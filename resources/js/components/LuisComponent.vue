@@ -232,16 +232,13 @@
 </template>
 <style>
 .col1 {
-background: grey;
-width: 15%;
+width: 60%;
 }
 .col2 {
 border: white;
-background: grey;
-width: 85%;
+width: 40%;
 }
 .row {
-display: flex;
 width: 100%;
 }
 </style>
