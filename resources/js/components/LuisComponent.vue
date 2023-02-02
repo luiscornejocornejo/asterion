@@ -80,13 +80,13 @@
 
                                                     <div class="container">
                                                         <div class="row">
-                                                            <div class="col-8"><h5 class="mt-0 mb-0 font-14" style="color:#727CF5;">{{ currency.topic }}</h5></div>
+                                                            <div class="col-12"><h5 class="mt-0 mb-0 font-14" style="color:#727CF5;">{{ currency.topic }}</h5></div>
                                                             <div class="col-4"><span class="float-end text-muted font-12">{{currency.lastupdate }}</span></div>
                                                         </div>
-                                                    </div>
-                                                    <div class="container">
+                                                    
+                                                    
                                                         <div class="row">
-                                                            <div class="col-8"> <h5>{{ currency.nombreusuario }}</h5></div>
+                                                            <div class="col-12"> <h5>{{ currency.nombreusuario }}</h5></div>
                                                             <div class="col-4"><span class="float-end text-muted font-12">{{currency.number }}</span></div>
                                                         </div>
                                                     </div>
