@@ -291,8 +291,9 @@ export default {
                 .get('/api/extraswhatapp/' + id)
                 .then(response => (this.extra = response.data))
                 .catch(error => console.log(error))
-            console.log(this.extra)
-            console.log("carga")
+                console.log("carga")
+
+            console.log(this.extra) 
 
         },
         extrahistorial(id) {
