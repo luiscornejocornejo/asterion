@@ -238,15 +238,9 @@
                 </div>
 </template>
 <style>
-.col1 {
 
-}
-.col2 {
-border: white;
-
-}
 .row {
-
+width: auto;
 }
 </style>
 <script>
