@@ -78,7 +78,7 @@
                                                     id="{{ currency.ticket_id  }}"></div>
 
                                                 <div class="w-100 overflow-hidden">
-                                                    <h5 class="mt-0 mb-0 font-14">{{ currency.topic }}<br>
+                                                    <h5 class="mt-0 mb-0 font-14" style="color:#727CF5;position: absolute;">{{ currency.topic }}<br>
                                                         {{ currency.nombreusuario }}
                                                         <span class="float-end text-muted font-12">{{
                                                                 currency.lastupdate
