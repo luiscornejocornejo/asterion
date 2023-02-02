@@ -55,6 +55,7 @@ class wsController extends Controller
   public function datostickets()
   {
 
+    echo "entro";
     // $id = $request->id;
     $fields2 = $this->select2(75);
     $fields3 = $this->select2(77);
