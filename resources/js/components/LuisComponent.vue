@@ -145,7 +145,7 @@
                     <spam id="departamento"></spam><br><br>
 
 
-                    <p class="mt-3 mb-1"><strong><i class='uil uil-globe'></i> Fuente:<spam id="source">{{ source }}
+                    <p class="mt-3 mb-1"><strong><i class='uil uil-globe'></i> Fuente:<spam id="source">{{ source }} {{ ext.chat_link }}
                             </spam></strong></p>
 
                     <div v-if="tipo" v-for="ext in extra">
