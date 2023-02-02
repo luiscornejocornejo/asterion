@@ -79,12 +79,11 @@
 
                                                 <div class="w-100 overflow-hidden">
                                                     <h5 class="mt-0 mb-0 font-14" style="color:#727CF5;position: absolute;">{{ currency.topic }}<br>
-                                                        {{ currency.nombreusuario }}
-                                                        <span class="float-end text-muted font-12">{{
-                                                                currency.lastupdate
-                                                        }}</span>
+                                                        
+                                                        <span class="float-end text-muted font-12">{{currency.lastupdate }}</span>
 
                                                     </h5>
+                                                    <h5>{{ currency.nombreusuario }}</h5>
                                                     <p class="mt-1 mb-0 text-muted font-14">
                                                         <span class="w-25 float-end text-end">
                                                             <span class="badge badge-danger-lighten">{{ currency.number
