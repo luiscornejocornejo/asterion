@@ -73,9 +73,9 @@
                                      
                                         <a href="javascript:void(0);" class="text-body">
                                             {{currency.chat_status}}
-                                            <div v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source)"
+                                            <div style="background: grey;" v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source)"
                                                 class="d-flex align-items-start mt-1 p-2">
-                                                <div style="float: left;width: 10px;height: 100px;background: grey;"
+                                                <div style="float: left;width: 10px;height: 100px;background: white;"
                                                     id="{{ currency.ticket_id  }}"></div>
 
                                                     <div class="container">
