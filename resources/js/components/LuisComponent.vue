@@ -77,17 +77,19 @@
                                                 <div style="float: left;width: 10px;height: 100px;background: white;"
                                                     id="{{ currency.ticket_id  }}"></div>
 
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col1"><h5 class="mt-0 mb-0 font-14" style="color:#727CF5;position: absolute;">{{ currency.topic }}</h5></div>
+                                                            <div class="col2"><span class="float-end text-muted font-12">{{currency.lastupdate }}</span></div>
+                                                        </div>
+                                                    </div>
                                                 <div class="w-100 overflow-hidden">
-                                                    <h5 class="mt-0 mb-0 font-14" style="color:#727CF5;position: absolute;">{{ currency.topic }}<br>
-                                                        
-                                                       
-
-                                                    </h5>
+                                                    
                                                 <br>
                                                 <br>
 
                                                     <h5>{{ currency.nombreusuario }}</h5>
-                                                    <span class="float-end text-muted font-12">{{currency.lastupdate }}</span>
+                                                    
                                                     <p class="mt-1 mb-0 text-muted font-14">
                                                         <span class="w-25 float-end text-end">
                                                             <span class="badge badge-danger-lighten">{{ currency.number
