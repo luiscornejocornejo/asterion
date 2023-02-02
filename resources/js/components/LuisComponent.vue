@@ -79,7 +79,7 @@
 
                                                     <div class="container">
                                                         <div class="row">
-                                                            <div class="col1"><h5 class="mt-0 mb-0 font-14" style="color:#727CF5;position: absolute;">{{ currency.topic }}</h5></div>
+                                                            <div class="col1"><h5 class="mt-0 mb-0 font-14" style="color:#727CF5;">{{ currency.topic }}</h5></div>
                                                             <div class="col2"><span class="float-end text-muted font-12">{{currency.lastupdate }}</span></div>
                                                         </div>
                                                     </div>
