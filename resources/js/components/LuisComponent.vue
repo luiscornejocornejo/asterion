@@ -232,14 +232,14 @@
 </template>
 <style>
 .col1 {
-width: 60%;
+
 }
 .col2 {
 border: white;
-width: 40%;
+
 }
 .row {
-width: 100%;
+
 }
 </style>
 <script>
