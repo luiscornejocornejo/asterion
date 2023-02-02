@@ -1,114 +1,6 @@
 <template>
 
-    <div class="col-xxl-3 col-xl-6 order-xl-1">
-        <div class="card">
-            <div class="card-body p-0">
-                <div class="flex-grow-1">
-                    <p class="text-muted mb-0">Bandeja de Tickets( {{ sise }})</p>
-                </div>
-                <select onchange="location = this.value;">
-                    <option>estados</option>
-                    <option value="/chat?id=75">
-                        <h5 class="font-size-14 mb-3"><a href="/chat?id=75">Open</a></h5>
-                    </option>
-                    <option value="/chat?id=80">
-                        <h5 class="font-size-14 mb-3"><a href="/chat?id=80">cerrados (hoy)</a></h5>
-                    </option>
-                    <option value="/chat?id=81">
-                        <h5 class="font-size-14 mb-3"><a href="/chat?id=81">cerrados (ayer)</a></h5>
-                    </option>
-
-
-                </select>
-
-                <ul class="nav nav-tabs nav-bordered">
-                    <li class="nav-item">
-                        <a href="#allUsers" data-bs-toggle="tab" aria-expanded="false" class="nav-link active py-2">
-                            All
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#favUsers" data-bs-toggle="tab" aria-expanded="true" class="nav-link py-2">
-                            Favourties
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#friendUsers" data-bs-toggle="tab" aria-expanded="true" class="nav-link py-2">
-                            Friends
-                        </a>
-                    </li>
-                </ul> <!-- end nav-->
-                <div class="tab-content">
-                    <div class="tab-pane show active card-body pb-0" id="newpost">
-
-                        <!-- start search box -->
-                        <div class="app-search">
-                            <form>
-                                <div class="mb-2 position-relative">
-                                    <input type="text" class="form-control"
-                                        placeholder="People, groups & messages..." />
-                                    <span class="mdi mdi-magnify search-icon"></span>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- end search box -->
-                    </div>
-
-                    <!-- users -->
-                    <div class="row">
-                        <div class="col">
-                            <div class="card-body py-0 mb-3" data-simplebar style="max-height: 546px">
-
-
-                                <section v-if="errored">
-                                    <p>Lo sentimos, no es posible obtener la información en este momento, por favor
-                                        intente nuevamente mas tarde</p>
-                                </section>
-
-                                <section v-else>
-                                    <div v-if="loading">Cargando...</div>
-
-                                    <div v-else v-for="currency in info" class="currency">
-
-
-                                        <a href="javascript:void(0);" class="text-body">
-                                            {{currency.chat_status}}
-                                            <div v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source)"
-                                                class="d-flex align-items-start mt-1 p-2">
-                                                <div style="float: left;width: 10px;height: 100px;background: white;"
-                                                    id="{{ currency.ticket_id  }}"></div>
-
-                                                <div class="w-100 overflow-hidden">
-                                                    <h5 class="mt-0 mb-0 font-14">{{ currency.topic }}<br>
-                                                        {{ currency.nombreusuario }}
-                                                        <span class="float-end text-muted font-12">{{
-                                                                currency.lastupdate
-                                                        }}</span>
-
-                                                    </h5>
-                                                    <p class="mt-1 mb-0 text-muted font-14">
-                                                        <span class="w-25 float-end text-end">
-                                                            <span class="badge badge-danger-lighten">{{ currency.number
-                                                            }}</span>
-                                                            <span class="w-75"></span>
-                                                        </span>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-
-                                </section>
-
-
-
-                            </div> <!-- end slimscroll-->
-                        </div> <!-- End col -->
-                    </div> <!-- end users -->
-                </div> <!-- end tab content-->
-            </div> <!-- end card-body-->
-        </div> <!-- end card-->
-    </div>
+   
 
 
 
@@ -298,7 +190,7 @@
                                     </div> <!-- end card-body-->
                                 </div> <!-- end card-->
                             </div>
-                            
+
     <div class="col-xxl-6 col-xl-12 order-xl-2 ">
         <div class="card">
             <div class="card-body">
