@@ -70,6 +70,7 @@
 
                                     <div v-else v-for="currency in info" class="currency">
 
+                                     
                                         <a href="javascript:void(0);" class="text-body">
                                             {{currency.chat_status}}
                                             <div v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source)"
@@ -229,7 +230,21 @@
                     </div> <!-- end card -->
                 </div>
 </template>
-
+<style>
+.col1 {
+background: grey;
+width: 15%;
+}
+.col2 {
+border: white;
+background: grey;
+width: 85%;
+}
+.row {
+display: flex;
+width: 100%;
+}
+</style>
 <script>
 
 
