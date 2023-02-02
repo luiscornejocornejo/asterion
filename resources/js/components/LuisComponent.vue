@@ -145,11 +145,11 @@
                     <spam id="departamento"></spam><br><br>
 
 
-                    <p class="mt-3 mb-1"><strong><i class='uil uil-globe'></i> Fuente:<spam id="source">{{ source }} {{ chat_link }}
+                    <p class="mt-3 mb-1"><strong><i class='uil uil-globe'></i> Fuente:<spam id="source">{{ source }} 
                             </spam></strong></p>
 
-                    <div v-if="tipo" v-for="ext in extra">
-                        <iframe width="600 px" height="800 px" frameborder='0' allowfullscreen src='{{ chat_link }}'></iframe>
+                    <div v-if="tipo" v-for="ext2 in whapp">
+                        <iframe width="600 px" height="800 px" frameborder='0' allowfullscreen src='{{ ext2.chat_link }}'></iframe>
 
                     </div>
                     <div v-else v-for="ext in extra" class="currency">
@@ -249,6 +249,7 @@ export default {
             nombreusuario: null,
             ticket_id: null,
             extra: null,
+            whapp: null,
             datoooo: null,
             source: null,
             tipo: null,
@@ -289,11 +290,11 @@ export default {
         extraswhatapp(id) {
             axios
                 .get('/api/extraswhatapp/' + id)
-                .then(response => (this.extra = response.data))
+                .then(response => (this.whapp = response.data))
                 .catch(error => console.log(error))
                 console.log("carga")
 
-            console.log(this.extra) 
+            console.log(this.whapp) 
 
         },
         extrahistorial(id) {
