@@ -145,11 +145,11 @@
                     <spam id="departamento"></spam><br><br>
 
 
-                    <p class="mt-3 mb-1"><strong><i class='uil uil-globe'></i> Fuente:<spam id="source">{{ source }} {{ ext.chat_link }}
+                    <p class="mt-3 mb-1"><strong><i class='uil uil-globe'></i> Fuente:<spam id="source">{{ source }} {{ chat_link }}
                             </spam></strong></p>
 
                     <div v-if="tipo" v-for="ext in extra">
-                        <iframe width="600 px" height="800 px" frameborder='0' allowfullscreen src='{{ ext.chat_link }}'></iframe>
+                        <iframe width="600 px" height="800 px" frameborder='0' allowfullscreen src='{{ chat_link }}'></iframe>
 
                     </div>
                     <div v-else v-for="ext in extra" class="currency">
