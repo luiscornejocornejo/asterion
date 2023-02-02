@@ -83,21 +83,13 @@
                                                             <div class="col2"><span class="float-end text-muted font-12">{{currency.lastupdate }}</span></div>
                                                         </div>
                                                     </div>
-                                                <div class="w-100 overflow-hidden">
-                                                    
-                                                <br>
-                                                <br>
-
-                                                    <h5>{{ currency.nombreusuario }}</h5>
-                                                    
-                                                    <p class="mt-1 mb-0 text-muted font-14">
-                                                        <span class="w-25 float-end text-end">
-                                                            <span class="badge badge-danger-lighten">{{ currency.number
-                                                            }}</span>
-                                                            <span class="w-75"></span>
-                                                        </span>
-                                                    </p>
-                                                </div>
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col1"> <h5>{{ currency.nombreusuario }}</h5></div>
+                                                            <div class="col2"><span class="float-end text-muted font-12">{{currency.number }}</span></div>
+                                                        </div>
+                                                    </div>
+          
                                             </div>
                                         </a>
                                     </div>
