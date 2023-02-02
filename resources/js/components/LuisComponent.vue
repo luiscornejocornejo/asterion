@@ -83,8 +83,8 @@
                                                        
 
                                                     </h5>
-                                                <br></br>
-                                                <br></br>
+                                                <br>
+                                                <br>
 
                                                     <h5>{{ currency.nombreusuario }}</h5>
                                                     <span class="float-end text-muted font-12">{{currency.lastupdate }}</span>
