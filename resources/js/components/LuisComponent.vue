@@ -57,7 +57,7 @@
                     <!-- users -->
                     <div class="row">
                         <div class="col">
-                            <div class="card-body py-0 mb-3" data-simplebar style="max-height: 546px">
+                            <div class="card-body py-0 mb-3" data-simplebar style="max-height: 646px">
 
 
                                 <section v-if="errored">
@@ -68,7 +68,7 @@
                                 <section v-else>
                                     <div v-if="loading">Cargando...</div>
 
-                                    <div v-else v-for="currency in info" class="currency" style="background-color: white;opacity: 0.9;width: 100%;">
+                                    <div v-else v-for="currency in info" class="currency" style="border: whitesmoke; box-shadow: whitesmoke;">
 
                                      
                                         <a href="javascript:void(0);" class="text-body">
