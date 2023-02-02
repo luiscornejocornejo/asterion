@@ -78,7 +78,7 @@
                                                 <div style="float: left;width: 10px;height: 100px;background: white;"
                                                     id="{{ currency.ticket_id  }}"></div>
 
-                                                    <div class="container">
+                                                    <div class="container-fluid">
                                                         <div class="row">
                                                             <div class="col-6 align-self-start"><h5 class="mt-0 mb-0 font-14" style="color:#727CF5;">{{ currency.topic }}</h5></div>
                                                             <div class="col-4 align-self-end"><span class="float-end text-muted small">{{currency.lastupdate }}</span></div>
