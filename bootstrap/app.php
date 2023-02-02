@@ -15,6 +15,29 @@ $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
+if (!defined('SUBDOMAIN')) {
+    $subdomain_tmp = 'localhost';
+    if (isset($_SERVER['HTTP_HOST'])) {
+        $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+        $subdomain_tmp =  array_shift($domainParts);
+    } elseif(isset($_SERVER['SERVER_NAME'])){
+        $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+        $subdomain_tmp =  array_shift($domainParts);
+        
+    }
+    
+    else {
+       // $app->loadEnvironmentFrom('subdomains_config' .   '/.suricata' );
+
+        if (php_sapi_name() === 'cli') {
+            //Modo CLI útil a futuro
+            $g=0;
+        }
+    }
+    define('SUBDOMAIN', $subdomain_tmp);
+}
+$app->loadEnvironmentFrom('subdomains_config' .   '/.' . SUBDOMAIN);
+
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces
