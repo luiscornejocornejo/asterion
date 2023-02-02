@@ -16,7 +16,7 @@ class ChatController extends Controller
 
     $idticketestado = $request->idticketestado;
     $statos = $request->statos;
-    $query = "update homero_os set status_id='" . $statos . "'   where ticket_id ='" . $idticketestado . "'";
+    $query = "update ost_ticket set status_id='" . $statos . "'   where ticket_id ='" . $idticketestado . "'";
 
     $aa = $this->conectar2(11);
     $actualizado = DB::connection('mysql2')->select($query);
@@ -30,7 +30,7 @@ class ChatController extends Controller
 
     $idticketestado = $request->idticketestado;
     $statos = $request->statos;
-    $query = "update homero_os set topic_id='" . $statos . "'   where ticket_id ='" . $idticketestado . "'";
+    $query = "update ost_ticket set topic_id='" . $statos . "'   where ticket_id ='" . $idticketestado . "'";
 
     $aa = $this->conectar2(11);
     $actualizado = DB::connection('mysql2')->select($query);
@@ -62,7 +62,7 @@ class ChatController extends Controller
 
     $idticketestado = $request->idticketestado;
     $statos = $request->statos;
-    $query = "update homero_os set dept_id='" . $statos . "'   where ticket_id ='" . $idticketestado . "'";
+    $query = "update ost_ticket set dept_id='" . $statos . "'   where ticket_id ='" . $idticketestado . "'";
 
     $aa = $this->conectar2(11);
     $actualizado = DB::connection('mysql2')->select($query);
