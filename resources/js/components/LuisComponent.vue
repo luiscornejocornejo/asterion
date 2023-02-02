@@ -1,10 +1,6 @@
 <template>
 
-   
-
-
-
-<div class="col-xxl-3 col-xl-6 order-xl-1">
+    <div class="col-xxl-3 col-xl-6 order-xl-1">
         <div class="card">
             <div class="card-body p-0">
                 <div class="flex-grow-1">
@@ -113,7 +109,6 @@
             </div> <!-- end card-body-->
         </div> <!-- end card-->
     </div>
-
     <div class="col-xxl-6 col-xl-12 order-xl-2 ">
         <div class="card">
             <div class="card-body">
