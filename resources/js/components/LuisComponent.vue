@@ -87,6 +87,12 @@
                                                     
                                                         <div class="row">
                                                             <div class="col-6 align-self-start"> <h5>{{ currency.nombreusuario }}</h5></div>
+                                                            <div class="col-4 align-self-end"><span class="float-end text-muted font-12">Asignado</span></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-6 align-self-start"> 
+                                                                {{currency.source}}
+                                                                <h5>{{ currency.number }}</h5></div>
                                                             <div class="col-4 align-self-end"><span class="float-end text-muted font-12">{{currency.number }}</span></div>
                                                         </div>
                                                     </div>
