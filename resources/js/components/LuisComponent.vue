@@ -86,7 +86,7 @@
                                                     
                                                         <div class="row">
                                                             <div class="col-6 align-self-start"> <h5>{{ currency.nombreusuario }}</h5></div>
-                                                            <div class="col-6 align-self-end"><span class="float-end text-muted font-12">Asignado</span></div>
+                                                            <div class="col-6 align-self-end"><span class="float-end text-muted small">Asignado</span></div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-6 align-self-start"> 
