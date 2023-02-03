@@ -327,12 +327,12 @@ export default {
             if (e == "Email") {
                 this.datoooo = this.extrasmail(d);
                 this.tipo = false;
-                this.logo = '<i class="bi bi-whatsapp"></i>';
+                this.logo = '<i class="ri-whatsapp-fill"></i> ';
             } 
             if(e == "Whatsapp") {
                 this.datoooo = this.extraswhatapp(d);
                 this.tipo = true;
-                this.logo = '<i class="bi bi-whatsapp"></i>';
+                this.logo = '<i class="ri-whatsapp-fill"></i> ';
           
             }
             this.historialllll=this.extrahistorial(d);
