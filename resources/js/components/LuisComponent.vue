@@ -332,6 +332,8 @@ export default {
             } 
             if(e == "Whatsapp") {
                 this.datoooo = this.extraswhatapp(d);
+                console.log(this.datoooo)
+
                 this.tipo = true;
                 this.logo = '<i class="ri-whatsapp-fill"></i> ';
           
