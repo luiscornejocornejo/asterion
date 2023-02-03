@@ -57,7 +57,7 @@
                     <!-- users -->
                     <div class="row">
                         <div class="col">
-                            <div class="card-body py-0 mb-3" data-simplebar >
+                            <div class="card-body py-0 mb-3" data-simplebar style="max-height: 346px">
 
 
                                 <section v-if="errored">
