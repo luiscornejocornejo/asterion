@@ -153,7 +153,7 @@
                     <p class="mt-3 mb-1"><strong><i class='uil uil-globe'></i> Fuente:<spam id="source">{{ source }} 
                             </spam></strong></p>
 
-                    <div v-if="tipo" v-for="ext2 in whapp">
+                    <div v-if="tipo" v-for="ext2 in whapp" style="max-height: 346px">
                         <iframe width="600 px" height="800 px" frameborder='0' allowfullscreen src='{{ ext2.chat_link }}'></iframe>
 
                     </div>
