@@ -266,6 +266,7 @@ export default {
             historial:null,
             historialllll:null,
             logo: null,
+            datowhatapp:null,
 
         }
     },
@@ -331,15 +332,15 @@ export default {
                 this.logo = '<i class="ri-whatsapp-fill"></i> ';
             } 
             if(e == "Whatsapp") {
-                this.datoooo = this.extraswhatapp(d);
-                console.log(this.datoooo);
+                this.datowhatapp= this.extraswhatapp(d);
+                console.log(this.datowhatapp);
 
-                if(this.datoooo.length==0){
+                if(this.datowhatapp.length==0){
                     console.log(this.datoooo);
                 }else{
                     this.tipo = true;
                 this.logo = '<i class="ri-whatsapp-fill"></i> ';
-                this.whapp='<iframe width="600 px" height="346px" frameborder="0" allowfullscreen src={{ ext2.chat_link }}></iframe>';
+                this.whapp='<iframe width="600 px" height="346px" frameborder="0" allowfullscreen src='+ext2.chat_link +'></iframe>';
 
                 }
 
