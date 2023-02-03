@@ -155,8 +155,7 @@
 
                     <div v-if="tipo" v-for="ext2 in whapp" style="max-height: 346px">
                         {{ ext2.chat_link }}
-                        <iframe width="600 px" height="346px" frameborder='0' allowfullscreen src='{{ ext2.chat_link }}'></iframe>
-
+                       
                     </div>
                     <div v-else v-for="ext in extra" class="currency">
                         
@@ -332,10 +331,16 @@ export default {
             } 
             if(e == "Whatsapp") {
                 this.datoooo = this.extraswhatapp(d);
-                console.log(this.datoooo)
-
-                this.tipo = true;
+                if(this.datoooo.length==0){
+                    console.log(this.datoooo);
+                }else{
+                    this.tipo = true;
                 this.logo = '<i class="ri-whatsapp-fill"></i> ';
+                this.whapp='<iframe width="600 px" height="346px" frameborder="0" allowfullscreen src={{ ext2.chat_link }}></iframe>';
+
+                }
+
+              
           
             }
             this.historialllll=this.extrahistorial(d);

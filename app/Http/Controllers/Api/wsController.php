@@ -82,7 +82,13 @@ class wsController extends Controller
        on f.ticket_id=a.ticket_id
        where a.ticket_id=" . $ticketid;
     $fields55 = DB::reconnect('mysql2')->select($querydatos);
-    $return2 = json_encode($fields55);
+
+    $return=array();
+    foreach($fields55  as $value){
+      $return=array("chat_link"=>$value->chat_link);
+    }
+    
+    $return2 = json_encode($return);
     return $return2;
   }
 
