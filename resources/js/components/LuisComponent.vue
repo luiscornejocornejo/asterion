@@ -302,6 +302,7 @@ export default {
         },
         extraswhatapp(id) {
             console.log(id) ;
+            this.whapp=null;
             axios
                 .get('/api/extraswhatapp/' + id)
                 .then(response => (this.whapp = response.data))
@@ -332,15 +333,17 @@ export default {
                 this.logo = '<i class="ri-whatsapp-fill"></i> ';
             } 
             if(e == "Whatsapp") {
+                this.datowhatapp= null;
                 this.datowhatapp= this.extraswhatapp(d);
-                console.log(this.datowhatapp);
-
-                if(this.datowhatapp.length==0){
-                    console.log(this.datoooo);
+                if(this.datowhatapp === null){
+              
+                    console.log(this.datowhatapp);
                 }else{
+                    console.log(this.datowhatapp);
+
                     this.tipo = true;
                 this.logo = '<i class="ri-whatsapp-fill"></i> ';
-                this.whapp='<iframe width="600 px" height="346px" frameborder="0" allowfullscreen src='+ext2.chat_link +'></iframe>';
+                this.whapp='<iframe width="600 px" height="346px" frameborder="0" allowfullscreen src='+this.datowhatapp.chat_link +'></iframe>';
 
                 }
 
