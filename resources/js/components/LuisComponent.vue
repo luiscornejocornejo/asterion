@@ -309,8 +309,6 @@ export default {
                 .catch(error => console.log(error))
                 console.log("carga")
 
-            console.log(this.whapp) 
-
         },
         extrahistorial(id) {
             axios
@@ -341,6 +339,8 @@ export default {
               
                     console.log(this.datowhatapp);
                 }else{
+                    console.log("not null")
+
                     console.log(this.datowhatapp);
 
                     this.tipo = true;
