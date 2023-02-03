@@ -68,7 +68,7 @@
                                 <section v-else>
                                     <div v-if="loading">Cargando...</div>
  
-                                    <div v-else v-for="currency in info" class="currency shadow-lg p-3 mb-5 bg-white rounded" style="">
+                                    <div v-else v-for="currency in info" class="currency shadow-sm p-3 mb-5 bg-white rounded" style="">
 
                                      
                                         <a href="javascript:void(0);" class="text-body">
