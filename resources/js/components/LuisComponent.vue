@@ -154,7 +154,8 @@
                             </spam></strong></p>
 
                     <div v-if="tipo" v-for="ext2 in whapp" style="max-height: 346px">
-                        <iframe width="600 px" height="800 px" frameborder='0' allowfullscreen src='{{ ext2.chat_link }}'></iframe>
+                        {{ ext2.chat_link }}
+                        <iframe width="600 px" height="346px" frameborder='0' allowfullscreen src='{{ ext2.chat_link }}'></iframe>
 
                     </div>
                     <div v-else v-for="ext in extra" class="currency">
