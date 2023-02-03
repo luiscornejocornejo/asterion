@@ -300,6 +300,7 @@ export default {
 
         },
         extraswhatapp(id) {
+            console.log(id) ;
             axios
                 .get('/api/extraswhatapp/' + id)
                 .then(response => (this.whapp = response.data))
