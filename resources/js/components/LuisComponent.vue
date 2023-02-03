@@ -92,7 +92,7 @@
                                                             <div class="col-6 align-self-start"> 
                                                                 
                                                                 
-                                                                <h5 v-if="source=='Whatsapp'"> <i class="ri-whatsapp-fill"></i> {{currency.logo}}{{ currency.number }}</h5></div>
+                                                                <h5 v-if="currency.source=='Whatsapp'"> <i class="ri-whatsapp-fill"></i> {{currency.logo}}{{ currency.number }}</h5></div>
                                                             <div class="col-6 align-self-end"><span class="float-end text-muted font-12">{{currency.number }}</span></div>
                                                         </div>
                                                     </div>
