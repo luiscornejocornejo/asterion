@@ -335,6 +335,8 @@ export default {
             if(e == "Whatsapp") {
                 this.datowhatapp= null;
                 this.datowhatapp= this.extraswhatapp(d);
+                console.log(this.datowhatapp);
+
                 if(this.datowhatapp === null){
               
                     console.log(this.datowhatapp);
