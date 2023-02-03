@@ -68,13 +68,12 @@
                                 <section v-else>
                                     <div v-if="loading">Cargando...</div>
  
-                                    <div v-else v-for="currency in info" class="currency shadow-sm p-3 mb-5 bg-white rounded" style="">
+                                    <div v-else v-for="currency in info" class="currency shadow-sm p-3 mb-5 bg-white rounded"  v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source)">
 
                                      
                                         <a href="javascript:void(0);" class="text-body">
                                             {{currency.chat_status}}
-                                            <div  v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source)"
-                                                class="d-flex align-items-start mt-1 p-2">
+                                            
                                                 <div style="float: left;width: 10px;height: 100px;background: white;"
                                                     id="{{ currency.ticket_id  }}"></div>
 
@@ -98,7 +97,7 @@
                                                         </div>
                                                     </div>
           
-                                            </div>
+                                            
                                         </a>
                                     </div>
 
