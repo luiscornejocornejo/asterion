@@ -235,12 +235,12 @@
                                         aria-label="scrollable content" style="height: auto; overflow: hidden scroll;">
                                         <div class="simplebar-content" style="padding: 0px 24px;">
                                             <div class="timeline-alt py-0">
-                                                <div class="timeline-item">
+                                                <div v-for="extrah in historial"  class="timeline-item">
                                                     <i
                                                         class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>
                                                     <div class="timeline-item-info">
                                                         <a href="javascript:void(0);"
-                                                            class="text-info fw-bold mb-1 d-block">You sold an item</a>
+                                                            class="text-info fw-bold mb-1 d-block">{{ extrah.username }}</a>
                                                         <small>Paul Burgess just purchased “Hyper - Admin
                                                             Dashboard”!</small>
                                                         <p class="mb-0 pb-2">
@@ -412,7 +412,7 @@
                         <li class="clearfix">
                             <div class="chat-avatar">
 
-                                <p class="fs-6">{{ extrah.username }}</p>
+                                <p class="fs-6"></p>
                             </div>
                             <div class="conversation-text">
                                 <div class="ctext-wrap">
