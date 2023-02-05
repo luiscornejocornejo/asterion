@@ -136,7 +136,8 @@
             <div class="card-body">
                         <div class="row  m-0">
                              <div class="col-6 align-self-start" style="display:inline-block;">
-                                <span class="float-start text-white small" >{{ nombreusuario }}</span>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#standard-modal3">{{ ans }}</button>
                             </div>
                             <div class="col-6 align-self-end" style="display:inline-block;">
                                 <span class="float-end text-white small" >Ticket:{{ ticket_id }}</span>
@@ -151,8 +152,7 @@
 
                 <div class="mt-3">
                     <hr class="" />
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#standard-modal3">Motivo:</button>
+                    
                     <spam id="motivo">{{ ans }}</spam><br><br>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#standard-modal">Estado:</button>
