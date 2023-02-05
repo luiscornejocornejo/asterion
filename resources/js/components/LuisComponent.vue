@@ -235,7 +235,7 @@
                                         aria-label="scrollable content" style="height: auto; overflow: hidden scroll;">
                                         <div class="simplebar-content" style="padding: 0px 24px;">
                                             <div class="timeline-alt py-0">
-                                                <div v-for="extrah in historialllll"  class="timeline-item extrahistorial2">
+                                                <div v-for="extrah in historial"  class="timeline-item extrahistorial2">
                                                     <i
                                                         class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>
                                                     <div class="timeline-item-info">
@@ -530,6 +530,8 @@ export default {
 
             }
             this.historialllll = this.extrahistorial(d);
+            console.log('extrahistorial.')
+
             console.log(this.historialllll)
 
         }
