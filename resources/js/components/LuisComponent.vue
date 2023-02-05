@@ -125,7 +125,17 @@
         <div class="card">
             <div class="card-body">
                
-                    <div class=" bg-primary text-white">{{ nombreusuario }}     <span class="text-right"> Ticket: {{ticket_id}} </span> </div>
+                  
+                        <div class="row bg-primary text-white">
+                             <div class="col-6 align-self-start" style="display:inline-block;">
+                                <h5 class="mt-0 mb-0 small" >{{ nombreusuario }}</h5>
+                            </div>
+                            <div class="col-6 align-self-end" style="display:inline-block;">
+                                <span class="float-end text-muted small" >Ticket:{{ ticket_id }}</span>
+                            </div>
+                        </div>
+                                                    
+                                 
 
             </div>
             <div class="card-body">
