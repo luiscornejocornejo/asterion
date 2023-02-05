@@ -140,7 +140,9 @@
                         data-bs-target="#standard-modal3">{{ ans }}</button>
                             </div>
                             <div class="col-6 align-self-end" style="display:inline-block;">
-                                <span class="float-end text-white small" >Ticket:{{ ticket_id }}</span>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#standard-modal"><spam id="estado"></spam>:</button>
+                                
                             </div>
                         </div>
             </div>
@@ -154,9 +156,7 @@
                     <hr class="" />
                     
                     <spam id="motivo">{{ ans }}</spam><br><br>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#standard-modal">Estado:</button>
-                    <spam id="estado"></spam><br><br>
+                   <br><br>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#standard-modal2">Depto:</button>
                     <spam id="departamento"></spam><br><br>
