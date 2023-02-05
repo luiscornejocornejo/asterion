@@ -267,7 +267,7 @@
                     </div>
                     <form action="/chatcreate" method="post" class="needs-validation" novalidate=""
                                 name="chat-form" id="chat-form">
-                                @csrf
+                                
 
                                 <div class="row">
                                     <div class="col mb-2 mb-sm-0">
@@ -280,8 +280,7 @@
                                     </div>
                                     <div class="col-sm-auto">
                                         <div class="btn-group">
-                                            <a href="#" class="btn btn-light"><i class="uil uil-paperclip"></i></a>
-                                            <a href="#" class="btn btn-light"> <i class='uil uil-smile'></i> </a>
+                                          
                                             <div class="d-grid">
                                                 <button type="submit" class="btn btn-success chat-send"><i
                                                         class='uil uil-message'></i></button>
@@ -302,9 +301,21 @@
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
-                        the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine
-                        this being filled with some actual content.</div>
+                    <div class="accordion-body">
+                        
+                        <button type="button" class="btn btn-success " data-bs-toggle="modal"
+                            data-bs-target="#standard-modal">
+                            <spam id="estado">Enviar Email</spam>:
+                        </button>
+                        <button type="button" class="btn btn-success " data-bs-toggle="modal"
+                            data-bs-target="#standard-modal">
+                            <spam id="estado">Llamar</spam>:
+                        </button>
+                        <button type="button" class="btn btn-success " data-bs-toggle="modal"
+                            data-bs-target="#standard-modal">
+                            <spam id="estado">Enviar Whatsapp</spam>:
+                        </button>
+                    </div>
                 </div>
             </div>
 
