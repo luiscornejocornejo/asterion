@@ -355,8 +355,7 @@
                                 style="height: 280px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
                         </div>
                     </div>
-                </div>
-                <form action="/chatcreate" method="post" class="needs-validation" novalidate=""
+                    <form action="/chatcreate" method="post" class="needs-validation" novalidate=""
                                 name="chat-form" id="chat-form">
                                 @csrf
 
@@ -381,6 +380,8 @@
                                     </div> <!-- end col -->
                                 </div> <!-- end row-->
                             </form>
+                </div>
+               
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwo">
@@ -426,16 +427,7 @@
                 </ul>
                
             </div> <!-- end card-body -->
-            <div class="card-body p-0">
-                <div class="row">
-                    <div class="col">
-                        <div class="mt-2 bg-light p-3">
-                        
-                        </div>
-                    </div> <!-- end col-->
-                </div>
-                <!-- end row -->
-            </div>
+       
         </div> <!-- end card -->
     </div>
 </template>
