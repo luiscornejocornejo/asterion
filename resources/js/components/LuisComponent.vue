@@ -80,7 +80,7 @@
                                                     <div class="container" >
                                                         <div class="row">
                                                             <div class="col-6 align-self-start"><h5 class="mt-0 mb-0 font-14" style="color:#727CF5;">{{ currency.topic }}</h5></div>
-                                                            <div class="col-6 align-self-end"><span class="float-end text-muted small">{{currency.lastupdate }}</span></div>
+                                                            <div class="col-6 align-self-end"><span class="float-end text-muted small" v-if="hora(currency.lastupdate )">{{tiempo2}}</span></div>
                                                         </div>
                                                     
                                                     
@@ -274,7 +274,7 @@ export default {
             historialllll:null,
             logo: null,
             datowhatapp:null,
-
+            tiempo2: null,
         }
     },
     mounted() {
@@ -298,6 +298,10 @@ export default {
                 .catch(error => console.log(error))
             console.log('reinicio.')
 
+        },
+        hora(tiempo){
+            let tiempo2 = tiempo.substring(0, 10);
+            return true;
         },
         extrasmail(id) {
             axios
