@@ -136,16 +136,34 @@
             <div class="card-body">
                         <div class="row  m-0">
                              <div class="col-6 align-self-start" style="display:inline-block;">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                <button type="button" class="btn btn-info" data-bs-toggle="modal"
                         data-bs-target="#standard-modal3">{{ ans }}</button>
                             </div>
                             <div class="col-6 align-self-end" style="display:inline-block;">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                <button type="button" class="btn btn-success " data-bs-toggle="modal"
                         data-bs-target="#standard-modal"><spam id="estado"></spam>:</button>
                                 
                             </div>
                         </div>
             </div>
+
+            <div class="card-body">
+                        <div class="row  m-0">
+                             <div class="col-6 align-self-start" style="display:inline-block;">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Cras justo odio</li>
+                                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                                    <li class="list-group-item">Vestibulum at eros</li>
+                                </ul>
+                            </div>
+                            <div class="col-6 align-self-end" style="display:inline-block;">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#standard-modal2">Depto:</button>
+                                <spam id="departamento"></spam>
+                            </div>
+                        </div>
+            </div>
+
             <div class="card-body">
                 <div class="mt-3 text-center">
                     <h4 id="nombre">  </h4>
@@ -157,9 +175,7 @@
                     
                     <spam id="motivo">{{ ans }}</spam><br><br>
                    <br><br>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#standard-modal2">Depto:</button>
-                    <spam id="departamento"></spam><br><br>
+                    <br><br>
 
 
                     <p class="mt-3 mb-1"><strong><i class='uil uil-globe'></i> Fuente:<spam id="source">{{ source }} 
