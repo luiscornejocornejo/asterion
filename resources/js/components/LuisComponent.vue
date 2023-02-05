@@ -385,8 +385,7 @@ export default {
         },
         hora(tiempo) {
             this.tiempo2 = tiempo.substring(0, 10);
-            console.log(tiempo)
-            console.log(this.tiempo2)
+            
             return true;
         },
         extrasmail(id) {
@@ -434,9 +433,11 @@ export default {
             if (e == "Whatsapp") {
                 this.datowhatapp = null;
                 this.datowhatapp = this.extraswhatapp(d);
+                console.log('paso1.')
+
                 console.log(this.whapp);
 
-                if (this.datowhatapp === null) {
+                if (this.whapp === null) {
 
                     console.log(this.whapp);
                 } else {
