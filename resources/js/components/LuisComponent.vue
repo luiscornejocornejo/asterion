@@ -310,7 +310,7 @@
                         <button type="button" class="btn btn-primary " data-bs-toggle="modal"
                             data-bs-target="#standard-modal">
                             <spam id="estado">Llamar</spam>:
-                        </button><br></br>
+                        </button><br>
                         <button type="button" class="btn btn-primary " data-bs-toggle="modal"
                             data-bs-target="#standard-modal">
                             <spam id="estado">Enviar Whatsapp</spam>:
