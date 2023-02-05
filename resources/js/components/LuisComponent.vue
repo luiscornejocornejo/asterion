@@ -124,10 +124,9 @@
     <div class="col-xxl-6 col-xl-12 order-xl-2 ">
         <div class="card">
             <div class="card-body">
-                <div class="dropdown float-end">
-                    <div class="p-3 mb-2 bg-primary text-white">{{ nombreusuario }}       Tikect: {{ticket_id}}</div>
+               
+                    <div class=" bg-primary text-white">{{ nombreusuario }}       Tikect: {{ticket_id}}</div>
 
-                </div>
             </div>
             <div class="card-body">
                 <div class="mt-3 text-center">
