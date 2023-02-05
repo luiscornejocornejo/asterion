@@ -151,9 +151,9 @@
                         <div class="row  m-0">
                              <div class="col-6 align-self-start" style="display:inline-block;">
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Cras justo odio</li>
-                                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                                    <li class="list-group-item">Vestibulum at eros</li>
+                                    <li class="list-group-item">Fuente {{ source }}</li>
+                                    <li class="list-group-item">Fecha de creacion: </li>
+                                    <li class="list-group-item">Fecha de ultima Modificacion: {{ lastupdate }}</li>
                                 </ul>
                             </div>
                             <div class="col-6 align-self-end" style="display:inline-block;">
@@ -167,20 +167,14 @@
             <div class="card-body">
                 <div class="mt-3 text-center">
                     <h4 id="nombre">  </h4>
-                    <p class="text-muted mt-2 font-14">Last Interacted: <strong>{{ lastupdate }}</strong></p>
+                    <p class="text-muted mt-2 font-14">Last Interacted: <strong></strong></p>
                 </div>
 
-                <div class="mt-3">
-                    <hr class="" />
-                    
-                    <spam id="motivo">{{ ans }}</spam><br><br>
-                   <br><br>
-                    <br><br>
-
-
-                    <p class="mt-3 mb-1"><strong><i class='uil uil-globe'></i> Fuente:<spam id="source">{{ source }} 
-                            </spam></strong></p>
-
+                <div class="">
+                    <div v-if="source=='Api'" >Api</div>
+                    <div v-if="source=='Email'" >Email</div>
+                    <div v-if="source=='Telegram'" >Telegram</div>
+                    <div v-if="source=='Whatsapp'" >Whatsapp</div>
                     <div v-if="tipo" v-for="ext2 in whapp" style="max-height: 346px">
                         {{ ext2.chat_link }}
                        
