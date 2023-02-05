@@ -530,6 +530,8 @@ export default {
 
             }
             this.historialllll = this.extrahistorial(d);
+            console.log(this.historialllll)
+
         }
 
     },
