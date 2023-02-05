@@ -237,12 +237,11 @@
                                             <div class="timeline-alt py-0">
                                                 <div v-for="extrah in historial"  class="timeline-item extrahistorial2">
                                                     <i
-                                                        class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>
+                                                        class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>{{ extrah.name }}
                                                     <div class="timeline-item-info">
                                                         <a href="javascript:void(0);"
                                                             class="text-info fw-bold mb-1 d-block">{{ extrah.username }}</a>
-                                                        <small>Paul Burgess just purchased “Hyper - Admin
-                                                            Dashboard”!</small>
+                                                        <small>{{ extrah.data }}</small>
                                                         <p class="mb-0 pb-2">
                                                             <small class="text-muted">{{ extrah.timestamp }}</small>
                                                         </p>
