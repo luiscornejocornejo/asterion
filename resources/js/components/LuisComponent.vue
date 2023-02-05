@@ -191,10 +191,10 @@
                     <div v-if="source == 'API'">API</div>
                     <div v-if="source == 'Email'">Email</div>
                     <div v-if="source == 'Telegram'">Telegram</div>
-                    <div v-if="source == 'Whatsapp'" v-for="ext2 in whapp" style="max-height: 346px">
+                    <div v-if="source == 'Whatsapp'" v-for="ll in whapp" style="max-height: 346px">
                         Whatsapp <div id='status22'>
                         </div>
-                        <iframe width="600 px" height="346px" frameborder="0" allowfullscreen src={{ext2.chat_link}} ></iframe>
+                        <iframe width="600 px" height="346px" frameborder="0" allowfullscreen src={{ll.chat_link}} ></iframe>
                     </div>
            
                     <div v-else v-for="ext in extra" class="currency">
@@ -434,19 +434,15 @@ export default {
             if (e == "Whatsapp") {
                 this.datowhatapp = null;
                 this.datowhatapp = this.extraswhatapp(d);
-                console.log(this.datowhatapp);
+                console.log(this.whapp);
 
                 if (this.datowhatapp === null) {
 
-                    console.log(this.datowhatapp);
+                    console.log(this.whapp);
                 } else {
                     console.log("not null")
 
-                    console.log(this.datowhatapp);
-
-                    this.tipo = true;
-                    this.logo = '<i class="ri-whatsapp-fill"></i> ';
-                    //this.whapp = '<iframe width="600 px" height="346px" frameborder="0" allowfullscreen src=' + this.datowhatapp.chat_link + '></iframe>';
+                    console.log(this.whapp);
 
                 }
 
