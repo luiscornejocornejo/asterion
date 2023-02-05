@@ -302,7 +302,7 @@ export default {
         hora(tiempo){
             this.tiempo2 = tiempo.substring(0, 10);
             console.log(tiempo)
-            console.log(tiempo2)
+            console.log(this.tiempo2)
             return true;
         },
         extrasmail(id) {
