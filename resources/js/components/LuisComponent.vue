@@ -125,22 +125,12 @@
         <div class="card">
             <div class="card-body">
                 <div class="dropdown float-end">
-                    <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <i class="mdi mdi-dots-horizontal"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end">
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item">View full</a>
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item">Edit Contact Info</a>
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item">Remove</a>
-                    </div>
+                    <div class="p-3 mb-2 bg-primary text-white">{{ nombreusuario }}       Tikect: {{ticket_id}}</div>
+
                 </div>
 
                 <div class="mt-3 text-center">
-                    <h4 id="nombre"> {{ nombreusuario }} </h4>
+                    <h4 id="nombre">  </h4>
                     <p class="text-muted mt-2 font-14">Last Interacted: <strong>{{ lastupdate }}</strong></p>
                 </div>
 
