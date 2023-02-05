@@ -88,7 +88,7 @@ class wsController extends Controller
       $return=array("chat_link"=>$value->chat_link);
     }
     
-    $return2 = json_encode($return);
+    $return2 = json_encode($fields55);
     return $return2;
   }
 
