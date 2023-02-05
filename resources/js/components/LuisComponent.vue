@@ -437,18 +437,7 @@ export default {
 
                 console.log(this.whapp);
 
-                if (this.whapp === null) {
-
-                    console.log(this.whapp);
-                } else {
-                    console.log("not null")
-
-                    console.log(this.whapp);
-
-                }
-
-
-
+            
             }
             
 
