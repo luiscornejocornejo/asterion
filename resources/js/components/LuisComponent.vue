@@ -124,7 +124,7 @@
     <div class="col-xxl-6 col-xl-12 order-xl-2 ">
         <div class="card">
             <div class="card-body">
-                        <div class="row bg-primary text-white">
+                        <div class="row bg-primary text-white m-0">
                              <div class="col-6 align-self-start" style="display:inline-block;">
                                 <span class="float-start text-white small" >{{ nombreusuario }}</span>
                             </div>
