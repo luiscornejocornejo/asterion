@@ -300,7 +300,7 @@ export default {
 
         },
         hora(tiempo){
-            tiempo2 = tiempo.substring(0, 10);
+            this.tiempo2 = tiempo.substring(0, 10);
             console.log(tiempo)
             console.log(tiempo2)
             return true;
