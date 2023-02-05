@@ -74,19 +74,19 @@
                                         <a href="javascript:void(0);" class="text-body">
                                             {{currency.chat_status}}
                                             
-                                                <div style="float: left;width: 10px;height: 100px;background: white;"
+                                                <div style="float: left;width: 5px;height: 100px;background: white;"
                                                     id="{{ currency.ticket_id  }}"></div>
 
                                                     <div class="container" >
                                                         <div class="row">
-                                                            <div class="col-6 align-self-start"><h5 class="mt-0 mb-0 font-14" style="color:#727CF5;">{{ currency.topic }}</h5></div>
-                                                            <div class="col-6 align-self-end"><span class="float-end text-muted small" v-if="hora(currency.lastupdate)">{{ tiempo2 }}</span></div>
+                                                            <div class="col-6 align-self-start"><h5 class="mt-0 mb-0 font-8" style="color:#727CF5;">{{ currency.topic }}</h5></div>
+                                                            <div class="col-6 align-self-end"><span class="float-end text-muted font-8" v-if="hora(currency.lastupdate)">{{ tiempo2 }}</span></div>
                                                         </div>
                                                     
                                                     
                                                         <div class="row">
-                                                            <div class="col-6 align-self-start"> <h5>{{ currency.nombreusuario }}</h5></div>
-                                                            <div class="col-6 align-self-end"><span class="float-end text-muted small">Asignado</span></div>
+                                                            <div class="col-6 align-self-start"> <h5 class="mt-0 mb-0 font-8">{{ currency.nombreusuario }}</h5></div>
+                                                            <div class="col-6 align-self-end"><span class="float-end text-muted font-8">Asignado</span></div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-6 align-self-start"> 
