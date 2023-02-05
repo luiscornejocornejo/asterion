@@ -157,8 +157,7 @@
                         <span class="float-end text-white small">Ticket:{{ ticket_id }}</span>
                     </div>
                 </div>
-            </div>
-            <div class="card-body">
+           
                 <div class="row  m-0">
                     <div class="col-6 align-self-start" style="display:inline-block;">
                         <button type="button" class="btn btn-info" data-bs-toggle="modal"
@@ -404,12 +403,7 @@
                         </li>
                     </div>
                 </ul>
-            </div> <!-- end card-body -->
-            <div class="card-body p-0">
-                <div class="row">
-                    <div class="col">
-                        <div class="mt-2 bg-light p-3">
-                            <form action="/chatcreate" method="post" class="needs-validation" novalidate=""
+                <form action="/chatcreate" method="post" class="needs-validation" novalidate=""
                                 name="chat-form" id="chat-form">
                                 @csrf
 
@@ -434,6 +428,12 @@
                                     </div> <!-- end col -->
                                 </div> <!-- end row-->
                             </form>
+            </div> <!-- end card-body -->
+            <div class="card-body p-0">
+                <div class="row">
+                    <div class="col">
+                        <div class="mt-2 bg-light p-3">
+                        
                         </div>
                     </div> <!-- end col-->
                 </div>
