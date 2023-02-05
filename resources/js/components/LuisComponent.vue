@@ -403,30 +403,7 @@
 
 
 
-            <div class="card-body px-0 pb-0">
-                <ul class="conversation-list px-3" data-simplebar style="max-height: 554px" id="historial">
-
-                    <div  class="">
-
-
-                        <li class="clearfix">
-                            <div class="chat-avatar">
-
-                                <p class="fs-6"></p>
-                            </div>
-                            <div class="conversation-text">
-                                <div class="ctext-wrap">
-                                    <i>{{ extrah.name }}</i>
-                                    <i>{{ extrah.data }}</i>
-                                    <p></p>
-                                </div>
-                            </div>
-
-                        </li>
-                    </div>
-                </ul>
-               
-            </div> <!-- end card-body -->
+          
        
         </div> <!-- end card -->
     </div>
