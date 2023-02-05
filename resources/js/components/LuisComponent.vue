@@ -171,7 +171,7 @@
                 </div>
 
                 <div class="">
-                    <div v-if="source=='Api'" >Api</div>
+                    <div v-if="source=='API'" >API</div>
                     <div v-if="source=='Email'" >Email</div>
                     <div v-if="source=='Telegram'" >Telegram</div>
                     <div v-if="source=='Whatsapp'" >Whatsapp</div>
