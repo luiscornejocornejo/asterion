@@ -88,7 +88,8 @@
                                                     </div>
                                                     <div class="col-6 align-self-end" style="display:inline-block;">
                                                         <span class="float-end text-muted small"
-                                                            v-if="hora(currency.lastupdate)">{{ tiempo2 }}</span></div>
+                                                            v-if="hora(currency.lastupdate)">{{ tiempo2 }}</span>
+                                                    </div>
                                                 </div>
 
 
@@ -97,7 +98,8 @@
                                                         <h5 class="mt-0 mb-0 small">{{ currency.nombreusuario }}</h5>
                                                     </div>
                                                     <div class="col-6 align-self-end" style="display:inline-block;">
-                                                        <span class="float-end text-muted small">Asignado</span></div>
+                                                        <span class="float-end text-muted small">Asignado</span>
+                                                    </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-6 align-self-start" style="display:inline-block;">
@@ -122,7 +124,8 @@
                                                     <div class="col-6 align-self-end" style="display:inline-block;">
                                                         <span class="float-end text-muted font-12">{{
                                                             currency.number
-                                                        }}</span></div>
+                                                        }}</span>
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -189,11 +192,6 @@
             </div>
 
             <div class="card-body">
-                <div class="mt-3 text-center">
-                    <h4 id="nombre"> </h4>
-                    <p class="text-muted mt-2 font-14">Last Interacted: <strong></strong></p>
-                </div>
-
                 <div class="">
                     <div v-if="source == 'API'">API</div>
                     <div v-if="source == 'Email'">Email</div>
@@ -220,6 +218,166 @@
 
 
     <div class="col-xxl-3 col-xl-6 order-xl-1 order-xxl-2">
+
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Bitacora
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="card-body py-0 mb-3" data-simplebar="init" style="max-height: 403px;">
+                        <div class="simplebar-wrapper" style="margin: 0px -24px;">
+                            <div class="simplebar-height-auto-observer-wrapper">
+                                <div class="simplebar-height-auto-observer"></div>
+                            </div>
+                            <div class="simplebar-mask">
+                                <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                                    <div class="simplebar-content-wrapper" tabindex="0" role="region"
+                                        aria-label="scrollable content" style="height: auto; overflow: hidden scroll;">
+                                        <div class="simplebar-content" style="padding: 0px 24px;">
+                                            <div class="timeline-alt py-0">
+                                                <div class="timeline-item">
+                                                    <i
+                                                        class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>
+                                                    <div class="timeline-item-info">
+                                                        <a href="javascript:void(0);"
+                                                            class="text-info fw-bold mb-1 d-block">You sold an item</a>
+                                                        <small>Paul Burgess just purchased “Hyper - Admin
+                                                            Dashboard”!</small>
+                                                        <p class="mb-0 pb-2">
+                                                            <small class="text-muted">5 minutes ago</small>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="timeline-item">
+                                                    <i
+                                                        class="mdi mdi-airplane bg-primary-lighten text-primary timeline-icon"></i>
+                                                    <div class="timeline-item-info">
+                                                        <a href="javascript:void(0);"
+                                                            class="text-primary fw-bold mb-1 d-block">Product on the
+                                                            Bootstrap Market</a>
+                                                        <small>Dave Gamache added
+                                                            <span class="fw-bold">Admin Dashboard</span>
+                                                        </small>
+                                                        <p class="mb-0 pb-2">
+                                                            <small class="text-muted">30 minutes ago</small>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="timeline-item">
+                                                    <i
+                                                        class="mdi mdi-microphone bg-info-lighten text-info timeline-icon"></i>
+                                                    <div class="timeline-item-info">
+                                                        <a href="javascript:void(0);"
+                                                            class="text-info fw-bold mb-1 d-block">Robert Delaney</a>
+                                                        <small>Send you message
+                                                            <span class="fw-bold">"Are you there?"</span>
+                                                        </small>
+                                                        <p class="mb-0 pb-2">
+                                                            <small class="text-muted">2 hours ago</small>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="timeline-item">
+                                                    <i
+                                                        class="mdi mdi-upload bg-primary-lighten text-primary timeline-icon"></i>
+                                                    <div class="timeline-item-info">
+                                                        <a href="javascript:void(0);"
+                                                            class="text-primary fw-bold mb-1 d-block">Audrey Tobey</a>
+                                                        <small>Uploaded a photo
+                                                            <span class="fw-bold">"Error.jpg"</span>
+                                                        </small>
+                                                        <p class="mb-0 pb-2">
+                                                            <small class="text-muted">14 hours ago</small>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="timeline-item">
+                                                    <i
+                                                        class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>
+                                                    <div class="timeline-item-info">
+                                                        <a href="javascript:void(0);"
+                                                            class="text-info fw-bold mb-1 d-block">You sold an item</a>
+                                                        <small>Paul Burgess just purchased “Hyper - Admin
+                                                            Dashboard”!</small>
+                                                        <p class="mb-0 pb-2">
+                                                            <small class="text-muted">16 hours ago</small>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="timeline-item">
+                                                    <i
+                                                        class="mdi mdi-airplane bg-primary-lighten text-primary timeline-icon"></i>
+                                                    <div class="timeline-item-info">
+                                                        <a href="javascript:void(0);"
+                                                            class="text-primary fw-bold mb-1 d-block">Product on the
+                                                            Bootstrap Market</a>
+                                                        <small>Dave Gamache added
+                                                            <span class="fw-bold">Admin Dashboard</span>
+                                                        </small>
+                                                        <p class="mb-0 pb-2">
+                                                            <small class="text-muted">22 hours ago</small>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="timeline-item">
+                                                    <i
+                                                        class="mdi mdi-microphone bg-info-lighten text-info timeline-icon"></i>
+                                                    <div class="timeline-item-info">
+                                                        <a href="javascript:void(0);"
+                                                            class="text-info fw-bold mb-1 d-block">Robert Delaney</a>
+                                                        <small>Send you message
+                                                            <span class="fw-bold">"Are you there?"</span>
+                                                        </small>
+                                                        <p class="mb-0 pb-2">
+                                                            <small class="text-muted">2 days ago</small>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end timeline -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="simplebar-placeholder" style="width: auto; height: 579px;"></div>
+                        </div>
+                        <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+                            <div class="simplebar-scrollbar" style="width: 0px; display: none;"></div>
+                        </div>
+                        <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+                            <div class="simplebar-scrollbar"
+                                style="height: 280px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Cliente
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
+                        the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine
+                        this being filled with some actual content.</div>
+                </div>
+            </div>
+
+        </div>
         <div class="card">
 
 
