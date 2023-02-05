@@ -125,7 +125,7 @@
         <div class="card">
             <div class="card-body">
                
-                    <div class=" bg-primary text-white">{{ nombreusuario }}       Tikect: {{ticket_id}}</div>
+                    <div class=" bg-primary text-white">{{ nombreusuario }}     <span class="align-self-end"> Ticket: {{ticket_id}} </span> </div>
 
             </div>
             <div class="card-body">
