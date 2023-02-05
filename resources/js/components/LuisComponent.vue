@@ -79,17 +79,17 @@
 
                                                     <div class="container" >
                                                         <div class="row">
-                                                            <div class="col-6 align-self-start"><h5 class="mt-0 mb-0 small" style="color:#727CF5;">{{ currency.topic }}</h5></div>
-                                                            <div class="col-6 align-self-end"><span class="float-end text-muted small" v-if="hora(currency.lastupdate)">{{ tiempo2 }}</span></div>
+                                                            <div class="col-6 align-self-start" style="display:inline-block;"><h5 class="mt-0 mb-0 small" style="color:#727CF5;">{{ currency.topic }}</h5></div>
+                                                            <div class="col-6 align-self-end" style="display:inline-block;"><span class="float-end text-muted small" v-if="hora(currency.lastupdate)">{{ tiempo2 }}</span></div>
                                                         </div>
                                                     
                                                     
                                                         <div class="row">
-                                                            <div class="col-6 align-self-start"> <h5 class="mt-0 mb-0 small">{{ currency.nombreusuario }}</h5></div>
-                                                            <div class="col-6 align-self-end"><span class="float-end text-muted small">Asignado</span></div>
+                                                            <div class="col-6 align-self-start" style="display:inline-block;"> <h5 class="mt-0 mb-0 small">{{ currency.nombreusuario }}</h5></div>
+                                                            <div class="col-6 align-self-end" style="display:inline-block;"><span class="float-end text-muted small">Asignado</span></div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col-6 align-self-start"> 
+                                                            <div class="col-6 align-self-start" style="display:inline-block;"> 
                                                                 
                                                                 
                                                                 <h5 v-if="currency.source=='Whatsapp'"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" color="#25D366" viewBox="0 0 16 16">
@@ -100,7 +100,7 @@
                                                                           </svg>{{ currency.number }}</h5>       
                                                                         
                                                                         </div>
-                                                            <div class="col-6 align-self-end"><span class="float-end text-muted font-12">{{currency.number }}</span></div>
+                                                            <div class="col-6 align-self-end" style="display:inline-block;"><span class="float-end text-muted font-12">{{currency.number }}</span></div>
                                                         </div>
                                                     </div>
           
