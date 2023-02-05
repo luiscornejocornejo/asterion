@@ -128,7 +128,8 @@
                     <div class="p-3 mb-2 bg-primary text-white">{{ nombreusuario }}       Tikect: {{ticket_id}}</div>
 
                 </div>
-
+            </div>
+            <div class="card-body">
                 <div class="mt-3 text-center">
                     <h4 id="nombre">  </h4>
                     <p class="text-muted mt-2 font-14">Last Interacted: <strong>{{ lastupdate }}</strong></p>
