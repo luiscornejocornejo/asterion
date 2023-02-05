@@ -149,7 +149,7 @@
     <div class="col-xxl-6 col-xl-12 order-xl-2 ">
         <div class="card">
             <div class="card-body">
-                <div class="row bg-primary text-white m-0">
+                <div class="row bg-primary text-white m-0 p-2">
                     <div class="col-6 align-self-start" style="display:inline-block;">
                         <span class="float-start text-white small">{{ nombreusuario }}</span>
                     </div>
@@ -158,7 +158,7 @@
                     </div>
                 </div>
            
-                <div class="row  m-0">
+                <div class="row  m-0 p-2">
                     <div class="col-6 align-self-start" style="display:inline-block;">
                         <button type="button" class="btn btn-info" data-bs-toggle="modal"
                             data-bs-target="#standard-modal3">{{ ans }}</button>
@@ -171,10 +171,8 @@
 
                     </div>
                 </div>
-            </div>
-
-            <div class="card-body">
-                <div class="row  ">
+            
+                <div class="row  p-2">
                     <div class="col-6 align-self-start" style="display:inline-block;">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Fuente {{ source }}</li>
@@ -188,10 +186,8 @@
                         <spam id="departamento"></spam>
                     </div>
                 </div>
-            </div>
-
-            <div class="card-body">
-                <div class="">
+          
+                <div class="p-2">
                     <div v-if="source == 'API'">API</div>
                     <div v-if="source == 'Email'">Email</div>
                     <div v-if="source == 'Telegram'">Telegram</div>
