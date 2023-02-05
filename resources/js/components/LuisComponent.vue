@@ -126,7 +126,7 @@
             <div class="card-body">
                         <div class="row bg-primary text-white">
                              <div class="col-6 align-self-start" style="display:inline-block;">
-                                <span class="float-end text-white small" >{{ nombreusuario }}</span>
+                                <span class="float-start text-white small" >{{ nombreusuario }}</span>
                             </div>
                             <div class="col-6 align-self-end" style="display:inline-block;">
                                 <span class="float-end text-white small" >Ticket:{{ ticket_id }}</span>
