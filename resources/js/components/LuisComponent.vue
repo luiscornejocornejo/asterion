@@ -235,7 +235,7 @@
                                         aria-label="scrollable content" style="height: auto; overflow: hidden scroll;">
                                         <div class="simplebar-content" style="padding: 0px 24px;">
                                             <div class="timeline-alt py-0">
-                                                <div v-for="extrah in historial"  class="timeline-item">
+                                                <div v-for="extrah in historial"  class="timeline-item extrahistorial2">
                                                     <i
                                                         class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>
                                                     <div class="timeline-item-info">
@@ -244,7 +244,7 @@
                                                         <small>Paul Burgess just purchased “Hyper - Admin
                                                             Dashboard”!</small>
                                                         <p class="mb-0 pb-2">
-                                                            <small class="text-muted">5 minutes ago</small>
+                                                            <small class="text-muted">{{ extrah.timestamp }}</small>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -406,7 +406,7 @@
             <div class="card-body px-0 pb-0">
                 <ul class="conversation-list px-3" data-simplebar style="max-height: 554px" id="historial">
 
-                    <div v-for="extrah in historial" class="extrahistorial2">
+                    <div  class="">
 
 
                         <li class="clearfix">
@@ -418,7 +418,7 @@
                                 <div class="ctext-wrap">
                                     <i>{{ extrah.name }}</i>
                                     <i>{{ extrah.data }}</i>
-                                    <p>{{ extrah.timestamp }}</p>
+                                    <p></p>
                                 </div>
                             </div>
 
