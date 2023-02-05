@@ -133,7 +133,16 @@
                             </div>
                         </div>
             </div>
-
+            <div class="card-body">
+                        <div class="row  m-0">
+                             <div class="col-6 align-self-start" style="display:inline-block;">
+                                <span class="float-start text-white small" >{{ nombreusuario }}</span>
+                            </div>
+                            <div class="col-6 align-self-end" style="display:inline-block;">
+                                <span class="float-end text-white small" >Ticket:{{ ticket_id }}</span>
+                            </div>
+                        </div>
+            </div>
             <div class="card-body">
                 <div class="mt-3 text-center">
                     <h4 id="nombre">  </h4>
