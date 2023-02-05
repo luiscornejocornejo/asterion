@@ -303,15 +303,15 @@
                     data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
                         
-                        <button type="button" class="btn btn-success " data-bs-toggle="modal"
+                        <button type="button" class="btn btn-primary " data-bs-toggle="modal"
                             data-bs-target="#standard-modal">
                             <spam id="estado">Enviar Email</spam>:
-                        </button>
-                        <button type="button" class="btn btn-success " data-bs-toggle="modal"
+                        </button><br>
+                        <button type="button" class="btn btn-primary " data-bs-toggle="modal"
                             data-bs-target="#standard-modal">
                             <spam id="estado">Llamar</spam>:
-                        </button>
-                        <button type="button" class="btn btn-success " data-bs-toggle="modal"
+                        </button><br></br>
+                        <button type="button" class="btn btn-primary " data-bs-toggle="modal"
                             data-bs-target="#standard-modal">
                             <spam id="estado">Enviar Whatsapp</spam>:
                         </button>
