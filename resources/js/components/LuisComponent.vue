@@ -194,7 +194,7 @@
                     <div v-if="source == 'Whatsapp'" v-for="ll in whapp" style="max-height: 346px">
                         Whatsapp
                         {{ ll.chat_link }} 
-                        <iframe width="600 px" height="346px" frameborder="0" allowfullscreen src='{{ ll.chat_link }}' ></iframe>
+                        <iframe width="600 px" height="346px" frameborder="0" allowfullscreen src='   {{ ll.chat_link }}  ' ></iframe>
                     </div>
            
                     <div v-else v-for="ext in extra" class="currency">
