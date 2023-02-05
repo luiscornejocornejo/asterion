@@ -191,13 +191,12 @@
                     <div v-if="source == 'API'">API</div>
                     <div v-if="source == 'Email'">Email</div>
                     <div v-if="source == 'Telegram'">Telegram</div>
-                    <div v-if="source == 'Whatsapp'">Whatsapp <div id='status22'>
+                    <div v-if="source == 'Whatsapp'" v-for="ext2 in whapp" style="max-height: 346px">
+                        Whatsapp <div id='status22'>
                         </div>
+                        <iframe width="600 px" height="346px" frameborder="0" allowfullscreen src={{ext2.chat_link}} ></iframe>
                     </div>
-                    <div v-if="tipo" v-for="ext2 in whapp" style="max-height: 346px">
-                        {{ ext2.chat_link }}
-
-                    </div>
+           
                     <div v-else v-for="ext in extra" class="currency">
 
                         <span v-html="ext.body"></span>
@@ -400,7 +399,7 @@ export default {
         },
         extraswhatapp(id) {
             console.log(id);
-            this.whapp = null;
+   
             axios
                 .get('/api/extraswhatapp/' + id)
                 .then(response => (this.whapp = response.data))
