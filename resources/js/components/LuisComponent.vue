@@ -80,7 +80,7 @@
                                                     <div class="container" >
                                                         <div class="row">
                                                             <div class="col-6 align-self-start"><h5 class="mt-0 mb-0 font-14" style="color:#727CF5;">{{ currency.topic }}</h5></div>
-                                                            <div class="col-6 align-self-end"><span class="float-end text-muted small" v-if="hora(currency.lastupdate )">{{tiempo2}}</span></div>
+                                                            <div class="col-6 align-self-end"><span class="float-end text-muted small" v-if="hora(currency.lastupdate)">{{ tiempo2 }}</span></div>
                                                         </div>
                                                     
                                                     
@@ -300,7 +300,7 @@ export default {
 
         },
         hora(tiempo){
-            let tiempo2 = tiempo.substring(0, 10);
+            tiempo2 = tiempo.substring(0, 10);
             console.log(tiempo)
             console.log(tiempo2)
             return true;
