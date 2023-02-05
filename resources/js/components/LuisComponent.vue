@@ -79,14 +79,14 @@
 
                                                     <div class="container" >
                                                         <div class="row">
-                                                            <div class="col-6 align-self-start"><h5 class="mt-0 mb-0 font-8" style="color:#727CF5;">{{ currency.topic }}</h5></div>
-                                                            <div class="col-6 align-self-end"><span class="float-end text-muted font-8" v-if="hora(currency.lastupdate)">{{ tiempo2 }}</span></div>
+                                                            <div class="col-6 align-self-start"><h5 class="mt-0 mb-0 font-4" style="color:#727CF5;">{{ currency.topic }}</h5></div>
+                                                            <div class="col-6 align-self-end"><span class="float-end text-muted font-4" v-if="hora(currency.lastupdate)">{{ tiempo2 }}</span></div>
                                                         </div>
                                                     
                                                     
                                                         <div class="row">
-                                                            <div class="col-6 align-self-start"> <h5 class="mt-0 mb-0 font-8">{{ currency.nombreusuario }}</h5></div>
-                                                            <div class="col-6 align-self-end"><span class="float-end text-muted font-8">Asignado</span></div>
+                                                            <div class="col-6 align-self-start"> <h5 class="mt-0 mb-0 font-4">{{ currency.nombreusuario }}</h5></div>
+                                                            <div class="col-6 align-self-end"><span class="float-end text-muted font-4">Asignado</span></div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-6 align-self-start"> 
