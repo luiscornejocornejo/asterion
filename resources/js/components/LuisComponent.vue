@@ -365,18 +365,11 @@ export default {
             datowhatapp: null,
             tiempo2: null,
             a: null,
-            loaded: false,
-            iframe: {
-                src: window.location.href,
-                style: null,
-                wrapperStyle: null,
-            }
+           
 
         }
     },
-    computed: {
-      
-    },
+    
     mounted() {
         this.timer = setInterval(this.fetchEventsList, 60000),
 
