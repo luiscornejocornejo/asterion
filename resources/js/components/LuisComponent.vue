@@ -442,7 +442,7 @@ export default {
 
                     out = monty + '-' + date[2] + '-' + date[0] + ' ' + time[0] + ':' + time[1];
                     this.tiempo2 = out;
-                    return false;
+                    return true;
                 }
 
                 this.tiempo2 = out;
