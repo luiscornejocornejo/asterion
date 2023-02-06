@@ -440,10 +440,11 @@ export default {
                 }
 
                 this.tiempo2 = out;
+                return true;
             }
             else{
                 this.tiempo2 = 'Hace un tiempo';
-
+                return true;
             }
           
            
