@@ -195,6 +195,7 @@
                         Whatsapp
                         
                         <iframe width="600 px" height="346px" frameborder="0" allowfullscreen src=" ll.chat_link "></iframe>
+                        <iframe height="600px" width="90%" class="embed-responsive-item" src="@{{ll.chat_link}}" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
                         {{ ll.chat_link }} 
                     </div>
