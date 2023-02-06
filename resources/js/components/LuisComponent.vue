@@ -458,6 +458,8 @@ export default {
 
         },
         traerhora: function(tiempo) {
+
+            /*
             if (tiempo.length === 19) {
 
                 var b = tiempo.split(' ');
@@ -529,8 +531,8 @@ export default {
                 //   return this.tiempo2;
             }
 
-
-            // this.tiempo2 = tiempo.substring(0, 10);
+*/
+             this.tiempo2 = tiempo.substring(0, 10);
 
            
         },
