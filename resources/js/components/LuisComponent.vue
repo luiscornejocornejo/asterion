@@ -411,11 +411,11 @@ export default {
 
                  let nuevotiempo = new Date(date[0], date[1], date[2], time[0], time[1], time[2]); // fecha input
                  console.log(nuevotiempo );
-                }
- /*
-                var diff = (a - b); // Diff en ms
+         
+                var diff = (a - nuevotiempo); // Diff en ms
                 console.log(diff );
-
+            }
+ /*
                 const days = Math.round(diff / (1000 * 60 * 60 * 24));
                 const hours = Math.round(diff / (1000 * 60 * 60));
                 const minutes = Math.round(diff / (1000 * 60));
