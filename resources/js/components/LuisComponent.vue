@@ -415,9 +415,9 @@ export default {
                 var diff = (a - nuevotiempo); // Diff en ms
                 console.log(diff );
    
-                const days = Math.round(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.round(diff / (1000 * 60 * 60));
-                const minutes = Math.round(diff / (1000 * 60));
+                var days = Math.round(diff / (1000 * 60 * 60 * 24));
+                var hours = Math.round(diff / (1000 * 60 * 60));
+                var minutes = Math.round(diff / (1000 * 60));
 
                 var out = 'Hace un tiempo';
   
