@@ -394,7 +394,7 @@ export default {
         },
         hora(tiempo) {
 
-            /*
+           
             if (tiempo2.length === 19) {
 
                 var b = a.split(' ');
@@ -405,6 +405,8 @@ export default {
                 date[1] = parseInt(date[1]) - 1;
                 console.log(date[1] );
 
+            }
+ /*
                let  a = new Date(); // fecha actual.
                 console.log('pasa a.');
 
