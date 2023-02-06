@@ -401,7 +401,7 @@ export default {
                 var date = b[0].split('-');
                 var time = b[1].split(':');
 
-                const mont = date[1];
+                var monty = date[1];
                 date[1] = parseInt(date[1]) - 1;
                 console.log(date[1] );
 
@@ -440,7 +440,7 @@ export default {
                 else {
                     console.log("entro 3" );
 
-                    out = mont + '-' + date[2] + '-' + date[0] + ' ' + time[0] + ':' + time[1];
+                    out = monty + '-' + date[2] + '-' + date[0] + ' ' + time[0] + ':' + time[1];
                     this.tiempo2 = out;
                     return true;
                 }
