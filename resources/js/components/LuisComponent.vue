@@ -401,7 +401,7 @@ export default {
         },
         traerhora(tiempo) {
 
-
+/*
             if (tiempo.length === 19) {
 
                 var b = tiempo.split(' ');
@@ -446,7 +446,7 @@ export default {
                     out = 'ayer';
 
                 }
-                /*
+               
                 else if (days < 2) {
                     if (hours < 23) {
                         out = 'Ayer a las ' + time[0] + ':' + time[1];
@@ -464,7 +464,7 @@ export default {
                     this.tiempo2 = out;
                     return true;
                 }
-*/
+
                 this.tiempo2 = out;
                 return true;
             }
@@ -473,8 +473,8 @@ export default {
                 return true;
             }
 
-
-            //this.tiempo2 = tiempo.substring(0, 10);
+*/
+            this.tiempo2 = tiempo.substring(0, 10);
 
             return false;
         },
