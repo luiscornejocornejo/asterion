@@ -476,7 +476,7 @@ export default {
 
            // this.tiempo2 = tiempo.substring(0, 10);
 
-           return this.tiempo2;
+           return this.tiempo2
         },
         extrasmail(id) {
             axios
