@@ -87,8 +87,9 @@
                                                         }}</h5>
                                                     </div>
                                                     <div class="col-6 align-self-end" style="display:inline-block;">
-                                                        <span class="float-end text-muted small"
-                                                            >{{ traerhora(currency.lastupdate)  }}</span>
+                                                        <span class="float-end text-muted small">{{
+                                                            traerhora(currency.lastupdate)
+                                                        }}</span>
                                                     </div>
                                                 </div>
 
@@ -193,10 +194,10 @@
                     <div v-if="source == 'Telegram'">Telegram</div>
                     <div v-if="source == 'Whatsapp'">
                         <div v-for="ext in whapp" style="max-height: 446px">
-                            
 
-                            <iframe max-height="200px"   width="600 px" height="400 px" frameborder='0' allowfullscreen
-                            v-bind:src="ext.chat_link"    ></iframe>
+
+                            <iframe max-height="200px" width="600 px" height="400 px" frameborder='0' allowfullscreen
+                                v-bind:src="ext.chat_link"></iframe>
 
                         </div>
                     </div>
@@ -390,15 +391,7 @@ export default {
             console.log('Component mounted.')
         this.loading = false
     },
-    methods: {
-        fetchEventsList() {
-            axios
-                .get('/api/datostickets')
-                .then(response => (this.info = response.data, this.sise = response.data.length))
-                .catch(error => console.log(error))
-            console.log('reinicio.')
-
-        },
+    computed: {
         traerhora(tiempo) {
 
 
@@ -446,7 +439,7 @@ export default {
                     out = 'ayer';
 
                 }
-               
+
                 else if (days < 2) {
                     if (hours < 23) {
                         out = 'Ayer a las ' + time[0] + ':' + time[1];
@@ -454,30 +447,41 @@ export default {
                     else {
                         out = 'Hace ' + hours + ' horas(s)';
                     }
-                    console.log("entro 2" );
+                    console.log("entro 2");
 
                 }
                 else {
-                    console.log("entro 3" );
+                    console.log("entro 3");
 
                     out = monty + '-' + date[2] + '-' + date[0] + ' ' + time[0] + ':' + time[1];
                     this.tiempo2 = out;
-                   // return this.tiempo2;
+                    // return this.tiempo2;
                 }
 
                 this.tiempo2 = out;
-               // return this.tiempo2;
+                // return this.tiempo2;
             }
             else {
                 this.tiempo2 = 'Hace un tiempo';
-             //   return this.tiempo2;
+                //   return this.tiempo2;
             }
 
 
-           // this.tiempo2 = tiempo.substring(0, 10);
+            // this.tiempo2 = tiempo.substring(0, 10);
 
-           return this.tiempo2
+            return this.tiempo2
+        }
+    },
+    methods: {
+        fetchEventsList() {
+            axios
+                .get('/api/datostickets')
+                .then(response => (this.info = response.data, this.sise = response.data.length))
+                .catch(error => console.log(error))
+            console.log('reinicio.')
+
         },
+
         extrasmail(id) {
             axios
                 .get('/api/extrasmail/' + id)
