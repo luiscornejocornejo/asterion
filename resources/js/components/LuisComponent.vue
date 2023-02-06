@@ -400,8 +400,11 @@ export default {
 
                 const mont = date[1];
                 date[1] = parseInt(date[1]) - 1;
+                console.log(date[1] );
 
                 a = new Date(); // fecha actual.
+                console.log('pasa a.');
+
                 b = new Date(date[0], date[1], date[2], time[0], time[1], time[2]); // fecha input
 
                 var diff = (a - b); // Diff en ms
