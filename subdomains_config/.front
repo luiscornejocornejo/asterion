@@ -2,7 +2,7 @@ APP_NAME=Laravel
 APP_ENV=production
 APP_KEY=base64:EG66z4K9mTzBzvhXaDlOKhbNiX/xkwt28Y40q3PconM=
 APP_DEBUG=true
-APP_URL=https://suricata.pagoralia.com/
+APP_URL=http://front.suricata.cloud/
 
 LOG_CHANNEL=stack
 LOG_DEPRECATIONS_CHANNEL=null
