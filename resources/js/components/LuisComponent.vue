@@ -157,7 +157,7 @@
                         <span class="float-end text-white small">Ticket:{{ ticket_id }}</span>
                     </div>
                 </div>
-           
+
                 <div class="row  m-0 p-2">
                     <div class="col-6 align-self-start" style="display:inline-block;">
                         <button type="button" class="btn btn-info" data-bs-toggle="modal"
@@ -171,7 +171,7 @@
 
                     </div>
                 </div>
-            
+
                 <div class="row  p-2">
                     <div class="col-6 align-self-start" style="display:inline-block;">
                         <ul class="list-group list-group-flush">
@@ -186,19 +186,20 @@
                         <spam id="departamento"></spam>
                     </div>
                 </div>
-          
+
                 <div class="p-2">
                     <div v-if="source == 'API'">API</div>
                     <div v-if="source == 'Email'">Email</div>
                     <div v-if="source == 'Telegram'">Telegram</div>
                     <div v-if="source == 'Whatsapp'" v-for="ll in whapp" style="max-height: 346px">
                         Whatsapp
-                        
-                            <iframe width="600 px" height="800 px" frameborder='0' allowfullscreen src='{{ ll.chat_link }}'></iframe>
 
-                        {{ ll.chat_link }} 
+                        <iframe width="600 px" height="800 px" frameborder='0' allowfullscreen
+                            src='{{ ll.chat_link }}'></iframe>
+
+                        {{ ll.chat_link }}
                     </div>
-           
+
                     <div v-else v-for="ext in extra" class="currency">
 
                         <span v-html="ext.body"></span>
@@ -236,12 +237,16 @@
                                         aria-label="scrollable content" style="height: auto; overflow: hidden scroll;">
                                         <div class="simplebar-content" style="padding: 0px 24px;">
                                             <div class="timeline-alt py-0">
-                                                <div v-for="extrah in historial"  class="timeline-item extrahistorial2">
+                                                <div v-for="extrah in historial" class="timeline-item extrahistorial2">
                                                     <i
-                                                        class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>{{ extrah.name }}
+                                                        class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>{{
+                                                            extrah.name
+                                                        }}
                                                     <div class="timeline-item-info">
                                                         <a href="javascript:void(0);"
-                                                            class="text-info fw-bold mb-1 d-block">{{ extrah.username }}</a>
+                                                            class="text-info fw-bold mb-1 d-block">{{
+                                                                extrah.username
+                                                            }}</a>
                                                         <small>{{ extrah.data }}</small>
                                                         <p class="mb-0 pb-2">
                                                             <small class="text-muted">{{ extrah.timestamp }}</small>
@@ -249,7 +254,7 @@
                                                     </div>
                                                 </div>
 
-        
+
                                             </div>
                                             <!-- end timeline -->
                                         </div>
@@ -266,32 +271,32 @@
                                 style="height: 280px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
                         </div>
                     </div>
-                    <form action="/chatcreate" method="post" class="needs-validation" novalidate=""
-                                name="chat-form" id="chat-form">
-                                
+                    <form action="/chatcreate" method="post" class="needs-validation" novalidate="" name="chat-form"
+                        id="chat-form">
 
-                                <div class="row">
-                                    <div class="col mb-2 mb-sm-0">
-                                        <input type="hidden" name="idtickethistorial" id="idtickethistorial" value="">
-                                        <input name="notainterna" type="text" class="form-control border-0"
-                                            placeholder="Enter your text" required="">
-                                        <div class="invalid-feedback">
-                                            Please enter your messsage
-                                        </div>
+
+                        <div class="row">
+                            <div class="col mb-2 mb-sm-0">
+                                <input type="hidden" name="idtickethistorial" id="idtickethistorial" value="">
+                                <input name="notainterna" type="text" class="form-control border-0"
+                                    placeholder="Enter your text" required="">
+                                <div class="invalid-feedback">
+                                    Please enter your messsage
+                                </div>
+                            </div>
+                            <div class="col-sm-auto">
+                                <div class="btn-group">
+
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-success chat-send"><i
+                                                class='uil uil-message'></i></button>
                                     </div>
-                                    <div class="col-sm-auto">
-                                        <div class="btn-group">
-                                          
-                                            <div class="d-grid">
-                                                <button type="submit" class="btn btn-success chat-send"><i
-                                                        class='uil uil-message'></i></button>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end col -->
-                                </div> <!-- end row-->
-                            </form>
+                                </div>
+                            </div> <!-- end col -->
+                        </div> <!-- end row-->
+                    </form>
                 </div>
-               
+
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwo">
@@ -303,7 +308,7 @@
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
                     data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-                        
+
                         <button type="button" class="btn btn-primary " data-bs-toggle="modal"
                             data-bs-target="#standard-modal">
                             <spam id="estado">Enviar Email</spam>:
@@ -325,8 +330,8 @@
 
 
 
-          
-       
+
+
         </div> <!-- end card -->
     </div>
 </template>
@@ -386,8 +391,50 @@ export default {
 
         },
         hora(tiempo) {
-            this.tiempo2 = tiempo.substring(0, 10);
-            
+
+            if (tiempo.length === 19) {
+
+                var b = tiempo.split(' ');
+                var date = b[0].split('-');
+                var time = b[1].split(':');
+
+                const mont = date[1];
+                date[1] = parseInt(date[1]) - 1;
+
+                a = new Date(); // fecha actual.
+                b = new Date(date[0], date[1], date[2], time[0], time[1], time[2]); // fecha input
+
+                var diff = (a - b); // Diff en ms
+
+                const days = Math.round(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.round(diff / (1000 * 60 * 60));
+                const minutes = Math.round(diff / (1000 * 60));
+
+                var out = 'Hace un tiempo';
+                if (days < 1) {
+                    if (hours < 1)
+                        out = 'Hace ' + minutes + ' minuto(s)';
+                    else
+                        out = 'Hace ' + hours + ' horas(s)';
+                }
+                else if (days < 2) {
+                    if (hours < 23) {
+                        out = 'Ayer a las ' + time[0] + ':' + time[1];
+                    }
+                    else {
+                        out = 'Hace ' + hours + ' horas(s)';
+                    }
+                }
+                else {
+                    out = mont + '-' + date[2] + '-' + date[0] + ' ' + time[0] + ':' + time[1];
+                }
+
+                this.tiempo2 = out;
+            }
+            else
+            this.tiempo2 = 'Hace un tiempo';
+           // this.tiempo2 = tiempo.substring(0, 10);
+
             return true;
         },
         extrasmail(id) {
@@ -400,7 +447,7 @@ export default {
         },
         extraswhatapp(id) {
             console.log(id);
-   
+
             axios
                 .get('/api/extraswhatapp/' + id)
                 .then(response => (this.whapp = response.data))
@@ -439,9 +486,9 @@ export default {
 
                 console.log(this.whapp);
 
-            
+
             }
-            
+
 
         }
 
