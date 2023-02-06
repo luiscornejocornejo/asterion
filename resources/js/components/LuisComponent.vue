@@ -442,7 +442,7 @@ export default {
 
                     out = monty + '-' + date[2] + '-' + date[0] + ' ' + time[0] + ':' + time[1];
                     this.tiempo2 = out;
-                    return true;
+                    return false;
                 }
 
                 this.tiempo2 = out;
@@ -456,7 +456,7 @@ export default {
            
             //this.tiempo2 = tiempo.substring(0, 10);
 
-            return true;
+            return false;
         },
         extrasmail(id) {
             axios
