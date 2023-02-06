@@ -427,6 +427,7 @@ export default {
                     else
                         out = 'Hace ' + hours + ' horas(s)';
                 }
+                /*
                 else if (days < 2) {
                     if (hours < 23) {
                         out = 'Ayer a las ' + time[0] + ':' + time[1];
@@ -444,7 +445,7 @@ export default {
                     this.tiempo2 = out;
                     return true;
                 }
-
+*/
                 this.tiempo2 = out;
                 return true;
             }
