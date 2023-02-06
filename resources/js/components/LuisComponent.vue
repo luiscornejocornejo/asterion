@@ -441,6 +441,8 @@ export default {
                     console.log("entro 3" );
 
                     out = mont + '-' + date[2] + '-' + date[0] + ' ' + time[0] + ':' + time[1];
+                    this.tiempo2 = out;
+                    return true;
                 }
 
                 this.tiempo2 = out;
