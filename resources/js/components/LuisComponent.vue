@@ -366,6 +366,8 @@ export default {
             logo: null,
             datowhatapp: null,
             tiempo2: null,
+            a: null,
+
         }
     },
     mounted() {
