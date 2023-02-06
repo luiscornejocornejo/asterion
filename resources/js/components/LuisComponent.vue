@@ -193,12 +193,11 @@
                     <div v-if="source == 'Telegram'">Telegram</div>
                     <div v-if="source == 'Whatsapp'">
                         <div v-for="ext in whapp" style="max-height: 346px">
-                            Whatsapp
+                            
 
-                            <iframe max-height="346px"   width="600 px" height="346 px" frameborder='0' allowfullscreen
+                            <iframe max-height="200px"   width="600 px" height="200 px" frameborder='0' allowfullscreen
                             v-bind:src="ext.chat_link"    ></iframe>
 
-                            {{ ext.chat_link }}
                         </div>
                     </div>
 
