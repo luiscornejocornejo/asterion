@@ -88,7 +88,7 @@
                                                     </div>
                                                     <div class="col-6 align-self-end" style="display:inline-block;">
                                                         <span class="float-end text-muted small"
-                                                            v-if="traerhora(currency.lastupdate)">{{ tiempo2 }}</span>
+                                                            v-if="traerhora(currency.lastupdate)  !== null">{{ tiempo2 }}</span>
                                                     </div>
                                                 </div>
 
@@ -401,7 +401,7 @@ export default {
         },
         traerhora(tiempo) {
 
-/*
+
             if (tiempo.length === 19) {
 
                 var b = tiempo.split(' ');
@@ -462,21 +462,21 @@ export default {
 
                     out = monty + '-' + date[2] + '-' + date[0] + ' ' + time[0] + ':' + time[1];
                     this.tiempo2 = out;
-                    return true;
+                    return this.tiempo2;
                 }
 
                 this.tiempo2 = out;
-                return true;
+                return this.tiempo2;
             }
             else {
                 this.tiempo2 = 'Hace un tiempo';
-                return true;
+                return this.tiempo2;
             }
 
-*/
+
             this.tiempo2 = tiempo.substring(0, 10);
 
-            return false;
+            return this.tiempo2;
         },
         extrasmail(id) {
             axios
