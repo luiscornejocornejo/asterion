@@ -378,23 +378,8 @@ export default {
 
         }
     },
-    mounted() {
-        this.timer = setInterval(this.fetchEventsList, 60000),
-
-            axios
-                .get('/api/datostickets')
-                .then(response => (this.info = response.data, this.sise = response.data.length))
-                .catch(error => console.log(error))
-
-
-            ,
-            console.log('Component mounted.')
-        this.loading = false
-    },
     computed: {
         traerhora(tiempo) {
-
-
             if (tiempo.length === 19) {
 
                 var b = tiempo.split(' ');
@@ -472,6 +457,20 @@ export default {
             return this.tiempo2
         }
     },
+    mounted() {
+        this.timer = setInterval(this.fetchEventsList, 60000),
+
+            axios
+                .get('/api/datostickets')
+                .then(response => (this.info = response.data, this.sise = response.data.length))
+                .catch(error => console.log(error))
+
+
+            ,
+            console.log('Component mounted.')
+        this.loading = false
+    },
+   
     methods: {
         fetchEventsList() {
             axios
