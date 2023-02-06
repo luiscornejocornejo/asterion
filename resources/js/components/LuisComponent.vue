@@ -395,9 +395,9 @@ export default {
         hora(tiempo) {
 
            
-            if (tiempo2.length === 19) {
+            if (tiempo.length === 19) {
 
-                var b = a.split(' ');
+                var b = tiempo.split(' ');
                 var date = b[0].split('-');
                 var time = b[1].split(':');
 
