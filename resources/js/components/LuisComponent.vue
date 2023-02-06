@@ -88,7 +88,7 @@
                                                     </div>
                                                     <div class="col-6 align-self-end" style="display:inline-block;">
                                                         <span class="float-end text-muted small"
-                                                            v-if="hora(currency.lastupdate)">{{ tiempo2 }}</span>
+                                                            v-if="traerhora(currency.lastupdate)">{{ tiempo2 }}</span>
                                                     </div>
                                                 </div>
 
@@ -392,7 +392,7 @@ export default {
             console.log('reinicio.')
 
         },
-        hora(tiempo) {
+        traerhora(tiempo) {
 
            
             if (tiempo.length === 19) {
@@ -434,8 +434,12 @@ export default {
                     else {
                         out = 'Hace ' + hours + ' horas(s)';
                     }
+                    console.log("entro 2" );
+
                 }
                 else {
+                    console.log("entro 3" );
+
                     out = mont + '-' + date[2] + '-' + date[0] + ' ' + time[0] + ':' + time[1];
                 }
 
