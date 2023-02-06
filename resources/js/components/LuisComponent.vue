@@ -191,13 +191,15 @@
                     <div v-if="source == 'API'">API</div>
                     <div v-if="source == 'Email'">Email</div>
                     <div v-if="source == 'Telegram'">Telegram</div>
-                    <div v-if="source == 'Whatsapp'" v-for="ll in whapp" style="max-height: 346px">
-                        Whatsapp
+                    <div v-if="source == 'Whatsapp'">
+                        <div v-for="ext in whapp" style="max-height: 346px">
+                            Whatsapp
 
-                        <iframe width="600 px" height="800 px" frameborder='0' allowfullscreen
-                            src='{{ ll.chat_link }}'></iframe>
+                            <iframe width="600 px" height="800 px" frameborder='0' allowfullscreen
+                                src='{{ ext.chat_link }}'></iframe>
 
-                        {{ ll.chat_link }}
+                            {{ ext.chat_link }}
+                        </div>
                     </div>
 
                     <div v-else v-for="ext in extra" class="currency">
@@ -367,6 +369,7 @@ export default {
             datowhatapp: null,
             tiempo2: null,
             a: null,
+            loaded: false,
             iframe: {
                 src: window.location.href,
                 style: null,
