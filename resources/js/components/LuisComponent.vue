@@ -89,7 +89,7 @@
                                                     <div class="col-6 align-self-end" style="display:inline-block;">
                                                         <span class="float-end text-muted small">{{
                                                             traerhora(currency.lastupdate)
-                                                        }}</span>
+                                                        }}  {{ tiempo2 }}</span>
                                                     </div>
                                                 </div>
 
@@ -379,7 +379,25 @@ export default {
         }
     },
     computed: {
-       nece:function traerhora(tiempo) {
+      
+    },
+    mounted() {
+        this.timer = setInterval(this.fetchEventsList, 60000),
+
+            axios
+                .get('/api/datostickets')
+                .then(response => (this.info = response.data, this.sise = response.data.length))
+                .catch(error => console.log(error))
+
+
+            ,
+            console.log('Component mounted.')
+        this.loading = false
+    },
+   
+    methods: {
+
+        traerhora(tiempo) {
             if (tiempo.length === 19) {
 
                 var b = tiempo.split(' ');
@@ -454,24 +472,8 @@ export default {
 
             // this.tiempo2 = tiempo.substring(0, 10);
 
-            return this.tiempo2
-        }
-    },
-    mounted() {
-        this.timer = setInterval(this.fetchEventsList, 60000),
-
-            axios
-                .get('/api/datostickets')
-                .then(response => (this.info = response.data, this.sise = response.data.length))
-                .catch(error => console.log(error))
-
-
-            ,
-            console.log('Component mounted.')
-        this.loading = false
-    },
-   
-    methods: {
+           
+        },
         fetchEventsList() {
             axios
                 .get('/api/datostickets')
