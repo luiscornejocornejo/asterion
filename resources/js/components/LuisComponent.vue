@@ -379,7 +379,7 @@ export default {
         }
     },
     computed: {
-        traerhora(tiempo) {
+       nece:function traerhora(tiempo) {
             if (tiempo.length === 19) {
 
                 var b = tiempo.split(' ');
