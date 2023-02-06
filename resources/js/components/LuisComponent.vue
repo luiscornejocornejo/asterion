@@ -57,7 +57,7 @@
                     <!-- users -->
                     <div class="row">
                         <div class="col">
-                            <div class="card-body py-0 mb-3" data-simplebar style="max-height: 95%">
+                            <div class="card-body py-0 mb-3" data-simplebar style="max-height: 600px">
 
 
                                 <section v-if="errored">
@@ -192,10 +192,10 @@
                     <div v-if="source == 'Email'">Email</div>
                     <div v-if="source == 'Telegram'">Telegram</div>
                     <div v-if="source == 'Whatsapp'">
-                        <div v-for="ext in whapp" style="max-height: 346px">
+                        <div v-for="ext in whapp" style="max-height: 446px">
                             
 
-                            <iframe max-height="200px"   width="600 px" height="300 px" frameborder='0' allowfullscreen
+                            <iframe max-height="200px"   width="600 px" height="400 px" frameborder='0' allowfullscreen
                             v-bind:src="ext.chat_link"    ></iframe>
 
                         </div>
