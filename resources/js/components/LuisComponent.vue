@@ -392,8 +392,9 @@ export default {
             console.log('reinicio.')
 
         },
-        hora(tiempo2) {
+        hora(tiempo) {
 
+            /*
             if (tiempo2.length === 19) {
 
                 var b = a.split(' ');
@@ -440,7 +441,9 @@ export default {
             }
             else
             this.tiempo2 = 'Hace un tiempo';
-           // this.tiempo2 = tiempo.substring(0, 10);
+           */
+           
+            this.tiempo2 = tiempo.substring(0, 10);
 
             return true;
         },
