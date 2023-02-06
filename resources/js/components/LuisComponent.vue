@@ -409,7 +409,7 @@ export default {
                let  a = new Date(); // fecha actual.
                 console.log('pasa a.');
 
-                 nuevotiempo = new Date(date[0], date[1], date[2], time[0], time[1], time[2]); // fecha input
+                 let nuevotiempo = new Date(date[0], date[1], date[2], time[0], time[1], time[2]); // fecha input
                  console.log(nuevotiempo );
                 }
  /*
