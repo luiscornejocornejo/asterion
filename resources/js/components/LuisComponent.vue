@@ -390,11 +390,11 @@ export default {
             console.log('reinicio.')
 
         },
-        hora(tiempo) {
+        hora(a) {
 
-            if (tiempo.length === 19) {
+            if (a.length === 19) {
 
-                var b = tiempo.split(' ');
+                var b = a.split(' ');
                 var date = b[0].split('-');
                 var time = b[1].split(':');
 
