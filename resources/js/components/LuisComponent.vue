@@ -414,13 +414,13 @@ export default {
          
                 var diff = (a - nuevotiempo); // Diff en ms
                 console.log(diff );
-            }
- /*
+   
                 const days = Math.round(diff / (1000 * 60 * 60 * 24));
                 const hours = Math.round(diff / (1000 * 60 * 60));
                 const minutes = Math.round(diff / (1000 * 60));
 
                 var out = 'Hace un tiempo';
+  
                 if (days < 1) {
                     if (hours < 1)
                         out = 'Hace ' + minutes + ' minuto(s)';
@@ -441,11 +441,13 @@ export default {
 
                 this.tiempo2 = out;
             }
-            else
-            this.tiempo2 = 'Hace un tiempo';
-           */
+            else{
+                this.tiempo2 = 'Hace un tiempo';
+
+            }
+          
            
-            this.tiempo2 = tiempo.substring(0, 10);
+            //this.tiempo2 = tiempo.substring(0, 10);
 
             return true;
         },
