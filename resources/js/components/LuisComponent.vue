@@ -82,14 +82,10 @@
                                             <div class="container">
                                                 <div class="row">
                                                     <div class="col-6 align-self-start" style="display:inline-block;">
-                                                        <h5 class="mt-0 mb-0 small" style="color:#727CF5;">{{
-                                                            currency.topic
-                                                        }}</h5>
+                                                        <h5 class="mt-0 mb-0 small" style="color:#727CF5;">{{currency.topic }}</h5>
                                                     </div>
                                                     <div class="col-6 align-self-end" style="display:inline-block;">
-                                                        <span class="float-end text-muted small">{{
-                                                            traerhora(currency.lastupdate)
-                                                        }}  {{ tiempo2 }}</span>
+                                                        <span class="float-end text-muted small">{{traerhora(currency.lastupdate)}} {{ tiempo2 }}</span>
                                                     </div>
                                                 </div>
 
@@ -397,7 +393,71 @@ export default {
    
     methods: {
 
-        traerhora(tiempo) {
+       
+        fetchEventsList() {
+            axios
+                .get('/api/datostickets')
+                .then(response => (this.info = response.data, this.sise = response.data.length))
+                .catch(error => console.log(error))
+            console.log('reinicio.')
+
+        },
+
+        extrasmail(id) {
+            axios
+                .get('/api/extrasmail/' + id)
+                .then(response => (this.extra = response.data))
+                .catch(error => console.log(error))
+            console.log('extrasmail.')
+
+        },
+        extraswhatapp(id) {
+            console.log(id);
+
+            axios
+                .get('/api/extraswhatapp/' + id)
+                .then(response => (this.whapp = response.data))
+                .catch(error => console.log(error))
+            console.log("carga")
+
+        },
+        extrahistorial(id) {
+            axios
+                .get('/api/extrahistorial/' + id)
+                .then(response => (this.historial = response.data))
+                .catch(error => console.log(error))
+            console.log('extrahistorial.')
+
+        },
+        pasar: function (a, b, c, d, e) {
+            this.ans = a;
+            this.lastupdate = c;
+            this.nombreusuario = b;
+            this.ticket_id = d;
+            this.source = e;
+            this.historialllll = this.extrahistorial(d);
+            console.log('extrahistorial.')
+
+            console.log(this.historial)
+
+            if (e == "Email") {
+                this.datoooo = this.extrasmail(d);
+                this.tipo = false;
+                this.logo = '<i class="ri-whatsapp-fill"></i> ';
+            }
+            if (e == "Whatsapp") {
+                this.datowhatapp = null;
+                this.datowhatapp = this.extraswhatapp(d);
+                console.log('paso1.')
+
+                console.log(this.whapp);
+
+
+            }
+
+
+        },
+        traerhora: function(tiempo) {
             if (tiempo.length === 19) {
 
                 var b = tiempo.split(' ');
@@ -474,69 +534,6 @@ export default {
 
            
         },
-        fetchEventsList() {
-            axios
-                .get('/api/datostickets')
-                .then(response => (this.info = response.data, this.sise = response.data.length))
-                .catch(error => console.log(error))
-            console.log('reinicio.')
-
-        },
-
-        extrasmail(id) {
-            axios
-                .get('/api/extrasmail/' + id)
-                .then(response => (this.extra = response.data))
-                .catch(error => console.log(error))
-            console.log('extrasmail.')
-
-        },
-        extraswhatapp(id) {
-            console.log(id);
-
-            axios
-                .get('/api/extraswhatapp/' + id)
-                .then(response => (this.whapp = response.data))
-                .catch(error => console.log(error))
-            console.log("carga")
-
-        },
-        extrahistorial(id) {
-            axios
-                .get('/api/extrahistorial/' + id)
-                .then(response => (this.historial = response.data))
-                .catch(error => console.log(error))
-            console.log('extrahistorial.')
-
-        },
-        pasar: function (a, b, c, d, e) {
-            this.ans = a;
-            this.lastupdate = c;
-            this.nombreusuario = b;
-            this.ticket_id = d;
-            this.source = e;
-            this.historialllll = this.extrahistorial(d);
-            console.log('extrahistorial.')
-
-            console.log(this.historial)
-
-            if (e == "Email") {
-                this.datoooo = this.extrasmail(d);
-                this.tipo = false;
-                this.logo = '<i class="ri-whatsapp-fill"></i> ';
-            }
-            if (e == "Whatsapp") {
-                this.datowhatapp = null;
-                this.datowhatapp = this.extraswhatapp(d);
-                console.log('paso1.')
-
-                console.log(this.whapp);
-
-
-            }
-
-
-        }
 
     },
 
