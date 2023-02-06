@@ -427,6 +427,18 @@ export default {
                     else
                         out = 'Hace ' + hours + ' horas(s)';
                 }
+
+                if (days >1) {
+                    
+                        out = 'Hace ' + days + ' dia(s)';
+                  
+                }
+
+                if ( (days >1) && (days<2)) {
+                    
+                    out = 'ayer';
+              
+            }
                 /*
                 else if (days < 2) {
                     if (hours < 23) {
