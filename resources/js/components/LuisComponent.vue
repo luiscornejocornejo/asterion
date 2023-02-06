@@ -367,6 +367,11 @@ export default {
             datowhatapp: null,
             tiempo2: null,
             a: null,
+            iframe: {
+                src: window.location.href,
+                style: null,
+                wrapperStyle: null,
+            }
 
         }
     },
@@ -394,7 +399,7 @@ export default {
         },
         traerhora(tiempo) {
 
-           
+
             if (tiempo.length === 19) {
 
                 var b = tiempo.split(' ');
@@ -403,24 +408,24 @@ export default {
 
                 var monty = date[1];
                 date[1] = parseInt(date[1]) - 1;
-                console.log(date[1] );
+                console.log(date[1]);
 
-    
-               let  a = new Date(); // fecha actual.
+
+                let a = new Date(); // fecha actual.
                 console.log('pasa a.');
 
-                 let nuevotiempo = new Date(date[0], date[1], date[2], time[0], time[1], time[2]); // fecha input
-                 console.log(nuevotiempo );
-         
+                let nuevotiempo = new Date(date[0], date[1], date[2], time[0], time[1], time[2]); // fecha input
+                console.log(nuevotiempo);
+
                 var diff = (a - nuevotiempo); // Diff en ms
-                console.log(diff );
-   
+                console.log(diff);
+
                 var days = Math.round(diff / (1000 * 60 * 60 * 24));
                 var hours = Math.round(diff / (1000 * 60 * 60));
                 var minutes = Math.round(diff / (1000 * 60));
 
                 var out = 'Hace un tiempo';
-  
+
                 if (days < 1) {
                     if (hours < 1)
                         out = 'Hace ' + minutes + ' minuto(s)';
@@ -428,17 +433,17 @@ export default {
                         out = 'Hace ' + hours + ' horas(s)';
                 }
 
-                if (days >1) {
-                    
-                        out = 'Hace ' + days + ' dia(s)';
-                  
+                if (days > 1) {
+
+                    out = 'Hace ' + days + ' dia(s)';
+
                 }
 
-                if ( (days >1) && (days<2)) {
-                    
+                if ((days > 1) && (days < 2)) {
+
                     out = 'ayer';
-              
-            }
+
+                }
                 /*
                 else if (days < 2) {
                     if (hours < 23) {
@@ -461,12 +466,12 @@ export default {
                 this.tiempo2 = out;
                 return true;
             }
-            else{
+            else {
                 this.tiempo2 = 'Hace un tiempo';
                 return true;
             }
-          
-           
+
+
             //this.tiempo2 = tiempo.substring(0, 10);
 
             return false;
