@@ -196,7 +196,7 @@
                             Whatsapp
 
                             <iframe width="600 px" height="800 px" frameborder='0' allowfullscreen
-                                src='{{{ ext.chat_link }}}'></iframe>
+                            v-bind:src="ext.chat_link"    ></iframe>
 
                             {{ ext.chat_link }}
                         </div>
