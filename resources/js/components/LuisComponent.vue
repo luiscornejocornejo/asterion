@@ -405,7 +405,7 @@ export default {
                let  a = new Date(); // fecha actual.
                 console.log('pasa a.');
 
-              let   b = new Date(date[0], date[1], date[2], time[0], time[1], time[2]); // fecha input
+                 b = new Date(date[0], date[1], date[2], time[0], time[1], time[2]); // fecha input
 
                 var diff = (a - b); // Diff en ms
 
