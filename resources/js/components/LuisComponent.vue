@@ -425,7 +425,7 @@ export default {
                 dato="ayer";
             }
         }
-        if(days >21){
+        if(days >2){
             dato=dato.substring(0, 10);
         }
       return dato;
