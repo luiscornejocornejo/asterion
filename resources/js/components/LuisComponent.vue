@@ -454,88 +454,9 @@ export default {
             }
 
 
-        },
-        traerhora: function(tiempo) {
+        }
 
-            /*
-            if (tiempo.length === 19) {
-
-                var b = tiempo.split(' ');
-                var date = b[0].split('-');
-                var time = b[1].split(':');
-
-                var monty = date[1];
-                date[1] = parseInt(date[1]) - 1;
-                console.log(date[1]);
-
-
-                let a = new Date(); // fecha actual.
-                console.log('pasa a.');
-
-                let nuevotiempo = new Date(date[0], date[1], date[2], time[0], time[1], time[2]); // fecha input
-                console.log(nuevotiempo);
-
-                var diff = (a - nuevotiempo); // Diff en ms
-                console.log(diff);
-
-                var days = Math.round(diff / (1000 * 60 * 60 * 24));
-                var hours = Math.round(diff / (1000 * 60 * 60));
-                var minutes = Math.round(diff / (1000 * 60));
-
-                var out = 'Hace un tiempo';
-
-                if (days < 1) {
-                    if (hours < 1)
-                        out = 'Hace ' + minutes + ' minuto(s)';
-                    else
-                        out = 'Hace ' + hours + ' horas(s)';
-                }
-
-                if (days > 1) {
-
-                    out = 'Hace ' + days + ' dia(s)';
-
-                }
-
-                if ((days > 1) && (days < 2)) {
-
-                    out = 'ayer';
-
-                }
-
-                else if (days < 2) {
-                    if (hours < 23) {
-                        out = 'Ayer a las ' + time[0] + ':' + time[1];
-                    }
-                    else {
-                        out = 'Hace ' + hours + ' horas(s)';
-                    }
-                    console.log("entro 2");
-
-                }
-                else {
-                    console.log("entro 3");
-
-                    out = monty + '-' + date[2] + '-' + date[0] + ' ' + time[0] + ':' + time[1];
-                    this.tiempo2 = out;
-                    // return this.tiempo2;
-                }
-
-                this.tiempo2 = out;
-                // return this.tiempo2;
-            }
-            else {
-                this.tiempo2 = 'Hace un tiempo';
-                //   return this.tiempo2;
-            }
-
-*/
-             this.tiempo2 = tiempo.substring(0, 10);
-
-           
-        },
-
-    },
+    }
 
 
 
