@@ -168,7 +168,7 @@
                 <div class="row  m-0 p-2">
                     <div class="col-6 align-self-start" style="display:inline-block;">
                         <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                            data-bs-target="#standard-modal3">{{ ans }}</button>
+                            data-bs-target="#standard-modal3">1{{ ans }}</button>
                     </div>
                     <div class="col-6 align-self-end" style="display:inline-block;">
                         <button type="button" class="btn btn-success " data-bs-toggle="modal"
@@ -547,6 +547,7 @@ export default {
         pasar: function (a, b, c, d, e, f) {
             this.active = !this.active;
             this.ans = a;
+            console.log(this.ans)
             this.lastupdate = c;
             this.creacion = f;
             this.nombreusuario = b;
