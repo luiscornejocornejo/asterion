@@ -69,7 +69,7 @@
                                     <div v-if="loading">Cargando...</div>
 
                                     <div v-else v-for="currency in info "  
-                                        class="currency shadow-sm p-3 mb-3 bg-white rounded"
+                                        class="currency shadow-sm p-3 mb-3 bg-white rounded { red : deleteClicked }"
                                         v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source,currency.creacion)">
 
 
@@ -345,6 +345,7 @@
 export default {
     data() {
         return {
+            deleteClicked: false,
             info: null,
             loading: true,
             errored: false,
@@ -466,6 +467,7 @@ export default {
 
         },
         pasar: function (a, b, c, d, e,f) {
+            this.deleteClicked = true;
             this.ans = a;
             this.lastupdate = c;
             this.creacion=f;
