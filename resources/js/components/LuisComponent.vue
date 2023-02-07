@@ -378,7 +378,28 @@ export default {
     },
     computed: {
     hora(dato) {
-        var b = dato.split(' ');
+       
+    },
+  },
+    mounted() {
+        this.timer = setInterval(this.fetchEventsList, 60000),
+
+            axios
+                .get('/api/datostickets')
+                .then(response => (this.info = response.data, this.sise = response.data.length))
+                .catch(error => console.log(error))
+
+
+            ,
+            console.log('Component mounted.')
+        this.loading = false
+    },
+   
+    methods: {
+
+        fecha(dato) {
+           // dato=dato.substring(0, 10);
+            var b = dato.split(' ');
 		var date = b[0].split('-');
 		var time = b[1].split(':');
 
@@ -404,27 +425,6 @@ export default {
                 dato="ayer";
             }
         }
-      return dato;
-    },
-  },
-    mounted() {
-        this.timer = setInterval(this.fetchEventsList, 60000),
-
-            axios
-                .get('/api/datostickets')
-                .then(response => (this.info = response.data, this.sise = response.data.length))
-                .catch(error => console.log(error))
-
-
-            ,
-            console.log('Component mounted.')
-        this.loading = false
-    },
-   
-    methods: {
-
-        fecha(dato) {
-            dato=dato.substring(0, 10);
       return dato;
     },
         fetchEventsList() {
