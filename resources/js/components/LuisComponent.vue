@@ -70,7 +70,7 @@
 
                                     <div v-else v-for="currency in info"
                                         class="currency shadow-sm p-3 mb-3 bg-white rounded"
-                                        v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source)">
+                                        v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source,currency.creacion)">
 
 
                                         <a href="javascript:void(0);" class="text-body">
@@ -173,7 +173,7 @@
                     <div class="col-6 align-self-start" style="display:inline-block;">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Fuente {{ source }}</li>
-                            <li class="list-group-item">Fecha de creacion: </li>
+                            <li class="list-group-item">Fecha de creacion: {{ creacion }} </li>
                             <li class="list-group-item">Fecha de ultima Modificacion: {{ lastupdate }}</li>
                         </ul>
                     </div>
@@ -352,6 +352,7 @@ export default {
             sise: null,
             ans: null,
             lastupdate: null,
+            creacion:null,
             nombreusuario: null,
             ticket_id: null,
             extra: null,
@@ -427,9 +428,10 @@ export default {
             console.log('extrahistorial.')
 
         },
-        pasar: function (a, b, c, d, e) {
+        pasar: function (a, b, c, d, e,f) {
             this.ans = a;
             this.lastupdate = c;
+            this.creacion=f;
             this.nombreusuario = b;
             this.ticket_id = d;
             this.source = e;
