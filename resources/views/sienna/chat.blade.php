@@ -22,7 +22,7 @@
             <div class="content">
 
                 <!-- Start Content-->
-                <div class="container-fluid " style="height: auto; overflow: hidden scroll;">
+                <div class="container " style="height: auto; ">
 
                     <!-- start page title -->
                    
