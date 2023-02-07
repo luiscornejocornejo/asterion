@@ -293,8 +293,8 @@
     <div class="col-xxl-3 col-xl-6 order-xl-1 order-xxl-2">
 
         <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item bg-primary">
-                <h2 class="accordion-header" id="flush-headingOne">
+            <div class="accordion-item">
+                <h2 class="accordion-header bg-primary" id="flush-headingOne">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                         Bitacora
@@ -375,8 +375,8 @@
                 </div>
 
             </div>
-            <div class="accordion-item bg-primary">
-                <h2 class="accordion-header" id="flush-headingTwo">
+            <div class="accordion-item">
+                <h2 class="accordion-header  bg-primary" id="flush-headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                         Cliente
