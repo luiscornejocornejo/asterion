@@ -393,6 +393,7 @@ export default {
 		const days = Math.round(diff/(1000*60*60*24)); 
 		const hours = Math.round(diff/(1000*60*60)); 
 		const minutes = Math.round(diff/(1000*60)); 
+        console.log('diferencia de dias '+days);
 
 		var out = 'Hace un tiempo';
         if(days < 1){
