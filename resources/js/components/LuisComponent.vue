@@ -398,7 +398,7 @@ export default {
     methods: {
 
         fecha(dato) {
-           // dato=dato.substring(0, 10);
+           // 
             var b = dato.split(' ');
 		var date = b[0].split('-');
 		var time = b[1].split(':');
@@ -424,6 +424,9 @@ export default {
             if(days < 2){
                 dato="ayer";
             }
+        }
+        if(days >21){
+            dato=dato.substring(0, 10);
         }
       return dato;
     },
