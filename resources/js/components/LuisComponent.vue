@@ -189,11 +189,11 @@
                         </ul>
                     </div>
                     <div class="col-6 align-self-end" style="display:inline-block;">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-info p-2" data-bs-toggle="modal"
                             data-bs-target="#standard-modal2">{{ depto }}</button>
                         <spam id="departamento"></spam>
                         <br>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-info p-2" data-bs-toggle="modal"
                             data-bs-target="#standard-modal4">aa{{ asignado }}</button>
                         
                     </div>
