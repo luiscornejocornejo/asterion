@@ -85,7 +85,7 @@
                                                         <h5 class="mt-0 mb-0 small" style="color:#727CF5;">{{currency.topic }}</h5>
                                                     </div>
                                                     <div class="col-6 align-self-end" style="display:inline-block;">
-                                                        <span class="float-end text-muted small">{{currency.creacion}} </span>
+                                                        <span class="float-end text-muted small">{{ fecha(currency.creacion)}} </span>
                                                     </div>
                                                 </div>
 
@@ -397,7 +397,10 @@ export default {
    
     methods: {
 
-       
+        fecha(dato) {
+            dato=dato.substring(0, 10);
+      return dato;
+    },
         fetchEventsList() {
             axios
                 .get('/api/datostickets')
