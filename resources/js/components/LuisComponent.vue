@@ -338,7 +338,7 @@
     width: auto;
 }
 .red {
-  background-color: red;
+  background-color: red !important;
 }
 </style>
 <script>
