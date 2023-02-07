@@ -68,14 +68,14 @@
                                 <section v-else>
                                     <div v-if="loading">Cargando...</div>
 
-                                    <div v-else v-for="currency in info " v-bind:id="currency.ticket_id"
+                                    <div v-else v-for="currency in info " currency="currency"
                                         class="currency shadow-sm p-3 mb-3 bg-white rounded "
                                         v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion)">
 
-                                        <div :style="{
+                                        <div  :style="{
                                             backgroundColor: active ? 'yellow !important' : 'white !important',
                                             color: active ? 'black' : 'white',
-                                        }">
+                                        }" @click="toggleIsClicked" >
                                             <a href="javascript:void(0);" class="text-body">
                                                 {{ currency.chat_status }}
 
@@ -309,9 +309,7 @@
                                         aria-label="scrollable content" style="height: auto; overflow: hidden scroll;">
                                         <div class="simplebar-content" style="padding: 0px 24px;">
                                             <div class="timeline-alt py-0">
-                                                <div v-for="ext in extra" class="currency">
-                            <span v-html="ext.body"></span>
-                        </div>
+                                      
                                                 <div v-for="extrah in historial" class="timeline-item extrahistorial2">
                                                     <i
                                                         class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>{{
@@ -424,6 +422,7 @@
 
 
 export default {
+    props: ['currency'],
     data() {
         return {
             active: false,
