@@ -18,8 +18,8 @@
         </div>
         @endif
 
-        <div class="content-page">
-            <div class="content">
+        <div class="content-page" style="height: auto; ">
+            
 
                 <!-- Start Content-->
                 <div class="container " style="height: auto; ">
@@ -180,6 +180,6 @@
 
 
 
-        </div>
+       
   
         @include('creative.footer')
