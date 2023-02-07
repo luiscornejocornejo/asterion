@@ -406,10 +406,10 @@ export default {
 		const mont = date[1];
 		date[1] = parseInt(date[1])-1;
 
-		a = new Date(); // fecha actual.
-		b = new Date(date[0], date[1], date[2], time[0], time[1], time[2]); // fecha input
+		let a = new Date(); // fecha actual.
+		let fechactual = new Date(date[0], date[1], date[2], time[0], time[1], time[2]); // fecha input
 
-		var diff = (a-b); // Diff en ms
+		var diff = (a-fechactual); // Diff en ms
 
 		const days = Math.round(diff/(1000*60*60*24)); 
 		const hours = Math.round(diff/(1000*60*60)); 
