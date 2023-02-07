@@ -69,7 +69,7 @@
                                     <div v-if="loading">Cargando...</div>
 
                                     <div v-else v-for="currency in info " v-bind:style="bgc"
-                                    v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion,currency.topic)"
+                                    v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion,currency.topic,currency.status_id)"
                                         class="currency shadow-sm p-3 mb-3 bg-white rounded "
                                         >
 
@@ -173,7 +173,7 @@
                     <div class="col-6 align-self-end" style="display:inline-block;">
                         <button type="button" class="btn btn-success " data-bs-toggle="modal"
                             data-bs-target="#standard-modal">
-                            <spam id="estado"></spam>:
+                            <spam id="estado">{{ ticketestatus }}</spam>:
                         </button>
 
                     </div>
@@ -431,6 +431,7 @@ export default {
             sise: null,
             depto: null,
             topic: null,
+            ticketestatus:null,
             lastupdate: null,
             creacion: null,
             nombreusuario: null,
@@ -545,10 +546,11 @@ export default {
             console.log('extrahistorial.')
 
         },
-        pasar: function (a, b, c, d, e, f,g) {
+        pasar: function (a, b, c, d, e, f,g,h) {
             this.active = !this.active;
             this.topic=g;
             this.depto = a;
+            this.ticketestatus=h;
             console.log(this.ans)
             this.lastupdate = c;
             this.creacion = f;
