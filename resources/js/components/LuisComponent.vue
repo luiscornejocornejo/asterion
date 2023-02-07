@@ -395,6 +395,9 @@ export default {
 		const minutes = Math.round(diff/(1000*60)); 
 
 		var out = 'Hace un tiempo';
+        if(days < 1){
+            dato=time[0]+":"+time[1];
+        }
       return dato;
     },
   },
