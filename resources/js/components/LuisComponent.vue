@@ -69,7 +69,7 @@
                                     <div v-if="loading">Cargando...</div>
 
                                     <div v-else v-for="currency in info " v-bind:style="bgc"
-                                    v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion,currency.topic,currency.status_id,currency.priority_desc)"
+                                    v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion,currency.topic,currency.status_id,currency.priority_desc,currency.priority_color)"
                                         class="currency shadow-sm p-3 mb-3 bg-white rounded "
                                         >
 
@@ -158,7 +158,10 @@
             <div class="card-body">
                 <div class="row bg-primary text-white m-0 p-2">
                     <div class="col-6 align-self-start" style="display:inline-block;">
-                        <span class="float-start text-white small">{{ nombreusuario }}  {{ prioridad }}</span>
+                        <span class="float-start text-white small">{{ nombreusuario }}  </span>
+                    </div>
+                    <div class="col-6 align-self-start" style="display:inline-block; background-color: {{ colorestado }} ;">
+                        <span class="float-center text-white small">{{ prioridad }}</span>
                     </div>
                     <div class="col-6 align-self-end" style="display:inline-block;">
                         <span class="float-end text-white small">Ticket:{{ ticket_id }}</span>
@@ -433,6 +436,7 @@ export default {
             depto: null,
             topic: null,
             prioridad:null,
+            colorestado:null,
             ticketestatus:null,
             lastupdate: null,
             creacion: null,
@@ -548,12 +552,13 @@ export default {
             console.log('extrahistorial.')
 
         },
-        pasar: function (a, b, c, d, e, f,g,h,i) {
+        pasar: function (a, b, c, d, e, f,g,h,i,j) {
             this.active = !this.active;
             this.topic=g;
             this.depto = a;
             this.prioridad=i;
             this.ticketestatus=h;
+            colorestado=j;
             console.log(this.ans)
             this.lastupdate = c;
             this.creacion = f;
