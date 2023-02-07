@@ -69,7 +69,7 @@
                                     <div v-if="loading">Cargando...</div>
 
                                     <div v-else v-for="currency in info " v-bind:style="bgc"
-                                    v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion,currency.topic,currency.status_id,currency.priority_desc,currency.priority_color)"
+                                    v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion,currency.topic,currency.status_id,currency.priority_desc,currency.priority_color,currency.asignado)"
                                         class="currency shadow-sm p-3 mb-3 bg-white rounded "
                                         >
 
@@ -192,6 +192,11 @@
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#standard-modal2">{{ depto }}</button>
                         <spam id="departamento"></spam>
+                    </div>
+                    <div class="col-6 align-self-end" style="display:inline-block;">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#standard-modal4">{{ asignado }}</button>
+                        <spam id="Asignado"></spam>
                     </div>
                 </div>
 
@@ -435,6 +440,7 @@ export default {
             topic: null,
             prioridad:null,
             colorestado:null,
+            asignado:null,
             ticketestatus:null,
             lastupdate: null,
             creacion: null,
@@ -550,13 +556,14 @@ export default {
             console.log('extrahistorial.')
 
         },
-        pasar: function (a, b, c, d, e, f,g,h,i,j) {
+        pasar: function (a, b, c, d, e, f,g,h,i,j,k) {
             this.active = !this.active;
             this.topic=g;
             this.depto = a;
             this.prioridad=i;
             this.ticketestatus=h;
             this.colorestado=j;
+            this.asignado=k;
             console.log(this.ans)
             this.lastupdate = c;
             this.creacion = f;
