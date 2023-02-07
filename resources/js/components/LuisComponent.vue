@@ -68,14 +68,12 @@
                                 <section v-else>
                                     <div v-if="loading">Cargando...</div>
 
-                                    <div v-else v-for="currency in info " currency="currency"
+                                    <div v-else v-for="currency in info " v-bind:style="bgc"
+                                    v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion)"
                                         class="currency shadow-sm p-3 mb-3 bg-white rounded "
                                         >
 
-                                        <div  :style="{
-                                            backgroundColor: active ? 'yellow !important' : 'white !important',
-                                            color: active ? 'black' : 'white',
-                                        }" @click="toggleIsClicked"  v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion)">
+                                       
                                             <a href="javascript:void(0);" class="text-body">
                                                 {{ currency.chat_status }}
 
@@ -139,7 +137,7 @@
 
 
                                             </a>
-                                        </div>
+                                        
                                     </div>
 
                                 </section>
