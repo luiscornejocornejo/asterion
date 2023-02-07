@@ -192,12 +192,12 @@
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#standard-modal2">{{ depto }}</button>
                         <spam id="departamento"></spam>
-                    </div>
-                    <div class="col-6 align-self-end" style="display:inline-block;">
+                        <br>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#standard-modal4">{{ asignado }}</button>
-                        <spam id="Asignado"></spam>
+                            data-bs-target="#standard-modal4">aa{{ asignado }}</button>
+                        
                     </div>
+                  
                 </div>
 
                 <div class="p-2">
