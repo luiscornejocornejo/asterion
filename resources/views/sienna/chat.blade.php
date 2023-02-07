@@ -18,7 +18,7 @@
         </div>
         @endif
 
-        <div class="content-page" style="height: auto; ">
+        <div class="container" style="height: auto; ">
             
 
                 <!-- Start Content-->
