@@ -129,7 +129,7 @@
                                                         </div>
                                                         <div class="col-6 align-self-end" style="display:inline-block;">
                                                             <span class="float-end text-muted font-12">{{
-                                                                currency.number
+                                                                currency.asignado
                                                             }}</span>
                                                         </div>
                                                     </div>
