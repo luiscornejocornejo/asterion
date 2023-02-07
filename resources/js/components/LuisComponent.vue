@@ -398,7 +398,7 @@ export default {
         if(days < 1){
             dato=time[0]+":"+time[1];
         }
-        if(days > 1){
+        if(days >= 1){
             if(days < 2){
                 dato="ayer";
             }
