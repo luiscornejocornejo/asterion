@@ -337,6 +337,9 @@
 .row {
     width: auto;
 }
+.red {
+  background-color: red;
+}
 </style>
 <script>
 
