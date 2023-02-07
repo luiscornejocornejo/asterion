@@ -77,7 +77,7 @@
                                             <a href="javascript:void(0);" class="text-body">
                                                 {{ currency.chat_status }}
 
-                                                <div style="float: left;width: 5px;height: 100px;background: {{ currency.priority_color }};"
+                                                <div style="float: left;width: 5px;height: 100px;background-color: {{ currency.priority_color }};"
                                                     id="{{ currency.ticket_id  }}"></div>
 
                                                 <div class="container">
