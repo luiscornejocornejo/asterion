@@ -85,7 +85,7 @@
                                                         <h5 class="mt-0 mb-0 small" style="color:#727CF5;">{{currency.topic }}</h5>
                                                     </div>
                                                     <div class="col-6 align-self-end" style="display:inline-block;">
-                                                        <span class="float-end text-muted small">{{currency.lastupdate}} </span>
+                                                        <span class="float-end text-muted small">{{currency.creacion}} </span>
                                                     </div>
                                                 </div>
 
