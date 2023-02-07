@@ -181,7 +181,7 @@
                 </div>
 
                 <div class="row  p-2">
-                    <div class="col-6 align-self-start" style="display:inline-block;">
+                    <div class="col-6 align-self-start small" style="display:inline-block;">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Fuente {{ source }}</li>
                             <li class="list-group-item">Fecha de creacion: {{ creacion }} </li>
