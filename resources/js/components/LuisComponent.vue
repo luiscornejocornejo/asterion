@@ -271,7 +271,7 @@
                     </div>
                     <div v-if="source == 'Whatsapp'">
                         <div v-for="ext in whapp" style="max-height: 446px">
-                            <iframe max-height="200px" width="600 px" height="400 px" frameborder='0' allowfullscreen
+                            <iframe class="w-100" max-height="200px" width="600 px" height="400 px" frameborder='0' allowfullscreen
                                 v-bind:src="ext.chat_link"></iframe>
                         </div>
                     </div>
