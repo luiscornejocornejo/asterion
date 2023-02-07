@@ -77,8 +77,8 @@
                                             <a href="javascript:void(0);" class="text-body">
                                                 {{ currency.chat_status }}
 
-                                                <div style="float: left;width: 5px;height: 100px;background-color: {{ currency.priority_color }};"
-                                                    id="{{ currency.ticket_id  }}">{{ currency.priority_color }}</div>
+                                                <div v-bind:background-color="currency.priority_color" style="float: left;width: 5px;height: 100px;background-color: {{ currency.priority_color }};"
+                                                    >{{ currency.priority_color }}</div>
 
                                                 <div class="container">
                                                     <div class="row">
