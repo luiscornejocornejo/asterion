@@ -68,7 +68,7 @@
                                 <section v-else>
                                     <div v-if="loading">Cargando...</div>
 
-                                    <div v-else v-for="currency in info"
+                                    <div v-else v-for="currency in info"  hora(currency.creacion)
                                         class="currency shadow-sm p-3 mb-3 bg-white rounded"
                                         v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source,currency.creacion)">
 
@@ -375,7 +375,11 @@ export default {
 
         }
     },
-    
+    computed: {
+    hora(dato) {
+      return dato;
+    },
+  },
     mounted() {
         this.timer = setInterval(this.fetchEventsList, 60000),
 
