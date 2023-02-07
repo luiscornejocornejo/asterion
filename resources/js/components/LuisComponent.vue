@@ -378,6 +378,23 @@ export default {
     },
     computed: {
     hora(dato) {
+        var b = dato.split(' ');
+		var date = b[0].split('-');
+		var time = b[1].split(':');
+
+		const mont = date[1];
+		date[1] = parseInt(date[1])-1;
+
+		a = new Date(); // fecha actual.
+		b = new Date(date[0], date[1], date[2], time[0], time[1], time[2]); // fecha input
+
+		var diff = (a-b); // Diff en ms
+
+		const days = Math.round(diff/(1000*60*60*24)); 
+		const hours = Math.round(diff/(1000*60*60)); 
+		const minutes = Math.round(diff/(1000*60)); 
+
+		var out = 'Hace un tiempo';
       return dato;
     },
   },
