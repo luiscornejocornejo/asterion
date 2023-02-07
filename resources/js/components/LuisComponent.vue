@@ -71,7 +71,7 @@
                                     <div v-else v-for="currency in info "  
                                         class="currency shadow-sm p-3 mb-3 bg-white rounded "
                                         :style="{
-        backgroundColor: active ? 'white' : 'blue',
+        backgroundColor: active ? 'white !important' : 'blue !important',
         color: active ? 'black' : 'white',
       }"
                                         v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source,currency.creacion)">
