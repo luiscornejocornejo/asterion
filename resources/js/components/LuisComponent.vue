@@ -168,7 +168,7 @@
 
                 <div class="row  m-0 p-2">
                     <div class="col-6 align-self-start" style="display:inline-block;">
-                        <button type="button" class="btn btn-info" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-info btn-block" data-bs-toggle="modal"
                             data-bs-target="#standard-modal3">{{ topic }}</button>
                     </div>
                     <div class="col-6 align-self-end" style="display:inline-block;">
@@ -189,11 +189,11 @@
                         </ul>
                     </div>
                     <div class="col-6 align-self-end" style="display:inline-block;">
-                        <button type="button" class="btn btn-info p-2" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-info p-2 btn-block" data-bs-toggle="modal"
                             data-bs-target="#standard-modal2">{{ depto }}</button>
                         <spam id="departamento"></spam>
-                        <br>
-                        <button type="button" class="btn btn-info p-2" data-bs-toggle="modal"
+                        <br><br><br>
+                        <button type="button" class="btn btn-info p-2 btn-block" data-bs-toggle="modal"
                             data-bs-target="#standard-modal4">aa{{ asignado }}</button>
                         
                     </div>
