@@ -69,7 +69,7 @@
                                     <div v-if="loading">Cargando...</div>
 
                                     <div v-else v-for="currency in info " v-bind:style="bgc"
-                                    v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion)"
+                                    v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion,currency.topic)"
                                         class="currency shadow-sm p-3 mb-3 bg-white rounded "
                                         >
 
@@ -168,7 +168,7 @@
                 <div class="row  m-0 p-2">
                     <div class="col-6 align-self-start" style="display:inline-block;">
                         <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                            data-bs-target="#standard-modal3">1{{ ans }}</button>
+                            data-bs-target="#standard-modal3">{{ topic }}</button>
                     </div>
                     <div class="col-6 align-self-end" style="display:inline-block;">
                         <button type="button" class="btn btn-success " data-bs-toggle="modal"
@@ -189,7 +189,7 @@
                     </div>
                     <div class="col-6 align-self-end" style="display:inline-block;">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#standard-modal2">Depto:</button>
+                            data-bs-target="#standard-modal2">{{ depto }}</button>
                         <spam id="departamento"></spam>
                     </div>
                 </div>
@@ -429,7 +429,8 @@ export default {
             errored: false,
             timer: '',
             sise: null,
-            ans: null,
+            depto: null,
+            topic: null,
             lastupdate: null,
             creacion: null,
             nombreusuario: null,
@@ -544,9 +545,10 @@ export default {
             console.log('extrahistorial.')
 
         },
-        pasar: function (a, b, c, d, e, f) {
+        pasar: function (a, b, c, d, e, f,g) {
             this.active = !this.active;
-            this.ans = a;
+            this.topic=g;
+            this.depto = a;
             console.log(this.ans)
             this.lastupdate = c;
             this.creacion = f;
