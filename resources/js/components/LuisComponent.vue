@@ -387,7 +387,7 @@
                     <div class="accordion-body">
 
                         <button type="button" class="btn btn-primary " data-bs-toggle="modal"
-                            data-bs-target="#standard-modal">
+                            data-bs-target="#compose-modal">
                             <spam id="estado">Enviar Email</spam>:
                         </button><br>
                         <button type="button" class="btn btn-primary " data-bs-toggle="modal"

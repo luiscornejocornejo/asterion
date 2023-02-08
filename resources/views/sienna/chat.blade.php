@@ -19,13 +19,13 @@
         @endif
 
         <div class="content-page" style="height: auto; ">
-            
+
 
                 <!-- Start Content-->
                 <div class="container " style="height: auto; ">
 
                     <!-- start page title -->
-                   
+
                     <!-- end page title -->
 
 
@@ -72,14 +72,14 @@
                                     @csrf
                                     <input type="hidden" name="idticketestado" id="idticketestado" value="">
                                     <?php
-                                    foreach ($estados as $value) {
-                                    ?>
+foreach ($estados as $value) {
+    ?>
 
                                         <input class="form-radio" type="radio" name="statos" value="<?php echo $value->id; ?>"><?php echo $value->name; ?><br>
 
                                     <?php
 
-                                    } ?>
+}?>
                                     <button type="submit" class="btn btn-success
                                 waves-effect waves-light">Cambiar</button>
 
@@ -103,14 +103,14 @@
                                     @csrf
                                     <input type="hidden" name="idticketestado" id="idticketdepto" value="">
                                     <?php
-                                    foreach ($deptos as $value) {
-                                    ?>
+foreach ($deptos as $value) {
+    ?>
 
                                         <input class="form-radio" type="radio" name="statos" value="<?php echo $value->id; ?>"><?php echo $value->name; ?><br>
 
                                     <?php
 
-                                    } ?>
+}?>
                                     <button type="submit" class="btn btn-success
                                 waves-effect waves-light">Cambiar</button>
 
@@ -132,14 +132,14 @@
                                     @csrf
                                     <input type="hidden" name="idticketestado" id="idtickettopic" value="">
                                     <?php
-                                    foreach ($topics as $value) {
-                                    ?>
+foreach ($topics as $value) {
+    ?>
 
                                         <input class="form-radio" type="radio" name="statos" value="<?php echo $value->topic_id; ?>"><?php echo $value->topic; ?><br>
 
                                     <?php
 
-                                    } ?>
+}?>
                                     <button type="submit" class="btn btn-success
                                 waves-effect waves-light">Cambiar</button>
 
@@ -160,14 +160,14 @@
                                     @csrf
                                     <input type="hidden" name="idticketestado" id="idtickettopic" value="">
                                     <?php
-                                    foreach ($topics as $value) {
-                                    ?>
+foreach ($topics as $value) {
+    ?>
 
                                         <input class="form-radio" type="radio" name="statos" value="<?php echo $value->topic_id; ?>"><?php echo $value->topic; ?><br>
 
                                     <?php
 
-                                    } ?>
+}?>
                                     <button type="submit" class="btn btn-success
                                 waves-effect waves-light">Asignar</button>
 
@@ -176,10 +176,45 @@
                         </div><!-- /.modal-content -->
                     </div><!-- /.modal-dialog -->
                 </div>
+
+
+                      <!-- Compose Modal -->
+            <div id="compose-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="compose-header-modalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header modal-colored-header bg-primary">
+                                <h4 class="modal-title" id="compose-header-modalLabel">New Message</h4>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="p-1">
+                                <div class="modal-body px-3 pt-3 pb-0">
+                                    <form>
+                                        <div class="mb-2">
+                                            <label for="msgto" class="form-label">To</label>
+                                            <input type="text" id="msgto" class="form-control" placeholder="Example@email.com">
+                                        </div>
+                                        <div class="mb-2">
+                                            <label for="mailsubject" class="form-label">Subject</label>
+                                            <input type="text" id="mailsubject" class="form-control" placeholder="Your subject">
+                                        </div>
+                                        <div class="write-mdg-box mb-3">
+                                            <label class="form-label">Message</label>
+                                            <textarea id="simplemde1"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="px-3 pb-3">
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i class="mdi mdi-send me-1"></i> Send Message</button>
+                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
             </div>
 
 
 
-       
-  
+
+
         @include('creative.footer')
