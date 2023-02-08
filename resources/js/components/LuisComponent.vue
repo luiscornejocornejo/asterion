@@ -443,7 +443,7 @@
                                                             class="text-info fw-bold mb-1 d-block">{{
                                                                 extrah.username
                                                             }}</a>
-                                                        <small>{{ extrah.data }}</small>
+                                                       
                                                         <p class="mb-0 pb-2">
                                                             <small class="text-muted">{{ extrah.timestamp }}</small>
                                                         </p>
