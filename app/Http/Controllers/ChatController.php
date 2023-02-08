@@ -62,14 +62,14 @@ class ChatController extends Controller
 
     $idticketestado = $request->idticketestado;
     $statos = $request->statos;
-   echo  $query = "update ost_ticket set dept_id='" . $statos . "'   where ticket_id ='" . $idticketestado . "'";
-/*
+    $query = "update ost_ticket set dept_id='" . $statos . "'   where ticket_id ='" . $idticketestado . "'";
+
     $aa = $this->conectar2(11);
     $actualizado = DB::connection('mysql2')->select($query);
 
     return redirect()
       ->back()
-      ->with('success', 'Se modifico el depto  correctamente!');*/
+      ->with('success', 'Se modifico el depto  correctamente!');
   }
   public function index(Request $request)
   {

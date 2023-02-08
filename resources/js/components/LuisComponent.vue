@@ -452,9 +452,9 @@
                                 <form action="/chatcambiarestado" method="post">
                                     <input type="hidden" name="_token" v-bind:value="csrf">
                                     <input v-model="ticket_id" type="hidden" name="idticketestado" id="idtickettopic" >
-                                    <div  v-for="department in departments " >
+                                    <div  v-for="ost_ticket_statu in ost_ticket_status " >
                                     
-                                         <input :value="department.id" v-model="department.id" class="form-radio" type="radio" name="statos" >{{ department.name }}
+                                         <input :value="ost_ticket_statu.id" v-model="ost_ticket_statu.id" class="form-radio" type="radio" name="statos" >{{ ost_ticket_statu.name }}
                                     </div>
                                                                     <button type="submit" class="btn btn-success
                                 waves-effect waves-light">Cambiar</button>
@@ -535,6 +535,7 @@ export default {
             info: null,
             topics:null,
             departments:null,
+            ost_ticket_status:null,
 
             loading: true,
             errored: false,
@@ -583,23 +584,22 @@ export default {
                 .get('/api/datostickets')
                 .then(response => (this.info = response.data, this.sise = response.data.length))
                 .catch(error => console.log(error))
-
-
             ,
 
             axios
                 .get('/api/topics')
                 .then(response => (this.topics = response.data))
                 .catch(error => console.log(error))
-
-
             ,
             axios
                 .get('/api/departments')
                 .then(response => (this.departments = response.data))
                 .catch(error => console.log(error))
-
-
+            ,
+            axios
+                .get('/api/ost_ticket_status')
+                .then(response => (this.ost_ticket_status = response.data))
+                .catch(error => console.log(error))
             ,
             
             console.log('Component mounted.')
