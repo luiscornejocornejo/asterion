@@ -45,6 +45,13 @@ foreach ($resultados2 as $valuee2) {
     <link href="assets3/css/icons.min.css" rel="stylesheet" type="text/css" />
 
 
+
+    <link href="assets3/vendor/simplemde/simplemde.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
     <script type="text/javascript">
         window.onload = function() {
             newPageTitle = "<?php echo $empresaTitle; ?>";
