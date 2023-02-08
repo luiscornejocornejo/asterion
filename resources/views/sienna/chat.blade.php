@@ -120,34 +120,7 @@ foreach ($deptos as $value) {
                     </div><!-- /.modal-dialog -->
                 </div>
 
-                <div id="standard-modal3" class="modal fade bs-example-modal-center3" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Cambiar Topics</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="/chatcambiartopic" method="post">
-                                    @csrf
-                                    <input type="hidden" name="idticketestado" id="idtickettopic" value="">
-                                    <?php
-foreach ($topics as $value) {
-    ?>
-
-                                        <input class="form-radio" type="radio" name="statos" value="<?php echo $value->topic_id; ?>"><?php echo $value->topic; ?><br>
-
-                                    <?php
-
-}?>
-                                    <button type="submit" class="btn btn-success
-                                waves-effect waves-light">Cambiar</button>
-
-                                </form>
-                            </div>
-                        </div><!-- /.modal-content -->
-                    </div><!-- /.modal-dialog -->
-                </div>
+                
                 <div id="standard-modal4" class="modal fade bs-example-modal-center3" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">

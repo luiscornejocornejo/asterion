@@ -411,6 +411,32 @@
 
         </div> <!-- end card -->
     </div>
+
+
+    <div id="standard-modal3" class="modal fade bs-example-modal-center3" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Cambiar Topics</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="/chatcambiartopic" method="post">
+                                    <input type="hidden" name="_token" v-bind:value="csrf">
+                                    <input type="hidden" name="idticketestado" id="idtickettopic" value="{{ ticket_id }}">
+                                   
+
+                                        <input class="form-radio" type="radio" name="statos" value="1">
+                                        <input class="form-radio" type="radio" name="statos" value="3">
+                                                          
+                                    <button type="submit" class="btn btn-success
+                                waves-effect waves-light">Cambiar</button>
+
+                                </form>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div>
 </template>
 <style>
 .row {
@@ -429,7 +455,7 @@ export default {
     props: ['currency'],
     data() {
         return {
-         
+            csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
             active: false,
             info: null,
             loading: true,
@@ -558,6 +584,8 @@ export default {
         },
         pasar: function (a, b, c, d, e, f,g,h,i,j,k) {
             this.active = !this.active;
+            this.ticket_id = d;
+            console.log(this.ticket_id)
             this.topic=g;
             this.depto = a;
             this.prioridad=i;
@@ -568,7 +596,7 @@ export default {
             this.lastupdate = c;
             this.creacion = f;
             this.nombreusuario = b;
-            this.ticket_id = d;
+            
             this.source = e;
             this.historialllll = this.extrahistorial(d);
             console.log('extrahistorial.')
