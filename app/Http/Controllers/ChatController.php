@@ -76,15 +76,11 @@ class ChatController extends Controller
 
     $id = $request->id;
     $fields2 = $this->select2($id);
-    $fields3 = $this->select2(77);
-    $fields4 = $this->select2(78);
-    $fields5 = $this->select2(79);
+   // $fields3 = $this->select2(77);
+    //$fields4 = $this->select2(78);
+    //$fields5 = $this->select2(79);
  
     return view('sienna/chat')
-      ->with('estados', $fields3)
-      ->with('deptos', $fields4)
-      ->with('topics', $fields5)
-
       ->with('datos', $fields2);
   }
 
