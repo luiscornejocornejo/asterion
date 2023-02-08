@@ -70,7 +70,7 @@
 
                                     <div v-else v-for="currency in info " v-bind:style="bgc"
                                     v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion,currency.topic,currency.status_id,currency.priority_desc,currency.priority_color,currency.asignado)"
-                                        class="currency shadow-sm p-3 mb-3 bg-white rounded "
+                                        class="currency shadow-sm p-2 mb-3 bg-white rounded "
                                         >
 
                                        
