@@ -91,6 +91,9 @@ Route::get('/chat','App\Http\Controllers\ChatController@index');
 Route::post('/chatcambiarestado','App\Http\Controllers\ChatController@cambiarestado');
 Route::post('/chatcambiardeptos','App\Http\Controllers\ChatController@cambiardepto');
 Route::post('/chatcambiartopic','App\Http\Controllers\ChatController@cambiartopic');
+Route::post('/chatasignar','App\Http\Controllers\ChatController@asignar');
+
+
 Route::post('/chatcreate','App\Http\Controllers\ChatController@chatcreate');
 
 
