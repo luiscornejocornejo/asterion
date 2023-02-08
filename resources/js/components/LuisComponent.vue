@@ -77,7 +77,7 @@
                                             <a href="javascript:void(0);" class="text-body">
                                                 {{ currency.chat_status }}
 
-                                                <div :style="{ 'background-color': currency.priority_color }" style="float: left;width: 10px;height: 8px;"
+                                                <div :style="{ 'background-color': currency.priority_color }" style="float: left;width: 10px;height: 80px;"
                                                   class="p-1"  ></div> 
                                                    
                                                 <div class="container">
