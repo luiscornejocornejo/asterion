@@ -423,7 +423,7 @@
                             <div class="modal-body">
                                 <form action="/chatcambiartopic" method="post">
                                     <input type="hidden" name="_token" v-bind:value="csrf">
-                                    <input type="hidden" name="idticketestado" id="idtickettopic" value="{{ ticket_id }}">
+                                    <input v-model="ticket_id" type="hidden" name="idticketestado" id="idtickettopic" >
                                    
 
                                         <input class="form-radio" type="radio" name="statos" value="1">
