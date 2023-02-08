@@ -473,7 +473,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form action="/chatcambiarestado" method="post">
+                                <form action="/chatcambiardeptos" method="post">
                                     <input type="hidden" name="_token" v-bind:value="csrf">
                                     <input v-model="ticket_id" type="hidden" name="idticketestado" id="idtickettopic" >
                                     <div  v-for="department in departments " >
