@@ -32,11 +32,7 @@
                             Mios
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#friendUsers" data-bs-toggle="tab" aria-expanded="true" class="nav-link py-2">
-                            Departamento
-                        </a>
-                    </li>
+                
                 </ul> <!-- end nav-->
                 <div class="tab-content">
                     <div class="tab-pane show active card-body pb-0" id="newpost">
