@@ -509,7 +509,7 @@
 
         <!-- App js -->
         <script src="assets3/js/app.min.js"></script>
-
+        <script src="assets3/js/pages/demo.inbox.js"></script>
     </body>
 
 </html>
