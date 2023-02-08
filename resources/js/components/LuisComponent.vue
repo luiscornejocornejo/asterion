@@ -100,7 +100,7 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-6 align-self-start" style="display:inline-block;">
-
+{{ currency.source  }}
 
                                                         <h5 v-if="currency.source == 'Whatsapp'"> <svg
                                                                 xmlns="http://www.w3.org/2000/svg" width="16"
