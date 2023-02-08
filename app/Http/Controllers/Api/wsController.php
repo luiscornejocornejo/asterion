@@ -57,9 +57,9 @@ class wsController extends Controller
 
     // $id = $request->id;
     $fields2 = $this->select2(75);
-    $fields3 = $this->select2(77);
-    $fields4 = $this->select2(78);
-    $fields5 = $this->select2(79);
+    //$fields3 = $this->select2(77);
+    //$fields4 = $this->select2(78);
+   // $fields5 = $this->select2(79);
     $return2 = json_encode($fields2);
     return $return2;
   }
@@ -107,9 +107,12 @@ class wsController extends Controller
 
   public function topics(Request $request)
   {
-    $fields3 = $this->conectar2(11);
-    $querydatos = "select topic_id,topic from ost_help_topic";
-    $fields55 = DB::reconnect('mysql2')->select($querydatos);
+
+  //  $fields3 = $this->conectar2(11);
+   // $querydatos = "select topic_id,topic from ost_help_topic";
+    //$fields55 = DB::reconnect('mysql2')->select($querydatos);
+
+    $fields5 = $this->select2(79);
     $return2 = json_encode($fields55);
     return $return2;
   }
