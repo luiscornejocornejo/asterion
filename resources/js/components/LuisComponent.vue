@@ -78,7 +78,7 @@
                                                 {{ currency.chat_status }}
 
                                                 <div  v-bind:style.background-color="currency.priority_color" style="float: left;width: 5px;height: 100px;background-color:  {currency.priority_color} ;"
-                                                    ></div>
+                                                    >{{currency.priority_color}}</div>
 
                                                 <div class="container">
                                                     <div class="row">
