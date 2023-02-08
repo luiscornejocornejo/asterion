@@ -426,7 +426,7 @@
                                     <input v-model="ticket_id" type="hidden" name="idticketestado" id="idtickettopic" >
                                     <div  v-for="topic in topics " >
                                     
-                                         <input v-model="topic.topic_id" class="form-radio" type="radio" name="statos" >{{ topic.topic }}
+                                         <input :value="topic.topic_id" v-model="topic.topic_id" class="form-radio" type="radio" name="statos" >{{ topic.topic }}
                                     </div>
                                     
                                         
