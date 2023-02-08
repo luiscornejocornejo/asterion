@@ -77,7 +77,7 @@
                                             <a href="javascript:void(0);" class="text-body">
                                                 {{ currency.chat_status }}
 
-                                                <div v-bind:style="bgc" v-bind:style.background-color="currency.priority_color" style="float: left;width: 5px;height: 100px;background-color: {{ {currency.priority_color} }};"
+                                                <div  v-bind:style.background-color="currency.priority_color" style="float: left;width: 5px;height: 100px;background-color:  {currency.priority_color} ;"
                                                     ></div>
 
                                                 <div class="container">
