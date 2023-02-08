@@ -435,7 +435,7 @@
 
                                                 <div v-for="extrah in historial" class="timeline-item extrahistorial2">
                                                     <i
-                                                        class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>{{
+                                                        class="mdi mdi-file-upload-download-outline bg-info-lighten text-info timeline-icon"></i>{{
                                                             extrah.name
                                                         }}
                                                     <div class="timeline-item-info">
