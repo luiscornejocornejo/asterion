@@ -113,11 +113,11 @@ class ChatController extends Controller
 
     $resultados = base::where('id', '=', $id)->get();
     foreach ($resultados as $value) {
-    echo   $host = $value->host;
-    echo  $base = $value->base;
-    echo  $usuario = $value->usuario;
-    echo  $pass = $value->pass;
-    echo  $port = $value->port;
+       $host = $value->host;
+      $base = $value->base;
+      $usuario = $value->usuario;
+      $pass = $value->pass;
+      $port = $value->port;
     }
     config(['database.connections.mysql2.host' => $host]);
     config(['database.connections.mysql2.database' => $base]);
