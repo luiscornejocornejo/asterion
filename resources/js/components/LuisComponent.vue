@@ -1,5 +1,6 @@
 <template>
 
+<div class="p-2">
     <div class="col-xxl-3 col-xl-6 order-xl-1  ">
         <div class="card">
             <div class="card-body p-0">
@@ -408,7 +409,7 @@
         </div> <!-- end card -->
     </div>
 
-
+</div>
     <div id="standard-modal3" class="modal fade bs-example-modal-center3" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
