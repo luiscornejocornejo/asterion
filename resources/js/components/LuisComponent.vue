@@ -424,10 +424,12 @@
                                 <form action="/chatcambiartopic" method="post">
                                     <input type="hidden" name="_token" v-bind:value="csrf">
                                     <input v-model="ticket_id" type="hidden" name="idticketestado" id="idtickettopic" >
-                                   
-
-                                        <input class="form-radio" type="radio" name="statos" value="1">
-                                        <input class="form-radio" type="radio" name="statos" value="3">
+                                    <div  v-for="topic in topics " >
+                                    
+                                        {{ topic.topic }} <input class="form-radio" type="radio" name="statos" value="{{ topic.topic_id }}">
+                                    </div>
+                                    
+                                        
                                                           
                                     <button type="submit" class="btn btn-success
                                 waves-effect waves-light">Cambiar</button>
@@ -458,6 +460,7 @@ export default {
             csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
             active: false,
             info: null,
+            topics:null,
             loading: true,
             errored: false,
             timer: '',
@@ -504,6 +507,14 @@ export default {
             axios
                 .get('/api/datostickets')
                 .then(response => (this.info = response.data, this.sise = response.data.length))
+                .catch(error => console.log(error))
+
+
+            ,
+
+            axios
+                .get('/api/topics')
+                .then(response => (this.topics = response.data))
                 .catch(error => console.log(error))
 
 

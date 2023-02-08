@@ -104,6 +104,16 @@ class wsController extends Controller
     $return2 = json_encode($fields55);
     return $return2;
   }
+
+  public function topics(Request $request)
+  {
+    $fields3 = $this->conectar2(11);
+    $querydatos = "select topic_id,topic from ost_help_topic";
+    $fields55 = DB::reconnect('mysql2')->select($querydatos);
+    $return2 = json_encode($fields55);
+    return $return2;
+  }
+
   
   public function ws(Request $request)
   {

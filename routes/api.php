@@ -18,6 +18,10 @@ use App\Http\Controllers\Api\cappi2022Controller;
 Route::get('/ws','App\Http\Controllers\api\wsController@ws');
 //Route::get('/datostickets','App\Http\Controllers\api\wsController@datostickets');
 Route::get('/datostickets', [wsController::class, 'datostickets']);
+Route::get('/topics', [wsController::class, 'topics']);
+
+
+
 Route::get('/extrasmail/{id}',[wsController::class, 'extrasmail']);
 Route::get('/extraswhatapp/{id}',[wsController::class, 'extraswhatapp']);
 Route::get('/extrahistorial/{id}',[wsController::class, 'extrahistorial']);
