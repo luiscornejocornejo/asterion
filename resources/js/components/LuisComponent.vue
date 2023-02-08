@@ -78,7 +78,7 @@
                                                 {{ currency.chat_status }}
 
                                                 <div :style="{ 'background-color': currency.priority_color }" style="float: left;width: 10px;height: 100px;"
-                                                    ></div>
+                                                    ></div> 
                                                    
                                                 <div class="container">
                                                     <div class="row">
