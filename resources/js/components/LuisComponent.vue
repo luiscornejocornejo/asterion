@@ -497,12 +497,12 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form action="/chatcambiarestado" method="post">
+                                <form action="/chatasignar" method="post">
                                     <input type="hidden" name="_token" v-bind:value="csrf">
                                     <input v-model="ticket_id" type="hidden" name="idticketestado" id="idtickettopic" >
-                                    <div  v-for="department in departments " >
+                                    <div  v-for="staff in staffs " >
                                     
-                                         <input :value="department.id" v-model="department.id" class="form-radio" type="radio" name="statos" >{{ department.name }}
+                                         <input :value="staff.id" v-model="staff.id" class="form-radio" type="radio" name="statos" >{{ staff.name }}
                                     </div>
                                                                     <button type="submit" class="btn btn-success
                                 waves-effect waves-light">Cambiar</button>
@@ -536,6 +536,7 @@ export default {
             topics:null,
             departments:null,
             ost_ticket_status:null,
+            staffs:null,
 
             loading: true,
             errored: false,
@@ -599,6 +600,11 @@ export default {
             axios
                 .get('/api/ost_ticket_status')
                 .then(response => (this.ost_ticket_status = response.data))
+                .catch(error => console.log(error))
+            ,
+            axios
+                .get('/api/staff')
+                .then(response => (this.staffs = response.data))
                 .catch(error => console.log(error))
             ,
             

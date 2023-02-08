@@ -131,6 +131,15 @@ class wsController extends Controller
         return $return2;
     }
 
+    public function staff(Request $request)
+    {
+
+        $fields3 = $this->conectar2(11);
+        $querydatos = "select staff_id as id,concat(firstname, ' ', lastname) as name from ost_staff";
+        $fields55 = DB::reconnect('mysql2')->select($querydatos);
+        $return2 = json_encode($fields55);
+        return $return2;
+    }
 
 
 

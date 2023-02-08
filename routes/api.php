@@ -21,6 +21,7 @@ Route::get('/datostickets', [wsController::class, 'datostickets']);
 Route::get('/topics', [wsController::class, 'topics']);
 Route::get('/ost_ticket_status', [wsController::class, 'ost_ticket_status']);
 Route::get('/departments', [wsController::class, 'departments']);
+Route::get('/staff', [wsController::class, 'staff']);
 
 
 
