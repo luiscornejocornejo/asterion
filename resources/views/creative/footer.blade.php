@@ -510,6 +510,14 @@
         <!-- App js -->
         <script src="assets3/js/app.min.js"></script>
         <script src="assets3/js/pages/demo.inbox.js"></script>
+
+
+<!-- SimpleMDE js -->
+<script src="assets3/vendor/simplemde/simplemde.min.js"></script>
+
+<!-- Page init js -->
+
+<!-- App js -->
     </body>
 
 </html>
