@@ -673,6 +673,7 @@ export default {
     data() {
         return {
             csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            user: document.querySelector('meta[name="user"]').getAttribute('content'),
             active: false,
             info: null,
             topics: null,
