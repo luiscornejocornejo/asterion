@@ -20,7 +20,15 @@ class wsController extends Controller
         foreach ($resultados as $valuep) {
             $query2 = $valuep->query;
             $dbexterna = $valuep->base;
+            $parametros = $valuep->parametros;
         }
+        if($parametros=="logeo"){
+
+          $valordelcampo = session('email');
+          $clave = "@" . $parametros;
+          $query2 = str_replace($clave, $valordelcampo, $query2);
+        }
+        echo $query2;
         if ($dbexterna == 1) {
             $fields2 = DB::select($query2);
         } else {
