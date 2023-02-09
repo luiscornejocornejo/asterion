@@ -707,6 +707,7 @@ export default {
             datowhatapp: null,
             tiempo2: null,
             a: null,
+            url1: null,
             loaded: false,
             iframe: {
                 src: window.location.href,
@@ -722,11 +723,11 @@ export default {
         },
     },
     mounted() {
-        let url1='/api/datostickets/'+user;
+        this.url1='/api/datostickets/'+user,
         this.timer = setInterval(this.fetchEventsList, 60000),
 
             axios
-                .get(url1)
+                .get(this.url1)
                 .then(response => (this.info = response.data, this.sise = response.data.length))
                 .catch(error => console.log(error))
             ,
