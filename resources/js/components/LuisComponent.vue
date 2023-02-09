@@ -723,7 +723,7 @@ export default {
         },
     },
     mounted() {
-        this.url1='/api/datostickets/'+user,
+        this.url1='/api/datostickets/'+this.user,
         this.timer = setInterval(this.fetchEventsList, 60000),
 
             axios
