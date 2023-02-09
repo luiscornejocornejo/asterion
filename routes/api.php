@@ -17,7 +17,7 @@ use App\Http\Controllers\Api\cappi2022Controller;
 */
 Route::get('/ws','App\Http\Controllers\api\wsController@ws');
 //Route::get('/datostickets','App\Http\Controllers\api\wsController@datostickets');
-Route::get('/datostickets', [wsController::class, 'datostickets']);
+Route::get('/datostickets/{mail}', [wsController::class, 'datostickets']);
 Route::get('/topics', [wsController::class, 'topics']);
 Route::get('/ost_ticket_status', [wsController::class, 'ost_ticket_status']);
 Route::get('/departments', [wsController::class, 'departments']);
