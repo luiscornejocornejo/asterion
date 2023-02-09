@@ -722,10 +722,11 @@ export default {
         },
     },
     mounted() {
+        let url1='/api/datostickets/'+user;
         this.timer = setInterval(this.fetchEventsList, 60000),
 
             axios
-                .get('/api/datostickets/'.user)
+                .get(url1)
                 .then(response => (this.info = response.data, this.sise = response.data.length))
                 .catch(error => console.log(error))
             ,
