@@ -313,7 +313,7 @@
 
 
     <div class="col-xxl-6 col-xl-12 order-xl-2 ">
-        <div class="card">
+        <div v-if="clickeo" class="card">
             <div class="card-body">
                 <div class="row bg-primary text-white m-0 p-2">
                     <div class="col-6 align-self-start" style="display:inline-block;">
@@ -444,7 +444,9 @@
                 </div>
             </div> <!-- end card-body -->
         </div> <!-- end card-->
-
+        <div v-else>
+            no mostrar
+        </div>
 
     </div>
 
@@ -680,7 +682,7 @@ export default {
             departments: null,
             ost_ticket_status: null,
             staffs: null,
-
+            clickeo:false,
             loading: true,
             errored: false,
             timer: '',
@@ -723,8 +725,8 @@ export default {
         },
     },
     mounted() {
-        this.url1='/api/datostickets/'+this.user,
-        this.timer = setInterval(this.fetchEventsList, 60000),
+        this.url1 = '/api/datostickets/' + this.user,
+            this.timer = setInterval(this.fetchEventsList, 60000),
 
             axios
                 .get(this.url1)
@@ -753,8 +755,8 @@ export default {
                 .catch(error => console.log(error))
             ,
 
-            
-        this.loading = false;
+
+            this.loading = false;
         console.log('Component mounted.');
     },
 
@@ -829,6 +831,7 @@ export default {
 
         },
         pasar: function (a, b, c, d, e, f, g, h, i, j, k) {
+            this.clickeo=true;
             this.active = !this.active;
             this.ticket_id = d;
             console.log(this.ticket_id)
