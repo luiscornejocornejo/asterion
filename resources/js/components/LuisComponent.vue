@@ -478,7 +478,7 @@
             </div> <!-- end card-body -->
         </div> <!-- end card-->
         <div v-else>
-            <img src="/ing/sinticket.png"/>
+            <img src="/img/sinticket.png"/>
         
             no mostrar
         </div>
