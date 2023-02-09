@@ -109,7 +109,7 @@ class ChatController extends Controller
     if($parametros=="logeo"){
 
       $valordelcampo = session('email');
-      $clave = "@" . $nombredelcampo;
+      $clave = "@" . $parametros;
       $query2 = str_replace($clave, $valordelcampo, $query2);
     }
     if ($dbexterna == 1) {
