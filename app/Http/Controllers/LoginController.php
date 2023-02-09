@@ -56,6 +56,7 @@ class LoginController extends Controller
                 session(['idusuario' => $idusuario]);
                 session(['categoria' => $categoria]);
                 session(['nombreusuario' => $nombreusuario]);
+                session(['email' => $email]);
             }
 
             return Redirect::to('/home');

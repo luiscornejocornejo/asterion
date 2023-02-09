@@ -103,6 +103,14 @@ class ChatController extends Controller
     foreach ($resultados as  $valuep) {
       $query2 = $valuep->query;
       $dbexterna = $valuep->base;
+      $parametros = $valuep->parametros;
+    }
+   
+    if($parametros=="logeo"){
+
+      $valordelcampo = session('email');
+      $clave = "@" . $nombredelcampo;
+      $query2 = str_replace($clave, $valordelcampo, $query2);
     }
     if ($dbexterna == 1) {
       $fields2 = DB::select($query2);
@@ -131,5 +139,34 @@ class ChatController extends Controller
     config(['database.connections.mysql2.username' => $usuario]);
     config(['database.connections.mysql2.password' => $pass]);
     config(['database.connections.mysql2.port' => $port]);
+  }
+  function cambiarquery($parametros, $request, $query)
+  {
+
+
+    if ($parametros == "") {
+      return $query;
+    }
+
+    $posicion_coincidencia = strpos($parametros, ",");
+    //se puede hacer la comparacion con 'false' o 'true' y los comparadores '===' o '!=='
+    if ($posicion_coincidencia === false) {
+      //un solo parametro
+      $nombredelcampo = $parametros;
+      $valordelcampo = $request->$nombredelcampo;
+      $clave = "@" . $nombredelcampo;
+      $query2 = str_replace($clave, $valordelcampo, $query);
+      if($nombredelcampo=="logeo"){
+
+        $valordelcampo = session('email');
+        $clave = "@" . $nombredelcampo;
+        $query2 = str_replace($clave, $valordelcampo, $query);
+      }
+      return $query2;
+    } else {
+      //varios parametros
+    }
+
+    return $query;
   }
 }

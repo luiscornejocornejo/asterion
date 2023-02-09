@@ -536,6 +536,12 @@ class siennaController extends Controller
       $valordelcampo = $request->$nombredelcampo;
       $clave = "@" . $nombredelcampo;
       $query2 = str_replace($clave, $valordelcampo, $query);
+      if($nombredelcampo=="logeo"){
+
+        $valordelcampo = session('email');
+        $clave = "@" . $nombredelcampo;
+        $query2 = str_replace($clave, $valordelcampo, $query);
+      }
       return $query2;
     } else {
       //varios parametros
