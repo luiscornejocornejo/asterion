@@ -796,6 +796,7 @@ export default {
             return dato;
         },
         fetchEventsList() {
+            this.url1 = '/api/datostickets/' + this.user,
             axios
                 .get(this.url1)
                 .then(response => (this.info = response.data, this.sise = response.data.length))
