@@ -89,10 +89,10 @@ class ChatController extends Controller
   public function index(Request $request)
   {
 
-    //$id = $request->id;
-  //  $fields2 = $this->select2($id);
-    return view('sienna/chat');
-     // ->with('datos', $fields2);
+    $id = $request->id;
+    $fields2 = $this->select2($id);
+    return view('sienna/chat')
+      ->with('datos', $fields2);
   }
 
 
@@ -122,6 +122,7 @@ class ChatController extends Controller
       //si es distinta a 1 aa otra base
       $fields2 = DB::connection('mysql2')->select($query2);
     }
+    var_dump($fields2);
     return $fields2;
   }
   public static function conectar2($id)
