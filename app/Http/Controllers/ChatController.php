@@ -112,6 +112,7 @@ class ChatController extends Controller
       $clave = "@" . $parametros;
       $query2 = str_replace($clave, $valordelcampo, $query2);
     }
+    echo $query2;
     if ($dbexterna == 1) {
       $fields2 = DB::select($query2);
     } else {
