@@ -3,7 +3,7 @@
     <div class="col-xxl-3 col-xl-6 order-xl-1  ">
         <div class="card">
             <div class="card-body p-2">
-                <div class="flex-grow-1">
+                <div class="flex-grow-1 p-4">
                     <p class="text-muted mb-0">Bandeja de Tickets( {{ sise }})</p>
                 </div>
                 <select onchange="location = this.value;">
@@ -240,7 +240,7 @@
                                                             </svg>
                                                             {{ currency.number }}
                                                         </h5>
-                                                        <h5 v-if="currency.source == 'API'">
+                                                        <h5 v-if="currency.source == ''">
 
                                                             {{ currency.number }}
                                                         </h5>
