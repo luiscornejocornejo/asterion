@@ -2,7 +2,7 @@
 
     <div class="col-xxl-3 col-xl-6 order-xl-1  ">
         <div class="card">
-            <div class="card-body p-0">
+            <div class="card-body p-2">
                 <div class="flex-grow-1">
                     <p class="text-muted mb-0">Bandeja de Tickets( {{ sise }})</p>
                 </div>
