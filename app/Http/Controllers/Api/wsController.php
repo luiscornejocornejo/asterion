@@ -79,11 +79,23 @@ class wsController extends Controller
         return $return2;
 
     }
+
+    public function extrasuser(Request $request)
+    {
+        $fields3 = $this->conectar2(11);
+        $user_id = $request->user_id;
+        $query66 = "select * from ost_user__cdata where user_id=" . $user_id . "";
+        $fields66 = DB::reconnect('mysql2')->select($query66);
+        $return2 = json_encode($fields66);
+        return $return2;
+
+    }
+     
     public function extraswhatapp(Request $request)
     {
         $fields3 = $this->conectar2(11);
         $ticketid = $request->id;
-        $querydatos = "select f.chat_link from ost_ticket a
+        $querydatos = "select f.chat_link,f.extra1_ticket,f.extra2_ticket,f.subject from ost_ticket a
        left join   ost_ticket__cdata f
        on f.ticket_id=a.ticket_id
        where a.ticket_id=" . $ticketid;
