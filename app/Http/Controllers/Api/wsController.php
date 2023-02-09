@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 class wsController extends Controller
 {
 
-    public function select2($id)
+    public function select2($id,$mail)
     {
 
         $resultados = masterreport::where('id', '=', $id)->get();
@@ -24,7 +24,7 @@ class wsController extends Controller
         }
         if($parametros=="logeo"){
 
-          $valordelcampo = session('email');
+          $valordelcampo = $mail;
           $clave = "@" . $parametros;
           $query2 = str_replace($clave, $valordelcampo, $query2);
         }
@@ -58,11 +58,11 @@ class wsController extends Controller
         config(['database.connections.mysql2.password' => $pass]);
         config(['database.connections.mysql2.port' => $port]);
     }
-    public function datostickets()
+    public function datostickets(Request $request)
     {
 
         // $id = $request->id;
-        $fields2 = $this->select2(75);
+        $fields2 = $this->select2(75,$request->mail);
         //$fields3 = $this->select2(77);
         //$fields4 = $this->select2(78);
         // $fields5 = $this->select2(79);
