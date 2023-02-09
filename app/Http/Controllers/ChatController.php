@@ -89,10 +89,10 @@ class ChatController extends Controller
   public function index(Request $request)
   {
 
-    $id = $request->id;
-    $fields2 = $this->select2($id);
-    return view('sienna/chat')
-      ->with('datos', $fields2);
+    //$id = $request->id;
+  //  $fields2 = $this->select2($id);
+    return view('sienna/chat');
+     // ->with('datos', $fields2);
   }
 
 
