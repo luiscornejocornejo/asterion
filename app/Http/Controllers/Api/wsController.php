@@ -28,7 +28,7 @@ class wsController extends Controller
           $clave = "@" . $parametros;
           $query2 = str_replace($clave, $valordelcampo, $query2);
         }
-        //echo $query2;
+        echo $query2;
         if ($dbexterna == 1) {
             $fields2 = DB::select($query2);
         } else {
@@ -38,6 +38,7 @@ class wsController extends Controller
             //si es distinta a 1 aa otra base
             $fields2 = DB::connection('mysql2')->select($query2);
         }
+        var_dump($fields2);
         return $fields2;
     }
     public static function conectar2($id)
