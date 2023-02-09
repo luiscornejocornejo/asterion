@@ -724,7 +724,7 @@ export default {
         this.timer = setInterval(this.fetchEventsList, 60000),
 
             axios
-                .get('/api/datostickets/admin@example.com')
+                .get('/api/datostickets/'.user)
                 .then(response => (this.info = response.data, this.sise = response.data.length))
                 .catch(error => console.log(error))
             ,
