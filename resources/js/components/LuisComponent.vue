@@ -750,8 +750,9 @@ export default {
                 .catch(error => console.log(error))
             ,
 
-            console.log('Component mounted.')
-        this.loading = false
+            
+        this.loading = false;
+        console.log('Component mounted.');
     },
 
     methods: {
