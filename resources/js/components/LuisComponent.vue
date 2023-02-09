@@ -486,7 +486,7 @@
 
     <div class="col-xxl-3 col-xl-6 order-xl-1 order-xxl-2">
 
-        <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div v-if="clickeo"  class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header bg-primary text-white" id="flush-headingOne">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -573,6 +573,9 @@
                 </div>
             </div>
 
+        </div>
+        <div v-else>
+            
         </div>
         <div class="card">
 
