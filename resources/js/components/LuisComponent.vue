@@ -480,7 +480,7 @@
         <div v-else>
             <img src="/img/sinticket.png"/>
         
-            no mostrar
+          
         </div>
 
     </div>
@@ -511,11 +511,12 @@
                                             <div class="timeline-alt py-0">
 
                                                 <div v-for="extrah in historial" class="timeline-item extrahistorial2">
-                                                    <i
-                                                        class="mdi mdi-camera-marker-outline bg-info-lighten text-info timeline-icon"></i>{{
-                                                            extrah.name
-                                                        }}
-                                                    <div class="timeline-item-info">
+                                                    <i v-if ="extrah.name=='created'" class="mdi mdi-progress-check bg-info-lighten text-info timeline-icon"></i>{{  extrah.name }}
+                                                    <i v-if ="extrah.name=='closed'" class="mdi mdi-progress-close bg-info-lighten text-info timeline-icon"></i>{{  extrah.name }}
+                                                    <i v-if ="extrah.name=='overdue'" class="mdi mdi-timer-sand-complete bg-info-lighten text-info timeline-icon"></i>{{  extrah.name }}
+                                                    <i v-if ="extrah.name=='edited'" class="mdi mdi-account-edit bg-info-lighten text-info timeline-icon"></i>{{  extrah.name }}
+                                                    <i v-if ="extrah.name=='reopened'" class="mdi mdi-openid bg-info-lighten text-info timeline-icon"></i>{{  extrah.name }}
+                                                   <div class="timeline-item-info">
                                                         <a href="javascript:void(0);"
                                                             class="text-info fw-bold mb-1 d-block">{{
                                                                 extrah.username
