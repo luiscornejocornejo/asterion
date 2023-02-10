@@ -458,7 +458,7 @@
                     </div>
 
                     <div v-if="source == 'Telegram'">
-                        
+
                         <div v-for="ext in whapp" style="max-height: 446px">
                             {{ ext.chat_link }}
                             <iframe max-height="200px" width="600 px" height="400 px" frameborder='0' allowfullscreen
@@ -603,7 +603,7 @@
 
                                 </ul>
                             </div>
-                         
+
 
                         </div>
 
@@ -921,6 +921,12 @@ export default {
             console.log('extrahistorial.')
 
         },
+        myMap() {
+            var mapProp = {
+                center: new google.maps.LatLng(51.508742, -0.120850),
+                zoom: 5,
+            }
+        },
         pasar: function (a, b, c, d, e, f, g, h, i, j, k, l) {
             this.clickeo = true;
             this.active = !this.active;
@@ -948,15 +954,15 @@ export default {
                 this.tipo = false;
                 this.logo = '<i class="ri-whatsapp-fill"></i> ';
             }
-            
-                this.datowhatapp = null;
-                this.datowhatapp = this.extraswhatapp(d);
-                console.log('paso1.')
 
-                console.log(this.whapp);
+            this.datowhatapp = null;
+            this.datowhatapp = this.extraswhatapp(d);
+            console.log('paso1.')
+
+            console.log(this.whapp);
 
 
-            
+
             this.datoooo2 = this.extrasuserf(l);
 
 
