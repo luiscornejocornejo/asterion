@@ -595,7 +595,7 @@
                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="header-title mb-3">Basic Google Map</h4>
-                                        <div id="gmaps-basic" class="gmaps"></div>
+                                        <div id="googleMap" style="width:100%;height:400px;"></div>
                                     </div> <!-- end card-body-->
                                 </div>
                     </div>

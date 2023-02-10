@@ -50,7 +50,16 @@ foreach ($resultados2 as $valuee2) {
     <link href="assets3/vendor/simplemde/simplemde.min.css" rel="stylesheet" type="text/css" />
 
 
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+    <script>
+function myMap() {
+var mapProp= {
+  center:new google.maps.LatLng(51.508742,-0.120850),
+  zoom:5,
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+</script>
 
 
     <script type="text/javascript">
