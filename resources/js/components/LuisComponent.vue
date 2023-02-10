@@ -72,7 +72,7 @@
                                     <div v-if="loading">Cargando...</div>
 
                                     <div v-else v-for="currency in info " v-bind:style="bgc"
-                                        v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.status_id, currency.priority_desc, currency.priority_color, currency.asignado,currency.user_id)"
+                                        v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.status_id, currency.priority_desc, currency.priority_color, currency.asignado, currency.user_id)"
                                         class="currency shadow-sm p-2 mb-3 bg-white rounded ">
 
 
@@ -286,11 +286,13 @@
                                                             {{ currency.number }}
                                                         </h5>
                                                         <h5 v-if="currency.source == 'Web'">
-                                                            <svg fill="#000000" height="16px" width="16px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 viewBox="0 0 301.416 301.416" xml:space="preserve">
-<g>
-	<g>
-		<path d="M272.013,239.992C344.29,141.941,275.356,1.036,151.905,0.059c-0.005,0-0.009-0.001-0.014-0.001
+                                                            <svg fill="#000000" height="16px" width="16px" version="1.1"
+                                                                id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                viewBox="0 0 301.416 301.416" xml:space="preserve">
+                                                                <g>
+                                                                    <g>
+                                                                        <path d="M272.013,239.992C344.29,141.941,275.356,1.036,151.905,0.059c-0.005,0-0.009-0.001-0.014-0.001
 			c-0.013,0-0.027,0-0.039-0.001c-0.019,0-0.039-0.001-0.057-0.001c-0.014,0-0.029,0-0.043,0c-0.756-0.019-1.522-0.019-2.196,0
 			c-0.007,0-0.013,0-0.02,0c-0.009,0-0.018,0.001-0.026,0.001c-0.007,0-0.015,0-0.022,0c-0.003,0-0.005,0-0.008,0
 			C65.826,0.691,0,68.785,0,150.71c0,83.201,67.451,150.664,150.664,150.664c26.765,0,53.515-7.072,77.353-21.367l19.125,19.126
@@ -312,10 +314,10 @@
 			l6.979,6.979C210.286,272.501,203.462,275.602,196.436,278.124z M252.551,282.904l-37.286-37.287
 			c-2.986-2.986-7.83-2.989-10.819-0.001c-10.898,10.898-8.04,8.04-18.211,18.212l-24.751-92.363
 			c38.489,10.316,81.823,21.928,92.354,24.75l-18.211,18.209c-2.988,2.989-2.988,7.832,0,10.819l37.289,37.289L252.551,282.904z
-			 M267.228,219.56c-1.92,3.245-3.972,6.412-6.159,9.488l-9.213-9.213l0.274-0.275H267.228z"/>
-	</g>
-</g>
-</svg>
+			 M267.228,219.56c-1.92,3.245-3.972,6.412-6.159,9.488l-9.213-9.213l0.274-0.275H267.228z" />
+                                                                    </g>
+                                                                </g>
+                                                            </svg>
                                                             {{ currency.number }}
                                                         </h5>
                                                     </div>
@@ -478,9 +480,9 @@
             </div> <!-- end card-body -->
         </div> <!-- end card-->
         <div v-else>
-            <img src="/img/sinticket.png"/>
-        
-          
+            <img src="/img/sinticket.png" />
+
+
         </div>
 
     </div>
@@ -488,7 +490,7 @@
 
     <div class="col-xxl-3 col-xl-6 order-xl-1 order-xxl-2">
 
-        <div v-if="clickeo"  class="accordion accordion-flush" id="accordionFlushExample">
+        <div v-if="clickeo" class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header bg-primary text-white" id="flush-headingOne">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -511,12 +513,19 @@
                                             <div class="timeline-alt py-0">
 
                                                 <div v-for="extrah in historial" class="timeline-item extrahistorial2">
-                                                    <i v-if ="extrah.name=='created'" class="mdi mdi-progress-check bg-info-lighten text-info timeline-icon"></i>
-                                                    <i v-if ="extrah.name=='closed'" class="mdi mdi-progress-close bg-info-lighten text-info timeline-icon"></i>
-                                                    <i v-if ="extrah.name=='overdue'" class="mdi mdi-timer-sand-complete bg-info-lighten text-info timeline-icon"></i>
-                                                    <i v-if ="extrah.name=='edited'" class="mdi mdi-account-edit bg-info-lighten text-info timeline-icon"></i>
-                                                    <i v-if ="extrah.name=='reopened'" class="mdi mdi-openid bg-info-lighten text-info timeline-icon"></i>{{  extrah.name }}
-                                                   <div class="timeline-item-info">
+                                                    <i v-if="extrah.name == 'created'"
+                                                        class="mdi mdi-progress-check bg-info-lighten text-info timeline-icon"></i>
+                                                    <i v-if="extrah.name == 'closed'"
+                                                        class="mdi mdi-progress-close bg-info-lighten text-info timeline-icon"></i>
+                                                    <i v-if="extrah.name == 'overdue'"
+                                                        class="mdi mdi-timer-sand-complete bg-info-lighten text-info timeline-icon"></i>
+                                                    <i v-if="extrah.name == 'edited'"
+                                                        class="mdi mdi-account-edit bg-info-lighten text-info timeline-icon"></i>
+                                                    <i v-if="extrah.name == 'reopened'"
+                                                        class="mdi mdi-openid bg-info-lighten text-info timeline-icon"></i>{{
+                                                            extrah.name
+                                                        }}
+                                                    <div class="timeline-item-info">
                                                         <a href="javascript:void(0);"
                                                             class="text-info fw-bold mb-1 d-block">{{
                                                                 extrah.username
@@ -561,50 +570,54 @@
                     <div class="accordion-body">
 
 
-<div class="row  p-2">
-                    <div class="col-6 align-self-start small" style="display:inline-block;">
-                        <ul v-for="datousuario in extrauser" class="list-group list-group-flush">
-                            <li class="list-group-item">clientid: {{ datousuario.clientid }}</li>
-                            <li class="list-group-item">email: {{ datousuario.email }} <span v-if="datousuario.email!=null"> <button type="button" class="btn btn-success btn-sm  " data-bs-toggle="modal"
-                            data-bs-target="#compose-modal">
-                            <spam id="estado">Enviar Email</spam>:
-                        </button></span></li>
-                            <li class="list-group-item">phone: {{ datousuario.phone }}</li>
-                            <li class="list-group-item">whatsapp_nro: {{ datousuario.whatsapp_nro }}</li>
-                            <li class="list-group-item">plan_name: {{ datousuario.plan_name }}</li>
-                            <li class="list-group-item">lat: {{ datousuario.lat }}</li>
-                            <li class="list-group-item">long: {{ datousuario.long }}</li>
-                            <li class="list-group-item">extra1: {{ datousuario.extra1 }}</li>
-                            <li class="list-group-item">extra2: {{ datousuario.extra2 }}</li>
-                            
-                        </ul>
-                    </div>
-                    <div class="col-6 align-self-end" style="display:inline-block;">
-                        <br><br>
-                        <button type="button" class="btn btn-success  " data-bs-toggle="modal"
-                            data-bs-target="#standard-modal">
-                            <spam id="estado">Llamar</spam>:
-                        </button><br><br>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#standard-modal">
-                            <spam id="estado">Enviar Whatsapp</spam>:
-                        </button><br><br><br><br><br><br>                    </div>
+                        <div class="row  p-2">
+                            <div class="col-6 align-self-start small" style="display:inline-block;">
+                                <ul v-for="datousuario in extrauser" class="list-group list-group-flush">
+                                    <li class="list-group-item">clientid: {{ datousuario.clientid }}</li>
+                                    <li class="list-group-item">email: {{ datousuario.email }}
+                                        <span v-if="datousuario.email != null"> <button type="button"
+                                                class="btn btn-success btn-sm  " data-bs-toggle="modal"
+                                                data-bs-target="#compose-modal">
 
-                </div>
+                                            </button></span>
+                                    </li>
+                                    <li class="list-group-item">phone: {{ datousuario.phone }} <span
+                                            v-if="datousuario.phone != null">
+                                            <button type="button" class="btn btn-success btn-sm  "
+                                                data-bs-toggle="modal" data-bs-target="#standard-modal">
 
-                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="header-title mb-3">Basic Google Map</h4>
-                                        <div id="googleMap" style="width:100%;height:400px;"></div>
-                                    </div> <!-- end card-body-->
-                                </div>
+                                            </button></span></li>
+                                    <li class="list-group-item">whatsapp_nro: {{ datousuario.whatsapp_nro }}<span
+                                            v-if="datousuario.whatsapp_nro != null">
+                                            <button type="button" class="btn btn-success btn-sm  "
+                                                data-bs-toggle="modal" data-bs-target="#standard-modal">
+
+                                            </button></span></li>
+                                    <li class="list-group-item">plan_name: {{ datousuario.plan_name }}</li>
+                                    <li class="list-group-item">lat: {{ datousuario.lat }}</li>
+                                    <li class="list-group-item">long: {{ datousuario.long }}</li>
+                                    <li class="list-group-item">extra1: {{ datousuario.extra1 }}</li>
+                                    <li class="list-group-item">extra2: {{ datousuario.extra2 }}</li>
+
+                                </ul>
+                            </div>
+                         
+
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title mb-3">Basic Google Map</h4>
+                                <div id="googleMap" style="width:100%;height:400px;"></div>
+                            </div> <!-- end card-body-->
+                        </div>
                     </div>
                 </div>
             </div>
 
         </div>
         <div v-else>
-            
+
         </div>
         <div class="card">
 
@@ -747,7 +760,7 @@ export default {
             departments: null,
             ost_ticket_status: null,
             staffs: null,
-            clickeo:false,
+            clickeo: false,
             loading: true,
             errored: false,
             timer: '',
@@ -755,7 +768,7 @@ export default {
             depto: null,
             topic: null,
             extrauser: null,
-            extrauserf:null,
+            extrauserf: null,
             prioridad: null,
             colorestado: null,
             asignado: null,
@@ -864,10 +877,10 @@ export default {
         },
         fetchEventsList() {
             this.url1 = '/api/datostickets/' + this.user,
-            axios
-                .get(this.url1)
-                .then(response => (this.info = response.data, this.sise = response.data.length))
-                .catch(error => console.log(error))
+                axios
+                    .get(this.url1)
+                    .then(response => (this.info = response.data, this.sise = response.data.length))
+                    .catch(error => console.log(error))
             console.log('reinicio.')
 
         },
@@ -880,7 +893,7 @@ export default {
             console.log('extrasmail.')
 
         },
-        extrasuserf(userid){
+        extrasuserf(userid) {
 
             axios
                 .get('/api/extrasuser/' + userid)
@@ -906,8 +919,8 @@ export default {
             console.log('extrahistorial.')
 
         },
-        pasar: function (a, b, c, d, e, f, g, h, i, j, k,l) {
-            this.clickeo=true;
+        pasar: function (a, b, c, d, e, f, g, h, i, j, k, l) {
+            this.clickeo = true;
             this.active = !this.active;
             this.ticket_id = d;
             console.log(this.ticket_id)
