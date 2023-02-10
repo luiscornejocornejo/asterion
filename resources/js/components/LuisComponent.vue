@@ -77,11 +77,11 @@
 
 
                                         <a href="javascript:void(0);" class="text-body">
-                                            {{ currency.chat_status }}
+                                           
                                             <div :style="{ 'background-color': currency.priority_color }"
                                                 style="float: left;width: 10px;height: 80px;" class="p-1"></div>
 
-                                            <div class="container">
+                                            <div  class="container" :style="{ 'background-color': currency.chat_status }">
                                                 <div class="row">
                                                     <div class="col-6 align-self-start" style="display:inline-block;">
                                                         <h5 class="mt-0 mb-0 small" style="color:#727CF5;">
