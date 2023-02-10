@@ -729,6 +729,7 @@ export default {
             depto: null,
             topic: null,
             extrauser: null,
+            extrauserf:null,
             prioridad: null,
             colorestado: null,
             asignado: null,
@@ -915,7 +916,7 @@ export default {
 
 
             }
-            this.datoooo2 = this.extrauserf(l);
+            this.datoooo2 = this.extrasuserfS(l);
 
 
         }
