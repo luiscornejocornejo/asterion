@@ -611,7 +611,7 @@
                             <div class="card-body">
                                 <h4 class="header-title mb-3">Basic Google Map</h4>
                                
-                            <GoogleMap api-key="AIzaSyCpW_qQg8n6GJZ5o22J9MdQqXrzVdx-UHY" style="width:60px;height:60px;"
+                            <GoogleMap api-key="AIzaSyCpW_qQg8n6GJZ5o22J9MdQqXrzVdx-UHY" style="width:300px;height:500px;"
                                 :center="center" :zoom="15">
                                 <Marker :options="{ position: center }" />
                             </GoogleMap></div>
@@ -757,8 +757,8 @@ import { GoogleMap, Marker } from "vue3-google-map";
 export default {
     components: { GoogleMap, Marker },
   setup() {
-    const center = { lat: 40.689247, lng: -74.044502 };
-
+    const center = { lat: -34.58845756270908, lng: -58.44093554428371 };
+    
     return { center };
   },
     props: ['currency'],
