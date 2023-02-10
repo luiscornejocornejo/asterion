@@ -854,10 +854,10 @@ export default {
             console.log('extrasmail.')
 
         },
-        extrasuserf(user_id){
+        extrasuserf(userid){
 
             axios
-                .get('/api/extrasuser/' + user_id)
+                .get('/api/extrasuser/' + userid)
                 .then(response => (this.extrauser = response.data))
                 .catch(error => console.log(error))
             console.log('extrasmail.')
@@ -916,7 +916,7 @@ export default {
 
 
             }
-            this.datoooo2 = this.extrasuserfS(l);
+            this.datoooo2 = this.extrasuserf(l);
 
 
         }
