@@ -923,7 +923,7 @@ export default {
             console.log('extrahistorial.')
 
         },
-        myMap() {
+        myMap: function () {
             var mapProp = {
                 center: new google.maps.LatLng(51.508742, -0.120850),
                 zoom: 5,
