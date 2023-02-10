@@ -50,7 +50,7 @@ foreach ($resultados2 as $valuee2) {
     <link href="assets3/vendor/simplemde/simplemde.min.css" rel="stylesheet" type="text/css" />
 
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpW_qQg8n6GJZ5o22J9MdQqXrzVdx-UHY&callback=myMap"></script>
     <script>
 function myMap() {
 var mapProp= {
