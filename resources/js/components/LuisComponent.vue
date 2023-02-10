@@ -577,15 +577,15 @@
                         </ul>
                     </div>
                     <div class="col-6 align-self-end" style="display:inline-block;">
-                        <button type="button" class="btn btn-primary p-4 " data-bs-toggle="modal"
+                        <button type="button" class="btn btn-success  " data-bs-toggle="modal"
                             data-bs-target="#compose-modal">
                             <spam id="estado">Enviar Email</spam>:
-                        </button><br>
-                        <button type="button" class="btn btn-primary p-4  " data-bs-toggle="modal"
+                        </button><br><br><br><br>
+                        <button type="button" class="btn btn-success  " data-bs-toggle="modal"
                             data-bs-target="#standard-modal">
                             <spam id="estado">Llamar</spam>:
-                        </button><br>
-                        <button type="button" class="btn btn-primary p-4 " data-bs-toggle="modal"
+                        </button><br><br><br><br><br>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
                             data-bs-target="#standard-modal">
                             <spam id="estado">Enviar Whatsapp</spam>:
                         </button>
