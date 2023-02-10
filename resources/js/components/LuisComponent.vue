@@ -580,16 +580,15 @@
                         <button type="button" class="btn btn-success  " data-bs-toggle="modal"
                             data-bs-target="#compose-modal">
                             <spam id="estado">Enviar Email</spam>:
-                        </button><br><br><br><br>
+                        </button><br><br>
                         <button type="button" class="btn btn-success  " data-bs-toggle="modal"
                             data-bs-target="#standard-modal">
                             <spam id="estado">Llamar</spam>:
-                        </button><br><br><br><br><br>
+                        </button><br><br>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
                             data-bs-target="#standard-modal">
                             <spam id="estado">Enviar Whatsapp</spam>:
-                        </button><br><br><br><br><br>
-                    </div>
+                        </button><br><br><br><br><br><br>                    </div>
 
                 </div>
 
