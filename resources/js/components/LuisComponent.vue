@@ -559,7 +559,7 @@
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
                     data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-{{ extrauser }}
+
 
 <div class="row  p-2">
                     <div class="col-6 align-self-start small" style="display:inline-block;">
@@ -577,15 +577,15 @@
                         </ul>
                     </div>
                     <div class="col-6 align-self-end" style="display:inline-block;">
-                        <button type="button" class="btn btn-primary " data-bs-toggle="modal"
+                        <button type="button" class="btn btn-primary p-4 " data-bs-toggle="modal"
                             data-bs-target="#compose-modal">
                             <spam id="estado">Enviar Email</spam>:
                         </button><br>
-                        <button type="button" class="btn btn-primary " data-bs-toggle="modal"
+                        <button type="button" class="btn btn-primary p-4  " data-bs-toggle="modal"
                             data-bs-target="#standard-modal">
                             <spam id="estado">Llamar</spam>:
                         </button><br>
-                        <button type="button" class="btn btn-primary " data-bs-toggle="modal"
+                        <button type="button" class="btn btn-primary p-4 " data-bs-toggle="modal"
                             data-bs-target="#standard-modal">
                             <spam id="estado">Enviar Whatsapp</spam>:
                         </button>
