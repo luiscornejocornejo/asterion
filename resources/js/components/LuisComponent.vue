@@ -75,7 +75,7 @@
                                         v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.status_id, currency.priority_desc, currency.priority_color, currency.asignado, currency.user_id)"
                                         class="currency shadow-sm p-2 mb-3 bg-white rounded ">
 
-
+{{ currency.chat_status }}
                                         <a href="javascript:void(0);" class="text-body">
                                             {{ currency.chat_status }}
 
