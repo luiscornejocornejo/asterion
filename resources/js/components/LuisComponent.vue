@@ -609,9 +609,8 @@
 
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title mb-3">Basic Google Map</h4>
-                               
-                            <GoogleMap api-key="AIzaSyCpW_qQg8n6GJZ5o22J9MdQqXrzVdx-UHY" style="width:300px;height:500px;"
+                                
+                            <GoogleMap api-key="AIzaSyCpW_qQg8n6GJZ5o22J9MdQqXrzVdx-UHY" style="width:300px;height:300px;"
                                 :center="center" :zoom="15">
                                 <Marker :options="{ position: center }" />
                             </GoogleMap></div>
