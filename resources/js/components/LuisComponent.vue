@@ -771,6 +771,8 @@ export default {
             topic: null,
             extrauser: null,
             extrauserf: null,
+            myMap: null,
+
             prioridad: null,
             colorestado: null,
             asignado: null,
