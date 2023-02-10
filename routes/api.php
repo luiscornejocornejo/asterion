@@ -28,6 +28,8 @@ Route::get('/staff', [wsController::class, 'staff']);
 Route::get('/extrasmail/{id}',[wsController::class, 'extrasmail']);
 Route::get('/extraswhatapp/{id}',[wsController::class, 'extraswhatapp']);
 Route::get('/extrahistorial/{id}',[wsController::class, 'extrahistorial']);
+Route::get('/extrasuser/{user_id}',[wsController::class, 'extrasuser']);
+
 
 Route::get('/cappi2022', [cappi2022Controller::class, 'crear']);
 
