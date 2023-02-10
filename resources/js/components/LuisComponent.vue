@@ -72,7 +72,7 @@
                                     <div v-if="loading">Cargando...</div>
 
                                     <div v-else v-for="currency in info " v-bind:style="bgc"
-                                        v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.status_id, currency.priority_desc, currency.priority_color, currency.asignado)"
+                                        v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.status_id, currency.priority_desc, currency.priority_color, currency.asignado,currency.userid)"
                                         class="currency shadow-sm p-2 mb-3 bg-white rounded ">
 
 
@@ -559,7 +559,7 @@
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
                     data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
-
+{{ extrauser }}
                         <button type="button" class="btn btn-primary " data-bs-toggle="modal"
                             data-bs-target="#compose-modal">
                             <spam id="estado">Enviar Email</spam>:
@@ -728,6 +728,7 @@ export default {
             sise: null,
             depto: null,
             topic: null,
+            extrauser: null,
             prioridad: null,
             colorestado: null,
             asignado: null,
@@ -852,6 +853,14 @@ export default {
             console.log('extrasmail.')
 
         },
+        extrasuser(user_id){
+
+            axios
+                .get('/api/extrasuser/' + id)
+                .then(response => (this.extrauser = response.data))
+                .catch(error => console.log(error))
+            console.log('extrasmail.')
+        },
         extraswhatapp(id) {
             console.log(id);
 
@@ -870,7 +879,7 @@ export default {
             console.log('extrahistorial.')
 
         },
-        pasar: function (a, b, c, d, e, f, g, h, i, j, k) {
+        pasar: function (a, b, c, d, e, f, g, h, i, j, k,l) {
             this.clickeo=true;
             this.active = !this.active;
             this.ticket_id = d;
@@ -906,6 +915,7 @@ export default {
 
 
             }
+            this.datoooo2 = this.extrauser(l);
 
 
         }
