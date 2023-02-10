@@ -565,7 +565,10 @@
                     <div class="col-6 align-self-start small" style="display:inline-block;">
                         <ul v-for="datousuario in extrauser" class="list-group list-group-flush">
                             <li class="list-group-item">clientid: {{ datousuario.clientid }}</li>
-                            <li class="list-group-item">email: {{ datousuario.email }} </li>
+                            <li class="list-group-item">email: {{ datousuario.email }} <span v-if="datousuario.email!=''"> <button type="button" class="btn btn-success  " data-bs-toggle="modal"
+                            data-bs-target="#compose-modal">
+                            <spam id="estado">Enviar Email</spam>:
+                        </button></span></li>
                             <li class="list-group-item">phone: {{ datousuario.phone }}</li>
                             <li class="list-group-item">whatsapp_nro: {{ datousuario.whatsapp_nro }}</li>
                             <li class="list-group-item">plan_name: {{ datousuario.plan_name }}</li>
@@ -577,10 +580,7 @@
                         </ul>
                     </div>
                     <div class="col-6 align-self-end" style="display:inline-block;">
-                        <button type="button" class="btn btn-success  " data-bs-toggle="modal"
-                            data-bs-target="#compose-modal">
-                            <spam id="estado">Enviar Email</spam>:
-                        </button><br><br>
+                        <br><br>
                         <button type="button" class="btn btn-success  " data-bs-toggle="modal"
                             data-bs-target="#standard-modal">
                             <spam id="estado">Llamar</spam>:
