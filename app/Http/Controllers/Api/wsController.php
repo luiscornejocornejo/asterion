@@ -95,9 +95,13 @@ class wsController extends Controller
     {
         $fields3 = $this->conectar2(11);
         $ticketid = $request->id;
-        $querydatos = "select f.chat_link,f.extra1_ticket,f.extra2_ticket,f.subject from ost_ticket a
+        $querydatos = "select f.chat_link,f.extra1_ticket,f.extra2_ticket,f.subject, c.priority_desc as priority
+        
+        from ost_ticket a
        left join   ost_ticket__cdata f
        on f.ticket_id=a.ticket_id
+       left join ost_ticket_priority c on f.priority = c.priority_id 
+
        where a.ticket_id=" . $ticketid;
         $fields55 = DB::reconnect('mysql2')->select($querydatos);
 
