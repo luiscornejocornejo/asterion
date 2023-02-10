@@ -948,7 +948,7 @@ export default {
                 this.tipo = false;
                 this.logo = '<i class="ri-whatsapp-fill"></i> ';
             }
-            if (e == "Whatsapp") {
+            
                 this.datowhatapp = null;
                 this.datowhatapp = this.extraswhatapp(d);
                 console.log('paso1.')
@@ -956,7 +956,7 @@ export default {
                 console.log(this.whapp);
 
 
-            }
+            
             this.datoooo2 = this.extrasuserf(l);
 
 
