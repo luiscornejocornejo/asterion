@@ -588,7 +588,7 @@
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
                             data-bs-target="#standard-modal">
                             <spam id="estado">Enviar Whatsapp</spam>:
-                        </button>
+                        </button><br><br><br><br><br>
                     </div>
 
                 </div>
