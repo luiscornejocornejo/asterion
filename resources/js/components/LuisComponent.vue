@@ -565,7 +565,7 @@
                     <div class="col-6 align-self-start small" style="display:inline-block;">
                         <ul v-for="datousuario in extrauser" class="list-group list-group-flush">
                             <li class="list-group-item">clientid: {{ datousuario.clientid }}</li>
-                            <li class="list-group-item">email: {{ datousuario.email }} <span v-if="datousuario.email!=''"> <button type="button" class="btn btn-success  " data-bs-toggle="modal"
+                            <li class="list-group-item">email: {{ datousuario.email }} <span v-if="datousuario.email!=null"> <button type="button" class="btn btn-success btn-sm  " data-bs-toggle="modal"
                             data-bs-target="#compose-modal">
                             <spam id="estado">Enviar Email</spam>:
                         </button></span></li>
