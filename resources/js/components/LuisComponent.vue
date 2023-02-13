@@ -8,20 +8,7 @@
                     <div class="row">
                         <div class="col">
                             <p class="text-muted mb-0 float-left">Bandeja de Tickets( {{ sise }})</p>
-                            <select class="float-right" onchange="location = this.value;">
-                                <option>estados</option>
-                                <option value="/chat?id=75">
-                                    <h5 class="font-size-14 mb-3"><a href="/chat?id=75">Open</a></h5>
-                                </option>
-                                <option value="/chat?id=80">
-                                    <h5 class="font-size-14 mb-3"><a href="/chat?id=80">cerrados (hoy)</a></h5>
-                                </option>
-                                <option value="/chat?id=81">
-                                    <h5 class="font-size-14 mb-3"><a href="/chat?id=81">cerrados (ayer)</a></h5>
-                                </option>
-
-
-                            </select>
+                  
                         </div>
                     </div>
 
