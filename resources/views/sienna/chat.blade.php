@@ -5,7 +5,7 @@
     <!-- Begin page -->
     <div class="wrapper">
 
-        @include('creative.menuarriba')
+        @include('creative.menuizq')
 
 
 
