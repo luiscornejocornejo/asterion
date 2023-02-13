@@ -5,8 +5,9 @@
     <!-- Begin page -->
     <div class="wrapper">
 
-        @include('creative.menuizq')
+        @include('creative.menuarriba')
 
+        @include('pp.menuizq')
 
 
         <div id="alert"></div>
