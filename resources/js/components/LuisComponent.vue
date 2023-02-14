@@ -46,7 +46,7 @@
                                                     <div class="row">
                                                         <div class="col-6 align-self-start"
                                                             style="display:inline-block;">
-                                                            <h5 class="mt-0 mb-0 small" style="color:#727CF5;">
+                                                            <h5 class="mt-0 mb-0 small" style="color:#f9bcob;">
                                                                 {{ currency.topic }}</h5>
                                                         </div>
                                                         <div class="col-6 align-self-end" style="display:inline-block;">
