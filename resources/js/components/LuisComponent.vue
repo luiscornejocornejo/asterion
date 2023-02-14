@@ -37,9 +37,9 @@
 
 
                                             <a href="javascript:void(0);" class="text-body">
+                                                <span :style="{ 'background-color': currency.priority_color }" class="border-left"></span>
 
-                                                <div :style="{ 'background-color': currency.priority_color }"
-                                                    style="float: left;width: 10px;height: 80px;" class="p-1"></div>
+                                              
 
                                                 <div class="container"
                                                     :style="{ 'background-color': currency.chat_status }">
