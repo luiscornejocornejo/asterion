@@ -335,7 +335,7 @@
 
     <div class="col-xxl-6 col-xl-12 order-xl-2 ">
         <div v-if="clickeo" class="card ">
-            <div class="card-body bg-primary text-white">
+            <div class="bg-primary text-white">
                 <div class="row  m-0 p-2">
                     <div class="col-6 align-self-start" style="display:inline-block;">
                         <span class="float-start text-white small">{{ nombreusuario }} </span>
@@ -345,6 +345,9 @@
                         <span class="float-end text-white small">{{ prioridad }} Ticket:{{ ticket_id }}</span>
                     </div>
                 </div>
+            </div>
+            <div class="card-body ">
+             
 
                 <div class="row  m-0 p-2">
                     <div class="col-6 align-self-start" style="display:inline-block;">
