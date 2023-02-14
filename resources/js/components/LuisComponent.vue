@@ -31,7 +31,7 @@
                                     <section v-else>
                                         <div v-if="loading">Cargando...</div>
 
-                                        <div v-else v-for="currency in info " v-bind:style="bgc"  :style="{ 'background-color': currency.chat_status }
+                                        <div v-else v-for="currency in info " v-bind:style="bgc"
                                             v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.status_id, currency.priority_desc, currency.priority_color, currency.asignado, currency.user_id)"
                                             class="currency  p-2 mb-3 bg-white rounded " style=" box-shadow: 4px 4px rgba(0,0,0,0.25);  border-left-color: rgba(0, 255, 0, 0.5);  ">
 
@@ -42,7 +42,7 @@
                                               
 
                                                 <div class="container"
-                                                   ">
+                                                    :style="{ 'background-color': currency.chat_status }">
                                                     <div class="row">
                                                         <div class="col-6 align-self-start"
                                                             style="display:inline-block;">
@@ -464,7 +464,7 @@
             <div v-if="clickeo" class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header bg-primary text-white" id="flush-headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                             Bitacora
                         </button>
@@ -533,7 +533,7 @@
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header  bg-primary text-white" id="flush-headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                             Cliente
                         </button>
