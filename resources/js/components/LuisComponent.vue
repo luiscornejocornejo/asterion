@@ -722,7 +722,7 @@
 }
 
 .red {
-    background-color: red !important;
+    background-color: rgb(254,243,211)!important;
 }
 </style>
 <script>
