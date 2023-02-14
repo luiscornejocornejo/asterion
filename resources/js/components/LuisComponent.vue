@@ -20,21 +20,6 @@
                    
                 </div>
 
-
-
-                    <ul class="nav nav-tabs nav-bordered">
-                        <li class="nav-item">
-                            <a href="#allUsers" data-bs-toggle="tab" aria-expanded="false" class="nav-link active py-2">
-                                Todos
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#favUsers" data-bs-toggle="tab" aria-expanded="true" class="nav-link py-2">
-                                Mios
-                            </a>
-                        </li>
-
-                    </ul> <!-- end nav-->
                     <div class="tab-content">
                         <div class="tab-pane show active card-body pb-0" id="newpost">
 
@@ -352,11 +337,11 @@
                 <div class="bg-primary text-white">
                     <div class="row  m-0 p-2">
                         <div class="col-6 align-self-start" style="display:inline-block;">
-                            <span class="float-start text-white small">{{ nombreusuario }} </span>
+                            <span class="float-start text-white ">{{ nombreusuario }} </span>
                         </div>
 
                         <div class="col-6 align-self-end" style="display:inline-block;">
-                            <span class="float-end text-white small">{{ prioridad }} Ticket:{{ ticket_id }}</span>
+                            <span class="float-end text-white ">{{ prioridad }} Ticket:{{ ticket_id }}</span>
                         </div>
                     </div>
                 </div>
