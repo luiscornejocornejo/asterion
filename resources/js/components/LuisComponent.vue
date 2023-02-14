@@ -1,20 +1,23 @@
 <template>
 
     <div class="col-xxl-3 col-xl-6 order-xl-1  ">
-        <div class="card">
-            <div class="card-body p-2">
-                <div class="flex-grow-1 p-4">
 
-
-                    <div class="bg-primary text-white">
-                        <div class="row  m-0 p-2">
+        <div class="bg-primary text-white">
+                        <div class="row">
                             <div class="col-6 align-self-start" style="display:inline-block;">
-                                <p class="text-muted mb-0 float-left">Bandeja de Tickets( {{ sise }})</p>
+                                <p class="t mb-0 float-left">Bandeja de Tickets( {{ sise }})</p>
                             </div>
 
 
                         </div>
                     </div>
+                    
+        <div class="card">
+            <div class="card-body p-2">
+                <div class="flex-grow-1 p-4">
+
+
+                   
                 </div>
 
 
