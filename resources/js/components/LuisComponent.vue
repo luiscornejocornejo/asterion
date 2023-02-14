@@ -33,11 +33,11 @@
 
                                         <div v-else v-for="currency in info " v-bind:style="bgc"
                                             v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.status_id, currency.priority_desc, currency.priority_color, currency.asignado, currency.user_id)"
-                                            class="currency  p-2 mb-3 bg-white rounded " style=" box-shadow: 4px 4px rgba(0,0,0,0.25);">
+                                            class="currency  p-2 mb-3 bg-white rounded " style=" box-shadow: 4px 4px rgba(0,0,0,0.25);border-left-color:yellow">
 
 
                                             <a href="javascript:void(0);" class="text-body">
-                                                <span :style="{ 'background-color': currency.priority_color }" class="border-left-primary"></span>
+                                                <span :style="{ 'border-left-color': currency.priority_color }" class="border-left-primary"></span>
 
                                               
 
