@@ -21,20 +21,7 @@
                 </div>
 
                     <div class="tab-content">
-                        <div class="tab-pane show active card-body pb-0" id="newpost">
-
-                            <!-- start search box -->
-                            <div class="app-search">
-                                <form>
-                                    <div class="mb-2 position-relative">
-                                        <input type="text" class="form-control"
-                                            placeholder="People, groups & messages..." />
-                                        <span class="mdi mdi-magnify search-icon"></span>
-                                    </div>
-                                </form>
-                            </div>
-                            <!-- end search box -->
-                        </div>
+                    
 
                         <!-- users -->
                         <div class="row">
