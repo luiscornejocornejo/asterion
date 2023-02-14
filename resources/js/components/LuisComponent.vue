@@ -37,7 +37,7 @@
 
 
                                             <a href="javascript:void(0);" class="text-body">
-                                                <span :style="{ 'border-left-color': currency.priority_color }" class="border-left-primary"></span>
+                                              
 
                                               
 
