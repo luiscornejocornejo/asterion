@@ -1,4 +1,8 @@
-<div class="navbar-custom topnav-navbar .bg-white" >
+
+<?php
+$categoria =  session('categoria');
+?>
+<div class="navbar-custom topnav-navbar bg-white" >
                 <div class="container-fluid detached-nav">
 
                     <!-- Topbar Logo -->
@@ -30,7 +34,7 @@
                     </button>
 
                     <!-- Horizontal Menu Toggle Button -->
-                    <button class="navbar-toggle" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
+                    <button class="navbar-toggle bg-light" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
                         <div class="lines">
                             <span></span>
                             <span></span>
@@ -52,8 +56,8 @@
                                     <img src="assets3/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                                 </span>
                                 <span>
-                                    <span class="account-user-name">Dominic Keller</span>
-                                    <span class="account-position">Founder</span>
+                                    <span class="account-user-name"><?php echo session('nombreusuario') ;?></span>
+                                    <span class="account-position"><?php echo $categoria ;?></span>
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
