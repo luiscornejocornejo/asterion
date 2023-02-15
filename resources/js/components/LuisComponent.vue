@@ -41,7 +41,7 @@
 
                                               
  
-                                                <div class="container" v-bind:style="{ backgroundColor: red} "  >
+                                                <div class="container" v-bind:style="{ backgroundColor: colordeprueba} "  >
                                                     <div class="row">
                                                         <div class="col-6 align-self-start"
                                                             style="display:inline-block;">
@@ -741,6 +741,7 @@ export default {
         return {
             csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
             user: document.querySelector('meta[name="user"]').getAttribute('content'),
+            colordeprueba:'#624ec6',
             active: false,
             info: null,
             topics: null,
