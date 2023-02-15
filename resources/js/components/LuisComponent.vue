@@ -41,7 +41,7 @@
 
                                               
  
-                                                <div class="container" :style="{ 'background-color': currency.chat_status  }"  >
+                                                <div class="container" v-bind:style="{ backgroundColor: currency.chat_status} "  >
                                                     <div class="row">
                                                         <div class="col-6 align-self-start"
                                                             style="display:inline-block;">
