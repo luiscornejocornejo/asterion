@@ -41,7 +41,7 @@
 
                                               
  
-                                                <div class="container" v-bind:style="{ backgroundColor: colordeprueba} "  >
+                                                <div class="container" :style="{ 'background-color': colordeprueba} "  >
                                                     <div class="row">
                                                         <div class="col-6 align-self-start"
                                                             style="display:inline-block;">
