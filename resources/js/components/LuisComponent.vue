@@ -637,8 +637,7 @@
         </div>
 
 
-        <div id="standard-modal" class="modal fade bs-example-modal-center" tabindex="-1" role="dialog"
-            aria-hidden="true">
+        <div id="standard-modal" class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -653,6 +652,7 @@
 
                                 <input :value="ost_ticket_statu.id" v-model="ost_ticket_statu.id" class="form-radio"
                                     type="radio" name="statos">{{ ost_ticket_statu.name }}
+                                    <br><br>
                             </div>
                             <button type="submit" class="btn btn-success
                                 waves-effect waves-light">Cambiar</button>
@@ -663,8 +663,7 @@
             </div><!-- /.modal-dialog -->
         </div>
 
-        <div id="standard-modal2" class="modal fade bs-example-modal-center" tabindex="-1" role="dialog"
-            aria-hidden="true">
+        <div id="standard-modal2" class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -679,6 +678,7 @@
 
                                 <input :value="department.id" v-model="department.id" class="form-radio" type="radio"
                                     name="statos">{{ department.name }}
+                                    <br><br>
                             </div>
                             <button type="submit" class="btn btn-success
                                 waves-effect waves-light">Cambiar</button>
@@ -706,7 +706,7 @@
                                 <input :value="staff.id" v-model="staff.id" class="form-radio" type="radio"
                                     name="statos">{{
         staff.name
-                                    }}
+                                    }} <br><br>
                             </div>
                             <button type="submit" class="btn btn-success
                                 waves-effect waves-light">Cambiar</button>
