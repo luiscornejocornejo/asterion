@@ -41,8 +41,8 @@
 
                                               
 
-                                                <div class="container"
-                                                    :style="{ 'background-color': currency.chat_status ,'border-left-color': rgba(0, 255, 0, 0.5)} ">
+                                                <div class="container" style=" 'border-left-color': rgba(0, 255, 0, 0.5);  "
+                                                    :style="{ 'background-color': currency.chat_status} ">
                                                     <div class="row">
                                                         <div class="col-6 align-self-start"
                                                             style="display:inline-block;">
