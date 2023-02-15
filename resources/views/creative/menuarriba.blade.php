@@ -1,6 +1,17 @@
 
 <?php
 $categoria =  session('categoria');
+
+use Illuminate\Support\Facades\DB;
+
+
+$query = "SELECT * FROM `categoria`  WHERE id=" . $categoria . ";";
+$resultados = DB::select($query);
+foreach($resultados as $value){
+
+    $nombrecategoria=$value->nombre;
+}
+
 ?>
 <div class="navbar-custom topnav-navbar bg-white" >
                 <div class="container-fluid detached-nav">
@@ -57,7 +68,7 @@ $categoria =  session('categoria');
                                 </span>
                                 <span>
                                     <span class="account-user-name"><?php echo session('nombreusuario') ;?></span>
-                                    <span class="account-position"><?php echo $categoria ;?></span>
+                                    <span class="account-position"><?php echo $nombrecategoria ;?></span>
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
