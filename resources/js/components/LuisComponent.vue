@@ -330,11 +330,11 @@
 
 
                     <div class="row  m-0 p-2">
-                        <div class="col-6 align-self-start" style="display:inline-block; width: 300px; height: 37px;">
+                        <div class="col-6 align-self-start" style="display:inline-block; ">
                             <button type="button" class="btn btn-info btn-block w-100" data-bs-toggle="modal"
                                 data-bs-target="#standard-modal3">{{ topic }}</button>
                         </div>
-                        <div class="col-6 align-self-end" style="display:inline-block; width: 250px; height: 37px;">
+                        <div class="col-6 align-self-end" style="display:inline-block; ">
                             <button type="button" class="btn btn-success w-100" data-bs-toggle="modal"
                                 data-bs-target="#standard-modal">
                                 <spam id="estado">{{ ticketestatus }}</spam>
@@ -351,7 +351,7 @@
                                 <li class="list-group-item">Fecha de ultima Modificacion: {{ lastupdate }}</li>
                             </ul>
                         </div>
-                        <div class="col-6 align-self-end" style="display:inline-block;width: 250px; height: 37px;">
+                        <div class="col-6 align-self-end" style="display:inline-block;">
                             <button type="button" class="btn btn-success w-100 p-2 btn-block" data-bs-toggle="modal"
                                 data-bs-target="#standard-modal2">{{ depto }}</button>
                             <spam id="departamento"></spam>
