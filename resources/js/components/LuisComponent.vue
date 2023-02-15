@@ -72,7 +72,7 @@
                                                             style="display:inline-block;">
 
 
-                                                            <h5 v-if="currency.source == 'Whatsapp'"> <svg
+                                                            <h5 v-if="currency.source == 'Whatsapp'"> <svg style="vertical-align: middle;"
                                                                     xmlns="http://www.w3.org/2000/svg" width="16"
                                                                     height="16" fill="currentColor"
                                                                     class="bi bi-whatsapp" color="#25D366"
