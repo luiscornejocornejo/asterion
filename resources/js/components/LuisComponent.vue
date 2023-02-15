@@ -31,9 +31,9 @@
                                     <section v-else>
                                         <div v-if="loading">Cargando...</div>
 
-                                        <div v-else v-for="currency in info " v-bind:style="bgc"  :style="{ 'background-color': currency.chat_status }"
+                                        <div v-else v-for="currency in info " v-bind:style="bgc"
                                             v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.status_id, currency.priority_desc, currency.priority_color, currency.asignado, currency.user_id)"
-                                            class="currency  p-2 mb-3 bg-white rounded " style=" box-shadow: 4px 4px rgba(0,0,0,0.25);  border-left-color: rgba(0, 255, 0, 0.5);  ">
+                                            class="currency  p-2 mb-3 bg-white rounded " style=" box-shadow: 4px 4px rgba(0,0,0,0.25);   ">
 
 
                                             <a href="javascript:void(0);" class="text-body">
@@ -42,7 +42,7 @@
                                               
 
                                                 <div class="container"
-                                                    >
+                                                    :style="{ 'background-color': currency.chat_status ,'border-left-color': rgba(0, 255, 0, 0.5)} ">
                                                     <div class="row">
                                                         <div class="col-6 align-self-start"
                                                             style="display:inline-block;">
@@ -330,11 +330,11 @@
 
 
                     <div class="row  m-0 p-2">
-                        <div class="col-6 align-self-start" style="display:inline-block;">
+                        <div class="col-6 align-self-start" style="display:inline-block; width: 300px; height: 37px;">
                             <button type="button" class="btn btn-info btn-block w-100" data-bs-toggle="modal"
                                 data-bs-target="#standard-modal3">{{ topic }}</button>
                         </div>
-                        <div class="col-6 align-self-end" style="display:inline-block;">
+                        <div class="col-6 align-self-end" style="display:inline-block; width: 250px; height: 37px;">
                             <button type="button" class="btn btn-success w-100" data-bs-toggle="modal"
                                 data-bs-target="#standard-modal">
                                 <spam id="estado">{{ ticketestatus }}</spam>
@@ -351,7 +351,7 @@
                                 <li class="list-group-item">Fecha de ultima Modificacion: {{ lastupdate }}</li>
                             </ul>
                         </div>
-                        <div class="col-6 align-self-end" style="display:inline-block;">
+                        <div class="col-6 align-self-end" style="display:inline-block;width: 250px; height: 37px;">
                             <button type="button" class="btn btn-success w-100 p-2 btn-block" data-bs-toggle="modal"
                                 data-bs-target="#standard-modal2">{{ depto }}</button>
                             <spam id="departamento"></spam>
@@ -622,6 +622,7 @@
 
                                 <input :value="topic.topic_id" v-model="topic.topic_id" class="form-radio" type="radio"
                                     name="statos">{{ topic.topic }}
+                                    <br><br>
                             </div>
 
 
