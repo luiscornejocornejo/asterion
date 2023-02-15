@@ -35,7 +35,7 @@
                                           :style="{ 'background-color': currency.chat_status} "
                                             v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.status_id, currency.priority_desc, currency.priority_color, currency.asignado, currency.user_id)"
                                             class="currency  p-2 mb-3  rounded " >
-
+{{  currency.priority_color }}
 
                                             <a href="javascript:void(0);" class="text-body">
                                               
