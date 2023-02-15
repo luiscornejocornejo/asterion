@@ -35,13 +35,13 @@
                                             v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.status_id, currency.priority_desc, currency.priority_color, currency.asignado, currency.user_id)"
                                             class="currency  p-2 mb-3  rounded " >
 
-{{ currency.chat_status }} <input type="color" id="head" name="head" v-model="colordeprueba"/>
+{{ currency.chat_status }} 
                                             <a href="javascript:void(0);" class="text-body">
                                               
 
                                               
  
-                                                <div class="container" :style="{ 'background-color': colordeprueba} "  >
+                                                <div class="container" :style="{ 'background-color': currency.chat_status} "  >
                                                     <div class="row">
                                                         <div class="col-6 align-self-start"
                                                             style="display:inline-block;">
