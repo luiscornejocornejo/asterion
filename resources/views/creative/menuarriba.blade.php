@@ -77,7 +77,7 @@ foreach($resultados as $value){
 
                            
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="/salir" class="dropdown-item notify-item">
                                     <i class="mdi mdi-logout me-1"></i>
                                     <span>Logout</span>
                                 </a>
