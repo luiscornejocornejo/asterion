@@ -28,12 +28,12 @@
                                             intente nuevamente mas tarde</p>
                                     </section>
 
-                                    <section v-else>
+                                    <section v-else> 
                                         <div v-if="loading">Cargando...</div>
 
                                         <div v-else v-for="currency in info " v-bind:style="bgc"
                                             v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.status_id, currency.priority_desc, currency.priority_color, currency.asignado, currency.user_id)"
-                                            class="currency  p-2 mb-3 bg-white rounded " :style="{ 'background-color': currency.chat_status} " style=" box-shadow: 4px 4px rgba(0,0,0,0.25);   ">
+                                            class="currency  p-2 mb-3  rounded " :style="{ 'background-color': currency.chat_status} " >
 
 {{ currency.chat_status }}
                                             <a href="javascript:void(0);" class="text-body">
