@@ -31,9 +31,9 @@
                                     <section v-else> 
                                         <div v-if="loading">Cargando...</div>
 
-                                        <div v-else v-for="currency in info " 
+                                        <div v-else v-for="currency in info "  style="box-shadow: 4px 4px rgba(0,0,0,0.25);background-color:{{currency.chat_status}}"
                                             v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.status_id, currency.priority_desc, currency.priority_color, currency.asignado, currency.user_id)"
-                                            class="currency  p-2 mb-3  rounded " :style="{'background-color': currency.chat_status}">
+                                            class="currency  p-2 mb-3  rounded " >
 
 {{ currency.chat_status }}
                                             <a href="javascript:void(0);" class="text-body">
