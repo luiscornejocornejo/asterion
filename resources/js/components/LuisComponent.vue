@@ -40,7 +40,7 @@
                                               
 
                                               
-
+ 
                                                 <div class="container" style=" 'border-left-color': rgba(0, 255, 0, 0.5);  "
                                                     :style="{ 'background-color': currency.chat_status} ">
                                                     <div class="row">
