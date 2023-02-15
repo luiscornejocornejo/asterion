@@ -1,4 +1,4 @@
-<div class="navbar-custom topnav-navbar" style="backgroung-color:white">
+<div class="navbar-custom topnav-navbar .bg-white" >
                 <div class="container-fluid detached-nav">
 
                     <!-- Topbar Logo -->
