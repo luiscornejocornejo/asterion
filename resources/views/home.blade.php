@@ -14,38 +14,32 @@
         <!-- Page Wrapper -->
         <div id="wrapper">
 
-<?php 
+<?php
 /*
 var_dump($_SERVER['SERVER_NAME'] );
-var_dump($_SERVER['HTTP_HOST'] ); 
+var_dump($_SERVER['HTTP_HOST'] );
 $domainParts = explode('.', $_SERVER['SERVER_NAME']);
-        $subdomain_tmp =  array_shift($domainParts);
-        
-        var_dump($subdomain_tmp );
-        */?>
+$subdomain_tmp =  array_shift($domainParts);
+
+var_dump($subdomain_tmp );
+ */?>
             <!-- Begin Page Content -->
             <div class="container-fluid">
-
-            <iframe
-    src="http://ibm.clientdeck.com.ar/public/dashboard/cdef47f0-e7af-4dd1-87c9-57abcf17fdcc"
-    frameborder="0"
-    width="800"
-    height="600"
-    allowtransparency
-></iframe>
-
+            <div class="embed-container">
+                <iframe src="http://ibm.clientdeck.com.ar/public/dashboard/cdef47f0-e7af-4dd1-87c9-57abcf17fdcc"nframeborder="0" allowfullscreen></iframe>
+            </div>
             <div class="row">
                 <?php
 
-                use App\Models\dashboard;
+use App\Models\dashboard;
 use App\Models\graficos;
 
-                $das = dashboard::datos();
-               // var_dump($das);
-                foreach ($das as $value) {
+$das = dashboard::datos();
+// var_dump($das);
+foreach ($das as $value) {
 
-                ?>
-               
+    ?>
+
                     <div class="col-lg-4">
                         <div class="card border border-primary">
                             <div class="card-header bg-transparent border-primary">
@@ -55,31 +49,31 @@ use App\Models\graficos;
                             </div>
                             <div class="card-body">
                                 <?php
-                                $master=dashboard::reporte($value->masterreport);
-                                $grafi=graficos::find($value->tipo);
-                                   if ($master->servicio <> 2) {
+$master = dashboard::reporte($value->masterreport);
+    $grafi = graficos::find($value->tipo);
+    if ($master->servicio != 2) {
 
-                                    $a = "<a target=_blank  href='/ceviche_view?id=" . $master->id . "'   >" . $master->nombre . "</a>";
-                                    echo $a;
-                                } else {
-                                    $grafico = "grafico";?>
+        $a = "<a target=_blank  href='/ceviche_view?id=" . $master->id . "'   >" . $master->nombre . "</a>";
+        echo $a;
+    } else {
+        $grafico = "grafico";?>
                                     <iframe id="inlineFrameExample"
                                     title="Inline Frame Example"
                                     scrolling="no"
                                     width="300"
                                     height="300"
-                                    src="/ceviche_grafico_iframe?id=<?php echo $master->id;?>&graficos=<?php echo $grafi->nombre;?>">
-                                </iframe>  
+                                    src="/ceviche_grafico_iframe?id=<?php echo $master->id; ?>&graficos=<?php echo $grafi->nombre; ?>">
+                                </iframe>
                                    <?php
-                                }
-                              //  echo $view=dashboard::grafico($master,$value->tipo);
-                                ?>
+}
+    //  echo $view=dashboard::grafico($master,$value->tipo);
+    ?>
                             </div>
                         </div>
                     </div>
 
 
-                <?php } ?>
+                <?php }?>
             </div>
             </div>
         </div>

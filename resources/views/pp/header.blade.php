@@ -58,6 +58,19 @@ foreach ($resultados2 as $valuee2) {
             margin-top: 50px !important;
 
         }
+        .embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+.embed-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
     </style>
     <script>
         function exportTableToExcel(tableID, filename = '') {
