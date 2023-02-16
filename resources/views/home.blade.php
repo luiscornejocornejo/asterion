@@ -25,6 +25,15 @@ $domainParts = explode('.', $_SERVER['SERVER_NAME']);
         */?>
             <!-- Begin Page Content -->
             <div class="container-fluid">
+
+            <iframe
+    src="http://ibm.clientdeck.com.ar/public/dashboard/cdef47f0-e7af-4dd1-87c9-57abcf17fdcc"
+    frameborder="0"
+    width="800"
+    height="600"
+    allowtransparency
+></iframe>
+
             <div class="row">
                 <?php
 
