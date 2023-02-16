@@ -1,5 +1,5 @@
 <template>
-<div class="container-fluid">
+
     <div class="col-xxl-3 col-xl-6 order-xl-1  ">
 
         <div class="bg-primary text-white">
@@ -716,7 +716,7 @@
             </div><!-- /.modal-dialog -->
         </div>
 
-    </div>
+   
 </template>
 <style>
 .row {
