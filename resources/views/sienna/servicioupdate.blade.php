@@ -340,8 +340,8 @@ let valor="";
 </script>
 <br><br><br>
 @include('pp.footer')
-<script src="https://siennasystem.com/assets/libs/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
-<script src="https://siennasystem.com/assets/libs/twitter-bootstrap-wizard/prettify.js"></script>
+<script src="assets/libs/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+<script src="assets/libs/twitter-bootstrap-wizard/prettify.js"></script>
 
 <!-- form wizard init -->
-<script src="https://siennasystem.com/assets/js/pages/form-wizard.init.js"></script>
+<script src="assets/js/pages/form-wizard.init.js"></script>
