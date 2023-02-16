@@ -1,6 +1,6 @@
 <template>
 
-    <div class="col-xxl-3 col-xl-6 order-xl-1  ">
+    <div class="col-xxl-3 col-xl-6 order-xl-1  ml-2">
 
         <div class="bg-primary text-white">
                         <div class="row m-0 p-2">
@@ -458,7 +458,7 @@
         </div>
 
 
-        <div class="col-xxl-3 col-xl-6 order-xl-1 order-xxl-2">
+        <div class="col-xxl-3 col-xl-6 order-xl-1 order-xxl-2 mr-2">
 
             <div v-if="clickeo" class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">
