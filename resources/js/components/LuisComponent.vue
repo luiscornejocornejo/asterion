@@ -482,7 +482,7 @@
                             Bitacora
                         </button>
                     </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse text-white" aria-labelledby="flush-headingOne"
+                    <div id="flush-collapseOne" class="accordion-collapse collapse text-white bg-white" aria-labelledby="flush-headingOne"
                         data-bs-parent="#accordionFlushExample">
                         <div class="card-body py-0 mb-3" data-simplebar="init" style="max-height: 403px;">
                             <div class="simplebar-wrapper" style="margin: 0px -24px;">
@@ -550,7 +550,7 @@
                     </h2>
                     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
                         data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
+                        <div class="accordion-body bg-white">
 
 
                             <div class="row  p-2">
@@ -577,10 +577,7 @@
 
                                                 </button></span></li>
                                         <li class="list-group-item">plan_name: {{ datousuario.plan_name }}</li>
-                                        <li class="list-group-item">lat: {{ datousuario.lat }}</li>
-                                        <li class="list-group-item">long: {{ datousuario.long }}</li>
-                                        <li class="list-group-item">extra1: {{ datousuario.extra1 }}</li>
-                                        <li class="list-group-item">extra2: {{ datousuario.extra2 }}</li>
+                                       
 
                                     </ul>
                                 </div>
