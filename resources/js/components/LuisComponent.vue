@@ -5,7 +5,7 @@
         <div class="bg-primary text-white">
                         <div class="row m-0 p-2">
                             <div class="col-6 align-self-start" style="display:inline-block;">
-                                <p class="t mb-0 float-left">Bandeja de Tickets( {{ sise }})</p>
+                                <p class="t mb-0 float-left">Bandeja de Tickets ({{ sise }})</p>
                             </div>
 
 
