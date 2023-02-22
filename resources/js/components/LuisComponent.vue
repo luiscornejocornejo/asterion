@@ -329,7 +329,7 @@
                 <div class="card-body ">
 
 
-                    <div class="row  m-0 p-2">
+                    <div class="row  m-0 p-1">
                         <div class="col-6 align-self-start" style="display:inline-block; ">
                             <button type="button" class="btn btn-info btn-block w-100" data-bs-toggle="modal"
                                 data-bs-target="#standard-modal3">{{ topic }}</button>
@@ -343,7 +343,7 @@
                         </div>
                     </div>
 
-                    <div class="row m-0 p-2">
+                    <div class="row m-0 p-1">
                         <div class="col-6 align-self-start small" style="display:inline-block;">
                             <ul class="list-group list-group-flush">
                               
@@ -362,7 +362,7 @@
 
 
 
-                    <div class="row  m-0 p-2">
+                    <div class="row  m-0 p-1">
                         <div class="col-6 align-self-start" style="display:inline-block; ">
                             <ul class="list-group list-group-flush">
                               
