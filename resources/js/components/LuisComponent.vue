@@ -499,12 +499,10 @@
                                                             }}
                                                         <div class="timeline-item-info">
                                                             <a href="javascript:void(0);"
-                                                                class="text-info fw-bold mb-1 d-block">{{
-                                                                    extrah.username
-                                                                }}</a>
+                                                                class="text-info fw-bold mb-1 d-block" style="color: #262626;">{{ extrah.timestamp }}</a>
 
                                                             <p class="mb-0 pb-2">
-                                                                <small class="text-muted">{{ extrah.timestamp }}</small>
+                                                                <small class="text-muted">{{ extrah.username}}</small>
                                                             </p>
                                                         </div>
                                                     </div>
