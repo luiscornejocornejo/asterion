@@ -485,7 +485,7 @@
                     <div id="flush-collapseOne" class="accordion-collapse collapse text-white bg-white" aria-labelledby="flush-headingOne"
                         data-bs-parent="#accordionFlushExample">
                         <div class="card-body py-0 mb-3" data-simplebar="init" style="max-height: 403px;">
-                            <div class="simplebar-wrapper" style="margin: 0px -24px;">
+                            <div class="simplebar-wrapper" style="margin: 2px -24px;">
                                 <div class="simplebar-height-auto-observer-wrapper">
                                     <div class="simplebar-height-auto-observer"></div>
                                 </div>
