@@ -321,7 +321,7 @@
                         </div>
 
                         <div class="col-6 align-self-end" style="display:inline-block;">
-                            <span class="float-end text-white ">{{ prioridad }} Ticket:{{ ticket_id }}</span>
+                            <span class="float-end text-white ">{{ prioridad }} TICKET #{{ ticket_id }}</span>
                         </div>
                     </div>
                 </div>
