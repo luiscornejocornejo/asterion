@@ -20,7 +20,7 @@
                         <!-- users -->
                         <div class="row">
                             <div class="col">
-                                <div class="card-body py-0 mb-3" data-simplebar style="max-height: 600px">
+                                <div class="card-body py-0 mb-3" data-simplebar style="max-height: 600px;min-height: 600px;">
 
 
                                     <section v-if="errored">
