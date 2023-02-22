@@ -13,7 +13,7 @@ foreach($resultados as $value){
 }
 
 ?>
-<div class="navbar-custom topnav-navbar bg-white" >
+<div class="navbar-custom topnav-navbar "  style="background-color:#3c4655">
                 <div class="container-fluid detached-nav">
 
                     <!-- Topbar Logo -->
