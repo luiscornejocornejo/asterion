@@ -343,7 +343,7 @@
                         </div>
                     </div>
 
-                    <div class="row  p-2">
+                    <div class="row m-0 p-2">
                         <div class="col-6 align-self-start small" style="display:inline-block;">
                             <ul class="list-group list-group-flush">
                               
