@@ -288,7 +288,7 @@
                                                             </h5>
                                                         </div>
                                                         <div class="col-6 align-self-end" style="display:inline-block;">
-                                                            <span class="float-end text-muted " style="color: #727CF5;font-size: 12px;">{{
+                                                            <span class="float-end  " style="color: #727CF5;font-size: 12px;">{{
                                                                 currency.asignado
                                                             }}</span>
                                                         </div>
