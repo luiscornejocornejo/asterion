@@ -501,8 +501,7 @@
                                                             <a href="javascript:void(0);"
                                                                 class=" fw-bold mb-1 d-block" style="color: #262626;">{{ extrah.timestamp }}</a>
 
-                                                            <p class="mb-0 pb-2">
-                                                                <small class="text-muted">{{ extrah.username}}</small>
+                                                            <p class="mb-0 pb-2"  style="color: #262626;">{{ extrah.username}}
                                                             </p>
                                                         </div>
                                                     </div>
