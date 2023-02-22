@@ -49,7 +49,7 @@
                                                                 {{ currency.topic }}</h5>
                                                         </div>
                                                         <div class="col-6 align-self-end" style="display:inline-block;">
-                                                            <span class="float-end text-muted small">{{
+                                                            <span class="float-end fw-bold" style="color: #98a6ad;font-size: 12px;">{{
                                                                 fecha(currency.creacion)
                                                             }} </span>
                                                         </div>
