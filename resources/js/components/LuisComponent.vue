@@ -59,7 +59,8 @@
                                                     <div class="row">
                                                         <div class="col-6 align-self-start"
                                                             style="display:inline-block;">
-                                                            <h5 class="mt-0 mb-0 small">{{ currency.nombreusuario }}
+                                                            <h5 class="mt-0 mb-0 small" style="color: #98a6ad;">
+                                                                {{ currency.nombreusuario }}
                                                             </h5>
                                                         </div>
                                                         <div class="col-6 align-self-end" style="display:inline-block;">
