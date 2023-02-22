@@ -499,7 +499,7 @@
 
                                                         <div class="timeline-item-info">
                                                             <a href="javascript:void(0);"
-                                                                class=" fw-bold mb-1 d-block" style="color: #262626;font-size: 12px;">{{ extrah.timestamp }}</a>
+                                                                class="fw-light  mb-1 d-block" style="color: #262626;font-size: 12px;">{{ extrah.timestamp }}</a>
 
                                                             <p class="mb-0 pb-2"  style="color: #262626;font-size: 14px;">{{ extrah.username}}
                                                             </p>
