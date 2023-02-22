@@ -33,7 +33,7 @@
 
                                         <div v-else v-for="currency in info "  style="box-shadow: 4px 4px rgba(0,0,0,0.25);"  
                                           :style="{ 'background-color': currency.chat_status, 'border-left': 'solid','border-left': '5px', 'border-left': ['solid','5px','solid 5px'+currency.priority_color]} "
-                                            v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.status_id, currency.priority_desc, currency.priority_color, currency.asignado, currency.user_id)"
+                                            v-on:click="pasar(currency.depto, currency.nombreusuario, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.status_id, currency.priority_desc, currency.priority_color, currency.asignado, currency.user_id,currency.chat_status)"
                                             class="currency  p-2 mb-3  rounded " >
 
                                             <a href="javascript:void(0);" class="text-body">
@@ -322,7 +322,7 @@
                         </div>
 
                         <div class="col-6 align-self-end" style="display:inline-block;">
-                            <span class="float-end text-white fw-bold  "><span :style="{ 'color':  'red'}" >{{ prioridad }}</span> TICKET #{{ ticket_id }}</span>
+                            <span class="float-end text-white fw-bold  "><span :style="{ 'color':  laprio}" >{{ prioridad }}</span> TICKET #{{ ticket_id }}</span>
                         </div>
                     </div>
                 </div>
@@ -758,6 +758,7 @@ export default {
             extrauser: null,
             extrauserf: null,
             myMap: null,
+            laprio:null,
 
             prioridad: null,
             colorestado: null,
@@ -915,10 +916,11 @@ export default {
                 zoom: 5,
             }
         },
-        pasar: function (a, b, c, d, e, f, g, h, i, j, k, l) {
+        pasar: function (a, b, c, d, e, f, g, h, i, j, k, l,m) {
             this.clickeo = true;
             this.active = !this.active;
             this.ticket_id = d;
+            this.laprio=m,
             console.log(this.ticket_id)
             this.topic = g;
             this.depto = a;
