@@ -5,7 +5,7 @@
         <div class="bg-primary text-white">
                         <div class="row m-0 p-2">
                             <div class="col-6 align-self-start" style="display:inline-block;">
-                                <p class="t mb-0 float-left">Bandeja de Tickets ({{ sise }})</p>
+                                <p class="t mb-0 float-left  fw-bold">Bandeja de Tickets ({{ sise }})</p>
                             </div>
 
 
@@ -318,11 +318,11 @@
                 <div class="bg-primary text-white">
                     <div class="row  m-0 p-2">
                         <div class="col-6 align-self-start" style="display:inline-block;">
-                            <span class="float-start text-white ">{{ nombreusuario }} </span>
+                            <span class="float-start text-white fw-bold ">{{ nombreusuario.toUpperCase() }} </span>
                         </div>
 
                         <div class="col-6 align-self-end" style="display:inline-block;">
-                            <span class="float-end text-white ">{{ prioridad }} TICKET #{{ ticket_id }}</span>
+                            <span class="float-end text-white fw-bold  "><p :style="{ 'background-color':  'red'}" >{{ prioridad }}</p> TICKET #{{ ticket_id }}</span>
                         </div>
                     </div>
                 </div>
