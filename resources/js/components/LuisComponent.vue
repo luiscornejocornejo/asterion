@@ -351,7 +351,7 @@
                             </ul>
                         </div>
                         <div class="col-6 align-self-end" style="display:inline-block;">
-                            <button type="button" class="btn btn-success w-100 p-2 btn-block" data-bs-toggle="modal"
+                            <button type="button" class="btn btn-success w-100  btn-block" data-bs-toggle="modal"
                                 data-bs-target="#standard-modal2">{{ depto }}</button>
                             <spam id="departamento"></spam>
                            
@@ -370,7 +370,7 @@
                           </ul>
                         </div>
                         <div class="col-6 align-self-end" style="display:inline-block; ">
-                            <button type="button" class="btn btn-success w-100 p-2 btn-block" data-bs-toggle="modal"
+                            <button type="button" class="btn btn-success w-100  btn-block" data-bs-toggle="modal"
                                 data-bs-target="#standard-modal4">{{ asignado }}</button>
 
                         </div>
