@@ -494,14 +494,14 @@
                                                         <i v-if="extrah.name == 'edited'"
                                                             class="mdi mdi-account-edit bg-info-lighten text-info timeline-icon"></i>
                                                         <i v-if="extrah.name == 'reopened'" 
-                                                            class="mdi mdi-openid bg-info-lighten text-info timeline-icon"></i><p style="color: #727CF5;">{{extrah.name }}</p>
+                                                            class="mdi mdi-openid bg-info-lighten text-info timeline-icon"></i><p style="color: #727CF5;font-size: 14px;">{{extrah.name }}</p>
 
 
                                                         <div class="timeline-item-info">
                                                             <a href="javascript:void(0);"
-                                                                class=" fw-bold mb-1 d-block" style="color: #262626;">{{ extrah.timestamp }}</a>
+                                                                class=" fw-bold mb-1 d-block" style="color: #262626;font-size: 12px;">{{ extrah.timestamp }}</a>
 
-                                                            <p class="mb-0 pb-2"  style="color: #262626;">{{ extrah.username}}
+                                                            <p class="mb-0 pb-2"  style="color: #262626;font-size: 14px;">{{ extrah.username}}
                                                             </p>
                                                         </div>
                                                     </div>
