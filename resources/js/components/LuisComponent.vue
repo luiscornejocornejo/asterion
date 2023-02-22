@@ -493,10 +493,10 @@
                                                             class="mdi mdi-timer-sand-complete bg-info-lighten text-info timeline-icon"></i>
                                                         <i v-if="extrah.name == 'edited'"
                                                             class="mdi mdi-account-edit bg-info-lighten text-info timeline-icon"></i>
-                                                        <i v-if="extrah.name == 'reopened'"
-                                                            class="mdi mdi-openid bg-info-lighten text-info timeline-icon"></i>{{
-                                                                extrah.name
-                                                            }}
+                                                        <i v-if="extrah.name == 'reopened'" 
+                                                            class="mdi mdi-openid bg-info-lighten text-info timeline-icon"></i><p style="color: #727CF5;">{{extrah.name }}</p>
+
+
                                                         <div class="timeline-item-info">
                                                             <a href="javascript:void(0);"
                                                                 class=" fw-bold mb-1 d-block" style="color: #262626;">{{ extrah.timestamp }}</a>
