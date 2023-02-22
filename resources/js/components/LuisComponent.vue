@@ -348,7 +348,6 @@
                             <ul class="list-group list-group-flush">
                               
                                 <li class="list-group-item">Fecha de creacion: {{ creacion }} </li>
-                                <li class="list-group-item">Fecha de ultima Modificacion: {{ lastupdate }}</li>
                             </ul>
                         </div>
                         <div class="col-6 align-self-end" style="display:inline-block;">
@@ -365,7 +364,10 @@
 
                     <div class="row  m-0 p-2">
                         <div class="col-6 align-self-start" style="display:inline-block; ">
-                        
+                            <ul class="list-group list-group-flush">
+                              
+                              <li class="list-group-item">Fecha de ultima Modificacion: {{ lastupdate }}</li>
+                          </ul>
                         </div>
                         <div class="col-6 align-self-end" style="display:inline-block; ">
                             <button type="button" class="btn btn-success w-100 p-2 btn-block" data-bs-toggle="modal"
