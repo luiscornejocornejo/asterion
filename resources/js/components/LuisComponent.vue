@@ -494,7 +494,7 @@
                                                         <i v-if="extrah.name == 'edited'"
                                                             class="mdi mdi-account-edit bg-info-lighten text-info timeline-icon"></i>
                                                         <i v-if="extrah.name == 'reopened'" 
-                                                            class="mdi mdi-openid bg-info-lighten text-info timeline-icon "></i> <p style="color: #727CF5;font-size: 14px;">{{extrah.name.toUpperCase() }}</p>
+                                                            class="mdi mdi-openid bg-info-lighten text-info timeline-icon "></i> <p class="mb-1" style="color: #727CF5;font-size: 14px;">{{extrah.name.toUpperCase() }}</p>
 
  
                                                         <div class="timeline-item-info">
