@@ -463,7 +463,7 @@
             <div v-if="clickeo" class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header bg-primary text-white" id="flush-headingOne">
-                        <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse"
+                        <button class="accordion-button collapsed text-white bg-primary" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                             Bitacora
                         </button>
@@ -529,7 +529,7 @@
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header  bg-primary text-white" id="flush-headingTwo">
-                        <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse"
+                        <button class="accordion-button collapsed text-white bg-primary" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                             Cliente
                         </button>
