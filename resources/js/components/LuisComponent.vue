@@ -468,7 +468,7 @@
                             Bitacora
                         </button>
                     </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                    <div id="flush-collapseOne" class="accordion-collapse collapse text-white" aria-labelledby="flush-headingOne"
                         data-bs-parent="#accordionFlushExample">
                         <div class="card-body py-0 mb-3" data-simplebar="init" style="max-height: 403px;">
                             <div class="simplebar-wrapper" style="margin: 0px -24px;">
