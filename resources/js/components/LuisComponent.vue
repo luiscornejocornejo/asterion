@@ -322,7 +322,7 @@
                         </div>
 
                         <div class="col-6 align-self-end" style="display:inline-block;">
-                            <span class="float-end text-white fw-bold  "><p :style="{ 'color':  'red'}" >{{ prioridad }}</p> TICKET #{{ ticket_id }}</span>
+                            <span class="float-end text-white fw-bold  "><span :style="{ 'color':  'red'}" >{{ prioridad }}</span> TICKET #{{ ticket_id }}</span>
                         </div>
                     </div>
                 </div>
