@@ -66,7 +66,7 @@ echo '
  else
 {
 echo '
-<meta http-equiv="refresh" content="100">
+<meta http-equiv="refresh" content="1000">
 <center>
 <table style="width: 100px; height: 100px; margin-left: auto; margin-right: auto;">
   <tr>
