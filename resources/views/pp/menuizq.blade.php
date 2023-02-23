@@ -21,7 +21,12 @@ $resultados = DB::select($query);
                     <span data-key="t-dashboard">Dashboard</span>
                 </a>
             </li>
-
+            <li>
+                <a target="_self" href="/estado">
+                    <i data-feather="tv"></i>
+                    <span data-key="t-dashboard">Estado</span>
+                </a>
+            </li>
             <?php
             if ($categoria == 1) { ?>
                 <li>

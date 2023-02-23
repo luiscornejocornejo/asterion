@@ -55,6 +55,9 @@ Route::get('/home', function () {
    Route::get('/ttt', function () {
     return view('/sienna/tt');
 });
+Route::get('/estado', function () {
+    return view('/estado');
+});
 Route::get('/sienna','App\Http\Controllers\siennaController@principal')->middleware('adminsienna');
 Route::post('/sienna','App\Http\Controllers\siennaController@servicio')->middleware('adminsienna');
 Route::get('/serviciocreate','App\Http\Controllers\siennaController@serviciocreate')->middleware('adminsienna');
