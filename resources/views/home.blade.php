@@ -25,7 +25,7 @@ var_dump($subdomain_tmp );
  */?>
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <iframe style="width: 1400px; heigth: 1400px; "  src="http://ibm.clientdeck.com.ar/public/dashboard/cdef47f0-e7af-4dd1-87c9-57abcf17fdcc"  frameborder="0" allowfullscreen></iframe>
+                <iframe style="width: 1400px; height: 1400px !important; "  src="http://ibm.clientdeck.com.ar/public/dashboard/cdef47f0-e7af-4dd1-87c9-57abcf17fdcc"  frameborder="0" allowfullscreen></iframe>
             <div class="row">
                 <?php
 
