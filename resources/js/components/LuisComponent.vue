@@ -612,7 +612,7 @@
         </div>
 
 
-        <div id="standard-modal3" class="modal fade bs-example-modal-center3" tabindex="-1" role="dialog"
+        <div id="standard-modal3" class="modal fade bs-example-modal-center3 bg-primary text-white" tabindex="-1" role="dialog"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -643,7 +643,7 @@
         </div>
 
 
-        <div id="standard-modal" class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-hidden="true">
+        <div id="standard-modal" class="modal fade bs-example-modal-center bg-primary text-white" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -669,7 +669,7 @@
             </div><!-- /.modal-dialog -->
         </div>
 
-        <div id="standard-modal2" class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-hidden="true">
+        <div id="standard-modal2" class="modal fade bs-example-modal-center bg-primary text-white" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -695,7 +695,7 @@
             </div><!-- /.modal-dialog -->
         </div>
 
-        <div id="standard-modal4" class="modal fade bs-example-modal-center" tabindex="-1" role="dialog"
+        <div id="standard-modal4" class="modal fade bs-example-modal-center bg-primary text-white" tabindex="-1" role="dialog"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
