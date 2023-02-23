@@ -738,11 +738,10 @@
 import { GoogleMap, Marker } from "vue3-google-map";
 
 export default {
-    lat1:-34.58845756270908,
-    log1:-58.44093554428371,
+   
     components: { GoogleMap, Marker },
     setup() {
-        const center = { lat:lat1 , lng: log1 };
+        const center = { lat:-34.58845756270908 , lng: -58.44093554428371 };
 
         return { center };
     },
@@ -750,8 +749,7 @@ export default {
     data() {
         return {
 
-            lat1:-34.58845756270908,
-            log1:-58.44093554428371,
+           
             csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
             user: document.querySelector('meta[name="user"]').getAttribute('content'),
             colordeprueba:'#624ec6',
