@@ -1,6 +1,6 @@
 <template>
 
-    <div class="col-xxl-3 col-xl-6 order-xl-1  ">
+    <div class="col-xxl-3 col-xl-6 order-xl-1  " style="max-height: 900px;min-height: 900px;">
 
         <div class="bg-primary text-white">
                         <div class="row m-0 p-2">
@@ -313,7 +313,7 @@
         </div>
 
 
-        <div class="col-xxl-6 col-xl-12 order-xl-2 ">
+        <div class="col-xxl-6 col-xl-12 order-xl-2 " style="max-height: 900px;min-height: 900px;">
             <div v-if="clickeo" class="card ">
                 <div class="bg-primary text-white">
                     <div class="row  m-0 p-2">
@@ -471,7 +471,7 @@
         </div>
 
 
-        <div class="col-xxl-3 col-xl-6 order-xl-1 order-xxl-2">
+        <div class="col-xxl-3 col-xl-6 order-xl-1 order-xxl-2" style="max-height: 900px;min-height: 900px;">
 
             <div v-if="clickeo" class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">
