@@ -627,7 +627,7 @@
                             <div v-for="topic in topics ">
 
                                 <input :value="topic.topic_id" v-model="topic.topic_id" class="form-radio" type="radio"
-                                    name="statos">{{ topic.topic }}
+                                    name="statos"><span class=" fw-bold" style="color: #98a6ad;font-size: 12px;">{{ topic.topic  }}</span>
                                     <br><br>
                             </div>
 
@@ -657,7 +657,7 @@
                             <div v-for="ost_ticket_statu in ost_ticket_status ">
 
                                 <input :value="ost_ticket_statu.id" v-model="ost_ticket_statu.id" class="form-radio"
-                                    type="radio" name="statos">{{ ost_ticket_statu.name }}
+                                    type="radio" name="statos"><span class=" fw-bold" style="color: #98a6ad;font-size: 12px;">{{ ost_ticket_statu.name  }}</span>
                                     <br><br>
                             </div>
                             <button type="submit" class="btn btn-success
@@ -683,7 +683,8 @@
                             <div v-for="department in departments ">
 
                                 <input :value="department.id" v-model="department.id" class="form-radio" type="radio"
-                                    name="statos">{{ department.name }}
+                                    name="statos">
+                                    <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;">{{ department.name  }}</span>
                                     <br><br>
                             </div>
                             <button type="submit" class="btn btn-success
@@ -710,9 +711,7 @@
                             <div v-for="staff in staffs ">
 
                                 <input :value="staff.id" v-model="staff.id" class="form-radio" type="radio"
-                                    name="statos">{{
-        staff.name
-                                    }} <br><br>
+                                    name="statos"> <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;">{{ staff.name  }}</span> <br><br>
                             </div>
                             <button type="submit" class="btn btn-success
                                 waves-effect waves-light">Cambiar</button>
