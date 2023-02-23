@@ -41,7 +41,7 @@ $result = str_replace ('"',"", $json2);
 
 if ($result == 'true') {
 echo '
-<meta http-equiv="refresh" content="10">
+<meta http-equiv="refresh" content="1000">
 <center>
 <table style="width: 100px; height: 100px; margin-left: auto; margin-right: auto;">
   <tr>
@@ -53,7 +53,7 @@ echo '
 }
 elseif ($result == 'false') {
 echo '
-<meta http-equiv="refresh" content="10">
+<meta http-equiv="refresh" content="1000">
 <center>
 <table style="width: 100px; height: 100px; margin-left: auto; margin-right: auto;">
   <tr>
