@@ -81,7 +81,7 @@ $maytapiNumber = "2231";
 $maytapiToken = "66bf7ec4-241b-4418-87cb-3ace5ddad33f";
 $salida2=shell_exec('curl -X GET "https://api.maytapi.com/api/'.$maytapiProduct.'/'.$maytapiNumber.'/qrCode" -H "accept: application/json" -H "x-maytapi-key: '.$maytapiToken.'"');
 header('Content-type: image/png');
-echo $salida2;
+//echo $salida2;
 ?>
 </div>
 
