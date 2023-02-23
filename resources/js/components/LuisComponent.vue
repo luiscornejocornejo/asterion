@@ -385,56 +385,56 @@
                         </div>
                         <div v-if="source == 'Google Business '">
                             <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="900 px" height="400 px" frameborder='0'
+                                <iframe max-height="200px" width="880 px" height="400 px" frameborder='0'
                                     allowfullscreen v-bind:src="ext.chat_link"></iframe>
                             </div>
                         </div>
                         <div v-if="source == 'Teams'">
                             <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="900 px" height="400 px" frameborder='0'
+                                <iframe max-height="200px" width="880 px" height="400 px" frameborder='0'
                                     allowfullscreen v-bind:src="ext.chat_link"></iframe>
                             </div>
                         </div>
 
                         <div v-if="source == 'Slack'">
                             <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="900 px" height="400 px" frameborder='0'
+                                <iframe max-height="200px" width="880 px" height="400 px" frameborder='0'
                                     allowfullscreen v-bind:src="ext.chat_link"></iframe>
                             </div>
                         </div>
                         <div v-if="source == 'Discord'">
                             <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="900 px" height="400 px" frameborder='0'
+                                <iframe max-height="200px" width="880 px" height="400 px" frameborder='0'
                                     allowfullscreen v-bind:src="ext.chat_link"></iframe>
                             </div>
                         </div>
                         <div v-if="source == 'Web'">
                             <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="900 px" height="400 px" frameborder='0'
+                                <iframe max-height="200px" width="880 px" height="400 px" frameborder='0'
                                     allowfullscreen v-bind:src="ext.chat_link"></iframe>
                             </div>
                         </div>
                         <div v-if="source == 'RCS'">
                             <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="900 px" height="400 px" frameborder='0'
+                                <iframe max-height="200px" width="880 px" height="400 px" frameborder='0'
                                     allowfullscreen v-bind:src="ext.chat_link"></iframe>
                             </div>
                         </div>
                         <div v-if="source == 'SMS'">
                             <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="900 px" height="400 px" frameborder='0'
+                                <iframe max-height="200px" width="880 px" height="400 px" frameborder='0'
                                     allowfullscreen v-bind:src="ext.chat_link"></iframe>
                             </div>
                         </div>
                         <div v-if="source == 'Instagram'">
                             <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="900 px" height="400 px" frameborder='0'
+                                <iframe max-height="200px" width="880 px" height="400 px" frameborder='0'
                                     allowfullscreen v-bind:src="ext.chat_link"></iframe>
                             </div>
                         </div>
                         <div v-if="source == 'Facebook'">
                             <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="900 px" height="400 px" frameborder='0'
+                                <iframe max-height="200px" width="880 px" height="400 px" frameborder='0'
                                     allowfullscreen v-bind:src="ext.chat_link"></iframe>
                             </div>
                         </div>
@@ -442,13 +442,13 @@
                         <div v-if="source == 'Telegram'">
 
                             <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="900 px" height="400 px" frameborder='0'
+                                <iframe max-height="200px" width="880 px" height="400 px" frameborder='0'
                                     allowfullscreen v-bind:src="ext.chat_link"></iframe>
                             </div>
                         </div>
                         <div v-if="source == 'Whatsapp'">
                             <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe class="w-100" max-height="200px" width="900 px" height="400 px" frameborder='0'
+                                <iframe class="w-100" max-height="200px" width="880 px" height="400 px" frameborder='0'
                                     allowfullscreen v-bind:src="ext.chat_link"></iframe>
                             </div>
                         </div>
