@@ -24,23 +24,25 @@ $subdomain_tmp =  array_shift($domainParts);
 var_dump($subdomain_tmp );
  */?>
             <!-- Begin Page Content -->
-            <div>
+
+        
+            <div id="semaforo">
 
 
 <?php
-$clientName ="soporte";// $_ENV['CLIENT_NAME'];
-$maytapiNumber="2231";// $_ENV['MAYTAPI_ID'];
-$maytapiProduct="3336d0b5-4e23-4a50-8243-f76dfd70dddd";// $_ENV['MAYTAPI_PRODUCT_ID'];
-$maytapiToken="66bf7ec4-241b-4418-87cb-3ace5ddad33f" ;// $_ENV['MAYTAPI_TOKEN'];
-$salida=shell_exec('curl -X GET "https://api.maytapi.com/api/'.$maytapiProduct.'/'.$maytapiNumber.'/status" -H "accept: application/json" -H "x-maytapi-key: '.$maytapiToken.'"');
-$json=json_decode($salida, TRUE);
-$json2=json_encode($json['status']['loggedIn']);
+$clientName = "soporte"; // $_ENV['CLIENT_NAME'];
+$maytapiNumber = "2231"; // $_ENV['MAYTAPI_ID'];
+$maytapiProduct = "3336d0b5-4e23-4a50-8243-f76dfd70dddd"; // $_ENV['MAYTAPI_PRODUCT_ID'];
+$maytapiToken = "66bf7ec4-241b-4418-87cb-3ace5ddad33f"; // $_ENV['MAYTAPI_TOKEN'];
+$salida = shell_exec('curl -X GET "https://api.maytapi.com/api/' . $maytapiProduct . '/' . $maytapiNumber . '/status" -H "accept: application/json" -H "x-maytapi-key: ' . $maytapiToken . '"');
+$json = json_decode($salida, true);
+$json2 = json_encode($json['status']['loggedIn']);
 
-$result = str_replace ('"',"", $json2);
+$result = str_replace('"', "", $json2);
 //echo $result;
 
 if ($result == 'true') {
-echo '
+    echo '
 <meta http-equiv="refresh" content="1000">
 <center>
 <table style="width: 100px; height: 100px; margin-left: auto; margin-right: auto;">
@@ -50,22 +52,19 @@ echo '
   </tr>
 </table>
 </center>';
-}
-elseif ($result == 'false') {
-echo '
+} elseif ($result == 'false') {
+    echo '
 <meta http-equiv="refresh" content="1000">
 <center>
 <table style="width: 100px; height: 100px; margin-left: auto; margin-right: auto;">
   <tr>
     <td style="padding:0 50px 0 50px;"><p style="text-align: center;"><img src="img/semaforo_rojo.png" alt="Estado de Servicio no ok" align="center" width="150" height="264"></p></td>
-    <td style="padding:0 50px 0 50px;"><p style="text-align: justify;"><iframe src="https://'.$clientName.'.clientdeck.com.ar/maytapiqr.php" align="center" frameBorder="0" width="264" height="264" overflow:scroll></iframe></p></td>
+    <td style="padding:0 50px 0 50px;"><p style="text-align: justify;"><iframe src="https://' . $clientName . '.clientdeck.com.ar/maytapiqr.php" align="center" frameBorder="0" width="264" height="264" overflow:scroll></iframe></p></td>
   </tr>
 </table>
 </center>';
-}
- else
-{
-echo '
+} else {
+    echo '
 <meta http-equiv="refresh" content="1000">
 <center>
 <table style="width: 100px; height: 100px; margin-left: auto; margin-right: auto;">
@@ -79,6 +78,16 @@ echo '
 ?>
 
             </div>
+
+            <div id="qr">
+
+<?php
+
+$salida=shell_exec('curl -X GET "https://api.maytapi.com/api/'.$maytapiProduct.'/'.$maytapiNumber.'/qrCode" -H "accept: application/json" -H "x-maytapi-key: '.$maytapiToken.'"');
+header('Content-type: image/png');
+echo $salida;
+?>
+</div>
             <div class="container-fluid">
                 <iframe style="width: 1400px; height: 1400px !important; "  src="http://ibm.clientdeck.com.ar/public/dashboard/cdef47f0-e7af-4dd1-87c9-57abcf17fdcc"  frameborder="0" allowfullscreen></iframe>
             <div class="row">
