@@ -588,7 +588,7 @@
                                 <div class="card-body">
 
                                     <GoogleMap api-key="AIzaSyCpW_qQg8n6GJZ5o22J9MdQqXrzVdx-UHY"
-                                        style="width:450px;height:200px;" :center="center" :zoom="15">
+                                        style="width:420px;height:220px;" :center="center" :zoom="15">
                                         <Marker :options="{ position: center }" />
                                     </GoogleMap>
                                 </div>
