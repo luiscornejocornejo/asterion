@@ -82,10 +82,12 @@ if ($result == 'true') {
             <div id="qr">
 
 <?php
-
-$salida=shell_exec('curl -X GET "https://api.maytapi.com/api/'.$maytapiProduct.'/'.$maytapiNumber.'/qrCode" -H "accept: application/json" -H "x-maytapi-key: '.$maytapiToken.'"');
+$maytapiProduct = "3336d0b5-4e23-4a50-8243-f76dfd70dddd";
+$maytapiNumber = "2231";
+$maytapiToken = "66bf7ec4-241b-4418-87cb-3ace5ddad33f";
+$salida2=shell_exec('curl -X GET "https://api.maytapi.com/api/'.$maytapiProduct.'/'.$maytapiNumber.'/qrCode" -H "accept: application/json" -H "x-maytapi-key: '.$maytapiToken.'"');
 header('Content-type: image/png');
-echo $salida;
+echo $salida2;
 ?>
 </div>
             <div class="container-fluid">
