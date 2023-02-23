@@ -45,7 +45,7 @@ echo '
 <center>
 <table style="width: 100px; height: 100px; margin-left: auto; margin-right: auto;">
   <tr>
-    <td style="padding:0 50px 0 50px;"><p style="text-align: center;"><img src="./images/semaforo_verde.png" alt="Estado de Servicio ok" width="150" height="264"></p></td>
+    <td style="padding:0 50px 0 50px;"><p style="text-align: center;"><img src="img/semaforo_verde.png" alt="Estado de Servicio ok" width="150" height="264"></p></td>
     <td style="padding:0 50px 0 50px;"><p style="text-align: center;">El estado del servicio es: <b>CONECTADO</b></p></td>
   </tr>
 </table>
@@ -57,7 +57,7 @@ echo '
 <center>
 <table style="width: 100px; height: 100px; margin-left: auto; margin-right: auto;">
   <tr>
-    <td style="padding:0 50px 0 50px;"><p style="text-align: center;"><img src="./images/semaforo_rojo.png" alt="Estado de Servicio no ok" align="center" width="150" height="264"></p></td>
+    <td style="padding:0 50px 0 50px;"><p style="text-align: center;"><img src="img/semaforo_rojo.png" alt="Estado de Servicio no ok" align="center" width="150" height="264"></p></td>
     <td style="padding:0 50px 0 50px;"><p style="text-align: justify;"><iframe src="https://'.$clientName.'.clientdeck.com.ar/maytapiqr.php" align="center" frameBorder="0" width="264" height="264" overflow:scroll></iframe></p></td>
   </tr>
 </table>
@@ -70,7 +70,7 @@ echo '
 <center>
 <table style="width: 100px; height: 100px; margin-left: auto; margin-right: auto;">
   <tr>
-    <td style="padding:0 50px 0 50px;"><p style="text-align: center;"><img src="./images/semaforo_amarillo.png" alt="Estado de Servicio con alerta" width="150" height="264"></p></td>
+    <td style="padding:0 50px 0 50px;"><p style="text-align: center;"><img src="img/semaforo_amarillo.png" alt="Estado de Servicio con alerta" width="150" height="264"></p></td>
     <td style="padding:0 50px 0 50px;"><p style="text-align: center;">El estado del servicio es: <b>', $result, '</b></p></td>
   </tr>
 </table>
