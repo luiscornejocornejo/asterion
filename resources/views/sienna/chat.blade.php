@@ -25,7 +25,7 @@
                
 
                     <div id="App">
-                        <div class="row">
+                        <div class="row m-1">
                             <luis-component></luis-component>
                             <centro-component></centro-component>
                             <final-component></final-component>
