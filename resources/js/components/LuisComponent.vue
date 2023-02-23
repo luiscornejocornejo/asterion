@@ -350,7 +350,7 @@
                                 <li class="list-group-item">Fecha de creacion: {{ creacion }} </li>
                             </ul>
                         </div>
-                        <div v-if="depto==''" class="col-6 align-self-end" style="display:inline-block;">
+                        <div v-if="depto===''" class="col-6 align-self-end" style="display:inline-block;">
                             <button type="button" class="btn btn-success w-100  btn-block" data-bs-toggle="modal"
                                 data-bs-target="#standard-modal2">{{ depto }} sin asignar depto</button>
                             <spam id="departamento"></spam>
