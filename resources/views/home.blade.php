@@ -24,6 +24,61 @@ $subdomain_tmp =  array_shift($domainParts);
 var_dump($subdomain_tmp );
  */?>
             <!-- Begin Page Content -->
+            <div>
+
+
+<?php
+$clientName ="soporte";// $_ENV['CLIENT_NAME'];
+$maytapiNumber="2231";// $_ENV['MAYTAPI_ID'];
+$maytapiProduct="3336d0b5-4e23-4a50-8243-f76dfd70dddd";// $_ENV['MAYTAPI_PRODUCT_ID'];
+$maytapiToken="66bf7ec4-241b-4418-87cb-3ace5ddad33f" ;// $_ENV['MAYTAPI_TOKEN'];
+$salida=shell_exec('curl -X GET "https://api.maytapi.com/api/'.$maytapiProduct.'/'.$maytapiNumber.'/status" -H "accept: application/json" -H "x-maytapi-key: '.$maytapiToken.'"');
+$json=json_decode($salida, TRUE);
+$json2=json_encode($json['status']['loggedIn']);
+
+$result = str_replace ('"',"", $json2);
+//echo $result;
+
+if ($result == 'true') {
+echo '
+<meta http-equiv="refresh" content="10">
+<center>
+<table style="width: 100px; height: 100px; margin-left: auto; margin-right: auto;">
+  <tr>
+    <td style="padding:0 50px 0 50px;"><p style="text-align: center;"><img src="./images/semaforo_verde.png" alt="Estado de Servicio ok" width="150" height="264"></p></td>
+    <td style="padding:0 50px 0 50px;"><p style="text-align: center;">El estado del servicio es: <b>CONECTADO</b></p></td>
+  </tr>
+</table>
+</center>';
+}
+elseif ($result == 'false') {
+echo '
+<meta http-equiv="refresh" content="10">
+<center>
+<table style="width: 100px; height: 100px; margin-left: auto; margin-right: auto;">
+  <tr>
+    <td style="padding:0 50px 0 50px;"><p style="text-align: center;"><img src="./images/semaforo_rojo.png" alt="Estado de Servicio no ok" align="center" width="150" height="264"></p></td>
+    <td style="padding:0 50px 0 50px;"><p style="text-align: justify;"><iframe src="https://'.$clientName.'.clientdeck.com.ar/maytapiqr.php" align="center" frameBorder="0" width="264" height="264" overflow:scroll></iframe></p></td>
+  </tr>
+</table>
+</center>';
+}
+ else
+{
+echo '
+<meta http-equiv="refresh" content="10">
+<center>
+<table style="width: 100px; height: 100px; margin-left: auto; margin-right: auto;">
+  <tr>
+    <td style="padding:0 50px 0 50px;"><p style="text-align: center;"><img src="./images/semaforo_amarillo.png" alt="Estado de Servicio con alerta" width="150" height="264"></p></td>
+    <td style="padding:0 50px 0 50px;"><p style="text-align: center;">El estado del servicio es: <b>', $result, '</b></p></td>
+  </tr>
+</table>
+</center>';
+}
+?>
+
+            </div>
             <div class="container-fluid">
                 <iframe style="width: 1400px; height: 1400px !important; "  src="http://ibm.clientdeck.com.ar/public/dashboard/cdef47f0-e7af-4dd1-87c9-57abcf17fdcc"  frameborder="0" allowfullscreen></iframe>
             <div class="row">
