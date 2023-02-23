@@ -738,6 +738,8 @@
 import { GoogleMap, Marker } from "vue3-google-map";
 
 export default {
+    lat1:-34.58845756270908,
+    log1:-58.44093554428371,
     components: { GoogleMap, Marker },
     setup() {
         const center = { lat:lat1 , lng: log1 };
