@@ -52,7 +52,7 @@ class LoginController extends Controller
 
                 $idusuario = $value->id;
                 $categoria = $value->categoria;
-                $nombreusuario = $value->name . " " . $value->last_name;
+                $nombreusuario = $value->nombre . " " . $value->last_name;
                 session(['idusuario' => $idusuario]);
                 session(['categoria' => $categoria]);
                 session(['nombreusuario' => $nombreusuario]);
