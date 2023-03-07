@@ -90,6 +90,10 @@ Route::post('/eliminarregistro','App\Http\Controllers\siennaController@delete');
 Route::get('/endpointentrantes','App\Http\Controllers\siennaController@endpointentrantes');
 Route::get('/profile','App\Http\Controllers\LoginController@profile');
 Route::post('/actualizardatos','App\Http\Controllers\LoginController@actualizardatos');
+
+Route::get('/chatsienna','App\Http\Controllers\ChatsiennaController@index');
+
+
 Route::get('/chat','App\Http\Controllers\ChatController@index');
 Route::post('/chatcambiarestado','App\Http\Controllers\ChatController@cambiarestado');
 Route::post('/chatcambiardeptos','App\Http\Controllers\ChatController@cambiardepto');
