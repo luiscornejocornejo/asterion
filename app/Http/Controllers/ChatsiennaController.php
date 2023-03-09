@@ -89,11 +89,10 @@ class ChatsiennaController extends Controller
   public function index(Request $request)
   {
 
-    echo $id = $request->id;
+     $id = $request->id;
     $fields2 = $this->select2($id);
-    var_dump($fields2);
- //   return view('sienna/chatsienna')
-   //   ->with('datos', $fields2);
+   return view('sienna/chatsienna')
+      ->with('datos', $fields2);
   }
 
 

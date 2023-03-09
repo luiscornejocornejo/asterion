@@ -26,9 +26,8 @@
 
                     <div id="App">
                         <div class="row m-1">
-                            <luis-component></luis-component>
-                            <centro-component></centro-component>
-                            <final-component></final-component>
+                            <cliente-component></cliente-component>
+                         
                         </div> <!-- end row-->
 
                         <!-- end chat users-->
