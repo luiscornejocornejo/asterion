@@ -91,9 +91,9 @@ class ChatsiennaController extends Controller
 
     echo $id = $request->id;
     $fields2 = $this->select2($id);
-    dd($fields2);
-    return view('sienna/chatsienna')
-      ->with('datos', $fields2);
+    var_dump($fields2);
+ //   return view('sienna/chatsienna')
+   //   ->with('datos', $fields2);
   }
 
 
