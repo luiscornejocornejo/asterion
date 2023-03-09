@@ -1,0 +1,37 @@
+
+
+select a.
+
+select  a.user_id,a.ticket_id,e.name as status_id,a.ticket_id,c.topic,b.name as nombreusuario,a.number,a.lastupdate,d.name as depto,a.source,
+ a.created as creacion, i.priority_desc,i.priority_color, concat(f.firstname, ' ', f.lastname) as asignado,
+ (case when h.chat_status=1 then 'rgba(249, 188, 13, 0.1804) '
+ else 'white  ' end) as chat_status
+
+
+from ost_ticket a
+               left join ost_user b on b.id=a.user_id
+               left join ost_help_topic c
+                on 
+                a.topic_id=c.topic_id
+              left  join ost_department d
+                on d.id=a.dept_id
+
+left join ost_ticket_status e
+on e.id=a.status_id
+ left join ost_staff f on f.staff_id = a.staff_id
+  left join ost_ticket__cdata h on a.ticket_id = h.ticket_id
+
+ left join ost_ticket_priority i on h.priority = i.priority_id
+                where 
+         
+                a.status_id<>3
+and a.ticket_id in (
+    select 
+      distinct g.ticket_id 
+    from 
+      ost_ticket g 
+      left join ost_staff f on g.staff_id = f.staff_id 
+      or g.dept_id = f.dept_id 
+    where 
+      f.email = '@logeo'
+  )

@@ -187,7 +187,7 @@
                                     $class = "";
                                     $arraycolor = array('color', 'color2', 'color3');
                                     if ((in_array($Fieldarray[$i], $arraycolor))) {
-
+                                        $tipo = "color";
                                         $class = "pick-a-color ";
                                     }
                                     if ($Fieldarray[$i] == "logo") {
