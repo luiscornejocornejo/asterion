@@ -89,7 +89,7 @@ class ChatsiennaController extends Controller
   public function index(Request $request)
   {
 
-    $id = $request->id;
+    echo $id = $request->id;
     $fields2 = $this->select2($id);
     dd($fields2);
     return view('sienna/chatsienna')
