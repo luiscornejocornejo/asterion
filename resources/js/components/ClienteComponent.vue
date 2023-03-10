@@ -477,7 +477,10 @@ export default {
                     .get(this.url1)
                     .then(response => (this.info = response.data, this.sise = response.data.length))
                     .catch(error => console.log(error))
-            console.log('reinicio.')
+                    console.log('reinicio.')
+                    console.log(this.info)
+
+            
 
         },
 
