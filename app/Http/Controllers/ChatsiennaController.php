@@ -69,7 +69,7 @@ class ChatsiennaController extends Controller
                      $staff = $value2->id;
                   
                 }
-    $query = "INSERT INTO t_bitacora (t_estado, t_staff, t_tickets, fecha) VALUES(".$estado.", ".$staff.", ".$ticket.", 'now()')";
+    $query = "INSERT INTO t_bitacora (t_estado, t_staff, t_tickets, fecha) VALUES('".$estado."', ".$staff.", ".$ticket.", 'now()')";
 
       $fields55 = DB::select($query);
 
