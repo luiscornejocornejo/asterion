@@ -44,11 +44,6 @@ class ChatsiennaController extends Controller
 
      $topiclist = t_topic::find($statos);//('users', '=', $userid)->get();
                
-     foreach ($datoreporte as $value2) {
-          $staff = $value2->id;
-       
-     }
-
      $this->bitacoracreate("cambio de topic".$topiclist->nombre,$idticketestado);
     return redirect()
       ->back()
