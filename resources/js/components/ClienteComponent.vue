@@ -569,28 +569,28 @@
 
                         <div class="row  p-2">
                             <div class="col-6 align-self-start small" style="display:inline-block;">
-                                <ul v-for="datousuario in extrauser" class="list-group list-group-flush">
-                                    <li class="list-group-item">clientid: {{ datousuario.clientid }}</li>
-                                    <li class="list-group-item">email: {{ datousuario.email }}
-                                        <span v-if="datousuario.email != null"> <button type="button"
+                                <ul  class="list-group list-group-flush">
+                                    <li class="list-group-item">clientid: {{ client_id }}</li>
+                                    <li class="list-group-item">email: {{mail }}
+                                        <span v-if="mail!= null"> <button type="button"
                                                 class="btn btn-success btn-sm  " data-bs-toggle="modal"
                                                 data-bs-target="#compose-modal">
 
                                             </button></span>
                                     </li>
-                                    <li class="list-group-item">phone: {{ datousuario.phone }} <span
-                                            v-if="datousuario.phone != null">
+                                    <li class="list-group-item">phone: {{ telefono }} <span
+                                            v-if="telefono != null">
                                             <button type="button" class="btn btn-success btn-sm  " data-bs-toggle="modal"
                                                 data-bs-target="#standard-modal">
 
                                             </button></span></li>
-                                    <li class="list-group-item">whatsapp_nro: {{ datousuario.whatsapp_nro }}<span
-                                            v-if="datousuario.whatsapp_nro != null">
+                                    <li class="list-group-item">whatsapp_nro: {{ whatsapp_nro }}<span
+                                            v-if="whatsapp_nro != null">
                                             <button type="button" class="btn btn-success btn-sm  " data-bs-toggle="modal"
                                                 data-bs-target="#standard-modal">
 
                                             </button></span></li>
-                                    <li class="list-group-item">plan_name: {{ datousuario.plan_name }}</li>
+                                    <li class="list-group-item">plan_name: {{ plan_name }}</li>
 
 
                                 </ul>
