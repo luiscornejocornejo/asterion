@@ -106,7 +106,7 @@ Route::post('/chatasignar','App\Http\Controllers\ChatController@asignar');
 Route::post('/chatcambiarestado2','App\Http\Controllers\ChatsiennaController@cambiarestado2');
 Route::post('/chatcambiardeptos2','App\Http\Controllers\ChatsiennaController@cambiardepto2');
 Route::post('/chatcambiartopic2','App\Http\Controllers\ChatsiennaController@cambiartopic2');
-Route::post('/chatasignar2','App\Http\Controllers\ChatsiennaController@asignar2');
+Route::post('/chatasignar2','App\Http\Controllers\ChatsiennaController@chatasignar2');
 
 
 
