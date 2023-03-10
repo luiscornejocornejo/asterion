@@ -24,7 +24,7 @@
                 <!-- Start Content-->
                
 
-                    <div id="App2">
+                    <div id="App">
                         <div class="row m-1">
                             <cliente-component></cliente-component>
                          
