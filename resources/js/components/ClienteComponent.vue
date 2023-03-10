@@ -315,6 +315,174 @@
 </div>
 
 
+<div class="col-xxl-6 col-xl-12 order-xl-2 " style="max-height: 900px;min-height: 900px;">
+            <div v-if="clickeo" class="card ">
+                <div class="bg-primary text-white">
+                    <div class="row  m-0 p-2">
+                        <div class="col-6 align-self-start" style="display:inline-block;">
+                            <span class="float-start text-white fw-bold ">{{ nombreusuario.toUpperCase() }} </span>
+                        </div>
+
+                        <div class="col-6 align-self-end" style="display:inline-block;">
+                            <span class="float-end text-white fw-bold  "><span :style="{ 'color':  laprio}" >{{ prioridad }}</span> TICKET #{{ ticket_id }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body ">
+
+
+                    <div class="row  m-0 p-1">
+                        <div class="col-6 align-self-start" style="display:inline-block; ">
+                            <button type="button" class="btn btn-info btn-block w-100" data-bs-toggle="modal"
+                                data-bs-target="#standard-modal3">{{ topic }}</button>
+                        </div>
+                        <div class="col-6 align-self-end" style="display:inline-block; ">
+                            <button type="button" class="btn btn-success w-100" data-bs-toggle="modal"
+                                data-bs-target="#standard-modal">
+                                <spam id="estado">{{ ticketestatus }}</spam>
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <div class="row m-0 p-1">
+                        <div class="col-6 align-self-start small" style="display:inline-block;">
+                            <ul class="list-group list-group-flush">
+                              
+                                <li class="list-group-item">Fecha de creacion: {{ creacion }} </li>
+                            </ul>
+                        </div>
+                        <div v-if="depto===null" class="col-6 align-self-end" style="display:inline-block;">
+                            <button type="button" class="btn btn-success w-100  btn-block" data-bs-toggle="modal"
+                                data-bs-target="#standard-modal2">{{ depto }} sin asignar depto</button>
+                            <spam id="departamento"></spam>
+                           
+
+                        </div>
+                        <div v-else class="col-6 align-self-end" style="display:inline-block;">
+                            <button type="button" class="btn btn-success w-100  btn-block" data-bs-toggle="modal"
+                                data-bs-target="#standard-modal2">{{ depto }}</button>
+                            <spam id="departamento"></spam>
+                           
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="row  m-0 p-1">
+                        <div class="col-6 align-self-start" style="display:inline-block; ">
+                            <ul class="list-group list-group-flush">
+                              
+                              <li class="list-group-item">Fecha de ultima Modificacion: {{ lastupdate }}</li>
+                          </ul>
+                        </div>
+                        <div v-if="asignado===null" class="col-6 align-self-end" style="display:inline-block; ">
+                            <button type="button" class="btn btn-success w-100  btn-block" data-bs-toggle="modal"
+                                data-bs-target="#standard-modal4">{{ asignado }} sin asignar</button>
+
+                        </div>
+                        <div v-else class="col-6 align-self-end" style="display:inline-block; ">
+                            <button type="button" class="btn btn-success w-100  btn-block" data-bs-toggle="modal"
+                                data-bs-target="#standard-modal4">{{ asignado }}</button>
+
+                        </div>
+                    </div>
+
+                    <div class="p-2">
+                        <div v-if="source == 'API'">API</div>
+                        <div v-if="source == 'Email'">
+                            <div v-for="ext in extra" class="currency">
+                                <span v-html="ext.body"></span>
+                            </div>
+                        </div>
+                        <div v-if="source == 'Google Business '">
+                            <div v-for="ext in whapp" style="max-height: 446px">
+                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0'
+                                    allowfullscreen v-bind:src="ext.chat_link"></iframe>
+                            </div>
+                        </div>
+                        <div v-if="source == 'Teams'">
+                            <div v-for="ext in whapp" style="max-height: 446px">
+                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0'
+                                    allowfullscreen v-bind:src="ext.chat_link"></iframe>
+                            </div>
+                        </div>
+
+                        <div v-if="source == 'Slack'">
+                            <div v-for="ext in whapp" style="max-height: 446px">
+                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0'
+                                    allowfullscreen v-bind:src="ext.chat_link"></iframe>
+                            </div>
+                        </div>
+                        <div v-if="source == 'Discord'">
+                            <div v-for="ext in whapp" style="max-height: 446px">
+                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0'
+                                    allowfullscreen v-bind:src="ext.chat_link"></iframe>
+                            </div>
+                        </div>
+                        <div v-if="source == 'Web'">
+                            <div v-for="ext in whapp" style="max-height: 446px">
+                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0'
+                                    allowfullscreen v-bind:src="ext.chat_link"></iframe>
+                            </div>
+                        </div>
+                        <div v-if="source == 'RCS'">
+                            <div v-for="ext in whapp" style="max-height: 446px">
+                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0'
+                                    allowfullscreen v-bind:src="ext.chat_link"></iframe>
+                            </div>
+                        </div>
+                        <div v-if="source == 'SMS'">
+                            <div v-for="ext in whapp" style="max-height: 446px">
+                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0'
+                                    allowfullscreen v-bind:src="ext.chat_link"></iframe>
+                            </div>
+                        </div>
+                        <div v-if="source == 'Instagram'">
+                            <div v-for="ext in whapp" style="max-height: 446px">
+                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0'
+                                    allowfullscreen v-bind:src="ext.chat_link"></iframe>
+                            </div>
+                        </div>
+                        <div v-if="source == 'Facebook'">
+                            <div v-for="ext in whapp" style="max-height: 446px">
+                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0'
+                                    allowfullscreen v-bind:src="ext.chat_link"></iframe>
+                            </div>
+                        </div>
+
+                        <div v-if="source == 'Telegram'">
+
+                            <div v-for="ext in whapp" style="max-height: 446px">
+                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0'
+                                    allowfullscreen v-bind:src="ext.chat_link"></iframe>
+                            </div>
+                        </div>
+                        <div v-if="source == 'Whatsapp'">
+                            <div v-for="ext in whapp" style="max-height: 446px">
+                                <iframe class="w-100" max-height="200px" width="860 px" height="400 px" frameborder='0'
+                                    allowfullscreen v-bind:src="ext.chat_link"></iframe>
+                            </div>
+                        </div>
+
+                        <div v-else v-for="ext in extra" class="currency">
+
+                            <span v-html="ext.body"></span>
+                        </div>
+
+
+                    </div>
+                </div> <!-- end card-body -->
+            </div> <!-- end card-->
+            <div v-else>
+                <img src="/img/sinticket.png" />
+
+
+            </div>
+
+        </div>
      
 
    
