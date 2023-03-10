@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 use App\Models\masterreport;
 
 use App\Models\t_bitacora;
+use App\Models\t_staff;
+
 
 
 class ChatsiennaController extends Controller
@@ -36,7 +38,7 @@ class ChatsiennaController extends Controller
      $query = "update t_tickets set t_topic='" . $statos . "'   where id ='" . $idticketestado . "'";
 
      $fields55 = DB::select($query);
-
+     $this->bitacoracreate("cambio de topic",$idticketestado);
     return redirect()
       ->back()
       ->with('success', 'Se modifico el topic  correctamente!');
@@ -61,8 +63,13 @@ class ChatsiennaController extends Controller
   {
 
     $userid=session('idusuario');
-   $query1="select ";
-    $query = "INSERT INTO t_bitacora (t_estado, t_staff, t_tickets, fecha) VALUES(".$estado.", 0, ".$ticket.", 'now()')";
+    $datoreporte = t_staff::where('user', '=', $userid)->get();
+               
+                foreach ($datoreporte as $value2) {
+                     $staff = $value2->id;
+                  
+                }
+    $query = "INSERT INTO t_bitacora (t_estado, t_staff, t_tickets, fecha) VALUES(".$estado.", ".$staff.", ".$ticket.", 'now()')";
 
       $fields55 = DB::select($query);
 
