@@ -12,4 +12,4 @@ import LuisComponent from './components/ClienteComponent.vue';
 app2.component('cliente-component', LuisComponent);
 
 
-app2.mount('#App');
+app2.mount('#App2');
