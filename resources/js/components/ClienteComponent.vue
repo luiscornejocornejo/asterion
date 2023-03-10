@@ -498,7 +498,7 @@
                             <input v-model="ticket_id" type="hidden" name="idticketestado" id="idtickettopic">
                             <div v-for="topic in topics ">
 
-                                <input :value="topic.topic_id" v-model="topic.topic_id" class="form-radio" type="radio"
+                                <input :value="topic.id" v-model="topic.id" class="form-radio" type="radio"
                                     name="statos">&nbsp; <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;">{{ topic.nombre  }}</span>
                                     <br><br>
                             </div>
@@ -691,6 +691,7 @@ export default {
                 .get('/api/topics2')
                 .then(response => (this.topics = response.data))
                 .catch(error => console.log(error))
+                console.log(this.topics)
             ,
             axios
                 .get('/api/departments2')
