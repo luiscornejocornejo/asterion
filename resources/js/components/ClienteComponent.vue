@@ -519,6 +519,7 @@
                                                     <i v-if="extrah.name == 'reopened'"
                                                         class="mdi mdi-openid bg-info-lighten text-info timeline-icon "></i>
                                                     <p class="mb-1" style="color: #727CF5;font-size: 14px;">
+                                                        
                                                         {{ extrah.name.toUpperCase() }}</p>
 
 
