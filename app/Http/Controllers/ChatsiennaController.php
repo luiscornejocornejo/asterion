@@ -67,6 +67,23 @@ class ChatsiennaController extends Controller
       ->with('success', 'Se modifico el depto  correctamente!');
   }
 
+
+  public function chatasignar2(Request $request)
+  {
+
+    $idticketestado = $request->idticketestado;
+    $statos = $request->statos;
+     $query = "update t_tickets set t_staff='" . $statos . "'   where id ='" . $idticketestado . "'";
+
+     $fields55 = DB::select($query);
+     $topiclist = t_staff::find($statos);
+     $this->bitacoracreate("asignado a ".$topiclist->nombre,$idticketestado);
+
+    return redirect()
+      ->back()
+      ->with('success', 'Se asigno correctamente!');
+  }
+  
   public function bitacoracreate($estado,$ticket)
   {
 
