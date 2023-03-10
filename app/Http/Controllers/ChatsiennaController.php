@@ -10,8 +10,8 @@ use App\Models\masterreport;
 use App\Models\t_bitacora;
 use App\Models\t_staff;
 use App\Models\t_departamentos;
-
 use App\Models\t_topic;
+use App\Models\t_estado;
 
 
 
@@ -19,20 +19,24 @@ class ChatsiennaController extends Controller
 {
   //
 
-  public function cambiarestado(Request $request)
+ 
+  public function cambiarestado2(Request $request)
   {
 
     $idticketestado = $request->idticketestado;
     $statos = $request->statos;
-    $query = "update ost_ticket set status_id='" . $statos . "'   where ticket_id ='" . $idticketestado . "'";
+     $query = "update t_tickets set t_estado='" . $statos . "'   where id ='" . $idticketestado . "'";
 
-    $aa = $this->conectar2(11);
-    $actualizado = DB::connection('mysql2')->select($query);
+     $fields55 = DB::select($query);
+     $topiclist = t_estado::find($statos);
+     $this->bitacoracreate("cambio de estado: a ".$topiclist->nombre,$idticketestado);
 
     return redirect()
       ->back()
-      ->with('success', 'Se modifico el status  correctamente!');
+      ->with('success', 'Se asigno correctamente!');
   }
+
+  
   public function cambiartopic2(Request $request)
   {
 
@@ -102,20 +106,6 @@ class ChatsiennaController extends Controller
   
 
 
-  public function asignar(Request $request)
-  {
-
-    $idticketestado = $request->idticketestado;
-    $statos = $request->statos;
-    $query = "update ost_ticket set staff_id='" . $statos . "'   where ticket_id ='" . $idticketestado . "'";
-
-    $aa = $this->conectar2(11);
-    $actualizado = DB::connection('mysql2')->select($query);
-
-    return redirect()
-      ->back()
-      ->with('success', 'Se modifico el depto  correctamente!');
-  }
   public function index(Request $request)
   {
 
