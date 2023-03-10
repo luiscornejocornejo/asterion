@@ -932,13 +932,15 @@ export default {
                 zoom: 5,
             }
         },
-        pasar: function (a, b, c, d, e, f, g, h, i, j, k, l, m, chat_link,mail,telefono,latitud,longitud,plan_name,whatsapp_nro,client_id) {
+        pasar: function (a, b, c, d, e, f, g, h, i, j, k, l, m, chat_link, mail, telefono, latitud, longitud, plan_name, whatsapp_nro, client_id) {
             this.chat_link = chat_link;
             this.mail=mail;
             this.telefono=telefono;
             this.latitud=latitud;
             this.longitud=longitud;
             this.plan_name=plan_name;
+            console.log(this.plan_name)
+
             this.whatsapp_nro=whatsapp_nro;
             this.client_id=client_id;
             console.log(this.chat_link)
