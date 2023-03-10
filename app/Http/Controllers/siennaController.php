@@ -627,7 +627,7 @@ class siennaController extends Controller
   private function limpiar($query)
   {
     $query = strtolower($query);
-    $healthy = array("drop", "truncate", "insert", "update ");
+    $healthy = array("drop", "truncate", "insert", "  opdate ");
     $yummy   = array("", "", "", "");
 
     $query = str_replace($healthy, $yummy, $query);
