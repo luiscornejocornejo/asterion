@@ -44,7 +44,7 @@ class ChatsiennaController extends Controller
 
      $topiclist = t_topic::find($statos);//('users', '=', $userid)->get();
                
-     $this->bitacoracreate("cambio de topic".$topiclist->nombre,$idticketestado);
+     $this->bitacoracreate("cambio de topic ".$topiclist->nombre,$idticketestado);
     return redirect()
       ->back()
       ->with('success', 'Se modifico el topic  correctamente!');
