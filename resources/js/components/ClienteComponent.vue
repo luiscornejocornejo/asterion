@@ -776,6 +776,8 @@ export default {
         },
         pasar: function (a, b, c, d, e, f, g, h, i, j, k, l, m,chat_link) {
             this.chat_link=chat_link;
+            console.log(this.chat_link)
+
             this.clickeo = true;
             this.active = !this.active;
             this.ticket_id = d;
