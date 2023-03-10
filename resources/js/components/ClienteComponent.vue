@@ -479,7 +479,7 @@ export default {
                     .catch(error => console.log(error))
                     console.log('reinicio.')
                     console.log(this.info)
-
+ 
             
 
         },
