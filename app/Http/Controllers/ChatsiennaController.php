@@ -9,6 +9,9 @@ use App\Models\masterreport;
 
 use App\Models\t_bitacora;
 use App\Models\t_staff;
+use App\Models\t_departamentos;
+
+use App\Models\t_topic;
 
 
 
@@ -38,7 +41,15 @@ class ChatsiennaController extends Controller
      $query = "update t_tickets set t_topic='" . $statos . "'   where id ='" . $idticketestado . "'";
 
      $fields55 = DB::select($query);
-     $this->bitacoracreate("cambio de topic",$idticketestado);
+
+     $topiclist = t_topic::find($statos);//('users', '=', $userid)->get();
+               
+     foreach ($datoreporte as $value2) {
+          $staff = $value2->id;
+       
+     }
+
+     $this->bitacoracreate("cambio de topic".$topiclist->nombre,$idticketestado);
     return redirect()
       ->back()
       ->with('success', 'Se modifico el topic  correctamente!');
