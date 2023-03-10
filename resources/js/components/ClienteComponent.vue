@@ -921,6 +921,7 @@ export default {
                 .then(response => (this.historial = response.data))
                 .catch(error => console.log(error))
             console.log('extrahistorial.')
+            console.log(this.historial )
 
         },
 
