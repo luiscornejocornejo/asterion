@@ -679,26 +679,7 @@ export default {
             this.nombreusuario = b;
 
             this.source = e;
-            this.historialllll = this.extrahistorial(d);
-            console.log('extrahistorial.')
-
-            console.log(this.historial)
-
-            if (e == "Email") {
-                this.datoooo = this.extrasmail(d);
-                this.tipo = false;
-                this.logo = '<i class="ri-whatsapp-fill"></i> ';
-            }
-
-            this.datowhatapp = null;
-            this.datowhatapp = this.extraswhatapp(d);
-            console.log('paso1.')
-
-            console.log(this.whapp);
-
-
-
-            this.datoooo2 = this.extrasuserf(l);
+           
 
 
         }
