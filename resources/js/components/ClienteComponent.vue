@@ -33,7 +33,7 @@
 
                                     <div v-else v-for="currency in info " style="box-shadow: 4px 4px rgba(0,0,0,0.25);"
                                         :style="{ 'background-color': currency.chat_status, 'border-left': 'solid', 'border-left': '5px', 'border-left': ['solid', '5px', 'solid 5px' + currency.priority_color] }"
-                                        v-on:click="pasar(currency.depto, currency.nombredelcliente, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.estado, currency.priority_desc, currency.priority_color, currency.asignado, currency.user_id, currency.priority_color,currency.chat_link)"
+                                        v-on:click="pasar(currency.depto, currency.nombredelcliente, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.estado, currency.priority_desc, currency.priority_color, currency.asignado, currency.user_id, currency.priority_color, currency.chat_link)"
                                         class="currency  p-2 mb-3  rounded ">
 
                                         <a href="javascript:void(0);" class="text-body">
@@ -88,28 +88,28 @@
                                                                 <g>
                                                                     <g>
                                                                         <path d="M272.013,239.992C344.29,141.941,275.356,1.036,151.905,0.059c-0.005,0-0.009-0.001-0.014-0.001
-        c-0.013,0-0.027,0-0.039-0.001c-0.019,0-0.039-0.001-0.057-0.001c-0.014,0-0.029,0-0.043,0c-0.756-0.019-1.522-0.019-2.196,0
-        c-0.007,0-0.013,0-0.02,0c-0.009,0-0.018,0.001-0.026,0.001c-0.007,0-0.015,0-0.022,0c-0.003,0-0.005,0-0.008,0
-        C65.826,0.691,0,68.785,0,150.71c0,83.201,67.451,150.664,150.664,150.664c26.765,0,53.515-7.072,77.353-21.367l19.125,19.126
-        c2.981,2.978,7.826,2.993,10.819-0.001l31.181-31.192c2.988-2.989,2.987-7.832,0-10.818L272.013,239.992z M104.596,23.536
-        C92.138,37.607,81.843,57.499,74.897,81.86H34.13C50.241,54.704,75.415,34.187,104.596,23.536z M26.319,97.16h44.787
-        c-3.109,14.681-4.897,30.054-5.331,45.9H15.51C16.385,127.124,20.014,111.736,26.319,97.16z M15.51,158.36h50.266
-        c0.433,15.847,2.222,31.22,5.331,45.9H26.319C20.014,189.686,16.385,174.298,15.51,158.36z M34.13,219.56h40.766
-        c6.946,24.359,17.239,44.25,29.69,58.32C75.411,267.229,50.242,246.713,34.13,219.56z M143.014,285.21
-        c-21.34-4.782-40.88-29.327-52.151-65.65h52.151V285.21z M143.014,204.26H86.782c-3.32-14.596-5.241-29.977-5.703-45.9h61.935
-        C143.014,181.499,143.014,193.693,143.014,204.26z M143.014,143.06H81.079c0.461-15.923,2.382-31.303,5.702-45.9h56.234V143.06z
-         M143.014,81.859H90.864c11.264-36.302,30.791-60.842,52.151-65.644V81.859z M275.008,204.26h-7.578l6.595-6.595
-        c4.162-4.164,2.247-11.279-3.43-12.799l-36.048-9.66c0.505-5.544,0.847-11.17,1.004-16.845h50.267
-        C284.943,174.295,281.315,189.682,275.008,204.26z M285.818,143.06h-50.265c-0.433-15.847-2.223-31.22-5.331-45.9h44.786
-        C281.314,111.734,284.943,127.123,285.818,143.06z M267.198,81.86h-40.766c-6.946-24.359-17.239-44.25-29.69-58.32
-        C225.919,34.19,251.089,54.707,267.198,81.86z M158.314,16.209c21.34,4.782,40.88,29.327,52.151,65.65h-52.151V16.209z
-         M158.314,97.16h56.233c3.32,14.595,5.242,29.976,5.703,45.9h-61.935V97.16z M220.235,158.36
-        c-0.126,4.311-0.348,8.596-0.686,12.826l-47.859-12.826H220.235z M158.314,285.204V219.56h0.217l15.616,58.28
-        C169.022,281.506,163.702,283.986,158.314,285.204z M196.436,278.124c3.309-3.699,6.472-7.813,9.465-12.325l3.955-3.955
-        l6.979,6.979C210.286,272.501,203.462,275.602,196.436,278.124z M252.551,282.904l-37.286-37.287
-        c-2.986-2.986-7.83-2.989-10.819-0.001c-10.898,10.898-8.04,8.04-18.211,18.212l-24.751-92.363
-        c38.489,10.316,81.823,21.928,92.354,24.75l-18.211,18.209c-2.988,2.989-2.988,7.832,0,10.819l37.289,37.289L252.551,282.904z
-         M267.228,219.56c-1.92,3.245-3.972,6.412-6.159,9.488l-9.213-9.213l0.274-0.275H267.228z" />
+            c-0.013,0-0.027,0-0.039-0.001c-0.019,0-0.039-0.001-0.057-0.001c-0.014,0-0.029,0-0.043,0c-0.756-0.019-1.522-0.019-2.196,0
+            c-0.007,0-0.013,0-0.02,0c-0.009,0-0.018,0.001-0.026,0.001c-0.007,0-0.015,0-0.022,0c-0.003,0-0.005,0-0.008,0
+            C65.826,0.691,0,68.785,0,150.71c0,83.201,67.451,150.664,150.664,150.664c26.765,0,53.515-7.072,77.353-21.367l19.125,19.126
+            c2.981,2.978,7.826,2.993,10.819-0.001l31.181-31.192c2.988-2.989,2.987-7.832,0-10.818L272.013,239.992z M104.596,23.536
+            C92.138,37.607,81.843,57.499,74.897,81.86H34.13C50.241,54.704,75.415,34.187,104.596,23.536z M26.319,97.16h44.787
+            c-3.109,14.681-4.897,30.054-5.331,45.9H15.51C16.385,127.124,20.014,111.736,26.319,97.16z M15.51,158.36h50.266
+            c0.433,15.847,2.222,31.22,5.331,45.9H26.319C20.014,189.686,16.385,174.298,15.51,158.36z M34.13,219.56h40.766
+            c6.946,24.359,17.239,44.25,29.69,58.32C75.411,267.229,50.242,246.713,34.13,219.56z M143.014,285.21
+            c-21.34-4.782-40.88-29.327-52.151-65.65h52.151V285.21z M143.014,204.26H86.782c-3.32-14.596-5.241-29.977-5.703-45.9h61.935
+            C143.014,181.499,143.014,193.693,143.014,204.26z M143.014,143.06H81.079c0.461-15.923,2.382-31.303,5.702-45.9h56.234V143.06z
+             M143.014,81.859H90.864c11.264-36.302,30.791-60.842,52.151-65.644V81.859z M275.008,204.26h-7.578l6.595-6.595
+            c4.162-4.164,2.247-11.279-3.43-12.799l-36.048-9.66c0.505-5.544,0.847-11.17,1.004-16.845h50.267
+            C284.943,174.295,281.315,189.682,275.008,204.26z M285.818,143.06h-50.265c-0.433-15.847-2.223-31.22-5.331-45.9h44.786
+            C281.314,111.734,284.943,127.123,285.818,143.06z M267.198,81.86h-40.766c-6.946-24.359-17.239-44.25-29.69-58.32
+            C225.919,34.19,251.089,54.707,267.198,81.86z M158.314,16.209c21.34,4.782,40.88,29.327,52.151,65.65h-52.151V16.209z
+             M158.314,97.16h56.233c3.32,14.595,5.242,29.976,5.703,45.9h-61.935V97.16z M220.235,158.36
+            c-0.126,4.311-0.348,8.596-0.686,12.826l-47.859-12.826H220.235z M158.314,285.204V219.56h0.217l15.616,58.28
+            C169.022,281.506,163.702,283.986,158.314,285.204z M196.436,278.124c3.309-3.699,6.472-7.813,9.465-12.325l3.955-3.955
+            l6.979,6.979C210.286,272.501,203.462,275.602,196.436,278.124z M252.551,282.904l-37.286-37.287
+            c-2.986-2.986-7.83-2.989-10.819-0.001c-10.898,10.898-8.04,8.04-18.211,18.212l-24.751-92.363
+            c38.489,10.316,81.823,21.928,92.354,24.75l-18.211,18.209c-2.988,2.989-2.988,7.832,0,10.819l37.289,37.289L252.551,282.904z
+             M267.228,219.56c-1.92,3.245-3.972,6.412-6.159,9.488l-9.213-9.213l0.274-0.275H267.228z" />
                                                                     </g>
                                                                 </g>
                                                             </svg>{{ currency.number }}</h5>
@@ -256,28 +256,28 @@
                                                                 <g>
                                                                     <g>
                                                                         <path d="M272.013,239.992C344.29,141.941,275.356,1.036,151.905,0.059c-0.005,0-0.009-0.001-0.014-0.001
-        c-0.013,0-0.027,0-0.039-0.001c-0.019,0-0.039-0.001-0.057-0.001c-0.014,0-0.029,0-0.043,0c-0.756-0.019-1.522-0.019-2.196,0
-        c-0.007,0-0.013,0-0.02,0c-0.009,0-0.018,0.001-0.026,0.001c-0.007,0-0.015,0-0.022,0c-0.003,0-0.005,0-0.008,0
-        C65.826,0.691,0,68.785,0,150.71c0,83.201,67.451,150.664,150.664,150.664c26.765,0,53.515-7.072,77.353-21.367l19.125,19.126
-        c2.981,2.978,7.826,2.993,10.819-0.001l31.181-31.192c2.988-2.989,2.987-7.832,0-10.818L272.013,239.992z M104.596,23.536
-        C92.138,37.607,81.843,57.499,74.897,81.86H34.13C50.241,54.704,75.415,34.187,104.596,23.536z M26.319,97.16h44.787
-        c-3.109,14.681-4.897,30.054-5.331,45.9H15.51C16.385,127.124,20.014,111.736,26.319,97.16z M15.51,158.36h50.266
-        c0.433,15.847,2.222,31.22,5.331,45.9H26.319C20.014,189.686,16.385,174.298,15.51,158.36z M34.13,219.56h40.766
-        c6.946,24.359,17.239,44.25,29.69,58.32C75.411,267.229,50.242,246.713,34.13,219.56z M143.014,285.21
-        c-21.34-4.782-40.88-29.327-52.151-65.65h52.151V285.21z M143.014,204.26H86.782c-3.32-14.596-5.241-29.977-5.703-45.9h61.935
-        C143.014,181.499,143.014,193.693,143.014,204.26z M143.014,143.06H81.079c0.461-15.923,2.382-31.303,5.702-45.9h56.234V143.06z
-         M143.014,81.859H90.864c11.264-36.302,30.791-60.842,52.151-65.644V81.859z M275.008,204.26h-7.578l6.595-6.595
-        c4.162-4.164,2.247-11.279-3.43-12.799l-36.048-9.66c0.505-5.544,0.847-11.17,1.004-16.845h50.267
-        C284.943,174.295,281.315,189.682,275.008,204.26z M285.818,143.06h-50.265c-0.433-15.847-2.223-31.22-5.331-45.9h44.786
-        C281.314,111.734,284.943,127.123,285.818,143.06z M267.198,81.86h-40.766c-6.946-24.359-17.239-44.25-29.69-58.32
-        C225.919,34.19,251.089,54.707,267.198,81.86z M158.314,16.209c21.34,4.782,40.88,29.327,52.151,65.65h-52.151V16.209z
-         M158.314,97.16h56.233c3.32,14.595,5.242,29.976,5.703,45.9h-61.935V97.16z M220.235,158.36
-        c-0.126,4.311-0.348,8.596-0.686,12.826l-47.859-12.826H220.235z M158.314,285.204V219.56h0.217l15.616,58.28
-        C169.022,281.506,163.702,283.986,158.314,285.204z M196.436,278.124c3.309-3.699,6.472-7.813,9.465-12.325l3.955-3.955
-        l6.979,6.979C210.286,272.501,203.462,275.602,196.436,278.124z M252.551,282.904l-37.286-37.287
-        c-2.986-2.986-7.83-2.989-10.819-0.001c-10.898,10.898-8.04,8.04-18.211,18.212l-24.751-92.363
-        c38.489,10.316,81.823,21.928,92.354,24.75l-18.211,18.209c-2.988,2.989-2.988,7.832,0,10.819l37.289,37.289L252.551,282.904z
-         M267.228,219.56c-1.92,3.245-3.972,6.412-6.159,9.488l-9.213-9.213l0.274-0.275H267.228z" />
+            c-0.013,0-0.027,0-0.039-0.001c-0.019,0-0.039-0.001-0.057-0.001c-0.014,0-0.029,0-0.043,0c-0.756-0.019-1.522-0.019-2.196,0
+            c-0.007,0-0.013,0-0.02,0c-0.009,0-0.018,0.001-0.026,0.001c-0.007,0-0.015,0-0.022,0c-0.003,0-0.005,0-0.008,0
+            C65.826,0.691,0,68.785,0,150.71c0,83.201,67.451,150.664,150.664,150.664c26.765,0,53.515-7.072,77.353-21.367l19.125,19.126
+            c2.981,2.978,7.826,2.993,10.819-0.001l31.181-31.192c2.988-2.989,2.987-7.832,0-10.818L272.013,239.992z M104.596,23.536
+            C92.138,37.607,81.843,57.499,74.897,81.86H34.13C50.241,54.704,75.415,34.187,104.596,23.536z M26.319,97.16h44.787
+            c-3.109,14.681-4.897,30.054-5.331,45.9H15.51C16.385,127.124,20.014,111.736,26.319,97.16z M15.51,158.36h50.266
+            c0.433,15.847,2.222,31.22,5.331,45.9H26.319C20.014,189.686,16.385,174.298,15.51,158.36z M34.13,219.56h40.766
+            c6.946,24.359,17.239,44.25,29.69,58.32C75.411,267.229,50.242,246.713,34.13,219.56z M143.014,285.21
+            c-21.34-4.782-40.88-29.327-52.151-65.65h52.151V285.21z M143.014,204.26H86.782c-3.32-14.596-5.241-29.977-5.703-45.9h61.935
+            C143.014,181.499,143.014,193.693,143.014,204.26z M143.014,143.06H81.079c0.461-15.923,2.382-31.303,5.702-45.9h56.234V143.06z
+             M143.014,81.859H90.864c11.264-36.302,30.791-60.842,52.151-65.644V81.859z M275.008,204.26h-7.578l6.595-6.595
+            c4.162-4.164,2.247-11.279-3.43-12.799l-36.048-9.66c0.505-5.544,0.847-11.17,1.004-16.845h50.267
+            C284.943,174.295,281.315,189.682,275.008,204.26z M285.818,143.06h-50.265c-0.433-15.847-2.223-31.22-5.331-45.9h44.786
+            C281.314,111.734,284.943,127.123,285.818,143.06z M267.198,81.86h-40.766c-6.946-24.359-17.239-44.25-29.69-58.32
+            C225.919,34.19,251.089,54.707,267.198,81.86z M158.314,16.209c21.34,4.782,40.88,29.327,52.151,65.65h-52.151V16.209z
+             M158.314,97.16h56.233c3.32,14.595,5.242,29.976,5.703,45.9h-61.935V97.16z M220.235,158.36
+            c-0.126,4.311-0.348,8.596-0.686,12.826l-47.859-12.826H220.235z M158.314,285.204V219.56h0.217l15.616,58.28
+            C169.022,281.506,163.702,283.986,158.314,285.204z M196.436,278.124c3.309-3.699,6.472-7.813,9.465-12.325l3.955-3.955
+            l6.979,6.979C210.286,272.501,203.462,275.602,196.436,278.124z M252.551,282.904l-37.286-37.287
+            c-2.986-2.986-7.83-2.989-10.819-0.001c-10.898,10.898-8.04,8.04-18.211,18.212l-24.751-92.363
+            c38.489,10.316,81.823,21.928,92.354,24.75l-18.211,18.209c-2.988,2.989-2.988,7.832,0,10.819l37.289,37.289L252.551,282.904z
+             M267.228,219.56c-1.92,3.245-3.972,6.412-6.159,9.488l-9.213-9.213l0.274-0.275H267.228z" />
                                                                     </g>
                                                                 </g>
                                                             </svg>
@@ -457,7 +457,7 @@
                         </div>
                     </div>
                     <div v-if="source == 'Whatsapp'">
-                        <div  style="max-height: 446px">
+                        <div style="max-height: 446px">
                             <iframe class="w-100" max-height="200px" width="860 px" height="400 px" frameborder='0'
                                 allowfullscreen v-bind:src="chat_link"></iframe>
                         </div>
@@ -481,119 +481,258 @@
     </div>
 
 
+    <div class="col-xxl-3 col-xl-6 order-xl-1 order-xxl-2" style="max-height: 900px;min-height: 900px;">
+
+        <div v-if="clickeo" class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header bg-primary text-white" id="flush-headingOne">
+                    <button class="accordion-button collapsed text-white bg-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Bitacora
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse text-white bg-white"
+                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="card-body py-0 mb-3" data-simplebar="init" style="max-height: 403px;">
+                        <div class="simplebar-wrapper" style="margin: 2px -24px;">
+                            <div class="simplebar-height-auto-observer-wrapper">
+                                <div class="simplebar-height-auto-observer"></div>
+                            </div>
+                            <div class="simplebar-mask">
+                                <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                                    <div class="simplebar-content-wrapper" tabindex="0" role="region"
+                                        aria-label="scrollable content" style="height: auto; overflow: hidden scroll;">
+                                        <div class="simplebar-content" style="padding: 0px 24px;">
+                                            <div class="timeline-alt py-0">
+
+                                                <div v-for="extrah in historial" class="timeline-item extrahistorial2">
+                                                    <i v-if="extrah.name == 'created'"
+                                                        class="mdi mdi-progress-check bg-info-lighten text-info timeline-icon"></i>
+                                                    <i v-if="extrah.name == 'closed'"
+                                                        class="mdi mdi-progress-close bg-info-lighten text-info timeline-icon"></i>
+                                                    <i v-if="extrah.name == 'overdue'"
+                                                        class="mdi mdi-timer-sand-complete bg-info-lighten text-info timeline-icon"></i>
+                                                    <i v-if="extrah.name == 'edited'"
+                                                        class="mdi mdi-account-edit bg-info-lighten text-info timeline-icon"></i>
+                                                    <i v-if="extrah.name == 'reopened'"
+                                                        class="mdi mdi-openid bg-info-lighten text-info timeline-icon "></i>
+                                                    <p class="mb-1" style="color: #727CF5;font-size: 14px;">
+                                                        {{ extrah.name.toUpperCase() }}</p>
 
 
+                                                    <div class="timeline-item-info">
+                                                        <a href="javascript:void(0);" class="fw-light  mb-0 d-block"
+                                                            style="color: #262626;font-size: 12px;">{{ extrah.timestamp
+                                                            }}</a>
 
-    <div id="standard-modal3" class="modal fade bs-example-modal-center3 " tabindex="-1" role="dialog"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header bg-primary text-white">
-                        <h5 class="modal-title">Cambiar Topics</h5>
-                        <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        <p class="mb-0 pb-2" style="color: #262626;font-size: 14px;">{{
+                                                            extrah.username }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <!-- end timeline -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="simplebar-placeholder" style="width: auto; height: 579px;"></div>
+                        </div>
+                        <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+                            <div class="simplebar-scrollbar" style="width: 0px; display: none;"></div>
+                        </div>
+                        <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+                            <div class="simplebar-scrollbar"
+                                style="height: 280px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        <form action="/chatcambiartopic2" method="post">
-                            <input type="hidden" name="_token" v-bind:value="csrf">
-                            <input v-model="ticket_id" type="hidden" name="idticketestado" id="idtickettopic">
-                            <div v-for="topic in topics ">
 
-                                <input :value="topic.id" v-model="topic.id" class="form-radio" type="radio"
-                                    name="statos">&nbsp; <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;">{{ topic.nombre  }}</span>
-                                    <br><br>
+                </div>
+
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header  bg-primary text-white" id="flush-headingTwo">
+                    <button class="accordion-button collapsed text-white bg-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Cliente
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body bg-white">
+
+
+                        <div class="row  p-2">
+                            <div class="col-6 align-self-start small" style="display:inline-block;">
+                                <ul v-for="datousuario in extrauser" class="list-group list-group-flush">
+                                    <li class="list-group-item">clientid: {{ datousuario.clientid }}</li>
+                                    <li class="list-group-item">email: {{ datousuario.email }}
+                                        <span v-if="datousuario.email != null"> <button type="button"
+                                                class="btn btn-success btn-sm  " data-bs-toggle="modal"
+                                                data-bs-target="#compose-modal">
+
+                                            </button></span>
+                                    </li>
+                                    <li class="list-group-item">phone: {{ datousuario.phone }} <span
+                                            v-if="datousuario.phone != null">
+                                            <button type="button" class="btn btn-success btn-sm  " data-bs-toggle="modal"
+                                                data-bs-target="#standard-modal">
+
+                                            </button></span></li>
+                                    <li class="list-group-item">whatsapp_nro: {{ datousuario.whatsapp_nro }}<span
+                                            v-if="datousuario.whatsapp_nro != null">
+                                            <button type="button" class="btn btn-success btn-sm  " data-bs-toggle="modal"
+                                                data-bs-target="#standard-modal">
+
+                                            </button></span></li>
+                                    <li class="list-group-item">plan_name: {{ datousuario.plan_name }}</li>
+
+
+                                </ul>
                             </div>
 
 
+                        </div>
 
-                            <button type="submit" class="btn btn-success
-                                waves-effect waves-light">Cambiar</button>
- 
-                        </form>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div>
+                        <div class="card">
+                            <div class="card-body">
 
-
-        <div id="standard-modal" class="modal fade bs-example-modal-center " tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header bg-primary text-white">
-                        <h5 class="modal-title">Cambiar status</h5>
-                        <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="/chatcambiarestado2" method="post">
-                            <input type="hidden" name="_token" v-bind:value="csrf">
-                            <input v-model="ticket_id" type="hidden" name="idticketestado" id="idtickettopic">
-                            <div v-for="ost_ticket_statu in ost_ticket_status ">
-
-                                <input :value="ost_ticket_statu.id" v-model="ost_ticket_statu.id" class="form-radio"
-                                    type="radio" name="statos">&nbsp; <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;">{{ ost_ticket_statu.nombre  }}</span>
-                                    <br><br>
+                                <GoogleMap api-key="AIzaSyCpW_qQg8n6GJZ5o22J9MdQqXrzVdx-UHY"
+                                    style="width:360px;height:242px;" :center="center" :zoom="15">
+                                    <Marker :options="{ position: center }" />
+                                </GoogleMap>
                             </div>
-                            <button type="submit" class="btn btn-success
-                                waves-effect waves-light">Cambiar</button>
 
-                        </form>
+                        </div>
                     </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
+                </div>
+            </div>
+
         </div>
+        <div v-else>
 
-        <div id="standard-modal2" class="modal fade bs-example-modal-center " tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header bg-primary text-white">
-                        <h5 class="modal-title">Cambiar Depto</h5>
-                        <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="/chatcambiardeptos2" method="post">
-                            <input type="hidden" name="_token" v-bind:value="csrf">
-                            <input v-model="ticket_id" type="hidden" name="idticketestado" id="idtickettopic">
-                            <div v-for="department in departments ">
-
-                                <input :value="department.id" v-model="department.id" class="form-radio" type="radio"
-                                    name="statos">&nbsp; 
-                                    <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;">{{ department.nombre  }}</span>
-                                    <br><br>
-                            </div>
-                            <button type="submit" class="btn btn-success
-                                waves-effect waves-light">Cambiar</button>
-
-                        </form>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
         </div>
+        <div class="card">
 
-        <div id="standard-modal4" class="modal fade bs-example-modal-center " tabindex="-1" role="dialog"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header bg-primary text-white">
-                        <h5 class="modal-title">Asignar</h5>
-                        <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="/chatasignar2" method="post">
-                            <input type="hidden" name="_token" v-bind:value="csrf">
-                            <input v-model="ticket_id" type="hidden" name="idticketestado" id="idtickettopic">
-                            <div v-for="staff in staffs ">
 
-                                <input :value="staff.id" v-model="staff.id" class="form-radio" type="radio"
-                                    name="statos">&nbsp;  <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;">{{ staff.nombre  }}</span> <br><br>
-                            </div>
-                            <button type="submit" class="btn btn-success
-                                waves-effect waves-light">Cambiar</button>
 
-                        </form>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div>
 
+
+        </div> <!-- end card -->
+    </div>
+
+
+    <div id="standard-modal3" class="modal fade bs-example-modal-center3 " tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Cambiar Topics</h5>
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/chatcambiartopic2" method="post">
+                        <input type="hidden" name="_token" v-bind:value="csrf">
+                        <input v-model="ticket_id" type="hidden" name="idticketestado" id="idtickettopic">
+                        <div v-for="topic in topics ">
+
+                            <input :value="topic.id" v-model="topic.id" class="form-radio" type="radio" name="statos">&nbsp;
+                            <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;">{{ topic.nombre }}</span>
+                            <br><br>
+                        </div>
+
+
+
+                        <button type="submit" class="btn btn-success
+                                    waves-effect waves-light">Cambiar</button>
+
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+
+    <div id="standard-modal" class="modal fade bs-example-modal-center " tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Cambiar status</h5>
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/chatcambiarestado2" method="post">
+                        <input type="hidden" name="_token" v-bind:value="csrf">
+                        <input v-model="ticket_id" type="hidden" name="idticketestado" id="idtickettopic">
+                        <div v-for="ost_ticket_statu in ost_ticket_status ">
+
+                            <input :value="ost_ticket_statu.id" v-model="ost_ticket_statu.id" class="form-radio"
+                                type="radio" name="statos">&nbsp; <span class=" fw-bold"
+                                style="color: #98a6ad;font-size: 12px;">{{ ost_ticket_statu.nombre }}</span>
+                            <br><br>
+                        </div>
+                        <button type="submit" class="btn btn-success
+                                    waves-effect waves-light">Cambiar</button>
+
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <div id="standard-modal2" class="modal fade bs-example-modal-center " tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Cambiar Depto</h5>
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/chatcambiardeptos2" method="post">
+                        <input type="hidden" name="_token" v-bind:value="csrf">
+                        <input v-model="ticket_id" type="hidden" name="idticketestado" id="idtickettopic">
+                        <div v-for="department in departments ">
+
+                            <input :value="department.id" v-model="department.id" class="form-radio" type="radio"
+                                name="statos">&nbsp;
+                            <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;">{{ department.nombre }}</span>
+                            <br><br>
+                        </div>
+                        <button type="submit" class="btn btn-success
+                                    waves-effect waves-light">Cambiar</button>
+
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+    <div id="standard-modal4" class="modal fade bs-example-modal-center " tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Asignar</h5>
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/chatasignar2" method="post">
+                        <input type="hidden" name="_token" v-bind:value="csrf">
+                        <input v-model="ticket_id" type="hidden" name="idticketestado" id="idtickettopic">
+                        <div v-for="staff in staffs ">
+
+                            <input :value="staff.id" v-model="staff.id" class="form-radio" type="radio" name="statos">&nbsp;
+                            <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;">{{ staff.nombre }}</span>
+                            <br><br>
+                        </div>
+                        <button type="submit" class="btn btn-success
+                                    waves-effect waves-light">Cambiar</button>
+
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
 </template>
 <style>
 .row {
@@ -620,7 +759,7 @@ export default {
     data() {
         return {
 
-            chat_link:null,
+            chat_link: null,
             csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
             user: document.querySelector('meta[name="user"]').getAttribute('content'),
             colordeprueba: '#624ec6',
@@ -691,26 +830,26 @@ export default {
                 .get('/api/topics2')
                 .then(response => (this.topics = response.data))
                 .catch(error => console.log(error))
-                console.log(this.topics)
-                console.log(this.topics)
+        console.log(this.topics)
+        console.log(this.topics)
             ,
             axios
                 .get('/api/departments2')
                 .then(response => (this.departments = response.data))
                 .catch(error => console.log(error))
-                console.log(this.departments)
+        console.log(this.departments)
             ,
             axios
                 .get('/api/status2')
                 .then(response => (this.ost_ticket_status = response.data))
                 .catch(error => console.log(error))
-                console.log(this.ost_ticket_status)
+        console.log(this.ost_ticket_status)
             ,
             axios
                 .get('/api/staff2')
                 .then(response => (this.staffs = response.data))
                 .catch(error => console.log(error))
-                console.log(this.staffs)
+        console.log(this.staffs)
             ,
 
 
@@ -774,8 +913,8 @@ export default {
                 zoom: 5,
             }
         },
-        pasar: function (a, b, c, d, e, f, g, h, i, j, k, l, m,chat_link) {
-            this.chat_link=chat_link;
+        pasar: function (a, b, c, d, e, f, g, h, i, j, k, l, m, chat_link) {
+            this.chat_link = chat_link;
             console.log(this.chat_link)
 
             this.clickeo = true;
