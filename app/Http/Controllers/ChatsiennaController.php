@@ -25,15 +25,14 @@ class ChatsiennaController extends Controller
       ->back()
       ->with('success', 'Se modifico el status  correctamente!');
   }
-  public function cambiartopic(Request $request)
+  public function cambiartopic2(Request $request)
   {
 
     $idticketestado = $request->idticketestado;
     $statos = $request->statos;
-     $query = "update ost_ticket set topic_id='" . $statos . "'   where ticket_id ='" . $idticketestado . "'";
+     $query = "update t_ticket set t_topic='" . $statos . "'   where id ='" . $idticketestado . "'";
 
-    $aa = $this->conectar2(11);
-    $actualizado = DB::connection('mysql2')->select($query);
+     $fields55 = DB::select($querydatos);
 
     return redirect()
       ->back()
