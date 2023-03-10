@@ -924,7 +924,7 @@ export default {
             console.log(this.historial )
 
         },
-
+      
 
         myMap: function () {
             var mapProp = {

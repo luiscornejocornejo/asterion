@@ -111,15 +111,23 @@ class clienteController extends Controller
     {
         $ticketid = $request->id;
 
-        $querydatos = "select a.fecha as timestamp,ts.nombre as username,te.nombre as name from sienna1.t_bitacora a
-        join sienna1.t_staff ts on ts.id=a.t_staff 
-        join sienna1.t_estado te on te.id =a.t_estado 
+        $querydatos = "select a.fecha as timestamp,ts.nombre as username,a.nombre as name from t_bitacora a
+        join t_staff ts on ts.id=a.t_staff 
         where a.t_tickets =" . $ticketid . "";
         $fields55 = DB::select($querydatos);
         $return2 = json_encode($fields55);
         return $return2;
     }
 
+    public function bitacora(Request $request)
+    {
+        $fields3 = $this->conectar2(11);
+        $ticketid = $request->id;
+        $querydatos = "select * from t_bitacora  where t_tickets=" . $ticketid . "";
+        $fields55 = DB::select($querydatos);
+        $return2 = json_encode($fields55);
+        return $return2;
+    }
 
     public function extrasmail(Request $request)
     {
@@ -180,7 +188,7 @@ class clienteController extends Controller
     }
 
    
-
+   
     public function departments(Request $request)
     {
 
