@@ -75,7 +75,7 @@ class clienteController extends Controller
 
         $fields3 = $this->conectar2(1);
         $querydatos = "select * from t_topic";
-        $fields55 = DB::reconnect('mysql2')->select($querydatos);
+        $fields55 = DB::select($querydatos);
         $return2 = json_encode($fields55);
         return $return2;
     }
