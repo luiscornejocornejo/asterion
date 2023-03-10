@@ -457,9 +457,9 @@
                         </div>
                     </div>
                     <div v-if="source == 'Whatsapp'">
-                        <div v-for="ext in whapp" style="max-height: 446px">
+                        <div  style="max-height: 446px">
                             <iframe class="w-100" max-height="200px" width="860 px" height="400 px" frameborder='0'
-                                allowfullscreen v-bind:src="ext.chat_link"></iframe>
+                                allowfullscreen v-bind:src="chat_link"></iframe>
                         </div>
                     </div>
 
@@ -493,7 +493,7 @@
                         <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="/chatcambiartopic" method="post">
+                        <form action="/chatcambiartopic2" method="post">
                             <input type="hidden" name="_token" v-bind:value="csrf">
                             <input v-model="ticket_id" type="hidden" name="idticketestado" id="idtickettopic">
                             <div v-for="topic in topics ">
@@ -523,7 +523,7 @@
                         <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="/chatcambiarestado" method="post">
+                        <form action="/chatcambiarestado2" method="post">
                             <input type="hidden" name="_token" v-bind:value="csrf">
                             <input v-model="ticket_id" type="hidden" name="idticketestado" id="idtickettopic">
                             <div v-for="ost_ticket_statu in ost_ticket_status ">
@@ -549,7 +549,7 @@
                         <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="/chatcambiardeptos" method="post">
+                        <form action="/chatcambiardeptos2" method="post">
                             <input type="hidden" name="_token" v-bind:value="csrf">
                             <input v-model="ticket_id" type="hidden" name="idticketestado" id="idtickettopic">
                             <div v-for="department in departments ">
@@ -577,7 +577,7 @@
                         <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="/chatasignar" method="post">
+                        <form action="/chatasignar2" method="post">
                             <input type="hidden" name="_token" v-bind:value="csrf">
                             <input v-model="ticket_id" type="hidden" name="idticketestado" id="idtickettopic">
                             <div v-for="staff in staffs ">
@@ -620,7 +620,7 @@ export default {
     data() {
         return {
 
-
+            chat_link:null,
             csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
             user: document.querySelector('meta[name="user"]').getAttribute('content'),
             colordeprueba: '#624ec6',
@@ -774,7 +774,8 @@ export default {
                 zoom: 5,
             }
         },
-        pasar: function (a, b, c, d, e, f, g, h, i, j, k, l, m) {
+        pasar: function (a, b, c, d, e, f, g, h, i, j, k, l, m,chat_link) {
+            this.chat_link=chat_link;
             this.clickeo = true;
             this.active = !this.active;
             this.ticket_id = d;
