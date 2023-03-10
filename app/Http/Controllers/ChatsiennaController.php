@@ -30,7 +30,7 @@ class ChatsiennaController extends Controller
 
     $idticketestado = $request->idticketestado;
     $statos = $request->statos;
-     $query = "update t_ticket set t_topic='" . $statos . "'   where id ='" . $idticketestado . "'";
+     $query = "update t_tickets set t_topic='" . $statos . "'   where id ='" . $idticketestado . "'";
 
      $fields55 = DB::select($query);
 
