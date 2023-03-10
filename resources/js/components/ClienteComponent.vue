@@ -508,7 +508,7 @@
                                             <div class="timeline-alt py-0">
 
                                                 <div v-for="extrah in historial" class="timeline-item extrahistorial2">
-                                                    <i v-if="extrah.name == 'created'"
+                                                    <i v-if="extrah.name == 'open'"
                                                         class="mdi mdi-progress-check bg-info-lighten text-info timeline-icon"></i>
                                                     <i v-if="extrah.name == 'closed'"
                                                         class="mdi mdi-progress-close bg-info-lighten text-info timeline-icon"></i>
