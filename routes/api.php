@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\wsController;
 use App\Http\Controllers\Api\cappi2022Controller;
+use App\Http\Controllers\Api\clienteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,13 @@ use App\Http\Controllers\Api\cappi2022Controller;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+
+Route::get('/datostickets2/{mail}', [clienteController::class, 'datostickets']);
+
+
+
+
 Route::get('/ws','App\Http\Controllers\api\wsController@ws');
 //Route::get('/datostickets','App\Http\Controllers\api\wsController@datostickets');
 Route::get('/datostickets/{mail}', [wsController::class, 'datostickets']);
