@@ -1,5 +1,5 @@
 @include('creative.header')
-@vite(['resources/js/app2.js'])
+@vite(['resources/js/app.js'])
 
 <body>
     <!-- Begin page -->
