@@ -571,7 +571,7 @@
                             <div class="col-6 align-self-start small" style="display:inline-block;">
                                 <ul  class="list-group list-group-flush">
                                     <li class="list-group-item">clientid: {{ client_id }}</li>
-                                    <li class="list-group-item">email: {{mail }}
+                                    <li class="list-group-item">email: {{ mail }}
                                         <span v-if="mail!= null"> <button type="button"
                                                 class="btn btn-success btn-sm  " data-bs-toggle="modal"
                                                 data-bs-target="#compose-modal">
@@ -915,7 +915,15 @@ export default {
 
 
         },
+        
+        extrahistorial(id) {
+            axios
+                .get('/api/extrahistorial2/' + id)
+                .then(response => (this.historial = response.data))
+                .catch(error => console.log(error))
+            console.log('extrahistorial.')
 
+        },
 
 
         myMap: function () {
