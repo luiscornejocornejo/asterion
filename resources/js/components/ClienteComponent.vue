@@ -32,7 +32,7 @@
 
                                     <div v-else v-for="currency in info " style="box-shadow: 4px 4px rgba(0,0,0,0.25);"
                                         :style="{ 'background-color': currency.chat_status, 'border-left': 'solid', 'border-left': '5px', 'border-left': ['solid', '5px', 'solid 5px' + currency.priority_color] }"
-                                        v-on:click="pasar(currency.depto, currency.nombredelcliente, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.estado, currency.priority_desc, currency.priority_color, currency.asignado, currency.user_id, currency.priority_color, currency.chat_link,mail,telefono,latitud,longitud,plan_name,whatsapp_nro,client_id)"
+                                        v-on:click="pasar(currency.depto, currency.nombredelcliente, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.estado, currency.priority_desc, currency.priority_color, currency.asignado, currency.user_id, currency.priority_color, currency.chat_link,currency.mail,currency.telefono,currency.latitud,currency.longitud,currency.plan_name,currency.whatsapp_nro,currency.client_id)"
 
                      
 
