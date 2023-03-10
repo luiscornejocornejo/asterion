@@ -7,6 +7,9 @@ use App\Models\base;
 use Illuminate\Support\Facades\DB;
 use App\Models\masterreport;
 
+use App\Models\t_bitacora;
+
+
 class ChatsiennaController extends Controller
 {
   //

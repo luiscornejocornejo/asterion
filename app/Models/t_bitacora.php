@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class t_bitacora extends Model
 {
-    use HasFactory;
+
+
+    protected $table = 't_bitacora';
 }
