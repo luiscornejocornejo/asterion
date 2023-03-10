@@ -653,40 +653,8 @@ export default {
 
         },
 
-        extrasmail(id) {
-            axios
-                .get('/api/extrasmail2/' + id)
-                .then(response => (this.extra = response.data))
-                .catch(error => console.log(error))
-            console.log('extrasmail.')
-
-        },
-        extrasuserf(userid) {
-
-            axios
-                .get('/api/extrasuser2/' + userid)
-                .then(response => (this.extrauser = response.data))
-                .catch(error => console.log(error))
-            console.log('extrasmail.')
-        },
-        extraswhatapp(id) {
-            console.log(id);
-
-            axios
-                .get('/api/extraswhatapp2/' + id)
-                .then(response => (this.whapp = response.data))
-                .catch(error => console.log(error))
-            console.log("carga")
-
-        },
-        extrahistorial(id) {
-            axios
-                .get('/api/extrahistorial2/' + id)
-                .then(response => (this.historial = response.data))
-                .catch(error => console.log(error))
-            console.log('extrahistorial.')
-
-        },
+      
+      
         myMap: function () {
             var mapProp = {
                 center: new google.maps.LatLng(51.508742, -0.120850),
