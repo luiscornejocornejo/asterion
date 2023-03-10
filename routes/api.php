@@ -23,6 +23,9 @@ Route::get('/topics2', [clienteController::class, 'topics2']);
 Route::get('/departments2', [clienteController::class, 'departments2']);
 Route::get('/status2', [clienteController::class, 'status2']);
 Route::get('/staff2', [clienteController::class, 'staff2']);
+Route::get('/extrahistorial2/{id}',[wsController::class, 'extrahistorial2']);
+
+
 
 
 

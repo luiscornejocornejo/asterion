@@ -1,5 +1,4 @@
 <template>
-    <div>hola</div>
     <div class="col-xxl-3 col-xl-6 order-xl-1  " style="max-height: 900px;min-height: 900px;">
 
         <div class="bg-primary text-white">
