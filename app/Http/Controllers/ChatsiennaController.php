@@ -63,7 +63,7 @@ class ChatsiennaController extends Controller
   {
 
     $userid=session('idusuario');
-    $datoreporte = t_staff::where('user', '=', $userid)->get();
+    $datoreporte = t_staff::where('users', '=', $userid)->get();
                
                 foreach ($datoreporte as $value2) {
                      $staff = $value2->id;
