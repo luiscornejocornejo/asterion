@@ -692,21 +692,25 @@ export default {
                 .then(response => (this.topics = response.data))
                 .catch(error => console.log(error))
                 console.log(this.topics)
+                console.log(this.topics)
             ,
             axios
                 .get('/api/departments2')
                 .then(response => (this.departments = response.data))
                 .catch(error => console.log(error))
+                console.log(this.departments)
             ,
             axios
                 .get('/api/status2')
                 .then(response => (this.ost_ticket_status = response.data))
                 .catch(error => console.log(error))
+                console.log(this.ost_ticket_status)
             ,
             axios
                 .get('/api/staff2')
                 .then(response => (this.staffs = response.data))
                 .catch(error => console.log(error))
+                console.log(this.staffs)
             ,
 
 
