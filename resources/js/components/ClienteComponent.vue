@@ -33,7 +33,10 @@
 
                                     <div v-else v-for="currency in info " style="box-shadow: 4px 4px rgba(0,0,0,0.25);"
                                         :style="{ 'background-color': currency.chat_status, 'border-left': 'solid', 'border-left': '5px', 'border-left': ['solid', '5px', 'solid 5px' + currency.priority_color] }"
-                                        v-on:click="pasar(currency.depto, currency.nombredelcliente, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.estado, currency.priority_desc, currency.priority_color, currency.asignado, currency.user_id, currency.priority_color, currency.chat_link)"
+                                        v-on:click="pasar(currency.depto, currency.nombredelcliente, currency.lastupdate, currency.ticket_id, currency.source, currency.creacion, currency.topic, currency.estado, currency.priority_desc, currency.priority_color, currency.asignado, currency.user_id, currency.priority_color, currency.chat_link,mail,telefono,latitud,longitud,plan_name,whatsapp_nro,client_id)"
+
+                     
+
                                         class="currency  p-2 mb-3  rounded ">
 
                                         <a href="javascript:void(0);" class="text-body">
@@ -760,6 +763,14 @@ export default {
         return {
 
             chat_link: null,
+            mail:null,
+            telefono:null,
+            latitud:null,
+            longitud:null,
+            plan_name:null,
+            whatsapp_nro:null,
+            client_id:null,
+
             csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
             user: document.querySelector('meta[name="user"]').getAttribute('content'),
             colordeprueba: '#624ec6',
@@ -913,8 +924,15 @@ export default {
                 zoom: 5,
             }
         },
-        pasar: function (a, b, c, d, e, f, g, h, i, j, k, l, m, chat_link) {
+        pasar: function (a, b, c, d, e, f, g, h, i, j, k, l, m, chat_link,mail,telefono,latitud,longitud,plan_name,whatsapp_nro,client_id) {
             this.chat_link = chat_link;
+            this.mail=mail;
+            this.telefono=telefono;
+            this.latitud=latitud;
+            this.longitud=longitud;
+            this.plan_name=plan_name;
+            this.whatsapp_nro=whatsapp_nro;
+            this.client_id=client_id;
             console.log(this.chat_link)
 
             this.clickeo = true;
