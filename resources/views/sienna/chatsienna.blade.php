@@ -1,5 +1,5 @@
 @include('creative.header')
-@vite(['resources/js/app.js'])
+@vite(['resources/js/app2.js'])
 
 <body>
     <!-- Begin page -->
@@ -24,7 +24,7 @@
                 <!-- Start Content-->
                
 
-                    <div id="App">
+                    <div id="App2">
                         <div class="row m-1">
                             <cliente-component></cliente-component>
                          
