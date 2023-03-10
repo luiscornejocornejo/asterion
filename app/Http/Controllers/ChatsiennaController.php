@@ -54,20 +54,15 @@ class ChatsiennaController extends Controller
       ->with('success', 'Se modifico el depto  correctamente!');
   }
 
-  public function chatcreate(Request $request)
+  public function bitacoracreate($estado,$ticket)
   {
 
-   echo $idtickethistorial = $request->idtickethistorial;
-   echo$notainterna = $request->notainterna;
-    /*
-    $query = "update ost_ticket set topic_id='" . $statos . "'   where ticket_id ='" . $idticketestado . "'";
+    $userid=session('idusuario');
+   $query1="select ";
+    $query = "INSERT INTO t_bitacora (t_estado, t_staff, t_tickets, fecha) VALUES(".$estado.", 0, ".$ticket.", 'now()')";
 
-    $aa = $this->conectar2(8);
-    $actualizado = DB::connection('mysql2')->select($query);
+      $fields55 = DB::select($query);
 
-    return redirect()
-      ->back()
-      ->with('success', 'Se modifico el topic  correctamente!');*/
   }
   
 
