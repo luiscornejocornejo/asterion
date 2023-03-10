@@ -40,6 +40,20 @@ class ChatsiennaController extends Controller
   }
 
 
+  public function cambiardepto2(Request $request)
+  {
+
+    $idticketestado = $request->idticketestado;
+    $statos = $request->statos;
+     $query = "update t_tickets set t_departamentos='" . $statos . "'   where id ='" . $idticketestado . "'";
+
+     $fields55 = DB::select($query);
+
+    return redirect()
+      ->back()
+      ->with('success', 'Se modifico el depto  correctamente!');
+  }
+
   public function chatcreate(Request $request)
   {
 
@@ -56,20 +70,7 @@ class ChatsiennaController extends Controller
       ->with('success', 'Se modifico el topic  correctamente!');*/
   }
   
-  public function cambiardepto(Request $request)
-  {
 
-    $idticketestado = $request->idticketestado;
-    $statos = $request->statos;
-    $query = "update ost_ticket set dept_id='" . $statos . "'   where ticket_id ='" . $idticketestado . "'";
-
-    $aa = $this->conectar2(11);
-    $actualizado = DB::connection('mysql2')->select($query);
-
-    return redirect()
-      ->back()
-      ->with('success', 'Se modifico el depto  correctamente!');
-  }
 
   public function asignar(Request $request)
   {
