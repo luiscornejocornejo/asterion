@@ -18,7 +18,7 @@ use App\Http\Controllers\Api\clienteController;
 */
 
 
-Route::get('/datostickets2/{mail}', [clienteController::class, 'datostickets']);
+Route::get('/datostickets2/{mail}', [clienteController::class, 'datostickets2']);
 
 
 
