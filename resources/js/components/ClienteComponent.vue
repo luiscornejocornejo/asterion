@@ -959,6 +959,8 @@ export default {
             this.nombreusuario = b;
 
             this.source = e;
+            this.historialllll = this.extrahistorial(d);
+            console.log('extrahistorial.')
 
 
 
