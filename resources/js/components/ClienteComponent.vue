@@ -421,7 +421,7 @@ export default {
                 .catch(error => console.log(error))
             ,
             axios
-                .get('/api/ost_ticket_status2')
+                .get('/api/status2')
                 .then(response => (this.ost_ticket_status = response.data))
                 .catch(error => console.log(error))
             ,

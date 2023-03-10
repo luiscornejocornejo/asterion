@@ -20,6 +20,9 @@ use App\Http\Controllers\Api\clienteController;
 
 Route::get('/datostickets2/{mail}', [clienteController::class, 'datostickets2']);
 Route::get('/topics2', [clienteController::class, 'topics2']);
+Route::get('/departments2', [clienteController::class, 'departments2']);
+Route::get('/status2', [clienteController::class, 'status2']);
+Route::get('/staff2', [clienteController::class, 'staff2']);
 
 
 

@@ -73,12 +73,41 @@ class clienteController extends Controller
     public function topics2(Request $request)
     {
 
-        $fields3 = $this->conectar2(1);
         $querydatos = "select * from t_topic";
         $fields55 = DB::select($querydatos);
         $return2 = json_encode($fields55);
         return $return2;
     }
+
+    public function departments2(Request $request)
+    {
+
+        $querydatos = "select * from t_departamentos";
+        $fields55 = DB::select($querydatos);
+        $return2 = json_encode($fields55);
+        return $return2;
+    }
+    
+    public function status2(Request $request)
+    {
+
+        $querydatos = "select * from t_estado";
+        $fields55 = DB::select($querydatos);
+        $return2 = json_encode($fields55);
+        return $return2;
+    }
+    
+
+    public function staff2(Request $request)
+    {
+
+        $querydatos = "select * from t_staff";
+        $fields55 = DB::select($querydatos);
+        $return2 = json_encode($fields55);
+        return $return2;
+    }
+    
+
 
 
     public function extrasmail(Request $request)
