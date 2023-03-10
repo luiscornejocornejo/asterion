@@ -42,7 +42,7 @@ class ChatsiennaController extends Controller
 
      $fields55 = DB::select($query);
 
-     $topiclist = t_topic::find($statos);//('users', '=', $userid)->get();
+     $topiclist = t_topic::find($statos);
                
      $this->bitacoracreate("cambio de topic ".$topiclist->nombre,$idticketestado);
     return redirect()
@@ -59,6 +59,8 @@ class ChatsiennaController extends Controller
      $query = "update t_tickets set t_departamentos='" . $statos . "'   where id ='" . $idticketestado . "'";
 
      $fields55 = DB::select($query);
+     $topiclist = t_departamentos::find($statos);
+     $this->bitacoracreate("cambio de departamento ".$topiclist->nombre,$idticketestado);
 
     return redirect()
       ->back()
