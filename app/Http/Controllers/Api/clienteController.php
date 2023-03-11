@@ -10,6 +10,8 @@ use App\Models\masterreport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\t_tickets;
+use App\Models\t_bitacora;
+
 use Carbon\Carbon;
 
 class clienteController extends Controller
@@ -134,13 +136,7 @@ class clienteController extends Controller
   
     public function crearticket(Request $request){
 
-
-        $date = Carbon::now();
-
-        
-
         $t_tickets=new t_tickets();
-
         $t_tickets->t_departamentos=$request->t_departamentos;
         $t_tickets->t_topic=$request->t_topic;
         if(isset($request->t_estado)){
@@ -148,19 +144,19 @@ class clienteController extends Controller
         }else{
             $t_tickets->t_estado=1;
         }
-        
         $t_tickets->t_source=$request->t_source;
         $t_tickets->t_prioridad=$request->t_prioridad;
         $t_tickets->t_staff=null;
-        
         $t_tickets->save();
         $ticketidinsertado = $t_tickets->id;
 
-        //$querydatos = "INSERT INTO t_tickets (t_departamentos, t_staff, t_topic, t_estado, t_source, t_creado, t_last_update, t_cerrado, `number`, t_prioridad) 
-        //VALUES(".$t_departamentos.", 0,". $t_topic.", ".$t_estado.", ".$t_source.", now(), 'NULL', 'NULL', '', ".$t_prioridad.");
-        //";
-        ///$fields55 = DB::select($querydatos);
-        $return2 = json_encode($ticketidinsertado);
+        $t_bitacora=new t_bitacora();
+        $t_bitacora->t_estado=$t_tickets->t_estado;
+        $t_bitacora->t_staff=1;
+        $t_bitacora->t_tickets=$ticketidinsertado;
+        $t_bitacora->save();
+        $devo=array("ticket"=>$ticketidinsertado);
+        $return2 = json_encode($devo);
         return $return2;
 
 
