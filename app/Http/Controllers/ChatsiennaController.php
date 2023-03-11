@@ -26,7 +26,7 @@ class ChatsiennaController extends Controller
 
     $idticketestado = $request->idticketestado;
     $statos = $request->statos;
-    
+
     $ticketes = t_tickets::find($idticketestado);
     $ticketes->t_estado=$statos;
     $ticketes->save();
@@ -47,12 +47,10 @@ class ChatsiennaController extends Controller
     $idticketestado = $request->idticketestado;
     $statos = $request->statos;
 
-
     $ticketes = t_tickets::find($idticketestado);
     $ticketes->t_topic=$statos;
     $ticketes->save();
 
-   
      $topiclist = t_topic::find($statos);
                
      $this->bitacoracreate("cambio de topic ".$topiclist->nombre,$idticketestado);
@@ -67,9 +65,11 @@ class ChatsiennaController extends Controller
 
     $idticketestado = $request->idticketestado;
     $statos = $request->statos;
-     $query = "update t_tickets set t_departamentos='" . $statos . "'   where id ='" . $idticketestado . "'";
+    
+    $ticketes = t_tickets::find($idticketestado);
+    $ticketes->t_departamentos=$statos;
+    $ticketes->save();
 
-     $fields55 = DB::select($query);
      $topiclist = t_departamentos::find($statos);
      $this->bitacoracreate("cambio de departamento ".$topiclist->nombre,$idticketestado);
 
@@ -84,9 +84,11 @@ class ChatsiennaController extends Controller
 
     $idticketestado = $request->idticketestado;
     $statos = $request->statos;
-     $query = "update t_tickets set t_staff='" . $statos . "'   where id ='" . $idticketestado . "'";
 
-     $fields55 = DB::select($query);
+    $ticketes = t_tickets::find($idticketestado);
+    $ticketes->t_staff=$statos;
+    $ticketes->save();
+    
      $topiclist = t_staff::find($statos);
      $this->bitacoracreate("asignado a ".$topiclist->nombre,$idticketestado);
 
