@@ -137,6 +137,13 @@ class clienteController extends Controller
   
     public function crearticket(Request $request){
 
+        $tokentabla="limaperu";
+        $token=$request->token;
+        if ($tokentabla != $token) {
+            $error = array("error token" => "error de credenciales");
+            return json_encode($error);
+        }
+
         $t_tickets=new t_tickets();
         $t_tickets->t_departamentos=$request->t_departamentos;
         $t_tickets->t_topic=$request->t_topic;
