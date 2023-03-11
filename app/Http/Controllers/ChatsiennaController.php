@@ -42,10 +42,13 @@ class ChatsiennaController extends Controller
 
     $idticketestado = $request->idticketestado;
     $statos = $request->statos;
-     $query = "update t_tickets set t_topic='" . $statos . "'   where id ='" . $idticketestado . "'";
 
-     $fields55 = DB::select($query);
 
+    $ticketes = t_tickets::find($idticketestado);
+    $ticketes->t_topic=$statos;
+    $ticketes->save();
+
+   
      $topiclist = t_topic::find($statos);
                
      $this->bitacoracreate("cambio de topic ".$topiclist->nombre,$idticketestado);
@@ -90,18 +93,17 @@ class ChatsiennaController extends Controller
   
   public function bitacoracreate($estado,$ticket)
   {
-
     $userid=session('idusuario');
     $datoreporte = t_staff::where('users', '=', $userid)->get();
-               
-                foreach ($datoreporte as $value2) {
-                     $staff = $value2->id;
-                  
-                }
-    $query = "INSERT INTO t_bitacora (t_estado, t_staff, t_tickets, fecha) VALUES('".$estado."', ".$staff.", ".$ticket.", now())";
+    foreach ($datoreporte as $value2) {
+        $staff = $value2->id;          
+     }
 
-      $fields55 = DB::select($query);
-
+    $t_bitacora=new t_bitacora();
+    $t_bitacora->t_estado=$estado;
+    $t_bitacora->t_staff=$staff;
+    $t_bitacora->t_tickets=$ticket;
+    $t_bitacora->save();
   }
   
 
