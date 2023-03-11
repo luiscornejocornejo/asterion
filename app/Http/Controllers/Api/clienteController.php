@@ -154,13 +154,14 @@ class clienteController extends Controller
         $t_tickets->t_staff=null;
         
         $t_tickets->save();
+        $ticketidinsertado = $t_tickets->id;
 
         //$querydatos = "INSERT INTO t_tickets (t_departamentos, t_staff, t_topic, t_estado, t_source, t_creado, t_last_update, t_cerrado, `number`, t_prioridad) 
         //VALUES(".$t_departamentos.", 0,". $t_topic.", ".$t_estado.", ".$t_source.", now(), 'NULL', 'NULL', '', ".$t_prioridad.");
         //";
         ///$fields55 = DB::select($querydatos);
-        //$return2 = json_encode($fields55);
-        return $date;
+        $return2 = json_encode($ticketidinsertado);
+        return $return2;
 
 
 
