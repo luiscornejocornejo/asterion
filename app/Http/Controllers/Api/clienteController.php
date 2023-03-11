@@ -115,7 +115,7 @@ class clienteController extends Controller
     {
         $ticketid = $request->id;
 
-        $querydatos = "select a.fecha as timestamp,ts.nombre as username,a.t_estado as name from t_bitacora a
+        $querydatos = "select a.created_at as timestamp,ts.nombre as username,a.t_estado as name from t_bitacora a
         join t_staff ts on ts.id=a.t_staff 
         where a.t_tickets =" . $ticketid . "";
         $fields55 = DB::select($querydatos);
