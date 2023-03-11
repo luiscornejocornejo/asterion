@@ -26,9 +26,12 @@ class ChatsiennaController extends Controller
 
     $idticketestado = $request->idticketestado;
     $statos = $request->statos;
-     $query = "update t_tickets set t_estado='" . $statos . "'   where id ='" . $idticketestado . "'";
+    
+    $ticketes = t_tickets::find($idticketestado);
+    $ticketes->t_estado=$statos;
+    $ticketes->save();
 
-     $fields55 = DB::select($query);
+
      $topiclist = t_estado::find($statos);
      $this->bitacoracreate("cambio de estado: a ".$topiclist->nombre,$idticketestado);
 
