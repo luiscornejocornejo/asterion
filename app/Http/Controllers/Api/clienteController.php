@@ -129,94 +129,23 @@ class clienteController extends Controller
         return $return2;
     }
 
-    public function extrasmail(Request $request)
-    {
-        $fields3 = $this->conectar2(11);
-        $ticketid = $request->id;
-        $query66 = "SELECT body FROM ost_thread_entry WHERE thread_id= (SELECT id FROM ost_thread where object_id=" . $ticketid . ")";
-        $fields66 = DB::reconnect('mysql2')->select($query66);
-        $return2 = json_encode($fields66);
+  
+    public function crearticket(Request $request){
+
+
+        $querydatos = "select * from t_tickets";
+        $fields55 = DB::select($querydatos);
+        $return2 = json_encode($fields55);
         return $return2;
 
-    }
 
-    public function extrasuser(Request $request)
-    {
-        $fields3 = $this->conectar2(11);
-        $user_id = $request->user_id;
-        $query66 = "select * from ost_user__cdata where user_id=" . $user_id . "";
-        $fields66 = DB::reconnect('mysql2')->select($query66);
-        $return2 = json_encode($fields66);
-        return $return2;
 
     }
+  
      
-    public function extraswhatapp(Request $request)
-    {
-        $fields3 = $this->conectar2(11);
-        $ticketid = $request->id;
-        $querydatos = "select f.chat_link,f.extra1_ticket,f.extra2_ticket,f.subject, c.priority_desc as priority
-        
-        from ost_ticket a
-       left join   ost_ticket__cdata f
-       on f.ticket_id=a.ticket_id
-       left join ost_ticket_priority c on f.priority = c.priority_id 
-
-       where a.ticket_id=" . $ticketid;
-        $fields55 = DB::reconnect('mysql2')->select($querydatos);
-
-        $return = array();
-        foreach ($fields55 as $value) {
-            $return = array("chat_link" => $value->chat_link);
-        }
-
-        $return2 = json_encode($fields55);
-        return $return2;
-    }
-
-    public function extrahistorial(Request $request)
-    {
-        $fields3 = $this->conectar2(11);
-        $ticketid = $request->id;
-        $querydatos = "select b.name,a.username,a.timestamp,a.data from ost_thread_event a
-    left join ost_event b on b.id=a.event_id
-    where a.thread_id=(select id from ost_thread where object_id=" . $ticketid . ")
-    order by a.id asc";
-        $fields55 = DB::reconnect('mysql2')->select($querydatos);
-        $return2 = json_encode($fields55);
-        return $return2;
-    }
-
    
-   
-    public function departments(Request $request)
-    {
 
-        $fields3 = $this->conectar2(11);
-        $querydatos = "select id,name  from ost_department";
-        $fields55 = DB::reconnect('mysql2')->select($querydatos);
-        $return2 = json_encode($fields55);
-        return $return2;
-    }
-    public function ost_ticket_status(Request $request)
-    {
-
-        $fields3 = $this->conectar2(11);
-        $querydatos = "select id,name from ost_ticket_status";
-        $fields55 = DB::reconnect('mysql2')->select($querydatos);
-        $return2 = json_encode($fields55);
-        return $return2;
-    }
-
-    public function staff(Request $request)
-    {
-
-        $fields3 = $this->conectar2(11);
-        $querydatos = "select staff_id as id,concat(firstname, ' ', lastname) as name from ost_staff";
-        $fields55 = DB::reconnect('mysql2')->select($querydatos);
-        $return2 = json_encode($fields55);
-        return $return2;
-    }
+    
 
 
 

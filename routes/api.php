@@ -25,6 +25,9 @@ Route::get('/status2', [clienteController::class, 'status2']);
 Route::get('/staff2', [clienteController::class, 'staff2']);
 Route::get('/extrahistorial2/{id}',[clienteController::class, 'extrahistorial2']);
 
+Route::post('/crearticket', [clienteController::class, 'crearticket']);
+
+
 
 
 
