@@ -152,7 +152,6 @@ class clienteController extends Controller
         $t_tickets->t_source=$request->t_source;
         $t_tickets->t_prioridad=$request->t_prioridad;
         $t_tickets->t_staff=null;
-        $t_tickets->t_creado=$date;
         
         $t_tickets->save();
 
