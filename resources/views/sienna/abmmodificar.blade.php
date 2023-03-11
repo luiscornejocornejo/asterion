@@ -120,6 +120,13 @@
                                 if ($tipo == "textarea") {
 
                                 ?>
+                                 <div id="ckeditor-classic"></div>
+                                 <script src="assets/libs/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+<!-- init js -->
+
+<script type="text/javascript">
+    ClassicEditor.create(document.querySelector("#ckeditor-classic")).then(function(e){e.ui.view.editable.element.style.height="200px"}).catch(function(e){console.error(e)});
+</script>
                                     <textarea name="<?php echo $Fieldarray[$i]; ?>" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $data[0]->$pre; ?></textarea>
 
                                 <?php
