@@ -12,6 +12,7 @@ use App\Models\t_staff;
 use App\Models\t_departamentos;
 use App\Models\t_topic;
 use App\Models\t_estado;
+use App\Models\t_tickets;
 
 
 
