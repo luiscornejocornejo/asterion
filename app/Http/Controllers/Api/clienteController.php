@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\t_tickets;
 use App\Models\t_bitacora;
+use App\Models\t_estado;
 
 use Carbon\Carbon;
 
@@ -150,8 +151,10 @@ class clienteController extends Controller
         $t_tickets->save();
         $ticketidinsertado = $t_tickets->id;
 
+        $t_estado= t_estado::find($t_tickets->t_estado);
+        
         $t_bitacora=new t_bitacora();
-        $t_bitacora->t_estado=$t_tickets->t_estado;
+        $t_bitacora->t_estado=$t_estado->nombre;
         $t_bitacora->t_staff=1;
         $t_bitacora->t_tickets=$ticketidinsertado;
         $t_bitacora->save();
