@@ -121,6 +121,7 @@
 
                                 ?>
 
+<script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
 
 <textarea name="<?php echo $Fieldarray[$i]; ?>"><?php echo $data[0]->$pre; ?></textarea>
                 <script>
