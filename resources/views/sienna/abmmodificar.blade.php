@@ -128,15 +128,7 @@
                         CKEDITOR.replace( '<?php echo $Fieldarray[$i]; ?>' );
                 </script>
 
-                                 <div id="ckeditor-classic">
-                                 <?php echo $data[0]->$pre; ?>
-                                </div>
-                                 <script src="assets/libs/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
-<!-- init js -->
-
-<script type="text/javascript">
-    ClassicEditor.create(document.querySelector("#ckeditor-classic")).then(function(e){e.ui.view.editable.element.style.height="200px"}).catch(function(e){console.error(e)});
-</script>
+                    
                                 <?php
                                 } elseif ($tipo == "boolean") {
 

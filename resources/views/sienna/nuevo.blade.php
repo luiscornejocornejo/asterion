@@ -104,8 +104,14 @@
                                 if ($tipo == "textarea") {
 
                                 ?>
-                                    <textarea name="<?php echo $Fieldarray[$i]; ?>" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                  
+                                    
+<script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
 
+<textarea name="<?php echo $Fieldarray[$i]; ?>"><?php echo $data[0]->$pre; ?></textarea>
+                <script>
+                        CKEDITOR.replace( '<?php echo $Fieldarray[$i]; ?>' );
+                </script>
                                 <?php
                                 } elseif ($tipo == "boolean") {
 
