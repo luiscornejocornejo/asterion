@@ -120,6 +120,13 @@
                                 if ($tipo == "textarea") {
 
                                 ?>
+
+
+<textarea name="editor1"><?php echo $data[0]->$pre; ?></textarea>
+                <script>
+                        CKEDITOR.replace( 'editor1' );
+                </script>
+
                                  <div id="ckeditor-classic" name="<?php echo $Fieldarray[$i]; ?>">
                                  <?php echo $data[0]->$pre; ?>
                                 </div>
@@ -129,7 +136,7 @@
 <script type="text/javascript">
     ClassicEditor.create(document.querySelector("#ckeditor-classic")).then(function(e){e.ui.view.editable.element.style.height="200px"}).catch(function(e){console.error(e)});
 </script>
-                                    <textarea name="old<?php echo $Fieldarray[$i]; ?>" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $data[0]->$pre; ?></textarea>
+                                    <textarea name="<?php echo $Fieldarray[$i]; ?>" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $data[0]->$pre; ?></textarea>
 
                                 <?php
                                 } elseif ($tipo == "boolean") {
