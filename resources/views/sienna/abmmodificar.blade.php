@@ -47,7 +47,7 @@
                     <h1 class="h3 mb-0 text-gray-800">Modificar</h1>
                 </div>
 
-                <form method="get" enctype="multipart/form-data">
+                <form method="post" enctype="multipart/form-data">
                     @csrf
                     <?php for ($i = 0; $i < sizeof($Nullarray); $i++) {
                         $arrayno = array('created_at', $pk, 'updated_at',  'email_verified_at', 'remember_token');
@@ -129,7 +129,7 @@
 <script type="text/javascript">
     ClassicEditor.create(document.querySelector("#ckeditor-classic")).then(function(e){e.ui.view.editable.element.style.height="200px"}).catch(function(e){console.error(e)});
 </script>
-                                    <textarea name="<?php echo $Fieldarray[$i]; ?>" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $data[0]->$pre; ?></textarea>
+                                    <textarea name="old<?php echo $Fieldarray[$i]; ?>" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $data[0]->$pre; ?></textarea>
 
                                 <?php
                                 } elseif ($tipo == "boolean") {
