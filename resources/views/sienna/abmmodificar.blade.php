@@ -47,7 +47,7 @@
                     <h1 class="h3 mb-0 text-gray-800">Modificar</h1>
                 </div>
 
-                <form method="post" enctype="multipart/form-data">
+                <form method="get" enctype="multipart/form-data">
                     @csrf
                     <?php for ($i = 0; $i < sizeof($Nullarray); $i++) {
                         $arrayno = array('created_at', $pk, 'updated_at',  'email_verified_at', 'remember_token');
@@ -120,7 +120,9 @@
                                 if ($tipo == "textarea") {
 
                                 ?>
-                                 <div id="ckeditor-classic"></div>
+                                 <div id="ckeditor-classic" name="<?php echo $Fieldarray[$i]; ?>">
+                                 <?php echo $data[0]->$pre; ?>
+                                </div>
                                  <script src="assets/libs/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
 <!-- init js -->
 
