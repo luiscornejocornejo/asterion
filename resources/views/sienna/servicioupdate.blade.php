@@ -141,7 +141,7 @@ foreach ($report as $valor){
                 <script>
                         CKEDITOR.replace( 'query2' );
                 </script>
-                                                        <textarea required id="progresspill-address-input" name="query2" class="form-control" rows="2"><?php echo $query;?></textarea>
+                                                        <textarea required  name="query2" ><?php echo $query;?></textarea>
                                                     </div>
                                                 </div>
                                             </div>
