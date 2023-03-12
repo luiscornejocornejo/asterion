@@ -123,9 +123,9 @@
 
 
                 <script>
-                        CKEDITOR.replace( 'query2' );
+                        CKEDITOR.replace( 'query3' );
                 </script>
-                                                        <textarea required id="progresspill-address-input" name="query2" class="form-control" rows="2"></textarea>
+                                                        <textarea required id="progresspill-address-input" name="query2" class="form-control" rows="10"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
