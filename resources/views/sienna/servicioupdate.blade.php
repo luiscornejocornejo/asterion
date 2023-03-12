@@ -135,12 +135,7 @@ foreach ($report as $valor){
                                                 <div class="col-lg-12">
                                                     <div class="mb-3">
                                                         <label for="progresspill-address-input">QUERY</label>
-                                                        <script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
-
-
-                <script>
-                        CKEDITOR.replace( 'query2' );
-                </script>
+                                    
                                                         <textarea required  name="query2" ><?php echo $query;?></textarea>
                                                     </div>
                                                 </div>
@@ -351,3 +346,10 @@ let valor="";
 
 <!-- form wizard init -->
 <script src="assets/js/pages/form-wizard.init.js"></script>
+
+<script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
+
+
+<script>
+        CKEDITOR.replace( 'query2' );
+</script>
