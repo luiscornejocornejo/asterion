@@ -28,12 +28,12 @@ Route::get('/extrahistorial2/{id}',[clienteController::class, 'extrahistorial2']
 Route::post('/crearticket', [clienteController::class, 'crearticket']);
 
 
+Route::get('/ws', [wsController::class, 'ws']);
 
 
 
 
-
-Route::get('/ws','App\Http\Controllers\api\wsController@ws');
+//Route::get('/ws','App\Http\Controllers\api\wsController@ws');
 //Route::get('/datostickets','App\Http\Controllers\api\wsController@datostickets');
 Route::get('/datostickets/{mail}', [wsController::class, 'datostickets']);
 Route::get('/topics', [wsController::class, 'topics']);
