@@ -190,7 +190,7 @@ class wsController extends Controller
             }
             $master = masterreport::where('id', $idreport)->get();
             foreach ($master as $value2) {
-                $query = $value2->query;
+              echo   $query = $value2->query;
                 $dbexterna = $value2->base;
             }
             if ($dbexterna == 1) {
