@@ -167,7 +167,29 @@ class wsController extends Controller
     }
 
 
-
+    function cambiarquery($parametros, $request, $query)
+    {
+  
+  
+      if ($parametros == "") {
+        return $query;
+      }
+  
+      $posicion_coincidencia = strpos($parametros, ",");
+      //se puede hacer la comparacion con 'false' o 'true' y los comparadores '===' o '!=='
+      if ($posicion_coincidencia === false) {
+        //un solo parametro
+        $nombredelcampo = $parametros;
+        $valordelcampo = $request->$nombredelcampo;
+        $clave = "@" . $nombredelcampo;
+        $query2 = str_replace($clave, $valordelcampo, $query);
+        return $query2;
+      } else {
+        //varios parametros
+      }
+  
+      return $query;
+    }
 
     public function ws(Request $request)
     {
@@ -192,7 +214,11 @@ class wsController extends Controller
             foreach ($master as $value2) {
               echo   $query = $value2->query;
                 $dbexterna = $value2->base;
+                $parametros = $value2->parametros;
             }
+
+
+            $query=$this->cambiarquery($parametros, $request, $query);
             if ($dbexterna == 1) {
                 $datos = DB::select($query);
             } else {
