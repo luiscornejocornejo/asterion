@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\wsController;
 use App\Http\Controllers\Api\cappi2022Controller;
 use App\Http\Controllers\Api\clienteController;
+use App\Http\Controllers\Api\crearticketController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
