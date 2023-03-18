@@ -72,7 +72,7 @@ class crearticketController extends Controller
     
         $abierto=$this->tieneticket($request)
 */
-        $existe=$this->existe($request->email);
+       echo  $existe=$this->existe($request->email);
 
 
 
@@ -86,9 +86,13 @@ class crearticketController extends Controller
     
         $fields3 = $this->conectar2(11);
         $fields55 = DB::reconnect('mysql2')->select($query);
-        $return2 = json_encode($fields55);
-        dd($fields55);
-        return $return2;
+        $cuantos=0;
+        foreach($fields55 as $value){
+
+            $cuantos=$value->cuantos;
+        }
+    
+        return $cuantos;
     }
 
     public function tieneticket(Request $request)
