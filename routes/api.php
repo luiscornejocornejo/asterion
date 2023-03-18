@@ -27,6 +27,9 @@ Route::get('/extrahistorial2/{id}',[clienteController::class, 'extrahistorial2']
 
 Route::post('/crearticket', [clienteController::class, 'crearticket']);
 
+Route::get('/crearticketos', [crearticketController::class, 'crearticketenos']);
+
+
 
 Route::get('/ws', [wsController::class, 'ws']);
 

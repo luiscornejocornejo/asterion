@@ -137,6 +137,9 @@ class clienteController extends Controller
   
     public function crearticket(Request $request){
 
+
+
+        //token validacion
         $tokentabla="limaperu";
         $token=$request->token;
         if ($tokentabla != $token) {
@@ -144,6 +147,8 @@ class clienteController extends Controller
             return json_encode($error);
         }
 
+
+        //creacion de ticket
         $t_tickets=new t_tickets();
         $t_tickets->t_departamentos=$request->t_departamentos;
         $t_tickets->t_topic=$request->t_topic;
@@ -165,6 +170,16 @@ class clienteController extends Controller
         $t_bitacora->t_staff=1;
         $t_bitacora->t_tickets=$ticketidinsertado;
         $t_bitacora->save();
+
+
+        //datos extrasuser
+
+
+
+
+
+
+        //devolucion
         $devo=array("ticket"=>$ticketidinsertado);
         $return2 = json_encode($devo);
         return $return2;
