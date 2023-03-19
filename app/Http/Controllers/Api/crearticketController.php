@@ -72,27 +72,66 @@ class crearticketController extends Controller
     
         $abierto=$this->tieneticket($request)
 */
-       echo  $existe=$this->existe($request->email);
+         $user_id=$this->existe($request->email);
+         if($user_id==0){
+            echo "crear usuario";
+
+         }else{
+
+            
+          $tt=$this->insertarTicket($user_id);
+         }
 
 
 
     }
 
+    public function insertarTicket($user_id){
+
+
+    echo   $queryinsert= " INSERT INTO homero_os.ost_ticket 
+    (ticket_pid, `number`, user_id, user_email_id, status_id, dept_id, sla_id, topic_id, staff_id, team_id, email_id, lock_id, flags, sort, ip_address, source, source_extra, isoverdue, isanswered, duedate, est_duedate, reopened, closed, lastupdate, created, updated, user_data_json)
+     VALUES(0, '','".$user_id."', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 'Other', '', 0, 0, '', '', '', '', '', '', '', '');
+       ";
+    echo "<br><br>";
+
+        echo  $query2="INSERT INTO homero_os.ost_ticket__cdata (ticket_id, priority, subject, xen_chatid, chat_status, chat_link, extra1_ticket, extra2_ticket, plan_name, lat, `long`)
+        
+         VALUES(0, '', '', '', '', '', '', '', '', '', '');
+            ";
+                echo "<br><br>";
+
+            echo $query3="INSERT INTO homero_os.ost_user__cdata (user_id, clientid, name, email, phone, whatsapp_nro, plan_name, lat, `long`, extra1, extra2)
+            
+             VALUES('".$user_id."', '', '', '', '', '', '', '', '', '', '');
+            ";
+
+echo "<br><br>";
+
+        echo $query4="INSERT INTO homero_os.ost_thread (object_id, object_type, extra, lastresponse, lastmessage, created) VALUES(0, '', '', '', '', '');
+        ";
+    echo "<br><br>";
+
+        echo $query5="INSERT INTO homero_os.ost_thread_entry (pid, thread_id, staff_id, user_id, `type`, flags, poster, editor, editor_type, source, title, body, format, ip_address, extra, recipients, created, updated) 
+        
+        VALUES(0, 0, '".$user_id."', 0, '', 0, '', 0, '', '', '', '', 'html', '', '', '', '', '');
+        ";
+    }
+
     public function existe($email)
     {
-        $return=false;
 
-        $query="select count(*) as cuantos from homero_os.ost_user_email  where address='".$email."'";
+        $query="select user_id from homero_os.ost_user_email  where address='".$email."'";
     
         $fields3 = $this->conectar2(11);
         $fields55 = DB::reconnect('mysql2')->select($query);
-        $cuantos=0;
+        $user_id=0;
         foreach($fields55 as $value){
 
-            $cuantos=$value->cuantos;
+            $user_id=$value->user_id;
         }
     
-        return $cuantos;
+        return $user_id;
     }
 
     public function tieneticket(Request $request)
