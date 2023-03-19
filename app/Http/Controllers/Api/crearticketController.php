@@ -138,7 +138,7 @@ class crearticketController extends Controller
             ";
                 echo "<br><br>";
 
-                $fields55 = DB::reconnect('mysql2')->select($query2);
+              ///  $fields55 = DB::reconnect('mysql2')->select($query2);
 
          $query3="INSERT INTO homero_os.ost_user__cdata (user_id, clientid, name, email, phone, whatsapp_nro, plan_name, lat, `long`, extra1, extra2)
             
@@ -150,8 +150,12 @@ echo "<br><br>";
 
 
 
-        echo $query4="INSERT INTO homero_os.ost_thread (object_id, object_type, extra, lastresponse, lastmessage, created) VALUES(0, '', '', '', '', '');
+        echo $query4="INSERT INTO homero_os.ost_thread (object_id, object_type, extra, lastresponse, lastmessage, created)
+         VALUES(".$maxid.", 'T', '', null, now(), now());
         ";
+
+           $fields55 = DB::reconnect('mysql2')->select($query4);
+
     echo "<br><br>";
 
         echo $query5="INSERT INTO homero_os.ost_thread_entry (pid, thread_id, staff_id, user_id, `type`, flags, poster, editor, editor_type, source, title, body, format, ip_address, extra, recipients, created, updated) 
