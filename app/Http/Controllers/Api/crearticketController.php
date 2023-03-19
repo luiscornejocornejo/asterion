@@ -86,7 +86,7 @@ class crearticketController extends Controller
             $phone= "1123123132";
             $conversation_id= "pruebaloca 17";
             $subject="tema canal";
-            $body="<iframe src='https://meerkat.xenioo.com/wshare/D53C4919716B44F099CC1102B7ED9594' width='100%' height='400'</iframe>";
+            $body="<iframe src=https://meerkat.xenioo.com/wshare/D53C4919716B44F099CC1102B7ED9594 width=100% height=400></iframe>";
             $ip= "123.211.233.123";
             $message="mensaje";
             $conversation_share_url="https://meerkat.xenioo";
