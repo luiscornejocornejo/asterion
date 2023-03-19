@@ -82,7 +82,7 @@ class crearticketController extends Controller
         //extras user
 
         $clientid = $request->clientid;
-        $nameuser = $request->name;
+        $nameuser = $request->nameuser;
         $email = $request->email;
         $phone = $request->phone;
         $plan_name = $request->plan_name;
