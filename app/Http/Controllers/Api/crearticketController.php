@@ -86,7 +86,7 @@ class crearticketController extends Controller
             $phone= "1123123132";
             $conversation_id= "pruebaloca 17";
             $subject="tema canal";
-            $body='<iframe src="https://meerkat.xenioo.com/wshare/D53C4919716B44F099CC1102B7ED9594" width="100%" height="400"></iframe><br /><table><thead><tr><th>Campo</th><th>Valor</th></tr></thead><tbody><tr><td>channel_id</td><td>TelegramChannel</td></tr><tr><td>filter_value</td><td>5698266763</td></tr><tr><td>Nombre</td><td>test suricata</td></tr><tr><td>Whatsapp Bot</td> <td></td></tr></tbody></table><br /> ';
+            $body="<iframe src='https://meerkat.xenioo.com/wshare/D53C4919716B44F099CC1102B7ED9594' width='100%' height='400'</iframe>";
             $ip= "123.211.233.123";
             $message="mensaje";
             $conversation_share_url="https://meerkat.xenioo";
@@ -178,7 +178,7 @@ echo "<br><br>";
     $maxidhilo=$this->maxidhilo();
         echo $query5="INSERT INTO homero_os.ost_thread_entry (pid, thread_id, staff_id, user_id, `type`, flags, poster, editor, editor_type, source, title, body, format, ip_address, extra, recipients, created, updated) 
         
-        VALUES(0, ".$maxidhilo.",0, '".$user_id."',  'M', 0, '', 0, '', '".$source."', ".$title.", ".$body.", 'html', '', '', '', now(), now());
+        VALUES(0, ".$maxidhilo.",0, '".$user_id."',  'M', 0, '', 0, '', '".$source."', '".$title."', '".$body."', 'html', '', '', '', now(), now());
         ";
 
 
