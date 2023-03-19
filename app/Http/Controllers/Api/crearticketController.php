@@ -79,19 +79,57 @@ class crearticketController extends Controller
          }else{
 
             
-          $tt=$this->insertarTicket($user_id);
+
+            $topic_id= 6;
+
+            $alert= true;
+            $autorespond= true;
+            $source="instagram";
+            $name="Bachata";
+            $email="17host.com";
+            $emailcustomer="cliente17@suricata.la";
+            $idcustomer= "17";
+            $phone= "1123123132";
+            $conversation_id= "pruebaloca 17";
+            $subject="tema canal";
+            $chat_link="https://meerkat.xenioo.com/wshare/41C27038C14B45FEAB5D597EEA317C38";
+            $ip= "123.211.233.123";
+            $message="mensaje";
+            $user_data=:{ "aaaa": "aaaa", "dsadadas": "dasdsads" },
+            $conversation_share_url="https://meerkat.xenioo;
+
+            $status_id=1;
+          $tt=$this->insertarTicket($user_id,$topic_id,$status_id,$source);
+
+          echo $maxid=$this->maxid();
          }
 
 
 
     }
 
-    public function insertarTicket($user_id){
+    public function maxid(){
+
+
+        $query="select max(ticket_id) as max from homero_os.ost_ticket";
+    
+        $fields3 = $this->conectar2(11);
+        $fields55 = DB::reconnect('mysql2')->select($query);
+        $max=0;
+        foreach($fields55 as $value){
+
+            $max=$value->max;
+        }
+    
+        return $max;
+
+    }
+    public function insertarTicket($user_id,$topic_id,$status_id,$source){
 
 
     echo   $queryinsert= " INSERT INTO homero_os.ost_ticket 
     (ticket_pid, `number`, user_id, user_email_id, status_id, dept_id, sla_id, topic_id, staff_id, team_id, email_id, lock_id, flags, sort, ip_address, source, source_extra, isoverdue, isanswered, duedate, est_duedate, reopened, closed, lastupdate, created, updated, user_data_json)
-     VALUES(0, '','".$user_id."', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 'Other', '', 0, 0, '', '', '', '', '', '', '', '');
+     VALUES(null, '000091','".$user_id."', 0, ".$status_id.", 0, 0, 0, ".$topic_id.", 0, 0, 0, 0, 0, '', 'Other', '".$source."', 0, 0, '', '', '', '', now(), now(), now(), '');
        ";
     echo "<br><br>";
 
@@ -107,6 +145,8 @@ class crearticketController extends Controller
             ";
 
 echo "<br><br>";
+
+
 
         echo $query4="INSERT INTO homero_os.ost_thread (object_id, object_type, extra, lastresponse, lastmessage, created) VALUES(0, '', '', '', '', '');
         ";
