@@ -217,7 +217,7 @@ class crearticketController extends Controller
     staff_id, team_id, email_id, lock_id, flags, sort, ip_address, source,
      source_extra, isoverdue, isanswered, duedate, est_duedate, reopened, closed, lastupdate, created, updated, user_data_json)
      VALUES(null, '".$maxnumber."','" . $user_id . "', 0, " . $status_id . ", ".$dept_id.", 0, " . $topic_id . ", 
-     0, 0, 0, 0, 0, 0, '".$ip."', '".$source."',
+     0, 0, 0, 0, 0, 0, '".$ip."', 'Other',
      
      0,0, 0, null,  now(), null, null, now(), now(), now(), '');
        ";
