@@ -94,7 +94,6 @@ class crearticketController extends Controller
             $status_id=1;
           $tt=$this->insertarTicket($user_id,$topic_id,$status_id,$source);
 
-          echo $maxid=$this->maxid();
          }
 
 
@@ -127,16 +126,25 @@ class crearticketController extends Controller
        ";
     echo "<br><br>";
 
+    $fields3 = $this->conectar2(11);
+    $fields55 = DB::reconnect('mysql2')->select($queryinsert);
+     $maxid=$this->maxid();
+
         echo  $query2="INSERT INTO homero_os.ost_ticket__cdata (ticket_id, priority, subject, xen_chatid, chat_status, chat_link, extra1_ticket, extra2_ticket, plan_name, lat, `long`)
         
-         VALUES(0, '', '', '', '', '', '', '', '', '', '');
+
+        sleep(2);
+         VALUES(".$maxid.", '', '', '', '', '', '', '', '', '', '');
             ";
                 echo "<br><br>";
 
-            echo $query3="INSERT INTO homero_os.ost_user__cdata (user_id, clientid, name, email, phone, whatsapp_nro, plan_name, lat, `long`, extra1, extra2)
+                $fields55 = DB::reconnect('mysql2')->select($query2);
+
+         $query3="INSERT INTO homero_os.ost_user__cdata (user_id, clientid, name, email, phone, whatsapp_nro, plan_name, lat, `long`, extra1, extra2)
             
              VALUES('".$user_id."', '', '', '', '', '', '', '', '', '', '');
             ";
+            $fields55 = DB::reconnect('mysql2')->select($query3);
 
 echo "<br><br>";
 
