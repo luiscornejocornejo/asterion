@@ -83,7 +83,7 @@ class crearticketController extends Controller
 
         $clientid = $request->clientid;
         $nameuser = $request->nameuser;
-        $email = $request->email;
+        $emailcliente = $request->emailcliente;
         $phone = $request->phone;
         $plan_name = $request->plan_name;
         $whatsapp_nro=$request->whatsapp_nro;
@@ -120,7 +120,7 @@ class crearticketController extends Controller
             $tt = $this->insertarTicket($user_id, $topic_id, $status_id, $source, $subject, $body,$maxnumber,$dept_id,$ip);
             $maxid = $this->maxid();
             $tt2 = $this->insertarTicketextra($maxid, $priority, $subject, $xen_chatid, $chat_status, $chat_link);
-            $tt3=$this->updateusernuevo($user_id, $clientid, $nameuser, $email, $phone, $whatsapp_nro,$plan_name);
+            $tt3=$this->updateusernuevo($user_id, $clientid, $nameuser, $emailcliente, $phone, $whatsapp_nro,$plan_name);
             $maxidhilo = $this->maxidhilo();
             $tt4=$this->insertarTicketsystem($maxid, $user_id, $source, $title, $body,$maxidhilo);
 
