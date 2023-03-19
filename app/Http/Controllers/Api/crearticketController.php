@@ -114,7 +114,7 @@ class crearticketController extends Controller
         if ($user_id == 0) {
             echo "crear usuario";
 
-            $user_id=$this->crearuser();
+            $user_id=$this->crearuser($nameuser);
             
             $maxnumber=$this->maxnumber();
             $tt = $this->insertarTicket($user_id, $topic_id, $status_id, $source, $subject, $body,$maxnumber,$dept_id,$ip);
@@ -283,9 +283,9 @@ class crearticketController extends Controller
         return $max;
 
     }
-    public function crearuser(){
+    public function crearuser($nameuser){
 
-        $querycrear="INSERT INTO homero_os.ost_user (org_id, default_email_id, status, name, created, updated) VALUES(0, 0, 0, '', now(), now());";
+        $querycrear="INSERT INTO homero_os.ost_user (org_id, default_email_id, status, name, created, updated) VALUES(0, 0, 0, '$nameuser', now(), now());";
 
         $fields55 = DB::reconnect('mysql2')->select($querycrear);
         $usercreado=$this->maxiduser();
