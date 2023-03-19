@@ -127,13 +127,13 @@ class crearticketController extends Controller
     echo "<br><br>";
 
     $fields3 = $this->conectar2(11);
-    $fields55 = DB::reconnect('mysql2')->select($queryinsert);
+ //   $fields55 = DB::reconnect('mysql2')->select($queryinsert);
      $maxid=$this->maxid();
+     sleep(2);
 
         echo  $query2="INSERT INTO homero_os.ost_ticket__cdata (ticket_id, priority, subject, xen_chatid, chat_status, chat_link, extra1_ticket, extra2_ticket, plan_name, lat, `long`)
         
 
-        sleep(2);
          VALUES(".$maxid.", '', '', '', '', '', '', '', '', '', '');
             ";
                 echo "<br><br>";
