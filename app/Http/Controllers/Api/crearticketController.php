@@ -86,13 +86,13 @@ class crearticketController extends Controller
             $phone= "1123123132";
             $conversation_id= "pruebaloca 17";
             $subject="tema canal";
-            $chat_link="https://meerkat.xenioo.com/wshare/41C27038C14B45FEAB5D597EEA317C38";
+            $body='<iframe src="https://meerkat.xenioo.com/wshare/D53C4919716B44F099CC1102B7ED9594" width="100%" height="400"></iframe><br /><table><thead><tr><th>Campo</th><th>Valor</th></tr></thead><tbody><tr><td>channel_id</td><td>TelegramChannel</td></tr><tr><td>filter_value</td><td>5698266763</td></tr><tr><td>Nombre</td><td>test suricata</td></tr><tr><td>Whatsapp Bot</td> <td></td></tr></tbody></table><br /> ';
             $ip= "123.211.233.123";
             $message="mensaje";
             $conversation_share_url="https://meerkat.xenioo";
 
             $status_id=1;
-          $tt=$this->insertarTicket($user_id,$topic_id,$status_id,$source);
+          $tt=$this->insertarTicket($user_id,$topic_id,$status_id,$source,$subject,$body);
 
          }
 
@@ -117,7 +117,25 @@ class crearticketController extends Controller
    
        }
 
-    public function insertarTicket($user_id,$topic_id,$status_id,$source){
+       public function maxidhilo(){
+
+
+        $query="        select max(id) as max from        homero_os.ost_thread 
+        ";
+           
+       
+           $fields3 = $this->conectar2(11);
+           $fields55 = DB::reconnect('mysql2')->select($query);
+           $max=0;
+           foreach($fields55 as $value){
+   
+               $max=$value->max;
+           }
+       
+           return $max;
+   
+       }
+    public function insertarTicket($user_id,$topic_id,$status_id,$source,$title,$body){
 
 
     echo   $queryinsert= " INSERT INTO homero_os.ost_ticket 
@@ -154,14 +172,17 @@ echo "<br><br>";
          VALUES(".$maxid.", 'T', '', null, now(), now());
         ";
 
-           $fields55 = DB::reconnect('mysql2')->select($query4);
+        //   $fields55 = DB::reconnect('mysql2')->select($query4);
 
     echo "<br><br>";
-
+    $maxidhilo=$this->maxidhilo();
         echo $query5="INSERT INTO homero_os.ost_thread_entry (pid, thread_id, staff_id, user_id, `type`, flags, poster, editor, editor_type, source, title, body, format, ip_address, extra, recipients, created, updated) 
         
-        VALUES(0, 0, '".$user_id."', 0, '', 0, '', 0, '', '', '', '', 'html', '', '', '', '', '');
+        VALUES(0, ".$maxidhilo.",0, '".$user_id."',  'M', 0, '', 0, '', '".$source."', ".$title.", ".$body.", 'html', '', '', '', now(), now());
         ";
+
+
+        $fields55 = DB::reconnect('mysql2')->select($query5);
     }
 
     public function existe($email)
