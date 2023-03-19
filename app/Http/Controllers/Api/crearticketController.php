@@ -144,7 +144,7 @@ class crearticketController extends Controller
             
              VALUES('".$user_id."', '', '', '', '', '', '', '', '', '', '');
             ";
-            $fields55 = DB::reconnect('mysql2')->select($query3);
+        //    $fields55 = DB::reconnect('mysql2')->select($query3);
 
 echo "<br><br>";
 
