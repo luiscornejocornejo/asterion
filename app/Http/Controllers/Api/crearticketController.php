@@ -212,7 +212,7 @@ class crearticketController extends Controller
         echo "<br><br>";
 
         $fields3 = $this->conectar2(11);
-        //   $fields55 = DB::reconnect('mysql2')->select($queryinsert);
+          $fields55 = DB::reconnect('mysql2')->select($queryinsert);
         sleep(2);
 
       
