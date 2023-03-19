@@ -95,7 +95,7 @@ class crearticketController extends Controller
             $chat_link="https://meerkat.xenioo.com/wshare/41C27038C14B45FEAB5D597EEA317C38";
             $ip= "123.211.233.123";
             $message="mensaje";
-            $user_data=:{ "aaaa": "aaaa", "dsadadas": "dasdsads" },
+            //$user_data=:{ "aaaa": "aaaa", "dsadadas": "dasdsads" },
             $conversation_share_url="https://meerkat.xenioo;
 
             $status_id=1;
