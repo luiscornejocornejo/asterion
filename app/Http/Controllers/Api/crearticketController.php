@@ -66,12 +66,6 @@ class crearticketController extends Controller
     public function crearticketenos(Request $request)
     {
 
-/*
-
-
-    
-        $abierto=$this->tieneticket($request)
-*/
          $user_id=$this->existe($request->email);
          if($user_id==0){
             echo "crear usuario";
@@ -95,8 +89,7 @@ class crearticketController extends Controller
             $chat_link="https://meerkat.xenioo.com/wshare/41C27038C14B45FEAB5D597EEA317C38";
             $ip= "123.211.233.123";
             $message="mensaje";
-            //$user_data=:{ "aaaa": "aaaa", "dsadadas": "dasdsads" },
-            $conversation_share_url="https://meerkat.xenioo;
+            $conversation_share_url="https://meerkat.xenioo";
 
             $status_id=1;
           $tt=$this->insertarTicket($user_id,$topic_id,$status_id,$source);
@@ -107,23 +100,24 @@ class crearticketController extends Controller
 
 
     }
-
     public function maxid(){
 
 
-        $query="select max(ticket_id) as max from homero_os.ost_ticket";
-    
-        $fields3 = $this->conectar2(11);
-        $fields55 = DB::reconnect('mysql2')->select($query);
-        $max=0;
-        foreach($fields55 as $value){
+        $query="        select max(ticket_id) as max from homero_os.ost_ticket ";
+           
+       
+           $fields3 = $this->conectar2(11);
+           $fields55 = DB::reconnect('mysql2')->select($query);
+           $max=0;
+           foreach($fields55 as $value){
+   
+               $max=$value->max;
+           }
+       
+           return $max;
+   
+       }
 
-            $max=$value->max;
-        }
-    
-        return $max;
-
-    }
     public function insertarTicket($user_id,$topic_id,$status_id,$source){
 
 
