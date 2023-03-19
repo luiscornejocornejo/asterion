@@ -114,13 +114,26 @@ class crearticketController extends Controller
         if ($user_id == 0) {
             echo "crear usuario";
 
+            $user_id=$this->crearuser();
+            
+            $maxnumber=$this->maxnumber();
+            $tt = $this->insertarTicket($user_id, $topic_id, $status_id, $source, $subject, $body,$maxnumber,$dept_id,$ip);
+            sleep(4);
+
+             $maxid = $this->maxid();
+            $tt2 = $this->insertarTicketextra($maxid, $priority, $subject, $xen_chatid, $chat_status, $chat_link);
+            $tt3=$this->updateusernuevo($user_id, $clientid, $nameuser, $emailcliente, $phone, $whatsapp_nro,$plan_name);
+            $tt4=$this->insertarTicketsystem( $user_id, $source, $title, $body);
+
+                
+
         } else {
 
             $maxnumber=$this->maxnumber();
             $tt = $this->insertarTicket($user_id, $topic_id, $status_id, $source, $subject, $body,$maxnumber,$dept_id,$ip);
             sleep(4);
 
-           echo  $maxid = $this->maxid();
+             $maxid = $this->maxid();
             $tt2 = $this->insertarTicketextra($maxid, $priority, $subject, $xen_chatid, $chat_status, $chat_link);
             $tt3=$this->updateusernuevo($user_id, $clientid, $nameuser, $emailcliente, $phone, $whatsapp_nro,$plan_name);
             $tt4=$this->insertarTicketsystem( $user_id, $source, $title, $body);
@@ -254,7 +267,43 @@ class crearticketController extends Controller
        $fields55 = DB::reconnect('mysql2')->select($query3);
     }
 
+    public function maxiduser()
+    {
 
+        $query = "select max(id) as max from homero_os.ost_user ";
+
+        $fields3 = $this->conectar2(11);
+        $fields55 = DB::reconnect('mysql2')->select($query);
+        $max = 0;
+        foreach ($fields55 as $value) {
+
+            $max = $value->max;
+        }
+
+        return $max;
+
+    }
+    public function crearuser(){
+
+        $querycrear="INSERT INTO homero_os.ost_user (org_id, default_email_id, status, name, created, updated) VALUES(0, 0, 0, '', now(), now());";
+
+        $fields55 = DB::reconnect('mysql2')->select($querycrear);
+        $usercreado=$this->maxiduser();
+
+        $mailusercreado=$usercreado."@host";
+        $query2="INSERT INTO homero_os.ost_user_email (user_id, flags, address) VALUES(".$usercreado.", 0, '".$mailusercreado."');        ";
+        $fields55 = DB::reconnect('mysql2')->select($query2);
+
+
+        $query3="INSERT INTO homero_os.ost_user_account (user_id, status, timezone, lang, username, passwd, backend, extra, registered) 
+        
+        VALUES(".$usercreado.", 0, '430', '', '".".$usercreado."."', '', 'client', '', CURRENT_TIMESTAMP);
+        ";
+                $fields55 = DB::reconnect('mysql2')->select($query3);
+
+        return $usercreado;
+
+    }
     public function insertarusernuevo($user_id, $clientid, $name, $email, $phone, $whatsapp_nro)
 
     {
