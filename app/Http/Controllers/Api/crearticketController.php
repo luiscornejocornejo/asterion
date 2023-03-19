@@ -175,7 +175,7 @@ echo "<br><br>";
         //   $fields55 = DB::reconnect('mysql2')->select($query4);
 
     echo "<br><br>";
-    $maxidhilo=$this->maxidhilo();
+   echo  $maxidhilo=$this->maxidhilo();
         echo $query5="INSERT INTO homero_os.ost_thread_entry (pid, thread_id, staff_id, user_id, `type`, flags, poster, editor, editor_type, source, title, body, format, ip_address, extra, recipients, created, updated) 
         
         VALUES(0, ".$maxidhilo.",0, '".$user_id."',  'M', 0, '', 0, '', '".$source."', '".$title."', '".$body."', 'html', '', '', '', now(), now());
@@ -183,7 +183,7 @@ echo "<br><br>";
 
 
         $fields55 = DB::reconnect('mysql2')->select($query5);
-    }
+    } 
 
     public function existe($email)
     {
