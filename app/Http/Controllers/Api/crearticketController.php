@@ -118,11 +118,12 @@ class crearticketController extends Controller
 
             $maxnumber=$this->maxnumber();
             $tt = $this->insertarTicket($user_id, $topic_id, $status_id, $source, $subject, $body,$maxnumber,$dept_id,$ip);
-            $maxid = $this->maxid();
+            sleep(4);
+
+           echo  $maxid = $this->maxid();
             $tt2 = $this->insertarTicketextra($maxid, $priority, $subject, $xen_chatid, $chat_status, $chat_link);
             $tt3=$this->updateusernuevo($user_id, $clientid, $nameuser, $emailcliente, $phone, $whatsapp_nro,$plan_name);
-            $maxidhilo = $this->maxidhilo();
-            $tt4=$this->insertarTicketsystem($maxid, $user_id, $source, $title, $body,$maxidhilo);
+            $tt4=$this->insertarTicketsystem($maxid, $user_id, $source, $title, $body);
 
 
         }
@@ -169,9 +170,13 @@ class crearticketController extends Controller
 
     }
 
-    public function insertarTicketsystem($maxid, $user_id, $source, $title, $body,$maxidhilo)
+    public function insertarTicketsystem( $user_id, $source, $title, $body)
 
     {
+
+
+        $maxid = $this->maxid();
+
         echo $query4 = "INSERT INTO homero_os.ost_thread (object_id, object_type, extra, lastresponse, lastmessage, created)
         VALUES(" . $maxid . ", 'T', '', null, now(), now());
        ";
@@ -179,6 +184,8 @@ class crearticketController extends Controller
          $fields55 = DB::reconnect('mysql2')->select($query4);
 
        echo "<br><br>";
+       $maxidhilo = $this->maxidhilo();
+
        echo $query5 = "INSERT INTO homero_os.ost_thread_entry (pid, thread_id, staff_id, user_id, `type`, flags, poster, editor, editor_type, source, title, body, format, ip_address, extra, recipients, created, updated)
 
        VALUES(0, " . $maxidhilo . ",0, '" . $user_id . "',  'M', 0, '', 0, '', '" . $source . "', '" . $title . "', '" . $body . "', 'html', '', '', '', now(), now());
@@ -218,7 +225,6 @@ class crearticketController extends Controller
 
         $fields3 = $this->conectar2(11);
           $fields55 = DB::reconnect('mysql2')->select($queryinsert);
-        sleep(2);
 
       
 
