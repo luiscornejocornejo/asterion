@@ -207,7 +207,7 @@ class crearticketController extends Controller
 
         echo $queryinsert = " INSERT INTO homero_os.ost_ticket
     (ticket_pid, `number`, user_id, user_email_id, status_id, dept_id, sla_id, topic_id, staff_id, team_id, email_id, lock_id, flags, sort, ip_address, source, source_extra, isoverdue, isanswered, duedate, est_duedate, reopened, closed, lastupdate, created, updated, user_data_json)
-     VALUES(null, '".$maxnumber."','" . $user_id . "', 0, " . $status_id . ", ".$dept_id.", 0, 0, " . $topic_id . ", 0, 0, 0, 0, 0, '', '".$ip."', 'Web', 0, 0, null,  now(), null, null, now(), now(), now(), '');
+     VALUES(null, '".$maxnumber."','" . $user_id . "', 0, " . $status_id . ", ".$dept_id.", 0, " . $topic_id . ", 0, 0, 0, 0, 0, '', '".$ip."', 'Other', 0, 0, null,  now(), null, null, now(), now(), now(), '');
        ";
         echo "<br><br>";
 
