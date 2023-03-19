@@ -123,7 +123,7 @@ class crearticketController extends Controller
            echo  $maxid = $this->maxid();
             $tt2 = $this->insertarTicketextra($maxid, $priority, $subject, $xen_chatid, $chat_status, $chat_link);
             $tt3=$this->updateusernuevo($user_id, $clientid, $nameuser, $emailcliente, $phone, $whatsapp_nro,$plan_name);
-            $tt4=$this->insertarTicketsystem($maxid, $user_id, $source, $title, $body);
+            $tt4=$this->insertarTicketsystem( $user_id, $source, $title, $body);
 
 
         }
