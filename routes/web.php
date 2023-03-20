@@ -93,6 +93,9 @@ Route::post('/actualizardatos','App\Http\Controllers\LoginController@actualizard
 
 Route::get('/chatsienna','App\Http\Controllers\ChatsiennaController@index');
 
+Route::get('/chatsiennacrear','App\Http\Controllers\ChatsiennaController@creardb');
+
+
 
 Route::get('/chat','App\Http\Controllers\ChatController@index');
 Route::post('/chatcambiarestado','App\Http\Controllers\ChatController@cambiarestado');

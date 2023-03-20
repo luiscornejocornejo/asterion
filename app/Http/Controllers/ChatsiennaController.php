@@ -20,7 +20,68 @@ class ChatsiennaController extends Controller
 {
   //
 
- 
+  public function creardb(){
+
+    $dbcrear="abogados";//$request->db;
+  //  $token=$request->token;
+
+
+    $querycrear="CREATE DATABASE  `".$dbcrear."`; ";
+    DB::select($querycrear);
+
+    $query = "SHOW  TABLES";
+    $basesdb =  DB::select($query);
+    foreach($basesdb as $key=>$value){
+
+       
+        foreach($value as  $value2){
+
+
+             $querygeneral="CREATE TABLE  `".$dbcrear."`.".$value2." LIKE sienna1.".$value2." ";
+           
+           try {
+
+                 $actualizarorder = DB::select($querygeneral);
+                 
+                 // DB::connection('mysql2')->select($querygeneral);
+
+                 } 
+            catch (\Illuminate\Database\QueryException$ex) {
+                    continue;
+                 }
+
+        }
+
+    }
+
+
+    foreach($basesdb as $key=>$value){
+
+       
+        foreach($value as  $value2){
+
+
+             $querygeneral2="INSERT  `".$dbcrear."`.".$value2." SELECT *
+             FROM sienna1.".$value2." ";
+           
+           try {
+
+            $actualizarorder = DB::select($querygeneral2);
+
+                // $actualizarorder = DB::connection('mysql2')->select($querygeneral2);
+
+                 } 
+            catch (\Illuminate\Database\QueryException$ex) {
+                    continue;
+                 }
+
+        }
+
+    }
+
+
+sleep(10);
+}
   public function cambiarestado2(Request $request)
   {
 

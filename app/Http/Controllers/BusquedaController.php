@@ -21,6 +21,8 @@ class BusquedaController extends Controller
     {
         //        $this->middleware('auth');
     }
+
+   
     public function pasajededatos(Request $request)
     {
         $query = "SELECT id,id_function_frame FROM `providers`";
