@@ -148,6 +148,11 @@ class clienteController extends Controller
         }
 
 
+        //existe usuario
+
+
+        
+
         //creacion de ticket
         $t_tickets=new t_tickets();
         $t_tickets->t_departamentos=$request->t_departamentos;
