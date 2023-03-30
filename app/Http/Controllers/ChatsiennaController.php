@@ -20,9 +20,9 @@ class ChatsiennaController extends Controller
 {
   //
 
-  public function creardb(){
+  public function creardb(Request $request){
 
-    $dbcrear="abogados";//$request->db;
+    $dbcrear=$request->db;
   //  $token=$request->token;
 
 
