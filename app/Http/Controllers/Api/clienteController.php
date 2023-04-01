@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\t_tickets;
 use App\Models\t_bitacora;
 use App\Models\t_estado;
+use App\Models\t_ticketuser;
 
 use Carbon\Carbon;
 
@@ -179,8 +180,16 @@ class clienteController extends Controller
 
         //datos extrasuser
 
+        $t_ticketuser=new t_ticketuser();
 
-
+        $t_ticketuser->cliente_id=$request->cliente_id;
+        $t_ticketuser->mail=$request->mail;
+        $t_ticketuser->telefono=$request->telefono;
+        $t_ticketuser->latitud=$request->latitud;
+        $t_ticketuser->longitud=$request->longitud;
+        $t_ticketuser->plan_name=$request->plan_name;
+        $t_ticketuser->whatsapp_nro=$request->whatsapp_nro;
+        $t_ticketuser->ticket=$ticketidinsertado;
 
 
 
