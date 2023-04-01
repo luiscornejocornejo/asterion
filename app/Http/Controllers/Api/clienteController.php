@@ -190,7 +190,7 @@ class clienteController extends Controller
         $t_ticketuser->plan_name=$request->plan_name;
         $t_ticketuser->whatsapp_nro=$request->whatsapp_nro;
         $t_ticketuser->ticket=$ticketidinsertado;
-
+        $t_ticketuser->save();
 
 
         //devolucion
