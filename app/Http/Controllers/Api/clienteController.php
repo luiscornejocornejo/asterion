@@ -182,7 +182,7 @@ class clienteController extends Controller
 
         $t_ticketuser=new t_ticketuser();
 
-        $t_ticketuser->cliente_id=$request->cliente_id;
+        $t_ticketuser->client_id=$request->client_id;
         $t_ticketuser->mail=$request->mail;
         $t_ticketuser->telefono=$request->telefono;
         $t_ticketuser->latitud=$request->latitud;
