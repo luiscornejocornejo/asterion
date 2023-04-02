@@ -205,7 +205,7 @@ class clienteController extends Controller
         $t_extraticket->chat_link=$request->chat_link;
         $t_extraticket->t_boot=$request->t_boot;
         $t_extraticket->ticket=$ticketidinsertado;
-        $t_extraticket->chat_status=0;//$request->chat_link;
+        $t_extraticket->chat_status=$request->chat_link;
         $t_extraticket->chat_id=$request->chat_id;
         $t_extraticket->save();
         //devolucion
