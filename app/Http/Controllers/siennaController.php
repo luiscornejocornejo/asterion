@@ -693,6 +693,41 @@ $cabezeras = $this->cabezerasgraficos($datosget);
 
   //form
 
+
+
+  public function ticketsienna(Request $request)
+  {
+    $id = $request->id;
+    $resultados = masterreport::where('id', '=', $id)->get();
+    $return = array();
+    foreach ($resultados as $value) {
+
+
+      $pos3 = stripos($value->parametros, ",");
+      if ($pos3 !== false) {
+        $parametros = explode(",", $value->parametros);
+        $parametrosTipo = explode(",", $value->parametrosTipo);
+
+        for ($i = 0; $i < sizeof($parametros); $i++) {
+          $tipopara = tipoparametro::find($parametrosTipo[$i]); //('id', '=', $id)->get();
+
+          array_push($return, array($parametros[$i] => $tipopara->nombre));
+        }
+      } else {
+        $tipopara = tipoparametro::find($value->parametrosTipo); //('id', '=', $id)->get();
+
+        array_push($return, array($value->parametros => $tipopara->nombre));
+      }
+    }
+
+    return view('sienna/ticketsienna')
+      ->with('id', $id)
+      ->with('vista', "0")
+
+      ->with('resultados', $return);
+  }
+
+
   public function siennaform(Request $request)
   {
     $id = $request->id;

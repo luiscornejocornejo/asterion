@@ -79,6 +79,12 @@ Route::get('/siennareport','App\Http\Controllers\siennaController@siennareport')
 Route::get('/siennaform','App\Http\Controllers\siennaController@siennaform');
 Route::post('/siennaform','App\Http\Controllers\siennaController@siennaformpost');
 
+Route::get('/ticketsienna','App\Http\Controllers\siennaController@ticketsienna');
+Route::post('/ticketsienna','App\Http\Controllers\siennaController@ticketsiennapost');
+
+
+
+
 Route::get('/siennaformg','App\Http\Controllers\siennaController@siennaformg');
 Route::post('/siennaformg','App\Http\Controllers\siennaController@siennaformgpost');
 Route::get('/siennaforme','App\Http\Controllers\siennaController@siennaforme');
