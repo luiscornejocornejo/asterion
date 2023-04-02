@@ -388,8 +388,7 @@ $querysoption = "select * from " . $key . " ";
                 <div class="modal-body">
                     <form action="/chatasignar2" method="post">
                     @csrf
-                    <?php echo $id; ?>
-                        <input type="hidden" name="idticketestado" id="<?php echo $ticket_id; ?>">
+                        <input type="hidden" name="idticketestado" value="<?php echo $ticket_id; ?>">
                         <?php foreach($t_staff as $value2){?>
                         <div >
                             <input value="<?php echo $value2->id;?>"  class="form-radio" type="radio" name="statos">&nbsp;
