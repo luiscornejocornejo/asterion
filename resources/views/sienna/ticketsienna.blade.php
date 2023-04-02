@@ -132,6 +132,8 @@ $querysoption = "select * from " . $key . " ";
 
 
 
+<?php if ($vista == "1") {
+    ?>
 @foreach($datos as $resultado)
 
 <div class="col-xxl-6 col-xl-12 order-xl-2 " style="max-height: 900px;min-height: 900px;">
@@ -554,7 +556,8 @@ $querysoption = "select * from " . $key . " ";
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div>
-
+    <?php
+}?>
     <br><br><br>
 
 @include('pp.footer')
