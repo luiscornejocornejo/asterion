@@ -145,8 +145,8 @@ $querysoption = "select * from " . $key . " ";
                     </div>
 
                     <div class="col-6 align-self-end" style="display:inline-block;">
-                        <span class="float-end text-white fw-bold  "><span :style="{ 'color': laprio }">{{ prioridad
-                        }}</span> TICKET #{{ ticket_id }}</span>
+                        <span class="float-end text-white fw-bold  "><span :style="{ 'color': laprio }">{{ $resultado->prioridad
+                        }}</span> TICKET #{{ $resultado->ticket_id }}</span>
                     </div>
                 </div>
             </div>
@@ -156,12 +156,12 @@ $querysoption = "select * from " . $key . " ";
                 <div class="row  m-0 p-1">
                     <div class="col-6 align-self-start" style="display:inline-block; ">
                         <button type="button" class="btn btn-info btn-block w-100" data-bs-toggle="modal"
-                            data-bs-target="#standard-modal3">{{ topic }}</button>
+                            data-bs-target="#standard-modal3">{{ $resultado->topic }}</button>
                     </div>
                     <div class="col-6 align-self-end" style="display:inline-block; ">
                         <button type="button" class="btn btn-success w-100" data-bs-toggle="modal"
                             data-bs-target="#standard-modal">
-                            <spam id="estado">{{ ticketestatus }}</spam>
+                            <spam id="estado">{{ $resultado->ticketestatus }}</spam>
                         </button>
 
                     </div>
@@ -171,19 +171,19 @@ $querysoption = "select * from " . $key . " ";
                     <div class="col-6 align-self-start small" style="display:inline-block;">
                         <ul class="list-group list-group-flush">
 
-                            <li class="list-group-item">Fecha de creacion: {{ creacion }} </li>
+                            <li class="list-group-item">Fecha de creacion: {{ $resultado->creacion }} </li>
                         </ul>
                     </div>
                     <div v-if="depto === null" class="col-6 align-self-end" style="display:inline-block;">
                         <button type="button" class="btn btn-success w-100  btn-block" data-bs-toggle="modal"
-                            data-bs-target="#standard-modal2">{{ depto }} sin asignar depto</button>
+                            data-bs-target="#standard-modal2">{{ $resultado->depto }} sin asignar depto</button>
                         <spam id="departamento"></spam>
 
 
                     </div>
                     <div v-else class="col-6 align-self-end" style="display:inline-block;">
                         <button type="button" class="btn btn-success w-100  btn-block" data-bs-toggle="modal"
-                            data-bs-target="#standard-modal2">{{ depto }}</button>
+                            data-bs-target="#standard-modal2">{{ $resultado->depto }}</button>
                         <spam id="departamento"></spam>
 
 
@@ -197,17 +197,17 @@ $querysoption = "select * from " . $key . " ";
                     <div class="col-6 align-self-start" style="display:inline-block; ">
                         <ul class="list-group list-group-flush">
 
-                            <li class="list-group-item">Fecha de ultima Modificacion: {{ lastupdate }}</li>
+                            <li class="list-group-item">Fecha de ultima Modificacion: {{ $resultado->lastupdate }}</li>
                         </ul>
                     </div>
                     <div v-if="asignado === null" class="col-6 align-self-end" style="display:inline-block; ">
                         <button type="button" class="btn btn-success w-100  btn-block" data-bs-toggle="modal"
-                            data-bs-target="#standard-modal4">{{ asignado }} sin asignar</button>
+                            data-bs-target="#standard-modal4">{{ $resultado->asignado }} sin asignar</button>
 
                     </div>
                     <div v-else class="col-6 align-self-end" style="display:inline-block; ">
                         <button type="button" class="btn btn-success w-100  btn-block" data-bs-toggle="modal"
-                            data-bs-target="#standard-modal4">{{ asignado }}</button>
+                            data-bs-target="#standard-modal4">{{ $resultado->asignado }}</button>
 
                     </div>
                 </div>
