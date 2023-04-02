@@ -386,10 +386,10 @@ $querysoption = "select * from " . $key . " ";
                 <div class="modal-body">
                     <form action="/chatasignar2" method="post">
                     @csrf
+                    <?php echo $id; ?>
                         <input type="hidden" name="idticketestado" id="<?php echo $id; ?>">
                         <?php foreach($t_staff as $value2){?>
                         <div >
-                        <?php echo $value2->id;?>
                             <input value="<?php echo $value2->id;?>"  class="form-radio" type="radio" name="statos">&nbsp;
                             <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo $value2->nombre;?></span>
                             <br><br>
