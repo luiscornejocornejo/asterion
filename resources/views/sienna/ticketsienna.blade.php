@@ -160,7 +160,7 @@ $querysoption = "select * from " . $key . " ";
                     <div class="col-6 align-self-end" style="display:inline-block; ">
                         <button type="button" class="btn btn-success w-100" data-bs-toggle="modal"
                             data-bs-target="#standard-modal">
-                            <spam id="estado">{{ $resultado->ticketestatus }}</spam>
+                            <spam id="estado">{{ $resultado->estado }}</spam>
                         </button>
 
                     </div>
