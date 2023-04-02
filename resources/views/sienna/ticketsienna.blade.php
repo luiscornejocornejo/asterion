@@ -21,51 +21,51 @@
                 </div>
 
                 <form action="" method="post" enctype="multipart/form-data">
-           
+
                     @csrf
                     <input type="hidden" name="idreport" value="<?php echo $id; ?>">
 
                     <?php
 
-                    foreach ($resultados as $valu2) {
-                        foreach ($valu2 as $key => $value) {
+foreach ($resultados as $valu2) {
+    foreach ($valu2 as $key => $value) {
 
-                            $$key = $value;
-                    ?>
+        $$key = $value;
+        ?>
                             <div class="form-group">
                                 <label><?php echo $key; ?></label>
                                 <?php if ($$key == "tabla") {
 
-                                ?>
+            ?>
 
                                     <div class="form-check form-switch">
                                         <select class="form-select" aria-label="Default select example" name="<?php echo $key; ?>">
                                             <?php
-                                            $querysoption = "select * from " . $key . " ";
-                                            $resultadosoption = DB::select($querysoption);
-                                            foreach ($resultadosoption as $resultoption) {
+$querysoption = "select * from " . $key . " ";
+            $resultadosoption = DB::select($querysoption);
+            foreach ($resultadosoption as $resultoption) {
 
-                                                $idoption = $resultoption->id;
-                                                $nombreoption = $resultoption->nombre;
+                $idoption = $resultoption->id;
+                $nombreoption = $resultoption->nombre;
 
-                                                echo "<option  value='" . $idoption . "' >" . $nombreoption . "</option>";
-                                            } ?>
+                echo "<option  value='" . $idoption . "' >" . $nombreoption . "</option>";
+            }?>
 
                                         </select>
                                     </div>
                                 <?php
-                                } else {
-                                ?>
+} else {
+            ?>
                                     <input class="form-control" require type="<?php echo $$key; ?>" name="<?php echo $key; ?>">
 
                                 <?php
-                                } ?>
+}?>
                             </div>
                             <br><br>
                     <?php
-                        }
-                    }
-                    ?>
+}
+}
+?>
 
 
                     <button type="submit" class="btn btn-primary">Consultar</button>
@@ -75,8 +75,8 @@
             </div>
 
 
-            <?php if($vista=="1"){
-?>
+            <?php if ($vista == "1") {
+    ?>
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">Report</h1>
                 </div>
@@ -90,13 +90,13 @@
                             <tr role="row">
 
                                 @foreach($cabezeras as $cabeza)
-                                <?php if ($cabeza <> "id") { ?>
+                                <?php if ($cabeza != "id") {?>
 
                                     <th role="columnheader">{{ $cabeza }}</th>
-                                <?php  } ?>
+                                <?php }?>
 
                                 @endforeach
-                               
+
 
                             </tr>
                         </thead>
@@ -106,14 +106,14 @@
 
                             <tr role="row">
                                 @foreach($cabezeras as $cabeza)
-                                <?php if ($cabeza <> "id") { ?>
+                                <?php if ($cabeza != "id") {?>
                                     <td role="cell">
                                         {!! $resultado->$cabeza !!}
                                     </td>
 
-                                <?php  } ?>
+                                <?php }?>
                                 @endforeach
-                             
+
 
                             </tr>
                             @endforeach
@@ -124,7 +124,7 @@
                 </div>
 
 <?php
-            }?>
+}?>
         </div>
     </div>
 </div>
@@ -132,14 +132,14 @@
 
 
 
-
+@foreach($datos as $resultado)
 
 <div class="col-xxl-6 col-xl-12 order-xl-2 " style="max-height: 900px;min-height: 900px;">
         <div class="card ">
             <div class="bg-primary text-white">
                 <div class="row  m-0 p-2">
                     <div class="col-6 align-self-start" style="display:inline-block;">
-                        <span class="float-start text-white fw-bold ">{{ nombreusuario.toUpperCase() }} </span>
+                        <span class="float-start text-white fw-bold ">{{ $resultado->nombreusuario }} </span>
                     </div>
 
                     <div class="col-6 align-self-end" style="display:inline-block;">
@@ -296,7 +296,7 @@
                 </div>
             </div> <!-- end card-body -->
         </div> <!-- end card-->
-      
+
 
     </div>
 
@@ -443,7 +443,7 @@
 
         </div> <!-- end card -->
     </div>
-
+    @endforeach
 
     <div id="standard-modal3" class="modal fade bs-example-modal-center3 " tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -554,5 +554,7 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div>
-<br><br><br>
+
+    <br><br><br>
+
 @include('pp.footer')
