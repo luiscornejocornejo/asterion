@@ -74,14 +74,6 @@ $querysoption = "select * from " . $key . " ";
 
             </div>
 
-
-            <?php if ($vista == "1") {
-    ?>
-        
- 
-
-
-
 <?php if ($vista == "1") {
     ?>
 @foreach($datos as $resultado)
