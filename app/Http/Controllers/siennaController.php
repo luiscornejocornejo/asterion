@@ -771,11 +771,23 @@ $cabezeras = $this->cabezerasgraficos($datosget);
     //  var_export($resultados);
     $cabezeras = $this->cabezerasgraficos($resultados);
 
+
+
+
+
     $return = $this->siennaform2($id);
+
+
+        
+    $querydatos = "select * from t_staff";
+    $t_staff = DB::select($querydatos);
+
     return view('sienna/ticketsienna')
       ->with('id', $id)
       ->with('vista', "1")
       ->with('datos', $resultados)
+      ->with('t_staff', $t_staff)
+
       ->with('cabezeras', $cabezeras)
       ->with('resultados', $return);
   }
