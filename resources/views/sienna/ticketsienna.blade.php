@@ -244,7 +244,7 @@ $querysoption = "select * from " . $key . " ";
 </div>
 
 
-<div class="col-xxl-3 col-xl-6 order-xl-1 order-xxl-2" style="max-height: 900px;min-height: 900px;">
+<div class="float-right" style="max-height: 900px;min-height: 900px;">
 
         <div  class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
