@@ -78,7 +78,10 @@ $querysoption = "select * from " . $key . " ";
     ?>
 @foreach($datos as $resultado)
 
-<div class="col-xxl-6 col-xl-12 order-xl-2 " style="max-height: 900px;min-height: 900px;">
+
+<div class="container-fluid">
+  <div class="row text-white text-center">
+  <div class="col-xxl-6 col-xl-12 order-xl-2 " style="max-height: 900px;min-height: 900px;">
         <div class="card ">
             <div class="bg-primary text-white">
                 <div class="row  m-0 p-2">
@@ -242,130 +245,137 @@ $querysoption = "select * from " . $key . " ";
 
 
 </div>
-
-
 <div class="float-right" style="max-height: 900px;min-height: 900px;">
 
-        <div  class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header bg-primary text-white" id="flush-headingOne">
-                    <button class="accordion-button collapsed text-white bg-primary" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        Bitacora
-                    </button>
-                </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse text-white bg-white"
-                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                    <div class="card-body py-0 mb-3" data-simplebar="init" style="max-height: 403px;">
-                        <div class="simplebar-wrapper" style="margin: 2px -24px;">
-                            <div class="simplebar-height-auto-observer-wrapper">
-                                <div class="simplebar-height-auto-observer"></div>
-                            </div>
-                            <div class="simplebar-mask">
-                                <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
-                                    <div class="simplebar-content-wrapper" tabindex="0" role="region"
-                                        aria-label="scrollable content" style="height: auto; overflow: hidden scroll;">
-                                        <div class="simplebar-content" style="padding: 0px 24px;">
-                                            <div class="timeline-alt py-0">
+<div  class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header bg-primary text-white" id="flush-headingOne">
+            <button class="accordion-button collapsed text-white bg-primary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                Bitacora
+            </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse text-white bg-white"
+            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="card-body py-0 mb-3" data-simplebar="init" style="max-height: 403px;">
+                <div class="simplebar-wrapper" style="margin: 2px -24px;">
+                    <div class="simplebar-height-auto-observer-wrapper">
+                        <div class="simplebar-height-auto-observer"></div>
+                    </div>
+                    <div class="simplebar-mask">
+                        <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                            <div class="simplebar-content-wrapper" tabindex="0" role="region"
+                                aria-label="scrollable content" style="height: auto; overflow: hidden scroll;">
+                                <div class="simplebar-content" style="padding: 0px 24px;">
+                                    <div class="timeline-alt py-0">
 
-                                                <div v-for="extrah in historial" class="timeline-item extrahistorial2">
-                                                    <i v-if="extrah.name == 'open'"
-                                                        class="mdi mdi-progress-check bg-info-lighten text-info timeline-icon"></i>
-                                                    <i v-if="extrah.name == 'closed'"
-                                                        class="mdi mdi-progress-close bg-info-lighten text-info timeline-icon"></i>
-                                                    <i v-if="extrah.name == 'overdue'"
-                                                        class="mdi mdi-timer-sand-complete bg-info-lighten text-info timeline-icon"></i>
-                                                    <i v-if="extrah.name == 'edited'"
-                                                        class="mdi mdi-account-edit bg-info-lighten text-info timeline-icon"></i>
-                                                    <i v-if="extrah.name == 'reopened'"
-                                                        class="mdi mdi-openid bg-info-lighten text-info timeline-icon "></i>
-                                                    <p class="mb-1" style="color: #727CF5;font-size: 14px;">
+                                        <div v-for="extrah in historial" class="timeline-item extrahistorial2">
+                                            <i v-if="extrah.name == 'open'"
+                                                class="mdi mdi-progress-check bg-info-lighten text-info timeline-icon"></i>
+                                            <i v-if="extrah.name == 'closed'"
+                                                class="mdi mdi-progress-close bg-info-lighten text-info timeline-icon"></i>
+                                            <i v-if="extrah.name == 'overdue'"
+                                                class="mdi mdi-timer-sand-complete bg-info-lighten text-info timeline-icon"></i>
+                                            <i v-if="extrah.name == 'edited'"
+                                                class="mdi mdi-account-edit bg-info-lighten text-info timeline-icon"></i>
+                                            <i v-if="extrah.name == 'reopened'"
+                                                class="mdi mdi-openid bg-info-lighten text-info timeline-icon "></i>
+                                            <p class="mb-1" style="color: #727CF5;font-size: 14px;">
 
-                                          
-                                                </div>
-
-
-                                            </div>
-                                            <!-- end timeline -->
+                                  
                                         </div>
+
+
                                     </div>
+                                    <!-- end timeline -->
                                 </div>
                             </div>
-                            <div class="simplebar-placeholder" style="width: auto; height: 579px;"></div>
-                        </div>
-                        <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
-                            <div class="simplebar-scrollbar" style="width: 0px; display: none;"></div>
-                        </div>
-                        <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
-                            <div class="simplebar-scrollbar"
-                                style="height: 280px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
                         </div>
                     </div>
-
+                    <div class="simplebar-placeholder" style="width: auto; height: 579px;"></div>
                 </div>
-
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header  bg-primary text-white" id="flush-headingTwo">
-                    <button class="accordion-button collapsed text-white bg-primary" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                        Cliente
-                    </button>
-                </h2>
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body bg-white">
-
-
-                        <div class="row  p-2">
-                            <div class="col-6 align-self-start small" style="display:inline-block;">
-                                <ul  class="list-group list-group-flush">
-                                    <li class="list-group-item">clientid: {{ $resultado->client_id }}</li>
-                                    <li class="list-group-item">email: {{ $resultado->mail }}
-                                        <span v-if="mail!= null"> <button type="button"
-                                                class="btn btn-success btn-sm  " data-bs-toggle="modal"
-                                                data-bs-target="#compose-modal">
-
-                                            </button></span>
-                                    </li>
-                                    <li class="list-group-item">phone: {{ $resultado->telefono }} <span
-                                            v-if="telefono != null">
-                                            <button type="button" class="btn btn-success btn-sm  " data-bs-toggle="modal"
-                                                data-bs-target="#standard-modal">
-
-                                            </button></span></li>
-                                    <li class="list-group-item">whatsapp_nro: {{ $resultado->whatsapp_nro }}<span
-                                            v-if="whatsapp_nro != null">
-                                            <button type="button" class="btn btn-success btn-sm  " data-bs-toggle="modal"
-                                                data-bs-target="#standard-modal">
-
-                                            </button></span></li>
-                                    <li class="list-group-item">plan_name: {{ $resultado->plan_name }}</li>
-
-
-                                </ul>
-                            </div>
-
-
-                        </div>
-
-                        <div class="card">
-                            <div class="card-body">
-
-                                <GoogleMap api-key="AIzaSyCpW_qQg8n6GJZ5o22J9MdQqXrzVdx-UHY"
-                                    style="width:360px;height:242px;" :center="center" :zoom="15">
-                                    <Marker :options="{ position: center }" />
-                                </GoogleMap>
-                            </div>
-
-                        </div>
-                    </div>
+                <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+                    <div class="simplebar-scrollbar" style="width: 0px; display: none;"></div>
+                </div>
+                <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+                    <div class="simplebar-scrollbar"
+                        style="height: 280px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
                 </div>
             </div>
 
         </div>
-      
+
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header  bg-primary text-white" id="flush-headingTwo">
+            <button class="accordion-button collapsed text-white bg-primary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Cliente
+            </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body bg-white">
+
+
+                <div class="row  p-2">
+                    <div class="col-6 align-self-start small" style="display:inline-block;">
+                        <ul  class="list-group list-group-flush">
+                            <li class="list-group-item">clientid: {{ $resultado->client_id }}</li>
+                            <li class="list-group-item">email: {{ $resultado->mail }}
+                                <span v-if="mail!= null"> <button type="button"
+                                        class="btn btn-success btn-sm  " data-bs-toggle="modal"
+                                        data-bs-target="#compose-modal">
+
+                                    </button></span>
+                            </li>
+                            <li class="list-group-item">phone: {{ $resultado->telefono }} <span
+                                    v-if="telefono != null">
+                                    <button type="button" class="btn btn-success btn-sm  " data-bs-toggle="modal"
+                                        data-bs-target="#standard-modal">
+
+                                    </button></span></li>
+                            <li class="list-group-item">whatsapp_nro: {{ $resultado->whatsapp_nro }}<span
+                                    v-if="whatsapp_nro != null">
+                                    <button type="button" class="btn btn-success btn-sm  " data-bs-toggle="modal"
+                                        data-bs-target="#standard-modal">
+
+                                    </button></span></li>
+                            <li class="list-group-item">plan_name: {{ $resultado->plan_name }}</li>
+
+
+                        </ul>
+                    </div>
+
+
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+
+                        <GoogleMap api-key="AIzaSyCpW_qQg8n6GJZ5o22J9MdQqXrzVdx-UHY"
+                            style="width:360px;height:242px;" :center="center" :zoom="15">
+                            <Marker :options="{ position: center }" />
+                        </GoogleMap>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+</div>
+  </div>
+</div>
+
+
+
+
+
+
+
     @endforeach
 
     <?php
