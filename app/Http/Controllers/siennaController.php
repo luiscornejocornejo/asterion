@@ -781,6 +781,14 @@ $cabezeras = $this->cabezerasgraficos($datosget);
         
     $querydatos = "select * from t_staff";
     $t_staff = DB::select($querydatos);
+    $querydatos = "select * from t_departamentos";
+    $t_departamentos = DB::select($querydatos);
+    $querydatos = "select * from t_topic";
+    $t_topic = DB::select($querydatos);
+    $querydatos = "select * from t_estado";
+    $t_estado = DB::select($querydatos);
+
+
 
     if(sizeof($resultados)>0){
       
@@ -792,6 +800,11 @@ $cabezeras = $this->cabezerasgraficos($datosget);
       ->with('vista', $vista)
       ->with('datos', $resultados)
       ->with('t_staff', $t_staff)
+      ->with('t_departamentos', $t_departamentos)
+      ->with('t_topic', $t_topic)
+      ->with('t_estado', $t_estado)
+
+      
 
       ->with('cabezeras', $cabezeras)
       ->with('resultados', $return);
