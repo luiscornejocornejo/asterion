@@ -241,12 +241,12 @@ $querysoption = "select * from " . $key . " ";
         </div> <!-- end card-->
 
 
-    </div>
+</div>
 
 
-    <div class="col-xxl-3 col-xl-6 order-xl-1 order-xxl-2" style="max-height: 900px;min-height: 900px;">
+<div class="col-xxl-3 col-xl-6 order-xl-1 order-xxl-2" style="max-height: 900px;min-height: 900px;">
 
-        <div v-if="clickeo" class="accordion accordion-flush" id="accordionFlushExample">
+        <div  class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header bg-primary text-white" id="flush-headingOne">
                     <button class="accordion-button collapsed text-white bg-primary" type="button" data-bs-toggle="collapse"
@@ -364,17 +364,8 @@ $querysoption = "select * from " . $key . " ";
             </div>
 
         </div>
-        <div v-else>
-
-        </div>
-        <div class="card">
-
-
-
-
-
-        </div> <!-- end card -->
-    </div>
+      
+</div>
     @endforeach
 
     <?php
