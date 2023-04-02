@@ -79,6 +79,8 @@ $querysoption = "select * from " . $key . " ";
 @foreach($datos as $resultado)
 
 
+<?php $ticket_id=$resultado->ticket_id;?>
+
 <div class="container-fluid">
   <div class="row text-white text-center">
     <div class=" " style="max-height: 900px;min-height: 600px; width:70%">
@@ -387,7 +389,7 @@ $querysoption = "select * from " . $key . " ";
                     <form action="/chatasignar2" method="post">
                     @csrf
                     <?php echo $id; ?>
-                        <input type="hidden" name="idticketestado" id="<?php echo $id; ?>">
+                        <input type="hidden" name="idticketestado" id="<?php echo $ticket_id; ?>">
                         <?php foreach($t_staff as $value2){?>
                         <div >
                             <input value="<?php echo $value2->id;?>"  class="form-radio" type="radio" name="statos">&nbsp;
