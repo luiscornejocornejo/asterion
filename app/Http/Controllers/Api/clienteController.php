@@ -188,6 +188,9 @@ class clienteController extends Controller
         $t_ticketuser->latitud=$request->latitud;
         $t_ticketuser->longitud=$request->longitud;
         $t_ticketuser->plan_name=$request->plan_name;
+        $t_ticketuser->nombre=$request->nombre;
+        $t_ticketuser->mensaje=$request->mensaje;
+
         $t_ticketuser->whatsapp_nro=$request->whatsapp_nro;
         $t_ticketuser->ticket=$ticketidinsertado;
         $t_ticketuser->save();
