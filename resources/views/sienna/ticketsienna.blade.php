@@ -139,16 +139,14 @@ $querysoption = "select * from " . $key . " ";
                                 <li class="list-group-item">Fecha de ultima Modificacion: {{ $resultado->lastupdate }}</li>
                             </ul>
                         </div>
-                        <div v-if="asignado === null" class="col-6 align-self-end" style="display:inline-block; ">
+                        <div  class="col-6 align-self-end" style="display:inline-block; ">
                             <button type="button" class="btn btn-success w-100  btn-block" data-bs-toggle="modal"
-                                data-bs-target="#standard-modal4">{{ $resultado->asignado }} sin asignar</button>
+                                data-bs-target="#standard-modal4">
+                                <?php if($resultado->asignado==""){echo "sin asignar depto";}else echo $resultado->asignado;?>
+                               </button>
 
                         </div>
-                        <div v-else class="col-6 align-self-end" style="display:inline-block; ">
-                            <button type="button" class="btn btn-success w-100  btn-block" data-bs-toggle="modal"
-                                data-bs-target="#standard-modal4">{{ $resultado->asignado }}</button>
 
-                        </div>
                     </div>
 
                     <div class="p-2">
