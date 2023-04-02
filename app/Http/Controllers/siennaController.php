@@ -726,7 +726,59 @@ $cabezeras = $this->cabezerasgraficos($datosget);
 
       ->with('resultados', $return);
   }
+  public function siennaformticket(Request $request)
+  {
+    $id = $request->id;
+    $resultados = masterreport::find($id);
 
+    $queryoriginal = $resultados->query;
+    $dbexterna = $resultados->base;
+
+    $pos3 = stripos($resultados->parametros, ",");
+    if ($pos3 !== false) {
+
+      $separado = explode(",", $resultados->parametros);
+      for ($i = 0; $i < sizeof($separado); $i++) {
+
+        $variable = "@" . $separado[$i];
+        $variable2 = $separado[$i];
+
+        $valor = $request->$variable2;
+
+
+        $queryoriginal = str_replace($variable, $valor, $queryoriginal);
+      }
+    } else {
+
+      $variable = "@" . $resultados->parametros;
+
+      $variable2 = $resultados->parametros;
+
+      $valor = $request->$variable2;
+      $queryoriginal = str_replace($variable, $valor, $queryoriginal);
+    }
+
+    //echo $queryoriginal;
+    if ($dbexterna == 1) {
+      $resultados = DB::select($queryoriginal);
+    } else {
+      $prueba = $this->conectar($dbexterna);
+
+      //si es distinta a 1 aa otra base
+      $resultados = DB::connection('mysql2')->select($queryoriginal);
+    }
+
+    //  var_export($resultados);
+    $cabezeras = $this->cabezerasgraficos($resultados);
+
+    $return = $this->siennaform2($id);
+    return view('sienna/ticketsienna')
+      ->with('id', $id)
+      ->with('vista', "1")
+      ->with('datos', $resultados)
+      ->with('cabezeras', $cabezeras)
+      ->with('resultados', $return);
+  }
 
   public function siennaform(Request $request)
   {
@@ -760,6 +812,9 @@ $cabezeras = $this->cabezerasgraficos($datosget);
       ->with('resultados', $return);
   }
 
+
+
+  
 
   public function siennaform2($id)
   {
