@@ -81,7 +81,7 @@ $querysoption = "select * from " . $key . " ";
 
 <div class="container-fluid">
   <div class="row text-white text-center">
-    <div class=" " style="max-height: 50%;min-height: 50%;">
+    <div class=" " style="max-height: 900px;min-height: 900px; width:50%">
             <div class="card ">
                 <div class="bg-primary text-white">
                     <div class="row  m-0 p-2">
@@ -245,7 +245,7 @@ $querysoption = "select * from " . $key . " ";
 
 
     </div>
-    <div class="" style="max-height: 50%;min-height: 50%;">
+    <div class="" style="max-height: 900px;min-height: 900px;width:50%">
 
         <div  class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
