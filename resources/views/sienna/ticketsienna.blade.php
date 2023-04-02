@@ -390,7 +390,7 @@ $querysoption = "select * from " . $key . " ";
                         <?php foreach($t_staff as $value){?>
                         <div v-for="staff in staffs ">
 
-                            <input :value="<?php echo $value->id;?>" v-model="staff.id" class="form-radio" type="radio" name="statos">&nbsp;
+                            <input value="<?php echo $value->id;?>"  class="form-radio" type="radio" name="statos">&nbsp;
                             <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo $value->nombre;?></span>
                             <br><br>
                         </div>
