@@ -118,20 +118,15 @@ $querysoption = "select * from " . $key . " ";
                                 <li class="list-group-item">Fecha de creacion: {{ $resultado->creacion }} </li>
                             </ul>
                         </div>
-                        <div v-if="depto === null" class="col-6 align-self-end" style="display:inline-block;">
+                        <div  class="col-6 align-self-end" style="display:inline-block;">
                             <button type="button" class="btn btn-success w-100  btn-block" data-bs-toggle="modal"
-                                data-bs-target="#standard-modal2">{{ $resultado->depto }} sin asignar depto</button>
+                                data-bs-target="#standard-modal2">
+                                <?php if($resultado->depto==""){echo "sin asignar depto";}else echo $resultado->depto;?>  </button>
                             <spam id="departamento"></spam>
 
 
                         </div>
-                        <div v-else class="col-6 align-self-end" style="display:inline-block;">
-                            <button type="button" class="btn btn-success w-100  btn-block" data-bs-toggle="modal"
-                                data-bs-target="#standard-modal2">{{ $resultado->depto }}</button>
-                            <spam id="departamento"></spam>
-
-
-                        </div>
+                    
 
                     </div>
 
