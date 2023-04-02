@@ -397,6 +397,8 @@ $querysoption = "select * from " . $key . " ";
                             <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo $value->nombre;?></span>
                             <br><br>
                         </div>
+
+                        <?php }?>
                         <button type="submit" class="btn btn-success
                                     waves-effect waves-light">Cambiar</button>
 
