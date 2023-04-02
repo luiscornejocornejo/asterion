@@ -726,7 +726,7 @@ $cabezeras = $this->cabezerasgraficos($datosget);
 
       ->with('resultados', $return);
   }
-  public function siennaformticket(Request $request)
+  public function ticketsiennapost(Request $request)
   {
     $id = $request->id;
     $resultados = masterreport::find($id);
