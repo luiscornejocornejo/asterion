@@ -339,18 +339,7 @@ $querysoption = "select * from " . $key . " ";
                                                         class="mdi mdi-openid bg-info-lighten text-info timeline-icon "></i>
                                                     <p class="mb-1" style="color: #727CF5;font-size: 14px;">
 
-                                                        {{ extrah.name.toUpperCase() }}</p>
-
-
-                                                    <div class="timeline-item-info">
-                                                        <a href="javascript:void(0);" class="fw-light  mb-0 d-block"
-                                                            style="color: #262626;font-size: 12px;">{{ extrah.timestamp
-                                                            }}</a>
-
-                                                        <p class="mb-0 pb-2" style="color: #262626;font-size: 14px;">{{
-                                                            extrah.username }}
-                                                        </p>
-                                                    </div>
+                                          
                                                 </div>
 
 
@@ -389,27 +378,27 @@ $querysoption = "select * from " . $key . " ";
                         <div class="row  p-2">
                             <div class="col-6 align-self-start small" style="display:inline-block;">
                                 <ul  class="list-group list-group-flush">
-                                    <li class="list-group-item">clientid: {{ client_id }}</li>
-                                    <li class="list-group-item">email: {{ mail }}
+                                    <li class="list-group-item">clientid: {{ $resultado->client_id }}</li>
+                                    <li class="list-group-item">email: {{ $resultado->mail }}
                                         <span v-if="mail!= null"> <button type="button"
                                                 class="btn btn-success btn-sm  " data-bs-toggle="modal"
                                                 data-bs-target="#compose-modal">
 
                                             </button></span>
                                     </li>
-                                    <li class="list-group-item">phone: {{ telefono }} <span
+                                    <li class="list-group-item">phone: {{ $resultado->telefono }} <span
                                             v-if="telefono != null">
                                             <button type="button" class="btn btn-success btn-sm  " data-bs-toggle="modal"
                                                 data-bs-target="#standard-modal">
 
                                             </button></span></li>
-                                    <li class="list-group-item">whatsapp_nro: {{ whatsapp_nro }}<span
+                                    <li class="list-group-item">whatsapp_nro: {{ $resultado->whatsapp_nro }}<span
                                             v-if="whatsapp_nro != null">
                                             <button type="button" class="btn btn-success btn-sm  " data-bs-toggle="modal"
                                                 data-bs-target="#standard-modal">
 
                                             </button></span></li>
-                                    <li class="list-group-item">plan_name: {{ plan_name }}</li>
+                                    <li class="list-group-item">plan_name: {{ $resultado->plan_name }}</li>
 
 
                                 </ul>
