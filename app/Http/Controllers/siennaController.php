@@ -782,9 +782,10 @@ $cabezeras = $this->cabezerasgraficos($datosget);
     $querydatos = "select * from t_staff";
     $t_staff = DB::select($querydatos);
 
+    if(sizeof($resultados)>0){$vista=1}else {$vista=0;}
     return view('sienna/ticketsienna')
       ->with('id', $id)
-      ->with('vista', "1")
+      ->with('vista', $vista)
       ->with('datos', $resultados)
       ->with('t_staff', $t_staff)
 
