@@ -13,6 +13,9 @@ use App\Models\t_tickets;
 use App\Models\t_bitacora;
 use App\Models\t_estado;
 use App\Models\t_ticketuser;
+use App\Models\t_extraticket;
+
+
 
 use Carbon\Carbon;
 
@@ -195,7 +198,16 @@ class clienteController extends Controller
         $t_ticketuser->ticket=$ticketidinsertado;
         $t_ticketuser->save();
 
+        //extra tickets
 
+
+        $t_extraticket=new  t_extraticket();
+        $t_extraticket->chat_link=$request->chat_link;
+        $t_extraticket->t_boot=$request->t_boot;
+        $t_extraticket->ticket=$ticketidinsertado;
+        $t_extraticket->chat_status=0;//$request->chat_link;
+        $t_extraticket->chat_id=$request->chat_id;
+        $t_extraticket->save();
         //devolucion
         $devo=array("ticket"=>$ticketidinsertado);
         $return2 = json_encode($devo);
