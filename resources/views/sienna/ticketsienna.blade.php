@@ -144,7 +144,7 @@ $querysoption = "select * from " . $key . " ";
                         <div  class="col-6 align-self-end" style="display:inline-block; ">
                             <button type="button" class="btn btn-success w-100  btn-block" data-bs-toggle="modal"
                                 data-bs-target="#standard-modal4">
-                                <?php if($resultado->asignado==""){echo "sin asignar depto";}else echo $resultado->asignado;?>
+                                <?php if($resultado->asignado==""){echo "sin asignar ";}else echo $resultado->asignado;?>
                                </button>
 
                         </div>
