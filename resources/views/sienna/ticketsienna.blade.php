@@ -77,58 +77,8 @@ $querysoption = "select * from " . $key . " ";
 
             <?php if ($vista == "1") {
     ?>
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Report</h1>
-                </div>
-                <button class="btn btn-success" onclick="exportTableToExcel('datatable')">Exportar </button>
-
-                <div class="table-responsive">
-
-
-                    <table role="table" id="datatable" class="table table-bordered dt-responsive nowrap w-100">
-                        <thead role="rowgroup" class="table-success">
-                            <tr role="row">
-
-                                @foreach($cabezeras as $cabeza)
-                                <?php if ($cabeza != "id") {?>
-
-                                    <th role="columnheader">{{ $cabeza }}</th>
-                                <?php }?>
-
-                                @endforeach
-
-
-                            </tr>
-                        </thead>
-                        <tbody role="rowgroup">
-                            @foreach($datos as $resultado)
-
-
-                            <tr role="row">
-                                @foreach($cabezeras as $cabeza)
-                                <?php if ($cabeza != "id") {?>
-                                    <td role="cell">
-                                        {!! $resultado->$cabeza !!}
-                                    </td>
-
-                                <?php }?>
-                                @endforeach
-
-
-                            </tr>
-                            @endforeach
-
-                        </tbody>
-                    </table>
-
-                </div>
-
-<?php
-}?>
-        </div>
-    </div>
-</div>
-
+        
+ 
 
 
 
@@ -437,6 +387,13 @@ $querysoption = "select * from " . $key . " ";
 
     <?php
 }?>
+
+
+
+</div>
+    </div>
+</div>
+
     <br><br><br>
 
 @include('pp.footer')
