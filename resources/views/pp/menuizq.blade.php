@@ -231,6 +231,10 @@ $resultados = DB::select($query);
 
                                         $a = "<a target='_self' href='/chatsienna?id=" . $value2->id . "'><span>" . $value2->nombre . "</span></a>";
                                     }
+                                    elseif ($value2->servicio == 11) {
+
+                                        $a = "<a target='_self' href='/ticketsienna?id=" . $value2->id . "'><span>" . $value2->nombre . "</span></a>";
+                                    }
                                 ?>
                                     <li><?php echo $a; ?></li>
                             <?php
