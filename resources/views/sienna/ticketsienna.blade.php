@@ -139,7 +139,7 @@ $querysoption = "select * from " . $key . " ";
             <div class="bg-primary text-white">
                 <div class="row  m-0 p-2">
                     <div class="col-6 align-self-start" style="display:inline-block;">
-                        <span class="float-start text-white fw-bold ">{{ $resultado->nombreusuario }} </span>
+                        <span class="float-start text-white fw-bold ">{{ $resultado->nombredelcliente }} </span>
                     </div>
 
                     <div class="col-6 align-self-end" style="display:inline-block;">
