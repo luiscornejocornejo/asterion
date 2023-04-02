@@ -145,8 +145,7 @@ $querysoption = "select * from " . $key . " ";
                     </div>
 
                     <div class="col-6 align-self-end" style="display:inline-block;">
-                        <span class="float-end text-white fw-bold  "><span :style="{ 'color': laprio }">{{ $resultado->prioridad
-                        }}</span> TICKET #{{ $resultado->ticket_id }}</span>
+                        <span class="float-end text-white fw-bold  "><span :style="{ 'color': laprio }">{{ $resultado->priority_desc}}</span> TICKET #{{ $resultado->ticket_id }}</span>
                     </div>
                 </div>
             </div>
