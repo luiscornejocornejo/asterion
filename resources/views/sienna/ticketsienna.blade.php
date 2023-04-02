@@ -387,11 +387,11 @@ $querysoption = "select * from " . $key . " ";
                     <form action="/chatasignar2" method="post">
                     @csrf
                         <input type="hidden" name="idticketestado" id="<?php echo $id; ?>">
-                        <?php foreach($t_staff as $value){?>
+                        <?php foreach($t_staff as $value2){?>
                         <div >
-
-                            <input value="<?php echo $value->id;?>"  class="form-radio" type="radio" name="statos">&nbsp;
-                            <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo $value->nombre;?></span>
+                        <?php echo $value2->id;?>
+                            <input value="<?php echo $value2->id;?>"  class="form-radio" type="radio" name="statos">&nbsp;
+                            <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo $value2->nombre;?></span>
                             <br><br>
                         </div>
 

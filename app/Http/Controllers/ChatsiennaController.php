@@ -144,8 +144,8 @@ sleep(10);
   {
 
     $idticketestado = $request->idticketestado;
-   echo  $statos = $request->statos;
-
+     $statos = $request->statos;
+dd($statos);
     $ticketes = t_tickets::find($idticketestado);
     $ticketes->t_staff=$statos;
     $ticketes->save();
