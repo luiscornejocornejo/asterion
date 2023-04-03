@@ -264,7 +264,8 @@ $querysoption = "select * from " . $key . " ";
                                         <div class="simplebar-content" style="padding: 0px 24px;">
                                             <div class="timeline-alt py-0">
 
-                                                <div v-for="extrah in historial" class="timeline-item extrahistorial2">
+                                            <?php foreach($t_bitacora as $value3){?>
+                                                <div >
                                                     <i v-if="extrah.name == 'open'"
                                                         class="mdi mdi-progress-check bg-info-lighten text-info timeline-icon"></i>
                                                     <i v-if="extrah.name == 'closed'"
@@ -275,8 +276,17 @@ $querysoption = "select * from " . $key . " ";
                                                         class="mdi mdi-account-edit bg-info-lighten text-info timeline-icon"></i>
                                                     <i v-if="extrah.name == 'reopened'"
                                                         class="mdi mdi-openid bg-info-lighten text-info timeline-icon "></i>
-                                                    <p class="mb-1" style="color: #727CF5;font-size: 14px;">
+                                                        <p class="mb-1" style="color: #727CF5;font-size: 14px;">
 
+                                                        <?php echo $value3->nombre;?></p>
+
+
+                                                        <div class="timeline-item-info">
+                                                        <a href="javascript:void(0);" class="fw-light  mb-0 d-block"
+                                                            style="color: #262626;font-size: 12px;"><?php echo $value3->timestamp;?></a>
+
+                                                        <p class="mb-0 pb-2" style="color: #262626;font-size: 14px;"><?php echo $value3->username;?></p>
+                                                        </div>
 
                                                 </div>
 

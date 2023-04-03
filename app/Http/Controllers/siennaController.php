@@ -788,6 +788,11 @@ $cabezeras = $this->cabezerasgraficos($datosget);
     $querydatos = "select * from t_estado";
     $t_estado = DB::select($querydatos);
 
+   echo  $querydatos = "select a.created_at as timestamp,ts.nombre as username,a.t_estado as name from t_bitacora a
+    join t_staff ts on ts.id=a.t_staff 
+    where a.t_tickets =" . $$valor . "";
+    $t_bitacora = DB::select($querydatos);
+
 
 
     if(sizeof($resultados)>0){
@@ -803,6 +808,9 @@ $cabezeras = $this->cabezerasgraficos($datosget);
       ->with('t_departamentos', $t_departamentos)
       ->with('t_topic', $t_topic)
       ->with('t_estado', $t_estado)
+      ->with('t_bitacora', $t_bitacora)
+
+      
 
       
 
