@@ -158,78 +158,10 @@ $querysoption = "select * from " . $key . " ";
                     </div>
 
                     <div class="p-2">
-                        <div v-if="source == 'API'">API</div>
-                        <div v-if="source == 'Email'">
-                            <div v-for="ext in extra" class="currency">
-                                <span v-html="ext.body"></span>
-                            </div>
-                        </div>
-                        <div v-if="source == 'Google Business '">
-                            <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                                    src="{{ $resultado->chat_link }}"></iframe>
-                            </div>
-                        </div>
-                        <div v-if="source == 'Teams'">
-                            <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                                    src="{{ $resultado->chat_link }}"></iframe>
-                            </div>
-                        </div>
-
-                        <div v-if="source == 'Slack'">
-                            <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                                    src="{{ $resultado->chat_link }}"></iframe>
-                            </div>
-                        </div>
-                        <div v-if="source == 'Discord'">
-                            <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                                    src="{{ $resultado->chat_link }}"></iframe>
-                            </div>
-                        </div>
-                        <div v-if="source == 'Web'">
-                            <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                                    src="{{ $resultado->chat_link }}"></iframe>
-                            </div>
-                        </div>
-                        <div v-if="source == 'RCS'">
-                            <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                                    src="{{ $resultado->chat_link }}"></iframe>
-                            </div>
-                        </div>
-                        <div v-if="source == 'SMS'">
-                            <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                                    src="{{ $resultado->chat_link }}"></iframe>
-                            </div>
-                        </div>
-                        <div v-if="source == 'Instagram'">
-                            <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                            src="{{ $resultado->chat_link }}"></iframe>
-                            </div>
-                        </div>
-                        <div v-if="source == 'Facebook'">
-                            <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                                    src="{{ $resultado->chat_link }}"></iframe>
-                            </div>
-                        </div>
-
-                        <div v-if="source == 'Telegram'">
-
-                            <div v-for="ext in whapp" style="max-height: 446px">
-                                <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                                    src="{{ $resultado->chat_link }}"></iframe>
-                            </div>
-                        </div>
+                     
                         <div v-if="source == 'Whatsapp'">
                             <div style="max-height: 446px">
-                                <iframe class="w-100" max-height="200px" width="860 px" height="400 px" frameborder='0'
+                                <iframe class="w-100" max-height="200px" width="460 px" height="400 px" frameborder='0'
                                     allowfullscreen src="{{ $resultado->chat_link }}"></iframe>
                             </div>
                         </div>
