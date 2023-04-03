@@ -79,7 +79,7 @@ $querysoption = "select * from " . $key . " ";
 @foreach($datos as $resultado)
 
 
-<?php $ticket_id=$resultado->ticket_id;?>
+<?php $ticket_id = $resultado->ticket_id;?>
 
 <div class="container-fluid">
   <div class="row text-white text-center">
@@ -123,12 +123,15 @@ $querysoption = "select * from " . $key . " ";
                         <div  class="col-6 align-self-end" style="display:inline-block;">
                             <button type="button" class="btn btn-success w-100  btn-block" data-bs-toggle="modal"
                                 data-bs-target="#standard-modal2">
-                                <?php if($resultado->depto==""){echo "sin asignar depto";}else echo $resultado->depto;?>  </button>
+                                <?php if ($resultado->depto == "") {echo "sin asignar depto";} else {
+        echo $resultado->depto;
+    }
+    ?>  </button>
                             <spam id="departamento"></spam>
 
 
                         </div>
-                    
+
 
                     </div>
 
@@ -144,7 +147,10 @@ $querysoption = "select * from " . $key . " ";
                         <div  class="col-6 align-self-end" style="display:inline-block; ">
                             <button type="button" class="btn btn-success w-100  btn-block" data-bs-toggle="modal"
                                 data-bs-target="#standard-modal4">
-                                <?php if($resultado->asignado==""){echo "sin asignar ";}else echo $resultado->asignado;?>
+                                <?php if ($resultado->asignado == "") {echo "sin asignar ";} else {
+        echo $resultado->asignado;
+    }
+    ?>
                                </button>
 
                         </div>
@@ -264,28 +270,62 @@ $querysoption = "select * from " . $key . " ";
                                         <div class="simplebar-content" style="padding: 0px 24px;">
                                             <div class="timeline-alt py-0">
 
-                                            <?php foreach($t_bitacora as $value3){?>
+                                            <?php foreach ($t_bitacora as $value3) {?>
                                                 <div >
-                                                    <i v-if="extrah.name == 'open'"
+
+                                                <?php
+if ($value3->name == "open") {
+        ?>
+ <i v-if="extrah.name == 'open'"
                                                         class="mdi mdi-progress-check bg-info-lighten text-info timeline-icon"></i>
-                                                    <i v-if="extrah.name == 'closed'"
-                                                        class="mdi mdi-progress-close bg-info-lighten text-info timeline-icon"></i>
-                                                    <i v-if="extrah.name == 'overdue'"
-                                                        class="mdi mdi-timer-sand-complete bg-info-lighten text-info timeline-icon"></i>
-                                                    <i v-if="extrah.name == 'edited'"
-                                                        class="mdi mdi-account-edit bg-info-lighten text-info timeline-icon"></i>
-                                                    <i v-if="extrah.name == 'reopened'"
+
+                                                <?php
+}?>
+                                                <?php
+if ($value3->name == "reopened") {
+        ?>
+
+<i v-if="extrah.name == 'reopened'"
                                                         class="mdi mdi-openid bg-info-lighten text-info timeline-icon "></i>
+                                                <?php
+}?>
+                                                <?php
+if ($value3->name == "edited") {
+        ?>
+<i v-if="extrah.name == 'edited'"
+                                                        class="mdi mdi-account-edit bg-info-lighten text-info timeline-icon"></i>
+
+                                                <?php
+}?>
+                                                <?php
+if ($value3->name == "overdue") {
+        ?>
+
+<i v-if="extrah.name == 'overdue'"
+                                                        class="mdi mdi-timer-sand-complete bg-info-lighten text-info timeline-icon"></i>
+                                                <?php
+}?>
+                                                <?php
+if ($value3->name == "closed") {
+        ?>
+
+<i class="mdi mdi-progress-close bg-info-lighten text-info timeline-icon"></i>
+                                                <?php
+}?>
+
+
+
+
                                                         <p class="mb-1" style="color: #727CF5;font-size: 14px;">
 
-                                                        <?php echo $value3->name;?></p>
+                                                        <?php echo $value3->name; ?></p>
 
 
                                                         <div class="timeline-item-info">
                                                         <a href="javascript:void(0);" class="fw-light  mb-0 d-block"
-                                                            style="color: #262626;font-size: 12px;"><?php echo $value3->timestamp;?></a>
+                                                            style="color: #262626;font-size: 12px;"><?php echo $value3->timestamp; ?></a>
 
-                                                        <p class="mb-0 pb-2" style="color: #262626;font-size: 14px;"><?php echo $value3->username;?></p>
+                                                        <p class="mb-0 pb-2" style="color: #262626;font-size: 14px;"><?php echo $value3->username; ?></p>
                                                         </div>
 
                                                 </div>
@@ -399,10 +439,10 @@ $querysoption = "select * from " . $key . " ";
                     <form action="/chatasignar2" method="post">
                     @csrf
                         <input type="hidden" name="idticketestado" value="<?php echo $ticket_id; ?>">
-                        <?php foreach($t_staff as $value2){?>
+                        <?php foreach ($t_staff as $value2) {?>
                         <div >
-                            <input value="<?php echo $value2->id;?>"  class="form-radio" type="radio" name="statos">&nbsp;
-                            <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo $value2->nombre;?></span>
+                            <input value="<?php echo $value2->id; ?>"  class="form-radio" type="radio" name="statos">&nbsp;
+                            <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo $value2->nombre; ?></span>
                             <br><br>
                         </div>
 
@@ -427,11 +467,11 @@ $querysoption = "select * from " . $key . " ";
                     @csrf
                         <input type="hidden" name="idticketestado" value="<?php echo $ticket_id; ?>">
 
-                        <?php foreach($t_topic as $value2){?>
+                        <?php foreach ($t_topic as $value2) {?>
                         <div>
 
-                            <input value="<?php echo $value2->id;?>"  class="form-radio" type="radio" name="statos">&nbsp;
-                            <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo $value2->nombre;?></span>
+                            <input value="<?php echo $value2->id; ?>"  class="form-radio" type="radio" name="statos">&nbsp;
+                            <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo $value2->nombre; ?></span>
                             <br><br>
                         </div>
 
@@ -460,12 +500,12 @@ $querysoption = "select * from " . $key . " ";
                     @csrf
                         <input type="hidden" name="idticketestado" value="<?php echo $ticket_id; ?>">
 
-                        <?php foreach($t_estado as $value2){?>
+                        <?php foreach ($t_estado as $value2) {?>
                         <div >
 
-                            <input value="<?php echo $value2->id;?>" v-model="ost_ticket_statu.id" class="form-radio"
+                            <input value="<?php echo $value2->id; ?>" v-model="ost_ticket_statu.id" class="form-radio"
                                 type="radio" name="statos">&nbsp; <span class=" fw-bold"
-                                style="color: #98a6ad;font-size: 12px;"><?php echo $value2->nombre;?></span>
+                                style="color: #98a6ad;font-size: 12px;"><?php echo $value2->nombre; ?></span>
                             <br><br>
                         </div>
                         <?php }?>
@@ -491,12 +531,12 @@ $querysoption = "select * from " . $key . " ";
                     @csrf
                         <input type="hidden" name="idticketestado" value="<?php echo $ticket_id; ?>">
 
-                        <?php foreach($t_departamentos as $value2){?>
+                        <?php foreach ($t_departamentos as $value2) {?>
                         <div>
 
-                            <input value="<?php echo $value2->id;?>" v-model="department.id" class="form-radio" type="radio"
+                            <input value="<?php echo $value2->id; ?>" v-model="department.id" class="form-radio" type="radio"
                                 name="statos">&nbsp;
-                            <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo $value2->nombre;?></span>
+                            <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo $value2->nombre; ?></span>
                             <br><br>
                         </div>
                         <?php }?>
