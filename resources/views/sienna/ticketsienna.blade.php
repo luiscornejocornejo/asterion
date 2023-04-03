@@ -180,43 +180,43 @@ $querysoption = "select * from " . $key . " ";
                         <div v-if="source == 'Slack'">
                             <div v-for="ext in whapp" style="max-height: 446px">
                                 <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                                    v-bind:src="ext.chat_link"></iframe>
+                                    src="{{ $resultado->chat_link }}"></iframe>
                             </div>
                         </div>
                         <div v-if="source == 'Discord'">
                             <div v-for="ext in whapp" style="max-height: 446px">
                                 <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                                    v-bind:src="ext.chat_link"></iframe>
+                                    src="{{ $resultado->chat_link }}"></iframe>
                             </div>
                         </div>
                         <div v-if="source == 'Web'">
                             <div v-for="ext in whapp" style="max-height: 446px">
                                 <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                                    v-bind:src="ext.chat_link"></iframe>
+                                    src="{{ $resultado->chat_link }}"></iframe>
                             </div>
                         </div>
                         <div v-if="source == 'RCS'">
                             <div v-for="ext in whapp" style="max-height: 446px">
                                 <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                                    v-bind:src="ext.chat_link"></iframe>
+                                    src="{{ $resultado->chat_link }}"></iframe>
                             </div>
                         </div>
                         <div v-if="source == 'SMS'">
                             <div v-for="ext in whapp" style="max-height: 446px">
                                 <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                                    v-bind:src="ext.chat_link"></iframe>
+                                    src="{{ $resultado->chat_link }}"></iframe>
                             </div>
                         </div>
                         <div v-if="source == 'Instagram'">
                             <div v-for="ext in whapp" style="max-height: 446px">
                                 <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                                    v-bind:src="ext.chat_link"></iframe>
+                            src="{{ $resultado->chat_link }}"></iframe>
                             </div>
                         </div>
                         <div v-if="source == 'Facebook'">
                             <div v-for="ext in whapp" style="max-height: 446px">
                                 <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                                    v-bind:src="ext.chat_link"></iframe>
+                                    src="{{ $resultado->chat_link }}"></iframe>
                             </div>
                         </div>
 
@@ -224,13 +224,13 @@ $querysoption = "select * from " . $key . " ";
 
                             <div v-for="ext in whapp" style="max-height: 446px">
                                 <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                                    v-bind:src="ext.chat_link"></iframe>
+                                    src="{{ $resultado->chat_link }}"></iframe>
                             </div>
                         </div>
                         <div v-if="source == 'Whatsapp'">
                             <div style="max-height: 446px">
                                 <iframe class="w-100" max-height="200px" width="860 px" height="400 px" frameborder='0'
-                                    allowfullscreen v-bind:src="chat_link"></iframe>
+                                    allowfullscreen src="{{ $resultado->chat_link }}"></iframe>
                             </div>
                         </div>
 
