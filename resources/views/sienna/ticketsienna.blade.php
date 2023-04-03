@@ -274,15 +274,14 @@ $querysoption = "select * from " . $key . " ";
                                                 <div >
 
                                                 <?php
-if ($value3->name == "open") {
+if ($value3->name == 'open') {
         ?>
- <i v-if="extrah.name == 'open'"
-                                                        class="mdi mdi-progress-check bg-info-lighten text-info timeline-icon"></i>
+ <i class="mdi mdi-progress-check bg-info-lighten text-info timeline-icon"></i>
 
                                                 <?php
 }?>
                                                 <?php
-if ($value3->name == "reopened") {
+if ($value3->name == 'reopened') {
         ?>
 
 <i v-if="extrah.name == 'reopened'"
