@@ -790,7 +790,7 @@ $cabezeras = $this->cabezerasgraficos($datosget);
 
    echo  $querydatos = "select a.created_at as timestamp,ts.nombre as username,a.t_estado as name from t_bitacora a
     join t_staff ts on ts.id=a.t_staff 
-    where a.t_tickets =" . $$valor . "";
+    where a.t_tickets =" . $valor . "";
     $t_bitacora = DB::select($querydatos);
 
 
