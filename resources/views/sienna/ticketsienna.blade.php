@@ -486,7 +486,7 @@ $querysoption = "select * from " . $key . " ";
 
                             <input value="<?php echo $value2->id;?>" v-model="department.id" class="form-radio" type="radio"
                                 name="statos">&nbsp;
-                            <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo $value2->nombre;?>}</span>
+                            <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo $value2->nombre;?></span>
                             <br><br>
                         </div>
                         <?php }?>
