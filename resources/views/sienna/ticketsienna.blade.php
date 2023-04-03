@@ -167,13 +167,13 @@ $querysoption = "select * from " . $key . " ";
                         <div v-if="source == 'Google Business '">
                             <div v-for="ext in whapp" style="max-height: 446px">
                                 <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                                    v-bind:src="ext.chat_link"></iframe>
+                                    src="{{ $resultado->chat_link }}"></iframe>
                             </div>
                         </div>
                         <div v-if="source == 'Teams'">
                             <div v-for="ext in whapp" style="max-height: 446px">
                                 <iframe max-height="200px" width="860 px" height="400 px" frameborder='0' allowfullscreen
-                                    v-bind:src="ext.chat_link"></iframe>
+                                    src="{{ $resultado->chat_link }}"></iframe>
                             </div>
                         </div>
 
