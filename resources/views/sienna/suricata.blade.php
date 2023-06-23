@@ -8,9 +8,10 @@
 <?php 
 
 
-var_dump(json_decode($response, true));
+$res=json_decode($response, true);
 
-
+$url=$res->Home;
+echo $url;
 ?>
 
 
