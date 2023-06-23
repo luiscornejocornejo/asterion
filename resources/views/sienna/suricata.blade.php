@@ -1,6 +1,21 @@
 
 <html>
-    <head></head>
+    <head>
+
+<style>
+body {
+    margin: 0;            /* Reset default margin */
+}
+iframe {
+    display: block;       /* iframes are inline by default */
+    background: #000;
+    border: none;         /* Reset default border */
+    height: 100vh;        /* Viewport-relative units */
+    width: 100vw;
+}
+    </style>
+
+    </head>
 
 
 <body>
@@ -10,12 +25,10 @@
 
 $res=json_decode($response, true);
 
-var_dump($res);
 $url=$res['Home'];
-echo $url;
 ?>
 
-
+<iframe src="<?php echo $url;?>" ></iframe>
 
 </body>
 
