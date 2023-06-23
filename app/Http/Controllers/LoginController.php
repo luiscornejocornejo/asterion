@@ -93,7 +93,7 @@ class LoginController extends Controller
                // return Redirect::to('/suricata');
 
             }
-            return Redirect::to('/home');
+           // return Redirect::to('/home');
 
             // return view('home');;
         } else {
