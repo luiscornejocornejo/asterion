@@ -57,7 +57,7 @@ class LoginController extends Controller
                         "AccountAPIKey":"9474C39E-5E40-4A99-96B4-9709EAFA677A",
                         "BotAPIKey":"UH1jLwAoIDYBSkTw73dysIRr",
                         "BotAPISecret":"L5tZePdZNvY563aMsCRhDuKTUySkNmTCqANF3b9taynXCNp3",
-                        "Email":"'.$email.'"s
+                        "Email":"'.$email.'"
                     }',
                     CURLOPT_HTTPHEADER => array(
                         'Accept: application/json',
