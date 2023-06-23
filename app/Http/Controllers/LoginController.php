@@ -59,6 +59,11 @@ class LoginController extends Controller
                 session(['email' => $email]);
             }
 
+            if($categoria==9){
+
+                return Redirect::to('/suricata');
+
+            }
             return Redirect::to('/home');
 
             // return view('home');;
