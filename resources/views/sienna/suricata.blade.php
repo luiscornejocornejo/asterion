@@ -5,7 +5,13 @@
 
 <body>
 
-<?php echo $response;?>
+<?php 
+
+
+var_dump(json_decode($response, true));
+
+
+?>
 
 
 
