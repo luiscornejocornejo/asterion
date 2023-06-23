@@ -159,18 +159,14 @@ $querysoption = "select * from " . $key . " ";
 
                     <div class="p-2">
                      
-                        <div v-if="source == 'Whatsapp'">
+                        <div >
                             <div style="max-height: 446px">
                                 <iframe class="w-100" max-height="200px" width="460 px" height="400 px" frameborder='0'
                                     allowfullscreen src="{{ $resultado->chat_link }}"></iframe>
                             </div>
                         </div>
 
-                        <div v-else v-for="ext in extra" class="currency">
-
-                            <span v-html="ext.body"></span>
-                        </div>
-
+                  
 
                     </div>
                 </div> <!-- end card-body -->
@@ -216,15 +212,13 @@ if ($value3->name == 'open') {
 if ($value3->name == 'reopened') {
         ?>
 
-<i v-if="extrah.name == 'reopened'"
-                                                        class="mdi mdi-openid bg-info-lighten text-info timeline-icon "></i>
+<i  class="mdi mdi-openid bg-info-lighten text-info timeline-icon "></i>
                                                 <?php
 }?>
                                                 <?php
 if ($value3->name == "edited") {
         ?>
-<i v-if="extrah.name == 'edited'"
-                                                        class="mdi mdi-account-edit bg-info-lighten text-info timeline-icon"></i>
+<i class="mdi mdi-account-edit bg-info-lighten text-info timeline-icon"></i>
 
                                                 <?php
 }?>
@@ -232,8 +226,7 @@ if ($value3->name == "edited") {
 if ($value3->name == "overdue") {
         ?>
 
-<i v-if="extrah.name == 'overdue'"
-                                                        class="mdi mdi-timer-sand-complete bg-info-lighten text-info timeline-icon"></i>
+<i   class="mdi mdi-timer-sand-complete bg-info-lighten text-info timeline-icon"></i>
                                                 <?php
 }?>
                                                 <?php
@@ -312,7 +305,7 @@ if ($value3->name == "closed") {
 
                                             </button></span></li>
                                     <li class="list-group-item">whatsapp_nro: {{ $resultado->whatsapp_nro }}<span
-                                            v-if="whatsapp_nro != null">
+                                            >
                                             <button type="button" class="btn btn-success btn-sm  " data-bs-toggle="modal"
                                                 data-bs-target="#standard-modal">
 
