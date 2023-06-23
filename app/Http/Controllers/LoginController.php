@@ -69,6 +69,7 @@ class LoginController extends Controller
 
                     curl_close($curl);
                     //echo $response;
+                    
         return view('sienna/suricata')
          ->with('response', $response);
     }
@@ -96,14 +97,14 @@ class LoginController extends Controller
 
             if($categoria==9){
 
-                $this->suricata($email);
+               $hh= $this->suricata($email);
 
 
                 
                // return Redirect::to('/suricata');
 
             }
-           return Redirect::to('/home');
+          // return Redirect::to('/home');
 
             // return view('home');;
         } else {
