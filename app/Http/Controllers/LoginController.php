@@ -41,6 +41,7 @@ class LoginController extends Controller
     public function suricata( $email)
     {
 
+        echo $email;
         $curl = curl_init();
 
                     curl_setopt_array($curl, array(
@@ -68,7 +69,7 @@ class LoginController extends Controller
                     $response = curl_exec($curl);
 
                     curl_close($curl);
-                    //echo $response;
+                    echo $response;
                     
         return view('sienna/suricata')
          ->with('response', $response);
