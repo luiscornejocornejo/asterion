@@ -37,6 +37,41 @@ class LoginController extends Controller
 
         return view('sienna/profile');;
     }
+
+    public function suricata( $email)
+    {
+
+        $curl = curl_init();
+
+                    curl_setopt_array($curl, array(
+                    CURLOPT_URL => 'https://meerkat.xenioo.com/authorization/sso',
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_ENCODING => '',
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 0,
+                    CURLOPT_FOLLOWLOCATION => true,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => 'POST',
+                    CURLOPT_POSTFIELDS =>'{
+                        "AccountAPIKey":"9474C39E-5E40-4A99-96B4-9709EAFA677A",
+                        "BotAPIKey":"UH1jLwAoIDYBSkTw73dysIRr",
+                        "BotAPISecret":"L5tZePdZNvY563aMsCRhDuKTUySkNmTCqANF3b9taynXCNp3",
+                        "Email":'.$email.'
+                    }',
+                    CURLOPT_HTTPHEADER => array(
+                        'Accept: application/json',
+                        'Content-Type: application/json',
+                        'Cookie: xenioo-id=XENIOO_b527e095-bc1b-4142-9f55-b09da0fe42ab'
+                    ),
+                    ));
+
+                    $response = curl_exec($curl);
+
+                    curl_close($curl);
+                    //echo $response;
+        return view('sienna/suricata')
+         ->with('response', $response);
+    }
     public function index(Request $request)
     {
         $email = $request->email;
@@ -61,39 +96,14 @@ class LoginController extends Controller
 
             if($categoria==9){
 
+                $this->suricata($email);
 
-                $curl = curl_init();
 
-                    curl_setopt_array($curl, array(
-                    CURLOPT_URL => 'https://meerkat.xenioo.com/authorization/sso',
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_ENCODING => '',
-                    CURLOPT_MAXREDIRS => 10,
-                    CURLOPT_TIMEOUT => 0,
-                    CURLOPT_FOLLOWLOCATION => true,
-                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                    CURLOPT_CUSTOMREQUEST => 'POST',
-                    CURLOPT_POSTFIELDS =>'{
-                        "AccountAPIKey":"9474C39E-5E40-4A99-96B4-9709EAFA677A",
-                        "BotAPIKey":"UH1jLwAoIDYBSkTw73dysIRr",
-                        "BotAPISecret":"L5tZePdZNvY563aMsCRhDuKTUySkNmTCqANF3b9taynXCNp3",
-                        "Email":"ar.elevate@suricata.la"
-                    }',
-                    CURLOPT_HTTPHEADER => array(
-                        'Accept: application/json',
-                        'Content-Type: application/json',
-                        'Cookie: xenioo-id=XENIOO_b527e095-bc1b-4142-9f55-b09da0fe42ab'
-                    ),
-                    ));
-
-                    $response = curl_exec($curl);
-
-                    curl_close($curl);
-                    echo $response;
+                
                // return Redirect::to('/suricata');
 
             }
-           // return Redirect::to('/home');
+           return Redirect::to('/home');
 
             // return view('home');;
         } else {
