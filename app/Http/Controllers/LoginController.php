@@ -100,7 +100,7 @@ class LoginController extends Controller
                $hh= $this->suricata($email);
                $res=json_decode($hh, true);
 
-                $url=$res['Home'];
+                $url=$res['Home']."/conversation";
                // $rr=get
 
                return view('sienna/suricata')
