@@ -98,12 +98,17 @@ class LoginController extends Controller
             if($categoria==9){
 
                $hh= $this->suricata($email);
+               $res=json_decode($hh, true);
+
+                $url=$res['Home'];
+               // $rr=get
+
                return view('sienna/suricata')
-                ->with('response', $hh);
+                ->with('url', $url);
 
 
                 
-               // return Redirect::to('/suricata');
+               //return Redirect::to('/suricata');
 
             }else{
                 return Redirect::to('/home');
