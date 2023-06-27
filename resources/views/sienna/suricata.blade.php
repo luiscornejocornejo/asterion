@@ -23,9 +23,7 @@ iframe {
 <?php 
 
 
-$res=json_decode($response, true);
 
-$url=$res['Home'];
 ?>
 
 <iframe src="<?php echo $url;?>" ></iframe>
