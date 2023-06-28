@@ -24,7 +24,9 @@ class TicketdatosController extends Controller
     public function datos(Request $request)
     {
 
-        return view("sienna/Ticketdatos");
+        $id=$request->conversation_id;
+        return view("sienna/Ticketdatos")
+        ->with('id', $id);
 
     }
     public function view(Request $request)

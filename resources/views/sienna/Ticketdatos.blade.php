@@ -8,7 +8,7 @@
 
 
 <body>
-datos del ticket
+datos del ticket <?php echo $id;?>
 </body>
 
 
