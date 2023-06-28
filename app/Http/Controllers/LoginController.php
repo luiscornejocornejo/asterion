@@ -38,7 +38,7 @@ class LoginController extends Controller
         return view('sienna/profile');;
     }
 
-    public function suricata( $email)
+    public function suricata( $email,$AccountAPIKey,$BotAPIKey,$BotAPISecret)
     {
 
        // echo $email;
@@ -54,9 +54,9 @@ class LoginController extends Controller
                     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                     CURLOPT_CUSTOMREQUEST => 'POST',
                     CURLOPT_POSTFIELDS =>'{
-                        "AccountAPIKey":"9474C39E-5E40-4A99-96B4-9709EAFA677A",
-                        "BotAPIKey":"UH1jLwAoIDYBSkTw73dysIRr",
-                        "BotAPISecret":"L5tZePdZNvY563aMsCRhDuKTUySkNmTCqANF3b9taynXCNp3",
+                        "AccountAPIKey":"'.$AccountAPIKey.'",
+                        "BotAPIKey":"'.$BotAPIKey.'",
+                        "BotAPISecret":"'.$BotAPISecret.'",
                         "Email":"'.$email.'"
                     }',
                     CURLOPT_HTTPHEADER => array(
@@ -97,7 +97,15 @@ class LoginController extends Controller
 
             if($categoria==9){
 
-               $hh= $this->suricata($email);
+                //$AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
+                //$BotAPIKey="UH1jLwAoIDYBSkTw73dysIRr";
+                //$BotAPISecret="L5tZePdZNvY563aMsCRhDuKTUySkNmTCqANF3b9taynXCNp3";
+
+                $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
+                $BotAPIKey="bUef7lQ3tJA2kK2S0NFuB3VH";
+                $BotAPISecret="8wCJCymWYS3LnuXfTEOlkbQIvHVLxCnXzMWAZ7ruXeUIGhe5";
+
+               $hh= $this->suricata($email,$AccountAPIKey,$BotAPIKey,$BotAPISecret);
                $res=json_decode($hh, true);
 
                 $url=$res['Home']."/conversation";
