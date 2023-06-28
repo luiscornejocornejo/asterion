@@ -173,9 +173,12 @@ Route::get('/calendario','App\Http\Controllers\calendarioController@calendario')
 
 //front xennio
 
-Route::get('/datos','App\Http\Controllers\TicketdatosController@datos');
+//Route::get('/datos','App\Http\Controllers\TicketdatosController@datos');
 
-
+Route::get('/datos/', array(
+    'before'=>'forcehttps',
+    'uses' => 'App\Http\Controllers\TicketdatosController@datos')
+  );
 
  
 
