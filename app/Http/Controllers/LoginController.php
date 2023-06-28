@@ -106,7 +106,7 @@ class LoginController extends Controller
                 $BotAPISecret="8wCJCymWYS3LnuXfTEOlkbQIvHVLxCnXzMWAZ7ruXeUIGhe5";
 
                 $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
-                $BotAPIKey="H4TJzHoAedn0lo6acczPYqtu"";
+                $BotAPIKey="H4TJzHoAedn0lo6acczPYqtu";
                 $BotAPISecret="mK6swiRhdihoS2lB8INOPr6AKDQLVYbQBYWeAvEwC6M36I8a";
 
                
