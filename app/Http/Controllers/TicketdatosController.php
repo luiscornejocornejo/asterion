@@ -24,7 +24,7 @@ class TicketdatosController extends Controller
     public function datos(Request $request)
     {
 
-        return view("sienna/Ticketdatos")
+        return view("sienna/Ticketdatos");
 
     }
     public function view(Request $request)
