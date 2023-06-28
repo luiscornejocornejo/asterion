@@ -17,6 +17,9 @@ use App\Http\Controllers\JornadasController;
 
 
 
+Route::get('/datos','App\Http\Controllers\TicketdatosController@datos');
+
+
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -176,7 +179,6 @@ Route::get('/calendario','App\Http\Controllers\calendarioController@calendario')
 
 //front xennio
 
-Route::get('/datos','App\Http\Controllers\TicketdatosController@datos');
 
 
 /*
