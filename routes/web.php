@@ -171,6 +171,9 @@ Route::get('/cronmail','App\Http\Controllers\Dashboard2Controller@cronmail');
 Route::get('/calendario','App\Http\Controllers\calendarioController@calendario'); 
 
 
+//front xennio
+
+Route::get('/datos','App\Http\Controllers\TicketdatosController@datos');
 
 
 
