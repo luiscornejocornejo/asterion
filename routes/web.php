@@ -175,7 +175,7 @@ Route::get('/calendario','App\Http\Controllers\calendarioController@calendario')
 
 //Route::get('/datos','App\Http\Controllers\TicketdatosController@datos');
 
-Route::get('/datos/', array(
+Route::get('/datos', array(
     'before'=>'forcehttps',
     'uses' => 'App\Http\Controllers\TicketdatosController@datos')
   );
