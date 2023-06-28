@@ -27,7 +27,7 @@ iframe {
 
 ?>
 
-<iframe src="<?php echo $url;?>"  ></iframe>
+<iframe src="<?php echo $url;?>" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-top-navigation" ></iframe>
 
 </body>
 
