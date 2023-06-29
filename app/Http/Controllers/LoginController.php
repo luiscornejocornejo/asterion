@@ -113,8 +113,11 @@ class LoginController extends Controller
 
                $hh= $this->suricata($email,$AccountAPIKey,$BotAPIKey,$BotAPISecret);
                $res=json_decode($hh, true);
-                dd($res);
-                $url=$res['Home']."/conversation";
+                if($res<>''){
+                    $url=$res['Home']."/conversation";
+                    return Redirect::to('/suricata')->with('url', $url);
+
+                }
                // $rr=get
 /*
                return view('sienna/suricata')
@@ -122,7 +125,6 @@ class LoginController extends Controller
 
 
                 
-               return Redirect::to('/suricata')->with('url', $url);
 
             }else{
                 return Redirect::to('/home');
