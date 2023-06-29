@@ -84,7 +84,7 @@ class TicketdatosController extends Controller
 
 
                  $querygeneral2="INSERT  `".$dbcrear."`.".$value2." SELECT *
-                 FROM template.".$value2." ";
+                 FROM sienna1.".$value2." ";
                
                try {
 
