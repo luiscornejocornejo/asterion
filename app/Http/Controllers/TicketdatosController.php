@@ -17,6 +17,8 @@ use Illuminate\Support\File;
 use App\Models\cronmail;
 use App\Models\masterreport;
 use Mail;
+use Illuminate\Support\Facades\Storage;
+
 class TicketdatosController extends Controller
 {
     //
