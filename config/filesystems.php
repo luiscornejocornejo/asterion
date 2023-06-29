@@ -35,6 +35,14 @@ return [
             'root' => storage_path('app'),
             'throw' => false,
         ],
+        'sftp' => [
+            'driver' => 'sftp',
+            'host' => '146.190.138.96',
+            'username' => 'root',
+            'password' => 'YmsZy2P7SeQetG',
+            'root' => '/var/www/laravel',
+            'timeout' => 10,
+        ],
 
         'public' => [
             'driver' => 'local',
