@@ -124,11 +124,11 @@ class TicketdatosController extends Controller
          $query5="update  `".$dbcrear."`.masterreport SET query = REPLACE(query, 'template', '".$dbcrear."') where id='126' ";
         $basesdb = DB::connection('mysql2')->select($query5);
 
-        
+        */
         return redirect()
         ->back()
         ->with('success', 'Se Creo  correctamente! el cliente')
-        ->with('lista', $ftp_files)  ;*/
+        ->with('lista', $ftp_files)  ;
 
     } 
   
