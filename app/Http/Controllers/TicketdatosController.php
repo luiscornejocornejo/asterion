@@ -29,6 +29,103 @@ class TicketdatosController extends Controller
         ->with('id', $id);
 
     }
+
+
+    public function cp(Request $request)
+    {
+
+
+/*
+        $dbcrear=$request->db;
+        $contents = Storage::disk('sftp')->get('subdomains_config/.redlam');
+        $contents2= str_replace("redlam", $dbcrear, $contents);
+        $path2=Storage::disk('sftp')->put('subdomains_config/.'.$dbcrear, $contents2);
+        $ftp_files = Storage::disk('sftp')->files('subdomains_config');
+
+*/
+
+        $dbcrear="redlam";$request->db;
+       // $token=$request->token;
+    
+        $base = 13;
+        $prueba = $this->conectar($base);
+         
+        $querycrear="CREATE DATABASE  `".$dbcrear."`; ";
+        $basesdb = DB::connection('mysql2')->select($querycrear);
+
+        $query = "SHOW  TABLES";
+        $basesdb = DB::connection('mysql2')->select($query);
+        foreach($basesdb as $key=>$value){
+
+           
+            foreach($value as  $value2){
+
+
+                 $querygeneral="CREATE TABLE  `".$dbcrear."`.".$value2." LIKE sienna1.".$value2." ";
+               
+               try {
+
+                     $actualizarorder = DB::connection('mysql2')->select($querygeneral);
+
+                     } 
+                catch (\Illuminate\Database\QueryException$ex) {
+                        continue;
+                     }
+
+            }
+
+        }
+
+
+        foreach($basesdb as $key=>$value){
+
+           
+            foreach($value as  $value2){
+
+
+                 $querygeneral2="INSERT  `".$dbcrear."`.".$value2." SELECT *
+                 FROM template.".$value2." ";
+               
+               try {
+
+                     $actualizarorder = DB::connection('mysql2')->select($querygeneral2);
+
+                     } 
+                catch (\Illuminate\Database\QueryException$ex) {
+                        continue;
+                     }
+
+            }
+
+        }
+
+        echo "ok";
+/*
+
+            sleep(10);
+          $query1="update  `".$dbcrear."`.pagoraliaconfig set url='https://".$dbcrear.".pagoralia.live/api/v2/',token='".$token."'  where id='1'";
+        $basesdb = DB::connection('mysql2')->select($query1);
+
+         $query2="update  `".$dbcrear."`.base set base='db_".$dbcrear."',nombre='".$dbcrear."' where id='11'";
+        $basesdb = DB::connection('mysql2')->select($query2);
+
+         $query3="update  `".$dbcrear."`.masterreport SET nombre = REPLACE(nombre, 'template', '".$dbcrear."') where id='131' ";
+        $basesdb = DB::connection('mysql2')->select($query3);
+
+         $query4="update  `".$dbcrear."`.masterreport SET query = REPLACE(query, 'template', '".$dbcrear."') where id='131' ";
+        $basesdb = DB::connection('mysql2')->select($query4);
+
+         $query5="update  `".$dbcrear."`.masterreport SET query = REPLACE(query, 'template', '".$dbcrear."') where id='126' ";
+        $basesdb = DB::connection('mysql2')->select($query5);
+
+        
+        return redirect()
+        ->back()
+        ->with('success', 'Se Creo  correctamente! el cliente')
+        ->with('lista', $ftp_files)  ;*/
+
+    } 
+  
     public function view(Request $request)
     {
         $query = "SELECT a.id,a.nombre,b.nombre as servicio FROM `masterreport` a
