@@ -180,9 +180,9 @@ Route::get('/calendario','App\Http\Controllers\calendarioController@calendario')
 //front xennio
 
 //crear db u .env
-Route::get('/creardb','App\Http\Controllers\TicketdatosController@cp')->middleware('adminsienna');
+Route::get('/creardb','App\Http\Controllers\TicketdatosController@creardb')->middleware('adminsienna');
 
-Route::post('/creardb','App\Http\Controllers\TicketdatosController@cp')->middleware('adminsienna');
+Route::post('/creardb','App\Http\Controllers\TicketdatosController@creardbpost')->middleware('adminsienna');
 
 /*
 Route::get('/datos', array(
