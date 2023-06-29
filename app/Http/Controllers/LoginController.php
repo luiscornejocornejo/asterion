@@ -115,7 +115,8 @@ class LoginController extends Controller
                $res=json_decode($hh, true);
                 if($res<>''){
                     $url=$res['Home']."/conversation";
-                    return redirect('/suricata')->with('url', $url);
+                    return redirect()->route('suricata', ['url' => $url]);
+                    //redirect('/suricata')->with('url', $url);
 
                 }
                // $rr=get
