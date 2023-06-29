@@ -50,7 +50,7 @@ class TicketdatosController extends Controller
 
 
 
-        $dbcrear="redlam";$request->db;
+        $dbcrear=$request->db;
        // $token=$request->token;
     
         $base = 13;
