@@ -184,13 +184,9 @@ Route::get('/creardb','App\Http\Controllers\TicketdatosController@creardb')->mid
 
 Route::post('/creardb','App\Http\Controllers\TicketdatosController@creardbpost')->middleware('adminsienna');
 
-/*
-Route::get('/datos', array(
-    'before'=>'forcehttps',
-    'uses' => 'App\Http\Controllers\TicketdatosController@datos')
-  );
-
- */
+Route::get('/suricata', function () {
+    return view('sienna/suricata');
+});
 
 });
 //});

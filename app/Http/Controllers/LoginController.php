@@ -116,13 +116,13 @@ class LoginController extends Controller
 
                 $url=$res['Home']."/conversation";
                // $rr=get
-
+/*
                return view('sienna/suricata')
-                ->with('url', $url);
+                ->with('url', $url);*/
 
 
                 
-               //return Redirect::to('/suricata');
+               return Redirect::to('/suricata')->with('url', $url);
 
             }else{
                 return Redirect::to('/home');
