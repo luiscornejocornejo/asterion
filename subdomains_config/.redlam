@@ -12,7 +12,7 @@ LOG_LEVEL=debug
 DB_CONNECTION=mysql
 DB_HOST=db-mysql-sfo3-84622-do-user-4274947-0.b.db.ondigitalocean.com
 DB_PORT=25060
-DB_DATABASE=sienna1
+DB_DATABASE=redlam
 DB_USERNAME=doadmin
 DB_PASSWORD=AVNS_WH2DodUlKTBZgYotOdO
 
