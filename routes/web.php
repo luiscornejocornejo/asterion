@@ -183,7 +183,7 @@ Route::get('/calendario','App\Http\Controllers\calendarioController@calendario')
 Route::get('/creardb','App\Http\Controllers\TicketdatosController@creardb')->middleware('adminsienna');
 
 Route::post('/creardb','App\Http\Controllers\TicketdatosController@creardbpost')->middleware('adminsienna');
-Route::get('/suricata','App\Http\Controllers\TicketdatosController@suricata');
+Route::get('/conversations  ','App\Http\Controllers\TicketdatosController@suricata');
 
 });
 //});

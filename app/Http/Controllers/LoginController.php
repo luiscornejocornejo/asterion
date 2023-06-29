@@ -118,16 +118,12 @@ class LoginController extends Controller
                     session(['urlxennio' => $url]);
 
 
-                    return Redirect::to('/suricata');
+                    return Redirect::to('/conversations');
 
-                    //return redirect()->route('/suricata', ['url' => $url]);
-                    //redirect('/suricata')->with('url', $url);
+                   
 
                 }
-               // $rr=get
-/*
-               return view('sienna/suricata')
-                ->with('url', $url);*/
+          
 
 
                 
