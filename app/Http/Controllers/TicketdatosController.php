@@ -30,19 +30,23 @@ class TicketdatosController extends Controller
 
     }
 
+    public function creardb(Request $request){
 
-    public function cp(Request $request)
+        return view('sienna/creardb');
+
+    }
+    public function creardbpost(Request $request)
     {
 
 
-/*
+
         $dbcrear=$request->db;
         $contents = Storage::disk('sftp')->get('subdomains_config/.redlam');
         $contents2= str_replace("redlam", $dbcrear, $contents);
         $path2=Storage::disk('sftp')->put('subdomains_config/.'.$dbcrear, $contents2);
         $ftp_files = Storage::disk('sftp')->files('subdomains_config');
 
-*/
+
 
         $dbcrear="redlam";$request->db;
        // $token=$request->token;

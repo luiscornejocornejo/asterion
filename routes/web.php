@@ -19,7 +19,6 @@ use App\Http\Controllers\JornadasController;
 
 Route::get('/datos','App\Http\Controllers\TicketdatosController@datos');
 
-Route::get('/cp','App\Http\Controllers\TicketdatosController@cp');
 
 
 Route::get('/welcome', function () {
@@ -180,7 +179,10 @@ Route::get('/calendario','App\Http\Controllers\calendarioController@calendario')
 
 //front xennio
 
+//crear db u .env
+Route::get('/creardb','App\Http\Controllers\TicketdatosController@cp')->middleware('adminsienna');
 
+Route::post('/creardb','App\Http\Controllers\TicketdatosController@cp')->middleware('adminsienna');
 
 /*
 Route::get('/datos', array(
