@@ -37,6 +37,12 @@ class TicketdatosController extends Controller
         return view('sienna/creardb');
 
     }
+
+    public function suricata(Request $request){
+
+        return view('sienna/suricata')->with('url', $url);
+
+    }
     public function creardbpost(Request $request)
     {
 
