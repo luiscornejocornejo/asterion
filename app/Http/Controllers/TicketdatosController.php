@@ -40,6 +40,7 @@ class TicketdatosController extends Controller
 
     public function suricata(Request $request){
 
+        $url=$request->url;
         return view('sienna/suricata')->with('url', $url);
 
     }
