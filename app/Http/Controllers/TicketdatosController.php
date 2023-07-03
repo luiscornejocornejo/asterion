@@ -27,7 +27,14 @@ class TicketdatosController extends Controller
     {
 
         $id=$request->conversation_id;
+
+        $base=14;
+        $prueba = $this->conectar($base);
+         
+        $querycrear="select * from elevate.ost_ticket__cdata where xen_chatid='".$id."' ";
+        $basesdb = DB::connection('mysql2')->select($querycrear);
         return view("sienna/Ticketdatos")
+        ->with('ticket', $basesdb)
         ->with('id', $id);
 
     }

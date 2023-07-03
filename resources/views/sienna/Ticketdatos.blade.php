@@ -9,6 +9,8 @@
 
 <body>
 datos del ticket <?php echo $id;?>
+<br>
+<?php echo $ticket;?>
 </body>
 
 
