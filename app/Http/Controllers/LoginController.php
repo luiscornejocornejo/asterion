@@ -97,17 +97,35 @@ class LoginController extends Controller
 
             if($categoria==9){
 
+
+                $subdomain_tmp = 'localhost';
+                if (isset($_SERVER['HTTP_HOST'])) {
+                    $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+                    $subdomain_tmp =  array_shift($domainParts);
+                } elseif(isset($_SERVER['SERVER_NAME'])){
+                    $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+                    $subdomain_tmp =  array_shift($domainParts);
+                    
+                }
+
+                if($subdomain_tmp =="redlam"){
+                    $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
+                    $BotAPIKey="H4TJzHoAedn0lo6acczPYqtu";
+                    $BotAPISecret="mK6swiRhdihoS2lB8INOPr6AKDQLVYbQBYWeAvEwC6M36I8a";
+
+                }elseif($subdomain_tmp =="elevate"){
+                    $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
+                    $BotAPIKey="bUef7lQ3tJA2kK2S0NFuB3VH";
+                    $BotAPISecret="8wCJCymWYS3LnuXfTEOlkbQIvHVLxCnXzMWAZ7ruXeUIGhe5";
+
+                }
                 //$AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
                 //$BotAPIKey="UH1jLwAoIDYBSkTw73dysIRr";
                 //$BotAPISecret="L5tZePdZNvY563aMsCRhDuKTUySkNmTCqANF3b9taynXCNp3";
 
-                $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
-                $BotAPIKey="bUef7lQ3tJA2kK2S0NFuB3VH";
-                $BotAPISecret="8wCJCymWYS3LnuXfTEOlkbQIvHVLxCnXzMWAZ7ruXeUIGhe5";
+               
 
-                $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
-                $BotAPIKey="H4TJzHoAedn0lo6acczPYqtu";
-                $BotAPISecret="mK6swiRhdihoS2lB8INOPr6AKDQLVYbQBYWeAvEwC6M36I8a";
+              
 
                
 
