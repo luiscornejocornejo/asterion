@@ -31,7 +31,7 @@ class TicketdatosController extends Controller
         $base=14;
         $prueba = $this->conectar($base);
          
-        $querycrear="select * from fastnet_os.ost_ticket__cdata where xen_chatid='".$id."' ";
+       echo  $querycrear="select * from fastnet_os.ost_ticket__cdata where xen_chatid='".$id."' ";
         $basesdb = DB::connection('mysql2')->select($querycrear);
         return view("sienna/Ticketdatos")
         ->with('ticket', $basesdb)
