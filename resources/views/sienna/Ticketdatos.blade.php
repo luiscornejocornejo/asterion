@@ -10,7 +10,7 @@
 <body>
 datos del ticket <?php echo $id;?>
 <br>
-<?php echo $ticket;?>
+<?php  var_dump($ticket);?>
 </body>
 
 
