@@ -6,6 +6,7 @@
 
 </head>
 
+@include('creative.header')
 
 <body>
 datos del ticket <?php echo $id;?>

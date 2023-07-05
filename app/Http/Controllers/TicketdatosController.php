@@ -33,6 +33,11 @@ class TicketdatosController extends Controller
          
          $querycrear="select * from fastnet_os.ost_ticket__cdata where trim(xen_chatid)=trim('".$id."') ";
         $basesdb = DB::connection('mysql2')->select($querycrear);
+
+        $ticket="";
+        foreach($basesdb as $value){
+            $ticket=$value->ticket_id;
+        }
         return view("sienna/Ticketdatos")
         ->with('ticket', $basesdb)
         ->with('id', $id);
