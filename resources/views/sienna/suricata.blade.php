@@ -1,4 +1,4 @@
-@include('creative.header')
+
 
 <html>
     <head>
@@ -19,7 +19,8 @@ iframe {
 
     </head>
 
-
+    @include('creative.header')
+    @include('creative.menuarriba')
 <body>
 
 <?php 
