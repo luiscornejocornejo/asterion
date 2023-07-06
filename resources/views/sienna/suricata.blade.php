@@ -14,6 +14,7 @@ iframe {
     border: none;         /* Reset default border */
     height: 100vh;        /* Viewport-relative units */
     width: 100vw;
+    top: 10px;
 }
     </style>
 
@@ -35,6 +36,7 @@ iframe {
 
 
 
+@include('creative.footer')
 
 
 </html>
