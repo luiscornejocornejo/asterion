@@ -12,7 +12,7 @@ iframe {
     display: block;       /* iframes are inline by default */
     background: #000;
     border: none;         /* Reset default border */
-    height: 100%;        /* Viewport-relative units */
+    height: 90%;        /* Viewport-relative units */
     width: 100vw;
     margin-top: 2px;
 z-index: 9999;}
