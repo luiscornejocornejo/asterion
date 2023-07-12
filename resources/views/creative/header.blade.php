@@ -25,7 +25,7 @@ foreach ($resultados2 as $valuee2) {
 <html lang="en" data-theme="light" data-layout="topnav" data-topbar-color="dark" data-layout-mode="fluid" data-layout-position="fixed">
 
 <head>
-    <title>window.onload()</title>
+    <title>Suricata CX</title>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,13 +52,7 @@ foreach ($resultados2 as $valuee2) {
 
   
 
-    <script type="text/javascript">
-        window.onload = function() {
-            newPageTitle = "Suricata CX<?php //echo $empresaTitle; ?>";
-            document.title = newPageTitle;
-
-        }
-    </script>
+  
     <script>
         function exportTableToExcel(tableID, filename = '') {
             var downloadLink;
