@@ -19,7 +19,7 @@ foreach($resultados as $value){
                     <!-- Topbar Logo -->
                     <div class="logo-topbar">
                         <!-- Logo light -->
-                        <a href="/" class="logo-light">
+                        <a href="#" class="logo-light">
                             <span class="logo-lg">
                                 <img src="assets3/images/logo.svg" alt="logo" height="22">
                             </span>
@@ -29,7 +29,7 @@ foreach($resultados as $value){
                         </a>
 
                         <!-- Logo Dark -->
-                        <a href="index.html" class="logo-dark">
+                        <a href="#" class="logo-dark">
                             <span class="logo-lg">
                                 <img src="assets3/images/logo-dark.png" alt="dark logo" height="22">
                             </span>
