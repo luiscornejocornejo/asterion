@@ -54,7 +54,7 @@ foreach ($resultados2 as $valuee2) {
 
     <script type="text/javascript">
         window.onload = function() {
-            newPageTitle = "<?php echo $empresaTitle; ?>";
+            newPageTitle = "Suricata CX<?php //echo $empresaTitle; ?>";
             document.title = newPageTitle;
 
         }
