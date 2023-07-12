@@ -6,7 +6,6 @@
         date_default_timezone_set("America/Argentina/Buenos_Aires");
 
 $date = date('d-m-y H:i:s');
-echo $date;
     use Illuminate\Support\Facades\DB;
 
     $query = "select * from login";
@@ -49,8 +48,9 @@ echo $date;
                         <div class="w-100">
                             <div class="d-flex flex-column h-100">
                                 <div class="mb-4 mb-md-5 text-center">
-                                    <a href="index.html" class="d-block auth-logo">
-                                        <img src="assets/images/logo-sm.svg" alt="" height="28"> <span class="logo-txt"> <?php echo $empresasss[0];?></span>
+                                    <a href="" class="d-block auth-logo">
+                                        <img src="/img/pago8.png" alt="" height="80px;"> 
+                                        <br><br><span class="logo-txt"> <?php echo $empresasss[0];?></span>
                                     </a>
                                 </div>
                                 <div class="auth-content my-auto">
@@ -94,7 +94,7 @@ echo $date;
 
                                         </div>
                                         <div class="mb-3">
-                                            <button class="btn btn-warning w-100 waves-effect waves-light" type="submit">Log In</button>
+                                            <button style="background-color: #38e991;" class="btn w-100 waves-effect waves-light" type="submit">Log In</button>
                                         </div>
                                     </form>
 
@@ -108,10 +108,10 @@ echo $date;
                     <!-- end auth full page content -->
                 </div>
                 <!-- end col -->
-                <div class="col-xxl-9 col-lg-8 col-md-7" style="background-color: orange;opacity:0.4">
-                    <div class="auth-bg pt-md-5 p-4 d-flex">
+                <div class="col-xxl-9 col-lg-8 col-md-7" >
+                    <div class="auth-bg pt-md-5 p-4 d-flex" >
                         <div class="bg-overlay bg-primary"></div>
-                        <ul class="bg-bubbles bg-warning">
+                        <ul class="bg-bubbles "  style="background-color: #38e991;opacity:0.3;">
                             <li></li>
                             <li></li>
                             <li></li>
