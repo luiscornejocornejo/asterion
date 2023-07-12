@@ -20,10 +20,10 @@ foreach($resultados as $value){
                     <div class="logo-topbar">
                         <!-- Logo light -->
                         <a href="#" class="logo-light">
-                            <span class="logo-lg">
+                            <span class="logo-lg m2">
                                 <img src="assets3/images/logo.svg" alt="logo" height="22">
                             </span>
-                            <span class="logo-sm">
+                            <span class="logo-sm m2">
                                 <img src="assets3/images/logo-sm.png" alt="small logo" height="22">
                             </span>
                         </a>
