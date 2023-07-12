@@ -21,20 +21,20 @@ foreach($resultados as $value){
                         <!-- Logo light -->
                         <a href="#" class="logo-light">
                             <span class="logo-lg m2">
-                                <img src="assets3/images/logo.svg" alt="logo" height="22">
+                                <img src="/img/suri.jpg" alt="logo" height="22">
                             </span>
                             <span class="logo-sm m2">
-                                <img src="assets3/images/logo-sm.png" alt="small logo" height="22">
+                                <img src="/img/suri.jpg" alt="small logo" height="22">
                             </span>
                         </a>
 
                         <!-- Logo Dark -->
                         <a href="#" class="logo-dark">
                             <span class="logo-lg">
-                                <img src="assets3/images/logo-dark.png" alt="dark logo" height="22">
+                                <img src="/img/suri.jpg" alt="dark logo" height="22">
                             </span>
                             <span class="logo-sm">
-                                <img src="assets3/images/logo-dark-sm.png" alt="small logo" height="22">
+                                <img src="/img/suri.jpg" alt="small logo" height="22">
                             </span>
                         </a>
                     </div>
