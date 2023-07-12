@@ -21,10 +21,10 @@ foreach($resultados as $value){
                         <!-- Logo light -->
                         <a href="#" class="logo-light">
                             <span class="logo-lg m2">
-                                <img src="/img/suri.jpg" alt="logo" height="67" width="100">
+                                <img src="/img/suri2.jpg" alt="logo" height="67" width="100">
                             </span>
                             <span class="logo-sm m2">
-                                <img src="/img/suri.jpg" alt="small logo" height="67" width="100">
+                                <img src="/img/suri2.jpg" alt="small logo" height="67" width="100">
                             </span>
                         </a>
 
