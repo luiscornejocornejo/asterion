@@ -25,7 +25,7 @@ foreach($resultados as $value){
     }
 </style>
 
-<div class="logo-topbar">
+<div class="logo-topbar"> 
     <!-- Logo light -->
     <a href="#" class="logo-light">
         <span class="logo-lg m2">
