@@ -55,9 +55,10 @@ $date = date('d-m-y H:i:s');
                                 </div>
                                 <div class="auth-content my-auto">
                                     <div class="text-center">
-                                        <h5 class="mb-0">Welcome Back !</h5>
-                                        <p class="text-muted mt-2">Sign in to continue to <?php echo $empresasss[0];?></p>
+                                        <h5 class="mb-0">Welcome Back!</h5>
+                                        <p class="text-muted mt-2">Sign in to continue to <?php echo $empresasss[0]; ?></p>
                                     </div>
+
 
                                     <form class="custom-form mt-4 pt-2" method="post" action="/login">
                                         @csrf

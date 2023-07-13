@@ -25,7 +25,17 @@
         <!-- Begin page -->
         <div class="wrapper">
 
-            
+            <?php
+echo "Hello World!";
+?>
+<?php
+date_default_timezone_set('GMT');
+
+$hora_actual = date('H:i:s');
+
+echo "La hora actual en GMT+0 es: " . $hora_actual;
+?>
+
             <!-- ========== Topbar Start ========== -->
             <div class="navbar-custom topnav-navbar">
                 <div class="container-fluid detached-nav">

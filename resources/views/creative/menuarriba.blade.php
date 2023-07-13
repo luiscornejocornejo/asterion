@@ -17,27 +17,36 @@ foreach($resultados as $value){
                 <div class="container-fluid detached-nav">
 
                     <!-- Topbar Logo -->
-                    <div class="logo-topbar">
-                        <!-- Logo light -->
-                        <a href="#" class="logo-light">
-                            <span class="logo-lg m2">
-                                <img src="/img/suri5.png" alt="logo" height="40%" >
-                            </span>
-                            <span class="logo-sm m2">
-                                <img src="/img/suri5.png" alt="small logo" height="40%" >
-                            </span>
-                        </a>
+                    <style>
+    .logo-topbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
 
-                        <!-- Logo Dark -->
-                        <a href="#" class="logo-dark">
-                            <span class="logo-lg">
-                                <img src="/img/suri5.png" alt="dark logo" height="40%">
-                            </span>
-                            <span class="logo-sm">
-                                <img src="/img/suri5.png" alt="small logo" height="40%">
-                            </span> 
-                        </a>
-                    </div> 
+<div class="logo-topbar">
+    <!-- Logo light -->
+    <a href="#" class="logo-light">
+        <span class="logo-lg m2">
+            <img src="/img/suri5.png" alt="logo" height="40%" >
+        </span>
+        <span class="logo-sm m2">
+            <img src="/img/suri5.png" alt="small logo" height="40%" >
+        </span>
+    </a>
+
+    <!-- Logo Dark -->
+    <a href="#" class="logo-dark">
+        <span class="logo-lg">
+            <img src="/img/suri5.png" alt="dark logo" height="40%">
+        </span>
+        <span class="logo-sm">
+            <img src="/img/suri5.png" alt="small logo" height="40%">
+        </span> 
+    </a>
+</div>
+
 
                     <!-- Sidebar Menu Toggle Button -->
                     <button class="button-toggle-menu">
