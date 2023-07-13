@@ -37,7 +37,7 @@ foreach($resultados as $value){
                                 <img src="/img/suri4.png" alt="small logo" height="50%">
                             </span>
                         </a>
-                    </div>
+                    </div> 
 
                     <!-- Sidebar Menu Toggle Button -->
                     <button class="button-toggle-menu">
