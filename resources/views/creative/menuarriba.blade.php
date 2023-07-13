@@ -35,7 +35,7 @@ foreach($resultados as $value){
                             </span>
                             <span class="logo-sm">
                                 <img src="/img/suri5.png" alt="small logo" height="50%">
-                            </span>
+                            </span> 
                         </a>
                     </div> 
 
