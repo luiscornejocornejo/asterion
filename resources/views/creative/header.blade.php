@@ -34,7 +34,7 @@ foreach ($resultados2 as $valuee2) {
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="user" content="{{ session('email')}}" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets3/images/favicon.ico">
+    <link rel="shortcut icon" href="assets3/images/favicon.ico"> 
 
     <!-- Theme Config Js -->
     <script src="assets3/js/hyper-config.js"></script>
