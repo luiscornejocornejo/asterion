@@ -33,7 +33,6 @@ foreach($resultados as $value){
             <img src="/img/suri5.png" alt="logo" height="40%" >
         </span>
         <span class="logo-sm m2">
-        <br>
             <img src="/img/suri5.png" alt="small logo" height="40%" >
         </span>
     </a>
