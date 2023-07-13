@@ -19,7 +19,7 @@ foreach($resultados as $value){
                     <!-- Topbar Logo -->
                     <style>
     .logo-topbar {
-        display: flex;
+        display: flex !important ;
         justify-content: center;
         align-items: center;
     }
