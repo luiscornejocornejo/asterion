@@ -88,7 +88,7 @@ class LoginController extends Controller
 
                 $idusuario = $value->id;
                 $categoria = $value->categoria;
-                $email_suricata = $value->email_suricata;
+              echo   $email_suricata = $value->email_suricata;
 
                 $nombreusuario = $value->nombre . " " . $value->last_name;
                 session(['idusuario' => $idusuario]);
