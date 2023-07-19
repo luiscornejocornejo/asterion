@@ -88,6 +88,8 @@ class LoginController extends Controller
 
                 $idusuario = $value->id;
                 $categoria = $value->categoria;
+                $email_suricata = $value->email_suricata;
+
                 $nombreusuario = $value->nombre . " " . $value->last_name;
                 session(['idusuario' => $idusuario]);
                 session(['categoria' => $categoria]);
@@ -130,7 +132,7 @@ class LoginController extends Controller
 
                
 
-               $hh= $this->suricata($email,$AccountAPIKey,$BotAPIKey,$BotAPISecret);
+               $hh= $this->suricata($email_suricata,$AccountAPIKey,$BotAPIKey,$BotAPISecret);
                $res=json_decode($hh, true);
                 if($res<>''){
                     $url=$res['Home']."/conversation";
