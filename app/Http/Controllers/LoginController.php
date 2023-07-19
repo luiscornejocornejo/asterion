@@ -124,7 +124,7 @@ class LoginController extends Controller
                     //$BotAPISecret="8wCJCymWYS3LnuXfTEOlkbQIvHVLxCnXzMWAZ7ruXeUIGhe5";
 
                 }
-                elseif($subdomain_tmp =="conectared"){
+                elseif($subdomain_tmp =="conectared"){ 
                     $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
                     $BotAPIKey="eeghPqCSLVA78h7FlGLAY0Zf";
                     $BotAPISecret="E8mqLMvFhTa24KF8zUkw10NWzAMQYRTe50SH3M7zZvPf74BR";
