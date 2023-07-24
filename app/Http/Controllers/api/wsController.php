@@ -18,7 +18,7 @@ class wsController extends Controller
     public function crearusuario(Request $request)
     {
         $token=$request->token;
-        if($token=="EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM"){
+        if($token<>"EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM"){
             return "token invalido";
         }
 
