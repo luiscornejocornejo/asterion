@@ -65,7 +65,7 @@ Route::get('/datosextras','App\Http\Controllers\api\ticketController@principal')
 
 
 
-Route::post('/crearusuario','App\Http\Controllers\api\wsController@crearusuario');
+Route::get('/crearusuario','App\Http\Controllers\api\wsController@crearusuario');
 
 
 //Route::apiResource('cappi2022', App\Http\Controllers\api\cappi2022Controller::class);
