@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\DB;
 class wsController extends Controller
 {
 
+
+    public function crearusuario(Request $request)
+    {
+    
+        dd($request);
+    }
     public function select2($id,$mail)
     {
 
