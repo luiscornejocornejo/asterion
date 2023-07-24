@@ -17,7 +17,7 @@ class wsController extends Controller
     public function crearusuario(Request $request)
     {
     
-        dd($request->nombre);
+       echo $request->nombre;
     }
     public function select2($id,$mail)
     {
