@@ -7,6 +7,7 @@ use App\Models\base;
 use App\Models\endpoint;
 use App\Models\enpointnombre;
 use App\Models\masterreport;
+use App\Models\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,7 +18,34 @@ class wsController extends Controller
     public function crearusuario(Request $request)
     {
     
-        dd($request->nombre);
+        $nombre=$request->nombre;
+        $categoria=$request->categoria;
+        $apellido=$request->apellido;
+        $mail=$request->mail;
+        $email_suricata=$request->email_suricata;
+
+        $pass=$request->pass;
+        users::query()->updateOrCreate([
+            'id' => ''
+        ], [
+            'nombre' => $nombre,
+            'categoria' => $categoria,
+            'last_name' => $apellido,
+            'mail' => $mail,
+            'password' => $pass,
+            'type_dni' => 1,
+            'dni' =>'123456789',
+            'cuit' =>'123456789',
+            'framegender' =>'1',
+            'email_suricata' =>$email_suricata,
+            'framecountry' =>'1',
+            'active' =>'1',
+            'birthdate' =>'203-10-12',
+           
+            
+            ]);
+        
+       
     }
     public function select2($id,$mail)
     {
