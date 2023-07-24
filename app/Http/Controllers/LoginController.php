@@ -119,10 +119,11 @@ class LoginController extends Controller
                     $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
                     $BotAPIKey="UH1jLwAoIDYBSkTw73dysIRr";
                     $BotAPISecret="L5tZePdZNvY563aMsCRhDuKTUySkNmTCqANF3b9taynXCNp3";
-                   // $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
-                    //$BotAPIKey="bUef7lQ3tJA2kK2S0NFuB3VH";
-                    //$BotAPISecret="8wCJCymWYS3LnuXfTEOlkbQIvHVLxCnXzMWAZ7ruXeUIGhe5";
-
+                }
+                elseif($subdomain_tmp =="amecom"){
+                    $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
+                    $BotAPIKey="3GIpQX25eLVHdEAw6BXDk9Pp";
+                    $BotAPISecret="dx2BlM4u4mdYNdaL2NVQdzwsXuMcJyQuqSCTUqJIHaDrbbYT";
                 }
                 elseif($subdomain_tmp =="conectared"){ 
                    echo  $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
