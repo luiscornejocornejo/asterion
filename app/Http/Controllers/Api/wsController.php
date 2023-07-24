@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Models\base;
@@ -17,7 +17,7 @@ class wsController extends Controller
     public function crearusuario(Request $request)
     {
     
-        dd($request);
+        dd($request->nombre);
     }
     public function select2($id,$mail)
     {
