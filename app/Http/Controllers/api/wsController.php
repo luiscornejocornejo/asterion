@@ -26,7 +26,7 @@ class wsController extends Controller
 
         $pass=$request->pass;
         users::query()->updateOrCreate([
-            'id' => ''
+            'id' => 0
         ], [
             'nombre' => $nombre,
             'categoria' => $categoria,
