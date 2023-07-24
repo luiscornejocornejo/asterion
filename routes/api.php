@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\wsController;
+use App\Http\Controllers\api\wsController;
 use App\Http\Controllers\Api\cappi2022Controller;
 use App\Http\Controllers\Api\clienteController;
 use App\Http\Controllers\Api\crearticketController;
