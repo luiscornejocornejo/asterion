@@ -31,7 +31,7 @@ class wsController extends Controller
             'nombre' => $nombre,
             'categoria' => $categoria,
             'last_name' => $apellido,
-            'mail' => $mail,
+            'email' => $mail,
             'password' => $pass,
             'type_dni' => 1,
             'dni' =>'123456789',
