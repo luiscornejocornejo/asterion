@@ -28,7 +28,7 @@ class wsController extends Controller
         $mail=$request->mail;
         $email_suricata=$request->email_suricata;
 
-        $pass=$request->pass;
+        $pass=md5($request->pass);
         users::query()->updateOrCreate([
             'id' => 0
         ], [
