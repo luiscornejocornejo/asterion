@@ -91,8 +91,5 @@ foreach ($resultados2 as $valuee2) {
             document.getElementById("idregistro").value = x;
         }
     </script>
-   <script data-id='xenioo' data-node='meerkat' src="https://static.xenioo.com/webchat/xenioowebchat.js"></script>
-<script>
-    xenioowebchat.Start("057a5242-4957-445d-9a5c-d4415cb07ea3");
-</script>
+  
 </head>
