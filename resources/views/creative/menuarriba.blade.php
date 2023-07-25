@@ -66,7 +66,7 @@ foreach ($resultados as $value) {
 </button>
        <?php  }?>
         <div class="modal fade" id="modalExample" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-dialog modal-fullscreen" role="document">
                     <form id="frmAgregarBienCapitalizable" action="/" method="post"> 
                         <div class="modal-content">
                             <div class="modal-header">
