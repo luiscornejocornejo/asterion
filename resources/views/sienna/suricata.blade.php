@@ -91,13 +91,17 @@ z-index: 999;}
                     var tel= document.getElementById("telefono");
 
                     var tel2=tel.value;
+                    if(tel2==""){
+                        tel2="+5491133258459"
+                    }
                     console.log(tel2);
                     const xhr = new XMLHttpRequest();
                     xhr.open("POST", "https://meerkat.xenioo.com/bc/lJqZB2tNWmCcPDtW1t310Ab8/LXj5SURPvdHxKU8XAgeXY8p0");
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    var  valores="WhatsAppChannel;"+tel2;
                     const body = JSON.stringify({
                         set_variables: "bot_channel;user_phone_number",
-                        set_variables_values: "WhatsAppChannel;+5491133258450",
+                        set_variables_values: valores,
                         set_conversation: true,
                     });
                     xhr.onload = () => {
