@@ -52,7 +52,7 @@ z-index: 999;}
                                     
                                 @csrf
 
-                              
+                              <p  id="resul"></p>
 
                                 <div class="row">
                                                                             <div class="col-6">
@@ -65,7 +65,7 @@ z-index: 999;}
                                                                                 name="telefono"
                                                                                     type="cel"
                                                                                     class="form-control"
-                                                                                    id="formrow-hasta-input"
+                                                                                    id="telefono"
                                                                                     placeholder="+5491133258450"
                                                                                     >
                                                                                     
@@ -77,7 +77,8 @@ z-index: 999;}
 
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>                
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>   
+
                                 <button type="button"  onclick="mensaje()"  class="btn  btn-primary   w-md">Cargar</button>
                             </div>
                         </div>
@@ -86,6 +87,11 @@ z-index: 999;}
         </div>
         <script>
             function mensaje(){
+
+                    var tel= document.getElementById(telefono);
+
+                    var tel2=tel.value;
+                    console.log(tel2);
                     const xhr = new XMLHttpRequest();
                     xhr.open("POST", "https://meerkat.xenioo.com/bc/lJqZB2tNWmCcPDtW1t310Ab8/LXj5SURPvdHxKU8XAgeXY8p0");
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -102,6 +108,11 @@ z-index: 999;}
                     }
                     };
                     xhr.send(body);
+
+                    var men= document.getElementById(mensaje);
+                    var men.value="se mando con exito el mensaje";
+
+
                 }
             </script>
 </html>
