@@ -62,10 +62,14 @@ z-index: 999;}
                                                                                     for="formrow-firstname-input">WhatsApp</label>
                                                                                 <input
                                                                                 required
-                                                                                name="HORASDESDE"
+                                                                                name="telefono"
                                                                                     type="cel"
                                                                                     class="form-control"
-                                                                                    id="formrow-hasta-input">
+                                                                                    id="formrow-hasta-input"
+                                                                                    placeholder="+5491133258450"
+                                                                                    >
+                                                                                    
+
 
                                                                         </div>
                                                                         
