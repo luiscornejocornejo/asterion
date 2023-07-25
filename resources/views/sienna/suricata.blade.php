@@ -38,5 +38,48 @@ z-index: 999;}
 
 @include('creative.footer')
 
+<div class="modal " id="modalExample" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-fullscreen" role="document">
+                    <form id="frmAgregarBienCapitalizable" action="/" method="post"> 
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Iniciar Mensaje</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                    
+                                @csrf
 
+                                <div class="mt-12">                                 
+                                            
+                                </div>
+
+                                <div class="row">
+                                                                            <div class="col-6">
+                                            
+                                                                                <label
+                                                                                    class="form-label"
+                                                                                    for="formrow-firstname-input">WhatsApp</label>
+                                                                                <input
+                                                                                required
+                                                                                name="HORASDESDE"
+                                                                                    type="cel"
+                                                                                    class="form-control"
+                                                                                    id="formrow-hasta-input">
+
+                                                                        </div>
+                                                                        
+                                                                        </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>                
+                                <button type="submit"   class="btn  btn-primary   w-md">Cargar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        </div>
 </html>

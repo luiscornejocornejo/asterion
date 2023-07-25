@@ -65,50 +65,7 @@ foreach ($resultados as $value) {
     <i class="mdi mdi-plus-circle-outline"></i>Iniciar Conversacion
 </button>
        <?php  }?>
-        <div class="modal " id="modalExample" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-fullscreen" role="document">
-                    <form id="frmAgregarBienCapitalizable" action="/" method="post"> 
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Iniciar Mensaje</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                    
-                                @csrf
-
-                                <div class="mt-12">                                 
-                                            
-                                </div>
-
-                                <div class="row">
-                                                                            <div class="col-6">
-                                            
-                                                                                <label
-                                                                                    class="form-label"
-                                                                                    for="formrow-firstname-input">WhatsApp</label>
-                                                                                <input
-                                                                                required
-                                                                                name="HORASDESDE"
-                                                                                    type="cel"
-                                                                                    class="form-control"
-                                                                                    id="formrow-hasta-input">
-
-                                                                        </div>
-                                                                        
-                                                                        </div>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>                
-                                <button type="submit"   class="btn  btn-primary   w-md">Cargar</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-        </div>
+      
         <!-- Horizontal Menu Toggle Button -->
         <button class="navbar-toggle bg-light" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
             <div class="lines">
