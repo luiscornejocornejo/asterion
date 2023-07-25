@@ -88,7 +88,7 @@ z-index: 999;}
         <script>
             function mensaje(){
 
-                    var tel= document.getElementById(telefono);
+                    var tel= document.getElementById("telefono");
 
                     var tel2=tel.value;
                     console.log(tel2);
@@ -109,7 +109,7 @@ z-index: 999;}
                     };
                     xhr.send(body);
 
-                    var men= document.getElementById(resul);
+                    var men= document.getElementById("resul");
                      men.innerHTML ="se mando con exito el mensaje";
 
 
