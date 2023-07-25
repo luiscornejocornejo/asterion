@@ -78,10 +78,30 @@ z-index: 999;}
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>                
-                                <button type="submit"   class="btn  btn-primary   w-md">Cargar</button>
+                                <button type="button"  onclick="mensaje()"  class="btn  btn-primary   w-md">Cargar</button>
                             </div>
                         </div>
                     </form>
                 </div>
         </div>
+        <script>
+            function mensaje(){
+                    const xhr = new XMLHttpRequest();
+                    xhr.open("POST", "https://meerkat.xenioo.com/bc/lJqZB2tNWmCcPDtW1t310Ab8/LXj5SURPvdHxKU8XAgeXY8p0");
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    const body = JSON.stringify({
+                        set_variables: "bot_channel;user_phone_number",
+                        set_variables_values: "WhatsAppChannel;+5491133258450",
+                        set_conversation: true,
+                    });
+                    xhr.onload = () => {
+                    if (xhr.readyState == 4 && xhr.status == 201) {
+                        console.log(JSON.parse(xhr.responseText));
+                    } else {
+                        console.log(`Error: ${xhr.status}`);
+                    }
+                    };
+                    xhr.send(body);
+                }
+            </script>
 </html>
