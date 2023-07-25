@@ -39,7 +39,7 @@ z-index: 999;}
 @include('creative.footer')
 
 <div class="modal " id="modalExample" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-fullscreen" role="document">
+                <div class="modal-dialog " role="document">
                     <form id="frmAgregarBienCapitalizable" action="/" method="post"> 
                         <div class="modal-content">
                             <div class="modal-header">
@@ -52,9 +52,7 @@ z-index: 999;}
                                     
                                 @csrf
 
-                                <div class="mt-12">                                 
-                                            
-                                </div>
+                              
 
                                 <div class="row">
                                                                             <div class="col-6">
