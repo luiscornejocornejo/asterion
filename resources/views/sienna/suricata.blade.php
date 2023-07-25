@@ -109,8 +109,8 @@ z-index: 999;}
                     };
                     xhr.send(body);
 
-                    var men= document.getElementById(mensaje);
-                    var men.value="se mando con exito el mensaje";
+                    var men= document.getElementById(resul);
+                     men.innerHTML ="se mando con exito el mensaje";
 
 
                 }
