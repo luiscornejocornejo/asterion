@@ -177,8 +177,10 @@ class LoginController extends Controller
                     if( $url='https://publicapi.xenioo.com/sso/authorize'){
 
                                               //   
-dd($res['Data']);
                                                  $urlfinal=$res['Data']['Home'];
+                                                 $urlfinal=explode("auth",$urlfinal);
+                                                 dd($urlfinal[0]);
+
                                                  $urlfinal=str_replace("auth","bots/",$urlfinal);
                                                  $urlfinal=str_replace('/sso/',"",$urlfinal);
                                                  $url=$urlfinal."/conversation";
