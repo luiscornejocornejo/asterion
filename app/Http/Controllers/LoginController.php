@@ -170,7 +170,7 @@ class LoginController extends Controller
 
                
 
-               $hh= $this->suricata($email_suricata,$AccountAPIKey,$BotAPIKey,$BotAPISecret);
+               $hh= $this->suricata($email_suricata,$AccountAPIKey,$BotAPIKey,$BotAPISecret,$url);
                $res=json_decode($hh, true);
                 if($res<>''){
                     $url=$res['Home']."/conversation";
