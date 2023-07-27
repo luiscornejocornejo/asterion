@@ -51,28 +51,18 @@ foreach ($resultados as $value) {
             <i class="mdi mdi-menu"></i>
         </button>
 
-        <?php $subdomain_tmp = 'localhost';
-                if (isset($_SERVER['HTTP_HOST'])) {
-                    $domainParts = explode('.', $_SERVER['HTTP_HOST']);
-                    $subdomain_tmp =  array_shift($domainParts);
-                } elseif(isset($_SERVER['SERVER_NAME'])){
-                    $domainParts = explode('.', $_SERVER['SERVER_NAME']);
-                    $subdomain_tmp =  array_shift($domainParts);
-                    
-                }
-
-                if($saliente <>""){?>
- <button    style=""  class="btn btn-primary btn-sm" id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
-    <i class="mdi mdi-plus-circle-outline"></i>Iniciar Conversacion
-</button>
-       <?php  }?>
+       
       
         <!-- Horizontal Menu Toggle Button -->
         <button class="navbar-toggle bg-light" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
             <div class="lines">
-                <span></span>
-                <span></span>
-                <span></span>
+            <?php 
+
+if($saliente <>""){?>
+<button    style=""  class="btn btn-primary btn-sm" id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
+<i class="mdi mdi-plus-circle-outline"></i>Iniciar Conversacion
+</button>
+<?php  }?>
             </div>
         </button>
 
