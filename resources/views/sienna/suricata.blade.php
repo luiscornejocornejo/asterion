@@ -79,14 +79,14 @@ z-index: 999;}
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>   
 
-                                <button type="button"  onclick="mensaje()"  class="btn  btn-primary   w-md">Cargar</button>
+                                <button type="button"  onclick="mensaje(<?php echo $saliente = session('saliente');?>)"  class="btn  btn-primary   w-md">Cargar</button>
                             </div>
                         </div>
                     </form>
                 </div>
         </div>
         <script>
-            function mensaje(){
+            function mensaje(saliente){
 
                     var tel= document.getElementById("telefono");
 //https://meerkat.xenioo.com/bc/H4TJzHoAedn0lo6acczPYqtu/CctysvLkSxT22CrsyRn2xVyA
@@ -97,7 +97,7 @@ z-index: 999;}
                     }
                     console.log(tel2);
                     const xhr = new XMLHttpRequest();
-                    xhr.open("POST", "https://meerkat.xenioo.com/bc/H4TJzHoAedn0lo6acczPYqtu/CctysvLkSxT22CrsyRn2xVyA");
+                    xhr.open("POST", saliente);
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     var  valores="WhatsAppChannel;"+tel2;
                     const body = JSON.stringify({
