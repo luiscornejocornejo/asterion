@@ -178,7 +178,11 @@ class LoginController extends Controller
 
                                               //    $url=$res['Data']['Home']."/conversation";
 
-                                                 dd($res['Data']['Home']);
+                                                 $urlfinal=$res['Data']['Home'];
+                                                 $urlfinal=str_replace("auth","bots");
+                                                 $urlfinal=str_replace(""/sso/"","");
+                                                 dd($urlfinal);
+                                                 //https://designer.xenioo.com/en/bots/6d3b5545-0b8a-4215-9baa-c7cd8d518913/conversation
 
                     }else{
 
