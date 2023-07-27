@@ -60,15 +60,7 @@ foreach ($resultados as $value) {
             </div>
         </button>
 
-        <ul class="list-unstyled topbar-menu float-end mb-0">
-        <?php 
-
-if($saliente <>""){?>
-<button    style=""  class="btn btn-primary btn-sm" id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
-<i class="mdi mdi-plus-circle-outline"></i>Iniciar Conversacion
-</button>
-<?php  }?>
-        </ul>
+        
 
         <ul class="list-unstyled topbar-menu float-end mb-0">
             <li class="dropdown notification-list">
@@ -92,6 +84,15 @@ if($saliente <>""){?>
                     </a>
                 </div>
             </li>
+        </ul>
+        <ul class="list-unstyled topbar-menu float-end mb-0">
+        <?php 
+
+if($saliente <>""){?>
+<button    style=""  class="btn btn-primary btn-sm" id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
+<i class="mdi mdi-plus-circle-outline"></i>Iniciar Conversacion
+</button>
+<?php  }?>
         </ul>
     </div>
 </div>
