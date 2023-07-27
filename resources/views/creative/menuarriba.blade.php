@@ -85,7 +85,7 @@ foreach ($resultados as $value) {
                 </div>
             </li>
         </ul>
-        <ul class="list-unstyled topbar-menu float-end mb-0">
+        <ul class="list-unstyled topbar-menu float-end mb-2">
         <?php 
 
 if($saliente <>""){?>
