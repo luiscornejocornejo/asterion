@@ -52,7 +52,7 @@ z-index: 999;}
                                     
                                 @csrf
 
-                              <div>  id="resul"></div>
+                              <div id="resul"></div>
 
                                 <div class="row">
                                                                             <div class="col-6">
