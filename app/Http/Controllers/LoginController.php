@@ -173,7 +173,16 @@ class LoginController extends Controller
                $hh= $this->suricata($email_suricata,$AccountAPIKey,$BotAPIKey,$BotAPISecret,$url);
                $res=json_decode($hh, true);
                 if($res<>''){
-                    $url=$res['Home']."/conversation";
+
+                    if( $url='https://publicapi.xenioo.com/sso/authorize'){
+
+                                                  $url=$res['HoDatDataame'].['Home']."/conversation";
+
+                    }else{
+
+                        $url=$res['Home']."/conversation";
+
+                    }
                     session(['urlxennio' => $url]);
 
 
