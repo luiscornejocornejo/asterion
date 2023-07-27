@@ -174,7 +174,7 @@ class LoginController extends Controller
                $res=json_decode($hh, true);
                 if($res<>''){
 
-                    if( $url='https://publicapi.xenioo.com/sso/authorize'){
+                    if( $url=='https://publicapi.xenioo.com/sso/authorize'){
 
                                               //   
                                                  $urlfinal=$res['Data']['Home'];
