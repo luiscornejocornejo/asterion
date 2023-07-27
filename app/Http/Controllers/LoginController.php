@@ -180,7 +180,7 @@ class LoginController extends Controller
 
                                                  $urlfinal=$res['Data']['Home'];
                                                  $urlfinal=str_replace("auth","bots",$urlfinal);
-                                                 $urlfinal=str_replace(""/sso/"","",$urlfinald);
+                                                 $urlfinal=str_replace('/sso/',"",$urlfinald);
                                                  dd($urlfinal);
                                                  //https://designer.xenioo.com/en/bots/6d3b5545-0b8a-4215-9baa-c7cd8d518913/conversation
 
