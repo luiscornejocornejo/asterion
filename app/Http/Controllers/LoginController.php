@@ -38,14 +38,14 @@ class LoginController extends Controller
         return view('sienna/profile');;
     }
 
-    public function suricata( $email,$AccountAPIKey,$BotAPIKey,$BotAPISecret)
+    public function suricata( $email,$AccountAPIKey,$BotAPIKey,$BotAPISecret,$url)
     {
 
        // echo $email;
         $curl = curl_init();
 
                     curl_setopt_array($curl, array(
-                    CURLOPT_URL => 'https://meerkat.xenioo.com/authorization/sso',
+                    CURLOPT_URL => $url,
                     CURLOPT_RETURNTRANSFER => true,
                     CURLOPT_ENCODING => '',
                     CURLOPT_MAXREDIRS => 10,
@@ -116,6 +116,7 @@ class LoginController extends Controller
                     $BotAPISecret="mK6swiRhdihoS2lB8INOPr6AKDQLVYbQBYWeAvEwC6M36I8a";
                     $saliente="https://meerkat.xenioo.com/bc/H4TJzHoAedn0lo6acczPYqtu/CctysvLkSxT22CrsyRn2xVyA";
                     session(['saliente' => $saliente]);
+                    $url='https://meerkat.xenioo.com/authorization/sso';
 
 
                 }elseif($subdomain_tmp =="elevate"){
@@ -124,6 +125,8 @@ class LoginController extends Controller
                     $BotAPISecret="L5tZePdZNvY563aMsCRhDuKTUySkNmTCqANF3b9taynXCNp3";
                     $saliente="";
                     session(['saliente' => $saliente]);
+                    $url='https://meerkat.xenioo.com/authorization/sso';
+
 
 
                 }
@@ -133,6 +136,8 @@ class LoginController extends Controller
                     $BotAPISecret="dx2BlM4u4mdYNdaL2NVQdzwsXuMcJyQuqSCTUqJIHaDrbbYT";
                     $saliente="";
                     session(['saliente' => $saliente]);
+                    $url='https://meerkat.xenioo.com/authorization/sso';
+
 
 
                 }
@@ -142,13 +147,21 @@ class LoginController extends Controller
                     $BotAPISecret="E8mqLMvFhTa24KF8zUkw10NWzAMQYRTe50SH3M7zZvPf74BR";
                     $saliente="";
                     session(['saliente' => $saliente]);
+                    $url='https://meerkat.xenioo.com/authorization/sso';
 
-
-                   // $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
-                    //$BotAPIKey="bUef7lQ3tJA2kK2S0NFuB3VH";
-                    //$BotAPISecret="8wCJCymWYS3LnuXfTEOlkbQIvHVLxCnXzMWAZ7ruXeUIGhe5";
 
                 }
+
+                elseif($subdomain_tmp =="internetservice"){ 
+                    echo  $AccountAPIKey="315CEEE5-F54A-4B7C-A1F9-BB10A75E5C08";
+                     $BotAPIKey="opUaCLLrEfIBULaJ7S3F2MTxKygGl9oujfXp4OeF2ZT5x5ay3sQ1B3GRMWFEf454";
+                     $BotAPISecret="qORookEjonDStOzFNhDtjmigP5TY8QaxUOEZdmAIdgDOpoYyWzqxrBL3flPiGgaN";
+                     $saliente="";
+                     session(['saliente' => $saliente]);
+                     $url='https://publicapi.xenioo.com/sso/authorize';
+ 
+ 
+                 }
                 
 
                
