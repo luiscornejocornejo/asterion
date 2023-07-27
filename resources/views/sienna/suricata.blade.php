@@ -116,7 +116,7 @@ z-index: 999;}
 
                     var men= document.getElementById("resul");
                      men.innerHTML ='<div class="alert alert-success" role="alert">'+
-    '<strong>Success - </strong> A simple success alert—check it out!</div>';
+    '<strong>Felicitaciones - </strong>   El mensaje fue enviado correctamente</div>';
 
 
                 }
