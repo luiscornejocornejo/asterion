@@ -52,7 +52,7 @@ z-index: 999;}
                                     
                                 @csrf
 
-                              <p  id="resul"></p>
+                              <div>  id="resul"></div>
 
                                 <div class="row">
                                                                             <div class="col-6">
@@ -114,7 +114,8 @@ z-index: 999;}
                     xhr.send(body);
 
                     var men= document.getElementById("resul");
-                     men.innerHTML ="se mando con exito el mensaje";
+                     men.innerHTML ='<div class="alert alert-success" role="alert">'+
+    '<strong>Success - </strong> A simple success alert—check it out!</div>';
 
 
                 }
