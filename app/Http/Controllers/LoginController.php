@@ -145,7 +145,7 @@ class LoginController extends Controller
                    echo  $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
                     $BotAPIKey="eeghPqCSLVA78h7FlGLAY0Zf";
                     $BotAPISecret="E8mqLMvFhTa24KF8zUkw10NWzAMQYRTe50SH3M7zZvPf74BR";
-                    $saliente="";
+                    $saliente="https://meerkat.xenioo.com/bc/eeghPqCSLVA78h7FlGLAY0Zf/nSfNwBMaY92Oc8ERWTSWLsvf";
                     session(['saliente' => $saliente]);
                     $url='https://meerkat.xenioo.com/authorization/sso';
 
