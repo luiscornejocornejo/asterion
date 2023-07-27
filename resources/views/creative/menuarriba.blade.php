@@ -53,12 +53,7 @@ foreach ($resultados as $value) {
 
        
       
-        <!-- Horizontal Menu Toggle Button -->
-        <button class="navbar-toggle bg-light" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
-            <div class="lines">
-         
-            </div>
-        </button>
+       
 
         
 
@@ -84,12 +79,12 @@ foreach ($resultados as $value) {
                 </div>
             </li>
         </ul>
-        <ul class="list-unstyled topbar-menu float-end mb-2">
+        <ul class="list-unstyled topbar-menu float-end mb-0">
             <br>
         <?php 
 
 if($saliente <>""){?>
- &nbsp; <button    style=""  class="btn btn-primary btn-sm mb-2" id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
+ &nbsp; <button    style=""  class="btn btn-primary btn-sm mb-0" id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
 <i class="mdi mdi-plus-circle-outline"></i>Iniciar Conversacion
 </button>
 <?php  }?>
