@@ -178,7 +178,7 @@ class LoginController extends Controller
 
                                                 //  $url=$res['Data'].['Home']."/conversation";
 
-                                                  dd($res['Data']);
+                                                  dd($res['Data']['Home']);
 
                     }else{
 
