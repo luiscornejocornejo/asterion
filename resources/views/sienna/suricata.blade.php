@@ -42,8 +42,8 @@ z-index: 999;}
                 <div class="modal-dialog " role="document">
                     <form id="frmAgregarBienCapitalizable" action="/" method="post"> 
                         <div class="modal-content">
-                            <div class="modal-header bg-warning">
-                                <h5 class="modal-title" id="exampleModalLabel">Iniciar Mensaje</h5>
+                            <div class="modal-header " style="background-color:#3c4655">
+                                <h5 class="modal-title" id="exampleModalLabel">Abris conversacion</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
