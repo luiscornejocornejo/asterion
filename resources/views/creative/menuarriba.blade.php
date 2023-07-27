@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\DB;
+$saliente = session('saliente');
 
 $categoria = session('categoria');
 
@@ -60,7 +61,7 @@ foreach ($resultados as $value) {
                     
                 }
 
-                if($subdomain_tmp =="redlam"){?>
+                if($saliente <>""){?>
  <button class="btn btn-primary btn-sm" id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
     <i class="mdi mdi-plus-circle-outline"></i>Iniciar Conversacion
 </button>

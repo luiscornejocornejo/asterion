@@ -114,21 +114,36 @@ class LoginController extends Controller
                     $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
                     $BotAPIKey="H4TJzHoAedn0lo6acczPYqtu";
                     $BotAPISecret="mK6swiRhdihoS2lB8INOPr6AKDQLVYbQBYWeAvEwC6M36I8a";
+                    $saliente="https://meerkat.xenioo.com/bc/H4TJzHoAedn0lo6acczPYqtu/CctysvLkSxT22CrsyRn2xVyA";
+                    session(['saliente' => $saliente]);
+
 
                 }elseif($subdomain_tmp =="elevate"){
                     $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
                     $BotAPIKey="UH1jLwAoIDYBSkTw73dysIRr";
                     $BotAPISecret="L5tZePdZNvY563aMsCRhDuKTUySkNmTCqANF3b9taynXCNp3";
+                    $saliente="";
+                    session(['saliente' => $saliente]);
+
+
                 }
                 elseif($subdomain_tmp =="amecom"){
                     $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
                     $BotAPIKey="3GIpQX25eLVHdEAw6BXDk9Pp";
                     $BotAPISecret="dx2BlM4u4mdYNdaL2NVQdzwsXuMcJyQuqSCTUqJIHaDrbbYT";
+                    $saliente="";
+                    session(['saliente' => $saliente]);
+
+
                 }
                 elseif($subdomain_tmp =="conectared"){ 
                    echo  $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
                     $BotAPIKey="eeghPqCSLVA78h7FlGLAY0Zf";
                     $BotAPISecret="E8mqLMvFhTa24KF8zUkw10NWzAMQYRTe50SH3M7zZvPf74BR";
+                    $saliente="";
+                    session(['saliente' => $saliente]);
+
+
                    // $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
                     //$BotAPIKey="bUef7lQ3tJA2kK2S0NFuB3VH";
                     //$BotAPISecret="8wCJCymWYS3LnuXfTEOlkbQIvHVLxCnXzMWAZ7ruXeUIGhe5";
