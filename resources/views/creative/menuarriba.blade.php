@@ -86,6 +86,7 @@ foreach ($resultados as $value) {
             </li>
         </ul>
         <ul class="list-unstyled topbar-menu float-end mb-2">
+            <br>
         <?php 
 
 if($saliente <>""){?>
