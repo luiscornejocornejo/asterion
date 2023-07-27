@@ -70,8 +70,7 @@ foreach ($resultados as $value) {
                         <img src="assets3/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                     </span>
                     <span>
-                        <span class="account-user-name"><?php echo session('nombreusuario'); ?></span>
-                        <span class="account-position"><?php echo $nombrecategoria; ?></span>
+                        <span class="account-user-name"><?php echo session('nombreusuario'); ?> (<?php echo $nombrecategoria; ?>)</span>
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
