@@ -151,7 +151,16 @@ class LoginController extends Controller
 
 
                 }
-
+                elseif($subdomain_tmp =="betured"){ 
+                    echo  $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
+                     $BotAPIKey="rhsazXnAbQW3rfyeRpKt929E";
+                     $BotAPISecret="M5Qqb7O6Yw5qF7dN4I98jxMrGVyehX1oYeEt6wZT2PVua8OK";
+                     $saliente="";
+                     session(['saliente' => $saliente]);
+                     $url='https://meerkat.xenioo.com/authorization/sso';
+ 
+ 
+                 }
                 elseif($subdomain_tmp =="internetservice"){ 
                     echo  $AccountAPIKey="315CEEE5-F54A-4B7C-A1F9-BB10A75E5C08";
                      $BotAPIKey="opUaCLLrEfIBULaJ7S3F2MTxKygGl9oujfXp4OeF2ZT5x5ay3sQ1B3GRMWFEf454";
