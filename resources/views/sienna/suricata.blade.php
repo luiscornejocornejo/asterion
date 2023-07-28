@@ -52,7 +52,7 @@ z-index: 999;}
                                     
                                 @csrf
 
-                              <div id="resul" style="  margin: 20px;"  ></div>
+                              <div id="resul"  ></div>
 
                               
                                
