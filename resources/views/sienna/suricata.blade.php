@@ -67,7 +67,7 @@ z-index: 999;}
 
                            
                             
-                                <div class="row">
+                                <div class="row" style="justify-content: center;"  >
                                 <div class="col-3">&nbsp;&nbsp;&nbsp;
                                 </div>
                                                     <div class="alert alert-warning   col-7" role="alert">
