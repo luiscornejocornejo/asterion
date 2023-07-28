@@ -52,7 +52,7 @@ z-index: 999;}
                                     
                                 @csrf
 
-                              <div id="resul"></div>
+                              <div id="resul" style="align-items: center;  justify-content: center;display: flex;"  ></div>
 
                                 <div class="row">
                                     <div class="col-6">
@@ -67,7 +67,7 @@ z-index: 999;}
 
                            
                             
-                                <div class="row" style="justify-content: center;"  >
+                                <div class="row"  >
                                 <div class="col-3">&nbsp;&nbsp;&nbsp;
                                 </div>
                                                     <div class="alert alert-warning   col-7" role="alert">
