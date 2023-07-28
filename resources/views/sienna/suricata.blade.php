@@ -68,7 +68,7 @@ z-index: 999;}
                                                     $url=$val22->url;
                                                     $nombre=$val22->nombre;
                                                     $descripcion=$val22->descripcion;
-                                                    echo "<option vañue='".$url."'>".$nombre."</option>";
+                                                    echo "<option value='".$url."'>".$nombre."</option>";
                                                 }
                                                 ?>
                                         </select>
