@@ -91,10 +91,24 @@ z-index: 999;}
             function mensaje(saliente){
 
                     var tel= document.getElementById("telefono");
+                    var telvalor= document.getElementById("telefono").value;
+
+                    if(telvalor==""){
+                        var men= document.getElementById("resul");
+                     men.innerHTML ='<div data-mdb-delay="3000" class="alert alert-success" role="alert">   '+
+    '<strong>Telefono - </strong>   Es obligatorio</div>';
+
+    window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove(); 
+    });
+}, 4000);
+                    }else{
+
+
+                    
                     var url= document.getElementById("template").value;
-                    //alert(url);
-//https://meerkat.xenioo.com/bc/H4TJzHoAedn0lo6acczPYqtu/CctysvLkSxT22CrsyRn2xVyA
-//https://meerkat.xenioo.com/bc/lJqZB2tNWmCcPDtW1t310Ab8/LXj5SURPvdHxKU8XAgeXY8p0
+               
                     var tel2=tel.value;
                     if(tel2==""){
                         tel2="+5491133258459"
@@ -128,5 +142,6 @@ z-index: 999;}
     });
 }, 4000);
                 }
+            }
             </script>
 </html>
