@@ -74,7 +74,7 @@ z-index: 999;}
                                                                         </div>
                                                                         <br>
                                                                         <br>
-                                                                        <div class="alert alert-warning" role="alert">
+                                                                        <div class="alert alert-warning mb-2" role="alert">
                                                     <i class="ri-alert-line me-1 align-middle font-16"></i> Atención - Este proceso puede demorar unos minutos y el usuario debe responder el mensaje enviado.
                                                 </div>
                                                                         
