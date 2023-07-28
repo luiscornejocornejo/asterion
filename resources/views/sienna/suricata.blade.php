@@ -94,7 +94,7 @@ z-index: 999;}
 
                     var tel= document.getElementById("telefono");
                     var url= document.getElementById("template").value;
-                    alert(url);
+                    //alert(url);
 //https://meerkat.xenioo.com/bc/H4TJzHoAedn0lo6acczPYqtu/CctysvLkSxT22CrsyRn2xVyA
 //https://meerkat.xenioo.com/bc/lJqZB2tNWmCcPDtW1t310Ab8/LXj5SURPvdHxKU8XAgeXY8p0
                     var tel2=tel.value;
