@@ -58,7 +58,7 @@ z-index: 999;}
                                         <br>
                                         <input size="52" style="  margin-right:20;margin-left:20;"   required name="telefono" type="cel" class=" input-lg" id="telefono" placeholder="+5491133258450">
 
-                                        <select style="  margin: 20px;" size="52" id="template" >
+                                        <select style="  margin: 20px;" size="12" id="template" >
                                         <?php 
 
                                                 $query22="SELECT id, nombre, url, descripcion FROM template";
