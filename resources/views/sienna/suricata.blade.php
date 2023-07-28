@@ -68,7 +68,8 @@ z-index: 999;}
                            
                             
                                 <div class="row">
-
+                                <div class="col-3">
+                                </div>
                                                     <div class="alert alert-warning   col-10" role="alert">
                                                         <i class="ri-alert-line me-1 align-middle font-16"></i> Atención - Este proceso puede demorar unos minutos y el usuario debe responder el mensaje enviado.
                                                     </div>
