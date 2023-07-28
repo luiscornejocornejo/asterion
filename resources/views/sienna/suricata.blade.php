@@ -24,11 +24,7 @@ z-index: 999;}
     @include('creative.menuarriba')
 <body>
 
-<?php 
 
-
-
-?>
 
 <iframe src="<?php echo $url;?>" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-top-navigation" ></iframe>
 
@@ -61,6 +57,21 @@ z-index: 999;}
                                         <label  style="  margin: 20px;"  class="form-label"   for="formrow-firstname-input">WhatsApp</label>
                                         <br>
                                         <input size="52" style="  margin-right:20;margin-left:20;"   required name="telefono" type="cel" class=" input-lg" id="telefono" placeholder="+5491133258450">
+
+                                        <select >
+                                        <?php 
+
+                                                $query22="SELECT id, nombre, url, descripcion FROM template";
+
+                                                $resultados22 = DB::select($query22);
+                                                foreach($resultados22 as $val22){
+                                                    $url=$val22->url;
+                                                    $nombre=$val22->nombre;
+                                                    $descripcion=$val22->descripcion;
+                                                    echo "<option vañue='".$url."'>".$nombre."</option>";
+                                                }
+                                                ?>
+                                        </select>
                                         <div  style="  margin: 20px;"  class="alert alert-warning  " role="alert">
                                                         <i class="ri-alert-line me-1 align-middle font-16"></i> Atención - Este proceso puede demorar unos minutos y el usuario debe responder el mensaje enviado.
                                         </div>
