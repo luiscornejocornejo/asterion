@@ -96,7 +96,7 @@ z-index: 999;}
                     if(telvalor==""){
                         var men= document.getElementById("resul");
                      men.innerHTML ='<div data-mdb-delay="3000" class="alert alert-danger" role="alert">   '+
-    '<strong>WhatsApp - </strong>   Es obligatorio</div>';
+    '<strong>Error - </strong> El campo Whatsapp es obligatorio.</div>';
 
     window.setTimeout(function() {
     $(".alert").fadeTo(500, 0).slideUp(500, function(){
