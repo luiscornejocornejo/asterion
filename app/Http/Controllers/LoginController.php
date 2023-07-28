@@ -171,6 +171,16 @@ class LoginController extends Controller
  
  
                  }
+                 elseif($subdomain_tmp =="redpower"){ 
+                    echo  $AccountAPIKey="315CEEE5-F54A-4B7C-A1F9-BB10A75E5C08";
+                     $BotAPIKey="SzTppTZ5pCsk3xRL0CjsGzKRj6GJlqOzIw6dyFJQ9e4p3t5nVFeWM3cTf25jCGKz";
+                     $BotAPISecret="nsS6qoMktJjcuUNp0SnWBscEKdxw9aDtJ42ARyxhstc3K0YBeFijSonvFDmDqQaJ";
+                     $saliente="";
+                     session(['saliente' => $saliente]);
+                     $url='https://publicapi.xenioo.com/sso/authorize';
+ 
+ 
+                 }
                 
 
                
