@@ -40,7 +40,7 @@ z-index: 999;}
                         <div class="modal-content">
                             <div class="modal-header " style="background-color:#3c4655">
                                 <h5 class="modal-title text-white" id="exampleModalLabel">Iniciar Conversacion</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <button type="button" class="btn-close-white" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
