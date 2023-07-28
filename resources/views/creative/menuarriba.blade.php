@@ -86,7 +86,7 @@ foreach ($resultados as $value) {
 if($saliente <>""){?>
  &nbsp; 
 
- <button    style="background-color: #ffc95c;"  class="btn btn-primary btn-sm mb-0 " id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
+ <button    style="background-color: #ffc95c;"  class="btn  btn-sm mb-0 " id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
 <span style="color: #495057;" >Iniciar Conversacion</span>
 </button>
 <?php  }?>
