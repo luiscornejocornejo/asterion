@@ -72,7 +72,7 @@ z-index: 999;}
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>   
 
-                                <button type="button"  onclick="mensaje('<?php echo $saliente = session('saliente');?>')"  class="btn  btn-primary   w-md">Cargar</button>
+                                <button type="button" style="background-color: #ffc95c;"  class="btn btn-primary btn-sm mb-0 " onclick="mensaje('<?php echo $saliente = session('saliente');?>')"  class="  w-md">Iniciar</button>
                             </div>
                         </div>
                     </form>
