@@ -54,21 +54,17 @@ z-index: 999;}
 
                               <div id="resul" style="  margin: 20px;"  ></div>
 
-                                <div class="row" style="  margin: 20px;" >
+                              
                                
-                                    <div class="col-9">
+                                   
                                             
-                                        <label  class="form-label"   for="formrow-firstname-input">WhatsApp</label>
-                                        <input required name="telefono" type="cel" class="form-control" id="telefono" placeholder="+5491133258450">
-                                        <div class="alert alert-warning  " role="alert">
+                                        <label  style="  margin: 20px;"  class="form-label"   for="formrow-firstname-input">WhatsApp</label>
+                                        <input style="  margin: 20px;"   required name="telefono" type="cel" class="form-control" id="telefono" placeholder="+5491133258450">
+                                        <div  style="  margin: 20px;"  class="alert alert-warning  " role="alert">
                                                         <i class="ri-alert-line me-1 align-middle font-16"></i> Atención - Este proceso puede demorar unos minutos y el usuario debe responder el mensaje enviado.
-                                                    </div>
-                                    </div>
-                                                                        <br>
-                                                                        <br>
-                                                          
-                                </div>
-
+                                        </div>
+                                   
+                             
                            
                             
                             </div>
