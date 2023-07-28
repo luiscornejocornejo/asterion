@@ -55,7 +55,7 @@ z-index: 999;}
                               <div id="resul" style="align-items: center;  justify-content: center;display: flex;"  ></div>
 
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-10">
                                             
                                         <label  class="form-label"   for="formrow-firstname-input">WhatsApp</label>
                                         <input required name="telefono" type="cel" class="form-control" id="telefono" placeholder="+5491133258450">
@@ -68,9 +68,9 @@ z-index: 999;}
                            
                             
                                 <div class="row"  >
-                                <div class="col-1">&nbsp;&nbsp;&nbsp;
-                                </div>
-                                                    <div class="alert alert-warning   col-5" role="alert">
+                                                    <div class="col-1">&nbsp;&nbsp;&nbsp;
+                                                    </div>
+                                                    <div class="alert alert-warning   col-9" role="alert">
                                                         <i class="ri-alert-line me-1 align-middle font-16"></i> Atención - Este proceso puede demorar unos minutos y el usuario debe responder el mensaje enviado.
                                                     </div>
                                 </div>
