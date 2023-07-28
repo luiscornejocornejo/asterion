@@ -60,7 +60,7 @@ z-index: 999;}
                                             
                                         <label  style="  margin: 20px;"  class="form-label"   for="formrow-firstname-input">WhatsApp</label>
                                         <br>
-                                        <input size="10" style="  margin: 20px;margin-rigth:20;"   required name="telefono" type="cel" class=" input-lg" id="telefono" placeholder="+5491133258450">
+                                        <input size="20" style="  margin-right:20;margin-left:20;"   required name="telefono" type="cel" class=" input-lg" id="telefono" placeholder="+5491133258450">
                                         <div  style="  margin: 20px;"  class="alert alert-warning  " role="alert">
                                                         <i class="ri-alert-line me-1 align-middle font-16"></i> Atención - Este proceso puede demorar unos minutos y el usuario debe responder el mensaje enviado.
                                         </div>
