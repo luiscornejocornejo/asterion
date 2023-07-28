@@ -72,6 +72,10 @@ z-index: 999;}
 
 
                                                                         </div>
+                                                                        <div class="alert alert-warning" role="alert">
+                                                    <i class="ri-alert-line me-1 align-middle font-16"></i> This is a
+                                                    <strong>warning</strong> alert - check it out!
+                                                </div>
                                                                         
                                                                         </div>
 
