@@ -74,13 +74,18 @@ z-index: 999;}
                                                                         </div>
                                                                         <br>
                                                                         <br>
-                                                                        <div class="alert alert-warning  mb-2 col-6" role="alert">
-                                                    <i class="ri-alert-line me-1 align-middle font-16"></i> Atención - Este proceso puede demorar unos minutos y el usuario debe responder el mensaje enviado.
-                                                </div>
+                                                          
                                                                         
                                                                         </div>
 
                             </div>
+                            
+                            <div class="row">
+
+                            <div class="alert alert-warning  mb-2 col-6" role="alert">
+                                                    <i class="ri-alert-line me-1 align-middle font-16"></i> Atención - Este proceso puede demorar unos minutos y el usuario debe responder el mensaje enviado.
+                                                </div>
+</div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>   
 
