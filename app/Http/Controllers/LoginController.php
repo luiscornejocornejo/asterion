@@ -126,9 +126,14 @@ class LoginController extends Controller
                     $saliente="";
                     session(['saliente' => $saliente]);
                     $url='https://meerkat.xenioo.com/authorization/sso';
-
-
-
+                }
+                elseif($subdomain_tmp =="prolux"){
+                    $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
+                    $BotAPIKey="kUSkMV3DW5ggE4sMFNNrDcuM";
+                    $BotAPISecret="hJmQXef5k5hYYoYGe3xIRORfIS5MyBS8a622idfsPav8MJoQ";
+                    $saliente="";
+                    session(['saliente' => $saliente]);
+                    $url='https://meerkat.xenioo.com/authorization/sso';
                 }
                 elseif($subdomain_tmp =="amecom"){
                     $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
