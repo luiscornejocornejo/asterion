@@ -93,6 +93,8 @@ z-index: 999;}
             function mensaje(saliente){
 
                     var tel= document.getElementById("telefono");
+                    var url= document.getElementById("template");
+                    alert(url);
 //https://meerkat.xenioo.com/bc/H4TJzHoAedn0lo6acczPYqtu/CctysvLkSxT22CrsyRn2xVyA
 //https://meerkat.xenioo.com/bc/lJqZB2tNWmCcPDtW1t310Ab8/LXj5SURPvdHxKU8XAgeXY8p0
                     var tel2=tel.value;
@@ -101,7 +103,7 @@ z-index: 999;}
                     }
                     console.log(tel2);
                     const xhr = new XMLHttpRequest();
-                    xhr.open("POST", saliente);
+                    xhr.open("POST", url);
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     var  valores="WhatsAppChannel;"+tel2;
                     const body = JSON.stringify({
