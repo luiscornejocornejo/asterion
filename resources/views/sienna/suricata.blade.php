@@ -115,7 +115,7 @@ z-index: 999;}
                     xhr.send(body);
 
                     var men= document.getElementById("resul");
-                     men.innerHTML ='<div class="alert alert-success" role="alert">    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>'+
+                     men.innerHTML ='<div class="alert alert-success" role="alert">    <button type="button" class="btn-close btn-close-black" data-bs-dismiss="alert" aria-label="Close"></button>'+
     '<strong>Felicitaciones - </strong>   El mensaje fue enviado correctamente</div>';
 
 
