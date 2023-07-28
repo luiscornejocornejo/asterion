@@ -87,7 +87,7 @@ if($saliente <>""){?>
  &nbsp; 
 
  <button    style="background-color: #ffc95c;"  class="btn btn-primary btn-sm mb-0 " id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
-<i style="color: #495057;" class="mdi mdi-plus-circle-outline"></i>Iniciar Conversacion
+<i  class="mdi mdi-plus-circle-outline"></i><span style="color: #495057;" >Iniciar Conversacion</span>
 </button>
 <?php  }?>
         </ul>
