@@ -184,6 +184,8 @@ Route::get('/creardb','App\Http\Controllers\TicketdatosController@creardb')->mid
 
 Route::post('/creardb','App\Http\Controllers\TicketdatosController@creardbpost')->middleware('adminsienna');
 Route::get('/conversations  ','App\Http\Controllers\TicketdatosController@suricata');
+Route::get('/salientes  ','App\Http\Controllers\SalientesController@salientes');
+Route::post('/salientes  ','App\Http\Controllers\SalientesController@salientespost');
 
 });
 //});
