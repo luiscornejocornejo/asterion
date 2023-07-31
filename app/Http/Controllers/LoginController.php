@@ -61,8 +61,7 @@ class LoginController extends Controller
                     }',
                     CURLOPT_HTTPHEADER => array(
                         'Accept: application/json',
-                        'Content-Type: application/json',
-                        'Cookie: xenioo-id=XENIOO_b527e095-bc1b-4142-9f55-b09da0fe42ab'
+                        'Content-Type: application/json'
                     ),
                     ));
 
