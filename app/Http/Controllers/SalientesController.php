@@ -34,7 +34,7 @@ class SalientesController extends Controller
      */
 
 
-    public function index(Request $request)
+    public function salientes(Request $request)
     {
         $query = "SELECT * FROM whatsapp ";
         $resultados = DB::select($query);
@@ -46,7 +46,7 @@ return view('sienna/salientes')
     }
   
 
-    public function salientes(Request $request)
+    public function salientespost(Request $request)
     {
 
         $archivo = $request->file('file');
