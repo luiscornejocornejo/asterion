@@ -14,7 +14,7 @@ class PagoraliaController extends Controller
 
     public function template(){
 
-        return response()->download(public_path('template.csv'));
+        return response()->download(public_path('templatesalientes.csv'));
 
     }
     public function subir()
