@@ -202,7 +202,7 @@ class LoginController extends Controller
 
                                             //  dd($res);
                                                  $urlfinal=$res['Data']['Home'];
-                                                 $urlfinal.="conversation";
+                                                // $urlfinal.="conversation";
                                                  $url=$urlfinal;
                                                 //$urlfinal=explode("auth",$urlfinal);
                                                 //$url=$urlfinal[0]."bots/6d3b5545-0b8a-4215-9baa-c7cd8d518913/conversation";
