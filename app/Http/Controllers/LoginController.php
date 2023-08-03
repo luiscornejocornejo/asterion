@@ -155,6 +155,16 @@ class LoginController extends Controller
 
 
                 }
+                elseif($subdomain_tmp =="pconline"){ 
+                    echo  $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
+                     $BotAPIKey="Ob7mdpIh3YaiU9F3MOQUuOiW";
+                     $BotAPISecret="uavtbNMlky1FUijOjnE0PdsLbxsxCoA0sas2uO6gCoyV7zZd";
+                     $saliente="https://meerkat.xenioo.com/bc/eeghPqCSLVA78h7FlGLAY0Zf/nSfNwBMaY92Oc8ERWTSWLsvf";
+                     session(['saliente' => $saliente]);
+                     $url='https://meerkat.xenioo.com/authorization/sso';
+ 
+ 
+                 }
                 elseif($subdomain_tmp =="betured"){ 
                     echo  $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
                      $BotAPIKey="rhsazXnAbQW3rfyeRpKt929E";
