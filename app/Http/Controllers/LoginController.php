@@ -236,6 +236,9 @@ class LoginController extends Controller
 
                    
 
+                }else{
+
+                    echo "no login";
                 }
           
 
