@@ -167,14 +167,23 @@ class LoginController extends Controller
                  }
                 elseif($subdomain_tmp =="betured"){ 
                     echo  $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
-                     $BotAPIKey="rhsazXnAbQW3rfyeRpKt929E";
-                     $BotAPISecret="M5Qqb7O6Yw5qF7dN4I98jxMrGVyehX1oYeEt6wZT2PVua8OK";
-                     $saliente="";
+                    echo  $BotAPIKey="rhsazXnAbQW3rfyeRpKt929E";
+                    echo $BotAPISecret="M5Qqb7O6Yw5qF7dN4I98jxMrGVyehX1oYeEt6wZT2PVua8OK";
+                    echo $saliente="";
                      session(['saliente' => $saliente]);
                      $url='https://meerkat.xenioo.com/authorization/sso';
                      $queryoriginal="select * from sienna_creado where nombre='".$subdomain_tmp."' ";
                      $resultados = DB::connection('mysql3')->select($queryoriginal);
+                     foreach($resultados as $val){
+
+                        echo $AccountAPIKey=$val->AccountAPIKey;
+                        echo $BotAPIKey=$val->BotAPIKey;
+                        echo $BotAPISecret=$val->BotAPISecret;
+                        echo $saliente=$val->individual;
+                        session(['saliente' => $saliente]);
+                     }
                      dd($resultados);
+
  
  
                  }
