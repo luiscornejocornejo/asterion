@@ -83,7 +83,7 @@ foreach ($resultados as $value) {
             <br>
         <?php 
 
-if($saliente <>""){?>
+if($saliente ==1){?>
  &nbsp; 
 
  <button    style="background-color: #ffc95c;"  class="btn  btn-sm mb-0 " id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
