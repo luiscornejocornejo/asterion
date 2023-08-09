@@ -113,14 +113,14 @@ class LoginController extends Controller
                 $resultados = DB::connection('mysql3')->select($queryoriginal);
                 foreach($resultados as $val){
 
-                   echo $AccountAPIKey=$val->AccountAPIKey;                    echo "<br>";
+                    $AccountAPIKey=$val->AccountAPIKey;                   
 
-                   echo $BotAPIKey=$val->BotAPIKey;                    echo "<br>";
+                    $BotAPIKey=$val->BotAPIKey;                  
 
-                   echo $BotAPISecret=$val->BotAPISecret;                    echo "<br>";
+                    $BotAPISecret=$val->BotAPISecret;                  
 
-                   echo $saliente=$val->individual;                    echo "<br>";
-                   echo $version=$val->version;                    echo "<br>";
+                    $saliente=$val->individual;                    
+                    $version=$val->version;                    
 
                    if($version==1){
                     $url='https://meerkat.xenioo.com/authorization/sso';
@@ -146,7 +146,6 @@ class LoginController extends Controller
 
                     if( $url=='https://publicapi.xenioo.com/sso/authorize'){
 
-                                             dd($res);
                                                  $urlfinal=$res['Data']['Home'];
                                                 // $urlfinal.="conversation";
                                                 // $url=$urlfinal;
