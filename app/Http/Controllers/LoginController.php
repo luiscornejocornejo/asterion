@@ -109,6 +109,32 @@ class LoginController extends Controller
                     
                 }
 
+                $queryoriginal="select * from sienna_creado where nombre='".$subdomain_tmp."' ";
+                $resultados = DB::connection('mysql3')->select($queryoriginal);
+                foreach($resultados as $val){
+
+                   echo $AccountAPIKey=$val->AccountAPIKey;                    echo "<br>";
+
+                   echo $BotAPIKey=$val->BotAPIKey;                    echo "<br>";
+
+                   echo $BotAPISecret=$val->BotAPISecret;                    echo "<br>";
+
+                   echo $saliente=$val->individual;                    echo "<br>";
+                   echo $version=$val->version;                    echo "<br>";
+
+                   if($version==1){
+                    $url='https://meerkat.xenioo.com/authorization/sso';
+
+                   }else{
+                    $url='https://publicapi.xenioo.com/sso/authorize';
+
+
+                   }
+
+                   session(['saliente' => $saliente]);
+                }
+
+/*
                 if($subdomain_tmp =="redlam"){
                     $AccountAPIKey="9474C39E-5E40-4A99-96B4-9709EAFA677A";
                     $BotAPIKey="H4TJzHoAedn0lo6acczPYqtu";
@@ -179,21 +205,7 @@ class LoginController extends Controller
 
                      session(['saliente' => $saliente]);
                      $url='https://meerkat.xenioo.com/authorization/sso';
-                     $queryoriginal="select * from sienna_creado where nombre='".$subdomain_tmp."' ";
-                     $resultados = DB::connection('mysql3')->select($queryoriginal);
-                     foreach($resultados as $val){
-
-                        echo $AccountAPIKey=$val->AccountAPIKey;                    echo "<br>";
-
-                        echo $BotAPIKey=$val->BotAPIKey;                    echo "<br>";
-
-                        echo $BotAPISecret=$val->BotAPISecret;                    echo "<br>";
-
-                        echo $saliente=$val->individual;                    echo "<br>";
-
-                        session(['saliente' => $saliente]);
-                     }
-                     dd($resultados);
+                    
 
  
  
@@ -220,7 +232,7 @@ class LoginController extends Controller
                  }
                 
 
-               
+               */
 
               
 
