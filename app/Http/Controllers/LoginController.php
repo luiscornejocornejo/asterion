@@ -172,6 +172,9 @@ class LoginController extends Controller
                      $saliente="";
                      session(['saliente' => $saliente]);
                      $url='https://meerkat.xenioo.com/authorization/sso';
+                     $queryoriginal="select * from sienna_creado where nombre='".$subdomain_tmp."' ";
+                     $resultados = DB::connection('mysql3')->select($queryoriginal);
+                     dd($resultados);
  
  
                  }
