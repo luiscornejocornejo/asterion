@@ -146,6 +146,8 @@ class LoginController extends Controller
 
                     if( $url=='https://publicapi.xenioo.com/sso/authorize'){
 
+
+                        dd($res);
                                                  $urlfinal=$res['Data']['Home'];
                                                 // $urlfinal.="conversation";
                                                  $url=$urlfinal;
