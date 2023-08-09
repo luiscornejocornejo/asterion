@@ -152,7 +152,8 @@ class LoginController extends Controller
                                                 //
                                                 
                                              //   $urlfinal=explode("auth",$urlfinal);
-                                               // $url=$urlfinal[0]."bots/6d3b5545-0b8a-4215-9baa-c7cd8d518913/conversation";
+                                               //
+                                                $url=$urlfinal[0]."bots/6d3b5545-0b8a-4215-9baa-c7cd8d518913/conversation";
                         //  dd($url);https://designer.xenioo.com/en/bots/6d3b5545-0b8a-4215-9baa-c7cd8d518913/conversation
                                             
                                              //   dd($url);
