@@ -40,6 +40,11 @@ class LoginController extends Controller
 
     public function suricata( $email,$AccountAPIKey,$BotAPIKey,$BotAPISecret,$url)
     {
+        var_dump($email);
+        var_dump($AccountAPIKey);
+        var_dump($BotAPIKey);
+        var_dump($BotAPISecret);
+        var_dump($url);
 
        // echo $email;
         $curl = curl_init();
@@ -142,7 +147,6 @@ class LoginController extends Controller
 
                $hh= $this->suricata($email_suricata,$AccountAPIKey,$BotAPIKey,$BotAPISecret,$url);
                $res=json_decode($hh, true);
-               var_dump($res);
                 if($res<>''){
 
                     if( $url=='https://publicapi.xenioo.com/sso/authorize'){
