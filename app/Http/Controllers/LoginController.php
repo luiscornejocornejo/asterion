@@ -142,6 +142,7 @@ class LoginController extends Controller
 
                $hh= $this->suricata($email_suricata,$AccountAPIKey,$BotAPIKey,$BotAPISecret,$url);
                $res=json_decode($hh, true);
+               var_dump($res);
                 if($res<>''){
 
                     if( $url=='https://publicapi.xenioo.com/sso/authorize'){
