@@ -128,10 +128,10 @@ class LoginController extends Controller
                     $version=$val->version;                    
 
                    if($version==1){
-                    $url='https://meerkat.xenioo.com/authorization/sso';
+                    echo $url='https://meerkat.xenioo.com/authorization/sso';
 
                    }else{
-                    $url='https://publicapi.xenioo.com/sso/authorize';
+                  echo   $url='https://publicapi.xenioo.com/sso/authorize';
 
 
                    }
