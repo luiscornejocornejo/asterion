@@ -73,7 +73,10 @@ class LoginController extends Controller
                     $response = curl_exec($curl);
 
                     curl_close($curl);
+                    echo "<br>f";
                     echo $response;
+                    echo "a<br>";
+
                     return $response;
         
     }
