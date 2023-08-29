@@ -62,7 +62,9 @@ class LoginController extends Controller
                         "AccountAPIKey":"'.$AccountAPIKey.'",
                         "BotAPIKey":"'.$BotAPIKey.'",
                         "BotAPISecret":"'.$BotAPISecret.'",
-                        "Email":"'.$email.'"
+                        "Email":"'.$email.'", 
+                         "EnableEmbedding":true
+
                     }',
                     CURLOPT_HTTPHEADER => array(
                         'Accept: application/json',
