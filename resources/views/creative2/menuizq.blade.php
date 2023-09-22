@@ -212,13 +212,13 @@ function retro(elementId, color) {
                 <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                     <i class="ri-file-list-line"></i>
                     <span class="badge bg-success float-end"></span>
-                    <span> Ordenes </span>
+                    <span> Estado </span>
                 </a>
                 <div class="collapse" id="sidebarDashboards">
                     <ul class="side-nav-second-level">
                         <li>
-                        <a target="_self" href="/pagosestado">
-                                    <span id="Activas" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Ordenes Activas</span>
+                        <a target="_self" href="/Estado">
+                                    <span id="Estado" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Estado</span>
                                 </a>
                         </li>
                         <?php if($categoria==6)
