@@ -231,6 +231,23 @@ function retro(elementId, color) {
                 <a data-bs-toggle="collapse" href="#sidebarDashboards3" aria-expanded="false" aria-controls="sidebarDashboards3" class="side-nav-link">
                     <i class="ri-lifebuoy-line"></i>
                     <span class="badge bg-success float-end"></span>
+                    <span> Conversacion </span> 
+                </a>
+                <div class="collapse" id="sidebarDashboards3">
+                    <ul class="side-nav-second-level">
+                        <li>
+                        <a target="_self" href="/conversacion2">
+                                    <span id="Ticketsc" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Conversacion</span>
+                                </a>
+                        </li>
+     
+                    </ul>
+                </div>
+            </li>
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#sidebarDashboards3" aria-expanded="false" aria-controls="sidebarDashboards3" class="side-nav-link">
+                    <i class="ri-lifebuoy-line"></i>
+                    <span class="badge bg-success float-end"></span>
                     <span> Soporte </span> 
                 </a>
                 <div class="collapse" id="sidebarDashboards3">
@@ -240,41 +257,11 @@ function retro(elementId, color) {
                                     <span id="Ticketsc" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Tickets</span>
                                 </a>
                         </li>
-                       
-                        
-                         
-                       
+     
                     </ul>
                 </div>
             </li>
-            <?php if($categoria==6)
-            {?>
-
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarProp" aria-expanded="false" aria-controls="sidebarProp" class="side-nav-link">
-                    <i class="uil-signal-alt"></i>
-                    <span class="badge bg-success float-end"></span>
-                    <span> Propietarios </span>
-                </a>
-                <div class="collapse" id="sidebarProp">
-                    <ul class="side-nav-second-level">
-                        <li>
-                        <a target="_self" href="/siennaabm?id=137">
-                                 <span class="sin" id="Listado"  onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" data-key="t-Base">Listado</span>
-                                </a>
-                        </li>
-                        <li>
-                        <a target="_self" href="/masivospayers">
-                                        <span class="sin" id="masivospayers"  onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" data-key="t-Base">Masivos Payers</span>
-                                        </a>
-                        </li>
-                      
-                    
-                       
-                    </ul>
-                </div>
-            </li>
-            <?php }?>
+   
 
             <?php
             if (sizeof($resultados) > 0) {
