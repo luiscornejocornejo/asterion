@@ -146,16 +146,16 @@ foreach ($array['pp'] as $item) {
   
 
     if($item['nombrestatus']=="Open"){
-        echo '<td><span class="badge bg-info">'.$item['estadotick'].'</span></td>'; 
+        echo '<td><span class="badge bg-info">'.$item['nombrestatus'].'</span></td>'; 
        }
     if($item['nombrestatus']=="Progreso"){
-        echo '<td><span class="badge bg-warning">'.$item['estadotick'].'</span></td>';
+        echo '<td><span class="badge bg-warning">'.$item['nombrestatus'].'</span></td>';
     } 
     if($item['nombrestatus']=="Resuelto"){
-        echo '<td><span class="badge bg-success">'.$item['estadotick'].'</span></td>';   
+        echo '<td><span class="badge bg-success">'.$item['nombrestatus'].'</span></td>';   
      } 
     if($item['nombrestatus']=="Cerrado"){
-        echo '<td><span class="badge bg-danger">'.$item['estadotick'].'</span></td>';    
+        echo '<td><span class="badge bg-danger">'.$item['nombrestatus'].'</span></td>';    
     }
     ?>
     <td>
