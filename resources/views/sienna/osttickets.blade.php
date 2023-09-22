@@ -106,7 +106,7 @@ timer.innerHTML = '';
                 </button>
                 <br> <br>
  
-                <?php if(isset($datos)){ 
+                <?php if(isset($datos)){  
                     
                   ?>
                         <div class="table-responsive">
