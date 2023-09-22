@@ -44,7 +44,18 @@
          
 
           
+        <?php 
+           $saliente = session('saliente');
 
+if($saliente ==1){?>
+ &nbsp; 
+ <li class="notification-list d-none d-sm-inline-block">
+ <button    style="background-color: #ffc95c;"  class="btn  btn-sm mb-0 " id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
+<span style="color: #495057;" >Iniciar Conversacion</span>
+</button>
+            </li>
+ 
+<?php  }?>
           
 
             <li class="notification-list d-none d-sm-inline-block">
@@ -64,16 +75,7 @@
                     <i class="ri-fullscreen-line noti-icon"></i>
                 </a>
             </li>
-           <?php 
-           $saliente = session('saliente');
-
-if($saliente ==1){?>
- &nbsp; 
-
- <button    style="background-color: #ffc95c;"  class="btn  btn-sm mb-0 " id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
-<span style="color: #495057;" >Iniciar Conversacion</span>
-</button>
-<?php  }?>
+  
             <li class="dropdown notification-list" style="background-color: <?php echo session('empresaMenu'); ?>;">
                 <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <span class="account-user-avatar">
