@@ -1,26 +1,8 @@
 
 
-<html>
-    <head>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
-<style>
-body {
-    margin: 0;            /* Reset default margin */
-}
-iframe {
-    display: block;       /* iframes are inline by default */
-    background: #000;
-    border: none;         /* Reset default border */
-    height: 90%;        /* Viewport-relative units */
-    width: 100vw;
-    margin-top:70px;
-z-index: 999;}
-    </style>
 
-    </head>
-
-    @include('creative.header')
+    @include('creative2.header')
   
     <div id="principal">
     <div class="container mx-auto" style="margin-top: 70px;">
@@ -157,4 +139,4 @@ z-index: 999;}
             </script>
 </div>
 
-@include('creative.footer')
+@include('creative2.footer')

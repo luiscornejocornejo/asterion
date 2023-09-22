@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\DB;
-use App\Models\users;
 
 $categoria =  session('categoria');
 $query = "SELECT * from empresa";
@@ -13,8 +12,6 @@ foreach ($resultados as $valuee) {
     //$empresaBody=$valuee->body;
     $empresaMenu = $valuee->menucolor;
     $empresaLogo = $valuee->logo;
-    $empresaLogo = str_replace("public/", "", $empresaLogo);
-
 }
 
 $query2 = "SELECT nombre FROM `menucolor` where id='" . $empresaMenu . "'";
@@ -22,66 +19,40 @@ $resultados2 = DB::select($query2);
 foreach ($resultados2 as $valuee2) {
     session(['empresaMenu' => $valuee2->nombre]);
 }
-
-
-if (isset($_SERVER['HTTP_HOST'])) {
-    $domainParts = explode('.', $_SERVER['HTTP_HOST']);
-    $subdomain_tmp =  array_shift($domainParts);
-} elseif(isset($_SERVER['SERVER_NAME'])){
-    $domainParts = explode('.', $_SERVER['SERVER_NAME']);
-    $subdomain_tmp =  array_shift($domainParts);
-    
-}
 ?>
 
 <!DOCTYPE html>
 <html lang="en" data-theme="light" data-layout="topnav" data-topbar-color="dark" data-layout-mode="fluid" data-layout-position="fixed">
 
 <head>
-    <title>window.onload()</title>
+    <title>Suricata CX</title>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
-
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="user" content="{{ session('email')}}" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="https://<?php echo $subdomain_tmp;?>.pagoralia.com/assets3/images/favicon.ico">
+    <link rel="shortcut icon" href="assets3/images/favicon.ico"> 
 
     <!-- Theme Config Js -->
-    <script src="https://<?php echo $subdomain_tmp;?>.pagoralia.com/assets3/js/hyper-config.js"></script>
- 
+    <script src="assets3/js/hyper-config.js"></script>
+
     <!-- App css -->
-    <link href="https://<?php echo $subdomain_tmp;?>.pagoralia.com/assets3/css/app-saas.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <link href="assets3/css/app-saas.min.css" rel="stylesheet" type="text/css" id="app-style" />
 
     <!-- Icons css -->
-    <link href="https://<?php echo $subdomain_tmp;?>.pagoralia.com/assets3/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets3/css/icons.min.css" rel="stylesheet" type="text/css" />
 
 
-   <!-- Datatables css -->
-   <link href="assets3/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets3/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets3/vendor/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets3/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets3/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets3/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
 
-        <!-- Theme Config Js -->
-        <script src="assets3/js/hyper-config.js"></script>
+    <link href="assets3/vendor/simplemde/simplemde.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/vue3-google-map"></script>
 
-        <!-- Icons css -->
-        <link href="assets3/css/icons.min.css" rel="stylesheet" type="text/css" />
+  
 
-        <!-- App css -->
-        <link href="assets3/css/app-creative.min.css" rel="stylesheet" type="text/css" id="app-style" />
-
-    <script type="text/javascript">
-        window.onload = function() {
-            newPageTitle = "<?php echo $empresaTitle; ?>";
-            document.title = newPageTitle;
-
-        }
-    </script>
+  
     <script>
         function exportTableToExcel(tableID, filename = '') {
             var downloadLink;
@@ -120,19 +91,11 @@ if (isset($_SERVER['HTTP_HOST'])) {
             document.getElementById("idregistro").value = x;
         }
     </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
 
 
-<style>
-        #principal {
-            margin: auto !important;
-            width: 100% !important;
-            padding: 12px !important;
-            margin-top: 50px !important;
-
-        }
-       
-    </style>
 </head>
-
-@include('creative.menuizq')
-
