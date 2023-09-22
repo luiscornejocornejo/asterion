@@ -60,12 +60,7 @@ class TicketdatosController extends Controller
 
     public function datossuricata( $email,$AccountAPIKey,$BotAPIKey,$BotAPISecret,$url)
     {
-        var_dump($email);
-        var_dump($AccountAPIKey);
-        var_dump($BotAPIKey);
-        var_dump($BotAPISecret);
-        var_dump($url);
-
+        
        // echo $email;
         $curl = curl_init();
 
@@ -95,10 +90,7 @@ class TicketdatosController extends Controller
                     $response = curl_exec($curl);
 
                     curl_close($curl);
-                    echo "<br>f";
-                    echo $response;
-                    echo "a<br>";
-
+                    
                     return $response;
         
     }
