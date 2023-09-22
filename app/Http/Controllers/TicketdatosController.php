@@ -176,7 +176,7 @@ class TicketdatosController extends Controller
             $subdomain_tmp =  array_shift($domainParts);
             
         }
-        $url4="https://suricata1.com.ar/api/tickets2?token=12345&merchant=".$subdomain_tmp ;
+        $url4="https://suricata1.com.ar/api/tickets2?token=12345&merchat=".$subdomain_tmp ;
         $data="";
         $method="GET";
         $estados=$this->curlnuevo($url4, $data, $method);
