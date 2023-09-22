@@ -9,7 +9,7 @@ iframe {
     background: #000;
     border: none;         /* Reset default border */
     height: 90%;        /* Viewport-relative units */
-    width: 80vw;
+    width: 70vw;
     margin-top:50px;
     margin-right:70px;
 
