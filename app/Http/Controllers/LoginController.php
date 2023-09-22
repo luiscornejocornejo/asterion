@@ -104,6 +104,7 @@ class LoginController extends Controller
                 session(['categoria' => $categoria]);
                 session(['nombreusuario' => $nombreusuario]);
                 session(['email' => $email]);
+                session(['email_suricata' => $email_suricata]);
             }
 
             if($categoria==90){
