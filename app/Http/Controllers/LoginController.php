@@ -156,22 +156,10 @@ class LoginController extends Controller
 
                     if( $url=='https://publicapi.xenioo.com/sso/authorize'){
 
-
-                        //dd($res);
                                                  $urlfinal=$res['Data']['Home'];
                                                  $urlfinal.="/conversation";
                                                  $url=$urlfinal;
-                                                //
-                                                
-                                             //   $urlfinal=explode("auth",$urlfinal);
-                                               //
-                                               // $url=$urlfinal[0]."bots/6d3b5545-0b8a-4215-9baa-c7cd8d518913/conversation";
-                        //  dd($url);https://designer.xenioo.com/en/bots/6d3b5545-0b8a-4215-9baa-c7cd8d518913/conversation
-                                            
-                                             //   dd($url);
-                                                //   https://designer.xenioo.com/en/
-                                                 //https://designer.xenioo.com/en/bots/6d3b5545-0b8a-4215-9baa-c7cd8d518913/conversation
-                                                 //https://designer.xenioo.com/en/bots/6d3b5545-0b8a-4215-9baa-c7cd8d518913/conversation
+                                
 
                     }else{
 

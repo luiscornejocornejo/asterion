@@ -58,9 +58,109 @@ class TicketdatosController extends Controller
 
     }
 
+    public function datossuricata( $email,$AccountAPIKey,$BotAPIKey,$BotAPISecret,$url)
+    {
+        var_dump($email);
+        var_dump($AccountAPIKey);
+        var_dump($BotAPIKey);
+        var_dump($BotAPISecret);
+        var_dump($url);
+
+       // echo $email;
+        $curl = curl_init();
+
+                    curl_setopt_array($curl, array(
+                    CURLOPT_URL => $url,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_ENCODING => '',
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 0,
+                    CURLOPT_FOLLOWLOCATION => true,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => 'POST',
+                    CURLOPT_POSTFIELDS =>'{
+                        "AccountAPIKey":"'.$AccountAPIKey.'",
+                        "BotAPIKey":"'.$BotAPIKey.'",
+                        "BotAPISecret":"'.$BotAPISecret.'",
+                        "Email":"'.$email.'", 
+                         "EnableEmbedding":true
+
+                    }',
+                    CURLOPT_HTTPHEADER => array(
+                        'Accept: application/json',
+                        'Content-Type: application/json'
+                    ),
+                    ));
+
+                    $response = curl_exec($curl);
+
+                    curl_close($curl);
+                    echo "<br>f";
+                    echo $response;
+                    echo "a<br>";
+
+                    return $response;
+        
+    }
+    public function precon(){
+
+        $subdomain_tmp = 'localhost';
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+            $subdomain_tmp =  array_shift($domainParts);
+        } elseif(isset($_SERVER['SERVER_NAME'])){
+            $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+            $subdomain_tmp =  array_shift($domainParts);
+            
+        }
+
+        $queryoriginal="select * from sienna_creado where nombre='".$subdomain_tmp."' ";
+        $resultados = DB::connection('mysql3')->select($queryoriginal);
+        foreach($resultados as $val){
+
+            $AccountAPIKey=$val->AccountAPIKey;                   
+
+            $BotAPIKey=$val->BotAPIKey;                  
+
+            $BotAPISecret=$val->BotAPISecret;                  
+
+            $saliente=$val->individual;                    
+            $version=$val->version;                    
+
+                    if($version==1){
+                        $url='https://meerkat.xenioo.com/authorization/sso';
+
+                    }else{
+                        $url='https://publicapi.xenioo.com/sso/authorize';
+                        }
+
+            session(['saliente' => $saliente]);
+        }
+
+
+        $hh= $this->datossuricata($email_suricata,$AccountAPIKey,$BotAPIKey,$BotAPISecret,$url);
+        $res=json_decode($hh, true);
+        if($res<>''){
+                    if( $url=='https://publicapi.xenioo.com/sso/authorize'){
+
+                         $urlfinal=$res['Data']['Home'];
+                         $urlfinal.="/conversation";
+                         $url=$urlfinal;
+                    }else{
+                        $url=$res['Home']."/conversation";
+                    }
+                    session(['urlxennio' => $url]);
+
+                   // return Redirect::to('/conversations2');
+                }else{
+
+                    echo "no login";
+                }
+    }
     public function suricata2(Request $request){
 
     
+        $dat=$this->precon();
         $url =  session('urlxennio');
         
         return view('sienna/suricata2')->with('url', $url);
