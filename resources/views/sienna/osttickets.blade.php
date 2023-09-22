@@ -239,31 +239,12 @@ foreach ($array['pp'] as $item) {
                             <label for="exampleInputEmail1">metodo</label>
                             <select class="form-control "  name="metodo" id="selectf"  >
 
-                            <?php
-
-                                $metodos2 = json_decode($metodos, true);
-
-                                //dd($array);
-                                foreach ($metodos2['pp'] as $item2) {
-
-                                    echo "<option value='".$item2['id']."'>".$item2['nombre']."</option>";
-                                }
-                            ?>
                                 </select>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">tiporeclamo</label>
                             <select class="form-control "  name="tiporeclamo" id="selectf"  >
-                            <?php
-
-                                    $reclamos = json_decode($reclamos, true);
-
-                                    //dd($array);
-                                    foreach ($reclamos['pp'] as $item3) {
-
-                                        echo "<option value='".$item3['id']."'>".$item3['nombre']."</option>";
-                                    }
-                                    ?>
+                            
                                 </select>
                         </div>
                         <div class="form-group">
