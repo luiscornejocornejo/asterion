@@ -41,8 +41,7 @@
         <ul class="list-unstyled topbar-menu float-end mb-0" style="margin-right:0px;">
           
 
-         <br>
-
+        
           
         <?php 
            $saliente = session('saliente');
@@ -50,6 +49,7 @@
 if($saliente ==1){?>
  &nbsp; 
  <li class="notification-list d-none d-sm-inline-block">
+    <br>
  <button    style="background-color: #ffc95c;"  class="btn  btn-sm mb-0 " id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
 <span style="color: #495057;" >Iniciar Conversacion</span>
 </button>
