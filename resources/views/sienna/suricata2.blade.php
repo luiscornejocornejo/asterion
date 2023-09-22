@@ -1,6 +1,18 @@
 
 
-
+<style>
+body {
+    margin: 0;            /* Reset default margin */
+}
+iframe {
+    display: block;       /* iframes are inline by default */
+    background: #000;
+    border: none;         /* Reset default border */
+    height: 90%;        /* Viewport-relative units */
+    width: 100vw;
+    margin-top:70px;
+z-index: 999;}
+    </style>
 
     @include('creative2.header')
   
