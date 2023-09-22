@@ -37,7 +37,7 @@ Route::get('/', function () {
 
      $idusuario=session()->has('idusuario');
 if($idusuario){
-    return view('/conversations');
+    return view('/home');
     
 }else{
 
