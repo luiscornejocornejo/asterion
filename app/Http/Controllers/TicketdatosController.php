@@ -62,6 +62,7 @@ class TicketdatosController extends Controller
 
     
         $url =  session('urlxennio');
+        
         return view('sienna/suricata2')->with('url', $url);
 
     }
