@@ -20,7 +20,7 @@ var_dump($_SERVER['SERVER_NAME'] );
 var_dump($_SERVER['HTTP_HOST'] );
 $domainParts = explode('.', $_SERVER['SERVER_NAME']);
 $subdomain_tmp =  array_shift($domainParts);
-
+http://ibm.clientdeck.com.ar/public/dashboard/cdef47f0-e7af-4dd1-87c9-57abcf17fdcc
 var_dump($subdomain_tmp );
  */?>
             <!-- Begin Page Content -->
@@ -28,7 +28,7 @@ var_dump($subdomain_tmp );
         
          
             <div class="container-fluid">
-                <iframe style="width: 1400px; height: 1400px !important; "  src="http://ibm.clientdeck.com.ar/public/dashboard/cdef47f0-e7af-4dd1-87c9-57abcf17fdcc"  frameborder="0" allowfullscreen></iframe>
+                <iframe style="width: 1400px; height: 1400px !important; "  src=""  frameborder="0" allowfullscreen></iframe>
             <div class="row">
                 <?php
 
