@@ -6,20 +6,20 @@
             <!-- Logo light -->
             <a href="" class="logo-light">
                 <span class="logo-lg">
-                    <img src="storage/<?php echo $empresaLogo; ?>" alt="logo" style="width: 150px !important;height: 70px;" >
+                    <img src="img/suri5.png" alt="logo" style="width: 150px !important;height: 70px;" >
                 </span>
                 <span class="logo-sm">
-                    <img src="storage/<?php echo $empresaLogo; ?>" alt="small logo" style="width: 150px !important;height: 70px;" >
+                    <img src="img/suri5.png" alt="small logo" style="width: 150px !important;height: 70px;" >
                 </span>
             </a>
 
             <!-- Logo Dark -->
             <a href="" class="logo-dark">
                 <span class="logo-lg">
-                    <img src="storage/<?php echo $empresaLogo; ?>" alt="dark logo" style="width: 150px !important;height: 70px;" >
+                    <img src="img/suri5.png" alt="dark logo" style="width: 150px !important;height: 70px;" >
                 </span>
                 <span class="logo-sm">
-                    <img src="storage/<?php echo $empresaLogo; ?>" alt="small logo" style="width: 150px !important;height: 70px;" >
+                    <img src="img/suri5.png" alt="small logo" style="width: 150px !important;height: 70px;" >
                 </span>
             </a>
         </div>
