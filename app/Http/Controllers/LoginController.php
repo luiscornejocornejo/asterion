@@ -106,7 +106,7 @@ class LoginController extends Controller
                 session(['email' => $email]);
             }
 
-            if($categoria==9){
+            if($categoria==90){
 
 
                 $subdomain_tmp = 'localhost';
