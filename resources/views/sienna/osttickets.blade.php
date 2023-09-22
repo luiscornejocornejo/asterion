@@ -120,6 +120,7 @@ timer.innerHTML = '';
 
                                     <th role="columnheader" align='center'>Usuario</th>
                                     <th role="columnheader" align='center'>Estado</th>
+                                    <th role="columnheader" align='center'>Source</th>
                                     
 
                                     <th role="columnheader" align='center'>Acciones</th>
@@ -158,6 +159,10 @@ foreach ($array['pp'] as $item) {
     if($item['nombrestatus']=="Cerrado"){
         echo '<td><span class="badge bg-danger">'.$item['nombrestatus'].'</span></td>';    
     }
+
+
+    echo "<td>".$item['source']."</td>";
+
     ?>
     <td>
     <button onclick="car(<?php echo $item['ticket_id'];?>)" id="segui" type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#modalExample2"><i class="ri-discuss-line"></i></button>
