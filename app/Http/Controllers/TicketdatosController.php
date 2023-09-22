@@ -58,6 +58,9 @@ class TicketdatosController extends Controller
 
     }
 
+
+
+    //nuevo
     public function datossuricata( $email,$AccountAPIKey,$BotAPIKey,$BotAPISecret,$url)
     {
         
@@ -161,6 +164,68 @@ class TicketdatosController extends Controller
         return view('sienna/suricata2')->with('url', $url);
 
     }
+    public function osttickets(){
+
+
+        $subdomain_tmp = 'localhost';
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+            $subdomain_tmp =  array_shift($domainParts);
+        } elseif(isset($_SERVER['SERVER_NAME'])){
+            $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+            $subdomain_tmp =  array_shift($domainParts);
+            
+        }
+        $url4="https://suricata1.com.ar/api/tickets2?token=12345&merchant=".$subdomain_tmp ;
+        $data="";
+        $method="GET";
+        $estados=$this->curlnuevo($url4, $data, $method);
+
+        dd($estados);
+        $array = json_decode($datos, true);
+
+//dd($array);
+foreach ($array['pp'] as $item) {
+
+    echo "<tr>";
+    echo "<td>".$item['id']."</td>";
+
+}
+
+    }
+
+    public function curlnuevo($url, $data, $method)
+    {
+
+        var_dump($data);
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => $method,
+            CURLOPT_POSTFIELDS => $data,
+            CURLOPT_HTTPHEADER => array(
+               "Content-Type: application/json",
+               "Accept: application/json",
+             
+           ),
+        ));
+
+        $result = curl_exec($curl);
+        $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+        return [$result, $httpCode];
+    }
+
+    
+    //hasta
+
     public function creardbpost(Request $request)
     {
 
