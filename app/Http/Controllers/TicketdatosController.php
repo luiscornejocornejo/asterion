@@ -182,15 +182,9 @@ class TicketdatosController extends Controller
         $estados=$this->curlnuevo($url4, $data, $method);
 
         dd($estados);
-        $array = json_decode($datos, true);
 
-//dd($array);
-foreach ($array['pp'] as $item) {
-
-    echo "<tr>";
-    echo "<td>".$item['id']."</td>";
-
-}
+        return view('sienna/osttickets')->with('datos', $estados); 
+  
 
     }
 
