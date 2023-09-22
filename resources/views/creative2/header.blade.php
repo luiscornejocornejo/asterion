@@ -134,5 +134,5 @@ if (isset($_SERVER['HTTP_HOST'])) {
     </style>
 </head>
 
-@include('creative.menuizq')
+@include('creative2.menuizq')
 
