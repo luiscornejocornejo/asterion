@@ -236,7 +236,7 @@ function retro(elementId, color) {
                 <div class="collapse" id="sidebarDashboards3">
                     <ul class="side-nav-second-level">
                         <li>
-                        <a target="_self" href="/conversacion2">
+                        <a target="_self" href="/conversations2">
                                     <span id="Ticketsc" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Conversacion</span>
                                 </a>
                         </li>

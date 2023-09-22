@@ -1,4 +1,4 @@
-@include('pp.header')
+@include('creative2.header')
 
 <div id="principal">
     <div class="mx-auto" style="width: 1000px;margin-top: 70px;">
@@ -81,4 +81,4 @@ $master = dashboard::reporte($value->masterreport);
     </div>
 </div>
 <br><br><br>
-@include('pp.footer')
+@include('creative2.footer')
