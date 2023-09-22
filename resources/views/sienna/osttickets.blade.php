@@ -153,7 +153,6 @@ foreach ($array['pp'] as $item) {
     echo '<td>'.$item['nombredepto'].'</td>';
     echo '<td>'.$item['topic'].'</td>';
     echo '<td>'.$item['lastupdate'].'</td>';
-    echo '<td>'.$item['lastupdate'].'</td>';
     
     echo '<td>'.$item['staffname'].'</td>';
 
