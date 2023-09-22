@@ -119,8 +119,13 @@ timer.innerHTML = '';
                                     <th role="columnheader" align='center'>Ticket</th>
                                     
                                     <th role="columnheader" align='center'>Cliente</th>
+                                    <th role="columnheader" align='center'>Departamento</th>
+                                    <th role="columnheader" align='center'>Motivo</th>
+                                    <th role="columnheader" align='center'>Ultim Actua</th>
+
+                                    <th role="columnheader" align='center'>Asignado</th>
+
                                     <th role="columnheader" align='center'>Estado</th>
-                                    <th role="columnheader" align='center'>Source</th>
                                     
 
                                     <th role="columnheader" align='center'>Acciones</th>
@@ -145,7 +150,13 @@ foreach ($array['pp'] as $item) {
     echo '<td><i class="ri-whatsapp-line"></i> '.$item['number'].'</td>';
   
     echo '<td>'.$item['nombredelusuario'].'</td>';
-  
+    echo '<td>'.$item['nombredepto'].'</td>';
+    echo '<td>'.$item['topic'].'</td>';
+    echo '<td>'.$item['lastupdate'].'</td>';
+    echo '<td>'.$item['lastupdate'].'</td>';
+    
+    echo '<td>'.$item['staffname'].'</td>';
+
 
     if($item['nombrestatus']=="Open"){
         echo '<td><span class="badge bg-info">'.$item['nombrestatus'].'</span></td>'; 
@@ -161,7 +172,6 @@ foreach ($array['pp'] as $item) {
     }
 
 
-    echo "<td>".$item['source']."</td>";
 
     ?>
     <td>
