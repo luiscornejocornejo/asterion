@@ -118,7 +118,8 @@ timer.innerHTML = '';
 
                                     <th role="columnheader" align='center'>Id</th>
 
-                                    <th role="columnheader" align='center'>Fecha</th>
+                                    <th role="columnheader" align='center'>Usuario</th>
+                                    <th role="columnheader" align='center'>Estado</th>
                                     
 
                                     <th role="columnheader" align='center'>Acciones</th>
