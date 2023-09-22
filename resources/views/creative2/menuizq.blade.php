@@ -365,6 +365,63 @@ function retro(elementId, color) {
 </div>
 
 
+<script>
+            function mensaje(saliente){
+
+                    var tel= document.getElementById("telefono");
+                    var telvalor= document.getElementById("telefono").value;
+
+                    if(telvalor==""){
+                        var men= document.getElementById("resul");
+                     men.innerHTML ='<div data-mdb-delay="3000" class="alert alert-danger" role="alert">   '+
+                        '<strong>Error - </strong> El campo Whatsapp es obligatorio.</div>';
+
+                        window.setTimeout(function() {
+                        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                            $(this).remove(); 
+                        });
+                    }, 4000);
+                    }else{
+
+
+                    
+                    var url= document.getElementById("template").value;
+                    alert(url);
+                    var tel2=tel.value;
+                    if(tel2==""){
+                        tel2="+5491133258459"
+                    }
+                    console.log(tel2);
+                    const xhr = new XMLHttpRequest();
+                    xhr.open("POST", url);
+                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                    var  valores="WhatsAppChannel;"+tel2;
+                    const body = JSON.stringify({
+                        set_variables: "bot_channel;user_phone_number",
+                        set_variables_values: valores,
+                        set_conversation: true,
+                    });
+                    xhr.onload = () => {
+                    if (xhr.readyState == 4 && xhr.status == 201) {
+                        console.log(JSON.parse(xhr.responseText));
+                    } else {
+                        console.log(`Error: ${xhr.status}`);
+                    }
+                    };
+                    xhr.send(body);
+
+                    var men= document.getElementById("resul");
+                     men.innerHTML ='<div data-mdb-delay="3000" class="alert alert-success" role="alert">   '+
+                    '<strong>Felicitaciones - </strong>   El mensaje fue enviado correctamente</div>';
+
+                    window.setTimeout(function() {
+                    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                        $(this).remove(); 
+                    });
+                }, 4000);
+                }
+            }
+        </script>
 <div class="modal " id="modalExample" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog " role="document">
                     <form id="frmAgregarBienCapitalizable" action="/" method="post"> 
