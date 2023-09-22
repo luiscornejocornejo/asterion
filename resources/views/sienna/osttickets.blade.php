@@ -116,10 +116,9 @@ timer.innerHTML = '';
                                 <thead  class="table-dark">
                                     <tr role="row">
 
-                                    <th role="columnheader" align='center'>Id</th>
-                                    <th role="columnheader" align='center'>Number</th>
+                                    <th role="columnheader" align='center'>Ticket</th>
                                     
-                                    <th role="columnheader" align='center'>Usuario</th>
+                                    <th role="columnheader" align='center'>Cliente</th>
                                     <th role="columnheader" align='center'>Estado</th>
                                     <th role="columnheader" align='center'>Source</th>
                                     
@@ -143,10 +142,9 @@ $array = json_decode($datos[0], true);
 foreach ($array['pp'] as $item) { 
 
     echo "<tr>";
-    echo "<td>".$item['ticket_id']."</td>";
-    echo "<td>".$item['number']."</td>";
+    echo '<td><i class="ri-whatsapp-line"></i> '.$item['number'].'</td>';
   
-    echo '<td><i class="uil-calendar-alt"></i> '.$item['nombredelusuario'].'</td>';
+    echo '<td>'.$item['nombredelusuario'].'</td>';
   
 
     if($item['nombrestatus']=="Open"){
