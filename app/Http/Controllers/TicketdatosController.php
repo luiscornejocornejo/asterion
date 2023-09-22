@@ -57,6 +57,14 @@ class TicketdatosController extends Controller
         return view('sienna/suricata')->with('url', $url);
 
     }
+
+    public function suricata2(Request $request){
+
+    
+        $url =  session('urlxennio');
+        return view('sienna/suricata2')->with('url', $url);
+
+    }
     public function creardbpost(Request $request)
     {
 

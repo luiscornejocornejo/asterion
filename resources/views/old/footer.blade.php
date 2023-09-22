@@ -504,48 +504,20 @@
             </div>
         </div>
 
-        <?php
-        if (isset($_SERVER['HTTP_HOST'])) {
-            $domainParts = explode('.', $_SERVER['HTTP_HOST']);
-            $subdomain_tmp =  array_shift($domainParts);
-        } elseif(isset($_SERVER['SERVER_NAME'])){
-            $domainParts = explode('.', $_SERVER['SERVER_NAME']);
-            $subdomain_tmp =  array_shift($domainParts);
-            
-        }?>
+        <!-- Vendor js -->
+        <script src="assets3/js/vendor.min.js"></script>
 
-    
+        <!-- App js -->
+        <script src="assets3/js/app.min.js"></script>
+        <script src="assets3/js/pages/demo.inbox.js"></script>
 
-   <!-- Vendor js -->
-   <script src="assets3/js/vendor.min.js"></script>
 
-<!-- Code Highlight js -->
-<script src="assets3/vendor/highlightjs/highlight.pack.min.js"></script>
-<script src="assets3/js/hyper-syntax.js"></script>
+<!-- SimpleMDE js -->
+<script src="assets3/vendor/simplemde/simplemde.min.js"></script>
 
-<!-- Datatables js -->
-<script src="assets3/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="assets3/vendor/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-<script src="assets3/vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="assets3/vendor/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
-<script src="assets3/vendor/datatables.net-fixedcolumns-bs5/js/fixedColumns.bootstrap5.min.js"></script>
-<script src="assets3/vendor/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-<script src="assets3/vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="assets3/vendor/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
-<script src="assets3/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="assets3/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
-<script src="assets3/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="assets3/vendor/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-<script src="assets3/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
-
-<!-- Datatable Demo Aapp js -->
-<script src="assets3/js/pages/demo.datatable-init.js"></script>
-
+<!-- Page init js -->
 
 <!-- App js -->
-<script src="assets3/js/app.min.js"></script> 
-
-<script src="assets3/js/pages/demo.dashboard-analytics.js"></script>
     </body>
 
 </html>
