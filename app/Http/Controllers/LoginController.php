@@ -181,7 +181,7 @@ class LoginController extends Controller
                     session(['urlxennio' => $url]);
 
 
-                    return Redirect::to('/conversations');
+                    return Redirect::to('/conversations2');
 
                    
 
