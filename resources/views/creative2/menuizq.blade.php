@@ -217,28 +217,12 @@ function retro(elementId, color) {
                 <div class="collapse" id="sidebarDashboards">
                     <ul class="side-nav-second-level">
                         <li>
-                        <a target="_self" href="/Estado">
+                        <a target="_self" href="/estado">
                                     <span id="Estado" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Estado</span>
                                 </a>
                         </li>
-                        <?php if($categoria==6)
-                     {?>
-                        <li>
-                        <a target="_self" href="/masivoscobranzas">
-                                    <span id="masivoscobranzas" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Masivos Cobranzas</span>
-                                </a>
-                        </li>
-                        <?php }?>
-                        <li>
-                        <a target="_self" href="/siennareport?id=125">
-                                    <span id="error" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Ordenes con error</span>
-                                </a>
-                        </li>
-                        <li>
-                        <a target="_self" href="/siennareport?id=126">
-                                    <span id="historail" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Historial Ordenes</span>
-                                </a>
-                        </li>
+                    
+                     
                        
                     </ul>
                 </div>
