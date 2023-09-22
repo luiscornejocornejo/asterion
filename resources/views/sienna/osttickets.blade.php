@@ -136,7 +136,7 @@ timer.innerHTML = '';
 
 //$array = json_decode($datos, true);
 
-//dd($array);
+dd($datos);
 foreach ($datos->pp as $item) {
 
     echo "<tr>";
