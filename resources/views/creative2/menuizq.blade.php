@@ -64,7 +64,10 @@
                     <i class="ri-fullscreen-line noti-icon"></i>
                 </a>
             </li>
-           <?php if($saliente ==1){?>
+           <?php 
+           $saliente = session('saliente');
+
+if($saliente ==1){?>
  &nbsp; 
 
  <button    style="background-color: #ffc95c;"  class="btn  btn-sm mb-0 " id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
