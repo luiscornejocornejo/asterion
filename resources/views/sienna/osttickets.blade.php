@@ -99,7 +99,7 @@ timer.innerHTML = '';
           
           
         
-           <button id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#modalExample">Realizar Reclamo</button>
+           <button id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-info disabled" data-bs-toggle="modal" data-bs-target="#modalExample">Realizar Reclamo</button>
 
                 <button onclick="exportTableToExcel('basic-datatable')" style="" class="btn  btn-sm btn-secondary" id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
                 Exportar
@@ -165,8 +165,8 @@ foreach ($array['pp'] as $item) {
 
     ?>
     <td>
-    <button onclick="car(<?php echo $item['ticket_id'];?>)" id="segui" type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#modalExample2"><i class="ri-discuss-line"></i></button>
-    <button onclick="car2(<?php echo $item['ticket_id'];?>)" id="segui2" type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#modalExample4"><i class="ri-delete-bin-7-fill"></i></button>
+    <button onclick="car(<?php echo $item['ticket_id'];?>)" id="segui" type="button" class="btn btn-sm btn-info disabled" data-bs-toggle="modal" data-bs-target="#modalExample2"><i class="ri-discuss-line"></i></button>
+    <button onclick="car2(<?php echo $item['ticket_id'];?>)" id="segui2" type="button" class="btn btn-sm btn-secondary disabled" data-bs-toggle="modal" data-bs-target="#modalExample4"><i class="ri-delete-bin-7-fill"></i></button>
    
 
     
