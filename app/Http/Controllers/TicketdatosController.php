@@ -181,7 +181,7 @@ class TicketdatosController extends Controller
         $method="GET";
         $estados=$this->curlnuevo($url4, $data, $method);
 
-        dd($estados);
+      
 
         return view('sienna/osttickets')->with('datos', $estados); 
   
