@@ -137,7 +137,7 @@ timer.innerHTML = '';
 $array = json_decode($datos[0], true);
 
 //dd($datos[0]->pp);
-foreach ($datos['pp'] as $item) {
+foreach ($array['pp'] as $item) {
 
     echo "<tr>";
     echo "<td>".$item['ticket_id']."</td>";
