@@ -117,7 +117,8 @@ timer.innerHTML = '';
                                     <tr role="row">
 
                                     <th role="columnheader" align='center'>Id</th>
-
+                                    <th role="columnheader" align='center'>Number</th>
+                                    
                                     <th role="columnheader" align='center'>Usuario</th>
                                     <th role="columnheader" align='center'>Estado</th>
                                     <th role="columnheader" align='center'>Source</th>
@@ -143,6 +144,7 @@ foreach ($array['pp'] as $item) {
 
     echo "<tr>";
     echo "<td>".$item['ticket_id']."</td>";
+    echo "<td>".$item['number']."</td>";
   
     echo '<td><i class="uil-calendar-alt"></i> '.$item['nombredelusuario'].'</td>';
   
