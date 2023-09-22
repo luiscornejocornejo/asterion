@@ -137,6 +137,8 @@ class TicketdatosController extends Controller
             session(['saliente' => $saliente]);
         }
 
+        
+        $email_suricata =  session('email');
 
         $hh= $this->datossuricata($email_suricata,$AccountAPIKey,$BotAPIKey,$BotAPISecret,$url);
         $res=json_decode($hh, true);
