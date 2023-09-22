@@ -134,10 +134,10 @@ timer.innerHTML = '';
                                     
                                 <?php 
 
-$array = json_decode($datos, true);
+//$array = json_decode($datos, true);
 
 //dd($array);
-foreach ($array['pp'] as $item) {
+foreach ($datos['pp'] as $item) {
 
     echo "<tr>";
     echo "<td>".$item['ticket_id']."</td>";
