@@ -430,14 +430,44 @@ function retro(elementId, color) {
 <div id="warning-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
-            <div class="modal-body p-4">
-                <div class="text-center">
-                    <i class="ri-alert-line h1 text-warning"></i>
-                    <h4 class="mt-2">Incorrect Information</h4>
-                    <p class="mt-3">Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-                    <button type="button" class="btn btn-warning my-2" data-bs-dismiss="modal">Continue</button>
-                </div>
+            <div class="modal-header " style="background-color:#3c4655">
+                <h5 class="modal-title text-white" id="exampleModalLabel">Iniciar Conversacion</h5>
+                               
             </div>
+            <form id="frmAgregarBienCapitalizable" action="/" method="post"> 
+                @csrf
+
+                        <div class="modal-body p-4">
+
+                                        <label  style="  margin: 20px;"  class="form-label"   for="formrow-firstname-input">WhatsApp</label>
+                                        <br>
+                                        <input size="52" style="  margin-right:20;margin-left:20;"   required name="telefono" type="cel" class=" input-lg" id="telefono" placeholder="+5491133258450">
+
+                                        <select style="  margin: 20px;"  id="template" >
+                                        <?php 
+
+                                                $query22="SELECT id, nombre, url, descripcion FROM template";
+
+                                                $resultados22 = DB::select($query22);
+                                                foreach($resultados22 as $val22){
+                                                    $url=$val22->url;
+                                                    $nombre=$val22->nombre;
+                                                    $descripcion=$val22->descripcion;
+                                                    echo "<option value='".$url."'>".$nombre."</option>";
+                                                }
+                                                ?>
+                                        </select>
+                                        <div  style="  margin: 20px;"  class="alert alert-warning  " role="alert">
+                                                        <i class="ri-alert-line me-1 align-middle font-16"></i> Atención - Este proceso puede demorar unos minutos y el usuario debe responder el mensaje enviado.
+                                        </div>
+                            <div class="text-center">
+                                <i class="ri-alert-line h1 text-warning"></i>
+                                <h4 class="mt-2">Incorrect Information</h4>
+                                <p class="mt-3">Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+                                <button type="button" class="btn btn-warning my-2" data-bs-dismiss="modal">Continue</button>
+                            </div>
+                        </div>
+            </form>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
