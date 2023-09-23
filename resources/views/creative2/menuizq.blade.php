@@ -441,7 +441,7 @@ function retro(elementId, color) {
 
                                         <label  style="  margin: 20px;"  class="form-label"   for="formrow-firstname-input">WhatsApp</label>
                                         <br>
-                                        <input size="52" style="  margin-right:20;margin-left:20;"   required name="telefono" type="cel" class=" input-lg" id="telefono" placeholder="+5491133258450">
+                                        <input size="22" style="margin-right:20;margin-left:20;"   required name="telefono" type="cel" class=" input-lg" id="telefono" placeholder="+5491133258450">
 
                                         <select style="  margin: 20px;"  id="template" >
                                         <?php 
@@ -460,12 +460,12 @@ function retro(elementId, color) {
                                         <div  style="  margin: 20px;"  class="alert alert-warning  " role="alert">
                                                         <i class="ri-alert-line me-1 align-middle font-16"></i> Atención - Este proceso puede demorar unos minutos y el usuario debe responder el mensaje enviado.
                                         </div>
-                            <div class="text-center">
-                                <i class="ri-alert-line h1 text-warning"></i>
-                                <h4 class="mt-2">Incorrect Information</h4>
-                                <p class="mt-3">Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-                                <button type="button" class="btn btn-warning my-2" data-bs-dismiss="modal">Continue</button>
-                            </div>
+                            
+                        </div>
+                        <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary  mb-0 " data-dismiss="modal">Close</button>   
+
+                                <button type="button" style="background-color: #ffc95c;"  class="btn  mb-0 " onclick="mensaje('<?php echo $saliente = session('saliente');?>')"  class="  "><span style="color: #495057;">Iniciar</span></button>
                         </div>
             </form>
         </div><!-- /.modal-content -->
