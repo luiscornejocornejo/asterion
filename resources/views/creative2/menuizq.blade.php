@@ -382,6 +382,7 @@ function retro(elementId, color) {
                 @csrf
 
                         <div class="modal-body p-4">
+                        <div id="resul"  ></div>
 
                                         <label  style="  margin: 20px;"  class="form-label"   for="formrow-firstname-input">WhatsApp</label>
                                         <br>
@@ -437,21 +438,23 @@ function retro(elementId, color) {
 
 
                     
-                    var url= document.getElementById("template").value;
+                        var url= document.getElementById("template").value;
+                        var url= "https://publicapi.xenioo.com/broadcasts/uD7SL7UMkUeF878WQ5Jat5vE0KqKjY1sUjVi84xKAI781x0x0yy1EVFpHtS0H9dB/rn5HSrzi9xrvW8ZtVw8yVdiJdqoLdsc7kjybZSRbJpax6TEWL0RyWn8E5meb2e4H/direct";///document.getElementById("template").value;
                     alert(url);
                     var tel2=tel.value;
                     if(tel2==""){
-                        tel2="+5491133258459"
+                        tel2="5491133258450"
                     }
                     console.log(tel2);
                     const xhr = new XMLHttpRequest();
-                    xhr.open("POST", url);
+                    urlprincipal="http://146.190.115.238/api/broadcast";
+                    xhr.open("POST", urlprincipal);
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     var  valores="WhatsAppChannel;"+tel2;
                     const body = JSON.stringify({
-                        set_variables: "bot_channel;user_phone_number",
-                        set_variables_values: valores,
-                        set_conversation: true,
+                        url: url,
+                        tel2: tel2,
+                        token: "EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM",
                     });
                     xhr.onload = () => {
                     if (xhr.readyState == 4 && xhr.status == 201) {
