@@ -50,10 +50,8 @@ if($saliente ==1){?>
  &nbsp; 
  <li class="notification-list d-none d-sm-inline-block">
     <br>
- <button    style="background-color: #ffc95c;"  class="btn  btn-sm mb-0 " id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
-<span style="color: #495057;" >Iniciar Conversacion</span>
-</button>
-<button style="background-color: #ffc95c;" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#warning-alert-modal">Iniciar Conversacion2</button>
+
+<button style="background-color: #ffc95c;" type="button" class="btn btn-sm mb-0 " data-bs-toggle="modal" data-bs-target="#warning-alert-modal"><span style="color: #495057;" >Iniciar Conversacion</span></button>
 
             </li>
 
@@ -439,7 +437,7 @@ function retro(elementId, color) {
 
                     
                         var url= document.getElementById("template").value;
-                        var url= "https://publicapi.xenioo.com/broadcasts/uD7SL7UMkUeF878WQ5Jat5vE0KqKjY1sUjVi84xKAI781x0x0yy1EVFpHtS0H9dB/rn5HSrzi9xrvW8ZtVw8yVdiJdqoLdsc7kjybZSRbJpax6TEWL0RyWn8E5meb2e4H/direct";///document.getElementById("template").value;
+                      //  var url= "https://publicapi.xenioo.com/broadcasts/uD7SL7UMkUeF878WQ5Jat5vE0KqKjY1sUjVi84xKAI781x0x0yy1EVFpHtS0H9dB/rn5HSrzi9xrvW8ZtVw8yVdiJdqoLdsc7kjybZSRbJpax6TEWL0RyWn8E5meb2e4H/direct";///document.getElementById("template").value;
                     alert(url);
                     var tel2=tel.value;
                     if(tel2==""){
