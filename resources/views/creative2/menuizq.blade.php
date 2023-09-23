@@ -53,7 +53,23 @@ if($saliente ==1){?>
  <button    style="background-color: #ffc95c;"  class="btn  btn-sm mb-0 " id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
 <span style="color: #495057;" >Iniciar Conversacion</span>
 </button>
+<button style="background-color: #ffc95c;" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#warning-alert-modal">Iniciar Conversacion2</button>
+
             </li>
+            <div id="warning-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body p-4">
+                <div class="text-center">
+                    <i class="ri-alert-line h1 text-warning"></i>
+                    <h4 class="mt-2">Incorrect Information</h4>
+                    <p class="mt-3">Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+                    <button type="button" class="btn btn-warning my-2" data-bs-dismiss="modal">Continue</button>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
  
 <?php  }?>
           
