@@ -447,15 +447,10 @@ function retro(elementId, color) {
                     }
                     console.log(tel2);
                     const xhr = new XMLHttpRequest();
-                    urlprincipal="https://suricata4.com.ar/api/broadcast";
+                    urlprincipal="https://suricata4.com.ar/api/broadcast?tel2="+tel2+"&token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM&url="+url;
                     xhr.open("GET", urlprincipal);
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                    var  valores="WhatsAppChannel;"+tel2;
-                    const body = JSON.stringify({
-                        url: url,
-                        tel2: tel2,
-                        token: "EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM",
-                    });
+                   
                     xhr.onload = () => {
                     if (xhr.readyState == 4 && xhr.status == 200) {
                         console.log(JSON.parse(xhr.responseText));
@@ -463,7 +458,7 @@ function retro(elementId, color) {
                         console.log(`Error: ${xhr.status}`);
                     }
                     };
-                    xhr.send(body);
+                    xhr.send();
 
                     var men= document.getElementById("resul");
                      men.innerHTML ='<div data-mdb-delay="3000" class="alert alert-success" role="alert">   '+
