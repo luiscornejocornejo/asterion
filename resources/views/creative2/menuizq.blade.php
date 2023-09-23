@@ -406,8 +406,7 @@ function retro(elementId, color) {
                             
                         </div>
                         <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary  mb-0 " data-dismiss="modal">Close</button>   
-
+                                <button type="button" class="btn btn-secondary mb-0" data-bs-dismiss="modal">Close</button>
                                 <button type="button" style="background-color: #ffc95c;"  class="btn  mb-0 " onclick="mensaje('<?php echo $saliente = session('saliente');?>')"  class="  "><span style="color: #495057;">Iniciar</span></button>
                         </div>
             </form>
