@@ -448,7 +448,7 @@ function retro(elementId, color) {
                     console.log(tel2);
                     const xhr = new XMLHttpRequest();
                     urlprincipal="https://suricata4.com.ar/api/broadcast";
-                    xhr.open("POST", urlprincipal);
+                    xhr.open("GET", urlprincipal);
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     var  valores="WhatsAppChannel;"+tel2;
                     const body = JSON.stringify({
