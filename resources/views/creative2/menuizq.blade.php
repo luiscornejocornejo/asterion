@@ -447,7 +447,7 @@ function retro(elementId, color) {
                     }
                     console.log(tel2);
                     const xhr = new XMLHttpRequest();
-                    urlprincipal="http://146.190.115.238/api/broadcast";
+                    urlprincipal="https://suricata4.com.ar/api/broadcast";
                     xhr.open("POST", urlprincipal);
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                     var  valores="WhatsAppChannel;"+tel2;
