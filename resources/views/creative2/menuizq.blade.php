@@ -457,7 +457,7 @@ function retro(elementId, color) {
                         token: "EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM",
                     });
                     xhr.onload = () => {
-                    if (xhr.readyState == 4 && xhr.status == 201) {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
                         console.log(JSON.parse(xhr.responseText));
                     } else {
                         console.log(`Error: ${xhr.status}`);
