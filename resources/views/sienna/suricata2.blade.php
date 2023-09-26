@@ -18,7 +18,7 @@ z-index: 999;}
     @include('creative2.header')
   
     <div id="principal">
-    <div class="container-fluid" style="margin-top: 40px;">
+    <div class="container-fluid" style="margin-top: 60px;">
 
         @if ($message = Session::get('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
