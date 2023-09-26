@@ -9,9 +9,8 @@ iframe {
     background: #000;
     border: none;         /* Reset default border */
     height: 90%;        /* Viewport-relative units */
-    width: 85vw;
-    margin-top:20px;
-    margin-right:70px;
+    width: 80vw;
+  
 
 z-index: 999;}
     </style>
