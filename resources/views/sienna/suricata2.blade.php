@@ -28,7 +28,7 @@ z-index: 999;}
         @endif
 
         <!-- Page Wrapper -->
-        <div id="wrapper">
+        <div id="wrapper">    
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 <!-- Page Heading -->
