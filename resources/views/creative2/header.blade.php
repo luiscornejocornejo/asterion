@@ -130,7 +130,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
         #principal {
             margin: auto !important;
             width: 100% !important;
-            padding: 12px !important;
+            /*padding: 12px !important;*/
             margin-top: 50px !important;
 
         }

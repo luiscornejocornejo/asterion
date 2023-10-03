@@ -9,7 +9,8 @@ iframe {
     background: #000;
     border: none;         /* Reset default border */
     height: 90%;        /* Viewport-relative units */
-    width: 80vw;
+   /* width: 80vw;*/
+    width: 118.5%;
   
 
 z-index: 999;}
@@ -18,7 +19,7 @@ z-index: 999;}
     @include('creative2.header')
   
     <div id="principal">
-    <div class="container-fluid" style="margin-top: 60px;">
+    <div class="container-fluid" style="margin-top: 60px;max-width:88% !important;">
 
         @if ($message = Session::get('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
