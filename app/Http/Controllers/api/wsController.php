@@ -271,7 +271,48 @@ class wsController extends Controller
         $return2 = json_encode($return0);
         return $return2;
     }
+    public function ws2(Request $request)
+    {
 
+        $ws = $request->ws;
+        $token = $request->token;
+        $return0 = array();
+        $endpoint = endpoint::where('enpointnombre', '=',  $ws)->get();
+        foreach ($endpoint as $value) {
+              $idreport = $value->masterreport;
+            $nombre = $value->nombre;
+            //$buscar = $value->ws;
+            $buscandotoken = enpointnombre::where('id', '=',  $ws)->get();
+            foreach ($buscandotoken as $valor) {
+                $tokentabla = $valor->token;
+                if ($tokentabla <> $token) {
+                    $error = array("error token" => "error de credenciales");
+                    return json_encode($error);
+                }
+            }
+            $master = masterreport::where('id', $idreport)->get();
+            foreach ($master as $value2) {
+                $query = $value2->query;
+              $parametros=$value2->parametros;
+              $query=$this->cambiarquery($parametros, $request, $query);
+                $dbexterna = $value2->base;
+            }
+            if ($dbexterna == 1) {
+                $datos = DB::select($query);
+            } else {
+                $prueba = $this->conectar($dbexterna);
+                //si es distinta a 1 aa otra base
+                $datos = DB::connection('mysql2')->select($query);
+            }
+            $return = array($nombre => $datos);
+            array_push($return0, $return);
+            unset($return);
+        }
+        $return2 = json_encode($datos);
+
+        return response()->json(['pp' => $datos]);
+        return $datos;
+    }
     public function conectar($id)
     {
         $query = "SELECT * FROM `base`    where id='" . $id . "'";
