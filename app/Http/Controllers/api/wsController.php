@@ -326,11 +326,12 @@ class wsController extends Controller
     public function creartickessienna(Request $request){
         $cel=$request->cel;
         $siennadepto=$request->siennadepto;
+        $nya=$request->nya;
         $siennaestado=1;
         $siennasource=$request->siennasource;
       
-        $query = "INSERT INTO template.siennatickets (siennadepto, cliente, siennatopic, siennaestado, siennasource, created_at, updated_at, t_cerrado, cel)
-         VALUES(".$siennadepto.", '', 0, 1, ".$siennasource.", now(), now(), now(), '".$cel."')";
+        $query = "INSERT INTO template.siennatickets (siennadepto, cliente, siennatopic, siennaestado, siennasource, created_at, updated_at, t_cerrado, cel,nya)
+         VALUES(".$siennadepto.", '', 0, 1, ".$siennasource.", now(), now(), now(), '".$cel."', '".$nya."')";
         $resultados = DB::select($query);
        // $return2 = json_encode($resultados);
         //return response()->json(['cliente' => $return2]);
