@@ -313,6 +313,18 @@ class wsController extends Controller
         return response()->json(['pp' => $datos]);
         return $datos;
     }
+
+
+    public function tickessienna(Request $request){
+
+
+        $cel=$request->cel;
+        $query = "select * from siennatickets where cel='" . $cel . "'";
+        $resultados = DB::select($query);
+        $return2 = json_encode($datos);
+        return response()->json(['cliente' => $return2]);
+
+    }
     public function conectar($id)
     {
         $query = "SELECT * FROM `base`    where id='" . $id . "'";
