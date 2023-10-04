@@ -36,6 +36,7 @@ Route::get('/crearticketos', [crearticketController::class, 'crearticketenos']);
 
 
 Route::get('/ws', [wsController::class, 'ws']);
+Route::get('/ws2', [wsController::class, 'ws2']);
 
 
 
