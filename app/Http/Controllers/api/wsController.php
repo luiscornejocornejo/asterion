@@ -321,7 +321,7 @@ class wsController extends Controller
         $cel=$request->cel;
         $query = "select * from siennatickets where cel='" . $cel . "'";
         $resultados = DB::select($query);
-        $return2 = json_encode($datos);
+        $return2 = json_encode($resultados);
         return response()->json(['cliente' => $return2]);
 
     }
