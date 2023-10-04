@@ -316,8 +316,6 @@ class wsController extends Controller
 
 
     public function tickessienna(Request $request){
-
-
         $cel=$request->cel;
         $query = "select * from siennatickets where cel='" . $cel . "'";
         $resultados = DB::select($query);
@@ -325,6 +323,22 @@ class wsController extends Controller
         return response()->json(['cliente' => $return2]);
 
     }
+    public function creartickessienna(Request $request){
+        $cel=$request->cel;
+        $siennadepto=$request->siennadepto;
+        $siennaestado=1;
+        $siennasource=$request->siennasource;
+      
+        $query = "INSERT INTO template.siennatickets (siennadepto, cliente, siennatopic, siennaestado, siennasource, created_at, updated_at, t_cerrado, cel)
+         VALUES(".$siennadepto.", '', 0, 1, ".$siennasource.", now(), now(), now(), '".$cel."');
+        cel='" . $cel . "'";
+        $resultados = DB::select($query);
+       // $return2 = json_encode($resultados);
+        //return response()->json(['cliente' => $return2]);
+
+    }
+
+    
     public function conectar($id)
     {
         $query = "SELECT * FROM `base`    where id='" . $id . "'";
