@@ -150,8 +150,8 @@ foreach ($datos as $item) {
   
     echo '<td></td>';
     echo '<td>'.$item->depto.'</td>';
-    echo '<td>'.$item->nya.'</td>';
-    echo '<td>'.$item->nya.'</td>';
+    echo '<td>'.$item->siennatopic.'</td>';
+    echo '<td>'.$item->cel.'</td>';
     
     echo '<td>'.$item->nya.'</td>';
 
