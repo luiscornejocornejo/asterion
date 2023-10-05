@@ -207,9 +207,9 @@ class TicketdatosController extends Controller
       
         $query="select *,
         b.nombre as depto,a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel from siennatickets a
-        join siennadepto b on b.id=a.siennadepto 
-        join siennaestado c on c.id=a.siennaestado
-        join siennatopic d on d.id=a.siennatopic
+        join left siennadepto b on b.id=a.siennadepto 
+        join left siennaestado c on c.id=a.siennaestado
+        join left siennatopic d on d.id=a.siennatopic
         ";
 
         $resultados = DB::select($query);
