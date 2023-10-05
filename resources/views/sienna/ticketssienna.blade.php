@@ -146,7 +146,7 @@ timer.innerHTML = '';
 foreach ($datos as $item) { 
 
     echo "<tr>";
-    echo '<td><i class="ri-whatsapp-line"></i> '.$item->id.'</td>';
+    echo '<td><i class="ri-whatsapp-line"></i> '.$item->ticketid.'</td>';
   
     echo '<td></td>';
     echo '<td>'.$item->depto.'</td>';
@@ -157,24 +157,24 @@ foreach ($datos as $item) {
 
 
     if($item->siennaestado==1){
-        echo '<td><span class="badge bg-info">'.$item->siennaestado.'</span></td>'; 
+        echo '<td><span class="badge bg-info">'.$item->estadoname.'</span></td>'; 
        }
     if($item->siennaestado==2){
-        echo '<td><span class="badge bg-warning">'.$item->siennaestado.'</span></td>';
+        echo '<td><span class="badge bg-warning">'.$item->estadoname.'</span></td>';
     } 
     if($item->siennaestado==3){
-        echo '<td><span class="badge bg-success">'.$item->siennaestado.'</span></td>';   
+        echo '<td><span class="badge bg-success">'.$item->estadoname.'</span></td>';   
      } 
     if($item->siennaestado==4){
-        echo '<td><span class="badge bg-danger">'.$item->siennaestado.'</span></td>';    
+        echo '<td><span class="badge bg-danger">'.$item->estadoname.'</span></td>';    
     }
 
 
 
     ?>
     <td>
-    <button onclick="car(<?php echo $item->id;?>)" id="segui" type="button" class="btn btn-sm btn-info disabled" data-bs-toggle="modal" data-bs-target="#modalExample2"><i class="ri-discuss-line"></i></button>
-    <button onclick="car2(<?php echo $item->id;?>)" id="segui2" type="button" class="btn btn-sm btn-secondary disabled" data-bs-toggle="modal" data-bs-target="#modalExample4"><i class="ri-delete-bin-7-fill"></i></button>
+    <button onclick="car(<?php echo $item->ticketid;?>)" id="segui" type="button" class="btn btn-sm btn-info disabled" data-bs-toggle="modal" data-bs-target="#modalExample2"><i class="ri-discuss-line"></i></button>
+    <button onclick="car2(<?php echo $item->ticketid;?>)" id="segui2" type="button" class="btn btn-sm btn-secondary disabled" data-bs-toggle="modal" data-bs-target="#modalExample4"><i class="ri-delete-bin-7-fill"></i></button>
    
 
     
