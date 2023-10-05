@@ -190,6 +190,30 @@ class TicketdatosController extends Controller
 
     }
 
+    public function ticketssienna(){
+
+
+        $subdomain_tmp = 'localhost';
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+            $subdomain_tmp =  array_shift($domainParts);
+        } elseif(isset($_SERVER['SERVER_NAME'])){
+            $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+            $subdomain_tmp =  array_shift($domainParts);
+            
+        }
+        $emaillogeo =  session('email');
+
+      
+        $query="select * from siennatickets where siennaestado=1";
+
+        $resultados = DB::select($query);
+
+        return view('sienna/ticketssienna')->with('datos', $resultados); 
+  
+
+    }
+
     public function curlnuevo($url, $data, $method)
     {
 

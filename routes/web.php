@@ -186,6 +186,7 @@ Route::post('/creardb','App\Http\Controllers\TicketdatosController@creardbpost')
 Route::get('/conversations  ','App\Http\Controllers\TicketdatosController@suricata');
 Route::get('/conversations2  ','App\Http\Controllers\TicketdatosController@suricata2');
 Route::get('/tickets  ','App\Http\Controllers\TicketdatosController@osttickets');
+Route::get('/ticketssienna  ','App\Http\Controllers\TicketdatosController@ticketssienna');
 Route::get('/salientes  ','App\Http\Controllers\SalientesController@salientes');
 Route::post('/salientes  ','App\Http\Controllers\SalientesController@salientespost');
 
