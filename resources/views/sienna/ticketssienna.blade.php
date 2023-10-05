@@ -151,7 +151,7 @@ foreach ($datos as $item) {
     echo '<td>'.$item->nya.'</td>';
     echo '<td>'.$item->nya.'</td>';
     echo '<td>'.$item->nya.'</td>';
-    echo '<td>'.$item->nya'</td>';
+    echo '<td>'.$item->nya.'</td>';
     
     echo '<td>'.$item->nya.'</td>';
 
