@@ -116,14 +116,14 @@ timer.innerHTML = '';
                                 <thead  class="table-dark">
                                     <tr role="row">
 
-                                    <th role="columnheader" align='center'>Ticket</th>
+                                    <th role="columnheader" align='center'>#Ticket</th>
                                     
-                                    <th role="columnheader" align='center'>Cliente</th>
+                                    <th role="columnheader" align='center'>#Cliente</th>
                                     <th role="columnheader" align='center'>Departamento</th>
-                                    <th role="columnheader" align='center'>Motivo</th>
-                                    <th role="columnheader" align='center'>Ultim Actua</th>
+                                    <th role="columnheader" align='center'>Topic</th>
+                                    <th role="columnheader" align='center'>Cel</th>
 
-                                    <th role="columnheader" align='center'>Asignado</th>
+                                    <th role="columnheader" align='center'>Nombre</th>
 
                                     <th role="columnheader" align='center'>Estado</th>
                                     
@@ -150,7 +150,7 @@ foreach ($datos as $item) {
   
     echo '<td></td>';
     echo '<td>'.$item->depto.'</td>';
-    echo '<td>'.$item->siennatopic.'</td>';
+    echo '<td>'.$item->topicname.'</td>';
     echo '<td>'.$item->cel.'</td>';
     
     echo '<td>'.$item->nya.'</td>';
