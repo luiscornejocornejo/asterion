@@ -205,7 +205,8 @@ class TicketdatosController extends Controller
         $emaillogeo =  session('email');
 
       
-        $query="select * from siennatickets where siennaestado=1";
+        $query="select *,b.nombre as depto from siennatickets a
+        join siennadepto b onb.id=a.siennadepto where a.siennaestado=1";
 
         $resultados = DB::select($query);
 

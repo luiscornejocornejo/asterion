@@ -148,8 +148,8 @@ foreach ($datos as $item) {
     echo "<tr>";
     echo '<td><i class="ri-whatsapp-line"></i> '.$item->id.'</td>';
   
-    echo '<td>'.$item->nya.'</td>';
-    echo '<td>'.$item->nya.'</td>';
+    echo '<td></td>';
+    echo '<td>'.$item->depto.'</td>';
     echo '<td>'.$item->nya.'</td>';
     echo '<td>'.$item->nya.'</td>';
     
