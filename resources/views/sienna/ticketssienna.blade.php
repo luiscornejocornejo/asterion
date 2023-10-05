@@ -151,7 +151,7 @@ foreach ($datos as $item) {
     echo '<td></td>';
     echo '<td>'.$item->depto.'</td>';
     echo '<td>'.$item->topicname.'</td>';
-    echo '<td>'.$item->cel.'</td>';
+    echo '<td>'.$item->numerocel.'</td>';
     
     echo '<td>'.$item->nya.'</td>';
 
