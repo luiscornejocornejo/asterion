@@ -283,6 +283,31 @@ class TicketdatosController extends Controller
         ->with('success', $res);
     }
 
+    public function siennacrearseguimiento(Request $request){
+
+        
+        $descripcion=$request->descripcion;
+        $ticket=$request->ticket;
+
+
+        if (isset($request->logo)) {
+                $logo = $request->file('logo')->store('public');
+
+            }else{
+                $logo ="";
+            }
+         
+            $creador= session('nombreusuario');
+
+            $queryinsert="INSERT INTO siennaseguimientos (ticket, logo, descripcion, autor, create_at) VALUES(".$ticket.", '".$logo."', '".$descripcion."', '".$creador."', now());
+            ";
+            $resultados = DB::select($queryinsert);
+
+             $texto="seguimiento creado exitosamente";
+              return redirect()->back()->with('success', $texto);
+
+    }
+
     ////////fin sienna tickets
     public function curlnuevo($url, $data, $method)
     {
