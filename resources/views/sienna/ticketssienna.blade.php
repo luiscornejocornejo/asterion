@@ -237,7 +237,7 @@ foreach ($datos as $item) {
             <div class="modal-body">
                       
            
-            <form action="/siennaestado" method="get" enctype="multipart/form-data">
+            <form action="/siennaestado" method="post" enctype="multipart/form-data">
 
                         @csrf
                         <input type="hidden" name="idticketestado" id="idticketestado" value="">
