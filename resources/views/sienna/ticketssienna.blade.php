@@ -235,7 +235,7 @@ foreach ($datos as $item) {
             <form action="/siennaestado" method="get" enctype="multipart/form-data">
 
                         @csrf
-                        <input type="hidden" name="idticketestado" value="">
+                        <input type="hidden" name="idticketestado" id="idticketestado" value="">
 
                             <?php foreach ($siennaestado as $value2) {?>
                             <div >
