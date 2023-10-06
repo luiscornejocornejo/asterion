@@ -99,7 +99,6 @@ timer.innerHTML = '';
           
           
         
-           <button id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-info disabled" data-bs-toggle="modal" data-bs-target="#modalExample">Realizar Reclamo</button>
 
                 <button onclick="exportTableToExcel('basic-datatable')" style="" class="btn  btn-sm btn-secondary" id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
                 Exportar
@@ -163,7 +162,8 @@ foreach ($datos as $item) {
 
 
     if($item->siennaestado==1){
-        echo '<td><span class="badge bg-info">'.$item->estadoname.'</span></td>'; 
+        echo '<td><span class="badge bg-info">    <button id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-info " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
+        </span></td>'; 
        }
     if($item->siennaestado==2){
         echo '<td><span class="badge bg-warning">'.$item->estadoname.'</span></td>';
