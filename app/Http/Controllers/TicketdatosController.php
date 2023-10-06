@@ -235,7 +235,7 @@ class TicketdatosController extends Controller
         $resultados = DB::select($queryupdate);
         return redirect()
         ->back()
-        ->with('success', 'Se Modifico el estado Correctamente')
+        ->with('success', 'Se Modifico el estado Correctamente');
     }
 
 
