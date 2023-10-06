@@ -242,9 +242,10 @@ class TicketdatosController extends Controller
         
         $idticketcliente=$request->idticketcliente;
         $cliente=$request->cliente;
-        $queryupdate="update siennatickets set cliente='".$cliente."' where id='".$idticketcliente."'";
-        $resultados = DB::select($queryupdate);
+       
 
+
+        $ban=0;
         $queryselect="select * from siennatickets  where id='".$idticketcliente."' ";
         $resultadosselect  = DB::select($queryselect);
 
@@ -262,13 +263,24 @@ class TicketdatosController extends Controller
         $resultadosinsert = DB::select($queryinsert);
         } catch (\Illuminate\Database\QueryException$ex) {
             echo $ex;
+            $ban=1;
         }
-       
 
+            if( $ban==0){
+                $queryupdate="update siennatickets set cliente='".$cliente."' where id='".$idticketcliente."'";
+                $resultados = DB::select($queryupdate);
+                $res="Se Modifico el cliente Correctamente";
+                
+            }else{
+
+                $res="No Se Modifico el cliente Correctamente";
+
+            }
         
+
         return redirect()
         ->back()
-        ->with('success', 'Se Modifico el cliente Correctamente');
+        ->with('success', $res);
     }
 
     ////////fin sienna tickets
