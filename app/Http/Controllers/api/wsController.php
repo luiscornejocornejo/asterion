@@ -346,7 +346,7 @@ class wsController extends Controller
 
         $return2 = json_encode($resultados);
 
-        return response()->json(['pp' => $datos]);
+        return response()->json(['pp' => $resultados]);
 
     }
     
