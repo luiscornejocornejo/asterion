@@ -191,6 +191,7 @@ Route::post('/salientes  ','App\Http\Controllers\SalientesController@salientespo
 
 Route::get('/ticketssienna  ','App\Http\Controllers\TicketdatosController@ticketssienna');
 Route::post('/siennaestado  ','App\Http\Controllers\TicketdatosController@siennaestado');
+Route::post('/siennacliente  ','App\Http\Controllers\TicketdatosController@siennacliente');
 
 
 });

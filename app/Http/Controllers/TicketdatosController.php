@@ -237,7 +237,17 @@ class TicketdatosController extends Controller
         ->back()
         ->with('success', 'Se Modifico el estado Correctamente');
     }
+    public function siennacliente(Request $request){
 
+        
+        $idticketcliente=$request->idticketcliente;
+        $cliente=$request->cliente;
+        $queryupdate="update siennatickets set cliente='".$cliente."' where id='".$idticketcliente."'";
+        $resultados = DB::select($queryupdate);
+        return redirect()
+        ->back()
+        ->with('success', 'Se Modifico el cliente Correctamente');
+    }
 
     ////////fin sienna tickets
     public function curlnuevo($url, $data, $method)
