@@ -162,22 +162,22 @@ foreach ($datos as $item) {
 
 
     if($item->siennaestado==1){
-        echo '<td><span class="badge bg-info">    <button onclick="estado(<?php echo $item->ticketid;?>)"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-info " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
+        echo '<td><span class="badge bg-info">    <button onclick="estado('.$item->ticketid.')"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-info " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
         </span></td>'; 
        }
     if($item->siennaestado==2){
     
-        echo '<td><span class="badge bg-warning">    <button onclick="estado(<?php echo $item->ticketid;?>)"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-warning " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
+        echo '<td><span class="badge bg-warning">    <button onclick="estado('.$item->ticketid.')"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-warning " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
         </span></td>'; 
     } 
     if($item->siennaestado==3){
       
-        echo '<td><span class="badge bg-success">    <button onclick="estado(<?php echo $item->ticketid;?>)"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-success " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
+        echo '<td><span class="badge bg-success">    <button onclick="estado('.$item->ticketid.')"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-success " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
         </span></td>'; 
      } 
     if($item->siennaestado==4){
         
-        echo '<td><span class="badge bg-danger">    <button onclick="estado(<?php echo $item->ticketid;?>)"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-danger " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
+        echo '<td><span class="badge bg-danger">    <button onclick="estado('.$item->ticketid.')"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-danger " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
         </span></td>';  
     }
 
