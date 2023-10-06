@@ -124,6 +124,8 @@ if($saliente ==1){?>
 use Illuminate\Support\Facades\DB;
 
 $categoria =  session('categoria');
+
+
 $query = "SELECT m.nombre as nombremenu,i.nombre as icono,m.id FROM `categoria_menu` cm 
 join menu m on m.id=cm.menu join icono i on i.id=m.icono WHERE categoria=" . $categoria . ";
 ";
