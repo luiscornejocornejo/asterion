@@ -212,6 +212,7 @@ class TicketdatosController extends Controller
         left join  siennaestado c on c.id=a.siennaestado
         left join  siennatopic d on d.id=a.siennatopic
         where a.siennadepto in (select deptoid from siennadeptouser where userid =".$idusuario.")
+        and a.siennaestado<>4
         ";
 
         $resultados = DB::select($query);
