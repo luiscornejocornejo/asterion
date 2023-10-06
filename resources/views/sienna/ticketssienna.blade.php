@@ -12,8 +12,10 @@ img.style.transform = 'scale(1.9)';
     function estado(dd,ee) {
         alert(ee);
         if (ee === undefined) {
-            document.getElementById("statos4").disabled = true;
-            
+            document.getElementById("statos4").disabled = true;  
+        }else{
+            document.getElementById("statos4").disabled = false;  
+
         }
     document.getElementById("idticketestado").value = dd;
 
