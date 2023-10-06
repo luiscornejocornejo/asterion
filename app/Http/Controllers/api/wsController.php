@@ -341,8 +341,8 @@ class wsController extends Controller
         $ticket=$request->ticket;
         $resultados="";
         $query="select * from siennaseguimientos where ticket'" . $ticket . "'";
-        $resultados = DB::select($query);
-        return response()->json(['seguimientos' => $resultados]);
+      //  $resultados = DB::select($query);
+        return response()->json(['seguimientos' => $query]);
 
     }
     
