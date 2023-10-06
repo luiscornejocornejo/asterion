@@ -10,7 +10,6 @@ img.style.transform = 'scale(1.9)';
 
 
     function estado(dd,ee) {
-        alert(ee);
         if (ee === undefined) {
             document.getElementById("statos4").disabled = true;  
         }else{
