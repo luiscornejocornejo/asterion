@@ -287,7 +287,7 @@ foreach ($datos as $item) {
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header bg-info">
-                <h4 class="modal-title text-white" id="info-header-modalLabel">Cambiar Estado</h4>
+                <h4 class="modal-title text-white" id="info-header-modalLabel">Cambiar Cliente</h4>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
