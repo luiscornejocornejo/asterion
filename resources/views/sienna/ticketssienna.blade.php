@@ -19,6 +19,13 @@ img.style.transform = 'scale(1.9)';
     document.getElementById("idticketestado").value = dd;
 
     }
+    function cliente(dd) {
+        
+    document.getElementById("idticketcliente").value = dd;
+
+    }
+
+    
 function car(dd) {
     //alert(dd);
     document.getElementById("iddelticket").value = dd;
@@ -152,7 +159,14 @@ foreach ($datos as $item) {
     echo "<tr>";
     echo '<td><i class="ri-whatsapp-line"></i> '.$item->ticketid.'</td>';
   
-    echo '<td>'.$item->cliente.'</td>';
+    if($item->cliente==""){
+        $cli=$item->cliente;
+
+    }else{
+        $cli="sin cliente";
+    }
+    echo '<td><span class="badge bg-info">    <button onclick="cliente('.$item->ticketid.')"  id="btnAbrirAgregarBien3" type="button" class="btn btn-sm btn-info " data-bs-toggle="modal" data-bs-target="#modalExample3">'.$cli.'</button>
+    </span></td>'; 
     echo '<td>'.$item->depto.'</td>';
     if($item->topicname==""){
         echo '<td>sin topic</td>';
@@ -250,6 +264,41 @@ foreach ($datos as $item) {
                                 <br><br>
                             </div>
                             <?php }?>
+
+                            <button type="submit" class="btn btn-success
+                                        waves-effect waves-light">Cambiar</button>
+                        </form>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                        <script type="text/javascript">
+                        // Initialize our function when the document is ready for events.
+                        jQuery(document).ready(function(){
+                        // Listen for the input event.
+                        jQuery("#cliente").on('input', function (evt) {
+                        // Allow only numbers.
+                        jQuery(this).val(jQuery(this).val().replace(/[^0-9a-zA-Z]/g, ''));
+                        });
+                        });
+                        </script> 
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<div id="modalExample3" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="info-header-modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-info">
+                <h4 class="modal-title text-white" id="info-header-modalLabel">Cambiar Estado</h4>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
+            </div>
+            <div class="modal-body">
+                      
+           
+            <form action="/siennacliente" method="post" enctype="multipart/form-data">
+
+                        @csrf
+                        <input type="hidden" name="idticketcliente" id="idticketcliente" value="">
+                        <input type="text"  name="cliente"/>
+                           
 
                             <button type="submit" class="btn btn-success
                                         waves-effect waves-light">Cambiar</button>
