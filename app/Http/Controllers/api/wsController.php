@@ -339,9 +339,9 @@ class wsController extends Controller
     }
     public function tickessiennaseguimientos(Request $request){
         $ticket=$request->ticket;
+        $resultados="";
         $query="select * from siennaseguimientos where ticket'" . $ticket . "'";
         $resultados = DB::select($query);
-        $return2 = json_encode($resultados,true);
         return response()->json(['seguimientos' => $resultados]);
 
     }
