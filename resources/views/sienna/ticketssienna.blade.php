@@ -10,7 +10,6 @@ img.style.transform = 'scale(1.9)';
 
 
     function estado(dd) {
-    alert(dd);
     document.getElementById("idticketestado").value = dd;
 
     }
@@ -147,7 +146,7 @@ foreach ($datos as $item) {
     echo "<tr>";
     echo '<td><i class="ri-whatsapp-line"></i> '.$item->ticketid.'</td>';
   
-    echo '<td></td>';
+    echo '<td>'.$item->cliente.'</td>';
     echo '<td>'.$item->depto.'</td>';
     if($item->topicname==""){
         echo '<td>sin topic</td>';
@@ -162,7 +161,7 @@ foreach ($datos as $item) {
 
 
     if($item->siennaestado==1){
-        echo '<td><span class="badge bg-info">    <button onclick="estado('.$item->ticketid.')"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-info " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
+        echo '<td><span class="badge bg-info">    <button onclick="estado('.$item->ticketid.','.$item->ticketid.')"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-info " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
         </span></td>'; 
        }
     if($item->siennaestado==2){
