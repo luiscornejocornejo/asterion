@@ -27,70 +27,73 @@ img.style.transform = 'scale(1.9)';
 
     
 function car(dd) {
-    //alert(dd);
+    //
     document.getElementById("iddelticket").value = dd;
-var url2='https://pagoralia.site/api/ws2?token=12345&ws=8&ticket='+dd;
-timer=document.getElementById("timer");
-timer.innerHTML = '';
-    $.ajax({
-        url:url2 ,
-        beforeSend: function(xhr) {
-           
-        }, success: function(data){
-            console.log(data);
-            let valores = Object.values(data); // valores = ["Scott", "Negro", true, 5];
-            tt='<div id="dd" class="timeline" dir="ltr"><div class="timeline-show my-2 text-center">'+
-                                                '<h5 class="m-0 time-show-name">Conversacion</h5>'+
-                                            '</div>';
-            for(let i=0; i< valores.length; i++){
-                console.log(valores[i]);
-            
-                    for(let j=0; j< valores[i].length; j++){
-                    console.log(valores[i][j]['id']);
-                     
-                    if(valores[i][j]['autor']=="pagoralia"){
-                         tt+='<div class="timeline-lg-item timeline-item-right" style="">'+
-                                                '<div class="timeline-desk">'+
-                                                    '<div class="timeline-box">'+
-                                                        '<span class="arrow"></span>'+
-                                                        '<span class="timeline-icon"><i class="mdi mdi-adjust"></i></span>'+
-                                                        '<h4 class="mt-0 mb-1 font-16">'+valores[i][j]['creador']+'</h4>'+
-                                                        '<p class="text-muted">'+valores[i][j]['create_at']+'</small></p>'+
-                                                        '<p>'+valores[i][j]['descripcion']+'</p>'+
 
+    alert(dd);
+                    /*
+                var url2='https://pagoralia.site/api/ws2?token=12345&ws=8&ticket='+dd;
+                timer=document.getElementById("timer");
+                timer.innerHTML = '';
+                    $.ajax({
+                        url:url2 ,
+                        beforeSend: function(xhr) {
+                        
+                        }, success: function(data){
+                            console.log(data);
+                            let valores = Object.values(data); // valores = ["Scott", "Negro", true, 5];
+                            tt='<div id="dd" class="timeline" dir="ltr"><div class="timeline-show my-2 text-center">'+
+                                                                '<h5 class="m-0 time-show-name">Conversacion</h5>'+
+                                                            '</div>';
+                            for(let i=0; i< valores.length; i++){
+                                console.log(valores[i]);
                             
-                                                    '</div>'+
-                                                '</div>'+
-                                            '</div>'; 
-                    }else{
+                                    for(let j=0; j< valores[i].length; j++){
+                                    console.log(valores[i][j]['id']);
+                                    
+                                    if(valores[i][j]['autor']=="pagoralia"){
+                                        tt+='<div class="timeline-lg-item timeline-item-right" style="">'+
+                                                                '<div class="timeline-desk">'+
+                                                                    '<div class="timeline-box">'+
+                                                                        '<span class="arrow"></span>'+
+                                                                        '<span class="timeline-icon"><i class="mdi mdi-adjust"></i></span>'+
+                                                                        '<h4 class="mt-0 mb-1 font-16">'+valores[i][j]['creador']+'</h4>'+
+                                                                        '<p class="text-muted">'+valores[i][j]['create_at']+'</small></p>'+
+                                                                        '<p>'+valores[i][j]['descripcion']+'</p>'+
 
-                         tt+='<div class="timeline-lg-item timeline-item-left" style="">'+
-                                                '<div class="timeline-desk">'+
-                                                    '<div class="timeline-box">'+
-                                                        '<span class="arrow-alt"></span>'+
-                                                        '<span class="timeline-icon"><i class="mdi mdi-adjust"></i></span>'+
-                                                        '<h4 class="mt-0 mb-1 font-16">'+valores[i][j]['creador']+'</h4>'+
-                                                        '<p class="text-muted"><small>'+valores[i][j]['create_at']+'</small></p>'+
-                                                        '<p>'+valores[i][j]['descripcion']+'</p>'+
+                                            
+                                                                    '</div>'+
+                                                                '</div>'+
+                                                            '</div>'; 
+                                    }else{
 
-                            
-                                                    '</div>'+
-                                                '</div>'+
-                                            '</div>';
-                    }
-                    timer=document.getElementById("timer");
-                    timer.innerHTML = tt;
-                    }
-                     
-            }
+                                        tt+='<div class="timeline-lg-item timeline-item-left" style="">'+
+                                                                '<div class="timeline-desk">'+
+                                                                    '<div class="timeline-box">'+
+                                                                        '<span class="arrow-alt"></span>'+
+                                                                        '<span class="timeline-icon"><i class="mdi mdi-adjust"></i></span>'+
+                                                                        '<h4 class="mt-0 mb-1 font-16">'+valores[i][j]['creador']+'</h4>'+
+                                                                        '<p class="text-muted"><small>'+valores[i][j]['create_at']+'</small></p>'+
+                                                                        '<p>'+valores[i][j]['descripcion']+'</p>'+
 
-            tt+="</div>";
+                                            
+                                                                    '</div>'+
+                                                                '</div>'+
+                                                            '</div>';
+                                    }
+                                    timer=document.getElementById("timer");
+                                    timer.innerHTML = tt;
+                                    }
+                                    
+                            }
 
-           
-            //process the JSON data etc
-        }
-})
-    
+                            tt+="</div>";
+
+                        
+                            //process the JSON data etc
+                        }
+                })
+      */
 }
 </script>
 
@@ -333,17 +336,13 @@ foreach ($datos as $item) {
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
-                                <form action="crearseguimiento" method="post" enctype="multipart/form-data">
+                                <form action="/siennacrearseguimiento" method="post" enctype="multipart/form-data">
 
                     @csrf
-                    <div class="form-group">
-                            <?php //var_dump($metodos);?>
-                            <label for="exampleInputEmail1">merchant</label>
-                            <input required name="merchant"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter merchant">
-                        </div>
+                    
                     <div class="form-group">
                         <label for="exampleInputEmail1">descripcion</label>
-                        <input type="hidden" readonly name="ticket" id="iddelticket" >
+                        <input type="text" readonly name="ticket" id="iddelticket" >
                         <input required name="descripcion"  type="descripcion" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter descripcion">
                     </div>
 
