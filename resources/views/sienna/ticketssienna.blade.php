@@ -10,7 +10,7 @@ img.style.transform = 'scale(1.9)';
 
 
     function estado(dd) {
-    //alert(dd);
+    alert(dd);
     document.getElementById("idticketestado").value = dd;
 
     }
