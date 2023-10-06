@@ -232,12 +232,12 @@ foreach ($datos as $item) {
             <div class="modal-body">
                       
            
-            <form action="/cambiarestadots" method="get" enctype="multipart/form-data">
+            <form action="/siennaestado" method="get" enctype="multipart/form-data">
 
                         @csrf
                         <input type="hidden" name="idticketestado" value="">
 
-                            <?php foreach ($resulatdos2 as $value2) {?>
+                            <?php foreach ($siennaestado as $value2) {?>
                             <div >
 
                                 <input value="<?php echo $value2->id; ?>" class="form-radio"
