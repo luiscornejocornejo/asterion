@@ -446,7 +446,7 @@ function retro(elementId, color) {
                     console.log(url);
 
                     const xhr = new XMLHttpRequest();
-                    urlprincipal="https://suricata4.com.ar/api/broadcast?tel2="+tel2+"&token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM&url="+url;
+                    urlprincipal="https://suricata4.com.ar/api/broadcast?url="+urk+"&tel2="+tel2+"&token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM";
                     console.log(urlprincipal);
 
                     xhr.open("GET", urlprincipal);
