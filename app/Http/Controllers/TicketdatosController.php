@@ -215,9 +215,11 @@ class TicketdatosController extends Controller
         and a.siennaestado<>4
         ";
 
+        $query2="select * from siennaestado";
         $resultados = DB::select($query);
+        $resultados2 = DB::select($query2);
 
-        return view('sienna/ticketssienna')->with('datos', $resultados); 
+        return view('sienna/ticketssienna')->with('datos', $resultados)->with('siennaestado', $resultados2); 
   
 
     }

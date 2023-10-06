@@ -9,9 +9,9 @@ img.style.transform = 'scale(1.9)';
     }
 
 
-    function car2(dd) {
+    function estado(dd) {
     //alert(dd);
-    document.getElementById("iddelticket2").value = dd;
+    document.getElementById("idticketestado").value = dd;
 
     }
 function car(dd) {
@@ -162,17 +162,23 @@ foreach ($datos as $item) {
 
 
     if($item->siennaestado==1){
-        echo '<td><span class="badge bg-info">    <button id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-info " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
+        echo '<td><span class="badge bg-info">    <button onclick="estado(<?php echo $item->ticketid;?>)"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-info " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
         </span></td>'; 
        }
     if($item->siennaestado==2){
-        echo '<td><span class="badge bg-warning">'.$item->estadoname.'</span></td>';
+    
+        echo '<td><span class="badge bg-warning">    <button onclick="estado(<?php echo $item->ticketid;?>)"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-warning " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
+        </span></td>'; 
     } 
     if($item->siennaestado==3){
-        echo '<td><span class="badge bg-success">'.$item->estadoname.'</span></td>';   
+      
+        echo '<td><span class="badge bg-success">    <button onclick="estado(<?php echo $item->ticketid;?>)"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-success " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
+        </span></td>'; 
      } 
     if($item->siennaestado==4){
-        echo '<td><span class="badge bg-danger">'.$item->estadoname.'</span></td>';    
+        
+        echo '<td><span class="badge bg-danger">    <button onclick="estado(<?php echo $item->ticketid;?>)"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-danger " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
+        </span></td>';  
     }
 
 
@@ -220,73 +226,29 @@ foreach ($datos as $item) {
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header bg-info">
-                <h4 class="modal-title text-white" id="info-header-modalLabel">Crear Ticket</h4>
+                <h4 class="modal-title text-white" id="info-header-modalLabel">Cambiar Estado</h4>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
                       
            
-            <form action="creartickets" method="post" enctype="multipart/form-data">
+            <form action="/cambiarestadots" method="get" enctype="multipart/form-data">
 
                         @csrf
-                        <div class="form-group">
-                            <?php //var_dump($metodos);?>
-                            <label for="exampleInputEmail1">merchant</label>
-                            <input required name="merchant"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter merchant">
-                        </div>
-                        <div class="form-group">
-                            <?php //var_dump($metodos);?>
-                            <label for="exampleInputEmail1">cliente</label>
-                            <input required name="cliente"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter cliente">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">rastreo</label>
-                            <input required name="rastreo"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter rastreo">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">recibo</label>
-                            <input required name="recibo"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter recibo">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">importe</label>
-                            <input required name="importe"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter importe">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">descripcion</label>
-                            <input required name="descripcion"  type="descripcion" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter descripcion">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">metodo</label>
-                            <select class="form-control "  name="metodo" id="selectf"  >
+                        <input type="hidden" name="idticketestado" value="">
 
-                                </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">tiporeclamo</label>
-                            <select class="form-control "  name="tiporeclamo" id="selectf"  >
-                            
-                                </select>
-                        </div>
-                        <div class="form-group">
+                            <?php foreach ($resulatdos2 as $value2) {?>
+                            <div >
 
-                        <input type="hidden" name="estadoticket" value="1">
-                            
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">mediodepago</label>
-                            <input required name="mediodepago"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter descripcion">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">imagen</label>
-                            <input required name="logo"  type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter descripcion">
-                        </div>
+                                <input value="<?php echo $value2->id; ?>" class="form-radio"
+                                    type="radio" name="statos">&nbsp; <span class=" fw-bold"
+                                    style="color: #98a6ad;font-size: 12px;"><?php echo $value2->nombre; ?></span>
+                                <br><br>
+                            </div>
+                            <?php }?>
 
-
-
-                        <div class="form-group">
-                            <br><br>
-                                <button type="submit" class="btn btn-success btn-block">Crear Ticket </button>
-                        </div>
+                            <button type="submit" class="btn btn-success
+                                        waves-effect waves-light">Cambiar</button>
                         </form>
                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                         <script type="text/javascript">
