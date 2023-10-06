@@ -342,7 +342,7 @@ foreach ($datos as $item) {
                     
                     <div class="form-group">
                         <label for="exampleInputEmail1">descripcion</label>
-                        <input type="text" readonly name="ticket" id="iddelticket" >
+                        <input type="hidden" readonly name="ticket" id="iddelticket" >
                         <input required name="descripcion"  type="descripcion" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter descripcion">
                     </div>
 
