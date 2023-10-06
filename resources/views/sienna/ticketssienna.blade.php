@@ -165,8 +165,15 @@ foreach ($datos as $item) {
     }else{
         $cli="sin cliente";
     }
-    echo '<td><span class="badge bg-info">    <button onclick="cliente('.$item->ticketid.')"  id="btnAbrirAgregarBien3" type="button" class="btn btn-sm btn-info " data-bs-toggle="modal" data-bs-target="#modalExample3">'.$cli.'</button>
-    </span></td>'; 
+
+    if($item->cliente<>""){
+        echo '<td>'.$item->cliente.'</td>';
+    }else{
+
+        echo '<td><span class="badge bg-info">    <button onclick="cliente('.$item->ticketid.')"  id="btnAbrirAgregarBien3" type="button" class="btn btn-sm btn-info " data-bs-toggle="modal" data-bs-target="#modalExample3">'.$cli.'</button>
+        </span></td>'; 
+    }
+    
     echo '<td>'.$item->depto.'</td>';
     if($item->topicname==""){
         echo '<td>sin topic</td>';
