@@ -185,8 +185,7 @@ foreach ($datos as $item) {
 
     ?>
     <td>
-    <button onclick="car(<?php echo $item->ticketid;?>)" id="segui" type="button" class="btn btn-sm btn-info disabled" data-bs-toggle="modal" data-bs-target="#modalExample2"><i class="ri-discuss-line"></i></button>
-    <button onclick="car2(<?php echo $item->ticketid;?>)" id="segui2" type="button" class="btn btn-sm btn-secondary disabled" data-bs-toggle="modal" data-bs-target="#modalExample4"><i class="ri-delete-bin-7-fill"></i></button>
+    <button onclick="car(<?php echo $item->ticketid;?>)" id="segui" type="button" class="btn btn-sm btn-info " data-bs-toggle="modal" data-bs-target="#modalExample2"><i class="ri-discuss-line"></i></button>
    
 
     
