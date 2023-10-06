@@ -11,6 +11,10 @@ img.style.transform = 'scale(1.9)';
 
     function estado(dd,ee) {
         alert(ee);
+        if (ee === undefined) {
+            document.getElementById("statos4").disabled = true;
+            
+        }
     document.getElementById("idticketestado").value = dd;
 
     }
@@ -240,7 +244,7 @@ foreach ($datos as $item) {
                             <div >
 
                                 <input value="<?php echo $value2->id; ?>" class="form-radio"
-                                    type="radio" name="statos">&nbsp; <span class=" fw-bold"
+                                    type="radio" id="statos<?php echo $value2->id; ?>" name="statos">&nbsp; <span class=" fw-bold"
                                     style="color: #98a6ad;font-size: 12px;"><?php echo $value2->nombre; ?></span>
                                 <br><br>
                             </div>
