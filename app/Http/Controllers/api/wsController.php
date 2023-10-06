@@ -340,7 +340,7 @@ class wsController extends Controller
     public function tickessiennaseguimientos(Request $request){
         $ticket=$request->ticket;
         $resultados="";
-        $query="select * from siennaseguimientos where ticket'" . $ticket . "'";
+        $query="select * from siennaseguimientos where ticket='" . $ticket . "'";
         $resultados = DB::select($query);
      
 
