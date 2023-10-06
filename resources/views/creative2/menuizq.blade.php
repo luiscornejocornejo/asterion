@@ -443,8 +443,12 @@ function retro(elementId, color) {
                         tel2="5491133258450"
                     }
                     console.log(tel2);
+                    console.log(url);
+
                     const xhr = new XMLHttpRequest();
                     urlprincipal="https://suricata4.com.ar/api/broadcast?tel2="+tel2+"&token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM&url="+url;
+                    console.log(urlprincipal);
+
                     xhr.open("GET", urlprincipal);
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                    
