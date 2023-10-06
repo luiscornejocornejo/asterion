@@ -31,8 +31,8 @@ function car(dd) {
     document.getElementById("iddelticket").value = dd;
 
     alert(dd);
-                    /*
-                var url2='https://pagoralia.site/api/ws2?token=12345&ws=8&ticket='+dd;
+                    
+                var url2='https://template.suricata.cloud/api/tickessiennaseguimientos?token=12345&ticket='+dd;
                 timer=document.getElementById("timer");
                 timer.innerHTML = '';
                     $.ajax({
@@ -40,7 +40,7 @@ function car(dd) {
                         beforeSend: function(xhr) {
                         
                         }, success: function(data){
-                            console.log(data);
+                            alert(data);
                             let valores = Object.values(data); // valores = ["Scott", "Negro", true, 5];
                             tt='<div id="dd" class="timeline" dir="ltr"><div class="timeline-show my-2 text-center">'+
                                                                 '<h5 class="m-0 time-show-name">Conversacion</h5>'+
