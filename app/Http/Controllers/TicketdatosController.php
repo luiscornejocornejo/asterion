@@ -255,7 +255,7 @@ class TicketdatosController extends Controller
         }
 
 
-        $queryinsert="INSERT INTO siennacliente (cliente, nya, cel) VALUES('".$cliente."', '".$nya."', '".$cel."');
+        $queryinsert="INSERT INTO siennacliente (cliente, nya, cel) VALUES('".$cliente."', '".$nya."', '".$cel."')";
         $resultadosinsert = DB::select($queryinsert);
 
         ";
