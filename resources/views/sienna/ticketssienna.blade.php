@@ -159,7 +159,7 @@ foreach ($datos as $item) {
     echo "<tr>";
     echo '<td><i class="ri-whatsapp-line"></i> '.$item->ticketid.'</td>';
   
-    if($item->cliente==""){
+    if($item->cliente<>""){
         $cli=$item->cliente;
 
     }else{
