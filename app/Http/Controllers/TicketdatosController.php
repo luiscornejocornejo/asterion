@@ -255,8 +255,15 @@ class TicketdatosController extends Controller
         }
 
 
-        $queryinsert="INSERT INTO siennacliente (cliente, nya, cel) VALUES('".$cliente."', '".$nya."', '".$cel."')";
+
+        try {
+
+            $queryinsert="INSERT INTO siennacliente (cliente, nya, cel) VALUES('".$cliente."', '".$nya."', '".$cel."')";
         $resultadosinsert = DB::select($queryinsert);
+        } catch (\Illuminate\Database\QueryException$ex) {
+            echo $ex;
+        }
+       
 
         
         return redirect()
