@@ -448,7 +448,7 @@ function retro(elementId, color) {
                     const xhr = new XMLHttpRequest();
                     urlprincipal2="https://suricata4.com.ar/api/broadcast?url="+url+"&tel2="+tel2+"&token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM";
                     console.log(urlprincipal2);
-s
+
                     xhr.open("GET", urlprincipal);
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                    
