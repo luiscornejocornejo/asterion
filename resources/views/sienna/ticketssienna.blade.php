@@ -192,23 +192,37 @@ foreach ($datos as $item) {
 
 
     if($item->siennaestado==1){
-        echo '<td><span class="badge bg-info">    <button onclick="estado('.$item->ticketid.','.$item->cliente.')"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-info " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
-        </span></td>'; 
+        echo '<td>
+        
+        <button onclick="estado('.$item->ticketid.','.$item->cliente.')"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-danger " data-bs-toggle="modal" data-bs-target="#modalExample">
+        <span class="badge bg-info">  '.$item->estadoname.'</span>
+        </button>
+       </td>'; 
        }
     if($item->siennaestado==2){
     
-        echo '<td><span class="badge bg-warning">    <button onclick="estado('.$item->ticketid.','.$item->cliente.')"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-warning " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
-        </span></td>'; 
+        echo '<td>
+        
+        <button onclick="estado('.$item->ticketid.','.$item->cliente.')"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-danger " data-bs-toggle="modal" data-bs-target="#modalExample">
+        <span class="badge bg-warning">  '.$item->estadoname.'</span>
+        </button>
+       </td>'; 
     } 
     if($item->siennaestado==3){
       
-        echo '<td><span class="badge bg-success">    <button onclick="estado('.$item->ticketid.','.$item->cliente.')"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-success " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
-        </span></td>'; 
+        echo '<td>
+        <button onclick="estado('.$item->ticketid.','.$item->cliente.')"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-danger " data-bs-toggle="modal" data-bs-target="#modalExample">
+        <span class="badge bg-success">  '.$item->estadoname.'</span>
+        </button>
+     </td>'; 
      } 
     if($item->siennaestado==4){
         
-        echo '<td><span class="badge bg-danger">    <button onclick="estado('.$item->ticketid.','.$item->cliente.')"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-danger " data-bs-toggle="modal" data-bs-target="#modalExample">'.$item->estadoname.'</button>
-        </span></td>';  
+        echo '<td> 
+         <button onclick="estado('.$item->ticketid.','.$item->cliente.')"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm btn-danger " data-bs-toggle="modal" data-bs-target="#modalExample">
+         <span class="badge bg-danger">  '.$item->estadoname.'</span>
+         </button>
+        </td>';  
     }
 
 
