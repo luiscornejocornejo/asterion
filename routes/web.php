@@ -204,3 +204,7 @@ Route::get('/usuarios','UsersController@list');
 Route::get('/denied', ['as' => 'denied', function() {
     return view('denied');
 }]);
+
+Route::fallback(function () {
+    return abort(404);
+ });
