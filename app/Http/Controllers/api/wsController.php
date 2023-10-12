@@ -329,9 +329,10 @@ class wsController extends Controller
         $nya=$request->nya;
         $siennaestado=1;
         $siennasource=$request->siennasource;
+        $conversation_url=$request->conversation_url;
       
         $query = "INSERT INTO siennatickets (siennadepto, cliente, siennatopic, siennaestado, siennasource, created_at, updated_at, t_cerrado, cel,nya)
-         VALUES(".$siennadepto.", '', 0, 1, ".$siennasource.", now(), now(), now(), '".$cel."', '".$nya."')";
+         VALUES(".$siennadepto.", '', 0, 1, ".$siennasource.", now(), now(), now(), '".$cel."', '".$nya."', '".$conversation_url."')";
         $resultados = DB::select($query);
        // $return2 = json_encode($resultados);
         //return response()->json(['cliente' => $return2]);
