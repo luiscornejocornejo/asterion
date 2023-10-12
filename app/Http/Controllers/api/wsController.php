@@ -324,12 +324,12 @@ class wsController extends Controller
 
     }
     public function creartickessienna(Request $request){
-        $cel=$request->cel;
-        $siennadepto=$request->siennadepto;
-        $nya=$request->nya;
-        $siennaestado=1;
-        $siennasource=$request->siennasource;
-        $conversation_url=$request->conversation_url;
+       echo $cel=$request->cel;
+       echo $siennadepto=$request->siennadepto;
+       echo $nya=$request->nya;
+       echo $siennaestado=1;
+       echo $siennasource=$request->siennasource;
+       echo $conversation_url=$request->conversation_url;
       
         echo $query = "INSERT INTO siennatickets (siennadepto, cliente, siennatopic, siennaestado, siennasource, created_at, updated_at, t_cerrado, cel,nya,conversation_url)
          VALUES(".$siennadepto.", '', 0, 1, ".$siennasource.", now(), now(), now(), '".$cel."', '".$nya."', '".$conversation_url."')";
