@@ -39,7 +39,7 @@ Route::get('/ws', [wsController::class, 'ws']);
 Route::get('/ws2', [wsController::class, 'ws2']);
 Route::get('/tickessienna', [wsController::class, 'tickessienna']);
 Route::get('/tickessiennaseguimientos', [wsController::class, 'tickessiennaseguimientos']);
-Route::get('/creartickessienna', [wsController::class, 'creartickessienna']);
+Route::post('/creartickessienna', [wsController::class, 'creartickessienna']);
 
 
 
