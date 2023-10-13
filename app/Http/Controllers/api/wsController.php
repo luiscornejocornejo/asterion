@@ -11,6 +11,7 @@ use App\Models\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\siennatickets;
+use App\Models\siennaseguimientos;
 
 class wsController extends Controller
 {
@@ -343,6 +344,11 @@ class wsController extends Controller
        $si->conversation_url=$conversation_url;
 
         $si->save();
+
+        $se=new siennaseguimientos();
+        $se->ticket=$si->id;
+        $se->autor="sistema";
+        $se->save();
         return $si->id;
         //return response()->json(['cliente' => $return2]);
 
