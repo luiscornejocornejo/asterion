@@ -325,12 +325,12 @@ class wsController extends Controller
 
     }
     public function creartickessienna(Request $request){
-       echo $cel=$request->cel;
-       echo $siennadepto=$request->siennadepto;
-       echo $nya=$request->nya;
-       echo $siennaestado=$request->siennaestado;
-       echo $siennasource=$request->siennasource;
-       echo $conversation_url=$request->conversation_url;
+        $cel=$request->cel;
+        $siennadepto=$request->siennadepto;
+        $nya=$request->nya;
+        $siennaestado=$request->siennaestado;
+        $siennasource=$request->siennasource;
+        $conversation_url=$request->conversation_url;
       
        $si=new siennatickets();
        $si->siennadepto=$siennadepto;
