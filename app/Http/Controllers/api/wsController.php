@@ -10,6 +10,7 @@ use App\Models\masterreport;
 use App\Models\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\siennatickets;
 
 class wsController extends Controller
 {
@@ -327,14 +328,22 @@ class wsController extends Controller
        echo $cel=$request->cel;
        echo $siennadepto=$request->siennadepto;
        echo $nya=$request->nya;
-       echo $siennaestado=1;
+       echo $siennaestado=$request->siennaestado;
        echo $siennasource=$request->siennasource;
        echo $conversation_url=$request->conversation_url;
       
-        echo $query = "INSERT INTO siennatickets (siennadepto, cliente, siennatopic, siennaestado, siennasource, created_at, updated_at, t_cerrado, cel,nya,conversation_url)
-         VALUES(".$siennadepto.", '', 0, 1, ".$siennasource.", now(), now(), now(), '".$cel."', '".$nya."', '".$conversation_url."')";
-        $resultados = DB::select($query);
-        $return2 = json_encode($resultados);
+       $si=new siennatickets();
+       $si->siennadepto=$siennadepto;
+       $si->cliente="";
+       $si->siennatopic="";
+       $si->siennaestado=$siennaestado;
+       $si->siennasource=$siennasource;
+       $si->cel=$cel;
+       $si->nya=$nya;
+       $si->conversation_url=$conversation_url;
+
+        $si->save();
+        return $si->id;
         //return response()->json(['cliente' => $return2]);
 
     }
