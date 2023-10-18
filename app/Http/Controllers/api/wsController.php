@@ -319,12 +319,21 @@ class wsController extends Controller
 
     public function tickessienna(Request $request){
         $cel=$request->cel;
+        $merchant=$request->merchant;
+        $inte=$request->inte;
+
         $query = "select * from siennacliente where cel='" . $cel . "'";
         $resultados = DB::select($query);
         $return2 = json_encode($resultados,true);
         $query2 = "select * from siennatickets where cel='" . $cel . "' and siennaestado=1";
         $resultados2 = DB::select($query2);
-        return response()->json(['cliente' => $resultados,'tickets' => $resultados2]);
+
+        $prueba = $this->conectar(14);
+        //si es distinta a 1 aa otra base
+       echo  $query3="select * from ".$inte.".ws_cliente";
+        $datos = DB::connection('mysql2')->select($query3);
+
+        return response()->json(['cliente' => $resultados,'tickets' => $resultados2,'datos' => $datos]);
 
     }
     public function creartickessienna(Request $request){
