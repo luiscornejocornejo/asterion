@@ -319,10 +319,12 @@ class wsController extends Controller
 
     public function tickessienna(Request $request){
         $cel=$request->cel;
-        $query = "select * from siennatickets where cel='" . $cel . "'";
+        $query = "select * from siennacliente where cel='" . $cel . "'";
         $resultados = DB::select($query);
         $return2 = json_encode($resultados,true);
-        return response()->json(['cliente' => $resultados]);
+        $query2 = "select * from siennatickets where cel='" . $cel . "' and siennaestado=1";
+        $resultados2 = DB::select($query2);
+        return response()->json(['cliente' => $resultados,'tickets' => $resultados]);
 
     }
     public function creartickessienna(Request $request){
