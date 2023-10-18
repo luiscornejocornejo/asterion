@@ -333,10 +333,16 @@ class wsController extends Controller
        echo  $query3="select * from ".$inte.".ws_cliente where nombre='".$merchant."'";
         $datos = DB::connection('mysql2')->select($query3);
 
+        foreach($datos as $val){
 
-        $dat=file_get_contents("https://matzanet.suricata-wisphub.com.ar/api/ws?token=pelado&telefono=".$cel);//7461023535
+            $url=$val->headerlogin;
+            $tokensienna=$val->tokensienna;
+        }
+
+
+        $dat=file_get_contents("https://".$merchant.".".$url."/api/ws?token=".$tokensienna."&telefono=".$cel);//7461023535
         $dat=json_decode($dat);
-        return response()->json(['cliente' => $resultados,'tickets' => $resultados2,'datos' => $datos,'dat' => $dat]);
+        return response()->json(['cliente' => $resultados,'tickets' => $resultados2,'dat' => $dat]);
 
     }
     public function creartickessienna(Request $request){
