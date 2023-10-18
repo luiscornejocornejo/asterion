@@ -330,7 +330,7 @@ class wsController extends Controller
 
         $prueba = $this->conectar(14);
         //si es distinta a 1 aa otra base
-       echo  $query3="select * from ".$inte.".ws_cliente where nombre='".$merchant."'";
+         $query3="select * from ".$inte.".ws_cliente where nombre='".$merchant."'";
         $datos = DB::connection('mysql2')->select($query3);
 
         foreach($datos as $val){
