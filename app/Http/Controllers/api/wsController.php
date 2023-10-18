@@ -335,7 +335,7 @@ class wsController extends Controller
 
 
         $dat=file_get_contents("https://matzanet.suricata-wisphub.com.ar/api/ws?token=pelado&telefono=".$cel);//7461023535
-        $dat=json_encode($dat);
+        $dat=json_decode($dat);
         return response()->json(['cliente' => $resultados,'tickets' => $resultados2,'datos' => $datos,'dat' => $dat]);
 
     }
