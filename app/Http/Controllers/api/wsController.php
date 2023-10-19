@@ -362,6 +362,8 @@ class wsController extends Controller
         $siennaestado=$request->siennaestado;
         $siennasource=$request->siennasource;
         $conversation_url=$request->conversation_url;
+        $conversation_id=$request->conversation_id;
+        
         $cliente=$request->cliente;
 
        $si=new siennatickets();
@@ -373,6 +375,7 @@ class wsController extends Controller
        $si->cel=$cel;
        $si->nya=$nya;
        $si->conversation_url=$conversation_url;
+       $si->conversation_id=$conversation_id;
 
         $si->save();
 
@@ -398,7 +401,12 @@ class wsController extends Controller
     }
     
 
-    
+    public function tickessiennaapi(Request $request){
+
+        $conversation_id=$request->conversation_id;
+
+
+    }
     public function conectar($id)
     {
         $query = "SELECT * FROM `base`    where id='" . $id . "'";

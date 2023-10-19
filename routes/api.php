@@ -41,6 +41,9 @@ Route::get('/tickessienna', [wsController::class, 'tickessienna']);
 Route::get('/tickessiennaseguimientos', [wsController::class, 'tickessiennaseguimientos']);
 Route::post('/creartickessienna', [wsController::class, 'creartickessienna']);
 
+Route::get('/tickessiennaapi', [wsController::class, 'tickessiennaapi']);
+
+
 
 
 
