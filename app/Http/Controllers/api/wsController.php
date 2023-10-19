@@ -419,9 +419,9 @@ class wsController extends Controller
         $querysiennadepto="select * from siennadepto ";
         $resultadossiennadepto = DB::select($querysiennadepto);
 
-        $staff="";
+        $staff=array();
         $merchat="";
-        $datosticketsviejos="";
+        $datosticketsviejos=array();
         return view("sienna/Ticketdatosxennio")
         ->with('ticket', $resultados)
         ->with('deptos', $resultadossiennadepto)
