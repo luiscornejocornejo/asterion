@@ -171,7 +171,7 @@
                 <div class="modal-body">
                     <form action="/api/cambiartopic" method="post">
                         <input type="hidden" name="_token" v-bind:value="csrf">
-                        <input  type="hidden" name="idtickettopic" id="idtickettopic" value=" <?php echo $valor->ticket_id;?> ">
+                        <input  type="hidden" name="idtickettopic" id="idtickettopic" value=" <?php echo $valor->id;?> ">
                         <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $merchant;?> ">
 
                         <div v-for="topic in topics ">
@@ -206,7 +206,7 @@
                 <div class="modal-body">
                     <form action="/api/cambiarstatus" method="post">
                         <input type="hidden" name="_token" v-bind:value="csrf">
-                        <input value=" <?php echo $valor->ticket_id;?> " type="hidden" name="idticketestado" id="idtickettopic">
+                        <input value=" <?php echo $valor->id;?> " type="hidden" name="idticketestado" id="idtickettopic">
                         <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $merchant;?> ">
 
                         <div v-for="ost_ticket_statu in ost_ticket_status ">
@@ -238,7 +238,7 @@
                 <div class="modal-body">
                     <form action="/api/cambiardepto" method="post">
                         <input type="hidden" name="_token" v-bind:value="csrf">
-                        <input value=" <?php echo $valor->ticket_id;?> "  type="hidden" name="idticketdepto" id="idtickettopic">
+                        <input value=" <?php echo $valor->id;?> "  type="hidden" name="idticketdepto" id="idtickettopic">
                         <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $merchant;?> ">
 
                         <div v-for="department in departments ">
