@@ -14,7 +14,7 @@
                         <h2 class="accordion-header bg-primary text-white" id="flush-headingOne" >
                             <button  class="accordion-button collapsed text-white bg-primary" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                               <span align="center" style="font-family: 'Nunito', sans-serif; font-weight: bold; font-size: 18px;"> TICKET #{{ $valor->number }} </span>
+                               <span align="center" style="font-family: 'Nunito', sans-serif; font-weight: bold; font-size: 18px;"> TICKET #{{ $valor->id }} </span>
                          </button>
                         </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse text-white bg-white" aria-labelledby="flush-headingOne"
