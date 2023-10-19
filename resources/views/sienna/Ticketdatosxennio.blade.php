@@ -60,7 +60,7 @@
                                 <div class="row btn-container">
                                     <div class="col" style="margin-right: 1px;">
                                         <button type="button" style="color: EEF2F7;text-color:313A46" class="btn btn-secondary   w-100 btn-block" data-bs-toggle="modal" data-bs-target="#standard-modal2">
-                                            <?php if($valor->nombredepto==null){
+                                            <?php if($valor->siennadepto==null){
                                                 echo "sin depto";
                                             } else {
                                                 echo $valor->nombredepto;
