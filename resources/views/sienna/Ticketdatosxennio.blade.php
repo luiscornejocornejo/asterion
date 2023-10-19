@@ -48,10 +48,10 @@
                                 <div class="row">
                                     <div class="col">Topic: 
                                         <button type="button" class="btn btn-info btn-block w-100" data-bs-toggle="modal" data-bs-target="#standard-modal3">
-                                            <?php if($valor->topic==null){
+                                            <?php if($valor->siennatopic==null){
                                                 echo "sin topic";
                                             } else {
-                                                echo $valor->topic;
+                                                echo $valor->siennatopic;
                                             }?>
                                         </button>
                                     </div>
