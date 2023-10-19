@@ -403,4 +403,4 @@ if (isset($_SERVER['HTTP_HOST'])) {
     </div>
 
 <?php }?>
-        @include('creative2.footer2')
+        @include('creative2.footer')
