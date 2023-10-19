@@ -8,6 +8,8 @@ if (isset($_SERVER['HTTP_HOST'])) {
     $subdomain_tmp =  array_shift($domainParts);
     
 }
+
+$subdomain_tmp =str_replace("/api","", $subdomain_tmp );
 ?>
 
 <!DOCTYPE html>
