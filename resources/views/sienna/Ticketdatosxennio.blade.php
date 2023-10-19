@@ -37,21 +37,21 @@ echo $subdomain_tmp =str_replace("/api","", $subdomain_tmp );
 
 
    <!-- Datatables css -->
-   <link href="assets3/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets3/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets3/vendor/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets3/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets3/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-        <link href="assets3/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+   <link href="https://<?php echo $subdomain_tmp;?>.suricata.cloud/assets3/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://<?php echo $subdomain_tmp;?>.suricata.cloud/assets3/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://<?php echo $subdomain_tmp;?>.suricata.cloud/assets3/vendor/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://<?php echo $subdomain_tmp;?>.suricata.cloud/assets3/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://<?php echo $subdomain_tmp;?>.suricata.cloud/assets3/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://<?php echo $subdomain_tmp;?>.suricata.cloud/assets3/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
 
         <!-- Theme Config Js -->
-        <script src="assets3/js/hyper-config.js"></script>
+        <script src="https://<?php echo $subdomain_tmp;?>.suricata.cloud/assets3/js/hyper-config.js"></script>
 
         <!-- Icons css -->
-        <link href="assets3/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://<?php echo $subdomain_tmp;?>.suricata.cloud/assets3/css/icons.min.css" rel="stylesheet" type="text/css" />
 
         <!-- App css -->
-        <link href="assets3/css/app-creative.min.css" rel="stylesheet" type="text/css" id="app-style" />
+        <link href="https://<?php echo $subdomain_tmp;?>.suricata.cloud/assets3/css/app-creative.min.css" rel="stylesheet" type="text/css" id="app-style" />
 
     <script type="text/javascript">
         window.onload = function() {
