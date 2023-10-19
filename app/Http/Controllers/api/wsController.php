@@ -406,6 +406,32 @@ class wsController extends Controller
         $conversation_id=$request->conversation_id;
 
 
+        $query="select * from siennatickets where conversation_id='".$conversation_id."'";
+        $resultados = DB::select($query);
+
+        $querysiennaestado="select * from siennaestado  ";
+        $resultadossiennaestado = DB::select($querysiennaestado);
+
+        $querysiennatopic="select * from siennatopic";
+        $resultadossiennatopic = DB::select($querysiennatopic);
+
+
+        $querysiennadepto="select * from siennadepto ";
+        $resultadossiennadepto = DB::select($querysiennadepto);
+
+        $staff="";
+        $merchat="";
+        $datosticketsviejos="";
+        return view("sienna/Ticketdatosxennio")
+        ->with('ticket', $resultados)
+        ->with('deptos', $resultadossiennadepto)
+        ->with('staff', $staff)
+        ->with('ost_ticket_status', $resultadossiennaestado)
+        ->with('topics', $resultadossiennatopic)
+        ->with('merchant', $merchat)
+        ->with('datosticketsviejos', $datosticketsviejos)
+        ->with('id', $conversation_id);
+
     }
     public function conectar($id)
     {
