@@ -268,7 +268,7 @@
                 <div class="modal-body">
                     <form action="/api/cambiarasignacion" method="post">
                         <input type="hidden" name="_token" v-bind:value="csrf">
-                        <input value=" <?php echo $valor->ticket_id;?> "  type="hidden" name="idticketasignar" id="idtickettopic">
+                        <input value=" <?php echo $valor->id;?> "  type="hidden" name="idticketasignar" id="idtickettopic">
                         <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $merchant;?> ">
 
                         <div >
