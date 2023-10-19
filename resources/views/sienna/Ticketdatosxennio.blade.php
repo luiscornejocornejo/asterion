@@ -96,7 +96,7 @@
                                 
                                 
                                 ?>
-                                <a class="btn btn-primary" target="_blank" href="https://<?php echo $merchant;?>.clientdeck.com.ar/scp/tickets.php?id=<?php echo $valor->numeroticket;?>" role="button">Link</a>
+                                <a class="btn btn-primary" target="_blank" href="https://<?php echo $merchant;?>.clientdeck.com.ar/scp/tickets.php?id=<?php echo $valor->id;?>" role="button">Link</a>
                                 
 </div>
                                                
