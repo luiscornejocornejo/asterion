@@ -1,7 +1,7 @@
 
 
 
-@include('creative.header')
+@include('creative2.header')
 
 <body>
 <br>
@@ -291,4 +291,4 @@
     </div>
 
 <?php }?>
-        @include('creative.footer')
+        @include('creative2.footer')
