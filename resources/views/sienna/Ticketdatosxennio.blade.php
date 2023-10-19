@@ -177,7 +177,7 @@
                         <div v-for="topic in topics ">
 
                         <?php foreach($topics as $dep){?>
-                            <input value="<?php echo $dep->topic_id;?>" class="form-radio" type="radio" name="statos">&nbsp;
+                            <input value="<?php echo $dep->id;?>" class="form-radio" type="radio" name="statos">&nbsp;
                         <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo$dep->nombre;?></span>
                             <br><br>
 
@@ -213,7 +213,7 @@
 
                         <?php foreach($ost_ticket_status as $dep){?>
                             <input value="<?php echo $dep->id;?>" class="form-radio" type="radio" name="statos">&nbsp;
-                        <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo$dep->name;?></span>
+                        <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo$dep->nombre;?></span>
                             <br><br>
 
                             <?php }?> 
