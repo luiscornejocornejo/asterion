@@ -53,7 +53,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
     <script type="text/javascript">
         window.onload = function() {
-            newPageTitle = "<?php echo $empresaTitle; ?>";
+            newPageTitle = "<?php $empresaTitle="hola";echo $empresaTitle; ?>";
             document.title = newPageTitle;
 
         }
