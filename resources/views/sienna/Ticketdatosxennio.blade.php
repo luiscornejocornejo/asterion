@@ -120,7 +120,7 @@
                     <h2 class="accordion-header  bg-primary text-white" id="flush-headingTwo">
                         <button class="accordion-button collapsed text-white bg-primary" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            <?php echo $valor->nombredelusuario;?>
+                            <?php //echo $valor->nombredelusuario;?>
                         </button>
                     </h2>
                     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
