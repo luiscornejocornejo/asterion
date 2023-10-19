@@ -9,7 +9,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
     
 }
 
-$subdomain_tmp =str_replace("/api","", $subdomain_tmp );
+echo $subdomain_tmp =str_replace("/api","", $subdomain_tmp );
 ?>
 
 <!DOCTYPE html>
