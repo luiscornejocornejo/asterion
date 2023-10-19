@@ -63,17 +63,13 @@
                                             <?php if($valor->siennadepto==null){
                                                 echo "sin depto";
                                             } else {
-                                                echo $valor->nombredepto;
+                                                echo $valor->siennadepto;
                                             }?>
                                         </button>
                                     </div>
                                     <div class="col">
                                         <button type="button" class="btn btn-secondary w-100 btn-block" data-bs-toggle="modal" data-bs-target="#standard-modal4">
-                                            <?php if($valor->staffname==null){
-                                                echo "sin asignar";
-                                            } else {
-                                                echo $valor->staffname;
-                                            }?>
+                                          
                                         </button>
                                     </div>
                                 </div>
@@ -82,10 +78,10 @@
                                     <div class="col">
                                         <button type="button" class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#standard-modal">
                                             <span id="estado">
-                                                <?php if($valor->nombrestatus==null){
+                                                <?php if($valor->siennaestado==null){
                                                     echo "sin status";
                                                 } else {
-                                                    echo $valor->nombrestatus;
+                                                    echo $valor->siennaestado;
                                                 }?>
                                             </span>
                                         </button>
