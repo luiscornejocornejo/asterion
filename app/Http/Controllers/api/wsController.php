@@ -484,6 +484,21 @@ class wsController extends Controller
   
       }
     
+
+      public function cambiardeptosienna(Request $request){
+
+        echo   $idticketdepto=$request->idticketdepto;
+        echo   $statos=$request->statos;
+  
+  
+        $si2 = siennatickets::find($idticketdepto);
+        $si2->siennadepto=$statos;
+        $si2->save();
+        return redirect()
+        ->back()
+        ->with('success', 'Se modifico el departamento  correctamente!');
+  
+      }
     public function conectar($id)
     {
         $query = "SELECT * FROM `base`    where id='" . $id . "'";
