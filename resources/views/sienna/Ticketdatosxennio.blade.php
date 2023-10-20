@@ -177,7 +177,7 @@ echo $subdomain_tmp =str_replace("/api","", $subdomain_tmp );
                                             <?php if($valor->siennadepto==null){
                                                 echo "sin depto";
                                             } else {
-                                                echo $valor->siennadepto;
+                                                echo $valor->nombredepto;
                                             }?>
                                         </button>
                                     </div>
