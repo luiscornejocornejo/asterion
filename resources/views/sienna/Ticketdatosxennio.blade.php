@@ -154,23 +154,23 @@ echo $subdomain_tmp =str_replace("/api","", $subdomain_tmp );
               <?php
               $color="";
               if($valor->siennaestado==1){
-                $color="badge-success-lighten";
+                $color=" badge-success-lighten";
               }
               if($valor->siennaestado==2){
-                $color="badge-warning-lighten";
+                $color=" badge-warning-lighten";
               }
               if($valor->siennaestado==3){
-                $color="badge-secondary-lighten";
+                $color=" badge-secondary-lighten";
               }
               if($valor->siennaestado==4){
-                $color="badge-danger-lighten";
+                $color=" badge-danger-lighten";
               }?>
               
-              <span class="badge <?php $color;?> line-h" >
+              <span class="badge <?php echo $color;?> line-h" >
               <?php if($valor->siennaestado==null){
                                                     echo "sin status";
                                                 } else {
-                                                    echo $valor->nombreestado;
+                                                    echo $valor->nombreestado;echo $valor->siennaestado;
                                                 }?>
               </span>
               
