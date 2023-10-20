@@ -116,6 +116,9 @@ echo $subdomain_tmp =str_replace("/api","", $subdomain_tmp );
   line-height: 1.7 !important;      
 }
        
+.oculta{
+    display:none;
+}
     </style>
 
 
@@ -181,7 +184,7 @@ echo $subdomain_tmp =str_replace("/api","", $subdomain_tmp );
           </div> 
         </div> <!-- end card-body-->
 
-        <div class="card widget-flat">
+        <div class="card widget-flat oculta">
           <div class="card-body">
             <div class="float-end">
               <i class="mdi mdi-card-account-details widget-icon bg-secondary-lighten text-secondary"></i>
@@ -238,7 +241,7 @@ echo $subdomain_tmp =str_replace("/api","", $subdomain_tmp );
             </div>
             
       </div>
-      <div class="card widget-flat">
+      <div class="card widget-flat oculta">
         <div class="card-body">
           <div class="float-end">
             <i class="mdi mdi-whatsapp widget-icon bg-success-lighten text-success"></i>
