@@ -351,9 +351,14 @@ class wsController extends Controller
             $tokensienna=$val->tokensienna;
         }
 
+        if($url<>""){
+            $dat=file_get_contents("https://".$merchant.".".$url."/api/ws?token=".$tokensienna."&telefono=".$cel);//7461023535
+            $dat=json_decode($dat);
+        }else{
+            $dat="";
+        }
 
-        $dat=file_get_contents("https://".$merchant.".".$url."/api/ws?token=".$tokensienna."&telefono=".$cel);//7461023535
-        $dat=json_decode($dat);
+       
         return response()->json(['cliente' => $resultados,'tickets' => $resultados2,'dat' => $dat]);
 
     }
