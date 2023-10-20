@@ -195,7 +195,7 @@ echo $subdomain_tmp =str_replace("/api","", $subdomain_tmp );
                                                 <?php if($valor->siennaestado==null){
                                                     echo "sin status";
                                                 } else {
-                                                    echo $valor->siennaestado;
+                                                    echo $valor->nombreestado;
                                                 }?>
                                             </span>
                                         </button>
@@ -405,7 +405,7 @@ echo $subdomain_tmp =str_replace("/api","", $subdomain_tmp );
     </div>
 
 <?php }?>
-heme Settings -->
+
 <div class="offcanvas offcanvas-end border-0" tabindex="-1" id="theme-settings-offcanvas">
             <div class="d-flex align-items-center bg-primary p-3 offcanvas-header">
                 <h5 class="text-white m-0">Theme Settings</h5>

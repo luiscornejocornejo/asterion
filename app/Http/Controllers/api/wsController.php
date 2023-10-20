@@ -406,7 +406,9 @@ class wsController extends Controller
         $conversation_id=$request->conversation_id;
 
 
-        $query="select * from siennatickets where conversation_id='".$conversation_id."'";
+        $query="select *,b.nombre nombreestado from siennatickets a 
+        join siennaestado b on b.id=a.siennaestado
+        where a.conversation_id='".$conversation_id."'";
         $resultados = DB::select($query);
 
         $querysiennaestado="select * from siennaestado  ";
