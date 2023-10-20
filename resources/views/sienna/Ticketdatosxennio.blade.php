@@ -121,6 +121,135 @@ echo $subdomain_tmp =str_replace("/api","", $subdomain_tmp );
 <br>
 <?php  foreach($ticket as $valor){?>
 
+
+    <div class="card widget-flat">
+        <div class="card-body">
+          <div class="float-end">
+            <i class="mdi mdi-ticket-account widget-icon bg-warning-lighten text-warning"></i>
+          </div>
+          <h5 class="fw-normal mt-0" title="Number of Customers">Ticket #001123</h5>
+          <div class="d-flex  mt-4">
+            <i class="ri-question-answer-line "></i>&nbsp;Tema de ayuda:&nbsp;
+            <span class="badge badge-secondary-lighten hover-overlay line-h">
+              Consulta Administrativa
+            </span>
+          </div>
+          <div class="d-flex mt-2">
+            <i class="ri-building-4-line"></i>&nbsp;Departamento:&nbsp;
+            <span class="badge badge-secondary-lighten line-h">
+              Facturación/Pago
+            </span>
+          </div>
+          <div class="d-flex mt-2">
+              <i class="ri-customer-service-2-line"></i>&nbsp;Operador:&nbsp;
+              <span class="badge badge-secondary-lighten line-h">
+                Macarena
+              </span>
+            </div>
+            <div class="d-flex mt-2">
+              <i class="ri-ticket-line"></i>&nbsp;Estado de ticket:&nbsp;
+              <span class="badge badge-success-lighten line-h">
+                Abierto
+              </span>
+              <span class="badge badge-warning-lighten line-h ms-1">
+                Cerrado
+              </span>
+            </div>
+          </div> 
+        </div> <!-- end card-body-->
+
+        <div class="card widget-flat">
+          <div class="card-body">
+            <div class="float-end">
+              <i class="mdi mdi-card-account-details widget-icon bg-secondary-lighten text-secondary"></i>
+            </div>
+            <h5 class="fw-normal mt-0" title="Number of Customers">Información de usuario</h5>
+            <div class="d-flex mt-4">
+              <i class="mdi mdi-identifier"></i>&nbsp;Numero cliente:&nbsp;
+              <span class="badge badge-secondary-lighten line-h">
+                011223
+              </span>
+            </div>
+            <div class="d-flex  mt-2">
+              <i class="mdi mdi-account"></i>&nbsp;Nombre:&nbsp;
+              <span class="badge badge-secondary-lighten hover-overlay line-h">
+                Pepito
+              </span>
+            </div>
+            <div class="d-flex mt-2">
+              <i class="mdi mdi-home"></i>&nbsp;Domicilio:&nbsp;
+              <span class="badge badge-secondary-lighten line-h">
+                Calle Falsa 123
+              </span>
+            </div>
+            <div class="d-flex mt-2">
+                <i class="mdi mdi-whatsapp text"></i>&nbsp;Whatsapp:&nbsp;
+                <span class="badge badge-secondary-lighten line-h">
+                  5491122334455
+                </span>
+              </div>
+              <div class="d-flex mt-2">
+                <i class="mdi mdi-email"></i>&nbsp;Email:&nbsp;
+                <span class="badge badge-secondary-lighten line-h">
+                  pepito@gmail.com
+                </span>
+              </div>
+              <div class="d-flex mt-2">
+                <i class="mdi mdi-account-cash"></i>&nbsp;Estado de cuenta:&nbsp;
+                <span class="badge badge-success-lighten line-h">
+                  Normal
+                </span>
+                <span class="badge badge-warning-lighten line-h ms-1">
+                  Suspendido
+                </span>
+              </div>
+              <div class="d-flex mt-2">
+                <i class="mdi mdi-antenna"></i>&nbsp;Estado de servicio:&nbsp;
+                <span class="badge badge-success-lighten line-h">
+                  Normal
+                </span>
+                <span class="badge badge-danger-lighten line-h ms-1">
+                  Masivo
+                </span>
+              </div>
+            </div>
+            
+      </div>
+      <div class="card widget-flat">
+        <div class="card-body">
+          <div class="float-end">
+            <i class="mdi mdi-whatsapp widget-icon bg-success-lighten text-success"></i>
+          </div>
+          <h5 class="fw-normal mt-0" title="Number of Customers">Ultimo template enviado</h5>
+          <div class="d-flex  mt-4">
+            <i class="mdi mdi-information"></i>&nbsp;Nombre:&nbsp;
+            <span class="badge badge-secondary-lighten hover-overlay line-h">
+              Consulta
+            </span>
+          </div>
+          <div class="d-flex mt-2">
+            <i class="mdi mdi-message-text"></i>&nbsp;Contenido:&nbsp;
+            <span class="badge badge-secondary-lighten line-h">
+              Texto template
+            </span>
+          </div>
+          <div class="d-flex mt-2">
+              <i class="mdi mdi-calendar-today"></i>&nbsp;Fecha:&nbsp;
+              <span class="badge badge-secondary-lighten line-h">
+                19/10/23 16:00:23
+              </span>
+          </div> 
+          <div class="d-flex mt-2">
+            <i class="mdi mdi-history"></i>&nbsp;Historial:&nbsp;
+            <span class="badge badge-secondary-lighten line-h">
+              <i class="mdi mdi-login-variant"></i>
+            </span>
+        </div> 
+        </div>
+    </div>
+
+    
+
 <div class="col-xxl-3 col-xl-6 order-xl-1 order-xxl-2" style="max-height: 900px;min-height: 900px;">
 
             <div class="accordion accordion-flush" id="accordionFlushExample">
