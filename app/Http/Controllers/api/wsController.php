@@ -464,6 +464,9 @@ class wsController extends Controller
       $si2 = siennatickets::find($idticketestado);
       $si2->siennaestado=$statos;
       $si2->save();
+      return redirect()
+      ->back()
+      ->with('success', 'Se modifico el estado  correctamente!');
 
     }
     public function conectar($id)
