@@ -395,7 +395,7 @@ class wsController extends Controller
                 $sc->save();
 
             } catch (\Illuminate\Database\QueryException$ex) {
-                echo "existe".$ex;
+                //echo "existe".$ex;
             }
             
         }
