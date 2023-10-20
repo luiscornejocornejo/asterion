@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\siennatickets;
 use App\Models\siennaseguimientos;
+use App\Models\siennacliente;
 
 class wsController extends Controller
 {
@@ -383,6 +384,21 @@ class wsController extends Controller
         $se->ticket=$si->id;
         $se->autor="sistema";
         $se->save();
+
+
+        if($cliente<>''){
+            $sc=new siennacliente();
+            $sc->cliente=$cliente;
+            $sc->cel=$cel;
+            $sc->nya=$nya;
+            try {
+                $sc->save();
+
+            } catch (\Illuminate\Database\QueryException$ex) {
+                echo "existe";
+            }
+            
+        }
         return $si->id;
         //return response()->json(['cliente' => $return2]);
 
@@ -406,7 +422,7 @@ class wsController extends Controller
         $conversation_id=$request->conversation_id;
 
 
-        echo $query="select *,b.nombre nombreestado,c.nombre nombredepto,
+         $query="select *,b.nombre nombreestado,c.nombre nombredepto,
         a.id ticketid,d.nombre siennatopicnombre,a.nya nya from siennatickets a 
         left join siennaestado b on b.id=a.siennaestado
         left join siennadepto c on c.id=a.siennadepto
