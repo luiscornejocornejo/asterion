@@ -416,7 +416,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title">Asignar</h5>
+                    <h5 class="modal-title">Historial</h5>
                     <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -446,16 +446,23 @@ if (isset($_SERVER['HTTP_HOST'])) {
                     </form>
                 </div>
                 <div class="row"> 
-                                    <div id="timer" class="col-12">
-                                        
+                                        <div id="dd" class="timeline" dir="ltr"><div class="timeline-show my-2 text-center">
+                                            <h5 class="m-0 time-show-name">Conversacion</h5>
+                                        </div>
+                                        <div class="timeline-lg-item timeline-item-right" style="">
+                                                                <div class="timeline-desk">
+                                                                    <div class="timeline-box">
+                                                                        <span class="arrow"></span>
+                                                                        <span class="timeline-icon"><i class="mdi mdi-adjust"></i></span>
+                                                                        <h4 class="mt-0 mb-1 font-16">'+valores[i][j]['autor']+'</h4>
+                                                                        <p class="text-muted">'+valores[i][j]['create_at']+'</small></p>
+                                                                        <p>'+valores[i][j]['descripcion']+'</p>
 
                                             
-
-                                           
-
-                                        <!-- end timeline -->
-                                    </div> <!-- end col -->
-                                </div>
+                                                                    </div>
+                                                                </div>
+                                        </div>
+                </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div>
