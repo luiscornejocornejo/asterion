@@ -184,7 +184,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
             <div class="d-flex mt-2">
             <i class="mdi mdi-history"></i>&nbsp;Historial:&nbsp;
-            <span role="button" class="badge badge-secondary-lighten line-h">
+            <span role="button" class="badge badge-secondary-lighten line-h" data-bs-toggle="modal" data-bs-target="#standard-modal22">
               <i class="mdi mdi-login-variant"></i>
             </span>
           </div>
@@ -412,6 +412,59 @@ if (isset($_SERVER['HTTP_HOST'])) {
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div>
+
+    <div id="modalExample22" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="info-header-modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-info">
+                <h4 class="modal-title text-white" id="info-header-modalLabel">Seguimientos</h4>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
+            </div>
+            <div class="modal-body">
+                                <form action="/api/siennacrearseguimiento" method="post" enctype="multipart/form-data">
+
+                    @csrf
+                    
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">descripcion</label>
+                        <input type="hidden"  name="ticket" id="iddelticket"  value=" <?php echo $valor->ticketid;?> "  >
+                        <input required name="descripcion"  type="descripcion" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter descripcion">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">imagen</label>
+                       
+                        <input  name="logo"  type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter descripcion">
+                    </div>
+
+
+
+                    <div class="form-group">
+                    <br><br>
+                            <button type="submit" class="btn btn-success btn-block">Crear Seguimiento </button>
+                    </div>
+                    </form>
+           
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                                <script type="text/javascript">
+                              
+                                </script> 
+                                <div class="row"> 
+                                    <div id="timer" class="col-12">
+                                        
+
+                                            
+
+                                           
+
+                                        <!-- end timeline -->
+                                    </div> <!-- end col -->
+                                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <?php }?>
 
