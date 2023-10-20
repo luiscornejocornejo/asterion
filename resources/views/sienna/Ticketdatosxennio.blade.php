@@ -136,7 +136,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
           <h5 class="fw-normal mt-0" title="Number of Customers">Ticket #{{ $valor->ticketid }}</h5>
           <div class="d-flex  mt-4">
             <i class="ri-question-answer-line "></i>&nbsp;Tema de ayuda:&nbsp;
-            <span role="button" class="badge badge-secondary-lighten hover-overlay line-h"  data-bs-toggle="modal" data-bs-target="#standard-modal2">
+            <span role="button" class="badge badge-secondary-lighten hover-overlay line-h"  data-bs-toggle="modal" data-bs-target="#standard-modal3">
             <?php if($valor->siennatopic==null){
                                                 echo "sin topic";
                                             } else {
