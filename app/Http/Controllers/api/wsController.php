@@ -454,6 +454,14 @@ class wsController extends Controller
         ->with('id', $conversation_id);
 
     }
+
+    public function cambiarstatussienna(Request $request){
+
+      echo   $idticketestado=$request->idticketestado;
+      echo   $statos=$request->statos;
+
+
+    }
     public function conectar($id)
     {
         $query = "SELECT * FROM `base`    where id='" . $id . "'";
