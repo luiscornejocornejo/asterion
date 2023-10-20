@@ -460,6 +460,9 @@ class wsController extends Controller
       echo   $idticketestado=$request->idticketestado;
       echo   $statos=$request->statos;
 
+      $si2=new siennatickets($idticketestado);
+      $si2->siennaestado=$statos;
+      $si2->save();
 
     }
     public function conectar($id)
