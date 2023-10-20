@@ -127,11 +127,15 @@ echo $subdomain_tmp =str_replace("/api","", $subdomain_tmp );
           <div class="float-end">
             <i class="mdi mdi-ticket-account widget-icon bg-warning-lighten text-warning"></i>
           </div>
-          <h5 class="fw-normal mt-0" title="Number of Customers">Ticket #001123</h5>
+          <h5 class="fw-normal mt-0" title="Number of Customers">Ticket #{{ $valor->ticketid }}</h5>
           <div class="d-flex  mt-4">
             <i class="ri-question-answer-line "></i>&nbsp;Tema de ayuda:&nbsp;
             <span class="badge badge-secondary-lighten hover-overlay line-h">
-              Consulta Administrativa
+            <?php if($valor->siennatopic==null){
+                                                echo "sin topic";
+                                            } else {
+                                                echo $valor->siennatopicnombre;
+                                            }?>
             </span>
           </div>
           <div class="d-flex mt-2">
@@ -248,7 +252,7 @@ echo $subdomain_tmp =str_replace("/api","", $subdomain_tmp );
         </div>
     </div>
 
-    
+
 
 <div class="col-xxl-3 col-xl-6 order-xl-1 order-xxl-2" style="max-height: 900px;min-height: 900px;">
 
