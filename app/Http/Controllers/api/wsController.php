@@ -407,7 +407,7 @@ class wsController extends Controller
 
 
         $query="select *,b.nombre nombreestado from siennatickets a 
-        join siennaestado b on b.id=a.siennaestado
+        left join siennaestado b on b.id=a.siennaestado
         where a.conversation_id='".$conversation_id."'";
         $resultados = DB::select($query);
 
