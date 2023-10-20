@@ -361,6 +361,7 @@ class wsController extends Controller
         $siennadepto=$request->siennadepto;
         $nya=$request->nya;
         $siennaestado=$request->siennaestado;
+        $cedula=$request->cedula;
         $siennasource=$request->siennasource;
         $conversation_url=$request->conversation_url;
         $conversation_id=$request->conversation_id;
@@ -371,6 +372,7 @@ class wsController extends Controller
        $si->siennadepto=$siennadepto;
        $si->cliente=$cliente;
        $si->siennatopic=1;
+       $si->cedula=$cedula;
        $si->siennaestado=$siennaestado;
        $si->siennasource=$siennasource;
        $si->cel=$cel;
