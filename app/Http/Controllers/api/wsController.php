@@ -319,14 +319,14 @@ class wsController extends Controller
 
 
     public function tickessienna(Request $request){
-        $cel=$request->cel;
+        $conversation_id=$request->conversation_id;
         $merchant=$request->merchant;
         //$inte=$request->inte;
-
+        $cel ="";
         $query = "select * from siennacliente where cel='" . $cel . "'";
         $resultados = DB::select($query);
         $return2 = json_encode($resultados,true);
-        $query2 = "select * from siennatickets where cel='" . $cel . "' and siennaestado=1";
+        $query2 = "select * from siennatickets where conversation_id='" . $conversation_id . "' and siennaestado=1";
         $resultados2 = DB::select($query2);
 
 
