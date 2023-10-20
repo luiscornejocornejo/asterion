@@ -469,6 +469,21 @@ class wsController extends Controller
       ->with('success', 'Se modifico el estado  correctamente!');
 
     }
+    public function cambiartopicsienna(Request $request){
+
+        echo   $idticketestado=$request->idticketestado;
+        echo   $statos=$request->statos;
+  
+  
+        $si2 = siennatickets::find($idticketestado);
+        $si2->siennatopic=$statos;
+        $si2->save();
+        return redirect()
+        ->back()
+        ->with('success', 'Se modifico el topic  correctamente!');
+  
+      }
+    
     public function conectar($id)
     {
         $query = "SELECT * FROM `base`    where id='" . $id . "'";

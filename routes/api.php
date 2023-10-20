@@ -44,6 +44,8 @@ Route::post('/creartickessienna', [wsController::class, 'creartickessienna']);
 Route::get('/tickessiennaapi', [wsController::class, 'tickessiennaapi']);
 
 Route::post('/cambiarstatussienna', [wsController::class, 'cambiarstatussienna']);
+Route::post('/cambiartopicsienna', [wsController::class, 'cambiartopicsienna']);
+
 
 
 

@@ -285,7 +285,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                     <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="/api/cambiartopic" method="post">
+                    <form action="/api/cambiartopicsienna" method="post">
                         <input type="hidden" name="_token" v-bind:value="csrf">
                         <input  type="hidden" name="idtickettopic" id="idtickettopic" value=" <?php echo $valor->ticketid;?> ">
                         <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $merchant;?> ">
