@@ -112,6 +112,9 @@ echo $subdomain_tmp =str_replace("/api","", $subdomain_tmp );
             margin-top: 50px !important;
 
         }
+        .line-h {
+  line-height: 1.7 !important;      
+}
        
     </style>
 
