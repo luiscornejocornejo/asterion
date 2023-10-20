@@ -9,7 +9,7 @@ foreach($resultados as $valuee){
 
     $birthdate=$valuee->birthdate;
     $email=$valuee->email;
-    $name=$valuee->name;
+    $name=$valuee->nombre;
     $dni=$valuee->dni;
 }
 ?>
