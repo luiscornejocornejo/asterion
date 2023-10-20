@@ -160,16 +160,16 @@ if (isset($_SERVER['HTTP_HOST'])) {
               <?php
               $color="";
               if($valor->siennaestado==1){
-                $color=" badge-success-lighten";
-              }
-              if($valor->siennaestado==2){
                 $color=" badge-warning-lighten";
               }
+              if($valor->siennaestado==2){
+                $color=" badge-primary-lighten";
+              }
               if($valor->siennaestado==3){
-                $color=" badge-secondary-lighten";
+                $color=" badge-success-lighten";
               }
               if($valor->siennaestado==4){
-                $color=" badge-danger-lighten";
+                $color=" badge-success-lighten";
               }?>
               
               <span class="badge <?php echo $color;?> line-h"  data-bs-toggle="modal" data-bs-target="#standard-modal" role="button">
