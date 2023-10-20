@@ -287,7 +287,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 <div class="modal-body">
                     <form action="/api/cambiartopic" method="post">
                         <input type="hidden" name="_token" v-bind:value="csrf">
-                        <input  type="hidden" name="idtickettopic" id="idtickettopic" value=" <?php echo $valor->id;?> ">
+                        <input  type="hidden" name="idtickettopic" id="idtickettopic" value=" <?php echo $valor->ticketid;?> ">
                         <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $merchant;?> ">
 
                         <div v-for="topic in topics ">
@@ -322,7 +322,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 <div class="modal-body">
                     <form action="/api/cambiarstatussienna" method="post">
                         <input type="hidden" name="_token" v-bind:value="csrf">
-                        <input value=" <?php echo $valor->id;?> " type="hidden" name="idticketestado" id="idtickettopic">
+                        <input value=" <?php echo $valor->ticketid;?> " type="hidden" name="idticketestado" id="idtickettopic">
                         <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $merchant;?> ">
 
                         <div v-for="ost_ticket_statu in ost_ticket_status ">
@@ -354,7 +354,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 <div class="modal-body">
                     <form action="/api/cambiardepto" method="post">
                         <input type="hidden" name="_token" v-bind:value="csrf">
-                        <input value=" <?php echo $valor->id;?> "  type="hidden" name="idticketdepto" id="idtickettopic">
+                        <input value=" <?php echo $valor->ticketid;?> "  type="hidden" name="idticketdepto" id="idtickettopic">
                         <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $merchant;?> ">
 
                         <div v-for="department in departments ">
@@ -384,7 +384,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 <div class="modal-body">
                     <form action="/api/cambiarasignacion" method="post">
                         <input type="hidden" name="_token" v-bind:value="csrf">
-                        <input value=" <?php echo $valor->id;?> "  type="hidden" name="idticketasignar" id="idtickettopic">
+                        <input value=" <?php echo $valor->ticketid;?> "  type="hidden" name="idticketasignar" id="idtickettopic">
                         <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $merchant;?> ">
 
                         <div >
