@@ -258,12 +258,13 @@ function retro(elementId, color) {
                     </ul>
                 </div>
             </li>
-            <li class="side-nav-item">
+            <li class="side-nav-item" style="display:none;">
                 <a data-bs-toggle="collapse" href="#sidebarDashboards3" aria-expanded="false" aria-controls="sidebarDashboards3" class="side-nav-link">
                     <i class="ri-lifebuoy-line"></i>
                     <span class="badge bg-success float-end"></span>
                     <span> Soporte </span> 
                 </a>
+
                 <div class="collapse" id="sidebarDashboards3">
                     <ul class="side-nav-second-level">
                         <li>
