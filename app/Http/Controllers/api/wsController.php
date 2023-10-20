@@ -344,7 +344,7 @@ class wsController extends Controller
          $query3="select * from ".$inte.".ws_cliente where nombre='".$merchant."'";
         $datos = DB::connection('mysql2')->select($query3);
         $url="";
-        $tokensienna=="";
+        $tokensienna="";
         foreach($datos as $val){
 
             $url=$val->headerlogin;
