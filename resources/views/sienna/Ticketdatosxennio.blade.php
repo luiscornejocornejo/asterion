@@ -130,7 +130,7 @@ echo $subdomain_tmp =str_replace("/api","", $subdomain_tmp );
           <h5 class="fw-normal mt-0" title="Number of Customers">Ticket #{{ $valor->ticketid }}</h5>
           <div class="d-flex  mt-4">
             <i class="ri-question-answer-line "></i>&nbsp;Tema de ayuda:&nbsp;
-            <span class="badge badge-secondary-lighten hover-overlay line-h"  data-bs-toggle="modal" data-bs-target="#standard-modal2">
+            <span role="button" class="badge badge-secondary-lighten hover-overlay line-h"  data-bs-toggle="modal" data-bs-target="#standard-modal2">
             <?php if($valor->siennatopic==null){
                                                 echo "sin topic";
                                             } else {
@@ -140,7 +140,7 @@ echo $subdomain_tmp =str_replace("/api","", $subdomain_tmp );
           </div>
           <div class="d-flex mt-2">
             <i class="ri-building-4-line"></i>&nbsp;Departamento:&nbsp;
-            <span class="badge badge-secondary-lighten line-h" data-bs-toggle="modal" data-bs-target="#standard-modal2">
+            <span class="badge badge-secondary-lighten line-h" data-bs-toggle="modal" data-bs-target="#standard-modal2" role="button">
             <?php if($valor->siennadepto==null){
                                                 echo "sin depto";
                                             } else {
@@ -166,11 +166,11 @@ echo $subdomain_tmp =str_replace("/api","", $subdomain_tmp );
                 $color=" badge-danger-lighten";
               }?>
               
-              <span class="badge <?php echo $color;?> line-h" >
+              <span class="badge <?php echo $color;?> line-h"  data-bs-toggle="modal" data-bs-target="#standard-modal" role="button">
               <?php if($valor->siennaestado==null){
                                                     echo "sin status";
                                                 } else {
-                                                    echo $valor->nombreestado;echo $valor->siennaestado;
+                                                    echo $valor->nombreestado;
                                                 }?>
               </span>
               
