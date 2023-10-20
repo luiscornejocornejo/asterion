@@ -471,11 +471,11 @@ class wsController extends Controller
     }
     public function cambiartopicsienna(Request $request){
 
-        echo   $idticketestado=$request->idticketestado;
+        echo   $idtickettopic=$request->idtickettopic;
         echo   $statos=$request->statos;
   
   
-        $si2 = siennatickets::find($idticketestado);
+        $si2 = siennatickets::find($idtickettopic);
         $si2->siennatopic=$statos;
         $si2->save();
         return redirect()
