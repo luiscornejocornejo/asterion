@@ -181,6 +181,13 @@ if (isset($_SERVER['HTTP_HOST'])) {
               </span>
               
             </div>
+
+            <div class="d-flex mt-2">
+            <i class="mdi mdi-history"></i>&nbsp;Historial:&nbsp;
+            <span role="button" class="badge badge-secondary-lighten line-h">
+              <i class="mdi mdi-login-variant"></i>
+            </span>
+          </div>
           </div> 
         </div> <!-- end card-body-->
 
