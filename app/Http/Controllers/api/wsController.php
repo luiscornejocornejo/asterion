@@ -437,6 +437,11 @@ class wsController extends Controller
         left join siennatopic d on d.id=a.siennatopic
         where a.conversation_id='".$conversation_id."' and a.siennaestado<>4";
         $resultados = DB::select($query);
+        $ticketprincipal="";
+        foreach($resultados as $val){
+
+            $ticketprincipal=$val->ticketid;
+        }
 
         $querysiennaestado="select * from siennaestado  ";
         $resultadossiennaestado = DB::select($querysiennaestado);
@@ -448,6 +453,12 @@ class wsController extends Controller
         $querysiennadepto="select * from siennadepto ";
         $resultadossiennadepto = DB::select($querysiennadepto);
 
+
+
+        $queryq="select * from siennaseguimientos where ticket='" . $ticketprincipal . "'";
+        $resultadosq = DB::select($queryq);
+
+
         $staff=array();
         $merchat="";
         $datosticketsviejos=array();
@@ -458,6 +469,7 @@ class wsController extends Controller
         ->with('ost_ticket_status', $resultadossiennaestado)
         ->with('topics', $resultadossiennatopic)
         ->with('merchant', $merchat)
+        ->with('seguimientos', $resultadosq)
         ->with('datosticketsviejos', $datosticketsviejos)
         ->with('id', $conversation_id);
 
