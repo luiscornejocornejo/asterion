@@ -69,6 +69,8 @@ $resultados = DB::select($query);
         </a>
     </li>
     <?php 
+               $saliente = session('saliente');
+
                         echo "peña".$salientes;
                         if($saliente ==1){?>
  &nbsp; 
