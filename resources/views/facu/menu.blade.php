@@ -71,7 +71,7 @@ $resultados = DB::select($query);
 
 
     <li class="side-nav-item position-absolute fixed-bottom background-buttons">
-        <a data-bs-toggle="collapse" href="/salir" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link background-buttons">
+        <a target='_self' data-bs-toggle="collapse" href="/salir" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link background-buttons">
             <i class="uil-exit"></i>
             <span> Cerrar sesión </span>
         </a>
