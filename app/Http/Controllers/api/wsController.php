@@ -519,6 +519,29 @@ class wsController extends Controller
         ->with('success', 'Se modifico el departamento  correctamente!');
   
       }
+
+      public function siennacrearseguimiento(Request $request){
+
+        echo   $ticket=$request->ticket;
+        echo   $descripcion=$request->descripcion;
+        echo   $autor=$request->autor;
+        if (isset($request->logo)) {
+            $logo = $request->file('logo')->store('public');
+
+        }else{
+            $logo ="";
+        }
+
+        $se=new siennaseguimientos();
+        $se->ticket=$si->ticket;
+        $se->descripcion=$si->descripcion;
+        $se->logo=$si->logo;
+        $se->autor=$autor;
+        $se->save();
+
+
+
+      }
     public function conectar($id)
     {
         $query = "SELECT * FROM `base`    where id='" . $id . "'";

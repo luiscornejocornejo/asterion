@@ -425,7 +425,10 @@ if (isset($_SERVER['HTTP_HOST'])) {
                     
                     <div class="form-group">
                         <label for="exampleInputEmail1">descripcion</label>
+                        
+
                         <input type="hidden"  name="ticket" id="iddelticket"  value=" <?php echo $valor->ticketid;?> "  >
+                        <input type="hidden"  name="autor" id="autor"  value=" <?php $creador= session('nombreusuario'); echo $creador;?> "  >
                         <input required name="descripcion"  type="descripcion" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter descripcion">
                     </div>
 
@@ -470,22 +473,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                     <?php }?>
                         </ul>
                 
-                                        <div id="dd" class="timeline" dir="ltr"><div class="timeline-left timeline-item">
-                                            <h5 class="m-0 time-show-name">Conversacion</h5>
-                                        </div>
-                                        <div class="timeline-lg-item timeline-item-left" style="">
-                                                                <div class="timeline-desk">
-                                                                    <div class="timeline-box">
-                                                                        <span class="arrow"></span>
-                                                                        <span class="timeline-icon timeline-left"><i class="mdi mdi-adjust"></i></span>
-                                                                        <h4 class="mt-0 mb-1 font-16">'+valores[i][j]['autor']+'</h4>
-                                                                        <p class="text-muted">'+valores[i][j]['create_at']+'</small></p>
-                                                                        <p>'+valores[i][j]['descripcion']+'</p>
-
-                                            
-                                                                    </div>
-                                                                </div>
-                                        </div>
+                                     
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
