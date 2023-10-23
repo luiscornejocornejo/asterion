@@ -71,7 +71,6 @@ $resultados = DB::select($query);
     <?php 
                $saliente = session('saliente');
 
-                        echo "peña".$saliente; 
                         if($saliente ==1){?>
  &nbsp; 
  <li class="notification-list d-none d-sm-inline-block">
