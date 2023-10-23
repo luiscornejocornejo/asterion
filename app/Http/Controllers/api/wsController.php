@@ -533,9 +533,9 @@ class wsController extends Controller
         }
 
         $se=new siennaseguimientos();
-        $se->ticket=$si->ticket;
-        $se->descripcion=$si->descripcion;
-        $se->logo=$si->logo;
+        $se->ticket=$ticket;
+        $se->descripcion=$descripcion;
+        $se->logo=$logo;
         $se->autor=$autor;
         $se->save();
 
