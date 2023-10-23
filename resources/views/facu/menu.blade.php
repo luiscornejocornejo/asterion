@@ -63,7 +63,7 @@ $resultados = DB::select($query);
         </a>
     </li>
     <li class="side-nav-item background-buttons">
-        <a  href="/conversationsfacu"  class="side-nav-link hovering-pan ">
+        <a  href="/conversations2"  class="side-nav-link hovering-pan ">
             <i class="uil uil-comment-message"></i>
             <span> Conversaciones </span>
         </a>
