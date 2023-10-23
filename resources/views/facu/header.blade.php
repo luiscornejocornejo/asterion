@@ -660,10 +660,11 @@ overflow: hidden;
 width: 200%;
 height: 200%
 }
-
 .background-buttons :hover{
   background-color: #FFD193!important;
+  color: #3C4665!important;
 }
+
 
 
   .whatsapp {
