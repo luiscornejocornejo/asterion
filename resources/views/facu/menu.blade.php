@@ -57,13 +57,13 @@ $resultados = DB::select($query);
     <!--- Sidemenu -->
     <ul class="side-nav">
       <li class="side-nav-item mt-2 background-buttons">
-        <a data-bs-toggle="collapse" href="" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link hovering-pan ">
+        <a href="/"  class="side-nav-link hovering-pan ">
             <i class="uil-dashboard"></i>
             <span> Dashboards </span>
         </a>
     </li>
     <li class="side-nav-item background-buttons">
-        <a data-bs-toggle="collapse" href="/conversationsfacu" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link hovering-pan ">
+        <a  href="/conversationsfacu"  class="side-nav-link hovering-pan ">
             <i class="uil uil-comment-message"></i>
             <span> Conversaciones </span>
         </a>
