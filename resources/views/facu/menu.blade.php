@@ -20,7 +20,7 @@ $resultados = DB::select($query);
         <img src="assetsfacu/images/logo.svg" alt="logo">
     </span>
     <span class="logo-sm mt-2 ms-1">
-        <img src="assetsfacu/images/logo.png" alt="small logo">
+        <img style="width: 40px; height: 40px;" src="assetsfacu/images/logo.png" alt="small logo">
     </span>
 </a>
 
