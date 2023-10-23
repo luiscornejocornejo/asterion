@@ -446,7 +446,40 @@ if (isset($_SERVER['HTTP_HOST'])) {
                     </form>
                 </div>
                 <div class="row"> 
-                                        <div id="dd" class="timeline" dir="ltr"><div class="timeline-show my-2 text-center">
+
+                <ul class="timeline timeline-left">
+                    <li class="timeline-inverted timeline-item">
+                        <div class="timeline-badge success"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="img" class="img-fluid" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">Genelia</h4>
+                                <p>
+                                    <small class="text-muted"><i class="fa fa-clock-o"></i> 11 hours ago via Twitter</small>
+                                </p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laboriosam dolor perspiciatis omnis exercitationem. Beatae, officia pariatur? Est cum veniam excepturi. Maiores praesentium, porro voluptas
+                                    suscipit facere rem dicta, debitis.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted timeline-item">
+                        <div class="timeline-badge warning"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="img" class="img-fluid" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading"><h4 class="timeline-title">Ritesh Deshmukh</h4></div>
+                            <div class="timeline-body">
+                                <p><img src="https://www.bootdey.com/image/600x300/FFB6C1/000000" alt="img" class="img-fluid" /></p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium maiores odit qui est tempora eos, nostrum provident explicabo dignissimos debitis vel! Adipisci eius voluptates, ad aut recusandae
+                                    minus eaque facere.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                        </ul>
+                                        <div id="dd" class="timeline" dir="ltr"><div class="timeline-inverted timeline-item">
                                             <h5 class="m-0 time-show-name">Conversacion</h5>
                                         </div>
                                         <div class="timeline-lg-item timeline-item-right" style="">
