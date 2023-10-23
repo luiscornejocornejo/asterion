@@ -68,7 +68,19 @@ $resultados = DB::select($query);
             <span> Conversaciones </span>
         </a>
     </li>
+    <?php 
+                        echo "peña".$salientes;
+                        if($saliente ==1){?>
+ &nbsp; 
+ <li class="notification-list d-none d-sm-inline-block">
+    <br>
 
+<button style="background-color: #ffc95c;" type="button" class="btn btn-sm mb-0 " data-bs-toggle="modal" data-bs-target="#warning-alert-modal"><span style="color: #495057;" >Iniciar Conversacion</span></button>
+
+            </li>
+
+ 
+<?php  }?>
 
     <li class="side-nav-item position-absolute fixed-bottom background-buttons">
         <a target='_self'  href="/salir" class="side-nav-link background-buttons">
@@ -102,19 +114,7 @@ if ($categoria == 1) {?>
                                     <span id="report" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Report</span>
                                 </a>
                         </li>
-                        <?php 
-                        echo "peña".$salientes;
-                        if($saliente ==1){?>
- &nbsp; 
- <li class="notification-list d-none d-sm-inline-block">
-    <br>
-
-<button style="background-color: #ffc95c;" type="button" class="btn btn-sm mb-0 " data-bs-toggle="modal" data-bs-target="#warning-alert-modal"><span style="color: #495057;" >Iniciar Conversacion</span></button>
-
-            </li>
-
- 
-<?php  }?>
+           
                   
 
                     </ul>
