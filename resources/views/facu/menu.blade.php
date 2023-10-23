@@ -190,7 +190,9 @@ if ($categoria == 1) {?>
 
     </ul>
     <!--- End Sidemenu -->
-
+    <div class="whatsapp" data-bs-toggle="modal" data-bs-target="#warning-alert-modal">
+    <i class="mdi mdi-send ms-1" style="font-size: 25px;"></i>
+  </div>
     <div class="clearfix"></div>
 </div></div></div></div>
 
