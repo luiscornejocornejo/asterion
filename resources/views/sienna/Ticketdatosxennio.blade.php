@@ -451,7 +451,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                         <div id="dd" class="timeline" dir="ltr"><div class="timeline-left timeline-item">
                                             <h5 class="m-0 time-show-name">Conversacion</h5>
                                         </div>
-                                        <div class="timeline-lg-item timeline-item-right" style="">
+                                        <div class="timeline-lg-item timeline-item-left" style="">
                                                                 <div class="timeline-desk">
                                                                     <div class="timeline-box">
                                                                         <span class="arrow"></span>
