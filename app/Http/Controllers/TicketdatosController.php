@@ -171,7 +171,7 @@ class TicketdatosController extends Controller
         $dat=$this->precon();
         $url =  session('urlxennio');
         
-        return view('sienna/suricatafacu')->with('url', $url);
+        return view('sienna/facusinheader')->with('url', $url);
 
     }
     public function osttickets(){
