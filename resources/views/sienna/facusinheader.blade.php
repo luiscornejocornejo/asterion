@@ -795,7 +795,7 @@ z-index: 999;}
       <!-- Start Page Content here -->
       <!-- ============================================================== -->
 
-      <div class="content-page">
+      <div class="content-page" style="padding:0 !important;">
           <div class="content">
 
               <!-- Start Content-->
