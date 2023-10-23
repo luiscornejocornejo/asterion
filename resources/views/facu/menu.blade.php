@@ -78,7 +78,7 @@ $resultados = DB::select($query);
 <button style="background-color: #ffc95c;" type="button" class="btn btn-sm mb-0 " data-bs-toggle="modal" data-bs-target="#warning-alert-modal"><span style="color: #495057;" >Iniciar Conversacion</span></button>
 
             </li>
-
+  
  
 <?php  }?>
 
