@@ -165,7 +165,9 @@ if ($categoria == 1) {?>
                                 }?>
                         </li>
                         
-                        <?php if($saliente ==1){?>
+                        <?php 
+                        echo $salientes;
+                        if($saliente ==1){?>
  &nbsp; 
  <li class="notification-list d-none d-sm-inline-block">
     <br>
