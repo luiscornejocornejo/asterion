@@ -412,7 +412,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div>
-    <div id="standard-modal222" class="modal fade bs-example-modal-center " tabindex="-1" role="dialog" aria-hidden="true">
+    <div id="standard-modal22" class="modal fade bs-example-modal-center " tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header bg-primary text-white">
