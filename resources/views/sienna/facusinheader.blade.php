@@ -686,6 +686,22 @@ height: 200%
 
 
 </style>
+
+<style>
+body {
+    margin: 0;            /* Reset default margin */
+}
+iframe {
+    display: block;       /* iframes are inline by default */
+    background: #000;
+    border: none;         /* Reset default border */
+    height: 90%;        /* Viewport-relative units */
+   /* width: 80vw;*/
+    width: 118.5%;
+  
+
+z-index: 999;}
+    </style>
 </head>
 
 <body class="show">
