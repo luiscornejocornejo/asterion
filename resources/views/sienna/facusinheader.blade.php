@@ -6,22 +6,22 @@
   <meta content="Coderthemes" name="author">
 
   <!-- App favicon -->
-  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <link rel="shortcut icon" href="assetsfacu/images/favicon.ico">
 
   <!-- Daterangepicker css -->
-  <link rel="stylesheet" href="assets/vendor/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="assetsfacu/vendor/daterangepicker/daterangepicker.css">
 
   <!-- Vector Map css -->
-  <link rel="stylesheet" href="assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css">
+  <link rel="stylesheet" href="assetsfacu/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css">
 
   <!-- Theme Config Js -->
-  <script src="assets/js/hyper-config.js"></script>
+  <script src="assetsfacu/js/hyper-config.js"></script>
 
   <!-- App css -->
-  <link href="assets/css/app-saas.min.css" rel="stylesheet" type="text/css" id="app-style">
+  <link href="assetsfacu/css/app-saas.min.css" rel="stylesheet" type="text/css" id="app-style">
 
   <!-- Icons css -->
-  <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
+  <link href="assetsfacu/css/icons.min.css" rel="stylesheet" type="text/css">
 <style id="apexcharts-css">@keyframes opaque {
 0% {
 opacity: 0
@@ -698,20 +698,20 @@ height: 200%
           <!-- Brand Logo Light -->
           <a href="index.html" class="logo logo-light">
               <span class="logo-lg">
-                  <img src="assets/images/logo.svg" alt="logo">
+                  <img src="assetsfacu/images/logo.svg" alt="logo">
               </span>
               <span class="logo-sm mt-2 ms-1">
-                  <img src="assets/images/logo.png" alt="small logo">
+                  <img src="assetsfacu/images/logo.png" alt="small logo">
               </span>
           </a>
 
           <!-- Brand Logo Dark -->
           <a href="index.html" class="logo logo-dark">
               <span class="logo-lg">
-                  <img src="assets/images/logo-dark.png" alt="dark logo">
+                  <img src="assetsfacu/images/logo-dark.png" alt="dark logo">
               </span>
               <span class="logo-sm">
-                  <img src="assets/images/logo-dark-sm.png" alt="small logo">
+                  <img src="assetsfacu/images/logo-dark-sm.png" alt="small logo">
               </span>
           </a>
 
@@ -730,7 +730,7 @@ height: 200%
               <!-- Leftbar User -->
               <div class="leftbar-user">
                   <a href="pages-profile.html">
-                      <img src="assets/images/users/avatar-1.jpg" alt="user-image" height="42" class="rounded-circle shadow-sm">
+                      <img src="assetsfacu/images/users/avatar-1.jpg" alt="user-image" height="42" class="rounded-circle shadow-sm">
                       <span class="leftbar-user-name mt-2">Dominic Keller</span>
                   </a>
               </div>
@@ -809,24 +809,24 @@ height: 200%
        
   
   <!-- Vendor js -->
-  <script src="assets/js/vendor.min.js"></script>
+  <script src="assetsfacu/js/vendor.min.js"></script>
 
   <!-- Daterangepicker js -->
-  <script src="assets/vendor/daterangepicker/moment.min.js"></script>
-  <script src="assets/vendor/daterangepicker/daterangepicker.js"></script>
+  <script src="assetsfacu/vendor/daterangepicker/moment.min.js"></script>
+  <script src="assetsfacu/vendor/daterangepicker/daterangepicker.js"></script>
   
   <!-- Apex Charts js -->
-  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assetsfacu/vendor/apexcharts/apexcharts.min.js"></script>
 
   <!-- Vector Map js -->
-  <script src="assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
-  <script src="assets/vendor/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
+  <script src="assetsfacu/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js"></script>
+  <script src="assetsfacu/vendor/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
 
   <!-- Dashboard App js -->
-  <script src="assets/js/pages/demo.dashboard.js"></script>
+  <script src="assetsfacu/js/pages/demo.dashboard.js"></script>
 
   <!-- App js -->
-  <script src="assets/js/app.min.js"></script>
+  <script src="assetsfacu/js/app.min.js"></script>
 
 
 <svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg><div class="daterangepicker ltr single opensright"><div class="ranges"></div><div class="drp-calendar left single" style="display: block;"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-calendar right" style="display: none;"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">Apply</button> </div></div><div class="jvectormap-label"></div></body></html>
