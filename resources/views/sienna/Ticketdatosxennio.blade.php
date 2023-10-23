@@ -455,7 +455,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                                                 <div class="timeline-desk">
                                                                     <div class="timeline-box">
                                                                         <span class="arrow"></span>
-                                                                        <span class="timeline-icon"><i class="mdi mdi-adjust"></i></span>
+                                                                        <span class="timeline-icon timeline-left"><i class="mdi mdi-adjust"></i></span>
                                                                         <h4 class="mt-0 mb-1 font-16">'+valores[i][j]['autor']+'</h4>
                                                                         <p class="text-muted">'+valores[i][j]['create_at']+'</small></p>
                                                                         <p>'+valores[i][j]['descripcion']+'</p>
