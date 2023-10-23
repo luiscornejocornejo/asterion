@@ -81,7 +81,7 @@ $resultados = DB::select($query);
 
             </li>
   
- 
+  
 <?php  }?>
 
     <li class="side-nav-item position-absolute fixed-bottom background-buttons">
