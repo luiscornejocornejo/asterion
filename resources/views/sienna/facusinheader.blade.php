@@ -787,7 +787,7 @@ height: 200%
               <!-- Start Content-->
               <div class="container-fluid">
                  <div>
-                  Aqui va el Iframe
+                 <iframe src="<?php echo $url;?>" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-top-navigation" ></iframe>
                  </div>
               </div>
               <!-- container -->
