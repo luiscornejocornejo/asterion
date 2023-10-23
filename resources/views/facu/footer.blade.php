@@ -1,10 +1,8 @@
 
 
-<a href="https://api.whatsapp.com/send?phone=TUNUMERO&text=Hola,%20quiero%20información" target="_blank" class="whatsapp">
-    <i class="mdi mdi-send" style="font-size: 25px;"></i>
-  </a>
-  <!-- Theme Settings -->
 
+  <!-- Theme Settings -->
+ 
 
   <!-- Vendor js -->
   <script src="assetsfacu/js/vendor.min.js"></script>
