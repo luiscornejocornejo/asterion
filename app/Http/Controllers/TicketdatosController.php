@@ -164,6 +164,16 @@ class TicketdatosController extends Controller
         return view('sienna/suricata2')->with('url', $url);
 
     }
+
+    public function suricatafacu(Request $request){
+
+    
+        $dat=$this->precon();
+        $url =  session('urlxennio');
+        
+        return view('sienna/suricatafacu')->with('url', $url);
+
+    }
     public function osttickets(){
 
 

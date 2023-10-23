@@ -185,6 +185,7 @@ Route::get('/creardb','App\Http\Controllers\TicketdatosController@creardb')->mid
 Route::post('/creardb','App\Http\Controllers\TicketdatosController@creardbpost')->middleware('adminsienna');
 Route::get('/conversations  ','App\Http\Controllers\TicketdatosController@suricata');
 Route::get('/conversations2  ','App\Http\Controllers\TicketdatosController@suricata2');
+Route::get('/conversationsfacu  ','App\Http\Controllers\TicketdatosController@suricatafacu');
 Route::get('/tickets  ','App\Http\Controllers\TicketdatosController@osttickets');
 Route::get('/salientes  ','App\Http\Controllers\SalientesController@salientes');
 Route::post('/salientes  ','App\Http\Controllers\SalientesController@salientespost');
