@@ -524,7 +524,6 @@ class wsController extends Controller
 
         echo   $ticket=$request->ticket;
         echo   $descripcion=$request->descripcion;
-        echo   $autor=$request->autor;
         if (isset($request->logo)) {
             $logo = $request->file('logo')->store('public');
 
@@ -536,7 +535,7 @@ class wsController extends Controller
         $se->ticket=$ticket;
         $se->descripcion=$descripcion;
         $se->logo=$logo;
-        $se->autor=$autor;
+        $se->autor="api";
         $se->save();
 
 
