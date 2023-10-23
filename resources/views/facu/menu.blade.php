@@ -68,20 +68,7 @@ $resultados = DB::select($query);
             <span> Conversaciones </span>
         </a>
     </li>
-    <?php 
-               $saliente = session('saliente');
 
-                        if($saliente ==1){?>
- &nbsp; 
- <li class="notification-list d-none d-sm-inline-block">
-    <br>
-
-<button style="background-color: #ffc95c;" type="button" class="btn btn-sm mb-0 " data-bs-toggle="modal" data-bs-target="#warning-alert-modal"><span style="color: #495057;" >Iniciar Conversacion</span></button>
-
-            </li>
-  
-  
-<?php  }?>
 
     <li class="side-nav-item position-absolute fixed-bottom background-buttons">
         <a target='_self'  href="/salir" class="side-nav-link background-buttons">
@@ -190,9 +177,16 @@ if ($categoria == 1) {?>
 
     </ul>
     <!--- End Sidemenu -->
+
+    <?php
+       $saliente = session('saliente');
+
+                if($saliente ==1){?>
     <div class="whatsapp" data-bs-toggle="modal" data-bs-target="#warning-alert-modal">
     <i class="mdi mdi-send ms-1" style="font-size: 25px;"></i>
   </div>
+
+<?php }?>
     <div class="clearfix"></div>
 </div></div></div></div>
 
