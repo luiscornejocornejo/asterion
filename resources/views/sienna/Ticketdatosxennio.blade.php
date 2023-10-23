@@ -455,7 +455,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                             <div class="timeline-heading">
                                 <h4 class="timeline-title"><?php echo $segui->autor;?></h4>
                                 <p>
-                                    <small class="text-muted"><i class="fa fa-clock-o"></i> <?php echo $segui->create_at;?></small>
+                                    <small class="text-muted"><i class="fa fa-clock-o"></i> <?php echo $segui->created_at;?></small>
                                 </p>
                             </div>
                             <div class="timeline-body">
