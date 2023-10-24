@@ -35,7 +35,7 @@
 
                             <?php foreach($deptos as $val){?>
 
-                                <option value="<?php echo $val->id;?>"><?php echo $val->nombre;?></option>
+                                <option ><?php echo $val->nombre;?></option>
 
 
                             <?php }?>
