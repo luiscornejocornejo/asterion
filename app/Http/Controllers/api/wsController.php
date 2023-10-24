@@ -397,7 +397,7 @@ class wsController extends Controller
         if($cliente<>''){
             $sc=new siennacliente();
             $sc->cliente=$cliente;
-            $sc->cel=$cel;
+            $sc->conversation_id=$conversation_id;
             $sc->nya=$nya;
             try {
                 $sc->save();
