@@ -381,7 +381,7 @@ class TicketdatosController extends Controller
         $us=new users();
         $us->nombre=$request->nombre;
         $us->last_name=$request->apellido;
-        $us->maill=$request->maill;
+        $us->email=$request->maill;
 
         if($request->tipo="supervisor"){
             $cat=10;
