@@ -394,9 +394,15 @@ class wsController extends Controller
         $se->save();
 
 
-        if($cliente<>''){
             $sc=new siennacliente();
+            if($cliente<>''){
+
             $sc->cliente=$cliente;
+            }else{
+
+                $sc->cliente="";
+
+            }
             $sc->conversation_id=$conversation_id;
             $sc->nya=$nya;
             try {
@@ -406,7 +412,7 @@ class wsController extends Controller
                 //echo "existe".$ex;
             }
             
-        }
+       
         return $si->id;
         //return response()->json(['cliente' => $return2]);
 
