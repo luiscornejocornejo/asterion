@@ -390,7 +390,7 @@ class TicketdatosController extends Controller
             $cat=9;
         }
         $us->categoria=$cat;
-        $us->pass=md5($request->pass);
+        $us->password=md5($request->pass);
         $us->email_suricata=$mailsso;
         $us->save();
         
