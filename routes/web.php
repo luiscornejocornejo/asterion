@@ -194,6 +194,7 @@ Route::get('/ticketssienna  ','App\Http\Controllers\TicketdatosController@ticket
 Route::post('/siennaestado  ','App\Http\Controllers\TicketdatosController@siennaestado');
 Route::post('/siennacliente  ','App\Http\Controllers\TicketdatosController@siennacliente');
 Route::post('/siennacrearseguimiento  ','App\Http\Controllers\TicketdatosController@siennacrearseguimiento');
+Route::get('/siennacrearusuarios','App\Http\Controllers\TicketdatosController@siennacrearusuarios');
 
 
 });

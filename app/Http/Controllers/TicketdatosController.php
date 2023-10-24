@@ -318,6 +318,14 @@ class TicketdatosController extends Controller
 
     }
 
+
+    public function siennacrearusuarios(Request $request){
+
+
+        return view('sienna/siennacrearusuarios'); 
+
+
+    }
     ////////fin sienna tickets
     public function curlnuevo($url, $data, $method)
     {
