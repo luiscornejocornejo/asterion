@@ -17,7 +17,6 @@
 
               <!-- Start Content-->
               <div class="container-fluid">
-                 <div>
                  <form method="post" action="">
 
                             @csrf
@@ -41,22 +40,13 @@
                             </select>
                             <br>
 
-                            <br> <label for="exampleInputEmail1">Servicios </label>
-                            <select name="servicios[]" class="form-control" multiple>
-
-                            <option value="1">Sienna</option>
-                            <option value="2">osticket</option>
-                            <option value="3">xennio</option>
-
-                            </select>
-                            <br>
+                           
                             <label for="exampleInputEmail1">Password</label>
                             <input type="password" name="pass" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Password" required>
                             <br>
                             <select   class="form-select" aria-label="Default select example" name="tipo" >
                             <option >supervisor</option>
                             <option >agente</option>
-                            <option >super</option>
 
                                             </select>
 
@@ -70,7 +60,6 @@
 
 
 
-                </div>
               </div>
               <!-- container -->
           </div>
