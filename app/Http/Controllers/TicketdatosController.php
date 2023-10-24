@@ -8,6 +8,7 @@ use App\Eve;
 use App\Models\categoria;
 use App\Models\dashboard;
 use App\Models\graficos;
+use App\Models\users;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\PDO;
 use Redirect;
@@ -329,6 +330,76 @@ class TicketdatosController extends Controller
 
 
     }
+
+    public function siennacrearusuariospost(Request $request){
+
+     
+        
+        $grupossso=$request->grupossso;
+        $mailsso=$request->nombre.$request->apellido."@suricata.la";
+        $grup="";
+        foreach($grupossso as $val){
+
+          $grup.=$val.";";
+        }
+
+        $grup=substr($grup,0,-1);
+        var_dump($grup);
+        // dd($mailsso);
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+            $subdomain_tmp =  array_shift($domainParts);
+        } elseif(isset($_SERVER['SERVER_NAME'])){
+            $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+            $subdomain_tmp =  array_shift($domainParts);
+            
+        }
+
+        $url="http://146.190.115.238/api/createuser?token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM&botid=".$subdomain_tmp."&grupo=".$grup."&tipo=".$request->tipo."&email=".$mailsso.""; 
+       //dd($url);
+ 
+       $curl = curl_init();
+
+       curl_setopt_array($curl, array(
+         CURLOPT_URL => $url,
+         CURLOPT_RETURNTRANSFER => true,
+         CURLOPT_ENCODING => '',
+         CURLOPT_MAXREDIRS => 10,
+         CURLOPT_TIMEOUT => 0,
+         CURLOPT_FOLLOWLOCATION => true,
+         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+         CURLOPT_CUSTOMREQUEST => 'GET',
+     
+       ));
+       echo "<br><br>";
+        echo $response = curl_exec($curl);
+
+        curl_close($curl);
+ 
+
+
+        $us=new users();
+        $us->nombre=$request->nombre;
+        $us->apellido=$request->apellido;
+        $us->maill=$request->maill;
+
+        if($request->tipo="supervisor"){
+            $cat=10;
+        }else{
+
+            $cat=9;
+        }
+        $us->categoria=$cat;
+        $us->pass=md5($request->pass);
+        $us->email_suricata=$mailsso;
+        $us->save();
+        
+       return redirect() 
+        ->back() 
+        ->with('success', 'Se Creo  correctamente! el usuario');
+
+    }
+    
     ////////fin sienna tickets
     public function curlnuevo($url, $data, $method)
     {
