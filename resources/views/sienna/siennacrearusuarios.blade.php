@@ -30,12 +30,15 @@
                             <input type="text" name="apellido" class="form-control" id="" aria-describedby="" placeholder="Apellido" required>
                             <br> <label for="exampleInputEmail1">Mail logeo </label>
                             <input type="mail" name="maill" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mail logeo" required>
-                            <br> <label for="exampleInputEmail1">Grupos sso</label>
+                            <br> <label for="exampleInputEmail1">Grupos </label>
                             <select name="grupossso[]" class="form-control" multiple>
 
-                            <option>Administracion</option>
-                            <option>Soporte</option>
-                            <option>Ventas</option>
+                            <?php foreach($deptos as $val){?>
+
+                                <option value="<?php echo $val->id;?>"><?php echo $val->nombre;?></option>
+
+
+                            <?php }?>
 
                             </select>
                             <br>
