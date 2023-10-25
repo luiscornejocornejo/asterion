@@ -505,6 +505,7 @@ class wsController extends Controller
             "idconv" => $idconv
         );
   
+        var_dump($data);
         // Set headers for the cURL request
         $headers = array(
             'Accept: application/json',
