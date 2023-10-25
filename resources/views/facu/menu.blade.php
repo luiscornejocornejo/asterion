@@ -69,6 +69,7 @@ $resultados = DB::select($query);
         </a>
     </li>
     <?php
+    echo $categoria;
 if ($categoria == 10) {?>
     <li class="side-nav-item position-absolute fixed-bottom background-buttons">
         <a target='_self'  href="/siennacrearusuarios" class="side-nav-link background-buttons">
