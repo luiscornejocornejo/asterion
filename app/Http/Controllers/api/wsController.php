@@ -501,7 +501,7 @@ class wsController extends Controller
         // Prepare data array with account key, bot key, and account secret
         $data = array(
             "token" => "EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM",
-            "idbot" => $BOT_KEY,
+            "idbot" => $idbot,
             "idconv" => $idconv
         );
   
