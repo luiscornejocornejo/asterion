@@ -69,8 +69,8 @@ $resultados = DB::select($query);
         </a>
     </li>
     <?php
-    echo $categoria;
-if ($categoria == 10) {?>
+
+    if ($categoria == 10) {?>
 
    
     <li class="side-nav-item background-buttons">
