@@ -68,8 +68,18 @@ $resultados = DB::select($query);
             <span> Conversaciones </span>
         </a>
     </li>
+    <?php
+if ($categoria == 10) {?>
+    <li class="side-nav-item position-absolute fixed-bottom background-buttons">
+        <a target='_self'  href="/siennacrearusuarios" class="side-nav-link background-buttons">
+            <i class="uil-exit"></i>
+            <span> Crear Usuarios </span>
+        </a>
+    </li>
 
 
+    <?php   }
+    ?>
     <li class="side-nav-item position-absolute fixed-bottom background-buttons">
         <a target='_self'  href="/salir" class="side-nav-link background-buttons">
             <i class="uil-exit"></i>
