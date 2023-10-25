@@ -505,7 +505,6 @@ class wsController extends Controller
             "idconv" => $idconv
         );
   
-        var_dump($data);
         // Set headers for the cURL request
         $headers = array(
             'Accept: application/json',
@@ -514,6 +513,7 @@ class wsController extends Controller
         );
            $url='https://suricata4..com.ar/api/closechat';
      
+         echo  $url.="&token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM&idbot=".$idbot."&idconv=".$idconv;
         // Set options for the cURL request
         $options = array(
             CURLOPT_URL => $url,
@@ -524,7 +524,6 @@ class wsController extends Controller
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => json_encode($data),
             CURLOPT_HTTPHEADER => $headers,
         );
   
