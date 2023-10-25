@@ -513,7 +513,7 @@ class wsController extends Controller
         );
            $url='https://suricata4..com.ar/api/closechat';
      
-         echo  $url.="&token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM&idbot=".$idbot."&idconv=".$idconv;
+          echo  $url.="?token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM&idbot=".$idbot."&idconv=".$idconv;
         // Set options for the cURL request
         $options = array(
             CURLOPT_URL => $url,
