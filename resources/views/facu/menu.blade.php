@@ -71,9 +71,11 @@ $resultados = DB::select($query);
     <?php
     echo $categoria;
 if ($categoria == 10) {?>
-    <li class="side-nav-item position-absolute fixed-bottom background-buttons">
-        <a target='_self'  href="/siennacrearusuarios" class="side-nav-link background-buttons">
-            <i class="uil-exit"></i>
+
+   
+    <li class="side-nav-item background-buttons">
+        <a  href="/siennacrearusuarios"  class="side-nav-link hovering-pan ">
+            <i class="uil uil-comment-message"></i>
             <span> Crear Usuarios </span>
         </a>
     </li>
