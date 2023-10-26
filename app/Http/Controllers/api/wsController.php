@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\siennatickets;
 use App\Models\siennaseguimientos;
 use App\Models\siennacliente;
+use App\Models\siennadepto;
 
 class wsController extends Controller
 {
@@ -567,6 +568,14 @@ class wsController extends Controller
         $si2 = siennatickets::find($idticketdepto);
         $si2->siennadepto=$statos;
         $si2->save();
+
+
+
+        $depto = siennadepto::find($statos);
+
+         $behaviour=$depto->behaviour;
+dd($behaviour);
+
         return redirect()
         ->back()
         ->with('success', 'Se modifico el departamento  correctamente!');
