@@ -449,7 +449,7 @@ class wsController extends Controller
             left join siennaestado b on b.id=a.siennaestado
             left join siennadepto c on c.id=a.siennadepto
             left join siennatopic d on d.id=a.siennatopic
-            where a.conversation_id='+".$conversation_id."' and a.siennaestado<>4";
+            where a.conversation_id='".$conversation_id."' and a.siennaestado<>4";
         }else{
             $query="select *,b.nombre nombreestado,c.nombre nombredepto,a.user_id,
             a.id ticketid,d.nombre siennatopicnombre,a.nya nya from siennatickets a 
