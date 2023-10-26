@@ -196,8 +196,8 @@ if ($categoria == 1) {?>
 
                 if($saliente ==1){?>
     <div class="whatsapp" data-bs-toggle="modal" data-bs-target="#warning-alert-modal">
-    <i class="mdi mdi-send ms-1" style="font-size: 25px;margin-left: 0.785rem;"></i>
-  </div>
+    <i class="mdi mdi-send ms-1" style="font-size: 25px;margin-left: 0.785rem!important;"></i>
+</div>
 
 <?php }?>
     <div class="clearfix"></div>
