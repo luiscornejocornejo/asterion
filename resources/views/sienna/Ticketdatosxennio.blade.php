@@ -127,6 +127,90 @@ if (isset($_SERVER['HTTP_HOST'])) {
 <br>
 <?php  foreach($ticket as $valor){?>
 
+    <div class="card widget-flat">
+          <div class="card-body">
+            <div class="d-flex">
+              <i class="mdi mdi-card-account-details line-h me-1 text-info" style="font-size: 21px;"></i>
+              <h4 class="fw-normal text-dark">Nombre:&nbsp;Pepito</h4>
+          </div> 
+            <hr >
+            <div class="d-flex mt-2">
+                <i class="mdi mdi-whatsapp text-success"></i>&nbsp;Whatsapp:&nbsp;
+                <span class="badge badge-secondary-lighten line-h">
+                  5491122334455
+                </span>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="card widget-flat">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <div class="d-flex">
+              <i class="mdi mdi-ticket-account line-h me-1 text-warning" style="font-size: 23px;"></i>
+              <h4 class="fw-normal text-dark" title="Number of Customers">Ticket #0{{ $valor->ticketid }}1123</h4>
+            </div>
+            <div>
+              <div class="dropdown btn-group">
+              <?php
+              $color="";
+              if($valor->siennaestado==1){
+                $color=" btn-warning-lighten";
+              }
+              if($valor->siennaestado==2){
+                $color=" btn-primary-lighten";
+              }
+              if($valor->siennaestado==3){
+                $color=" btn-success-lighten";
+              }
+              if($valor->siennaestado==4){
+                $color=" btn-success-lighten";
+              }?>
+                <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php  echo $valor->nombreestado;?>
+                </button>
+                 <div class="dropdown-menu dropdown-menu-animated">
+                    <a class="dropdown-item" href="#">Progreso</a>
+                    <div class="dropdown-divider margin-dropdown"></div>
+                    <a class="dropdown-item " href="#">Resuelto</a>
+                    <div class="dropdown-divider margin-dropdown"></div>
+                    <a class="dropdown-item" href="#">Cerrado con encuesta</a>
+                    <a class="dropdown-item" href="#">Cerrado</a>
+                </div>
+              </div>            
+            </div>
+          </div>
+          <hr />
+          <div class="d-flex  mt-4">
+            <i class="ri-question-answer-line "></i>&nbsp;Tema de ayuda:&nbsp;
+            <span role="button" class="badge badge-secondary-lighten hover-overlay line-h"  data-bs-toggle="modal" data-bs-target="#standard-modal3">
+            <?php if($valor->siennatopic==null){
+                                                echo "sin topic";
+                                            } else {
+                                                echo $valor->siennatopicnombre;
+                                            }?>
+            </span>
+          </div>
+          <div class="d-flex mt-2">
+            <i class="ri-building-4-line"></i>&nbsp;Departamento:&nbsp;
+            <span class="badge badge-secondary-lighten line-h" data-bs-toggle="modal" data-bs-target="#standard-modal2" role="button">
+            <?php if($valor->siennadepto==null){
+                                                echo "sin depto";
+                                            } else {
+                                                echo $valor->nombredepto;
+                                            }?>
+            </span>
+          </div>
+          <div class="d-flex mt-2 oculta">
+            <i class="mdi mdi-history"></i>&nbsp;Historial:&nbsp;
+            <span role="button" class="badge badge-secondary-lighten line-h" data-bs-toggle="modal" data-bs-target="#standard-modal22">
+              <i class="mdi mdi-login-variant"></i>
+            </span>
+          </div>
+          </div> 
+        </div> <!-- end card-body-->
 
     <div class="card widget-flat">
         <div class="card-body">
