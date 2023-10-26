@@ -439,7 +439,7 @@ class wsController extends Controller
         $conversation_id=$request->conversation_id;
 
 
-         $query="select *,b.nombre nombreestado,c.nombre nombredepto,a.user_id
+         $query="select *,b.nombre nombreestado,c.nombre nombredepto,a.user_id,
         a.id ticketid,d.nombre siennatopicnombre,a.nya nya from siennatickets a 
         left join siennaestado b on b.id=a.siennaestado
         left join siennadepto c on c.id=a.siennadepto
