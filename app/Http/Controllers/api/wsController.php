@@ -583,6 +583,7 @@ class wsController extends Controller
         echo   $idconv=$request->idconv;
         echo   $idbot=$request->idbot;
         $user_id=$request->user_id;
+        $user_id=str_replace("+","",$user_id);
         echo   $bot_channel=$request->bot_channel;
 
         $si2 = siennatickets::find($idticketdepto);
