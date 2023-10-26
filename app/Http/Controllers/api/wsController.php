@@ -547,8 +547,7 @@ class wsController extends Controller
 
         echo   $idtickettopic=$request->idtickettopic;
         echo   $statos=$request->statos;
-        echo   $idconv=$request->idconv;
-        echo   $idbot=$request->idbot;
+       
   
         $si2 = siennatickets::find($idtickettopic);
         $si2->siennatopic=$statos;
@@ -565,7 +564,8 @@ class wsController extends Controller
         echo   $idticketdepto=$request->idticketdepto;
         echo   $statos=$request->statos;
   
-  
+        echo   $idconv=$request->idconv;
+        echo   $idbot=$request->idbot;
         $si2 = siennatickets::find($idticketdepto);
         $si2->siennadepto=$statos;
         $si2->save();
