@@ -568,6 +568,8 @@ class wsController extends Controller
   
         echo   $idconv=$request->idconv;
         echo   $idbot=$request->idbot;
+        $user_id=$request->user_id;
+
         $si2 = siennatickets::find($idticketdepto);
         $si2->siennadepto=$statos;
         $si2->save();
@@ -578,7 +580,6 @@ class wsController extends Controller
 
         $behaviour=$depto->behaviour;
         $interaction=$depto->interaction;
-        $user_id=$depto->user_id;
 
 
         $curl = curl_init();
