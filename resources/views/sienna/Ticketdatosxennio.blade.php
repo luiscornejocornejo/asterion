@@ -131,13 +131,13 @@ if (isset($_SERVER['HTTP_HOST'])) {
           <div class="card-body">
             <div class="d-flex">
               <i class="mdi mdi-card-account-details line-h me-1 text-info" style="font-size: 21px;"></i>
-              <h4 class="fw-normal text-dark">Nombre:&nbsp;Pepito</h4>
+              <h4 class="fw-normal text-dark">Nombre:&nbsp;{{ $valor->nya }}</h4>
           </div> 
             <hr >
             <div class="d-flex mt-2">
                 <i class="mdi mdi-whatsapp text-success"></i>&nbsp;Whatsapp:&nbsp;
                 <span class="badge badge-secondary-lighten line-h">
-                  5491122334455
+                {{ $valor->cel }}
                 </span>
               </div>
             </div>
