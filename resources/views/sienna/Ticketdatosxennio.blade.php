@@ -157,10 +157,10 @@ if (isset($_SERVER['HTTP_HOST'])) {
               <?php
               $color="";
               if($valor->siennaestado==1){
-                $color=" btn-warning";
+                $color=" btn-info";
               }
               if($valor->siennaestado==2){
-                $color=" btn-primary";
+                $color=" btn-warning";
               }
               if($valor->siennaestado==3){
                 $color=" btn-success";
