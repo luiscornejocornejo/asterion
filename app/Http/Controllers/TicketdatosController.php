@@ -383,7 +383,7 @@ class TicketdatosController extends Controller
         $us->last_name=$request->apellido;
         $us->email=$request->maill;
 
-        if($request->tipo="supervisor"){
+        if($request->tipo=="supervisor"){
             $cat=10;
         }else{
 
