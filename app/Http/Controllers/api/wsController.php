@@ -446,7 +446,7 @@ class wsController extends Controller
             if (strpos($conversation_id, "+") !== false) {
                     $bot_channel="WhatsAppChannel";
             } else {
-                $bot_channel="";
+                $bot_channel="telegram";
             }
 
 
