@@ -172,8 +172,11 @@ if (isset($_SERVER['HTTP_HOST'])) {
                     <?php  echo $valor->nombreestado;?>
                 </button>
                  <div class="dropdown-menu dropdown-menu-animated">
-                    <a class="dropdown-item" href="#">Progreso</a>
+                 <?php foreach($ost_ticket_status as $dep){?>
+
+                    <a class="dropdown-item" href="#"><?php echo $dep->nombre;?></a>
                     <div class="dropdown-divider margin-dropdown"></div>
+                    <?php }?>
                     <a class="dropdown-item " href="#">Resuelto</a>
                     <div class="dropdown-divider margin-dropdown"></div>
                     <a class="dropdown-item" href="#">Cerrado con encuesta</a>
