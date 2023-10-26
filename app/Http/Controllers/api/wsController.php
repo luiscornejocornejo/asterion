@@ -489,6 +489,7 @@ class wsController extends Controller
         ->with('ost_ticket_status', $resultadossiennaestado)
         ->with('topics', $resultadossiennatopic)
         ->with('merchant', $merchat)
+        ->with('bot_channel', $bot_channel)
         ->with('seguimientos', $resultadosq)
         ->with('datosticketsviejos', $datosticketsviejos)
         ->with('id', $conversation_id);
@@ -512,11 +513,14 @@ class wsController extends Controller
         $url="https://suricata4..com.ar/api/closechat";
         $curl = curl_init();
 
+        
         // Prepare data array with account key, bot key, and account secret
         $data = array(
             "token" => "EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM",
             "idbot" => $idbot,
-            "idconv" => $idconv
+            "idconv" => $idconv,
+            "bot_channel" => $bot_channel
+            
         );
   
         // Set headers for the cURL request

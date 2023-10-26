@@ -268,6 +268,9 @@ if (isset($_SERVER['HTTP_HOST'])) {
                         <input value="<?php echo $valor->ticketid;?>" type="hidden" name="idticketestado" id="idtickettopic">
                         <input value="<?php echo $valor->conversation_id;?>" type="hidden" name="idconv" id="idconv">
                         <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
+                        <input value="<?php echo $bot_channel;?>" type="hidden" name="bot_channel" id="bot_channel">
+
+                        
                         <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $merchant;?> ">
 
                         <div v-for="ost_ticket_statu in ost_ticket_status ">
