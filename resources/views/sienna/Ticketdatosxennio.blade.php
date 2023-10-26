@@ -307,7 +307,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                         <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
                         <input value=" <?php echo $valor->ticketid;?> "  type="hidden" name="idticketdepto" id="idtickettopic">
                         <input value="<?php echo $bot_channel;?>" type="hidden" name="bot_channel" id="bot_channel">
-
+  
                         <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $merchant;?> ">
 
                         <div v-for="department in departments ">
