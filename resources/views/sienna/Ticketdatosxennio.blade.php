@@ -157,16 +157,16 @@ if (isset($_SERVER['HTTP_HOST'])) {
               <?php
               $color="";
               if($valor->siennaestado==1){
-                $color=" btn-warning-lighten";
+                $color=" btn-warning";
               }
               if($valor->siennaestado==2){
-                $color=" btn-primary-lighten";
+                $color=" btn-primary";
               }
               if($valor->siennaestado==3){
-                $color=" btn-success-lighten";
+                $color=" btn-success";
               }
               if($valor->siennaestado==4){
-                $color=" btn-success-lighten";
+                $color=" btn-success";
               }?>
                 <button class="btn <?php echo $color;?> dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <?php  echo $valor->nombreestado;?>
