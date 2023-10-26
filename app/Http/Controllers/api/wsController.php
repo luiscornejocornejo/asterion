@@ -446,6 +446,7 @@ class wsController extends Controller
         left join siennatopic d on d.id=a.siennatopic
         where a.conversation_id='".$conversation_id."' and a.siennaestado<>4";
         $resultados = DB::select($query);
+        dd($resultados);
         $ticketprincipal="";
         foreach($resultados as $val){
 
