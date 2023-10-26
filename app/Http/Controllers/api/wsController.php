@@ -436,7 +436,7 @@ class wsController extends Controller
 
     public function tickessiennaapi(Request $request){
 
-        $conversation_id=$request->conversation_id;
+        $conversation_id=urlencode($request->conversation_id);
 
 
         echo  $query="select *,b.nombre nombreestado,c.nombre nombredepto,a.user_id,
