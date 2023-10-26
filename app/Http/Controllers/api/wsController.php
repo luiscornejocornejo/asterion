@@ -385,6 +385,9 @@ class wsController extends Controller
        $si->siennasource=$siennasource;
        $si->cel=$cel;
        $si->nya=$nya;
+     
+       $user_id=str_replace("+","",$user_id);  
+       $conversation_id=str_replace("+","",$conversation_id);
        $si->user_id=$user_id;
        $si->conversation_url=$conversation_url;
        $si->conversation_id=$conversation_id;
