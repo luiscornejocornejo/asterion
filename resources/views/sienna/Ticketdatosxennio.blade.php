@@ -168,19 +168,19 @@ if (isset($_SERVER['HTTP_HOST'])) {
               if($valor->siennaestado==4){
                 $color=" btn-success";
               }?>
-                <button class="btn <?php echo $color;?> dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn <?php echo $color;?> dropdown-toggle" type="button"  data-bs-toggle="modal" data-bs-target="#standard-modal"  aria-haspopup="true" aria-expanded="false">
                     <?php  echo $valor->nombreestado;?>
                 </button>
                  <div class="dropdown-menu dropdown-menu-animated">
+                     <input value="<?php echo $valor->ticketid;?>" type="hidden" name="idticketestado" id="idtickettopic">
+                        <input value="<?php echo $valor->conversation_id;?>" type="hidden" name="idconv" id="idconv">
+                        <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
                  <?php foreach($ost_ticket_status as $dep){?>
 
                     <a class="dropdown-item" href="#"><?php echo $dep->nombre;?></a>
                     <div class="dropdown-divider margin-dropdown"></div>
                     <?php }?>
-                    <a class="dropdown-item " href="#">Resuelto</a>
-                    <div class="dropdown-divider margin-dropdown"></div>
-                    <a class="dropdown-item" href="#">Cerrado con encuesta</a>
-                    <a class="dropdown-item" href="#">Cerrado</a>
+                  
                 </div>
               </div>            
             </div>
