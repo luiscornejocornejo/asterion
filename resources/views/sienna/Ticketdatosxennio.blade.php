@@ -150,7 +150,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
           <div class="d-flex justify-content-between">
             <div class="d-flex">
               <i class="mdi mdi-ticket-account line-h me-1 text-warning" style="font-size: 23px;"></i>
-              <h4 class="fw-normal text-dark" title="Number of Customers">Ticket #0{{ $valor->ticketid }}1123</h4>
+              <h4 class="fw-normal text-dark" title="Number of Customers">Ticket #{{ $valor->ticketid }}</h4>
             </div>
             <div>
               <div class="dropdown btn-group">
