@@ -438,7 +438,7 @@ class wsController extends Controller
 
         $conversation_id=urlencode($request->conversation_id);
 
-        echo $bot_channel=urlencode($request->bot_channel);
+         $bot_channel=urlencode($request->bot_channel);
 
         if($bot_channel=="WhatsAppChannel"){
             $query="select *,b.nombre nombreestado,c.nombre nombredepto,a.user_id,
@@ -457,7 +457,6 @@ class wsController extends Controller
         }
         
         $resultados = DB::select($query);
-        dd($resultados);
         $ticketprincipal="";
         foreach($resultados as $val){
 
