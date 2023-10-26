@@ -386,8 +386,8 @@ class wsController extends Controller
        $si->cel=$cel;
        $si->nya=$nya;
      
-       $user_id=str_replace("+","",$user_id);  
-       $conversation_id=str_replace("+","",$conversation_id);
+       //$user_id=str_replace("+","",$user_id);  
+       //$conversation_id=str_replace("+","",$conversation_id);
        $si->user_id=$user_id;
        $si->conversation_url=$conversation_url;
        $si->conversation_id=$conversation_id;
@@ -441,7 +441,19 @@ class wsController extends Controller
 
         $conversation_id=urlencode($request->conversation_id);
 
-         $bot_channel=urlencode($request->bot_channel);
+
+
+            if (strpos($conversation_id, "+") !== false) {
+                    $bot_channel="WhatsAppChannel";
+            } else {
+                $bot_channel="";
+            }
+
+
+
+
+
+        
 
         if($bot_channel=="WhatsAppChannel"){
             $query="select *,b.nombre nombreestado,c.nombre nombredepto,a.user_id,
@@ -449,7 +461,7 @@ class wsController extends Controller
             left join siennaestado b on b.id=a.siennaestado
             left join siennadepto c on c.id=a.siennadepto
             left join siennatopic d on d.id=a.siennatopic
-            where a.conversation_id='".$conversation_id."' and a.siennaestado<>4";
+            where a.conversation_id='+".$conversation_id."' and a.siennaestado<>4";
         }else{
             $query="select *,b.nombre nombreestado,c.nombre nombredepto,a.user_id,
             a.id ticketid,d.nombre siennatopicnombre,a.nya nya from siennatickets a 
@@ -586,7 +598,7 @@ class wsController extends Controller
         echo   $idconv=$request->idconv;
         echo   $idbot=$request->idbot;
         $user_id=$request->user_id;
-        $user_id=str_replace("+","",$user_id);
+        //$user_id=str_replace("+","",$user_id);
         echo   $bot_channel=$request->bot_channel;
 
         $si2 = siennatickets::find($idticketdepto);
