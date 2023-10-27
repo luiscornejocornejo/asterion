@@ -1,4 +1,8 @@
 @include('facu.header')
+<div class="wrapper">
+
+<!-- ========== Left Sidebar Start ========== -->
+@include('facu.menu')
 <?php $categoria =  session('categoria');?>
 <script>
 
