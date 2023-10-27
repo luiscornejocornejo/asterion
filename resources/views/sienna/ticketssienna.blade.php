@@ -412,7 +412,9 @@ foreach ($datos as $item) {
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
-                      
+            <div>
+                 <iframe src="" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-top-navigation" ></iframe>
+                 </div>
            
             
             </div>
