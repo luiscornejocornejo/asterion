@@ -28,6 +28,11 @@ img.style.transform = 'scale(1.9)';
     document.getElementById("idticketcliente").value = dd;
 
     }
+    function vista(dd) {
+        
+        document.getElementById("vista").contentWindow.document.location.href=dd;
+    
+        }
 
     
 function car(dd) {
@@ -145,7 +150,7 @@ function car(dd) {
                                     <button class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="mdi mdi-link"></i>
                                     </button> 
-                                    <button onclick="conver(<?php echo $item->conversation_url;?>,<?php echo $item->cliente;?>)"  id="btnAbrirAgregarBien" type="button" class="btn btn-outline-secondary rounded " data-bs-toggle="modal" data-bs-target="#modalExample33">
+                                    <button onclick="vista(<?php echo $item->conversation_url;?>,<?php echo $item->cliente;?>)"  id="btnAbrirAgregarBien" type="button" class="btn btn-outline-secondary rounded " data-bs-toggle="modal" data-bs-target="#modalExample33">
                                     <i class="mdi mdi-wechat"></i>
         </button>
                                  
@@ -413,7 +418,7 @@ foreach ($datos as $item) {
             </div>
             <div class="modal-body">
             <div>
-                 <iframe src="" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-top-navigation" ></iframe>
+                 <iframe id="vista" src="" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-top-navigation" ></iframe>
                  </div>
            
             
