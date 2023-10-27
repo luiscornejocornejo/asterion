@@ -151,7 +151,7 @@ function car(dd) {
                                     <button class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="mdi mdi-link"></i>
                                     </button> 
-                                    <button onclick="vista(<?php echo $item->conversation_url;?>,<?php echo $item->cliente;?>)"  id="btnAbrirAgregarBien" type="button" class="btn btn-outline-secondary rounded " data-bs-toggle="modal" data-bs-target="#modalExample33">
+                                    <button onclick="vista('<?php echo $item->conversation_url;?>')"  id="btnAbrirAgregarBien" type="button" class="btn btn-outline-secondary rounded " data-bs-toggle="modal" data-bs-target="#modalExample33">
                                     <i class="mdi mdi-wechat"></i>
         </button>
                                  
