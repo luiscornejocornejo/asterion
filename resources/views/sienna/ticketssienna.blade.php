@@ -119,7 +119,7 @@ function car(dd) {
                         <tbody>
                             <?php foreach ($datos as $item) { ?>
                             <tr class="text-center">
-                                <td><?php echo $item->ticket_id;?></td>
+                                <td><?php echo $item->ticketid;?></td>
                                 <td><?php echo $item->cliente;?></td>
                                 <td><?php echo $item->depto;?></td>
                                 <td><?php echo $item->topicname;?></td>
