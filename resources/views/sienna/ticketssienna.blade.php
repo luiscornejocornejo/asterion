@@ -122,7 +122,7 @@ function car(dd) {
                             <tr class="text-center">
                                 <th>Ticket</th>
                                 <th>Cliente</th>
-                                <th>Creado</th>
+                                <th>Departamento</th>
                                 <th>Topic</th>
                                 <th>Asignado a</th>
                                 <th>Estado</th>
