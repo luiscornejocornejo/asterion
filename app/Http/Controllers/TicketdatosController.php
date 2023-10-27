@@ -224,7 +224,7 @@ class TicketdatosController extends Controller
         left join siennadepto b on b.id=a.siennadepto 
         left join  siennaestado c on c.id=a.siennaestado
         left join  siennatopic d on d.id=a.siennatopic
-        where a.siennadepto in (select siennadepto from siennadeptouser where userid =".$idusuario.")
+        where a.siennadepto in (select siennadepto from siennadeptouser where users =".$idusuario.")
         and a.siennaestado<>4
         ";
 
