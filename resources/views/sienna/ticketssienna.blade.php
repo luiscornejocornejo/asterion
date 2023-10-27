@@ -411,7 +411,7 @@ foreach ($datos as $item) {
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <div id="modalExample33" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="info-header-modalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal">
         <div class="modal-content">
             <div class="modal-header bg-info">
                 <h4 class="modal-title text-white" id="info-header-modalLabel">cONVERSACION</h4>
