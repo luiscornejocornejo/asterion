@@ -1,6 +1,10 @@
 
 
-@include('pp.header')
+@include('facu.header')
+<div class="wrapper">
+
+<!-- ========== Left Sidebar Start ========== -->
+@include('facu.menu')
 <style>
     @media only screen and (max-width: 760px),
     (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -170,4 +174,4 @@ mdi-chevron-down"></i></button>
     </div>
 </div>
 <br><br><br>
-@include('pp.footer')
+@include('facu.footer')
