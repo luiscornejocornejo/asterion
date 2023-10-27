@@ -145,9 +145,9 @@ function car(dd) {
                                     <button class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="mdi mdi-link"></i>
                                     </button> 
-                                    <button class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a target="_blank" href="<?php $item->conversation_url;?>" class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="mdi mdi-wechat"></i>
-                                    </button> 
+                            </a> 
                                 </td>
                             </tr>
 
