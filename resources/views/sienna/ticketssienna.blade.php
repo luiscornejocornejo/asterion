@@ -411,16 +411,15 @@ foreach ($datos as $item) {
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <div id="modalExample33" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="info-header-modalLabel" aria-hidden="true">
-    <div class="modal">
+    <div class="modal-dialog"  role="document">
         <div class="modal-content">
             <div class="modal-header bg-info">
                 <h4 class="modal-title text-white" id="info-header-modalLabel">cONVERSACION</h4>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
-            <div>
+           
                  <iframe id="vista" src="" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-top-navigation" ></iframe>
-                 </div>
            
             
             </div>
