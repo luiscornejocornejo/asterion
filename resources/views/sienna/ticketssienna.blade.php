@@ -117,12 +117,13 @@ function car(dd) {
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach ($datos as $item) { ?>
                             <tr class="text-center">
-                                <td>{{ticket_id}}</td>
-                                <td>{{first_name}}</td>
-                                <td>{{create_at}}</td>
-                                <td>{{topic}}</td>
-                                <td>{{operator}}</td>
+                                <td>{{$item->ticket_id}}</td>
+                                <td>{{$item->cliente}}</td>
+                                <td>{{$item->depto}}</td>
+                                <td>{{$item->topicname}}</td>
+                                <td>{{$item->operator}}</td>
                                 <td>
                                     <button class="btn btn-info" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Abierto
@@ -137,12 +138,14 @@ function car(dd) {
                                     </button> 
                                 </td>
                             </tr>
+
+                            <?php }?>
                         </tbody>
                     </table>
                     
                                                      
                 </div>
-                
+
 <div id="principal">
     <div class="" style="width: 80%;margin-top: 70px;margin-left: 367px;">
 
