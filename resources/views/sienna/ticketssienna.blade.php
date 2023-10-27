@@ -102,6 +102,47 @@ function car(dd) {
 }
 </script>
 
+
+<div class="container mt-5">
+                    <table id="basic-datatable" class="table dt-responsive nowrap w-100">
+                        <thead class="">
+                            <tr class="text-center">
+                                <th>Ticket</th>
+                                <th>Cliente</th>
+                                <th>Creado</th>
+                                <th>Topic</th>
+                                <th>Asignado a</th>
+                                <th>Estado</th>
+                                <th>Historial</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center">
+                                <td>{{ticket_id}}</td>
+                                <td>{{first_name}}</td>
+                                <td>{{create_at}}</td>
+                                <td>{{topic}}</td>
+                                <td>{{operator}}</td>
+                                <td>
+                                    <button class="btn btn-info" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Abierto
+                                    </button> 
+                                </td>
+                                <td>
+                                    <button class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="mdi mdi-link"></i>
+                                    </button> 
+                                    <button class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="mdi mdi-wechat"></i>
+                                    </button> 
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                                                     
+                </div>
+                
 <div id="principal">
     <div class="" style="width: 80%;margin-top: 70px;margin-left: 367px;">
 
