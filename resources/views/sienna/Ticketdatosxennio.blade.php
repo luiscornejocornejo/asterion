@@ -137,7 +137,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
           <div class="d-flex mt-2">
           <i class="mdi mdi-card-account-details line-h me-1 "></i>
-          &nbsp;Numero de cédula:&nbsp;
+         Numero de cédula:&nbsp;
               <span class="badge badge-secondary-lighten line-h">
                 {{ $valor->cedula }}
               </span>
