@@ -108,6 +108,13 @@ function car(dd) {
 }
 </script>
 
+@if ($message = Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade
+                            show" role="alert">
+            {{ $message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
 
 <div class="container mt-5">
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
@@ -127,7 +134,7 @@ function car(dd) {
                             $operator="yo"; foreach ($datos as $item) { ?>
                             <tr class="text-center">
                                 <td><?php echo $item->ticketid;?></td>
-                                <td><?php echo $item->cliente;?></td>
+                                <td><?php echo $item->nya;?>(<?php echo $item->cliente;?>)</td>
                                 <td><?php echo $item->depto;?></td>
                                 <td><?php echo $item->topicname;?></td>
                                 <td><?php echo $operator;?></td>
@@ -165,170 +172,11 @@ function car(dd) {
                                                      
                 </div>
 
-<div id="principal">
-    <div class="" style="width: 80%;margin-top: 70px;margin-left: 367px;">
 
-        @if ($message = Session::get('success'))
-        <div class="alert alert-success alert-dismissible fade
-                            show" role="alert">
-            {{ $message }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        @endif
-
-        <!-- Page Wrapper -->
-        <div id="wrapper">
-            <!-- Begin Page Content -->
-          
-          
-        
-
-                <button onclick="exportTableToExcel('basic-datatable')" style="" class="btn  btn-sm btn-secondary" id="btnAbrirAgregarBien" data-toggle="modal" data-target="#modalExample">
-                Exportar
-                </button>
-                <br> <br>
- 
-                <?php if(isset($datos)){  
-                    
-                  ?>
-                        <div class="table-responsive">
-
-
-                            <table id="basic-datatable" class="table  table-centered mb-0" role="table"  >
-                                <thead  class="table-dark">
-                                    <tr role="row">
-
-                                    <th role="columnheader" align='center'>#Ticket</th>
-                                    
-                                    <th role="columnheader" align='center'>#Cliente</th>
-                                    <th role="columnheader" align='center'>Departamento</th>
-                                    <th role="columnheader" align='center'>Topic</th>
-                                    <th role="columnheader" align='center'>Cel</th>
-
-                                    <th role="columnheader" align='center'>Nombre</th>
-
-                                    <th role="columnheader" align='center'>Estado</th>
-                                    
-
-                                    <th role="columnheader" align='center'>Acciones</th>
-
-                                 
-                                    
-                                    
-
-                                    </tr>
-                                </thead>
-                                <tbody role="rowgroup">
-                                
-                                    
-                                <?php 
-
-
-//dd($datos[0]->pp);
-foreach ($datos as $item) { 
-
-    echo "<tr>";
-    echo '<td><i class="ri-whatsapp-line"></i> '.$item->ticketid.'</td>';
-  
-    if($item->cliente<>""){
-        $cli=$item->cliente;
-
-    }else{
-        $cli="sin cliente";
-    }
-
-    if($item->cliente<>""){
-        echo '<td>'.$item->cliente.'</td>';
-    }else{
-
-        echo '<td><span class="badge bg-info">    <button onclick="cliente('.$item->ticketid.')"  id="btnAbrirAgregarBien3" type="button" class="btn btn-sm btn-info " data-bs-toggle="modal" data-bs-target="#modalExample3">'.$cli.'</button>
-        </span></td>'; 
-    }
-    
-    echo '<td>'.$item->depto.'</td>';
-    if($item->topicname==""){
-        echo '<td>sin topic</td>';
-
-    }else{
-        echo '<td>'.$item->topicname.'</td>';
-
-    }
-    echo '<td>'.$item->numerocel.'</td>';
-    
-    echo '<td>'.$item->nya.'</td>';
-
-
-    if($item->siennaestado==1){
-        echo '<td>
-        
-        <button onclick="estado('.$item->ticketid.','.$item->cliente.')"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm  " data-bs-toggle="modal" data-bs-target="#modalExample">
-        <span class="badge bg-info">  '.$item->estadoname.'</span>
-        </button>
-       </td>'; 
-       }
-    if($item->siennaestado==2){
-    
-        echo '<td>
-        
-        <button onclick="estado('.$item->ticketid.','.$item->cliente.')"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm  " data-bs-toggle="modal" data-bs-target="#modalExample">
-        <span class="badge bg-warning">  '.$item->estadoname.'</span>
-        </button>
-       </td>'; 
-    } 
-    if($item->siennaestado==3){
-      
-        echo '<td>
-        <button onclick="estado('.$item->ticketid.','.$item->cliente.')"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm " data-bs-toggle="modal" data-bs-target="#modalExample">
-        <span class="badge bg-success">  '.$item->estadoname.'</span>
-        </button>
-     </td>'; 
-     } 
-    if($item->siennaestado==4){
-        
-        echo '<td> 
-         <button onclick="estado('.$item->ticketid.','.$item->cliente.')"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm  " data-bs-toggle="modal" data-bs-target="#modalExample">
-         <span class="badge bg-danger">  '.$item->estadoname.'</span>
-         </button>
-        </td>';  
-    }
-
-
-
-    ?>
-    <td>
-    <button onclick="car(<?php echo $item->ticketid;?>)" id="segui" type="button" class="btn btn-sm btn-info " data-bs-toggle="modal" data-bs-target="#modalExample2"><i class="ri-discuss-line"></i></button>
-   
-
-    
-</td>
-
-   </tr>
-   <?php
-}?>
-
-</tbody>
-                            </table>
-
-                        </div>
-                <?php }?>
-   
-
+            
                 
                               
-<br><br><br>
 
-
-
-
-
-
-               
-
-</div>
-</div>
-
-
-                            </div>
 
 
 
@@ -414,7 +262,7 @@ foreach ($datos as $item) {
     <div class="modal-dialog"  role="document">
         <div class="modal-content">
             <div class="modal-header bg-info">
-                <h4 class="modal-title text-white" id="info-header-modalLabel">cONVERSACION</h4>
+                <h4 class="modal-title text-white" id="info-header-modalLabel">CONVERSACION</h4>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
