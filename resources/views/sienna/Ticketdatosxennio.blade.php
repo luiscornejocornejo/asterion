@@ -130,13 +130,14 @@ if (isset($_SERVER['HTTP_HOST'])) {
     <div class="card widget-flat">
           <div class="card-body">
             <div class="d-flex">
-              <i class="mdi mdi-card-account-details line-h me-1 text-info" style="font-size: 21px;"></i>
+            <i class="mdi mdi-account line-h me-1 text-info" style="font-size:22px;"></i>
               <h4 class="fw-normal text-dark">Nombre:&nbsp;{{ $valor->nya }}</h4>
           </div> 
           <hr >
 
           <div class="d-flex mt-2">
-          <i class="mdi mdi-account line-h me-1 text-info" style="font-size: 22px;"></i>&nbsp;Numero de cédula:&nbsp;
+          <i class="mdi mdi-card-account-details line-h me-1 "></i>
+          &nbsp;Numero de cédula:&nbsp;
               <span class="badge badge-secondary-lighten line-h">
                 {{ $valor->cedula }}
               </span>
