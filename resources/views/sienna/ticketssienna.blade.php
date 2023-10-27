@@ -1,4 +1,4 @@
-@include('creative2.header')
+@include('facu.header')
 <?php $categoria =  session('categoria');?>
 <script>
 
@@ -419,4 +419,4 @@ foreach ($datos as $item) {
 
                            
 
-@include('creative2.footer')
+@include('facu.footer')
