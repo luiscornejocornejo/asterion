@@ -63,7 +63,8 @@
         td:nth-of-type(<?php echo $cant + 1; ?>):before {content: "eliminar"; };
     }
 </style>
-
+<div id="principal">
+    <div class="mx-auto" style="">
 
         @if ($message = Session::get('success'))
         <div class="alert alert-success alert-dismissible fade
@@ -170,5 +171,7 @@ mdi-chevron-down"></i></button>
 
             </div>
         </div>
-
+    </div>
+</div>
+<br><br><br>
 @include('facu.footer')
