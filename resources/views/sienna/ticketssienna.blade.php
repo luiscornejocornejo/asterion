@@ -119,11 +119,11 @@ function car(dd) {
                         <tbody>
                             <?php foreach ($datos as $item) { ?>
                             <tr class="text-center">
-                                <td>{{$item->ticket_id}}</td>
-                                <td>{{$item->cliente}}</td>
-                                <td>{{$item->depto}}</td>
-                                <td>{{$item->topicname}}</td>
-                                <td>{{$item->operator}}</td>
+                                <td><?php echo $item->ticket_id;?></td>
+                                <td><?php echo $item->cliente;?></td>
+                                <td><?php echo $item->depto;?></td>
+                                <td><?php echo $item->topicname;?></td>
+                                <td><?php echo $item->operator;?></td>
                                 <td>
                                     <button class="btn btn-info" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Abierto
