@@ -126,9 +126,20 @@ function car(dd) {
                                 <td><?php echo $item->topicname;?></td>
                                 <td><?php echo $operator;?></td>
                                 <td>
-                                    <button class="btn btn-info" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Abierto
-                                    </button> 
+
+                                <?php 
+                                    if($item->siennaestado==1){$bgcolor="info";}
+                                    if($item->siennaestado==2){$bgcolor="warning";}
+                                    if($item->siennaestado==3){$bgcolor="success";}
+                                    if($item->siennaestado==4){$bgcolor="success";}
+                                        
+                                        
+                                        
+                                        ?>
+                                <button onclick="estado(<?php echo $item->ticketid;?>,<?php echo $item->cliente;?>)"  id="btnAbrirAgregarBien" type="button" class="btn btn-sm  " data-bs-toggle="modal" data-bs-target="#modalExample">
+        <span class="badge bg-<?php echo $bgcolor;?>"><?php echo $item->estadoname;?></span>
+        </button>
+ 
                                 </td>
                                 <td>
                                     <button class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
