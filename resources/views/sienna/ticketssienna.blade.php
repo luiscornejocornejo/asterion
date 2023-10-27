@@ -29,7 +29,7 @@ img.style.transform = 'scale(1.9)';
 
     }
     function vista(dd) {
-        alert(dd);
+        
         document.getElementById("vista").contentWindow.document.location.href=dd;
         document.getElementById('vista').src = dd;
 
