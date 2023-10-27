@@ -134,7 +134,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
               <h4 class="fw-normal text-dark">Nombre:&nbsp;{{ $valor->nya }}</h4>
           </div> 
           <div class="d-flex mt-2">
-              <i class="mdi mdi-identifier"></i>&nbsp;Numero de cédula:&nbsp;
+          <i class="mdi mdi-account line-h me-1 text-info" style="font-size: 22px;"></i>&nbsp;Numero de cédula:&nbsp;
               <span class="badge badge-secondary-lighten line-h">
                 {{ $valor->cedula }}
               </span>
