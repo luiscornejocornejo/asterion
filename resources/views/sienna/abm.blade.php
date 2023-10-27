@@ -64,7 +64,7 @@
     }
 </style>
 <div id="principal">
-    <div class="mx-auto" style="">
+    <div class="container-fluid" >
 
         @if ($message = Session::get('success'))
         <div class="alert alert-success alert-dismissible fade
