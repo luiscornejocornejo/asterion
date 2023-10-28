@@ -52,7 +52,6 @@ function car(dd) {
                         }, success: function(data){
                            
                             let valores = Object.values(data); // valores = ["Scott", "Negro", true, 5];
-                            alert(valores);
                             tt='<div id="dd" class="timeline" dir="ltr"><div class="timeline-show my-2 text-center">'+
                                                                 '<h5 class="m-0 time-show-name">Conversacion</h5>'+
                                                             '</div>';
