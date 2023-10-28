@@ -41,9 +41,8 @@ function car(dd) {
     //
     document.getElementById("iddelticket").value = dd;
 
-    alert(dd);
                     
-                var url2='https://template.suricata.cloud/api/tickessiennaseguimientos?token=12345&ticket='+dd;
+                var url2='https://opticom.suricata.cloud/api/tickessiennaseguimientos?token=12345&ticket='+dd;
                 timer=document.getElementById("timer");
                 timer.innerHTML = '';
                     $.ajax({
