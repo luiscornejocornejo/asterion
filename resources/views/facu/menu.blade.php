@@ -79,7 +79,12 @@ $resultados = DB::select($query);
             <span> Crear Usuarios </span>
         </a>
     </li>
-
+    <li class="side-nav-item background-buttons">
+        <a  href="/ticketssienna"  class="side-nav-link hovering-pan ">
+            <i class="uil uil-comment-message"></i>
+            <span> Tickets  </span>
+        </a>
+    </li>
 
     <?php   }
     ?>
