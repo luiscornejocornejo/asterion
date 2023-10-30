@@ -189,14 +189,7 @@ function car(dd) {
             <div class="modal-body">
                       
             <form action="/api/cambiarstatussienna" method="post">
-                        <input type="hidden" name="_token" v-bind:value="csrf">
-                        <input value="<?php echo $valor->ticketid;?>" type="hidden" name="idticketestado" id="idtickettopic">
-                        <input value="<?php echo $valor->conversation_id;?>" type="hidden" name="idconv" id="idconv">
-                        <input value="<?php echo $bot_channel;?>" type="hidden" name="bot_channel" id="bot_channel">
-
-                        
-                        <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $merchant;?> ">
-            <form action="/siennaestado" method="post" enctype="multipart/form-data">
+                     
 
                         @csrf
                         <input type="hidden" name="idticketestado" id="idticketestado" value="">
