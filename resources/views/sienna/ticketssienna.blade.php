@@ -151,7 +151,7 @@ function car(dd) {
                                 <td><?php echo $item->ticketid;?></td>
                                 <td><?php echo $item->nya;?>(<?php echo $item->cliente;?>)</td>
                                 <td>
-                                            <button onclick="deptos('<?php echo $item->ticketid;?>','<?php echo $item->conversation_id;?>','<?php echo $item->user_id;?>')"  id="btnAbrirAgregarBien" type="button" class="btn btn-outline-secondary rounded" data-bs-toggle="modal" data-bs-target="#modalExampledeptos">
+                                            <button onclick="deptos('<?php echo $item->ticketid;?>','<?php echo $item->conversation_id;?>','<?php echo $item->user_id;?>')"  id="btnAbrirAgregarBien" type="button" class="btn btn-outline-secondary rounded" data-bs-toggle="modal" data-bs-target="#modalExample5">
                                             <span class="badge bg-info"><?php echo $item->depto;?></span>
                                             </button>
                                 </td>
@@ -367,7 +367,7 @@ function car(dd) {
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<div id="standard-modaldeptos" class="modal fade bs-example-modal-center " tabindex="-1" role="dialog" aria-hidden="true">
+<div id="modalExample5" class="modal fade bs-example-modal-center " tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header bg-dark text-white">
