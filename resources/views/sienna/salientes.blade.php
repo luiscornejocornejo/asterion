@@ -3,6 +3,8 @@
 
 
 @include('facu.header')
+<div class="wrapper">
+
 @include('facu.menu')
 
 <div id="principal">
@@ -114,5 +116,4 @@
         </div>
     </div>
 </div>
-<br><br><br>
     @include('facu.footer')
