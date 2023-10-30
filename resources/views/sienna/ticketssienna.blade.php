@@ -152,6 +152,7 @@ function car(dd) {
                                         
                                         
                                         ?>
+                                        
                                 <button onclick="estado(<?php echo $item->ticketid;?>,<?php echo $item->conversation_id;?>)"  id="btnAbrirAgregarBien" type="button" class="btn btn-outline-secondary rounded" data-bs-toggle="modal" data-bs-target="#modalExample">
         <span class="badge bg-<?php echo $bgcolor;?>"><?php echo $item->estadoname;?></span>
         </button>
