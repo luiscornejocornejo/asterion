@@ -65,20 +65,7 @@ return view('sienna/salientes')
 
     }
   
-    function parseCsv( string $csvFile, bool $stripUnicode = false ) {
-        if(pathinfo($csvFile, 4)=='csv'){
-            $pattern = $stripUnicode ? "/(^[ \t]+|[ \t]+$)|\p{So}/u" : "/^[ \t]+|[ \t]+$/";
-            $csvFile = array_map(function($e) use ($stripUnicode, $pattern){
-                static $c = 0; 
-                static $headers = [];
-                $s = $c == 0 ? 'headers' : 'record';
-                $$s = preg_replace($pattern, '', explode(',', $e));
-                $c++;
-                return isset($record) ? @array_combine($headers, $record) : false;
-            }, file($csvFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES));
-            return array_values(array_filter($csvFile));
-        } else { return false; }
-    }
+   
     public function salientespost(Request $request)
     {
 
@@ -126,13 +113,13 @@ return view('sienna/salientes')
             $prevista=$value->demo;
         }
         $cont=$cont-1;
-        $archivo2=$this->parseCsv($archivo,true);
+        //$archivo2=$this->parseCsv($archivo,true);
             return view('sienna/salientes')
             ->with('clientes', $resultados)
             ->with('cantidad', $cont)
             ->with('idmobility', $idmobility)
             ->with('prevista', $prevista)
-            ->with('archivo', $archivo2)
+            ->with('archivo', $archivo)
             ->with('posts', 1);
 
 
