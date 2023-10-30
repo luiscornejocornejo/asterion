@@ -118,6 +118,7 @@ return view('sienna/salientes')
             ->with('cantidad', $cont)
             ->with('idmobility', $idmobility)
             ->with('prevista', $prevista)
+            ->with('archivo', $archivo)
             ->with('posts', 1);
 
 

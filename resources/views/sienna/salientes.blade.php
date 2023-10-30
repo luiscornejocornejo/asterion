@@ -93,7 +93,10 @@
 
                     </div>
                     <div>
-                        <?php echo $prevista;?>
+                        <?php echo $prevista;
+                        
+                        
+                        var_dump($archivo);?>
 
 
 
