@@ -32,7 +32,7 @@ img.style.transform = 'scale(1.9)';
     function deptos(dd,ee,ff) {
      
         document.getElementById("idticketdepto").value = dd;
-        document.getElementById("conversation_id").value = ee;
+        document.getElementById("deptoconversation_id").value = ee;
         document.getElementById("user_id").value = ff;
 
 
@@ -377,7 +377,7 @@ function car(dd) {
                 <div class="modal-body">
                     <form action="/api/cambiardeptosienna" method="post">
                         <input type="hidden" name="_token" v-bind:value="csrf">
-                        <input value="" type="hidden" name="idconv" id="conversation_id">
+                        <input value="" type="hidden" name="idconv" id="deptoconversation_id">
                         <input value="" type="hidden" name="user_id" id="user_id">
                         <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
                         <input value=""  type="hidden" name="idticketdepto" id="idticketdepto">
