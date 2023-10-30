@@ -440,6 +440,7 @@ class wsController extends Controller
     public function tickessiennaapi(Request $request){
 
         $operator=$request->operator;
+        dd($operator);
         $conversation_id=urlencode($request->conversation_id);
             $bot_channel="telegram";
 
