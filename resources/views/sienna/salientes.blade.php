@@ -3,6 +3,7 @@
 
 
 @include('facu.header')
+@include('facu.menu')
 
 <div id="principal">
     <div class="mx-auto" style="width: 1000px;margin-top: 70px;">
