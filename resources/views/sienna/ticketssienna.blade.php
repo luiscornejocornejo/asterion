@@ -20,7 +20,11 @@ img.style.transform = 'scale(1.9)';
             document.getElementById("statos4").disabled = false;  
 
         }
-    document.getElementById("idticketestado").value = dd;
+        document.getElementById("idticketestado").value = dd;
+        document.getElementById("conversation_id").value = ee;
+
+
+    
 
     }
     function cliente(dd) {
@@ -148,7 +152,7 @@ function car(dd) {
                                         
                                         
                                         ?>
-                                <button onclick="estado(<?php echo $item->ticketid;?>,<?php echo $item->cliente;?>)"  id="btnAbrirAgregarBien" type="button" class="btn btn-outline-secondary rounded" data-bs-toggle="modal" data-bs-target="#modalExample">
+                                <button onclick="estado(<?php echo $item->ticketid;?>,<?php echo $item->clieconversation_idconversation_idnte;?>)"  id="btnAbrirAgregarBien" type="button" class="btn btn-outline-secondary rounded" data-bs-toggle="modal" data-bs-target="#modalExample">
         <span class="badge bg-<?php echo $bgcolor;?>"><?php echo $item->estadoname;?></span>
         </button>
  
@@ -184,11 +188,21 @@ function car(dd) {
             </div>
             <div class="modal-body">
                       
-           
+            <form action="/api/cambiarstatussienna" method="post">
+                        <input type="hidden" name="_token" v-bind:value="csrf">
+                        <input value="<?php echo $valor->ticketid;?>" type="hidden" name="idticketestado" id="idtickettopic">
+                        <input value="<?php echo $valor->conversation_id;?>" type="hidden" name="idconv" id="idconv">
+                        <input value="<?php echo $bot_channel;?>" type="hidden" name="bot_channel" id="bot_channel">
+
+                        
+                        <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $merchant;?> ">
             <form action="/siennaestado" method="post" enctype="multipart/form-data">
 
                         @csrf
                         <input type="hidden" name="idticketestado" id="idticketestado" value="">
+                        <input type="hidden" name="idconv" id="conversation_id" value="">
+                        <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
+
 
                             <?php foreach ($siennaestado as $value2) {?>
                             <div >

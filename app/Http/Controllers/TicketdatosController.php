@@ -227,7 +227,7 @@ class TicketdatosController extends Controller
         where a.siennadepto in (select siennadepto from siennadeptouser where users =".$idusuario.")
         and a.siennaestado<>4
         ";
-        $query="select *,
+        $query="select *,a.conversation_id,
         b.nombre as depto,a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel from siennatickets a
         left join siennadepto b on b.id=a.siennadepto 
         left join  siennaestado c on c.id=a.siennaestado
@@ -240,7 +240,7 @@ class TicketdatosController extends Controller
         $resultados = DB::select($query);
         $resultados2 = DB::select($query2);
 
-        return view('sienna/ticketssienna')->with('datos', $resultados)->with('siennaestado', $resultados2); 
+        return view('sienna/ticketssienna')->with('datos', $resultados)->with('siennaestado', $resultados2)->with('subdomain_tmp', $subdomain_tmp);
   
 
     }
