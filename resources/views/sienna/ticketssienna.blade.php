@@ -383,7 +383,7 @@ function car(dd) {
                         <input value=""  type="hidden" name="idticketdepto" id="idticketdepto">
                         <input value="" type="hidden" name="bot_channel" id="bot_channel">
    
-                        <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $merchant;?> ">
+                        <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $subdomain_tmp;?> ">
 
                         <div v-for="department in departments ">
                         <?php foreach($deptos as $dep){?>
