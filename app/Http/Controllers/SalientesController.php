@@ -112,7 +112,7 @@ return view('sienna/salientes')
 
             $prevista=$value->demo;
         }
-
+        $cont=$cont-1;
             return view('sienna/salientes')
             ->with('clientes', $resultados)
             ->with('cantidad', $cont)
