@@ -55,7 +55,8 @@ class SalientesController extends Controller
         $resultados = DB::connection('mysql2')->select($query);
 
 return view('sienna/salientes')
-->with('clientes', $resultados);
+->with('clientes', $resultados)
+->with('posts', 0);
 
 
     }
@@ -65,7 +66,7 @@ return view('sienna/salientes')
     {
 
         $archivo = $request->file('file');
-        $idcliente=$request->clientes;
+        $idmobility=$request->clientes;
         $gestor = @fopen($archivo, "r");
         if ($gestor) {
             $cont = 0;
@@ -75,22 +76,7 @@ return view('sienna/salientes')
                     continue;
                 }
 
-                $lista = explode(",", $búfer);
-                $sali=new salientes();
-                $sali->language = $this->limpiar($lista[0]);
-                $sali->template = $this->limpiar($lista[1]);
-                $sali->parameters = $this->limpiar($lista[2]);
-                $sali->to = $this->limpiar($lista[3]);
-                $sali->idcliente = $this->limpiar($idcliente);
-
-                
-                try {
-                    $sali->save();
-
-                } catch (\Illuminate\Database\QueryException$ex) {
-
-                    continue;
-                }
+               
          
                 $cont++;
             }
@@ -100,9 +86,34 @@ return view('sienna/salientes')
             fclose($gestor);
         }
 
-        return redirect()
-            ->back()
-            ->with('success', 'Se cargo los registros   correctamente!');
+        $subdomain_tmp = 'localhost';
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+            $subdomain_tmp =  array_shift($domainParts);
+        } elseif(isset($_SERVER['SERVER_NAME'])){
+            $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+            $subdomain_tmp =  array_shift($domainParts);
+            
+        }
+        $query = "SELECT *,b.id idmobility,b.nombre nombremobility,b.cantvariables FROM clientes a join mobility b on  a.mobility=b.id  where a.nombre='".$subdomain_tmp."_suricata'";
+
+        $prueba = $this->conectar(15);
+
+        //si es distinta a 1 aa otra base
+        $resultados = DB::connection('mysql2')->select($query);
+
+        $query2="select demo from mobility where id='".$idmobility."'";
+        $resultados2 = DB::connection('mysql2')->select($query2);
+        foreach($resultados2 as $value){
+
+            $prevista=$value->demo;
+        }
+
+            return view('sienna/salientes')
+            ->with('clientes', $resultados)
+            ->with('cantidad', $cont)
+            ->with('prevista', $prevista)
+            ->with('posts', 1);
 
 
 

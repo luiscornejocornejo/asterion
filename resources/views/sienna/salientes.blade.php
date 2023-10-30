@@ -2,7 +2,7 @@
 
 
 
-@include('pp.header')
+@include('facu.header')
 
 <div id="principal">
     <div class="mx-auto" style="width: 1000px;margin-top: 70px;">
@@ -50,16 +50,16 @@
                         <div>
                         <form action="" method="post" enctype="multipart/form-data">
            
-           @csrf                              
-           <div class="fallback">
+                            @csrf                              
+                            <div class="fallback">
                                 <select name="clientes" class="form-control">
 
-<?php foreach($clientes as $value){?>
+                                        <?php foreach($clientes as $value){?>
 
-    <option value='<?php echo $value->idmobility;?>'><?php echo $value->nombremobility."(".$value->cantvariables.")</option>";?>
+                                            <option value='<?php echo $value->idmobility;?>'><?php echo $value->nombremobility."(".$value->cantvariables.")</option>";?>
 
-<?php
-}?>
+                                        <?php
+                                        }?>
                               
 
                                 </select>
@@ -77,8 +77,28 @@
                                     
                                 </div>
 
-                            </form>
-                        </div>
+                        </form>
+                    </div>
+
+
+                    <?php if($posts==1){?>
+                    
+                    <div>
+                       cantidad para enviar <?php echo $cantidad;?>
+
+
+
+                    </div>
+                    <div>
+                       cantidad para enviar <?php echo $prevista;?>
+
+
+
+                    </div>
+                    
+                    
+                    
+                    <?php }?>
 
                      
                     </div>
@@ -94,4 +114,4 @@
     </div>
 </div>
 <br><br><br>
-    @include('pp.footer')
+    @include('facu.footer')
