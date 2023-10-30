@@ -159,7 +159,7 @@ function car(dd) {
                                 <td><?php echo $operator;?></td>
                                 <td>
 
-                                <?php 
+                                <?php  
                                     if($item->siennaestado==1){$bgcolor="info";}
                                     if($item->siennaestado==2){$bgcolor="warning";}
                                     if($item->siennaestado==3){$bgcolor="success";}
