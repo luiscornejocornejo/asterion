@@ -152,7 +152,7 @@ function car(dd) {
                                 <td><?php echo $item->nya;?>(<?php echo $item->cliente;?>)</td>
                                 <td>
                                             <button onclick="deptos('<?php echo $item->ticketid;?>','<?php echo $item->conversation_id;?>','<?php echo $item->user_id;?>')"  id="btnAbrirAgregarBien" type="button" class="btn btn-outline-secondary rounded" data-bs-toggle="modal" data-bs-target="#modalExampledeptos">
-                                            <span class="badge bg-<?php echo $bgcolor;?>"><?php echo $item->depto;?></span>
+                                            <span class="badge bg-info"><?php echo $item->depto;?></span>
                                             </button>
                                 </td>
                                 <td><?php echo $item->topicname;?></td>
