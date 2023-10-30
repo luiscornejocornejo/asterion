@@ -93,7 +93,7 @@
 
                     </div>
                     <div>
-                       cantidad para enviar <?php echo $prevista;?>
+                        <?php echo $prevista;?>
 
 
 
