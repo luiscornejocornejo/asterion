@@ -227,6 +227,14 @@ class TicketdatosController extends Controller
         where a.siennadepto in (select siennadepto from siennadeptouser where users =".$idusuario.")
         and a.siennaestado<>4
         ";
+        $query="select *,
+        b.nombre as depto,a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel from siennatickets a
+        left join siennadepto b on b.id=a.siennadepto 
+        left join  siennaestado c on c.id=a.siennaestado
+        left join  siennatopic d on d.id=a.siennatopic
+        where 
+         a.siennaestado<>4
+        ";
 
         $query2="select * from siennaestado";
         $resultados = DB::select($query);
