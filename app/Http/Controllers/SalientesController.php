@@ -38,8 +38,16 @@ class SalientesController extends Controller
     {
 
 
-        
-        $query = "SELECT * FROM clientes ";
+        $subdomain_tmp = 'localhost';
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+            $subdomain_tmp =  array_shift($domainParts);
+        } elseif(isset($_SERVER['SERVER_NAME'])){
+            $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+            $subdomain_tmp =  array_shift($domainParts);
+            
+        }
+        $query = "SELECT * FROM clientes a join mobility b on  a.mobility=b.id  where a.nombre='".$subdomain_tmp."'";
 
         $prueba = $this->conectar(15);
 
