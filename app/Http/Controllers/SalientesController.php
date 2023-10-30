@@ -116,6 +116,7 @@ return view('sienna/salientes')
             return view('sienna/salientes')
             ->with('clientes', $resultados)
             ->with('cantidad', $cont)
+            ->with('idmobility', $idmobility)
             ->with('prevista', $prevista)
             ->with('posts', 1);
 
