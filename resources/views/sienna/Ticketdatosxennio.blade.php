@@ -133,7 +133,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
             <i class="mdi mdi-account line-h me-1 text-info" style="font-size:22px;"></i>
               <h4 class="fw-normal text-dark">Nombre:&nbsp;{{ $valor->nya }}</h4>
 
-              {{ $operator;}}
+              <?php echo $operator;?>
           </div> 
           <hr >
 
