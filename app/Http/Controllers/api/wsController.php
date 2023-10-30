@@ -439,22 +439,10 @@ class wsController extends Controller
 
     public function tickessiennaapi(Request $request){
 
+        $operator=$request->operator;
         $conversation_id=urlencode($request->conversation_id);
-
-
-
-          
-
-
-
-
-
-        
-
             $bot_channel="telegram";
 
-            
-       
             $query="select *,b.nombre nombreestado,c.nombre nombredepto,a.user_id,
             a.id ticketid,d.nombre siennatopicnombre,a.nya nya from siennatickets a 
             left join siennaestado b on b.id=a.siennaestado
@@ -511,6 +499,7 @@ class wsController extends Controller
         ->with('bot_channel', $bot_channel)
         ->with('seguimientos', $resultadosq)
         ->with('datosticketsviejos', $datosticketsviejos)
+        ->with('operator', $operator)
         ->with('id', $conversation_id);
 
     }
