@@ -158,7 +158,7 @@ function car(dd) {
         </button>
  
                                 </td>
-                                <td>
+                                <td> 
                                 <button onclick="car(<?php echo $item->ticketid;?>)" id="segui" type="button" class="btn btn-outline-secondary rounded " data-bs-toggle="modal" data-bs-target="#modalExample2"> <i class="mdi mdi-link"></i></button>
                                 <button onclick="vista('<?php echo $item->conversation_url;?>')"  id="btnAbrirAgregarBien" type="button" class="btn btn-outline-secondary rounded " data-bs-toggle="modal" data-bs-target="#modalExample33"><i class="mdi mdi-wechat"></i> </button>
                                  
