@@ -96,7 +96,8 @@
                         <?php echo $prevista;
                         
                         
-                        var_dump($archivo);?>
+                        var_dump($archivo);
+                        echo "llega";?>
 
 
 
