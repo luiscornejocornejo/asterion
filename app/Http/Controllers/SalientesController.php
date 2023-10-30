@@ -36,8 +36,15 @@ class SalientesController extends Controller
 
     public function salientes(Request $request)
     {
-        $query = "SELECT * FROM whatsapp ";
-        $resultados = DB::select($query);
+
+
+        
+        $query = "SELECT * FROM clientes ";
+
+        $prueba = $this->conectar(15);
+
+        //si es distinta a 1 aa otra base
+        $resultados = DB::connection('mysql2')->select($query);
 
 return view('sienna/salientes')
 ->with('clientes', $resultados);
