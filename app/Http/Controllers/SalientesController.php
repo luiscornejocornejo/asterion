@@ -47,7 +47,7 @@ class SalientesController extends Controller
             $subdomain_tmp =  array_shift($domainParts);
             
         }
-        $query = "SELECT * FROM clientes a join mobility b on  a.mobility=b.id  where a.nombre='".$subdomain_tmp."'";
+        $query = "SELECT * FROM clientes a join mobility b on  a.mobility=b.id  where a.nombre='".$subdomain_tmp."_suricata'";
 
         $prueba = $this->conectar(15);
 
