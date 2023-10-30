@@ -56,7 +56,7 @@
 
 <?php foreach($clientes as $value){?>
 
-    <option value='<?php echo $value->id;?>'><?php echo $value->nombre."(".$value->mobility.")</option>";?>
+    <option value='<?php echo $value->idmobility;?>'><?php echo $value->nombremobility."(".$value->mobility.")</option>";?>
 
 <?php
 }?>
