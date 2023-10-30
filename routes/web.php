@@ -146,7 +146,6 @@ Route::get('/pdfrelease','App\Http\Controllers\JornadasController@pdfrelease');
 Route::get('/pagos','App\Http\Controllers\PagoraliaController@subir'); 
 Route::post('/pagos','App\Http\Controllers\PagoraliaController@procesar'); 
 Route::get('/crontab','App\Http\Controllers\PagoraliaController@crontab'); 
-Route::get('/template','App\Http\Controllers\PagoraliaController@template'); 
 
 // end pagoralia
 
@@ -189,6 +188,8 @@ Route::get('/conversationsfacu  ','App\Http\Controllers\TicketdatosController@su
 Route::get('/tickets  ','App\Http\Controllers\TicketdatosController@osttickets');
 Route::get('/salientes  ','App\Http\Controllers\SalientesController@salientes');
 Route::post('/salientes  ','App\Http\Controllers\SalientesController@salientespost');
+Route::get('/template','App\Http\Controllers\SalientesController@template'); 
+
 
 Route::get('/ticketssienna  ','App\Http\Controllers\TicketdatosController@ticketssienna');
 Route::post('/siennaestado  ','App\Http\Controllers\TicketdatosController@siennaestado');

@@ -33,7 +33,11 @@ class SalientesController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
+     public function template(){
 
+        return response()->download(public_path('templatesaliente.csv'));
+
+    }
     public function salientes(Request $request)
     {
 
