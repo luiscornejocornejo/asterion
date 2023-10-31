@@ -363,7 +363,7 @@ class wsController extends Controller
 
 
         $prueba = $this->conectar(14);
-         $query3="select * from ".$inte.".ws_cliente where nombre='".$merchant."'";
+       echo   $query3="select * from ".$inte.".ws_cliente where nombre='".$merchant."'";
         $datos = DB::connection('mysql2')->select($query3);
         $url="";
         $tokensienna="";
