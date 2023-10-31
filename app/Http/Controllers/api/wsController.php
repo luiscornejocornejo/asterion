@@ -318,19 +318,41 @@ class wsController extends Controller
         return $datos;
     }
 
+        function verificarSubcadena($cadena, $subcadena) {
+            if (strpos($cadena, $subcadena) !== false) {
+               return true;
+            } else {
+                    return false;
+            }
+        
+        }
+
+
+
 
     public function tickessienna(Request $request){
         $conversation_id=$request->conversation_id;
         $merchant=$request->merchant;
         //$inte=$request->inte;
-        $cel ="";
-        $query = "select * from siennacliente where cel='" . $cel . "'";
+
+        if($this->verificarSubcadena($conversation_id, "+")){
+
+        }else{
+            $conversation_id="+".$conversation_id;
+        }
+
+        $query = "select * from siennacliente where conversation_id='" . $conversation_id . "'";
         $resultados = DB::select($query);
         $return2 = json_encode($resultados,true);
+
+        
         $query2 = "select * from siennatickets where conversation_id='" . $conversation_id . "' and siennaestado=1";
         $resultados2 = DB::select($query2);
 
-
+        $idcustomer="";
+        foreach($resultados as $val){
+            $idcustomer=$val->cliente;
+        }
 
         $query4 = "select * from siennaintegracion";
         $resultados4 = DB::select($query4);
@@ -341,7 +363,6 @@ class wsController extends Controller
 
 
         $prueba = $this->conectar(14);
-        //si es distinta a 1 aa otra base
          $query3="select * from ".$inte.".ws_cliente where nombre='".$merchant."'";
         $datos = DB::connection('mysql2')->select($query3);
         $url="";
@@ -350,11 +371,20 @@ class wsController extends Controller
 
             $url=$val->headerlogin;
             $tokensienna=$val->tokensienna;
+            $campo=$val->headerendpoint;
         }
 
         if($url<>""){
-            $dat=file_get_contents("https://".$merchant.".".$url."/api/ws?token=".$tokensienna."&telefono=".$cel);//7461023535
-            $dat=json_decode($dat);
+            $campos=explode(",",$campo);
+            if($idcustomer<>""){
+                $dat=file_get_contents("https://".$merchant.".".$url."/api/ws?token=".$tokensienna."&".$campos[0]."=".$idcustomer);//7461023535
+                $dat=json_decode($dat);
+            }else{
+
+                $dat=file_get_contents("https://".$merchant.".".$url."/api/ws?token=".$tokensienna."&".$campos[2]."=".$cel);//7461023535
+                $dat=json_decode($dat);
+            }
+            
         }else{
             $dat="";
         }
