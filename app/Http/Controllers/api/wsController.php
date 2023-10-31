@@ -369,7 +369,7 @@ class wsController extends Controller
         $tokensienna="";
         foreach($datos as $val){
 
-            $url=$val->headerlogin;
+           echo $url=$val->headerlogin;
             $tokensienna=$val->tokensienna;
             $campo=$val->headerendpoint;
         }
