@@ -372,6 +372,8 @@ class wsController extends Controller
         $siennasource=$request->siennasource;
         $conversation_url=$request->conversation_url;
         $conversation_id=$request->conversation_id;
+        $cedula=$request->cedula;
+        $email=$request->email;
         $user_id=$request->user_id;
         
         $cliente=$request->cliente;
@@ -411,6 +413,9 @@ class wsController extends Controller
             }
             $sc->conversation_id=$conversation_id;
             $sc->nya=$nya;
+            $sc->email=$email;
+            $sc->cel=$cel;
+            $sc->cedula=$cedula;
             try {
                 $sc->save();
 
