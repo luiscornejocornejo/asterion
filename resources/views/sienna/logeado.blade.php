@@ -1,7 +1,7 @@
 <?php
 
 $categoria = session('categoria');
-$urlfinal = session('urlfinal');
+$urlfinal = session('urlxennio');
 
     var_dump($urlfinal);
     var_dump($categoria);

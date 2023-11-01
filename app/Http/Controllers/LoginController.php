@@ -160,7 +160,6 @@ class LoginController extends Controller
                                                  $urlfinal=$res['Data']['Home'];
                                                  $urlfinal.="/conversation";
                                                  $url=$urlfinal;
-                                                 session(['urlfinal' => $urlfinal]);
 
                                 
 
