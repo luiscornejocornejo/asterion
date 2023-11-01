@@ -64,6 +64,14 @@ Route::get('/home', function () {
 Route::get('/estado', function () {
     return view('/sienna/estado');
 });
+
+
+Route::get('/logeado', function () {
+    var_dump(session('urlfinal'));
+   // return view('/sienna/estado');
+});
+
+
 Route::get('/sienna','App\Http\Controllers\siennaController@principal')->middleware('adminsienna');
 Route::post('/sienna','App\Http\Controllers\siennaController@servicio')->middleware('adminsienna');
 Route::get('/serviciocreate','App\Http\Controllers\siennaController@serviciocreate')->middleware('adminsienna');
