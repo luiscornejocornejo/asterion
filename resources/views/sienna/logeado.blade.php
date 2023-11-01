@@ -1,8 +1,10 @@
 <?php
 
 $categoria = session('categoria');
-$urlfinal = session('urlxennio');
+$urlfinalunico = session('urlxennio');
 
-    var_dump($urlfinal);
+
+$urlfinalunico=str_replace("conversation","logout",$urlfinalunico);
+    var_dump($urlfinalunico);
     var_dump($categoria);
     ?>
