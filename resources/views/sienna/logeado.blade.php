@@ -1,3 +1,8 @@
 <?php
-    var_dump(session('urlfinal'));
-?>
+
+$categoria = session('categoria');
+$urlfinal = session('urlfinal');
+
+    var_dump($urlfinal);
+    var_dump($categoria);
+    ?>
