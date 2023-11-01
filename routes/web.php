@@ -67,8 +67,7 @@ Route::get('/estado', function () {
 
 
 Route::get('/logeado', function () {
-    var_dump(session('urlfinal'));
-   // return view('/sienna/estado');
+    return view('/sienna/logeado');
 });
 
 
