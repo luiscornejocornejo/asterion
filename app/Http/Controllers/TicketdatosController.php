@@ -356,6 +356,8 @@ class TicketdatosController extends Controller
         echo   $idticketestado=$request->idticketestado;
         echo   $estado=$request->estado;
 
+
+        dd($estado);
         $si2 = siennatickets::find($idticketestado);
         $si2->siennaestado=$estado;
         $si2->save();
