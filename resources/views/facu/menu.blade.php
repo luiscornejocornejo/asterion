@@ -76,7 +76,7 @@ $resultados = DB::select($query);
     if ($categoria ==11) {?>
     <li class="side-nav-item background-buttons">
                     <a  href="/ventas"  class="side-nav-link hovering-pan ">
-                        <i class="uil uil-comment-message"></i>
+                        <i class="mdi mdi-handshake"></i>
                         <span> Ventas </span>
                     </a>
                 </li>
