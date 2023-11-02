@@ -18,22 +18,22 @@
                                 <th>Ticket</th>
                                 <th>Cliente</th>
                                 <th>Creado</th>
-                                <th>Topic</th>
-                                <th>Asignado a</th>
+                              
                                 <th>Estado</th>
                                 <th>Historial</th>
                             </tr>
                         </thead>
                         <tbody>
+
+                        <?php foreach($tickets as $val){?>
                             <tr class="text-center">
-                                <td>ticket_id</td>
-                                <td>first_name</td>
-                                <td>create_at</td>
-                                <td>topic</td>
-                                <td>operator</td>
+                                <td><?php echo $val->ticketid;?></td>
+                                <td><?php echo $val->nya;?></td>
+                                <td><?php echo $val->created_at;?></td>
+                             
                                 <td>
                                     <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
-                                        Abierto
+                                    <?php echo $val->ticket_id;?>
                                     </button> 
                                 </td>
                                 <td>
@@ -45,6 +45,7 @@
                                     </button> 
                                 </td>
                             </tr>
+                            <?php }?>
                         </tbody>
                     </table>
                     
