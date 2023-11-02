@@ -33,7 +33,7 @@
                              
                                 <td>
                                     <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
-                                    <?php echo $val->ticket_id;?>
+                                    <?php echo $val->ticketid;?>
                                     </button> 
                                 </td>
                                 <td>
