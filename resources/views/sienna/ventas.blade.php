@@ -6,7 +6,20 @@
       <!-- ========== Left Sidebar Start ========== -->
       @include('facu.menu')
 <script>
+    function estado(dd,ee) {
+        if (ee === undefined) {
+            document.getElementById("statos4").disabled = true;  
+        }else{
+            document.getElementById("statos4").disabled = false;  
 
+        }
+        document.getElementById("idticketestado").value = dd;
+        document.getElementById("conversation_id").value = ee;
+
+
+    
+
+    }
 function vista(dd) {
         document.getElementById('vista').src = "";
 
@@ -42,15 +55,23 @@ function vista(dd) {
                                 <td><?php echo $val->created_at;?></td>
                              
                                 <td>
-                                    <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
-                                    <?php echo $val->ticketid;?>
+                                <?php  
+                                    if($item->siennaestado==1){$bgcolor="info";}
+                                    if($item->siennaestado==2){$bgcolor="warning";}
+                                    if($item->siennaestado==3){$bgcolor="success";}
+                                    if($item->siennaestado==4){$bgcolor="success";}
+                                        
+                                        ?>
+                                    <button onclick="estado('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>')"  class="btn btn-<?php echo $bgcolor;?>" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
+                                    <?php echo $val->estadoname;?>
                                     </button> 
                                 </td>
                                 <td>
-                                    <button class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                               
+                                    <button  class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                                         <i class="mdi mdi-link"></i>
                                     </button> 
-                                    <button  onclick="vista('<?php echo $item->conversation_url;?>')" class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg">
+                                    <button  onclick="vista('<?php echo $val->conversation_url;?>')" class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg">
                                         <i class="mdi mdi-wechat"></i>
                                     </button> 
                                 </td>
