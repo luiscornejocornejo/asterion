@@ -418,7 +418,7 @@ class wsController extends Controller
        $si->cel=$cel;
        $si->nya=$nya;
        $si->asignado=0;
-     
+      
        //$user_id=str_replace("+","",$user_id);  
        //$conversation_id=str_replace("+","",$conversation_id);
        $si->user_id=$user_id;
