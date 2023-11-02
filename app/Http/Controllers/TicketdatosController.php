@@ -344,6 +344,21 @@ class TicketdatosController extends Controller
 
     }
 
+    public function ventas(Request $request)
+    {
+/*
+        $das = new dashboard;
+        $das->titulo = $request->titulo;
+        $das->subtitulo = $request->subtitulo;
+        $das->masterreport = $request->reporte;
+        $das->tipo = $request->tipo;
+        $das->categoria = $request->categoria;
+        $das->save();
+*/
+$resultados="";
+return view('sienna/ventas')->with("deptos",$resultados); 
+
+    }
     public function siennacrearusuariospost(Request $request){
 
      

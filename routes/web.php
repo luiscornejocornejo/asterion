@@ -204,6 +204,7 @@ Route::post('/siennacliente  ','App\Http\Controllers\TicketdatosController@sienn
 Route::post('/siennacrearseguimiento  ','App\Http\Controllers\TicketdatosController@siennacrearseguimiento');
 Route::get('/siennacrearusuarios','App\Http\Controllers\TicketdatosController@siennacrearusuarios');
 Route::post('/siennacrearusuarios','App\Http\Controllers\TicketdatosController@siennacrearusuariospost');
+Route::get('/ventas','App\Http\Controllers\TicketdatosController@ventas');
 
 
 });
