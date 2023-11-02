@@ -50,6 +50,7 @@
                             <select   class="form-select" aria-label="Default select example" name="tipo" >
                             <option >supervisor</option>
                             <option >agente</option>
+                            <option >ventas</option>
 
                                             </select>
 

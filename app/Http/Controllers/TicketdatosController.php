@@ -413,10 +413,14 @@ class TicketdatosController extends Controller
 
         if($request->tipo=="supervisor"){
             $cat=10;
-        }else{
-
+        }
+        if($request->tipo=="ventas"){
+            $cat=11;
+        }
+        if($request->tipo=="agente"){
             $cat=9;
         }
+      
         $us->categoria=$cat;
         $us->password=md5($request->pass);
         $us->email_suricata=$mailsso;
