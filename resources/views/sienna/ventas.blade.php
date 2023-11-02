@@ -5,7 +5,17 @@
 
       <!-- ========== Left Sidebar Start ========== -->
       @include('facu.menu')
+<script>
 
+function vista(dd) {
+        document.getElementById('vista').src = "";
+
+        document.getElementById("vista").contentWindow.document.location.href=dd;
+        document.getElementById('vista').src = dd;
+
+        }
+
+    </script>
 
       <div class="content-page" style="padding: 0!important;">
           <div class="content">
@@ -40,7 +50,7 @@
                                     <button class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                                         <i class="mdi mdi-link"></i>
                                     </button> 
-                                    <button class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg">
+                                    <button  onclick="vista('<?php echo $item->conversation_url;?>')" class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg">
                                         <i class="mdi mdi-wechat"></i>
                                     </button> 
                                 </td>
@@ -65,7 +75,7 @@
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
-                        <iframe src="https://meerkat.xenioo.com/wshare/F7F81F840B684A6EA0BF2E891A42E7DA" width="100%" height="400px" class="border rounded-3"></iframe>
+                        <iframe id="vista" src="" width="100%" height="400px" class="border rounded-3"></iframe>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
