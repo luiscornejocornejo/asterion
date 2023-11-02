@@ -346,17 +346,17 @@ class TicketdatosController extends Controller
 
     public function ventas(Request $request)
     {
-/*
-        $das = new dashboard;
-        $das->titulo = $request->titulo;
-        $das->subtitulo = $request->subtitulo;
-        $das->masterreport = $request->reporte;
-        $das->tipo = $request->tipo;
-        $das->categoria = $request->categoria;
-        $das->save();
-*/
-$resultados="";
-return view('sienna/ventas')->with("deptos",$resultados); 
+        $query="select *,a.conversation_id,a.user_id,
+        b.nombre as depto,a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel from siennatickets a
+        left join siennadepto b on b.id=a.siennadepto 
+        left join  siennaestado c on c.id=a.siennaestado
+        left join  siennatopic d on d.id=a.siennatopic
+        where 
+         a.siennaestado<>4 and a.siennadepto=3
+        ";
+
+        $resultados = DB::select($query);
+            return view('sienna/ventas')->with("deptos",$resultados); 
 
     }
     public function siennacrearusuariospost(Request $request){
