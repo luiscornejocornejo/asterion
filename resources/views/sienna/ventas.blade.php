@@ -111,11 +111,11 @@ function vista(dd) {
                     <div class="modal-body">
                         <form action="/ventasstatus" method="post">
                         @csrf
+                        <input type="hidden" name="tik" id="idticketestado2" value="">
 
                         <?php foreach($estados as $value){?>
   
 
-                            <input type="hidden" name="tik" id="idticketestado2" value="">
                         <input type="hidden" name="idconv" id="conversation_id2" value="">
                         <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
                             <div class="mt-3">
