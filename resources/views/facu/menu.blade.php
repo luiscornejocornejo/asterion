@@ -62,29 +62,42 @@ $resultados = DB::select($query);
             <span> Dashboards </span>
         </a>
     </li>
+    <?php
+    if ($categoria <> 11) {?>
     <li class="side-nav-item background-buttons">
-        <a  href="/conversations2"  class="side-nav-link hovering-pan ">
-            <i class="uil uil-comment-message"></i>
-            <span> Conversaciones </span>
-        </a>
-    </li>
+                    <a  href="/conversations2"  class="side-nav-link hovering-pan ">
+                        <i class="uil uil-comment-message"></i>
+                        <span> Conversaciones </span>
+                    </a>
+                </li>
+    <?php }?>
+
+    <?php
+    if ($categoria ==11) {?>
+    <li class="side-nav-item background-buttons">
+                    <a  href="/ventas"  class="side-nav-link hovering-pan ">
+                        <i class="uil uil-comment-message"></i>
+                        <span> Ventas </span>
+                    </a>
+                </li>
+    <?php }?>
     <?php
 
     if ($categoria == 10) {?>
 
-   
-    <li class="side-nav-item background-buttons">
-        <a  href="/siennacrearusuarios"  class="side-nav-link hovering-pan ">
-            <i class="uil uil-comment-message"></i>
-            <span> Crear Usuarios </span>
-        </a>
-    </li>
-    <li class="side-nav-item background-buttons">
-        <a  href="/ticketssienna"  class="side-nav-link hovering-pan ">
-            <i class="uil uil-comment-message"></i>
-            <span> Tickets  </span>
-        </a>
-    </li>
+            
+                <li class="side-nav-item background-buttons">
+                    <a  href="/siennacrearusuarios"  class="side-nav-link hovering-pan ">
+                        <i class="uil uil-comment-message"></i>
+                        <span> Crear Usuarios </span>
+                    </a>
+                </li>
+                <li class="side-nav-item background-buttons">
+                    <a  href="/ticketssienna"  class="side-nav-link hovering-pan ">
+                        <i class="uil uil-comment-message"></i>
+                        <span> Tickets  </span>
+                    </a>
+                </li>
 
     <?php   }
     ?>
