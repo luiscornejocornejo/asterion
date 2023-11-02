@@ -26,11 +26,11 @@
                         </thead>
                         <tbody>
                             <tr class="text-center">
-                                <td>{{ticket_id}}</td>
-                                <td>{{first_name}}</td>
-                                <td>{{create_at}}</td>
-                                <td>{{topic}}</td>
-                                <td>{{operator}}</td>
+                                <td>ticket_id</td>
+                                <td>first_name</td>
+                                <td>create_at</td>
+                                <td>topic</td>
+                                <td>operator</td>
                                 <td>
                                     <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
                                         Abierto
