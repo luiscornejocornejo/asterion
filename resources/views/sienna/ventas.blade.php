@@ -119,8 +119,8 @@ function vista(dd) {
                             <div class="mt-3">
 
                             <div class="form-check mb-2">
-                                    <input type="radio" id="customRadio1" name="customRadio" value="<?php echo $value->id;?>"class="form-check-input">
-                                    <label class="form-check-label" for="customRadio1"><?php echo $value->nombre;?></label>
+                                    <input type="radio" id="customRadio<?php echo $value->id;?>" name="customRadio" value="<?php echo $value->id;?>"class="form-check-input">
+                                    <label class="form-check-label" for="customRadio<?php echo $value->id;?>"><?php echo $value->nombre;?></label>
                                 </div>
 
                                 </div>
