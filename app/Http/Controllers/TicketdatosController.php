@@ -356,7 +356,9 @@ class TicketdatosController extends Controller
         ";
 
         $resultados = DB::select($query);
-            return view('sienna/ventas')->with("tickets",$resultados); 
+        $query2="select * from siennaestadosventas";
+        $resultados2 = DB::select($query2);
+            return view('sienna/ventas')->with("tickets",$resultados)->with("estados",$resultados2); 
 
     }
     public function siennacrearusuariospost(Request $request){
