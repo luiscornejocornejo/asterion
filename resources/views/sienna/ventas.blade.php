@@ -116,33 +116,21 @@ function vista(dd) {
 
                         <?php foreach($estados as $value){?>
 
+                            <div class="mt-3">
 
                             <div class="form-check mb-2">
                                     <input type="radio" id="customRadio1" name="customRadio" value="<?php echo $value->id;?>"class="form-check-input">
                                     <label class="form-check-label" for="customRadio1"><?php echo $value->nombre;?></label>
                                 </div>
 
+                                </div>
 
                        <?php }?>
-                            <div class="mt-3">
                                
-                                <div class="form-check mb-2">
-                                <input type="radio" id="customRadio2" name="customRadio" class="form-check-input">
-                                <label class="form-check-label" for="customRadio2">Progreso</label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input type="radio" id="customRadio3" name="customRadio" class="form-check-input">
-                                <label class="form-check-label" for="customRadio3">Resuelto</label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input type="radio" id="customRadio4" name="customRadio" class="form-check-input">
-                                <label class="form-check-label" for="customRadio4">Cerrado</label>
-                            </div>
-                            
-                        </div>
+                                
                         <div class="modal-footer">
                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-success">Cambiar</button>
+                            <button type="submit" class="btn btn-success">Cambiar</button>
                         </div>
                     </form>
                     </div>
