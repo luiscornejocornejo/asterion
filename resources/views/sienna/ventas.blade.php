@@ -146,9 +146,9 @@ function vista(dd) {
       <!-- OffCanvas -->
       <div>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-            <div class="offcanvas-header bg-black text-white">
+            <div class="offcanvas-header bg-dark text-white">
                 <h5 id="offcanvasRightLabel" >Seguimiento</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white  text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
                 Aca va el contenido
