@@ -96,7 +96,7 @@ function vista(dd) {
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
-                        <iframe id="vista" src="" width="100%" height="800px" class="border rounded-3"></iframe>
+                        <iframe id="vista" src="" width="100%" height="800px" class="border rounded-3" style="height:400px !important"></iframe>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
