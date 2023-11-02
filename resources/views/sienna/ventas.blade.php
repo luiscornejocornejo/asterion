@@ -110,6 +110,7 @@ function vista(dd) {
                     </div>
                     <div class="modal-body">
                         <form action="/ventasstatus" method="post">
+                        @csrf
 
                         <?php foreach($estados as $value){?>
 
