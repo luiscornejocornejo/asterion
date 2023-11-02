@@ -40,6 +40,7 @@ function vista(dd) {
                             <tr class="text-center">
                                 <th>Ticket</th>
                                 <th>Cliente</th>
+                                <th>Whatapp</th>
                                 <th>Creado</th>
                               
                                 <th>Estado</th>
@@ -52,6 +53,7 @@ function vista(dd) {
                             <tr class="text-center">
                                 <td><?php echo $val->ticketid;?></td>
                                 <td><?php echo $val->nya;?></td>
+                                <td><?php echo $val->cel;?></td>
                                 <td><?php echo $val->created_at;?></td>
                              
                                 <td>
