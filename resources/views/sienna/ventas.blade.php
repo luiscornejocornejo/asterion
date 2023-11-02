@@ -113,7 +113,7 @@ function vista(dd) {
                         @csrf
 
                         <?php foreach($estados as $value){?>
-
+  
 
                             <input type="hidden" name="idticketestado" id="idticketestado2" value="">
                         <input type="hidden" name="idconv" id="conversation_id2" value="">
