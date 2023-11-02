@@ -6,15 +6,12 @@
       <!-- ========== Left Sidebar Start ========== -->
       @include('facu.menu')
 <script>
-    function estado(dd,ee) {
-        if (ee === undefined) {
-            document.getElementById("statos4").disabled = true;  
-        }else{
-            document.getElementById("statos4").disabled = false;  
+    function estado2(dd,ee) {
 
-        }
-        document.getElementById("idticketestado").value = dd;
-        document.getElementById("conversation_id").value = ee;
+
+      
+        document.getElementById("idticketestado2").value = dd;
+        document.getElementById("conversation_id2").value = ee;
 
 
     
@@ -64,7 +61,7 @@ function vista(dd) {
                                     if($val->siennaestado==4){$bgcolor="success";}
                                         
                                         ?>
-                                    <button onclick="estado('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>')"  class="btn btn-<?php echo $bgcolor;?>" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
+                                    <button onclick="estado2('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>')"  class="btn btn-<?php echo $bgcolor;?>" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
                                     <?php echo $val->estadoname;?>
                                     </button> 
                                 </td>
@@ -117,8 +114,8 @@ function vista(dd) {
                         <?php foreach($estados as $value){?>
 
 
-                            <input type="hidden" name="idticketestado" id="idticketestado" value="">
-                        <input type="hidden" name="idconv" id="conversation_id" value="">
+                            <input type="hidden" name="idticketestado" id="idticketestado2" value="">
+                        <input type="hidden" name="idconv" id="conversation_id2" value="">
                         <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
                             <div class="mt-3">
 
