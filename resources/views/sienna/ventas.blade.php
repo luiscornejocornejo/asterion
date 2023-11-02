@@ -109,7 +109,7 @@ function vista(dd) {
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="/api/cambiarstatussienna" method="post">
+                        <form action="/ventasstatus" method="post">
 
                         <?php foreach($estados as $value){?>
 
@@ -120,7 +120,7 @@ function vista(dd) {
                             <div class="mt-3">
 
                             <div class="form-check mb-2">
-                                    <input type="radio" id="customRadio<?php echo $value->id;?>" name="statos" value="<?php echo $value->id;?>"  class="form-check-input">
+                                    <input type="radio" id="customRadio<?php echo $value->id;?>" name="estado" value="<?php echo $value->id;?>"  class="form-check-input">
                                     
                                     <label class="form-check-label" for="customRadio<?php echo $value->id;?>"><?php echo $value->nombre;?></label>
                                 </div>

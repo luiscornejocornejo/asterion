@@ -19,6 +19,8 @@ use App\Models\cronmail;
 use App\Models\masterreport;
 use Mail;
 use Illuminate\Support\Facades\Storage;
+use App\Models\siennatickets;
+
 
 class TicketdatosController extends Controller
 {
@@ -344,6 +346,46 @@ class TicketdatosController extends Controller
 
     }
 
+
+    
+
+    public function ventasstatus(Request $request)
+    {
+
+
+        echo   $idticketestado=$request->idticketestado;
+        echo   $statos=$request->statos;
+
+        $si2 = siennatickets::find($idticketestado);
+        $si2->siennaestado=$estado;
+        $si2->save();
+
+        $subdomain_tmp = 'localhost';
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+            $subdomain_tmp =  array_shift($domainParts);
+        } elseif(isset($_SERVER['SERVER_NAME'])){
+            $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+            $subdomain_tmp =  array_shift($domainParts);
+            
+        }
+        $query="select *,a.conversation_id,a.user_id,
+        b.nombre as depto,a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel from siennatickets a
+        left join siennadepto b on b.id=a.siennadepto 
+        left join  siennaestadosventas c on c.id=a.siennaestado
+        left join  siennatopic d on d.id=a.siennatopic
+        where 
+         a.siennaestado<>4 and a.siennadepto=3
+        ";
+
+        $resultados = DB::select($query);
+        $query2="select * from siennaestadosventas";
+        $resultados2 = DB::select($query2);
+            return view('sienna/ventas')
+            ->with('subdomain_tmp', $subdomain_tmp)
+            ->with("tickets",$resultados)->with("estados",$resultados2); 
+
+    }
     public function ventas(Request $request)
     {
 
