@@ -349,7 +349,7 @@ class TicketdatosController extends Controller
         $query="select *,a.conversation_id,a.user_id,
         b.nombre as depto,a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel from siennatickets a
         left join siennadepto b on b.id=a.siennadepto 
-        left join  siennaestado c on c.id=a.siennaestado
+        left join  siennaestadosventas c on c.id=a.siennaestado
         left join  siennatopic d on d.id=a.siennatopic
         where 
          a.siennaestado<>4 and a.siennadepto=3
