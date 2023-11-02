@@ -9,7 +9,7 @@ $urlfinalunico=str_replace("conversation","logout",$urlfinalunico);
 
    echo $urlfinalunico;
     //echo $url;
-
+ 
     use Illuminate\Support\Facades\Redirect;
 
  Redirect::to($urlfinalunico);
