@@ -55,10 +55,14 @@ function vista(dd) {
                              
                                 <td>
                                 <?php  
-                                    if($val->siennaestado==1){$bgcolor="info";}
-                                    if($val->siennaestado==2){$bgcolor="warning";}
-                                    if($val->siennaestado==3){$bgcolor="success";}
-                                    if($val->siennaestado==4){$bgcolor="success";}
+
+                                        foreach($estados as $value){
+
+                                            if($val->siennaestado==$value->id){$bgcolor=$value->color;}
+
+                                        }
+                                    
+                                 
                                         
                                         ?>
                                     <button onclick="estado2('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>')"  class="btn btn-<?php echo $bgcolor;?>" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
