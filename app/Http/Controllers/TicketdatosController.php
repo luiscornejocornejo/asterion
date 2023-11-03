@@ -166,10 +166,7 @@ class TicketdatosController extends Controller
         $url =  session('urlxennio');
         
 
-        $xen = new siennaloginxenioo();
-        $xen->idusuario=session('idusuario');
-        $xen->categoria=session('categoria');
-        $xen->save();
+        
         return view('sienna/suricata2')->with('url', $url);
 
     }

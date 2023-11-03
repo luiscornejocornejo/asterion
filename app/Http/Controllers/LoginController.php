@@ -10,6 +10,7 @@ use Redirect;
 use Flash;
 use App\Models\users;
 use App\Models\graficos;
+use App\Models\siennaloginxenioo;
 
 use phpDocumentor\Reflection\PseudoTypes\False_;
 
@@ -106,6 +107,12 @@ class LoginController extends Controller
                 session(['email' => $email]);
                 session(['email_suricata' => $email_suricata]);
             }
+
+            $xen = new siennaloginxenioo();
+            $xen->idusuario=session('idusuario');
+            $xen->categoria=session('categoria');
+            $xen->login=1;
+            $xen->save();
 
             if($categoria==90){
 
