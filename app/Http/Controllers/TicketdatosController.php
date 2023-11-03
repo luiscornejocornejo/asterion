@@ -361,6 +361,10 @@ class TicketdatosController extends Controller
         $si2 = siennatickets::find($tik);
         $si2->siennaestado=$estado;
         $si2->save();
+        return redirect() 
+        ->back() 
+        ->with('success', 'Se Cambio status correctamente');
+
 
         $subdomain_tmp = 'localhost';
         if (isset($_SERVER['HTTP_HOST'])) {
