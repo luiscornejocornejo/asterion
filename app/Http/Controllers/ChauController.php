@@ -13,14 +13,29 @@ class ChauController extends Controller
   {
 
     $idusuario=session('idusuario');
-    $xen = siennaloginxenioo::where('idusuario', '=', $idusuario)->get();  
-    foreach($xen as $val){
 
-      $idxen=$val->id;
-    }     
-    $xen2=siennaloginxenioo::find($idxen); 
-    $xen2->login=2;
-    $xen2->save();
+    $subdomain_tmp = 'localhost';
+            if (isset($_SERVER['HTTP_HOST'])) {
+                $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+                $subdomain_tmp =  array_shift($domainParts);
+            } elseif(isset($_SERVER['SERVER_NAME'])){
+                $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+                $subdomain_tmp =  array_shift($domainParts);
+                
+            }
+
+            if($subdomain_tmp=="opticom"){
+
+                  $xen = siennaloginxenioo::where('idusuario', '=', $idusuario)->get();  
+                  foreach($xen as $val){
+
+                    $idxen=$val->id;
+                  }     
+                  $xen2=siennaloginxenioo::find($idxen); 
+                  $xen2->login=2;
+                  $xen2->save();
+
+            }
     session()->forget('idusuario');
 
     

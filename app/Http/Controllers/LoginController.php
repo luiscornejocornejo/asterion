@@ -108,11 +108,26 @@ class LoginController extends Controller
                 session(['email_suricata' => $email_suricata]);
             }
 
-            $xen = new siennaloginxenioo();
-            $xen->idusuario=session('idusuario');
-            $xen->categoria=session('categoria');
-            $xen->login=1;
-            $xen->save();
+
+            $subdomain_tmp = 'localhost';
+            if (isset($_SERVER['HTTP_HOST'])) {
+                $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+                $subdomain_tmp =  array_shift($domainParts);
+            } elseif(isset($_SERVER['SERVER_NAME'])){
+                $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+                $subdomain_tmp =  array_shift($domainParts);
+                
+            }
+
+            if($subdomain_tmp=="opticom"){
+
+                $xen = new siennaloginxenioo();
+                $xen->idusuario=session('idusuario');
+                $xen->categoria=session('categoria');
+                $xen->login=1;
+                $xen->save();
+            }
+            
 
             if($categoria==90){
 
