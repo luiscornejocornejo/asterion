@@ -121,6 +121,15 @@ class LoginController extends Controller
 
             if($subdomain_tmp=="opticom"){
 
+                $xen = siennaloginxenioo::where('idusuario', '=', session('idusuario'))->get();  
+                  foreach($xen as $val){
+
+                    $idxen=$val->id;
+                    $xen2=siennaloginxenioo::find($idxen); 
+                    $xen2->login=2;
+                    $xen2->save();
+                  }     
+                  
                 $xen = new siennaloginxenioo();
                 $xen->idusuario=session('idusuario');
                 $xen->categoria=session('categoria');
