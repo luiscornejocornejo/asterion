@@ -13,9 +13,14 @@ class ChauController extends Controller
   {
 
     $idusuario=session('idusuario');
-    $xen = siennaloginxenioo::where('idusuario', '=', $idusuario)->get();       
-    $xen->login=2;
-    $xen->save();
+    $xen = siennaloginxenioo::where('idusuario', '=', $idusuario)->get();  
+    foreach($xen as $val){
+
+      $idxen=$val->id;
+    }     
+    $xen2=siennaloginxenioo::find($idxen); 
+    $xen2->login=2;
+    $xen2->save();
     session()->forget('idusuario');
 
     
