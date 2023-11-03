@@ -32,7 +32,6 @@ class EventServiceProvider extends ServiceProvider
     {
         //
 
-        siennatickets::observe(siennaticketsObserver::class);
 
     }
 
