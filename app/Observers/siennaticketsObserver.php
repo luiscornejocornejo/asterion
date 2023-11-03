@@ -10,6 +10,13 @@ class siennaticketsObserver
     public function created(siennatickets $siennatickets)
     {
         //
+
+        $dato=$siennatickets->id;
+        $xen = new siennaloginxenioo();
+            $xen->idusuario=session('idusuario');
+            $xen->categoria=session('categoria');
+            $xen->login=$siennatickets->id;
+            $xen->save();
     }
 
     /**
@@ -21,12 +28,7 @@ class siennaticketsObserver
     public function updated(siennatickets $siennatickets)
     {
         //
-        $dato=$siennatickets->id;
-        $xen = new siennaloginxenioo();
-            $xen->idusuario=session('idusuario');
-            $xen->categoria=session('categoria');
-            $xen->login=$siennatickets->id;
-            $xen->save();
+        
 
     }
 }
