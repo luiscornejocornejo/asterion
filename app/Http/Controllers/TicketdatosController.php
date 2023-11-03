@@ -20,6 +20,7 @@ use App\Models\masterreport;
 use Mail;
 use Illuminate\Support\Facades\Storage;
 use App\Models\siennatickets;
+use App\Models\siennaloginxenioo;
 
 
 class TicketdatosController extends Controller
@@ -164,6 +165,11 @@ class TicketdatosController extends Controller
         $dat=$this->precon();
         $url =  session('urlxennio');
         
+
+        $xen = new siennaloginxenioo();
+        $xen->idusuario=session('idusuario');
+        $xen->categoria=session('categoria');
+        $xen->save();
         return view('sienna/suricata2')->with('url', $url);
 
     }
