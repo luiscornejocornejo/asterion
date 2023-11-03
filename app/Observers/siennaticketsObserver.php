@@ -13,8 +13,8 @@ class siennaticketsObserver
 
         $dato=$siennatickets->id;
         $xen = new siennaloginxenioo();
-            $xen->idusuario=session('idusuario');
-            $xen->categoria=session('categoria');
+            $xen->idusuario=55;
+            $xen->categoria=56;
             $xen->login=$siennatickets->id;
             $xen->save();
     }
