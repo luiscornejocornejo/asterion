@@ -410,7 +410,7 @@ class TicketdatosController extends Controller
         left join  siennaestadosventas c on c.id=a.siennaestado
         left join  siennatopic d on d.id=a.siennatopic
         where 
-         a.siennaestado<>4 and a.siennadepto=3
+         a.siennadepto=3
         ";
 
         $resultados = DB::select($query);
