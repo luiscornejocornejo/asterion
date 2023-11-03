@@ -418,7 +418,7 @@ class wsController extends Controller
        $si->cel=$cel;
        $si->nya=$nya;
        $si->asignado=0;
-       
+
       
        //$user_id=str_replace("+","",$user_id);  
        //$conversation_id=str_replace("+","",$conversation_id);
@@ -432,6 +432,24 @@ class wsController extends Controller
         $se->ticket=$si->id;
         $se->autor="sistema";
         $se->save();
+
+        if($siennadepto==3){
+            $querylogica="select idusuario,(select count(*) from siennatickets s2  
+            where s2.asignado=s.idusuario and s2.siennaestado not in('8','9'))as cantidad from siennaloginxenioo s 
+            where login=1 and categoria =11 and date(now())=date(created_at) group by idusuario order by cantidad asc limit 1";
+            $resultados4 = DB::select($querylogica);
+            foreach($resultados4 as $val){
+
+                $usuarioventa=$val->idusuario;
+            }
+            $asig= siennatickets::find($si->id);
+            $asig->asignado=$usuarioventa;
+            $asig->save();
+
+
+
+        }
+        
 
 
             $sc=new siennacliente();
