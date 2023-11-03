@@ -30,7 +30,6 @@ function vista(dd) {
       <div class="content-page" style="padding: 0!important;">
           <div class="content">
 
-          <?php echo $logeados;?>
               <!-- Start Content-->
                 <div class="container pt-5">
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">

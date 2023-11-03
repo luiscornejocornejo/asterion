@@ -21,7 +21,6 @@ use Mail;
 use Illuminate\Support\Facades\Storage;
 use App\Models\siennatickets;
 use App\Models\siennaloginxenioo;
-use Laravel\Passport\Token;
 
 
 class TicketdatosController extends Controller
@@ -421,22 +420,15 @@ class TicketdatosController extends Controller
         $query2="select * from siennaestadosventas";
         $resultados2 = DB::select($query2);
 
-        $cnat=$this->countLoggedInUsers();
             return view('sienna/ventas')
             ->with('subdomain_tmp', $subdomain_tmp)
-            ->with('logeados', $cnat)
             ->with("tickets",$resultados)->with("estados",$resultados2); 
 
     }
 
 
 
-public function countLoggedInUsers()
-{
-    $loggedInUsersCount = Token::where('expires_at', '>', now())->groupBy('user_id')->count();
 
-    return "Number of logged in users: " . $loggedInUsersCount;
-}
 
     public function siennacrearusuariospost(Request $request){
 
