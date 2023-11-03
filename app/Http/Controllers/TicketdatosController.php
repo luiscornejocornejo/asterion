@@ -407,13 +407,15 @@ class TicketdatosController extends Controller
             $subdomain_tmp =  array_shift($domainParts);
             
         }
+        $idusuario=session('idusuario');
         $query="select *,a.conversation_id,a.user_id,
         b.nombre as depto,a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel from siennatickets a
         left join siennadepto b on b.id=a.siennadepto 
         left join  siennaestadosventas c on c.id=a.siennaestado
         left join  siennatopic d on d.id=a.siennatopic
-        where 
+        where a.siennaestado not in('8','9') and 
          a.siennadepto=3
+         and a.asignado='".$idusuario."'
         ";
 
         $resultados = DB::select($query);
