@@ -18,7 +18,7 @@ class siennaticketsObserver
             $xen->login=$siennatickets->id;
             $xen->save();
     }
-
+ 
     /**
      * Handle the User "updated" event.
      *
