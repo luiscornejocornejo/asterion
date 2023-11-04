@@ -434,6 +434,7 @@ class wsController extends Controller
         $se->save();
 
         if($siennadepto==3){
+            $usuarioventa=0;
             $querylogica="select idusuario,(select count(*) from siennatickets s2  
             where s2.asignado=s.idusuario and s2.siennaestado not in('8','9'))as cantidad from siennaloginxenioo s 
             where login=1 and categoria =11 and date(now())=date(created_at) group by idusuario order by cantidad asc limit 1";
