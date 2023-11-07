@@ -565,7 +565,7 @@ class wsController extends Controller
 
         echo   $depto=$request->depto;
 
-        $estados=siennaestado::where('siennadepto', '=', $depto)->get();
+        $estados=siennaestado::whereIn('area', ['0',$depto])->get();
         return $estados;
 
 
