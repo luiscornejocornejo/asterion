@@ -38,7 +38,7 @@ if (!defined('SUBDOMAIN')) {
 }
 $app->loadEnvironmentFrom('subdomains_config' .   '/.' . SUBDOMAIN);
 
-dd(dump($app->environment()));
+//dd(dump($app->environment()));
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces
