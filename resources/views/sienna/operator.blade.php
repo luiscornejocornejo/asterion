@@ -103,7 +103,7 @@ function vista(dd) {
                                  
                                         
                                         ?>
-                                    <button onclick="estado2('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>','<?php echo $val->siennadepto;?>')"  class="btn btn-<?php echo $bgcolor;?>" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
+                                    <button onclick="estado2('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>','<?php echo $val->iddepto;?>')"  class="btn btn-<?php echo $bgcolor;?>" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
                                     <?php echo $val->estadoname;?>
                                     </button> 
                                 </td>
