@@ -14,7 +14,7 @@ class asignacion extends Command
      *
      * @var string
      */
-    protected $signature = 'enviar:asignacion';
+    protected $signature = 'asi:asignacion';
 
     /**
      * The console command description.
