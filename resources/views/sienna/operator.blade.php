@@ -88,7 +88,7 @@ function vista(dd) {
                                 <td><?php echo $val->ticketid;?></td>
                                 <td><?php echo $val->nya;?></td>
 
-                                <td><button onclick="area('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>','<?php echo $val->iddepto;?>')"  class="btn btn-<?php echo $bgcolor;?>" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
+                                <td><button onclick="area('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>','<?php echo $val->iddepto;?>')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
                                     <?php echo $val->depto;?>
                                     </button> </td>
                                 <td><?php echo $val->cel;?></td>
