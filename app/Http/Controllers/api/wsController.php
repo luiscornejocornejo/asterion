@@ -563,7 +563,7 @@ class wsController extends Controller
 
     public function statussiennaxdepto(Request $request){
 
-        echo   $depto=$request->depto;
+        echo   $depto=$request->depto;   
 
         $estados=siennaestado::whereIn('area', ['0',$depto])->get();
         return $estados;
