@@ -13,10 +13,12 @@
 
         alert("llego");
 
+
+        /*
         url="https://opticom.suricata.cloud/api/statussiennaxdepto?depto=3";
         const response = await fetch(url);
     var data = await response.json();
-        alert($data);
+        alert($data);*/
 
     
 
