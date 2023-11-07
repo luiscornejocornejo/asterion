@@ -11,7 +11,6 @@
         document.getElementById("idticketestado2").value = dd;
         document.getElementById("conversation_id2").value = ee;
 
-        alert("llego");
 
 
         
