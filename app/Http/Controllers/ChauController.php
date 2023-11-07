@@ -26,14 +26,18 @@ class ChauController extends Controller
 
             if($subdomain_tmp=="opticom"){
 
+                  $idxen=0;
                   $xen = siennaloginxenioo::where('idusuario', '=', $idusuario)->get();  
                   foreach($xen as $val){
 
                     $idxen=$val->id;
                   }     
-                  $xen2=siennaloginxenioo::find($idxen); 
-                  $xen2->login=2;
-                  $xen2->save();
+                  if($idxen<>0){
+                    $xen2=siennaloginxenioo::find($idxen); 
+                    $xen2->login=2;
+                    $xen2->save();
+                  }
+                  
 
             }
     session()->forget('idusuario');
