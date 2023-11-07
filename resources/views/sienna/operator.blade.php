@@ -19,7 +19,9 @@
         axios.get(url)
                 .then(function (response) {
                     // función que se ejecutará al recibir una respuesta
-                    console.log(response);
+                    console.log(response.data);
+
+
                 })
                 .catch(function (error) {
                     // función para capturar el error
