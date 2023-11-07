@@ -73,6 +73,7 @@ function vista(dd) {
                             <tr class="text-center">
                                 <th>Ticket</th>
                                 <th>Cliente</th>
+                                <th>Area</th>
                                 <th>Whatapp</th>
                                 <th>Creado</th>
                               
@@ -86,6 +87,10 @@ function vista(dd) {
                             <tr class="text-center">
                                 <td><?php echo $val->ticketid;?></td>
                                 <td><?php echo $val->nya;?></td>
+
+                                <td><button onclick="area('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>','<?php echo $val->iddepto;?>')"  class="btn btn-<?php echo $bgcolor;?>" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
+                                    <?php echo $val->depto;?>
+                                    </button> </td>
                                 <td><?php echo $val->cel;?></td>
                                 <td><?php echo $val->created_at;?></td>
                              
