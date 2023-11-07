@@ -6,7 +6,7 @@
       <!-- ========== Left Sidebar Start ========== -->
       @include('facu.menu')
 <script>
-    function estado2(dd,ee) {
+    function estado2(dd,ee,ff) {
       
         document.getElementById("idticketestado2").value = dd;
         document.getElementById("conversation_id2").value = ee;
@@ -14,7 +14,7 @@
 
 
         
-        url="https://opticom.suricata.cloud/api/statussiennaxdepto?depto=3";
+        url="https://opticom.suricata.cloud/api/statussiennaxdepto?depto="+ff;
         axios.get(url)
                 .then(function (response) {
                     // función que se ejecutará al recibir una respuesta
@@ -103,7 +103,7 @@ function vista(dd) {
                                  
                                         
                                         ?>
-                                    <button onclick="estado2('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>')"  class="btn btn-<?php echo $bgcolor;?>" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
+                                    <button onclick="estado2('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>','<?php echo $val->siennadepto;?>')"  class="btn btn-<?php echo $bgcolor;?>" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
                                     <?php echo $val->estadoname;?>
                                     </button> 
                                 </td>
