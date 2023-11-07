@@ -26,7 +26,7 @@
                         console.log(response.data[i].nombre);
 
 
-                       dato.=' <div class="mt-3">'+
+                       dato+=' <div class="mt-3">'+
 
                             '<div class="form-check mb-2">'+
                                    ' <input type="radio" id="customRadio'+response.data[i].id+'" name="estado" value="'+response.data[i].id+'"  class="form-check-input">'+
