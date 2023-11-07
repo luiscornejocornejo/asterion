@@ -14,6 +14,12 @@
         document.getElementById("conversation_id2").value = ee;
 
 
+
+        url="https://opticom.suricata.cloud/api/statussiennaxdepto?depto=3";
+        const response = await fetch(url);
+    var data = await response.json();
+        alert($data);
+
     
 
     }
@@ -124,6 +130,7 @@ function vista(dd) {
                         $estados=$homepage = file_get_contents('https://opticom.suricata.cloud/api/statussiennaxdepto?depto=2');
   
                         $estados=json_encode($estados);
+                        dd($estados);
                         foreach($estados as $value){?>
   
 
