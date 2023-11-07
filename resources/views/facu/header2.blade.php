@@ -18,7 +18,7 @@
 
   <!-- Theme Config Js -->
   <script src="assetsfacu/js/hyper-config.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
   <!-- App css -->
   <link href="assetsfacu/css/app-saas.min.css" rel="stylesheet" type="text/css" id="app-style">
         <link href="assetsfacu/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
