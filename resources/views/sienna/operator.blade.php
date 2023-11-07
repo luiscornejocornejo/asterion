@@ -186,13 +186,13 @@ function vista(dd) {
                 <div class="modal-body">
                     <form action="/api/cambiardeptosienna" method="post">
                         <input type="hidden" name="_token" v-bind:value="csrf">
-                        <input value="<?php echo $valor->conversation_id;?>" type="hidden" name="idconv" id="idconv">
-                        <input value="<?php echo $valor->user_id;?>" type="hidden" name="user_id" id="user_id">
+                        <input value="" type="hidden" name="idconv" id="idconv">
+                        <input value="" type="hidden" name="user_id" id="user_id">
                         <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
-                        <input value=" <?php echo $valor->ticketid;?> "  type="hidden" name="idticketdepto" id="idtickettopic">
-                        <input value="<?php echo $bot_channel;?>" type="hidden" name="bot_channel" id="bot_channel">
+                        <input value=""  type="hidden" name="idticketdepto" id="idtickettopic">
+                        <input value="" type="hidden" name="bot_channel" id="bot_channel">
   
-                        <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $merchant;?> ">
+                        <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $subdomain_tmp;?> ">
 
                         <div v-for="department in departments ">
                         <?php foreach($deptos as $dep){?>
