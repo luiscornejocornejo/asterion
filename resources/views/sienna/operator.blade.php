@@ -22,6 +22,11 @@
                     console.log(response.data);
 
 
+                    for (i = 0; i < response.data.length; i++) {
+                        console.log(response.data[i]);
+                        } 
+
+
                 })
                 .catch(function (error) {
                     // función para capturar el error
