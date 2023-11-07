@@ -123,7 +123,7 @@ function vista(dd) {
                         <?php 
                         $estados=$homepage = file_get_contents('https://opticom.suricata.cloud/api/statussiennaxdepto?depto=2');
 
-                        
+                        $estados=json_decode($estados);
                         foreach($estados as $value){?>
   
 
