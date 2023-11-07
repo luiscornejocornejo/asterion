@@ -7,13 +7,11 @@
       @include('facu.menu')
 <script>
     function estado2(dd,ee) {
-
-
       
         document.getElementById("idticketestado2").value = dd;
         document.getElementById("conversation_id2").value = ee;
 
-
+        alert("llego");
 
         url="https://opticom.suricata.cloud/api/statussiennaxdepto?depto=3";
         const response = await fetch(url);
