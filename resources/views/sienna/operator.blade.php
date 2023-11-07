@@ -21,13 +21,13 @@
                     // función que se ejecutará al recibir una respuesta
                     console.log(response.data);
 
-
+                    dato="";
                     for (i = 0; i < response.data.length; i++) {
                         console.log(response.data[i].id);
                         console.log(response.data[i].nombre);
 
 
-                       dato=' <div class="mt-3">'+
+                       dato.=' <div class="mt-3">'+
 
                             '<div class="form-check mb-2">'+
                                    ' <input type="radio" id="customRadio'+response.data[i].id+'" name="estado" value="'+response.data[i].id+'"  class="form-check-input">'+
@@ -37,9 +37,10 @@
 
                                ' </div>';
 
-                               document.getElementById("est").innerHTML = dato;
 
                         } 
+                        document.getElementById("est").innerHTML = dato;
+
 
 
                 })
