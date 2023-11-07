@@ -447,8 +447,6 @@ class wsController extends Controller
             $asig->asignado=$usuarioventa;
             $asig->save();
 
-
-
         }
         
 
