@@ -25,6 +25,20 @@
                     for (i = 0; i < response.data.length; i++) {
                         console.log(response.data[i].id);
                         console.log(response.data[i].nombre);
+
+
+                       dato=' <div class="mt-3">'+
+
+                            '<div class="form-check mb-2">'+
+                                   ' <input type="radio" id="customRadio'+response.data[i].id+'" name="estado" value="'+response.data[i].id+'"  class="form-check-input">'+
+                                    
+                                    '<label class="form-check-label" for="customRadio'+response.data[i].id+'">'+response.data[i].nombre+'</label>'+
+                                '</div>'+
+
+                               ' </div>';
+
+                               document.getElementById("est").innerHTML = dato;
+
                         } 
 
 
@@ -140,26 +154,10 @@ function vista(dd) {
                         <form action="/ventasstatus" method="post">
                         @csrf
                         <input type="hidden" name="tik" id="idticketestado2" value="">
-
-                        
-                        <?php 
-                       
-                        foreach($estados as $value){?>
-  
-
                         <input type="hidden" name="idconv" id="conversation_id2" value="">
                         <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
-                            <div class="mt-3">
-
-                            <div class="form-check mb-2">
-                                    <input type="radio" id="customRadio<?php echo $value->id;?>" name="estado" value="<?php echo $value->id;?>"  class="form-check-input">
-                                    
-                                    <label class="form-check-label" for="customRadio<?php echo $value->id;?>"><?php echo $value->nombre;?></label>
-                                </div>
-
-                                </div>
-
-                       <?php }?>
+                        
+                        <div id="est"></div>
                                
                                 
                         <div class="modal-footer">
