@@ -14,7 +14,7 @@ class ChauController extends Controller
 
     $idusuario=session('idusuario');
 
-    $subdomain_tmp = 'localhost';
+          $subdomain_tmp = 'localhost';
             if (isset($_SERVER['HTTP_HOST'])) {
                 $domainParts = explode('.', $_SERVER['HTTP_HOST']);
                 $subdomain_tmp =  array_shift($domainParts);
