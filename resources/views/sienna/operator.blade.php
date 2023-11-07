@@ -63,7 +63,7 @@ function vista(dd) {
                                         }*/
 
                                         $bgcolor="success";
-                                    
+                                     
                                  
                                         
                                         ?>
