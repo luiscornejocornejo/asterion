@@ -351,7 +351,38 @@ class TicketdatosController extends Controller
 
 
     
+    
+    public function operator(Request $request)
+    {
 
+        $subdomain_tmp = 'localhost';
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+            $subdomain_tmp =  array_shift($domainParts);
+        } elseif(isset($_SERVER['SERVER_NAME'])){
+            $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+            $subdomain_tmp =  array_shift($domainParts);
+            
+        }
+        $idusuario=session('idusuario');
+        $query="select *,a.conversation_id,a.user_id,
+        b.nombre as depto,a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel from siennatickets a
+        left join siennadepto b on b.id=a.siennadepto 
+        left join  siennaestado c on c.id=a.siennaestado
+        left join  siennatopic d on d.id=a.siennatopic
+        where a.siennaestado not in('3','4') and 
+         and a.asignado='".$idusuario."'
+        ";
+
+        $resultados = DB::select($query);
+        $query2="select * from siennaestado";
+        $resultados2 = DB::select($query2);
+
+            return view('sienna/ventas')
+            ->with('subdomain_tmp', $subdomain_tmp)
+            ->with("tickets",$resultados)->with("estados",$resultados2); 
+
+    }
     public function ventasstatus(Request $request)
     {
 

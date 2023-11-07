@@ -208,6 +208,10 @@ Route::get('/ventas','App\Http\Controllers\TicketdatosController@ventas');
 Route::post('/ventasstatus','App\Http\Controllers\TicketdatosController@ventasstatus');
 
 
+
+Route::get('/operator','App\Http\Controllers\TicketdatosController@operator');
+
+
 });
 //});
 
