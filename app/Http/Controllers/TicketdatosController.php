@@ -370,7 +370,7 @@ class TicketdatosController extends Controller
         left join siennadepto b on b.id=a.siennadepto 
         left join  siennaestado c on c.id=a.siennaestado
         left join  siennatopic d on d.id=a.siennatopic
-        where a.siennaestado not in('3','4') and 
+        where a.siennaestado not in('3','4')  
          and a.asignado='".$idusuario."'
         ";
 
