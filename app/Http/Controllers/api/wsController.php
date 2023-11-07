@@ -14,6 +14,7 @@ use App\Models\siennatickets;
 use App\Models\siennaseguimientos;
 use App\Models\siennacliente;
 use App\Models\siennadepto;
+use App\Models\siennaestado;
 
 class wsController extends Controller
 {
@@ -559,6 +560,17 @@ class wsController extends Controller
 
     }
 
+
+    public function statussiennaxdepto(Request $request){
+
+        echo   $depto=$request->depto;
+
+        $estados=siennaestado::where('siennadepto', '=', $depto)->get();
+        return $estados;
+
+
+    }
+    
     public function cambiarstatussienna(Request $request){
 
       echo   $idticketestado=$request->idticketestado;

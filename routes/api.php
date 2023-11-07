@@ -48,6 +48,7 @@ Route::post('/cambiartopicsienna', [wsController::class, 'cambiartopicsienna']);
 Route::post('/cambiardeptosienna', [wsController::class, 'cambiardeptosienna']);
 Route::post('/siennacrearseguimiento', [wsController::class, 'siennacrearseguimiento']);
 
+Route::get('/statussiennaxdepto', [wsController::class, 'statussiennaxdepto']);
 
 
 
