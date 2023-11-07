@@ -6,6 +6,16 @@
       <!-- ========== Left Sidebar Start ========== -->
       @include('facu.menu')
 <script>
+
+
+function area(dd,ee,ff) {
+      
+      document.getElementById("idticketdepto").value = dd;
+      document.getElementById("idconv").value = ee;
+      document.getElementById("user_id").value = ff;
+
+
+}
     function estado2(dd,ee,ff) {
       
         document.getElementById("idticketestado2").value = dd;
@@ -88,7 +98,7 @@ function vista(dd) {
                                 <td><?php echo $val->ticketid;?></td>
                                 <td><?php echo $val->nya;?></td>
 
-                                <td><button onclick="area('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>','<?php echo $val->iddepto;?>')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2">
+                                <td><button onclick="area('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>','<?php echo $val->user_id;?>')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2">
                                     <?php echo $val->depto;?>
                                     </button> </td>
                                 <td><?php echo $val->cel;?></td>
@@ -189,7 +199,7 @@ function vista(dd) {
                         <input value="" type="hidden" name="idconv" id="idconv">
                         <input value="" type="hidden" name="user_id" id="user_id">
                         <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
-                        <input value=""  type="hidden" name="idticketdepto" id="idtickettopic">
+                        <input value=""  type="hidden" name="idticketdepto" id="idticketdepto">
                         <input value="" type="hidden" name="bot_channel" id="bot_channel">
   
                         <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $subdomain_tmp;?> ">
