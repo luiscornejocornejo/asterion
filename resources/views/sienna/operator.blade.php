@@ -119,7 +119,7 @@ function vista(dd) {
 
                         
                         <?php 
-                        $estados=$homepage = file_get_contents('https://opticom.suricata.cloud/api/statussiennaxdepto?depto=3');
+                        $estados=$homepage = file_get_contents('https://opticom.suricata.cloud/api/statussiennaxdepto?depto=2');
 
                         
                         foreach($estados as $value){?>
