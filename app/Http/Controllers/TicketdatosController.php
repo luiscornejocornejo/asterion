@@ -375,12 +375,11 @@ class TicketdatosController extends Controller
         ";
 
         $resultados = DB::select($query);
-        $query2="select * from siennaestado";
-        $resultados2 = DB::select($query2);
+      
 
-            return view('sienna/ventas')
+            return view('sienna/operator')
             ->with('subdomain_tmp', $subdomain_tmp)
-            ->with("tickets",$resultados)->with("estados",$resultados2); 
+            ->with("tickets",$resultados); 
 
     }
     public function ventasstatus(Request $request)
