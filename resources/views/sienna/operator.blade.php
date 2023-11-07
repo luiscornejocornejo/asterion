@@ -55,12 +55,14 @@ function vista(dd) {
                              
                                 <td>
                                 <?php  
-
+/*
                                         foreach($estados as $value){
 
                                             if($val->siennaestado==$value->id){$bgcolor=$value->color;}
 
-                                        }
+                                        }*/
+
+                                        $bgcolor="success";
                                     
                                  
                                         
