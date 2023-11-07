@@ -663,6 +663,7 @@ class wsController extends Controller
 
         $si2 = siennatickets::find($idticketdepto);
         $si2->siennadepto=$statos;
+        $si2->asignado=0;
         $si2->save();
 
 
