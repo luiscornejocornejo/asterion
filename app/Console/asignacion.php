@@ -14,14 +14,14 @@ class asignacion extends Command
      *
      * @var string
      */
-    protected $signature = 'asi:asignacion';
+    protected $signature = 'semanal:asignacion';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = ' asignacion';
 
     /**
      * Execute the console command.
