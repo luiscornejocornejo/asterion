@@ -41,7 +41,7 @@ class asignacion extends Command
     {
         $query="select *  from siennatickets
         where siennaestado not in('3','4')  
-         and a.asignado='0'
+         and asignado='0'
         ";
 
         $resultados = DB::select($query);
