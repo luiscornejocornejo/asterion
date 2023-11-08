@@ -48,18 +48,18 @@ class asignacion extends Command
 
         foreach($resultados as $value){
 
-            echo $area=$value->siennadepto;
-            echo $tick=$value->id;
+             $area=$value->siennadepto;
+             $tick=$value->id;
 
              $query2="select idusuario,(select count(*) from siennatickets s2  
             where s2.asignado=s.idusuario and s2.siennaestado not in('3','4'))as cantidad from siennaloginxenioo s 
             where login=1 and areas =".$area." and date(now())=date(created_at) group by idusuario order by cantidad limit 1";
             $resultados2 = DB::select($query2);
             $idusu=0;
-            echo "/n/r";
+            echo "/r";
             foreach($resultados2 as $value2){
 
-                echo $idusu=$value2->idusuario;
+                 $idusu=$value2->idusuario;
             }
 
             if($idusu<>0){
