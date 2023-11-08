@@ -103,7 +103,7 @@ class LoginController extends Controller
                 $nombreusuario = $value->nombre . " " . $value->last_name;
                 session(['idusuario' => $idusuario]);
                 session(['categoria' => $categoria]);
-                if($subdomain_tmp=="opticom"){
+                if($subdomain_tmp=="opticom"){ 
                                 $query4 = "select * from categoria where id='" . $categoria . "'";
                                 $resultados4 = DB::select($query4);
 
