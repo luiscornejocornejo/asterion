@@ -90,8 +90,19 @@ class LoginController extends Controller
 
         $query = "select * from users where email='" . $email . "' and password=md5('" . $password . "')";
         $resultados = DB::select($query);
-
-
+        $subdomain_tmp = 'localhost';
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+            $subdomain_tmp =  array_shift($domainParts);
+        } elseif(isset($_SERVER['SERVER_NAME'])){
+            $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+            $subdomain_tmp =  array_shift($domainParts);
+            
+        }
+        if($subdomain_tmp=="redlam"){ 
+            echo $query;
+            dd($resultados);
+        }
         if (sizeof($resultados) == 1) {
 
             foreach ($resultados as $value) {
@@ -103,10 +114,7 @@ class LoginController extends Controller
                  $email_suricata = $value->email_suricata;
                  $nombreusuario = $value->nombre . " " . $value->last_name;
 
-                 if($subdomain_tmp=="redlam"){ 
-
-                    dd($nombreusuario);
-                }
+               
                 session(['idusuario' => $idusuario]);
                 session(['categoria' => $categoria]);
                 if($subdomain_tmp=="opticom"){ 
@@ -124,15 +132,7 @@ class LoginController extends Controller
             }
 
 
-            $subdomain_tmp = 'localhost';
-            if (isset($_SERVER['HTTP_HOST'])) {
-                $domainParts = explode('.', $_SERVER['HTTP_HOST']);
-                $subdomain_tmp =  array_shift($domainParts);
-            } elseif(isset($_SERVER['SERVER_NAME'])){
-                $domainParts = explode('.', $_SERVER['SERVER_NAME']);
-                $subdomain_tmp =  array_shift($domainParts);
-                
-            }
+            
 
             if($subdomain_tmp=="opticom"){
 
