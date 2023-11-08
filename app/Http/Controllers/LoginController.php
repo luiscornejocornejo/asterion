@@ -98,19 +98,20 @@ class LoginController extends Controller
 
                 $idusuario = $value->id;
                 $categoria = $value->categoria;
-              echo   $email_suricata = $value->email_suricata;
+                 $email_suricata = $value->email_suricata;
 
                 $nombreusuario = $value->nombre . " " . $value->last_name;
                 session(['idusuario' => $idusuario]);
                 session(['categoria' => $categoria]);
-                $query4 = "select * from categoria where id='" . $categoria . "'";
-                $resultados4 = DB::select($query4);
+                if($subdomain_tmp=="opticom"){
+                                $query4 = "select * from categoria where id='" . $categoria . "'";
+                                $resultados4 = DB::select($query4);
 
-                foreach($resultados4 as $val4){
-                    session(['areas' => $val4->area]);
+                                foreach($resultados4 as $val4){
+                                    session(['areas' => $val4->area]);
+                                }
 
-
-                }
+                    }
                 session(['nombreusuario' => $nombreusuario]);
                 session(['email' => $email]);
                 session(['email_suricata' => $email_suricata]);
