@@ -101,6 +101,7 @@ class LoginController extends Controller
         }
         if($subdomain_tmp=="redlam"){ 
             echo $query;
+            d(dump($app->environment()));
             dd($resultados);
         }
         if (sizeof($resultados) == 1) {
