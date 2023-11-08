@@ -59,7 +59,7 @@ class asignacion extends Command
             echo "/n/r";
             foreach($resultados2 as $value2){
 
-                echo $idusu=$value->idusuario;
+                echo $idusu=$value2->idusuario;
             }
 
             if($idusu<>0){
