@@ -75,7 +75,7 @@ $resultados = DB::select($query);
     
    
     <li class="side-nav-item background-buttons">
-                    <a  href="/oprator"  class="side-nav-link hovering-pan ">
+                    <a  href="/operator"  class="side-nav-link hovering-pan ">
                         <i class="mdi mdi-handshake"></i>
                         <span> Tickets </span>
                     </a>
