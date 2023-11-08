@@ -64,6 +64,8 @@ class asignacion extends Command
 
             if($idusu<>0){
                echo  $query3="update siennaticket set asginado='".$idusu."' where id=".$tick."";
+               $resultados3 = DB::select($query3);
+
             }
         }
     }
