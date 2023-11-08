@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\api;
+namespace App\Http\Controllers\Api2;
 
 use App\Http\Controllers\Controller;
 use App\Models\masterreport;
