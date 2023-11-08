@@ -96,11 +96,17 @@ class LoginController extends Controller
 
             foreach ($resultados as $value) {
 
+
+                
                 $idusuario = $value->id;
                 $categoria = $value->categoria;
                  $email_suricata = $value->email_suricata;
+                 $nombreusuario = $value->nombre . " " . $value->last_name;
 
-                $nombreusuario = $value->nombre . " " . $value->last_name;
+                 if($subdomain_tmp=="redlam"){ 
+
+                    dd($nombreusuario);
+                }
                 session(['idusuario' => $idusuario]);
                 session(['categoria' => $categoria]);
                 if($subdomain_tmp=="opticom"){ 
