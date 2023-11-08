@@ -72,15 +72,15 @@ $resultados = DB::select($query);
                 </li>
     <?php }?>
 
-    <?php
-    if ($categoria ==11) {?>
+    
+   
     <li class="side-nav-item background-buttons">
-                    <a  href="/ventas"  class="side-nav-link hovering-pan ">
+                    <a  href="/oprator"  class="side-nav-link hovering-pan ">
                         <i class="mdi mdi-handshake"></i>
-                        <span> Ventas </span>
+                        <span> Tickets </span>
                     </a>
                 </li>
-    <?php }?>
+    
     <?php
 
     if ($categoria == 10) {?>
