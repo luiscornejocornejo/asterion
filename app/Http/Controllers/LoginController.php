@@ -103,6 +103,14 @@ class LoginController extends Controller
                 $nombreusuario = $value->nombre . " " . $value->last_name;
                 session(['idusuario' => $idusuario]);
                 session(['categoria' => $categoria]);
+                $query4 = "select * from categoria where id='" . $categoria . "'";
+                $resultados4 = DB::select($query4);
+
+                foreach($resultados4 as $val4){
+                    session(['areas' => $val4->area]);
+
+
+                }
                 session(['nombreusuario' => $nombreusuario]);
                 session(['email' => $email]);
                 session(['email_suricata' => $email_suricata]);
@@ -133,6 +141,7 @@ class LoginController extends Controller
                 $xen = new siennaloginxenioo();
                 $xen->idusuario=session('idusuario');
                 $xen->categoria=session('categoria');
+                $xen->areas=session('areas');
                 $xen->login=1;
                 $xen->save();
             }
