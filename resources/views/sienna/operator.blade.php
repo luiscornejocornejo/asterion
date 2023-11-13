@@ -18,7 +18,7 @@ let identificadorIntervaloDeTiempo;
 function maxid(){
     var maxidt=<?php echo session('maxid');?>;
     var idusuario=<?php echo session('idusuario');?>;
-    url="https://opticom.suricata.cloud/api/maxid?idusuario="+idusuarioS+"&maxid="+maxidt+"";
+    url="https://opticom.suricata.cloud/api/maxid?idusuario="+idusuario+"&maxid="+maxidt+"";
         axios.get(url)
                 .then(function (response) {
                     // función que se ejecutará al recibir una respuesta
