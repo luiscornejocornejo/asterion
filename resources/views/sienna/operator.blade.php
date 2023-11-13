@@ -93,7 +93,10 @@ function vista(dd) {
                         </thead>
                         <tbody>
 
-                        <?php foreach($tickets as $val){?>
+                        <?php
+                        $maxid=0; foreach($tickets as $val){
+                            
+                            $maxid=$val->ticketid;?>
                             <tr class="text-center">
                                 <td><?php echo $val->ticketid;?></td>
                                 <td><?php echo $val->nya;?></td>
@@ -135,7 +138,7 @@ function vista(dd) {
                             <?php }?>
                         </tbody>
                     </table>
-                    
+                    <?php echo $maxid;?>
                                                      
                 </div>
               <!-- container -->
