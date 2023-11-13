@@ -22,9 +22,9 @@ function maxid(){
                 .then(function (response) {
                     // función que se ejecutará al recibir una respuesta
                     console.log(response.data);
-                    if(){
-                        <?php     $maxid=$maxid+1;    session(['maxid' => $maxid]);?>
-
+                    console.log(response.data.length);
+                    if(data.length>0){
+                        maxidt=maxidt+1;
                     }
                 })
                 .catch(function (error) {
