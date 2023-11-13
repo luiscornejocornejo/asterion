@@ -33,7 +33,7 @@ function maxid(){
                     console.log(response.data);
                     console.log(response.data.length);
                     if(response.data.length>0){
-                        let variableGlobal =1;
+                         variableGlobal =1;
 
                         maxidt=maxidt+1;
                     }
