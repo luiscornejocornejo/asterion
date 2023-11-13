@@ -49,6 +49,7 @@ Route::post('/cambiardeptosienna', [wsController::class, 'cambiardeptosienna']);
 Route::post('/siennacrearseguimiento', [wsController::class, 'siennacrearseguimiento']);
 
 Route::get('/statussiennaxdepto', [wsController::class, 'statussiennaxdepto']);
+Route::get('/maxid', [wsController::class, 'maxid']);
 
 
 

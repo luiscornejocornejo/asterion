@@ -394,6 +394,27 @@ class wsController extends Controller
         return response()->json(['cliente' => $resultados,'tickets' => $resultados2,'dat' => $dat]);
 
     }
+
+    public function maxid(Request $request){
+        $maxid=$request->maxid;
+        $idusuario=$request->idusuario;
+
+        $query="select *,a.conversation_id,a.user_id,
+        b.nombre as depto,b.id as iddepto,
+        a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel from siennatickets a
+        left join siennadepto b on b.id=a.siennadepto 
+        left join  siennaestado c on c.id=a.siennaestado
+        left join  siennatopic d on d.id=a.siennatopic
+        where a.siennaestado not in('3','4')  
+         and a.asignado='".$idusuario."' and a.id>'".$maxid."'
+         order by a.id asc
+        ";
+
+        $resultados = DB::select($query);
+        return $resultados;
+
+
+    }
     public function creartickessienna(Request $request){
         $cel=$request->cel;
         $siennadepto=$request->siennadepto;
