@@ -16,11 +16,16 @@ let identificadorIntervaloDeTiempo;
 
 
 function maxid(){
-    url="https://opticom.suricata.cloud/api/maxid?idusuario=48&maxid=4";
+    var maxidt=<?php echo session('maxid');?>
+    url="https://opticom.suricata.cloud/api/maxid?idusuario=48&maxid="+maxidt;
         axios.get(url)
                 .then(function (response) {
                     // función que se ejecutará al recibir una respuesta
                     console.log(response.data);
+                    if(){
+                        <?php     $maxid=$maxid+1;    session(['maxid' => $maxid]);?>
+
+                    }
                 })
                 .catch(function (error) {
                     // función para capturar el error

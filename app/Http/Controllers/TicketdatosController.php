@@ -377,6 +377,16 @@ class TicketdatosController extends Controller
         ";
 
         $resultados = DB::select($query);
+
+        $maxid=0; 
+        foreach($resultados as $val){
+                            
+            $maxid=$val->ticketid;
+            
+        }
+
+        session(['maxid' => $maxid]);
+
         $query2="select * from siennaestado";
         $resultados2 = DB::select($query2);
 
