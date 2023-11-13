@@ -385,7 +385,7 @@ class TicketdatosController extends Controller
             
         }
 
-        session(['maxid' => $maxid]);
+       echo  session(['maxid' => $maxid]);
 
         $query2="select * from siennaestado";
         $resultados2 = DB::select($query2);
@@ -396,6 +396,7 @@ class TicketdatosController extends Controller
             return view('sienna/operator')
             ->with('subdomain_tmp', $subdomain_tmp)
             ->with("tickets",$resultados)
+            ->with("maxid",$maxid)
             ->with("deptos",$resultados3)
             ->with("estados",$resultados2); 
 
