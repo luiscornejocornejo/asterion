@@ -10,12 +10,25 @@
 let identificadorIntervaloDeTiempo;
 
 
-  identificadorIntervaloDeTiempo = setInterval(maxid, 1000);
+  identificadorIntervaloDeTiempo = setInterval(maxid, 5000);
 
 
 
 
 function maxid(){
+    url="https://opticom.suricata.cloud/api/maxid?idusuario=48&maxid=4";
+        axios.get(url)
+                .then(function (response) {
+                    // función que se ejecutará al recibir una respuesta
+                    console.log(response.data);
+                })
+                .catch(function (error) {
+                    // función para capturar el error
+                    console.log(error);
+                })
+                .then(function () {
+                    // función que siempre se ejecuta
+                });  
     console.log("Ha pasado 1 segundo.");
 
 }
