@@ -373,6 +373,7 @@ class TicketdatosController extends Controller
         left join  siennatopic d on d.id=a.siennatopic
         where a.siennaestado not in('3','4')  
          and a.asignado='".$idusuario."'
+         order by a.id desc
         ";
 
         $resultados = DB::select($query);
@@ -383,6 +384,44 @@ class TicketdatosController extends Controller
         $resultados3 = DB::select($query3);
         
             return view('sienna/operator')
+            ->with('subdomain_tmp', $subdomain_tmp)
+            ->with("tickets",$resultados)
+            ->with("deptos",$resultados3)
+            ->with("estados",$resultados2); 
+
+    }
+
+    public function operator2(Request $request)
+    {
+
+        $subdomain_tmp = 'localhost';
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+            $subdomain_tmp =  array_shift($domainParts);
+        } elseif(isset($_SERVER['SERVER_NAME'])){
+            $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+            $subdomain_tmp =  array_shift($domainParts);
+            
+        }
+        $idusuario=session('idusuario');
+        $query="select *,a.conversation_id,a.user_id,
+        b.nombre as depto,b.id as iddepto,
+        a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel from siennatickets a
+        left join siennadepto b on b.id=a.siennadepto 
+        left join  siennaestado c on c.id=a.siennaestado
+        left join  siennatopic d on d.id=a.siennatopic
+        where a.siennaestado not in('3','4')  
+         and a.asignado='".$idusuario."'
+        ";
+
+        $resultados = DB::select($query);
+        $query2="select * from siennaestado";
+        $resultados2 = DB::select($query2);
+
+        $query3="select * from siennadepto";
+        $resultados3 = DB::select($query3);
+        
+            return view('sienna/operator2')
             ->with('subdomain_tmp', $subdomain_tmp)
             ->with("tickets",$resultados)
             ->with("deptos",$resultados3)

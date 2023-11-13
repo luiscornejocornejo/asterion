@@ -210,6 +210,7 @@ Route::post('/ventasstatus','App\Http\Controllers\TicketdatosController@ventasst
 
 
 Route::get('/operator','App\Http\Controllers\TicketdatosController@operator');
+Route::get('/operator2','App\Http\Controllers\TicketdatosController@operator2');
 
 
 });
