@@ -9,9 +9,9 @@
 
 let identificadorIntervaloDeTiempo;
 
-function repetirCadaSegundo() {
+
   identificadorIntervaloDeTiempo = setInterval(maxid, 1000);
-}
+
 
 
 
