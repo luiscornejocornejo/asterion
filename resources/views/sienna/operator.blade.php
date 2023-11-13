@@ -12,11 +12,15 @@ let identificadorIntervaloDeTiempo;
 
   identificadorIntervaloDeTiempo = setInterval(maxid, 5000);
 
+  var variableGlobal =0;
 
 
 
 function maxid(){
-    var maxidt=<?php echo session('maxid');?>;
+    if(variableGlobal==0){
+        var maxidt=<?php echo session('maxid');?>;
+
+    }
     var idusuario=<?php echo session('idusuario');?>;
     url="https://opticom.suricata.cloud/api/maxid?idusuario="+idusuario+"&maxid="+maxidt+"";
         axios.get(url)
@@ -25,6 +29,8 @@ function maxid(){
                     console.log(response.data);
                     console.log(response.data.length);
                     if(response.data.length>0){
+                        var variableGlobal =1;
+
                         maxidt=maxidt+1;
                     }
                 })
