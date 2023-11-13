@@ -7,7 +7,18 @@
       @include('facu.menu')
 <script>
 
+let identificadorIntervaloDeTiempo;
 
+function repetirCadaSegundo() {
+  identificadorIntervaloDeTiempo = setInterval(maxid, 1000);
+}
+
+
+
+function maxid(){
+    console.log("Ha pasado 1 segundo.");
+
+}
 function area(dd,ee,ff) {
       
       document.getElementById("idticketdepto").value = dd;
