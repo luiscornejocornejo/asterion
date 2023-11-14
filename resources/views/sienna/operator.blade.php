@@ -27,6 +27,26 @@ function maxid(){
                     console.log(response.data.length);
                     console.log(response.data);
                     document.getElementById("tb").innerHTML = null;
+                    tt="";
+                    for (i = 0; i < response.data.length; i++) {
+                        console.log(response.data[i].id);
+
+
+
+                        tt+='<tr class="text-center">'+
+                        ' <td>'+response.data[i].ticketid+'</td>'+
+                        ' <td>'+response.data[i].nya+'</td>'+
+                        ' <td><button onclick="area('+response.data[i].ticketid+','+response.data[i].conversation_id+','+response.data[i].user_id+')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2">'+response.data[i].depto+' </button> </td>'+
+                        ' <td>'+response.data[i].cel+'</td>'+
+                        ' <td>'+response.data[i].created_at+'</td>'+
+                        ' <td><button onclick="estado2('+response.data[i].ticketid+','+response.data[i].conversation_id+','+response.data[i].iddepto+')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">'+response.data[i].estadoname+' </button> </td>'+
+                        '<td><button  class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="mdi mdi-link"></i></button>'+ 
+                            '<button  onclick="vista('+response.data[i].conversation_url+')" class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg"><i class="mdi mdi-wechat"></i> </button></td </tr>';
+
+
+
+                    }
+                    document.getElementById("tb").innerHTML = tt;
 
                    
                 })
@@ -140,19 +160,7 @@ function vista(dd) {
                                 <td><?php echo $val->created_at;?></td>
                              
                                 <td>
-                                <?php  
-/*
-                                        foreach($estados as $value){
-
-                                            if($val->siennaestado==$value->id){$bgcolor=$value->color;}
-
-                                        }*/
-
-                                        $bgcolor="success";
-                                     
-                                 
-                                        
-                                        ?>
+                                <?php  $bgcolor="success"; ?>
                                     <button onclick="estado2('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>','<?php echo $val->iddepto;?>')"  class="btn btn-<?php echo $bgcolor;?>" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
                                     <?php echo $val->estadoname;?>
                                     </button> 
