@@ -17,26 +17,17 @@ let identificadorIntervaloDeTiempo;
 
 
 function maxid(){
-    if(variableGlobal==0){
-        var maxidt=<?php echo session('maxid');?>;
-        console.log("entro");
-
-    }
-
-    console.log("variglobal"+variableGlobal);
+ 
 
     var idusuario=<?php echo session('idusuario');?>;
-    url="https://opticom.suricata.cloud/api/maxid?idusuario="+idusuario+"&maxid="+maxidt+"";
+    url="https://opticom.suricata.cloud/api/maxid?idusuario="+idusuario+"";
         axios.get(url)
                 .then(function (response) {
                     // función que se ejecutará al recibir una respuesta
-                    console.log(response.data);
                     console.log(response.data.length);
-                    if(response.data.length>0){
-                         variableGlobal =1;
+                    console.log(response.data);
 
-                        maxidt=maxidt+1;
-                    }
+                   
                 })
                 .catch(function (error) {
                     // función para capturar el error

@@ -396,7 +396,6 @@ class wsController extends Controller
     }
 
     public function maxid(Request $request){
-        $maxid=$request->maxid;
         $idusuario=$request->idusuario;
 
         $query="select *,a.conversation_id,a.user_id,
@@ -406,7 +405,7 @@ class wsController extends Controller
         left join  siennaestado c on c.id=a.siennaestado
         left join  siennatopic d on d.id=a.siennatopic
         where a.siennaestado not in('3','4')  
-         and a.asignado='".$idusuario."' and a.id>'".$maxid."'
+         and a.asignado='".$idusuario."' 
          order by a.id asc
         ";
 
