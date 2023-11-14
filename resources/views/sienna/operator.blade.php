@@ -26,6 +26,7 @@ function maxid(){
                     // función que se ejecutará al recibir una respuesta
                     console.log(response.data.length);
                     console.log(response.data);
+                    document.getElementById("tb").innerHTML = null;
 
                    
                 })
@@ -122,7 +123,7 @@ function vista(dd) {
                                 <th>Historial</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="tb">
 
                         <?php
                         $maxid=0; foreach($tickets as $val){
