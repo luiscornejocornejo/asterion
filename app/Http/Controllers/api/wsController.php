@@ -790,6 +790,7 @@ class wsController extends Controller
 
             // Obtiene la hora actual en formato de 24 horas
             $horaLocal = date('H:i:s');
+            echo $diaSemana = date('l');
 
             // Imprime la hora local
             return 'Hora local: ' . $horaLocal;
