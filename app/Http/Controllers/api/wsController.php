@@ -797,7 +797,7 @@ class wsController extends Controller
 
             foreach($cat as $val){
 
-            echo $val->Friday;
+            echo $val->$diaSemana;
 
             }
 
