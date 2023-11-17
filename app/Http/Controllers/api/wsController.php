@@ -790,11 +790,8 @@ class wsController extends Controller
 
             // Obtiene la hora actual en formato de 24 horas
             $horaLocal = date('H:i:s');
-            // Establece el idioma local a español
-            setlocale(LC_TIME, 'es_ES');
+            echo $diaSemana = date('l');
 
-            // Obtiene el día de la semana actual en español
-            echo $diaSemana = strftime('%A');
             // Imprime la hora local
             return 'Hora local: ' . $horaLocal;
 
