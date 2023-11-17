@@ -16,6 +16,7 @@ use App\Models\siennacliente;
 use App\Models\siennadepto;
 use App\Models\siennaestado;
 use App\Models\empresa;
+use App\Models\categoria;
 
 
 class wsController extends Controller
@@ -782,6 +783,7 @@ class wsController extends Controller
     public function enhora(Request $request){
             // Configura la zona horaria a la hora local
 
+            $area=$request->area;
 
             $emp=empresa::find(1);
             $zona=$emp->zona;
@@ -789,8 +791,15 @@ class wsController extends Controller
             date_default_timezone_set($zona); // Reemplaza 'America/Buenos_Aires' con la zona horaria deseada
 
             // Obtiene la hora actual en formato de 24 horas
-            $horaLocal = date('H:i:s');
+            $horaLocal = date('H');
             echo $diaSemana = date('l');
+            $cat=categoria::where('area','=',$area)->get();
+
+            foreach($cat as $val){
+
+            echo $val->Friday;
+
+            }
 
             // Imprime la hora local
             return 'Hora local: ' . $horaLocal;
