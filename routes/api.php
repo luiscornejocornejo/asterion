@@ -50,6 +50,7 @@ Route::post('/siennacrearseguimiento', [wsController::class, 'siennacrearseguimi
 
 Route::get('/statussiennaxdepto', [wsController::class, 'statussiennaxdepto']);
 Route::get('/maxid', [wsController::class, 'maxid']);
+Route::get('/enhora', [wsController::class, 'enhora']);
 
 
 
