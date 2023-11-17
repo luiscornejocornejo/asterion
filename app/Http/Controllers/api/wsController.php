@@ -791,18 +791,26 @@ class wsController extends Controller
             date_default_timezone_set($zona); // Reemplaza 'America/Buenos_Aires' con la zona horaria deseada
 
             // Obtiene la hora actual en formato de 24 horas
-            $horaLocal = date('H');
+            echo $horaLocal = date('H');
             echo $diaSemana = date('l');
             $cat=categoria::where('area','=',$area)->get();
 
             foreach($cat as $val){
 
-            echo $val->$diaSemana;
+            echo $fecha=$val->$diaSemana;
 
             }
 
+            $fec=explode("-",$fecha);
+
+            if(($horaLocal>$fec[0]) and ($horaLocal<$fec[1])){
+                return "en horario";
+            }else{
+
+                return "fuera de horario";
+
+            }
             // Imprime la hora local
-            return 'Hora local: ' . $horaLocal;
 
 
     }
