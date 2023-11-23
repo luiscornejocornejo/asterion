@@ -125,7 +125,7 @@ class asignacion extends Command
         config(['database.connections.mysql2.host' => 'db-mysql-sfo3-84622-do-user-4274947-0.b.db.ondigitalocean.com']);
         config(['database.connections.mysql2.port' => '25060']);
 
-        config(['database.connections.mysql2.database' => 'OPTICOM']);
+        config(['database.connections.mysql2.database' => 'opticom']);
         config(['database.connections.mysql2.username' => 'doadmin']);
         config(['database.connections.mysql2.password' => 'AVNS_WH2DodUlKTBZgYotOdO']);
     }
