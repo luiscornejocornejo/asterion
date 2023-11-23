@@ -6,6 +6,8 @@ use App\Models\cronmail;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Mail;
+use App\Models\empresa;
+use App\Models\categoria;
 
 class asignacion extends Command
 {
