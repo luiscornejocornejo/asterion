@@ -71,7 +71,7 @@ class asignacion extends Command
 
         $fec=explode("-",$fecha);
 
-        if(($horaLocal>$fec[0]) and ($horaLocal<$fec[1])){
+        if(($horaLocal>=$fec[0]) and ($horaLocal<$fec[1])){
             return true;
         }else{
 
