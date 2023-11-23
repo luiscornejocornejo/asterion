@@ -60,6 +60,9 @@ class asignacion extends Command
         echo $diaSemana = date('l');
         $cat=categoria::where('area','=',$area)->get();
 
+        $query2="select * from categoria where area='".$area."'";
+        $cat = DB::connection('mysql2')->select($query2);
+
         foreach($cat as $val){
 
         echo $fecha=$val->$diaSemana;
