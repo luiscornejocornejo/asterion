@@ -44,8 +44,14 @@ class asignacion extends Command
 
        // $area=$request->area;
 
-        $emp=empresa::find(1);
-        $zona=$emp->zona;
+        //$emp=empresa::find(1);
+        $query="select * from empresa where id=1";
+        $resultados = DB::connection('mysql2')->select($query);
+
+        foreach($resultados as $emp){
+          echo   $zona=$emp->zona;
+
+        }
         
         date_default_timezone_set($zona); // Reemplaza 'America/Buenos_Aires' con la zona horaria deseada
 
