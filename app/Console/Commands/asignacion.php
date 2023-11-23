@@ -58,7 +58,7 @@ class asignacion extends Command
         // Obtiene la hora actual en formato de 24 horas
         echo $horaLocal = date('H');
         echo $diaSemana = date('l');
-        $cat=categoria::where('area','=',$area)->get();
+        //$cat=categoria::where('area','=',$area)->get();
 
         $query2="select * from categoria where area='".$area."'";
         $cat = DB::connection('mysql2')->select($query2);
