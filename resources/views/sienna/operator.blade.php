@@ -159,7 +159,7 @@ function vista(dd) {
                                 <td><?php echo $val->cel;?></td>
                                 <td><?php echo $val->created_at;?></td>
                                 <td>
-                                    <span class="badge bg-info" style="font-size:medium;">esta</span>
+                                    <span class="badge bg-info" style="font-size:medium;"><?php echo $val->estadoname;?></span>
                                 </td>
                                 <td>
                                     <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo">
@@ -168,7 +168,7 @@ function vista(dd) {
                                     <button onclick="area('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>','<?php echo $val->user_id;?>')"  class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2">
                                         <i class="mdi mdi-account-group"></i>
                                     </button>
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm" >
+                                    <button onclick="estado2('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>','<?php echo $val->iddepto;?>')" class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm" >
                                         <i class="mdi mdi-flag"></i>
                                     </button>
                                 </td>
@@ -176,7 +176,7 @@ function vista(dd) {
                                     <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                                         <i class="mdi mdi-link"></i>
                                     </button> 
-                                    <button class="btn btn-light" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg">
+                                    <button nclick="vista('<?php echo $val->conversation_url;?>')" class="btn btn-light" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg">
                                         <i class="mdi mdi-wechat"></i>
                                     </button> 
                                 </td>
@@ -324,16 +324,169 @@ function vista(dd) {
       <!-- End modal Status -->
 
       <!-- OffCanvas -->
+     <!-- Modal Reclamo Ticket -->
+     <div id="standard-modal-reclamo" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dark-header-modalLabel" aria-hidden="true">
+           <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                        <h4 class="modal-title text-light" id="dark-header-modalLabel">Reclamar ticket</h4>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
+                    </div>
+            <div class="modal-body">
+                ¿Deseas reclamar este ticket?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                <button type="button" class="btn btn-success">Si, reclamar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+      
+      <!-- End Reclamo Ticket -->
+    
+
+      <!-- OffCanvas -->
       <div>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header bg-dark text-white">
                 <h5 id="offcanvasRightLabel" >Seguimiento</h5>
-                <button type="button" class="btn-close btn-close-white  text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                Aca va el contenido
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-6">
+                                    <!-- assignee -->
+                                    <p class="mb-1 text-muted">Asignado a:</p>
+                                    <div class="d-flex">
+                                        <div>
+                                            <span class="mt-1 font-14">
+                                                {{agent_sienna}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!-- end assignee -->
+                                </div> <!-- end col -->                                
+                            </div> <!-- end row -->
+
+                            
+                            <!-- end sub tasks/checklists -->
+                            <div class="mt-2 ">
+                                <div class="mb-2">
+                                    <label class="form-label">Comentario</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" aria-label="Recipient's username">
+                                        <button class="btn btn-primary" type="button"><i class="mdi mdi-send"></i></button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="form-label">Subir archivo</label>
+                                    <input class="form-control" type="file" id="inputGroupFile04">
+                                </div>
+                            </div>
+                            
+                                <div class="mt-2">
+                                    <div class="card-header d-flex justify-content-between align-items-center mt-2">
+                                        <h4 class="header-title">Actividad reciente</h4>
+                                        <!-- Dropdown Inactivo
+                                        <div class="dropdown">
+                                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="mdi mdi-dots-vertical"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-end" style="">
+                                                
+                                                <a class="dropdown-item">Editar</a>
+                                                
+                                                <a href="javascript:void(0);" class="dropdown-item">Cerrar</a>
+                                            </div>
+                                        </div>
+                                        -->
+                                    </div>
+
+                                    <div class="card-body py-0 mb-3 mt-3" data-simplebar="init"><div class="simplebar-wrapper" ><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: auto; overflow: hidden scroll;"><div class="simplebar-content" style="padding: 0px 24px;">
+                                        <div class="timeline-alt py-0">
+                                            <div class="timeline-item">
+                                                <i class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>
+                                                <div class="timeline-item-info">
+                                                    <span class="text-info fw-bold mb-1 d-block">Carga de archivo</span>
+                                                    <small>{{agent_sienna}} ha subido un elemento</small>
+                                                    <p class="mb-0 pb-2">
+                                                        <small class="text-muted">{{date_event}}</small>
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="timeline-item">
+                                                <i class="mdi mdi-flag bg-primary-lighten text-primary timeline-icon"></i>
+                                                <div class="timeline-item-info">
+                                                    <a href="#" class="text-primary fw-bold mb-1 d-block">Cambio de estado en ticket</a>
+                                                    <small>{{agent_sienna}} cambió el estado del ticket a
+                                                        <span class="fw-bold">{{ticket_status}}</span>
+                                                    </small>
+                                                    <p class="mb-0 pb-2">
+                                                        <small class="text-muted">{{date_event}}</small>
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="timeline-item">
+                                                <i class="mdi mdi-account-group bg-info-lighten text-info timeline-icon"></i>
+                                                <div class="timeline-item-info">
+                                                    <a href="#" class="text-info fw-bold mb-1 d-block">Cambio de departamento</a>
+                                                    <small>{{agent_sienna}} derivó a 
+                                                        <span class="fw-bold">{{departament}}</span>
+                                                    </small>
+                                                    <p class="mb-0 pb-2">
+                                                        <small class="text-muted">{{date_event}}</small>
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="timeline-item">
+                                                <i class="mdi mdi-account-voice bg-primary-lighten text-primary timeline-icon"></i>
+                                                <div class="timeline-item-info">
+                                                    <a href="#" class="text-primary fw-bold mb-1 d-block">Reclamo de ticket</a>
+                                                    <small> Por agente {{agent_sienna}}</small>
+                                                    <p class="mb-0 pb-2">
+                                                        <small class="text-muted">{{date_event}}</small>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-item">
+                                                <i class="mdi mdi-account bg-primary-lighten text-primary timeline-icon"></i>
+                                                <div class="timeline-item-info">
+                                                    <a href="#" class="text-primary fw-bold mb-1 d-block">Asignación de ticket</a>
+                                                    <small> Asignado a {{agent_sienna}}</small>
+                                                    <p class="mb-0 pb-2">
+                                                        <small class="text-muted">{{date_event}}</small>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-item">
+                                                <i class="mdi mdi-comment-text bg-info-lighten text-info timeline-icon"></i>
+                                                <div class="timeline-item-info">
+                                                    <a href="#" class="text-info fw-bold mb-1 d-block">{{agent_sienna}}</a>
+                                                    <small>{{comment}}</small>
+                                                    <p class="mb-0 pb-2">
+                                                        <small class="text-muted">{{date_event}}</small>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end timeline -->
+                                    </div></div></div></div><div class="simplebar-placeholder" style="width: auto; height: 353px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 281px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div> <!-- end slimscroll -->
+                                </div>
+                            </div> <!-- end row-->
+                            <!-- end comments -->
+                        </div> <!-- end col -->
+                    </div> <!-- end row-->
+                </div>
             </div>
         </div>
+        
       </div>
       <!-- End of OffCanvas -->
 
