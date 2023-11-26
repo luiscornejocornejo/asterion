@@ -129,7 +129,7 @@ function vista(dd) {
           <div class="content">
 
               <!-- Start Content-->
-              <div class="container pt-5">
+                <div class="container pt-5">
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100 text-light">
                         <thead>
                             <tr class="text-center bg-dark" >
@@ -187,58 +187,7 @@ function vista(dd) {
                     
                                                      
                 </div>
-                <div class="container pt-5">
-                    <table id="basic-datatable" class="table dt-responsive nowrap w-100">
-                        <thead class="">
-                            <tr class="text-center">
-                                <th>Ticket</th>
-                                <th>Cliente</th>
-                                <th>Area</th>
-                                <th>Whatapp</th>
-                                <th>Creado</th>
-                              
-                                <th>Estado</th>
-                                <th>Historial</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tb">
-
-                        <?php
-                        $maxid=0; foreach($tickets as $val){
-                            
-                            $maxid=$val->ticketid;?>
-                            <tr class="text-center">
-                                <td><?php echo $val->ticketid;?></td>
-                                <td><?php echo $val->nya;?></td>
-
-                                <td><button onclick="area('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>','<?php echo $val->user_id;?>')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2">
-                                    <?php echo $val->depto;?>
-                                    </button> </td>
-                                <td><?php echo $val->cel;?></td>
-                                <td><?php echo $val->created_at;?></td>
-                             
-                                <td>
-                                <?php  $bgcolor="success"; ?>
-                                    <button onclick="estado2('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>','<?php echo $val->iddepto;?>')"  class="btn btn-<?php echo $bgcolor;?>" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
-                                    <?php echo $val->estadoname;?>
-                                    </button> 
-                                </td>
-                                <td>
-                               
-                                    <button  class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                                        <i class="mdi mdi-link"></i>
-                                    </button> 
-                                    <button  onclick="vista('<?php echo $val->conversation_url;?>')" class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg">
-                                        <i class="mdi mdi-wechat"></i>
-                                    </button> 
-                                </td>
-                            </tr>
-                            <?php }?>
-                        </tbody>
-                    </table>
-                    <?php echo $maxid;?>
-                                                     
-                </div>
+               
               <!-- container -->
           </div>
           <!-- content -->
