@@ -10,7 +10,7 @@
 let identificadorIntervaloDeTiempo;
 
 
-  identificadorIntervaloDeTiempo = setInterval(maxid, 5000);
+ // identificadorIntervaloDeTiempo = setInterval(maxid, 5000);
 
    let variableGlobal =0;
 
