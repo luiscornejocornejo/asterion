@@ -162,7 +162,7 @@ function vista(dd) {
                                     <span class="badge bg-info" style="font-size:medium;"><?php echo $val->estadoname;?></span>
                                 </td>
                                 <td>
-                                    <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo">
+                                    <button <?php if($val->asignado<>'99999'){ echo "disabled";}?> class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo">
                                         <i class="mdi mdi-account-voice"></i>
                                     </button>
                                     <button onclick="area('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>','<?php echo $val->user_id;?>')"  class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2">
