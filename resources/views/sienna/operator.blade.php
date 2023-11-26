@@ -143,17 +143,21 @@ function vista(dd) {
                                 <th class="text-light">Historial</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="tb">
+                        <?php
+                        $maxid=0; foreach($tickets as $val){
+                            
+                            $maxid=$val->ticketid;?>
                             <tr class="text-center">
                                 <td>
-                                    <span><i class="mdi mdi-whatsapp me-1 text-success"></i>ti</span>
+                                    <span><i class="mdi mdi-whatsapp me-1 text-success"></i><?php echo $val->ticketid;?></span>
                                 </td>
-                                <td>dd</td>
+                                <td><?php echo $val->nya;?></td>
                                 <td>
-                                    <span class="badge bg-warning" style="font-size:medium;">depto</span>
+                                    <span class="badge bg-warning" style="font-size:medium;"><?php echo $val->depto;?></span>
                                 </td>
-                                <td>cel</td>
-                                <td>fecha</td>
+                                <td><?php echo $val->cel;?></td>
+                                <td><?php echo $val->created_at;?></td>
                                 <td>
                                     <span class="badge bg-info" style="font-size:medium;">esta</span>
                                 </td>
@@ -161,7 +165,7 @@ function vista(dd) {
                                     <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo">
                                         <i class="mdi mdi-account-voice"></i>
                                     </button>
-                                    <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-departament">
+                                    <button onclick="area('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>','<?php echo $val->user_id;?>')"  class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2">
                                         <i class="mdi mdi-account-group"></i>
                                     </button>
                                     <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm" >
@@ -177,6 +181,7 @@ function vista(dd) {
                                     </button> 
                                 </td>
                             </tr>
+                            <?php }?>
                         </tbody>
                     </table>
                     
