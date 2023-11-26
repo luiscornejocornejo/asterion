@@ -364,7 +364,7 @@ function vista(dd) {
                                     <div class="d-flex">
                                         <div>
                                             <span class="mt-1 font-14">
-                                                {{agent_sienna}}
+                                                agent_sienna
                                             </span>
                                         </div>
                                     </div>
@@ -412,9 +412,9 @@ function vista(dd) {
                                                 <i class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>
                                                 <div class="timeline-item-info">
                                                     <span class="text-info fw-bold mb-1 d-block">Carga de archivo</span>
-                                                    <small>{{agent_sienna}} ha subido un elemento</small>
+                                                    <small>agent_sienna ha subido un elemento</small>
                                                     <p class="mb-0 pb-2">
-                                                        <small class="text-muted">{{date_event}}</small>
+                                                        <small class="text-muted">date_event</small>
                                                     </p>
                                                 </div>
                                             </div>
@@ -423,11 +423,11 @@ function vista(dd) {
                                                 <i class="mdi mdi-flag bg-primary-lighten text-primary timeline-icon"></i>
                                                 <div class="timeline-item-info">
                                                     <a href="#" class="text-primary fw-bold mb-1 d-block">Cambio de estado en ticket</a>
-                                                    <small>{{agent_sienna}} cambió el estado del ticket a
-                                                        <span class="fw-bold">{{ticket_status}}</span>
+                                                    <small>agent_sienna cambió el estado del ticket a
+                                                        <span class="fw-bold">ticket_status</span>
                                                     </small>
                                                     <p class="mb-0 pb-2">
-                                                        <small class="text-muted">{{date_event}}</small>
+                                                        <small class="text-muted">date_event</small>
                                                     </p>
                                                 </div>
                                             </div>
@@ -436,11 +436,11 @@ function vista(dd) {
                                                 <i class="mdi mdi-account-group bg-info-lighten text-info timeline-icon"></i>
                                                 <div class="timeline-item-info">
                                                     <a href="#" class="text-info fw-bold mb-1 d-block">Cambio de departamento</a>
-                                                    <small>{{agent_sienna}} derivó a 
-                                                        <span class="fw-bold">{{departament}}</span>
+                                                    <small>agent_sienna derivó a 
+                                                        <span class="fw-bold">departament</span>
                                                     </small>
                                                     <p class="mb-0 pb-2">
-                                                        <small class="text-muted">{{date_event}}</small>
+                                                        <small class="text-muted">date_event</small>
                                                     </p>
                                                 </div>
                                             </div>
@@ -449,9 +449,9 @@ function vista(dd) {
                                                 <i class="mdi mdi-account-voice bg-primary-lighten text-primary timeline-icon"></i>
                                                 <div class="timeline-item-info">
                                                     <a href="#" class="text-primary fw-bold mb-1 d-block">Reclamo de ticket</a>
-                                                    <small> Por agente {{agent_sienna}}</small>
+                                                    <small> Por agente agent_sienna</small>
                                                     <p class="mb-0 pb-2">
-                                                        <small class="text-muted">{{date_event}}</small>
+                                                        <small class="text-muted">date_event</small>
                                                     </p>
                                                 </div>
                                             </div>
@@ -459,19 +459,19 @@ function vista(dd) {
                                                 <i class="mdi mdi-account bg-primary-lighten text-primary timeline-icon"></i>
                                                 <div class="timeline-item-info">
                                                     <a href="#" class="text-primary fw-bold mb-1 d-block">Asignación de ticket</a>
-                                                    <small> Asignado a {{agent_sienna}}</small>
+                                                    <small> Asignado a agent_sienna</small>
                                                     <p class="mb-0 pb-2">
-                                                        <small class="text-muted">{{date_event}}</small>
+                                                        <small class="text-muted">date_event</small>
                                                     </p>
                                                 </div>
                                             </div>
                                             <div class="timeline-item">
                                                 <i class="mdi mdi-comment-text bg-info-lighten text-info timeline-icon"></i>
                                                 <div class="timeline-item-info">
-                                                    <a href="#" class="text-info fw-bold mb-1 d-block">{{agent_sienna}}</a>
-                                                    <small>{{comment}}</small>
+                                                    <a href="#" class="text-info fw-bold mb-1 d-block">agent_sienna</a>
+                                                    <small>comment</small>
                                                     <p class="mb-0 pb-2">
-                                                        <small class="text-muted">{{date_event}}</small>
+                                                        <small class="text-muted">date_event</small>
                                                     </p>
                                                 </div>
                                             </div>
