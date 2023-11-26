@@ -129,6 +129,59 @@ function vista(dd) {
           <div class="content">
 
               <!-- Start Content-->
+              <div class="container pt-5">
+                    <table id="basic-datatable" class="table dt-responsive nowrap w-100 text-light">
+                        <thead>
+                            <tr class="text-center bg-dark" >
+                                <th class="text-light"><i></i>Ticket</th>
+                                <th class="text-light">Cliente</th>
+                                <th class="text-light">Area</th>
+                                <th class="text-light">Telefono</th>
+                                <th class="text-light">Creado</th>
+                                <th class="text-light">Estado</th>
+                                <th class="text-light">Acciones</th>
+                                <th class="text-light">Historial</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center">
+                                <td>
+                                    <span><i class="mdi mdi-whatsapp me-1 text-success"></i>ti</span>
+                                </td>
+                                <td>dd</td>
+                                <td>
+                                    <span class="badge bg-warning" style="font-size:medium;">depto</span>
+                                </td>
+                                <td>cel</td>
+                                <td>fecha</td>
+                                <td>
+                                    <span class="badge bg-info" style="font-size:medium;">esta</span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo">
+                                        <i class="mdi mdi-account-voice"></i>
+                                    </button>
+                                    <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-departament">
+                                        <i class="mdi mdi-account-group"></i>
+                                    </button>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm" >
+                                        <i class="mdi mdi-flag"></i>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <i class="mdi mdi-link"></i>
+                                    </button> 
+                                    <button class="btn btn-light" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg">
+                                        <i class="mdi mdi-wechat"></i>
+                                    </button> 
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                                                     
+                </div>
                 <div class="container pt-5">
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100">
                         <thead class="">

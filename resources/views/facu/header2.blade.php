@@ -11,6 +11,7 @@
 
   <!-- Daterangepicker css -->
   <link rel="stylesheet" href="assetsfacu/vendor/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="tt.css">
 
   <!-- Vector Map css -->
   <link rel="stylesheet" href="assetsfacu/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css">
