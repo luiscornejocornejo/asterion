@@ -175,7 +175,7 @@ function vista(dd) {
                                     
                                     if($est->id==$val->siennaestado){
 
-                                        $bgcolor2=$est->casecolor;
+                                        $bgcolor2=$est->clasecolor;
                                     }
                                     
                                 }?>
