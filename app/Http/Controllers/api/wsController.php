@@ -404,15 +404,16 @@ class wsController extends Controller
 
         $query="select *,a.conversation_id,a.user_id,
         b.nombre as depto,b.id as iddepto,
-        a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel from siennatickets a
+        a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado from siennatickets a
         left join siennadepto b on b.id=a.siennadepto 
         left join  siennaestado c on c.id=a.siennaestado
         left join  siennatopic d on d.id=a.siennatopic
         where a.siennaestado not in('3','4')  
          and a.asignado='".$idusuario."' 
 
-        union
-        select *,a.conversation_id,a.user_id,
+         union 
+
+         select *,a.conversation_id,a.user_id,
         b.nombre as depto,b.id as iddepto,
         a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado from siennatickets a
         left join siennadepto b on b.id=a.siennadepto 
