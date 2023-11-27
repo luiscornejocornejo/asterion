@@ -44,7 +44,7 @@ identificadorIntervaloDeTiempo = setInterval(maxid(result,idusuario,area), 6000)
                                 <th class="text-light">Historial</th>
                             </tr>
                         </thead>
-                        <tbody id="">
+                        <tbody id="tb">
                         <?php
                         $maxid=0; foreach($tickets as $val){
                             
