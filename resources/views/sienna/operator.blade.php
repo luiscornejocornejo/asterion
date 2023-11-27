@@ -9,7 +9,6 @@ var porciones = URLactual.split('.');
 
 let result = porciones[0].replace("https://", "");
 
-alert(result);
 var idusuario =<?php echo session('idusuario');?>;
 var area =<?php echo session('areas');?>;
 
