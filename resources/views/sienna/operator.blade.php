@@ -13,7 +13,7 @@ alert(result);
 var idusuario =<?php echo session('idusuario');?>;
 var area =<?php echo session('areas');?>;
 
-identificadorIntervaloDeTiempo = setInterval(maxid(result,idusuario,area), 5000);
+identificadorIntervaloDeTiempo = setInterval(maxid(result,idusuario,area), 60000);
 
 </script>
  
