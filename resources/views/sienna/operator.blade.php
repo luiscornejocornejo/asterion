@@ -272,7 +272,7 @@ function vista(dd) {
             </div><!-- /.modal-dialog -->
         </div>
 
-        @include('ticketsmodals.departamentos')
+        @include('sienna.ticketsmodals.departamentos')
  
         departamentos
       <!-- End modal Status -->
