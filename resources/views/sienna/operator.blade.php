@@ -14,7 +14,7 @@ var area =<?php echo session('areas');?>;
 let departamentoslista = {!! json_encode($deptos,JSON_FORCE_OBJECT) !!};
 console.log(departamentoslista);
 
-identificadorIntervaloDeTiempo = setInterval(maxid(result,idusuario,area), 6000);
+//identificadorIntervaloDeTiempo = setInterval(maxid(result,idusuario,area), 6000);
 
 </script>
  
