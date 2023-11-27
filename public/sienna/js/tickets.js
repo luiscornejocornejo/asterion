@@ -3,7 +3,7 @@ let identificadorIntervaloDeTiempo;
 
 
  // identificadorIntervaloDeTiempo = setInterval(maxid, 5000);
- //var idusuario=<?php echo session('idusuario');?>;
+ var idusuario=<?php echo session('idusuario');?>;
 
    let variableGlobal =0;
 
