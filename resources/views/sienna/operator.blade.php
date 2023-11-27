@@ -28,7 +28,7 @@ function logo(id){
     }
     return im;
 }
-function colordepto(id){
+function colordeptof(id){
     console.log("colordepto");
     colordepto="";
     for (var listado2 in departamentoslista){
@@ -60,7 +60,7 @@ axios.get(url)
 
 
             im=logo(response.data[i].siennasource);
-            colordepto=colordepto(response.data[i].iddepto);
+            colordepto=colordeptof(response.data[i].iddepto);
             tt += '<tr class="text-center">' +
                 ' <td><i class="mdi '+im+' me-1 "></i>' + response.data[i].ticketid + '</td>' +
                 ' <td>' + response.data[i].nya + '</td>' +
