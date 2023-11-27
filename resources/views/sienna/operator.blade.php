@@ -23,8 +23,12 @@ function logo(id){
 
     console.log(id);
     im="";
-    console.log(sourcelista.length);
-    console.log(sourcelista[1].id);
+ 
+
+    for (var listado2 in sourcelista){
+        console.log(sourcelista[listado2]["id"]);
+
+    }
 
 /*
     for (i = 0; i < sourcelista.length; i++) {
