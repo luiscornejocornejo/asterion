@@ -230,7 +230,7 @@ function vista(dd) {
           <!-- content -->
       </div>
       <!-- Modal of conversation-->
-      @include('sienna.ticketsmodals.coversacion')
+      @include('sienna.ticketsmodals.conversacion')
 
       
       <!-- End Modal -->
