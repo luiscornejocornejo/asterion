@@ -13,6 +13,7 @@ var idusuario =<?php echo session('idusuario');?>;
 var area =<?php echo session('areas');?>;
 let departamentoslista = {!! json_encode($deptos,JSON_FORCE_OBJECT) !!};
 let sourcelista = {!! json_encode($source,JSON_FORCE_OBJECT) !!};
+let estadoslista = {!! json_encode($estados,JSON_FORCE_OBJECT) !!};
 console.log(departamentoslista);
 console.log(sourcelista);
 
@@ -38,6 +39,16 @@ function colordeptof(id){
     }
     return colordepto;
 }
+function colorestadof(id){
+    console.log("colorestado");
+    colorestado="";
+    for (var listado2 in estadoslista){
+        if(estadoslista[listado2]["id"]==id){
+            colorestado=estadoslista[listado2]["clasecolor"];
+        }
+    }
+    return colorestado;
+}
 
 function maxid(url,idusuario,area) {
 
@@ -61,12 +72,15 @@ axios.get(url)
 
             im=logo(response.data[i].siennasource);
             colordepto=colordeptof(response.data[i].iddepto);
+            colorestado=colorestadof(response.data[i].siennaestado);
             tt += '<tr class="text-center">' +
                 ' <td><i class="mdi '+im+' me-1 "></i>' + response.data[i].ticketid + '</td>' +
                 ' <td>' + response.data[i].nya + '</td>' +
                 ' <td> <span class="badge '+colordepto+'" style="font-size:medium;">' + response.data[i].depto + '</span>'+
                 ' <td>' + response.data[i].cel + '</td>' +
                 ' <td>' + response.data[i].created_at + '</td>' +
+                ' <td> <span class="badge '+colorestado+'" style="font-size:medium;">' + response.data[i].estadoname + '</span>'+
+
                 ' <td><button onclick="estado2(' + response.data[i].ticketid + ',' + response.data[i].conversation_id + ',' + response.data[i].iddepto + ')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">' + response.data[i].estadoname + ' </button> </td>' +
                 '<td><button  class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="mdi mdi-link"></i></button>' +
                 '<button  onclick="vista(' + response.data[i].conversation_url + ')" class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg"><i class="mdi mdi-wechat"></i> </button></td </tr>';
@@ -162,7 +176,7 @@ console.log("Ha pasado 1 segundo.");
                                     
                                 }?>
                                 
-                                    <span class="badge bg-<?php echo $bgcolor2;?>" style="font-size:medium;"><?php echo $val->estadoname;?></span>
+                                    <span class="badge <?php echo $bgcolor2;?>" style="font-size:medium;"><?php echo $val->estadoname;?></span>
                                 </td>
                                 <td>
                                     <button onclick="pedir('<?php echo $val->ticketid;?>')" <?php if($val->asignado<>'99999'){ echo "disabled";}?> class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo">
