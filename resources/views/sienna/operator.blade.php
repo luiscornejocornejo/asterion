@@ -4,9 +4,12 @@
 <script>
 
 var URLactual = window.location.href;
+
 var porciones = URLactual.split('.');
 
-alert(porciones[0]);
+let result = porciones[0].replace("https://", "");
+
+alert(result);
 // identificadorIntervaloDeTiempo = setInterval(maxid, 5000);
 var idusuario =<?php echo session('idusuario');?>;
 </script>
