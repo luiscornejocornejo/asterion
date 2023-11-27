@@ -23,7 +23,10 @@ function logo(id){
 
     console.log(id);
     im="";
+    console.log(sourcelista.length);
+    console.log(sourcelista[1].id);
 
+/*
     for (i = 0; i < sourcelista.length; i++) {
         console.log("viendos");
 
@@ -34,7 +37,7 @@ function logo(id){
             im=sourcelista[i].svg;
         }
 
-    }
+    }*/
     //im="mdi-whatsapp";
     return im;
 }
