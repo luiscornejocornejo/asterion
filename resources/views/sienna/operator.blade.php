@@ -83,9 +83,9 @@ axios.get(url)
 
                 ' <td>'+
                 
-                '<button onclick="pedir(' + response.data[i].ticketid + ')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sreclamom"><i class="mdi mdi-account-voice"></i> </button> </td>' +
-                '<button onclick="area(' + response.data[i].ticketid + ',' + response.data[i].conversation_id + ',' + response.data[i].user_id + ')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><i class="mdi mdi-account-group"></i> </button> </td>' +
-                '<button onclick="estado2(' + response.data[i].ticketid + ',' + response.data[i].conversation_id + ',' + response.data[i].iddepto + ')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm"><i class="mdi mdi-flag"></i> </button> </td>' +
+                '<button onclick="pedir(' + response.data[i].ticketid + ')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sreclamom"><i class="mdi mdi-account-voice"></i> </button> ' +
+                '<button onclick="area(' + response.data[i].ticketid + ',' + response.data[i].conversation_id + ',' + response.data[i].user_id + ')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><i class="mdi mdi-account-group"></i> </button>' +
+                '<button onclick="estado2(' + response.data[i].ticketid + ',' + response.data[i].conversation_id + ',' + response.data[i].iddepto + ')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm"><i class="mdi mdi-flag"></i> </button> ' +
 
                 ' </td>'+
 
