@@ -12,7 +12,7 @@ let result = porciones[0].replace("https://", "");
 var idusuario =<?php echo session('idusuario');?>;
 var area =<?php echo session('areas');?>;
 let departamentoslista = {!! json_encode($deptos,JSON_FORCE_OBJECT) !!};
-identificadorIntervaloDeTiempo = setInterval(maxid(result,idusuario,area), 60000);
+identificadorIntervaloDeTiempo = setInterval(maxid(result,idusuario,area), 6000);
 
 </script>
  
