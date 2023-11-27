@@ -1,10 +1,6 @@
 
 let identificadorIntervaloDeTiempo;
 
-var URLactual = window.location;
-alert(URLactual);
-// identificadorIntervaloDeTiempo = setInterval(maxid, 5000);
-var idusuario =<? php echo session('idusuario');?>;
 
 let variableGlobal = 0;
 

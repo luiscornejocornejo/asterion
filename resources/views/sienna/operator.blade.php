@@ -1,5 +1,15 @@
 @include('facu.header2')
 
+
+<script>
+
+var URLactual = window.location;
+alert(URLactual);
+// identificadorIntervaloDeTiempo = setInterval(maxid, 5000);
+var idusuario =<?php echo session('idusuario');?>;
+</script>
+ 
+
   <!-- Begin page -->
   <div class="wrapper">
 
