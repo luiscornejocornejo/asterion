@@ -273,7 +273,7 @@ function vista(dd) {
         </div>
 
         @include('ticketsmodals.departamentos')
-
+ 
         departamentos
       <!-- End modal Status -->
 
