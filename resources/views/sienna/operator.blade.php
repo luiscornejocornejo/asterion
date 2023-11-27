@@ -159,7 +159,7 @@ function vista(dd) {
                                     }
                                     
                                 }?>
-                                    <span><i class="mdi <?php echo $fon;?> me-1 text-success"></i><?php echo $val->ticketid;?></span>
+                                    <span><i class="mdi <?php echo $fon;?> me-1 "></i><?php echo $val->ticketid;?></span>
                                 </td>
                                 <td><?php echo $val->nya;?></td>
                                 <td>
