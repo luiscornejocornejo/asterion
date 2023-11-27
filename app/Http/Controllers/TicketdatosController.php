@@ -374,7 +374,6 @@ class TicketdatosController extends Controller
         left join  siennatopic d on d.id=a.siennatopic
         where a.siennaestado not in('3','4')  
          and a.asignado='".$idusuario."' 
-         order by a.id asc
 
          union 
 
