@@ -154,7 +154,17 @@ function vista(dd) {
                                 </td>
                                 <td><?php echo $val->nya;?></td>
                                 <td>
-                                    <span class="badge bg-warning" style="font-size:medium;"><?php echo $val->depto;?></span>
+                                <?php foreach($deptos as $dep){
+                                    
+                                    if($dep->id==$val->depto){
+
+                                        $bgcolor=$dep->colore;
+                                    }
+                                    
+                                }?>
+
+
+                                    <span class="badge <?php echo $bgcolor;?>" style="font-size:medium;"><?php echo $val->depto;?></span>
                                 </td>
                                 <td><?php echo $val->cel;?></td>
                                 <td><?php echo $val->created_at;?></td>
