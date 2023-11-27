@@ -88,7 +88,7 @@
                                     <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                                         <i class="mdi mdi-link"></i>
                                     </button> 
-                                    <button nclick="vista('<?php echo $val->conversation_url;?>')" class="btn btn-light" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg">
+                                    <button onclick="vista('<?php echo $val->conversation_url;?>')" class="btn btn-light" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg">
                                         <i class="mdi mdi-wechat"></i>
                                     </button> 
                                 </td>
