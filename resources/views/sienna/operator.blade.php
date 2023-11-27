@@ -19,23 +19,26 @@ console.log(sourcelista);
 identificadorIntervaloDeTiempo = setInterval(maxid(result,idusuario,area), 6000);
 
 function logo(id){
-    console.log("viendo");
-
-    console.log(id);
+    console.log("logo");
     im="";
- 
-
     for (var listado2 in sourcelista){
         if(sourcelista[listado2]["id"]==id){
             im=sourcelista[listado2]["svg"];
-
         }
-
     }
-
-
     return im;
 }
+function colordepto(id){
+    console.log("colordepto");
+    colordepto="";
+    for (var listado2 in departamentoslista){
+        if(departamentoslista[listado2]["id"]==id){
+            colordepto=departamentoslista[listado2]["colore"];
+        }
+    }
+    return colordepto;
+}
+
 function maxid(url,idusuario,area) {
 
 
@@ -56,11 +59,12 @@ axios.get(url)
             console.log(response.data[i].id);
 
 
-        im=logo(response.data[i].siennasource);
+            im=logo(response.data[i].siennasource);
+            colordepto=colordepto(response.data[i].iddepto);
             tt += '<tr class="text-center">' +
                 ' <td><i class="mdi '+im+' me-1 "></i>' + response.data[i].ticketid + '</td>' +
                 ' <td>' + response.data[i].nya + '</td>' +
-                ' <td><button onclick="area(' + response.data[i].ticketid + ',' + response.data[i].conversation_id + ',' + response.data[i].user_id + ')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2">' + response.data[i].depto + ' </button> </td>' +
+                ' <td> <span class="badge '+colordepto+'" style="font-size:medium;">' + response.data[i].depto + '</span>'+
                 ' <td>' + response.data[i].cel + '</td>' +
                 ' <td>' + response.data[i].created_at + '</td>' +
                 ' <td><button onclick="estado2(' + response.data[i].ticketid + ',' + response.data[i].conversation_id + ',' + response.data[i].iddepto + ')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">' + response.data[i].estadoname + ' </button> </td>' +
