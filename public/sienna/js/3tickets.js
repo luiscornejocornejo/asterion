@@ -5,12 +5,7 @@ let identificadorIntervaloDeTiempo;
 let variableGlobal = 0;
 
 
-function logo(id){
-    console.log(departamentoslista);
 
-    im="mdi-whatsapp";
-    return im;
-}
 
 
 function area(dd, ee, ff) {

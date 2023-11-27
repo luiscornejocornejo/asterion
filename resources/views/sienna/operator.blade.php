@@ -12,9 +12,26 @@ let result = porciones[0].replace("https://", "");
 var idusuario =<?php echo session('idusuario');?>;
 var area =<?php echo session('areas');?>;
 let departamentoslista = {!! json_encode($deptos,JSON_FORCE_OBJECT) !!};
+let sourcelista = {!! json_encode($source,JSON_FORCE_OBJECT) !!};
 console.log(departamentoslista);
+console.log(sourcelista);
 
 identificadorIntervaloDeTiempo = setInterval(maxid(result,idusuario,area), 6000);
+
+function logo(id){
+    console.log(sourcelista);
+
+    for (i = 0; i < sourcelista.length; i++) {
+
+        if(sourcelista[i].id==id){
+
+            im=sourcelista[i].svg;
+        }
+
+    }
+    //im="mdi-whatsapp";
+    return im;
+}
 function maxid(url,idusuario,area) {
 
 
