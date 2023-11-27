@@ -6,10 +6,10 @@ let variableGlobal = 0;
 
 
 
-function maxid(idusuario) {
+function maxid(url,idusuario,area) {
 
 
-    url = "https://opticom.suricata.cloud/api/maxid?idusuario=" + idusuario + "";
+    url = "https://"+url+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&area=" + area + "";
     axios.get(url)
         .then(function (response) {
             // función que se ejecutará al recibir una respuesta

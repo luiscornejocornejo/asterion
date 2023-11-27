@@ -10,8 +10,11 @@ var porciones = URLactual.split('.');
 let result = porciones[0].replace("https://", "");
 
 alert(result);
-// identificadorIntervaloDeTiempo = setInterval(maxid, 5000);
 var idusuario =<?php echo session('idusuario');?>;
+var area =<?php echo session('areas');?>;
+
+identificadorIntervaloDeTiempo = setInterval(maxid(result,idusuario,area), 5000);
+
 </script>
  
 
