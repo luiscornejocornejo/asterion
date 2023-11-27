@@ -156,9 +156,7 @@ function vista(dd) {
                                 <td>
                                 <?php foreach($deptos as $dep){
                                     
-                                    echo $dep->id;
-                                    echo $val->iddepto;
-                                    echo $bgcolor="";
+                                    
                                     if($dep->id==$val->iddepto){
 
                                         $bgcolor=$dep->colore;
