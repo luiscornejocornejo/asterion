@@ -26,23 +26,14 @@ function logo(id){
  
 
     for (var listado2 in sourcelista){
-        console.log(sourcelista[listado2]["id"]);
+        if(sourcelista[listado2]["id"]==id){
+            im=sourcelista[listado2]["svg"];
+
+        }
 
     }
 
-/*
-    for (i = 0; i < sourcelista.length; i++) {
-        console.log("viendos");
 
-        console.log(sourcelista[i].id);
-        if(sourcelista[i].id==id){
-            console.log(sourcelista[i].id);
-
-            im=sourcelista[i].svg;
-        }
-
-    }*/
-    //im="mdi-whatsapp";
     return im;
 }
 function maxid(url,idusuario,area) {
