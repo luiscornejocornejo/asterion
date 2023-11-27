@@ -150,7 +150,16 @@ function vista(dd) {
                             $maxid=$val->ticketid;?>
                             <tr class="text-center">
                                 <td>
-                                    <span><i class="mdi mdi-whatsapp me-1 text-success"></i><?php echo $val->ticketid;?></span>
+                                <?php foreach($source as $so){
+                                    
+                                    
+                                    if($so->id==$val->siennasource){
+
+                                        $fon=$so->svg;
+                                    }
+                                    
+                                }?>
+                                    <span><i class="mdi <?php echo $fon;?> me-1 text-success"></i><?php echo $val->ticketid;?></span>
                                 </td>
                                 <td><?php echo $val->nya;?></td>
                                 <td>
