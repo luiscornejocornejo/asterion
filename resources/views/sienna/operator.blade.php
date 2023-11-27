@@ -19,11 +19,15 @@ console.log(sourcelista);
 identificadorIntervaloDeTiempo = setInterval(maxid(result,idusuario,area), 6000);
 
 function logo(id){
-    console.log(sourcelista);
+    console.log("viendo");
+
+    console.log(id);
+    im="";
 
     for (i = 0; i < sourcelista.length; i++) {
 
         if(sourcelista[i].id==id){
+            console.log(sourcelista[i].id);
 
             im=sourcelista[i].svg;
         }
