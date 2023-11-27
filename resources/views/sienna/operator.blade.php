@@ -14,8 +14,55 @@ var area =<?php echo session('areas');?>;
 let departamentoslista = {!! json_encode($deptos,JSON_FORCE_OBJECT) !!};
 console.log(departamentoslista);
 
-//identificadorIntervaloDeTiempo = setInterval(maxid(result,idusuario,area), 6000);
+identificadorIntervaloDeTiempo = setInterval(maxid(result,idusuario,area), 6000);
+function maxid(url,idusuario,area) {
 
+
+url = "https://"+url+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&area=" + area + "";
+
+axios.get(url)
+    .then(function (response) {
+        // función que se ejecutará al recibir una respuesta
+        console.log(response.data.length);
+        console.log(response.data);
+        console.log("aca");
+        console.log(departamentoslista);  
+        
+        document.getElementById("tb").innerHTML = null;
+        tt = "";
+      
+        for (i = 0; i < response.data.length; i++) {
+            console.log(response.data[i].id);
+
+
+        im=logo(response.data[i].siennasource);
+            tt += '<tr class="text-center">' +
+                ' <td><i class="mdi '+im+' me-1 "></i>' + response.data[i].ticketid + '</td>' +
+                ' <td>' + response.data[i].nya + '</td>' +
+                ' <td><button onclick="area(' + response.data[i].ticketid + ',' + response.data[i].conversation_id + ',' + response.data[i].user_id + ')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2">' + response.data[i].depto + ' </button> </td>' +
+                ' <td>' + response.data[i].cel + '</td>' +
+                ' <td>' + response.data[i].created_at + '</td>' +
+                ' <td><button onclick="estado2(' + response.data[i].ticketid + ',' + response.data[i].conversation_id + ',' + response.data[i].iddepto + ')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">' + response.data[i].estadoname + ' </button> </td>' +
+                '<td><button  class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="mdi mdi-link"></i></button>' +
+                '<button  onclick="vista(' + response.data[i].conversation_url + ')" class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg"><i class="mdi mdi-wechat"></i> </button></td </tr>';
+
+
+
+        }
+        document.getElementById("tb").innerHTML = tt;
+
+
+    })
+    .catch(function (error) {
+        // función para capturar el error
+        console.log(error);
+    })
+    .then(function () {
+        // función que siempre se ejecuta
+    });
+console.log("Ha pasado 1 segundo.");
+
+}
 </script>
  
 
