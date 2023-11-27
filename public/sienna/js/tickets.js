@@ -16,6 +16,7 @@ function maxid(url,idusuario,area) {
             // función que se ejecutará al recibir una respuesta
             console.log(response.data.length);
             console.log(response.data);
+            console.log("aca");
             console.log(departamentoslista);
 
             
