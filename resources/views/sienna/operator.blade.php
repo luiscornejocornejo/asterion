@@ -81,11 +81,18 @@ axios.get(url)
                 ' <td>' + response.data[i].created_at + '</td>' +
                 ' <td> <span class="badge '+colorestado+'" style="font-size:medium;">' + response.data[i].estadoname + '</span>'+
 
-                ' <td><button onclick="estado2(' + response.data[i].ticketid + ',' + response.data[i].conversation_id + ',' + response.data[i].iddepto + ')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">' + response.data[i].estadoname + ' </button> </td>' +
-                '<td><button  class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="mdi mdi-link"></i></button>' +
+                ' <td>'+
+                
+                '<button onclick="pedir(' + response.data[i].ticketid + ')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sreclamom"><i class="mdi mdi-account-voice"></i> </button> </td>' +
+                '<button onclick="area(' + response.data[i].ticketid + ',' + response.data[i].conversation_id + ',' + response.data[i].user_id + ')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><i class="mdi mdi-account-group"></i> </button> </td>' +
+                '<button onclick="estado2(' + response.data[i].ticketid + ',' + response.data[i].conversation_id + ',' + response.data[i].iddepto + ')"  class="btn s" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm"><i class="mdi mdi-flag"></i> </button> </td>' +
+
+                ' </td>'+
+
+                '<td><button  class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="mdi mdi-flag"></i></button>' +
                 '<button  onclick="vista(' + response.data[i].conversation_url + ')" class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg"><i class="mdi mdi-wechat"></i> </button></td </tr>';
 
-
+              
 
         }
         document.getElementById("tb").innerHTML = tt;
