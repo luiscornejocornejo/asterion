@@ -23,8 +23,7 @@ function maxid(url,idusuario,area) {
             console.log(response.data.length);
             console.log(response.data);
             console.log("aca");
-            console.log(departamentoslista);
-
+            console.log(departamentoslista);  
             
             document.getElementById("tb").innerHTML = null;
             tt = "";
