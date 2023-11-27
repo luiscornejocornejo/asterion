@@ -68,6 +68,13 @@ function area(dd,ee,ff) {
 
 
 }
+function pedir(dd) {
+      
+      document.getElementById("idticketpedir").value = dd;
+
+
+
+}
     function estado2(dd,ee,ff) {
       
         document.getElementById("idticketestado2").value = dd;
@@ -192,7 +199,7 @@ function vista(dd) {
                                     <span class="badge bg-<?php echo $bgcolor2;?>" style="font-size:medium;"><?php echo $val->estadoname;?></span>
                                 </td>
                                 <td>
-                                    <button <?php if($val->asignado<>'99999'){ echo "disabled";}?> class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo">
+                                    <button onclick="pedir('<?php echo $val->ticketid;?>')" <?php if($val->asignado<>'99999'){ echo "disabled";}?> class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo">
                                         <i class="mdi mdi-account-voice"></i>
                                     </button>
                                     <button onclick="area('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>','<?php echo $val->user_id;?>')"  class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2">
@@ -315,8 +322,13 @@ function vista(dd) {
                 ¿Deseas reclamar este ticket?
             </div>
             <div class="modal-footer">
+                <form action="/api/pedir" methodo="post">
+                <input value="" type="text" name="idticketpedir" id="idticketpedir">
+                <input value="<?php echo session('idusuario');?>" type="text" name="usuarioticket" id="usuarioticket">
+
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
-                <button type="button" class="btn btn-success">Si, reclamar</button>
+                <button type="submit" class="btn btn-success">Si, reclamar</button>
+                        </form>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
