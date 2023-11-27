@@ -4,7 +4,9 @@
 <script>
 
 var URLactual = window.location;
-alert(URLactual);
+var porciones = URLactual.split('.');
+
+alert(porciones[0]);
 // identificadorIntervaloDeTiempo = setInterval(maxid, 5000);
 var idusuario =<?php echo session('idusuario');?>;
 </script>
