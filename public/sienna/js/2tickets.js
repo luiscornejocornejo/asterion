@@ -46,7 +46,7 @@ function maxid(url,idusuario,area) {
 
 
             }
-            document.getElementById("tb").innerHTML = html;
+            document.getElementById("tb").innerHTML = tt;
 
 
         })
