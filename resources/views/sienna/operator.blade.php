@@ -3,7 +3,7 @@
 
 <script>
 
-var URLactual = window.location;
+var URLactual = window.location.href;
 var porciones = URLactual.split('.');
 
 alert(porciones[0]);
