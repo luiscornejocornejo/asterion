@@ -365,7 +365,7 @@ class TicketdatosController extends Controller
             
         }
         $idusuario=session('idusuario');
-        $categoria=session('categoria');
+        $areas=session('areas');
         $query="select *,a.conversation_id,a.user_id,
         b.nombre as depto,b.id as iddepto,
         a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado from siennatickets a
@@ -385,7 +385,7 @@ class TicketdatosController extends Controller
         left join  siennatopic d on d.id=a.siennatopic
         where a.siennaestado not in('3','4')  
          and a.asignado='99999'
-         and a.siennadepto='".$categoria."'
+         and a.siennadepto='".$areas."'
         ";
 
         $resultados = DB::select($query);

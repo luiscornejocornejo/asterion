@@ -10,6 +10,7 @@ use Redirect;
 use Flash;
 use App\Models\users;
 use App\Models\graficos;
+use App\Models\categoria;
 use App\Models\siennaloginxenioo;
 
 use phpDocumentor\Reflection\PseudoTypes\False_;
