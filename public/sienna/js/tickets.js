@@ -31,7 +31,6 @@ function maxid(url,idusuario,area) {
             for (i = 0; i < response.data.length; i++) {
                 console.log(response.data[i].id);
 
-           
 
             im=logo(response.data[i].siennasource);
                 tt += '<tr class="text-center">' +
