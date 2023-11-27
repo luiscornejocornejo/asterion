@@ -170,7 +170,17 @@ function vista(dd) {
                                 <td><?php echo $val->cel;?></td>
                                 <td><?php echo $val->created_at;?></td>
                                 <td>
-                                    <span class="badge bg-info" style="font-size:medium;"><?php echo $val->estadoname;?></span>
+                                <?php foreach($estados as $est){
+                                    
+                                    
+                                    if($est->id==$val->siennaestado){
+
+                                        $bgcolor2=$est->casecolor;
+                                    }
+                                    
+                                }?>
+                                
+                                    <span class="badge bg-<?php echo $bgcolor2;?>" style="font-size:medium;"><?php echo $val->estadoname;?></span>
                                 </td>
                                 <td>
                                     <button <?php if($val->asignado<>'99999'){ echo "disabled";}?> class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo">
