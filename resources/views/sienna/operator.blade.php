@@ -28,7 +28,7 @@ identificadorIntervaloDeTiempo = setInterval(maxid(result,idusuario,area), 60000
           <div class="content">
 
               <!-- Start Content-->
-                <div class="container pt-5">
+                <div class="container pt-5" id="tb">
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100 text-light">
                         <thead>
                             <tr class="text-center bg-dark" >
@@ -42,7 +42,7 @@ identificadorIntervaloDeTiempo = setInterval(maxid(result,idusuario,area), 60000
                                 <th class="text-light">Historial</th>
                             </tr>
                         </thead>
-                        <tbody id="tb">
+                        <tbody id="">
                         <?php
                         $maxid=0; foreach($tickets as $val){
                             
