@@ -25,7 +25,9 @@ function logo(id){
     im="";
 
     for (i = 0; i < sourcelista.length; i++) {
+        console.log("viendos");
 
+        console.log(sourcelista[i].id);
         if(sourcelista[i].id==id){
             console.log(sourcelista[i].id);
 
