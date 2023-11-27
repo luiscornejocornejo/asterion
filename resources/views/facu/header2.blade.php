@@ -12,7 +12,7 @@
   <!-- Daterangepicker css -->
   <link rel="stylesheet" href="assetsfacu/vendor/daterangepicker/daterangepicker.css">
   <link rel="stylesheet" href="tt.css">
-  <script src="sienna/js/tickets.js"></script>
+  <script src="sienna/js/2tickets.js"></script>
 
   <!-- Vector Map css -->
   <link rel="stylesheet" href="assetsfacu/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css">
