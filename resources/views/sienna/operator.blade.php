@@ -49,7 +49,53 @@ function colorestadof(id){
     }
     return colorestado;
 }
+function estado2(url,dd, ee, ff) {
 
+document.getElementById("idticketestado2").value = dd;
+document.getElementById("conversation_id2").value = ee;
+
+
+
+
+url = "https://"+url+".suricata.cloud/api/statussiennaxdepto?depto=" + ff;
+axios.get(url)
+    .then(function (response) {
+        // función que se ejecutará al recibir una respuesta
+        console.log(response.data);
+
+        dato = "";
+        for (i = 0; i < response.data.length; i++) {
+            console.log(response.data[i].id);
+            console.log(response.data[i].nombre);
+
+
+            dato += ' <div class="mt-3">' +
+
+                '<div class="form-check mb-2">' +
+                ' <input type="radio" id="customRadio' + response.data[i].id + '" name="estado" value="' + response.data[i].id + '"  class="form-check-input">' +
+
+                '<label class="form-check-label" for="customRadio' + response.data[i].id + '">' + response.data[i].nombre + '</label>' +
+                '</div>' +
+
+                ' </div>';
+
+
+        }
+        document.getElementById("estunico").innerHTML = dato;
+
+
+
+    })
+    .catch(function (error) {
+        // función para capturar el error
+        console.log(error);
+    })
+    .then(function () {
+        // función que siempre se ejecuta
+    });
+
+
+}
 function maxid(url,idusuario,area) {
 
 
@@ -85,7 +131,7 @@ axios.get(url)
                 
                 '<button onclick="pedir(' + response.data[i].ticketid + ')"  class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><i class="mdi mdi-account-voice"></i> </button> ' +
                 '<button onclick="area(' + response.data[i].ticketid + ',' + response.data[i].conversation_id + ',' + response.data[i].user_id + ')"  class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><i class="mdi mdi-account-group"></i> </button>' +
-                '<button onclick="estado2(' + response.data[i].ticketid + ',' + response.data[i].conversation_id + ',' + response.data[i].iddepto + ')"  class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm"><i class="mdi mdi-flag"></i> </button> ' +
+                '<button onclick="estado2(' + url + ',' + response.data[i].ticketid + ',' + response.data[i].conversation_id + ',' + response.data[i].iddepto + ')"  class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm"><i class="mdi mdi-flag"></i> </button> ' +
 
                 ' </td>'+
 

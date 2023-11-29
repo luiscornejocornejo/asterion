@@ -12,7 +12,7 @@
                             <input type="hidden" name="idconv" id="conversation_id2" value="">
                             <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
                             
-                            <div id="est"></div>
+                            <div id="estunico"></div>
                                 
                                     
                             <div class="modal-footer">
