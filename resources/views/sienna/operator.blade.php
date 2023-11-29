@@ -65,6 +65,7 @@ var area =<?php echo session('areas');?>;
               
 
         }
+        
         document.getElementById("tb").outerHTML = tt;
 
 
