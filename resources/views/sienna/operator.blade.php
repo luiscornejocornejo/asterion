@@ -25,7 +25,7 @@ var idusuario =<?php echo session('idusuario');?>;
 var area =<?php echo session('areas');?>;
 
 
-    url = "https://"+url+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&area=" + area + "";
+    url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&area=" + area + "";
     console.log(url);
 
     axios.get(url)
