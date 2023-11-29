@@ -7,20 +7,20 @@
                     </div>
                     <div class="modal-body">
                         <form action="/ventasstatus" method="post">
-                        @csrf
-                        <input type="hidden" name="tik" id="idticketestado2" value="">
-                        <input type="hidden" name="idconv" id="conversation_id2" value="">
-                        <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
-                        
-                        <div id="est"></div>
-                               
+                            @csrf
+                            <input type="hidden" name="tik" id="idticketestado2" value="">
+                            <input type="hidden" name="idconv" id="conversation_id2" value="">
+                            <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
+                            
+                            <div id="est"></div>
                                 
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-success">Cambiar</button>
-                        </div>
-                    </form>
+                                    
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-success">Cambiar</button>
+                            </div>
+                        </form>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
-        </div>
+</div>
