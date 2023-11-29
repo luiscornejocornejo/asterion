@@ -49,7 +49,7 @@ function colorestadof(id){
     }
     return colorestado;
 }
-function estado2(url,dd, ee, ff) {
+function estado2(result,dd, ee, ff) {
 
 document.getElementById("idticketestado2").value = dd;
 document.getElementById("conversation_id2").value = ee;
@@ -57,7 +57,7 @@ document.getElementById("conversation_id2").value = ee;
 
 
 
-url = "https://"+url+".suricata.cloud/api/statussiennaxdepto?depto=" + ff;
+url = "https://"+result+".suricata.cloud/api/statussiennaxdepto?depto=" + ff;
 axios.get(url)
     .then(function (response) {
         // función que se ejecutará al recibir una respuesta
@@ -131,7 +131,7 @@ axios.get(url)
                 
                 '<button onclick="pedir(' + response.data[i].ticketid + ')"  class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><i class="mdi mdi-account-voice"></i> </button> ' +
                 '<button onclick="area(' + response.data[i].ticketid + ',' + response.data[i].conversation_id + ',' + response.data[i].user_id + ')"  class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><i class="mdi mdi-account-group"></i> </button>' +
-                '<button onclick="estado2(' + url + ',' + response.data[i].ticketid + ',' + response.data[i].conversation_id + ',' + response.data[i].iddepto + ')"  class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm"><i class="mdi mdi-flag"></i> </button> ' +
+                '<button onclick="estado2(' + result + ',' + response.data[i].ticketid + ',' + response.data[i].conversation_id + ',' + response.data[i].iddepto + ')"  class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm"><i class="mdi mdi-flag"></i> </button> ' +
 
                 ' </td>'+
 
