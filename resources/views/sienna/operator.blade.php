@@ -3,7 +3,19 @@
 
 <script>
 
-var URLactual = window.location.href;
+
+let departamentoslista = {!! json_encode($deptos,JSON_FORCE_OBJECT) !!};
+let sourcelista = {!! json_encode($source,JSON_FORCE_OBJECT) !!};
+let estadoslista = {!! json_encode($estados,JSON_FORCE_OBJECT) !!};
+
+
+identificadorIntervaloDeTiempo = setInterval(maxid, 5000);
+
+
+function maxid() {
+
+
+    var URLactual = window.location.href;
 
 var porciones = URLactual.split('.');
 
@@ -11,15 +23,6 @@ let result = porciones[0].replace("https://", "");
 
 var idusuario =<?php echo session('idusuario');?>;
 var area =<?php echo session('areas');?>;
-let departamentoslista = {!! json_encode($deptos,JSON_FORCE_OBJECT) !!};
-let sourcelista = {!! json_encode($source,JSON_FORCE_OBJECT) !!};
-let estadoslista = {!! json_encode($estados,JSON_FORCE_OBJECT) !!};
-
-
-identificadorIntervaloDeTiempo = setInterval(maxid(result,idusuario,area), 6000);
-
-
-function maxid(url,idusuario,area) {
 
 
     url = "https://"+url+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&area=" + area + "";
