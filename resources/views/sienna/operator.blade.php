@@ -65,7 +65,7 @@ var area =<?php echo session('areas');?>;
               
 
         }
-        document.getElementById("tb").innerHTML = tt;
+        document.getElementById("tb").outerHTML = tt;
 
 
     })
