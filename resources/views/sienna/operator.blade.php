@@ -11,7 +11,15 @@ let estadoslista = {!! json_encode($estados,JSON_FORCE_OBJECT) !!};
 
 identificadorIntervaloDeTiempo = setInterval(maxid, 5000);
 
-
+function colorlogo(id){
+    im2="";
+    for (var listado2 in sourcelista){
+        if(sourcelista[listado2]["id"]==id){
+            im2=sourcelista[listado2]["colore"];
+        }
+    }
+    return im2;
+}
 function maxid() {
 
 
@@ -41,10 +49,11 @@ var area =<?php echo session('areas');?>;
 
 
             im=logo(response.data[i].siennasource);
+            im2=colorlogo(response.data[i].siennasource);
             colordepto=colordeptof(response.data[i].iddepto);
             colorestado=colorestadof(response.data[i].siennaestado);
             tt += '<tr class="text-center">' +
-                ' <td><i class="mdi '+im+' me-1 "></i>' + response.data[i].ticketid + '</td>' +
+                ' <td><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</td>' +
                 ' <td>' + response.data[i].nya + '</td>' +
                 ' <td> <span class="badge '+colordepto+'" style="font-size:medium;">' + response.data[i].depto + '</span>'+
                 ' <td>' + response.data[i].cel + '</td>' +
