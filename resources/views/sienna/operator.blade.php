@@ -14,8 +14,7 @@ var area =<?php echo session('areas');?>;
 let departamentoslista = {!! json_encode($deptos,JSON_FORCE_OBJECT) !!};
 let sourcelista = {!! json_encode($source,JSON_FORCE_OBJECT) !!};
 let estadoslista = {!! json_encode($estados,JSON_FORCE_OBJECT) !!};
-console.log(departamentoslista);
-console.log(sourcelista);
+
 
 identificadorIntervaloDeTiempo = setInterval(maxid(result,idusuario,area), 6000);
 
@@ -105,10 +104,7 @@ function maxid(url,idusuario,area) {
     axios.get(url)
     .then(function (response) {
         // función que se ejecutará al recibir una respuesta
-        console.log(response.data.length);
-        console.log(response.data);
-        console.log("aca");
-        console.log(departamentoslista);  
+        
         
         document.getElementById("tb").innerHTML = null;
         tt = "";
