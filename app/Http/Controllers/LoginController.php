@@ -136,7 +136,7 @@ class LoginController extends Controller
 
             
 
-            if($subdomain_tmp=="opticom"){
+            if($subdomain_tmp=="infitelecom"){
 
                 $xen = siennaloginxenioo::where('idusuario', '=', session('idusuario'))->get();  
                   foreach($xen as $val){
