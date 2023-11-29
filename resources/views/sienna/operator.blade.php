@@ -51,14 +51,14 @@ function colorestadof(id){
 }
 function estado2(result,dd, ee, ff) {
 
-document.getElementById("idticketestado2").value = dd;
-document.getElementById("conversation_id2").value = ee;
+    document.getElementById("idticketestado2").value = dd;
+    document.getElementById("conversation_id2").value = ee;
 
 
 
 
-url = "https://"+result+".suricata.cloud/api/statussiennaxdepto?depto=" + ff;
-axios.get(url)
+    url = "https://"+result+".suricata.cloud/api/statussiennaxdepto?depto=" + ff;
+    axios.get(url)
     .then(function (response) {
         // función que se ejecutará al recibir una respuesta
         console.log(response.data);
@@ -99,9 +99,10 @@ axios.get(url)
 function maxid(url,idusuario,area) {
 
 
-url = "https://"+url+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&area=" + area + "";
+    url = "https://"+url+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&area=" + area + "";
+    console.log(url);
 
-axios.get(url)
+    axios.get(url)
     .then(function (response) {
         // función que se ejecutará al recibir una respuesta
         console.log(response.data.length);
