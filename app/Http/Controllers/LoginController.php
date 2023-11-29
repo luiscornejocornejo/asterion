@@ -119,7 +119,7 @@ class LoginController extends Controller
                
                 session(['idusuario' => $idusuario]);
                 session(['categoria' => $categoria]);
-                if($subdomain_tmp=="opticom"){ 
+                if($subdomain_tmp=="infitelecom"){ 
                                 $query4 = "select * from categoria where id='" . $categoria . "'";
                                 $resultados4 = DB::select($query4);
 
