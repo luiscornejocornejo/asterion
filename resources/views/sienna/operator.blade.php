@@ -33,7 +33,7 @@ var area =<?php echo session('areas');?>;
         // función que se ejecutará al recibir una respuesta
         
         
-        document.getElementById("tb").innerHTML = null;
+        document.getElementById("tb").outerHTML = null;
         tt = "";
       
         for (i = 0; i < response.data.length; i++) {
