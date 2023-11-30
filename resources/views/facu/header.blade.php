@@ -707,5 +707,13 @@ iframe {
 
 z-index: 999;}
     </style>
+    <script>
+        function borrar(x) {
+
+
+document.getElementById("idregistro").value = x;
+}
+</script>
+
 </head>
 <body class="show">
