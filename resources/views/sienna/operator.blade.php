@@ -43,7 +43,7 @@ var area =<?php echo session('areas');?>;
         
         document.getElementById("tb").innerHTML = null;
         tt = "";
-      
+        d="";
         for (i = 0; i < response.data.length; i++) {
             console.log(response.data[i].id);
 
@@ -52,6 +52,9 @@ var area =<?php echo session('areas');?>;
             im2=colorlogo(response.data[i].siennasource);
             colordepto=colordeptof(response.data[i].iddepto);
             colorestado=colorestadof(response.data[i].siennaestado);
+            if(response.data[i].asignado<>"99999"){
+                d="disabled";
+            }
             tt += '<tr class="text-center">' +
                 ' <td><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</td>' +
                 ' <td>' + response.data[i].nya + '</td>' +
@@ -62,7 +65,7 @@ var area =<?php echo session('areas');?>;
 
                 ' <td>'+
                 
-                '<button onclick="pedir(`' + response.data[i].ticketid + '`)"  class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><i class="mdi mdi-account-voice" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="mb-1" data-bs-title="Reclamar ticket."></i></button> ' +
+                '<button '+d+' onclick="pedir(`' + response.data[i].ticketid + '`)"  class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><i class="mdi mdi-account-voice" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="mb-1" data-bs-title="Reclamar ticket."></i></button> ' +
                 '<button onclick="area(`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].user_id + '`)"  class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><i class="mdi mdi-account-group" data-bs-toggle="tooltip" data-bs-placement="top"     data-bs-custom-class="mb-1" data-bs-title="Asignar departamento."></i> </button>' +
                 '<button onclick="estado2(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm"><i class="mdi mdi-flag" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Cambiar estado."></i> </button> ' +
 
@@ -183,6 +186,10 @@ console.log("Ha pasado 1 segundo.");
                                     </button> 
                                     <button onclick="vista('<?php echo $val->conversation_url;?>')" class="btn btn-light" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg">
                                         <i class="mdi mdi-wechat"></i>
+                                    </button> 
+                                    <button class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modalHistory">
+                                        <i class="mdi mdi-history" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        data-bs-custom-class="mb-1" data-bs-title="Historial."></i>
                                     </button> 
                                 </td>
                             </tr>
