@@ -89,6 +89,8 @@ class LoginController extends Controller
         $email = $request->email;
         $password = $request->password;
 
+        $os = array("infitelecom", "opticom", "Irix", "Linux");
+
         $query = "select * from users where email='" . $email . "' and password=md5('" . $password . "')";
         $resultados = DB::select($query);
         $subdomain_tmp = 'localhost';
@@ -119,7 +121,9 @@ class LoginController extends Controller
                
                 session(['idusuario' => $idusuario]);
                 session(['categoria' => $categoria]);
-                if($subdomain_tmp=="infitelecom"){ 
+                if (in_array($subdomain_tmp, $os)) {
+
+                //if($subdomain_tmp=="infitelecom"){ 
                                 $query4 = "select * from categoria where id='" . $categoria . "'";
                                 $resultados4 = DB::select($query4);
 
@@ -136,7 +140,7 @@ class LoginController extends Controller
 
             
 
-            if($subdomain_tmp=="infitelecom"){
+            if (in_array($subdomain_tmp, $os)) {
 
                 $xen = siennaloginxenioo::where('idusuario', '=', session('idusuario'))->get();  
                   foreach($xen as $val){
