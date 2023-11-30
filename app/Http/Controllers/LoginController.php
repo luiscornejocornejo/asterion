@@ -89,7 +89,7 @@ class LoginController extends Controller
         $email = $request->email;
         $password = $request->password;
 
-        $os = array("infitelecom", "opticom", "Irix", "Linux");
+        $os = array("infitelecom", "opticom", "soporte", "Linux");
 
         $query = "select * from users where email='" . $email . "' and password=md5('" . $password . "')";
         $resultados = DB::select($query);
