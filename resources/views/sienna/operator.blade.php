@@ -100,6 +100,7 @@ axios.get(url)
 .then(function (response) {
     // función que se ejecutará al recibir una respuesta
     console.log(response.data);
+    document.getElementById("seguimientounico").innerHTML = null;
 
     dato = "";
     for (i = 0; i < response.data.length; i++) {
