@@ -103,7 +103,7 @@ console.log("Ha pasado 1 segundo.");
           <div class="content">
 
               <!-- Start Content-->
-                <div class="container pt-5" id="">
+                <div class="container-fluid pt-2" id="">
                     <table id="basic-datatable" class="table dt-responsive nowrap w-100 text-light">
                         <thead>
                             <tr class="text-center bg-dark" >
