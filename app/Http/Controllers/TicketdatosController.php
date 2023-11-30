@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\siennatickets;
 use App\Models\siennaloginxenioo;
 use App\Models\siennaseguimientos;
+use App\Models\siennaestado;
 
 
 class TicketdatosController extends Controller
