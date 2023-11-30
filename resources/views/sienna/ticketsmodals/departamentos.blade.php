@@ -9,7 +9,7 @@
                     <form action="/api/cambiardeptosienna2" method="post">
                         <input type="hidden" name="_token" v-bind:value="csrf">
                         <input value="" type="hidden" name="idconv" id="idconv">
-                        <input value="<?php echo session('idusuario');?>" type="hidden" name="logeado" id="logeado">
+                        <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
                         <input value="" type="hidden" name="user_id" id="user_id">
                         <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
                         <input value=""  type="hidden" name="idticketdepto" id="idticketdepto">
