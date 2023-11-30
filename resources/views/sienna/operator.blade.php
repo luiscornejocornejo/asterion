@@ -104,18 +104,23 @@ axios.get(url)
     dato = "";
     for (i = 0; i < response.data.length; i++) {
         console.log(response.data[i].id);
-        console.log(response.data[i].nombre);
+        console.log(response.data[i].descripcion);
+        console.log(response.data[i].autor);
+        console.log(response.data[i].created_at);
+        console.log(response.data[i].tipo);
 
 
-        dato += ' <div class="mt-3">' +
-
-            '<div class="form-check mb-2">' +
-            ' <input type="radio" id="customRadio' + response.data[i].id + '" name="estado" value="' + response.data[i].id + '"  class="form-check-input">' +
-
-            '<label class="form-check-label" for="customRadio' + response.data[i].id + '">' + response.data[i].nombre + '</label>' +
-            '</div>' +
-
-            ' </div>';
+        dato += ' <div class="timeline-item">'+
+                '<i class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>'+
+                '<div class="timeline-item-info">'+
+                '<span class="text-info fw-bold mb-1 d-block">'+response.data[i].descripcion+'</span>'+
+                '<small>'+response.data[i].autor+'</small>'+
+                '<p class="mb-0 pb-2">'+
+                '<small class="text-muted">'+response.data[i].created_at+'</small>'+
+                '</p> </div> </div>';
+                                            
+                                            
+                                
 
 
     }
