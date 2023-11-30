@@ -9,7 +9,7 @@ let sourcelista = {!! json_encode($source,JSON_FORCE_OBJECT) !!};
 let estadoslista = {!! json_encode($estados,JSON_FORCE_OBJECT) !!};
 
 
-identificadorIntervaloDeTiempo = setInterval(maxid, 5000);
+identificadorIntervaloDeTiempo = setInterval(maxid, 60000);
 
 function colorlogo(id){
     im2="";
