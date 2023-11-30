@@ -54,6 +54,8 @@ Route::get('/maxid', [wsController::class, 'maxid']);
 Route::get('/enhora', [wsController::class, 'enhora']);
 
 Route::post('/pedir', [wsController::class, 'pedir']);
+Route::get('/listadoseguimientos', [wsController::class, 'listadoseguimientos']);
+
 
 
 

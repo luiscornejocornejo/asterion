@@ -4,6 +4,16 @@ let identificadorIntervaloDeTiempo;
 
 let variableGlobal = 0;
 
+
+function colorlogo(id){
+    im2="";
+    for (var listado2 in sourcelista){
+        if(sourcelista[listado2]["id"]==id){
+            im2=sourcelista[listado2]["colore"];
+        }
+    }
+    return im2;
+}
 function logo(id){
     im="";
     for (var listado2 in sourcelista){
@@ -78,6 +88,8 @@ function estado2(result,dd, ee, ff) {
 
 
 }
+
+
 
 
 

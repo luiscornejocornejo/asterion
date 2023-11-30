@@ -25,19 +25,25 @@
 
                             
                             <!-- end sub tasks/checklists -->
-                            <div class="mt-2 ">
-                                <div class="mb-2">
-                                    <label class="form-label">Comentario</label>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" aria-label="Recipient's username">
-                                        <button class="btn btn-primary" type="button"><i class="mdi mdi-send"></i></button>
+                            <form action="/api/crearseguimiento" method="POST">
+
+                                <div class="mt-2 ">
+                                    <div class="mb-2">
+                                        <label class="form-label">Comentario</label>
+                                        <div class="input-group">
+                                        
+                                        <input value="" type="hidden" name="idticketseguimiento" id="idticketseguimiento">
+
+                                            <input type="text" name="comentario" class="form-control" aria-label="Recipient's username">
+                                            <button class="btn btn-primary" type="button"><i class="mdi mdi-send"></i></button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="form-label">Subir archivo</label>
+                                        <input class="form-control" type="file" id="inputGroupFile04">
                                     </div>
                                 </div>
-                                <div>
-                                    <label class="form-label">Subir archivo</label>
-                                    <input class="form-control" type="file" id="inputGroupFile04">
-                                </div>
-                            </div>
+                            </form>
                             
                                 <div class="mt-2">
                                     <div class="card-header d-flex justify-content-between align-items-center mt-2">
@@ -58,7 +64,7 @@
                                     </div>
 
                                     <div class="card-body py-0 mb-3 mt-3" data-simplebar="init"><div class="simplebar-wrapper" ><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: auto; overflow: hidden scroll;"><div class="simplebar-content" style="padding: 0px 24px;">
-                                        <div class="timeline-alt py-0">
+                                        <div class="timeline-alt py-0" id="seguimientounico">
                                             <div class="timeline-item">
                                                 <i class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>
                                                 <div class="timeline-item-info">

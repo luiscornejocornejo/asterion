@@ -11,26 +11,18 @@ let estadoslista = {!! json_encode($estados,JSON_FORCE_OBJECT) !!};
 
 identificadorIntervaloDeTiempo = setInterval(maxid, 60000);
 
-function colorlogo(id){
-    im2="";
-    for (var listado2 in sourcelista){
-        if(sourcelista[listado2]["id"]==id){
-            im2=sourcelista[listado2]["colore"];
-        }
-    }
-    return im2;
-}
+
 function maxid() {
 
 
     var URLactual = window.location.href;
 
-var porciones = URLactual.split('.');
+    var porciones = URLactual.split('.');
 
-let result = porciones[0].replace("https://", "");
+    let result = porciones[0].replace("https://", "");
 
-var idusuario =<?php echo session('idusuario');?>;
-var area =<?php echo session('areas');?>;
+    var idusuario =<?php echo session('idusuario');?>;
+    var area =<?php echo session('areas');?>;
 
 
     url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&area=" + area + "";
@@ -90,7 +82,56 @@ var area =<?php echo session('areas');?>;
     .then(function () {
         // función que siempre se ejecuta
     });
-console.log("Ha pasado 1 segundo.");
+        console.log("Ha pasado 1 segundo.");
+
+}
+
+
+
+function listadoseguimientos(result,dd, ee, ff) {
+
+document.getElementById("idticketseguimiento").value = dd;
+
+
+
+
+url = "https://"+result+".suricata.cloud/api/listadoseguimientos?ticket=" + dd;
+axios.get(url)
+.then(function (response) {
+    // función que se ejecutará al recibir una respuesta
+    console.log(response.data);
+
+    dato = "";
+    for (i = 0; i < response.data.length; i++) {
+        console.log(response.data[i].id);
+        console.log(response.data[i].nombre);
+
+
+        dato += ' <div class="mt-3">' +
+
+            '<div class="form-check mb-2">' +
+            ' <input type="radio" id="customRadio' + response.data[i].id + '" name="estado" value="' + response.data[i].id + '"  class="form-check-input">' +
+
+            '<label class="form-check-label" for="customRadio' + response.data[i].id + '">' + response.data[i].nombre + '</label>' +
+            '</div>' +
+
+            ' </div>';
+
+
+    }
+    document.getElementById("seguimientounico").innerHTML = dato;
+
+
+
+})
+.catch(function (error) {
+    // función para capturar el error
+    console.log(error);
+})
+.then(function () {
+    // función que siempre se ejecuta
+});
+
 
 }
 </script>

@@ -607,6 +607,16 @@ class wsController extends Controller
 
 
     }
+
+    public function listadoseguimientos(Request $request){
+
+        $ticket=$request->ticket;   
+
+     $estados=siennaestado::where('ticket', $ticket)->get();
+     return $estados;
+
+
+ }
     
     public function cambiarstatussienna(Request $request){
 
