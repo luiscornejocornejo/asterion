@@ -2,7 +2,7 @@
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-dark text-white">
-                    <h4 class="modal-title" id="mySmallModalLabel">Tickets creados de: {{first_name}}</h4>
+                    <h4 class="modal-title" id="mySmallModalLabel">Tickets creados de: </h4>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                 </div>
                 <div class="modal-body">
