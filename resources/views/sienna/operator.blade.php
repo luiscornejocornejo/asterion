@@ -52,7 +52,7 @@ var area =<?php echo session('areas');?>;
             im2=colorlogo(response.data[i].siennasource);
             colordepto=colordeptof(response.data[i].iddepto);
             colorestado=colorestadof(response.data[i].siennaestado);
-            if(response.data[i].asignado<>"99999"){
+            if(response.data[i].asignado !='99999'){
                 d="disabled";
             }
             tt += '<tr class="text-center">' +
