@@ -21,6 +21,7 @@ use Mail;
 use Illuminate\Support\Facades\Storage;
 use App\Models\siennatickets;
 use App\Models\siennaloginxenioo;
+use App\Models\siennaseguimientos;
 
 
 class TicketdatosController extends Controller
@@ -466,6 +467,17 @@ class TicketdatosController extends Controller
         $si2 = siennatickets::find($tik);
         $si2->siennaestado=$estado;
         $si2->save();
+
+
+        $se=new siennaseguimientos();
+        $se->ticket=$tik;
+        $se->tipo="2";
+        $se->descripcion="cambio estado";
+        $usulogear = session('idusuario');
+
+        $se->autor=$usulogear;
+        $se->save();
+
         return redirect() 
         ->back() 
         ->with('success', 'Se Cambio status correctamente');
