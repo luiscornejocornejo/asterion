@@ -705,6 +705,8 @@ class wsController extends Controller
 
 
 
+       
+
         $depto = siennadepto::find($statos);
 
         $behaviour=$depto->behaviour;
@@ -753,7 +755,84 @@ class wsController extends Controller
         ->with('success', 'Se modifico el departamento  correctamente!');
   
       }
+      public function cambiardeptosienna2(Request $request){
 
+        echo   $idticketdepto=$request->idticketdepto;
+        echo   $statos=$request->statos;
+  
+        echo   $idconv=$request->idconv;
+        echo   $idbot=$request->idbot;
+        $user_id=$request->user_id;
+        //$user_id=str_replace("+","",$user_id);
+        echo   $bot_channel=$request->bot_channel;
+        $logeado=$request->logeado;
+        $si2 = siennatickets::find($idticketdepto);
+        $si2->siennadepto=$statos;
+        $si2->asignado=0;
+        $si2->save();
+
+
+
+       
+
+        $depto = siennadepto::find($statos);
+
+        $behaviour=$depto->behaviour;
+        $interaction=$depto->interaction;
+        $nombrearea=$depto->nombre;
+
+
+        $se=new siennaseguimientos();
+        $se->ticket=$idticketdepto;
+        $se->tipo="3";
+        $se->descripcion="modificar area:".$nombrearea;
+        $se->autor=$logeado;
+        $se->save();
+
+        $curl = curl_init();
+
+        // Prepare data array with account key, bot key, and account secret
+       
+        // Set headers for the cURL request
+        $headers = array(
+            'Accept: application/json',
+            'Content-Type: application/json',
+            'Cookie: xenioo-id=Bearer+ZlHPzQ0ZfubwcHXAjjXMG0hDlJI22S1S0dqgKs0H7O06PghfV3BRy6Wxmn7PLb6RUmfIXRXiijo5X8E7%2flsAUV24IzaB28PYO%2bw90fEOTrp8Hx0WQCQ%2btq69lwpWUZpCg0ga2p%2bQD%2bI9KFMrCB6Ht%2bJM4ZOuekNf%2bYWtUBQ%2bm1prYPb8nDXWuRnU6qgtzr7zInbdRjyNhsdg41gTr7AstZ3sLt2wAXQS%2ba8zSGYe1UZY7gvoYm%2fGKj6TbvAdWnO0WXTVkwnB1jhMbWDX38PYGt2jkNoaUXRWxncuQSxJRzUIBWuTJGju%2b7EZOaoK07cXNk%2bUPBMSV1Q9gV6Gzc8CkA%3d%3d',
+        );
+     
+          echo  $url="https://suricata4.com.ar/api/Behaviour?token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM&idbot=".$idbot."&idconv=".$idconv."&behaviour=".$behaviour."&interaction=".$interaction."&user_id=".$user_id."&bot_channel=".$bot_channel;
+        // Set options for the cURL request
+        $options = array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_HTTPHEADER => $headers,
+        );
+  
+        // Set the options for cURL resource
+        curl_setopt_array($curl, $options);
+  
+        // Execute the cURL request
+        $response = curl_exec($curl);
+  
+       //dd($response);   
+        // Close the cURL resource
+        curl_close($curl);
+
+
+
+        return redirect()
+        ->back()
+        ->with('success', 'Se modifico el departamento  correctamente!');
+  
+      }
+
+    
       public function siennacrearseguimiento(Request $request){
 
         echo   $ticket=$request->ticket;
