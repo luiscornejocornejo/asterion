@@ -466,6 +466,8 @@ class wsController extends Controller
 
         $se=new siennaseguimientos();
         $se->ticket=$si->id;
+        $se->tipo="1";
+        $se->descripcion="created";
         $se->autor="sistema";
         $se->save();
 
