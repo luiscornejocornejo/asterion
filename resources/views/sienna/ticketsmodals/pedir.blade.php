@@ -9,7 +9,7 @@
                         ¿Deseas reclamar este ticket?
                     </div>
                     <div class="modal-footer">
-                        <form action="/api/pedir" methodo="post">
+                        <form action="/api/pedir" methodo="POST">
                         <input value="" type="hidden" name="idticketpedir" id="idticketpedir">
                         <input value="<?php echo session('idusuario'); ?>" type="hidden" name="usuarioticket" id="usuarioticket">
                         <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
