@@ -468,11 +468,12 @@ class TicketdatosController extends Controller
         $si2->siennaestado=$estado;
         $si2->save();
 
-
+        $est=siennaestado::find($estado);
+        $estnombre=$est->nombre;
         $se=new siennaseguimientos();
         $se->ticket=$tik;
         $se->tipo="2";
-        $se->descripcion="cambio estado";
+        $se->descripcion="cambio estado ".$estnombre;
         $usulogear = session('idusuario');
 
         $se->autor=$usulogear;
