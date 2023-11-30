@@ -46,6 +46,7 @@ Route::get('/tickessiennaapi', [wsController::class, 'tickessiennaapi']);
 Route::post('/cambiarstatussienna', [wsController::class, 'cambiarstatussienna']);
 Route::post('/cambiartopicsienna', [wsController::class, 'cambiartopicsienna']);
 Route::post('/cambiardeptosienna', [wsController::class, 'cambiardeptosienna']);
+Route::post('/cambiardeptosienna2', [wsController::class, 'cambiardeptosienna2']);
 Route::post('/siennacrearseguimiento', [wsController::class, 'siennacrearseguimiento']);
 
 Route::get('/statussiennaxdepto', [wsController::class, 'statussiennaxdepto']);
