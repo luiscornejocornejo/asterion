@@ -9,7 +9,7 @@ let sourcelista = {!! json_encode($source,JSON_FORCE_OBJECT) !!};
 let estadoslista = {!! json_encode($estados,JSON_FORCE_OBJECT) !!};
 
 
-identificadorIntervaloDeTiempo = setInterval(maxid, 60000);
+identificadorIntervaloDeTiempo = setInterval(maxid, 6000);
 
 
 function maxid() {
@@ -63,9 +63,9 @@ function maxid() {
 
                 ' </td>'+
 
-                '<td><button  class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="mdi mdi-link" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="mb-1" data-bs-title="Seguimiento."></i></button>' +
+                '<td><button  onclick="listadoseguimientos(`' + result + '`,`' + response.data[i].ticketid + '`)"   class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="mdi mdi-link" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="mb-1" data-bs-title="Seguimiento."></i></button>' +
                 '<button  onclick="vista(`' + response.data[i].conversation_url + '`)" class="btn btn-outline-secondary rounded" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg"><i class="mdi mdi-wechat" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Conversación."></i> </button>'+
-                '<button class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modalHistory">  <i class="mdi mdi-history" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Historial."></i>           </button> </td </tr>';
+                '<button       class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modalHistory">  <i class="mdi mdi-history" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Historial."></i>           </button> </td </tr>';
 
               
 
@@ -88,7 +88,7 @@ function maxid() {
 
 
 
-function listadoseguimientos(result,dd, ee, ff) {
+function listadoseguimientos(result,dd) {
 
 document.getElementById("idticketseguimiento").value = dd;
 
