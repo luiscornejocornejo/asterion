@@ -831,7 +831,34 @@ class wsController extends Controller
         ->with('success', 'Se modifico el departamento  correctamente!');
   
       }
+      public function pedir(Request $request){
 
+        echo   $idticketpedir=$request->idticketpedir;
+
+        echo   $usuarioticket=$request->usuarioticket;
+  
+        
+        $logeado=$request->logeado;
+        $si2 = siennatickets::find($idticketpedir);
+        $si2->asignado=$usuarioticket;
+        $si2->save();
+
+
+
+        $se=new siennaseguimientos();
+        $se->ticket=$idticketpedir;
+        $se->tipo="4";
+        $se->descripcion="asignarse ";
+        $se->autor=$logeado;
+        $se->save();
+
+        
+
+        return redirect()
+        ->back()
+        ->with('success', 'Se asigno  correctamente!');
+  
+      }
     
       public function siennacrearseguimiento(Request $request){
 

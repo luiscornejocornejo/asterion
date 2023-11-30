@@ -12,6 +12,7 @@
                         <form action="/api/pedir" methodo="post">
                         <input value="" type="hidden" name="idticketpedir" id="idticketpedir">
                         <input value="<?php echo session('idusuario'); ?>" type="hidden" name="usuarioticket" id="usuarioticket">
+                        <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
 
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
                         <button type="submit" class="btn btn-success">Si, reclamar</button>
