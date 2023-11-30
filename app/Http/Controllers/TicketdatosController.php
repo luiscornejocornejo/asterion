@@ -475,7 +475,7 @@ class TicketdatosController extends Controller
         $se->ticket=$tik;
         $se->tipo="2";
         $se->descripcion="cambio estado ".$estnombre;
-        $usulogear = session('idusuario');
+        $usulogear = session('nombreusuario');
 
         $se->autor=$usulogear;
         $se->save();
