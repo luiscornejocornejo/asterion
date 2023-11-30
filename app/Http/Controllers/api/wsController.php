@@ -612,7 +612,7 @@ class wsController extends Controller
 
         $ticket=$request->ticket;   
 
-     $estados=siennaestado::where('ticket', $ticket)->get();
+     $estados=siennaseguimientos::where('ticket', $ticket)->get();
      return $estados;
 
 
