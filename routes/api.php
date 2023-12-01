@@ -56,7 +56,7 @@ Route::get('/enhora', [wsController::class, 'enhora']);
 Route::post('/pedir', [wsController::class, 'pedir']);
 Route::get('/listadoseguimientos', [wsController::class, 'listadoseguimientos']);
 Route::post('/siennacrearseguimiento2', [wsController::class, 'siennacrearseguimiento2']);
-Route::post('/ticketsviejo', [wsController::class, 'ticketsviejo']);
+Route::get('/ticketsviejo', [wsController::class, 'ticketsviejo']);
 
  
 
