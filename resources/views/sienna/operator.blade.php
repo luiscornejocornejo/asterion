@@ -179,78 +179,7 @@ axios.get(url)
                             </tr>
                         </thead>
                         <tbody id="tb">
-                        <?php
-                        $maxid=0; foreach($tickets as $val){
-                            
-                            $maxid=$val->ticketid;?>
-                            <tr class="text-center">
-                                <td>
-                                <?php foreach($source as $so){
-                                    
-                                    
-                                    if($so->id==$val->siennasource){
-
-                                        $fon=$so->svg;
-                                    }
-                                    
-                                }?>
-                                    <span><i class="mdi <?php echo $fon;?> me-1 "></i><?php echo $val->ticketid;?></span>
-                                </td>
-                                <td><?php echo $val->nya;?></td>
-                                <td>
-                                <?php foreach($deptos as $dep){
-                                    
-                                    
-                                    if($dep->id==$val->iddepto){
-
-                                        $bgcolor=$dep->colore;
-                                    }
-                                    
-                                }?>
-
-
-                                    <span class="badge <?php echo $bgcolor;?>" style="font-size:medium;"><?php echo $val->depto;?></span>
-                                </td>
-                                <td><?php echo $val->cel;?></td>
-                                <td><?php echo $val->created_at;?></td>
-                                <td>
-                                <?php foreach($estados as $est){
-                                    
-                                    
-                                    if($est->id==$val->siennaestado){
-
-                                        $bgcolor2=$est->clasecolor;
-                                    }
-                                    
-                                }?>
-                                
-                                    <span class="badge <?php echo $bgcolor2;?>" style="font-size:medium;"><?php echo $val->estadoname;?></span>
-                                </td>
-                                <td>
-                                    <button onclick="pedir('<?php echo $val->ticketid;?>')" <?php if($val->asignado<>'99999'){ echo "disabled";}?> class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo">
-                                        <i class="mdi mdi-account-voice"></i>
-                                    </button>
-                                    <button onclick="area('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>','<?php echo $val->user_id;?>')"  class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2">
-                                        <i class="mdi mdi-account-group"></i>
-                                    </button>
-                                    <button onclick="estado2('<?php echo $val->ticketid;?>','<?php echo $val->conversation_id;?>','<?php echo $val->iddepto;?>')" class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm" >
-                                        <i class="mdi mdi-flag"></i>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                                        <i class="mdi mdi-link"></i>
-                                    </button> 
-                                    <button onclick="vista('<?php echo $val->conversation_url;?>')" class="btn btn-light" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg">
-                                        <i class="mdi mdi-wechat"></i>
-                                    </button> 
-                                    <button class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modalHistory">
-                                        <i class="mdi mdi-history" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-custom-class="mb-1" data-bs-title="Historial."></i>
-                                    </button> 
-                                </td>
-                            </tr>
-                            <?php }?>
+                       
                         </tbody>
                     </table>
                     
