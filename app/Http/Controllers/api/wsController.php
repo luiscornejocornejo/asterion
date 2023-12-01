@@ -633,7 +633,7 @@ class wsController extends Controller
 
       if($statos==4){
 
-        $url="https://suricata4..com.ar/api/closechat";
+        $url="https://suricata4.com.ar/api/closechat";
         $curl = curl_init();
 
         
@@ -973,4 +973,13 @@ class wsController extends Controller
 
     }
 
+    public function ticketsviejo(Request $request){
+        $cel=$request->cel;
+        $resultados="";
+        $query="select * from siennatickets where cel='" . $cel . "' and siennaestado='4'";
+        $resultados = DB::select($query);
+        return $resultados;
+
+    }
+    
 }
