@@ -25,7 +25,7 @@
 
                             
                             <!-- end sub tasks/checklists -->
-                            <form action="/api/siennacrearseguimiento2" method="POST">
+                            <form action="/api/siennacrearseguimiento2" method="POST"  enctype="multipart/form-data">
 
                                 <div class="mt-2 ">
                                     <div class="mb-2">
