@@ -154,7 +154,7 @@ axios.get(url)
  
 
   <!-- Begin page -->
-  <div class="wrapper">
+  <div class="wrapper" onload="maxid()">
 
       <!-- ========== Left Sidebar Start ========== -->
       @include('facu.menu')
