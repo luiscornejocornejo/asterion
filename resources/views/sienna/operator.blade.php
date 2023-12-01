@@ -165,7 +165,7 @@ axios.get(url)
 
               <!-- Start Content-->
                 <div class="container-fluid pt-2" id="">
-                    <table id="basic-datatable" class="table dt-responsive nowrap w-100 text-light">
+                    <table id="basic-datatable2" class="table dt-responsive nowrap w-100 text-light">
                         <thead>
                             <tr class="text-center bg-dark" >
                                 <th class="text-light"><i></i>Ticket</th>
