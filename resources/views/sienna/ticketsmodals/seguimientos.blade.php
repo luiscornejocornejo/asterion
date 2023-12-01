@@ -25,17 +25,18 @@
 
                             
                             <!-- end sub tasks/checklists -->
-                            <form action="/api/crearseguimiento" method="POST">
+                            <form action="/api/siennacrearseguimiento2" method="POST">
 
                                 <div class="mt-2 ">
                                     <div class="mb-2">
                                         <label class="form-label">Comentario</label>
                                         <div>
                                         <label class="form-label">Subir archivo</label>
-                                        <input class="form-control" type="file" id="inputGroupFile04">
+                                        <input  name="logo" class="form-control" type="file" id="inputGroupFile04">
                                     </div>
                                         <div class="input-group">
-                                        
+                                        <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
+
                                         <input value="" type="hidden" name="idticketseguimiento" id="idticketseguimiento">
 
                                             <input type="text" name="comentario" class="form-control" aria-label="Recipient's username">

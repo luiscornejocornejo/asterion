@@ -869,7 +869,32 @@ class wsController extends Controller
         ->with('success', 'Se asigno  correctamente!');
   
       }
-    
+      
+      public function siennacrearseguimiento2(Request $request){
+
+        echo   $ticket=$request->idticketseguimiento;
+        echo   $descripcion=$request->comentario;
+        echo   $logeado=$request->logeado;
+
+        
+        if (isset($request->logo)) {
+            $logo = $request->file('logo')->store('public');
+
+        }else{
+            $logo ="";
+        }
+
+        $se=new siennaseguimientos();
+        $se->ticket=$ticket;
+        $se->descripcion=$descripcion;
+        $se->logo=$logo;
+        $se->tipo="5";
+        $se->autor=$logeado;
+        $se->save();
+
+
+
+      }
       public function siennacrearseguimiento(Request $request){
 
         echo   $ticket=$request->ticket;
@@ -885,6 +910,7 @@ class wsController extends Controller
         $se->ticket=$ticket;
         $se->descripcion=$descripcion;
         $se->logo=$logo;
+        $se->tipo="5";
         $se->autor="api";
         $se->save();
 
