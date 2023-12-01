@@ -892,7 +892,9 @@ class wsController extends Controller
         $se->autor=$logeado;
         $se->save();
 
-
+        return redirect()
+        ->back()
+        ->with('success', 'Se asigno  correctamente!');
 
       }
       public function siennacrearseguimiento(Request $request){
