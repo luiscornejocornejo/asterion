@@ -36,9 +36,9 @@ function maxid() {
         
         document.getElementById("tb").innerHTML = null;
         tt = "";
-        d="";
         for (i = 0; i < response.data.length; i++) {
             console.log(response.data[i].id);
+            d="";
 
 
             im=logo(response.data[i].siennasource);
