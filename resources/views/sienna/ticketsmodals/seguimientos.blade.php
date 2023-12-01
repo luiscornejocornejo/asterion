@@ -30,18 +30,19 @@
                                 <div class="mt-2 ">
                                     <div class="mb-2">
                                         <label class="form-label">Comentario</label>
+                                        <div>
+                                        <label class="form-label">Subir archivo</label>
+                                        <input class="form-control" type="file" id="inputGroupFile04">
+                                    </div>
                                         <div class="input-group">
                                         
                                         <input value="" type="hidden" name="idticketseguimiento" id="idticketseguimiento">
 
                                             <input type="text" name="comentario" class="form-control" aria-label="Recipient's username">
-                                            <button class="btn btn-primary" type="button"><i class="mdi mdi-send"></i></button>
+                                            <button class="btn btn-primary" type="submit"><i class="mdi mdi-send"></i></button>
                                         </div>
                                     </div>
-                                    <div>
-                                        <label class="form-label">Subir archivo</label>
-                                        <input class="form-control" type="file" id="inputGroupFile04">
-                                    </div>
+                                    
                                 </div>
                             </form>
                             
