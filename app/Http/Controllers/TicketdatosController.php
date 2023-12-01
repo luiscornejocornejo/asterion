@@ -409,11 +409,16 @@ class TicketdatosController extends Controller
         
         $query4="select * from siennasource";
         $resultados4 = DB::select($query4);
+
+
+        $query5="select * from iconostipo";
+        $resultados5 = DB::select($query5);
             return view('sienna/operator')
             ->with('subdomain_tmp', $subdomain_tmp)
             ->with("tickets",$resultados)
             ->with("maxid",$maxid)
             ->with("deptos",$resultados3)
+            ->with("iconos",$resultados5)
             ->with("source",$resultados4)
             ->with("estados",$resultados2); 
 
