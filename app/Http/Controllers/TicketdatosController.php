@@ -448,11 +448,15 @@ class TicketdatosController extends Controller
 
         $query3="select * from siennadepto";
         $resultados3 = DB::select($query3);
+
+        $query4="select * from iconostipo";
+        $resultados4 = DB::select($query4);
         
             return view('sienna/operator2')
             ->with('subdomain_tmp', $subdomain_tmp)
             ->with("tickets",$resultados)
             ->with("deptos",$resultados3)
+            ->with("iconos",$resultados4)
             ->with("estados",$resultados2); 
 
     }

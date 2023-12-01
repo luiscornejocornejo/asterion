@@ -7,6 +7,7 @@
 let departamentoslista = {!! json_encode($deptos,JSON_FORCE_OBJECT) !!};
 let sourcelista = {!! json_encode($source,JSON_FORCE_OBJECT) !!};
 let estadoslista = {!! json_encode($estados,JSON_FORCE_OBJECT) !!};
+let iconos = {!! json_encode($iconos,JSON_FORCE_OBJECT) !!};
 
 
 identificadorIntervaloDeTiempo = setInterval(maxid, 6000);
@@ -86,7 +87,15 @@ function maxid() {
 
 }
 
-
+function coloriconos(id){
+    coloricono="";
+    for (var listado2 in iconos){
+        if(iconos[listado2]["id"]==id){
+            coloricono=iconos[listado2]["descripcion"];
+        }
+    }
+    return coloricono;
+}
 
 function listadoseguimientos(result,dd) {
 
@@ -110,9 +119,10 @@ axios.get(url)
         console.log(response.data[i].created_at);
         console.log(response.data[i].tipo);
 
+       coloreicono= coloriconos(response.data[i].tipo);
 
         dato += ' <div class="timeline-item">'+
-                '<i class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>'+
+                coloreicono+
                 '<div class="timeline-item-info">'+
                 '<span class="text-info fw-bold mb-1 d-block">'+response.data[i].descripcion+'</span>'+
                 '<small>'+response.data[i].autor+'</small>'+
