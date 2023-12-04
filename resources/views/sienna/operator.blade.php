@@ -89,12 +89,12 @@ function maxid() {
               
 
         }
-        document.getElementById("casa").outerhtml = null;
+        document.getElementById("casa").innerHTML = null;
 
         document.getElementById("casa").outerhtml = sd;
-        //document.getElementById("tb").outerhtml = null;
+        document.getElementById("tb").innerHTML = null;
 
-        document.getElementById("tb").outerhtml = tt;
+        document.getElementById("tb").innerHTML = tt;
 
 
     })
