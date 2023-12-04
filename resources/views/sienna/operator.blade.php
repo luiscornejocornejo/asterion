@@ -231,11 +231,6 @@ axios.get(url)
 
               <!-- Start Content-->
             
-              <div class="d-flex justify-content-end mt-2">
-   <label for="buscar" class="me-2 mt-1 simpleinput">Buscar:</label>
-    <input class="form-control light-table-filter w-25 me-2" data-table="order-table" type="text" id="buscar">
-    
-</div>
                 <div class="container-fluid pt-2" id="casa">
                    
                     
