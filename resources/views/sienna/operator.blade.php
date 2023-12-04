@@ -33,6 +33,8 @@ function maxid() {
     .then(function (response) {
         // función que se ejecutará al recibir una respuesta
          
+        
+
         sd=' <table id="basic-datatable" class="table dt-responsive nowrap w-100 text-light">'+
                         '<thead>'+
                        '     <tr class="text-center bg-dark" >'+
@@ -89,10 +91,10 @@ function maxid() {
         }
         document.getElementById("casa").innerHTML = null;
 
-        document.getElementById("casa").innerHTML = sd;
+        document.getElementById("casa").outerhtml = sd;
         document.getElementById("tb").innerHTML = null;
 
-        document.getElementById("tb").innerHTML = tt;
+        document.getElementById("tb").outerhtml = tt;
 
 
     })
