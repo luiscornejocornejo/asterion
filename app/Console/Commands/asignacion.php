@@ -39,20 +39,21 @@ class asignacion extends Command
         foreach($os as $val){
 
             echo $val;
+            $sale = $this->asignacion($val);
+
 
         }
-        $sale = $this->asignacion();
 
         return 0;
     }
   
-    public function enhora($area){
+    public function enhora($merchant,$area){
         // Configura la zona horaria a la hora local
 
        // $area=$request->area;
 
         //$emp=empresa::find(1);
-        $query="select * from empresa where id=1";
+        $query="select * from ".$merchant.".empresa where id=1";
         $resultados = DB::connection('mysql2')->select($query);
 
         foreach($resultados as $emp){
@@ -67,7 +68,7 @@ class asignacion extends Command
         echo $diaSemana = date('l');
         //$cat=categoria::where('area','=',$area)->get();
 
-        $query2="select * from categoria where area='".$area."'";
+        $query2="select * from ".$merchant.".categoria where area='".$area."'";
         $cat = DB::connection('mysql2')->select($query2);
 
         foreach($cat as $val){
@@ -89,11 +90,11 @@ class asignacion extends Command
 
 
 }
-    public function asignacion()
+    public function asignacion($merchant)
     {
 
         $CONE=$this->conectar();
-        $query="select *  from siennatickets
+        $query="select *  from ".$merchant.".siennatickets
         where siennaestado not in('3','4')  
          and asignado='0'
         ";
@@ -105,9 +106,9 @@ class asignacion extends Command
              $area=$value->siennadepto;
              $tick=$value->id;
 
-             $enhora=$this->enhora($area);
+             $enhora=$this->enhora($merchant,$area);
              if($enhora){
-                $query2="select idusuario,(select count(*) from siennatickets s2  
+                $query2="select idusuario,(select count(*) from ".$merchant.".siennatickets s2  
                 where s2.asignado=s.idusuario and s2.siennaestado not in('3','4'))as cantidad from siennaloginxenioo s 
                 where login=1 and areas =".$area." and date(now())=date(created_at) group by idusuario order by cantidad limit 1";
                 $resultados2 = DB::connection('mysql2')->select($query2);
@@ -120,13 +121,13 @@ class asignacion extends Command
                 }
     
                 if($idusu<>0){
-                   echo  $query3="update siennatickets set asignado='".$idusu."' where id=".$tick."";
+                   echo  $query3="update ".$merchant.".siennatickets set asignado='".$idusu."' where id=".$tick."";
                    $resultados3 = DB::connection('mysql2')->select($query3);
 
     
                 }
              }else{
-                echo  $query3="update siennatickets set asignado='99999' where id=".$tick."";
+                echo  $query3="update ".$merchant.".siennatickets set asignado='99999' where id=".$tick."";
                 $resultados3 = DB::connection('mysql2')->select($query3);
             }
 
