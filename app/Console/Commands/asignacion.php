@@ -94,7 +94,7 @@ class asignacion extends Command
     {
 
         $CONE=$this->conectar();
-        $query="select *  from ".$merchant.".siennatickets
+       echo $query="select *  from ".$merchant.".siennatickets
         where siennaestado not in('3','4')  
          and asignado='0'
         ";
