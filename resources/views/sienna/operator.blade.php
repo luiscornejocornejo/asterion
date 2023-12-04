@@ -10,7 +10,7 @@ let estadoslista = {!! json_encode($estados,JSON_FORCE_OBJECT) !!};
 let iconos = {!! json_encode($iconos,JSON_FORCE_OBJECT) !!};
 
 
-identificadorIntervaloDeTiempo = setInterval(maxid, 60000);
+identificadorIntervaloDeTiempo = setInterval(maxid, 6000);
 
 
 function maxid() {
