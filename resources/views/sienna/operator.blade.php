@@ -1,5 +1,7 @@
 @include('facu.header2')
-
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
 <script type="text/javascript">
     (function(document) {
       'use strict';
@@ -39,6 +41,14 @@
       });
 
     })(document);
+
+    $(document).ready(function() {
+      $('#example').DataTable({
+        "language": {
+          "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
+        }
+      });
+    });
     </script>
 <script>
 
@@ -74,7 +84,7 @@ function maxid() {
          
         
 
-        sd=' <table  class="order-table table dt-responsive nowrap w-100 text-light">'+
+        sd=' <table id="example"  class="order-table table dt-responsive nowrap w-100 text-light">'+
                         '<thead>'+
                        '     <tr class="text-center bg-dark" >'+
                        '        <th class="text-light"><i></i>Ticket</th>'+
