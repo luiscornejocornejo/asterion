@@ -137,6 +137,8 @@ function maxid() {
         document.getElementById("tb").innerHTML = null;
 
         document.getElementById("tb").innerHTML = tt;
+        $('#example').dataTable();
+
 
 
     })
