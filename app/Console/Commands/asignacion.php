@@ -53,7 +53,7 @@ class asignacion extends Command
        // $area=$request->area;
 
         //$emp=empresa::find(1);
-        $query="select * from ".$merchant.".empresa where id=1";
+       echo $query="select * from ".$merchant.".empresa where id=1";
         $resultados = DB::connection('mysql2')->select($query);
 
         foreach($resultados as $emp){
