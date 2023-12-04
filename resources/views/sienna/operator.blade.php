@@ -3,6 +3,7 @@
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
 <script type="text/javascript">
+    /*
     (function(document) {
       'use strict';
 
@@ -40,7 +41,7 @@
         }
       });
 
-    })(document);
+    })(document);*/
 
     $(document).ready(function() {
       $('#example').DataTable({
@@ -84,7 +85,7 @@ function maxid() {
          
         
 
-        sd=' <table id="example"  class="order-table table dt-responsive nowrap w-100 text-light">'+
+        sd=' <table id="example"  class=" table dt-responsive nowrap w-100 text-light">'+
                         '<thead>'+
                        '     <tr class="text-center bg-dark" >'+
                        '        <th class="text-light"><i></i>Ticket</th>'+
