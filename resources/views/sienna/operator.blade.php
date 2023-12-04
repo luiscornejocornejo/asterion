@@ -92,7 +92,7 @@ function maxid() {
         document.getElementById("casa").outerhtml = null;
 
         document.getElementById("casa").outerhtml = sd;
-        document.getElementById("tb").outerhtml = null;
+        //document.getElementById("tb").outerhtml = null;
 
         document.getElementById("tb").outerhtml = tt;
 
