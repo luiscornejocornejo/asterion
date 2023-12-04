@@ -33,6 +33,23 @@ function maxid() {
     .then(function (response) {
         // función que se ejecutará al recibir una respuesta
         
+        sd=' <table id="basic-datatable" class="table dt-responsive nowrap w-100 text-light">'+
+                        '<thead>'+
+                       '     <tr class="text-center bg-dark" >'+
+                       '        <th class="text-light"><i></i>Ticket</th>'+
+                       '        <th class="text-light">Cliente</th>'+
+                       '          <th class="text-light">Area</th>'+
+                       '        <th class="text-light">Telefono</th>'+
+                       '        <th class="text-light">Creado</th>'+
+                       '        <th class="text-light">Estado</th>'+
+                       '        <th class="text-light">Acciones</th>'+
+                       '        <th class="text-light">Historial</th>'+
+                       '    </tr>'+
+                       ' </thead>'+
+                       ' <tbody id="tb">'+
+                       
+                       ' </tbody>'+
+                       ' </table>';
         
         document.getElementById("tb").innerHTML = null;
         tt = "";
@@ -71,6 +88,7 @@ function maxid() {
               
 
         }
+        document.getElementById("casa").innerHTML = sd;
 
         document.getElementById("tb").innerHTML = tt;
 
@@ -164,24 +182,8 @@ axios.get(url)
           <div class="content">
 
               <!-- Start Content-->
-                <div class="container-fluid pt-2" id="">
-                    <table id="basic-datatable2" class="table dt-responsive nowrap w-100 text-light">
-                        <thead>
-                            <tr class="text-center bg-dark" >
-                                <th class="text-light"><i></i>Ticket</th>
-                                <th class="text-light">Cliente</th>
-                                <th class="text-light">Area</th>
-                                <th class="text-light">Telefono</th>
-                                <th class="text-light">Creado</th>
-                                <th class="text-light">Estado</th>
-                                <th class="text-light">Acciones</th>
-                                <th class="text-light">Historial</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tb">
-                       
-                        </tbody>
-                    </table>
+                <div class="container-fluid pt-2" id="casa">
+                   
                     
                                                      
                 </div>
