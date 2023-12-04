@@ -34,6 +34,13 @@ class asignacion extends Command
     {
 
         echo "entro";
+        $os = array("infitelecom", "opticom", "soporte", "Linux");
+
+        foreach($os as $val){
+
+            echo $val;
+
+        }
         $sale = $this->asignacion();
 
         return 0;
