@@ -91,7 +91,7 @@ function maxid() {
         }
         document.getElementById("casa").innerHTML = null;
 
-        document.getElementById("casa").outerhtml = sd;
+        document.getElementById("casa").innerHTML = sd;
         document.getElementById("tb").innerHTML = null;
 
         document.getElementById("tb").innerHTML = tt;
