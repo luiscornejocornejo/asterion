@@ -7,6 +7,20 @@
   <!-- Vendor js -->
   <script src="assetsfacu/js/vendor.min.js"></script>
 
+
+
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+
+    <script type="text/javascript">
+   new DataTable('#example', {
+  "language" : {
+    "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
+  }
+}
+)
+    </script>
   <!-- Daterangepicker js -->
   <script src="assetsfacu/vendor/daterangepicker/moment.min.js"></script>
   <script src="assetsfacu/vendor/daterangepicker/daterangepicker.js"></script>
