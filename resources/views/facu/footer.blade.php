@@ -16,7 +16,6 @@
   <!-- Vector Map js -->
  
   <!-- Dashboard App js -->
-  <script src="assetsfacu/js/pages/demo.dashboard.js"></script>
 
   <!-- App js -->
   <script src="assetsfacu/js/app.min.js"></script>
