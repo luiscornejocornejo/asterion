@@ -51,7 +51,6 @@ function maxid() {
                        ' </tbody>'+
                        ' </table>';
         
-        document.getElementById("tb").innerHTML = null;
         tt = "";
         for (i = 0; i < response.data.length; i++) {
             console.log(response.data[i].id);
@@ -89,6 +88,7 @@ function maxid() {
 
         }
         document.getElementById("casa").innerHTML = sd;
+        document.getElementById("tb").innerHTML = null;
 
         document.getElementById("tb").innerHTML = tt;
 
