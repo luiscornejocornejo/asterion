@@ -137,7 +137,11 @@ function maxid() {
         document.getElementById("tb").innerHTML = null;
 
         document.getElementById("tb").innerHTML = tt;
-        $('#example').dataTable();
+        $('#example').dataTable({
+  "language" : {
+    "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
+  }
+});
 
 
 
