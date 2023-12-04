@@ -32,7 +32,7 @@ function maxid() {
     axios.get(url)
     .then(function (response) {
         // función que se ejecutará al recibir una respuesta
-        
+         
         sd=' <table id="basic-datatable" class="table dt-responsive nowrap w-100 text-light">'+
                         '<thead>'+
                        '     <tr class="text-center bg-dark" >'+
