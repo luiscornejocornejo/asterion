@@ -11,14 +11,7 @@
                             <div class="row">
                                 <div class="col-6">
                                     <!-- assignee -->
-                                    <p class="mb-1 text-muted">Asignado a:</p>
-                                    <div class="d-flex">
-                                        <div>
-                                            <span class="mt-1 font-14">
-                                                agent_sienna
-                                            </span>
-                                        </div>
-                                    </div>
+                                   
                                     <!-- end assignee -->
                                 </div> <!-- end col -->                                
                             </div> <!-- end row -->
