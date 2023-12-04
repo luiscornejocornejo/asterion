@@ -74,7 +74,6 @@ z-index: 999;}
     </style>
 
 <script src="sienna/js/2tickets.js"></script>
-<script src="sienna/js/datatable.js"></script>
 
 </head>
 <body class="show" onload="maxid()">
