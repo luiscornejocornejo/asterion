@@ -18,7 +18,7 @@ class siennaController extends Controller
   public function pruebamail(){
 
 
-    $mailbox = new PhpImap\Mailbox('{imap.gmail.com:995/imap/ssl}INBOX', 'support@suricata.la', 'Castillo1366+', __DIR__);
+    $mailbox = new ImapMailbox('{imap.gmail.com:995/imap/ssl}INBOX', 'support@suricata.la', 'Castillo1366+', __DIR__);
 
     $mailsIds = $mailbox->searchMailbox('UNSEEN');
 
