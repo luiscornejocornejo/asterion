@@ -21,10 +21,10 @@ class siennaController extends Controller
     $cm = new ClientManager('/var/www/laravel/config/imap.php');
 
     // or use an array of options instead
-    $cm = new ClientManager($options = []);
+    //$cm = new ClientManager($options = []);
     
     /** @var \Webklex\PHPIMAP\Client $client */
-    $client = $cm->account('account_identifier');
+    //$client = $cm->account('account_identifier');
     
     // or create a new instance manually
     $client = $cm->make([
