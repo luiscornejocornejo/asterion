@@ -27,6 +27,6 @@ class Asignar extends Command
      */
     public function handle()
     {
-        return "hola";
+        echo  "hola";
     }
 }
