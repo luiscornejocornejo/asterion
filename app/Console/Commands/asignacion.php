@@ -102,8 +102,8 @@ class asignacion extends Command
         $resultados = DB::connection('mysql2')->select($query);
 
         foreach($resultados as $value){
-            echo  $query3="update ".$merchant.".siennatickets set asignado='99999' where id=".$tick."";
-            $resultados3 = DB::connection('mysql2')->select($query3);
+          //  echo  $query3="update ".$merchant.".siennatickets set asignado='99999' where id=".$tick."";
+            //$resultados3 = DB::connection('mysql2')->select($query3);
              $area=$value->siennadepto;
              $tick=$value->id;
 
