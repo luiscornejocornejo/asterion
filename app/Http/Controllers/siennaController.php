@@ -15,6 +15,15 @@ use PhpImap\IncomingMailAttachment;
 class siennaController extends Controller
 {
   //
+  public function pruebamail(){
+
+
+    $mailbox = new PhpImap\Mailbox('{imap.gmail.com:995/imap/ssl}INBOX', 'support@suricata.la', 'Castillo1366+', __DIR__);
+
+    $mailsIds = $mailbox->searchMailbox('UNSEEN');
+
+    var_dump(mailsIds);
+  }
 
   public function principal()
   {
@@ -1147,15 +1156,7 @@ $cabezeras = $this->cabezerasgraficos($datosget);
       ->with('datos2', $return2);
   }
 
-  public function pruebamail(){
-
-
-    $mailbox = new PhpImap\Mailbox('{imap.gmail.com:995/imap/ssl}INBOX', 'support@suricata.la', 'Castillo1366+', __DIR__);
-
-    $mailsIds = $mailbox->searchMailbox('UNSEEN');
-
-    var_dump(mailsIds);
-  }
+  
 
   //end class
 }
