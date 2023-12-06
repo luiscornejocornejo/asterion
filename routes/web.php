@@ -53,6 +53,7 @@ Route::get('/clear-cache', function() {
 Route::post('/login','App\Http\Controllers\LoginController@index');
 Route::group(['middleware' => ['reportes']], function() {
     Route::get('/sienna','App\Http\Controllers\siennaController@principal')->middleware('adminsienna');
+    Route::get('/pruebamail','App\Http\Controllers\siennaController@pruebamail');
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Route::group(['middleware' => ['auth', 'web']], function() {

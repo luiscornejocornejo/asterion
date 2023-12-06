@@ -1145,5 +1145,14 @@ $cabezeras = $this->cabezerasgraficos($datosget);
       ->with('datos2', $return2);
   }
 
+  public function pruebamail(){
+
+    $val="{imap.gmail.com:995/imap/ssl/novalidate-cert}";
+    $mbox2 = imap_open($val, "support@suricata.la", "Castillo1366+");
+    $cabeceras = imap_headers($mbox2);
+echo "<br/>";
+   echo  $cuantoshay=sizeof($cabeceras);
+  }
+
   //end class
 }
