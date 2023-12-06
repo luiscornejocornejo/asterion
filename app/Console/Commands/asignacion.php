@@ -99,7 +99,7 @@ class asignacion extends Command
          and asignado='0'
         ";
 
-        $$resultados = DB::connection('mysql2')->select($query);
+        $resultados = DB::connection('mysql2')->select($query);
 
         foreach($resultados as $value){
           //  echo  $query3="update ".$merchant.".siennatickets set asignado='99999' where id=".$tick."";
