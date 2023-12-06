@@ -1147,11 +1147,12 @@ $cabezeras = $this->cabezerasgraficos($datosget);
 
   public function pruebamail(){
 
-    $val="{imap.gmail.com:995/imap/ssl/novalidate-cert}";
-    $mbox2 = imap_open($val, "support@suricata.la", "Castillo1366+");
-    $cabeceras = imap_headers($mbox2);
-echo "<br/>";
-   echo  $cuantoshay=sizeof($cabeceras);
+
+    $mailbox = new PhpImap\Mailbox('{imap.gmail.com:995/imap/ssl}INBOX', 'support@suricata.la', 'Castillo1366+', __DIR__);
+
+    $mailsIds = $mailbox->searchMailbox('UNSEEN');
+
+    var_dump(mailsIds);
   }
 
   //end class
