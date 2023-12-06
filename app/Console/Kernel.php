@@ -16,7 +16,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
-        $schedule->command('semanal:asignacion')->cron('*/2 * * * *')->emailOutputOnFailure('kayser1712@gmail.com');
+        $schedule->command('semanal:asignacion')->cron('*/1 * * * *')->emailOutputOnFailure('kayser1712@gmail.com');
         //$schedule->command('semanal:asignacionsoporte')->cron('*/2 * * * *')->emailOutputOnFailure('kayser1712@gmail.com');
 
     }
