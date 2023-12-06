@@ -9,7 +9,9 @@ use App\Models\base;
 use App\Models\tipoparametro;
 use Illuminate\Support\Facades\DB;
 
-
+use PhpImap\Mailbox as ImapMailbox;
+use PhpImap\IncomingMail;
+use PhpImap\IncomingMailAttachment;
 class siennaController extends Controller
 {
   //
