@@ -11,7 +11,7 @@ class Asignar extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'command:pp';
 
     /**
      * The console command description.

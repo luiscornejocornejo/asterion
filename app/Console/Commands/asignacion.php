@@ -23,7 +23,7 @@ class asignacion extends Command
      *
      * @var string
      */
-    protected $description = ' asignacion';
+    protected $description = 'asignacion';
 
     /**
      * Execute the console command.
