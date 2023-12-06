@@ -17,7 +17,7 @@ class siennaController extends Controller
   public function pruebamail(){
 
 
-    $mailbox = new PhpImap\Mailbox('{imap.gmail.com:995/imap/ssl}INBOX', 'support@suricata.la', 'Castillo1366+', __DIR__);
+    //$mailbox = new PhpImap\Mailbox('{imap.gmail.com:995/imap/ssl}INBOX', 'support@suricata.la', 'Castillo1366+', __DIR__);
     $cm = new ClientManager('/var/www/laravel/config/imap.php');
 
     // or use an array of options instead
