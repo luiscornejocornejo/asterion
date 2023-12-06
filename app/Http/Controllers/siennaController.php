@@ -9,20 +9,41 @@ use App\Models\base;
 use App\Models\tipoparametro;
 use Illuminate\Support\Facades\DB;
 
-use PhpImap\Mailbox as ImapMailbox;
-use PhpImap\IncomingMail;
-use PhpImap\IncomingMailAttachment;
+use Webklex\PHPIMAP\ClientManager;
+use Webklex\PHPIMAP\Client;
 class siennaController extends Controller
 {
   //
   public function pruebamail(){
 
 
-    $mailbox = new ImapMailbox('{imap.gmail.com:995/imap/ssl}INBOX', 'support@suricata.la', 'Castillo1366+', __DIR__);
+    $mailbox = new PhpImap\Mailbox('{imap.gmail.com:995/imap/ssl}INBOX', 'support@suricata.la', 'Castillo1366+', __DIR__);
+    $cm = new ClientManager('/var/www/laravel/config/imap.php');
 
-    $mailsIds = $mailbox->searchMailbox('UNSEEN');
-
-    var_dump(mailsIds);
+    // or use an array of options instead
+    $cm = new ClientManager($options = []);
+    
+    /** @var \Webklex\PHPIMAP\Client $client */
+    $client = $cm->account('account_identifier');
+    
+    // or create a new instance manually
+    $client = $cm->make([
+        'host'          => 'imap.gmail.com',
+        'port'          => 995,
+        'encryption'    => 'ssl',
+        'validate_cert' => true,
+        'username'      => 'support@suricata.la',
+        'password'      => 'Castillo1366+',
+        'protocol'      => 'imap'
+    ]);
+    
+    //Connect to the IMAP Server
+    $client->connect();
+    
+    //Get all Mailboxes
+    /** @var \Webklex\PHPIMAP\Support\FolderCollection $folders */
+    $folders = $client->getFolders();
+    var_dump($folders);
   }
 
   public function principal()
