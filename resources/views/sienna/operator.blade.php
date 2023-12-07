@@ -98,7 +98,7 @@ function maxid() {
         
         tt = "";
         for (i = 0; i < response.data.length; i++) {
-            console.log(response.data[i].id);
+            console.log(response.data[i].ticketid);
             d="";
 
 
