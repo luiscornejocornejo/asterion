@@ -51,8 +51,9 @@ let sourcelista = {!! json_encode($source,JSON_FORCE_OBJECT) !!};
 let estadoslista = {!! json_encode($estados,JSON_FORCE_OBJECT) !!};
 let iconos = {!! json_encode($iconos,JSON_FORCE_OBJECT) !!};
 
+var frecuencia =<?php echo session('frecuencia');?>;
 
-identificadorIntervaloDeTiempo = setInterval(maxid, 6000);
+identificadorIntervaloDeTiempo = setInterval(maxid, frecuencia);
 
 
 function maxid() {

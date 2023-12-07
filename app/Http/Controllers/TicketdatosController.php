@@ -390,6 +390,14 @@ class TicketdatosController extends Controller
          and a.siennadepto='".$areas."'
         ";
 
+
+        $queryempresa="select * from empresa";
+        $resultadosempresa = DB::select($queryempresa);
+        foreach($resultadosempresa as $val){
+            $frecuencia=$val->frecuencia;
+        }
+        session(['frecuencia' => $frecuencia]);
+
         $resultados = DB::select($query);
 
         $maxid=0; 
