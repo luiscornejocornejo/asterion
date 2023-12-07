@@ -101,6 +101,13 @@ $resultados = DB::select($query);
 
     <?php   }
     ?>
+     <li class="side-nav-item position-absolute fixed-bottom background-buttons">
+        <a  class="side-nav-link background-buttons">
+            <i class="uil-exit"></i>
+            <span><?php echo session('nombreusuario');?> </span>
+        </a>
+    </li>
+
     <li class="side-nav-item position-absolute fixed-bottom background-buttons">
         <a target='_self'  href="/salir" class="side-nav-link background-buttons">
             <i class="uil-exit"></i>
