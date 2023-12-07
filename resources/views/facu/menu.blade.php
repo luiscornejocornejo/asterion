@@ -56,6 +56,12 @@ $resultados = DB::select($query);
 
     <!--- Sidemenu -->
     <ul class="side-nav">
+    <li class="side-nav-item background-buttons">
+        <a  class="side-nav-link hovering-pan">
+            <i class="uil-exit"></i>
+            <span><?php echo session('nombreusuario');?> </span>
+        </a>
+    </li>
       <li class="side-nav-item mt-2 background-buttons">
         <a href="/"  class="side-nav-link hovering-pan ">
             <i class="uil-dashboard"></i>
@@ -101,12 +107,7 @@ $resultados = DB::select($query);
 
     <?php   }
     ?>
-     <li class="side-nav-item background-buttons">
-        <a  class="side-nav-link background-buttons">
-            <i class="uil-exit"></i>
-            <span>a<?php echo session('nombreusuario');?> </span>
-        </a>
-    </li>
+  
 
     <li class="side-nav-item position-absolute fixed-bottom background-buttons">
         <a target='_self'  href="/salir" class="side-nav-link background-buttons">
