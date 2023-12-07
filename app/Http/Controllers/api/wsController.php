@@ -422,6 +422,8 @@ class wsController extends Controller
         where a.siennaestado not in('3','4')  
          and a.asignado='99999'
          and a.siennadepto='".$areas."'
+
+         order by a.id desc
         ";
 
         $resultados = DB::select($query);
