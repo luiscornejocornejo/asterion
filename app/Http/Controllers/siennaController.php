@@ -38,12 +38,19 @@ class siennaController extends Controller
     ]);
     
     //Connect to the IMAP Server
-    $client->connect();
+
+    try {
+      $client->connect();
+      $folders = $client->getFolders();
+      var_dump($folders);
+
+    } catch (\Throwable $th) {
+      dump($th);
+    }
     
     //Get all Mailboxes
     /** @var \Webklex\PHPIMAP\Support\FolderCollection $folders */
-    $folders = $client->getFolders();
-    var_dump($folders);
+  
   }
 
   public function principal()
