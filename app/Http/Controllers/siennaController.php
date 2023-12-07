@@ -42,7 +42,7 @@ class siennaController extends Controller
     try {
       $client->connect();
       $folders = $client->getFolders();
-      var_dump($folders);
+      print_r($folders);
 
     } catch (\Throwable $th) {
       dump($th);
