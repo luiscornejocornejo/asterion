@@ -56,12 +56,7 @@ $resultados = DB::select($query);
 
     <!--- Sidemenu -->
     <ul class="side-nav">
-    <li class="side-nav-item background-buttons">
-        <a  class="side-nav-link hovering-pan">
-            <i class="uil-exit"></i>
-            <span><?php echo session('nombreusuario');?> </span>
-        </a>
-    </li>
+   
       <li class="side-nav-item mt-2 background-buttons">
         <a href="/"  class="side-nav-link hovering-pan ">
             <i class="uil-dashboard"></i>
@@ -107,14 +102,23 @@ $resultados = DB::select($query);
 
     <?php   }
     ?>
-  
 
-    <li class="side-nav-item position-absolute fixed-bottom background-buttons">
-        <a target='_self'  href="/salir" class="side-nav-link background-buttons">
-            <i class="uil-exit"></i>
-            <span> Cerrar sesión </span>
-        </a>
-    </li>
+
+    <div class="position-absolute fixed-bottom">
+                <li class="side-nav-item background-buttons">
+                    <a data-bs-toggle="collapse" href="#" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link background-buttons">
+                        <i class="uil-user"></i>
+                        <span> <?php echo session('nombreusuario');?> </span>
+                    </a>    
+                </li>
+                  <li class="side-nav-item background-buttons">
+                      <a data-bs-toggle="collapse" href="/salir" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link background-buttons">
+                          <i class="uil-exit"></i>
+                          <span> Cerrar sesión </span>
+                      </a>    
+                  </li>
+    </div>
+
     <?php
 if ($categoria == 1) {?>
 
