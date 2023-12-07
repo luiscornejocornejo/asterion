@@ -107,7 +107,7 @@ function maxid() {
             colordepto=colordeptof(response.data[i].iddepto);
             colorestado=colorestadof(response.data[i].siennaestado);
             if(response.data[i].asignado !='99999'){
-                d="disabled";
+                d="d-none";
             }
             tt += '<tr class="text-center">' +
                 ' <td><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</td>' +
@@ -119,7 +119,7 @@ function maxid() {
 
                 ' <td>'+
                 
-                '<button '+d+' onclick="pedir(`' + response.data[i].ticketid + '`)"  class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><i class="mdi mdi-account-voice" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="mb-1" data-bs-title="Reclamar ticket."></i></button> ' +
+                '<button  onclick="pedir(`' + response.data[i].ticketid + '`)"  class="btn btn-success '+d+'" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><i class="mdi mdi-account-voice" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="mb-1" data-bs-title="Reclamar ticket."></i></button> ' +
                 '<button onclick="area(`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].user_id + '`)"  class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><i class="mdi mdi-account-group" data-bs-toggle="tooltip" data-bs-placement="top"     data-bs-custom-class="mb-1" data-bs-title="Asignar departamento."></i> </button>' +
                 '<button onclick="estado2(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm"><i class="mdi mdi-flag" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Cambiar estado."></i> </button> ' +
 
