@@ -29,9 +29,9 @@ class siennaController extends Controller
     // or create a new instance manually
     $client = $cm->make([
         'host'          => 'imap.gmail.com',
-        'port'          => 995,
+        'port'          => 993,
         'encryption'    => 'ssl',
-        'validate_cert' => true,
+        'validate_cert' => false,
         'username'      => 'support@suricata.la',
         'password'      => 'Castillo1366+',
         'protocol'      => 'imap'
