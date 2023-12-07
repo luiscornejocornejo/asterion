@@ -7,7 +7,7 @@
   <meta content="Coderthemes" name="author">
 
   <!-- App favicon -->
-  <link rel="shortcut icon" href="assetsfacu/images/favicom.png">
+  <link rel="shortcut icon" href="assetsfacu/images/favicom_suricata.png">
 
   <!-- Daterangepicker css -->
   <link rel="stylesheet" href="assetsfacu/vendor/daterangepicker/daterangepicker.css">
