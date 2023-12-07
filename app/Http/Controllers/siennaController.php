@@ -18,10 +18,10 @@ class siennaController extends Controller
 
 
     //$mailbox = new PhpImap\Mailbox('{imap.gmail.com:995/imap/ssl}INBOX', 'support@suricata.la', 'Castillo1366+', __DIR__);
-    $cm = new ClientManager('/var/www/laravel/config/imap.php');
+   // $cm = new ClientManager('/var/www/laravel/config/imap.php');
 
     // or use an array of options instead
-    //$cm = new ClientManager($options = []);
+    $cm = new ClientManager($options = []);
     
     /** @var \Webklex\PHPIMAP\Client $client */
     //$client = $cm->account('account_identifier');
