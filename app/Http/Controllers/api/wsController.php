@@ -423,7 +423,7 @@ class wsController extends Controller
          and a.asignado='99999'
          and a.siennadepto='".$areas."'
 
-         order by ticketid asc
+         order by ticketid desc
         ";
 
         $resultados = DB::select($query);
