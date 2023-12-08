@@ -43,9 +43,16 @@ class siennaController extends Controller
       $client->connect();
       $folders = $client->getFolders();
       print_r($folders);
+      foreach($folders as $folder){
+
+        //Get all Messages of the current Mailbox $folder
+        /** @var \Webklex\PHPIMAP\Support\MessageCollection $messages */
+        $messages = $folder->messages()->all()->get();
+        dump($messages);
+      }
 
     } catch (\Throwable $th) {
-      dump($th);
+      print_r($th);
     }
     
     //Get all Mailboxes
