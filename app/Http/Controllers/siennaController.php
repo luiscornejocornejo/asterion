@@ -47,9 +47,7 @@ class siennaController extends Controller
 
       $folderluis=$client->getFolderByName("luis");
       
-      $folderluis->idle(function($message){
-        echo "New message with the subject '".$message->subject."' received\n";
-    }, $timeout = 1200, $auto_reconnect = false);
+     
       $messages=$folderluis->query()->all()->get();
       foreach ($messages as $message) {
         echo $message->getSubject();
