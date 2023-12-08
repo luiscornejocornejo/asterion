@@ -41,25 +41,23 @@ class siennaController extends Controller
 
     try {
       $client->connect();
-      $folders = $client->getFolders();
-     // print_r($folders);
-      foreach($folders as $folder){
 
-        //Get all Messages of the current Mailbox $folder
-        /** @var \Webklex\PHPIMAP\Support\MessageCollection $messages */
 
-        dump($folder->examine());
-        /*
-          $messages = $folder->messages()->all()->get();
-          foreach($messages as $message){
-            echo $message->getSubject().'<br />';
-           // echo 'Attachments: '.$message->getAttachments()->count().'<br />';
-            //echo $message->getHTMLBody();
-    
-            //Move the current Message to 'INBOX.read'
-        
-          }*/
+
+
+      $folderluis=$client->getFolderByName("luis");
+      
+      $messages=$folderluis->query()->all()->get();
+      foreach ($messages as $message) {
+        echo $message->getSubject();
+        echo $message->getHTMLBody();
       }
+      $client->disconnect();
+     
+
+
+
+   
 
     } catch (\Throwable $th) {
       print_r($th);
@@ -624,7 +622,7 @@ class siennaController extends Controller
 
               }
     
-          } catch (Throwable $e) {
+          } catch (\Throwable $e) {
           
               // Podemos hacer algo aquí si ocurre una excepción
           
