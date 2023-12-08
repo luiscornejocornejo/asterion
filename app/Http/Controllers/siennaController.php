@@ -54,7 +54,7 @@ class siennaController extends Controller
         echo "<hr>";
        // echo $message->getHTMLBody();
        //crear ticket en sienna
-       $message = $message->move($folder_path = "INBOX/luisleidos");
+       $message = $message->move($folder_path = "luisleidos");
 
       }
       $client->disconnect();
