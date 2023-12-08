@@ -47,6 +47,9 @@ class siennaController extends Controller
 
         //Get all Messages of the current Mailbox $folder
         /** @var \Webklex\PHPIMAP\Support\MessageCollection $messages */
+
+        dump($folder->examine());
+        /*
           $messages = $folder->messages()->all()->get();
           foreach($messages as $message){
             echo $message->getSubject().'<br />';
@@ -55,7 +58,7 @@ class siennaController extends Controller
     
             //Move the current Message to 'INBOX.read'
         
-          }
+          }*/
       }
 
     } catch (\Throwable $th) {
