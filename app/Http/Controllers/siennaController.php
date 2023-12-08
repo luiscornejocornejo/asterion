@@ -52,6 +52,9 @@ class siennaController extends Controller
       foreach ($messages as $message) {
         echo $message->getSubject();
        // echo $message->getHTMLBody();
+       //crear ticket en sienna
+       $message = $message->move($folder_path = "INBOX/luisleidos");
+
       }
       $client->disconnect();
      
