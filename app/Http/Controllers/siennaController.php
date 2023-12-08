@@ -53,7 +53,7 @@ class siennaController extends Controller
       $messages=$folderluis->query()->all()->get();
       foreach ($messages as $message) {
         echo $message->getSubject();
-        echo $message->getHTMLBody();
+       // echo $message->getHTMLBody();
       }
       $client->disconnect();
      
