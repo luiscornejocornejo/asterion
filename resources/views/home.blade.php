@@ -26,7 +26,7 @@ if($_GET['fecha']=="dia"){
 }
 if($_GET['fecha']=="semana"){
 
-    $queryfecha="created_at BETWEEN date_add(NOW(), INTERVAL -7 DAY)";
+    $queryfecha="created_at BETWEEN date_add(DATE(NOW()), INTERVAL -7 DAY)";
 }
 $listamensual=array();
 
