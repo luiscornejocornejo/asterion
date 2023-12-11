@@ -20,6 +20,13 @@ if (isset($_SERVER['HTTP_HOST'])) {
 $subdomain_tmp =trim($subdomain_tmp );
 
 $listamensual=array();
+
+$query="select count(*) as cantidaduser  from siennaloginxenioo where login=1 and DATE(created_at) >= DATE(NOW()) ";
+$resultados = DB::select($query);
+$cantidaduser=0;
+foreach($resultados as $val){
+    $cantidaduser=$val->cantidaduser;
+}
 ?>
       <!-- ========== Left Sidebar End ========== -->
 
@@ -40,7 +47,7 @@ $listamensual=array();
                                         <div class="card-body">
                                             <i class='uil uil-users-alt float-end'></i>
                                             <h6 class="text-uppercase mt-0">Users</h6>
-                                            <h2 class="my-2" id="active-users-count2"><?php echo  25;//$userpayers;?></h2>
+                                            <h2 class="my-2" id="active-users-count2"><?php echo  $cantidaduser;?></h2>
                                             <p class="mb-0 text-muted">
                                                 <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span></span>
                                                 <span class="text-nowrap">  week</span>  
