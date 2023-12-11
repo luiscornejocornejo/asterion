@@ -52,7 +52,7 @@ Route::get('/clear-cache', function() {
 });
 Route::post('/login','App\Http\Controllers\LoginController@index');
 Route::group(['middleware' => ['reportes']], function() {
-    Route::get('/sienna','App\Http\Controllers\siennaController@principal')->middleware('adminsienna');
+    Route::get('/siennai','App\Http\Controllers\siennaController@principal')->middleware('adminsienna');
     Route::get('/pruebamail','App\Http\Controllers\siennaController@pruebamail');
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -73,7 +73,7 @@ Route::get('/logeado', function () {
 });
 
 
-Route::post('/siennai','App\Http\Controllers\siennaController@servicio')->middleware('adminsienna');
+Route::post('/sienna','App\Http\Controllers\siennaController@servicio')->middleware('adminsienna');
 Route::get('/serviciocreate','App\Http\Controllers\siennaController@serviciocreate')->middleware('adminsienna');
 Route::post('/serviciocreate','App\Http\Controllers\siennaController@serviciocreatepost')->middleware('adminsienna');
 Route::get('/siennamodificar','App\Http\Controllers\siennaController@siennamodificarput')->middleware('adminsienna');
