@@ -1,87 +1,13 @@
-@include('pp.header')
-<style>
-    @media only screen and (max-width: 760px),
-    (min-device-width: 768px) and (max-device-width: 1024px) {
+@include('facu.header2')
 
-        /* Force table to not be like tables anymore */
-        table,
-        thead,
-        tbody,
-        th,
-        td,
-        tr {
-            display: block;
-        }
+  <!-- Begin page -->
+  <div class="wrapper" >
 
-        /* Hide table headers (but not display: none;, for accessibility) */
-        thead tr {
-            position: absolute;
-            top: -9999px;
-            left: -9999px;
-            padding: 2rem 1rem !important;
-        }
-
-        tr {
-            margin: 1rem 1rem 1rem 1rem !important;
-        }
-
-        tr:nth-child(odd) {
-            background: #ccc;
-        }
-
-        td {
-            /* Behave  like a "row" */
-            border: none;
-            border-bottom: 1px solid #eee;
-            position: relative;
-            padding-left: 50%;
-        }
-
-        td:before {
-            /* Now like a table header */
-            position: absolute;
-            /* Top/left values mimic padding */
-            top: 0;
-            left: 6px;
-            width: 45%;
-            padding-right: 10px;
-            white-space: nowrap;
-        }
+      <!-- ========== Left Sidebar Start ========== -->
+      @include('facu.menu')
 
 
-        <?php $cant = 0;
-        if (isset($datos)) { ?>td:nth-of-type(0):before {
-            content: "id"
-        }
-
-        td:nth-of-type(1):before {
-            content: "nombre"
-        }
-
-        td:nth-of-type(2):before {
-            content: "base"
-        }
-
-
-
-        td:nth-of-type(3):before {
-            content: "Modificar"
-        }
-
-        ;
-
-        td:nth-of-type(4):before {
-            content: "eliminar"
-        }
-
-        ;
-
-        <?php } ?>
-    }
-</style>
-<div id="principal">
-    <div class="mx-auto" style="width: 1000px;margin-top: 70px;">
-
+      <div class="content-page" style="padding: 0!important;">
         @if ($message = Session::get('success'))
         <div class="alert alert-success alert-dismissible fade
                             show" role="alert">
@@ -229,4 +155,4 @@
 </div>
 </div>
 <br><br><br>
-@include('pp.footer')
+@include('facu.footer')
