@@ -73,7 +73,7 @@ Route::get('/logeado', function () {
 });
 
 
-Route::post('/sienna','App\Http\Controllers\siennaController@servicio')->middleware('adminsienna');
+Route::post('/siennai','App\Http\Controllers\siennaController@servicio')->middleware('adminsienna');
 Route::get('/serviciocreate','App\Http\Controllers\siennaController@serviciocreate')->middleware('adminsienna');
 Route::post('/serviciocreate','App\Http\Controllers\siennaController@serviciocreatepost')->middleware('adminsienna');
 Route::get('/siennamodificar','App\Http\Controllers\siennaController@siennamodificarput')->middleware('adminsienna');
