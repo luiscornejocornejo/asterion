@@ -131,7 +131,7 @@ if ($categoria == 1) {?>
                 <div class="collapse" id="sidebarDashboards">
                     <ul class="side-nav-second-level">
                         <li>
-                        <a target="_self" href="/sienna">
+                        <a target="_self" href="/siennai">
                                     <span id="sienna" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Sienna</span>
                                 </a>
                         </li>
