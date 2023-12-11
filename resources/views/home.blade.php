@@ -27,6 +27,21 @@ $cantidaduser=0;
 foreach($resultados as $val){
     $cantidaduser=$val->cantidaduser;
 }
+
+$query="select count(*) as cantidadtickets  from siennatickets where siennaestado=1 and DATE(created_at) >= DATE(NOW()) ";
+$resultados2 = DB::select($query);
+$cantidadtickets=0;
+foreach($resultados2 as $val){
+    $cantidadtickets=$val->cantidadtickets;
+}
+
+
+$query="select count(*) as cantidadtickets2  from siennatickets where siennaestado=4 and DATE(created_at) >= DATE(NOW()) ";
+$resultados2 = DB::select($query);
+$cantidadtickets2=0;
+foreach($resultados2 as $val){
+    $cantidadtickets2=$val->cantidadtickets2;
+}
 ?>
       <!-- ========== Left Sidebar End ========== -->
 
@@ -50,7 +65,7 @@ foreach($resultados as $val){
                                             <h2 class="my-2" id="active-users-count2"><?php echo  $cantidaduser;?></h2>
                                             <p class="mb-0 text-muted">
                                                 <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span></span>
-                                                <span class="text-nowrap">  week</span>  
+                                                <span class="text-nowrap">  day</span>  
                                             </p>
                                         </div> <!-- end card-body-->
                                     </div>
@@ -60,10 +75,15 @@ foreach($resultados as $val){
                                         <div class="card-body">
                                             <i class='uil uil-window-restore float-end'></i>
                                             <h6 class="text-uppercase mt-0">Tickets </h6>
-                                            <h2 class="my-2" id="active-views-count2"><?php echo 22;// $cobd24;?></h2>
+                                            <h2 class="my-2" id="active-views-count2"><?php echo $cantidadtickets;?></h2>
                                             <p class="mb-0 text-muted">
                                                 <span class="text-danger me-2"><span class="mdi mdi-arrow-down-bold"></span> </span>
-                                                <span class="text-nowrap"> day</span>
+                                                <span class="text-nowrap"> open</span>
+                                            </p>
+                                            <h2 class="my-2" id="active-views-count2"><?php echo $cantidadtickets2;?></h2>
+                                            <p class="mb-0 text-muted">
+                                                <span class="text-danger me-2"><span class="mdi mdi-arrow-down-bold"></span> </span>
+                                                <span class="text-nowrap"> close</span>
                                             </p>
                                         </div> <!-- end card-body-->
                                     </div>
