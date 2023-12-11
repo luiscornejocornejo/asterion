@@ -50,7 +50,7 @@
                     <a class="btn btn-primary" href="/serviciocreate?id={{$id}}" role="button">Nuevo</a>
                     <div class="table-responsive">
 
-                        <table role="table" id="datatable" class="table table-bordered dt-responsive nowrap w-100">
+                        <table role="table" id="example" class="table table-bordered dt-responsive nowrap w-100">
                             <thead role="rowgroup" class="table-success">
                                 <tr role="row">
                                     <th role="columnheader">id</th>
