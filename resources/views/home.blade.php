@@ -19,16 +19,25 @@ if (isset($_SERVER['HTTP_HOST'])) {
 }
 $subdomain_tmp =trim($subdomain_tmp );
 
+
+if($_GET['fecha']=="dia"){
+
+    $queryfecha="DATE(created_at) >= DATE(NOW())";
+}
+if($_GET['fecha']=="semana"){
+
+    $queryfecha="created_at BETWEEN date_add(NOW(), INTERVAL -7 DAY)";
+}
 $listamensual=array();
 
-$query="select count(*) as cantidaduser  from siennaloginxenioo where login=1 and DATE(created_at) >= DATE(NOW()) ";
+$query="select count(*) as cantidaduser  from siennaloginxenioo where login=1 and  ".$queryfecha;
 $resultados = DB::select($query);
 $cantidaduser=0;
 foreach($resultados as $val){
     $cantidaduser=$val->cantidaduser;
 }
 
-$query="select count(*) as cantidadtickets  from siennatickets where siennaestado=1 and DATE(created_at) >= DATE(NOW()) ";
+$query="select count(*) as cantidadtickets  from siennatickets where siennaestado=1 and  ".$queryfecha;
 $resultados2 = DB::select($query);
 $cantidadtickets=0;
 foreach($resultados2 as $val){
@@ -36,7 +45,7 @@ foreach($resultados2 as $val){
 }
 
 
-$query="select count(*) as cantidadtickets2  from siennatickets where siennaestado=4 and DATE(created_at) >= DATE(NOW()) ";
+$query="select count(*) as cantidadtickets2  from siennatickets where siennaestado=4 and  ".$queryfecha;
 $resultados2 = DB::select($query);
 $cantidadtickets2=0;
 foreach($resultados2 as $val){
