@@ -2,7 +2,7 @@
 
 
 <?php
-$query="select count(*) as cantidaduser  from siennaloginxenioo where login=1 and  ".$queryfecha;
+$query="select count(*) as cantidaduser  from siennaloginxenioo where login=1 and  DATE(created_at) >= DATE(NOW())";
 $resultados = DB::select($query);
 $cantidaduser=0;
 foreach($resultados as $val){
