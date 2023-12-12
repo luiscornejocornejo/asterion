@@ -88,21 +88,18 @@ class siennaController extends Controller
     echo   $query1="
 
 
-    CREATE TABLE IF NOT EXISTS  ".$val->Database.".siennaseguimientos (
+    CREATE TABLE IF NOT EXISTS  ".$val->Database.".siennasource (
       id int auto_increment NOT NULL,
-      ticket int NOT NULL,
-      logo varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
-      descripcion text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
-      autor varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-      created_at datetime NULL,
-      updated_at datetime NULL,
-      tipo varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+      nombre varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+      svg text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+      colore varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
       CONSTRAINT `PRIMARY` PRIMARY KEY (id)
     )
     ENGINE=InnoDB
     DEFAULT CHARSET=utf8mb4
     COLLATE=utf8mb4_0900_ai_ci
     COMMENT='';
+    
     ";
       $resultados1 = DB::select($query1);
 
