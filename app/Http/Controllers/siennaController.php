@@ -87,7 +87,7 @@ class siennaController extends Controller
       }
     echo   $query1="
 
-    INSERT INTO ".$val->Database."..zonahoraria (nombre) VALUES
+    INSERT INTO ".$val->Database.".zonahoraria (nombre) VALUES
     ('America/Argentina/Buenos_Aires'),
     ('America/Mexico_City'),
     ('America/Lima');
