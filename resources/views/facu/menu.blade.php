@@ -73,9 +73,20 @@ $resultados = DB::select($query);
                 </li>
     
 
-    
+    <?php
+     $subdomain_tmp = 'localhost';
+     if (isset($_SERVER['HTTP_HOST'])) {
+         $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+         $subdomain_tmp =  array_shift($domainParts);
+     } elseif (isset($_SERVER['SERVER_NAME'])) {
+         $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+         $subdomain_tmp =  array_shift($domainParts);
+     }
+
+     if($subdomain_tmp =="infitelecom"){
+     ?>
    
-    <li class="side-nav-item background-buttons">
+                <li class="side-nav-item background-buttons">
                     <a  href="/operator"  class="side-nav-link hovering-pan ">
                         <i class="uil-ticket"></i>
                         <span> Tickets </span>
@@ -103,25 +114,11 @@ $resultados = DB::select($query);
 
                 
     <?php
-
-    if ($categoria == 10) {?>
+     }
+    ?>
 
             
-                <li class="side-nav-item background-buttons">
-                    <a  href="/siennacrearusuarios"  class="side-nav-link hovering-pan ">
-                        <i class="uil uil-comment-message"></i>
-                        <span> Crear Usuarios </span>
-                    </a>
-                </li>
-                <li class="side-nav-item background-buttons">
-                    <a  href="/ticketssienna"  class="side-nav-link hovering-pan ">
-                        <i class="uil uil-comment-message"></i>
-                        <span> Tickets  </span>
-                    </a>
-                </li>
-
-    <?php   }
-    ?>
+          
 
 
     <div class="position-absolute fixed-bottom">
