@@ -88,16 +88,10 @@ class siennaController extends Controller
     echo   $query1="
 
 
-    CREATE TABLE IF NOT EXISTS  ".$val->Database.".iconostipo (
-      id int auto_increment NOT NULL,
-      descripcion varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
-      CONSTRAINT `PRIMARY` PRIMARY KEY (id)
-    )
-    ENGINE=InnoDB
-    DEFAULT CHARSET=utf8mb4
-    COLLATE=utf8mb4_0900_ai_ci
-    COMMENT='';
-    
+   
+
+    ALTER TABLE ".$val->Database.".users ADD tipousers SMALLINT NULL;
+
     
     ";
       $resultados1 = DB::select($query1);
