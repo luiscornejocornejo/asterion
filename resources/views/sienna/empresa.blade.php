@@ -12,7 +12,7 @@
 
               <!-- Start Content-->
                 <div class="container pt-5">
-                 <form action="/datosempresa" method="post">
+                 <form action="/empresadatos" method="post">
 
                  frecuencia:<input type="number" name="frecuencia">
                  zona:<input type="text" name="zona">
