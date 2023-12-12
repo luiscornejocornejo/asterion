@@ -72,7 +72,18 @@ class siennaController extends Controller
     /** @var \Webklex\PHPIMAP\Support\FolderCollection $folders */
   
   }
+  public function pruebadatabase(){
 
+    $query="show databases";
+
+    $resultados = DB::select($query);
+
+    foreach($resultados as $val){
+
+      echo $val->Database;
+    }
+
+  }
   public function principal()
   {
     $servicios = servicio::all();

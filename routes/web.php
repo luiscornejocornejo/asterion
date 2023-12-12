@@ -83,8 +83,6 @@ Route::post('/siennacreate','App\Http\Controllers\siennaController@siennacreatep
 Route::get('/siennamenu','App\Http\Controllers\siennaController@siennamenu');
 Route::get('/siennaabmmodificar','App\Http\Controllers\siennaController@siennaabmmodificar');
 Route::post('/siennaabmmodificar','App\Http\Controllers\siennaController@siennaabmmodificarpost');
-
-
 Route::get('/siennagraficos','App\Http\Controllers\siennaController@siennagraficos');
 Route::post('/siennagraficos','App\Http\Controllers\siennaController@siennagraficospost'); 
 Route::get('/siennaendpoint','App\Http\Controllers\siennaController@siennaendpoint');
@@ -92,20 +90,19 @@ Route::get('/siennaemail','App\Http\Controllers\siennaController@siennaemail');
 Route::get('/siennareport','App\Http\Controllers\siennaController@siennareport');
 Route::get('/siennaform','App\Http\Controllers\siennaController@siennaform');
 Route::post('/siennaform','App\Http\Controllers\siennaController@siennaformpost');
-
-Route::get('/ticketsienna','App\Http\Controllers\siennaController@ticketsienna');
-Route::post('/ticketsienna','App\Http\Controllers\siennaController@ticketsiennapost');
-
-
-
-
 Route::get('/siennaformg','App\Http\Controllers\siennaController@siennaformg');
 Route::post('/siennaformg','App\Http\Controllers\siennaController@siennaformgpost');
 Route::get('/siennaforme','App\Http\Controllers\siennaController@siennaforme');
 Route::post('/siennaforme','App\Http\Controllers\siennaController@siennaformepost');
-
 Route::get('/siennaabm','App\Http\Controllers\siennaController@siennaabm');
 Route::post('/eliminarregistro','App\Http\Controllers\siennaController@delete'); 
+Route::get('/pruebadatabase','App\Http\Controllers\siennaController@pruebadatabase');
+
+
+
+Route::get('/ticketsienna','App\Http\Controllers\siennaController@ticketsienna');
+Route::post('/ticketsienna','App\Http\Controllers\siennaController@ticketsiennapost');
+
 
 Route::get('/endpointentrantes','App\Http\Controllers\siennaController@endpointentrantes');
 Route::get('/profile','App\Http\Controllers\LoginController@profile');
@@ -193,7 +190,6 @@ Route::post('/creardb','App\Http\Controllers\TicketdatosController@creardbpost')
 Route::get('/conversations  ','App\Http\Controllers\TicketdatosController@suricata');
 Route::get('/conversations2  ','App\Http\Controllers\TicketdatosController@suricata2');
 Route::get('/conversationsfacu  ','App\Http\Controllers\TicketdatosController@suricatafacu');
-Route::get('/tickets  ','App\Http\Controllers\TicketdatosController@osttickets');
 Route::get('/salientes  ','App\Http\Controllers\SalientesController@salientes');
 Route::post('/salientes  ','App\Http\Controllers\SalientesController@salientespost');
 Route::get('/template','App\Http\Controllers\SalientesController@template'); 
@@ -210,9 +206,13 @@ Route::post('/ventasstatus','App\Http\Controllers\TicketdatosController@ventasst
 
 
 
+//solo sienna
 Route::get('/operator','App\Http\Controllers\TicketdatosController@operator');
 Route::get('/operator2','App\Http\Controllers\TicketdatosController@operator2');
 
+
+//sienna y osticket
+Route::get('/tickets  ','App\Http\Controllers\TicketdatosController@osttickets');
 
 });
 //});
