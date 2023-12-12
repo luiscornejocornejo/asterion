@@ -91,7 +91,7 @@
                 <div class="table-responsive">
 
 
-                    <table role="table" id="datatable" class="table table-bordered dt-responsive nowrap w-100">
+                    <table role="table" id="example" class="table table-bordered dt-responsive nowrap w-100">
                         <thead role="rowgroup" class="table-dark">
                             <tr role="row">
 
