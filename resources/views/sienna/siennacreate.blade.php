@@ -1,8 +1,11 @@
-@include('pp.header')
+@include('facu.header')
+<div class="wrapper">
+
+<!-- ========== Left Sidebar Start ========== -->
+@include('facu.menu')
 
 <div id="principal">
-    <div class="mx-auto" style="width: 1000px;margin-top: 70px;">
-
+    <div class="container" >
         @if ($message = Session::get('success'))
         <div class="alert alert-success alert-dismissible fade
                     show" role="alert">
@@ -196,4 +199,4 @@
     </div>
 </div>
 <br><br><br>
-@include('pp.footer')
+@include('facu.footer')
