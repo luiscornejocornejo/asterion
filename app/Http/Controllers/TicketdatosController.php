@@ -366,8 +366,14 @@ class TicketdatosController extends Controller
      
         $query5="select * from empresa";
         $resultados5 = DB::select($query5);
+        
+        $query6="select * from zonahoraria";
+        $resultados6 = DB::select($query6);
+
+        
             return view('sienna/empresa')
             ->with('subdomain_tmp', $subdomain_tmp)
+            ->with("zonahoraria",$resultados6)
             ->with("empresa",$resultados5); 
 
     }

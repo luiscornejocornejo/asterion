@@ -15,7 +15,15 @@
                  <form action="/empresadatos" method="post">
 
                  frecuencia:<input type="number" name="frecuencia">
-                 zona:<input type="text" name="zona">
+                 zona:<select name="zonahoraria">
+                    <?php foreach ($zonahoraria as $val){
+
+                        echo "<option value='".$val->id."'>".$val->nombre."</option>";
+                    }
+
+?>
+                 </select>
+                 
                  <button type="submit" class="btn btn-primary">Consultar</button>
 
                  </form>
