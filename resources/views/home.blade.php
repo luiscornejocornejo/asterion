@@ -34,7 +34,7 @@ if(isset($_GET['fecha'])){
     $query="select count(*) as cantidadtickets2  from siennatickets where siennaestado=4 and  ".$queryfecha;
     $resultados2 = DB::select($query);
     $cantidadtickets2=0;
-    foreach($resultados2 as $val){
+    foreach($resultados2 as $val){ 
         $cantidadtickets2=$val->cantidadtickets2;
     }
 
