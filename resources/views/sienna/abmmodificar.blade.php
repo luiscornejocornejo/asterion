@@ -1,6 +1,10 @@
 
 
-@include('pp.header')
+@include('facu.header')
+<div class="wrapper">
+
+<!-- ========== Left Sidebar Start ========== -->
+@include('facu.menu')
 <style type="text/css">
     .pick-a-color-markup .color-menu.color-menu--inline {
         left: 242px !important;
@@ -27,8 +31,6 @@
         }
     });
 </script>
-<div id="principal">
-    <div class="mx-auto" style="width: 1000px;margin-top: 70px;">
 
         @if ($message = Session::get('success'))
         <div class="alert alert-success alert-dismissible fade
@@ -221,4 +223,4 @@
     </div>
 </div>
 <br><br><br>
-    @include('pp.footer')
+    @include('facu.footer')
