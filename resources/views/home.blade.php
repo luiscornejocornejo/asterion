@@ -2,6 +2,17 @@
 
 
 <?php
+
+$subdomain_tmp = 'localhost';
+if (isset($_SERVER['HTTP_HOST'])) {
+    $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+    $subdomain_tmp =  array_shift($domainParts);
+} elseif(isset($_SERVER['SERVER_NAME'])){
+    $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+    $subdomain_tmp =  array_shift($domainParts);
+    
+}
+$subdomain_tmp =trim($subdomain_tmp );
 $query="select count(*) as cantidaduser  from siennaloginxenioo where login=1 and  DATE(created_at) >= DATE(NOW())";
 $resultados = DB::select($query);
 $cantidaduser=0;
