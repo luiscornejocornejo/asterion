@@ -81,7 +81,28 @@ class siennaController extends Controller
     foreach($resultados as $val){
 
       echo $val->Database;
+
+      $query1="
+      CREATE TABLE IF NOT EXISTS  ".$val->Database.".siennacliente (
+        id int auto_increment NOT NULL,
+        cliente varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+        nya varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+        conversation_id varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+        updated_at datetime NULL,
+        created_at datetime NULL,
+        cedula varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+        email varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+        cel varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+        CONSTRAINT `PRIMARY` PRIMARY KEY (id)
+      )
+      ENGINE=InnoDB
+      DEFAULT CHARSET=utf8mb4
+      COLLATE=utf8mb4_0900_ai_ci
+      COMMENT='';";
     }
+
+    $resultados1 = DB::select($query1);
+
 
   }
   public function principal()
