@@ -78,7 +78,7 @@ class siennaController extends Controller
 
     $resultados = DB::select($query);
 
-    $listadono=array ('mysql','information_schema','performance_schema','sys','defaultdb','abogados','amecom','betured','celer','conectared');
+    $listadono=array ('mysql','information_schema','performance_schema','sys','defaultdb');
     foreach($resultados as $val){
 
       echo $val->Database;
@@ -87,10 +87,17 @@ class siennaController extends Controller
       }
     echo   $query1="
 
-
+    CREATE TABLE ".$val->Database.".tipousers (
+      id INT auto_increment NOT NULL,
+      nombre varchar(100) NULL,
+      CONSTRAINT tipousers_PK PRIMARY KEY (id)
+    )
+    ENGINE=InnoDB
+    DEFAULT CHARSET=utf8mb4
+    COLLATE=utf8mb4_0900_ai_ci;
+    
    
    
-    ALTER TABLE ".$val->Database.".users ADD tipousers SMALLINT NULL;
 
     
     ";
