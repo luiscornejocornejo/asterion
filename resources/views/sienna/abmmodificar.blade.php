@@ -32,6 +32,13 @@
     });
 </script>
 
+<div class="content-page" style="padding: 0!important;">
+          <div class="content">
+
+              <!-- Start Content-->
+            
+                <div class="container-fluid pt-2" >
+
         @if ($message = Session::get('success'))
         <div class="alert alert-success alert-dismissible fade
                             show" role="alert">
@@ -41,9 +48,7 @@
         @endif
 
         <!-- Page Wrapper -->
-        <div id="wrapper">
-            <!-- Begin Page Content -->
-            <div class="container-fluid">
+
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">Modificar</h1>
