@@ -21,7 +21,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
   <!-- App css -->
   <link href="assetsfacu/css/app-saas.min.css" rel="stylesheet" type="text/css" id="app-style">
- 
+  <link href="agents.css" rel="stylesheet" type="text/css" id="app-style">
+  
   <!-- Icons css -->
   <link href="assetsfacu/css/icons.min.css" rel="stylesheet" type="text/css">
 <style id="apexcharts-css">
