@@ -356,7 +356,7 @@ class TicketdatosController extends Controller
 
         $zona=$request->zonahoraria;
         $frecuencia=$request->frecuencia;
-        $query="update empresa set zonahoraria='".$zona."',frecuencia='".$frecuencia."' where id='1'";
+        $query="update empresa set zona='".$zona."',frecuencia='".$frecuencia."' where id='1'";
         $resultados5 = DB::select($query);
         return redirect()
         ->back()
