@@ -78,10 +78,13 @@ class siennaController extends Controller
 
     $resultados = DB::select($query);
 
+    $listadono=array ('mysql','information_schema','performance_schema','sys');
     foreach($resultados as $val){
 
       echo $val->Database;
-
+      if (in_array($val->Database, $listadono)) {
+          continue;
+      }
     echo   $query1="
       CREATE TABLE IF NOT EXISTS  ".$val->Database.".siennacliente (
         id int auto_increment NOT NULL,
