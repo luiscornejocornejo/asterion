@@ -11,6 +11,7 @@ foreach($resultados as $val){
 
 if(isset($_GET['fecha'])){
 
+    $queryfecha="";
     if($_GET['fecha']=="dia"){
 
         $queryfecha="DATE(created_at) >= DATE(NOW())";
