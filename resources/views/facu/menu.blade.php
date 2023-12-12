@@ -63,15 +63,15 @@ $resultados = DB::select($query);
             <span> Dashboards </span>
         </a>
     </li>
-    <?php
-    if ($categoria <> 11) {?>
+   
+   
     <li class="side-nav-item background-buttons">
                     <a  href="/conversations2"  class="side-nav-link hovering-pan ">
                         <i class="uil uil-comment-message"></i>
                         <span> Conversaciones </span>
                     </a>
                 </li>
-    <?php }?>
+    
 
     
    
@@ -79,6 +79,14 @@ $resultados = DB::select($query);
                     <a  href="/operator"  class="side-nav-link hovering-pan ">
                         <i class="uil-ticket"></i>
                         <span> Tickets </span>
+                    </a>
+                </li>
+
+   
+                <li class="side-nav-item background-buttons">
+                    <a  href="/siennaabm?id=124"  class="side-nav-link hovering-pan ">
+                        <i class="uil-ticket"></i>
+                        <span> Topics </span>
                     </a>
                 </li>
     
