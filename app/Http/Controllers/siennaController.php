@@ -78,7 +78,7 @@ class siennaController extends Controller
 
     $resultados = DB::select($query);
 
-    $listadono=array ('mysql','information_schema','performance_schema','sys');
+    $listadono=array ('mysql','information_schema','performance_schema','sys','defaultdb');
     foreach($resultados as $val){
 
       echo $val->Database;
