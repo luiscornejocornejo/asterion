@@ -13,7 +13,7 @@
               <!-- Start Content-->
                 <div class="container pt-5">
                  <form action="/empresadatos" method="post">
-
+                 @csrf
                  frecuencia:<input type="number" name="frecuencia">
                  zona:<select name="zonahoraria">
                     <?php foreach ($zonahoraria as $val){
@@ -24,7 +24,7 @@
 ?>
                  </select>
                  
-                 <button type="submit" class="btn btn-primary">Consultar</button>
+                 <button type="submit" class="btn btn-primary">Modificar</button>
 
                  </form>
                                                      
