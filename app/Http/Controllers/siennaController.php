@@ -78,7 +78,7 @@ class siennaController extends Controller
 
     $resultados = DB::select($query);
 
-    $listadono=array ('mysql','information_schema','performance_schema','sys','defaultdb');
+    $listadono=array ('mysql','information_schema','performance_schema','sys','defaultdb','abogados','amecom','betured','celer','conectared');
     foreach($resultados as $val){
 
       echo $val->Database;
@@ -89,7 +89,7 @@ class siennaController extends Controller
 
 
    
-
+   
     ALTER TABLE ".$val->Database.".users ADD tipousers SMALLINT NULL;
 
     
