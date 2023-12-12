@@ -88,10 +88,9 @@ class siennaController extends Controller
     echo   $query1="
 
 
-    CREATE TABLE IF NOT EXISTS  ".$val->Database.".siennatopic (
+    CREATE TABLE IF NOT EXISTS  ".$val->Database.".iconostipo (
       id int auto_increment NOT NULL,
-      nombre varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
-      siennadepto smallint NULL,
+      descripcion varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
       CONSTRAINT `PRIMARY` PRIMARY KEY (id)
     )
     ENGINE=InnoDB
