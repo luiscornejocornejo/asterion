@@ -209,6 +209,7 @@ Route::post('/ventasstatus','App\Http\Controllers\TicketdatosController@ventasst
 //solo sienna
 Route::get('/operator','App\Http\Controllers\TicketdatosController@operator');
 Route::get('/operator2','App\Http\Controllers\TicketdatosController@operator2');
+Route::get('/agentes','App\Http\Controllers\TicketdatosController@agentes');
 
 
 //sienna y osticket

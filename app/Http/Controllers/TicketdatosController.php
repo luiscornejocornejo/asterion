@@ -352,7 +352,27 @@ class TicketdatosController extends Controller
     }
 
 
-    
+    public function agentes(Request $request)
+    {
+
+        $subdomain_tmp = 'localhost';
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+            $subdomain_tmp =  array_shift($domainParts);
+        } elseif(isset($_SERVER['SERVER_NAME'])){
+            $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+            $subdomain_tmp =  array_shift($domainParts);
+            
+        }
+        $idusuario=session('idusuario');
+     
+        $query5="select * from users where tipousers='merchant'";
+        $resultados5 = DB::select($query5);
+            return view('sienna/agentes')
+            ->with('subdomain_tmp', $subdomain_tmp)
+            ->with("agentes",$resultados5); 
+
+    }
     
     public function operator(Request $request)
     {
