@@ -18,7 +18,7 @@
                  zona:<select name="zonahoraria">
                     <?php foreach ($zonahoraria as $val){
 
-                        echo "<option value='".$val->id."'>".$val->nombre."</option>";
+                        echo "<option value='".$val->nombre."'>".$val->nombre."</option>";
                     }
 
 ?>
