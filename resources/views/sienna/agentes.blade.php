@@ -53,7 +53,7 @@
       </div>
   
 <!-- Modal users register -->
-<div id="standard-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
+<div id="standard-modal23" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header bg-dark text-light">
@@ -97,7 +97,7 @@
             </div><!-- /.modal-dialog -->
         </div>    
       <!-- End users register -->
-      <div class="newAgent"  data-bs-toggle="modal" data-bs-target="#standard-modal">
+      <div class="newAgent"  data-bs-toggle="modal" data-bs-target="#standard-modal23">
         <i class="mdi mdi-account-plus" style="font-size: 25px;"></i>
       </div>
 
