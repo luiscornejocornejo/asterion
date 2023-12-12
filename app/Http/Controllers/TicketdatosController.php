@@ -350,6 +350,19 @@ class TicketdatosController extends Controller
 
 
     }
+
+    public function empresadatos2(Request $request)
+    {
+
+        $zona=$request->zonahoraria;
+        $frecuencia=$request->frecuencia;
+        $query="update empresa set zonahoraria='".$zona."',frecuencia='".$frecuencia."' where id='1'";
+        $resultados5 = DB::select($query);
+        return redirect()
+        ->back()
+        ->with('success', 'Se modifico  el registro  correctamente!');
+
+    }
     public function empresadatos(Request $request)
     {
 
