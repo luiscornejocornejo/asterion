@@ -82,14 +82,26 @@ $resultados = DB::select($query);
                     </a>
                 </li>
 
-   
+                <li class="side-nav-item background-buttons">
+                    <a  href="/agentes"  class="side-nav-link hovering-pan ">
+                        <i class="uil-ticket"></i>
+                        <span> Agentes </span>
+                    </a>
+                </li>
                 <li class="side-nav-item background-buttons">
                     <a  href="/siennaabm?id=124"  class="side-nav-link hovering-pan ">
                         <i class="uil-ticket"></i>
                         <span> Topics </span>
                     </a>
                 </li>
-    
+                <li class="side-nav-item background-buttons">
+                    <a  href="/empresadatos"  class="side-nav-link hovering-pan ">
+                        <i class="uil-ticket"></i>
+                        <span> Empresa </span>
+                    </a>
+                </li>
+
+                
     <?php
 
     if ($categoria == 10) {?>
