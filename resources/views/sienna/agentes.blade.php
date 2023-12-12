@@ -28,7 +28,7 @@
                         <?php foreach($agentes as $val){?>
                             <tr class="text-center">
                             <td>{{ $val->nombre}}</td>
-                                <td>{{$val->lastname}}</td>
+                                <td>{{$val->last_name}}</td>
                                 <td>{{$val->email}}</td>
                                 <td>{{$val->categoria}}</td>
                                 <td>{{$val->tipousers}}</td>
