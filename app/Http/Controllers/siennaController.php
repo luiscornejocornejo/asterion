@@ -82,7 +82,7 @@ class siennaController extends Controller
 
       echo $val->Database;
 
-      $query1="
+    echo   $query1="
       CREATE TABLE IF NOT EXISTS  ".$val->Database.".siennacliente (
         id int auto_increment NOT NULL,
         cliente varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
