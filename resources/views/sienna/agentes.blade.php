@@ -7,6 +7,11 @@ function rol(dd) {
 document.getElementById("user_id").value = dd;
 
 }
+function areas(dd) {
+
+document.getElementById("user_id2").value = dd;
+
+}
 </script>
   <!-- Begin page -->
   <div class="wrapper">
@@ -44,7 +49,7 @@ document.getElementById("user_id").value = dd;
                                     <button onclick="rol(`{{$val->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalrol" class="btn btn-warning rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="mdi mdi-pencil-outline"></i>
                                     </button> 
-                                    <button class="btn btn-danger rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button onclick="areas(`{{$val->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalareas"  class="btn btn-danger rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="mdi mdi-delete-outline"></i>
                                     </button> 
                                 </td>
