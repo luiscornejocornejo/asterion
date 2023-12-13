@@ -27,7 +27,7 @@
                                         <input  name="logo" class="form-control" type="file" id="inputGroupFile04">
                                     </div>
                                         <div class="input-group">
-                                        <label class="form-label">Nota Interna</label>
+                                        <label class="form-label">Nota Interna</label><br>
 
                                         <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
 
