@@ -363,6 +363,23 @@ class TicketdatosController extends Controller
         ->with('success', 'Se modifico  el registro  correctamente!');
 
     }
+
+    
+    public function rolusers(Request $request)
+    {
+
+        $user_id=$request->user_id;
+        $statos=$request->statos;
+
+
+
+        $query="update users set tipousers='".$statos."'  where id='".$user_id."'";
+        $resultados5 = DB::select($query);
+        return redirect()
+        ->back()
+        ->with('success', 'Se modifico  el registro  correctamente!');
+
+    }
     public function topiccambiar(Request $request)
     {
 

@@ -213,6 +213,7 @@ Route::get('/agentes','App\Http\Controllers\TicketdatosController@agentes');
 Route::get('/empresadatos','App\Http\Controllers\TicketdatosController@empresadatos');
 Route::post('/empresadatos','App\Http\Controllers\TicketdatosController@empresadatos2');
 Route::post('/topiccambiar','App\Http\Controllers\TicketdatosController@topiccambiar');
+Route::post('/rolusers','App\Http\Controllers\TicketdatosController@rolusers');
 
 
 //sienna y osticket
