@@ -1,5 +1,13 @@
 @include('facu.header2')
 
+<script>
+
+function rol(dd) {
+
+document.getElementById("user_id").value = dd;
+
+}
+</script>
   <!-- Begin page -->
   <div class="wrapper">
 
@@ -33,7 +41,7 @@
                                 <td>{{$val->deptosuser}}</td>
                                 <td>{{$val->tipousuario}}</td>
                                 <td>
-                                    <button  data-bs-toggle="modal" data-bs-target="#standard-modalrol" class="btn btn-warning rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button onclick="rol(`{{$val->id}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalrol" class="btn btn-warning rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="mdi mdi-pencil-outline"></i>
                                     </button> 
                                     <button class="btn btn-danger rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
