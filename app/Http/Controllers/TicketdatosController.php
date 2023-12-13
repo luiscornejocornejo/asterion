@@ -422,7 +422,7 @@ class TicketdatosController extends Controller
         }
         $idusuario=session('idusuario');
      
-        $query5="select * ,b.nombre as tipousuario from users a
+        $query5="select * ,b.nombre as tipousuario,a.id idusu from users a
         join tipousers b on a.tipousers=b.id
         where tipousers<>'1'";
         $resultados5 = DB::select($query5);
