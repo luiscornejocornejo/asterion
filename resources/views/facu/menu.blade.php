@@ -81,20 +81,20 @@ $resultados = DB::select($query);
 
                 <li class="side-nav-item background-buttons">
                     <a  href="/agentes"  class="side-nav-link hovering-pan ">
-                        <i class="uil-ticket"></i>
+                        <i class="mdi mdi-account-multiple"></i>
                         <span> Agentes </span>
                     </a>
                 </li>
                 <li class="side-nav-item background-buttons">
                     <a  href="/siennaabm?id=124"  class="side-nav-link hovering-pan ">
-                        <i class="uil-ticket"></i>
+                        <i class="mdi mdi-notebook"></i>
                         <span> Topics </span>
                     </a>
                 </li>
                
                 <li class="side-nav-item background-buttons">
                     <a  href="/siennaabm?id=134"  class="side-nav-link hovering-pan ">
-                        <i class="uil-ticket"></i>
+                        <i class="mdi mdi-radio-tower"></i>
                         <span> Nodos </span>
                     </a>
                 </li>   
@@ -113,7 +113,7 @@ $resultados = DB::select($query);
                 </li>
                 <li class="side-nav-item background-buttons">
                     <a  href="/empresadatos"  class="side-nav-link hovering-pan ">
-                        <i class="uil-ticket"></i>
+                        <i class="mdi mdi-cog"></i>
                         <span> Empresa </span>
                     </a>
                 </li>
