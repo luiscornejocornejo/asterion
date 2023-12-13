@@ -1,6 +1,7 @@
 @include('facu.header2')
 
 <script>
+let departamentoslista = {!! json_encode($deptos,JSON_FORCE_OBJECT) !!};
 
 function rol(dd) {
 

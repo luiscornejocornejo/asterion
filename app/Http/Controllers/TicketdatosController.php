@@ -443,8 +443,13 @@ class TicketdatosController extends Controller
         join tipousers b on a.tipousers=b.id
         where tipousers<>'1'";
         $resultados5 = DB::select($query5);
+
+        $query3="select * from siennadepto";
+        $resultados3 = DB::select($query3);
+
             return view('sienna/agentes')
             ->with('subdomain_tmp', $subdomain_tmp)
+            ->with('deptos', $resultados3)
             ->with("agentes",$resultados5); 
 
     }
