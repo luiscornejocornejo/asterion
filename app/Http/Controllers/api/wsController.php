@@ -531,6 +531,14 @@ class wsController extends Controller
 
     }
     
+    public function topicxdepto(Request $request){
+        $depto=$request->depto;
+        $resultados="";
+        $query="select * from siennatopic where siennadepto='" . $depto . "'";
+        $resultados = DB::select($query);
+        return $resultados;
+
+    }
 
     public function tickessiennaapi(Request $request){
 
