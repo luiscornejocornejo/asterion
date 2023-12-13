@@ -380,6 +380,26 @@ class TicketdatosController extends Controller
         ->with('success', 'Se modifico  el registro  correctamente!');
 
     }
+
+    
+
+    public function areasusers(Request $request)
+    {
+
+        echo $user_id=$request->user_id2;
+        $statos=$request->statos;
+        dump($statos);
+
+
+       //echo $query="update users set deptosuser='".$statos."'  where id='".$user_id."'";
+        /*
+        $resultados5 = DB::select($query);
+        return redirect()
+        ->back()
+        ->with('success', 'Se modifico  el registro  correctamente!');*/
+
+    }
+
     public function topiccambiar(Request $request)
     {
 
