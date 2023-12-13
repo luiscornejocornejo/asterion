@@ -18,7 +18,7 @@
                             <th class="text-light">Nombre</th>
                                 <th class="text-light">Apellido</th>
                                 <th class="text-light">Email</th>
-                                <th class="text-light">Departamento</th>
+                                <th class="text-light">Departamentos</th>
                                 <th class="text-light">Rol</th>
                                 <th class="text-light">Acciones</th>
                             </tr>
@@ -30,7 +30,7 @@
                             <td>{{ $val->nombre}}</td>
                                 <td>{{$val->last_name}}</td>
                                 <td>{{$val->email}}</td>
-                                <td>{{$val->categoria}}</td>
+                                <td>{{$val->deptosuser}}</td>
                                 <td>{{$val->tipousuario}}</td>
                                 <td>
                                     <button class="btn btn-warning rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
