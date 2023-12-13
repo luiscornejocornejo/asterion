@@ -87,10 +87,13 @@ class siennaController extends Controller
       }
     echo   $query1="
 
-    INSERT INTO ".$val->Database.".estadonodo (nombre) VALUES
-    ('Normal'),
-    ('Caido'),
-    ('Mantenimiento');
+
+    INSERT INTO ".$val->Database.".tipousers (nombre) VALUES
+	 ('agente'),
+	 ('mixto');
+
+
+
 
 
     
