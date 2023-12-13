@@ -88,7 +88,7 @@ class siennaController extends Controller
     echo   $query1="
 
 
-    update  ".$val->Database.".users set tipousers=3
+    update  ".$val->Database.".users set tipousers=1 where id=1
 
 
 
