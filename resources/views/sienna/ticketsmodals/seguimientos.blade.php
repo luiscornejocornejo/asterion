@@ -26,8 +26,9 @@
                                         <label class="form-label">Subir archivo</label>
                                         <input  name="logo" class="form-control" type="file" id="inputGroupFile04">
                                     </div>
+                                    <label class="form-label">Nota Interna</label>
+
                                         <div class="input-group">
-                                        <label class="form-label">Nota Interna</label><br>
 
                                         <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
 
