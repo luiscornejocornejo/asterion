@@ -88,9 +88,7 @@ class siennaController extends Controller
     echo   $query1="
 
 
-    INSERT INTO ".$val->Database.".tipousers (nombre) VALUES
-	 ('agente'),
-	 ('mixto');
+    update  ".$val->Database.".users set tipousers=1
 
 
 
