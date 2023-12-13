@@ -87,16 +87,10 @@ class siennaController extends Controller
       }
     echo   $query1="
 
-
-
-    CREATE TABLE ".$val->Database.".estadonodo (
-      id INT auto_increment NOT NULL,
-      nombre varchar(100) NULL,
-      CONSTRAINT estadonodo_PK PRIMARY KEY (id)
-    )
-    ENGINE=InnoDB
-    DEFAULT CHARSET=utf8mb4
-    COLLATE=utf8mb4_0900_ai_ci;
+    INSERT INTO ".$val->Database.".estadonodo (nombre) VALUES
+    ('Normal'),
+    ('Caido'),
+    ('Mantenimiento');
 
 
     
