@@ -445,11 +445,12 @@ class wsController extends Controller
         $user_id=$request->user_id;
         
         $cliente=$request->cliente;
+        $siennatopic=$request->siennatopic;
 
        $si=new siennatickets();
        $si->siennadepto=$siennadepto;
        $si->cliente=$cliente;
-       $si->siennatopic=1;
+       $si->siennatopic=$siennatopic;
        $si->cedula=$cedula;
        $si->siennaestado=$siennaestado;
        $si->siennasource=$siennasource;
