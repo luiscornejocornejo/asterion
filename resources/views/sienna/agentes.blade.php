@@ -35,7 +35,7 @@ document.getElementById("user_id").value = dd;
 
                         <?php foreach($agentes as $val){?>
                             <tr class="text-center">
-                            <td>{{ $val->nombre}}</td>
+                            <td>{{ $val->nom}}</td>
                                 <td>{{$val->last_name}}</td>
                                 <td>{{$val->email}}</td>
                                 <td>{{$val->deptosuser}}</td>
