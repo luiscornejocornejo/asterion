@@ -363,6 +363,23 @@ class TicketdatosController extends Controller
         ->with('success', 'Se modifico  el registro  correctamente!');
 
     }
+    public function topiccambiar(Request $request)
+    {
+
+        $tik=$request->tik;
+        $estado=$request->estado;
+
+
+
+        $query="update siennatickets set siennatopic='".$estado."'  where id='".$tik."'";
+        $resultados5 = DB::select($query);
+        return redirect()
+        ->back()
+        ->with('success', 'Se modifico  el registro  correctamente!');
+
+    }
+
+    
     public function empresadatos(Request $request)
     {
 
