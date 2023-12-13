@@ -33,7 +33,7 @@
                                 <td>{{$val->deptosuser}}</td>
                                 <td>{{$val->tipousuario}}</td>
                                 <td>
-                                    <button class="btn btn-warning rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button  data-bs-toggle="modal" data-bs-target="#standard-modalrol" class="btn btn-warning rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="mdi mdi-pencil-outline"></i>
                                     </button> 
                                     <button class="btn btn-danger rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -51,7 +51,8 @@
           </div>
           <!-- content -->
       </div>
-  
+      @include('sienna.usersmodal.rol')        
+
 <!-- Modal users register -->
 <div id="standard-modal23" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
             <div class="modal-dialog">
