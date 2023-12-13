@@ -395,7 +395,7 @@ class TicketdatosController extends Controller
 
             $nuevo.=$val.",";
         }
-        $nuevo=substr($nuevo,-1);
+        $nuevo=substr($nuevo,0,-1);
         echo $nuevo;
 
        //echo $query="update users set deptosuser='".$statos."'  where id='".$user_id."'";
