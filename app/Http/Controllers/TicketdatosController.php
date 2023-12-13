@@ -390,6 +390,12 @@ class TicketdatosController extends Controller
         $statos=$request->statos;
         dump($statos);
 
+        $nuevo="";
+        foreach($statos as $val){
+
+            $nuevo.=$val.",";
+        }
+        echo $nuevo;
 
        //echo $query="update users set deptosuser='".$statos."'  where id='".$user_id."'";
         /*
