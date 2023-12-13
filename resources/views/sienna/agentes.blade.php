@@ -31,7 +31,7 @@
                                 <td>{{$val->last_name}}</td>
                                 <td>{{$val->email}}</td>
                                 <td>{{$val->categoria}}</td>
-                                <td>{{$val->tipousers}}</td>
+                                <td>{{$val->tipousuario}}</td>
                                 <td>
                                     <button class="btn btn-warning rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="mdi mdi-pencil-outline"></i>

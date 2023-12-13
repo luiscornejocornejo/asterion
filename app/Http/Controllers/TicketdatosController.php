@@ -405,7 +405,9 @@ class TicketdatosController extends Controller
         }
         $idusuario=session('idusuario');
      
-        $query5="select * from users where tipousers<>'1'";
+        $query5="select * ,b.nombre as tipousuario from users a
+        join tipousers b on a.tipousers=b.id
+        where tipousers<>'1'";
         $resultados5 = DB::select($query5);
             return view('sienna/agentes')
             ->with('subdomain_tmp', $subdomain_tmp)
