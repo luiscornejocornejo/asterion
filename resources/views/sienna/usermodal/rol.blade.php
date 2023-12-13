@@ -7,7 +7,7 @@
                 </div>
                 <div class="modal-body">
                     <form action="/rolusers" method="post">
-                        <input type="hidden" name="_token" v-bind:value="csrf">
+                    @csrf
                        
                         <input value="" type="hidden" name="user_id" id="user_id">
                        
