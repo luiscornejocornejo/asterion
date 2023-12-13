@@ -51,7 +51,7 @@
           </div>
           <!-- content -->
       </div>
-      @include('sienna.usersmodal.rol')        
+      @include('sienna.usermodal.rol')        
 
 <!-- Modal users register -->
 <div id="standard-modal23" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
