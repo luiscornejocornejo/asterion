@@ -87,11 +87,22 @@ class siennaController extends Controller
       }
     echo   $query1="
 
-    INSERT INTO ".$val->Database.".zonahoraria (nombre) VALUES
-    ('America/Argentina/Buenos_Aires'),
-    ('America/Mexico_City'),
-    ('America/Lima');
 
+    CREATE TABLE ".$val->Database.".nodos (
+      id INT auto_increment NOT NULL,
+      nombre varchar(1000) NULL,
+      lat varchar(1000) NULL,
+      log varchar(1000) NULL,
+      direcion varchar(100) NULL,
+      ciudad varchar(100) NULL,
+      idget INT NULL,
+      mensaje varchar(1000) NULL,
+      estadonodo SMALLINT NULL
+    )
+    ENGINE=InnoDB
+    DEFAULT CHARSET=utf8mb4
+    COLLATE=utf8mb4_0900_ai_ci;
+  
 
  
 
