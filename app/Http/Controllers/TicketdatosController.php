@@ -386,9 +386,8 @@ class TicketdatosController extends Controller
     public function areasusers(Request $request)
     {
 
-        echo $user_id=$request->user_id2;
+         $user_id=$request->user_id2;
         $statos=$request->statos;
-        dump($statos);
 
         $nuevo="";
         foreach($statos as $val){
@@ -396,14 +395,13 @@ class TicketdatosController extends Controller
             $nuevo.=$val.",";
         }
         $nuevo=substr($nuevo,0,-1);
-        echo $nuevo;
 
-       //echo $query="update users set deptosuser='".$statos."'  where id='".$user_id."'";
-        /*
+        $query="update users set deptosuser='".$nuevo."'  where id='".$user_id."'";
+        
         $resultados5 = DB::select($query);
         return redirect()
         ->back()
-        ->with('success', 'Se modifico  el registro  correctamente!');*/
+        ->with('success', 'Se modifico  el registro  correctamente!');
 
     }
 
