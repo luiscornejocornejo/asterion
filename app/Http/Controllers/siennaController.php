@@ -88,25 +88,16 @@ class siennaController extends Controller
     echo   $query1="
 
 
-    CREATE TABLE ".$val->Database.".nodos (
-      id INT auto_increment NOT NULL,
-      nombre varchar(1000) NULL,
-      lat varchar(1000) NULL,
-      log varchar(1000) NULL,
-      direcion varchar(100) NULL,
-      ciudad varchar(100) NULL,
-      idget INT NULL,
-      mensaje varchar(1000) NULL,
-      estadonodo SMALLINT NULL,
-      CONSTRAINT nodos_PK PRIMARY KEY (id)
 
+    CREATE TABLE ".$val->Database.".estadonodo (
+      id INT auto_increment NOT NULL,
+      nombre varchar(100) NULL,
+      CONSTRAINT estadonodo_PK PRIMARY KEY (id)
     )
     ENGINE=InnoDB
     DEFAULT CHARSET=utf8mb4
     COLLATE=utf8mb4_0900_ai_ci;
-  
 
- 
 
     
     ";
