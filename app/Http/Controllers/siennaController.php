@@ -87,7 +87,7 @@ class siennaController extends Controller
       }
     echo   $query1="
 
-    ALTER TABLE ".$val->Database."..users ADD deptosuser varchar(1000) NULL;
+    ALTER TABLE ".$val->Database.".users ADD deptosuser varchar(1000) NULL;
 
 
 
