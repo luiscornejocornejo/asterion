@@ -65,6 +65,7 @@ document.getElementById("user_id2").value = dd;
           <!-- content -->
       </div>
       @include('sienna.usermodal.rol')        
+      @include('sienna.usermodal.areas')        
 
 <!-- Modal users register -->
 <div id="standard-modal23" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
