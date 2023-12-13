@@ -97,7 +97,9 @@ class siennaController extends Controller
       ciudad varchar(100) NULL,
       idget INT NULL,
       mensaje varchar(1000) NULL,
-      estadonodo SMALLINT NULL
+      estadonodo SMALLINT NULL,
+      CONSTRAINT nodos_PK PRIMARY KEY (id)
+
     )
     ENGINE=InnoDB
     DEFAULT CHARSET=utf8mb4
