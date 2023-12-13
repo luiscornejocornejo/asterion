@@ -22,12 +22,13 @@
 
                                 <div class="mt-2 ">
                                     <div class="mb-2">
-                                        <label class="form-label">Comentario</label>
                                         <div>
                                         <label class="form-label">Subir archivo</label>
                                         <input  name="logo" class="form-control" type="file" id="inputGroupFile04">
                                     </div>
                                         <div class="input-group">
+                                        <label class="form-label">Nota Interna</label>
+
                                         <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
 
                                         <input value="" type="hidden" name="idticketseguimiento" id="idticketseguimiento">
