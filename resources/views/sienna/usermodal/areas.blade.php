@@ -6,7 +6,7 @@
                     <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="/areasusers" method="post"  enctype="multipart/form-data">
+                    <form action="/areasusers" method="get"  enctype="multipart/form-data">
                     @csrf
                        
                         <input value="" type="hidden" name="user_id2" id="user_id2">
@@ -15,7 +15,7 @@
                         <div >
                      
                         <?php foreach($deptos as $dep){?>
-                            <input value="<?php echo $dep->id;?>" class="form-radio" type="check" name="statos[]">&nbsp;
+                            <input value="<?php echo $dep->id;?>" class="form-radio" type="checkbox" name="statos[]">&nbsp;
                         <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo$dep->nombre;?></span>
                             <br><br>
 
