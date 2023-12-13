@@ -124,6 +124,12 @@ class LoginController extends Controller
                 $categoria = $value->categoria;
                 $email_suricata = $value->email_suricata;
                 $nombreusuario = $value->nombre . " " . $value->last_name;
+
+                $tipodemenu = $value->tipousers;
+
+                session(['tipodemenu' => $tipodemenu]);
+
+
                 session(['idusuario' => $idusuario]);
                 session(['categoria' => $categoria]);
 

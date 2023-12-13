@@ -65,27 +65,13 @@ $resultados = DB::select($query);
     </li>
    
    
-    <li class="side-nav-item background-buttons">
-                    <a  href="/conversations2"  class="side-nav-link hovering-pan ">
-                        <i class="uil uil-comment-message"></i>
-                        <span> Conversaciones </span>
-                    </a>
-                </li>
+
     
 
     <?php
-     $subdomain_tmp = 'localhost';
-     if (isset($_SERVER['HTTP_HOST'])) {
-         $domainParts = explode('.', $_SERVER['HTTP_HOST']);
-         $subdomain_tmp =  array_shift($domainParts);
-     } elseif (isset($_SERVER['SERVER_NAME'])) {
-         $domainParts = explode('.', $_SERVER['SERVER_NAME']);
-         $subdomain_tmp =  array_shift($domainParts);
-     }
-
-     if($subdomain_tmp =="infitelecom"){
+     $tipodemenu = session('tipodemenu');
+     if(($tipodemenu =="1")or($tipodemenu =="2")){
      ?>
-   
                 <li class="side-nav-item background-buttons">
                     <a  href="/operator"  class="side-nav-link hovering-pan ">
                         <i class="uil-ticket"></i>
@@ -105,25 +91,67 @@ $resultados = DB::select($query);
                         <span> Topics </span>
                     </a>
                 </li>
+               
+                <li class="side-nav-item background-buttons">
+                    <a  href="/siennaabm?id=134"  class="side-nav-link hovering-pan ">
+                        <i class="uil-ticket"></i>
+                        <span> Nodos </span>
+                    </a>
+                </li>   
+    <?php
+     }
+    ?>
+ <?php
+     $tipodemenu = session('tipodemenu');
+     if($tipodemenu =="1"){
+     ?>
+               <li class="side-nav-item background-buttons">
+                    <a  href="/conversations2"  class="side-nav-link hovering-pan ">
+                        <i class="uil uil-comment-message"></i>
+                        <span> Conversaciones </span>
+                    </a>
+                </li>
                 <li class="side-nav-item background-buttons">
                     <a  href="/empresadatos"  class="side-nav-link hovering-pan ">
                         <i class="uil-ticket"></i>
                         <span> Empresa </span>
                     </a>
                 </li>
-                <li class="side-nav-item background-buttons">
-                    <a  href="/siennaabm?id=134"  class="side-nav-link hovering-pan ">
-                        <i class="uil-ticket"></i>
-                        <span> Nodos </span>
-                    </a>
-                </li>
-                
+             
     <?php
      }
     ?>
-
             
-          
+            <?php
+     $tipodemenu = session('tipodemenu');
+     if($tipodemenu =="4"){
+     ?>
+           
+           <li class="side-nav-item background-buttons">
+                    <a  href="/conversations2"  class="side-nav-link hovering-pan ">
+                        <i class="uil uil-comment-message"></i>
+                        <span> Conversaciones </span>
+                    </a>
+                </li>
+             
+    <?php
+     }
+    ?>
+               <?php
+     $tipodemenu = session('tipodemenu');
+     if($tipodemenu =="3"){
+     ?>
+           
+           <li class="side-nav-item background-buttons">
+                    <a  href="/operator"  class="side-nav-link hovering-pan ">
+                        <i class="uil-ticket"></i>
+                        <span> Tickets </span>
+                    </a>
+                </li>
+             
+    <?php
+     }
+    ?>
 
 
     <div class="position-absolute fixed-bottom">
