@@ -78,7 +78,7 @@ class siennaController extends Controller
 
     $resultados = DB::select($query);
 
-    $listadono=array ('mysql','information_schema','performance_schema','sys','defaultdb');
+    $listadono=array ('mysql','information_schema','performance_schema','sys','defaultdb','telesmart');
     foreach($resultados as $val){
 
       echo $val->Database;
@@ -88,7 +88,7 @@ class siennaController extends Controller
     echo   $query1="
 
 
-    update  ".$val->Database.".users set tipousers=1
+    update  ".$val->Database.".users set tipousers=3
 
 
 
