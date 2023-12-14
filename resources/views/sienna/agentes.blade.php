@@ -46,7 +46,7 @@ document.getElementById("user_id2").value = dd;
                                 <td>{{$val->email}}</td>
                                 <?php 
 
-                                $dp=explode(",",$deptosuser);
+                                $dp=explode(",",$$val->deptosuser);
 
                                 $nue="";
                                 foreach($dp as $vl){
