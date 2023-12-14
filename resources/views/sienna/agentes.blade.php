@@ -44,6 +44,16 @@ document.getElementById("user_id2").value = dd;
                             <td>{{ $val->nom}}</td>
                                 <td>{{$val->last_name}}</td>
                                 <td>{{$val->email}}</td>
+                                <?php 
+
+                                $dp=explode(",",$deptosuser);
+
+                                $nue="";
+                                foreach($dp as $vl){
+
+                                    echo $deptos[$vl]->nombre;
+                                }
+                                ?>
                                 <td>{{$val->deptosuser}}</td>
                                 <td>{{$val->tipousuario}}</td>
                                 <td>
