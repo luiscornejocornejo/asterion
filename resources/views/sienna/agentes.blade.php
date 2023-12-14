@@ -27,7 +27,7 @@ document.getElementById("user_id2").value = dd;
               <!-- Start Content-->
                 <div class="container pt-5">
                     <table id="example" class="table dt-responsive nowrap w-100">
-                        <thead class="">
+                        <thead class="bg-dark">
                             <tr class="text-center">
                             <th class="text-light">Nombre</th>
                                 <th class="text-light">Apellido</th>
