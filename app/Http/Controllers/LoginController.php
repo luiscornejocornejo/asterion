@@ -122,6 +122,7 @@ class LoginController extends Controller
 
                 $idusuario = $value->id;
                 $categoria = $value->categoria;
+                $deptosuser = $value->deptosuser;
                 $email_suricata = $value->email_suricata;
                 $nombreusuario = $value->nombre . " " . $value->last_name;
 
@@ -132,6 +133,7 @@ class LoginController extends Controller
 
                 session(['idusuario' => $idusuario]);
                 session(['categoria' => $categoria]);
+                session(['deptosuser' => $deptosuser]);
 
                 $query4 = "select * from categoria where id='" . $categoria . "'";
                 $resultados4 = DB::select($query4);
@@ -153,12 +155,21 @@ class LoginController extends Controller
                 $xen2->save();
             }
 
-            $xen = new siennaloginxenioo();
-            $xen->idusuario = session('idusuario');
-            $xen->categoria = session('categoria');
-            $xen->areas = session('areas');
-            $xen->login = 1;
-            $xen->save();
+
+            $deptosuser2=explode(",",$deptosuser);
+            
+            foreach($deptosuser2 as $valdepto){
+
+                $xen = new siennaloginxenioo();
+                $xen->idusuario = session('idusuario');
+                $xen->categoria = session('categoria');
+                $xen->areas = $valdepto;
+                $xen->login = 1;
+                $xen->save();
+
+            }
+            
+          
 
             return Redirect::to('/home?fecha=dia');
 
