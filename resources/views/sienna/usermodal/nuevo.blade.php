@@ -6,7 +6,7 @@
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
-                        <form method="post" action="">
+                        <form method="post" action="/newusers">
         
                             <input type="hidden" name="_token" value="GzdQZnVvlvbdi86JzkX8IjKUp7MINuufrqu138MD">
                             <label class="form-label" for="exampleInputEmail1">Nombre</label>
@@ -19,19 +19,27 @@
                             <input type="mail" name="maill" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mail logeo" required="">
                             
                             <label class="form-label" for="exampleInputEmail1">Grupos </label>
-                            <select name="grupossso[]" class="form-control mb-2" multiple="">    
-                                <option>soporte</option>
-                                <option>atencion cliente</option>
-                                <option>ventas</option>
+                            <select name="grupossso[]" class="form-control mb-2" multiple="">   
+                                <?php foreach ($deptos as $dep){?>
+
+
+                                
+                                <option value="<?php echo $dep->id;?>"><?php echo $dep->nombre;?></option>
+                               <?php }?>
                             </select>
                             
                             <label class="form-label" for="exampleInputEmail1">Contraseña</label>
                             <input type="password" name="pass" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">
                             
                             <label class="form-label" for="exampleInputEmail1">Rol</label>
-                            <select class="form-select mb-3" aria-label="Default select example" name="tipo">
+                            <select class="form-select mb-3" aria-label="Default select example" name="rol">
                                 <option>supervisor</option>
                                 <option>agente</option>
+                            </select>
+                            <label class="form-label" for="exampleInputEmail1">Asignar</label>
+                            <select class="form-select mb-3" aria-label="Default select example" name="asignar">
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
                             </select>
         
                             <button type="submit" class="btn btn-success w-100">Crear</button>
