@@ -33,8 +33,8 @@
                             
                             <label class="form-label" for="exampleInputEmail1">Rol</label>
                             <select class="form-select mb-3" aria-label="Default select example" name="rol">
-                                <option>supervisor</option>
-                                <option>agente</option>
+                                <option value="2">supervisor</option>
+                                <option value="3">agente</option>
                             </select>
                             <label class="form-label" for="exampleInputEmail1">Asignar</label>
                             <select class="form-select mb-3" aria-label="Default select example" name="asignar">

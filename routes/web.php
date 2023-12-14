@@ -216,6 +216,7 @@ Route::post('/topiccambiar','App\Http\Controllers\TicketdatosController@topiccam
 Route::post('/rolusers','App\Http\Controllers\TicketdatosController@rolusers');
 Route::post('/areasusers','App\Http\Controllers\TicketdatosController@areasusers');
 Route::post('/ticketusers','App\Http\Controllers\TicketdatosController@ticketusers');
+Route::post('/newusers','App\Http\Controllers\TicketdatosController@newusers');
 
 
 //sienna y osticket
