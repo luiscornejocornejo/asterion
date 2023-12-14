@@ -51,10 +51,10 @@ document.getElementById("user_id2").value = dd;
                                 $nue="";
                                 foreach($dp as $vl){
 
-                                    dump($deptos[$vl-1]->nombre) ;
+                                    $nue.=$deptos[$vl-1]->nombre ;
                                 }
                                 ?>
-                                <td>{{$val->deptosuser}}</td>
+                                <td>{{$nue}}</td>
                                 <td>{{$val->tipousuario}}</td>
                                 <td>
                                     <button onclick="rol(`{{$val->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalrol" class="btn btn-info rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
