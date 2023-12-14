@@ -472,7 +472,7 @@ class TicketdatosController extends Controller
         $us->categoria=3;
         $us->deptosuser=$grup22;
         $us->tipousers=$request->rol;
-        $us->ticket=$request->asignar;
+        $us->tickets=$request->asignar;
         $us->password=md5($request->pass);
         $us->email_suricata=$mailsso;
         $us->save();
