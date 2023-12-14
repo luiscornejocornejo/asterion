@@ -698,7 +698,7 @@ class TicketdatosController extends Controller
         echo   $estado=$request->estado;
 
         $idbot=$request->idbot;
-        $idconv=$request->conversation_id2;
+        $idconv=$request->idconv;
         $bot_channel="WhatsAppChannel";
 
         if($estado==4){
@@ -741,7 +741,7 @@ class TicketdatosController extends Controller
             // Execute the cURL request
             $response = curl_exec($curl);
       
-            dd($response);   
+           // dd($response);   
             // Close the cURL resource
             curl_close($curl);
     
