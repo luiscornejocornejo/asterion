@@ -37,6 +37,8 @@ document.getElementById("user_id4").value = dd;
                             <th class="text-light">Nombre</th>
                                 <th class="text-light">Apellido</th>
                                 <th class="text-light">Email</th>
+                                <th class="text-light">Asignarse</th>
+
                                 <th class="text-light">Departamentos</th>
                                 <th class="text-light">Rol</th>
                                 <th class="text-light">Acciones</th>
@@ -49,6 +51,7 @@ document.getElementById("user_id4").value = dd;
                             <td>{{ $val->nom}}</td>
                                 <td>{{$val->last_name}}</td>
                                 <td>{{$val->email}}</td>
+                                <td>{{$val->tickets}}</td>
                                 <?php 
 
                                 $dp=explode(",",$val->deptosuser);
