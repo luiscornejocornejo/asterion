@@ -13,6 +13,11 @@ function areas(dd) {
 document.getElementById("user_id2").value = dd;
 
 }
+function ticket(dd) {
+
+document.getElementById("user_id4").value = dd;
+
+}
 </script>
   <!-- Begin page -->
   <div class="wrapper">
@@ -65,6 +70,11 @@ document.getElementById("user_id2").value = dd;
                                     <i class="mdi mdi-office-building-cog" data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-custom-class="mb-1" data-bs-title="Departamento"></i>
                                     </button> 
+
+                                    <button onclick="ticket(`{{$val->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalticket"  class="btn btn-warning rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="mdi mdi-office-building-cog" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        data-bs-custom-class="mb-1" data-bs-title="Departamento"></i>
+                                    </button> 
                                 </td>
                             </tr>
                             <?php }?>
@@ -79,6 +89,7 @@ document.getElementById("user_id2").value = dd;
       </div>
       @include('sienna.usermodal.rol')        
       @include('sienna.usermodal.areas')        
+      @include('sienna.usermodal.ticket')        
 
 <!-- Modal users register -->
 <div id="standard-modal23" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
