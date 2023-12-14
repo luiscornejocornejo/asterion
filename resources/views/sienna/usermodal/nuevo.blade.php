@@ -8,7 +8,7 @@
                     <div class="modal-body">
                         <form method="post" action="/newusers">
         
-                            <input type="hidden" name="_token" value="GzdQZnVvlvbdi86JzkX8IjKUp7MINuufrqu138MD">
+                        @csrf
                             <label class="form-label" for="exampleInputEmail1">Nombre</label>
                             <input type="text" name="nombre" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre" required="">
 
