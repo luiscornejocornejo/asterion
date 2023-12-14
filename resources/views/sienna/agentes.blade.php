@@ -47,11 +47,13 @@ document.getElementById("user_id2").value = dd;
                                 <td>{{$val->deptosuser}}</td>
                                 <td>{{$val->tipousuario}}</td>
                                 <td>
-                                    <button onclick="rol(`{{$val->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalrol" class="btn btn-warning rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="mdi mdi-pencil-outline"></i>
+                                    <button onclick="rol(`{{$val->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalrol" class="btn btn-info rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="mdi mdi-account-cog" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        data-bs-custom-class="mb-1" data-bs-title="Rol"></i>
                                     </button> 
-                                    <button onclick="areas(`{{$val->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalareas"  class="btn btn-danger rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="mdi mdi-delete-outline"></i>
+                                    <button onclick="areas(`{{$val->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalareas"  class="btn btn-warning rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="mdi mdi-office-building-cog" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        data-bs-custom-class="mb-1" data-bs-title="Departamento"></i>
                                     </button> 
                                 </td>
                             </tr>
