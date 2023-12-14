@@ -699,7 +699,7 @@ class TicketdatosController extends Controller
 
         $idbot=$request->idbot;
         $idconv=$request->conversation_id2;
-        echo   $bot_channel="";
+        $bot_channel="WhatsAppChannel";
 
         if($estado==4){
 

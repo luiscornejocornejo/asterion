@@ -11,7 +11,8 @@
                             <input type="hidden" name="tik" id="idticketestado2" value="">
                             <input type="hidden" name="idconv" id="conversation_id2" value="">
                             <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
-                            
+                            <input value="<?php echo $bot_channel;?>" type="hidden" name="bot_channel" id="bot_channel">
+
                             <div id="estunico"></div>
                                 
                                     
