@@ -28,12 +28,13 @@ class ChauController extends Controller
     foreach ($xen as $val) {
 
       $idxen = $val->id;
+      if ($idxen <> 0) {
+        $xen2 = siennaloginxenioo::find($idxen);
+        $xen2->login = 2;
+        $xen2->save();
+      }
     }
-    if ($idxen <> 0) {
-      $xen2 = siennaloginxenioo::find($idxen);
-      $xen2->login = 2;
-      $xen2->save();
-    }
+    
 
 
 
