@@ -30,7 +30,7 @@ document.getElementById("user_id4").value = dd;
           <div class="content">
 
               <!-- Start Content-->
-                <div class="container pt-2">
+                <div class="container-fluid pt-2">
                     <table id="example" class="table dt-responsive nowrap w-100">
                         <thead class="bg-dark">
                             <tr class="text-center">
