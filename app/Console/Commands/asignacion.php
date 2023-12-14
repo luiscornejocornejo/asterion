@@ -109,9 +109,12 @@ class asignacion extends Command
 
              $enhora=$this->enhora($merchant,$area);
              if($enhora){
-                $query2="select idusuario,(select count(*) from ".$merchant.".siennatickets s2  
-                where s2.asignado=s.idusuario and s2.siennaestado not in('3','4'))as cantidad from siennaloginxenioo s 
-                where login=1 and areas =".$area." and date(now())=date(created_at) group by idusuario order by cantidad limit 1";
+                $query2="select s.idusuario,(select count(*) from ".$merchant.".siennatickets s2  
+                where s2.asignado=s.idusuario and s2.siennaestado not in('3','4'))as cantidad from siennaloginxenioo s
+                join users s3 on s3.id=s.idusuario 
+                where
+                s3.tickets=1 and 
+                s.login=1 and s.areas =".$area." and date(now())=date(s.created_at) group by idusuario order by cantidad limit 1";
                 $resultados2 = DB::connection('mysql2')->select($query2);
 
                 $idusu=0;
