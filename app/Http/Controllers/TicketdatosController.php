@@ -412,7 +412,7 @@ class TicketdatosController extends Controller
         $statos=$request->statos;
 
        
-        $query="update users set ticket='".$statos."'  where id='".$user_id."'";
+        $query="update users set tickets='".$statos."'  where id='".$user_id."'";
         
         $resultados5 = DB::select($query);
         return redirect()
