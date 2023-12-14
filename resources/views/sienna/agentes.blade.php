@@ -51,7 +51,7 @@ document.getElementById("user_id2").value = dd;
                                 $nue="";
                                 foreach($dp as $vl){
 
-                                    dump($deptos[$vl]) ;
+                                    dump($deptos[$vl-1]) ;
                                 }
                                 ?>
                                 <td>{{$val->deptosuser}}</td>
