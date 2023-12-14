@@ -51,7 +51,12 @@ document.getElementById("user_id4").value = dd;
                             <td>{{ $val->nom}}</td>
                                 <td>{{$val->last_name}}</td>
                                 <td>{{$val->email}}</td>
-                                <td>{{$val->tickets}}</td>
+                                <td><?php if($val->tickets==1){
+                                    echo "Si";
+                                }else{
+                                    echo "No";
+                                }?>
+                                    </td>
                                 <?php 
 
                                 $dp=explode(",",$val->deptosuser);
