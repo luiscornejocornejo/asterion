@@ -649,6 +649,84 @@ class TicketdatosController extends Controller
 
     }
     
+
+    public function busquedaavanzada(Request $request)
+    {
+
+        $subdomain_tmp = 'localhost';
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+            $subdomain_tmp =  array_shift($domainParts);
+        } elseif(isset($_SERVER['SERVER_NAME'])){
+            $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+            $subdomain_tmp =  array_shift($domainParts);
+            
+        }
+        $idusuario=session('idusuario');
+        $areas=session('areas');
+        $query="select *,a.conversation_id,a.user_id,
+        b.nombre as depto,b.id as iddepto,
+        a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado from siennatickets a
+        left join siennadepto b on b.id=a.siennadepto 
+        left join  siennaestado c on c.id=a.siennaestado
+        left join  siennatopic d on d.id=a.siennatopic
+        where a.siennaestado not in('3','4')  
+         and a.asignado='".$idusuario."' 
+
+         union 
+
+         select *,a.conversation_id,a.user_id,
+        b.nombre as depto,b.id as iddepto,
+        a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado from siennatickets a
+        left join siennadepto b on b.id=a.siennadepto 
+        left join  siennaestado c on c.id=a.siennaestado
+        left join  siennatopic d on d.id=a.siennatopic
+        where a.siennaestado not in('3','4')  
+         and a.asignado='99999'
+         and a.siennadepto='".$areas."'
+        ";
+
+
+        $queryempresa="select * from empresa";
+        $resultadosempresa = DB::select($queryempresa);
+        foreach($resultadosempresa as $val){
+            $frecuencia=$val->frecuencia;
+        }
+        session(['frecuencia' => $frecuencia]);
+
+        $resultados = DB::select($query);
+
+        $maxid=0; 
+        foreach($resultados as $val){
+                            
+            $maxid=$val->ticketid;
+            
+        }
+
+       echo  session(['maxid' => $maxid]);
+
+        $query2="select * from siennaestado";
+        $resultados2 = DB::select($query2);
+
+        $query3="select * from siennadepto";
+        $resultados3 = DB::select($query3);
+        
+        $query4="select * from siennasource";
+        $resultados4 = DB::select($query4);
+
+
+        $query5="select * from iconostipo";
+        $resultados5 = DB::select($query5);
+            return view('sienna/busquedaavanzada')
+            ->with('subdomain_tmp', $subdomain_tmp)
+            ->with("tickets",$resultados)
+            ->with("maxid",$maxid)
+            ->with("deptos",$resultados3)
+            ->with("iconos",$resultados5)
+            ->with("source",$resultados4)
+            ->with("estados",$resultados2); 
+
+    }
     public function supervisor(Request $request)
     {
 
