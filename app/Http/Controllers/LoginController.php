@@ -186,7 +186,7 @@ class LoginController extends Controller
         // $datoreporte = users::where('id', '=', $request->idusuario)->get();
         //  dd($request->idusuario);
         $post = users::find($request->iduser);
-        $post->name = $request->nombre;
+        $post->nombre = $request->nombre;
         $post->email = $request->email;
         $post->dni = $request->dni;
         $post->birthdate = $request->birthdate;
