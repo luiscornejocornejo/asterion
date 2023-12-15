@@ -163,7 +163,7 @@ $resultados = DB::select($query);
 
     <div class="position-absolute fixed-bottom">
                 <li class="side-nav-item background-buttons">
-                    <a data-bs-toggle="collapse" href="#" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link background-buttons">
+                    <a href="/profile"   class="side-nav-link background-buttons">
                         <i class="uil-user"></i>
                         <span> <?php echo session('nombreusuario');?> </span>
                     </a>    
