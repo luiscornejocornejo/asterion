@@ -10,12 +10,11 @@
                     <div class="modal-footer">
                         <form action="/api/pedir2" method="POST">
                         <input value="" type="hidden" name="idticketpedir" id="idticketpedir2">
-                        <input value="<?php echo session('idusuario'); ?>" type="hidden" name="usuarioticket" id="usuarioticket">
                         <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
                         
                         <div v-for="department in departments ">
                         <?php foreach($usersmerchant as $dep){?>
-                            <input value="<?php echo $dep->id;?>" class="form-radio" type="radio" name="statos">&nbsp;
+                            <input value="<?php echo $dep->id;?>" class="form-radio" type="radio" name="usuarioticket">&nbsp;
                         <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo$dep->nombre." ".$dep->last_name;?></span>
                             <br><br>
 
