@@ -15,10 +15,13 @@ foreach($resultados as $valuee){
 ?>
 
 
+@include('facu.header2')
+
 @include('facu.menu')
 
-<div id="principal">
-    <div class="container" >
+
+<div class="content-page" style="padding: 0!important;">
+    <div class="content">
         @if ($message = Session::get('success'))
         <div class="alert alert-success alert-dismissible fade
                             show" role="alert">
