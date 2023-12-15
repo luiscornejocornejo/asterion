@@ -50,11 +50,20 @@ let departamentoslista = {!! json_encode($deptos,JSON_FORCE_OBJECT) !!};
 let sourcelista = {!! json_encode($source,JSON_FORCE_OBJECT) !!};
 let estadoslista = {!! json_encode($estados,JSON_FORCE_OBJECT) !!};
 let iconos = {!! json_encode($iconos,JSON_FORCE_OBJECT) !!};
+let usersmerchant = {!! json_encode($usersmerchant,JSON_FORCE_OBJECT) !!};
+
+
 
 var frecuencia =<?php echo session('frecuencia');?>;
 
 //identificadorIntervaloDeTiempo = setInterval(maxid, frecuencia);
+function pedir2(dd) {
 
+document.getElementById("idticketpedir2").value = dd;
+
+
+
+}
 
 function maxid() {
 
@@ -123,7 +132,7 @@ function maxid() {
 
                 ' <td>'+
                 
-                '<button  onclick="pedir(`' + response.data[i].ticketid + '`)"  class="btn btn-success '+d+'" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><i class="mdi mdi-account-arrow-left" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="mb-1" data-bs-title="Reclamar ticket."></i></button> ' +
+                '<button  onclick="pedir2(`' + response.data[i].ticketid + '`)"  class="btn btn-success '+d+'" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><i class="mdi mdi-account-arrow-left" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="mb-1" data-bs-title="Reclamar ticket."></i></button> ' +
                 '<button onclick="area(`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].user_id + '`)"  class="btn btn-warning me-1" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><i class="mdi mdi-account-group" data-bs-toggle="tooltip" data-bs-placement="top"     data-bs-custom-class="mb-1" data-bs-title="Asignar departamento."></i> </button>' +
                 '<button onclick="estado2(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="btn btn-primary me-1" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm"><i class="mdi mdi-flag" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Cambiar estado."></i> </button> ' +
                 '<button onclick="topic(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="btn btn-info me-1" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smtopic">  <i class="mdi mdi-notebook" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Cambiar topic."></i></button> ' +
@@ -306,7 +315,7 @@ axios.get(url)
       @include('sienna.ticketsmodals.topic')
 
       @include('sienna.ticketsmodals.departamentos')
-      @include('sienna.ticketsmodals.pedir')
+      @include('sienna.ticketsmodals.pedir2')
       @include('sienna.ticketsmodals.seguimientos')
       @include('sienna.ticketsmodals.historialtickets')
       

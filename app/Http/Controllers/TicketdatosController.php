@@ -790,7 +790,8 @@ class TicketdatosController extends Controller
         
         $query4="select * from siennasource";
         $resultados4 = DB::select($query4);
-
+        $queryusers="select * from users where tipousers in ('2','3')";
+        $resultadosusers = DB::select($queryusers);
 
         $query5="select * from iconostipo";
         $resultados5 = DB::select($query5);
@@ -801,6 +802,7 @@ class TicketdatosController extends Controller
             ->with("deptos",$resultados3)
             ->with("iconos",$resultados5)
             ->with("source",$resultados4)
+            ->with("usersmerchant",$resultadosusers)
             ->with("estados",$resultados2); 
 
     }
