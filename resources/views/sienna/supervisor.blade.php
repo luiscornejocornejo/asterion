@@ -109,9 +109,7 @@ function maxid() {
             im2=colorlogo(response.data[i].siennasource);
             colordepto=colordeptof(response.data[i].iddepto);
             colorestado=colorestadof(response.data[i].siennaestado);
-            if(response.data[i].asignado !='99999'){
-                d="d-none";
-            }
+          
             tt += '<tr class="text-center">' +
                 ' <td><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</td>' +
                 ' <td>' + response.data[i].nya + '</td>' + 
