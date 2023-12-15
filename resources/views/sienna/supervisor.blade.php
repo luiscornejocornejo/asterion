@@ -83,6 +83,7 @@ function maxid() {
                        '     <tr class="text-center bg-dark" >'+
                        '        <th class="text-light"><i></i>Ticket</th>'+
                        '        <th class="text-light">Cliente</th>'+
+                       '        <th class="text-light">Asignado</th>'+
                        '          <th class="text-light">Area</th>'+
                        '        <th class="text-light">Topic</th>'+
                        '        <th class="text-light">Telefono</th>'+
@@ -113,7 +114,8 @@ function maxid() {
             }
             tt += '<tr class="text-center">' +
                 ' <td><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</td>' +
-                ' <td>' + response.data[i].nya + '</td>' +
+                ' <td>' + response.data[i].nya + '</td>' + 
+                ' <td>' + response.data[i].nombreagente + '</td>' + 
                 ' <td> <span class="badge '+colordepto+'" style="font-size:medium;">' + response.data[i].depto + '</span>'+
                 ' <td>' + response.data[i].topicnombre + '</td>' +
                 ' <td>' + response.data[i].cel + '</td>' +
