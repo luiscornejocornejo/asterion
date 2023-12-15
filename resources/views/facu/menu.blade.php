@@ -117,6 +117,13 @@ $resultados = DB::select($query);
                         <span> Empresa </span>
                     </a>
                 </li>
+                <li class="side-nav-item background-buttons">
+                    <a  href="/siennaabm?id=57"  class="side-nav-link hovering-pan ">
+                        <i class="mdi mdi-cog"></i>
+                        <span> Categoria </span>
+                    </a>
+                </li>
+                
              
     <?php
      }
