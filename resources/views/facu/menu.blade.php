@@ -73,9 +73,9 @@ $resultados = DB::select($query);
      if(($tipodemenu =="1")or($tipodemenu =="2")){
      ?>
                 <li class="side-nav-item background-buttons">
-                    <a  href="/operator"  class="side-nav-link hovering-pan ">
+                    <a  href="/supervisor"  class="side-nav-link hovering-pan ">
                         <i class="uil-ticket"></i>
-                        <span> Tickets </span>
+                        <span> Tickets Super </span>
                     </a>
                 </li>
 
