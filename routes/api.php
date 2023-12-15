@@ -54,6 +54,7 @@ Route::get('/topicxdepto', [wsController::class, 'topicxdepto']);
 
 
 Route::get('/maxid', [wsController::class, 'maxid']);
+Route::get('/maxid2', [wsController::class, 'maxid2']);
 Route::get('/enhora', [wsController::class, 'enhora']);
 
 Route::post('/pedir', [wsController::class, 'pedir']);
