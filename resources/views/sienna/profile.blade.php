@@ -15,7 +15,7 @@ foreach($resultados as $valuee){
 ?>
 
 
-@include('facu.header2')
+@include('facu.header')
 
 @include('facu.menu')
 
