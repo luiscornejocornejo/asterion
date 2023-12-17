@@ -112,7 +112,6 @@ function pedir(dd) {
 function vista(dd) {
     document.getElementById('vista').src = "";
 
-    document.getElementById("vista").contentWindow.document.location.href = dd;
     document.getElementById('vista').src = dd;
 
 }
