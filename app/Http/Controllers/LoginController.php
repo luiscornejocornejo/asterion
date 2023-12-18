@@ -213,7 +213,7 @@ class LoginController extends Controller
 
         $subject = "Recuperar password";
         $for = $request->email;
-        Mail::mailer('smtp.rivernet')
+        Mail::mailer('rivernet')
         ->send('recu', [], function ($msj) use ($subject, $for) {
             $msj->from("operador@suricata.la", "soporte");
             $msj->subject($subject);
