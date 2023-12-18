@@ -33,6 +33,7 @@ Route::get('/recuperar', function () {
     return view('sienna/password');
 
 });
+Route::post('/recuperar','App\Http\Controllers\LoginController@recuperar');
 Route::get('/', function () {
 
      $idusuario=session()->has('idusuario');

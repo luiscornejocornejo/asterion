@@ -12,7 +12,7 @@ use App\Models\users;
 use App\Models\graficos;
 use App\Models\categoria;
 use App\Models\siennaloginxenioo;
-
+use Mail; 
 use phpDocumentor\Reflection\PseudoTypes\False_;
 
 class LoginController extends Controller
@@ -204,4 +204,24 @@ class LoginController extends Controller
             ->back()
             ->with('success', 'Se Actulizo el registro  correctamente!');
     }
+
+    public function recuperar(Request $request)
+    {
+
+        ;
+       
+
+        $subject = "Recuperar password";
+        $for = $request->email;
+        Mail::send('recu',$request->all(), function($msj) use($subject,$for){
+            $msj->from("soporte@suricata.la","operador");
+            $msj->subject($subject);
+            $msj->to($for);
+        });
+        
+        return redirect()
+            ->back()
+            ->with('success', 'Se Envio un emailpara recuperar password !');
+    }
+    
 }

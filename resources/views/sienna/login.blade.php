@@ -73,7 +73,7 @@ $date = date('d-m-y H:i:s');
                                                 </div>
                                                 <div class="flex-shrink-0">
                                                     <div class="">
-                                                        <a href="recover-password.html" class="text-muted">Forgot password?</a>
+                                                        <a href="/recuperar" class="text-muted">Forgot password?</a>
                                                     </div>
                                                 </div>
                                             </div>
