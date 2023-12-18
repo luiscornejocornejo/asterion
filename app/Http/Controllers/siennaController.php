@@ -86,11 +86,11 @@ class siennaController extends Controller
           continue;
       }
     echo   $query1="
-    DROP TABLE ".$val->Database.".t_extraticket";
+    DROP TABLE ".$val->Database.".t_prioridad";
    /* DROP TABLE ".$val->Database.".;
     DROP TABLE ".$val->Database.".;
     DROP TABLE ".$val->Database.".;
-    DROP TABLE ".$val->Database."t_prioridad.;
+    DROP TABLE ".$val->Database.".;
     ;
     DROP TABLE ".$val->Database.".t_staff;
     DROP TABLE ".$val->Database.".t_ticketsC;
