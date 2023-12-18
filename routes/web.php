@@ -29,8 +29,8 @@ Route::get('/mm', function () {
     return view('sienna/mm');
 
 });
-Route::get('/registro', function () {
-    return view('sienna/registro');
+Route::get('/password', function () {
+    return view('sienna/password');
 
 });
 Route::get('/', function () {
@@ -97,19 +97,14 @@ Route::post('/siennaforme','App\Http\Controllers\siennaController@siennaformepos
 Route::get('/siennaabm','App\Http\Controllers\siennaController@siennaabm');
 Route::post('/eliminarregistro','App\Http\Controllers\siennaController@delete'); 
 Route::get('/pruebadatabase','App\Http\Controllers\siennaController@pruebadatabase');
-
-
-
 Route::get('/ticketsienna','App\Http\Controllers\siennaController@ticketsienna');
 Route::post('/ticketsienna','App\Http\Controllers\siennaController@ticketsiennapost');
-
-
 Route::get('/endpointentrantes','App\Http\Controllers\siennaController@endpointentrantes');
 Route::get('/profile','App\Http\Controllers\LoginController@profile');
 Route::post('/actualizardatos','App\Http\Controllers\LoginController@actualizardatos');
 
-Route::get('/chatsienna','App\Http\Controllers\ChatsiennaController@index');
 
+Route::get('/chatsienna','App\Http\Controllers\ChatsiennaController@index');
 Route::get('/chatsiennacrear','App\Http\Controllers\ChatsiennaController@creardb');
 
 
