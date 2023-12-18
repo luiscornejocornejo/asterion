@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\cappi2022Controller;
 use App\Http\Controllers\Api\clienteController;
 use App\Http\Controllers\Api\crearticketController;
 use App\Http\Controllers\api\siennaticketsController;
+use App\Http\Controllers\api\ostController;
 
 
 
@@ -22,7 +23,7 @@ use App\Http\Controllers\api\siennaticketsController;
 |
 */
 
-
+/*
 Route::get('/datostickets2/{mail}', [clienteController::class, 'datostickets2']);
 Route::get('/topics2', [clienteController::class, 'topics2']);
 Route::get('/departments2', [clienteController::class, 'departments2']);
@@ -34,7 +35,7 @@ Route::post('/crearticket', [clienteController::class, 'crearticket']);
 
 Route::get('/crearticketos', [crearticketController::class, 'crearticketenos']);
 
-
+*/
 
 Route::get('/ws', [wsController::class, 'ws']);
 Route::get('/ws2', [wsController::class, 'ws2']);
@@ -57,13 +58,14 @@ Route::post('/pedir2', [siennaticketsController::class, 'pedir2']);
 Route::get('/listadoseguimientos', [siennaticketsController::class, 'listadoseguimientos']);
 Route::post('/siennacrearseguimiento2', [siennaticketsController::class, 'siennacrearseguimiento2']);
 Route::get('/ticketsviejo', [siennaticketsController::class, 'ticketsviejo']);
+Route::get('/crearusuario', [siennaticketsController::class, 'crearusuario']);
 
  
 
 
 
 
-
+/*
 
 //Route::get('/ws','App\Http\Controllers\api\wsController@ws');
 //Route::get('/datostickets','App\Http\Controllers\api\wsController@datostickets');
@@ -72,17 +74,12 @@ Route::get('/topics', [wsController::class, 'topics']);
 Route::get('/ost_ticket_status', [wsController::class, 'ost_ticket_status']);
 Route::get('/departments', [wsController::class, 'departments']);
 Route::get('/staff', [wsController::class, 'staff']);
-
-
-
 Route::get('/extrasmail/{id}',[wsController::class, 'extrasmail']);
 Route::get('/extraswhatapp/{id}',[wsController::class, 'extraswhatapp']);
 Route::get('/extrahistorial/{id}',[wsController::class, 'extrahistorial']);
 Route::get('/extrasuser/{user_id}',[wsController::class, 'extrasuser']);
-
-
 Route::get('/cappi2022', [cappi2022Controller::class, 'crear']);
-
+*/
 
 Route::get('/generico','App\Http\Controllers\api\pasajeController@pasaje');
 Route::get('/especifico','App\Http\Controllers\api\pasajeController@especifico');
@@ -90,7 +87,6 @@ Route::get('/datosextras','App\Http\Controllers\api\ticketController@principal')
 
 
 
-Route::get('/crearusuario','App\Http\Controllers\api\wsController@crearusuario');
 
 
 //Route::apiResource('cappi2022', App\Http\Controllers\api\cappi2022Controller::class);

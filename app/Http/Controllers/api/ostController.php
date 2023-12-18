@@ -19,9 +19,44 @@ use App\Models\empresa;
 use App\Models\categoria;
 
 
-class wsController extends Controller
+class ostController extends Controller
 {
 
+
+    public function crearusuario(Request $request)
+    {
+        $token = $request->token;
+        if ($token <> "EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM") {
+            return "token invalido";
+        }
+
+        $nombre = $request->nombre;
+        $categoria = $request->categoria;
+        $apellido = $request->apellido;
+        $mail = $request->mail;
+        $email_suricata = $request->email_suricata;
+
+        $pass = md5($request->pass);
+        users::query()->updateOrCreate([
+            'id' => 0
+        ], [
+            'nombre' => $nombre,
+            'categoria' => $categoria,
+            'last_name' => $apellido,
+            'email' => $mail,
+            'password' => $pass,
+            'type_dni' => 1,
+            'dni' => '123456789',
+            'cuit' => '123456789',
+            'framegender' => '1',
+            'email_suricata' => $email_suricata,
+            'framecountry' => '1',
+            'active' => '1',
+            'birthdate' => '203-10-12',
+
+
+        ]);
+    }
     public function select2($id, $mail)
     {
 
@@ -67,6 +102,112 @@ class wsController extends Controller
         config(['database.connections.mysql2.password' => $pass]);
         config(['database.connections.mysql2.port' => $port]);
     }
+    public function datostickets(Request $request)
+    {
+
+        // $id = $request->id;
+        $fields2 = $this->select2(75, $request->mail);
+        //$fields3 = $this->select2(77);
+        //$fields4 = $this->select2(78);
+        // $fields5 = $this->select2(79);
+        $return2 = json_encode($fields2);
+        return $return2;
+    }
+    public function extrasmail(Request $request)
+    {
+        $fields3 = $this->conectar2(11);
+        $ticketid = $request->id;
+        $query66 = "SELECT body FROM ost_thread_entry WHERE thread_id= (SELECT id FROM ost_thread where object_id=" . $ticketid . ")";
+        $fields66 = DB::reconnect('mysql2')->select($query66);
+        $return2 = json_encode($fields66);
+        return $return2;
+    }
+
+    public function extrasuser(Request $request)
+    {
+        $fields3 = $this->conectar2(11);
+        $user_id = $request->user_id;
+        $query66 = "select * from ost_user__cdata where user_id=" . $user_id . "";
+        $fields66 = DB::reconnect('mysql2')->select($query66);
+        $return2 = json_encode($fields66);
+        return $return2;
+    }
+
+    public function extraswhatapp(Request $request)
+    {
+        $fields3 = $this->conectar2(11);
+        $ticketid = $request->id;
+        $querydatos = "select f.chat_link,f.extra1_ticket,f.extra2_ticket,f.subject, c.priority_desc as priority
+        
+        from ost_ticket a
+       left join   ost_ticket__cdata f
+       on f.ticket_id=a.ticket_id
+       left join ost_ticket_priority c on f.priority = c.priority_id 
+
+       where a.ticket_id=" . $ticketid;
+        $fields55 = DB::reconnect('mysql2')->select($querydatos);
+
+        $return = array();
+        foreach ($fields55 as $value) {
+            $return = array("chat_link" => $value->chat_link);
+        }
+
+        $return2 = json_encode($fields55);
+        return $return2;
+    }
+
+    public function extrahistorial(Request $request)
+    {
+        $fields3 = $this->conectar2(11);
+        $ticketid = $request->id;
+        $querydatos = "select b.name,a.username,a.timestamp,a.data from ost_thread_event a
+            left join ost_event b on b.id=a.event_id
+            where a.thread_id=(select id from ost_thread where object_id=" . $ticketid . ")
+            order by a.id asc";
+        $fields55 = DB::reconnect('mysql2')->select($querydatos);
+        $return2 = json_encode($fields55);
+        return $return2;
+    }
+
+    public function topics(Request $request)
+    {
+
+        $fields3 = $this->conectar2(11);
+        $querydatos = "select topic_id,topic from ost_help_topic";
+        $fields55 = DB::reconnect('mysql2')->select($querydatos);
+        $return2 = json_encode($fields55);
+        return $return2;
+    }
+
+    public function departments(Request $request)
+    {
+
+        $fields3 = $this->conectar2(11);
+        $querydatos = "select id,name  from ost_department";
+        $fields55 = DB::reconnect('mysql2')->select($querydatos);
+        $return2 = json_encode($fields55);
+        return $return2;
+    }
+    public function ost_ticket_status(Request $request)
+    {
+
+        $fields3 = $this->conectar2(11);
+        $querydatos = "select id,name from ost_ticket_status";
+        $fields55 = DB::reconnect('mysql2')->select($querydatos);
+        $return2 = json_encode($fields55);
+        return $return2;
+    }
+
+    public function staff(Request $request)
+    {
+
+        $fields3 = $this->conectar2(11);
+        $querydatos = "select staff_id as id,concat(firstname, ' ', lastname) as name from ost_staff";
+        $fields55 = DB::reconnect('mysql2')->select($querydatos);
+        $return2 = json_encode($fields55);
+        return $return2;
+    }
+
 
     function cambiarquery($parametros, $request, $query)
     {
@@ -185,6 +326,7 @@ class wsController extends Controller
             return false;
         }
     }
+
     public function conectar($id)
     {
         $query = "SELECT * FROM `base`    where id='" . $id . "'";

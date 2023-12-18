@@ -85,9 +85,9 @@ class siennaController extends Controller
       if (in_array($val->Database, $listadono)) {
           continue;
       }
-    echo   $query1="
+   /* echo   $query1="
     DROP TABLE ".$val->Database.".pagoraliaparametros";
-   /* DROP TABLE ".$val->Database.".;
+    DROP TABLE ".$val->Database.".;
     DROP TABLE ".$val->Database.".;
     DROP TABLE ".$val->Database.".;
     DROP TABLE ".$val->Database.".;

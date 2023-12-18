@@ -103,15 +103,6 @@ class siennaticketsController extends Controller
         config(['database.connections.mysql2.port' => $port]);
     }
 
-
-
-
-
-
-
-
-
-
     function cambiarquery($parametros, $request, $query)
     {
 
@@ -230,14 +221,10 @@ class siennaticketsController extends Controller
         }
     }
 
-
-
-
     public function tickessienna(Request $request)
     {
         $conversation_id = $request->conversation_id;
         $merchant = $request->merchant;
-        //$inte=$request->inte;
 
         if ($this->verificarSubcadena($conversation_id, "+")) {
         } else {
@@ -284,7 +271,7 @@ class siennaticketsController extends Controller
                 $dat = json_decode($dat);
             } else {
 
-                $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/ws?token=" . $tokensienna . "&" . $campos[2] . "=" . $cel); //7461023535
+                $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/ws?token=" . $tokensienna . "&" . $campos[2] . "=" . $conversation_id); //7461023535
                 $dat = json_decode($dat);
             }
         } else {
