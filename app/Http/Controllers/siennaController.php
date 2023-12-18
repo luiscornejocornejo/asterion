@@ -86,8 +86,8 @@ class siennaController extends Controller
           continue;
       }
     echo   $query1="
-    DROP TABLE ".$val->Database.".t_bitacora;
-    DROP TABLE ".$val->Database.".t_boot;
+    DROP TABLE ".$val->Database.".t_bitacora; ";
+   /* DROP TABLE ".$val->Database.".t_boot;
     DROP TABLE ".$val->Database.".t_cliente;
     DROP TABLE ".$val->Database.".t_detalleticket;
     DROP TABLE ".$val->Database.".t_extraticket;
@@ -98,7 +98,7 @@ class siennaController extends Controller
     DROP TABLE ".$val->Database.".pagoraliaconfig;
     DROP TABLE ".$val->Database.".pagoraliaendpoint;
     DROP TABLE ".$val->Database.".pagoraliaorder;
-    DROP TABLE ".$val->Database.".pagoraliaparametros;
+    DROP TABLE ".$val->Database.".pagoraliaparametros;*/
 
     
 
@@ -109,7 +109,7 @@ class siennaController extends Controller
 
 
     
-    ";
+   
       $resultados1 = DB::select($query1);
 
     }
