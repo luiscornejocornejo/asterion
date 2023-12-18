@@ -6,6 +6,7 @@ use App\Http\Controllers\api\wsController;
 use App\Http\Controllers\Api\cappi2022Controller;
 use App\Http\Controllers\Api\clienteController;
 use App\Http\Controllers\Api\crearticketController;
+use App\Http\Controllers\api\siennaticketsController;
 
 
 
@@ -37,31 +38,25 @@ Route::get('/crearticketos', [crearticketController::class, 'crearticketenos']);
 
 Route::get('/ws', [wsController::class, 'ws']);
 Route::get('/ws2', [wsController::class, 'ws2']);
-Route::get('/tickessienna', [wsController::class, 'tickessienna']);
-Route::get('/tickessiennaseguimientos', [wsController::class, 'tickessiennaseguimientos']);
-Route::post('/creartickessienna', [wsController::class, 'creartickessienna']);
-
-Route::get('/tickessiennaapi', [wsController::class, 'tickessiennaapi']);
-
-Route::post('/cambiarstatussienna', [wsController::class, 'cambiarstatussienna']);
-Route::post('/cambiartopicsienna', [wsController::class, 'cambiartopicsienna']);
-Route::post('/cambiardeptosienna', [wsController::class, 'cambiardeptosienna']);
-Route::post('/cambiardeptosienna2', [wsController::class, 'cambiardeptosienna2']);
-Route::post('/siennacrearseguimiento', [wsController::class, 'siennacrearseguimiento']);
-
-Route::get('/statussiennaxdepto', [wsController::class, 'statussiennaxdepto']);
-Route::get('/topicxdepto', [wsController::class, 'topicxdepto']);
-
-
-Route::get('/maxid', [wsController::class, 'maxid']);
-Route::get('/maxid2', [wsController::class, 'maxid2']);
-Route::get('/enhora', [wsController::class, 'enhora']);
-
-Route::post('/pedir', [wsController::class, 'pedir']);
-Route::post('/pedir2', [wsController::class, 'pedir2']);
-Route::get('/listadoseguimientos', [wsController::class, 'listadoseguimientos']);
-Route::post('/siennacrearseguimiento2', [wsController::class, 'siennacrearseguimiento2']);
-Route::get('/ticketsviejo', [wsController::class, 'ticketsviejo']);
+Route::get('/tickessienna', [siennaticketsController::class, 'tickessienna']);
+Route::get('/tickessiennaseguimientos', [siennaticketsController::class, 'tickessiennaseguimientos']);
+Route::post('/creartickessienna', [siennaticketsController::class, 'creartickessienna']);
+Route::get('/tickessiennaapi', [siennaticketsController::class, 'tickessiennaapi']);
+Route::post('/cambiarstatussienna', [siennaticketsController::class, 'cambiarstatussienna']);
+Route::post('/cambiartopicsienna', [siennaticketsController::class, 'cambiartopicsienna']);
+Route::post('/cambiardeptosienna', [siennaticketsController::class, 'cambiardeptosienna']);
+Route::post('/cambiardeptosienna2', [siennaticketsController::class, 'cambiardeptosienna2']);
+Route::post('/siennacrearseguimiento', [siennaticketsController::class, 'siennacrearseguimiento']);
+Route::get('/statussiennaxdepto', [siennaticketsController::class, 'statussiennaxdepto']);
+Route::get('/topicxdepto', [siennaticketsController::class, 'topicxdepto']);
+Route::get('/maxid', [siennaticketsController::class, 'maxid']);
+Route::get('/maxid2', [siennaticketsController::class, 'maxid2']);
+Route::get('/enhora', [siennaticketsController::class, 'enhora']);
+Route::post('/pedir', [siennaticketsController::class, 'pedir']);
+Route::post('/pedir2', [siennaticketsController::class, 'pedir2']);
+Route::get('/listadoseguimientos', [siennaticketsController::class, 'listadoseguimientos']);
+Route::post('/siennacrearseguimiento2', [siennaticketsController::class, 'siennacrearseguimiento2']);
+Route::get('/ticketsviejo', [siennaticketsController::class, 'ticketsviejo']);
 
  
 
