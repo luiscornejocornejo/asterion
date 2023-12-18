@@ -325,6 +325,7 @@ class siennaticketsController extends Controller
             $campo = $val->headerendpoint;
         }
 
+        echo $url;
         if ($url <> "") {
             $campos = explode(",", $campo);
             if ($idcustomer <> "") {
