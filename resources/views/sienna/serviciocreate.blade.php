@@ -1,8 +1,11 @@
-@include('pp.header')
+@include('facu.header')
+<div class="wrapper">
 
-<div id="principal">
-    <div class="mx-auto" style="width: 1000px;margin-top: 70px;">
+<!-- ========== Left Sidebar Start ========== -->
+@include('facu.menu')
 
+<div class="content-page" style="padding: 0!important;">
+          <div class="content">
         @if ($message = Session::get('success'))
         <div class="alert alert-success alert-dismissible fade
                             show" role="alert">
@@ -329,7 +332,7 @@
     }
 </script>
 <br><br><br>
-@include('pp.footer')
+@include('facu.footer')
 <script src="assets/libs/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
 <script src="assets/libs/twitter-bootstrap-wizard/prettify.js"></script>
 
