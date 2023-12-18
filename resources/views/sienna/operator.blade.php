@@ -106,7 +106,7 @@ function maxid() {
   "language" : {
     "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
   }
-});
+  });
 
 
 
@@ -125,14 +125,14 @@ function maxid() {
 
 function topic(result,dd, ee, ff) {
 
-document.getElementById("idticketestado3").value = dd;
+  document.getElementById("idticketestado3").value = dd;
 
 
 
 
-url = "https://"+result+".suricata.cloud/api/topicxdepto?depto=" + ff;
-axios.get(url)
-.then(function (response) {
+  url = "https://"+result+".suricata.cloud/api/topicxdepto?depto=" + ff;
+  axios.get(url)
+  .then(function (response) {
     // función que se ejecutará al recibir una respuesta
     console.log(response.data);
 
@@ -158,14 +158,14 @@ axios.get(url)
 
 
 
-})
-.catch(function (error) {
-    // función para capturar el error
-    console.log(error);
-})
-.then(function () {
-    // función que siempre se ejecuta
-});
+  })
+  .catch(function (error) {
+      // función para capturar el error
+      console.log(error);
+  })
+  .then(function () {
+      // función que siempre se ejecuta
+  });
 
 
 }
@@ -182,14 +182,10 @@ function coloriconos(id){
 
 function listadoseguimientos(result,dd) {
 
-document.getElementById("idticketseguimiento").value = dd;
-
-
-
-
-url = "https://"+result+".suricata.cloud/api/listadoseguimientos?ticket=" + dd;
-axios.get(url)
-.then(function (response) {
+  document.getElementById("idticketseguimiento").value = dd;
+  url = "https://"+result+".suricata.cloud/api/listadoseguimientos?ticket=" + dd;
+  axios.get(url)
+  .then(function (response) {
     // función que se ejecutará al recibir una respuesta
     console.log(response.data);
     document.getElementById("seguimientounico").innerHTML = null;
@@ -213,23 +209,20 @@ axios.get(url)
                 '<small class="text-muted">'+response.data[i].created_at+'</small>'+
                 '</p> </div> </div>';
                                             
-                                            
-                                
-
-
+                         
     }
     document.getElementById("seguimientounico").innerHTML = dato;
 
 
 
-})
-.catch(function (error) {
-    // función para capturar el error
-    console.log(error);
-})
-.then(function () {
-    // función que siempre se ejecuta
-});
+  })
+  .catch(function (error) {
+      // función para capturar el error
+      console.log(error);
+  })
+  .then(function () {
+      // función que siempre se ejecuta
+  });
 
 
 }
