@@ -44,6 +44,16 @@ return [
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
         ],
+        'rivernet' => [
+            'transport' => 'smtp',
+            'host' => 'mail.smtp2go.com',
+            'port' =>'2525',
+            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+            'username' => 'crm@pagoralia.com',
+            'password' => 'rOsfARmKpUNg9kUP',
+            'timeout' => null,
+            'local_domain' => env('MAIL_EHLO_DOMAIN'),
+        ],
 
         'ses' => [
             'transport' => 'ses',
