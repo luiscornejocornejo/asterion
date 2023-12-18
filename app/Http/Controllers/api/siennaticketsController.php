@@ -314,7 +314,7 @@ class siennaticketsController extends Controller
 
 
         $prueba = $this->conectar(14);
-       echo  $query3 = "select * from " . $inte . ".ws_cliente where nombre='" . $merchant . "'";
+         $query3 = "select * from " . $inte . ".ws_cliente where nombre='" . $merchant . "'";
         $datos = DB::connection('mysql2')->select($query3);
         $url = "";
         $tokensienna = "";
@@ -325,7 +325,6 @@ class siennaticketsController extends Controller
             $campo = $val->headerendpoint;
         }
 
-        echo $url;
         if ($url <> "") {
             $campos = explode(",", $campo);
             if ($idcustomer <> "") {
@@ -386,12 +385,12 @@ class siennaticketsController extends Controller
         if ($url <> "") {
             $campos = explode(",", $campo);
             if ($idcustomer <> "") {
-                //$dat = file_get_contents("https://" . $merchant . "." . $url . "/api/ws?token=" . $tokensienna . "&" . $campos[0] . "=" . $idcustomer); //7461023535
-                //$dat = json_decode($dat);
-            } else {
-
                 $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/ws?token=" . $tokensienna . "&" . $campos[0] . "=" . $clientid); //7461023535
                 $dat = json_decode($dat);
+            } else {
+
+               // $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/ws?token=" . $tokensienna . "&" . $campos[0] . "=" . $clientid); //7461023535
+                //$dat = json_decode($dat);
             }
         } else {
             $dat = "";
