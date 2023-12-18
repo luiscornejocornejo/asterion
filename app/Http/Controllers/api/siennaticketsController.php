@@ -236,7 +236,7 @@ class siennaticketsController extends Controller
         $return2 = json_encode($resultados, true);
 
 
-        $query2 = "select * from siennatickets where conversation_id='" . $conversation_id . "' and siennaestado=1";
+        $query2 = "select * from siennatickets where conversation_id='" . $conversation_id . "' and siennaestado<>4";
         $resultados2 = DB::select($query2);
 
         $idcustomer = "";
@@ -271,8 +271,8 @@ class siennaticketsController extends Controller
                 $dat = json_decode($dat);
             } else {
 
-                $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/ws?token=" . $tokensienna . "&" . $campos[2] . "=" . $conversation_id); //7461023535
-                $dat = json_decode($dat);
+               // $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/ws?token=" . $tokensienna . "&" . $campos[2] . "=" . $conversation_id); //7461023535
+                //$dat = json_decode($dat);
             }
         } else {
             $dat = "";
@@ -282,6 +282,123 @@ class siennaticketsController extends Controller
         return response()->json(['cliente' => $resultados, 'tickets' => $resultados2, 'dat' => $dat]);
     }
 
+    public function tickessienna2(Request $request)
+    {
+        $cel = $request->cel;
+        $merchant = $request->merchant;
+
+        if ($this->verificarSubcadena($cel, "+")) {
+        } else {
+            $cel = "+" . $cel;
+        }
+
+        $query = "select * from siennacliente where cel='" . $cel . "'";
+        $resultados = DB::select($query);
+        $return2 = json_encode($resultados, true);
+
+
+        $query2 = "select * from siennatickets where cel='" . $cel . "' and siennaestado<>4";
+        $resultados2 = DB::select($query2);
+
+        $idcustomer = "";
+        foreach ($resultados as $val) {
+            $idcustomer = $val->cliente;
+        }
+
+        $query4 = "select * from siennaintegracion";
+        $resultados4 = DB::select($query4);
+        foreach ($resultados4 as $val2) {
+
+            $inte = $val2->nombre;
+        }
+
+
+        $prueba = $this->conectar(14);
+        $query3 = "select * from " . $inte . ".ws_cliente where nombre='" . $merchant . "'";
+        $datos = DB::connection('mysql2')->select($query3);
+        $url = "";
+        $tokensienna = "";
+        foreach ($datos as $val) {
+
+            $url = $val->headerlogin;
+            $tokensienna = $val->tokensienna;
+            $campo = $val->headerendpoint;
+        }
+
+        if ($url <> "") {
+            $campos = explode(",", $campo);
+            if ($idcustomer <> "") {
+                $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/ws?token=" . $tokensienna . "&" . $campos[0] . "=" . $idcustomer); //7461023535
+                $dat = json_decode($dat);
+            } else {
+
+                $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/ws?token=" . $tokensienna . "&" . $campos[2] . "=" . $cel); //7461023535
+                $dat = json_decode($dat);
+            }
+        } else {
+            $dat = "";
+        }
+
+
+        return response()->json(['cliente' => $resultados, 'tickets' => $resultados2, 'dat' => $dat]);
+    }
+    public function tickessienna3(Request $request)
+    {
+        $clientid = $request->clientid;
+        $merchant = $request->merchant;
+
+        
+
+        $query = "select * from siennacliente where cliente='" . $clientid . "'";
+        $resultados = DB::select($query);
+        $return2 = json_encode($resultados, true);
+
+
+        $query2 = "select * from siennatickets where cliente='" . $clientid . "' and siennaestado<>4";
+        $resultados2 = DB::select($query2);
+
+        $idcustomer = "";
+        foreach ($resultados as $val) {
+            $idcustomer = $val->cliente;
+        }
+
+        $query4 = "select * from siennaintegracion";
+        $resultados4 = DB::select($query4);
+        foreach ($resultados4 as $val2) {
+
+            $inte = $val2->nombre;
+        }
+
+
+        $prueba = $this->conectar(14);
+        $query3 = "select * from " . $inte . ".ws_cliente where nombre='" . $merchant . "'";
+        $datos = DB::connection('mysql2')->select($query3);
+        $url = "";
+        $tokensienna = "";
+        foreach ($datos as $val) {
+
+            $url = $val->headerlogin;
+            $tokensienna = $val->tokensienna;
+            $campo = $val->headerendpoint;
+        }
+
+        if ($url <> "") {
+            $campos = explode(",", $campo);
+            if ($idcustomer <> "") {
+                //$dat = file_get_contents("https://" . $merchant . "." . $url . "/api/ws?token=" . $tokensienna . "&" . $campos[0] . "=" . $idcustomer); //7461023535
+                //$dat = json_decode($dat);
+            } else {
+
+                $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/ws?token=" . $tokensienna . "&" . $campos[0] . "=" . $clientid); //7461023535
+                $dat = json_decode($dat);
+            }
+        } else {
+            $dat = "";
+        }
+
+
+        return response()->json(['cliente' => $resultados, 'tickets' => $resultados2, 'dat' => $dat]);
+    }
     public function maxid(Request $request)
     {
         $idusuario = $request->idusuario;

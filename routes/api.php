@@ -39,7 +39,9 @@ Route::get('/crearticketos', [crearticketController::class, 'crearticketenos']);
 
 Route::get('/ws', [wsController::class, 'ws']);
 Route::get('/ws2', [wsController::class, 'ws2']);
-Route::get('/tickessienna', [siennaticketsController::class, 'tickessienna']);
+Route::get('/tickessienna', [siennaticketsController::class, 'tickessienna']);//busqueda por conversacioid
+Route::get('/tickessienna2', [siennaticketsController::class, 'tickessienna2']);//busqyeda por celular
+Route::get('/tickessienna3', [siennaticketsController::class, 'tickessienna3']);//busqueda por numero de cliente
 Route::get('/tickessiennaseguimientos', [siennaticketsController::class, 'tickessiennaseguimientos']);
 Route::post('/creartickessienna', [siennaticketsController::class, 'creartickessienna']);
 Route::get('/tickessiennaapi', [siennaticketsController::class, 'tickessiennaapi']);
