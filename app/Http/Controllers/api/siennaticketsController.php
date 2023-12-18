@@ -302,7 +302,7 @@ class siennaticketsController extends Controller
 
         $idcustomer = "";
         foreach ($resultados as $val) {
-            $idcustomer = $val->cliente;
+         echo    $idcustomer = $val->cliente;
         }
 
         $query4 = "select * from siennaintegracion";
