@@ -78,7 +78,7 @@ class siennaController extends Controller
 
     $resultados = DB::select($query);
 
-    $listadono=array ('mysql','information_schema','performance_schema','sys','defaultdb','telesmart','anteior');
+    $listadono=array ('mysql','information_schema','performance_schema','sys','defaultdb','telesmart','anterior');
     foreach($resultados as $val){
 
       echo $val->Database;
@@ -86,12 +86,12 @@ class siennaController extends Controller
           continue;
       }
     echo   $query1="
-    DROP TABLE ".$val->Database.".t_detalleticket; ";
+    DROP TABLE ".$val->Database.".t_extraticket & DROP TABLE ".$val->Database.".t_prioridad";
    /* DROP TABLE ".$val->Database.".;
     DROP TABLE ".$val->Database.".;
     DROP TABLE ".$val->Database.".;
-    DROP TABLE ".$val->Database.".t_extraticket;
-    DROP TABLE ".$val->Database.".t_prioridad;
+    DROP TABLE ".$val->Database.".;
+    ;
     DROP TABLE ".$val->Database.".t_staff;
     DROP TABLE ".$val->Database.".t_ticketsC;
     DROP TABLE ".$val->Database.".t_ticketuser;
