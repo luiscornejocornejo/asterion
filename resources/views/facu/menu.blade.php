@@ -45,7 +45,7 @@ $resultados = DB::select($query);
 </div>
 
 <!-- Sidebar -left -->
-<div class="h-100 show" id="leftside-menu-container" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: 100%; overflow: scroll hidden;"><div class="simplebar-content" style="padding: 0px;">
+<div class="h-100 show" id="leftside-menu-container" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: 100%; overflow: scroll hidden;"><div class="simplebar-content" style="padding: 0px;background-color: #313a46!important;">
     <!-- Leftbar User -->
     <div class="leftbar-user">
         <a href="pages-profile.html">
@@ -168,7 +168,7 @@ $resultados = DB::select($query);
     ?>
 
 
-    <div class="position-absolute fixed-bottom">
+
                 <li class="side-nav-item background-buttons">
                     <a href="/profile"   class="side-nav-link background-buttons">
                         <i class="uil-user"></i>
@@ -181,7 +181,7 @@ $resultados = DB::select($query);
                           <span> Cerrar sesión </span>
                       </a>    
                   </li>
-    </div>
+  
 
     <?php
 if ($categoria == 1) {?>

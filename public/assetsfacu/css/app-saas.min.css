@@ -16162,7 +16162,7 @@ html[data-sidenav-size=condensed]:not([data-layout=topnav]) .wrapper .navbar-cus
 }
 
 html[data-sidenav-size=condensed]:not([data-layout=topnav]) .wrapper .leftside-menu {
-    /*position: absolute;*/
+    position: absolute;
     width: var(--ct-leftbar-width-sm);
     min-width: var(--ct-leftbar-width-sm)
 }
