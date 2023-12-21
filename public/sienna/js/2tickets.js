@@ -112,7 +112,7 @@ function pedir(dd) {
 function vista(dd) {
     document.getElementById('vista').innerHTML = "";
    // document.getElementById('vista').src = dd;
-    g='<iframe id="vista" src="'+dd+'" width="100%" height="800px" class="border rounded-3" style="height:400px !important"></iframe>';
+    g='<iframe  src="'+dd+'" width="100%" height="800px" class="border rounded-3" style="height:400px !important"></iframe>';
     document.getElementById('vista').innerHTML = g;
 }
 
