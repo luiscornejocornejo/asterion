@@ -85,18 +85,12 @@ class siennaController extends Controller
       if (in_array($val->Database, $listadono)) {
           continue;
       }
-    echo   $query1="
-    ALTER TABLE ".$val->Database.".siennacliente ADD deuda varchar(100) NULL;
-
-
-     ";
+    //echo   $query1="   ALTER TABLE ".$val->Database.".siennacliente ADD deuda varchar(100) NULL;    ";
    
 
     
 
-     //ALTER TABLE infitelecom.siennacliente ADD  varchar(100) NULL;
-     //ALTER TABLE infitelecom.siennacliente ADD  varchar(100) NULL;
-     //ALTER TABLE infitelecom.siennacliente ADD  varchar(100) NULL;
+   
 
 
 
