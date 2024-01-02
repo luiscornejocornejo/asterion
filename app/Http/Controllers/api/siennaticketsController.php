@@ -477,9 +477,17 @@ class siennaticketsController extends Controller
         $cedula = $request->cedula;
         $email = $request->email;
         $user_id = $request->user_id;
-
         $cliente = $request->cliente;
         $siennatopic = $request->siennatopic;
+
+        $deuda = $request->deuda;
+        $s_status = $request->s_status;
+        $a_status = $request->a_status;
+        $address = $request->address;
+
+
+
+
 
         $si = new siennatickets();
         $si->siennadepto = $siennadepto;
@@ -538,6 +546,10 @@ class siennaticketsController extends Controller
         $sc->email = $email;
         $sc->cel = $cel;
         $sc->cedula = $cedula;
+        $sc->deuda = $deuda;
+        $sc->s_status = $s_status;
+        $sc->a_status = $a_status;
+        $sc->address = $address;
         try {
             $sc->save();
         } catch (\Illuminate\Database\QueryException $ex) {
