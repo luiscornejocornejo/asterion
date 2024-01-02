@@ -86,7 +86,7 @@ class siennaController extends Controller
           continue;
       }
     echo   $query1="
-    ALTER TABLE ".$val->Database.".siennacliente ADD s_status varchar(100) NULL;
+    ALTER TABLE ".$val->Database.".siennacliente ADD deuda varchar(100) NULL;
 
 
      ";
@@ -96,7 +96,7 @@ class siennaController extends Controller
 
      //ALTER TABLE infitelecom.siennacliente ADD  varchar(100) NULL;
      //ALTER TABLE infitelecom.siennacliente ADD  varchar(100) NULL;
-     //ALTER TABLE infitelecom.siennacliente ADD deuda varchar(100) NULL;
+     //ALTER TABLE infitelecom.siennacliente ADD  varchar(100) NULL;
 
 
 
