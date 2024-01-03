@@ -27,7 +27,7 @@
                             <div class="d-flex mt-2">
                             <i class="mdi mdi-account"></i>&nbsp;Nombre:&nbsp;
                             <span class="badge badge-secondary-lighten hover-overlay line-h">
-                                Pepito
+                                <span id="nyac"></span>
                             </span>
                             </div>
                             <div class="d-flex mt-2">

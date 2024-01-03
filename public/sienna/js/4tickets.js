@@ -110,8 +110,7 @@ function pedir(dd) {
 }
 
 function vista(dd,ee,result) {
-
-    alert(ee);
+    document.getElementById("nyac").innerHTML = "";
     url = "https://"+result+".suricata.cloud/api/datoscliente?cliente=" + ee;
     axios.get(url)
     .then(function (response) {
@@ -124,11 +123,11 @@ function vista(dd,ee,result) {
             console.log(response.data[i].nya);
             console.log(response.data[i].cel);
 
-
+            document.getElementById("nyac").innerHTML = response.data[i].nya;
 
 
         }
-       // document.getElementById("estunico").innerHTML = dato;
+       // 
 
 
 
