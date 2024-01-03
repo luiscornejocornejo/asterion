@@ -406,11 +406,9 @@ class siennaticketsController extends Controller
 
         $query = "select *,a.conversation_id,a.user_id,
         b.nombre as depto,b.id as iddepto,d.nombre topicnombre,
-        h.deuda,h.nya,h.email,h.cel,h.address,h.s_status,h.a_status,
         a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado from siennatickets a
         left join siennadepto b on b.id=a.siennadepto 
         left join  siennaestado c on c.id=a.siennaestado
-        left join siennacliente h on h.cliente=a.cliente
 
         left join  siennatopic d on d.id=a.siennatopic
         where a.siennaestado not in('3','4')  
@@ -420,12 +418,10 @@ class siennaticketsController extends Controller
 
          select *,a.conversation_id,a.user_id,
         b.nombre as depto,b.id as iddepto,d.nombre topicnombre,
-        h.deuda,h.nya,h.email,h.cel,h.address,h.s_status,h.a_status,
 
         a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado from siennatickets a
         left join siennadepto b on b.id=a.siennadepto 
         left join  siennaestado c on c.id=a.siennaestado
-        left join siennacliente h on h.cliente=a.cliente
 
         left join  siennatopic d on d.id=a.siennatopic
         where a.siennaestado not in('3','4')  
@@ -438,6 +434,15 @@ class siennaticketsController extends Controller
         $resultados = DB::select($query);
         return $resultados;
     }
+
+    public function datoscliente(Request $request)
+    {
+        $cliente = $request->cliente;
+
+        $query="select * from siennacliente where cliente='".$cliente."'";
+        $resultados = DB::select($query);
+        return $resultados;
+    }
     public function maxid2(Request $request)
     {
         $idusuario = $request->idusuario;
@@ -445,12 +450,10 @@ class siennaticketsController extends Controller
 
         $query = "select *,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
         b.nombre as depto,b.id as iddepto,d.nombre topicnombre,
-        h.deuda,h.nya,h.email,h.cel,h.address,h.s_status,h.a_status,
         a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado from siennatickets a
         left join siennadepto b on b.id=a.siennadepto 
         left join  siennaestado c on c.id=a.siennaestado
         left join  siennatopic d on d.id=a.siennatopic
-        left join siennacliente h on h.cliente=a.cliente
         left join  users e on e.id=a.asignado
         where a.siennaestado not in('3','4')  
          
@@ -459,13 +462,11 @@ class siennaticketsController extends Controller
 
          select *,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
         b.nombre as depto,b.id as iddepto,d.nombre topicnombre,
-        h.deuda,h.nya,h.email,h.cel,h.address,h.s_status,h.a_status,
 
         a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado from siennatickets a
         left join siennadepto b on b.id=a.siennadepto 
         left join  siennaestado c on c.id=a.siennaestado
         left join  siennatopic d on d.id=a.siennatopic
-        left join siennacliente h on h.cliente=a.cliente
 
         left join  users e on e.id=a.asignado
         where a.siennaestado not in('3','4')  
