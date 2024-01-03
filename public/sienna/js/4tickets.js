@@ -109,9 +109,40 @@ function pedir(dd) {
 
 }
 
-function vista(dd,ee) {
+function vista(dd,ee,result) {
 
     alert(ee);
+    url = "https://"+result+".suricata.cloud/api/datoscliente?cliente=" + ee;
+    axios.get(url)
+    .then(function (response) {
+        // función que se ejecutará al recibir una respuesta
+        console.log(response.data);
+
+        dato = "";
+        for (i = 0; i < response.data.length; i++) {
+            console.log(response.data[i].deuda);
+            console.log(response.data[i].nya);
+            console.log(response.data[i].cel);
+
+
+
+
+        }
+       // document.getElementById("estunico").innerHTML = dato;
+
+
+
+    })
+    .catch(function (error) {
+        // función para capturar el error
+        console.log(error);
+    })
+    .then(function () {
+        // función que siempre se ejecuta
+    });
+
+
+
     document.getElementById('vista').innerHTML = "";
    // document.getElementById('vista').src = dd;
     g='<iframe  src="'+dd+'" width="100%" height="800px" class="border rounded-3" style="height:400px !important"></iframe>';
