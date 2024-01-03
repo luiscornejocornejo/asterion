@@ -111,6 +111,12 @@ function pedir(dd) {
 
 function vista(dd,ee,result) {
     document.getElementById("nyac").innerHTML = "";
+    document.getElementById("clientec").innerHTML = "";
+    document.getElementById("domic").innerHTML = "";
+    document.getElementById("celc").innerHTML = "";
+    document.getElementById("emailc").innerHTML = "";
+    document.getElementById("estadocuentac").innerHTML = "";
+    document.getElementById("estadoservicioc").innerHTML = "";
     url = "https://"+result+".suricata.cloud/api/datoscliente?cliente=" + ee;
     axios.get(url)
     .then(function (response) {
@@ -124,6 +130,12 @@ function vista(dd,ee,result) {
             console.log(response.data[i].cel);
 
             document.getElementById("nyac").innerHTML = response.data[i].nya;
+            document.getElementById("clientec").innerHTML = ee;
+            document.getElementById("domic").innerHTML = response.data[i].address;
+            document.getElementById("celc").innerHTML = response.data[i].cel;
+            document.getElementById("emailc").innerHTML = response.data[i].email;
+            document.getElementById("estadocuentac").innerHTML = response.data[i].a_status;
+            document.getElementById("estadoservicioc").innerHTML = response.data[i].s_status;
 
 
         }
