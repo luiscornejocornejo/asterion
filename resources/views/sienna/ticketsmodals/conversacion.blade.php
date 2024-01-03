@@ -27,7 +27,7 @@
     <hr style="margin-top: 10px" />
     <div class="d-flex mt-2">
       <i class="mdi mdi-card-account-details"></i>&nbsp;Numero cliente:&nbsp;
-      <span class="badge badge-secondary-lighten line-h"> {{cedula}} </span>
+      <span class="badge badge-secondary-lighten line-h"> cedula </span>
     </div>
     <div class="d-flex mt-2">
       <i class="mdi mdi-account"></i>&nbsp;Nombre:&nbsp;
