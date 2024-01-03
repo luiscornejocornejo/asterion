@@ -10,8 +10,7 @@
             </div><!-- /.modal-dialog -->
         </div>
       </div>
-      <div class="card widget-flat">
-  <div class="card-body">
+      <div class="card-body">
     <div class="d-flex justify-content-between">
       <div>
         <h4 class="fw-normal text-dark" title="Number of Customers">
@@ -62,4 +61,6 @@
       <span class="badge badge-danger-lighten line-h ms-1"> Masivo </span>
     </div>
   </div>
+      <div class="card widget-flat">
+  
 </div>
