@@ -43,7 +43,7 @@
                             <div class="d-flex mt-2">
                             <i class="mdi mdi-email"></i>&nbsp;Email:&nbsp;
                             <span class="badge badge-secondary-lighten line-h">
-                            <span id="email"></span>
+                            <span id="emailc"></span>
                             </span>
                             </div>
                             <div class="d-flex mt-2">
