@@ -5,7 +5,7 @@
                    
                     <div class="modal-body" id="vista">
                         
-                    </div>
+                   
                     <div class="card-body">
                             <div class="d-flex justify-content-between">
                             <div>
@@ -54,6 +54,7 @@
                             <i class="mdi mdi-antenna"></i>&nbsp;Estado de servicio:&nbsp;
                             <span class="badge badge-success-lighten line-h"> <span id="estadoservicioc"></span> </span>
                             </div>
+                    </div>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
