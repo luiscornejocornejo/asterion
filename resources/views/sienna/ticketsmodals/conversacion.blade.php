@@ -6,7 +6,7 @@
                     <div class="modal-body" id="vista">
                         
                     </div>
-                    <div class="card-body container-fluid" >
+                    <div class="card-body" style="margin:20px;">
                             <div class="d-flex justify-content-between">
                             <div>
                                 <h4 class="fw-normal text-dark" title="Number of Customers">
