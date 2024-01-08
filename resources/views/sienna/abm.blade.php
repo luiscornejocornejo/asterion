@@ -119,25 +119,25 @@
                                 @endforeach
                                 <td role="cell">
 
-<div class="btn-group">
-<button type="button" class="btn btn-primary
-dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Action <i class="mdi
-mdi-chevron-down"></i></button>
-<div class="dropdown-menu">
-    <?php  if ($master->modificar == 1) {?>
-    <a class="btn btn-warning" href="/siennaabmmodificar?registro={{$resultado->$registro}}&idreport={{$idreport}}&pk={{$registro}}" role="button"> <i data-feather="edit"></i></a>
-    <?php }?>
-    <?php  if ($master->eliminar == 1) {?>
+                                    <div class="btn-group">
+                                    <button type="button" class="btn btn-primary
+                                    dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Action <i class="mdi
+                                    mdi-chevron-down"></i></button>
+                                    <div class="dropdown-menu">
+                                        <?php  if ($master->modificar == 1) {?>
+                                        <a class="btn btn-warning" href="/siennaabmmodificar?registro={{$resultado->$registro}}&idreport={{$idreport}}&pk={{$registro}}" role="button"> <i data-feather="edit"></i></a>
+                                        <?php }?>
+                                        <?php  if ($master->eliminar == 1) {?>
 
-    <button type="button" onclick="borrar(<?php echo $resultado->$registro; ?>)" class="btn btn-danger waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center"><i data-feather="delete"></i></button>
+                                        <button type="button" onclick="borrar(<?php echo $resultado->$registro; ?>)" class="btn btn-danger waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center"><i data-feather="delete"></i></button>
 
-    <?php }?>
+                                        <?php }?>
 
-</div>
-</div><!-- /btn-group -->
+                                    </div>
+                                    </div><!-- /btn-group -->
 
 
-</td>
+                                    </td>
 
                             </tr>
                             @endforeach
@@ -173,5 +173,8 @@ mdi-chevron-down"></i></button>
         </div>
     </div>
 </div>
+<div class="newAgent"  data-bs-toggle="modal" data-bs-target="#create-user-modal">
+        <i class="mdi mdi-plus" style="font-size: 25px;"></i>
+      </div>
 <br><br><br>
 @include('facu.footer')
