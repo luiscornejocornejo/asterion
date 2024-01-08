@@ -1,6 +1,8 @@
 
 
 @include('facu.header')
+<link rel="stylesheet" href="agents.css">
+
 <div class="wrapper">
 
 <!-- ========== Left Sidebar Start ========== -->
