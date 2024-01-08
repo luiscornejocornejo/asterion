@@ -178,5 +178,16 @@
 <div class="newAgent"  data-bs-toggle="modal" data-bs-target="#create-user-modal">
         <i class="mdi mdi-plus" style="font-size: 25px;"></i>
       </div>
+
+      <div id="create-user-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dark-header-modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-dark">
+                <h4 class="modal-title text-light" id="dark-header-modalLabel">Añadir usuario</h4>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
+            </div
+</div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
 <br><br><br>
 @include('facu.footer')
