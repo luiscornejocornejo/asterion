@@ -68,7 +68,7 @@ iframe {
 z-index: 999;}
     </style>
 
-<script src="sienna/js/6tickets.js"></script>
+<script src="sienna/js/7tickets.js"></script>
 
 </head>
 <body class="show" onload="maxid()">
