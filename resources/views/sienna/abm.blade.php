@@ -1,6 +1,20 @@
 
 
 @include('facu.header')
+
+<?php
+
+$subdomain_tmp = 'localhost';
+if (isset($_SERVER['HTTP_HOST'])) {
+    $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+    $subdomain_tmp =  array_shift($domainParts);
+} elseif(isset($_SERVER['SERVER_NAME'])){
+    $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+    $subdomain_tmp =  array_shift($domainParts);
+    
+}
+
+?>
 <link rel="stylesheet" href="agents.css">
 
 <div class="wrapper">
@@ -181,6 +195,21 @@
 
 <!-- Modal for Create Ticket -->
 <div id="create-user-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dark-header-modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content h-100">
+            <div class="modal-header bg-dark">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
+            </div>
+            <div class="modal-body">
+                   <iframe src="https://<?php echo $subdomain_tmp;?>.suricata.cloud/siennacreate?report={{$master->id}}" class="w-100 h-100"></iframe>
+            </div>
+           
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+<div id="edit-user-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dark-header-modalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content h-100">
             <div class="modal-header bg-dark">
