@@ -381,9 +381,9 @@ if ($categoria == 1) {?>
 
                     const xhr = new XMLHttpRequest();
                     urlprincipal2="https://suricata4.com.ar/api/broadcast?url="+url+"&tel2="+tel2+"&token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM";
-                    console.log(urlprincipal2);
+                    console.log(urlprincipal2.trim());
 
-                    xhr.open("GET", urlprincipal2);
+                    xhr.open("GET", urlprincipal2.trim());
                     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                    
                     xhr.onload = () => {
