@@ -286,7 +286,7 @@ if ($categoria == 1) {?>
     <!--- End Sidemenu -->
 
     <?php
-       $saliente = session('saliente');
+       $saliente = 1;
 
                 if($saliente ==1){?>
     <div class="whatsapp" data-bs-toggle="modal" data-bs-target="#warning-alert-modal">
