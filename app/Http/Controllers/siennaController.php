@@ -78,23 +78,18 @@ class siennaController extends Controller
 
     $resultados = DB::select($query);
 
-    $listadono=array ('mysql','information_schema','performance_schema','sys','defaultdb','telesmart','anterior');
+    $listadono=array ('mysql','information_schema','performance_schema','sys','defaultdb','telesmart','anterior','infitelecom');
     foreach($resultados as $val){
 
       echo $val->Database;
       if (in_array($val->Database, $listadono)) {
           continue;
       }
-    echo   $query1=" CREATE TABLE ".$val->Database.".suricata_servicios (
-      id INT auto_increment NOT NULL,
-      nombre varchar(100) NULL,
-      descripcion varchar(100) NULL,
-      prod BOOL NULL,
-      CONSTRAINT suricata_servicios_PK PRIMARY KEY (id)
-    )
-    ENGINE=InnoDB
-    DEFAULT CHARSET=utf8mb4
-    COLLATE=utf8mb4_0900_ai_ci;
+    echo   $query1="
+    INSERT INTO ".$val->Database.".masterreport (base,nombre,query,descripcion,crear,modificar,eliminar,parametros,parametrosTipo,tabla,servicio,dashboard,updated_at,created_at) VALUES
+	 (1,'servicios suricata','select * from suricata_servicios','',1,1,1,'','','suricata_servicios',5,0,'2023-12-18 06:01:04','2023-12-18 06:01:04');
+
+
          ";
    
 
