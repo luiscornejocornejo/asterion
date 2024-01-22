@@ -92,17 +92,6 @@ class siennaController extends Controller
 
          ";
    
-
-    
-
-   
-
-
-
-
-
-    
-   
       $resultados1 = DB::select($query1);
 
     }
