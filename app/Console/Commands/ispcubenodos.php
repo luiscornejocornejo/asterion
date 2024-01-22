@@ -37,10 +37,10 @@ class ispcubenodos extends Command
 
         $resultados = DB::select($query);
     
-        $listadono=array ('mysql','information_schema','performance_schema','sys','defaultdb','telesmart','anterior','infitelecom');
+        $listadono=array ('mysql','information_schema','performance_schema','sys','defaultdb','telesmart','anterior');
         foreach($resultados as $val){
     
-          echo $val->Database;
+          //echo $val->Database;
           if (in_array($val->Database, $listadono)) {
               continue;
           }
