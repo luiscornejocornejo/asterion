@@ -48,15 +48,38 @@ class ispcubenodos extends Command
        
             $resultados1 = DB::select($query1);
 
-            foreach($resultados1 as $val){
+            foreach($resultados1 as $val2){
                 if($val->cuantos>0){
-                    echo $val->cuantos;
+                    echo $val2->cuantos;
+
+                    $prueba = $this->conectar(14);
+                    $query3 = "select * from " . $val->Database . ".ws_cliente where nombre='" . $val->Database . "'";
+                    $datos = DB::connection('mysql2')->select($query3);
                 }
                 
 
             }
     
         }
+    }
+
+
+    public function conectar($id)
+    {
+        $query = "SELECT * FROM `base`    where id='" . $id . "'";
+        $resultados = DB::select($query);
+        foreach ($resultados as $value) {
+            $host = $value->host;
+            $base = $value->base;
+            $usuario = $value->usuario;
+            $pass = $value->pass;
+            $port = $value->port;
+        }
+        config(['database.connections.mysql2.host' => $host]);
+        config(['database.connections.mysql2.database' => $base]);
+        config(['database.connections.mysql2.username' => $usuario]);
+        config(['database.connections.mysql2.password' => $pass]);
+        config(['database.connections.mysql2.port' => $port]);
     }
 
 
