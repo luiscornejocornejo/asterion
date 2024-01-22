@@ -49,7 +49,7 @@ class ispcubenodos extends Command
             $resultados1 = DB::select($query1);
 
             foreach($resultados1 as $val2){
-                if($val->cuantos>0){
+                if($val2->cuantos>0){
                     echo $val2->cuantos;
 
                     $prueba = $this->conectar(14);
