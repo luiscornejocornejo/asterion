@@ -85,7 +85,17 @@ class siennaController extends Controller
       if (in_array($val->Database, $listadono)) {
           continue;
       }
-    //echo   $query1="   ALTER TABLE ".$val->Database.".siennacliente ADD deuda varchar(100) NULL;    ";
+    echo   $query1=" CREATE TABLE ".$val->Database.".suricata_servicios (
+      id INT auto_increment NOT NULL,
+      nombre varchar(100) NULL,
+      descripcion varchar(100) NULL,
+      prod BOOL NULL,
+      CONSTRAINT suricata_servicios_PK PRIMARY KEY (id)
+    )
+    ENGINE=InnoDB
+    DEFAULT CHARSET=utf8mb4
+    COLLATE=utf8mb4_0900_ai_ci;
+         ";
    
 
     
@@ -98,7 +108,7 @@ class siennaController extends Controller
 
     
    
-     // $resultados1 = DB::select($query1);
+      $resultados1 = DB::select($query1);
 
     }
 
