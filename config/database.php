@@ -49,7 +49,7 @@ return [
             'host' => env('DB_HOST', 'db-mysql-sfo3-84622-do-user-4274947-0.b.db.ondigitalocean.com'),
             'port' => env('DB_PORT', '25060'),
             'database' => env('DB_DATABASE', 'infitelecom'),
-            'username' => env('DB_USERNAME', 'defaultdb'),
+            'username' => env('DB_USERNAME', 'doadmin'),
             'password' => env('DB_PASSWORD', 'AVNS_WH2DodUlKTBZgYotOdO'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
