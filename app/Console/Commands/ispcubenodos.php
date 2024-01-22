@@ -55,6 +55,7 @@ class ispcubenodos extends Command
                     $prueba = $this->conectar(14);
                     $query3 = "select * from ispcube2.ws_cliente where nombre='" . $val->Database . "'";
                     $datos = DB::connection('mysql2')->select($query3);
+                    var_dump($datos);
                 }
                 
 
