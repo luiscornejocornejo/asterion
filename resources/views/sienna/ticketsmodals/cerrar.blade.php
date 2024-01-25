@@ -1,5 +1,5 @@
-<div class="modal fade" id="cerrar-ticket" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-smcerrar">
+<div class="modal fade" id="bs-example-modal-smcerrar" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header bg-dark text-white">
                     <h4 class="modal-title" id="mySmallModalLabel">Cerrar ticket</h4>
