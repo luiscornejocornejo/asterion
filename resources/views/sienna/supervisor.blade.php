@@ -65,6 +65,10 @@ document.getElementById("idticketpedir2").value = dd;
 
 }
 
+function cerrar(uno,dos,tres,cuatro){
+
+  alert("cerra");
+}
 function maxid() {
 
 
