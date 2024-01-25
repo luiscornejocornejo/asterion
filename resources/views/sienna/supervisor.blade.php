@@ -65,9 +65,9 @@ document.getElementById("idticketpedir2").value = dd;
 
 }
 
-function cerrar(uno,dos,tres,cuatro){
-
-  alert("cerra");
+function cerrar(result,dd, ee, ff){
+  document.getElementById("idticketestado2").value = dd;
+    document.getElementById("conversation_id2").value = ee;
 }
 function maxid() {
 
