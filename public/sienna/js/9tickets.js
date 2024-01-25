@@ -61,6 +61,7 @@ function estado2(result,dd, ee, ff) {
             console.log(response.data[i].nombre);
 
 
+            if(response.data[i].id !=4){
             dato += ' <div class="mt-3">' +
 
                 '<div class="form-check mb-2">' +
@@ -70,6 +71,8 @@ function estado2(result,dd, ee, ff) {
                 '</div>' +
 
                 ' </div>';
+
+            }
 
 
         }
