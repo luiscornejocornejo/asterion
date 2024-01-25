@@ -906,6 +906,10 @@ class TicketdatosController extends Controller
         //dd($tik);
         $si2 = siennatickets::find($tik);
         $si2->siennaestado=$estado;
+        if($estado==4){
+            $si2->cliente=$request->client_number;
+
+        }
         $si2->save();
 
         $est=siennaestado::find($estado);
