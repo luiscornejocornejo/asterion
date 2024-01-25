@@ -319,6 +319,7 @@ axios.get(url)
       @include('sienna.ticketsmodals.pedir2')
       @include('sienna.ticketsmodals.seguimientos')
       @include('sienna.ticketsmodals.historialtickets')
+      @include('sienna.ticketsmodals.cerrar')
       
 
     </div>
