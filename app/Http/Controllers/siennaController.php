@@ -93,6 +93,8 @@ echo $response;
         echo $message->getSubject();
         echo "<hr>";
         echo $message->getHTMLBody();
+        echo "<hr>";
+
        //crear ticket en sienna
        
        //$message = $message->move($folder_path = "luisleidos");
