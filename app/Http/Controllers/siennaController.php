@@ -99,7 +99,7 @@ echo $response;
         var_dump( $thearray);
 
         foreach($thearray as $key=>$valor){
-            echo $key;
+            echo $thearray[$key];
         }
         //var_dump($llegando);
         //dd($llegando);
