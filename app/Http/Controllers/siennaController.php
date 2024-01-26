@@ -93,7 +93,7 @@ echo $response;
       foreach ($messages as $message) {
         echo $message->getSubject();
         echo "<hr>";
-        var_dump(json_decode($message->getHeader(), true));
+        var_dump($message->getHeader());
          
         echo "<hr>";
         echo $message->getHTMLBody();
