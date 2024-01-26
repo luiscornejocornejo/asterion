@@ -88,6 +88,7 @@ echo $response;
       
      
       $messages=$folderluis->query()->all()->get();
+      dd($messages);
       $vueltas=0;
       foreach ($messages as $message) {
         echo $message->getSubject();
