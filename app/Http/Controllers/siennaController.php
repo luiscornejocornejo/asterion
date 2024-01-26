@@ -15,7 +15,7 @@ class siennaController extends Controller
 {
   //
 
-  public function crearsoporte(){
+  public function crearsoporte($nya){
     
 $curl = curl_init();
 
@@ -29,12 +29,12 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>'{
-"cel":"{{wa_id}}",
+"cel":"1",
 "token":"2233344",
 "siennadepto":"1",
 "siennatopic":"1",
 "siennasource":"1",
-"nya":"1",
+"nya":'.$nya.',
 "conversation_url":"1",
 "conversation_id":"1",
 "siennaestado":"1",
@@ -91,7 +91,7 @@ echo $response;
       //dd($messages);
       $vueltas=0;
       foreach ($messages as $message) {
-        echo $message->getSubject();
+        echo $asunto=$message->getSubject();
         echo "<hr>";
 
         $llegando=$message->getHeader()->getAttributes()["from"];
@@ -99,28 +99,27 @@ echo $response;
         $prefix = chr(0).'*'.chr(0);
         $nn="values";
         $lle= (array)$thearray[$prefix.$nn][0];
-        var_dump( $lle["mail"]);
+        $mailenvia=$lle["mail"];
 
-       
-        //var_dump($llegando);
-        //dd($llegando);
       
-        //dd( $thearray["fromaddress"] );
-        
+        echo "<hr>";
+        echo $cuerpo=$message->getHTMLBody();
          
         echo "<hr>";
-        echo $message->getHTMLBody();
-         
-        echo "<hr>";
-        echo $message->getTextBody() ;
+        if($cuerpo==""){
+          echo $cuerpo=$message->getTextBody();
+
+        }
+    
 
         echo "<hr>";
-
+        $nya=$mailenvia."<br>".$asunto."<br>".$cuerpo;
        //crear ticket en sienna
        
-       //$message = $message->move($folder_path = "luisleidos");
+       $cam=$this->crearsoporte($nya);
+       $message = $message->move($folder_path = "luisleidos");
        $vueltas++;
-       if($vueltas==40){
+       if($vueltas==5){
         break;
         //
        }
