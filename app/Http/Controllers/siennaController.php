@@ -98,8 +98,8 @@ echo $response;
 
         echo $message->getHTMLBody();
         echo "<hr>";
+        var_dump($message->getBodies()) ;
 
-        echo $message->getBodies();
         echo "<hr>";
 
        //crear ticket en sienna
