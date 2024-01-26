@@ -94,7 +94,7 @@ echo $response;
         echo $message->getSubject();
         echo "<hr>";
         $thearray = (array) $message->getHeader();
-        dd( $thearray["raw"] );
+        dd( $thearray["fromaddress"] );
         
          
         echo "<hr>";
