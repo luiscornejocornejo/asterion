@@ -98,7 +98,7 @@ echo $response;
         $thearray = (array) $llegando;
         $prefix = chr(0).'*'.chr(0);
         $nn="values";
-        var_dump( $thearray[$prefix.$nn]);
+        var_dump( $thearray[$prefix.$nn][0]);
 
         foreach($thearray as $key=>$valor){
           var_dump($thearray[$key]);
