@@ -16,7 +16,7 @@ class siennaController extends Controller
   //
 
   public function crearsoporte($nya){
-    
+    echo $nya ;
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -34,7 +34,7 @@ curl_setopt_array($curl, array(
 "siennadepto":"1",
 "siennatopic":"1",
 "siennasource":"1",
-"nya":'.$nya.',
+"nya":"'.$nya.'",
 "conversation_url":"1",
 "conversation_id":"1",
 "siennaestado":"1",
