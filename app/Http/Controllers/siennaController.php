@@ -45,7 +45,7 @@ class siennaController extends Controller
 
 
 
-      $folderluis=$client->getFolderByName("Inbox");
+      $folderluis=$client->getFolderByName("inbox ");
       
      
       $messages=$folderluis->query()->all()->get();
