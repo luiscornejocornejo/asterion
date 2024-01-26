@@ -94,7 +94,13 @@ echo $response;
         echo $message->getSubject();
         echo "<hr>";
         $thearray = (array) $message->getHeader();
-        dd( $thearray["fromaddress"] );
+
+        foreach($thearray as $val){
+
+          var_dump($val);
+          echo "<br><br>";
+        }
+        //dd( $thearray["fromaddress"] );
         
          
         echo "<hr>";
