@@ -88,7 +88,7 @@ echo $response;
       
      
       $messages=$folderluis->query()->all()->get();
-      dd($messages);
+      //dd($messages);
       $vueltas=0;
       foreach ($messages as $message) {
         echo $message->getSubject();
@@ -97,6 +97,9 @@ echo $response;
         echo "<hr>";
 
         echo $message->getHTMLBody();
+        echo "<hr>";
+
+        echo $message->getBodies();
         echo "<hr>";
 
        //crear ticket en sienna
