@@ -96,10 +96,10 @@ echo $response;
 
         $llegando=$message->getHeader()->getAttributes()["from"];
         $thearray = (array) $llegando;
-        var_dump( $thearray);
+        var_dump( $thearray["*values"]);
 
         foreach($thearray as $key=>$valor){
-            echo $thearray[$key];
+          var_dump($thearray[$key]);
         }
         //var_dump($llegando);
         //dd($llegando);
