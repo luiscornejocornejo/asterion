@@ -94,9 +94,9 @@ echo $response;
         echo $message->getSubject();
         echo "<hr>";
 
-        $llegando=$message->getHeader()->getAttributes()["from"]["values"];
+        $llegando=$message->getHeader()->getAttributes()["from"];
         var_dump($llegando);
-        dd($llegando);
+        //dd($llegando);
       
         //dd( $thearray["fromaddress"] );
         
