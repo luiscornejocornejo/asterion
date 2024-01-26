@@ -14,6 +14,45 @@ use Webklex\PHPIMAP\Client;
 class siennaController extends Controller
 {
   //
+
+  public function crearsoporte(){
+    
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://soporte.suricata.cloud/api/creartickessienna',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{
+"cel":"{{wa_id}}",
+"token":"2233344",
+"siennadepto":"1",
+"siennatopic":"1",
+"siennasource":"1",
+"nya":"1",
+"conversation_url":"1",
+"conversation_id":"1",
+"siennaestado":"1",
+"a_status":"1",
+"s_status":"1",
+"cliente":"1"
+}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/json'
+  ),
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+echo $response;
+
+  }
   public function pruebamail(){
 
 
@@ -53,10 +92,10 @@ class siennaController extends Controller
       foreach ($messages as $message) {
         echo $message->getSubject();
         echo "<hr>";
-       // echo $message->getHTMLBody();
+        echo $message->getHTMLBody();
        //crear ticket en sienna
        
-       $message = $message->move($folder_path = "luisleidos");
+       //$message = $message->move($folder_path = "luisleidos");
        $vueltas++;
        if($vueltas==4){
         break;
