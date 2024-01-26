@@ -93,14 +93,11 @@ echo $response;
       foreach ($messages as $message) {
         echo $message->getSubject();
         echo "<hr>";
-        $thearray = (array) $message->getHeader();
 
-        dd($message->getHeader()->getAttributes()["from"]);
-        foreach($thearray as $val){
-
-          var_dump($val);
-          echo "<br><br>";
-        }
+        $llegando=$message->getHeader()->getAttributes()["from"]["values"];
+        var_dump($llegando);
+        dd($llegando);
+      
         //dd( $thearray["fromaddress"] );
         
          
