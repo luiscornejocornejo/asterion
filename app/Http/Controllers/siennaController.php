@@ -95,8 +95,11 @@ echo $response;
         echo "<hr>";
         var_dump($message->getHeader()) ;
         echo "<hr>";
-
+        echo $message->FROM();
+         
+        echo "<hr>";
         echo $message->getHTMLBody();
+         
         echo "<hr>";
         var_dump($message->getBodies()) ;
 
