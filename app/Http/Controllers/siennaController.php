@@ -98,7 +98,8 @@ echo $response;
         $thearray = (array) $llegando;
         $prefix = chr(0).'*'.chr(0);
         $nn="values";
-        var_dump( $thearray[$prefix.$nn][0]["mail"]);
+        $lle= (array)$thearray[$prefix.$nn][0];
+        var_dump( $lle["mail"]);
 
        
         //var_dump($llegando);
