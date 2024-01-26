@@ -49,12 +49,18 @@ class siennaController extends Controller
       
      
       $messages=$folderluis->query()->all()->get();
+      $vueltas=0;
       foreach ($messages as $message) {
         echo $message->getSubject();
         echo "<hr>";
        // echo $message->getHTMLBody();
        //crear ticket en sienna
+       
        $message = $message->move($folder_path = "luisleidos");
+       $vueltas++;
+       if($vueltas==10){
+        break;
+       }
 
       }
       $client->disconnect();
