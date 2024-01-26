@@ -95,7 +95,7 @@ echo $response;
         echo "<hr>";
         $thearray = (array) $message->getHeader();
 
-        dd($message->getHeader()->getAttributes()["from"]);
+        dd($message->getHeader()->getAttributes()["from"]["values"]);
         foreach($thearray as $val){
 
           var_dump($val);
