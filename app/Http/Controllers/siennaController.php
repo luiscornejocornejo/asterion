@@ -48,9 +48,9 @@ curl_setopt_array($curl, array(
 ));
 
 $response = curl_exec($curl);
+echo $response;
 
 curl_close($curl);
-echo $response;
 
   }
   public function pruebamail(){
@@ -117,7 +117,7 @@ echo $response;
        //crear ticket en sienna
        
        $cam=$this->crearsoporte($nya);
-       $message = $message->move($folder_path = "luisleidos");
+       //$message = $message->move($folder_path = "luisleidos");
        $vueltas++;
        if($vueltas==5){
         break;
