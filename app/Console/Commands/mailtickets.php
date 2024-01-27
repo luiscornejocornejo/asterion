@@ -60,6 +60,7 @@ class mailtickets extends Command
           //dd($messages);
           $vueltas=0;
           foreach ($messages as $message) {
+            $nya="";
              $asunto=$message->getSubject();
     
             $llegando=$message->getHeader()->getAttributes()["from"];
