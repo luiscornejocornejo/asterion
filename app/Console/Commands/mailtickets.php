@@ -60,8 +60,7 @@ class mailtickets extends Command
           //dd($messages);
           $vueltas=0;
           foreach ($messages as $message) {
-            echo $asunto=$message->getSubject();
-            echo "<hr>";
+             $asunto=$message->getSubject();
     
             $llegando=$message->getHeader()->getAttributes()["from"];
             $thearray = (array) $llegando;
@@ -69,19 +68,13 @@ class mailtickets extends Command
             $nn="values";
             $lle= (array)$thearray[$prefix.$nn][0];
             $mailenvia=$lle["mail"];
-    
-          
-            echo "<hr>";
-            echo $cuerpo=$message->getHTMLBody();
-             
-            echo "<hr>";
+             $cuerpo=$message->getHTMLBody();
             if($cuerpo==""){
-              echo $cuerpo=$message->getTextBody();
+               $cuerpo=$message->getTextBody();
     
             }
         
     
-            echo "<hr>";
             $nya=$mailenvia."<br>".$asunto."<br>".$cuerpo;
            //crear ticket en sienna
 
@@ -112,7 +105,7 @@ class mailtickets extends Command
            $vueltas++;
            if($vueltas==50){
             break;
-            //
+            
            }
     
           }
@@ -124,45 +117,6 @@ class mailtickets extends Command
         
        
     }
-    /*
-        public function crearsoporte($nya){
-            echo $nya ;
-                $curl = curl_init();
-        
-                curl_setopt_array($curl, array(
-                    CURLOPT_URL => 'https://soporte.suricata.cloud/api/creartickessienna',
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_ENCODING => '',
-                    CURLOPT_MAXREDIRS => 10,
-                    CURLOPT_TIMEOUT => 0,
-                    CURLOPT_FOLLOWLOCATION => true,
-                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                    CURLOPT_CUSTOMREQUEST => 'POST',
-                    CURLOPT_POSTFIELDS =>'{
-                "cel":"1",
-                "token":"2233344",
-                "siennadepto":"1",
-                "siennatopic":"1",
-                "siennasource":"1",
-                "nya":"'.$nya.'",
-                "conversation_url":"1",
-                "conversation_id":"1",
-                "siennaestado":"1",
-                "a_status":"1",
-                "s_status":"1",
-                "cliente":"1"
-                }',
-                    CURLOPT_HTTPHEADER => array(
-                    'Content-Type: application/json'
-                    ),
-                ));
-        
-                $response = curl_exec($curl);
-                echo $response;
-        
-                curl_close($curl);
-        
-        }
-    */
+   
 
 }
