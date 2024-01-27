@@ -101,7 +101,7 @@ class mailtickets extends Command
         $se->autor = "sistema";
         $se->save();
 
-        $message = $message->move($folder_path = "luisleidos");
+        $message22 = $message->move($folder_path = "luisleidos");
            $vueltas++;
            if($vueltas==100){
             break;
