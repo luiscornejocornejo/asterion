@@ -68,7 +68,7 @@ class mailtickets extends Command
             $prefix = chr(0).'*'.chr(0);
             $nn="values";
             $lle= (array)$thearray[$prefix.$nn][0];
-            $mailenvia=$lle["mail"];
+           echo $mailenvia=$lle["mail"];
              $cuerpo=$message->getHTMLBody();
             if($cuerpo==""){
                $cuerpo=$message->getTextBody();
