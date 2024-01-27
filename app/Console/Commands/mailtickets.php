@@ -104,6 +104,8 @@ class mailtickets extends Command
         try {
             $se->save();
         } catch (\Illuminate\Database\QueryException $ex) {
+            $message22 = $message->move($folder_path = "noleidos");
+
             continue;
         }
 
