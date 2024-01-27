@@ -17,7 +17,7 @@ class mailtickets extends Command
      *
      * @var string
      */
-    protected $signature = 'semanal:mailtickets';
+    protected $signature = 'ma:mailtickets';
 
     /**
      * The console command description.
