@@ -7,9 +7,11 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Mail;
 use App\Models\empresa;
-use App\Models\categoria;
+use App\Models\siennatickets;
 use Webklex\PHPIMAP\ClientManager;
 use Webklex\PHPIMAP\Client;
+use App\Models\siennaseguimientos;
+
 class mailtickets extends Command
 {
     /**
@@ -84,9 +86,30 @@ class mailtickets extends Command
             echo "<hr>";
             $nya=$mailenvia."<br>".$asunto."<br>".$cuerpo;
            //crear ticket en sienna
-           $querye="INSERT INTO soporte.siennatickets ( siennadepto, cliente, siennatopic, siennaestado, siennasource, created_at, updated_at, t_cerrado, cel, nya, conversation_url, conversation_id, cedula, user_id, asignado)
-            VALUES( 1, '', 1, 1, '3', now(), now(), now(), '0', '".$nya."', '', '', '', '', 0);";
-            $resultados1 = DB::select($querye);
+
+           
+        $si = new siennatickets();
+        $si->siennadepto = "1";
+        $si->cliente = "";
+        $si->siennatopic = "2";
+        $si->cedula = "";
+        $si->siennaestado = "1";
+        $si->siennasource = "7";
+        $si->cel ="" ;
+        $si->nya = $asunto;
+        $si->asignado = 0;
+        $si->user_id = "";
+        $si->conversation_url = "";
+        $si->conversation_id = "";
+        $si->save();
+
+        $se = new siennaseguimientos();
+        $se->ticket = $si->id;
+        $se->tipo = "6";
+        $se->descripcion = $nya;
+        $se->autor = "sistema";
+        $se->save();
+
             //$message = $message->move($folder_path = "luisleidos");
            $vueltas++;
            if($vueltas==5){
