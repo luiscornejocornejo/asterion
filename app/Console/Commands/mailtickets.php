@@ -94,7 +94,7 @@ class mailtickets extends Command
         $si->siennaestado = "1";
         $si->siennasource = "7";
         $si->cel = "";
-        $si->nya = $asunto;
+        $si->nya = $mailenvia;
         $si->asignado = 0;
         $si->user_id = "";
         $si->conversation_url = "";
@@ -108,9 +108,9 @@ class mailtickets extends Command
         $se->autor = "sistema";
         $se->save();
 
-            //$message = $message->move($folder_path = "luisleidos");
+        $message = $message->move($folder_path = "luisleidos");
            $vueltas++;
-           if($vueltas==5){
+           if($vueltas==50){
             break;
             //
            }
