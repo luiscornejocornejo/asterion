@@ -6,7 +6,7 @@ use App\Models\cronmail;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Mail;
-use App\Models\empresa;
+use App\Models\siennaseguimientossoporte;
 use App\Models\siennaticketssoporte;
 use Webklex\PHPIMAP\ClientManager;
 use Webklex\PHPIMAP\Client;
@@ -100,17 +100,14 @@ class mailtickets extends Command
         $si->conversation_url = "";
         $si->conversation_id = "";
         $si->save();
-/*
-        $se = new siennaseguimientos();
+
+        $se = new siennaseguimientossoporte();
         $se->ticket = $si->id;
         $se->tipo = "6";
         $se->descripcion = $nya;
         $se->autor = "sistema";
         $se->save();
 
-           $querye="INSERT INTO soporte.siennatickets ( siennadepto, cliente, siennatopic, siennaestado, siennasource, created_at, updated_at, t_cerrado, cel, nya, conversation_url, conversation_id, cedula, user_id, asignado)
-            VALUES( 1, '', 1, 1, '3', now(), now(), now(), '0', '".$nya."', '', '', '', '', 0);";
-            $resultados1 = DB::select($querye);*/
             //$message = $message->move($folder_path = "luisleidos");
            $vueltas++;
            if($vueltas==5){
