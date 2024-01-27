@@ -1100,22 +1100,16 @@ class TicketdatosController extends Controller
     public function creardbpost(Request $request)
     {
 
-
-
         $dbcrear=$request->db;
         $contents = Storage::disk('sftp')->get('subdomains_config/.redlam');
         $contents2= str_replace("redlam", $dbcrear, $contents);
         $path2=Storage::disk('sftp')->put('subdomains_config/.'.$dbcrear, $contents2);
         $ftp_files = Storage::disk('sftp')->files('subdomains_config');
 
-
-
         $dbcrear=$request->db;
-       // $token=$request->token;
-    
+       // $token=$request->token;    
         $base = 13;
         $prueba = $this->conectar($base);
-         
         $querycrear="CREATE DATABASE  `".$dbcrear."`; ";
         $basesdb = DB::connection('mysql2')->select($querycrear);
 
@@ -1166,25 +1160,7 @@ class TicketdatosController extends Controller
         }
 
         echo "ok";
-/*
 
-            sleep(10);
-          $query1="update  `".$dbcrear."`.pagoraliaconfig set url='https://".$dbcrear.".pagoralia.live/api/v2/',token='".$token."'  where id='1'";
-        $basesdb = DB::connection('mysql2')->select($query1);
-
-         $query2="update  `".$dbcrear."`.base set base='db_".$dbcrear."',nombre='".$dbcrear."' where id='11'";
-        $basesdb = DB::connection('mysql2')->select($query2);
-
-         $query3="update  `".$dbcrear."`.masterreport SET nombre = REPLACE(nombre, 'template', '".$dbcrear."') where id='131' ";
-        $basesdb = DB::connection('mysql2')->select($query3);
-
-         $query4="update  `".$dbcrear."`.masterreport SET query = REPLACE(query, 'template', '".$dbcrear."') where id='131' ";
-        $basesdb = DB::connection('mysql2')->select($query4);
-
-         $query5="update  `".$dbcrear."`.masterreport SET query = REPLACE(query, 'template', '".$dbcrear."') where id='126' ";
-        $basesdb = DB::connection('mysql2')->select($query5);
-
-        */
         return redirect()
         ->back()
         ->with('success', 'Se Creo  correctamente! el cliente')
