@@ -76,7 +76,7 @@ class mailtickets extends Command
             }
         
     
-            $nya=$mailenvia."<br>".$asunto."<br>".$cuerpo;
+            $nya=$asunto."<br>".$cuerpo;
            //crear ticket en sienna
 
            
@@ -94,13 +94,18 @@ class mailtickets extends Command
         $si->conversation_url = "";
         $si->conversation_id = "";
         $si->save();
+       
 
         $se = new siennaseguimientossoporte();
         $se->ticket = $si->id;
         $se->tipo = "6";
         $se->descripcion = $nya;
         $se->autor = "sistema";
-        $se->save();
+        try {
+            $se->save();
+        } catch (\Illuminate\Database\QueryException $ex) {
+            continue;
+        }
 
         $message22 = $message->move($folder_path = "luisleidos");
            $vueltas++;
