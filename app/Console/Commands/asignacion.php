@@ -33,7 +33,7 @@ class asignacion extends Command
     public function handle()
     {
 
-        echo "entro";
+        echo "entro asignacion";
         $os = array("infitelecom", "soporte", "demo", "sidecom", "amecom2");
 
         foreach($os as $val){
