@@ -18,6 +18,7 @@ $resultados = DB::select($query);
 $cantidaduser=0;
 $cantidadtickets=0;
 $cantidadtickets2=0;
+$listamensual=array();
 foreach($resultados as $val){
     $cantidaduser=$val->cantidaduser;
 }
