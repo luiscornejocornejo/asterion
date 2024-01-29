@@ -233,5 +233,5 @@ Route::get('/denied', ['as' => 'denied', function() {
 }]);
 
 Route::fallback(function () {
-    return abort(404);
+    return view('404');
  });
