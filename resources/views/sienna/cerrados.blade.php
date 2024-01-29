@@ -15,6 +15,11 @@
         </div>
         @endif
 <script>
+    
+let departamentoslista = {!! json_encode($deptos,JSON_FORCE_OBJECT) !!};
+let sourcelista = {!! json_encode($source,JSON_FORCE_OBJECT) !!};
+let estadoslista = {!! json_encode($estados,JSON_FORCE_OBJECT) !!};
+let iconos = {!! json_encode($iconos,JSON_FORCE_OBJECT) !!};
     function pp(){
 
         var endDate=  $("#reportrange").data('daterangepicker').endDate.format('YYYY-MM-DD');
