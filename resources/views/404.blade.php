@@ -49,7 +49,7 @@
                             <div class="text-center">
                                 <h1 style="font-size: calc(4rem + 1.2vw);" class="text-warning">4<i class="mdi mdi-emoticon-sad"></i>4</h1>
                                 <h4 class="text-uppercase text-danger mt-3">Page Not Found</h4>
-                                <a class="btn btn-warning mt-3" href="index.html"><i class="mdi mdi-home"></i> Volver al inicio</a>
+                                <a class="btn btn-warning mt-3" href="/"><i class="mdi mdi-home"></i> Volver al inicio</a>
                             </div>
                         </div> <!-- end card-body -->
                     </div>
