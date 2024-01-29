@@ -80,9 +80,7 @@
         var endDate=  $("#reportrange").data('daterangepicker').endDate.format('YYYY-MM-DD');
         var start=  $("#reportrange").data('daterangepicker').startDate.format('YYYY-MM-DD');
 
-        alert(endDate);
-        alert(start);
-   
+       
         var URLactual = window.location.href;
 
         var porciones = URLactual.split('.');
@@ -93,10 +91,9 @@
 
         url = "https://"+result+".suricata.cloud/api/cerrados?inicio=" + start + "&fin=" + endDate + "";
         console.log(url);
-        alert(url);
+       
         axios.get(url)
         .then(function (response) {
-            console.log(response.data);
 
             // función que se ejecutará al recibir una respuesta
             
