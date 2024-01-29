@@ -17,7 +17,7 @@ use App\Models\siennadepto;
 use App\Models\siennaestado;
 use App\Models\empresa;
 use App\Models\categoria;
-
+use Illuminate\Support\Facades\Artisan;
 
 class siennaticketsController extends Controller
 {
@@ -1092,4 +1092,9 @@ class siennaticketsController extends Controller
         $resultados = DB::select($query);
         return $resultados;
     }
+    public function quispe(Request $request){
+
+        Artisan::call("ma:mailtickets");
+    }
+    
 }
