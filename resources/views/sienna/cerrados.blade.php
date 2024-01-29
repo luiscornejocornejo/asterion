@@ -1,4 +1,4 @@
-@include('facu.header2')
+@include('facu.header')
 <div class="wrapper" >
 
 <!-- ========== Left Sidebar Start ========== -->
@@ -36,6 +36,8 @@
         alert(url);
         axios.get(url)
         .then(function (response) {
+            console.log(response.data);
+
             // función que se ejecutará al recibir una respuesta
             
             
