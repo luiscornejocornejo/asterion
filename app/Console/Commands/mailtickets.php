@@ -11,8 +11,9 @@ use App\Models\siennaticketssoporte;
 use Webklex\PHPIMAP\ClientManager;
 use Webklex\PHPIMAP\Client;
 use Webklex\IMAP\Commands\ImapIdleCommand;
+
 use Webklex\PHPIMAP\Message;
-class mailtickets extends Command
+class mailtickets  extends ImapIdleCommand
 {
     /**
      * The name and signature of the console command.
