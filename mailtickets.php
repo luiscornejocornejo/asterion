@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 //use Mail;
 use App\Models\siennaseguimientossoporte;
 use App\Models\siennaticketssoporte;
-use Webklex\PHPIMAP\ClientManager;
+use vendor\Webklex\PHPIMAP\ClientManager;
 
 class mailtickets 
 {
