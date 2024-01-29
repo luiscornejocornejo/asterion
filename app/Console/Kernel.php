@@ -19,7 +19,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('semanal:asignacion')->cron('*/1 * * * *')->withoutOverlapping()->emailOutputOnFailure('kayser1712@gmail.com');
         //$schedule->command('semanal:nodos')->daily()->emailOutputOnFailure('kayser1712@gmail.com');
        // $schedule->command('semanal:mailtickets')->cron('*/10 * * * *')->emailOutputOnFailure('kayser1712@gmail.com');
-        $schedule->command('ma:mailtickets')->cron('*/4 * * * *')->emailOutputOnFailure('kayser1712@gmail.com');
+        $schedule->command('ma:mailtickets2')->cron('*/4 * * * *')->emailOutputOnFailure('kayser1712@gmail.com');
 
         
         //$schedule->command('command:pp')->cron('*/1 * * * *')->emailOutputOnFailure('kayser1712@gmail.com');

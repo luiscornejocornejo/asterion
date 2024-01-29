@@ -26,7 +26,7 @@ class mailtickets extends Command
      *
      * @var string
      */
-    protected $description = 'mailtickets';
+    protected $description = 'mailtickets2';
 
     /**
      * Execute the console command.
