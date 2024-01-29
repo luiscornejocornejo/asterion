@@ -1,0 +1,44 @@
+@include('facu.header2')
+
+<div id="principal">
+    <div class="mx-auto" style="width: 1000px;margin-top: 70px;">
+
+        @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade
+                            show" role="alert">
+            {{ $message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
+
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <form method="get" action="/route">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-12">
+                        <label class="form-label">Período</label>
+                        <div id="reportrange" class="form-control" data-toggle="date-picker-range" data-target-display="#reportrange" data-cancel-class="btn-light">
+                            <i class="mdi mdi-calendar"></i>&nbsp;
+                            <span ></span> <i class="mdi mdi-menu-down"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="mb-2 position-relative">
+                            <label class="form-label">&nbsp;</label>
+                            <input type="submit" type="button" class="form-control w-25 bg-success text-light" value="Buscar">
+                        </div>
+                    </div>
+                </div>
+            </form>
+                
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br>
+@include('facu.footer')
