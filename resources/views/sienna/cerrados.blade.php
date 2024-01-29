@@ -19,8 +19,10 @@
 
         vari=document.getElementById("reportrange").value;
         var endDate=  $("#reportrange").data('daterangepicker').endDate.format('YYYY-MM-DD');
+        var start=  $("#reportrange").data('daterangepicker').startDate.format('YYYY-MM-DD');
 
         alert(endDate);
+        alert(start);
     }
 </script>
         <!-- Page Wrapper -->
