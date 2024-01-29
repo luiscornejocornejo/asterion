@@ -44,6 +44,7 @@ class mailtickets  extends Command
 
 
         $cm = new ClientManager('/var/www/laravel/config/imap.php');
+        var_dump($cm);
         /** @var \Webklex\PHPIMAP\Client $client */
         $client = $cm->make([
             'host'          => 'imap.gmail.com',
