@@ -18,7 +18,9 @@
     function pp(){
 
         vari=document.getElementById("reportrange").value;
-        alert(vari);
+        var endDate=  $("#reportrange").data('daterangepicker').endDate.format('YYYY-MM-DD');
+
+        alert(endDate);
     }
 </script>
         <!-- Page Wrapper -->
@@ -30,7 +32,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-sm-12">
                         <label class="form-label">Período</label>
-                        <div name="fecha" id="reportrange" class="form-control" data-toggle="date-picker-range" data-target-display="#reportrange" data-cancel-class="btn-light">
+                        <div  id="reportrange" class="form-control" data-toggle="date-picker-range" data-target-display="#reportrange" data-cancel-class="btn-light">
                             <i class="mdi mdi-calendar"></i>&nbsp;
                             <span ></span> <i class="mdi mdi-menu-down"></i>
                         </div>
