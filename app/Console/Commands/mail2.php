@@ -20,7 +20,7 @@ class mailtickets  extends Command
      *
      * @var string
      */
-    protected $signature = 'ma:mailtickets';
+    protected $signature = 'old:oldmailtickets';
 
     /**
      * The console command description.
