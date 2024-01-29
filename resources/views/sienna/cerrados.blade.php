@@ -206,4 +206,7 @@
     </div>
 </div>
 <br><br><br>
+@include('sienna.ticketsmodals.conversacion')        
+
+@include('sienna.ticketsmodals.seguimientos')
 @include('facu.footer')
