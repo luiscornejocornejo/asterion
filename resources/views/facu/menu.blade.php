@@ -73,12 +73,28 @@ $resultados = DB::select($query);
      if(($tipodemenu =="1")or($tipodemenu =="2")){
      ?>
                 <li class="side-nav-item background-buttons">
-                    <a  href="/supervisor"  class="side-nav-link hovering-pan ">
-                        <i class="uil-ticket"></i>
-                        <span> Tickets Super </span>
-                    </a>
-                </li>
-
+                <a
+                  data-bs-toggle="collapse"
+                  href="/supervisor"
+                  aria-expanded="false"
+                  aria-controls="sidebarDashboards"
+                  class="side-nav-link hovering-pan"
+                >
+                  <i class="uil-ticket"></i>
+                  <span>Tickets</span>
+                  <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarEcommerce">
+                  <ul class="side-nav-second-level">
+                    <li>
+                      <a href="/operator">Abiertos</a>
+                    </li>
+                    <li>
+                      <a href="/cerrados">Cerrados</a>
+                    </li>
+                  </ul>
+                </div>
+</li>
                 <li class="side-nav-item background-buttons">
                     <a  href="/agentes"  class="side-nav-link hovering-pan ">
                         <i class="mdi mdi-account-multiple"></i>
@@ -157,11 +173,28 @@ $resultados = DB::select($query);
      ?>
            
            <li class="side-nav-item background-buttons">
-                    <a  href="/operator"  class="side-nav-link hovering-pan ">
-                        <i class="uil-ticket"></i>
-                        <span> Tickets </span>
-                    </a>
-                </li>
+                <a
+                  data-bs-toggle="collapse"
+                  href="/operator"
+                  aria-expanded="false"
+                  aria-controls="sidebarDashboards"
+                  class="side-nav-link hovering-pan"
+                >
+                  <i class="uil-ticket"></i>
+                  <span>Tickets</span>
+                  <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarEcommerce">
+                  <ul class="side-nav-second-level">
+                    <li>
+                      <a href="/operator">Abiertos</a>
+                    </li>
+                    <li>
+                      <a href="/cerrados">Cerrados</a>
+                    </li>
+                  </ul>
+                </div>
+</li>
              
     <?php
      }
