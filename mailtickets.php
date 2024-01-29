@@ -5,7 +5,7 @@
 use App\Models\cronmail;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
-use Mail;
+//use Mail;
 use App\Models\siennaseguimientossoporte;
 use App\Models\siennaticketssoporte;
 use Webklex\PHPIMAP\ClientManager;
