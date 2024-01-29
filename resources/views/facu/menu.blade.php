@@ -87,7 +87,7 @@ $resultados = DB::select($query);
                 <div class="collapse" id="sidebarEcommerce">
                   <ul class="side-nav-second-level">
                     <li>
-                      <a href="/operator">Abiertos</a>
+                      <a href="/supervisor">Abiertos</a>
                     </li>
                     <li>
                       <a href="/cerrados">Cerrados</a>
