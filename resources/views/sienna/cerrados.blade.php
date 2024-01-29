@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-sm-12">
                         <label class="form-label">Período</label>
-                        <div id="reportrange" class="form-control" data-toggle="date-picker-range" data-target-display="#reportrange" data-cancel-class="btn-light">
+                        <div name="fecha" id="reportrange" class="form-control" data-toggle="date-picker-range" data-target-display="#reportrange" data-cancel-class="btn-light">
                             <i class="mdi mdi-calendar"></i>&nbsp;
                             <span ></span> <i class="mdi mdi-menu-down"></i>
                         </div>
