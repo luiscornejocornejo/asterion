@@ -1001,24 +1001,26 @@ class TicketdatosController extends Controller
             $subdomain_tmp =  array_shift($domainParts);
             
         }
-        /*
-        $idusuario=session('idusuario');
-        $query="select *,a.conversation_id,a.user_id,
-        b.nombre as depto,a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel from siennatickets a
-        left join siennadepto b on b.id=a.siennadepto 
-        left join  siennaestadosventas c on c.id=a.siennaestado
-        left join  siennatopic d on d.id=a.siennatopic
-        where a.siennaestado not in('8','9') and 
-         a.siennadepto=3
-         and a.asignado='".$idusuario."'
-        ";
+        $query2="select * from siennaestado";
+        $resultados2 = DB::select($query2);
 
-        $resultados = DB::select($query);
-        $query2="select * from siennaestadosventas";
-        $resultados2 = DB::select($query2);*/
+        $query3="select * from siennadepto";
+        $resultados3 = DB::select($query3);
+        
+        $query4="select * from siennasource";
+        $resultados4 = DB::select($query4);
+
+
+        $query5="select * from iconostipo";
+        $resultados5 = DB::select($query5);
 
             return view('sienna/cerrados')
-            ->with('subdomain_tmp', $subdomain_tmp); 
+            ->with('subdomain_tmp', $subdomain_tmp)
+            
+            ->with("deptos",$resultados3)
+            ->with("iconos",$resultados5)
+            ->with("source",$resultados4)
+            ->with("estados",$resultados2); 
 
     }
 
