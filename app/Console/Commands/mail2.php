@@ -13,7 +13,8 @@ use Webklex\PHPIMAP\ClientManager;
 use Webklex\PHPIMAP\Client;
 use Webklex\IMAP\Commands\ImapIdleCommand;
 use Webklex\PHPIMAP\Message;
-class mailtickets22  extends Command
+
+class uuumailtickets22  extends Command
 {
     /**
      * The name and signature of the console command.
@@ -133,5 +134,5 @@ class mailtickets22  extends Command
 
 }
 
-$casa=new mailtickets();
-$devo=$casa->handle();
+//$casa=new mailtickets();
+//$devo=$casa->handle();
