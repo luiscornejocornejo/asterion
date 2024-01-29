@@ -14,7 +14,13 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         @endif
+<script>
+    function pp(){
 
+        vari=document.getElementById("reportrange").value;
+        alert(vari);
+    }
+</script>
         <!-- Page Wrapper -->
         <div id="wrapper">
             <!-- Begin Page Content -->
@@ -32,7 +38,7 @@
                     <div class="col-lg-4 col-sm-12">
                         <div class="mb-2 position-relative">
                             <label class="form-label">&nbsp;</label>
-                            <input type="submit" type="button" class="form-control w-25 bg-success text-light" value="Buscar">
+                            <input onclick="pp()" type="submit" type="button" class="form-control w-25 bg-success text-light" value="Buscar">
                         </div>
                     </div>
                 </div>
