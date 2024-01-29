@@ -20,7 +20,7 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 <!-- Page Heading -->
-                <form method="get" action="/route">
+                <form method="get" action="/cerrados">
                 <div class="row">
                     <div class="col-lg-4 col-sm-12">
                         <label class="form-label">Período</label>

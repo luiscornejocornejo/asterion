@@ -200,6 +200,7 @@ Route::post('/siennacrearusuarios','App\Http\Controllers\TicketdatosController@s
 Route::get('/ventas','App\Http\Controllers\TicketdatosController@ventas');
 Route::post('/ventasstatus','App\Http\Controllers\TicketdatosController@ventasstatus');
 Route::get('/cerrados','App\Http\Controllers\TicketdatosController@cerrados');
+Route::post('/cerrados','App\Http\Controllers\TicketdatosController@cerradospost');
 
 
 
