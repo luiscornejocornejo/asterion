@@ -56,8 +56,10 @@ class mailtickets  extends Command
         ]);
         
         //Connect to the IMAP Server
-    
+        echo "entre";
+
         try {
+            echo "entre";
           $client->connect();
           $folderluis=$client->getFolderByName("INBOX");
           $messages=$folderluis->query()->all()->get();
@@ -124,6 +126,8 @@ class mailtickets  extends Command
           $client->disconnect();
          
         } catch (\Throwable $th) {
+            echo "entre";
+
           print_r($th);
         }
         
