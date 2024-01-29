@@ -133,5 +133,5 @@ class mailtickets  extends Command
 
 }
 
-$casa=new mailtickets();
-$devo=$casa->handle();
+//$casa=new mailtickets();
+//$devo=$casa->handle();
