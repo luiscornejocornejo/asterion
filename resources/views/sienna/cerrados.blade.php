@@ -20,6 +20,15 @@
     let sourcelista = {!! json_encode($source,JSON_FORCE_OBJECT) !!};
     let estadoslista = {!! json_encode($estados,JSON_FORCE_OBJECT) !!};
     let iconos = {!! json_encode($iconos,JSON_FORCE_OBJECT) !!};
+    function coloriconos(id){
+        coloricono="";
+        for (var listado2 in iconos){
+            if(iconos[listado2]["id"]==id){
+                coloricono=iconos[listado2]["descripcion"];
+            }
+        }
+        return coloricono;
+    }
     function listadoseguimientos(result,dd) {
 
                 document.getElementById("idticketseguimiento").value = dd;
