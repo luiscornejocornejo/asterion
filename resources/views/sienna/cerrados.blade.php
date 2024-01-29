@@ -16,10 +16,56 @@
         @endif
 <script>
     
-let departamentoslista = {!! json_encode($deptos,JSON_FORCE_OBJECT) !!};
-let sourcelista = {!! json_encode($source,JSON_FORCE_OBJECT) !!};
-let estadoslista = {!! json_encode($estados,JSON_FORCE_OBJECT) !!};
-let iconos = {!! json_encode($iconos,JSON_FORCE_OBJECT) !!};
+    let departamentoslista = {!! json_encode($deptos,JSON_FORCE_OBJECT) !!};
+    let sourcelista = {!! json_encode($source,JSON_FORCE_OBJECT) !!};
+    let estadoslista = {!! json_encode($estados,JSON_FORCE_OBJECT) !!};
+    let iconos = {!! json_encode($iconos,JSON_FORCE_OBJECT) !!};
+    function listadoseguimientos(result,dd) {
+
+                document.getElementById("idticketseguimiento").value = dd;
+                url = "https://"+result+".suricata.cloud/api/listadoseguimientos?ticket=" + dd;
+                axios.get(url)
+                .then(function (response) {
+                // función que se ejecutará al recibir una respuesta
+                console.log(response.data);
+                document.getElementById("seguimientounico").innerHTML = null;
+
+                dato = "";
+                for (i = 0; i < response.data.length; i++) {
+                    console.log(response.data[i].id);
+                    console.log(response.data[i].descripcion);
+                    console.log(response.data[i].autor);
+                    console.log(response.data[i].created_at);
+                    console.log(response.data[i].tipo);
+
+                    coloreicono= coloriconos(response.data[i].tipo);
+
+                    dato += ' <div class="timeline-item">'+
+                            coloreicono+
+                            '<div class="timeline-item-info">'+
+                            '<span class="text-info fw-bold mb-1 d-block">'+response.data[i].descripcion+'</span>'+
+                            '<small>'+response.data[i].autor+'</small>'+
+                            '<p class="mb-0 pb-2">'+
+                            '<small class="text-muted">'+response.data[i].created_at+'</small>'+
+                            '</p> </div> </div>';
+                                                        
+                                    
+                }
+                document.getElementById("seguimientounico").innerHTML = dato;
+
+
+
+                })
+                .catch(function (error) {
+                    // función para capturar el error
+                    console.log(error);
+                })
+                .then(function () {
+                    // función que siempre se ejecuta
+                });
+
+
+    }
     function pp(){
 
         var endDate=  $("#reportrange").data('daterangepicker').endDate.format('YYYY-MM-DD');
@@ -92,17 +138,12 @@ let iconos = {!! json_encode($iconos,JSON_FORCE_OBJECT) !!};
 
                     ' <td>'+
                     
-                    '<button  onclick="pedir(`' + response.data[i].ticketid + '`)"  class="btn btn-info '+d+'" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><i class="mdi mdi-account-arrow-left" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="" data-bs-title="Reclamar ticket."></i></button> ' +
-                    '<button onclick="area(`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].user_id + '`)"  class="btn btn-info " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><i class="mdi mdi-account-group" data-bs-toggle="tooltip" data-bs-placement="top"     data-bs-custom-class="" data-bs-title="Asignar departamento."></i> </button>' +
-                    '<button onclick="estado2(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="btn btn-secondary " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm"><i class="mdi mdi-flag" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Cambiar estado."></i> </button> ' +
-                    '<button onclick="topic(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="btn btn-info " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smtopic">  <i class="mdi mdi-notebook" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Cambiar topic."></i></button> ' +
-                    '<button onclick="cerrar(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="btn btn-success  " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrar">  <i class="mdi mdi-check-circle" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="" data-bs-title="Cambiar cerrar."></i></button> ' +
-
+                 
                     ' '+
 
                     '<button  onclick="listadoseguimientos(`' + result + '`,`' + response.data[i].ticketid + '`)"   class="btn btn-secondary me-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="mdi mdi-link" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="mb-1" data-bs-title="Seguimiento."></i></button>' +
                     '<button  onclick="vista(`' + response.data[i].conversation_url + '`,`' + response.data[i].cliente + '`,`' + result + '`)" class="btn btn-primary " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg"><i class="mdi mdi-wechat" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Conversación."></i> </button>'+
-                    '<button       class="btn btn-secondary d-none" type="button" data-bs-toggle="modal" data-bs-target="#modalHistory">  <i class="mdi mdi-history" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Historial."></i>           </button> </td </tr>';
+                    '</td </tr>';
 
                 
 
