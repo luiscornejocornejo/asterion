@@ -10,7 +10,7 @@ use App\Models\siennaseguimientossoporte;
 use App\Models\siennaticketssoporte;
 use Webklex\PHPIMAP\ClientManager;
 
-class mailtickets 
+class mailtickets  extends Command
 {
     /**
      * The name and signature of the console command.
