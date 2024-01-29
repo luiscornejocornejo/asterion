@@ -55,6 +55,7 @@ Route::get('/topicxdepto', [siennaticketsController::class, 'topicxdepto']);
 Route::get('/maxid', [siennaticketsController::class, 'maxid']);
 Route::get('/maxid2', [siennaticketsController::class, 'maxid2']);
 Route::get('/datoscliente', [siennaticketsController::class, 'datoscliente']);
+Route::get('/cerrados', [siennaticketsController::class, 'cerrados']);
 
 
 Route::get('/enhora', [siennaticketsController::class, 'enhora']);
