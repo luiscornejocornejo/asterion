@@ -908,6 +908,7 @@ class TicketdatosController extends Controller
         $si2->siennaestado=$estado;
         if($estado==4){
             $si2->cliente=$request->client_number;
+            $si2->t_cerrado=date("Y-m-d H:i:s");
 
         }
         $si2->save();
