@@ -1,6 +1,6 @@
 <?php
 
-//namespace App\Console\Commands;
+namespace App\Console\Commands;
 
 use App\Models\cronmail;
 use Illuminate\Console\Command;
@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 //use Mail;
 use App\Models\siennaseguimientossoporte;
 use App\Models\siennaticketssoporte;
-use \var\www\laravel\Webklex\PHPIMAP\ClientManager;
+use Webklex\PHPIMAP\ClientManager;
 
 class mailtickets 
 {
