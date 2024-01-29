@@ -17,6 +17,7 @@ $query="select count(*) as cantidaduser  from siennaloginxenioo where login=1 an
 $resultados = DB::select($query);
 $cantidaduser=0;
 $cantidadtickets=0;
+$cantidadtickets2=0;
 foreach($resultados as $val){
     $cantidaduser=$val->cantidaduser;
 }
