@@ -109,7 +109,7 @@ class siennaController extends Controller
 
     $resultados = DB::select($query);
 
-    $listadono=array ('mysql','information_schema','performance_schema','sys','defaultdb','telesmart','anterior','infitelecom');
+    $listadono=array ('mysql','information_schema','performance_schema','sys','defaultdb','telesmart','anterior');
     foreach($resultados as $val){
 
       echo $val->Database;
@@ -117,9 +117,9 @@ class siennaController extends Controller
           continue;
       }
     echo   $query1="
-    INSERT INTO ".$val->Database.".masterreport (base,nombre,query,descripcion,crear,modificar,eliminar,parametros,parametrosTipo,tabla,servicio,dashboard,updated_at,created_at) VALUES
-	 (1,'servicios suricata','select * from suricata_servicios','',1,1,1,'','','suricata_servicios',5,0,'2023-12-18 06:01:04','2023-12-18 06:01:04');
+    ALTER TABLE ".$val->Database.".siennatickets ADD estadoconv varchar(100) DEFAULT 0 NULL;
 
+  
 
          ";
    
