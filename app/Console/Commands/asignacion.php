@@ -109,9 +109,9 @@ class asignacion extends Command
 
              $enhora=$this->enhora($merchant,$area);
              if($enhora){
-                $query2="select s.idusuario,(select count(*) from ".$merchant.".siennatickets s2  
-                where s2.asignado=s.idusuario and s2.siennaestado not in('3','4'))as cantidad from siennaloginxenioo s
-                join users s3 on s3.id=s.idusuario 
+                $query2="select s.idusuario as uu,(select count(*) from ".$merchant.".siennatickets s2  
+                where s2.asignado=s.idusuario and s2.siennaestado not in('3','4'))as cantidad from ".$merchant.".siennaloginxenioo s
+                join ".$merchant.".users s3 on s3.id=s.idusuario 
                 where
                 s3.tickets=1 and 
                 s.login=1 and s.areas =".$area." and date(now())=date(s.created_at) group by idusuario order by cantidad limit 1";
@@ -121,7 +121,7 @@ class asignacion extends Command
                 echo "/r";
                 foreach($resultados2 as $value2){
     
-                     $idusu=$value2->idusuario;
+                     $idusu=$value2->uu;
                 }
     
                 if($idusu<>0){
