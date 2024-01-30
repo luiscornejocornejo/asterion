@@ -124,7 +124,7 @@ function maxid() {
             colorestado=colorestadof(response.data[i].siennaestado);
           
             tt += '<tr class="text-center">' +
-                ' <td><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</td>' +
+                ' <td>' + response.data[i].estadoconv + '<i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</td>' +
                 ' <td>' + response.data[i].nya + '</td>' + 
                 ' <td>' + response.data[i].nombreagente + '</td>' + 
                 ' <td> <span class="badge '+colordepto+'" style="font-size:medium;">' + response.data[i].depto + '</span>'+
