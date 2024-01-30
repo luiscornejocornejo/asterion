@@ -130,7 +130,7 @@ function maxid() {
                 ' <td> <span class="badge '+colordepto+'" style="font-size:medium;">' + response.data[i].depto + '</span>'+
                 ' <td>' + response.data[i].topicnombre + '</td>' +
                 ' <td>' + response.data[i].cel + '</td>' +
-                ' <td>' + response.data[i].created_at + '</td>' +
+                ' <td>' + response.data[i].creado + '</td>' +
               
                 ' <td> <span class="badge '+colorestado+'" style="font-size:medium;">' + response.data[i].estadoname + '</span>'+
 
