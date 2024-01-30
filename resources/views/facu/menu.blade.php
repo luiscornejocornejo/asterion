@@ -70,7 +70,7 @@ $resultados = DB::select($query);
 
     <?php
      $tipodemenu = session('tipodemenu');
-     if(($tipodemenu =="1")or($tipodemenu =="2")){
+     if(($tipodemenu =="1")or($tipodemenu =="2")or($tipodemenu =="4")){
      ?>
                 <li class="side-nav-item background-buttons">
                 <a
