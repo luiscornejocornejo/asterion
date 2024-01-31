@@ -73,6 +73,9 @@ class ispcubenodos extends Command
                             $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/nd"); //7461023535
                             $dat = json_decode($dat);
                             var_dump($dat);
+                            $query11="INSERT INTO " . $merchant . ".nodos (id, nombre, lat, log, direcion, ciudad, idget, mensaje, estadonodo) VALUES(0, '', '', '', '', '', 0, '', 0)
+                            ON DUPLICATE KEY UPDATE " . $merchant . "..nodos SET nombre='', lat='', log='', direcion='', ciudad=''";
+                         //   $resultados11 = DB::select($query11);
 
                        
                     } else {

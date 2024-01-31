@@ -82,6 +82,15 @@ class mailtickets  extends Command
     
             }
         
+            $topic="2";
+            if($mailenvia=="reports@suricata.la	"){
+                $topic="14";
+
+            }
+            if($mailenvia=="noreply@xenioo.com	"){
+                $topic="15";
+
+            }
     
             $nya=$asunto."<br>".$cuerpo;
            //crear ticket en sienna
@@ -90,7 +99,7 @@ class mailtickets  extends Command
         $si = new siennaticketssoporte();
         $si->siennadepto = "1";
         $si->cliente = "";
-        $si->siennatopic = "2";
+        $si->siennatopic =$topic;
         $si->cedula = "";
         $si->siennaestado = "1";
         $si->siennasource = "7";
