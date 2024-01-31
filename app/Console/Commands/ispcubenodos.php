@@ -66,6 +66,7 @@ class ispcubenodos extends Command
                         $merchant = $val->nombre;
                     }
 
+                    echo "https://" . $merchant . "." . $url . "/api/nd";
                     if ($url <> "") {
                         
                         
