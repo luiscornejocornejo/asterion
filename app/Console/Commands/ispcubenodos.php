@@ -44,7 +44,7 @@ class ispcubenodos extends Command
           if (in_array($val->Database, $listadono)) {
               continue;
           }
-         $query1="select count(*) as cuantos from ".$val->Database.".siennaintegracion where nombre='ispcube' ";
+         $query1="select count(*) as cuantos from ".$val->Database.".siennaintegracion where nombre='ispcube2' ";
        
             $resultados1 = DB::select($query1);
 
