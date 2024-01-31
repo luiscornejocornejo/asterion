@@ -122,7 +122,7 @@ function maxid() {
             im2=colorlogo(response.data[i].siennasource);
             colordepto=colordeptof(response.data[i].iddepto);
             colorestado=colorestadof(response.data[i].siennaestado);
-            if(response.data[i].estadoconv==0){
+            if(response.data[i].estadoconv==1){
               aviso='<button class="btn btn-primary position-relative" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg">'+
                                        ' <i class="mdi mdi-wechat" data-bs-toggle="tooltip" data-bs-placement="top"'+
                                        ' data-bs-custom-class="mb-1" data-bs-title="El usuario ha enviado un mensaje"></i>'+
