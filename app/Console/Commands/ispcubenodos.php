@@ -60,14 +60,14 @@ class ispcubenodos extends Command
                     $tokensienna = "";
                     foreach ($datos as $val) {
 
-                        $url = $val->headerlogin;
+                      echo  $url = $val->headerlogin;
                         $tokensienna = $val->tokensienna;
                         $campo = $val->headerendpoint;
                         $merchant = $val->nombre;
                     }
 
                     if ($url <> "") {
-                        $campos = explode(",", $campo);
+                        
                         
                             $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/nd"); //7461023535
                             $dat = json_decode($dat);
