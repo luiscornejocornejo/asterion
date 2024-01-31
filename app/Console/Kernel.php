@@ -19,7 +19,7 @@ class Kernel extends ConsoleKernel
     { 
         // $schedule->command('inspire')->hourly();
         $schedule->command('semanal:asignacion')->cron('*/1 * * * *')->withoutOverlapping()->emailOutputOnFailure('kayser1712@gmail.com');
-        //$schedule->command('semanal:nodos')->daily()->emailOutputOnFailure('kayser1712@gmail.com');
+        $schedule->command('semanal:nodos')->daily()->emailOutputOnFailure('kayser1712@gmail.com');
        // $schedule->command('semanal:mailtickets')->cron('*/10 * * * *')->emailOutputOnFailure('kayser1712@gmail.com');
         $schedule->command('ma:mailtickets')->everyTwoMinutes()->sendOutputTo("scheduler-output.log");
   
