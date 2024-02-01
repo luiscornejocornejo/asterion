@@ -47,7 +47,7 @@
                     <td>
                         <div class="form-check">
                             <input value="<?php echo $value->id;?>" type="checkbox" class="form-check-input" name="lista[]">
-                            <label class="form-check-label" for="customCheck1">node_id</label>
+                            <label class="form-check-label" for="customCheck1"><?php echo $value->id;?></label>
                         </div>
                     </td>
                     <td><?php echo $value->nombre;?></td>
