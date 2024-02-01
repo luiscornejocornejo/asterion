@@ -123,8 +123,12 @@ class siennaController extends Controller
   
 
          ";
-   
+         try {
       $resultados1 = DB::select($query1);
+         }
+         catch(\Illuminate\Database\QueryException$ex){
+          echo "no";
+         }
 
     }
 
