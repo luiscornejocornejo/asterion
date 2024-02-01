@@ -18,8 +18,8 @@
                     <label for="example-select" class="form-label">Estado del nodo</label>
                     <select class="form-select" name="estado" id="example-select">
                         <option value="1">Normal</option>
-                        <option value="2">Mantenimiento</option>
-                        <option value="3">Corte General</option>
+                        <option value="3">Mantenimiento</option>
+                        <option value="2">Corte General</option>
                     </select>
                 </div>
                 <div class="col-lg-4 col-sm-12">
