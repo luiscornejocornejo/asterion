@@ -217,6 +217,7 @@ Route::post('/ticketusers','App\Http\Controllers\TicketdatosController@ticketuse
 Route::post('/newusers','App\Http\Controllers\TicketdatosController@newusers');
 Route::get('/supervisor','App\Http\Controllers\TicketdatosController@supervisor');
 Route::get('/nodes','App\Http\Controllers\TicketdatosController@nodes');
+Route::post('/nodes','App\Http\Controllers\TicketdatosController@nodespost');
 Route::get('/busquedaavanzada','App\Http\Controllers\TicketdatosController@busquedaavanzada');
 
 

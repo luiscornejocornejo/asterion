@@ -9,6 +9,7 @@ use App\Models\categoria;
 use App\Models\dashboard;
 use App\Models\graficos;
 use App\Models\users;
+use App\Models\nodos;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\PDO;
 use Redirect;
@@ -1335,5 +1336,25 @@ class TicketdatosController extends Controller
         return view("sienna/nodes")
             ->with('nodes', $nodes)
           ;
+    }
+    public function nodespost(Request $request)
+    {
+
+
+        $message=$request->message;
+        $estado=$request->estado;
+        $lista=$request->lista;
+
+        foreach($lista as $value){
+
+            $no = nodos::find($value);
+            $no->mensaje=$message;
+            $no->estadonodo=$estado;
+            $no->save();
+            
+        }
+        return redirect()
+        ->back()
+        ->with('success', 'Se Modifico el estado Correctamente');
     }
 }

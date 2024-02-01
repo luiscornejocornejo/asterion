@@ -6,7 +6,7 @@
 <div class="content-page" style="padding: 0!important;">
 
     <div class="container-fluid pt-2">
-        <form method="get" action="/nodes">
+        <form method="post" action="/nodes">
         @csrf
 
             <div class="row">
@@ -25,7 +25,7 @@
                 <div class="col-lg-4 col-sm-12">
                     <div class="mb-2 position-relative">
                         <label class="form-label">&nbsp;</label>
-                        <input type="submit" type="button" class="form-control w-25 bg-success text-light" value="Buscar">
+                        <input type="submit" type="button" class="form-control w-25 bg-success text-light" value="Cambiar">
                     </div>
                 </div>
 
