@@ -1324,4 +1324,16 @@ class TicketdatosController extends Controller
         }
   
     }
+    public function nodes(Request $request)
+    {
+        $query = "SELECT * FROM `nodos`";
+        $nodes = DB::select($query);
+
+        $categorias = categoria::all();
+        $graficos = graficos::all();
+
+        return view("sienna/nodes")
+            ->with('nodes', $nodes)
+          ;
+    }
 }
