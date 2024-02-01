@@ -109,7 +109,7 @@ $resultados = DB::select($query);
                 </li>
                
                 <li class="side-nav-item background-buttons">
-                    <a  href="/siennaabm?id=134"  class="side-nav-link hovering-pan ">
+                    <a  href="/nodes"  class="side-nav-link hovering-pan ">
                         <i class="mdi mdi-radio-tower"></i>
                         <span> Nodos </span>
                     </a>
