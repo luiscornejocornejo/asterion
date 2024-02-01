@@ -1092,6 +1092,15 @@ class siennaticketsController extends Controller
         $resultados = DB::select($query);
         return $resultados;
     }
+
+    public function nodos(Request $request)
+    {
+        $nombre = $request->nombre;
+        $resultados = "";
+        $query = "select * from nodos where nombre='" . $nombre . "' ";
+        $resultados = DB::select($query);
+        return $resultados;
+    }
     public function quispe(Request $request){
 
         Artisan::call("ma:mailtickets");
