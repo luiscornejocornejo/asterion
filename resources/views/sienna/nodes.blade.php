@@ -50,10 +50,10 @@
                             <label class="form-check-label" for="customCheck1"><?php echo $value->id;?></label>
                         </div>
                     </td>
-                    <td><?php echo $value->nombre;?></td>
+                    <td><?php echo $value->nombredelnodo;?></td>
 
                     <td><?php echo $value->ciudad;?></td>
-                    <td><?php echo $value->estadonodo;?></td>
+                    <td><?php echo $value->nombredelestadonodo;?></td>
                     <td><?php echo $value->mensaje;?></td>
 
                 </tr>

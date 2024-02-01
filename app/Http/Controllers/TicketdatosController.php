@@ -1326,11 +1326,11 @@ class TicketdatosController extends Controller
     }
     public function nodes(Request $request)
     {
-        $query = "SELECT * FROM `nodos`";
+        $query = "SELECT *,b.nombre as nombredelestadonodo,a.nombre as nombredelnodo  FROM `nodos` a join estadonombre 
+        on b b.id=a.estadonombre";
         $nodes = DB::select($query);
 
-        $categorias = categoria::all();
-        $graficos = graficos::all();
+     
 
         return view("sienna/nodes")
             ->with('nodes', $nodes)
