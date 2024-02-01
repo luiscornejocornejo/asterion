@@ -59,6 +59,6 @@
         </table>
 
     </div 
-</div>
+
     <br><br><br>
     @include('facu.footer')
