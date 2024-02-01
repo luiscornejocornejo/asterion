@@ -6,7 +6,9 @@
 <div class="content-page" style="padding: 0!important;">
 
     <div class="container-fluid pt-2">
-        <form method="post" action="/">
+        <form method="post" action="/nodes">
+        @csrf
+
             <div class="row">
                 <div class="col-4 mb-2">
                     <label for="simpleinput" class="form-label">Mensaje</label>
@@ -14,10 +16,10 @@
                 </div>
                 <div class="col-4 mb-2">
                     <label for="example-select" class="form-label">Estado del nodo</label>
-                    <select class="form-select" name="node" id="example-select">
-                        <option>Normal</option>
-                        <option>Mantenimiento</option>
-                        <option>Corte General</option>
+                    <select class="form-select" name="estado" id="example-select">
+                        <option value="1">Normal</option>
+                        <option value="2">Mantenimiento</option>
+                        <option value="3">Corte General</option>
                     </select>
                 </div>
                 <div class="col-lg-4 col-sm-12">
@@ -40,20 +42,23 @@
                 </tr>
             </thead>
             <tbody>
+                <?php foreach($nodes as $value){?>
                 <tr class="text-center">
                     <td>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="customCheck1">
+                            <input value="<?php echo $value->id;?>" type="checkbox" class="form-check-input" name="lista[]">
                             <label class="form-check-label" for="customCheck1">node_id</label>
                         </div>
                     </td>
-                    <td>node_name</td>
+                    <td><?php echo $value->nombre;?></td>
 
-                    <td>city</td>
-                    <td>state</td>
-                    <td>message</td>
+                    <td><?php echo $value->ciudad;?></td>
+                    <td><?php echo $value->estadonodo;?></td>
+                    <td><?php echo $value->mensaje;?></td>
 
                 </tr>
+
+                <?php }?>
 
             </tbody>
         </table>
