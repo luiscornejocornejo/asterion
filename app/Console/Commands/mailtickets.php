@@ -91,7 +91,7 @@ class mailtickets  extends Command
                 $topic="15";
 
             }
-    
+            $mailenvia=trim($mailenvia);
             $nya=$asunto."<br>".$cuerpo;
            //crear ticket en sienna
 
