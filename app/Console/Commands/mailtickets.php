@@ -83,11 +83,11 @@ class mailtickets  extends Command
             }
         
             $topic="2";
-            if($mailenvia=="reports@suricata.la	"){
+            if(trim($mailenvia)=="reports@suricata.la"){
                 $topic="14";
 
             }
-            if($mailenvia=="noreply@xenioo.com	"){
+            if(trim($mailenvia)=="noreply@xenioo.com"){
                 $topic="15";
 
             }

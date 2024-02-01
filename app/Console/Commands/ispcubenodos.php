@@ -60,26 +60,40 @@ class ispcubenodos extends Command
                     $tokensienna = "";
                     foreach ($datos as $val) {
 
-                      echo  $url = $val->headerlogin;
+                        echo  $url = $val->headerlogin;
                         $tokensienna = $val->tokensienna;
                         $campo = $val->headerendpoint;
                         $merchant = $val->nombre;
-                    }
+                    
 
-                    echo "https://" . $merchant . "." . $url . "/api/nd";
-                    if ($url <> "") {
+                        echo "https://" . $merchant . "." . $url . "/api/nd";
+                        if ($url <> "") {
                         
                         
                             $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/nd"); //7461023535
                             $dat = json_decode($dat);
                             var_dump($dat);
-                            $query11="INSERT INTO " . $merchant . ".nodos (id, nombre, lat, log, direcion, ciudad, idget, mensaje, estadonodo) VALUES(0, '', '', '', '', '', 0, '', 0)
-                            ON DUPLICATE KEY UPDATE " . $merchant . "..nodos SET nombre='', lat='', log='', direcion='', ciudad=''";
-                         //   $resultados11 = DB::select($query11);
+                            foreach($dat as $nodoval){
 
-                       
-                    } else {
+                                $nombre=$nodoval->code;
+                                $lat=$nodoval->lat;
+                                $log=$nodoval->lng;
+                                $direcion=$nodoval->address;
+                                $ciudad=$nodoval->comment;
+                                $idget=$nodoval->id;
+                                $mensaje="";
+                                $estadonodo=1;
+                            
+                                $query11="INSERT INTO " . $merchant . ".nodos ( nombre, lat, log, direcion, ciudad, idget, mensaje, estadonodo) 
+                                VALUES('".$nombre."', '".$lat."', '".$log."', '".$direcion."', '".$ciudad."', ".$idget.", '".$mensaje."', ".$estadonodo.")
+                                ON DUPLICATE KEY UPDATE " . $merchant . "..nodos 
+                                SET nombre='".$nombre."', lat='".$lat."', log='".$log."', direcion='".$direcion."', ciudad='".$ciudad."'";
+                                $resultados11 = DB::select($query11);
+
+                            }
+                        } else {
                         $dat = "";
+                        }
                     }
                 }
                 
