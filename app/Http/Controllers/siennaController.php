@@ -118,7 +118,7 @@ class siennaController extends Controller
       }
      /*   ALTER TABLE ".$val->Database.".nodos MODIFY COLUMN nombre varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL;
 
-*/
+
     echo   $query1="
 
     ALTER TABLE ".$val->Database.".nodos ADD created_at DATETIME NULL;
@@ -133,7 +133,7 @@ class siennaController extends Controller
          catch(\Illuminate\Database\QueryException$ex){
           echo "no";
          }
-
+*/
     }
 
 
