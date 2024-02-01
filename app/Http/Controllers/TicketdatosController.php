@@ -9,6 +9,8 @@ use App\Models\categoria;
 use App\Models\dashboard;
 use App\Models\graficos;
 use App\Models\users;
+use App\Models\estadonodo;
+
 use App\Models\nodos;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\PDO;
@@ -1331,7 +1333,7 @@ class TicketdatosController extends Controller
         on  b.id=a.estadonodo";
         $nodes = DB::select($query);
 
-     $listnodos=nodos::all();
+     $listnodos=estadonodo::all();
 
         return view("sienna/nodes")
             ->with('nodes', $nodes)

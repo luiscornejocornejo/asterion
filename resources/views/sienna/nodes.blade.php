@@ -18,7 +18,7 @@
                     <label for="example-select" class="form-label">Estado del nodo</label>
                     <select class="form-select" name="estado" id="example-select">
                         <?php foreach($listnodos as $ll){?>
-                        <option value="<?php echo $ll->id;?>"><?php echo $ll->nombre;?>"</option>
+                        <option value="<?php echo $ll->id;?>"><?php echo $ll->nombre;?></option>
                       <?php }?>
                     </select>
                 </div>
