@@ -6,7 +6,7 @@
 <div class="content-page" style="padding: 0!important;">
 
     <div class="container-fluid pt-2">
-        <form method="post" action="/nodes">
+        <form method="get" action="/nodes">
         @csrf
 
             <div class="row">
@@ -30,7 +30,7 @@
                 </div>
 
             </div>
-        </form>
+       
         <table class="table table-centered mb-0">
             <thead class=" bg-dark">
                 <tr class="text-center">
@@ -62,6 +62,7 @@
 
             </tbody>
         </table>
+        </form>
 
     </div 
 
