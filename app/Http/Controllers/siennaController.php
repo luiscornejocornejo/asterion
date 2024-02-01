@@ -116,11 +116,11 @@ class siennaController extends Controller
       if (in_array($val->Database, $listadono)) {
           continue;
       }
-     /* ALTER TABLE ".$val->Database.".nodos ADD CONSTRAINT nodos_UN UNIQUE KEY (nombre);
+     /*     ALTER TABLE ".$val->Database.".nodos MODIFY COLUMN nombre varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL;
+
 */
     echo   $query1="
-    ALTER TABLE ".$val->Database.".nodos MODIFY COLUMN nombre varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL;
-
+    ALTER TABLE ".$val->Database.".nodos ADD CONSTRAINT nodos_UN UNIQUE KEY (nombre);
 
 
   
