@@ -44,14 +44,14 @@
                     <td>
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="customCheck1">
-                            <label class="form-check-label" for="customCheck1">{{node_id}}</label>
+                            <label class="form-check-label" for="customCheck1">node_id</label>
                         </div>
                     </td>
-                    <td>{{node_name}}</td>
+                    <td>node_name</td>
 
-                    <td>{{city}}</td>
-                    <td>{{state}}</td>
-                    <td>{{message}}</td>
+                    <td>city</td>
+                    <td>state</td>
+                    <td>message</td>
 
                 </tr>
 
