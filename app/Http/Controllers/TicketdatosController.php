@@ -1331,10 +1331,11 @@ class TicketdatosController extends Controller
         on  b.id=a.estadonodo";
         $nodes = DB::select($query);
 
-     
+     $listnodos=nodos::all();
 
         return view("sienna/nodes")
             ->with('nodes', $nodes)
+            ->with('listnodos', $listnodos)
           ;
     }
     public function nodespost(Request $request)

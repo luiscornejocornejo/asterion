@@ -17,9 +17,9 @@
                 <div class="col-4 mb-2">
                     <label for="example-select" class="form-label">Estado del nodo</label>
                     <select class="form-select" name="estado" id="example-select">
-                        <option value="1">Normal</option>
-                        <option value="3">Mantenimiento</option>
-                        <option value="2">Corte General</option>
+                        <?php foreach($listnodos as $ll){?>
+                        <option value="<?php echo $ll->id;?>"><?php echo $ll->nombre;?>"</option>
+                      <?php }?>
                     </select>
                 </div>
                 <div class="col-lg-4 col-sm-12">
