@@ -86,8 +86,7 @@ class ispcubenodos extends Command
                             
                               echo   $query11="INSERT INTO " . $merchant . ".nodos ( nombre, lat, log, direcion, ciudad, idget, mensaje, estadonodo) 
                                 VALUES('".$nombre."', '".$lat."', '".$log."', '".$direcion."', '".$ciudad."', ".$idget.", '".$mensaje."', ".$estadonodo.")
-                                ON DUPLICATE KEY UPDATE " . $merchant . ".nodos 
-                                SET nombre='".$nombre."', lat='".$lat."', log='".$log."', direcion='".$direcion."', ciudad='".$ciudad."'";
+                                ON DUPLICATE KEY UPDATE nombre='".$nombre."', lat='".$lat."', log='".$log."', direcion='".$direcion."', ciudad='".$ciudad."'";
                                 $resultados11 = DB::select($query11);
 
                             }
