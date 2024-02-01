@@ -120,8 +120,8 @@ class siennaController extends Controller
 
 */
     echo   $query1="
-    ALTER TABLE ".$val->Database.".nodos ADD updated_at varchar(100) NULL;
 
+    ALTER TABLE ".$val->Database.".nodos ADD created_at DATETIME NULL;
 
 
   
