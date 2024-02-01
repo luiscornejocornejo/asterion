@@ -117,7 +117,8 @@ class siennaController extends Controller
           continue;
       }
     echo   $query1="
-    ALTER TABLE ".$val->Database.".siennatickets ADD estadoconv varchar(100) DEFAULT 0 NULL;
+    ALTER TABLE ".$val->Database.".nodos ADD CONSTRAINT nodos_UN UNIQUE KEY (nombre);
+
 
   
 
