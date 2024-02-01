@@ -1326,8 +1326,8 @@ class TicketdatosController extends Controller
     }
     public function nodes(Request $request)
     {
-        $query = "SELECT *,b.nombre as nombredelestadonodo,a.nombre as nombredelnodo  FROM `nodos` a join estadonombre 
-        on b b.id=a.estadonombre";
+        $query = "SELECT *,b.nombre as nombredelestadonodo,a.nombre as nombredelnodo  FROM `nodos` a join estadonombre b
+        on  b.id=a.estadonombre";
         $nodes = DB::select($query);
 
      
