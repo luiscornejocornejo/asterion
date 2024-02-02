@@ -133,11 +133,17 @@ function maxid() {
             }else{
               aviso='<button  onclick="vista(`' + response.data[i].conversation_url + '`,`' + response.data[i].cliente + '`,`' + result + '`)" class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg"><i class="mdi mdi-wechat" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Conversación."></i> </button>';
             }
+
+            if(response.data[i].nombreagente ==""){
+              $nombreamostrar="sin asignar";
+            }else{
+              $nombreamostrar=response.data[i].nombreagente ;
+            }
           
             tt += '<tr class="text-center">' +
                 ' <td><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</td>' +
                 ' <td>' + response.data[i].nya + '</td>' + 
-                ' <td>' + response.data[i].nombreagente + '</td>' + 
+                ' <td>' + $nombreamostrar+ '</td>' + 
                 ' <td> <span class="badge '+colordepto+'" style="font-size:medium;">' + response.data[i].depto + '</span>'+
                 ' <td>' + response.data[i].topicnombre + '</td>' +
                 ' <td>' + response.data[i].cel + '</td>' +
