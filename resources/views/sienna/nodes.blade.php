@@ -11,10 +11,7 @@
                 @csrf
 
                     <div class="row">
-                        <div class="col-4 mb-2">
-                            <label for="simpleinput" class="form-label">Mensaje</label>
-                            <input type="text" name="message" id="simpleinput" class="form-control">
-                        </div>
+                       
                         <div class="col-4 mb-2">
                             <label for="example-select" class="form-label">Estado del nodo</label>
                             <select class="form-select" name="estado" id="example-select">
@@ -22,6 +19,10 @@
                                 <option value="<?php echo $ll->id;?>"><?php echo $ll->nombre;?></option>
                             <?php }?>
                             </select>
+                        </div>
+                        <div class="col-4 mb-2">
+                            <label for="simpleinput" class="form-label">Mensaje</label>
+                            <input type="text" name="message" id="simpleinput" class="form-control">
                         </div>
                         <div class="col-lg-4 col-sm-12">
                             <div class="mb-2 position-relative">
