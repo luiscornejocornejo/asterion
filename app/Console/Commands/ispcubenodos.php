@@ -69,8 +69,13 @@ class ispcubenodos extends Command
                         echo "https://" . $merchant . "." . $url . "/api/nd";
                         if ($url <> "") {
                         
-                        
-                            $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/nd"); //7461023535
+                            if($merchant=="giles"){
+                                    $urlfinal="http://" . $merchant . "." . $url . "/api/nd";
+                            }else{
+                                $urlfinal="https://" . $merchant . "." . $url . "/api/nd";
+
+                            }
+                            $dat = file_get_contents($urlfinal); //7461023535
                             $dat = json_decode($dat);
                            // var_dump($dat);
                             foreach($dat as $nodoval){
