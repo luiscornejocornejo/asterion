@@ -66,7 +66,6 @@ document.getElementById("idticketpedir2").value = dd;
 }
 
 function cerrar(result,dd, ee, ff,cliente){
-  alert(cliente);
   document.getElementById("idticketestado20").value = dd;
   document.getElementById("conversation_id20").value = ee;
   document.getElementById("client_number").value = cliente;
