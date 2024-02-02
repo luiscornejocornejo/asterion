@@ -134,7 +134,7 @@ function maxid() {
               aviso='<button  onclick="vista(`' + response.data[i].conversation_url + '`,`' + response.data[i].cliente + '`,`' + result + '`)" class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg"><i class="mdi mdi-wechat" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Conversación."></i> </button>';
             }
 
-            if(response.data[i].nombreagente ==""){
+            if(response.data[i].nombreagente ==null){
               $nombreamostrar="sin asignar";
             }else{
               $nombreamostrar=response.data[i].nombreagente ;
