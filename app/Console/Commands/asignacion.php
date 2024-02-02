@@ -34,7 +34,7 @@ class asignacion extends Command
     {
 
         echo "entro asignacion";
-        $os = array("infitelecom", "soporte", "demo", "sidecom", "amecom2", "ispgroup");
+        $os = array("infitelecom", "soporte", "demo", "sidecom", "amecom2", "ispgroup", "futurity", "widecom");
 
         foreach($os as $val){
 
