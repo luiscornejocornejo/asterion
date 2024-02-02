@@ -72,7 +72,7 @@ class ispcubenodos extends Command
                         
                             $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/nd"); //7461023535
                             $dat = json_decode($dat);
-                            var_dump($dat);
+                           // var_dump($dat);
                             foreach($dat as $nodoval){
 
                                 $nombre=$nodoval->code;
