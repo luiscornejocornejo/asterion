@@ -2,7 +2,7 @@
 
 @include('facu.menu')
 
-
+<div class="wrapper menuitem-active">
 <div class="content-page" style="padding: 0!important;">
 
     <div class="container-fluid pt-2">
@@ -66,6 +66,6 @@
 
     </div> 
 </div> 
-
+</div>
     <br><br><br>
     @include('facu.footer')
