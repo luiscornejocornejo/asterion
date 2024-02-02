@@ -451,7 +451,7 @@ class siennaticketsController extends Controller
         left join  siennatopic d on d.id=a.siennatopic
         where a.siennaestado  in('4')  
         and
-        created_at BETWEEN '".$ini."' AND '".$fin."';
+      
          created_at>='".$ini." 00:00:00' and created_at<='".$fin." 23:59:59'
          
 
