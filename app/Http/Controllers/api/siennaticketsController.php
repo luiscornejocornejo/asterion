@@ -1143,16 +1143,21 @@ class siennaticketsController extends Controller
         $url = "";
         $tokensienna = "";
         foreach ($datos as $val) {
+            echo "<br>";
 
-          echo   $url = $val->headerlogin;
-          echo  $tokensienna = $val->tokensienna;
-          echo  $campo = $val->headerendpoint;
+          echo   $url = $val->headerlogin;            echo "<br>";
+
+          echo  $tokensienna = $val->tokensienna;            echo "<br>";
+
+          echo  $campo = $val->headerendpoint;            echo "<br>";
+
         }
 
         if ($url <> "") {
             $campos = explode(",", $campo);
+            echo $urlfinal="https://" . $merchant . "." . $url . "/api/ws?token=" . $tokensienna . "&" . $campos[0] . "=" . $idcustomer;
             if ($idcustomer <> "") {
-                $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/ws?token=" . $tokensienna . "&" . $campos[0] . "=" . $idcustomer); //7461023535
+                $dat = file_get_contents($urlfinal); //7461023535
                 $dat = json_decode($dat);
             } else {
 
