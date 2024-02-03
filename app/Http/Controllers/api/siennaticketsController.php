@@ -1124,13 +1124,13 @@ class siennaticketsController extends Controller
     public function getdata(Request $request)
     {
 
-        $idcustomer=$request->cliente;
+       echo $idcustomer=$request->cliente;
         $merchant =$this->dominio();
-        $query4 = "select * from ".$merchant.".siennaintegracion";
+        echo  $query4 = "select * from ".$merchant.".siennaintegracion";
         $resultados4 = DB::select($query4);
         foreach ($resultados4 as $val2) {
 
-            $inte = $val2->nombre;
+            echo   $inte = $val2->nombre;
         }
 
 
