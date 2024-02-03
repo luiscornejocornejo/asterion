@@ -1125,11 +1125,14 @@ class siennaticketsController extends Controller
     {
 
        echo $idcustomer=$request->cliente;
-        $merchant =$this->dominio();
-        echo  $query4 = "select * from ".$merchant.".siennaintegracion";
+        $merchant =$this->dominio();            echo "<br>";
+
+        echo  $query4 = "select * from ".$merchant.".siennaintegracion";            echo "<br>";
+
         $resultados4 = DB::select($query4);
         foreach ($resultados4 as $val2) {
 
+            echo "<br>";
             echo   $inte = $val2->nombre;
         }
 
