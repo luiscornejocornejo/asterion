@@ -1144,9 +1144,9 @@ class siennaticketsController extends Controller
         $tokensienna = "";
         foreach ($datos as $val) {
 
-            $url = $val->headerlogin;
-            $tokensienna = $val->tokensienna;
-            $campo = $val->headerendpoint;
+          echo   $url = $val->headerlogin;
+          echo  $tokensienna = $val->tokensienna;
+          echo  $campo = $val->headerendpoint;
         }
 
         if ($url <> "") {
