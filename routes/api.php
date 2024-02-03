@@ -58,6 +58,7 @@ Route::get('/datoscliente', [siennaticketsController::class, 'datoscliente']);
 Route::get('/cerrados', [siennaticketsController::class, 'cerrados']);
 Route::get('/quispe', [siennaticketsController::class, 'quispe']);
 Route::get('/nodos', [siennaticketsController::class, 'nodos']);
+Route::get('/getdata', [siennaticketsController::class, 'getdata']);
 
 
 Route::get('/enhora', [siennaticketsController::class, 'enhora']);

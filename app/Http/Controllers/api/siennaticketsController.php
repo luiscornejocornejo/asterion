@@ -1108,5 +1108,60 @@ class siennaticketsController extends Controller
 
         Artisan::call("ma:mailtickets");
     }
+
+    public function dominio(){
+        $subdomain_tmp = 'localhost';
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+            $subdomain_tmp =  array_shift($domainParts);
+        } elseif(isset($_SERVER['SERVER_NAME'])){
+            $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+            $subdomain_tmp =  array_shift($domainParts);
+            
+        }
+        return $subdomain_tmp;
+    }
+    public function getdata(Request $request)
+    {
+
+        $idcustomer=$request->cliente;
+        $merchant =$this->dominio();
+        $query4 = "select * from ".$merchant.".siennaintegracion";
+        $resultados4 = DB::select($query4);
+        foreach ($resultados4 as $val2) {
+
+            $inte = $val2->nombre;
+        }
+
+
+        $prueba = $this->conectar(14);
+        $query3 = "select * from " . $inte . ".ws_cliente where nombre='" . $merchant . "'";
+        $datos = DB::connection('mysql2')->select($query3);
+        $url = "";
+        $tokensienna = "";
+        foreach ($datos as $val) {
+
+            $url = $val->headerlogin;
+            $tokensienna = $val->tokensienna;
+            $campo = $val->headerendpoint;
+        }
+
+        if ($url <> "") {
+            $campos = explode(",", $campo);
+            if ($idcustomer <> "") {
+                $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/ws?token=" . $tokensienna . "&" . $campos[0] . "=" . $idcustomer); //7461023535
+                $dat = json_decode($dat);
+            } else {
+
+               // $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/ws?token=" . $tokensienna . "&" . $campos[0] . "=" . $clientid); //7461023535
+                //$dat = json_decode($dat);
+            }
+        } else {
+            $dat = "";
+        }
+
+
+        return response()->json($dat);
+    }
     
 }

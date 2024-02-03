@@ -1360,4 +1360,7 @@ class TicketdatosController extends Controller
         ->back()
         ->with('success', 'Se Modifico el estado Correctamente');
     }
+
+   
+    
 }
