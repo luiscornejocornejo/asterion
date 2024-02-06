@@ -89,20 +89,12 @@ if(isset($_GET['fecha'])){
                 </div>
            
                 <script>
-                 function home(){
-
-                    var endDate=  $("#reportrange").data('daterangepicker').endDate.format('YYYY-MM-DD');
-                    var start=  $("#reportrange").data('daterangepicker').startDate.format('YYYY-MM-DD');
-                    var URLactual = window.location.href;
-                    var porciones = URLactual.split('.');
-                    let result = porciones[0].replace("https://", "");
-                    alert(start);
-                    url = "https://"+result+".suricata.cloud/api/cerradoscant?ini=" + start + "&fin=" + endDate + "";
-                    console.log(url);
+                    function cerrados(url){
+                        console.log(url);
                     axios.get(url)
                     .then(function (response) {
                         for (i = 0; i < response.data.length; i++) {
-                                console.log(response.data[i].cantidadtickets2);
+                                ticketcerrados=response.data[i].cantidadtickets2;
                         }
                     })
                 .catch(function (error) {
@@ -112,7 +104,19 @@ if(isset($_GET['fecha'])){
                 .then(function () {
                     // función que siempre se ejecuta
                 });
-                    console.log("Ha pasado 1 segundo.");
+
+                    }
+                 function home(){
+
+                    var endDate=  $("#reportrange").data('daterangepicker').endDate.format('YYYY-MM-DD');
+                    var start=  $("#reportrange").data('daterangepicker').startDate.format('YYYY-MM-DD');
+                    var URLactual = window.location.href;
+                    var porciones = URLactual.split('.');
+                    let result = porciones[0].replace("https://", "");
+                    alert(start);
+                    url = "https://"+result+".suricata.cloud/api/cerradoscant?ini=" + start + "&fin=" + endDate + "";
+                    ticketcerrados=cerrados(url);
+                    console.log(ticketcerrados);
 
                 }
                 

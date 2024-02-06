@@ -1195,7 +1195,7 @@ class siennaticketsController extends Controller
         $fin=$request->fin;
         $resultados = "";
         $dom=$this->dominio();
-       echo  $query = "select count(*) as cantidadtickets2  from ".$dom.".siennatickets where siennaestado=4 and
+         $query = "select count(*) as cantidadtickets2  from ".$dom.".siennatickets where siennaestado=4 and
         created_at>='".$ini."' and created_at<='".$fin."'  ";
         $resultados = DB::select($query);
         $valor=0;
