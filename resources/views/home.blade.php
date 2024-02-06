@@ -94,17 +94,17 @@ if(isset($_GET['fecha'])){
                     axios.get(url)
                     .then(function (response) {
                         for (i = 0; i < response.data.length; i++) {
-                                ticketcerrados=response.data[i].cantidadtickets2;
-                        }
-                    })
-                .catch(function (error) {
-                    // función para capturar el error
-                    console.log(error);
-                })
-                .then(function () {
-                    // función que siempre se ejecuta
-                });
-                return ticketcerrados;
+                                let ticketcerrados=response.data[i].cantidadtickets2;
+                                    }
+                                })
+                            .catch(function (error) {
+                                // función para capturar el error
+                                console.log(error);
+                            })
+                            .then(function () {
+                                // función que siempre se ejecuta
+                            });
+                        return ticketcerrados;
 
                     }
                  function home(){
