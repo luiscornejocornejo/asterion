@@ -370,31 +370,39 @@ class siennaticketsController extends Controller
         }
 
 
-        $prueba = $this->conectar(14);
-        $query3 = "select * from " . $inte . ".ws_cliente where nombre='" . $merchant . "'";
-        $datos = DB::connection('mysql2')->select($query3);
-        $url = "";
-        $tokensienna = "";
-        foreach ($datos as $val) {
-
-            $url = $val->headerlogin;
-            $tokensienna = $val->tokensienna;
-            $campo = $val->headerendpoint;
-        }
-
-        if ($url <> "") {
-            $campos = explode(",", $campo);
-            if ($idcustomer <> "") {
-                $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/ws?token=" . $tokensienna . "&" . $campos[0] . "=" . $clientid); //7461023535
-                $dat = json_decode($dat);
-            } else {
-
-               // $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/ws?token=" . $tokensienna . "&" . $campos[0] . "=" . $clientid); //7461023535
-                //$dat = json_decode($dat);
+        try{
+            $prueba = $this->conectar(14);
+            $query3 = "select * from " . $inte . ".ws_cliente where nombre='" . $merchant . "'";
+            $datos = DB::connection('mysql2')->select($query3);
+            $url = "";
+            $tokensienna = "";
+            foreach ($datos as $val) {
+    
+                $url = $val->headerlogin;
+                $tokensienna = $val->tokensienna;
+                $campo = $val->headerendpoint;
             }
-        } else {
-            $dat = "";
+    
+            if ($url <> "") {
+                $campos = explode(",", $campo);
+                if ($idcustomer <> "") {
+                    $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/ws?token=" . $tokensienna . "&" . $campos[0] . "=" . $clientid); //7461023535
+                    $dat = json_decode($dat);
+                } else {
+    
+                   // $dat = file_get_contents("https://" . $merchant . "." . $url . "/api/ws?token=" . $tokensienna . "&" . $campos[0] . "=" . $clientid); //7461023535
+                    //$dat = json_decode($dat);
+                }
+            } else {
+                $dat = "";
+            }
         }
+        catch (\Throwable $e) {
+          
+            // Podemos hacer algo aquí si ocurre una excepción
+            $dat = "";
+        } 
+       
 
 
         return response()->json(['cliente' => $resultados, 'tickets' => $resultados2, 'dat' => $dat]);
