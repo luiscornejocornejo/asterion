@@ -71,6 +71,24 @@ if(isset($_GET['fecha'])){
       <div class="content-page" style="padding:0 !important;">
           <div class="content">
 
+
+          <div class="row">
+                    <div class="col-lg-4 col-sm-12">
+                        <label class="form-label">Período</label>
+                        <div  id="reportrange" class="form-control" data-toggle="date-picker-range" data-target-display="#reportrange" data-cancel-class="btn-light">
+                            <i class="mdi mdi-calendar"></i>&nbsp;
+                            <span ></span> <i class="mdi mdi-menu-down"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="mb-2 position-relative">
+                            <label class="form-label">&nbsp;</label>
+                            <input onclick="pp()" type="submit" type="button" class="form-control w-25 bg-success text-light" value="Buscar">
+                        </div>
+                    </div>
+                </div>
+           
+                <div id="graf"></div>
               <!-- Start Content-->
               <div class="col2">
                             <div class="row" style="">
