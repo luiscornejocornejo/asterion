@@ -122,7 +122,7 @@ class siennaController extends Controller
        
     echo   $query1="
 
-    ALTER TABLE ".$val->Database.".siennacliente ADD ip varchar(100) NULL;
+    ALTER TABLE ".$val->Database.".siennacliente ADD nodo varchar(100) NULL;
 
 
   
