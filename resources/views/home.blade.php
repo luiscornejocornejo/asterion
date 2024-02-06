@@ -164,7 +164,7 @@ if(isset($_GET['fecha'])){
                                             <h6 class="text-uppercase mt-0">Tickets </h6>
                                             <h2 class="my-2" id="active-views-count2"><p id="abiertos"><?php echo $cantidadtickets;?></p></h2>
                                             <p class="mb-0 text-muted">
-                                                <span class="text-danger me-2"><span class="mdi mdi-arrow-down-bold"></span> </span>
+                                            <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span></span>
                                                 <span class="text-nowrap"> open</span>
                                             </p>
                                             <h2 class="my-2" id="active-views-count2" >
