@@ -83,11 +83,24 @@ if(isset($_GET['fecha'])){
                     <div class="col-lg-4 col-sm-12">
                         <div class="mb-2 position-relative">
                             <label class="form-label">&nbsp;</label>
-                            <input onclick="pp()" type="submit" type="button" class="form-control w-25 bg-success text-light" value="Buscar">
+                            <input onclick="home()" type="submit" type="button" class="form-control w-25 bg-success text-light" value="Buscar">
                         </div>
                     </div>
                 </div>
            
+                <script>
+                 function home(){
+
+                    var endDate=  $("#reportrange").data('daterangepicker').endDate.format('YYYY-MM-DD');
+                    var start=  $("#reportrange").data('daterangepicker').startDate.format('YYYY-MM-DD');
+                    var URLactual = window.location.href;
+                    var porciones = URLactual.split('.');
+                    let result = porciones[0].replace("https://", "");
+                    alert(start);
+                    url = "https://"+result+".suricata.cloud/api/cerrados?inicio=" + start + "&fin=" + endDate + "";
+                    console.log(url);
+                }
+                </script>
                 <div id="graf"></div>
               <!-- Start Content-->
               <div class="col2">
