@@ -116,12 +116,13 @@ class siennaController extends Controller
       if (in_array($val->Database, $listadono)) {
           continue;
       }
-     /*   ALTER TABLE ".$val->Database.".nodos MODIFY COLUMN nombre varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL;
 
-
+      // ALTER TABLE amecom2.siennacliente ADD ip varchar(100) NULL;
+     //  ALTER TABLE amecom2.siennacliente ADD nodo varchar(100) NULL;
+       
     echo   $query1="
 
-    ALTER TABLE ".$val->Database.".nodos ADD created_at DATETIME NULL;
+    ALTER TABLE ".$val->Database.".siennacliente ADD ip varchar(100) NULL;
 
 
   
@@ -133,7 +134,7 @@ class siennaController extends Controller
          catch(\Illuminate\Database\QueryException$ex){
           echo "no";
          }
-*/
+
     }
 
 
