@@ -1196,7 +1196,7 @@ class siennaticketsController extends Controller
         $resultados = "";
         $dom=$this->dominio();
          $query = "select count(*) as cantidadtickets2  from ".$dom.".siennatickets where siennaestado=4 and
-        created_at>='".$ini."' and created_at<='".$fin."'  ";
+        created_at>='".$ini." 00:00:00' and created_at<='".$fin." 23:59:59'  ";
         $resultados = DB::select($query);
         return $resultados;
     }
@@ -1209,7 +1209,7 @@ class siennaticketsController extends Controller
         $resultados = "";
         $dom=$this->dominio();
          $query = "select count(*) as cantidadtickets2  from ".$dom.".siennatickets where siennaestado<>4 and
-        created_at>='".$ini."' and created_at<='".$fin."'  ";
+        created_at>='".$ini." 00:00:00' and created_at<='".$fin." 23:59:59'  ";
         $resultados = DB::select($query);
         return $resultados;
     }
