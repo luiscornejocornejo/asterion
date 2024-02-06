@@ -102,6 +102,8 @@ if(isset($_GET['fecha'])){
                     .then(function (response) {
                         for (i = 0; i < response.data.length; i++) {
                                 let ticketcerrados=response.data[i].cantidadtickets2;
+                                console.log(ticketcerrados);
+
                                     }
                                 })
                             .catch(function (error) {
@@ -111,7 +113,6 @@ if(isset($_GET['fecha'])){
                             .then(function () {
                                 // función que siempre se ejecuta
                             });
-                    console.log(ticketcerrados);
 
                 }
                 
