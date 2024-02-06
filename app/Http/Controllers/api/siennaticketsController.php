@@ -1198,10 +1198,19 @@ class siennaticketsController extends Controller
          $query = "select count(*) as cantidadtickets2  from ".$dom.".siennatickets where siennaestado=4 and
         created_at>='".$ini."' and created_at<='".$fin."'  ";
         $resultados = DB::select($query);
-        $valor=0;
-        foreach($resultados as $val){
-            $valor=$val->cantidadtickets2;
-        }
+        return $resultados;
+    }
+
+    
+    public function abiertoscant(Request $request)
+    {
+        $ini=$request->ini;
+        $fin=$request->fin;
+        $resultados = "";
+        $dom=$this->dominio();
+         $query = "select count(*) as cantidadtickets2  from ".$dom.".siennatickets where siennaestado<>4 and
+        created_at>='".$ini."' and created_at<='".$fin."'  ";
+        $resultados = DB::select($query);
         return $resultados;
     }
     

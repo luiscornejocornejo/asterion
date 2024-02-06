@@ -141,7 +141,7 @@ if(isset($_GET['fecha'])){
                                         <div class="card-body">
                                             <i class='uil uil-window-restore float-end'></i>
                                             <h6 class="text-uppercase mt-0">Tickets </h6>
-                                            <h2 class="my-2" id="active-views-count2"><?php echo $cantidadtickets;?></h2>
+                                            <h2 class="my-2" id="active-views-count2"><p id="abiertos"><?php echo $cantidadtickets;?></p></h2>
                                             <p class="mb-0 text-muted">
                                                 <span class="text-danger me-2"><span class="mdi mdi-arrow-down-bold"></span> </span>
                                                 <span class="text-nowrap"> open</span>
