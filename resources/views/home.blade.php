@@ -89,7 +89,7 @@ if(isset($_GET['fecha'])){
                 </div>
            
                 <script>
-                    function cerrados(url){
+                  ticketcerrados= async  function cerrados(url){
                         let ticketcerrados=0;
                         console.log(url);
                     axios.get(url)
