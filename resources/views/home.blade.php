@@ -97,9 +97,23 @@ if(isset($_GET['fecha'])){
                     var porciones = URLactual.split('.');
                     let result = porciones[0].replace("https://", "");
                     alert(start);
-                    url = "https://"+result+".suricata.cloud/api/cerrados?inicio=" + start + "&fin=" + endDate + "";
+                    url = "https://"+result+".suricata.cloud/api/cerradoscant?ini=" + start + "&fin=" + endDate + "";
                     console.log(url);
+                    axios.get(url)
+                    .then(function (response) {
+                        alert(response.data);
+                    })
+                .catch(function (error) {
+                    // función para capturar el error
+                    console.log(error);
+                })
+                .then(function () {
+                    // función que siempre se ejecuta
+                });
+                    console.log("Ha pasado 1 segundo.");
+
                 }
+                
                 </script>
                 <div id="graf"></div>
               <!-- Start Content-->

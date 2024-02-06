@@ -69,6 +69,7 @@ Route::get('/siennasource', [siennaticketsController::class, 'siennasource']);
 Route::post('/siennacrearseguimiento2', [siennaticketsController::class, 'siennacrearseguimiento2']);
 Route::get('/ticketsviejo', [siennaticketsController::class, 'ticketsviejo']);
 Route::get('/crearusuario', [siennaticketsController::class, 'crearusuario']);
+Route::get('/cerradoscant', [siennaticketsController::class, 'cerradoscant']);
 
  
 

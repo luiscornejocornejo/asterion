@@ -79,15 +79,9 @@
 
         var endDate=  $("#reportrange").data('daterangepicker').endDate.format('YYYY-MM-DD');
         var start=  $("#reportrange").data('daterangepicker').startDate.format('YYYY-MM-DD');
-
-       
         var URLactual = window.location.href;
-
         var porciones = URLactual.split('.');
-
         let result = porciones[0].replace("https://", "");
-
-
 
         url = "https://"+result+".suricata.cloud/api/cerrados?inicio=" + start + "&fin=" + endDate + "";
         console.log(url);

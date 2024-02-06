@@ -1188,5 +1188,20 @@ class siennaticketsController extends Controller
         $resultados = DB::select($query);
         return $resultados;
     }
+
+    public function cerradoscant(Request $request)
+    {
+        $ini=$request->ini;
+        $fin=$request->fin;
+        $resultados = "";
+        $query = "select count(*) as cantidadtickets2  from siennatickets where siennaestado=4 and
+        created_at>=".$ini." and created_at<=".$fin."  ";
+        $resultados = DB::select($query);
+        $valor=0;
+        foreach($resultados as $val){
+            $valor=$val->cantidadtickets2;
+        }
+        return $valor;
+    }
     
 }
