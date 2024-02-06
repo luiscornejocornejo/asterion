@@ -1201,7 +1201,7 @@ class siennaticketsController extends Controller
         foreach($resultados as $val){
             $valor=$val->cantidadtickets2;
         }
-        return $valor;
+        return $resultados;
     }
     
 }
