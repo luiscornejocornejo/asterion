@@ -89,9 +89,16 @@ if(isset($_GET['fecha'])){
                 </div>
            
                 <script>
-                 const ticketcerrados= async  function cerrados(url){
-                        let ticketcerrados=0;
-                        console.log(url);
+                
+                 function home(){
+
+                    var endDate=  $("#reportrange").data('daterangepicker').endDate.format('YYYY-MM-DD');
+                    var start=  $("#reportrange").data('daterangepicker').startDate.format('YYYY-MM-DD');
+                    var URLactual = window.location.href;
+                    var porciones = URLactual.split('.');
+                    let result = porciones[0].replace("https://", "");
+                    alert(start);
+                    url = "https://"+result+".suricata.cloud/api/cerradoscant?ini=" + start + "&fin=" + endDate + "";
                     axios.get(url)
                     .then(function (response) {
                         for (i = 0; i < response.data.length; i++) {
@@ -105,19 +112,6 @@ if(isset($_GET['fecha'])){
                             .then(function () {
                                 // función que siempre se ejecuta
                             });
-                        return ticketcerrados;
-
-                    }
-                 function home(){
-
-                    var endDate=  $("#reportrange").data('daterangepicker').endDate.format('YYYY-MM-DD');
-                    var start=  $("#reportrange").data('daterangepicker').startDate.format('YYYY-MM-DD');
-                    var URLactual = window.location.href;
-                    var porciones = URLactual.split('.');
-                    let result = porciones[0].replace("https://", "");
-                    alert(start);
-                    url = "https://"+result+".suricata.cloud/api/cerradoscant?ini=" + start + "&fin=" + endDate + "";
-                   // ticketcerrados=cerrados(url);
                     console.log(ticketcerrados);
 
                 }
