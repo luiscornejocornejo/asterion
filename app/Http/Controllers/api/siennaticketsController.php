@@ -1169,5 +1169,16 @@ class siennaticketsController extends Controller
 
         return response()->json($dat);
     }
+
+
+    
+    public function siennasource(Request $request)
+    {
+       
+        $resultados = "";
+        $query = "select * from siennasource  ";
+        $resultados = DB::select($query);
+        return $resultados;
+    }
     
 }
