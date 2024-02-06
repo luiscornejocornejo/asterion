@@ -117,7 +117,7 @@ if(isset($_GET['fecha'])){
                     let result = porciones[0].replace("https://", "");
                     alert(start);
                     url = "https://"+result+".suricata.cloud/api/cerradoscant?ini=" + start + "&fin=" + endDate + "";
-                    ticketcerrados=cerrados(url);
+                   // ticketcerrados=cerrados(url);
                     console.log(ticketcerrados);
 
                 }
