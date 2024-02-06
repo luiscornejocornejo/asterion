@@ -99,22 +99,43 @@ if(isset($_GET['fecha'])){
                     let result = porciones[0].replace("https://", "");
                     url = "https://"+result+".suricata.cloud/api/cerradoscant?ini=" + start + "&fin=" + endDate + "";
                     axios.get(url)
-                    .then(function (response) {
+                    .then(function (response) 
+                    {
                         for (i = 0; i < response.data.length; i++) {
                                 let ticketcerrados=response.data[i].cantidadtickets2;
                                 console.log(ticketcerrados);
                                 document.getElementById("cerrados").innerHTML =ticketcerrados;
 
 
-                                    }
-                                })
-                            .catch(function (error) {
+                        }
+                    })
+                    .catch(function (error) {
                                 // función para capturar el error
                                 console.log(error);
-                            })
-                            .then(function () {
+                    })
+                    .then(function () {
                                 // función que siempre se ejecuta
-                            });
+                    });
+
+                    url = "https://"+result+".suricata.cloud/api/abiertoscant?ini=" + start + "&fin=" + endDate + "";
+                    axios.get(url)
+                    .then(function (response) 
+                    {
+                        for (i = 0; i < response.data.length; i++) {
+                                let ticketabiertos=response.data[i].cantidadtickets2;
+                                console.log(ticketabiertos);
+                                document.getElementById("abiertos").innerHTML =ticketabiertos;
+
+
+                        }
+                    })
+                    .catch(function (error) {
+                                // función para capturar el error
+                                console.log(error);
+                    })
+                    .then(function () {
+                                // función que siempre se ejecuta
+                    });
 
                 }
                 
