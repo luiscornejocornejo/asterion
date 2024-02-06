@@ -90,11 +90,12 @@ if(isset($_GET['fecha'])){
            
                 <script>
                     function cerrados(url){
+                        var ticketcerrados=0;
                         console.log(url);
                     axios.get(url)
                     .then(function (response) {
                         for (i = 0; i < response.data.length; i++) {
-                                let ticketcerrados=response.data[i].cantidadtickets2;
+                                 ticketcerrados=response.data[i].cantidadtickets2;
                                     }
                                 })
                             .catch(function (error) {
