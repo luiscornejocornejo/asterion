@@ -54,12 +54,15 @@
                             <i class="mdi mdi-antenna"></i>&nbsp;Estado de servicio:&nbsp;
                             <span class="badge badge-success-lighten line-h"> <span id="estadoservicioc"></span> </span>
                             </div>
+                            <div class="d-flex mt-2">
                             <i class="mdi mdi-antenna"></i>&nbsp;Deuda:&nbsp;
                             <span class="badge badge-success-lighten line-h"> <span id="deuda"></span> </span>
                             </div>
+                            <div class="d-flex mt-2">
                             <i class="mdi mdi-antenna"></i>&nbsp;Ip:&nbsp;
                             <span class="badge badge-success-lighten line-h"> <span id="ip"></span> </span>
                             </div>
+                            <div class="d-flex mt-2">
                             <i class="mdi mdi-antenna"></i>&nbsp;Nodo:&nbsp;
                             <span class="badge badge-success-lighten line-h"> <span id="nodo"></span> </span>
                             </div>
