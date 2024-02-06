@@ -104,6 +104,7 @@ if(isset($_GET['fecha'])){
                 .then(function () {
                     // función que siempre se ejecuta
                 });
+                return ticketcerrados;
 
                     }
                  function home(){
