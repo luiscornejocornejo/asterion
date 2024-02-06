@@ -101,7 +101,9 @@ if(isset($_GET['fecha'])){
                     console.log(url);
                     axios.get(url)
                     .then(function (response) {
-                        alert(response.data);
+                        for (i = 0; i < response.data.length; i++) {
+                                console.log(response.data[i].cantidadtickets2);
+                        }
                     })
                 .catch(function (error) {
                     // función para capturar el error
