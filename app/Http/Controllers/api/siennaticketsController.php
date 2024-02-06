@@ -534,6 +534,8 @@ class siennaticketsController extends Controller
         $s_status = $request->s_status;
         $a_status = $request->a_status;
         $address = $request->address;
+        $ip = $request->ip;
+        $nodo = $request->nodo;
 
 
 
@@ -600,6 +602,8 @@ class siennaticketsController extends Controller
         $sc->s_status = $s_status;
         $sc->a_status = $a_status;
         $sc->address = $address;
+        $sc->ip = $ip;
+        $sc->nodo = $nodo;
         try {
             $sc->save();
         } catch (\Illuminate\Database\QueryException $ex) {

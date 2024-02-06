@@ -141,6 +141,8 @@ function vista(dd,ee,result) {
             document.getElementById("estadocuentac").innerHTML = response.data[i].a_status;
             document.getElementById("estadoservicioc").innerHTML = response.data[i].s_status;
             document.getElementById("deuda").innerHTML = response.data[i].deuda;
+            document.getElementById("ip").innerHTML = response.data[i].ip;
+            document.getElementById("nodo").innerHTML = response.data[i].nodo;
 
 
         }
