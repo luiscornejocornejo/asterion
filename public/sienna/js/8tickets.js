@@ -120,6 +120,7 @@ function vista(dd,ee,result) {
     document.getElementById("emailc").innerHTML = "";
     document.getElementById("estadocuentac").innerHTML = "";
     document.getElementById("estadoservicioc").innerHTML = "";
+    document.getElementById("deuda").innerHTML = "";
     url = "https://"+result+".suricata.cloud/api/datoscliente?cliente=" + ee;
     axios.get(url)
     .then(function (response) {
@@ -139,6 +140,7 @@ function vista(dd,ee,result) {
             document.getElementById("emailc").innerHTML = response.data[i].email;
             document.getElementById("estadocuentac").innerHTML = response.data[i].a_status;
             document.getElementById("estadoservicioc").innerHTML = response.data[i].s_status;
+            document.getElementById("deuda").innerHTML = response.data[i].deuda;
 
 
         }
