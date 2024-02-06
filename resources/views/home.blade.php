@@ -97,7 +97,7 @@ if(isset($_GET['fecha'])){
                     var URLactual = window.location.href;
                     var porciones = URLactual.split('.');
                     let result = porciones[0].replace("https://", "");
-                    let ticketcerrados=0;
+                    var ticketcerrados=0;
                     url = "https://"+result+".suricata.cloud/api/cerradoscant?ini=" + start + "&fin=" + endDate + "";
                     axios.get(url)
                     .then(function (response) {
