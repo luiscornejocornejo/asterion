@@ -1224,13 +1224,11 @@ class siennaticketsController extends Controller
         $fin=$request->fin;
         $resultados = "";
         $dom=$this->dominio();
-        $query="select count(*) as cant ,s.nombre  as name,s2.nombre as estado 
+        $query="select count(*) as cant ,s.nombre  as name
         from ".$dom.".siennatickets a 
         join ".$dom.".siennadepto s 
         on s.id=a.siennadepto 
-        join ".$dom.".siennaestado s2 
-        on s2.id=a.siennaestado 
-        where siennaestado<>4 group by siennadepto,s2.nombre";
+        where siennaestado<>4 group by siennadepto";
         $resultados = DB::select($query);
         return $resultados;
     }
