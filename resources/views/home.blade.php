@@ -88,11 +88,12 @@ if (isset($_GET['fecha'])) {
 
             <script>
                 function grafico(datosp,subdomain_tmp,divss) {
-                    console.log(datosp);
+                    console.log(datosp.data);
 
-                    var labels;
-                    var datos;
+                    var labels="";
+                    var datos="";
                     for (i = 0; i < datosp.data.length; i++) {
+                        console.log(datosp.data[i].name);
 
                         labels+="'"+datosp.data[i].name+"',";
                         datos+=datosp.data[i].cant+",";;
