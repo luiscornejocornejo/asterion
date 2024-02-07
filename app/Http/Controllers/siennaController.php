@@ -122,14 +122,14 @@ class siennaController extends Controller
        
     echo   $query1="
 
-    ALTER TABLE ".$val->Database.".siennacliente ADD nodo varchar(100) NULL;
 
 
-  
+    ALTER TABLE ".$val->Database.".siennaseguimientos MODIFY COLUMN logo TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL;
+
 
          ";
          try {
-     // $resultados1 = DB::select($query1);
+      $resultados1 = DB::select($query1);
          }
          catch(\Illuminate\Database\QueryException$ex){
           echo "no";
