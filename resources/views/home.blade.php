@@ -112,10 +112,10 @@ if (isset($_GET['fecha'])) {
                 new Chart(ctx, {
                     type: 'pie',
                     data: {
-                    labels: [labels],
+                    labels: labels,
                     datasets: [{
                         label: '# of Votes',
-                        data: [datos],
+                        data: datos,
                         borderWidth: 1
                     }]
                     },
