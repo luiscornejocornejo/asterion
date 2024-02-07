@@ -267,10 +267,10 @@ if (isset($_GET['fecha'])) {
 
                 }
             </script>
-            <div id="graf"></div>
+        
             <div>
-  <canvas id="myChart"></canvas>
-</div>
+                   
+            </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -344,10 +344,7 @@ if (isset($_GET['fecha'])) {
                                     <div class="card-body">
 
                                         <h4 class="header-title">Tickets por estado<i title="Volumen bruto por método de pago antes de descontar comisiones." class="ri-information-fill"></i></h4>
-                                        <div id="chart3" class="apex-charts" dir="ltr"></div>
-                                        <script>
-
-                                        </script>
+                                        <canvas id="myChart" ></canvas>
 
 
                                     </div> <!-- end card-body-->
