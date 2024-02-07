@@ -194,7 +194,7 @@ if (isset($_GET['fecha'])) {
                             }*/
                             console.log(response);
                             divss="#chart3";
-                            grafico(response,result,divss) 
+                           // grafico(response,result,divss) 
 
                         })
                         .catch(function(error) {
