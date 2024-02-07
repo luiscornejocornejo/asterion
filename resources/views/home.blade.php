@@ -162,7 +162,7 @@ if(isset($_GET['fecha'])){
                     let result = porciones[0].replace("https://", "");
 
                     urlcerrados = "https://"+result+".suricata.cloud/api/cerradoscant?ini=" + start + "&fin=" + endDate + "";
-                    urlcerrados(urlcerrados);
+                    cerrados(urlcerrados);
         
                     urlabiertos = "https://"+result+".suricata.cloud/api/abiertoscant?ini=" + start + "&fin=" + endDate + "";
                     abiertos(urlabiertos);
