@@ -100,7 +100,6 @@ if(isset($_GET['fecha'])){
                                 console.log(ticketabiertos);
                                 document.getElementById("abiertos").innerHTML =ticketabiertos;
                         }*/
-                        alert(response);
                         console.log(response);
 
                     })
@@ -133,15 +132,8 @@ if(isset($_GET['fecha'])){
                                 // función que siempre se ejecuta
                     });
                 }
-                 function home(){
-
-                    var endDate=  $("#reportrange").data('daterangepicker').endDate.format('YYYY-MM-DD');
-                    var start=  $("#reportrange").data('daterangepicker').startDate.format('YYYY-MM-DD');
-                    var URLactual = window.location.href;
-                    var porciones = URLactual.split('.');
-                    let result = porciones[0].replace("https://", "");
-                    url = "https://"+result+".suricata.cloud/api/cerradoscant?ini=" + start + "&fin=" + endDate + "";
-                    axios.get(url)
+                function cerrados(urlcerrados){
+                    axios.get(urlcerrados)
                     .then(function (response) 
                     {
                         for (i = 0; i < response.data.length; i++) {
@@ -160,13 +152,23 @@ if(isset($_GET['fecha'])){
                                 // función que siempre se ejecuta
                     });
 
+                }
+                function home(){
+
+                    var endDate=  $("#reportrange").data('daterangepicker').endDate.format('YYYY-MM-DD');
+                    var start=  $("#reportrange").data('daterangepicker').startDate.format('YYYY-MM-DD');
+                    var URLactual = window.location.href;
+                    var porciones = URLactual.split('.');
+                    let result = porciones[0].replace("https://", "");
+
+                    urlcerrados = "https://"+result+".suricata.cloud/api/cerradoscant?ini=" + start + "&fin=" + endDate + "";
+                    urlcerrados(urlcerrados);
+        
                     urlabiertos = "https://"+result+".suricata.cloud/api/abiertoscant?ini=" + start + "&fin=" + endDate + "";
                     abiertos(urlabiertos);
-
-
-                    ///
-                    url2="https://"+result+".suricata.cloud/api/ticketxdepto?ini=" + start + "&fin=" + endDate + "";
-                    ticketxdepto(url2);
+                    
+                    urlticketxdepto="https://"+result+".suricata.cloud/api/ticketxdepto?ini=" + start + "&fin=" + endDate + "";
+                    ticketxdepto(urlticketxdepto);
 
                 }
                 
