@@ -108,77 +108,26 @@ if (isset($_GET['fecha'])) {
                     datos=datos.substring(0, datos.length - 1);
                     console.log(datos);
 
-                    var options = {
-                        chart: {
-                            height: 262,
-                            width: 750,
-                            type: 'donut',
-                        },
-                        
-        
-                       
-                            series: [{
-                                                                data:[datos]
-                                                            }],
+                    const ctx = document.getElementById('myChart');
 
-                        
-
-                        labels: [labels],
-                        xaxis: {
-                            categories: [labels],
-
-                        },
-                        yaxis: {
-                            title: {
-                                text: 'subdomain_tmp',
-                                style: {
-                                    fontWeight: '500',
-                                },
-                            }
-                        },
-                        colors: [
-                            window.chartColors.green,
-                            window.chartColors.blue,
-                            window.chartColors.red,
-                            window.chartColors.orange,
-                            window.chartColors.yellow,
-                            window.chartColors.purple,
-                            window.chartColors.grenclaro,
-                            window.chartColors.grenclaro1,
-                            window.chartColors.grenclaro2,
-                            window.chartColors.grenclaro3,
-                            window.chartColors.grenclaro4,
-                            window.chartColors.grenclaro5
-                        ],
-                        legend: {
-                            show: true,
-                            position: 'bottom',
-                            horizontalAlign: 'center',
-                            verticalAlign: 'middle',
-                            floating: false,
-                            fontSize: '14px',
-                            offsetX: 0,
-                        },
-                        responsive: [{
-                            breakpoint: 600,
-                            options: {
-                                chart: {
-                                    height: 240
-                                },
-                                legend: {
-                                    show: true
-                                },
-                            }
-                        }]
-
+                new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                    labels: [labels],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [datos],
+                        borderWidth: 1
+                    }]
+                    },
+                    options: {
+                    scales: {
+                        y: {
+                        beginAtZero: true
+                        }
                     }
-
-                    var chart = new ApexCharts(
-                        document.querySelector(divss),
-                        options
-                    );
-
-                    chart.render();
+                    }
+                });
 
                 }
 
@@ -194,7 +143,7 @@ if (isset($_GET['fecha'])) {
                             }*/
                             console.log(response);
                             divss="#chart3";
-                           // grafico(response,result,divss) 
+                            grafico(response,result,divss) 
 
                         })
                         .catch(function(error) {
@@ -325,26 +274,7 @@ if (isset($_GET['fecha'])) {
                                         <h4 class="header-title">Tickets por estado<i title="Volumen bruto por método de pago antes de descontar comisiones." class="ri-information-fill"></i></h4>
                                         <canvas id="myChart" ></canvas>
                                         <script>
-  const ctx = document.getElementById('myChart');
-
-  new Chart(ctx, {
-    type: 'pie',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
+  
 </script>
 
                                     </div> <!-- end card-body-->
