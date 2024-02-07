@@ -1228,7 +1228,10 @@ class siennaticketsController extends Controller
         from ".$dom.".siennatickets a 
         join ".$dom.".siennadepto s 
         on s.id=a.siennadepto 
-        where siennaestado<>4 group by siennadepto";
+        where siennaestado<>4
+        and
+        a.created_at>='".$ini." 00:00:00' and a.created_at<='".$fin." 23:59:59' 
+         group by siennadepto";
         $resultados = DB::select($query);
         return $resultados;
     }
