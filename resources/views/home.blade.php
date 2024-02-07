@@ -90,22 +90,21 @@ if (isset($_GET['fecha'])) {
                 function grafico(datosp,subdomain_tmp,divss) {
                     console.log(datosp.data);
 
-                    var labels="";
-                    var datos="";
+                    var labels=[];
+                    var datos=[];
+                  
                     for (i = 0; i < datosp.data.length; i++) {
                         console.log(datosp.data[i].name);
-
-                        labels+=datosp.data[i].name+",";
+                        labels.push(datosp.data[i].name);
                         console.log(labels);
 
-                        datos+=datosp.data[i].cant+",";
+                        datos.push(datosp.data[i].cant);
+
                         console.log(datos);
 
                     }
-                    labels=labels.substring(0, labels.length - 1);
-                    console.log("sincoma"+labels);
+                    console.log(labels);
 
-                    datos=datos.substring(0, datos.length - 1);
                     console.log(datos);
 
                     const ctx = document.getElementById('myChart');
