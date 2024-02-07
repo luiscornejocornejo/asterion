@@ -278,7 +278,7 @@ if (isset($_GET['fecha'])) {
   const ctx = document.getElementById('myChart');
 
   new Chart(ctx, {
-    type: 'donut',
+    type: 'pie',
     data: {
       labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
       datasets: [{
