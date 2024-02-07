@@ -108,6 +108,7 @@ if (isset($_GET['fecha'])) {
                     console.log(datos);
 
                     const ctx = document.getElementById('myChart');
+                    ctx.innerHTML="";
 
                 new Chart(ctx, {
                     type: 'pie',
