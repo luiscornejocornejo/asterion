@@ -117,7 +117,9 @@ if (isset($_GET['fecha'])) {
                         
         
                        
-                            series: [datos],
+                            series: [{
+                                                                data:[datos]
+                                                            }],
 
                         
 
