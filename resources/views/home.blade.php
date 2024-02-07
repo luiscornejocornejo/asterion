@@ -108,9 +108,10 @@ if (isset($_GET['fecha'])) {
                     console.log(datos);
 
                     const ctx = document.getElementById('myChart');
-                    ctx.innerHTML="";
-
-                new Chart(ctx, {
+                    if (myChart) {
+                        myChart.destroy();
+                    }
+                    myChart=new Chart(ctx, {
                     type: 'pie',
                     data: {
                     labels: labels,
