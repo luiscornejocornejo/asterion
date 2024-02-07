@@ -117,7 +117,7 @@ if (isset($_GET['fecha'])) {
                         
         
                        
-                            series: ["donut"],
+                            series: [datos],
 
                         
 
