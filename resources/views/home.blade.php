@@ -102,10 +102,10 @@ if (isset($_GET['fecha'])) {
                         console.log(datos);
 
                     }
-                    labels=labels.substring(0, -1);
+                    labels=labels.substring(0, labels.length - 1);
                     console.log("sincoma"+labels);
 
-                    datos=datos.substring(0, -1);
+                    datos=datos.substring(0, datos.length - 1);
                     console.log(datos);
 
                     var options = {
