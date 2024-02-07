@@ -96,7 +96,11 @@ if (isset($_GET['fecha'])) {
                         console.log(datosp.data[i].name);
 
                         labels+="'"+datosp.data[i].name+"',";
-                        datos+=datosp.data[i].cant+",";;
+                        console.log(labels);
+
+                        datos+=datosp.data[i].cant+",";
+                        console.log(datos);
+
                     }
                     labels=labels.substring(0, -1);
                     console.log(labels);
