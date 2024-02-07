@@ -19,7 +19,10 @@
   <!-- Theme Config Js -->
   <script src="assetsfacu/js/hyper-config.js"></script>
   <script src="js/utils.js"></script>
-  <script src="js/Chart.js"></script>
+  <script src="js/Chart.min.js"></script>
+  <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
   <!-- App css -->
   <link href="assetsfacu/css/app-saas.min.css" rel="stylesheet" type="text/css" id="app-style">
