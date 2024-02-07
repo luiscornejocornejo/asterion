@@ -103,7 +103,7 @@ if (isset($_GET['fecha'])) {
 
                     }
                     labels=labels.substring(0, -1);
-                    console.log(labels);
+                    console.log("sincoma"+labels);
 
                     datos=datos.substring(0, -1);
                     console.log(datos);
