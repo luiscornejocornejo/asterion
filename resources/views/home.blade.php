@@ -114,7 +114,7 @@ if (isset($_GET['fecha'])) {
                     data: {
                     labels: labels,
                     datasets: [{
-                        label: '# of Votes',
+                        label: '# depto',
                         data: datos,
                         borderWidth: 1
                     }]
@@ -270,7 +270,7 @@ if (isset($_GET['fecha'])) {
                                 <div class="card">
                                     <div class="card-body" style="width: 500px;">
 
-                                        <h4 class="header-title">Tickets por estado<i title="Volumen bruto por método de pago antes de descontar comisiones." class="ri-information-fill"></i></h4>
+                                        <h4 class="header-title">Tickets por Depto<i title="Volumen bruto por método de pago antes de descontar comisiones." class="ri-information-fill"></i></h4>
                                         <canvas id="myChart" ></canvas>
                                         <script>
   
