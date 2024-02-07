@@ -88,6 +88,8 @@ if (isset($_GET['fecha'])) {
 
             <script>
                 function grafico(datosp,subdomain_tmp,divss) {
+                    console.log(datosp);
+
                     var labels;
                     var datos;
                     for (i = 0; i < datosp.data.length; i++) {
@@ -96,7 +98,11 @@ if (isset($_GET['fecha'])) {
                         datos+=datosp.data[i].cant+",";;
                     }
                     labels=labels.substring(0, -1);
+                    console.log(labels);
+
                     datos=datos.substring(0, -1);
+                    console.log(datos);
+
                     var options = {
                         chart: {
                             height: 262,
