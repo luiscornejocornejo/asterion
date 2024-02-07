@@ -95,7 +95,7 @@ if (isset($_GET['fecha'])) {
                     for (i = 0; i < datosp.data.length; i++) {
                         console.log(datosp.data[i].name);
 
-                        labels+="'"+datosp.data[i].name+"',";
+                        labels+=datosp.data[i].name+",";
                         console.log(labels);
 
                         datos+=datosp.data[i].cant+",";
