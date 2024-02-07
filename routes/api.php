@@ -71,6 +71,7 @@ Route::get('/ticketsviejo', [siennaticketsController::class, 'ticketsviejo']);
 Route::get('/crearusuario', [siennaticketsController::class, 'crearusuario']);
 Route::get('/cerradoscant', [siennaticketsController::class, 'cerradoscant']);
 Route::get('/abiertoscant', [siennaticketsController::class, 'abiertoscant']);
+Route::get('/ticketxdepto', [siennaticketsController::class, 'ticketxdepto']);
 
  
 

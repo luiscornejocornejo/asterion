@@ -89,7 +89,29 @@ if(isset($_GET['fecha'])){
                 </div>
            
                 <script>
-                
+                function ticketxdepto(url2){
+
+                    axios.get(url2)
+                    .then(function (response) 
+                    {
+                        /*
+                        for (i = 0; i < response.data.length; i++) {
+                                let ticketabiertos=response.data[i].cantidadtickets2;
+                                console.log(ticketabiertos);
+                                document.getElementById("abiertos").innerHTML =ticketabiertos;
+                        }*/
+                        alert(response);
+                        console.log(response);
+
+                    })
+                    .catch(function (error) {
+                                // función para capturar el error
+                                console.log(error);
+                    })
+                    .then(function () {
+                                // función que siempre se ejecuta
+                    });
+                }
                  function home(){
 
                     var endDate=  $("#reportrange").data('daterangepicker').endDate.format('YYYY-MM-DD');
@@ -136,6 +158,11 @@ if(isset($_GET['fecha'])){
                     .then(function () {
                                 // función que siempre se ejecuta
                     });
+
+
+                    ///
+                    url2="https://"+result+".suricata.cloud/api/ticketxdepto?ini=" + start + "&fin=" + endDate + "";
+                    ticketxdepto(url2);
 
                 }
                 
