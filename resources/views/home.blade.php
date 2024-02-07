@@ -113,7 +113,7 @@ if (isset($_GET['fecha'])) {
                         myChart.destroy();
                     }
                     myChart=new Chart(ctx, {
-                    type: 'bar',
+                    type: 'doughnut',
                     data: {
                     labels: labels,
                     datasets: [{
