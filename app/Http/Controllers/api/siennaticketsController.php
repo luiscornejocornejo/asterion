@@ -623,7 +623,7 @@ class siennaticketsController extends Controller
         $resultados = DB::select($query);
         return $resultados;
     }
-    public function depto(Request $request)
+    public function deptos(Request $request)
     {
         $depto = $request->depto;
         $resultados = "";
