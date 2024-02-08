@@ -490,10 +490,15 @@ class siennaticketsController extends Controller
     public function datoscliente(Request $request)
     {
         $cliente = $request->cliente;
+        if($cliente<>""){
+            $query="select * from siennacliente where cliente='".$cliente."'";
+            $resultados = DB::select($query);
+            return $resultados;
+        }else{
+            return "";
+        }
 
-        $query="select * from siennacliente where cliente='".$cliente."'";
-        $resultados = DB::select($query);
-        return $resultados;
+        
     }
     public function maxid2(Request $request)
     {
