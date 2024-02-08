@@ -29,7 +29,7 @@ function maxid() {
     let result = porciones[0].replace("https://", "");
 
     var idusuario =<?php echo session('idusuario');?>;
-    var area =<?php echo session('areas');?>;
+    var area =<?php echo session('deptosuser');?>;
 
 
     url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&area=" + area + "";
