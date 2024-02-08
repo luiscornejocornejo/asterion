@@ -623,6 +623,15 @@ class siennaticketsController extends Controller
         $resultados = DB::select($query);
         return $resultados;
     }
+    public function depto(Request $request)
+    {
+        $depto = $request->depto;
+        $resultados = "";
+        $query = "select a.id,s.nombre,   a.Monday,a.Tuesday,a.Wednesday ,a.Thursday ,a.Friday ,a.Saturday ,a.Sunday  from categoria a join siennadepto s  on
+        a.area =s.id ";
+        $resultados = DB::select($query);
+        return $resultados;
+    }
 
     public function tickessiennaapi(Request $request)
     {
