@@ -627,7 +627,7 @@ class siennaticketsController extends Controller
     {
         $depto = $request->depto;
         $resultados = "";
-        $query = "select a.id,s.nombre,   a.Monday,a.Tuesday,a.Wednesday ,a.Thursday ,a.Friday ,a.Saturday ,a.Sunday  from categoria a join siennadepto s  on
+        $query = "select s.id,s.nombre,   a.Monday,a.Tuesday,a.Wednesday ,a.Thursday ,a.Friday ,a.Saturday ,a.Sunday  from categoria a join siennadepto s  on
         a.area =s.id ";
         $resultados = DB::select($query);
         return $resultados;
