@@ -490,7 +490,7 @@ class siennaticketsController extends Controller
     public function datoscliente(Request $request)
     {
         $cliente = $request->cliente;
-        if($cliente>0){
+        if($cliente<>"{{idcustomer}}"){
              $query="select * from siennacliente where cliente='".$cliente."'";
             $resultados = DB::select($query);
             return $resultados;
