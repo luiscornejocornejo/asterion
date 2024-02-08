@@ -278,7 +278,9 @@ axios.get(url)
         console.log(response.data[i].tipo);
         uri="";
         if(response.data[i].logo!=''){
-          uri='<a target=_blank href="https://sienamedia.sfo3.digitaloceanspaces.com/ispgroup/xennio/enviados/'+uri+'">'+response.data[i].logo+'</a>';
+
+          ht='https://sienamedia.sfo3.digitaloceanspaces.com/ispgroup/xennio/enviados/'+response.data[i].logo;
+          uri='<a target=_blank href="'+ht+'">'+response.data[i].logo+'</a>';
         }
        coloreicono= coloriconos(response.data[i].tipo);
 
