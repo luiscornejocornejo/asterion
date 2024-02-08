@@ -128,6 +128,8 @@ function vista(dd,ee,result) {
 
     
     url = "https://"+result+".suricata.cloud/api/datoscliente?cliente=" + ee;
+    console.log(url);
+
     axios.get(url)
     .then(function (response) {
         // función que se ejecutará al recibir una respuesta
