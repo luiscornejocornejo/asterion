@@ -289,8 +289,8 @@ axios.get(url)
                 '<small>'+response.data[i].autor+'</small>'+
                 '<p class="mb-0 pb-2">'+
                 '<small class="text-muted">'+response.data[i].created_at+'</small>'+
-                '<small class="text-muted">'+uri+'</small>'+
-                '</p> </div> </div>';
+              
+                '</p> <a href='+uri+'>'+uri+'</a></div> </div>';
                                             
                                             
                                 
