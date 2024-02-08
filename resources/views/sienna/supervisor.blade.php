@@ -281,6 +281,8 @@ axios.get(url)
 
           ht='https://sienamedia.sfo3.digitaloceanspaces.com/ispgroup/xennio/enviados/'+response.data[i].logo;
           uri='<a target=_blank href="'+ht+'">'+response.data[i].logo+'</a>';
+        }else{
+          uri='';
         }
        coloreicono= coloriconos(response.data[i].tipo);
 
