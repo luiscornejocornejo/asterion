@@ -279,7 +279,7 @@ axios.get(url)
         uri="";
         if(response.data[i].logo!=null){
 
-          ht='https://sienamedia.sfo3.digitaloceanspaces.com/ispgroup/xennio/enviados/'+response.data[i].logo;
+          ht='https://sienamedia.sfo3.digitaloceanspaces.com/ispgroup/xen/enviados/'+response.data[i].logo;
           uri='<a target=_blank href="'+ht+'">'+response.data[i].logo+'</a>';
         }else{
           uri='';
