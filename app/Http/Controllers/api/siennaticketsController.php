@@ -428,7 +428,7 @@ class siennaticketsController extends Controller
                 }
                 $final=substr($final,0,-1);
             }
-       echo  $query = "select *,a.conversation_id,a.user_id,
+         $query = "select *,a.conversation_id,a.user_id,
         b.nombre as depto,b.id as iddepto,d.nombre topicnombre,a.created_at as creado,
         a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado from siennatickets a
         left join siennadepto b on b.id=a.siennadepto 
@@ -454,7 +454,7 @@ class siennaticketsController extends Controller
 
          order by ticketid desc
         ";
-
+ 
         $resultados = DB::select($query);
         return $resultados;
     }
