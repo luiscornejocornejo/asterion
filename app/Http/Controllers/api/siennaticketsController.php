@@ -412,6 +412,22 @@ class siennaticketsController extends Controller
         $idusuario = $request->idusuario;
         $areas = $request->area;
 
+        $pos = strpos($areas, ",");
+
+            // Nótese el uso de ===. Puesto que == simple no funcionará como se espera
+            // porque la posición de 'a' está en el 1° (primer) caracter.
+            if ($pos === false) {
+                $final="'".$areas."'";
+               // echo "La cadena '$findme' no fue encontrada en la cadena '$mystring'";
+            } else {
+                
+                $sepa=explode(",",$areas);
+                $final="";
+                foreach($sepa as $val){
+                    $final.="'".$val."',";
+                }
+                $final=substr($final,0,-1);
+            }
        echo  $query = "select *,a.conversation_id,a.user_id,
         b.nombre as depto,b.id as iddepto,d.nombre topicnombre,a.created_at as creado,
         a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado from siennatickets a
@@ -434,7 +450,7 @@ class siennaticketsController extends Controller
         left join  siennatopic d on d.id=a.siennatopic
         where a.siennaestado not in('3','4')  
          and a.asignado='99999'
-         and a.siennadepto in ('" . $areas . "')
+         and a.siennadepto in (" . $final . ")
 
          order by ticketid desc
         ";
