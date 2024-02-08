@@ -277,7 +277,7 @@ axios.get(url)
         console.log(response.data[i].created_at);
         console.log(response.data[i].tipo);
         uri="";
-        if(response.data[i].logo!=''){
+        if(response.data[i].logo!=null){
 
           ht='https://sienamedia.sfo3.digitaloceanspaces.com/ispgroup/xennio/enviados/'+response.data[i].logo;
           uri='<a target=_blank href="'+ht+'">'+response.data[i].logo+'</a>';
