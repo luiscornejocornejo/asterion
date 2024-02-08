@@ -121,6 +121,11 @@ function vista(dd,ee,result) {
     document.getElementById("estadocuentac").innerHTML = "";
     document.getElementById("estadoservicioc").innerHTML = "";
     document.getElementById("deuda").innerHTML = "";
+    if(ee=== ""){
+
+    }else{
+
+    
     url = "https://"+result+".suricata.cloud/api/datoscliente?cliente=" + ee;
     axios.get(url)
     .then(function (response) {
@@ -160,7 +165,7 @@ function vista(dd,ee,result) {
     });
 
 
-
+    }
     document.getElementById('vista').innerHTML = "";
    // document.getElementById('vista').src = dd;
     g='<iframe allow="camera;microphone"  src="'+dd+'" width="100%" height="800px" class="border rounded-3" style="height:400px !important"></iframe>';
