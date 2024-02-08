@@ -276,7 +276,10 @@ axios.get(url)
         console.log(response.data[i].autor);
         console.log(response.data[i].created_at);
         console.log(response.data[i].tipo);
-
+        uri="";
+        if(response.data[i].logo!=''){
+          uri=response.data[i].logo;
+        }
        coloreicono= coloriconos(response.data[i].tipo);
 
         dato += ' <div class="timeline-item">'+
@@ -286,6 +289,7 @@ axios.get(url)
                 '<small>'+response.data[i].autor+'</small>'+
                 '<p class="mb-0 pb-2">'+
                 '<small class="text-muted">'+response.data[i].created_at+'</small>'+
+                '<small class="text-muted">'+uri+'</small>'+
                 '</p> </div> </div>';
                                             
                                             
