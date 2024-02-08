@@ -491,7 +491,7 @@ class siennaticketsController extends Controller
     {
         $cliente = $request->cliente;
         if($cliente<>""){
-            $query="select * from siennacliente where cliente='".$cliente."'";
+           echo  $query="select * from siennacliente where cliente='".$cliente."'";
             $resultados = DB::select($query);
             return $resultados;
         }else{
