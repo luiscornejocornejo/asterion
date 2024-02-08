@@ -121,6 +121,7 @@ function vista(dd,ee,result) {
     document.getElementById("estadocuentac").innerHTML = "";
     document.getElementById("estadoservicioc").innerHTML = "";
     document.getElementById("deuda").innerHTML = "";
+    console.log(typeof(ee) );
     if(ee=== ""){
 
     }else{
