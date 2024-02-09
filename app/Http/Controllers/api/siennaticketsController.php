@@ -506,14 +506,17 @@ class siennaticketsController extends Controller
     {
         $idusuario = $request->idusuario;
         $areas = $request->area;
+        $merchant=$this->dominio();
+
 
         $query = "select *,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
         b.nombre as depto,b.id as iddepto,d.nombre topicnombre,CONVERT_TZ(a.created_at,  'utc','America/Argentina/Buenos_Aires')  as creado,
-        a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado from siennatickets a
-        left join siennadepto b on b.id=a.siennadepto 
-        left join  siennaestado c on c.id=a.siennaestado
-        left join  siennatopic d on d.id=a.siennatopic
-        left join  users e on e.id=a.asignado
+        a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado 
+        from ".$merchant.".siennatickets a
+        left join ".$merchant.".siennadepto b on b.id=a.siennadepto 
+        left join  ".$merchant.".siennaestado c on c.id=a.siennaestado
+        left join  ".$merchant.".siennatopic d on d.id=a.siennatopic
+        left join  ".$merchant.".users e on e.id=a.asignado
         where a.siennaestado not in('3','4')  
          
 
@@ -522,12 +525,13 @@ class siennaticketsController extends Controller
          select *,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
         b.nombre as depto,b.id as iddepto,d.nombre topicnombre,CONVERT_TZ(a.created_at,  'utc','America/Argentina/Buenos_Aires')  as creado,
 
-        a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado from siennatickets a
-        left join siennadepto b on b.id=a.siennadepto 
-        left join  siennaestado c on c.id=a.siennaestado
-        left join  siennatopic d on d.id=a.siennatopic
+        a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado 
+        from ".$merchant.".siennatickets a
+        left join ".$merchant.".siennadepto b on b.id=a.siennadepto 
+        left join  ".$merchant.".siennaestado c on c.id=a.siennaestado
+        left join  ".$merchant.".siennatopic d on d.id=a.siennatopic
 
-        left join  users e on e.id=a.asignado
+        left join  ".$merchant.".users e on e.id=a.asignado
         where a.siennaestado not in('3','4')  
          
 
