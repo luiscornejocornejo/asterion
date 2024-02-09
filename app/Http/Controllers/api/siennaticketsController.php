@@ -616,7 +616,7 @@ class siennaticketsController extends Controller
 
         $merchant=$this->dominio();
         
-        if($siennaestado==40){
+        if($siennaestado==4){
 
             $url="https://suricata4.com.ar/api/closechat";
             $curl = curl_init();
