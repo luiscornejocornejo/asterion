@@ -8,6 +8,8 @@ use App\Models\endpoint;
 use App\Models\enpointnombre;
 use App\Models\masterreport;
 use App\Models\users;
+use App\Models\siennasource;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\siennatickets;
@@ -557,7 +559,9 @@ class siennaticketsController extends Controller
         $address = $request->address;
         $ip = $request->ip;
         $nodo = $request->nodo;
-        $bot_channel=$request->bot_channel;
+
+        $siebotchanel=siennasource::find($siennasource);
+        $bot_channel=$siebotchanel->nombre;
 
 
 
