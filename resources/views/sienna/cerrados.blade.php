@@ -156,6 +156,7 @@
                     document.getElementById("tb").innerHTML = tt;
                     $('#example').dataTable({
                         "order": [[0, 'desc']],
+                        "pageLength": 25,
                 "language" : {
                 "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
                 }
