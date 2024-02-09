@@ -905,7 +905,7 @@ class TicketdatosController extends Controller
             // Close the cURL resource
             curl_close($curl);
     
-          }
+        }
         //dd($tik);
         $si2 = siennatickets::find($tik);
         $si2->siennaestado=$estado;
