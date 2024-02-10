@@ -20,10 +20,23 @@ use App\Models\siennaestado;
 use App\Models\empresa;
 use App\Models\categoria;
 use Illuminate\Support\Facades\Artisan;
-
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 class siennaticketsController extends Controller
 {
 
+    public function prueba(){
+        $content="prueba 1";
+    
+        $url="https://store.xenioo.com/fs/600fdfe1-d560-4df8-b505-63a48c9a2e41/fb_4_697594.pdf";
+      
+       $content = file_get_contents($url);
+    
+    
+       $archi=Str::of($url)->basename();
+       $rr= Storage::disk('do')->put('seguimientos/'.$archi, $content);
+       dd($rr);
+      }
 
     public function crearusuario(Request $request)
     {

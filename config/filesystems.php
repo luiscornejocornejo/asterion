@@ -63,6 +63,15 @@ return [
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
         ],
+        'do' => [
+            'driver' => 's3',
+            'key' => env('DIGITALOCEAN_SPACES_KEY', 'DO00V2VKR42PK2HD8MZN'),
+            'secret' => env('DIGITALOCEAN_SPACES_SECRET', '3AA9n67+yR1qZ6lbo6LHYZJP3K/p3c9R0vIeGhwywLU'),
+            'endpoint' => env('DIGITALOCEAN_SPACES_ENDPOINT', 'https://sfo3.digitaloceanspaces.com'),
+            'region' => env('DIGITALOCEAN_SPACES_REGION', 'sfo3'),
+            'bucket' => env('DIGITALOCEAN_SPACES_BUCKET', 'sienamedia'),
+            'visibility' => 'public',
+        ],
 
     ],
 
