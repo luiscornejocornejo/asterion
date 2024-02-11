@@ -1098,12 +1098,12 @@ class siennaticketsController extends Controller
         $merchant=$this->dominio();
         if (isset($request->logo)) {
             $logo = $request->file('logo');
-            dd($logo);
+           // dd($logo);
           //  $content = file_get_contents($url);
     
     
             $archi=Str::of($logo)->basename();
-            $ruta=$merchant."/seguimientos/".$archi;
+            $ruta=$merchant."/seguimientos/";
             $rr= Storage::disk('do')->put($ruta, $logo);
         } else {
             $logo = "";
