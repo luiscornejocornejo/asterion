@@ -1098,6 +1098,7 @@ class siennaticketsController extends Controller
         $merchant=$this->dominio();
         if (isset($request->logo)) {
             $logo = $request->file('logo');
+            dd($logo);
           //  $content = file_get_contents($url);
     
     
