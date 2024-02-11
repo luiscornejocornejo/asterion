@@ -1095,9 +1095,15 @@ class siennaticketsController extends Controller
         echo   $descripcion = $request->comentario;
         echo   $logeado = $request->logeado;
 
-
+        $merchant=$this->dominio();
         if (isset($request->logo)) {
-            $logo = $request->file('logo')->store('public');
+            $logo = $request->file('logo');
+          //  $content = file_get_contents($url);
+    
+    
+            $archi=Str::of($logo)->basename();
+            $ruta=$merchant."/seguimientos/".$archi;
+            $rr= Storage::disk('do')->put($ruta, $logo);
         } else {
             $logo = "";
         }
