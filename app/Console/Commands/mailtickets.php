@@ -38,7 +38,7 @@ class mailtickets  extends Command
     {
 
         echo "entro mail";
-        $entra=$this->pruebamail();
+      //  $entra=$this->pruebamail();
     }
     public function pruebamail(){
 
