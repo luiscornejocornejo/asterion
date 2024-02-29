@@ -120,13 +120,13 @@ class siennaController extends Controller
       // ALTER TABLE amecom2.siennacliente ADD ip varchar(100) NULL;
      //  ALTER TABLE amecom2.siennacliente ADD nodo varchar(100) NULL;
        
-    // ALTER TABLE futurity.siennatickets ADD timeoflive DATETIME DEFAULT CURRENT_TIMESTAMP NULL;
+    // 
     
      
     echo   $query1="
 
-    ALTER TABLE ".$val->Database."..siennatickets ADD firstcontact DATETIME DEFAULT CURRENT_TIMESTAMP NULL;
-
+  
+    ALTER TABLE ".$val->Database.".siennatickets ADD timeoflive DATETIME DEFAULT CURRENT_TIMESTAMP NULL;
    
 
          ";
