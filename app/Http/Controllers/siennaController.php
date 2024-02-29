@@ -109,7 +109,7 @@ class siennaController extends Controller
 
     $resultados = DB::select($query);
 
-    $listadono=array ('mysql','information_schema','performance_schema','sys','defaultdb','telesmart','anterior');
+    $listadono=array ('mysql','information_schema','performance_schema','sys','defaultdb','telesmart','anterior','futurity');
     foreach($resultados as $val){
 
       echo $val->Database;
@@ -120,16 +120,18 @@ class siennaController extends Controller
       // ALTER TABLE amecom2.siennacliente ADD ip varchar(100) NULL;
      //  ALTER TABLE amecom2.siennacliente ADD nodo varchar(100) NULL;
        
+    // ALTER TABLE futurity.siennatickets ADD timeoflive DATETIME DEFAULT CURRENT_TIMESTAMP NULL;
+    
+     
     echo   $query1="
 
+    ALTER TABLE ".$val->Database."..siennatickets ADD firstcontact DATETIME DEFAULT CURRENT_TIMESTAMP NULL;
 
-
-    ALTER TABLE ".$val->Database.".siennaseguimientos MODIFY COLUMN logo TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL;
-
+   
 
          ";
          try {
-      //$resultados1 = DB::select($query1);
+            $resultados1 = DB::select($query1);
          }
          catch(\Illuminate\Database\QueryException$ex){
           echo "no";
