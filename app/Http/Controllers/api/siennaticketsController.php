@@ -640,7 +640,7 @@ class siennaticketsController extends Controller
         try {
             $sc->save();
         } catch (\Illuminate\Database\QueryException $ex) {
-            echo "existe".$ex;
+           // echo "existe".$ex;
         }
         $merchant=$this->dominio();
         
