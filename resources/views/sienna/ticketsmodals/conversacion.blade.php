@@ -6,7 +6,7 @@
                     <div class="modal-body" id="vista">
                         
                     </div>
-                    <div class="card-body" style="margin:20px;">
+                    <div class="card-body" style="margin:20px;" id="registros">
                             <div class="d-flex justify-content-between">
                             <div>
                                 <h4 class="fw-normal text-dark" title="Number of Customers">
@@ -24,6 +24,7 @@
                             <i class="mdi mdi-card-account-details"></i>&nbsp;Numero cliente:&nbsp;
                             <span class="badge badge-secondary-lighten line-h"> <span id="clientec"></span> </span>
                             </div>
+
                             <div class="d-flex mt-2">
                             <i class="mdi mdi-account"></i>&nbsp;Nombre:&nbsp;
                             <span class="badge badge-secondary-lighten hover-overlay line-h">

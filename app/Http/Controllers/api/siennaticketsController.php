@@ -637,7 +637,11 @@ class siennaticketsController extends Controller
         $sc->address = $address;
         $sc->ip = $ip;
         $sc->nodo = $nodo;
-
+        try {
+            $sc->save();
+        } catch (\Illuminate\Database\QueryException $ex) {
+            echo "existe".$ex;
+        }
         $merchant=$this->dominio();
         
         if($siennaestado==4){
@@ -682,11 +686,9 @@ class siennaticketsController extends Controller
             curl_close($curl);
     
         }
-        try {
-            $sc->save();
-        } catch (\Illuminate\Database\QueryException $ex) {
-            //echo "existe".$ex;
-        }
+
+
+      
 
 
         return $si->id;
