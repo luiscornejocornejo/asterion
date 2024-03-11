@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class base extends Model
+class linknetclientes extends Model
 {
     protected $table = 'linknetclientes';
 }
