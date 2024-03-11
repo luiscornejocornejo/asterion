@@ -1365,8 +1365,8 @@ class TicketdatosController extends Controller
    
     public function subirclientes(Request $request)
     {
-
-        return view("sienna/subirclientes");
+        $entireTable = linknetclientes::all();
+        return view("sienna/subirclientes") ->with('entireTable', $entireTable);
 
     }
 
@@ -1429,10 +1429,11 @@ class TicketdatosController extends Controller
             }
             fclose($gestor);
         }
+        $entireTable = linknetclientes::all();
 
         return redirect()
             ->back()
-            ->with('success', $errores);
+            ->with('entireTable', $entireTable);
 
     }
 
