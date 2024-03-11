@@ -48,6 +48,7 @@
                             <th class="text-light">cuentas</th>
                             <th class="text-light">plan</th>
                             <th class="text-light">valor</th>
+                            <th class="text-light">nodo</th>
                         </tr>
                     </thead>
                     <tbody>
