@@ -32,7 +32,7 @@
 
                             </form>
 
-                            <table class="table table-centered mb-0">
+                            <table id="example" class="table table-centered mb-0">
                     <thead class=" bg-dark">
                         <tr class="text-center">
                             <th class="text-light">codigo</th>
