@@ -1374,7 +1374,9 @@ class TicketdatosController extends Controller
     {
 
 
-        //linknetclientes
+        //
+        $linknetclientes = new linknetclientes();
+
         $archivo = $request->file('file');
         $gestor = @fopen($archivo, "r");
         $errores=array();
@@ -1388,7 +1390,6 @@ class TicketdatosController extends Controller
 
                 $lista = explode(",", $búfer);
                
-               dd($lista);
                echo  $codigo = $this->limpiar($lista[0]);
                echo $saldo_mes = $this->limpiar($lista[1]);
                echo  $nombre = $this->limpiar($lista[2]);
@@ -1404,6 +1405,22 @@ class TicketdatosController extends Controller
                echo  $valor = $this->limpiar($lista[12]);
                echo  $nodo = $this->limpiar($lista[13]);
               
+               $linknetclientes->codigo=$codigo;
+               $linknetclientes->saldo_mes=$saldo_mes;
+               $linknetclientes->nombre=$nombre;
+               $linknetclientes->numeros=$numeros;
+               $linknetclientes->servicios=$servicios;
+               $linknetclientes->domicilio=$domicilio;
+               $linknetclientes->telefono=$telefono;
+               $linknetclientes->email=$email;
+               $linknetclientes->clave=$clave;
+               $linknetclientes->empresa=$empresa;
+               $linknetclientes->cuentas=$cuentas;
+               $linknetclientes->plan=$plan;
+               $linknetclientes->valor=$valor;
+               $linknetclientes->nodo=$nodo;
+               $linknetclientes->save();
+             
                 $cont++;
             }
             if (!feof($gestor)) {
@@ -1418,7 +1435,16 @@ class TicketdatosController extends Controller
 
     }
 
-    
+    private function limpiar($query)
+    {
+        $query = strtolower($query);
+        $healthy = array("drop", "truncate", "insert", "update ");
+        $yummy = array("", "", "", "");
+
+        $query = str_replace($healthy, $yummy, $query);
+
+        return $query;
+    }
     public function linknetclientes(Request $request)
     {
 
