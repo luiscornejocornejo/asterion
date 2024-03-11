@@ -1375,7 +1375,6 @@ class TicketdatosController extends Controller
 
 
         //
-        $linknetclientes = new linknetclientes();
 
         $archivo = $request->file('file');
         $gestor = @fopen($archivo, "r");
@@ -1389,7 +1388,8 @@ class TicketdatosController extends Controller
                 }  
 
                 $lista = explode(",", $búfer);
-               
+                $linknetclientes = new linknetclientes();
+
                echo  $codigo = $this->limpiar($lista[0]);
                echo $saldo_mes = $this->limpiar($lista[1]);
                echo  $nombre = $this->limpiar($lista[2]);
