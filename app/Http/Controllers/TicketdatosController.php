@@ -1374,7 +1374,7 @@ class TicketdatosController extends Controller
     {
 
 
-        linknetclientes
+        //linknetclientes
         $archivo = $request->file('file');
         $gestor = @fopen($archivo, "r");
         $errores=array();
