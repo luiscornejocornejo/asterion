@@ -218,6 +218,8 @@ Route::post('/newusers','App\Http\Controllers\TicketdatosController@newusers');
 Route::get('/supervisor','App\Http\Controllers\TicketdatosController@supervisor');
 Route::get('/nodes','App\Http\Controllers\TicketdatosController@nodes');
 Route::post('/nodes','App\Http\Controllers\TicketdatosController@nodespost');
+Route::get('/subirclientes','App\Http\Controllers\TicketdatosController@subirclientes');
+Route::post('/subirclientes','App\Http\Controllers\TicketdatosController@subirclientespost');
 Route::get('/busquedaavanzada','App\Http\Controllers\TicketdatosController@busquedaavanzada');
 
 
