@@ -10,6 +10,7 @@ use App\Models\dashboard;
 use App\Models\graficos;
 use App\Models\users;
 use App\Models\estadonodo;
+use App\Models\linknetclientes;
 
 use App\Models\nodos;
 use Illuminate\Support\Facades\DB;
@@ -1368,6 +1369,56 @@ class TicketdatosController extends Controller
         return view("sienna/subirclientes");
 
     }
+
+    public function subirclientespost(Request $request)
+    {
+
+
+        linknetclientes
+        $archivo = $request->file('file');
+        $gestor = @fopen($archivo, "r");
+        $errores=array();
+        if ($gestor) {
+            $cont = 0;
+            while (($búfer = fgets($gestor, 4096)) !== false) {
+                if ($cont == 0) {
+                    $cont++;
+                    continue;
+                }  
+
+                $lista = explode(",", $búfer);
+               
+               dd($lista);
+               echo  $codigo = $this->limpiar($lista[0]);
+               echo $saldo_mes = $this->limpiar($lista[1]);
+               echo  $nombre = $this->limpiar($lista[2]);
+               echo  $numeros = $this->limpiar($lista[3]);
+               echo  $servicios = $this->limpiar($lista[4]);
+               echo  $domicilio = $this->limpiar($lista[5]);
+               echo  $telefono = $this->limpiar($lista[6]);
+               echo  $email = $this->limpiar($lista[7]);
+               echo  $clave = $this->limpiar($lista[8]);
+               echo  $empresa = $this->limpiar($lista[9]);
+               echo  $cuentas = $this->limpiar($lista[10]);
+               echo  $plan = $this->limpiar($lista[11]);
+               echo  $valor = $this->limpiar($lista[12]);
+               echo  $nodo = $this->limpiar($lista[13]);
+              
+                $cont++;
+            }
+            if (!feof($gestor)) {
+                echo "Error: fallo inesperado de fgets()\n";
+            }
+            fclose($gestor);
+        }
+
+        return redirect()
+            ->back()
+            ->with('success', $errores);
+
+    }
+
+    
     public function linknetclientes(Request $request)
     {
 
