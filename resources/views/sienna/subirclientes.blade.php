@@ -35,32 +35,27 @@
                             <table class="table table-centered mb-0">
                     <thead class=" bg-dark">
                         <tr class="text-center">
-                            <th class="text-light">ID</th>
-                            <th class="text-light">Nodo</th>
-                            <th class="text-light">Ciudad</th>
-                            <th class="text-light">Estado del Nodo</th>
-                            <th class="text-light">Mensaje</th>
-                            <th class="text-light">Mensaje</th>
-                            <th class="text-light">Mensaje</th>
-                            <th class="text-light">Mensaje</th>
-                            <th class="text-light">Mensaje</th>
-                            <th class="text-light">Mensaje</th>
-                            <th class="text-light">Mensaje</th>
-                            <th class="text-light">Mensaje</th>
-                            <th class="text-light">Mensaje</th>
+                            <th class="text-light">codigo</th>
+                            <th class="text-light">saldo_mes</th>
+                            <th class="text-light">nombre</th>
+                            <th class="text-light">numeros</th>
+                            <th class="text-light">servicios</th>
+                            <th class="text-light">domicilio</th>
+                            <th class="text-light">telefono</th>
+                            <th class="text-light">email</th>
+                            <th class="text-light">clave</th>
+                            <th class="text-light">empresa</th>
+                            <th class="text-light">cuentas</th>
+                            <th class="text-light">plan</th>
+                            <th class="text-light">valor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach($entireTable as $value){?>
                         <tr class="text-center">
-                            <td>
-                                <div class="form-check">
-                                    <input value="<?php echo $value->codigo;?>" type="checkbox" class="form-check-input" name="lista[]">
-                                    <label class="form-check-label" for="customCheck1"><?php echo $value->codigo;?></label>
-                                </div>
-                            </td>
+                           
+                            <td><?php echo $value->codigo;?></td>
                             <td><?php echo $value->saldo_mes;?></td>
-
                             <td><?php echo $value->nombre;?></td>
                             <td><?php echo $value->numeros;?></td>
                             <td><?php echo $value->servicios;?></td>
