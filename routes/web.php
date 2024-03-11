@@ -219,6 +219,8 @@ Route::get('/supervisor','App\Http\Controllers\TicketdatosController@supervisor'
 Route::get('/nodes','App\Http\Controllers\TicketdatosController@nodes');
 Route::post('/nodes','App\Http\Controllers\TicketdatosController@nodespost');
 Route::get('/subirclientes','App\Http\Controllers\TicketdatosController@subirclientes');
+Route::get('/linknetclientes','App\Http\Controllers\TicketdatosController@linknetclientes');
+
 Route::post('/subirclientes','App\Http\Controllers\TicketdatosController@subirclientespost');
 Route::get('/busquedaavanzada','App\Http\Controllers\TicketdatosController@busquedaavanzada');
 

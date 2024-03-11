@@ -1368,4 +1368,10 @@ class TicketdatosController extends Controller
         return view("sienna/subirclientes");
 
     }
+    public function linknetclientes(Request $request)
+    {
+
+        return response()->download(public_path('linknetclientes.csv'));
+    }
+    
 }
