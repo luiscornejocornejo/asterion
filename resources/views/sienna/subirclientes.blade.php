@@ -7,6 +7,13 @@
 <div class="content-page" style="padding: 0!important;">
 
     <div class="container-fluid pt-2">
+    <div class="card-header">
+                        <h4 class="card-title">Datos</h4>
+                        <p class="card-title-desc">
+                        <a href="/linknetclientes">Descarga Template</a>
+
+                        </p>
+                    </div>
     <form action="" method="post" enctype="multipart/form-data">
            
            @csrf                                <div class="fallback">
