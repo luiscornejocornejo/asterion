@@ -2,7 +2,7 @@
 
 <style>
   thead input {
-        width: 80%;
+        width: 100%;
     }
     </style>
 <script>
