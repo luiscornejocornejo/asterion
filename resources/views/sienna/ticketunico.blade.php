@@ -112,55 +112,51 @@
                               <div class="d-flex  mt-2">
                                 <i class="mdi mdi-account"></i>&nbsp;Nombre:&nbsp;
                                 <span class="badge badge-secondary-lighten hover-overlay line-h">
-                                <?php  echo $resultados[0]->nombre;?>
+                                <?php  echo $resultados[0]->nya;?>
                                 </span>
                               </div>
                               <div class="d-flex mt-2">
                                 <i class="mdi mdi-home"></i>&nbsp;Domicilio:&nbsp;
                                 <span class="badge badge-secondary-lighten line-h">
-                                <?php  echo $resultados[0]->nombre;?>
+                                <?php  echo $resultados[0]->address;?>
                                 </span>
                               </div>
                               <div class="d-flex mt-2">
                                   <i class="mdi mdi-whatsapp text"></i>&nbsp;Teléfono:&nbsp;
                                   <span class="badge badge-secondary-lighten line-h">
-                                  <?php  echo $resultados[0]->nombre;?>
+                                  <?php  echo $resultados[0]->cel;?>
                                   </span>
                                 </div>
                                 <div class="d-flex mt-2">
                                   <i class="mdi mdi-email"></i>&nbsp;Email:&nbsp;
                                   <span class="badge badge-secondary-lighten line-h">
-                                  <?php  echo $resultados[0]->nombre;?>
+                                  <?php  echo $resultados[0]->email;?>
                                   </span>
                                 </div>
                                 <div class="d-flex mt-2">
                                   <i class="mdi mdi-account-cash"></i>&nbsp;Estado de cuenta:&nbsp;
                                   <span class="badge badge-success-lighten line-h">
-                                  <?php  echo $resultados[0]->nombre;?>
+                                  <?php  echo $resultados[0]->a_status;?>
                                   </span>
-                                  <span class="badge badge-warning-lighten line-h ms-1">
-                                  <?php  echo $resultados[0]->nombre;?>
-                                  </span>
+                               
                                 </div>
                                 <div class="d-flex mt-2">
                                   <i class="mdi mdi-antenna"></i>&nbsp;Estado de servicio:&nbsp;
                                   <span class="badge badge-success-lighten line-h">
-                                  <?php  echo $resultados[0]->nombre;?>
+                                  <?php  echo $resultados[0]->s_status;?>
                                   </span>
-                                  <span class="badge badge-danger-lighten line-h ms-1">
-                                  <?php  echo $resultados[0]->nombre;?>
-                                  </span>
+                                  
                                 </div>
                                 <div class="d-flex mt-2">
                                     <i class="mdi mdi-switch"></i>&nbsp;Nodo:&nbsp;
                                     <span class="badge badge-secondary-lighten line-h">
-                                    <?php  echo $resultados[0]->nombre;?>
+                                    <?php  echo $resultados[0]->nodo;?>
                                     </span>
                                   </div>
                                 <div class="d-flex mt-2">
                                     <i class="mdi mdi-map-marker"></i>&nbsp;IP:&nbsp;
                                     <span class="badge badge-secondary-lighten line-h">
-                                    <?php  echo $resultados[0]->nombre;?>
+                                    <?php  echo $resultados[0]->ip;?>
                                     </span>
                                   </div>
                                   
