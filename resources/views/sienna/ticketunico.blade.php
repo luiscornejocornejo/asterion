@@ -12,7 +12,7 @@
         <div class="container pt-2 ">
             <div class="d-flex justify-content-between pb-2">
                 <div>
-                    <a href="route/" class="h4 link-primary text-decoration-underline link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">#<?php  echo $resultados[0]->ticketid;?></a>
+                    <span class="h4 link-primary text-decoration-underline link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">#<?php  echo $resultados[0]->ticketid;?></span>
                 </div>
                 <div>
                     <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo">
@@ -61,26 +61,26 @@
                               <div class="d-flex justify-content-between">
                                 <div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-list-status"></i> <strong>Estado: </strong>ticket_status
+                                        <i class="mdi mdi-list-status"></i> <strong>Estado: </strong><?php  echo $resultados[0]->estadoname;?>
                                     </div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-office-building"></i> <strong>Departamento: </strong>departament
+                                        <i class="mdi mdi-office-building"></i> <strong>Departamento: </strong><?php  echo $resultados[0]->depto;?>
                                     </div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-account-voice"></i> <strong>Asignado a: </strong>operator_name
+                                        <i class="mdi mdi-account-voice"></i> <strong>Asignado a: </strong><?php  echo $resultados[0]->estadoname;?>
                                     </div>
 
                                 </div>
                                 
                                 <div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-calendar"></i> <strong>Creado: </strong>date
+                                        <i class="mdi mdi-calendar"></i> <strong>Creado: </strong><?php  echo $resultados[0]->created_at;?>
                                     </div>
                                     <div class="mb-1">
-                                        <i class="mdi sienna_source_class"></i> <strong>Fuente: </strong>Channel
+                                        <i class="mdi sienna_source_class"></i> <strong>Fuente: </strong><?php  echo $resultados[0]->siennasource;?>
                                     </div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-information"></i> <strong>Tema de ayuda: </strong>topic_name
+                                        <i class="mdi mdi-information"></i> <strong>Tema de ayuda: </strong><?php  echo $resultados[0]->nombre;?>
                                     </div>
                                 </div>
                               </div>
