@@ -125,7 +125,7 @@ function maxid() {
             "pageLength": 25,
   "language" : {
     "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
-  },
+  },columns: [{ width: '20%' }, null, null, null, null],
   dom: 'Bfrtip',
   initComplete: function () {
             var api = this.api();
@@ -317,7 +317,7 @@ function listadoseguimientos(result,dd) {
 
               <!-- Start Content-->
             
-                <div class="container-fluid pt-2" id="casa" style="width:70% !important;" >
+                <div class="container-fluid pt-2" id="casa"  >
                    
                     
                                                      
