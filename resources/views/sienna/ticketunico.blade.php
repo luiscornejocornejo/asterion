@@ -201,10 +201,10 @@
                                 <div class="timeline-item">
                 coloreicono+
                 <div class="timeline-item-info">
-                <span class="text-info fw-bold mb-1 d-block"><?php echo $segi[0]->descripcion;?></span>
-                <small><?php echo $segi[0]->autor;?></small>
+                <span class="text-info fw-bold mb-1 d-block"><?php echo $segui[0]->descripcion;?></span>
+                <small><?php echo $segui[0]->autor;?></small>
                 <p class="mb-0 pb-2">
-                <small class="text-muted"><?php echo $segi[0]->created_at;?></small>
+                <small class="text-muted"><?php echo $segui[0]->created_at;?></small>
                 </p> </div> </div>
                             
                             </div></div></div><div class="simplebar-placeholder" style="width: auto; height: 353px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 281px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div> <!-- end slimscroll -->
