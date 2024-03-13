@@ -11,7 +11,7 @@
 
     <?php
     
-    echo $resultados->conversation_url;
+    echo $resultados[0]->conversation_url;
     dd($resultados);?>
 
     </div> 
