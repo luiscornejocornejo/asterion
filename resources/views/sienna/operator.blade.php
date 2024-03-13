@@ -41,7 +41,7 @@ function maxid() {
          
         
 
-        sd=' <table id="example"  class="table table-striped dt-responsive nowrap w-80 text-light">'+
+        sd=' <table id="example" style="width:80%"  class="table table-striped dt-responsive nowrap w-80 text-light">'+
                         '<thead>'+
                        '     <tr class="text-center bg-dark" >'+
                        '        <th class="text-light"><i></i>Ticket</th>'+
