@@ -9,7 +9,10 @@
     <div class="container-fluid pt-2">
      
 
-    <?php dd($resultados);?>
+    <?php
+    
+    echo $resultados->conversation_url;
+    dd($resultados);?>
 
     </div> 
 </div> 
