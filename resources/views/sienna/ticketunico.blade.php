@@ -77,7 +77,7 @@
                                         <i class="mdi mdi-calendar"></i> <strong>Creado: </strong>date
                                     </div>
                                     <div class="mb-1">
-                                        <i class="mdi {{sienna_source_class}}"></i> <strong>Fuente: </strong>Channel
+                                        <i class="mdi sienna_source_class"></i> <strong>Fuente: </strong>Channel
                                     </div>
                                     <div class="mb-1">
                                         <i class="mdi mdi-information"></i> <strong>Tema de ayuda: </strong>topic_name
@@ -106,7 +106,7 @@
                               <div class="d-flex mt-2">
                                 <i class="mdi mdi-card-account-details"></i>&nbsp;Numero cliente:&nbsp;
                                 <span class="badge badge-secondary-lighten line-h">
-                                  {{cedula}}
+                                  cedula
                                 </span>
                               </div>
                               <div class="d-flex  mt-2">
@@ -200,9 +200,9 @@
                                             <i class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>
                                             <div class="timeline-item-info">
                                                 <span class="text-info fw-bold mb-1 d-block">Carga de archivo</span>
-                                                <small>{{agent_sienna}} ha subido un archivo de tipo <a href="route" target="_blank">imagen</a></small>
+                                                <small>agent_sienna ha subido un archivo de tipo <a href="route" target="_blank">imagen</a></small>
                                                 <p class="mb-0 pb-2">
-                                                    <small class="text-muted">{{date_event}}</small>
+                                                    <small class="text-muted">date_event</small>
                                                 </p>
                                             </div>
                                         </div>
@@ -274,7 +274,7 @@
                             <div class="mt-3">
                                 <div class="form-check mb-2">
                                     <input type="radio" id="customRadio1Departament" name="customRadio" class="form-check-input">
-                                    <label class="form-check-label" for="customRadio1">{{operator_name}}</label>
+                                    <label class="form-check-label" for="customRadio1">operator_name</label>
                                 </div>
                             </div>
                             
@@ -385,7 +385,7 @@
                 <form>
                 <div class="modal-body">
                     
-                    <label for="client_number" class="form-label">Por favor agrega el número de cliente correspondiente del usuario {{first_name}}:</label>
+                    <label for="client_number" class="form-label">Por favor agrega el número de cliente correspondiente del usuariofirst_name:</label>
                     <input type="number" class="form-control" name="client_number" id="client_number">
                 </div>
                 
