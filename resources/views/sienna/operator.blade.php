@@ -317,7 +317,7 @@ function listadoseguimientos(result,dd) {
 
               <!-- Start Content-->
             
-                <div class="container-fluid pt-2" id="casa">
+                <div class="container pt-2" id="casa">
                    
                     
                                                      
