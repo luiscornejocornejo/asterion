@@ -1475,7 +1475,7 @@ class TicketdatosController extends Controller
         left join  ".$subdomain_tmp.".siennatopic d on d.id=a.siennatopic
         left join  ".$subdomain_tmp.".users e on e.id=a.asignado
         left join  ".$subdomain_tmp.".siennacliente f on f.cliente=a.cliente
-        left join  ".$subdomain_tmp.".siennaseguimientos g on g.ticket=a.id
+        
 
         
         where a.id='".$tick."'";
@@ -1483,10 +1483,12 @@ class TicketdatosController extends Controller
         $resultados = DB::select($query);
 
 
-       
+        $segui = siennaseguimientos::where('ticket', $tick)->get();
        // dd($resultados);
 
-        return view("sienna/ticketunico") ->with('resultados', $resultados);
+        return view("sienna/ticketunico")
+        ->with('segui', $segui)
+         ->with('resultados', $resultados);
 
     }
 }

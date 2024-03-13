@@ -196,6 +196,7 @@
                                     <h4 class="header-title">Actividad reciente</h4>
                                 </div>
 
+                                <?php var_dump($segui);?>
                                 <div class="card-body py-0 mb-3 mt-3 " style="height: 600px;" data-simplebar="init"><div class="simplebar-wrapper" ><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: auto; overflow: hidden scroll;"><div class="simplebar-content" style="padding: 0px 24px;">
                                     <div class="timeline-alt py-0 " ">
                                         <div class="timeline-item">
