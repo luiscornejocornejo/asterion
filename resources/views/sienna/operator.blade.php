@@ -1,6 +1,10 @@
 @include('facu.header2')
 
-
+<style>
+  thead input {
+        width: 80%;
+    }
+    </style>
 <script>
 
 
@@ -131,6 +135,7 @@ function maxid() {
             var api = this.api();
  
             // For each column
+          
             api
                 .columns()
                 .eq(0)
