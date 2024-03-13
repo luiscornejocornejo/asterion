@@ -67,7 +67,7 @@
                                         <i class="mdi mdi-office-building"></i> <strong>Departamento: </strong><?php  echo $resultados[0]->depto;?>
                                     </div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-account-voice"></i> <strong>Asignado a: </strong><?php  echo $resultados[0]->estadoname;?>
+                                        <i class="mdi mdi-account-voice"></i> <strong>Asignado a: </strong><?php  echo $resultados[0]->nombreagente;?>
                                     </div>
 
                                 </div>

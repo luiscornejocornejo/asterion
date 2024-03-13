@@ -1466,13 +1466,14 @@ class TicketdatosController extends Controller
         }
 
         $tick=$request->tick;
-        $query="select *,a.conversation_id,a.user_id,
+        $query="select *,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
         b.nombre as depto,b.id as iddepto,
         a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado from 
         ".$subdomain_tmp.".siennatickets a
         left join ".$subdomain_tmp.".siennadepto b on b.id=a.siennadepto 
         left join  ".$subdomain_tmp.".siennaestado c on c.id=a.siennaestado
         left join  ".$subdomain_tmp.".siennatopic d on d.id=a.siennatopic
+        left join  ".$subdomain_tmp.".users e on e.id=a.asignado
         where a.id='".$tick."'";
 
         $resultados = DB::select($query);
