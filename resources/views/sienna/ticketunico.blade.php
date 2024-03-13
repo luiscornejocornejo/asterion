@@ -12,7 +12,7 @@
         <div class="container pt-2 ">
             <div class="d-flex justify-content-between pb-2">
                 <div>
-                    <a href="route/{{ticket_number}}" class="h4 link-primary text-decoration-underline link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">#{{ticket_number}}</a>
+                    <a href="route/" class="h4 link-primary text-decoration-underline link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">#ticket_number</a>
                 </div>
                 <div>
                     <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo">
@@ -407,7 +407,7 @@
 
   </div>
 
-  
+
 
   
      
