@@ -15,9 +15,9 @@
    
 </div> 
 </div>
-dd($resultados);?>
+<?php dd($resultados);?>
     <br><br><br>
-    <?php
+  
     
    
    
