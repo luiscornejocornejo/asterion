@@ -61,26 +61,26 @@
                               <div class="d-flex justify-content-between">
                                 <div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-list-status"></i> <strong>Estado: </strong>{{ticket_status}}
+                                        <i class="mdi mdi-list-status"></i> <strong>Estado: </strong>ticket_status
                                     </div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-office-building"></i> <strong>Departamento: </strong>{{departament}}
+                                        <i class="mdi mdi-office-building"></i> <strong>Departamento: </strong>departament
                                     </div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-account-voice"></i> <strong>Asignado a: </strong>{{operator_name}}
+                                        <i class="mdi mdi-account-voice"></i> <strong>Asignado a: </strong>operator_name
                                     </div>
 
                                 </div>
                                 
                                 <div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-calendar"></i> <strong>Creado: </strong>{{date}}
+                                        <i class="mdi mdi-calendar"></i> <strong>Creado: </strong>date
                                     </div>
                                     <div class="mb-1">
-                                        <i class="mdi {{sienna_source_class}}"></i> <strong>Fuente: </strong>{{Channel}}
+                                        <i class="mdi {{sienna_source_class}}"></i> <strong>Fuente: </strong>Channel
                                     </div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-information"></i> <strong>Tema de ayuda: </strong>{{topic_name}}
+                                        <i class="mdi mdi-information"></i> <strong>Tema de ayuda: </strong>topic_name
                                     </div>
                                 </div>
                               </div>
