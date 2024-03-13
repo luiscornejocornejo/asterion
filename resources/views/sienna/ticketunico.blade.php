@@ -196,16 +196,18 @@
                                     <h4 class="header-title">Actividad reciente</h4>
                                 </div>
 
-                                <?php var_dump($segui);?>
+                                <?php foreach($segui as $val){?>
                                 
                                 <div class="timeline-item">
                 coloreicono+
                 <div class="timeline-item-info">
-                <span class="text-info fw-bold mb-1 d-block"><?php echo $segui[0]->descripcion;?></span>
-                <small><?php echo $segui[0]->autor;?></small>
+                <span class="text-info fw-bold mb-1 d-block"><?php echo $val->descripcion;?></span>
+                <small><?php echo $val->autor;?></small>
                 <p class="mb-0 pb-2">
-                <small class="text-muted"><?php echo $segui[0]->created_at;?></small>
+                <small class="text-muted"><?php echo $val->created_at;?></small>
                 </p> </div> </div>
+
+                <?php }?>
                             
                             </div></div></div><div class="simplebar-placeholder" style="width: auto; height: 353px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 281px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div> <!-- end slimscroll -->
                             </div>
