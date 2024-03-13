@@ -106,61 +106,61 @@
                               <div class="d-flex mt-2">
                                 <i class="mdi mdi-card-account-details"></i>&nbsp;Numero cliente:&nbsp;
                                 <span class="badge badge-secondary-lighten line-h">
-                                  cedula
+                                <?php  echo $resultados[0]->cliente;?>
                                 </span>
                               </div>
                               <div class="d-flex  mt-2">
                                 <i class="mdi mdi-account"></i>&nbsp;Nombre:&nbsp;
                                 <span class="badge badge-secondary-lighten hover-overlay line-h">
-                                  Pepito
+                                <?php  echo $resultados[0]->nombre;?>
                                 </span>
                               </div>
                               <div class="d-flex mt-2">
                                 <i class="mdi mdi-home"></i>&nbsp;Domicilio:&nbsp;
                                 <span class="badge badge-secondary-lighten line-h">
-                                  Calle Falsa 123
+                                <?php  echo $resultados[0]->nombre;?>
                                 </span>
                               </div>
                               <div class="d-flex mt-2">
                                   <i class="mdi mdi-whatsapp text"></i>&nbsp;Teléfono:&nbsp;
                                   <span class="badge badge-secondary-lighten line-h">
-                                    5491122334455
+                                  <?php  echo $resultados[0]->nombre;?>
                                   </span>
                                 </div>
                                 <div class="d-flex mt-2">
                                   <i class="mdi mdi-email"></i>&nbsp;Email:&nbsp;
                                   <span class="badge badge-secondary-lighten line-h">
-                                    pepito@gmail.com
+                                  <?php  echo $resultados[0]->nombre;?>
                                   </span>
                                 </div>
                                 <div class="d-flex mt-2">
                                   <i class="mdi mdi-account-cash"></i>&nbsp;Estado de cuenta:&nbsp;
                                   <span class="badge badge-success-lighten line-h">
-                                    Normal
+                                  <?php  echo $resultados[0]->nombre;?>
                                   </span>
                                   <span class="badge badge-warning-lighten line-h ms-1">
-                                    Suspendido
+                                  <?php  echo $resultados[0]->nombre;?>
                                   </span>
                                 </div>
                                 <div class="d-flex mt-2">
                                   <i class="mdi mdi-antenna"></i>&nbsp;Estado de servicio:&nbsp;
                                   <span class="badge badge-success-lighten line-h">
-                                    Normal
+                                  <?php  echo $resultados[0]->nombre;?>
                                   </span>
                                   <span class="badge badge-danger-lighten line-h ms-1">
-                                    Masivo
+                                  <?php  echo $resultados[0]->nombre;?>
                                   </span>
                                 </div>
                                 <div class="d-flex mt-2">
                                     <i class="mdi mdi-switch"></i>&nbsp;Nodo:&nbsp;
                                     <span class="badge badge-secondary-lighten line-h">
-                                      Nodo
+                                    <?php  echo $resultados[0]->nombre;?>
                                     </span>
                                   </div>
                                 <div class="d-flex mt-2">
                                     <i class="mdi mdi-map-marker"></i>&nbsp;IP:&nbsp;
                                     <span class="badge badge-secondary-lighten line-h">
-                                      192.0.1.2
+                                    <?php  echo $resultados[0]->nombre;?>
                                     </span>
                                   </div>
                                   

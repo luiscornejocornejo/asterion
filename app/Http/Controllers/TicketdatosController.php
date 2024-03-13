@@ -1474,10 +1474,13 @@ class TicketdatosController extends Controller
         left join  ".$subdomain_tmp.".siennaestado c on c.id=a.siennaestado
         left join  ".$subdomain_tmp.".siennatopic d on d.id=a.siennatopic
         left join  ".$subdomain_tmp.".users e on e.id=a.asignado
+        left join  ".$subdomain_tmp.".siennacliente f on f.cliente=a.cliente
         where a.id='".$tick."'";
 
         $resultados = DB::select($query);
 
+
+       
        // dd($resultados);
 
         return view("sienna/ticketunico") ->with('resultados', $resultados);
