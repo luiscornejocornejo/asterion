@@ -90,7 +90,7 @@
                               
                         </div>
                     </div>
-                    <iframe src="https://routing.xenioo.com/share/30SI9376CV4D5U9TZXDHK3XYSANB8THH" width="100%" class="border rounded-3" style="height: 400px!important;"></iframe>    
+                    <iframe src="<?php  echo $resultados[0]->conversation_url;?>" width="100%" class="border rounded-3" style="height: 400px!important;"></iframe>    
                     <div class="mt-2">
                         <div class="card widget-flat">
                             <div class="card-body">
@@ -413,9 +413,7 @@
      
 
    
- <iframe allow="camera;microphone"  src="<?php  echo $resultados[0]->conversation_url;?> " width="100%" height="800px" class="border rounded-3" style="height:600px !important"></iframe>
-  
-   
+
 </div> 
 </div>
 <?php dd($resultados);?>
