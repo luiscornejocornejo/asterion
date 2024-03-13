@@ -197,23 +197,17 @@
                                 </div>
 
                                 <?php var_dump($segui);?>
-                                <div class="card-body py-0 mb-3 mt-3 " style="height: 600px;" data-simplebar="init"><div class="simplebar-wrapper" ><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: auto; overflow: hidden scroll;"><div class="simplebar-content" style="padding: 0px 24px;">
-                                    <div class="timeline-alt py-0 " ">
-                                        <div class="timeline-item">
-                                            <i class="mdi mdi-upload bg-info-lighten text-info timeline-icon"></i>
-                                            <div class="timeline-item-info">
-                                                <span class="text-info fw-bold mb-1 d-block">Carga de archivo</span>
-                                                <small>agent_sienna ha subido un archivo de tipo <a href="route" target="_blank">imagen</a></small>
-                                                <p class="mb-0 pb-2">
-                                                    <small class="text-muted">date_event</small>
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        
-                                    </div>
-                                    <!-- end timeline -->
-                                </div></div></div></div><div class="simplebar-placeholder" style="width: auto; height: 353px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 281px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div> <!-- end slimscroll -->
+                                
+                                <div class="timeline-item">
+                coloreicono+
+                <div class="timeline-item-info">
+                <span class="text-info fw-bold mb-1 d-block"><?php echo $segi[0]->descripcion;?></span>
+                <small><?php echo $segi[0]->autor;?></small>
+                <p class="mb-0 pb-2">
+                <small class="text-muted"><?php echo $segi[0]->created_at;?></small>
+                </p> </div> </div>
+                            
+                            </div></div></div><div class="simplebar-placeholder" style="width: auto; height: 353px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 281px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div> <!-- end slimscroll -->
                             </div>
             </div> <!-- end row-->
                 </div>
