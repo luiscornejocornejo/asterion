@@ -1477,8 +1477,9 @@ class TicketdatosController extends Controller
 
         $resultados = DB::select($query);
 
-        dd($resultados);
+       // dd($resultados);
 
+        return view("sienna/ticketunico") ->with('resultados', $resultados);
 
     }
 }
