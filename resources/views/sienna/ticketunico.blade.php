@@ -222,7 +222,7 @@ function coloriconos($iconos,$tipo){
 
                                         
                                         
-                                        $uri='<a target=_blank href="'.$ht.'">'.$val->logo.'</a>';
+                                        $uri='<a target=_blank href="'.$ht.'"><img src='.$ht.' width="40px;"></a>';
                                       }else{
                                         $uri='';
                                       }
