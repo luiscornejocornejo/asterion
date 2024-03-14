@@ -22,9 +22,7 @@ function coloriconos($iconos,$tipo){
            
         <div class="container pt-2 ">
             <div class="d-flex justify-content-between pb-2">
-                <div>
-                    <span class="h4 link-primary text-decoration-underline link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">#<?php  echo $resultados[0]->ticketid;?></span>
-                </div>
+               
                 <div>
                     <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo">
                         <i class="mdi mdi-account-arrow-left" data-bs-toggle="tooltip" data-bs-placement="top"
@@ -62,7 +60,7 @@ function coloriconos($iconos,$tipo){
                             <div class="card-body">
                               <div class="d-flex justify-content-between">
                                 <div>  
-                                  <h4 class="fw-normal text-dark" title="Number of Customers">Información del Ticket</h4>
+                                  <h4 class="fw-normal text-dark" title="Number of Customers">Información del Ticket #<?php  echo $resultados[0]->ticketid;?></h4>
                                 </div>
                                 <div>
                                     <i class="mdi mdi-note-text widget-icon bg-secondary-lighten text-secondary"></i>          
