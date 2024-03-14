@@ -317,8 +317,9 @@ if ($categoria == 1) {?>
 
     </ul>
     <!--- End Sidemenu -->
-
+    <div id="xenioowebchat" style="width: 100%; height: 600px;"></div>
     <?php
+
        $saliente = 1;
 
                 if($saliente ==1){?>
