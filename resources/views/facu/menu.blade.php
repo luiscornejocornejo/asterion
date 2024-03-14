@@ -60,7 +60,8 @@ $resultados = DB::select($query);
       <li class="side-nav-item mt-2 background-buttons">
         <a href="/home?fecha=dia"  class="side-nav-link hovering-pan ">
             <i class="uil-dashboard"></i>
-            <span> Dashboards2 </span>
+            <span> Dashboards </span>
+            <div id="xenioowebchat" style="width: 100%; height: 600px;"></div>
         </a>
     </li>
    

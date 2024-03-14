@@ -82,4 +82,4 @@ landingUrl: 'https://res.xenioo.com/landing//display.html?route=cm91dGluZy54ZW5p
 });
 </script>
 </head>
-<body class="show" onload="maxid()"><div id="xenioowebchat" style="width: 100%; height: 600px;"></div>
+<body class="show" onload="maxid()">
