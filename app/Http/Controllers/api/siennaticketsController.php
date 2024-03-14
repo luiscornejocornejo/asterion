@@ -1105,7 +1105,7 @@ class siennaticketsController extends Controller
     
     
             $archi=Str::of($logo)->basename();
-            $ruta=$merchant."/seguimientos/";
+            $ruta=$merchant."/seguimientos";
             $logo= Storage::disk('do')->put($ruta, $logo);
         } else {
             $logo = "";
