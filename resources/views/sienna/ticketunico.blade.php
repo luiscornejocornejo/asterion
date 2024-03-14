@@ -211,8 +211,16 @@ function coloriconos($iconos,$tipo){
                                     
                                     
                                     if($val->logo<>null){
+                                        $pos = strpos($val->logo, "public");
 
-                                        $ht='https://sienamedia.sfo3.digitaloceanspaces.com/ispgroup/xen/enviados/'.$val->logo;
+                                        if ($pos === false) {
+                                            $ht='https://sienamedia.sfo3.digitaloceanspaces.com/ispgroup/xen/enviados/'.$val->logo;
+                                        } else {
+                                            $log=str_replace("public/","",$val->logo);
+                                            $ht='https://sienamedia.sfo3.digitaloceanspaces.com/ispgroup/seguimientos/'.$log;
+                                        }
+
+                                        
                                         
                                         $uri='<a target=_blank href="'.$ht.'">'.$val->logo.'</a>';
                                       }else{
