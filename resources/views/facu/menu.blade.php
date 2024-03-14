@@ -60,7 +60,8 @@ $resultados = DB::select($query);
       <li class="side-nav-item mt-2 background-buttons">
         <a href="/home?fecha=dia"  class="side-nav-link hovering-pan ">
             <i class="uil-dashboard"></i>
-            <span> Dashboards </span>
+            <span> Dashboards2 </span>
+            <div id="xenioowebchat" style="width: 100%; height: 600px;"></div>
         </a>
     </li>
    
@@ -323,7 +324,7 @@ if ($categoria == 1) {?>
        $saliente = 1;
 
                 if($saliente ==1){?>
-                  <div id="xenioowebchat" style="width: 100%; height: 600px;"></div>
+                 
     <div class="whatsapp" data-bs-toggle="modal" data-bs-target="#warning-alert-modal">
     <i class="mdi mdi-send ms-1" style="font-size: 25px;margin-left: 0.785rem!important;"></i>
 </div>
