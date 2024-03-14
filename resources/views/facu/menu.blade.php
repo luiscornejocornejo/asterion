@@ -61,7 +61,7 @@ $resultados = DB::select($query);
         <a href="/home?fecha=dia"  class="side-nav-link hovering-pan ">
             <i class="uil-dashboard"></i>
             <span> Dashboards </span>
-            <div id="xenioowebchat" style="width: 100%; height: 600px;"></div>
+     
         </a>
     </li>
    
@@ -318,7 +318,7 @@ if ($categoria == 1) {?>
 
     </ul>
     <!--- End Sidemenu -->
-  
+    <div id="xenioowebchat" style="width: 100%; height: 600px;"></div>
     <?php
 
        $saliente = 1;
