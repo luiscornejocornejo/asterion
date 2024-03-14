@@ -196,7 +196,18 @@
                                     <h4 class="header-title">Actividad reciente</h4>
                                 </div>
 
-                                <?php foreach($segui as $val){?>
+                                <?php foreach($segui as $val){
+                                    
+                                    
+                                    if($val->logo<>null){
+
+                                        $ht='https://sienamedia.sfo3.digitaloceanspaces.com/ispgroup/xen/enviados/'.$val->logo;
+                                        
+                                        $uri='<a target=_blank href="'.$ht.'">'.$val->logo.'</a>';
+                                      }else{
+                                        $uri='';
+                                      }
+                                      ?>
                                 
                                 <div class="timeline-item">
                 coloreicono+
@@ -205,7 +216,8 @@
                 <small><?php echo $val->autor;?></small>
                 <p class="mb-0 pb-2">
                 <small class="text-muted"><?php echo $val->created_at;?></small>
-                </p> </div> </div>
+                </p>
+            <span><?php echo $uri;?></span> </div> </div>
 
                 <?php }?>
                             
