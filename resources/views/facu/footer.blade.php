@@ -11,7 +11,7 @@
         landingUrl: 'https://res.xenioo.com/landing//display.html?route=cm91dGluZy54ZW5pb28uY29t&bot_key=sUccEJjrHUiJMpy6NEe4RFfhS7goUj2pSB50K0wCngMJ5eVgTTwbTBAdou96cuNX'
 });
 </script>
-  <!-- Vendor js -->
+  <!-- Vendor js --> 
   <script src="assetsfacu/js/vendor.min.js"></script>
 
   <link href="assetsfacu/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
