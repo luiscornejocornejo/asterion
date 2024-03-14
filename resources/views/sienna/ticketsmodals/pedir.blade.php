@@ -15,7 +15,7 @@
                         <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
 
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
-                        button type="submit" class="btn btn-success">Si, reclamar</button>
+                        <button type="submit" class="btn btn-success">Si, reclamar</button>
                                 </form><
                     </div>
                 </div><!-- /.modal-content -->
