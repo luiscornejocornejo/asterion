@@ -6,7 +6,7 @@ function coloriconos($iconos,$tipo){
     $coloricono="";
     foreach ($iconos as $valu){
         if($valu->id==$tipo){
-            $coloricono=$val->descripcion;
+            $coloricono=$valu->descripcion;
         }
     }
     return $coloricono;
