@@ -318,7 +318,7 @@ if ($categoria == 1) {?>
 
     </ul>
     <!--- End Sidemenu -->
-    <div id="xenioowebchat" style="width: 100%; height: 600px;margin-left: 0.585rem!important;"></div>
+
 <script data-id='xenioo' data-node='cm91dGluZy54ZW5pb28uY29t' src="https://res.xenioo.com/plugin/xenioo.js"></script>
 <script>
     xenioowebchat.EmbedChatLanding({

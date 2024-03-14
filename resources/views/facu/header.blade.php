@@ -717,4 +717,4 @@ document.getElementById("idregistro").value = x;
 
 
 </head>
-<body class="show">
+<body class="show">    <div id="xenioowebchat" style="width: 100%; height: 600px;margin-left: 0.585rem!important;"></div>
