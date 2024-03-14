@@ -16,7 +16,7 @@
 
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
                         <button type="submit" class="btn btn-success">Si, reclamar</button>
-                                </form><
+                                </form>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
