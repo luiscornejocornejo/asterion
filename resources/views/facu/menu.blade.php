@@ -61,7 +61,6 @@ $resultados = DB::select($query);
         <a href="/home?fecha=dia"  class="side-nav-link hovering-pan ">
             <i class="uil-dashboard"></i>
             <span> Dashboards2 </span>
-            <div id="xenioowebchat" style="width: 100%; height: 600px;"></div>
         </a>
     </li>
    
