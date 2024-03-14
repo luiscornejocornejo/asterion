@@ -439,7 +439,8 @@ function coloriconos($iconos,$tipo){
 
 </div> 
 </div>
-<?php dd($resultados);?>
+<?php
+// dd($resultados);?>
     <br><br><br>
   
     
