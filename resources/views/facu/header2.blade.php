@@ -74,6 +74,7 @@ z-index: 999;}
     </style>
 
 <script src="sienna/js/5tickets.js"></script>
+<script data-id='xenioo' data-node='cm91dGluZy54ZW5pb28uY29t' src="https://res.xenioo.com/plugin/xenioo.js"></script>
 <script>
 xenioowebchat.EmbedChatLanding({
 container: 'xenioowebchat',
@@ -81,4 +82,4 @@ landingUrl: 'https://res.xenioo.com/landing//display.html?route=cm91dGluZy54ZW5p
 });
 </script>
 </head>
-<body class="show" onload="maxid()">
+<body class="show" onload="maxid()"><div id="xenioowebchat" style="width: 100%; height: 600px;"></div>
