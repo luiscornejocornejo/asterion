@@ -2,7 +2,7 @@
 
 
 <?php
-function coloriconos($id){
+function coloriconos($iconos,$id){
     $coloricono="";
     foreach ($iconos as $valu){
         if($valu->id==$id){
@@ -221,7 +221,7 @@ function coloriconos($id){
                                       ?>
                                 
                                 <div class="timeline-item">
-                <?php echo $color=coloriconos($val->tipo);?>
+                <?php echo $color=coloriconos($iconos,$val->tipo);?>
                 <div class="timeline-item-info">
                 <span class="text-info fw-bold mb-1 d-block"><?php echo $val->descripcion;?></span>
                 <small><?php echo $val->autor;?></small>
