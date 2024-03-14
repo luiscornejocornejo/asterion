@@ -317,12 +317,13 @@ if ($categoria == 1) {?>
 
     </ul>
     <!--- End Sidemenu -->
-    <div id="xenioowebchat" style="width: 100%; height: 600px;"></div>
+  
     <?php
 
        $saliente = 1;
 
                 if($saliente ==1){?>
+                  <div id="xenioowebchat" style="width: 100%; height: 600px;"></div>
     <div class="whatsapp" data-bs-toggle="modal" data-bs-target="#warning-alert-modal">
     <i class="mdi mdi-send ms-1" style="font-size: 25px;margin-left: 0.785rem!important;"></i>
 </div>
