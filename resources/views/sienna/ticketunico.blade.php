@@ -216,7 +216,7 @@ function coloriconos($iconos,$tipo){
                                         if ($val->tipo == 5) {
                                             $ht='https://sienamedia.sfo3.digitaloceanspaces.com/'.$val->logo;
                                         } else {
-                                            $ht='https://sienamedia.sfo3.digitaloceanspaces.com/ispgroup/xen/enviados/'.$val->logo;
+                                            $ht='https://sienamedia.sfo3.digitaloceanspaces.com/'.$subdomain_tmp.'/xen/enviados/'.$val->logo;
                                             
                                         }
 

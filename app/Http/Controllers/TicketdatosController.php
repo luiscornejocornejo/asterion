@@ -1490,6 +1490,7 @@ class TicketdatosController extends Controller
        // dd($resultados);
 
         return view("sienna/ticketunico")
+        ->with('subdomain_tmp', $subdomain_tmp)
         ->with('segui', $segui)
         ->with('iconos', $resultados5)
          ->with('resultados', $resultados);
