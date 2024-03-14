@@ -1,7 +1,18 @@
 @include('facu.header')
 
 
+<?php
+function coloriconos($id){
+    $coloricono="";
+    foreach ($iconos as $valu){
+        if($valu->id==$id){
+            $coloricono=$val->descripcion;
+        }
+    }
+    return $coloricono;
+}
 
+?>
 <div class="wrapper menuitem-active">
 @include('facu.menu')
 <div class="content-page" style="padding: 0!important;">
@@ -210,7 +221,7 @@
                                       ?>
                                 
                                 <div class="timeline-item">
-                coloreicono+
+                <?php echo $color=coloriconos($id);?>
                 <div class="timeline-item-info">
                 <span class="text-info fw-bold mb-1 d-block"><?php echo $val->descripcion;?></span>
                 <small><?php echo $val->autor;?></small>

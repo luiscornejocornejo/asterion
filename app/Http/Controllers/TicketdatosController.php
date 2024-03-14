@@ -1484,10 +1484,14 @@ class TicketdatosController extends Controller
 
 
         $segui = siennaseguimientos::where('ticket', $tick)->get();
+
+        $query5="select * from iconostipo";
+        $resultados5 = DB::select($query5);
        // dd($resultados);
 
         return view("sienna/ticketunico")
         ->with('segui', $segui)
+        ->with('iconos', $resultados5)
          ->with('resultados', $resultados);
 
     }
