@@ -221,7 +221,7 @@ function coloriconos($id){
                                       ?>
                                 
                                 <div class="timeline-item">
-                <?php echo $color=coloriconos($id);?>
+                <?php echo $color=coloriconos($val->tipo);?>
                 <div class="timeline-item-info">
                 <span class="text-info fw-bold mb-1 d-block"><?php echo $val->descripcion;?></span>
                 <small><?php echo $val->autor;?></small>
