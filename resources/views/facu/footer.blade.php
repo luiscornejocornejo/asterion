@@ -4,6 +4,13 @@
   <!-- Theme Settings -->
  
   <div id="xenioowebchat" style="width: 100%; height: 600px;margin-left: 0.585rem!important;"></div>
+  <script data-id='xenioo' data-node='cm91dGluZy54ZW5pb28uY29t' src="https://res.xenioo.com/plugin/xenioo.js"></script>
+<script>
+    xenioowebchat.EmbedChatLanding({
+        container: 'xenioowebchat',
+        landingUrl: 'https://res.xenioo.com/landing//display.html?route=cm91dGluZy54ZW5pb28uY29t&bot_key=sUccEJjrHUiJMpy6NEe4RFfhS7goUj2pSB50K0wCngMJ5eVgTTwbTBAdou96cuNX'
+});
+</script>
   <!-- Vendor js -->
   <script src="assetsfacu/js/vendor.min.js"></script>
 
