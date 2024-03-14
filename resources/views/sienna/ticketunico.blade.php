@@ -89,7 +89,7 @@ function coloriconos($iconos,$tipo){
                                         <i class="mdi sienna_source_class"></i> <strong>Fuente: </strong><?php  echo $resultados[0]->siennasource;?>
                                     </div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-information"></i> <strong>Tema de ayuda: </strong><?php  echo $resultados[0]->nombre;?>
+                                        <i class="mdi mdi-information"></i> <strong>Tema de ayuda: </strong><?php  echo $resultados[0]->topicname;?>
                                     </div>
                                 </div>
                               </div>
