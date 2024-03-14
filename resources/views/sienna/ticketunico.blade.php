@@ -371,8 +371,14 @@ function coloriconos($iconos,$tipo){
                 ¿Deseas reclamar este ticket?
             </div>
             <div class="modal-footer">
+            <form action="/api/pedir" method="POST">
+                        <input value="<?php  echo $resultados[0]->ticketid;?>" type="hidden" name="idticketpedir" id="idticketpedir">
+                        <input value="<?php echo session('idusuario'); ?>" type="hidden" name="usuarioticket" id="usuarioticket">
+                        <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
+
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
-                <button type="button" class="btn btn-success">Si, reclamar</button>
+                <button type="submit" class="btn btn-success">Si, reclamar</button>
+                                </form>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
