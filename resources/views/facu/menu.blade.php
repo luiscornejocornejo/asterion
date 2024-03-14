@@ -318,6 +318,13 @@ if ($categoria == 1) {?>
 
     </ul>
     <!--- End Sidemenu -->
+    <script data-id='xenioo' data-node='cm91dGluZy54ZW5pb28uY29t' src="https://res.xenioo.com/plugin/xenioo.js"></script>
+<script>
+xenioowebchat.EmbedChatLanding({
+container: 'xenioowebchat',
+landingUrl: 'https://res.xenioo.com/landing//display.html?route=cm91dGluZy54ZW5pb28uY29t&bot_key=sUccEJjrHUiJ...'
+});
+</script>
     <div id="xenioowebchat" style="width: 100%; height: 600px;"></div>
     <?php
 
