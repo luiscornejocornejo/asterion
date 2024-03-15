@@ -1,4 +1,4 @@
-@include('pp.header')
+@include('facu.header')
 
 <div id="principal">
     <div class="mx-auto" style="width: 1000px;margin-top: 70px;">
@@ -33,4 +33,4 @@
     </div>
 </div>
 <br><br><br>
-    @include('pp.footer')
+    @include('facu.footer')

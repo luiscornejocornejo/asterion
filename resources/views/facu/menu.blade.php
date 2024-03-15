@@ -66,7 +66,7 @@ $resultados = DB::select($query);
     </li>
     <li class="side-nav-item mt-2 background-buttons">
         <a target="_blank" href="/gpt"  class="side-nav-link hovering-pan ">
-            <i class="uil-dashboard"></i>
+            <i class="mdi-robot-happy-outline"></i>
             <span> Gpt </span>
      
         </a>
