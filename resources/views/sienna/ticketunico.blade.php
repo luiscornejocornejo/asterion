@@ -455,7 +455,7 @@ function ng(ruta) {
     document.getElementById('vista2').innerHTML = "";
    // document.getElementById('vista').src = dd;
    // g='<iframe allow="camera;microphone"  src="'+dd+'" width="100%" height="800px" class="border rounded-3" style="height:400px !important"></iframe>';
-   g='<embed src="'+dd+'" type="" width="180" height="350" quality="high" wmode="transparent">'
+   g='<embed src="'+ruta+'" type="" width="180" height="350" quality="high" wmode="transparent">'
     document.getElementById('vista2').innerHTML = g;
 }
 </script>
