@@ -47,7 +47,25 @@ function cerrar(result,dd, ee, ff,cliente){
                     </button>
                     <?php }?>
 
-                   
+                    <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-departament">
+                        <i class="mdi mdi-account-group" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="mb-1" data-bs-title="Asignar departamento."></i>
+                    </button>
+                    <button onclick="topic(`<?php  echo $subdomain_tmp;?>`,`<?php  echo $resultados[0]->ticketid;?>`,`<?php  echo $resultados[0]->conversation_id;?>`,`<?php  echo $resultados[0]->iddepto;?>`)" 
+                     class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smt" >
+                        <i class="mdi mdi-notebook" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="mb-1" data-bs-title="Cambiar topic."></i>
+                    </button>
+                    <button onclick="estado2(`<?php  echo $subdomain_tmp;?>`,`<?php  echo $resultados[0]->ticketid;?>`,`<?php  echo $resultados[0]->conversation_id;?>`,`<?php  echo $resultados[0]->iddepto;?>`)" 
+                     class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm" >
+                        <i class="mdi mdi-flag" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="mb-1" data-bs-title="Cambiar estado."></i>
+                    </button>
+                    <button onclick="cerrar(`<?php  echo $subdomain_tmp;?>`,`<?php  echo $resultados[0]->ticketid;?>`,`<?php  echo $resultados[0]->conversation_id;?>`,`<?php  echo $resultados[0]->iddepto;?>`,`<?php  echo $resultados[0]->cliente;?>`)" 
+                     class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrar" >
+                        <i class="mdi mdi-check-circle" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="mb-1" data-bs-title="Cerrar Ticket."></i>
+                    </button>
                 
                     
                 </div>
@@ -242,15 +260,15 @@ function cerrar(result,dd, ee, ff,cliente){
                                     <p class="mb-0 pb-2">
                                     <small class="text-muted"><?php echo $val->created_at;?></small>
                                     </p>
-                                <span><?php if($uri<>""){
-                                
-//echo $uri;?>
+                                <span>
+                                    <?php if($uri<>""){?>
                                 <button onclick="ng(`<?php  echo $ht;?>`)" 
-                     class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-img" >
-                        <i class="mdi mdi-notebook" data-bs-toggle="tooltip" data-bs-placement="top"
-                        data-bs-custom-class="mb-1" data-bs-title="Img."></i>
-                    </button><?php }?>
-                            </span> </div> </div>
+                                    class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-img" >
+                                        <i class="mdi mdi-notebook" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        data-bs-custom-class="mb-1" data-bs-title="Img."></i>
+                                </button>
+                                <?php }?>
+                                </span> </div> </div>
 
                                     <?php }?>
                             
@@ -268,7 +286,6 @@ function cerrar(result,dd, ee, ff,cliente){
       <!-- Small modal Status-->
        
       <!-- End modal Status -->
-      @include('sienna.ticketsmodals.estados')
         <!-- Departament modal Status-->
         <div class="modal fade" id="bs-example-modal-sm-assign" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm">
@@ -448,6 +465,7 @@ function ng(ruta) {
     <!-- End Solicita numero de cliente -->
     @include('sienna.ticketsmodals.cerrar')
 
+    @include('sienna.ticketsmodals.estados')
 
 
       <!-- ============================================================== -->
