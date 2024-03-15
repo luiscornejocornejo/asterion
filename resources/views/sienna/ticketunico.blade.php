@@ -13,6 +13,14 @@ function coloriconos($iconos,$tipo){
 }
 
 ?>
+<script>
+    
+function cerrar(result,dd, ee, ff,cliente){
+  document.getElementById("idticketestado20").value = dd;
+  document.getElementById("conversation_id20").value = ee;
+  document.getElementById("client_number").value = cliente;
+}
+</script>
 <div class="wrapper menuitem-active">
 @include('facu.menu')
 <div class="content-page" style="padding: 0!important;">
