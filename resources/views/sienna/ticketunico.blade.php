@@ -2,11 +2,12 @@
 
 
 <?php
-function coloriconos($iconos,$tipo){
-    $coloricono="";
-    foreach ($iconos as $valu){
-        if($valu->id==$tipo){
-            $coloricono=$valu->descripcion;
+function coloriconos($iconos, $tipo)
+{
+    $coloricono = "";
+    foreach ($iconos as $valu) {
+        if ($valu->id == $tipo) {
+            $coloricono = $valu->descripcion;
         }
     }
     return $coloricono;
@@ -14,7 +15,7 @@ function coloriconos($iconos,$tipo){
 
 ?>
 <script>
-    
+
 function cerrar(result,dd, ee, ff,cliente){
   document.getElementById("idticketestado20").value = dd;
   document.getElementById("conversation_id20").value = ee;
@@ -24,59 +25,63 @@ function cerrar(result,dd, ee, ff,cliente){
 <div class="wrapper menuitem-active">
 @include('facu.menu')
 <div class="content-page" style="padding: 0!important;">
+@include('sienna.tu.asignar')
+        @include('sienna.tu.reclamar')
+        @include('sienna.tu.topic')
+        @include('sienna.tu.depto')
+        @include('sienna.ticketsmodals.cerrar')
+        @include('sienna.ticketsmodals.estados')
+        @include('sienna.tu.imagen')
           <div class="content">
 
               <!-- Start Content-->
-           
+
         <div class="container pt-2 ">
             <div class="d-flex justify-content-between pb-2">
-               
+
                 <div>
                                 <?php
-                    $tipodemenu = session('tipodemenu');
-                    if(($tipodemenu =="1")or($tipodemenu =="2")or($tipodemenu =="4")){
-                    ?>
+                                    $tipodemenu = session('tipodemenu');
+                                    if (($tipodemenu == "1") or ($tipodemenu == "2") or ($tipodemenu == "4")) {
+                                        ?>
                     <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-assign">
                         <i class="mdi mdi-account-arrow-right" data-bs-toggle="tooltip" data-bs-placement="top"
                         data-bs-custom-class="mb-1" data-bs-title="Asignar ticket"></i>
                     </button>
-                    <?php }else{?>
+                    <?php } else {?>
                     <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo">
                         <i class="mdi mdi-account-arrow-left" data-bs-toggle="tooltip" data-bs-placement="top"
                         data-bs-custom-class="mb-1" data-bs-title="Reclamar ticket."></i>
                     </button>
                     <?php }?>
-
-                    
-
                     <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-departament">
                         <i class="mdi mdi-account-group" data-bs-toggle="tooltip" data-bs-placement="top"
                         data-bs-custom-class="mb-1" data-bs-title="Asignar departamento."></i>
                     </button>
-                    <button onclick="topic(`<?php  echo $subdomain_tmp;?>`,`<?php  echo $resultados[0]->ticketid;?>`,`<?php  echo $resultados[0]->conversation_id;?>`,`<?php  echo $resultados[0]->iddepto;?>`)" 
+                    <button onclick="topic(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->conversation_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`)"
                      class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smt" >
                         <i class="mdi mdi-notebook" data-bs-toggle="tooltip" data-bs-placement="top"
                         data-bs-custom-class="mb-1" data-bs-title="Cambiar topic."></i>
                     </button>
-                    <button onclick="estado2(`<?php  echo $subdomain_tmp;?>`,`<?php  echo $resultados[0]->ticketid;?>`,`<?php  echo $resultados[0]->conversation_id;?>`,`<?php  echo $resultados[0]->iddepto;?>`)" 
+                    <button onclick="estado2(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->conversation_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`)"
                      class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm" >
                         <i class="mdi mdi-flag" data-bs-toggle="tooltip" data-bs-placement="top"
                         data-bs-custom-class="mb-1" data-bs-title="Cambiar estado."></i>
                     </button>
-                    <button onclick="cerrar(`<?php  echo $subdomain_tmp;?>`,`<?php  echo $resultados[0]->ticketid;?>`,`<?php  echo $resultados[0]->conversation_id;?>`,`<?php  echo $resultados[0]->iddepto;?>`,`<?php  echo $resultados[0]->cliente;?>`)" 
+                    <button onclick="cerrar(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->conversation_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`,`<?php echo $resultados[0]->cliente; ?>`)"
                      class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrar" >
                         <i class="mdi mdi-check-circle" data-bs-toggle="tooltip" data-bs-placement="top"
                         data-bs-custom-class="mb-1" data-bs-title="Cerrar Ticket."></i>
                     </button>
-                
-                    
+
+
                 </div>
 
             </div>
 
         </div>
   <!-- Small modal Status-->
-  
+
       <!-- End modal Status -->
 
 
@@ -86,125 +91,125 @@ function cerrar(result,dd, ee, ff,cliente){
                         <div class="card widget-flat">
                             <div class="card-body">
                               <div class="d-flex justify-content-between">
-                                <div>  
-                                  <h4 class="fw-normal text-dark" title="Number of Customers">Información del Ticket #<?php  echo $resultados[0]->ticketid;?></h4>
+                                <div>
+                                  <h4 class="fw-normal text-dark" title="Number of Customers">Información del Ticket #<?php echo $resultados[0]->ticketid; ?></h4>
                                 </div>
                                 <div>
-                                    <i class="mdi mdi-note-text widget-icon bg-secondary-lighten text-secondary"></i>          
+                                    <i class="mdi mdi-note-text widget-icon bg-secondary-lighten text-secondary"></i>
                                 </div>
                               </div>
                               <hr style="margin-top: 10px;"/>
                               <div class="d-flex justify-content-between">
                                 <div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-list-status"></i> <strong>Estado: </strong><?php  echo $resultados[0]->estadoname;?>
+                                        <i class="mdi mdi-list-status"></i> <strong>Estado: </strong><?php echo $resultados[0]->estadoname; ?>
                                     </div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-office-building"></i> <strong>Departamento: </strong><?php  echo $resultados[0]->depto;?>
+                                        <i class="mdi mdi-office-building"></i> <strong>Departamento: </strong><?php echo $resultados[0]->depto; ?>
                                     </div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-account-voice"></i> <strong>Asignado a: </strong><?php  echo $resultados[0]->nombreagente;?>
+                                        <i class="mdi mdi-account-voice"></i> <strong>Asignado a: </strong><?php echo $resultados[0]->nombreagente; ?>
                                     </div>
 
                                 </div>
-                                
+
                                 <div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-calendar"></i> <strong>Creado: </strong><?php  echo $resultados[0]->created_at;?>
+                                        <i class="mdi mdi-calendar"></i> <strong>Creado: </strong><?php echo $resultados[0]->created_at; ?>
                                     </div>
                                     <div class="mb-1">
-                                        <i class="mdi sienna_source_class"></i> <strong>Fuente: </strong><?php  echo $resultados[0]->siennasource;?>
+                                        <i class="mdi sienna_source_class"></i> <strong>Fuente: </strong><?php echo $resultados[0]->siennasource; ?>
                                     </div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-information"></i> <strong>Tema de ayuda: </strong><?php  echo $resultados[0]->topicname;?>
+                                        <i class="mdi mdi-information"></i> <strong>Tema de ayuda: </strong><?php echo $resultados[0]->topicname; ?>
                                     </div>
                                 </div>
                               </div>
-                              
 
-                              </div>
-                              
+
+                            </div>
+
                         </div>
                     </div>
-                    <iframe src="<?php  echo $resultados[0]->conversation_url;?>" width="100%" class="border rounded-3" style="height: 400px!important;"></iframe>    
+                    <iframe src="<?php echo $resultados[0]->conversation_url; ?>" width="100%" class="border rounded-3" style="height: 400px!important;"></iframe>
                     <div class="mt-2">
                         <div class="card widget-flat">
                             <div class="card-body">
                               <div class="d-flex justify-content-between">
-                                <div>  
+                                <div>
                                   <h4 class="fw-normal text-dark" title="Number of Customers">Información de usuario</h4>
                                 </div>
                                 <div>
-                                    <i class="mdi mdi-card-account-details widget-icon bg-secondary-lighten text-secondary"></i>          
+                                    <i class="mdi mdi-card-account-details widget-icon bg-secondary-lighten text-secondary"></i>
                                 </div>
                               </div>
                               <hr style="margin-top: 10px;"/>
                               <div class="d-flex mt-2">
                                 <i class="mdi mdi-card-account-details"></i>&nbsp;Numero cliente:&nbsp;
                                 <span class="badge badge-secondary-lighten line-h">
-                                <?php  echo $resultados[0]->cliente;?>
+                                <?php echo $resultados[0]->cliente; ?>
                                 </span>
                               </div>
                               <div class="d-flex  mt-2">
                                 <i class="mdi mdi-account"></i>&nbsp;Nombre:&nbsp;
                                 <span class="badge badge-secondary-lighten hover-overlay line-h">
-                                <?php  echo $resultados[0]->nya;?>
+                                <?php echo $resultados[0]->nya; ?>
                                 </span>
                               </div>
                               <div class="d-flex mt-2">
                                 <i class="mdi mdi-home"></i>&nbsp;Domicilio:&nbsp;
                                 <span class="badge badge-secondary-lighten line-h">
-                                <?php  echo $resultados[0]->address;?>
+                                <?php echo $resultados[0]->address; ?>
                                 </span>
                               </div>
                               <div class="d-flex mt-2">
                                   <i class="mdi mdi-whatsapp text"></i>&nbsp;Teléfono:&nbsp;
                                   <span class="badge badge-secondary-lighten line-h">
-                                  <?php  echo $resultados[0]->cel;?>
+                                  <?php echo $resultados[0]->cel; ?>
                                   </span>
                                 </div>
                                 <div class="d-flex mt-2">
                                   <i class="mdi mdi-email"></i>&nbsp;Email:&nbsp;
                                   <span class="badge badge-secondary-lighten line-h">
-                                  <?php  echo $resultados[0]->email;?>
+                                  <?php echo $resultados[0]->email; ?>
                                   </span>
                                 </div>
                                 <div class="d-flex mt-2">
                                   <i class="mdi mdi-account-cash"></i>&nbsp;Estado de cuenta:&nbsp;
                                   <span class="badge badge-success-lighten line-h">
-                                  <?php  echo $resultados[0]->a_status;?>
+                                  <?php echo $resultados[0]->a_status; ?>
                                   </span>
-                               
+
                                 </div>
                                 <div class="d-flex mt-2">
                                   <i class="mdi mdi-antenna"></i>&nbsp;Estado de servicio:&nbsp;
                                   <span class="badge badge-success-lighten line-h">
-                                  <?php  echo $resultados[0]->s_status;?>
+                                  <?php echo $resultados[0]->s_status; ?>
                                   </span>
-                                  
+
                                 </div>
                                 <div class="d-flex mt-2">
                                     <i class="mdi mdi-switch"></i>&nbsp;Nodo:&nbsp;
                                     <span class="badge badge-secondary-lighten line-h">
-                                    <?php  echo $resultados[0]->nodo;?>
+                                    <?php echo $resultados[0]->nodo; ?>
                                     </span>
                                   </div>
                                 <div class="d-flex mt-2">
                                     <i class="mdi mdi-map-marker"></i>&nbsp;IP:&nbsp;
                                     <span class="badge badge-secondary-lighten line-h">
-                                    <?php  echo $resultados[0]->ip;?>
+                                    <?php echo $resultados[0]->ip; ?>
                                     </span>
                                   </div>
                                 <div class="d-flex mt-2">
                                     <i class="mdi mdi-currency-usd"></i>&nbsp;Deuda:&nbsp;
                                     <span class="badge badge-secondary-lighten line-h">
-                                    <?php  echo $resultados[0]->deuda;?>
+                                    <?php echo $resultados[0]->deuda; ?>
                                     </span>
                                   </div>
-                                  
+
                               </div>
-                              
-                              
+
+
                         </div>
                     </div>
                 </div>
@@ -223,14 +228,14 @@ function cerrar(result,dd, ee, ff,cliente){
                                     <div class="mb-2">
                                         <label class="form-label">Nota interna</label>
                                         <div class="input-group">
-                                        <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
+                                        <input value="<?php echo session('nombreusuario'); ?>" type="hidden" name="logeado" id="logeado">
 
-                                        <input value="<?php echo $resultados[0]->ticketid;?>" type="hidden" name="idticketseguimiento" id="idticketseguimiento">
+                                        <input value="<?php echo $resultados[0]->ticketid; ?>" type="hidden" name="idticketseguimiento" id="idticketseguimiento">
                                             <input name="comentario" type="text" class="form-control" aria-label="Recipient's username">
                                             <button class="btn btn-primary" type="submit"><i class="mdi mdi-send"></i></button>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                         </form>
                             <div class="mt-2">
@@ -238,40 +243,36 @@ function cerrar(result,dd, ee, ff,cliente){
                                     <h4 class="header-title">Actividad reciente</h4>
                                 </div>
                                 <div class="card-body py-0 mb-3 mt-3 " style="height: 600px;" data-simplebar="init"><div class="simplebar-wrapper" ><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: auto; overflow: hidden scroll;"><div class="simplebar-content" style="padding: 0px 24px;">
-                                   
-                                <?php foreach($segui as $val){
-                                    
-                                    
-                                    if($val->logo<>null){
-                                       
 
-                                        if ($val->tipo == 5) {
-                                            $ht='https://sienamedia.sfo3.digitaloceanspaces.com/'.$val->logo;
-                                        } else {
-                                            $ht='https://sienamedia.sfo3.digitaloceanspaces.com/'.$subdomain_tmp.'/xen/enviados/'.$val->logo;
-                                            
-                                        }
+                                <?php foreach ($segui as $val) {
 
-                                        
-                                        
-                                        $uri='<a target=_blank href="'.$ht.'"><img  src='.$ht.' width="40px;"></a>';
-                                      }else{
-                                        $uri='';
-                                      }
-                                      ?>
+                                                if ($val->logo != null) {
+
+                                                    if ($val->tipo == 5) {
+                                                        $ht = 'https://sienamedia.sfo3.digitaloceanspaces.com/' . $val->logo;
+                                                    } else {
+                                                        $ht = 'https://sienamedia.sfo3.digitaloceanspaces.com/' . $subdomain_tmp . '/xen/enviados/' . $val->logo;
+
+                                                    }
+
+                                                    $uri = '<a target=_blank href="' . $ht . '"><img  src=' . $ht . ' width="40px;"></a>';
+                                                } else {
+                                                    $uri = '';
+                                                }
+                                                ?>
                                  <div class="timeline-alt py-0 " ">
                                 <div class="timeline-item">
-                                    <?php  $tipo=$val->tipo;
-                                echo $color=coloriconos($iconos,$tipo);?>
+                                    <?php $tipo = $val->tipo;
+    echo $color = coloriconos($iconos, $tipo);?>
                                     <div class="timeline-item-info">
-                                    <span class="text-info fw-bold mb-1 d-block"><?php echo $val->descripcion;?></span>
-                                    <small><?php echo $val->autor;?></small>
+                                    <span class="text-info fw-bold mb-1 d-block"><?php echo $val->descripcion; ?></span>
+                                    <small><?php echo $val->autor; ?></small>
                                     <p class="mb-0 pb-2">
-                                    <small class="text-muted"><?php echo $val->created_at;?></small>
+                                    <small class="text-muted"><?php echo $val->created_at; ?></small>
                                     </p>
                                 <span>
-                                    <?php if($uri<>""){?>
-                                <button onclick="ng(`<?php  echo $ht;?>`)" 
+                                    <?php if ($uri != "") {?>
+                                <button onclick="ng(`<?php echo $ht; ?>`)"
                                     class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-img" >
                                         <i class="mdi mdi-notebook" data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-custom-class="mb-1" data-bs-title="Img."></i>
@@ -280,7 +281,7 @@ function cerrar(result,dd, ee, ff,cliente){
                                 </span> </div> </div>
 
                                     <?php }?>
-                            
+
                             </div></div></div><div class="simplebar-placeholder" style="width: auto; height: 353px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 281px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div> <!-- end slimscroll -->
                             </div>
             </div> <!-- end row-->
@@ -290,61 +291,29 @@ function cerrar(result,dd, ee, ff,cliente){
         </div>
           <!-- content -->
       </div>
-      
-      @include('sienna.tu.asignar')
-      @include('sienna.tu.reclamar')
-     
-      @include('sienna.tu.depto')
 
-@include('sienna.ticketsmodals.cerrar')
+       
 
-@include('sienna.ticketsmodals.estados')
-@include('sienna.tu.imagen')
-    
         <!-- Departament modal Status-->
-       
-      <!-- End modal Status -->
-    
-        <!-- Departament modal Status-->
-       
+
       <!-- End modal Status -->
 
-      
+        <!-- Departament modal Status-->
+
+      <!-- End modal Status -->
+
+
 
       <!-- Modal Reclamo Ticket -->
-    
+
 </div>
 <!-- /.modal -->
-      
+
       <!-- End Reclamo Ticket -->
-    
+
 <!-- /.modal-topic -->
 
-<div class="modal fade" id="bs-example-modal-smt" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-header bg-dark text-white">
-                        <h4 class="modal-title" id="mySmallModalLabel">Cambiar Topic</h4>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="/topiccambiar" method="post">
-                            @csrf
-                            <input type="hidden" name="tik" id="idticketestado3" value="">
-                            <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
-                            
-                            <div id="estunico2"></div>
-                                
-                                    
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="submit" class="btn btn-success">Cambiar</button>
-                            </div>
-                        </form>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-</div>
+
 <script>
 function topic(result,dd, ee, ff) {
 
@@ -386,11 +355,11 @@ function ng(ruta) {
 }
 </script>
 <!-- /.modal-topic -->
-     
+
 
 
     <!-- End Solicita numero de cliente -->
-   
+
 
 
       <!-- ============================================================== -->
@@ -401,19 +370,19 @@ function ng(ruta) {
 
 
 
-  
-     
 
-   
 
-</div> 
+
+
+
+</div>
 </div>
 <?php
 // dd($resultados);?>
     <br><br><br>
-  
-    
-   
+
+
+
 </div>
-   
+
     @include('facu.footer')
