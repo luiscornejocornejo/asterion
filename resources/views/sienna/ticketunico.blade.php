@@ -53,7 +53,8 @@ function coloriconos($iconos,$tipo){
                         <i class="mdi mdi-flag" data-bs-toggle="tooltip" data-bs-placement="top"
                         data-bs-custom-class="mb-1" data-bs-title="Cambiar estado."></i>
                     </button>
-                    <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#cerrar-ticket" >
+                    <button onclick="cerrar(`<?php  echo $subdomain_tmp;?>`,`<?php  echo $resultados[0]->ticketid;?>`,`<?php  echo $resultados[0]->conversation_id;?>`,`<?php  echo $resultados[0]->iddepto;?>`,`<?php  echo $resultados[0]->cliente;?>`)" 
+                     class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#cerrar-ticket" >
                         <i class="mdi mdi-check-circle" data-bs-toggle="tooltip" data-bs-placement="top"
                         data-bs-custom-class="mb-1" data-bs-title="Cerrar Ticket."></i>
                     </button>
@@ -437,52 +438,9 @@ function topic(result,dd, ee, ff) {
 <!-- /.modal-topic -->
      
     
-      <!-- Cerrar conversación -->
-      <div class="modal fade" id="sss" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header bg-dark text-white">
-                    <h4 class="modal-title" id="mySmallModalLabel">Cerrar ticket</h4>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
-                </div>
-                <form method="post" action="route">
-                    <div class="modal-body">
-                        ¿Está seguro de cerrar el ticket?
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-success">Si, cerrar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-      <!-- End of Cerrar conversación -->
-
-    <!-- Solicita numero de cliente -->
-    <div id="cerrar-ticket" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-dark text-white">
-                    <h4 class="modal-title" id="standard-modalLabel">Añadir numero de cliente</h4>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
-                </div>
-                <form>
-                <div class="modal-body">
-                    
-                    <label for="client_number" class="form-label">Por favor agrega el número de cliente correspondiente del usuariofirst_name:</label>
-                    <input type="number" class="form-control" name="client_number" id="client_number">
-                </div>
-                
-                </form>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-success">Enviar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+   
     <!-- End Solicita numero de cliente -->
+    @include('sienna.ticketsmodals.cerrar')
 
 
 
