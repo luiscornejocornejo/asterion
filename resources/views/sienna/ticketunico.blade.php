@@ -62,7 +62,7 @@ function cerrar(result,dd, ee, ff,cliente){
                         data-bs-custom-class="mb-1" data-bs-title="Cambiar estado."></i>
                     </button>
                     <button onclick="cerrar(`<?php  echo $subdomain_tmp;?>`,`<?php  echo $resultados[0]->ticketid;?>`,`<?php  echo $resultados[0]->conversation_id;?>`,`<?php  echo $resultados[0]->iddepto;?>`,`<?php  echo $resultados[0]->cliente;?>`)" 
-                     class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#cerrar-ticket" >
+                     class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrar" >
                         <i class="mdi mdi-check-circle" data-bs-toggle="tooltip" data-bs-placement="top"
                         data-bs-custom-class="mb-1" data-bs-title="Cerrar Ticket."></i>
                     </button>
