@@ -175,6 +175,12 @@ function coloriconos($iconos,$tipo){
                                     <?php  echo $resultados[0]->ip;?>
                                     </span>
                                   </div>
+                                <div class="d-flex mt-2">
+                                    <i class="mdi mdi-map-marker"></i>&nbsp;Deuda:&nbsp;
+                                    <span class="badge badge-secondary-lighten line-h">
+                                    <?php  echo $resultados[0]->deuda;?>
+                                    </span>
+                                  </div>
                                   
                               </div>
                               
