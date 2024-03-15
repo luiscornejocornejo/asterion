@@ -467,13 +467,14 @@ function ng(ruta) {
                 <div class="modal-content">
                     <div class="modal-headerbg-dark text-white">
                         hola
-                    <div class="modal-body" id="vista2">
+                   
                     </div>
                     <div class="modal-body">
-                     
+                    <div class="modal-body" id="vista2">
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
+</div>
 </div>
     <!-- End Solicita numero de cliente -->
     @include('sienna.ticketsmodals.cerrar')
