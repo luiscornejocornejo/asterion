@@ -451,10 +451,33 @@ function topic(result,dd, ee, ff) {
 
 
 }
+function mg(ruta) {
+    document.getElementById('vista2').innerHTML = "";
+   // document.getElementById('vista').src = dd;
+    g='<iframe allow="camera;microphone"  src="'+dd+'" width="100%" height="800px" class="border rounded-3" style="height:400px !important"></iframe>';
+    document.getElementById('vista2').innerHTML = g;
+}
 </script>
 <!-- /.modal-topic -->
      
-    
+<div>
+        <div class="modal fade" id="bs-example-modal-img" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                   
+                    <div class="modal-body" id="vista2">
+                        
+                    </div>
+                  
+                   
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+      </div>
+     
+      <div class="card widget-flat">
+  
+</div>
    
     <!-- End Solicita numero de cliente -->
     @include('sienna.ticketsmodals.cerrar')
