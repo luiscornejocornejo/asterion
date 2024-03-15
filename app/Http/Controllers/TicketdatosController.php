@@ -1487,11 +1487,15 @@ class TicketdatosController extends Controller
 
         $query5="select * from iconostipo";
         $resultados5 = DB::select($query5);
+
+        $query6="select * from users where tipousers in ('2','3')";
+        $usersmerchant= DB::select($query6);
        // dd($resultados);
 
         return view("sienna/ticketunico")
         ->with('subdomain_tmp', $subdomain_tmp)
         ->with('segui', $segui)
+        ->with('usersmerchant', $usersmerchant)
         ->with('iconos', $resultados5)
          ->with('resultados', $resultados);
 
