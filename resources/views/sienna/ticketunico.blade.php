@@ -74,6 +74,7 @@ function cerrar(result,dd, ee, ff,cliente){
 
             </div>
 
+        </div>
   <!-- Small modal Status-->
   <div class="modal fade" id="bs-example-modal-sm-assign" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-sm">
