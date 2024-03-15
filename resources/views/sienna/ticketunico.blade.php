@@ -266,45 +266,9 @@ function coloriconos($iconos,$tipo){
       
       
       <!-- Small modal Status-->
-        <div class="modal fade" id="bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-header bg-dark text-white">
-                        <h4 class="modal-title" id="mySmallModalLabel">Estado de Ticket</h4>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="" method="post">
-                            <div class="mt-3">
-                                <div class="form-check mb-2">
-                                    <input type="radio" id="customRadio1" name="customRadio" class="form-check-input">
-                                    <label class="form-check-label" for="customRadio1">Abierto</label>
-                                </div>
-                                <div class="form-check mb-2">
-                                <input type="radio" id="customRadio2" name="customRadio" class="form-check-input">
-                                <label class="form-check-label" for="customRadio2">Progreso</label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input type="radio" id="customRadio3" name="customRadio" class="form-check-input">
-                                <label class="form-check-label" for="customRadio3">Resuelto</label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input type="radio" id="customRadio4" name="customRadio" class="form-check-input">
-                                <label class="form-check-label" for="customRadio4">Cerrado</label>
-                            </div>
-                            
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-success">Cambiar</button>
-                        </div>
-                    </form>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div>
+       
       <!-- End modal Status -->
-
+      @include('sienna.ticketsmodals.estados')
         <!-- Departament modal Status-->
         <div class="modal fade" id="bs-example-modal-sm-assign" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm">
