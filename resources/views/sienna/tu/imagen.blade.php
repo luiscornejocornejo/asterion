@@ -1,12 +1,20 @@
-<div class="modal fade" id="bs-example-modal-img" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
+
+
+
+<div id="standard-modal-img" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dark-header-modalLabel" aria-hidden="true">
+           <div class="modal-dialog ">
                 <div class="modal-content">
-                    <div class="modal-headerbg-dark text-white">
-                        hola
-                   
+                    <div class="modal-header bg-dark">
+                        <h4 class="modal-title text-light" id="dark-header-modalLabel">Reclamar ticket</h4>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
-                    <div class="modal-body">
+             
+
                     <div class="modal-body" id="vista2">
+                       
+                    </div>
+                    <div class="modal-footer">
+                  
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
