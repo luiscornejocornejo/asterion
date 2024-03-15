@@ -24,14 +24,21 @@ function coloriconos($iconos,$tipo){
             <div class="d-flex justify-content-between pb-2">
                
                 <div>
-                    <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo">
-                        <i class="mdi mdi-account-arrow-left" data-bs-toggle="tooltip" data-bs-placement="top"
-                        data-bs-custom-class="mb-1" data-bs-title="Reclamar ticket."></i>
-                    </button>
+                                <?php
+                    $tipodemenu = session('tipodemenu');
+                    if(($tipodemenu =="1")or($tipodemenu =="2")or($tipodemenu =="4")){
+                    ?>
                     <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-assign">
                         <i class="mdi mdi-account-arrow-right" data-bs-toggle="tooltip" data-bs-placement="top"
                         data-bs-custom-class="mb-1" data-bs-title="Asignar ticket"></i>
                     </button>
+                    <?php }else{?>
+                    <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo">
+                        <i class="mdi mdi-account-arrow-left" data-bs-toggle="tooltip" data-bs-placement="top"
+                        data-bs-custom-class="mb-1" data-bs-title="Reclamar ticket."></i>
+                    </button>
+                    <?php }?>
+                    
                     <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-departament">
                         <i class="mdi mdi-account-group" data-bs-toggle="tooltip" data-bs-placement="top"
                         data-bs-custom-class="mb-1" data-bs-title="Asignar departamento."></i>
