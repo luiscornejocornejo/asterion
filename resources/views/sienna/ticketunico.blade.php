@@ -25,13 +25,7 @@ function cerrar(result,dd, ee, ff,cliente){
 <div class="wrapper menuitem-active">
 @include('facu.menu')
 <div class="content-page" style="padding: 0!important;">
-@include('sienna.tu.asignar')
-        @include('sienna.tu.reclamar')
-        @include('sienna.tu.topic')
-        @include('sienna.tu.depto')
-        @include('sienna.ticketsmodals.cerrar')
-        @include('sienna.ticketsmodals.estados')
-        @include('sienna.tu.imagen')
+
           <div class="content">
 
               <!-- Start Content-->
@@ -313,7 +307,13 @@ function cerrar(result,dd, ee, ff,cliente){
 
 <!-- /.modal-topic -->
 
-
+@include('sienna.tu.asignar')
+        @include('sienna.tu.reclamar')
+        @include('sienna.tu.topic')
+        @include('sienna.tu.depto')
+        @include('sienna.ticketsmodals.cerrar')
+        @include('sienna.ticketsmodals.estados')
+        @include('sienna.tu.imagen')
 <script>
 function topic(result,dd, ee, ff) {
 
