@@ -254,25 +254,28 @@ function cerrar(result,dd, ee, ff,cliente){
                                                     $uri = '';
                                                 }
                                                 ?>
-                                 <div class="timeline-alt py-0 " ">
-                                <div class="timeline-item">
-                                    <?php $tipo = $val->tipo;
-    echo $color = coloriconos($iconos, $tipo);?>
-                                    <div class="timeline-item-info">
-                                    <span class="text-info fw-bold mb-1 d-block"><?php echo $val->descripcion; ?></span>
-                                    <small><?php echo $val->autor; ?></small>
-                                    <p class="mb-0 pb-2">
-                                    <small class="text-muted"><?php echo $val->created_at; ?></small>
-                                    </p>
-                                <span>
-                                    <?php if ($uri != "") {?>
-                                <button onclick="ng(`<?php echo $ht; ?>`)"
-                                    class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-img" >
-                                        <i class="mdi mdi-notebook" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-custom-class="mb-1" data-bs-title="Img."></i>
-                                </button>
-                                <?php }?>
-                                </span> </div> </div>
+                                                <div class="timeline-alt py-0 " ">
+                                                <div class="timeline-item">
+                                                    <?php $tipo = $val->tipo;
+                                                        echo $color = coloriconos($iconos, $tipo);?>
+                                                    <div class="timeline-item-info">
+                                                                <span class="text-info fw-bold mb-1 d-block"><?php echo $val->descripcion; ?></span>
+                                                                <small><?php echo $val->autor; ?></small>
+                                                                <p class="mb-0 pb-2">
+                                                                <small class="text-muted"><?php echo $val->created_at; ?></small>
+                                                                </p>
+                                                            <span>
+                                                                <?php if ($uri != "") {?>
+                                                            <button onclick="ng(`<?php echo $ht; ?>`)"
+                                                                class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-img" >
+                                                                    <i class="mdi mdi-notebook" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    data-bs-custom-class="mb-1" data-bs-title="Img."></i>
+                                                            </button>
+                                                            <?php }?>
+                                                            </span>
+                                                     </div> 
+                                                </div>
+                                                </div>
 
                                     <?php }?>
 
