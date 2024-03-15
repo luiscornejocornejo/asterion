@@ -451,7 +451,7 @@ function topic(result,dd, ee, ff) {
 
 
 }
-function mg(ruta) {
+function ng(ruta) {
     document.getElementById('vista2').innerHTML = "";
    // document.getElementById('vista').src = dd;
    // g='<iframe allow="camera;microphone"  src="'+dd+'" width="100%" height="800px" class="border rounded-3" style="height:400px !important"></iframe>';
@@ -465,7 +465,7 @@ function mg(ruta) {
 <div class="modal fade" id="bs-example-modal-img" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
-                    <div class="modal-header bg-dark text-white">
+                    <div class="modal-headerbg-dark text-white">
                         hola
                     <div class="modal-body" id="vista2">
                     </div>
