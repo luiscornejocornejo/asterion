@@ -466,6 +466,7 @@ function mg(ruta) {
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
                     <div class="modal-header bg-dark text-white">
+                        hola
                     <div class="modal-body" id="vista2">
                     </div>
                     <div class="modal-body">
