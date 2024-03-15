@@ -202,6 +202,9 @@ Route::post('/ventasstatus','App\Http\Controllers\TicketdatosController@ventasst
 Route::get('/cerrados','App\Http\Controllers\TicketdatosController@cerrados');
 Route::post('/cerrados','App\Http\Controllers\TicketdatosController@cerradospost');
 
+Route::get('/gpt', function () {
+    return view('/sienna/gpt');
+});
 
 
 //solo sienna
