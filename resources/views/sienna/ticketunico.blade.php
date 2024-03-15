@@ -43,7 +43,8 @@ function coloriconos($iconos,$tipo){
                         <i class="mdi mdi-account-group" data-bs-toggle="tooltip" data-bs-placement="top"
                         data-bs-custom-class="mb-1" data-bs-title="Asignar departamento."></i>
                     </button>
-                    <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm" >
+                    <button onclick="topic(`<?php  echo $subdomain_tmp;?>`,`<?php  echo $resultados[0]->ticketid;?>`,`<?php  echo $resultados[0]->conversation_id;?>`,`<?php  echo $resultados[0]->iddepto;?>`)" 
+                     class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smt" >
                         <i class="mdi mdi-notebook" data-bs-toggle="tooltip" data-bs-placement="top"
                         data-bs-custom-class="mb-1" data-bs-title="Cambiar topic."></i>
                     </button>
@@ -240,17 +241,17 @@ function coloriconos($iconos,$tipo){
                                       ?>
                                 
                                 <div class="timeline-item">
-                <?php  $tipo=$val->tipo;
-               echo $color=coloriconos($iconos,$tipo);?>
-                <div class="timeline-item-info">
-                <span class="text-info fw-bold mb-1 d-block"><?php echo $val->descripcion;?></span>
-                <small><?php echo $val->autor;?></small>
-                <p class="mb-0 pb-2">
-                <small class="text-muted"><?php echo $val->created_at;?></small>
-                </p>
-            <span><?php echo $uri;?></span> </div> </div>
+                                    <?php  $tipo=$val->tipo;
+                                echo $color=coloriconos($iconos,$tipo);?>
+                                    <div class="timeline-item-info">
+                                    <span class="text-info fw-bold mb-1 d-block"><?php echo $val->descripcion;?></span>
+                                    <small><?php echo $val->autor;?></small>
+                                    <p class="mb-0 pb-2">
+                                    <small class="text-muted"><?php echo $val->created_at;?></small>
+                                    </p>
+                                <span><?php echo $uri;?></span> </div> </div>
 
-                <?php }?>
+                                    <?php }?>
                             
                             </div></div></div><div class="simplebar-placeholder" style="width: auto; height: 353px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 281px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div> <!-- end slimscroll -->
                             </div>
@@ -408,7 +409,35 @@ function coloriconos($iconos,$tipo){
       
       <!-- End Reclamo Ticket -->
     
+<!-- /.modal-topic -->
 
+<div class="modal fade" id="bs-example-modal-smt" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark text-white">
+                        <h4 class="modal-title" id="mySmallModalLabel">Cambiar Topic</h4>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/topiccambiar" method="post">
+                            @csrf
+                            <input type="hidden" name="tik" id="idticketestado3" value="">
+                            <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
+                            
+                            <div id="estunico2"></div>
+                                
+                                    
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-success">Cambiar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+</div>
+
+<!-- /.modal-topic -->
      
     
       <!-- Cerrar conversación -->
