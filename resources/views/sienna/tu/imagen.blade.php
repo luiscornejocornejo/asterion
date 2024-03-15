@@ -5,7 +5,7 @@
            <div class="modal-dialog ">
                 <div class="modal-content">
                     <div class="modal-header bg-dark">
-                        <h4 class="modal-title text-light" id="dark-header-modalLabel">Reclamar ticket</h4>
+                        <h4 class="modal-title text-light" id="dark-header-modalLabel">Archivo</h4>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
              
