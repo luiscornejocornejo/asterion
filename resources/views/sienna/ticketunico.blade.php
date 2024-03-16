@@ -86,7 +86,7 @@ function cerrar(result,dd, ee, ff,cliente){
                             <div class="card-body">
                               <div class="d-flex justify-content-between">
                                 <div>
-                                  <h4 class="fw-normal text-dark" title="Number of Customers">Información del Ticket #<?php echo $resultados[0]->creacion; ?></h4>
+                                  <h4 class="fw-normal text-dark" title="Number of Customers">Información del Ticket #<?php echo $resultados[0]->ticketid; ?></h4>
                                 </div>
                                 <div>
                                     <i class="mdi mdi-note-text widget-icon bg-secondary-lighten text-secondary"></i>
@@ -109,7 +109,7 @@ function cerrar(result,dd, ee, ff,cliente){
 
                                 <div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-calendar"></i> <strong>Creado: </strong><?php echo $resultados[0]->created_at; ?>
+                                        <i class="mdi mdi-calendar"></i> <strong>Creado: </strong><?php echo $resultados[0]->creacion; ?>
                                     </div>
                                     <div class="mb-1">
                                         <i class="mdi sienna_source_class"></i> <strong>Fuente: </strong><?php echo $resultados[0]->siennasource; ?>
