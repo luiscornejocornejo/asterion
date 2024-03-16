@@ -109,7 +109,7 @@ class siennaController extends Controller
 
     $resultados = DB::select($query);
 
-    $listadono=array ('mysql','information_schema','performance_schema','sys','defaultdb','telesmart','anterior','futurity');
+    $listadono=array ('mysql','information_schema','performance_schema','sys','defaultdb','telesmart','anterior','amecom2','betured');
     foreach($resultados as $val){
 
       echo $val->Database;
@@ -124,9 +124,26 @@ class siennaController extends Controller
     
       
     echo   $query1="
-
+    CREATE FUNCTION ".$val->Database.".convertirTiempo(fecha DATETIME) 
+    RETURNS VARCHAR(255) DETERMINISTIC
+    BEGIN 
+        DECLARE resultado VARCHAR(255);
+        
+        IF TIMESTAMPDIFF(MINUTE, fecha, NOW()) < 1 THEN
+            SET resultado = 'hace unos momentos';
+        ELSEIF TIMESTAMPDIFF(MINUTE, fecha, NOW()) < 60 THEN
+            SET resultado = CONCAT('hace ', TIMESTAMPDIFF(MINUTE, fecha, NOW()), ' minutos');
+        ELSEIF TIMESTAMPDIFF(HOUR, fecha, NOW()) < 24 THEN
+            SET resultado = CONCAT('hace ', TIMESTAMPDIFF(HOUR, fecha, NOW()), ' horas');
+        ELSEIF TIMESTAMPDIFF(DAY, fecha, NOW()) < 2 THEN
+            SET resultado = 'ayer';
+        ELSE
+            SET resultado = CONCAT('hace ', TIMESTAMPDIFF(DAY, fecha, NOW()), ' días');
+        END IF;
+        RETURN resultado;
+    END
   
-    ALTER TABLE ".$val->Database.".siennatickets ADD timeoflive DATETIME DEFAULT CURRENT_TIMESTAMP NULL;
+ 
    
 
          ";
