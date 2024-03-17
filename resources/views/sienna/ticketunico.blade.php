@@ -26,7 +26,7 @@ function cerrar(result,dd, ee, ff,cliente){
 @include('facu.menu')
 <div class="content-page" style="padding: 0!important;">
 
-          <div class="content">
+        <div class="content">
 
               <!-- Start Content-->
 
@@ -282,18 +282,25 @@ function cerrar(result,dd, ee, ff,cliente){
                             </div>
                     </div>
                 </div>
-                <div class="simplebar-placeholder" style="width: auto; height: 353px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 281px; transform: translate3d(0px, 0px, 0px); display: block;">
+                <div class="simplebar-placeholder" style="width: auto; height: 353px;"></div>
                 </div>
-            </div>
-        </div> <!-- end slimscroll -->
+                <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+                    <div class="simplebar-scrollbar" style="width: 0px; display: none;">
+                    </div>
+                </div>
+                <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+                    <div class="simplebar-scrollbar" style="height: 281px; transform: translate3d(0px, 0px, 0px); display: block;">
+                    </div>
+                </div>
+            </div> <!-- end slimscroll -->
                             </div>
             </div> <!-- end row-->
                 </div>
             </div>
               <!-- container -->
-        </div>
+</div>
           <!-- content -->
-      </div>
+      
 
        
 
