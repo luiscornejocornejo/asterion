@@ -30,56 +30,56 @@ function cerrar(result,dd, ee, ff,cliente){
 
               <!-- Start Content-->
 
-        <div class="container pt-2 ">
-            <div class="d-flex justify-content-between pb-2">
+            <div class="container pt-2 ">
+                <div class="d-flex justify-content-between pb-2">
 
-                <div>
-                                <?php
-                                    $tipodemenu = session('tipodemenu');
-                                    if (($tipodemenu == "1") or ($tipodemenu == "2") or ($tipodemenu == "4")) {
-                                        ?>
-                    <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-assign">
-                        <i class="mdi mdi-account-arrow-right" data-bs-toggle="tooltip" data-bs-placement="top"
-                        data-bs-custom-class="mb-1" data-bs-title="Asignar ticket"></i>
-                    </button>
-                    <?php } else {?>
-                    <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo">
-                        <i class="mdi mdi-account-arrow-left" data-bs-toggle="tooltip" data-bs-placement="top"
-                        data-bs-custom-class="mb-1" data-bs-title="Reclamar ticket."></i>
-                    </button>
-                    <?php }?>
-                    <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-departament">
-                        <i class="mdi mdi-account-group" data-bs-toggle="tooltip" data-bs-placement="top"
-                        data-bs-custom-class="mb-1" data-bs-title="Asignar departamento."></i>
-                    </button>
-                    <button onclick="topic(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->conversation_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`)"
-                     class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smt" >
-                        <i class="mdi mdi-notebook" data-bs-toggle="tooltip" data-bs-placement="top"
-                        data-bs-custom-class="mb-1" data-bs-title="Cambiar topic."></i>
-                    </button>
-                    <button onclick="estado2(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->conversation_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`)"
-                     class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm" >
-                        <i class="mdi mdi-flag" data-bs-toggle="tooltip" data-bs-placement="top"
-                        data-bs-custom-class="mb-1" data-bs-title="Cambiar estado."></i>
-                    </button>
-                    <button onclick="cerrar(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->conversation_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`,`<?php echo $resultados[0]->cliente; ?>`)"
-                     class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrar" >
-                        <i class="mdi mdi-check-circle" data-bs-toggle="tooltip" data-bs-placement="top"
-                        data-bs-custom-class="mb-1" data-bs-title="Cerrar Ticket."></i>
-                    </button>
+                    <div>
+                                    <?php
+                                        $tipodemenu = session('tipodemenu');
+                                        if (($tipodemenu == "1") or ($tipodemenu == "2") or ($tipodemenu == "4")) {
+                                            ?>
+                        <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-assign">
+                            <i class="mdi mdi-account-arrow-right" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-custom-class="mb-1" data-bs-title="Asignar ticket"></i>
+                        </button>
+                        <?php } else {?>
+                        <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo">
+                            <i class="mdi mdi-account-arrow-left" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-custom-class="mb-1" data-bs-title="Reclamar ticket."></i>
+                        </button>
+                        <?php }?>
+                        <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-departament">
+                            <i class="mdi mdi-account-group" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-custom-class="mb-1" data-bs-title="Asignar departamento."></i>
+                        </button>
+                        <button onclick="topic(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->conversation_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`)"
+                        class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smt" >
+                            <i class="mdi mdi-notebook" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-custom-class="mb-1" data-bs-title="Cambiar topic."></i>
+                        </button>
+                        <button onclick="estado2(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->conversation_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`)"
+                        class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm" >
+                            <i class="mdi mdi-flag" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-custom-class="mb-1" data-bs-title="Cambiar estado."></i>
+                        </button>
+                        <button onclick="cerrar(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->conversation_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`,`<?php echo $resultados[0]->cliente; ?>`)"
+                        class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrar" >
+                            <i class="mdi mdi-check-circle" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-custom-class="mb-1" data-bs-title="Cerrar Ticket."></i>
+                        </button>
 
+
+                    </div>
 
                 </div>
 
             </div>
-
-        </div>
   <!-- Small modal Status-->
 
       <!-- End modal Status -->
 
 
-            <div class="row">
+            <div class="row m-2">
                 <div class="col-sm-12 col-lg-8 col-xxl-9">
                     <div class="mt-2">
                         <div class="card widget-flat">
@@ -279,7 +279,13 @@ function cerrar(result,dd, ee, ff,cliente){
 
                                     <?php }?>
 
-                            </div></div></div><div class="simplebar-placeholder" style="width: auto; height: 353px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 281px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div> <!-- end slimscroll -->
+                            </div>
+                    </div>
+                </div>
+                <div class="simplebar-placeholder" style="width: auto; height: 353px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 281px; transform: translate3d(0px, 0px, 0px); display: block;">
+                </div>
+            </div>
+        </div> <!-- end slimscroll -->
                             </div>
             </div> <!-- end row-->
                 </div>
