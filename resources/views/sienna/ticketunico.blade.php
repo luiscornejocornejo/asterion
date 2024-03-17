@@ -77,7 +77,7 @@ function cerrar(result,dd, ee, ff,cliente){
   <!-- Small modal Status-->
 
       <!-- End modal Status -->
-
+ 
 
             <div class="row m-2">
                 <div class="col-sm-12 col-lg-8 col-xxl-9">
