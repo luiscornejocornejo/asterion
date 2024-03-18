@@ -539,7 +539,7 @@ class siennaticketsController extends Controller
          union 
 
          select *,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
-        b.nombre as depto,b.id as iddepto,d.nombre topicnombre,CONVERT_TZ(a.created_at,  'utc','America/Argentina/Buenos_Aires')  as creado,
+        b.nombre as depto,b.id as iddepto,d.nombre topicnombre,convertirTiempo(a.created_at)  as creado,
 
         a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado 
         from ".$merchant.".siennatickets a
