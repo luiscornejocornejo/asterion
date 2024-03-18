@@ -253,6 +253,7 @@ function coloriconos($iconos, $tipo)
                                                                 <span>
                                                                     <?php if ($uri != "") { ?>
                                                                         <span onclick="ng(`<?php echo $ht; ?>`)" class="link-primary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-img">
+                                                                            Ver archivo    
                                                                         </span>
                                                                     <?php } ?>
                                                                 </span>
