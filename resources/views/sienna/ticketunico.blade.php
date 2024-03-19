@@ -61,7 +61,7 @@ function coloriconos($iconos, $tipo)
 
             <div class="row">
                 <div class="col-sm-12 col-lg-8 col-xxl-9">
-                    <div class="mt-2">
+                    <div>
                         <div class="card widget-flat">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
