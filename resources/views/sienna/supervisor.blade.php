@@ -56,7 +56,7 @@ let usersmerchant = {!! json_encode($usersmerchant,JSON_FORCE_OBJECT) !!};
 
 var frecuencia =<?php echo session('frecuencia');?>;
 
-//identificadorIntervaloDeTiempo = setInterval(maxid, frecuencia);
+identificadorIntervaloDeTiempo = setInterval(maxid, frecuencia);
 function pedir2(dd) {
 
 document.getElementById("idticketpedir2").value = dd;
