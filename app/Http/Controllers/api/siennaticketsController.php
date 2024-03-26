@@ -579,6 +579,10 @@ class siennaticketsController extends Controller
         $address = $request->address;
         $ip = $request->ip;
         $nodo = $request->nodo;
+        $asignado=0;
+        if($request->siennasource='5'){
+            $asignado=99999;
+        }
 
         $siebotchanel=siennasource::find($siennasource);
         $bot_channel=$siebotchanel->nombre;
@@ -596,7 +600,7 @@ class siennaticketsController extends Controller
         $si->siennasource = $siennasource;
         $si->cel = $cel;
         $si->nya = $nya;
-        $si->asignado = 0;
+        $si->asignado = $asignado;
 
 
         //$user_id=str_replace("+","",$user_id);  
