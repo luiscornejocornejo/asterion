@@ -9,10 +9,7 @@
                     <div class="card widget-flat">
                         <div class="card-body">
                           <div class="d-flex justify-content-between">
-                            <div class="d-flex">
-                              <i class="mdi mdi-ticket-account line-h me-1 text-warning" style="font-size: 23px;"></i>
-                              <h4 class="fw-normal text-dark" title="Number of Customers">Ticket #001123</h4>
-                            </div>
+                           
                             <div>
                               <div id="historico"></div>
                                        
