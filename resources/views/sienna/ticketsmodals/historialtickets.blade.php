@@ -14,7 +14,7 @@
                               <h4 class="fw-normal text-dark" title="Number of Customers">Ticket #001123</h4>
                             </div>
                             <div>
-                              <div id="historial"></div>
+                              <div id="historico"></div>
                               <div class="">
                                 <button class="btn btn-info" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Estado de Ticket
