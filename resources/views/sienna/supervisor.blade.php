@@ -254,7 +254,7 @@ function topic(result,dd, ee, ff) {
 function historico(result,dd) {
 
 
-  //document.getElementById("historico").innerHTML = "";
+  document.getElementById("historico").innerHTML = "";
 url = "https://"+result+".suricata.cloud/api/historico?cliente=" + dd;
 axios.get(url)
 .then(function (response) {
