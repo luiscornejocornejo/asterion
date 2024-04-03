@@ -1335,4 +1335,20 @@ class siennaticketsController extends Controller
         $resultados = DB::select($query);
         return $resultados;
     }
+
+    
+    public function historico(Request $request)
+    {
+        $cliente=$request->cliente;
+        $resultados = "";
+        $dom=$this->dominio();
+        $query="select *
+        from ".$dom.".siennatickets a 
+        join ".$dom.".siennadepto s 
+        on s.id=a.siennadepto 
+        where siennacliente<>'".$cliente."
+        ";
+        $resultados = DB::select($query);
+        return $resultados;
+    }
 }
