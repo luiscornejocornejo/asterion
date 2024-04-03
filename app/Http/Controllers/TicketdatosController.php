@@ -1442,7 +1442,7 @@ class TicketdatosController extends Controller
     private function limpiar($query)
     {
         $query = strtolower($query);
-        $healthy = array("drop", "truncate", "insert", "update ");
+        $healthy = array("drop", "truncate", "insert", "update ", "' ");
         $yummy = array("", "", "", "");
 
         $query = str_replace($healthy, $yummy, $query);
