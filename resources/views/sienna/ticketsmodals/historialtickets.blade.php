@@ -15,32 +15,13 @@
                             </div>
                             <div>
                               <div id="historico"></div>
-                              <div class="">
-                                <button class="btn btn-info" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Estado de Ticket
-                                </button>
-                              </div>            
+                                       
                             </div>
                           </div>
-                          <hr />
-                          <div class="d-flex mt-4">
-                            <i class="ri-question-answer-line"></i>&nbsp;Tema de ayuda:&nbsp;
-                            <span class="badge badge-secondary-lighten hover-overlay line-h">
-                              Consulta Administrativa
-                            </span>
-                          </div>
-                          <div class="d-flex mt-2">
-                            <i class="ri-building-4-line"></i>&nbsp;Departamento:&nbsp;
-                            <span class="badge badge-secondary-lighten line-h">
-                              Facturación/Pago
-                            </span>
-                          </div>
-                          <div class="d-flex mt-2">
-                            <i class="mdi mdi-calendar-clock"></i>&nbsp;Fecha de cierre:&nbsp;
-                            <span class="badge badge-secondary-lighten line-h">
-                              29/11/2023 14:30:34
-                            </span>
-                          </div>
+                          
+                         
+                        
+                          
                           </div> 
                         </div>
                         

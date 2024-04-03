@@ -267,13 +267,15 @@ axios.get(url)
       console.log(response.data[i].nombre);
 
 
-      dato += ' <div class="mt-3">' +
+      dato += ' <div class="mt-3"><div class="">' +
+                                '<button class="btn btn-info" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'+response.data[i].nombre +'</button>' +
+                              '</div>   ' +
 
           '<div class="form-check mb-2">' +
-          ' <input type="radio" id="customRadio' + response.data[i].id + '" name="estado" value="' + response.data[i].id + '"  class="form-check-input">' +
+          ' ' +
 
-          '<label class="form-check-label" for="customRadio' + response.data[i].id + '">' + response.data[i].nombre + '</label>' +
-          '</div>' +
+          '<a href="https://ispgroup.suricata.cloud/ticketunico?tick='+ response.data[i].id+'" class="form-check-label" >' + response.data[i].topicname + '</a>' +
+          '</div><hr />' +
 
           ' </div>';
 
