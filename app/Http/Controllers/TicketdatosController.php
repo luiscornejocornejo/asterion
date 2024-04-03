@@ -1392,34 +1392,36 @@ class TicketdatosController extends Controller
                 $linknetclientes = new linknetclientes();
 
                echo  $codigo = $this->limpiar($lista[0]);
-               echo $saldo_mes = $this->limpiar($lista[1]);
+               echo  $documento = $this->limpiar($lista[1]);
                echo  $nombre = $this->limpiar($lista[2]);
-               echo  $numeros = $this->limpiar($lista[3]);
-               echo  $servicios = $this->limpiar($lista[4]);
-               echo  $domicilio = $this->limpiar($lista[5]);
-               echo  $telefono = $this->limpiar($lista[6]);
-               echo  $email = $this->limpiar($lista[7]);
-               echo  $clave = $this->limpiar($lista[8]);
-               echo  $empresa = $this->limpiar($lista[9]);
-               echo  $cuentas = $this->limpiar($lista[10]);
-               echo  $plan = $this->limpiar($lista[11]);
-               echo  $valor = $this->limpiar($lista[12]);
-               echo  $nodo = $this->limpiar($lista[13]);
-              
+               echo  $apellido = $this->limpiar($lista[3]);
+               echo  $domicilio = $this->limpiar($lista[4]);
+               echo  $telefono = $this->limpiar($lista[5]);
+               echo  $email = $this->limpiar($lista[6]);
+               echo  $servicios = $this->limpiar($lista[7]);
+               echo  $plan = $this->limpiar($lista[8]);
+               echo  $nodo = $this->limpiar($lista[9]);
+               echo  $complejo = $this->limpiar($lista[10]);
+               echo  $empresa = $this->limpiar($lista[11]);
+               echo  $saldo_mes = $this->limpiar($lista[12]);
+
+             
+
                $linknetclientes->codigo=$codigo;
-               $linknetclientes->saldo_mes=$saldo_mes;
+               $linknetclientes->documento=$documento;
                $linknetclientes->nombre=$nombre;
-               $linknetclientes->numeros=$numeros;
-               $linknetclientes->servicios=$servicios;
+               $linknetclientes->apellido=$apellido;
                $linknetclientes->domicilio=$domicilio;
                $linknetclientes->telefono=$telefono;
                $linknetclientes->email=$email;
-               $linknetclientes->clave=$clave;
-               $linknetclientes->empresa=$empresa;
-               $linknetclientes->cuentas=$cuentas;
+               $linknetclientes->servicios=$servicios;
                $linknetclientes->plan=$plan;
-               $linknetclientes->valor=$valor;
                $linknetclientes->nodo=$nodo;
+               $linknetclientes->complejo=$complejo;
+               $linknetclientes->empresa=$empresa;
+               $linknetclientes->saldo_mes=$saldo_mes;
+
+               
                $linknetclientes->save();
              
                 $cont++;
