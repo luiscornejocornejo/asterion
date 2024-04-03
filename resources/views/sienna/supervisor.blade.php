@@ -267,13 +267,11 @@ axios.get(url)
       console.log(response.data[i].nombre);
 
 
-      dato += ' <div class="mt-3"><div class="">' +
-                                '<button class="btn btn-info" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'+response.data[i].nombreestado +'</button>' +
-                              '</div>   ' +
+      dato += ' <div class="mt-3"> ' +
 
           '<div class="form-check mb-2">' +
           'estado:'+response.data[i].nombreestado +'<br> ' +
-          'depto:'+response.data[i].depto +'<br> ' +
+          'depto:'+response.data[i].nombredepto +'<br> ' +
           'fecha:'+response.data[i].created_at +'<br> ' +
 
           '<a target="_blank" href="https://ispgroup.suricata.cloud/ticketunico?tick='+ response.data[i].id+'" class="form-check-label" >' + response.data[i].siennatopicnombre + '</a>' +
