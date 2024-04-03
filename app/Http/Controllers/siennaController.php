@@ -153,6 +153,7 @@ class siennaController extends Controller
     COMMENT='';
     
          ";
+         $query1="";
          try {
             $resultados1 = DB::select($query1);
          }
