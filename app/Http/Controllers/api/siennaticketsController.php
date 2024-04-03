@@ -1346,7 +1346,7 @@ class siennaticketsController extends Controller
         from ".$dom.".siennatickets a 
         join ".$dom.".siennadepto s 
         on s.id=a.siennadepto 
-        where siennacliente<>'".$cliente."
+        where siennacliente<>'".$cliente."'
         ";
         $resultados = DB::select($query);
         return $resultados;
