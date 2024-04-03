@@ -165,7 +165,7 @@ function maxid() {
                 '<button  onclick="listadoseguimientos(`' + result + '`,`' + response.data[i].ticketid + '`)"   class="btn btn-secondary " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="mdi mdi-link" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="mb-1" data-bs-title="Seguimiento."></i></button>' +
                 ''+
                 '  '+aviso+ ''+
-                '<button       class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modalHistory">  <i class="mdi mdi-history" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Historial."></i>           </button> </td </tr>';
+                '<button   onclick="historico(`' + result + '`,`' + response.data[i].cliente + '`)"      class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modalHistory">  <i class="mdi mdi-history" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Historial."></i>           </button> </td </tr>';
 
               
 
@@ -206,14 +206,14 @@ function maxid() {
 
 function topic(result,dd, ee, ff) {
 
-document.getElementById("idticketestado3").value = dd;
+  document.getElementById("idticketestado3").value = dd;
 
 
 
 
-url = "https://"+result+".suricata.cloud/api/topicxdepto?depto=" + ff;
-axios.get(url)
-.then(function (response) {
+  url = "https://"+result+".suricata.cloud/api/topicxdepto?depto=" + ff;
+  axios.get(url)
+  .then(function (response) {
     // función que se ejecutará al recibir una respuesta
     console.log(response.data);
 
@@ -239,14 +239,58 @@ axios.get(url)
 
 
 
-})
-.catch(function (error) {
-    // función para capturar el error
-    console.log(error);
-})
-.then(function () {
-    // función que siempre se ejecuta
-});
+  })
+  .catch(function (error) {
+      // función para capturar el error
+      console.log(error);
+  })
+  .then(function () {
+      // función que siempre se ejecuta
+  });
+
+
+}
+
+function historico(result,dd) {
+
+
+  document.getElementById("historico").innerHTML = "";
+url = "https://"+result+".suricata.cloud/api/historico?cliente=" + dd;
+axios.get(url)
+.then(function (response) {
+  // función que se ejecutará al recibir una respuesta
+  console.log(response.data);
+
+  dato = "";
+  for (i = 0; i < response.data.length; i++) {
+      console.log(response.data[i].id);
+      console.log(response.data[i].nombre);
+
+
+      dato += ' <div class="mt-3">' +
+
+          '<div class="form-check mb-2">' +
+          ' <input type="radio" id="customRadio' + response.data[i].id + '" name="estado" value="' + response.data[i].id + '"  class="form-check-input">' +
+
+          '<label class="form-check-label" for="customRadio' + response.data[i].id + '">' + response.data[i].nombre + '</label>' +
+          '</div>' +
+
+          ' </div>';
+
+
+  }
+  document.getElementById("historico").innerHTML = dato;
+
+
+
+    })
+    .catch(function (error) {
+        // función para capturar el error
+        console.log(error);
+    })
+    .then(function () {
+        // función que siempre se ejecuta
+    });
 
 
 }
