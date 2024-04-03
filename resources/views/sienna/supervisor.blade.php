@@ -272,9 +272,11 @@ axios.get(url)
                               '</div>   ' +
 
           '<div class="form-check mb-2">' +
-          ' ' +
+          'estado:'+response.data[i].nombreestado +'<br> ' +
+          'depto:'+response.data[i].depto +'<br> ' +
+          'fecha:'+response.data[i].created_at +'<br> ' +
 
-          '<a href="https://ispgroup.suricata.cloud/ticketunico?tick='+ response.data[i].id+'" class="form-check-label" >' + response.data[i].siennatopicnombre + '</a>' +
+          '<a target="_blank" href="https://ispgroup.suricata.cloud/ticketunico?tick='+ response.data[i].id+'" class="form-check-label" >' + response.data[i].siennatopicnombre + '</a>' +
           '</div><hr />' +
 
           ' </div>';
