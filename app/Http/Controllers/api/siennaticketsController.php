@@ -1342,7 +1342,7 @@ class siennaticketsController extends Controller
         $cliente=$request->cliente;
         $resultados = "";
         $dom=$this->dominio();
-        $query="select *,b.nombre nombreestado,c.nombre nombredepto,a.user_id,
+        $query="select *,b.nombre nombreestado,c.nombre nombredepto,a.user_id, a.id as ticketid,
         a.id ticketid,d.nombre siennatopicnombre,a.nya nya from ".$dom.".siennatickets a 
         left join ".$dom.".siennaestado b on b.id=a.siennaestado
         left join ".$dom.".siennadepto c on c.id=a.siennadepto

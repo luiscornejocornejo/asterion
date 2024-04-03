@@ -274,7 +274,7 @@ axios.get(url)
           'depto:'+response.data[i].nombredepto +'<br> ' +
           'fecha:'+response.data[i].created_at +'<br> ' +
 
-          '<a target="_blank" href="https://ispgroup.suricata.cloud/ticketunico?tick='+ response.data[i].id+'" class="form-check-label" >' + response.data[i].siennatopicnombre + '</a>' +
+          '<a target="_blank" href="https://ispgroup.suricata.cloud/ticketunico?tick='+ response.data[i].ticketid+'" class="form-check-label" >' + response.data[i].siennatopicnombre + '</a>' +
           '</div><hr />' +
 
           ' </div>';
