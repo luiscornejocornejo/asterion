@@ -1391,19 +1391,19 @@ class TicketdatosController extends Controller
                 $lista = explode(",", $búfer);
                 $linknetclientes = new linknetclientes();
 
-               echo  $codigo = $this->limpiar($lista[0]);
-               echo  $documento = $this->limpiar($lista[1]);
-               echo  $nombre = $this->limpiar($lista[2]);
-               echo  $apellido = $this->limpiar($lista[3]);
-               echo  $domicilio = $this->limpiar($lista[4]);
-               echo  $telefono = $this->limpiar($lista[5]);
-               echo  $email = $this->limpiar($lista[6]);
-               echo  $servicios = $this->limpiar($lista[7]);
-               echo  $plan = $this->limpiar($lista[8]);
-               echo  $nodo = $this->limpiar($lista[9]);
-               echo  $complejo = $this->limpiar($lista[10]);
-               echo  $empresa = $this->limpiar($lista[11]);
-               echo  $saldo_mes = $this->limpiar($lista[12]);
+                 $codigo = $this->limpiar($lista[0]);
+                 $documento = $this->limpiar($lista[1]);
+                 $nombre = $this->limpiar($lista[2]);
+                 $apellido = $this->limpiar($lista[3]);
+                 $domicilio = $this->limpiar($lista[4]);
+                 $telefono = $this->limpiar($lista[5]);
+                 $email = $this->limpiar($lista[6]);
+                 $servicios = $this->limpiar($lista[7]);
+                 $plan = $this->limpiar($lista[8]);
+                 $nodo = $this->limpiar($lista[9]);
+                 $complejo = $this->limpiar($lista[10]);
+                 $empresa = $this->limpiar($lista[11]);
+                 $saldo_mes = $this->limpiar($lista[12]);
 
              
 
