@@ -1375,6 +1375,7 @@ class TicketdatosController extends Controller
 
 
         //
+       
         linknetclientes::truncate();
 
         $archivo = $request->file('file');
@@ -1421,8 +1422,14 @@ class TicketdatosController extends Controller
                $linknetclientes->empresa=$empresa;
                $linknetclientes->saldo_mes=$saldo_mes;
 
+               try{
+                $linknetclientes->save();
+            } catch (\Illuminate\Database\QueryException $ex) {
+                //$message22 = $message->move($folder_path = "noleidos");
+                echo "nose pudo:".$ex;
+                continue;
+            }
                
-               $linknetclientes->save();
              
                 $cont++;
             }
