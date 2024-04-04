@@ -1389,7 +1389,7 @@ class TicketdatosController extends Controller
                     continue;
                 }  
 
-                $lista = explode(",", $búfer);
+                $lista = explode(";", $búfer);
                 $linknetclientes = new linknetclientes();
 
                  $codigo = $this->limpiar2($lista[0]);
