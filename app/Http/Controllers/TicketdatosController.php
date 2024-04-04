@@ -1392,19 +1392,19 @@ class TicketdatosController extends Controller
                 $lista = explode(",", $búfer);
                 $linknetclientes = new linknetclientes();
 
-                 $codigo = $this->limpiar($lista[0]);
-                 $documento = $this->limpiar($lista[1]);
-                 $nombre = $this->limpiar($lista[2]);
-                 $apellido = $this->limpiar($lista[3]);
-                 $domicilio = $this->limpiar($lista[4]);
-                 $telefono = $this->limpiar($lista[5]);
-                 $email = $this->limpiar($lista[6]);
-                 $servicios = $this->limpiar($lista[7]);
-                 $plan = $this->limpiar($lista[8]);
-                 $nodo = $this->limpiar($lista[9]);
-                 $complejo = $this->limpiar($lista[10]);
-                 $empresa = $this->limpiar($lista[11]);
-                 $saldo_mes = $this->limpiar($lista[12]);
+                 $codigo = $this->limpiar2($lista[0]);
+                 $documento = $this->limpiar2($lista[1]);
+                 $nombre = $this->limpiar2($lista[2]);
+                 $apellido = $this->limpiar2($lista[3]);
+                 $domicilio = $this->limpiar2($lista[4]);
+                 $telefono = $this->limpiar2($lista[5]);
+                 $email = $this->limpiar2($lista[6]);
+                 $servicios = $this->limpiar2($lista[7]);
+                 $plan = $this->limpiar2($lista[8]);
+                 $nodo = $this->limpiar2($lista[9]);
+                 $complejo = $this->limpiar2($lista[10]);
+                 $empresa = $this->limpiar2($lista[11]);
+                 $saldo_mes = $this->limpiar2($lista[12]);
 
              
 
@@ -1449,7 +1449,17 @@ class TicketdatosController extends Controller
     private function limpiar($query)
     {
         $query = strtolower($query);
-        $healthy = array("drop", "truncate", "insert", "update ", "' ");
+        $healthy = array("drop", "truncate", "insert", "update ");
+        $yummy = array("", "", "", "");
+
+        $query = str_replace($healthy, $yummy, $query);
+
+        return $query;
+    }
+    private function limpiar2($query)
+    {
+        $query = strtolower($query);
+        $healthy = array("drop", "truncate", "insert", "update ", ", ");
         $yummy = array("", "", "", "");
 
         $query = str_replace($healthy, $yummy, $query);
