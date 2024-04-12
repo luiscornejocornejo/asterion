@@ -580,7 +580,7 @@ class siennaticketsController extends Controller
         $ip = $request->ip;
         $nodo = $request->nodo;
         $asignado=0;
-        if($request->siennasource='5'){
+        if($request->siennasource=='5'){
             $asignado=99999;
         }
 
