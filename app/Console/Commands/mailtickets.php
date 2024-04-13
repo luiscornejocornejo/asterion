@@ -65,7 +65,7 @@ class mailtickets  extends Command
        // dd($folderluis);
         $messages=$folderluis->query()->all()->get();
         foreach ($messages as $message) {
-            $nya="";
+            $nya=""; 
          echo    $asunto=$message->getSubject();
     
             $llegando=$message->getHeader()->getAttributes()["from"];
