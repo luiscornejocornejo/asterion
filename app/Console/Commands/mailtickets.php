@@ -64,7 +64,24 @@ class mailtickets  extends Command
         
        // dd($folderluis);
         $messages=$folderluis->query()->all()->get();
-        dd($messages);
+        foreach ($messages as $message) {
+            $nya="";
+         echo    $asunto=$message->getSubject();
+    
+            $llegando=$message->getHeader()->getAttributes()["from"];
+            $thearray = (array) $llegando;
+            $prefix = chr(0).'*'.chr(0);
+            $nn="values";
+            $lle= (array)$thearray[$prefix.$nn][0];
+            echo $mailenvia=$lle["mail"];
+             $cuerpo=$message->getHTMLBody();
+            if($cuerpo==""){
+               $cuerpo=$message->getTextBody();
+    
+            }
+
+        }
+        $client->disconnect();
     }
     public function pruebamail(){
 
