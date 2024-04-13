@@ -60,6 +60,7 @@ class mailtickets  extends Command
         echo "entre";
         $client->connect();
         $folderluis=$client->getFolderByName("INBOX");
+        dd($folderluis);
         $messages=$folderluis->query()->all()->get();
         dd($messages);
     }
@@ -83,7 +84,7 @@ class mailtickets  extends Command
             $prefix = chr(0).'*'.chr(0);
             $nn="values";
             $lle= (array)$thearray[$prefix.$nn][0];
-           echo $mailenvia=$lle["mail"];
+            echo $mailenvia=$lle["mail"];
              $cuerpo=$message->getHTMLBody();
             if($cuerpo==""){
                $cuerpo=$message->getTextBody();
@@ -104,41 +105,41 @@ class mailtickets  extends Command
            //crear ticket en sienna
 
            
-        $si = new siennaticketssoporte();
-        $si->siennadepto = "1";
-        $si->cliente = "";
-        $si->siennatopic =$topic;
-        $si->cedula = "";
-        $si->siennaestado = "1";
-        $si->siennasource = "7";
-        $si->cel = "";
-        $si->nya = $mailenvia;
-        $si->asignado = 0;
-        $si->user_id = "";
-        $si->conversation_url = "";
-        $si->conversation_id = "";
-        $si->save();
+            $si = new siennaticketssoporte();
+            $si->siennadepto = "1";
+            $si->cliente = "";
+            $si->siennatopic =$topic;
+            $si->cedula = "";
+            $si->siennaestado = "1";
+            $si->siennasource = "7";
+            $si->cel = "";
+            $si->nya = $mailenvia;
+            $si->asignado = 0;
+            $si->user_id = "";
+            $si->conversation_url = "";
+            $si->conversation_id = "";
+            $si->save();
        
 
-        $se = new siennaseguimientossoporte();
-        $se->ticket = $si->id;
-        $se->tipo = "6";
-        $se->descripcion = $nya;
-        $se->autor = "sistema";
-        try {
-            $se->save();
-        } catch (\Illuminate\Database\QueryException $ex) {
-            $message22 = $message->move($folder_path = "noleidos");
+            $se = new siennaseguimientossoporte();
+            $se->ticket = $si->id;
+            $se->tipo = "6";
+            $se->descripcion = $nya;
+            $se->autor = "sistema";
+            try {
+                $se->save();
+            } catch (\Illuminate\Database\QueryException $ex) {
+                $message22 = $message->move($folder_path = "noleidos");
 
-            continue;
-        }
+                continue;
+            }
 
-        $message22 = $message->move($folder_path = "luisleidos");
-           $vueltas++;
-           if($vueltas==100){
-            break;
-            
-           }
+            $message22 = $message->move($folder_path = "luisleidos");
+            $vueltas++;
+            if($vueltas==100){
+                break;
+                
+            }
     
           }
           $client->disconnect();
