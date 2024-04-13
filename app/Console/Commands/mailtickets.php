@@ -88,6 +88,7 @@ class mailtickets  extends Command
 
             }
             echo  $mailenvia=trim($mailenvia);
+            $busca=$this->buscar($mail);
             $nya=$asunto."<br>".$cuerpo;
             $tiketid=$this->guardarticket($topic,$mailenvia);
             $seguiid=$this->guardarseguimiento($tiketid,$nya);
@@ -104,7 +105,7 @@ class mailtickets  extends Command
         $idreturn=0;
         $si = new siennaticketssoporte();
         $si->siennadepto = "1";
-        $si->cliente = "";
+        $si->cliente = $mailenvia;
         $si->siennatopic =$topic;
         $si->cedula = "";
         $si->siennaestado = "1";
@@ -138,6 +139,12 @@ class mailtickets  extends Command
            // echo "existe".$ex;
         }
       
+    }
+
+    public function buscar($mail){
+
+        $resultados = siennaticketssoporte::where('cliente', '=', $mail)->where('siennaestado', '=', '1')->get();
+        dd($resultados);
     }
 
     public function mover($message){
