@@ -64,7 +64,7 @@ class mailtickets  extends Command
           $client->connect();
           $folderluis=$client->getFolderByName("INBOX");
           $messages=$folderluis->query()->all()->get();
-          //dd($messages);
+          dd($messages);
           $vueltas=0;
           foreach ($messages as $message) {
             $nya="";
