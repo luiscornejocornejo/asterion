@@ -101,6 +101,7 @@ class mailtickets  extends Command
     }
 
     public function guardarticket($topic,$mailenvia){
+        $idreturn=0;
         $si = new siennaticketssoporte();
         $si->siennadepto = "1";
         $si->cliente = "";
@@ -114,8 +115,14 @@ class mailtickets  extends Command
         $si->user_id = "";
         $si->conversation_url = "";
         $si->conversation_id = "";
-        $si->save();
-        return $si->id;
+        try {
+            $si->save();
+            $idreturn=$si->id;
+        } catch (\Illuminate\Database\QueryException $ex) {
+           // echo "existe".$ex;
+        }
+        
+        return $idreturn;
     }
     public function guardarseguimiento($tiketid,$nya){
         $se = new siennaseguimientossoporte();
@@ -124,6 +131,12 @@ class mailtickets  extends Command
         $se->descripcion = $nya;
         $se->autor = "sistema";
         $se->save();
+        try {
+            $se->save();
+           
+        } catch (\Illuminate\Database\QueryException $ex) {
+           // echo "existe".$ex;
+        }
       
     }
 
