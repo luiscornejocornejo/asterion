@@ -65,7 +65,7 @@ class mailtickets  extends Command
         $messages=$folderluis->query()->all()->get();
         foreach ($messages as $message) {
             $nya=""; 
-         echo    $asunto=$message->getSubject();
+            echo $asunto=$message->getSubject();
     
             $llegando=$message->getHeader()->getAttributes()["from"];
             $thearray = (array) $llegando;
@@ -86,7 +86,7 @@ class mailtickets  extends Command
                 $topic="15";
 
             }
-            $mailenvia=trim($mailenvia);
+            echo  $mailenvia=trim($mailenvia);
             $nya=$asunto."<br>".$cuerpo;
             $tiketid=$this->guardarticket($topic,$mailenvia);
             $seguiid=$this->guardarseguimiento($tiketid,$nya);
