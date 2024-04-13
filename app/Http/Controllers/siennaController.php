@@ -143,7 +143,7 @@ class siennaController extends Controller
       COLLATE=utf8mb4_0900_ai_ci;
       
          ";
-       //$query1="";
+       $query1="";
          try {
             $resultados1 = DB::select($query1);
          }
