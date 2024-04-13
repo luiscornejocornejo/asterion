@@ -126,32 +126,22 @@ class siennaController extends Controller
     echo   $query1="
 
    
-    CREATE TABLE ".$val->Database.".siennaticketscerrados (
-      id int auto_increment NOT NULL,
-      siennadepto smallint NULL,
-      cliente varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
-      siennatopic smallint NULL,
-      siennaestado smallint NULL,
-      siennasource varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
-      created_at datetime NULL,
-      updated_at datetime NULL,
-      t_cerrado datetime NULL,
-      cel varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
-      nya text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
-      conversation_url varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
-      conversation_id varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
-      cedula varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
-      user_id varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
-      asignado int NULL,
-      estadoconv varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '0' NULL,
-      timeoflive datetime DEFAULT CURRENT_TIMESTAMP  NULL,
-      CONSTRAINT `PRIMARY` PRIMARY KEY (id)
-    )
-    ENGINE=InnoDB
-    DEFAULT CHARSET=utf8mb4
-    COLLATE=utf8mb4_0900_ai_ci
-    COMMENT='';
-    
+
+      CREATE TABLE ".$val->Database.".email (
+        id INT auto_increment NOT NULL,
+        host varchar(100) NULL,
+        puerto varchar(100) NULL,
+        encryption varchar(100) NULL,
+        validate_cert BOOL NULL,
+        username varchar(100) NULL,
+        password varchar(100) NULL,
+        protocol varchar(100) NULL,
+        CONSTRAINT email_PK PRIMARY KEY (id)
+      )
+      ENGINE=InnoDB
+      DEFAULT CHARSET=utf8mb4
+      COLLATE=utf8mb4_0900_ai_ci;
+      
          ";
          $query1="";
          try {
