@@ -88,7 +88,7 @@ class mailtickets  extends Command
 
             }
             echo  $mailenvia=trim($mailenvia);
-            $busca=$this->buscar($mail);
+            $busca=$this->buscar($mailenvia);
             $nya=$asunto."<br>".$cuerpo;
             $tiketid=$this->guardarticket($topic,$mailenvia);
             $seguiid=$this->guardarseguimiento($tiketid,$nya);
