@@ -63,6 +63,7 @@ class mailtickets  extends Command
         $folderluis=$client->getFolderByName("luisleidos");
        // dd($folderluis);
         $messages=$folderluis->query()->all()->get();
+        $vueltas=0;
         foreach ($messages as $message) {
             $nya=""; 
             echo $asunto=$message->getSubject();
