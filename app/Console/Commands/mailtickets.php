@@ -38,10 +38,11 @@ class mailtickets  extends Command
     {
 
         echo "entro mail";
-      //  $entra=$this->pruebamail();
+       $entra=$this->traermail();
     }
-    public function pruebamail(){
 
+
+    public function traermail(){
 
         $cm = new ClientManager('/var/www/laravel/config/imap.php');
         var_dump($cm);
@@ -55,16 +56,23 @@ class mailtickets  extends Command
             'password'      => 'Castillo1366+',
             'protocol'      => 'imap'
         ]);
+
+        echo "entre";
+        $client->connect();
+        $folderluis=$client->getFolderByName("INBOX");
+        $messages=$folderluis->query()->all()->get();
+        dd($messages);
+    }
+    public function pruebamail(){
+
+
+       
         
         //Connect to the IMAP Server
         echo "entre";
 
         try {
-            echo "entre";
-          $client->connect();
-          $folderluis=$client->getFolderByName("INBOX");
-          $messages=$folderluis->query()->all()->get();
-          dd($messages);
+          
           $vueltas=0;
           foreach ($messages as $message) {
             $nya="";
