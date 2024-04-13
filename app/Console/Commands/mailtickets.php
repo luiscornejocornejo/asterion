@@ -60,7 +60,7 @@ class mailtickets  extends Command
         echo "entre";
         $client->connect();
         $folderluis=$client->getFolderByName("INBOX");
-        dd($folderluis);
+       // dd($folderluis);
         $messages=$folderluis->query()->all()->get();
         dd($messages);
     }
