@@ -61,7 +61,6 @@ class mailtickets  extends Command
         $client->connect();
         $folderluis=$client->getFolderByName("INBOX");
         //$folderluis=$client->getFolderByName("luisleidos");
-        
        // dd($folderluis);
         $messages=$folderluis->query()->all()->get();
         foreach ($messages as $message) {
@@ -77,11 +76,58 @@ class mailtickets  extends Command
              $cuerpo=$message->getHTMLBody();
             if($cuerpo==""){
                $cuerpo=$message->getTextBody();
-    
             }
+            $topic="2";
+            if(trim($mailenvia)=="reports@suricata.la"){
+                $topic="14";
 
+            }
+            if(trim($mailenvia)=="noreply@xenioo.com"){
+                $topic="15";
+
+            }
+            $mailenvia=trim($mailenvia);
+            $nya=$asunto."<br>".$cuerpo;
+            $tiketid=$this->guardarticket($topic,$mailenvia);
+            $seguiid=$this->guardarseguimiento($tiketid,$nya);
+            $mov=$this->mover($message);
+            $vueltas++;
+            if($vueltas==3){
+                break; 
+            }
         }
         $client->disconnect();
+    }
+
+    public function guardarticket($topic,$mailenvia){
+        $si = new siennaticketssoporte();
+        $si->siennadepto = "1";
+        $si->cliente = "";
+        $si->siennatopic =$topic;
+        $si->cedula = "";
+        $si->siennaestado = "1";
+        $si->siennasource = "7";
+        $si->cel = "";
+        $si->nya = $mailenvia;
+        $si->asignado = 0;
+        $si->user_id = "";
+        $si->conversation_url = "";
+        $si->conversation_id = "";
+        $si->save();
+        return $si->id;
+    }
+    public function guardarseguimiento($tiketid,$nya){
+        $se = new siennaseguimientossoporte();
+        $se->ticket = $tiketid;
+        $se->tipo = "6";
+        $se->descripcion = $nya;
+        $se->autor = "sistema";
+        $se->save();
+      
+    }
+
+    public function mover($message){
+        $message22 = $message->move($folder_path = "luisleidos");
     }
     public function pruebamail(){
 
@@ -110,54 +156,19 @@ class mailtickets  extends Command
     
             }
         
-            $topic="2";
-            if(trim($mailenvia)=="reports@suricata.la"){
-                $topic="14";
-
-            }
-            if(trim($mailenvia)=="noreply@xenioo.com"){
-                $topic="15";
-
-            }
-            $mailenvia=trim($mailenvia);
-            $nya=$asunto."<br>".$cuerpo;
+            
            //crear ticket en sienna
 
            
-            $si = new siennaticketssoporte();
-            $si->siennadepto = "1";
-            $si->cliente = "";
-            $si->siennatopic =$topic;
-            $si->cedula = "";
-            $si->siennaestado = "1";
-            $si->siennasource = "7";
-            $si->cel = "";
-            $si->nya = $mailenvia;
-            $si->asignado = 0;
-            $si->user_id = "";
-            $si->conversation_url = "";
-            $si->conversation_id = "";
-            $si->save();
+            
        
 
-            $se = new siennaseguimientossoporte();
-            $se->ticket = $si->id;
-            $se->tipo = "6";
-            $se->descripcion = $nya;
-            $se->autor = "sistema";
-            try {
-                $se->save();
-            } catch (\Illuminate\Database\QueryException $ex) {
-                $message22 = $message->move($folder_path = "noleidos");
+            
 
-                continue;
-            }
-
-            $message22 = $message->move($folder_path = "luisleidos");
+            
             $vueltas++;
-            if($vueltas==100){
-                break;
-                
+            if($vueltas==10){
+                break; 
             }
     
           }
