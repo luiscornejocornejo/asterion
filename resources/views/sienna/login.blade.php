@@ -38,6 +38,10 @@ $date = date('d-m-y H:i:s');
 </head>
 
 <body>
+    <?php
+    $dbName = $_ENV['DB_DATABASE'];
+    echo  $dbName ;
+    ?>
 
     <!-- <body data-layout="horizontal"> -->
     <div class="auth-page">
