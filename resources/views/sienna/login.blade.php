@@ -40,7 +40,7 @@ $date = date('d-m-y H:i:s');
 <body>
     <?php
    // $dbName = $_ENV['DB_DATABASE'];
-    dd($_ENV);//  $dbName ;
+   // dd($_ENV);//  $dbName ;
     ?>
 
     <!-- <body data-layout="horizontal"> -->
