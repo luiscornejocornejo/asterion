@@ -13,21 +13,21 @@ use Webklex\PHPIMAP\Client;
 use Webklex\IMAP\Commands\ImapIdleCommand;
 
 use Webklex\PHPIMAP\Message;
-class mailtickets  extends Command
+class mailtickets2  extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'ma:mailtickets';
+    protected $signature = 'ma:mailtickets2';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'mailtickets';
+    protected $description = 'mailtickets2';
 
     /**
      * Execute the console command.
@@ -38,7 +38,7 @@ class mailtickets  extends Command
     {
 
         echo "entro mail";
-       $entra=$this->traermail();
+       $entra=$this->traermail2();
     }
 
 
