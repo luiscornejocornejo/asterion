@@ -13,7 +13,7 @@ use Webklex\PHPIMAP\Client;
 use Webklex\IMAP\Commands\ImapIdleCommand;
 
 use Webklex\PHPIMAP\Message;
-class mailtickets2  extends Command
+class kkkkk  extends Command
 {
     /**
      * The name and signature of the console command.
