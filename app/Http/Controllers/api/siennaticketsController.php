@@ -1359,12 +1359,12 @@ class siennaticketsController extends Controller
     public function difhora(Request $request){
 
         echo $zona=$request->zona;
-     
+        echo "<br>";
       echo  $fecha1 = Carbon::create(Carbon::now($zona) );
       echo "<br>";
- 
+      echo "utc:<br>";
       echo  $fecha2 = Carbon::create(Carbon::now('UTC'));
-       
+      echo "<br>";
        // Calcular la diferencia de horas
       echo $diferencia_horas = $fecha2->diff($fecha1)->format('%H');
       echo "<br>";
