@@ -1367,7 +1367,7 @@ class siennaticketsController extends Controller
       echo  $fecha2 = Carbon::create(Carbon::now('UTC'));
      echo $fecha22=$fecha2->format('Y-m-d H');
 
-     echo dateDiff($fecha22, $fecha11);
+     echo $this->dateDiff($fecha22, $fecha11);
       echo "<br>";
        // Calcular la diferencia de horas
     //  echo $diferencia_horas = $fecha22->diff($fecha11)->format('%H');
@@ -1378,7 +1378,7 @@ class siennaticketsController extends Controller
        //  return $diferencia_horas;
      }
 
-     function dateDiff($start, $end) {
+     public function dateDiff($start, $end) {
 
         $start_ts = strtotime($start);
         
