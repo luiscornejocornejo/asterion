@@ -1352,4 +1352,23 @@ class siennaticketsController extends Controller
         $resultados = DB::select($query);
         return $resultados;
     }
+
+
+    public function difhora(Request $request){
+
+        echo $zona=$request->zona;
+     
+      echo  $fecha1 = Carbon::create(Carbon::now($zona) );
+      echo "<br>";
+ 
+      echo  $fecha2 = Carbon::create(Carbon::now('UTC'));
+       
+       // Calcular la diferencia de horas
+       $diferencia_horas = $fecha1->diff($fecha2)->format('%H');
+       
+       echo 'La diferencia de horas entre las dos fechas es: ' . $diferencia_horas . ' horas';
+ //echo  $diferencia_horas = $hora_actual->diffInHours($hora_cero);
+ 
+         return $diferencia_horas;
+     }
 }
