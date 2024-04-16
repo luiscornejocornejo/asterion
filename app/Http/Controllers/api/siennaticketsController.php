@@ -1369,11 +1369,11 @@ class siennaticketsController extends Controller
 
       echo "<br>";
        // Calcular la diferencia de horas
-      echo $diferencia_horas = $fecha22->diff($fecha11)->format('%H');
+    //  echo $diferencia_horas = $fecha22->diff($fecha11)->format('%H');
       echo "<br>";
-       echo 'La diferencia de horas entre las dos fechas es: ' . $diferencia_horas . ' horas';
+   //    echo 'La diferencia de horas entre las dos fechas es: ' . $diferencia_horas . ' horas';
  //echo  $diferencia_horas = $hora_actual->diffInHours($hora_cero);
  
-         return $diferencia_horas;
+       //  return $diferencia_horas;
      }
 }
