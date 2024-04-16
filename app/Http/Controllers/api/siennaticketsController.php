@@ -1380,9 +1380,9 @@ class siennaticketsController extends Controller
 
      public function dateDiff($start, $end) {
 
-        $start_ts = strtotime($start);
-        
-        $end_ts = strtotime($end);
+       echo $start_ts = strtotime($start);
+       echo "<br>";
+     echo    $end_ts = strtotime($end);
         
         $diff = $end_ts - $start_ts;
         
