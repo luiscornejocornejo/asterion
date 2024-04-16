@@ -1367,7 +1367,7 @@ class siennaticketsController extends Controller
        
        // Calcular la diferencia de horas
       echo $diferencia_horas = $fecha2->diff($fecha1)->format('%H');
-       
+      echo "<br>";
        echo 'La diferencia de horas entre las dos fechas es: ' . $diferencia_horas . ' horas';
  //echo  $diferencia_horas = $hora_actual->diffInHours($hora_cero);
  
