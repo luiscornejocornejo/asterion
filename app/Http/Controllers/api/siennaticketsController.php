@@ -22,6 +22,8 @@ use App\Models\categoria;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
+
 class siennaticketsController extends Controller
 {
 
