@@ -1365,7 +1365,7 @@ class siennaticketsController extends Controller
       echo "<br>";
       echo "utc:<br>";
       echo  $fecha2 = Carbon::create(Carbon::now('UTC'));
-     echo $fecha22=$fecha2->format('Y-m-d H');
+     echo $fecha22=$fecha2->format('Y-m-d h');
      echo "<br>";
      echo $this->dateDiff($fecha11, $fecha22);
       echo "<br>";
@@ -1381,7 +1381,7 @@ class siennaticketsController extends Controller
      public function dateDiff($start, $end) {
 
        echo $start_ts = strtotime($start);
-       echo "<br>";
+       echo "aca<br>";
      echo    $end_ts = strtotime($end);
         
         $diff = $end_ts - $start_ts;
