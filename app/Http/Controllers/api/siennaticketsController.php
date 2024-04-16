@@ -1361,11 +1361,11 @@ class siennaticketsController extends Controller
         echo $zona=$request->zona;
         echo "<br>";
       echo  $fecha1 = Carbon::create(Carbon::now($zona) );
-     echo  $fecha11=$fecha1->format('Y-m-d');
+     echo  $fecha11=$fecha1->format('Y-m-d H');
       echo "<br>";
       echo "utc:<br>";
       echo  $fecha2 = Carbon::create(Carbon::now('UTC'));
-     echo $fecha22=$fecha2->format('Y-m-d');
+     echo $fecha22=$fecha2->format('Y-m-d H');
 
       echo "<br>";
        // Calcular la diferencia de horas
