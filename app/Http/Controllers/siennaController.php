@@ -127,20 +127,11 @@ class siennaController extends Controller
 
    
 
-      CREATE TABLE ".$val->Database.".email (
-        id INT auto_increment NOT NULL,
-        host varchar(100) NULL,
-        puerto varchar(100) NULL,
-        encryption varchar(100) NULL,
-        validate_cert BOOL NULL,
-        username varchar(100) NULL,
-        password varchar(100) NULL,
-        protocol varchar(100) NULL,
-        CONSTRAINT email_PK PRIMARY KEY (id)
-      )
-      ENGINE=InnoDB
-      DEFAULT CHARSET=utf8mb4
-      COLLATE=utf8mb4_0900_ai_ci;
+
+      
+        ALTER TABLE ".$val->Database.".siennatickets ADD prioridad SMALLINT NULL;
+ALTER TABLE betured.siennatickets ADD extras varchar(1000) NULL;
+
       
          ";
        $query1="";
