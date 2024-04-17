@@ -1368,7 +1368,7 @@ class siennaticketsController extends Controller
    
       $diferencia_horas=$this->dateDiff($fecha22, $fecha11);
   
-         return $diferencia_horas;
+         echo $diferencia_horas;
      }
 
      public function dateDiff($start, $end) {
@@ -1377,7 +1377,7 @@ class siennaticketsController extends Controller
 
         $end_ts = strtotime($end);
         
-        $diff = $end_ts - $start_ts;
+         $diff = $end_ts - $start_ts;
         
         return round($diff / 3600);
         }
