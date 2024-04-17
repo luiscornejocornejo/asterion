@@ -1361,10 +1361,10 @@ class siennaticketsController extends Controller
          $zona=$request->zona;
        
         $fecha1 = Carbon::create(Carbon::now($zona) );
-      echo  $fecha11=$fecha1->format('Y-m-d h:i:s');
+      echo  $fecha11=$fecha1->format('Y-m-d H:i:s');
     echo "<br>";
         $fecha2 = Carbon::create(Carbon::now('UTC'));
-     echo  $fecha22=$fecha2->format('Y-m-d h:i:s');
+     echo  $fecha22=$fecha2->format('Y-m-d H:i:s');
      echo "<br>";
 
      $fecha111 = Carbon::parse($fecha11);
