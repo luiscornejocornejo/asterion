@@ -485,6 +485,7 @@ class siennaticketsController extends Controller
 
         $ini=$request->inicio;
         $fin=$request->fin;
+        echo $zona=$this->zona();
        
         $query = "select *,a.conversation_id,a.user_id,
         b.nombre as depto,b.id as iddepto,d.nombre topicnombre,
@@ -506,6 +507,19 @@ class siennaticketsController extends Controller
 
         $resultados = DB::select($query);
         return $resultados;
+    }
+
+    public function zona(){
+        $merchant=$this->dominio();
+        $query="select * from ".$merchant.".empresa ";
+        $resultados = DB::select($query);
+        $zone="";
+        foreach($resultados as $val){
+            $zone=$val->zona;
+
+        }
+        $horas=file_get_contents('https://ispgroup.suricata.cloud/api/difhora?zona='.$zone);
+        return $horas;
     }
     public function datoscliente(Request $request)
     {
