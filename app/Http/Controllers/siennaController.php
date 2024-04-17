@@ -129,10 +129,18 @@ class siennaController extends Controller
 
 
       
-    ALTER TABLE ".$val->Database.".siennatickets ADD extras varchar(1000) NULL;
 
 
-      
+
+    CREATE TABLE ".$val->Database.".prioridad (
+      id INT auto_increment NOT NULL,
+      nombre varchar(100) NULL,
+      CONSTRAINT prioridad_PK PRIMARY KEY (id)
+    )
+    ENGINE=InnoDB
+    DEFAULT CHARSET=utf8mb4
+    COLLATE=utf8mb4_0900_ai_ci;
+    
          ";
       // $query1="";
          try {
