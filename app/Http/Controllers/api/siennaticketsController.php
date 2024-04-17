@@ -507,7 +507,7 @@ class siennaticketsController extends Controller
 
          order by ticketid desc
         ";
-
+        dd($query );
         $resultados = DB::select($query);
         return $resultados;
     }
