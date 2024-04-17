@@ -127,9 +127,9 @@ class siennaController extends Controller
 
    
 
-    ALTER TABLE ".$val->Database.".siennatickets MODIFY COLUMN prioridad smallint DEFAULT 3 NULL;
 
       
+    ALTER TABLE ".$val->Database.".siennatopic ADD ostickettopic INT NULL;
 
 
 
