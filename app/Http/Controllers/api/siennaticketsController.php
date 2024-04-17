@@ -496,8 +496,11 @@ class siennaticketsController extends Controller
         left join  siennatopic d on d.id=a.siennatopic
         where a.siennaestado  in('4')  
         and
+        CONVERT_TZ(created_at, '+00:00', '".$zona.":00') as created_at>='".$ini." 00:00:00'
+         and 
+         CONVERT_TZ(created_at, '+00:00', '".$zona.":00') as created_at<='".$fin." 00:00:00'
+         
       
-         created_at>='".$ini." 00:00:00' and created_at<='".$fin." 23:59:59'
          
 
        
