@@ -1366,6 +1366,16 @@ class siennaticketsController extends Controller
         $fecha2 = Carbon::create(Carbon::now('UTC'));
      echo  $fecha22=$fecha2->format('Y-m-d h:i:s');
      echo "<br>";
+
+     $fecha111 = new DateTime($fecha11);
+$fecha222 = new DateTime($fecha22);
+
+// Calcular la diferencia entre las fechas en horas
+$diferencia = $fecha222->diff($fecha111)->h;
+
+// Imprimir la diferencia en horas
+echo "La diferencia entre las fechas es de $diferencia horas.";
+
    //  $diferencia_horas=$this->dateDiff($fecha22, $fecha11);
 
     echo "<br>";
