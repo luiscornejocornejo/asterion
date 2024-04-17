@@ -488,8 +488,8 @@ class siennaticketsController extends Controller
          $zona=$this->zona();
        
         $query = "select *,a.conversation_id,a.user_id, 
-        CONVERT_TZ(created_at, '+00:00', '".$zona.":00') as created_at,
-        CONVERT_TZ(t_cerrado, '+00:00', '".$zona.":00') as t_cerrado,
+        CONVERT_TZ(created_at, '+00:00', '".$zona.":00') as created_at2,
+        CONVERT_TZ(t_cerrado, '+00:00', '".$zona.":00') as t_cerrado2,
         b.nombre as depto,b.id as iddepto,d.nombre topicnombre,
         a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado from siennatickets a
         left join siennadepto b on b.id=a.siennadepto 

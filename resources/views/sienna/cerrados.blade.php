@@ -133,8 +133,8 @@
                     ' <td> <span class="badge '+colordepto+'" style="font-size:medium;">' + response.data[i].depto + '</span>'+
                     ' <td>' + response.data[i].topicnombre + '</td>' +
                     ' <td>' + response.data[i].cel + '</td>' +
-                    ' <td>' + response.data[i].created_at + '</td>' +
-                    ' <td>' + response.data[i].t_cerrado + '</td>' +
+                    ' <td>' + response.data[i].created_at2 + '</td>' +
+                    ' <td>' + response.data[i].t_cerrado2 + '</td>' +
                     
                     ' <td> <span class="badge '+colorestado+'" style="font-size:medium;">' + response.data[i].estadoname + '</span>'+
 
