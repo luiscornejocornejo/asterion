@@ -126,7 +126,7 @@ class siennaController extends Controller
     echo   $query1="
 
    
-    update ".$val->Database.".prioridad  set nombre='normal' where id='3';
+    update ".$val->Database.".prioridad  set nombre='Normal' where id='3';
 
       
   
