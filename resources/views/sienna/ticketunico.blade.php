@@ -106,7 +106,7 @@ function coloriconos($iconos, $tipo)
                         </div>
                     </div>
                     <iframe src="<?php echo $resultados[0]->conversation_url; ?>" width="100%" class="border rounded-3" style="height: 500px!important;"></iframe>
-                    <div class="d-flex justify-content-between mt-2 mb-2">
+                    <div class="d-none d-flex justify-content-between mt-2 mb-2">
                         <div></div>
                         <div class="me-2">
                             <button class="btn btn-success " data-bs-toggle="tooltip" data-bs-placement="top"
