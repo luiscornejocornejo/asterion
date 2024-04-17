@@ -498,7 +498,7 @@ class siennaticketsController extends Controller
         and
         CONVERT_TZ(created_at, '+00:00', '".$zona.":00') >='".$ini." 00:00:00'
          and 
-         CONVERT_TZ(created_at, '+00:00', '".$zona.":00') <='".$fin." 00:00:00'
+         CONVERT_TZ(created_at, '+00:00', '".$zona.":00') <='".$fin." 23:59:59'
          
       
          
