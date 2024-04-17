@@ -122,7 +122,7 @@ class siennaController extends Controller
        
     // 
     
-      
+      //ALTER TABLE ".$val->Database.".siennatickets ADD extras varchar(1000) NULL;
     echo   $query1="
 
    
@@ -130,7 +130,7 @@ class siennaController extends Controller
 
       
         ALTER TABLE ".$val->Database.".siennatickets ADD prioridad SMALLINT NULL;
-ALTER TABLE betured.siennatickets ADD extras varchar(1000) NULL;
+
 
       
          ";
