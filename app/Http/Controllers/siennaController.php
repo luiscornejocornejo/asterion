@@ -130,7 +130,7 @@ class siennaController extends Controller
 
       
 
-    INSERT INTO ".$val->Database.".prioridad ( nombre) VALUES( 'Media');
+    INSERT INTO ".$val->Database.".prioridad ( nombre) VALUES( 'Baja');
 
 
     
