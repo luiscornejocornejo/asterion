@@ -33,7 +33,7 @@ class asignacion extends Command
     public function handle()
     {
 
-
+        $CONE=$this->conectar();
         $queryoriginal="show databases";
         $resultados11 = DB::connection('mysql2')->select($queryoriginal);
         foreach($resultados11 as $val){
