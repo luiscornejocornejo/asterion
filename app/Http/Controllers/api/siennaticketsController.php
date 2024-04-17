@@ -485,7 +485,7 @@ class siennaticketsController extends Controller
 
         $ini=$request->inicio;
         $fin=$request->fin;
-        echo $zona=$this->zona();
+         $zona=$this->zona();
        
         $query = "select *,a.conversation_id,a.user_id,
         b.nombre as depto,b.id as iddepto,d.nombre topicnombre,
