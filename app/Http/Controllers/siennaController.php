@@ -126,10 +126,10 @@ class siennaController extends Controller
     echo   $query1="
 
    
-
+    update ".$val->Database.".prioridad  set nombre='normal' where id='3';
 
       
-    ALTER TABLE ".$val->Database.".siennatopic ADD ostickettopic INT NULL;
+  
 
 
 
