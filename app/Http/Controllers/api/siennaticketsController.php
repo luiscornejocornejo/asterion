@@ -17,6 +17,7 @@ use App\Models\siennaseguimientos;
 use App\Models\siennacliente;
 use App\Models\siennadepto;
 use App\Models\siennaestado;
+use App\Models\siennatopic;
 use App\Models\empresa;
 use App\Models\categoria;
 use Illuminate\Support\Facades\Artisan;
@@ -592,7 +593,19 @@ class siennaticketsController extends Controller
         $email = $request->email;
         $user_id = $request->user_id;
         $cliente = $request->cliente;
-        $siennatopic = $request->siennatopic;
+
+        if(isset($request->ostickettopic)){
+            $ostickettopic=$request->ostickettopic;
+            $resultados222 = siennatopic::where('ostickettopic', '=', $ostickettopic)->get();
+            foreach ($resultados222 as $valuep) {
+                $siennatopic = $valuep->id;
+                
+            }
+          
+        }else{
+            $siennatopic = $request->siennatopic;
+
+        }
 
         $deuda = $request->deuda;
         $s_status = $request->s_status;
