@@ -1371,6 +1371,10 @@ class siennaticketsController extends Controller
     echo "<br>";
          echo $diferencia_horas;
          echo "<br>";
+
+
+      echo    $DeferenceInDays = Carbon::parse(Carbon::now())->diffInDays($fecha1);
+
      }
 
      public function dateDiff($start, $end) {
