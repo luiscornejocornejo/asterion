@@ -33,6 +33,15 @@ class asignacion extends Command
     public function handle()
     {
 
+
+        $queryoriginal="show databases";
+        $resultados11 = DB::connection('mysql2')->select($query);
+        foreach($resultados11 as $val){
+
+            echo $Database=$val->Database; 
+            echo "<br>";
+
+        }
         echo "entro asignacion";
         $os = array("infitelecom", "soporte", "demo", "sidecom", "amecom2", "ispgroup", "futurity", "wiredcom", "wiber", "gandalf", "onfiber",  "lotelcom", "fibercom", "cyminternet","airfibra","quierofibra");
 
