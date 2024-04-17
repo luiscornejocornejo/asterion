@@ -92,7 +92,7 @@ function coloriconos($iconos, $tipo)
                                             <i class="mdi mdi-calendar"></i> <strong>Creado: </strong><?php echo $resultados[0]->creacion; ?>
                                         </div>
                                         <div class="mb-1">
-                                            <i class="mdi sienna_source_class"></i> <strong>Prioridad: </strong><?php echo $resultados[0]->prioridad; ?>
+                                            <i class="mdi sienna_source_class"></i> <strong>Prioridad: </strong><?php echo $resultados[0]->nombreprioridad; ?>
                                         </div>
                                         <div class="mb-1">
                                             <i class="mdi mdi-information"></i> <strong>Tema de ayuda: </strong><?php echo $resultados[0]->topicname; ?>
