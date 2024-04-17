@@ -36,10 +36,17 @@ class asignacion extends Command
         $CONE=$this->conectar();
         $queryoriginal="show databases";
         $resultados11 = DB::connection('mysql2')->select($queryoriginal);
+        $os = array("defaultdb", "information_schema", "mysql", "moldemaestro", "performance_schema", "sienna1", "telesmart", "template");
+
         foreach($resultados11 as $val){
 
-            echo $Database=$val->Database; 
-            echo "<br>";
+             $Database=$val->Database; 
+            
+            if (!in_array($Database, $os)) {
+                echo $Database;
+                echo "<br>";
+            }
+            
 
         }
         echo "entro asignacion";
