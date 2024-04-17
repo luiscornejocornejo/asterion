@@ -1373,7 +1373,7 @@ class siennaticketsController extends Controller
          echo "<br>";
 
 
-      echo    $DeferenceInDays = Carbon::parse(Carbon::now())->diffInDays($fecha1);
+      echo    $DeferenceInDays = Carbon::parse(Carbon::now())->diffInDays($fecha2);
 
      }
 
