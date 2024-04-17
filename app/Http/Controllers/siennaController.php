@@ -127,10 +127,11 @@ class siennaController extends Controller
 
    
 
+    ALTER TABLE ".$val->Database.".siennatickets MODIFY COLUMN prioridad smallint DEFAULT 3 NULL;
 
       
 
-    INSERT INTO ".$val->Database.".prioridad ( nombre) VALUES( 'Baja');
+
 
 
     
