@@ -1371,7 +1371,12 @@ class siennaticketsController extends Controller
      $fecha222 = Carbon::parse($fecha22);
      
      // Calcular la diferencia entre las fechas en horas
-     $diferencia = $fecha222->diffInHours($fecha111);
+     if($fecha111> $fecha222){
+        $diferencia = $fecha222->diffInHours($fecha111);
+     }else{
+        $diferencia = $fecha111->diffInHours($fecha222);
+     }
+     
      
      // Imprimir la diferencia en horas
      echo "La diferencia entre las fechas es de $diferencia horas.";
