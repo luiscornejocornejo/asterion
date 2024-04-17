@@ -1376,6 +1376,7 @@ class siennaticketsController extends Controller
      }else{
         echo "aca";
         $diferencia = $fecha111->diffInHours($fecha222);
+        $diferencia =$diferencia *-1;
      }
      
      
