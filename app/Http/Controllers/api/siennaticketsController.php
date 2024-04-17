@@ -1361,11 +1361,11 @@ class siennaticketsController extends Controller
          $zona=$request->zona;
        
         $fecha1 = Carbon::create(Carbon::now($zona) );
-      echo  $fecha11=$fecha1->format('Y-m-d H:i:s');
-    echo "<br>";
+        $fecha11=$fecha1->format('Y-m-d H:i:s');
+    
         $fecha2 = Carbon::create(Carbon::now('UTC'));
-     echo  $fecha22=$fecha2->format('Y-m-d H:i:s');
-     echo "<br>";
+       $fecha22=$fecha2->format('Y-m-d H:i:s');
+  
 
      $fecha111 = Carbon::parse($fecha11);
      $fecha222 = Carbon::parse($fecha22);
@@ -1374,38 +1374,17 @@ class siennaticketsController extends Controller
      if($fecha111> $fecha222){
         $diferencia = $fecha222->diffInHours($fecha111);
      }else{
-        echo "aca";
+      
         $diferencia = $fecha111->diffInHours($fecha222);
         $diferencia =$diferencia *-1;
      }
      
-     
+     return $diferencia;
      // Imprimir la diferencia en horas
-     echo "La diferencia entre las fechas es de $diferencia horas.";
-// Imprimir la diferencia en horas
-echo "La diferencia entre las fechas es de $diferencia horas.";
-
-   //  $diferencia_horas=$this->dateDiff($fecha22, $fecha11);
-
-    echo "<br>";
-       //S  echo $diferencia_horas;
-         echo "<br>";
-
-
 
 
      }
 
-     public function dateDiff($start, $end) {
-
-        $start_ts = strtotime($start);
-
-        $end_ts = strtotime($end);
-        
-         $diff = $end_ts - $start_ts;
-        
-        return round($diff / 3600);
-        }
         
      
 }
