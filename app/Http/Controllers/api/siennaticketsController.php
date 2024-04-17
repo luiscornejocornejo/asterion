@@ -496,9 +496,9 @@ class siennaticketsController extends Controller
         left join  siennatopic d on d.id=a.siennatopic
         where a.siennaestado  in('4')  
         and
-        CONVERT_TZ(created_at, '+00:00', '".$zona.":00') as created_at>='".$ini." 00:00:00'
+        CONVERT_TZ(created_at, '+00:00', '".$zona.":00') >='".$ini." 00:00:00'
          and 
-         CONVERT_TZ(created_at, '+00:00', '".$zona.":00') as created_at<='".$fin." 00:00:00'
+         CONVERT_TZ(created_at, '+00:00', '".$zona.":00') <='".$fin." 00:00:00'
          
       
          
@@ -507,7 +507,7 @@ class siennaticketsController extends Controller
 
          order by ticketid desc
         ";
-        dd($query );
+      
         $resultados = DB::select($query);
         return $resultados;
     }
