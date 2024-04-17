@@ -32,11 +32,11 @@ class asignacion extends Command
      */
     public function handle()
     {
-
+        echo "entro asignacion";
         $CONE=$this->conectar();
         $queryoriginal="show databases";
         $resultados11 = DB::connection('mysql2')->select($queryoriginal);
-        $os = array("defaultdb", "information_schema", "mysql", "moldemaestro", "performance_schema", "sienna1", "telesmart", "template");
+        $os = array("defaultdb", "information_schema", "mysql", "moldemaestro", "performance_schema", "sienna1", "telesmart", "template","anterior");
 
         foreach($resultados11 as $val){
 
@@ -45,11 +45,13 @@ class asignacion extends Command
             if (!in_array($Database, $os)) {
                 echo $Database;
                 echo "<br>";
+                $sale = $this->asignacion($Database);
             }
             
 
         }
-        echo "entro asignacion";
+      
+        /*
         $os = array("infitelecom", "soporte", "demo", "sidecom", "amecom2", "ispgroup", "futurity", "wiredcom", "wiber", "gandalf", "onfiber",  "lotelcom", "fibercom", "cyminternet","airfibra","quierofibra");
 
         foreach($os as $val){
@@ -58,7 +60,7 @@ class asignacion extends Command
             $sale = $this->asignacion($val);
 
 
-        }
+        }*/
 
         return 0;
     }
