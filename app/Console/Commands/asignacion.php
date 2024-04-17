@@ -35,7 +35,7 @@ class asignacion extends Command
 
 
         $queryoriginal="show databases";
-        $resultados11 = DB::connection('mysql2')->select($query);
+        $resultados11 = DB::connection('mysql2')->select($queryoriginal);
         foreach($resultados11 as $val){
 
             echo $Database=$val->Database; 
