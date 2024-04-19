@@ -89,7 +89,7 @@ function maxid() {
             }else{
               aviso='<button  onclick="vista(`' + response.data[i].conversation_url + '`,`' + response.data[i].cliente + '`,`' + result + '`)" class="btn btn-primary " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg"><i class="mdi mdi-wechat" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Conversación."></i> </button>';
             }
-            colorestado=colorestado.replace("-bg", "");
+            colorestado2=colorestado.replace("-bg", "");
             tt += '<tr class="text-center">' +
                 ' <td><a  target=blank href=/ticketunico?tick='+response.data[i].ticketid +'><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</a></td>' +
                 ' <td>' + response.data[i].nya + '</td>' +
@@ -100,7 +100,7 @@ function maxid() {
          
                 ' <td>' + response.data[i].cel + '</td>' +
                 ' <td>' + response.data[i].creado + '</td>' +
-                '<td> <button onclick="estado2(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="btn btn-'+colorestado+' " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">' + response.data[i].estadoname + ' </button></td> ' +
+                '<td> <button onclick="estado2(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="btn btn-'+colorestado2+' " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">' + response.data[i].estadoname + ' </button></td> ' +
               
                 ' <td>'+
                 
