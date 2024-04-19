@@ -142,6 +142,7 @@ function coloriconos($iconos, $tipo)
                         <button class="btn btn-success " data-bs-toggle="modal" data-bs-target="#open-conversation">
                                 <i class="mdi mdi-whatsapp me-1" ></i>Reabrir conversación 
                      </button>
+                    </div>
                         <script>
                                             function reabrir(tel2,url){
                                                
