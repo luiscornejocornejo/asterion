@@ -106,14 +106,20 @@ function coloriconos($iconos, $tipo)
                         </div>
                     </div>
                     <iframe src="<?php echo $resultados[0]->conversation_url; ?>" width="100%" class="border rounded-3" style="height: 500px!important;"></iframe>
-                    <div class="d-none d-flex justify-content-between mt-2 mb-2">
+                   <?php  $ver="d-none ";
+                        foreach($emp as $value){
+                            $urlreabrir=$value->reabrir;
+                        }
+                        if($urlreabrir==""){
+                            $ver="";
+                        }
+                   ?>
+                    <div class="<?php  echo $ver;?> d-flex justify-content-between mt-2 mb-2">
                         <div></div>
                         <div class="me-2">
                         <?php 
                             
-                            foreach($emp as $value){
-                                 $urlreabrir=$value->reabrir;
-                            }
+                          
                          
                             ?>
                             <button onclick="reabrir('<?php echo $resultados[0]->cel;?>','<?php echo $urlreabrir;?>')" class="btn btn-success " data-bs-toggle="tooltip" data-bs-placement="top"
