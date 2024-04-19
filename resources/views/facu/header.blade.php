@@ -719,6 +719,11 @@ document.getElementById("idregistro").value = x;
       	window.open("http://www.google.es","venta","") 
    	} 
    	</script> 
-
+<SCRIPT>
+    function Cerrar() {
+       console.log("Se va a cerrar la ventana");
+       event.returnValue = "Te estás saliendo del sitio…";
+    } 
+</SCRIPT>
 </head>
-<body class="show"  onunload="abreventana()">    
+<body class="show"  onbeforeunload="return Cerrar()">    

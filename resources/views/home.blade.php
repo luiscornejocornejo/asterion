@@ -54,42 +54,9 @@ if (isset($_GET['fecha'])) {
 }
 ?>
 
-<script>
-	var bPreguntar = true;
- 
-	//window.onbeforeunload = preguntarAntesDeSalir;
- 
-	function preguntarAntesDeSalir () {
-		var respuesta;
- 
-		if ( bPreguntar ) {
-			respuesta = confirm ( '¿Seguro que quieres salir?' );
- 
-			if ( respuesta ) {
-				window.onunload = function () {
-					return true;
-				}
-			} else {
-				return false;
-			}
-		}
-	}
 
-
-</script>
 <!-- Begin page -->
-<script language="JavaScript" type="text/javascript">
-     
-    var bPreguntar = true;
-     
-    window.onbeforeunload = preguntarAntesDeSalir;
-     
-    function preguntarAntesDeSalir()
-    {
-      if (bPreguntar)
-        return "¿Seguro que quieres salir?";
-    }
-</script>
+
 <div class="wrapper">
 
     <!-- ========== Left Sidebar Start ========== -->

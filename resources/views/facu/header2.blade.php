@@ -74,10 +74,11 @@ z-index: 999;}
     </style>
 
 <script src="sienna/js/5tickets.js"></script>
-<script> 
-   	function abreventana(){ 
-      	window.open("http://www.google.es","venta","") 
-   	} 
-   	</script> 
+<SCRIPT>
+    function Cerrar() {
+       console.log("Se va a cerrar la ventana");
+       event.returnValue = "Te estás saliendo del sitio…";
+    } 
+</SCRIPT>
 </head>
-<body class="show" onload="maxid()" onunload="abreventana()">
+<body class="show" onload="maxid()" onbeforeunload="return Cerrar()">
