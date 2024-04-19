@@ -53,6 +53,15 @@ if (isset($_GET['fecha'])) {
     }
 }
 ?>
+<script language="JavaScript">
+
+window.onbeforeunload = preguntarAntesDeSalir;
+
+function preguntarAntesDeSalir(){
+return "¿Seguro que quieres salir?";
+}
+
+</script>
 <!-- Begin page -->
 <div class="wrapper">
 
