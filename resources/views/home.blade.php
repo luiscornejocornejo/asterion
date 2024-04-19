@@ -57,7 +57,7 @@ if (isset($_GET['fecha'])) {
 <script>
 	var bPreguntar = true;
  
-	window.onbeforeunload = preguntarAntesDeSalir;
+	//window.onbeforeunload = preguntarAntesDeSalir;
  
 	function preguntarAntesDeSalir () {
 		var respuesta;
@@ -78,7 +78,12 @@ if (isset($_GET['fecha'])) {
 
 </script>
 <!-- Begin page -->
-<div class="wrapper">
+<script> 
+   	function abreventana(){ 
+      	window.open("http://www.google.es","venta","") 
+   	} 
+   	</script> 
+<div class="wrapper" onunload="abreventana()>
 
     <!-- ========== Left Sidebar Start ========== -->
     @include('facu.menu')
