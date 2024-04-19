@@ -55,11 +55,11 @@ if (isset($_GET['fecha'])) {
 ?>
 <script language="JavaScript">
 
-window.onbeforeunload = preguntarAntesDeSalir;
-
-function preguntarAntesDeSalir(){
-return "¿Seguro que quieres salir?";
-}
+window.onbeforeunload = saveBeforeExit; 
+function saveBeforeExit(){
+if (confirm("desea salir sin enviar el mensaje?")) window.location.href = "/salir";
+return 0;
+} 
 
 </script>
 <!-- Begin page -->
