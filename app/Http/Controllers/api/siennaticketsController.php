@@ -1433,7 +1433,7 @@ class siennaticketsController extends Controller
            $bot_channel = $request->bot_channel;
         $logeado = $request->logeado;
         $si2 = siennatickets::find($idticketestadoprioridad);
-        $si2->siennadepto = $statos;
+        $si2->prioridad = $statos;
         $si2->asignado = 0;
         $si2->save();
         echo "<br>";
@@ -1443,9 +1443,9 @@ class siennaticketsController extends Controller
         $se->descripcion = "modificar prioridad:" ;
         $se->autor = $logeado;
         $se->save();
-       /* return redirect()
+        return redirect()
         ->back()
-        ->with('success', 'Se modifico la Prioridad  correctamente!');*/
+        ->with('success', 'Se modifico la Prioridad  correctamente!');
 
      }
      
