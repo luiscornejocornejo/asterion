@@ -1420,6 +1420,33 @@ class siennaticketsController extends Controller
 
 
      }
+     public function prioridad(Request $request){
+
+        echo   $idticketestadoprioridad = $request->idticketestadoprioridad;
+        echo   $statos = $request->statos;
+
+        echo   $idconv = $request->idconv;
+        echo   $idbot = $request->idbot;
+        $user_id = $request->user_id;
+        //$user_id=str_replace("+","",$user_id);
+        echo   $bot_channel = $request->bot_channel;
+        $logeado = $request->logeado;
+        $si2 = siennatickets::find($idticketestadoprioridad);
+        $si2->siennadepto = $statos;
+        $si2->asignado = 0;
+        $si2->save();
+        $se = new siennaseguimientos();
+        $se->ticket = $idticketestadoprioridad;
+        $se->tipo = "9";
+        $se->descripcion = "modificar prioridad:" ;
+        $se->autor = $logeado;
+        $se->save();
+        return redirect()
+        ->back()
+        ->with('success', 'Se modifico la Prioridad  correctamente!');
+
+     }
+     
 
         
      
