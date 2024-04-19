@@ -109,19 +109,20 @@ function coloriconos($iconos, $tipo)
                     <div class="d-none d-flex justify-content-between mt-2 mb-2">
                         <div></div>
                         <div class="me-2">
-                            <button onclick="reabrir('<?php echo $resultados[0]->cel;?>')" class="btn btn-success " data-bs-toggle="tooltip" data-bs-placement="top"
-                            data-bs-custom-class="mt-1" data-bs-title="Reclamar ticket."><i class="mdi mdi-whatsapp me-1" ></i>Reabrir conversación </button>
-                            <?php 
+                        <?php 
                             
                             foreach($emp as $value){
-                                echo $urlreabrir=$value->reabrir;
+                                 $urlreabrir=$value->reabrir;
                             }
                             ?>
+                            <button onclick="reabrir('<?php echo $resultados[0]->cel;?>,<?php echo $urlreabrir;?>')" class="btn btn-success " data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-custom-class="mt-1" data-bs-title="Reclamar ticket."><i class="mdi mdi-whatsapp me-1" ></i>Reabrir conversación </button>
+                           
                         </div>
                         <script>
-                                            function reabrir(){
+                                            function reabrir(cel,url){
                                                 const xhr = new XMLHttpRequest();
-                                                url="https://publicapi.xenioo.com/broadcasts/jjjTNjqyv3gGCFnsGDT3JA7G8dgHzpjr/4iQCeaeFBmdGvLZSo3dKzM9Q1H36cLlrTCrsFImZTxVR7BJ1dJVdjMCiZzBMXXdp/direct";
+                                               // url="https://publicapi.xenioo.com/broadcasts/jjjTNjqyv3gGCFnsGDT3JA7G8dgHzpjr/4iQCeaeFBmdGvLZSo3dKzM9Q1H36cLlrTCrsFImZTxVR7BJ1dJVdjMCiZzBMXXdp/direct";
                                                 tel2="541133258450";
                                                 urlprincipal2="https://suricata4.com.ar/api/broadcast?url="+url+"&tel2="+tel2+"&token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM";
                     
