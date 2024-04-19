@@ -78,11 +78,7 @@ if (isset($_GET['fecha'])) {
 
 </script>
 <!-- Begin page -->
-<script> 
-   	function abreventana(){ 
-      	window.open("http://www.google.es","venta","") 
-   	} 
-   	</script> 
+
 <div class="wrapper">
 
     <!-- ========== Left Sidebar Start ========== -->

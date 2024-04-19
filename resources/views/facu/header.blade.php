@@ -714,7 +714,11 @@ z-index: 999;}
 document.getElementById("idregistro").value = x;
 }
 </script>
-
+<script> 
+   	function abreventana(){ 
+      	window.open("http://www.google.es","venta","") 
+   	} 
+   	</script> 
 
 </head>
-<body class="show">    
+<body class="show"  onunload="abreventana()>    
