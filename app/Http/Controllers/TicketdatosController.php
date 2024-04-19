@@ -27,6 +27,7 @@ use App\Models\siennatickets;
 use App\Models\siennaloginxenioo;
 use App\Models\siennaseguimientos;
 use App\Models\siennaestado;
+use App\Models\empresa;
 
 
 class TicketdatosController extends Controller
@@ -1515,12 +1516,14 @@ class TicketdatosController extends Controller
        $querydeptos="select * from siennadepto";
        $resultadosdeptos = DB::select($querydeptos);
 
+       $emp=empresa::all();
         return view("sienna/ticketunico")
         ->with('subdomain_tmp', $subdomain_tmp)
         ->with('segui', $segui)
         ->with('deptos', $resultadosdeptos)
         ->with('usersmerchant', $usersmerchant)
         ->with('iconos', $resultados5)
+        ->with('emp', $emp)
          ->with('resultados', $resultados);
 
     }
