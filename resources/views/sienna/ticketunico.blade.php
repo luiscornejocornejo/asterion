@@ -114,7 +114,7 @@ function coloriconos($iconos, $tipo)
                             foreach($emp as $value){
                                  $urlreabrir=$value->reabrir;
                             }
-                            echo $urlreabrir;
+                         
                             ?>
                             <button onclick="reabrir('<?php echo $resultados[0]->cel;?>','<?php echo $urlreabrir;?>')" class="btn btn-success " data-bs-toggle="tooltip" data-bs-placement="top"
                             data-bs-custom-class="mt-1" data-bs-title="Reclamar ticket."><i class="mdi mdi-whatsapp me-1" ></i>Reabrir conversación </button>
