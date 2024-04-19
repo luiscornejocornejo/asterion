@@ -20,6 +20,13 @@ function coloriconos($iconos, $tipo)
         document.getElementById("conversation_id20").value = ee;
         document.getElementById("client_number").value = cliente;
     }
+
+    function prioridad(result, dd, ee, ff, cliente) {
+        document.getElementById("idticketestadoprioridad").value = dd;
+        document.getElementById("conversation_id20").value = ee;
+        document.getElementById("client_number").value = cliente;
+    }
+    
 </script>
 <div class="wrapper menuitem-active">
     @include('facu.menu')
