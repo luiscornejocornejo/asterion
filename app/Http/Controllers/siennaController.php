@@ -128,7 +128,7 @@ class siennaController extends Controller
  
   
 
-    update ".$val->Database.".prioridad  set colore=' bg-danger' where id='1';
+    update ".$val->Database.".prioridad  set colore=' bg-warning' where id='2';
 
 
  
