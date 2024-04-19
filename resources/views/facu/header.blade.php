@@ -714,16 +714,6 @@ z-index: 999;}
 document.getElementById("idregistro").value = x;
 }
 </script>
-<script> 
-   	function abreventana(){ 
-      	window.open("http://www.google.es","venta","") 
-   	} 
-   	</script> 
-<SCRIPT>
-    function Cerrar() {
-       console.log("Se va a cerrar la ventana");
-       event.returnValue = "Te estás saliendo del sitio…";
-    } 
-</SCRIPT>
+
 </head>
-<body class="show"  onbeforeunload="return Cerrar()">    
+<body class="show" >    
