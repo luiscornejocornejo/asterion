@@ -721,4 +721,4 @@ document.getElementById("idregistro").value = x;
    	</script> 
 
 </head>
-<body class="show"  onunload="abreventana()>    
+<body class="show"  onunload="abreventana()">    
