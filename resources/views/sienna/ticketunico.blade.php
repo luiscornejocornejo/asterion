@@ -109,7 +109,7 @@ function coloriconos($iconos, $tipo)
                     <div class="d-none d-flex justify-content-between mt-2 mb-2">
                         <div></div>
                         <div class="me-2">
-                            <button onclick="reabrir('<?php echo $saliente;?>')" class="btn btn-success " data-bs-toggle="tooltip" data-bs-placement="top"
+                            <button onclick="reabrir('<?php echo $resultados[0]->cel;?>')" class="btn btn-success " data-bs-toggle="tooltip" data-bs-placement="top"
                             data-bs-custom-class="mt-1" data-bs-title="Reclamar ticket."><i class="mdi mdi-whatsapp me-1" ></i>Reabrir conversación </button>
                             
                         </div>
