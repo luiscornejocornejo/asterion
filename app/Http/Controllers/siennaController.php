@@ -126,9 +126,10 @@ class siennaController extends Controller
     echo   $query1="
 
  
-    ALTER TABLE ".$val->Database.".empresa ADD reabrir varchar(1000) NULL;
-
   
+
+    ALTER TABLE ".$val->Database.".prioridad ADD colore varchar(100) NULL;
+
 
 
 
