@@ -110,7 +110,8 @@ function coloriconos($iconos, $tipo)
                         foreach($emp as $value){
                             $urlreabrir=$value->reabrir;
                         }
-                        if($urlreabrir==""){
+
+                        if(sizeof($urlreabrir)<2){
                             $ver="";
                         }
                    ?>
