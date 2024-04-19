@@ -128,7 +128,7 @@ class siennaController extends Controller
  
   
 
-    ALTER TABLE ".$val->Database.".prioridad ADD colore varchar(100) NULL;
+    update ".$val->Database.".prioridad  set colore=' bg-danger' where id='1';
 
 
 
