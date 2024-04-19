@@ -74,6 +74,10 @@ z-index: 999;}
     </style>
 
 <script src="sienna/js/5tickets.js"></script>
-
+<script> 
+   	function abreventana(){ 
+      	window.open("http://www.google.es","venta","") 
+   	} 
+   	</script> 
 </head>
-<body class="show" onload="maxid()">
+<body class="show" onload="maxid()" onunload="abreventana()">
