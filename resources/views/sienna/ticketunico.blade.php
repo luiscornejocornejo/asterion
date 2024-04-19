@@ -106,14 +106,14 @@ function coloriconos($iconos, $tipo)
                         </div>
                     </div>
                     <iframe src="<?php echo $resultados[0]->conversation_url; ?>" width="100%" class="border rounded-3" style="height: 500px!important;"></iframe>
-                   <?php  $vero="d-non ";
+                   <?php  $vero="";
                         foreach($emp as $value){
                             $urlreabrir=$value->reabrir;
                         }
 
                         echo strlen($urlreabrir);
                         if(strlen($urlreabrir)<2){
-                            $vero="";
+                            $vero="d-none";
                         }
                    ?>
                     <div class="<?php  echo $vero;?> d-flex justify-content-between mt-2 mb-2">
