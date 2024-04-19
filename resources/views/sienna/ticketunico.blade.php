@@ -121,6 +121,7 @@ function coloriconos($iconos, $tipo)
                         </div>
                         <script>
                                             function reabrir(cel,url){
+                                                alert(url);
                                                 const xhr = new XMLHttpRequest();
                                                // url="https://publicapi.xenioo.com/broadcasts/jjjTNjqyv3gGCFnsGDT3JA7G8dgHzpjr/4iQCeaeFBmdGvLZSo3dKzM9Q1H36cLlrTCrsFImZTxVR7BJ1dJVdjMCiZzBMXXdp/direct";
                                                 tel2="541133258450";
