@@ -83,7 +83,7 @@ if (isset($_GET['fecha'])) {
       	window.open("http://www.google.es","venta","") 
    	} 
    	</script> 
-<div class="wrapper" onunload="abreventana()>
+<div class="wrapper">
 
     <!-- ========== Left Sidebar Start ========== -->
     @include('facu.menu')
