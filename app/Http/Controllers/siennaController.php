@@ -125,10 +125,9 @@ class siennaController extends Controller
       //
     echo   $query1="
 
-   
-    update ".$val->Database.".siennatickets  set prioridad='3' ;
+ 
+    ALTER TABLE ".$val->Database.".empresa ADD reabrir varchar(1000) NULL;
 
-      
   
 
 
