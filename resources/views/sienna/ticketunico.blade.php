@@ -111,7 +111,12 @@ function coloriconos($iconos, $tipo)
                         <div class="me-2">
                             <button onclick="reabrir('<?php echo $resultados[0]->cel;?>')" class="btn btn-success " data-bs-toggle="tooltip" data-bs-placement="top"
                             data-bs-custom-class="mt-1" data-bs-title="Reclamar ticket."><i class="mdi mdi-whatsapp me-1" ></i>Reabrir conversación </button>
-                            <?php echo $urlreabrir=$emp->reabrir;?>
+                            <?php 
+                            
+                            foreach($emp as $value){
+                                echo $urlreabrir=$value->reabrir;
+                            }
+                            ?>
                         </div>
                         <script>
                                             function reabrir(){
