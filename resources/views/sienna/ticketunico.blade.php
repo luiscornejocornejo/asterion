@@ -138,10 +138,13 @@ function coloriconos($iconos, $tipo)
                           
                          
                             ?>
-                            <button onclick="reabrir('<?php echo $resultados[0]->cel;?>','<?php echo $urlreabrir;?>')" class="btn btn-success " data-bs-toggle="tooltip" data-bs-placement="top"
+                            <button class="btn btn-success " data-bs-toggle="tooltip" data-bs-placement="top"
                             data-bs-custom-class="mt-1" data-bs-title="Reclamar ticket."><i class="mdi mdi-whatsapp me-1" ></i>Reabrir conversación </button>
                            
                         </div>
+                        <button class="btn btn-success " data-bs-toggle="modal" data-bs-target="#open-conversation">
+                                <i class="mdi mdi-whatsapp me-1" ></i>Reabrir conversación 
+                       </button>
                         <script>
                                             function reabrir(tel2,url){
                                                
@@ -445,7 +448,24 @@ function coloriconos($iconos, $tipo)
 ?>
 <br><br><br>
 
-
+<!-- Modal open conversation -->
+<div id="open-conversation" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="open-conversation" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <h4 class="modal-title text-light" id="standard-modalLabel">Reabrir conversación</h4>
+                    <button type="button" class="btn-close btn-white" data-bs-dismiss="modal" aria-hidden="true"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Confirma la reapertura de conversación?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">No</button>
+                    <button onclick="reabrir('<?php echo $resultados[0]->cel;?>','<?php echo $urlreabrir;?>')"  type="button" class="btn btn-success">Si, enviar</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
 
 </div>
 
