@@ -12,7 +12,7 @@
                             <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
                             <input value="<?php  echo $resultados[0]->user_id;?>" type="hidden" name="user_id" id="user_id">
                             <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
-                            <input value="<?php  echo $resultados[0]->ticketid;?>"  type="hidden" name="idticketdepto" id="idticketdepto">
+                            <input value="<?php  echo $resultados[0]->ticketid;?>"  type="hidden" name="idticketdepto" id="idticketestadoprioridad">
                             <input value="" type="hidden" name="bot_channel" id="bot_channel">
     
                             <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $subdomain_tmp;?> ">
