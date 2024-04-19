@@ -111,7 +111,7 @@ function coloriconos($iconos, $tipo)
                             $urlreabrir=$value->reabrir;
                         }
 
-                        if(sizeof($urlreabrir)<2){
+                        if(strlen($urlreabrir)<2){
                             $ver="";
                         }
                    ?>
