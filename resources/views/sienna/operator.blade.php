@@ -99,9 +99,7 @@ function maxid() {
          
                 ' <td>' + response.data[i].cel + '</td>' +
                 ' <td>' + response.data[i].creado + '</td>' +
-              
-                ' <td> <span class="badge '+colorestado+'" style="font-size:medium;">' + response.data[i].estadoname + '</span>'+
-                '<td> <button onclick="estado2(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="btn btn-secondary " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">' + response.data[i].estadoname + ' </button></td> ' +
+               '<td> <button onclick="estado2(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="btn btn-secondary " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">' + response.data[i].estadoname + ' </button></td> ' +
               
                 ' <td>'+
                 
