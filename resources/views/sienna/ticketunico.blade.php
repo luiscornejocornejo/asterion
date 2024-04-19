@@ -109,10 +109,31 @@ function coloriconos($iconos, $tipo)
                     <div class="d-none d-flex justify-content-between mt-2 mb-2">
                         <div></div>
                         <div class="me-2">
-                            <button class="btn btn-success " data-bs-toggle="tooltip" data-bs-placement="top"
+                            <button onclick="reabrir('<?php echo $saliente;?>')" class="btn btn-success " data-bs-toggle="tooltip" data-bs-placement="top"
                             data-bs-custom-class="mt-1" data-bs-title="Reclamar ticket."><i class="mdi mdi-whatsapp me-1" ></i>Reabrir conversación </button>
                             
                         </div>
+                        <script>
+                                            function reabrir(){
+                                                url="https://publicapi.xenioo.com/broadcasts/jjjTNjqyv3gGCFnsGDT3JA7G8dgHzpjr/4iQCeaeFBmdGvLZSo3dKzM9Q1H36cLlrTCrsFImZTxVR7BJ1dJVdjMCiZzBMXXdp/direct";
+                                                tel2="541133258450";
+                                                urlprincipal2="https://suricata4.com.ar/api/broadcast?url="+url+"&tel2="+tel2+"&token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM";
+                    
+                                                xhr.open("GET", urlprincipal2.trim());
+                                                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                                            
+                                                xhr.onload = () => {
+                                                if (xhr.readyState == 4 && xhr.status == 200) {
+                                                    console.log(JSON.parse(xhr.responseText));
+                                                } else {
+                                                    console.log(`Error: ${xhr.status}`);
+                                                }
+                                                };
+                                                xhr.send();
+
+
+                                            }
+                        </script>
 
                     </div>  
                     <div class="mt-2">

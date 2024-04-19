@@ -593,7 +593,7 @@ class siennaticketsController extends Controller
         $email = $request->email;
         $user_id = $request->user_id;
         $cliente = $request->cliente;
-
+       
         if(isset($request->ostickettopic)){
             $ostickettopic=$request->ostickettopic;
             $resultados222 = siennatopic::where('ostickettopic', '=', $ostickettopic)->get();
@@ -635,8 +635,12 @@ class siennaticketsController extends Controller
         $si->cel = $cel;
         $si->nya = $nya;
         $si->asignado = $asignado;
-
-
+        if(isset($request->prioridad)){
+            $si->prioridad= $request->prioridad;
+        }
+        if(isset($request->extras)){
+            $si->extras= $request->extras;
+        }
         //$user_id=str_replace("+","",$user_id);  
         //$conversation_id=str_replace("+","",$conversation_id);
         $si->user_id = $user_id;
