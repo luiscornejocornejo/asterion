@@ -375,6 +375,7 @@ function coloriconos($iconos, $tipo)
     @include('sienna.ticketsmodals.cerrar')
     @include('sienna.ticketsmodals.estados')
     @include('sienna.tu.imagen')
+    @include('sienna.tu.prioridad')
     <script>
         function topic(result, dd, ee, ff) {
 
