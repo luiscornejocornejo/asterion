@@ -1423,18 +1423,20 @@ class siennaticketsController extends Controller
      public function prioridad(Request $request){
 
         echo   $idticketestadoprioridad = $request->idticketestadoprioridad;
+        echo "<br>";
         echo   $statos = $request->statos;
-
-        echo   $idconv = $request->idconv;
-        echo   $idbot = $request->idbot;
+        echo "<br>";
+           $idconv = $request->idconv;
+           $idbot = $request->idbot;
         $user_id = $request->user_id;
         //$user_id=str_replace("+","",$user_id);
-        echo   $bot_channel = $request->bot_channel;
+           $bot_channel = $request->bot_channel;
         $logeado = $request->logeado;
         $si2 = siennatickets::find($idticketestadoprioridad);
         $si2->siennadepto = $statos;
         $si2->asignado = 0;
         $si2->save();
+        echo "<br>";
         $se = new siennaseguimientos();
         $se->ticket = $idticketestadoprioridad;
         $se->tipo = "9";
