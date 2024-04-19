@@ -1441,9 +1441,9 @@ class siennaticketsController extends Controller
         $se->descripcion = "modificar prioridad:" ;
         $se->autor = $logeado;
         $se->save();
-        return redirect()
+       /* return redirect()
         ->back()
-        ->with('success', 'Se modifico la Prioridad  correctamente!');
+        ->with('success', 'Se modifico la Prioridad  correctamente!');*/
 
      }
      
