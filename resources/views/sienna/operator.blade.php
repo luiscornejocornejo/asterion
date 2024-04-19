@@ -92,7 +92,9 @@ function maxid() {
             tt += '<tr class="text-center">' +
                 ' <td><a  target=blank href=/ticketunico?tick='+response.data[i].ticketid +'><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</a></td>' +
                 ' <td>' + response.data[i].nya + '</td>' +
-                ' <td> <span class="badge '+colordepto+'" style="font-size:medium;">' + response.data[i].depto + '</span>'+
+               
+                '<td><button onclick="area(`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].user_id + '`)"  class="btn btn-info " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><i class="mdi mdi-account-group" data-bs-toggle="tooltip" data-bs-placement="top"     data-bs-custom-class="" data-bs-title="Asignar departamento."></i> </button></td>' +
+               
                 ' <td>' + response.data[i].topicnombre + '</td>' +
                 ' <td>' + response.data[i].cel + '</td>' +
                 ' <td>' + response.data[i].creado + '</td>' +
