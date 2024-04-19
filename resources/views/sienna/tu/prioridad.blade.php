@@ -6,7 +6,7 @@
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="/api/prioridad" method="post">
+                        <form action="/api/prioridad" method="get">
                             <input type="hidden" name="_token" v-bind:value="csrf">
                             <input value="<?php  echo $resultados[0]->conversation_id;?>" type="hidden" name="idconv" id="idconv">
                             <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
@@ -18,7 +18,7 @@
                             <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $subdomain_tmp;?> ">
 
                             <div v-for="department in departments ">
-                            <?php foreach($deptos as $dep){?>
+                            <?php foreach($pri as $dep){?>
                                 <input value="<?php echo $dep->id;?>" class="form-radio" type="radio" name="statos">&nbsp;
                             <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo$dep->nombre;?></span>
                                 <br><br>
