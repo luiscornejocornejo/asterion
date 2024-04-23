@@ -126,7 +126,7 @@ function coloriconos($iconos, $tipo)
                             </div>
 
                             <p><?php
-                            dd($resultados[0]);
+                           // dd($resultados[0]);
                             echo $resultados[0]->eltexto; ?></p>
                             <hr>
 
