@@ -1504,6 +1504,10 @@ class TicketdatosController extends Controller
         where a.id='".$tick."'";
 
         $resultados = DB::select($query);
+        foreach($resultados as $valu){
+
+                $siennasource=$valu->siennasource;
+        }
 
 
         $segui = siennaseguimientos::where('ticket', $tick)->get();
@@ -1519,6 +1523,17 @@ class TicketdatosController extends Controller
 
        $emp=empresa::all();
        $pri=prioridad::all();
+       if($siennasource==7){
+        return view("sienna/ticketunicoemail")
+        ->with('subdomain_tmp', $subdomain_tmp)
+        ->with('segui', $segui)
+        ->with('deptos', $resultadosdeptos)
+        ->with('usersmerchant', $usersmerchant)
+        ->with('iconos', $resultados5)
+        ->with('emp', $emp)
+        ->with('pri', $pri)
+         ->with('resultados', $resultados);
+       }else{
         return view("sienna/ticketunico")
         ->with('subdomain_tmp', $subdomain_tmp)
         ->with('segui', $segui)
@@ -1528,6 +1543,7 @@ class TicketdatosController extends Controller
         ->with('emp', $emp)
         ->with('pri', $pri)
          ->with('resultados', $resultados);
+       }
 
     }
 }
