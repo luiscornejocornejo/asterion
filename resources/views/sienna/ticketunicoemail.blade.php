@@ -124,8 +124,8 @@ function coloriconos($iconos, $tipo)
                                     <small class="text-muted">From: user_email</small>
                                 </div>
                             </div>
-
-                           {{  $resultados[0]->eltexto }}
+                            <?php $b = html_entity_decode($resultados[0]->eltexto);?>
+                           {{  $b }}
                             <hr>
 
                             <h5 class="mb-3">Adjuntos (preparar condición para que en todo caso desaparezca esta linea y el hr)</h5>
