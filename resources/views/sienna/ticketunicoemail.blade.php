@@ -125,7 +125,7 @@ function coloriconos($iconos, $tipo)
                                 </div>
                             </div>
                             <?php $b = html_entity_decode($resultados[0]->eltexto);?>
-                           {{  $b }}
+                           {{{  $b }}}
                             <hr>
 
                             <h5 class="mb-3">Adjuntos (preparar condición para que en todo caso desaparezca esta linea y el hr)</h5>
