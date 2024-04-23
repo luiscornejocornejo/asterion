@@ -406,7 +406,7 @@ function coloriconos($iconos, $tipo)
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">No</button>
-                    <button onclick="reabrir('<?php echo $resultados[0]->cel;?>','<?php echo $urlreabrir;?>')"  type="button" class="btn btn-success">Si, enviar</button>
+                    <button onclick="reabrir('<?php echo $resultados[0]->cel;?>','<?php //echo $urlreabrir;?>')"  type="button" class="btn btn-success">Si, enviar</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
