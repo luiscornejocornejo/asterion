@@ -125,7 +125,7 @@ function coloriconos($iconos, $tipo)
                                 </div>
                             </div>
 
-                            <p>{!!  $resultados[0]->eltexto !!}
+                           {{{  $resultados[0]->eltexto }}}
                             <hr>
 
                             <h5 class="mb-3">Adjuntos (preparar condición para que en todo caso desaparezca esta linea y el hr)</h5>
