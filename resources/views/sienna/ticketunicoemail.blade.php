@@ -250,14 +250,14 @@ function coloriconos($iconos, $tipo)
                                                 src="https://www.cyberclick.es/hs-fs/hubfs/04.%20BLOG/Dashboard%20de%20DataBox.png?width=796&height=579&name=Dashboard%20de%20DataBox.png"
                                                 class="timeline-icon"
                                             >
-                                            <span onclick="ng(`<?php echo $ht; ?>`)" class="link-primary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-img">
+                                            <span onclick="ng(`<?php //echo $ht; ?>`)" class="link-primary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-img">
                                             Ver archivo
                                             </span>
                                             <div class="timeline-item-info">
                                                 <span class="text-info fw-bold mb-1 d-block">Subida de archivo desde Bot</span>
-                                                <small>{{agent_sienna}} ha subido un archivo de tipo <span class="link-primary" role="button" data-bs-toggle="modal" data-bs-target="#image-modal">imágen</span></small>
+                                                <small>agent_sienna ha subido un archivo de tipo <span class="link-primary" role="button" data-bs-toggle="modal" data-bs-target="#image-modal">imágen</span></small>
                                                 <p class="mb-0 pb-2">
-                                                    <small class="text-muted">{{date_event}}</small>
+                                                    <small class="text-muted">date_event</small>
                                                 </p>
                                             </div>
                                         </div>
@@ -265,9 +265,9 @@ function coloriconos($iconos, $tipo)
                                             <i class="mdi mdi-file-document bg-secondary-lighten text-secondary timeline-icon"></i>
                                             <div class="timeline-item-info">
                                                 <span class="text-info fw-bold mb-1 d-block">Subida de archivo</span>
-                                                <small>{{agent_sienna}} ha subido un <a href="route" target="_blank">archivo</a></small>
+                                                <small>agent_sienna ha subido un <a href="route" target="_blank">archivo</a></small>
                                                 <p class="mb-0 pb-2">
-                                                    <small class="text-muted">{{date_event}}</small>
+                                                    <small class="text-muted">date_event</small>
                                                 </p>
                                             </div>
                                         </div>
@@ -276,9 +276,9 @@ function coloriconos($iconos, $tipo)
                                             <i class="mdi mdi-file-image-plus-outline bg-secondary-lighten text-secondary timeline-icon"></i>
                                             <div class="timeline-item-info">
                                                 <span class="text-info fw-bold mb-1 d-block">Subida de imágen</span>
-                                                <small>{{agent_sienna}} ha subido un archivo de tipo <span class="link-primary" role="button" data-bs-toggle="modal" data-bs-target="#image-modal">imágen</span></small>
+                                                <small>agent_sienna ha subido un archivo de tipo <span class="link-primary" role="button" data-bs-toggle="modal" data-bs-target="#image-modal">imágen</span></small>
                                                 <p class="mb-0 pb-2">
-                                                    <small class="text-muted">{{date_event}}</small>
+                                                    <small class="text-muted">date_event</small>
                                                 </p>
                                             </div>
                                         </div>
