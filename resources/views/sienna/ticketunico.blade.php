@@ -328,6 +328,7 @@ function tituloiconos($iconos, $tipo)
                                                                 <small><?php echo $val->descripcion; ?></small>
                                                                 <p class="mb-0 pb-2">
                                                                 <small class="text-muted"><?php echo $val->autor; ?></small>
+                                                                <br>
                                                                     <small class="text-muted"><?php echo $val->created_at; ?></small>
                                                                 </p>
                                                                 <span>
