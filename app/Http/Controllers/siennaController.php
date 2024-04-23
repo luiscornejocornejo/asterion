@@ -129,7 +129,7 @@ class siennaController extends Controller
 
 
 
-update   ".$val->Database.".iconostipo  set titulo='Cambio Estado' where id='2'
+update   ".$val->Database.".iconostipo  set titulo='Cambio Depto' where id='3'
  
  
 
