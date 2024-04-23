@@ -73,7 +73,7 @@ function coloriconos($iconos, $tipo)
                             <div class="card-body">
                               <div class="d-flex justify-content-between">
                                 <div>  
-                                  <h4 class="fw-normal text-dark" title="Number of Customers">Información del Ticket <strong>#{{ticket_number}}</strong></h4>
+                                  <h4 class="fw-normal text-dark" title="Number of Customers">Información del Ticket <strong>#ticket_number</strong></h4>
                                 </div>
                                 <div>
                                     <i class="mdi mdi-note-text widget-icon bg-secondary-lighten text-secondary"></i>          
@@ -83,26 +83,26 @@ function coloriconos($iconos, $tipo)
                               <div class="d-flex justify-content-between">
                                 <div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-list-status"></i> <strong>Estado: </strong>{{ticket_status}}
+                                        <i class="mdi mdi-list-status"></i> <strong>Estado: </strong>ticket_status
                                     </div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-office-building"></i> <strong>Departamento: </strong>{{departament}}
+                                        <i class="mdi mdi-office-building"></i> <strong>Departamento: </strong>departament
                                     </div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-account-voice"></i> <strong>Asignado a: </strong>{{operator_name}}
+                                        <i class="mdi mdi-account-voice"></i> <strong>Asignado a: </strong>operator_name
                                     </div>
 
                                 </div>
                                 
                                 <div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-calendar"></i> <strong>Creado: </strong>{{date}}
+                                        <i class="mdi mdi-calendar"></i> <strong>Creado: </strong>date
                                     </div>
                                     <div class="mb-1">
-                                        <i class="mdi {{sienna_source_class}}"></i> <strong>Fuente: </strong>{{Channel}}
+                                        <i class="mdi sienna_source_class"></i> <strong>Fuente: </strong>Channel
                                     </div>
                                     <div class="mb-1">
-                                        <i class="mdi mdi-information"></i> <strong>Tema de ayuda: </strong>{{topic_name}}
+                                        <i class="mdi mdi-information"></i> <strong>Tema de ayuda: </strong>topic_name
                                     </div>
                                 </div>
                               </div>
@@ -114,18 +114,18 @@ function coloriconos($iconos, $tipo)
                     </div>
                     <div class="card ">
                         <div class="card-body">
-                            <h5 class="font-18">{{asunto_del_correo}}</h5>
+                            <h5 class="font-18">asunto_del_correo</h5>
                             <hr>
                             <div class="d-flex mb-3 mt-1">
                                 <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg" alt="placeholder image" height="32">
                                 <div class="w-100 overflow-hidden">
-                                    <small class="float-end">{{date_received}}</small>
-                                    <h6 class="m-0 font-14">{{user_name}}</h6>
-                                    <small class="text-muted">From: {{user_email}}</small>
+                                    <small class="float-end">date_received</small>
+                                    <h6 class="m-0 font-14">user_name</h6>
+                                    <small class="text-muted">From: user_email</small>
                                 </div>
                             </div>
 
-                            <p>Aqui va el cuerpo del mensaje</p>
+                            <p><?php echo $resultados[0]->email; ?></p>
                             <hr>
 
                             <h5 class="mb-3">Adjuntos (preparar condición para que en todo caso desaparezca esta linea y el hr)</h5>
