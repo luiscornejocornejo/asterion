@@ -12,7 +12,16 @@ function coloriconos($iconos, $tipo)
     }
     return $coloricono;
 }
-
+function tituloiconos($iconos, $tipo)
+{
+    $tituloiconos = "";
+    foreach ($iconos as $valu) {
+        if ($valu->id == $tipo) {
+            $tituloiconos = $valu->titulo;
+        }
+    }
+    return $tituloiconos;
+}
 ?>
 <script>
     function cerrar(result, dd, ee, ff, cliente) {
@@ -312,9 +321,13 @@ function coloriconos($iconos, $tipo)
                                                             <?php $tipo = $val->tipo;
                                                             echo $color = coloriconos($iconos, $tipo); ?>
                                                             <div class="timeline-item-info">
-                                                                <span class="text-info fw-bold mb-1 d-block"><?php echo $val->autor; ?></span>
+                                                                <span class="text-info fw-bold mb-1 d-block"><?php 
+                                                                echo $titulo = tituloiconos($iconos, $tipo);
+                                                                
+                                                                ?></span>
                                                                 <small><?php echo $val->descripcion; ?></small>
                                                                 <p class="mb-0 pb-2">
+                                                                <small class="text-muted"><?php echo $val->autor; ?></small>
                                                                     <small class="text-muted"><?php echo $val->created_at; ?></small>
                                                                 </p>
                                                                 <span>
