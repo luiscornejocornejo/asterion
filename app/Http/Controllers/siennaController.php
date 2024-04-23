@@ -128,9 +128,8 @@ class siennaController extends Controller
  
 
 
-    ALTER TABLE ".$val->Database.".iconostipo ADD titulo varchar(100) NULL;
 
-
+update   ".$val->Database.".iconostipo  set titulo='Nota Interna' where id='5'
  
  
 
