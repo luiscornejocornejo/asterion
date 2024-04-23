@@ -126,9 +126,9 @@ class siennaController extends Controller
     echo   $query1="
 
  
-  
+    ALTER TABLE ".$val->Database.".siennatickets ADD email TEXT NULL;
 
-    update ".$val->Database.".prioridad  set colore=' text-bg-secondary' where id='3';
+
 
 
  
