@@ -127,7 +127,7 @@ function coloriconos($iconos, $tipo)
 
                             <p><?php
                             dd($resultados[0]);
-                            echo $resultados[0]->email; ?></p>
+                            echo $resultados[0]->eltexto; ?></p>
                             <hr>
 
                             <h5 class="mb-3">Adjuntos (preparar condición para que en todo caso desaparezca esta linea y el hr)</h5>
