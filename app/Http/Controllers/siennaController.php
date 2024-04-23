@@ -126,9 +126,9 @@ class siennaController extends Controller
     echo   $query1="
 
  
-    ALTER TABLE ".$val->Database.".siennatickets ADD email TEXT NULL;
 
 
+    ALTER TABLE ".$val->Database.".iconostipo ADD titulo varchar(100) NULL;
 
 
  
