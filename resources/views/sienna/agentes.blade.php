@@ -47,7 +47,7 @@ document.getElementById("user_id4").value = dd;
                         <tbody>
 
                         <?php
-                        dd($agentes);
+                        
                         foreach($agentes as $val){?>
                             <tr class="text-center">
                             <td>{{$val->nom}}</td>
@@ -58,7 +58,7 @@ document.getElementById("user_id4").value = dd;
                                 }else{
                                     echo "No";
                                 }?>
-                                    </td>
+                                    </td> 
                                 <?php 
 
                                 $dp=explode(",",$val->deptosuser);
