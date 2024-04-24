@@ -71,7 +71,7 @@ class asignacion extends Command
        // $area=$request->area;
 
         //$emp=empresa::find(1);
-       echo $query="select * from ".$merchant.".empresa where id=1";
+        $query="select * from ".$merchant.".empresa where id=1";
         $resultados = DB::connection('mysql2')->select($query);
 
         foreach($resultados as $emp){
@@ -112,13 +112,13 @@ class asignacion extends Command
     {
 
         $CONE=$this->conectar();
-       echo $query="select *  from ".$merchant.".siennatickets
+        $query="select *  from ".$merchant.".siennatickets
         where siennaestado not in('3','4')  
          and asignado='0'
         ";
 
         $resultados = DB::connection('mysql2')->select($query);
-        echo sizeof($resultados);
+        //echo sizeof($resultados);
         foreach($resultados as $value){
           //  echo  $query3="update ".$merchant.".siennatickets set asignado='99999' where id=".$tick."";
             //$resultados3 = DB::connection('mysql2')->select($query3);
