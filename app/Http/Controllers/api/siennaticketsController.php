@@ -447,7 +447,7 @@ class siennaticketsController extends Controller
                 }
                 $final=substr($final,0,-1);
             }
-        echo $query = "select *,a.conversation_id,a.user_id,
+         $query = "select *,a.conversation_id,a.user_id,
         b.nombre as depto,b.id as iddepto,d.nombre topicnombre,convertirTiempo(a.created_at)  as creado,
         a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado 
         from ".$merchant.".siennatickets a
