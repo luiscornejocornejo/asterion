@@ -46,7 +46,9 @@ document.getElementById("user_id4").value = dd;
                         </thead>
                         <tbody>
 
-                        <?php foreach($agentes as $val){?>
+                        <?php
+                        dd($agentes);
+                        foreach($agentes as $val){?>
                             <tr class="text-center">
                             <td>{{$val->nom}}</td>
                                 <td>{{$val->last_name}}</td>
