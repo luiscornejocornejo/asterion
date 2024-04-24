@@ -50,7 +50,7 @@ document.getElementById("user_id4").value = dd;
                             <tr class="text-center">
                             <td>{{ $val->nom}}</td>
                                 <td>{{$val->last_name}}</td>
-                                <td></td>
+                                <td>{{$val->email}}</td>
                                 <td><?php if($val->tickets==1){
                                     echo "Si";
                                 }else{

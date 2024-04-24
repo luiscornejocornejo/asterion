@@ -566,7 +566,7 @@ class TicketdatosController extends Controller
         join tipousers b on a.tipousers=b.id
         where tipousers<>'1'";
         $resultados5 = DB::select($query5);
-
+dd($resultados5);
         $query3="select * from siennadepto";
         $resultados3 = DB::select($query3);
 
