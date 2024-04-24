@@ -48,7 +48,7 @@ document.getElementById("user_id4").value = dd;
 
                         <?php foreach($agentes as $val){?>
                             <tr class="text-center">
-                            <td>{{ $val->nom}}</td>
+                            <td>{{$val->nom}}</td>
                                 <td>{{$val->last_name}}</td>
                                 <td>{{$val->email}}</td>
                                 <td><?php if($val->tickets==1){
@@ -95,7 +95,10 @@ document.getElementById("user_id4").value = dd;
           </div>
           <!-- content -->
       </div>
-          
+      @include('sienna.usermodal.rol')        
+      @include('sienna.usermodal.areas')        
+      @include('sienna.usermodal.ticket')        
+      @include('sienna.usermodal.nuevo')        
 
 <!-- Modal users register -->
  
@@ -107,4 +110,4 @@ document.getElementById("user_id4").value = dd;
     </div>
   <!-- END wrapper -->
 
-  @include('facu.footer') 
+  @include('facu.footer')
