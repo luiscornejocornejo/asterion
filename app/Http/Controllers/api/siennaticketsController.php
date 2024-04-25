@@ -741,6 +741,11 @@ class siennaticketsController extends Controller
     {
         $cel = $request->cel;//callid
         $tel = $request->tel;//telcontacto
+        //$valida = $request->valida;//telcontacto
+        if(true){
+
+            return '{"error":"true","ticket":"10"}';
+        }
 
         $siennaestado = $request->siennaestado;
       
@@ -875,7 +880,7 @@ class siennaticketsController extends Controller
 
       
 
-
+        //return '{"error":"false","ticket":"11"}';
         return $si->id;
         //return response()->json(['cliente' => $return2]);
 
