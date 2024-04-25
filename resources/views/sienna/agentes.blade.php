@@ -70,7 +70,7 @@ document.getElementById("user_id4").value = dd;
                                 $nue="";
                                 foreach($dp as $vl){
 
-                                    $nue.=$deptos[$vl-1]->nombre."-" ;
+                                    $nue.=$deptos[$vl]->nombre."-" ;
                                 }
                                 ?>
                                 <td>{{$nue}}</td>
