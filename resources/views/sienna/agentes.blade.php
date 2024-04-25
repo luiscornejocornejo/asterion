@@ -48,12 +48,12 @@ document.getElementById("user_id4").value = dd;
 
                         <?php
                         
-                        foreach($agentes as $val){?>
+                        foreach($agentes as $val3){?>
                             <tr class="text-center">
-                            <td>{{$val->nom}}</td>
-                                <td>{{$val->last_name}}</td>
-                                <td>{{$val->email}}</td>
-                                <td><?php if($val->tickets==1){
+                            <td>{{$val3->nom}}</td>
+                                <td>{{$val3->last_name}}</td>
+                                <td>{{$val3->email}}</td>
+                                <td><?php if($val3->tickets==1){
                                     echo "Si";
                                 }else{
                                     echo "No";
@@ -61,7 +61,7 @@ document.getElementById("user_id4").value = dd;
                                     </td> 
                                 <?php 
 
-                                $dp=explode(",",$val->deptosuser);
+                                $dp=explode(",",$val3->deptosuser);
 
                                 $nue="";
                                 foreach($dp as $vl){
@@ -70,18 +70,18 @@ document.getElementById("user_id4").value = dd;
                                 }
                                 ?>
                                 <td>{{$nue}}</td>
-                                <td>{{$val->tipousuario}}</td>
+                                <td>{{$val3->tipousuario}}</td>
                                 <td>
-                                    <button onclick="rol(`{{$val->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalrol" class="btn btn-info rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button onclick="rol(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalrol" class="btn btn-info rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="mdi mdi-account-cog" data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-custom-class="mb-1" data-bs-title="Rol"></i>
                                     </button> 
-                                    <button onclick="areas(`{{$val->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalareas"  class="btn btn-warning rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button onclick="areas(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalareas"  class="btn btn-warning rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="mdi mdi-office-building-cog" data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-custom-class="mb-1" data-bs-title="Departamento"></i>
                                     </button> 
 
-                                    <button onclick="ticket(`{{$val->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalticket"  class="btn btn-success rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button onclick="ticket(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalticket"  class="btn btn-success rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="mdi mdi-office-building-cog" data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-custom-class="mb-1" data-bs-title="Departamento"></i>
                                     </button> 
