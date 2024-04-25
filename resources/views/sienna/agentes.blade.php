@@ -1,7 +1,7 @@
 @include('facu.header2')
 
 <script>
-//let departamentoslista = {!! json_encode($deptos,JSON_FORCE_OBJECT) !!};
+let departamentoslista = {!! json_encode($deptos,JSON_FORCE_OBJECT) !!};
 
 function rol(dd) {
 
@@ -97,7 +97,11 @@ document.getElementById("user_id4").value = dd;
           </div>
           <!-- content -->
       </div>
-   
+      @include('sienna.usermodal.rol')        
+      @include('sienna.usermodal.areas')        
+      @include('sienna.usermodal.ticket')        
+      @include('sienna.usermodal.nuevo')        
+
 <!-- Modal users register -->
  
       <!-- End users register -->
