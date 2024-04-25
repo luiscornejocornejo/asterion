@@ -565,6 +565,14 @@ class TicketdatosController extends Controller
         $query5="select * ,b.nombre as tipousuario,a.id idusu,a.nombre nom from users a
         join tipousers b on a.tipousers=b.id
         where tipousers<>'1'";
+
+        $query5="select * ,a.id idusu,a.nombre nom,
+        (select nombre from tipousers where id=a.tipousers) as tipousuario
+        from users a
+             
+                left join siennadepto s on find_in_set(s.id, 
+        a.deptosuser)
+                where tipousers<>'1'";
         $resultados5 = DB::select($query5);
         $query3="select * from siennadepto";
         $resultados3 = DB::select($query3);
