@@ -47,7 +47,7 @@ document.getElementById("user_id4").value = dd;
                         <tbody>
 
                         <?php
-                        
+                        $vueltas=0;
                         foreach($agentes as $val3){
                             if(!isset($val3->nom)){
                                 continue;
@@ -93,7 +93,11 @@ document.getElementById("user_id4").value = dd;
                                         data-bs-custom-class="mb-1" data-bs-title="Departamento"></i>
                                     </button> 
                                 </td>
-                                <?php dd($val3);;?>
+                                <?php 
+                                if($vueltas==5){
+                                    dd($val3);
+                                }
+                                $vueltas++;?>
                             </tr>
                             <?php }?>
                         </tbody>
