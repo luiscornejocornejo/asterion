@@ -48,7 +48,11 @@ document.getElementById("user_id4").value = dd;
 
                         <?php
                         
-                        foreach($agentes as $val3){?>
+                        foreach($agentes as $val3){
+                            if(!isset($val3->nom)){
+                                continue;
+                            }
+                            ?>
                             <tr class="text-center">
                             <td>{{$val3->nom}}</td>
                                 <td>{{$val3->last_name}}</td>
