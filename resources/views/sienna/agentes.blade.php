@@ -65,7 +65,6 @@ document.getElementById("user_id4").value = dd;
                                 }?>
                                     </td> 
                                 <?php 
- dd($val3);
                                 $dp=explode(",",$val3->deptosuser);
 
                                 $nue="";
@@ -75,6 +74,8 @@ document.getElementById("user_id4").value = dd;
                                 }
                                 ?>
                                 <td>{{$nue}}</td>
+ 
+                                <?php dd($val3);;?>
                                 <td>{{$val3->tipousuario}}</td>
                                 <td>
                                     <button onclick="rol(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalrol" class="btn btn-info rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
