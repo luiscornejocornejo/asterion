@@ -57,7 +57,8 @@ document.getElementById("user_id4").value = dd;
                             <td>{{$val3->nom}}</td>
                                 <td>{{$val3->last_name}}</td>
                                 <td>{{$val3->email}}</td>
-                                <td><?php if($val3->tickets==1){
+                                <td><?php dd($val3);
+                                 if($val3->tickets==1){
                                     echo "Si";
                                 }else{
                                     echo "No";
