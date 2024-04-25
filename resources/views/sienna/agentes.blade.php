@@ -94,7 +94,7 @@ document.getElementById("user_id4").value = dd;
                                     </button> 
                                 </td>
                                 <?php 
-                                if($vueltas==5){
+                                if($vueltas==10){
                                     dd($val3);
                                 }
                                 $vueltas++;?>
