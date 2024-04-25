@@ -70,7 +70,7 @@ document.getElementById("user_id4").value = dd;
                                 $nue="";
                                 foreach($dp as $vl){
 
-                                    $nue.=$deptos[$vl]->nombre."-" ;
+                                    $nue.=$deptos[$vl-1]->nombre."-" ;
                                 }
                                 ?>
                                 <td>{{$nue}}</td>
@@ -95,7 +95,7 @@ document.getElementById("user_id4").value = dd;
                                 </td>
                                 <?php 
                                 if($vueltas==23){
-                                dd($val3);
+                                //dd($val3);
                                 }
                                 $vueltas++;?>
                             </tr>
