@@ -95,7 +95,7 @@ document.getElementById("user_id4").value = dd;
                                 </td>
                                 <?php 
                                 if($vueltas==23){
-                                //dd($val3);
+                                dd($val3);
                                 }
                                 $vueltas++;?>
                             </tr>
