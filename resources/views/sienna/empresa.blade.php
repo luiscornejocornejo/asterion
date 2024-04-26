@@ -43,9 +43,11 @@
                     </div>
                     <div class="form-group">
                       <label for="exampleFormControlInput1">Reabrir url broadcast</label>
-                      <input type="text" name="broadcast" class="form-control" id="exampleFormControlInput1" placeholder="http://">
+                      <input type="text" name="reabrir" class="form-control" id="exampleFormControlInput1" placeholder="http://">
                     </div>
                     <div class="form-group">
+                    <label for="exampleFormControlInput1"></label>
+
                       <button type="submit" class="btn btn-primary">Modificar</button>
                     </div>
                   </form>                       
