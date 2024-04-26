@@ -72,7 +72,7 @@ document.getElementById("user_id4").value = dd;
 
                                     foreach($deptos as $val2){
                                         if($val2->id==$vl){
-                                            $nue.=$val2->nombre;
+                                            $nue.=$val2->nombre."-";
                                         }
                                     }
                                    // $nue.=$deptos[$vl-1]->nombre."-" ;
