@@ -31,6 +31,8 @@
                       foreach ($zonahoraria as $val){
                         if($val->nombre==$zona){
                           $selected="selected";
+                        }else{
+                          $selected=""; 
                         }
 
                           echo "<option ".$selected." value='".$val->nombre."'>".$val->nombre."</option>";
