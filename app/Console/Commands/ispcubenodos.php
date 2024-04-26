@@ -58,6 +58,8 @@ class ispcubenodos extends Command
                    // var_dump($datos);
                     $url = "";
                     $tokensienna = "";
+                   echo $query111="truncate " . $merchant . ".nodos";
+                                $resultados111 = DB::select($query111);
                     foreach ($datos as $val) {
 
                         echo  $url = $val->headerlogin;
