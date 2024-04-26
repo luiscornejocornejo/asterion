@@ -33,7 +33,7 @@
                           $selected="selected";
                         }
 
-                          echo "<option ".$val->selected." value='".$val->nombre."'>".$val->nombre."</option>";
+                          echo "<option ".$selected." value='".$val->nombre."'>".$val->nombre."</option>";
                           }?>
                       </select>
                     </div>
