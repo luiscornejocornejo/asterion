@@ -28,6 +28,7 @@
 
                  </form>
                  <form action="/empresadatos" method="post">
+                 @csrf
                     <div class="form-group">
                       <label for="exampleFormControlInput1">Frecuencia</label>
                       <input type="number" name="frecuencia" class="form-control" id="exampleFormControlInput1" placeholder="60000">
