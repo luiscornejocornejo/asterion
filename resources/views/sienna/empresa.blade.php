@@ -27,7 +27,28 @@
                  <button type="submit" class="btn btn-primary">Modificar</button>
 
                  </form>
-                                                     
+                 <form action="/empresadatos" method="post">
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Frecuencia</label>
+                      <input type="number" name="frecuencia" class="form-control" id="exampleFormControlInput1" placeholder="60000">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">Zona Horaria </label>
+                      <select  name="zonahoraria" class="form-control" id="exampleFormControlSelect1">
+                      <?php foreach ($zonahoraria as $val){
+
+                          echo "<option value='".$val->nombre."'>".$val->nombre."</option>";
+                          }?>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Reabrir url broadcast</label>
+                      <input type="text" name="broadcast" class="form-control" id="exampleFormControlInput1" placeholder="http://">
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary">Modificar</button>
+                    </div>
+                  </form>                       
                 </div>
               <!-- container -->
           </div>
