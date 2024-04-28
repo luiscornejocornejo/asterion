@@ -44,6 +44,10 @@
   <script src="assetsfacu/vendor/daterangepicker/moment.min.js"></script>
   <script src="assetsfacu/vendor/daterangepicker/daterangepicker.js"></script>
 
+
+  <script src="assetsfacu/vendor/quill/quill.min.js"></script>
+ <!-- quill Init js-->
+ <script src="assetsfacu/js/pages/demo.quilljs.js"></script>
   <!-- Apex Charts js -->
 
   <!-- Vector Map js -->
