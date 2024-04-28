@@ -16,6 +16,12 @@
   <!-- Vector Map css -->
   <link rel="stylesheet" href="assetsfacu/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css">
 
+  <link href="assetsfacu/vendor/quill/quill.core.css" rel="stylesheet" type="text/css" />
+   <link href="assetsfacu/vendor/quill/quill.snow.css" rel="stylesheet" type="text/css" />
+
+   <link href="assetsfacu/vendor/quill/quill.core.css" rel="stylesheet" type="text/css">
+   <link href="assetsfacu/vendor/quill/quill.bubble.css" rel="stylesheet" type="text/css">
+   <link href="assetsfacu/vendor/quill/quill.snow.css" rel="stylesheet" type="text/css">
   <!-- Theme Config Js -->
   <script src="assetsfacu/js/hyper-config.js"></script>
   <script src="js/utils.js"></script>
