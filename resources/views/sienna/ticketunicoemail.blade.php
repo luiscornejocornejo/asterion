@@ -114,14 +114,14 @@ function coloriconos($iconos, $tipo)
                     </div>
                     <div class="card ">
                         <div class="card-body">
-                            <h5 class="font-18">asunto_del_correo</h5>
+                            <h5 class="font-18"><?php echo $resultados[0]->nya;?></h5>
                             <hr>
                             <div class="d-flex mb-3 mt-1">
                                 <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg" alt="placeholder image" height="32">
                                 <div class="w-100 overflow-hidden">
                                     <small class="float-end">date_received</small>
                                     <h6 class="m-0 font-14">user_name</h6>
-                                    <small class="text-muted">From: user_email</small>
+                                    <small class="text-muted">From: <?php echo $resultados[0]->cliente;?></small>
                                 </div>
                             </div>
                             <?php 
