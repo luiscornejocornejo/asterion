@@ -126,18 +126,9 @@ class siennaController extends Controller
     echo   $query1="
 
  
+    INSERT INTO ".$val->Database.".motivoc (nombre, iddepto) VALUES( 'Sin Motivo', 0);
 
-
-      CREATE TABLE ".$val->Database.".motivoc (
-        id INT auto_increment NOT NULL,
-        nombre varchar(100) NULL,
-        iddepto INT NULL,
-        CONSTRAINT motivoc_pk PRIMARY KEY (id)
-      )
-      ENGINE=InnoDB
-      DEFAULT CHARSET=utf8mb4
-      COLLATE=utf8mb4_0900_ai_ci;
-      
+    
     
 
 
