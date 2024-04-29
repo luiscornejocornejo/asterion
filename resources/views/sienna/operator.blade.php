@@ -19,9 +19,36 @@ identificadorIntervaloDeTiempo = setInterval(maxid, frecuencia);
 
 function cerrar(result,dd, ee, ff,cliente){
   document.getElementById("idticketestado20").value = dd;
-    document.getElementById("conversation_id20").value = ee;
-    document.getElementById("client_number").value = cliente;
+  document.getElementById("conversation_id20").value = ee;
+  document.getElementById("client_number").value = cliente;
 
+  ff
+  url = "https://"+result+".suricata.cloud/api/motic?depto=" + ff + "";
+    console.log(url);
+
+    axios.get(url)
+    .then(function (response) {
+
+      res="<select name='motivoc' class='form-control'>";
+      console.log(response.data);
+      for (i = 0; i < response.data.length; i++) {
+            console.log(response.data[i].nombre);
+            res+="<option value='"+response.data[i].id+"'>"+response.data[i].nombre+"</option>";
+
+      }
+      res+="</select>";
+      document.getElementById("motivoc").innerHTML = null;
+
+        document.getElementById("motivoc").innerHTML = res;
+
+    })
+    .catch(function (error) {
+        // función para capturar el error
+        console.log(error);
+    })
+    .then(function () {
+        // función que siempre se ejecuta
+    });
 }
 function maxid() {
 
