@@ -207,6 +207,7 @@ function tituloiconos($iconos, $tipo)
                                                         texto: texto
                                                     })
                                                     .then(function (response) {
+                                                        console.log("respuesta");
                                                         console.log(response);
                                                     })
                                                     .catch(function (error) {
