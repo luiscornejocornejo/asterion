@@ -128,7 +128,9 @@ function tituloiconos($iconos, $tipo)
 
                         </div>
                     </div>
-                    <?php if($resultados[0]->siennasource==7){?>
+                    <?php
+                    $urlreabrir="";
+                     if($resultados[0]->siennasource==7){?>
 
                         <div class="card ">
                                 <div class="card-body">
