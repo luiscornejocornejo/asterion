@@ -128,8 +128,9 @@ class siennaController extends Controller
  
   
 
+    ALTER TABLE ".$val->Database.".motivoc MODIFY COLUMN siennadepto SMALLINT NULL;
+
     
-    ALTER TABLE ".$val->Database.".motivoc CHANGE iddepto siennadepto int NULL;
 
 
 
