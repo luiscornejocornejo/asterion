@@ -48,6 +48,8 @@ Route::post('/creartickessiennacharlie', [siennaticketsController::class, 'crear
 
 
 Route::post('/mandarmail', [siennaticketsController::class, 'mandarmail']);
+Route::get('/motic', [siennaticketsController::class, 'motic']);
+
 
 
 Route::get('/tickessiennaapi', [siennaticketsController::class, 'tickessiennaapi']);

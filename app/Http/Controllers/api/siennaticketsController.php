@@ -1606,6 +1606,12 @@ class siennaticketsController extends Controller
         
         return $ticket;
      }
+     public function motic(Request $request){
+        $depto=$request->depto;
+
+        return $depto;
+     }
+     
      
      
 }
