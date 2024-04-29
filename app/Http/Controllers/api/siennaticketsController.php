@@ -1601,6 +1601,7 @@ class siennaticketsController extends Controller
 
         $mail=$request->mail;
         $texto=$request->texto;
+        echo $ticket=$request->ticket;
         
         return $mail;
      }
