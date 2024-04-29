@@ -149,7 +149,7 @@ class siennaController extends Controller
             $resultados1 = DB::select($query1);
          }
          catch(\Illuminate\Database\QueryException$ex){
-          echo "no";
+          echo "no".$ex;
          }
 
     }
