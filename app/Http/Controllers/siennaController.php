@@ -126,10 +126,11 @@ class siennaController extends Controller
     echo   $query1="
 
  
-    INSERT INTO ".$val->Database.".motivoc (nombre, iddepto) VALUES( 'Sin Motivo', 0);
+  
 
     
-    
+    ALTER TABLE ".$val->Database.".motivoc CHANGE iddepto siennadepto int NULL;
+
 
 
 
