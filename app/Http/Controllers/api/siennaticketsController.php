@@ -1612,10 +1612,10 @@ class siennaticketsController extends Controller
         $dom=$this->dominio();
        
          $query="select *  from ".$dom.".motivoc 
-        where ((area='".$siennadepto."')  or(area='0'))
-        "; /*
-        $resultados = DB::select($query);*/
-        return $query;
+        where ((siennadepto='".$siennadepto."')  or(siennadepto='0'))
+        "; 
+        $resultados = DB::select($query);
+        return $resultados;
         
      }
      
