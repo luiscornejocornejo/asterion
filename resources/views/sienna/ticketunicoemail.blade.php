@@ -136,6 +136,8 @@ function coloriconos($iconos, $tipo)
                            
                             $b = html_entity_decode($resultados[0]->eltexto);
                             $b = str_replace('src="cid:', '', $b);
+                            $b = preg_replace('/<img\b(?![^>]*\bsrc=)[^>]*>/i', '', $b);
+
                             echo $b;
 
 ?>  
