@@ -117,10 +117,8 @@ function coloriconos($iconos, $tipo)
                             <h5 class="font-18"><?php echo $resultados[0]->emailnom;?></h5>
                             <hr>
                             <div class="d-flex mb-3 mt-1">
-                                <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg" alt="placeholder image" height="32">
                                 <div class="w-100 overflow-hidden">
-                                    <small class="float-end">date_received</small>
-                                    <h6 class="m-0 font-14">user_name <?php echo $resultados[0]->id;?></h6>
+                                    
                                     <small class="text-muted">From: <?php echo $resultados[0]->emailcliente;?></small>
                                 </div>
                             </div>
