@@ -21,6 +21,7 @@
                             <input value="<?php  $bot_channel="WhatsAppChannel"; echo $bot_channel;?>" type="hidden" name="bot_channel" id="bot_channel">
 
 
+                            <div id="motivoc"></div>
                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
                         <button type="submit" class="btn btn-success">Si, cerrar</button>
                     </div>
