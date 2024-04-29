@@ -120,7 +120,7 @@ function coloriconos($iconos, $tipo)
                                 <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg" alt="placeholder image" height="32">
                                 <div class="w-100 overflow-hidden">
                                     <small class="float-end">date_received</small>
-                                    <h6 class="m-0 font-14">user_name</h6>
+                                    <h6 class="m-0 font-14">user_name <?php echo $resultados[0]->id;?></h6>
                                     <small class="text-muted">From: <?php echo $resultados[0]->cliente;?></small>
                                 </div>
                             </div>
