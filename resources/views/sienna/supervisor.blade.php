@@ -77,7 +77,18 @@ function cerrar(result,dd, ee, ff,cliente){
     axios.get(url)
     .then(function (response) {
 
+      res="<select name='motivoc'>";
       console.log(response.data);
+      for (i = 0; i < response.data.length; i++) {
+            console.log(response.data[i].nombre);
+            re+="<option value='"+response.data[i].id+"'>"+response.data[i].nombre+"</option>";
+
+      }
+      re+="</select>";
+      document.getElementById("motivoc").innerHTML = null;
+
+        document.getElementById("motivoc").innerHTML = re;
+
     })
     .catch(function (error) {
         // función para capturar el error
