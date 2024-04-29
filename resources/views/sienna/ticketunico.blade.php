@@ -378,13 +378,17 @@ function tituloiconos($iconos, $tipo)
                                                                 $ht = 'https://sienamedia.sfo3.digitaloceanspaces.com/' . $subdomain_tmp . '/xen/enviados/' . $val->logo;
                                                             }
 
-                                                            if($val->tipo == 9){
-                                                                $ht = $val->descripcion;
-                                                            }
+                                                            
                                                             $uri = '<a target=_blank href="' . $ht . '"><img  src=' . $ht . ' width="40px;"></a>';
                                                         } else {
                                                             $uri = '';
                                                         }
+                                                        if($val->tipo == 9){
+                                                            $ht = $val->descripcion;
+                                                            $uri = '<a target=_blank href="' . $ht . '"><img  src=' . $ht . ' width="40px;"></a>';
+
+                                                        }
+
                                                     ?>
                                                         <div class="timeline-alt py-0 ">
                                                             <div class=" timeline-item">
