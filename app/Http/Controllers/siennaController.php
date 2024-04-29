@@ -126,10 +126,18 @@ class siennaController extends Controller
     echo   $query1="
 
  
+    CREATE TABLE ".$val->Database.".motivoc (
+      id INT NULL,
+      nombre varchar(100) NULL,
+      iddepto INT NULL
+    )
+    ENGINE=InnoDB
+    DEFAULT CHARSET=utf8mb4
+    COLLATE=utf8mb4_0900_ai_ci;
+    
 
 
 
-update   ".$val->Database.".iconostipo  set titulo='Asignarse' where id='4'
  
  
 
