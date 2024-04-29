@@ -1607,13 +1607,15 @@ class siennaticketsController extends Controller
         return $ticket;
      }
      public function motic(Request $request){
+
         $siennadepto=$request->depto;
         $dom=$this->dominio();
+        /*
         echo $query="select *  from ".$dom.".motivoc 
         where ((area='".$siennadepto."')  or(area='0'))
         ";
-        $resultados = DB::select($query);
-        return $resultados;
+        $resultados = DB::select($query);*/
+        return $dom;
         
      }
      
