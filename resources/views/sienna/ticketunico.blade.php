@@ -395,7 +395,8 @@ function tituloiconos($iconos, $tipo)
                                                                 echo $titulo = tituloiconos($iconos, $tipo);
                                                                 
                                                                 ?></span>
-                                                                <small><?php echo $val->descripcion; ?></small>
+                                                                <small><?php
+                                                                if($val->tipo <> 9){ echo $val->descripcion;} ?></small>
                                                                 <p class="mb-0 pb-2">
                                                                 <small class="text-muted"><?php echo $val->autor; ?></small>
                                                                 <br>
