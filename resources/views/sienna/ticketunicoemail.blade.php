@@ -124,7 +124,10 @@ function coloriconos($iconos, $tipo)
                                     <small class="text-muted">From: user_email</small>
                                 </div>
                             </div>
-                            <?php $b = html_entity_decode($resultados[0]->eltexto);?>
+                            <?php $b = html_entity_decode($resultados[0]->eltexto);
+                            $b = preg_replace('/\b(src="cid:[^"]+")\b/', '', $b);
+
+?>
                             {!! $b !!}
                             <hr>
 
