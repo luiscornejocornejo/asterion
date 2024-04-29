@@ -384,9 +384,9 @@ function tituloiconos($iconos, $tipo)
                                                             $uri = '';
                                                         }
                                                         if($val->tipo == 9){
-                                                            $ht = $val->descripcion;
-                                                            $uri = '<a target=_blank href="' . $ht . '"><img  src=' . $ht . ' width="40px;"></a>';
-
+                                                            //$ht = $val->descripcion;
+                                                            //$uri = '<a target=_blank href="' . $ht . '"><img  src=' . $ht . ' width="40px;"></a>';
+                                                            continue;
                                                         }
 
                                                     ?>
