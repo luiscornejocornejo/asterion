@@ -127,8 +127,7 @@ class siennaController extends Controller
 
  
   
-
-    ALTER TABLE ".$val->Database.".motivoc MODIFY COLUMN siennadepto SMALLINT NULL;
+    INSERT INTO ".$val->Database.".motivoc (id, nombre, siennadepto) VALUES(1, 'SinMotivo', 0);
 
     
 
