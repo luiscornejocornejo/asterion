@@ -125,9 +125,9 @@ class siennaController extends Controller
       //
     echo   $query1="
 
- 
+    ALTER TABLE ".$val->Database.".siennatickets ADD motivoc SMALLINT NULL;
+
   
-    INSERT INTO ".$val->Database.".motivoc (id, nombre, siennadepto) VALUES(1, 'SinMotivo', 0);
 
     
 
