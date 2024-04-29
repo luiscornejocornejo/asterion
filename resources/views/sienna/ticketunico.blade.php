@@ -189,16 +189,20 @@ function tituloiconos($iconos, $tipo)
                                             <input id="mailaeviar" readonly type="email" value="<?php echo $resultados[0]->emailcliente;?>">
                                             <div  id="snow-editor" style="height: 300px;">
                                             </div>
-                                            <button onclick="enviaremail()" type="button" class="btn me-2 mt-2 rounded-pill" style="background-color: #FFD193;">Responder</button> 
+                                            <button onclick="enviaremail('<?php $subdomain_tmp;?>')" type="button" class="btn me-2 mt-2 rounded-pill" style="background-color: #FFD193;">Responder</button> 
                                         </div>
                                         <script>
-                                            function enviaremail(){
+                                            function enviaremail(merchant){
 
                                                 let mail=document.getElementById("mailaeviar").value;
                                                 let texto=document.getElementById("snow-editor").innerHTML;
                                                 alert(mail);
                                                 alert(texto);
-                                                axios.post('/api/mandarmail', {
+                                                alert(merchant);
+                                                url=merchant+'/api/mandarmail';
+                                                alert(url);
+
+                                                axios.post(url, {
                                                         mail: mail,
                                                         texto: texto
                                                     })
