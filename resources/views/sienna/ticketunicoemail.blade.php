@@ -126,7 +126,10 @@ function coloriconos($iconos, $tipo)
                             </div>
                             <?php 
                             //$b = html_entity_decode($resultados[0]->eltexto);
+                            echo $resultados[0]->eltexto;
+                            echo "<br><br><br>";
                             $c = preg_replace('/\b(src="cid:[^"]+")\b/', '', $resultados[0]->eltexto);
+                            echo $c;
                             $b = html_entity_decode($c);
 
 
