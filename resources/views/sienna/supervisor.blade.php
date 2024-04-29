@@ -77,7 +77,7 @@ function cerrar(result,dd, ee, ff,cliente){
     axios.get(url)
     .then(function (response) {
 
-      res="<select name='motivoc'>";
+      res="<select name='motivoc' class='form-control'>";
       console.log(response.data);
       for (i = 0; i < response.data.length; i++) {
             console.log(response.data[i].nombre);

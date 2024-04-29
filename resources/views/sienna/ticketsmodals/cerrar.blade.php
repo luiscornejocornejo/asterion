@@ -10,7 +10,7 @@
                         ¿Está seguro de cerrar el ticket?
                         <label for="client_number" class="form-label">Por favor agrega el número de cliente correspondiente del usuario :</label>
                     <input required type="number" class="form-control" name="client_number" id="client_number">
-
+                    <div id="motivoc"></div>
                     </div>
                     <div class="modal-footer">
                     @csrf
@@ -21,7 +21,7 @@
                             <input value="<?php  $bot_channel="WhatsAppChannel"; echo $bot_channel;?>" type="hidden" name="bot_channel" id="bot_channel">
 
 
-                            <div id="motivoc"></div>
+                            
                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
                         <button type="submit" class="btn btn-success">Si, cerrar</button>
                     </div>
