@@ -125,9 +125,10 @@ class siennaController extends Controller
       //
     echo   $query1="
 
-    ALTER TABLE ".$val->Database.".siennatickets ADD motivoc SMALLINT NULL;
+   
 
   
+    ALTER TABLE ".$val->Database.".siennatickets ADD callid varchar(100) NULL;
 
     
 
