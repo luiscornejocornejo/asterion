@@ -195,7 +195,7 @@ function tituloiconos($iconos, $tipo)
                                             function enviaremail(){
 
                                                 let mail=document.getElementById("mailaeviar").value;
-                                                let texto=document.getElementById("snow-editor").value;
+                                                let texto=document.getElementById("snow-editor").innerHTML;
                                                 alert(mail);
                                                 alert(texto);
                                             }
