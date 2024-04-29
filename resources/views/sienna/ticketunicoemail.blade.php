@@ -127,13 +127,16 @@ function coloriconos($iconos, $tipo)
                             <?php 
                             //$b = html_entity_decode($resultados[0]->eltexto);
                             echo $resultados[0]->eltexto;
-                                echo "<br><br><br>";
+                            echo "<br><br><br>";
+                   
+// Eliminar el componente src de la URL que contiene 'cid:'
+                                   
 
-                                // Eliminar todas las etiquetas <img> y su contenido
-                                $c = preg_replace('/<img[^>]*>/', '', $resultados[0]->eltexto);
-
-                                echo $c;
-                                $b = html_entity_decode($c);
+                                   
+                           
+                            $b = html_entity_decode($resultados[0]->eltexto);
+                            $b = str_replace('src="cid:', '', $b);
+                            echo $b;
 
 ?>  
                             {!! $b !!}
