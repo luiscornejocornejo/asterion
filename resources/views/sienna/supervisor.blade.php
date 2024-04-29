@@ -81,13 +81,13 @@ function cerrar(result,dd, ee, ff,cliente){
       console.log(response.data);
       for (i = 0; i < response.data.length; i++) {
             console.log(response.data[i].nombre);
-            re+="<option value='"+response.data[i].id+"'>"+response.data[i].nombre+"</option>";
+            res+="<option value='"+response.data[i].id+"'>"+response.data[i].nombre+"</option>";
 
       }
-      re+="</select>";
+      res+="</select>";
       document.getElementById("motivoc").innerHTML = null;
 
-        document.getElementById("motivoc").innerHTML = re;
+        document.getElementById("motivoc").innerHTML = res;
 
     })
     .catch(function (error) {
