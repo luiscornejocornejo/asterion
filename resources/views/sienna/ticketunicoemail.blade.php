@@ -130,12 +130,13 @@ function coloriconos($iconos, $tipo)
                             echo "<br><br><br>";
                    
 // Eliminar el componente src de la URL que contiene 'cid:'
-                                    $c = str_replace('src="cid:', '', $resultados[0]->eltexto);
+                                   
 
                                    
-                            echo $c;
-                            $b = html_entity_decode($c);
-
+                           
+                            $b = html_entity_decode($resultados[0]->eltexto);
+                            $b = str_replace('src="cid:', '', $b);
+                            echo $b;
 
 ?>  
                             {!! $b !!}
