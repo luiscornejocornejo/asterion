@@ -1526,7 +1526,7 @@ class TicketdatosController extends Controller
 
        $emp=empresa::all();
        $pri=prioridad::all();
-       if($siennasource==7){
+       if($siennasource==70){
         return view("sienna/ticketunicoemail")
         ->with('subdomain_tmp', $subdomain_tmp)
         ->with('segui', $segui)

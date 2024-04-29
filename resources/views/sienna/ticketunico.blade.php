@@ -128,55 +128,120 @@ function tituloiconos($iconos, $tipo)
 
                         </div>
                     </div>
-                    <iframe src="<?php echo $resultados[0]->conversation_url; ?>" width="100%" class="border rounded-3" style="height: 500px!important;"></iframe>
-                   <?php  $vero="";
-                        foreach($emp as $value){
-                            $urlreabrir=$value->reabrir;
-                        }
+                    <?php if($resultados[0]->siennasource==7){?>
 
-                       
-                        if(strlen($urlreabrir)<2){
-                            $vero="d-none";
-                        }
-                   ?>
-                    <div class="<?php  echo $vero;?> d-flex justify-content-between mt-2 mb-2">
-                        <div></div>
-                        <div class="me-2">
-                        <?php 
-                            
-                          
-                         
-                            ?>
-                           
-                        <button class="btn btn-success " data-bs-toggle="modal" data-bs-target="#open-conversation">
-                                <i class="mdi mdi-whatsapp me-1" ></i>Reabrir conversación 
-                     </button>
-                    </div>
-                        <script>
-                                            function reabrir(tel2,url){
-                                               
-                                                const xhr = new XMLHttpRequest();
-                                               // url="https://publicapi.xenioo.com/broadcasts/jjjTNjqyv3gGCFnsGDT3JA7G8dgHzpjr/4iQCeaeFBmdGvLZSo3dKzM9Q1H36cLlrTCrsFImZTxVR7BJ1dJVdjMCiZzBMXXdp/direct";
-                                                //tel2="541133258450";
-                                                urlprincipal2="https://suricata4.com.ar/api/broadcast?url="+url+"&tel2="+tel2+"&token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM";
-                    
-                                                xhr.open("GET", urlprincipal2.trim());
-                                                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                        <div class="card ">
+                                <div class="card-body">
+                                    <h5 class="font-18"><?php echo $resultados[0]->emailnom;?></h5>
+                                    <hr>
+                                    <div class="d-flex mb-3 mt-1">
+                                        <div class="w-100 overflow-hidden">
                                             
-                                                xhr.onload = () => {
-                                                if (xhr.readyState == 4 && xhr.status == 200) {
-                                                    console.log(JSON.parse(xhr.responseText));
-                                                } else {
-                                                    console.log(`Error: ${xhr.status}`);
-                                                }
-                                                };
-                                                xhr.send();
+                                            <small class="text-muted">From: <?php echo $resultados[0]->emailcliente;?></small>
+                                        </div>
+                                    </div>
+                                    <?php 
+                                
+                                        
+
+                                        
+                                
+                                    $b = html_entity_decode($resultados[0]->eltexto);
+                                    $b = str_replace('src="cid:', '', $b);
+                                    $b = preg_replace('/<img\b(?![^>]*\bsrc=)[^>]*>/i', '', $b);
+
+                                
+
+                                        ?>  
+                                    {!! $b !!}
+                                    <hr>
+
+                                    <h5 class="mb-3">Adjuntos</h5>
+
+                                    <div class="row">
+                                        <?php foreach($segui as $adj){
+                                            if($adj->tipo==9){?>
+                                        <div class="col-xl-4">
+                                            <div class="card mb-1 shadow-none border">
+                                                <div class="p-2">
+                                                    <div class="row align-items-center">
+                                                    
+                                                        <div class="col-auto">
+                                                            <!-- Button -->
+                                                    <a target=_blank href="<?php echo $adj->descripcion;?>"><img  src='<?php echo $adj->descripcion;?>' width="40px;"></a>
+                                                            
+                                                        
+                                                            
+                                                        
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> <!-- end col -->
+                                        <?php }}?>
+                                    
+                                    </div>
+                                    <!-- end row-->
+                                    <form action="" method="post">
+                                        <div class="mt-5">
+                                            <div id="snow-editor" style="height: 300px;">
+                                            </div>
+                                            <button type="submit" class="btn me-2 mt-2 rounded-pill" style="background-color: #FFD193;">Responder</button> 
+                                        </div>
+                                    </form>
+
+                                </div>
+                        <!-- end .mt-4 -->
+
+                        </div> 
 
 
-                                            }
-                        </script>
+                    <?php
+                    }else{?>
+                            <iframe src="<?php echo $resultados[0]->conversation_url; ?>" width="100%" class="border rounded-3" style="height: 500px!important;"></iframe>
+                            <?php  $vero="";
+                                    foreach($emp as $value){
+                                        $urlreabrir=$value->reabrir;
+                                    }
+                                    if(strlen($urlreabrir)<2){
+                                        $vero="d-none";
+                                    }
+                            ?>
+                            <div class="<?php  echo $vero;?> d-flex justify-content-between mt-2 mb-2">
+                                <div></div>
+                                <div class="me-2">
+                                
+                                
+                                    <button class="btn btn-success " data-bs-toggle="modal" data-bs-target="#open-conversation">
+                                            <i class="mdi mdi-whatsapp me-1" ></i>Reabrir conversación 
+                                    </button>
+                                </div>
+                                <script>
+                                                    function reabrir(tel2,url){
+                                                    
+                                                        const xhr = new XMLHttpRequest();
+                                                    // url="https://publicapi.xenioo.com/broadcasts/jjjTNjqyv3gGCFnsGDT3JA7G8dgHzpjr/4iQCeaeFBmdGvLZSo3dKzM9Q1H36cLlrTCrsFImZTxVR7BJ1dJVdjMCiZzBMXXdp/direct";
+                                                        //tel2="541133258450";
+                                                        urlprincipal2="https://suricata4.com.ar/api/broadcast?url="+url+"&tel2="+tel2+"&token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM";
+                            
+                                                        xhr.open("GET", urlprincipal2.trim());
+                                                        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                                                    
+                                                        xhr.onload = () => {
+                                                        if (xhr.readyState == 4 && xhr.status == 200) {
+                                                            console.log(JSON.parse(xhr.responseText));
+                                                        } else {
+                                                            console.log(`Error: ${xhr.status}`);
+                                                        }
+                                                        };
+                                                        xhr.send();
 
-                    </div>  
+
+                                                    }
+                                </script>
+
+                            </div>  
+                    <?php }?>
                     <div class="mt-2">
                         <div class="card widget-flat">
                             <div class="card-body">

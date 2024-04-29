@@ -124,8 +124,7 @@ function coloriconos($iconos, $tipo)
                             </div>
                             <?php 
                            
-// Eliminar el componente src de la URL que contiene 'cid:'
-                                   
+                                 
 
                                    
                            
@@ -135,7 +134,7 @@ function coloriconos($iconos, $tipo)
 
                            
 
-?>  
+                                ?>  
                             {!! $b !!}
                             <hr>
 
