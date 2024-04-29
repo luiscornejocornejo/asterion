@@ -1603,7 +1603,7 @@ class siennaticketsController extends Controller
         $texto=$request->texto;
         echo $ticket=$request->ticket;
         
-        return $mail;
+        return $ticket;
      }
      
      
