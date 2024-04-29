@@ -127,7 +127,8 @@ class siennaController extends Controller
 
  
     CREATE TABLE ".$val->Database.".motivoc (
-      id INT NULL,
+      id INT auto_increment NOT NULL,
+      CONSTRAINT motivoc_pk PRIMARY KEY (id)
       nombre varchar(100) NULL,
       iddepto INT NULL
     )
