@@ -861,6 +861,7 @@ class TicketdatosController extends Controller
 
         echo   $tik=$request->tik;
         echo   $estado=$request->estado;
+        echo   $motivoc=$request->motivoc;
 
         $idbot=$request->idbot;
         $idconv=$request->idconv;
@@ -916,8 +917,10 @@ class TicketdatosController extends Controller
         $si2->siennaestado=$estado;
         if($estado==4){
             $si2->cliente=$request->client_number;
-            $si2->t_cerrado=date("Y-m-d H:i:s");
+            $si2->motivoc=$request->motivoc;
 
+            $si2->t_cerrado=date("Y-m-d H:i:s");
+            
         }
         $si2->save();
 
