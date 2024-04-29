@@ -186,7 +186,7 @@ function tituloiconos($iconos, $tipo)
                                     <!-- end row-->
                                    
                                         <div class="mt-5">
-                                            <input id="mailaeviar" type="email" value="<?php echo $resultados[0]->emailcliente;?>">
+                                            <input id="mailaeviar" readonly type="email" value="<?php echo $resultados[0]->emailcliente;?>">
                                             <div  id="snow-editor" style="height: 300px;">
                                             </div>
                                             <button onclick="enviaremail()" type="button" class="btn me-2 mt-2 rounded-pill" style="background-color: #FFD193;">Responder</button> 
