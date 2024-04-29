@@ -198,6 +198,16 @@ function tituloiconos($iconos, $tipo)
                                                 let texto=document.getElementById("snow-editor").innerHTML;
                                                 alert(mail);
                                                 alert(texto);
+                                                axios.post('/api/mandarmail', {
+                                                        mail: mail,
+                                                        texto: texto
+                                                    })
+                                                    .then(function (response) {
+                                                        console.log(response);
+                                                    })
+                                                    .catch(function (error) {
+                                                        console.log(error);
+                                                    });
                                             }
                                         </script>
                                     

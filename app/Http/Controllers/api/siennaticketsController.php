@@ -1597,7 +1597,13 @@ class siennaticketsController extends Controller
 
      }
      
+     public function mandarmail(Request $request){
 
+        $mail=$request->mail;
+        $texto=$request->texto;
         
+        return $mail;
+     }
+     
      
 }
