@@ -737,23 +737,32 @@ class siennaticketsController extends Controller
         //return response()->json(['cliente' => $return2]);
 
     }
+
+    public function valida($cliente,$merchant){
+        $valida=0;
+
+        $query="select count(*) as cuantos from ".$merchant.".siennatickets where cliente='".$cliente."'  and siennnaestado<>'4'";
+        $resultados = DB::select($query);
+
+        foreach($resultados as $val){
+            $valida=$val->cuantos;
+        }
+
+        return $valida;
+    }
     public function creartickessiennacharlie(Request $request)
     {
         $cel = $request->cel;//callid
         $tel = $request->tel;//telcontacto
-        //$valida = $request->valida;//telcontacto
-        if(true){
-
-            return '{"error":"true","ticket":"10"}';
-        }
-
         $siennaestado = $request->siennaestado;
-      
         $siennasource = "5";
-      
-       
         $cliente = $request->cliente;
-       
+        $merchant = $request->merchant;
+        $valida = $this->valida($cliente,$merchant);//telcontacto
+        if($valida>0){
+
+            return '{"error":"true","ticket":"'.$valida.'"}';
+        }
         if($request->ostickettopic==""){
             $ostickettopic=$request->ostickettopic;
             $resultados222 = siennatopic::where('ostickettopic', '=', $ostickettopic)->get();
