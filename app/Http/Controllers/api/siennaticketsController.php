@@ -763,7 +763,7 @@ class siennaticketsController extends Controller
 
             return '{"error":"true","ticket":"'.$valida.'"}';
         }
-        if($request->ostickettopic==""){
+        if($request->ostickettopic<>""){
             $ostickettopic=$request->ostickettopic;
             dd($ostickettopic);
             $resultados222 = siennatopic::where('ostickettopic', '=', $ostickettopic)->get();
@@ -781,8 +781,6 @@ class siennaticketsController extends Controller
             foreach ($resultados222 as $valuep) {
                 $siennatopic = $valuep->id;
                 $siennadepto = $valuep->siennadepto;
-                
-                
             }
 
         }
