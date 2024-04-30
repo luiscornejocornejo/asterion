@@ -15,6 +15,7 @@
                  <?php
                  foreach($empresa as $val){
                   $fre=$val->frecuencia;
+                  $mail=$val->mail;
                   $zona=$val->zona;
                   $reabrir=$val->reabrir;
                 }?>
@@ -23,6 +24,10 @@
                     <div class="form-group">
                       <label for="exampleFormControlInput1">Frecuencia</label>
                       <input value="<?php echo $fre;?>" type="number" name="frecuencia" class="form-control" id="exampleFormControlInput1" placeholder="60000">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Email de envio</label>
+                      <input value="<?php echo $mail;?>" type="email" name="mail" class="form-control" id="exampleFormControlInput1" placeholder="60000">
                     </div>
                     <div class="form-group">
                       <label for="exampleFormControlSelect1">Zona Horaria </label>
