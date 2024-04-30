@@ -774,9 +774,9 @@ class siennaticketsController extends Controller
             }
           
         }else{
-           echo   $siennatopic = $request->siennatopic;
+              $siennatopic = $request->siennatopic;
             $resultados222 = siennatopic::where('id', '=', $siennatopic)->get();
-         dd($resultados222);
+        // dd($resultados222);
             foreach ($resultados222 as $valuep) {
                 $siennatopic = $valuep->id;
                 $siennadepto = $valuep->siennadepto;
