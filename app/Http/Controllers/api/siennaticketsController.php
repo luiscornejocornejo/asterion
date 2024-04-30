@@ -745,7 +745,7 @@ class siennaticketsController extends Controller
         $resultados = DB::select($query);
 
         foreach($resultados as $val){
-            $valida=$val->cuantos;
+            $valida=$val->id;
         }
 
         return $valida;
