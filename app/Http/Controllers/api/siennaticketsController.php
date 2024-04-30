@@ -750,6 +750,11 @@ class siennaticketsController extends Controller
 
         return $valida;
     }
+    public function creartickessiennacharlie2(Request $request)
+    {
+
+        echo "aca";
+    }
     public function creartickessiennacharlie(Request $request)
     {
         $cel = $request->cel;//callid

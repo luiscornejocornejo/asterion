@@ -45,6 +45,7 @@ Route::get('/tickessienna3', [siennaticketsController::class, 'tickessienna3']);
 Route::get('/tickessiennaseguimientos', [siennaticketsController::class, 'tickessiennaseguimientos']);
 Route::post('/creartickessienna', [siennaticketsController::class, 'creartickessienna']);
 Route::get('/creartickessiennacharlie', [siennaticketsController::class, 'creartickessiennacharlie']);
+Route::get('/creartickessiennacharlie2', [siennaticketsController::class, 'creartickessiennacharlie2']);
 
    
 Route::post('/mandarmail', [siennaticketsController::class, 'mandarmail']);
