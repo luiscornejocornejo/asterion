@@ -18,6 +18,8 @@
                   $mail=$val->mail;
                   $zona=$val->zona;
                   $reabrir=$val->reabrir;
+                  $user=$val->user;
+                  $password=$val->password;
                 }?>
                  <form action="/empresadatos" method="post">
                  @csrf
@@ -28,6 +30,14 @@
                     <div class="form-group">
                       <label for="exampleFormControlInput1">Email de envio</label>
                       <input value="<?php echo $mail;?>" type="email" name="mail" class="form-control" id="exampleFormControlInput1" placeholder="60000">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">User server mail</label>
+                      <input value="<?php echo $user;?>" type="text" name="mail" class="form-control" id="exampleFormControlInput1" placeholder="60000">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Password server mail</label>
+                      <input value="<?php echo $password;?>" type="text" name="mail" class="form-control" id="exampleFormControlInput1" placeholder="60000">
                     </div>
                     <div class="form-group">
                       <label for="exampleFormControlSelect1">Zona Horaria </label>

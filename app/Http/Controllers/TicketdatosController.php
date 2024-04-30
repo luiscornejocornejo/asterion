@@ -364,7 +364,9 @@ class TicketdatosController extends Controller
         $frecuencia=$request->frecuencia;
         $reabrir=$request->reabrir;
         $mail=$request->mail;
-        $query="update empresa set mail='".$mail."',zona='".$zona."',frecuencia='".$frecuencia."',reabrir='".$reabrir."' where id='1'";
+        $user=$request->user;
+        $password=$request->password;
+        $query="update empresa set user='".$user."',password='".$password."',mail='".$mail."',zona='".$zona."',frecuencia='".$frecuencia."',reabrir='".$reabrir."' where id='1'";
         $resultados5 = DB::select($query);
         return redirect()
         ->back()
