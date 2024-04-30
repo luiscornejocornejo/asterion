@@ -765,6 +765,7 @@ class siennaticketsController extends Controller
         }
         if($request->ostickettopic==""){
             $ostickettopic=$request->ostickettopic;
+            dd($ostickettopic);
             $resultados222 = siennatopic::where('ostickettopic', '=', $ostickettopic)->get();
             foreach ($resultados222 as $valuep) {
                 $siennatopic = $valuep->id;
