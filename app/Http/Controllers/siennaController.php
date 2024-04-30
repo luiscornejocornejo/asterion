@@ -124,8 +124,8 @@ class siennaController extends Controller
     
       //
     echo   $query1="
-    ALTER TABLE ".$val->Database.".users ADD interno varchar(100) NULL;
 
+    ALTER TABLE ".$val->Database.".siennatickets ADD cc varchar(1000) NULL;
 
 
   
