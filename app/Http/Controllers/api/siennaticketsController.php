@@ -741,7 +741,7 @@ class siennaticketsController extends Controller
     public function valida($cliente,$merchant){
         $valida=0;
 
-        $query="select count(*) as cuantos from ".$merchant.".siennatickets where cliente='".$cliente."'  and siennnaestado<>'4'";
+        $query="select count(*) as cuantos from ".$merchant.".siennatickets where cliente='".$cliente."'  and siennaestado<>'4'";
         $resultados = DB::select($query);
 
         foreach($resultados as $val){
