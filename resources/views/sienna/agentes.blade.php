@@ -41,6 +41,7 @@ document.getElementById("user_id4").value = dd;
 
                                 <th class="text-light">Departamentos</th>
                                 <th class="text-light">Rol</th>
+                                <th class="text-light">Interno</th>
                                 <th class="text-light">Acciones</th>
                             </tr>
                         </thead>
@@ -82,6 +83,7 @@ document.getElementById("user_id4").value = dd;
  
                                 
                                 <td>{{$val3->tipousuario}}</td>
+                                <td>{{$val3->interno}}</td>
                               
                                 <td>
                                     <button onclick="rol(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalrol" class="btn btn-info rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
