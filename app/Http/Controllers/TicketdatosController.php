@@ -423,6 +423,9 @@ class TicketdatosController extends Controller
 
         $grupossso=$request->grupossso;
         $mailsso=$request->nombre.$request->apellido."@suricata.la";
+        $interno=$request->interno;
+
+        
         $grup="";
         foreach($grupossso as $val){
 
@@ -483,6 +486,7 @@ class TicketdatosController extends Controller
         $us->deptosuser=$grup22;
         $us->tipousers=$request->rol;
         $us->tickets=$request->asignar;
+        $us->interno=$request->interno;
         $us->password=md5($request->pass);
         $us->email_suricata=$mailsso;
         $us->save();

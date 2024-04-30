@@ -41,7 +41,9 @@
                                 <option value="1">Si</option>
                                 <option value="0">No</option>
                             </select>
-        
+                            <label class="form-label" for="exampleInputEmail1">Interno</label>
+                            <input type="text" name="interno" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="303" required="">
+                            
                             <button type="submit" class="btn btn-success w-100">Crear</button>
                             
                          </form>
