@@ -894,7 +894,8 @@ class siennaticketsController extends Controller
       
 
         //return '{"error":"false","ticket":"11"}';
-        return $si->id;
+        return '{"error":"false","ticket":"'.$si->id.'"}';
+
         //return response()->json(['cliente' => $return2]);
 
     }
