@@ -190,7 +190,7 @@ function tituloiconos($iconos, $tipo)
                                         <input id="mailaeviarcc" readonly type="email" value="<?php echo $resultados[0]->cc;?>">
                                             <div  id="snow-editor" style="height: 300px;">
                                             </div>
-                                            <button onclick="enviaremail('<?php echo $resultados[0]->ticketid;?>','<?php echo $subdomain_tmp;?>','<?php echo $resultados[0]->cc;?>',)" type="button" class="btn me-2 mt-2 rounded-pill" style="background-color: #FFD193;">Responder</button> 
+                                            <button onclick="enviaremail('<?php echo $resultados[0]->ticketid;?>','<?php echo $subdomain_tmp;?>','<?php echo $resultados[0]->cc;?>')" type="button" class="btn me-2 mt-2 rounded-pill" style="background-color: #FFD193;">Responder</button> 
                                         </div>
                                         <script>
                                             function enviaremail(ticket,merchant,cc){
