@@ -200,11 +200,9 @@ function tituloiconos($iconos, $tipo)
                                                  cc=document.getElementById("cc2").value;
                                                  subject=document.getElementById("subject").value;
                                                 let texto=document.getElementById("snow-editor").innerHTML;
-                                                alert(mail);
-                                                alert(texto);
-                                                alert(ticket);
+                                               
                                                 url='/api/mandarmail';
-                                                alert(url);
+                                              
 
                                                 axios.post(url, {
                                                     mail: mail,
