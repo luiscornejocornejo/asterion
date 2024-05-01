@@ -205,7 +205,8 @@ function tituloiconos($iconos, $tipo)
                                                 alert(url);
 
                                                 axios.post(url, {
-                                                        mail: mail,
+                                                    mail: mail,
+                                                    cc: cc,
                                                         texto: texto,
                                                         ticket: ticket,
                                                         merchant: merchant,
