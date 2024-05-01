@@ -204,7 +204,7 @@ function tituloiconos($iconos, $tipo)
                                                 url='/api/mandarmail';
                                                 alert(url);
 
-                                                axios.get(url, {
+                                                axios.post(url, {
                                                     mail: mail,
                                                     cc: cc,
                                                         texto: texto,
