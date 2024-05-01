@@ -1621,7 +1621,7 @@ class siennaticketsController extends Controller
         $merchant=$request->merchant;
         $subject="remensaje";
         $for="kayser95@hotmail.com";
-        $cc="kayser1712@gmail.com";
+        $cc=array('kayser1712@gmail.com','luis.cornejo@suricata.la');
 
         Mail::mailer('suricata')
                 ->send('mailsienna', ["fields2" => $texto], function ($msj) use ($subject,$for, $cc) {
