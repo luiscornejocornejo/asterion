@@ -1630,6 +1630,11 @@ class siennaticketsController extends Controller
             $msj->to($for);
             $msj->cc($cc);
         });
+
+
+        $si2 = siennatickets::find($ticket);
+        $si2->email = $si2->email ."<hr>".$texto;
+        $si2->save();
         return $ticket;
      }
      public function motic(Request $request){
