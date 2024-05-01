@@ -1,4 +1,18 @@
 
+<html>
+    <head>
+
+</head>
+
+<body>
+
+<?php echo $fields2;?>
 
 
-{{$fields2}}
+</body>
+
+
+
+
+</html>
+
