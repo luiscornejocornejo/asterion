@@ -1621,7 +1621,7 @@ class siennaticketsController extends Controller
 
         $ticket=$request->ticket;
         $merchant=$request->merchant;
-        $subject="remensaje";
+        $subject=$request->subject;
         $for="kayser95@hotmail.com";
         $cc=array('kayser1712@gmail.com','luis.cornejo@suricata.la');
 

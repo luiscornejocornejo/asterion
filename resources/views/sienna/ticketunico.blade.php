@@ -188,15 +188,17 @@ function tituloiconos($iconos, $tipo)
                                         <div class="mt-5">
                                         <input id="mailaeviar" readonly type="email" value="<?php echo $resultados[0]->emailcliente;?>">
                                         <input id="cc2" readonly type="text" value="<?php echo $resultados[0]->cc;?>">
+                                        <input id="subject" readonly type="text" value="<?php echo $resultados[0]->nya;?>">
                                             <div  id="snow-editor" style="height: 300px;">
                                             </div>
-                                            <button onclick="enviaremail2('<?php echo $resultados[0]->ticketid;?>','<?php echo $subdomain_tmp;?>','<?php echo $resultados[0]->cc;?>')" type="button" class="btn me-2 mt-2 rounded-pill" style="background-color: #FFD193;">Responder</button> 
+                                            <button onclick="enviaremail2('<?php echo $resultados[0]->ticketid;?>','<?php echo $subdomain_tmp;?>','<?php echo $resultados[0]->cc;?>','<?php echo $resultados[0]->nya;?>')" type="button" class="btn me-2 mt-2 rounded-pill" style="background-color: #FFD193;">Responder</button> 
                                         </div>
                                         <script>
-                                            function enviaremail2(ticket,merchant,cc){
+                                            function enviaremail2(ticket,merchant,cc,subject){
 
                                                 let mail=document.getElementById("mailaeviar").value;
                                                  cc=document.getElementById("cc2").value;
+                                                 subject=document.getElementById("cc2").subject;
                                                 let texto=document.getElementById("snow-editor").innerHTML;
                                                 alert(mail);
                                                 alert(texto);
@@ -210,6 +212,7 @@ function tituloiconos($iconos, $tipo)
                                                         texto: texto,
                                                         ticket: ticket,
                                                         merchant: merchant,
+                                                        subject: subject,
                                                         
                                                     })
                                                     .then(function (response) {
