@@ -44,7 +44,7 @@ return [
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
         ],
-        'rivernet' => [
+        'suricata' => [
             'transport' => 'smtp',
             'host' => 'mail.smtp2go.com',
             'port' =>'2525',

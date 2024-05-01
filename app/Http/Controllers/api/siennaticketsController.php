@@ -1623,7 +1623,8 @@ class siennaticketsController extends Controller
         $for="kayser95@hotmail.com";
         $cc="kayser1712@gmail.com";
 
-        Mail::send('mailsienna', ["fields2" => $texto], function ($msj) use ($subject,$for, $cc) {
+        Mail::mailer('suricata')
+                ->send('mailsienna', ["fields2" => $texto], function ($msj) use ($subject,$for, $cc) {
             $msj->from("prueba@siennasystem.com", "luis");
             $msj->subject($subject);
             $msj->to($for);
