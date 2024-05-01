@@ -196,7 +196,7 @@ function tituloiconos($iconos, $tipo)
                                             function enviaremail2(ticket,merchant,cc){
 
                                                 let mail=document.getElementById("mailaeviar").value;
-                                                let cc=document.getElementById("cc2").value;
+                                                 cc=document.getElementById("cc2").value;
                                                 let texto=document.getElementById("snow-editor").innerHTML;
                                                 alert(mail);
                                                 alert(texto);
