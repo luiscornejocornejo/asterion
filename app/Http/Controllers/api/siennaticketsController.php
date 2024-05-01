@@ -1614,6 +1614,7 @@ class siennaticketsController extends Controller
      public function mandarmail(Request $request){
 
         echo  $mail=$request->mail;
+        echo  $cc=$request->cc;
         $texto=$request->texto;
         $ticket=$request->ticket;
         $merchant=$request->merchant;
