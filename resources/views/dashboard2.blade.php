@@ -120,6 +120,7 @@ if (isset($_GET['fecha'])) {
                     }
                     }
                 });
+            }
                 function grafico2(datosp,subdomain_tmp,divss) {
                     console.log(datosp.data);
 
@@ -161,7 +162,7 @@ if (isset($_GET['fecha'])) {
                         }
                     }
                     }
-                });
+                    });
 
 
                 }
