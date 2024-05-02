@@ -78,6 +78,7 @@ if (isset($_GET['fecha'])) {
             <script>
                 window.addEventListener('load', home());
                 let myChart;
+                let myChart2;
                 function grafico(datosp,subdomain_tmp,divss) {
                     console.log(datosp.data);
 
