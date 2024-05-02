@@ -62,8 +62,8 @@ Route::get('/home', function () {
        return view('/home');
    });
 
-   Route::get('/dashboard', function () {
-    return view('/dashboard');
+   Route::get('/dashboard2', function () {
+    return view('/dashboard2');
 });
    Route::get('/ttt', function () {
     return view('/sienna/tt');
