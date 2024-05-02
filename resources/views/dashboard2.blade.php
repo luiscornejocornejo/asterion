@@ -57,7 +57,7 @@ if (isset($_GET['fecha'])) {
 
 <!-- Begin page -->
 
-<div class="wrapper" onload="home()">
+<div class="wrapper" >
 
     <!-- ========== Left Sidebar Start ========== -->
     @include('facu.menu')
@@ -76,6 +76,7 @@ if (isset($_GET['fecha'])) {
            
 
             <script>
+                window.addEventListener('load', home());
                 let myChart;
                 function grafico(datosp,subdomain_tmp,divss) {
                     console.log(datosp.data);
