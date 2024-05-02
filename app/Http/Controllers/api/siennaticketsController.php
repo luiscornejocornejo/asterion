@@ -1590,7 +1590,7 @@ class siennaticketsController extends Controller
         on s.id=a.asignado
         where siennaestado<>4
    
-         group by users";
+         group by asignado";
         $resultados = DB::select($query);
         return $resultados;
     }
