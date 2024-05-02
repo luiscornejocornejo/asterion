@@ -203,7 +203,7 @@ if (isset($_GET['fecha'])) {
                                 // función que siempre se ejecuta
                             });
 
-                        }
+                }
 
                 function abiertos(urlabiertos) {
                     axios.get(urlabiertos)
@@ -258,11 +258,11 @@ if (isset($_GET['fecha'])) {
                    // cerrados(urlcerrados);
 
                     urlabiertos = "https://" + result + ".suricata.cloud/api/abiertoscant2";
-                   
                     abiertos(urlabiertos);
 
                     urlticketxdepto = "https://" + result + ".suricata.cloud/api/ticketxdepto2";
                     ticketxdepto(urlticketxdepto,result);
+
                     urlticketxestado = "https://" + result + ".suricata.cloud/api/ticketxestado";
                     ticketxestado(urlticketxestado,result);
 
