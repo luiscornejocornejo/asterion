@@ -61,6 +61,10 @@ Route::group(['middleware' => ['reportes']], function() {
 Route::get('/home', function () {
        return view('/home');
    });
+
+   Route::get('/dashboard', function () {
+    return view('/dashboard');
+});
    Route::get('/ttt', function () {
     return view('/sienna/tt');
 });

@@ -1507,21 +1507,20 @@ class siennaticketsController extends Controller
     }
 
     
-    public function abiertoscant(Request $request)
+    public function abiertoscant2(Request $request)
     {
         $ini=$request->ini;
         $fin=$request->fin;
         $resultados = "";
         $dom=$this->dominio();
-         $query = "select count(*) as cantidadtickets2  from ".$dom.".siennatickets where siennaestado<>4 and
-        created_at>='".$ini." 00:00:00' and created_at<='".$fin." 23:59:59'  ";
+         $query = "select count(*) as cantidadtickets2  from ".$dom.".siennatickets where siennaestado<>4   ";
         $resultados = DB::select($query);
         return $resultados;
     }
     
-    public function ticketxdepto(Request $request)
+    public function ticketxdepto2(Request $request)
     {
-        $ini=$request->ini;
+     $ini=$request->ini;
         $fin=$request->fin;
         $resultados = "";
         $dom=$this->dominio();
@@ -1530,8 +1529,7 @@ class siennaticketsController extends Controller
         join ".$dom.".siennadepto s 
         on s.id=a.siennadepto 
         where siennaestado<>4
-        and
-        a.created_at>='".$ini." 00:00:00' and a.created_at<='".$fin." 23:59:59' 
+   
          group by siennadepto";
         $resultados = DB::select($query);
         return $resultados;
