@@ -150,6 +150,7 @@ if (isset($_GET['fecha'])) {
                 function abiertos(urlabiertos) {
                     axios.get(urlabiertos)
                         .then(function(response) {
+                            console.log(response);
                             for (i = 0; i < response.data.length; i++) {
                                 let ticketabiertos = response.data[i].cantidadtickets2;
                                 console.log(ticketabiertos);
@@ -195,10 +196,11 @@ if (isset($_GET['fecha'])) {
                     var porciones = URLactual.split('.');
                     let result = porciones[0].replace("https://", "");
 
-                    urlcerrados = "https://" + result + ".suricata.cloud/api/cerradoscant?ini=" + start + "&fin=" + endDate + "";
-                    cerrados(urlcerrados);
+                 //   urlcerrados = "https://" + result + ".suricata.cloud/api/cerradoscant?ini=" + start + "&fin=" + endDate + "";
+                   // cerrados(urlcerrados);
 
                     urlabiertos = "https://" + result + ".suricata.cloud/api/abiertoscant2";
+                   
                     abiertos(urlabiertos);
 
                     urlticketxdepto = "https://" + result + ".suricata.cloud/api/ticketxdepto2";
