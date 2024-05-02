@@ -81,6 +81,7 @@ if (isset($_GET['fecha'])) {
                 let myChart2;
                 let myChart3;
                 let myChart4;
+                let myChart5;
                 function grafico(datosp,subdomain_tmp,divss) {
                     console.log(datosp.data);
 
@@ -259,6 +260,51 @@ if (isset($_GET['fecha'])) {
 
 
                 }
+                function grafico5(datosp,subdomain_tmp,divss) {
+                    console.log(datosp.data);
+
+                    var labels=[];
+                    var datos=[];
+                  
+                    for (i = 0; i < datosp.data.length; i++) {
+                        console.log(datosp.data[i].name);
+                        labels.push(datosp.data[i].name);
+                        console.log(labels);
+
+                        datos.push(datosp.data[i].cant);
+
+                        console.log(datos);
+
+                    }
+                    console.log(labels);
+
+                    console.log(datos);
+
+                    const ctx5 = document.getElementById('myChart5');
+                    if (myChart5) {
+                        myChart5.destroy();
+                    }
+                    myChart5=new Chart(ctx5, {
+                    type: 'doughnut',
+                    data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '# agente',
+                        data: datos,
+                        borderWidth: 1
+                    }]
+                    },
+                    options: {
+                    scales: {
+                        y: {
+                        beginAtZero: true
+                        }
+                    }
+                    }
+                    });
+
+
+                }
                 function ticketxdepto(url2,result) {
 
                     axios.get(url2)
@@ -316,6 +362,26 @@ if (isset($_GET['fecha'])) {
                         });
 
                 }
+                
+                function ticketxagente(url2,result) {
+
+                    axios.get(url2)
+                        .then(function(response) {
+                        
+                            console.log(response);
+                            divss="#chart6";
+                            grafico5(response,result,divss) 
+
+                        })
+                        .catch(function(error) {
+                            // función para capturar el error
+                            console.log(error);
+                        })
+                        .then(function() {
+                            // función que siempre se ejecuta
+                        });
+
+                    }
                 function ticketxtopic(url2,result) {
 
                     axios.get(url2)
@@ -402,6 +468,9 @@ if (isset($_GET['fecha'])) {
                     urlticketxtopic = "https://" + result + ".suricata.cloud/api/ticketxtopic";
                     ticketxtopic(urlticketxtopic,result);
 
+                    urlticketxagente = "https://" + result + ".suricata.cloud/api/ticketxagente";
+                    ticketxagente(urlticketxagente,result);
+
                 }
             </script>
         
@@ -476,6 +545,14 @@ if (isset($_GET['fecha'])) {
 
                                     <h4 class="header-title">Tickets por canal<i title="" class="ri-information-fill"></i></h4>
                                     <canvas id="myChart3" ></canvas>
+
+
+                                    </div> <!-- end card-body-->
+
+                                    <div class="card-body" style="width: 400px;">
+
+                                    <h4 class="header-title">Tickets por Agete<i title="" class="ri-information-fill"></i></h4>
+                                    <canvas id="myChart5" ></canvas>
 
 
                                     </div> <!-- end card-body-->

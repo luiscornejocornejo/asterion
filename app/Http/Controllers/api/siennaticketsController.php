@@ -1579,6 +1579,21 @@ class siennaticketsController extends Controller
         return $resultados;
     }
     
+    public function ticketxagente(Request $request)
+    {
+   
+        $resultados = "";
+        $dom=$this->dominio();
+        $query="select count(*) as cant ,s.nombre  as name
+        from ".$dom.".siennatickets a 
+        join ".$dom.".user s 
+        on s.id=a.asignado
+        where siennaestado<>4
+   
+         group by user";
+        $resultados = DB::select($query);
+        return $resultados;
+    }
     public function historico(Request $request)
     {
         $cliente=$request->cliente;
