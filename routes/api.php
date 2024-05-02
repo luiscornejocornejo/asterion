@@ -87,6 +87,10 @@ Route::get('/cerradoscant', [siennaticketsController::class, 'cerradoscant']);
 Route::get('/abiertoscant2', [siennaticketsController::class, 'abiertoscant2']);
 Route::get('/ticketxdepto2', [siennaticketsController::class, 'ticketxdepto2']);
 Route::get('/ticketxestado', [siennaticketsController::class, 'ticketxestado']);
+Route::get('/ticketxcanal', [siennaticketsController::class, 'ticketxcanal']);
+Route::get('/ticketxtopic', [siennaticketsController::class, 'ticketxtopic']);
+
+
 Route::get('/historico', [siennaticketsController::class, 'historico']);
 Route::get('/prueba', [siennaticketsController::class, 'prueba']);
 

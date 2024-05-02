@@ -1548,6 +1548,36 @@ class siennaticketsController extends Controller
         $resultados = DB::select($query);
         return $resultados;
     }
+    public function ticketxtopic(Request $request)
+    {
+   
+        $resultados = "";
+        $dom=$this->dominio();
+        $query="select count(*) as cant ,s.nombre  as name
+        from ".$dom.".siennatickets a 
+        join ".$dom.".siennatopic s 
+        on s.id=a.siennatopic
+        where siennaestado<>4
+   
+         group by siennatopic";
+        $resultados = DB::select($query);
+        return $resultados;
+    }
+    public function ticketxcanal(Request $request)
+    {
+   
+        $resultados = "";
+        $dom=$this->dominio();
+        $query="select count(*) as cant ,s.nombre  as name
+        from ".$dom.".siennatickets a 
+        join ".$dom.".siennasource s 
+        on s.id=a.siennasource
+        where siennaestado<>4
+   
+         group by siennasource";
+        $resultados = DB::select($query);
+        return $resultados;
+    }
     
     public function historico(Request $request)
     {

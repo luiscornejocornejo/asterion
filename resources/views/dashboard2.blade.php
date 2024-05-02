@@ -79,6 +79,8 @@ if (isset($_GET['fecha'])) {
                 window.addEventListener('load', home());
                 let myChart;
                 let myChart2;
+                let myChart3;
+                let myChart4;
                 function grafico(datosp,subdomain_tmp,divss) {
                     console.log(datosp.data);
 
@@ -167,7 +169,96 @@ if (isset($_GET['fecha'])) {
 
 
                 }
+                function grafico3(datosp,subdomain_tmp,divss) {
+                    console.log(datosp.data);
 
+                    var labels=[];
+                    var datos=[];
+                  
+                    for (i = 0; i < datosp.data.length; i++) {
+                        console.log(datosp.data[i].name);
+                        labels.push(datosp.data[i].name);
+                        console.log(labels);
+
+                        datos.push(datosp.data[i].cant);
+
+                        console.log(datos);
+
+                    }
+                    console.log(labels);
+
+                    console.log(datos);
+
+                    const ctx3 = document.getElementById('myChart3');
+                    if (myChart3) {
+                        myChart3.destroy();
+                    }
+                    myChart3=new Chart(ctx3, {
+                    type: 'doughnut',
+                    data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '# canal',
+                        data: datos,
+                        borderWidth: 1
+                    }]
+                    },
+                    options: {
+                    scales: {
+                        y: {
+                        beginAtZero: true
+                        }
+                    }
+                    }
+                    });
+
+
+                }
+                function grafico4(datosp,subdomain_tmp,divss) {
+                    console.log(datosp.data);
+
+                    var labels=[];
+                    var datos=[];
+                  
+                    for (i = 0; i < datosp.data.length; i++) {
+                        console.log(datosp.data[i].name);
+                        labels.push(datosp.data[i].name);
+                        console.log(labels);
+
+                        datos.push(datosp.data[i].cant);
+
+                        console.log(datos);
+
+                    }
+                    console.log(labels);
+
+                    console.log(datos);
+
+                    const ctx4 = document.getElementById('myChart4');
+                    if (myChart4) {
+                        myChart4.destroy();
+                    }
+                    myChart4=new Chart(ctx4, {
+                    type: 'doughnut',
+                    data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '# canal',
+                        data: datos,
+                        borderWidth: 1
+                    }]
+                    },
+                    options: {
+                    scales: {
+                        y: {
+                        beginAtZero: true
+                        }
+                    }
+                    }
+                    });
+
+
+                }
                 function ticketxdepto(url2,result) {
 
                     axios.get(url2)
@@ -206,7 +297,44 @@ if (isset($_GET['fecha'])) {
                             });
 
                 }
+                function ticketxcanal(url2,result) {
 
+                    axios.get(url2)
+                        .then(function(response) {
+                        
+                            console.log(response);
+                            divss="#chart5";
+                            grafico3(response,result,divss) 
+
+                        })
+                        .catch(function(error) {
+                            // función para capturar el error
+                            console.log(error);
+                        })
+                        .then(function() {
+                            // función que siempre se ejecuta
+                        });
+
+                }
+                function ticketxtopic(url2,result) {
+
+                    axios.get(url2)
+                        .then(function(response) {
+                        
+                            console.log(response);
+                            divss="#chart6";
+                            grafico4(response,result,divss) 
+
+                        })
+                        .catch(function(error) {
+                            // función para capturar el error
+                            console.log(error);
+                        })
+                        .then(function() {
+                            // función que siempre se ejecuta
+                        });
+
+                }
                 function abiertos(urlabiertos) {
                     axios.get(urlabiertos)
                         .then(function(response) {
@@ -268,6 +396,12 @@ if (isset($_GET['fecha'])) {
                     urlticketxestado = "https://" + result + ".suricata.cloud/api/ticketxestado";
                     ticketxestado(urlticketxestado,result);
 
+                    urlticketxcanal = "https://" + result + ".suricata.cloud/api/ticketxcanal";
+                    ticketxestado(urlticketxcanal,result);
+
+                    urlticketxtopic = "https://" + result + ".suricata.cloud/api/ticketxtopic";
+                    ticketxestado(urlticketxtopic,result);
+
                 }
             </script>
         
@@ -328,6 +462,20 @@ if (isset($_GET['fecha'])) {
 
                                     <h4 class="header-title">Tickets por estado<i title="" class="ri-information-fill"></i></h4>
                                     <canvas id="myChart2" ></canvas>
+
+
+                                    </div> <!-- end card-body-->
+                                    <div class="card-body" style="width: 400px;">
+
+                                    <h4 class="header-title">Tickets por topic<i title="" class="ri-information-fill"></i></h4>
+                                    <canvas id="myChart4" ></canvas>
+
+
+                                    </div> <!-- end card-body-->
+                                    <div class="card-body" style="width: 400px;">
+
+                                    <h4 class="header-title">Tickets por canal<i title="" class="ri-information-fill"></i></h4>
+                                    <canvas id="myChart3" ></canvas>
 
 
                                     </div> <!-- end card-body-->
