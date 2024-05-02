@@ -141,11 +141,11 @@ if (isset($_GET['fecha'])) {
 
                     console.log(datos);
 
-                    const ctx = document.getElementById('myChart2');
+                    const ctx2 = document.getElementById('myChart2');
                     if (myChart) {
                         myChart.destroy();
                     }
-                    myChart=new Chart(ctx, {
+                    myChart=new Chart(ctx2, {
                     type: 'doughnut',
                     data: {
                     labels: labels,
