@@ -1586,11 +1586,11 @@ class siennaticketsController extends Controller
         $dom=$this->dominio();
         $query="select count(*) as cant ,s.nombre  as name
         from ".$dom.".siennatickets a 
-        join ".$dom.".user s 
+        join ".$dom.".users s 
         on s.id=a.asignado
         where siennaestado<>4
    
-         group by user";
+         group by users";
         $resultados = DB::select($query);
         return $resultados;
     }
