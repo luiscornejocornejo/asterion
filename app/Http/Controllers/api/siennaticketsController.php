@@ -1635,7 +1635,7 @@ class siennaticketsController extends Controller
 
 
         $si2 = siennatickets::find($ticket);
-        $si2->email = $si2->email ."<hr>".$texto;
+        $si2->email = $si2->email ."<hr><h1>Soporte</h1>".$texto;
         $si2->estadoconv =0;
         $si2->save();
         return $ticket;
