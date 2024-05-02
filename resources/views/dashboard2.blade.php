@@ -397,10 +397,10 @@ if (isset($_GET['fecha'])) {
                     ticketxestado(urlticketxestado,result);
 
                     urlticketxcanal = "https://" + result + ".suricata.cloud/api/ticketxcanal";
-                    ticketxestado(urlticketxcanal,result);
+                    ticketxcanal(urlticketxcanal,result);
 
                     urlticketxtopic = "https://" + result + ".suricata.cloud/api/ticketxtopic";
-                    ticketxestado(urlticketxtopic,result);
+                    ticketxtopic(urlticketxtopic,result);
 
                 }
             </script>
