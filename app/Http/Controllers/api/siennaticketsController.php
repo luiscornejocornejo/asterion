@@ -1520,8 +1520,7 @@ class siennaticketsController extends Controller
     
     public function ticketxdepto2(Request $request)
     {
-     $ini=$request->ini;
-        $fin=$request->fin;
+   
         $resultados = "";
         $dom=$this->dominio();
         $query="select count(*) as cant ,s.nombre  as name
@@ -1534,7 +1533,21 @@ class siennaticketsController extends Controller
         $resultados = DB::select($query);
         return $resultados;
     }
-
+    public function ticketxestado(Request $request)
+    {
+   
+        $resultados = "";
+        $dom=$this->dominio();
+        $query="select count(*) as cant ,s.nombre  as name
+        from ".$dom.".siennatickets a 
+        join ".$dom.".siennaestado s 
+        on s.id=a.siennaestado
+        where siennaestado<>4
+   
+         group by siennaestado";
+        $resultados = DB::select($query);
+        return $resultados;
+    }
     
     public function historico(Request $request)
     {

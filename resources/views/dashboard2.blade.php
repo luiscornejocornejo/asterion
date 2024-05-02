@@ -120,6 +120,49 @@ if (isset($_GET['fecha'])) {
                     }
                     }
                 });
+                function grafico2(datosp,subdomain_tmp,divss) {
+                    console.log(datosp.data);
+
+                    var labels=[];
+                    var datos=[];
+                  
+                    for (i = 0; i < datosp.data.length; i++) {
+                        console.log(datosp.data[i].name);
+                        labels.push(datosp.data[i].name);
+                        console.log(labels);
+
+                        datos.push(datosp.data[i].cant);
+
+                        console.log(datos);
+
+                    }
+                    console.log(labels);
+
+                    console.log(datos);
+
+                    const ctx = document.getElementById('myChart2');
+                    if (myChart) {
+                        myChart.destroy();
+                    }
+                    myChart=new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '# estado',
+                        data: datos,
+                        borderWidth: 1
+                    }]
+                    },
+                    options: {
+                    scales: {
+                        y: {
+                        beginAtZero: true
+                        }
+                    }
+                    }
+                });
+
 
                 }
 
@@ -127,12 +170,7 @@ if (isset($_GET['fecha'])) {
 
                     axios.get(url2)
                         .then(function(response) {
-                            /*
-                            for (i = 0; i < response.data.length; i++) {
-                                    let ticketabiertos=response.data[i].cantidadtickets2;
-                                    console.log(ticketabiertos);
-                                    document.getElementById("abiertos").innerHTML =ticketabiertos;
-                            }*/
+                          
                             console.log(response);
                             divss="#chart3";
                             grafico(response,result,divss) 
@@ -147,6 +185,25 @@ if (isset($_GET['fecha'])) {
                         });
 
                 }
+                function ticketxestado(url2,result) {
+
+                        axios.get(url2)
+                            .then(function(response) {
+                            
+                                console.log(response);
+                                divss="#chart4";
+                                grafico(response,result,divss) 
+
+                            })
+                            .catch(function(error) {
+                                // función para capturar el error
+                                console.log(error);
+                            })
+                            .then(function() {
+                                // función que siempre se ejecuta
+                            });
+
+                        }
 
                 function abiertos(urlabiertos) {
                     axios.get(urlabiertos)
@@ -206,6 +263,8 @@ if (isset($_GET['fecha'])) {
 
                     urlticketxdepto = "https://" + result + ".suricata.cloud/api/ticketxdepto2";
                     ticketxdepto(urlticketxdepto,result);
+                    urlticketxestado = "https://" + result + ".suricata.cloud/api/ticketxestado";
+                    ticketxestado(urlticketxestado,result);
 
                 }
             </script>
@@ -245,13 +304,7 @@ if (isset($_GET['fecha'])) {
                                     <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span></span>
                                     <span class="text-nowrap"> open</span>
                                 </p>
-                                <h2 class="my-2" id="active-views-count2">
-                                    <p id="cerrados"><?php echo $cantidadtickets2; ?></p>
-                                </h2>
-                                <p class="mb-0 text-muted">
-                                    <span class="text-danger me-2"><span class="mdi mdi-arrow-down-bold"></span> </span>
-                                    <span class="text-nowrap"> close</span>
-                                </p>
+                               
                             </div> <!-- end card-body-->
                         </div>
                         <!--end card-->
@@ -266,9 +319,14 @@ if (isset($_GET['fecha'])) {
 
                                         <h4 class="header-title">Tickets por Depto<i title="" class="ri-information-fill"></i></h4>
                                         <canvas id="myChart" ></canvas>
-                                        <script>
-  
-</script>
+          
+
+                                    </div> <!-- end card-body-->
+                                    <div class="card-body" style="width: 400px;">
+
+                                    <h4 class="header-title">Tickets por estado<i title="" class="ri-information-fill"></i></h4>
+                                    <canvas id="myChart2" ></canvas>
+
 
                                     </div> <!-- end card-body-->
                                 </div> <!-- end card-->
