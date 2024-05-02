@@ -1627,7 +1627,7 @@ class siennaticketsController extends Controller
 
         Mail::mailer('suricata')
                 ->send('mailsienna', ["fields2" => $texto], function ($msj) use ($subject,$for, $cc) {
-            $msj->from("prueba@siennasystem.com", "luis");
+            $msj->from("support@suricata.la", "soporte");
             $msj->subject($subject);
             $msj->to($for);
             $msj->cc($cc);
