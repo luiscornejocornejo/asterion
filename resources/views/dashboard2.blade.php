@@ -469,25 +469,31 @@ if (isset($_GET['fecha'])) {
                    // cerrados(urlcerrados);
 
                     urlabiertos = "https://" + result + ".suricata.cloud/api/abiertoscant2";
-                    var intervalID = setInterval(abiertos, 500, urlabiertos);
+                    var intervalID = setInterval(abiertos, 6000, urlabiertos);
 
                     //abiertos(urlabiertos);
 
                     urlticketxdepto = "https://" + result + ".suricata.cloud/api/ticketxdepto2";
                    // ticketxdepto(urlticketxdepto,result);
-                    var intervalID2 = setInterval(ticketxdepto, 500, urlticketxdepto,result);
+                    var intervalID2 = setInterval(ticketxdepto, 6000, urlticketxdepto,result);
 
                     urlticketxestado = "https://" + result + ".suricata.cloud/api/ticketxestado";
-                    ticketxestado(urlticketxestado,result);
+                   // ticketxestado(urlticketxestado,result);
+                    var intervalID3 = setInterval(ticketxestado, 6000, urlticketxestado,result);
 
                     urlticketxcanal = "https://" + result + ".suricata.cloud/api/ticketxcanal";
-                    ticketxcanal(urlticketxcanal,result);
+                   // ticketxcanal(urlticketxcanal,result);
+                    var intervalID4 = setInterval(ticketxcanal, 6000, urlticketxcanal,result);
 
                     urlticketxtopic = "https://" + result + ".suricata.cloud/api/ticketxtopic";
-                    ticketxtopic(urlticketxtopic,result);
+                    //ticketxtopic(urlticketxtopic,result);
+                    var intervalID5 = setInterval(ticketxtopic, 6000, urlticketxtopic,result);
+
 
                     urlticketxagente = "https://" + result + ".suricata.cloud/api/ticketxagente";
-                    ticketxagente(urlticketxagente,result);
+                   // ticketxagente(urlticketxagente,result);
+                    var intervalID6 = setInterval(ticketxagente, 6000, urlticketxagente,result);
+
 
                 }
             </script>
