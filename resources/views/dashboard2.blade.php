@@ -469,10 +469,13 @@ if (isset($_GET['fecha'])) {
                    // cerrados(urlcerrados);
 
                     urlabiertos = "https://" + result + ".suricata.cloud/api/abiertoscant2";
-                    abiertos(urlabiertos);
+                    var intervalID = setInterval(abiertos, 500, urlabiertos);
+
+                    //abiertos(urlabiertos);
 
                     urlticketxdepto = "https://" + result + ".suricata.cloud/api/ticketxdepto2";
-                    ticketxdepto(urlticketxdepto,result);
+                   // ticketxdepto(urlticketxdepto,result);
+                    var intervalID2 = setInterval(ticketxdepto, 500, urlticketxdepto,result);
 
                     urlticketxestado = "https://" + result + ".suricata.cloud/api/ticketxestado";
                     ticketxestado(urlticketxestado,result);
