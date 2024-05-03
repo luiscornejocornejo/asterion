@@ -469,30 +469,37 @@ if (isset($_GET['fecha'])) {
                    // cerrados(urlcerrados);
 
                     urlabiertos = "https://" + result + ".suricata.cloud/api/abiertoscant2";
-                    var intervalID = setInterval(abiertos, 6000, urlabiertos);
+                    var intervalID = setInterval(abiertos, 60000, urlabiertos);
+                    var intervalIDd = setTimeout(abiertos, 500, urlabiertos);
 
                     //abiertos(urlabiertos);
 
                     urlticketxdepto = "https://" + result + ".suricata.cloud/api/ticketxdepto2";
                    // ticketxdepto(urlticketxdepto,result);
-                    var intervalID2 = setInterval(ticketxdepto, 6000, urlticketxdepto,result);
+                    var intervalID2 = setInterval(ticketxdepto, 60000, urlticketxdepto,result);
+                    var intervalIDd2 = setTimeout(ticketxdepto, 500, urlticketxdepto,result);
+
 
                     urlticketxestado = "https://" + result + ".suricata.cloud/api/ticketxestado";
                    // ticketxestado(urlticketxestado,result);
-                    var intervalID3 = setInterval(ticketxestado, 6000, urlticketxestado,result);
+                    var intervalID3 = setInterval(ticketxestado, 60000, urlticketxestado,result);
+                    var intervalIDd3 = setTimeout(ticketxestado, 500, urlticketxestado,result);
 
                     urlticketxcanal = "https://" + result + ".suricata.cloud/api/ticketxcanal";
                    // ticketxcanal(urlticketxcanal,result);
-                    var intervalID4 = setInterval(ticketxcanal, 6000, urlticketxcanal,result);
+                    var intervalID4 = setInterval(ticketxcanal, 60000, urlticketxcanal,result);
+                    var intervalIDd4 = setTimeout(ticketxcanal, 500, urlticketxcanal,result);
 
                     urlticketxtopic = "https://" + result + ".suricata.cloud/api/ticketxtopic";
                     //ticketxtopic(urlticketxtopic,result);
-                    var intervalID5 = setInterval(ticketxtopic, 6000, urlticketxtopic,result);
+                    var intervalID5 = setInterval(ticketxtopic, 60000, urlticketxtopic,result);
+                    var intervalIDd5 = setTimeout(ticketxtopic, 500, urlticketxtopic,result);
 
 
                     urlticketxagente = "https://" + result + ".suricata.cloud/api/ticketxagente";
                    // ticketxagente(urlticketxagente,result);
-                    var intervalID6 = setInterval(ticketxagente, 6000, urlticketxagente,result);
+                    var intervalID6 = setInterval(ticketxagente, 60000, urlticketxagente,result);
+                    var intervalIDd6 = setTimeout(ticketxagente, 500, urlticketxagente,result);
 
 
                 }
