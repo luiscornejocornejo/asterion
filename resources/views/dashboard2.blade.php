@@ -55,12 +55,19 @@ if (isset($_GET['fecha'])) {
 ?>
 
 <script>
-    function toggle_visibility(id) {
-       var e = document.getElementById(id);
-       if(e.style.display == 'none')
+    function mostrar() {
+        var e = document.getElementById('foo');
+        var f = document.getElementById('foo2');
           e.style.display = 'block';
-       else
+       
           e.style.display = 'none';
+    }
+    function mostrar2() {
+        var e = document.getElementById('foo');
+        var f = document.getElementById('foo2');
+          e.style.display = 'none';
+       
+          e.style.display = 'block';
     }
 </script>
 <!-- Begin page -->
@@ -488,9 +495,10 @@ if (isset($_GET['fecha'])) {
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<a href="#" onclick="toggle_visibility('foo');">Hide DIV 1 show DIV 2</a>
+<a href="#" onclick="mostrar();">Hide DIV 1 show DIV 2</a>
+<a href="#" onclick="mostrar2();">Hide DIV 1 show DIV 2</a>
 <div id="foo"> This is  DIV 1</div></div>
-<div id="foo"> This is  DIV 2</div></div>
+<div id="foo2" class="d-none"> This is  DIV 2</div></div>
             <!-- Start Content-->
             <div class="col2">
                 <div class="row" style="">
