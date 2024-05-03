@@ -495,8 +495,8 @@ if (isset($_GET['fecha'])) {
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<a href="#" onclick="mostrar();">Hide DIV 1 show DIV 2</a>
-<a href="#" onclick="mostrar2();">Hide DIV 1 show DIV 2</a>
+<a href="#" onclick="mostrar();">DIV 1</a>
+<a href="#" onclick="mostrar2();">DIV 2</a>
 <div id="foo"> This is  DIV 1</div></div>
 <div id="foo2" class="d-none"> This is  DIV 2</div></div>
             <!-- Start Content-->
