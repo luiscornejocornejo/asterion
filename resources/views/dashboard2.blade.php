@@ -548,7 +548,7 @@ if (isset($_GET['fecha'])) {
                                             <div class="row" style="">
                                                     <div class="col-md-6 ">
                                                             <div class="card">
-                                                                <div class="card-body" style="width: 300px;">
+                                                                <div class="card-body" style="width: 250px;">
                                                                 <h4 class="header-title">Tickets por Agente<i title="" class="ri-information-fill"></i></h4>
                                                                 <canvas id="myChart5" ></canvas>
                                     
@@ -557,7 +557,7 @@ if (isset($_GET['fecha'])) {
                                                     </div>
                                                     <div class="col-md-6 ">
                                                             <div class="card">
-                                                                <div class="card-body" style="width: 300px;">
+                                                                <div class="card-body" style="width: 250px;">
                                                                 <h4 class="header-title">Tickets por Depto<i title="" class="ri-information-fill"></i></h4>
                                                                     <canvas id="myChart" ></canvas>
                                     
@@ -566,7 +566,7 @@ if (isset($_GET['fecha'])) {
                                                     </div>
                                                     <div class="col-md-6 ">
                                                             <div class="card">
-                                                                <div class="card-body" style="width: 300px;">
+                                                                <div class="card-body" style="width: 250px;">
                                                                 <h4 class="header-title">Tickets por estado<i title="" class="ri-information-fill"></i></h4>
                                                                 <canvas id="myChart2" ></canvas>
                                                                 </div>
@@ -579,7 +579,7 @@ if (isset($_GET['fecha'])) {
                                                     
                                                     <div class="col-md-6 col-sm-6">
                                                             <div class="card">
-                                                                <div class="card-body" style="width: 300px;">
+                                                                <div class="card-body" style="width: 250px;">
                                                                     <h4 class="header-title">Tickets por topic<i title="" class="ri-information-fill"></i></h4>
                                                                     <canvas id="myChart4" ></canvas>
                                                                 </div>
@@ -587,7 +587,7 @@ if (isset($_GET['fecha'])) {
                                                     </div>
                                                     <div class="col-md-6 col-sm-6">
                                                             <div class="card">
-                                                                <div class="card-body" style="width: 300px;">
+                                                                <div class="card-body" style="width: 250px;">
                                                                     <h4 class="header-title">Tickets por canal<i title="" class="ri-information-fill"></i></h4>
                                                                     <canvas id="myChart3" ></canvas>
                                                                 </div>
