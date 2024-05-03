@@ -12,49 +12,18 @@ if (isset($_SERVER['HTTP_HOST'])) {
     $subdomain_tmp =  array_shift($domainParts);
 }
 $subdomain_tmp = trim($subdomain_tmp);
-$query = "select count(*) as cantidaduser  from siennaloginxenioo where login=1 and  DATE(created_at) >= DATE(NOW())";
-$resultados = DB::select($query);
-$cantidaduser = 0;
-$cantidadtickets = 0;
-$cantidadtickets2 = 0;
-$listamensual = array();
-foreach ($resultados as $val) {
-    $cantidaduser = $val->cantidaduser;
-}
 
-if (isset($_GET['fecha'])) {
-
-    $queryfecha = "";
-    if ($_GET['fecha'] == "dia") {
-
-        $queryfecha = "DATE(created_at) >= DATE(NOW())";
-    }
-    if ($_GET['fecha'] == "semana") {
-
-        $queryfecha = "created_at>= (DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY))";
-    }
-    $listamensual = array();
-
-
-
-    $query = "select count(*) as cantidadtickets  from siennatickets where siennaestado=1 and  " . $queryfecha;
-    $resultados2 = DB::select($query);
-    $cantidadtickets = 0;
-    foreach ($resultados2 as $val) {
-        $cantidadtickets = $val->cantidadtickets;
-    }
-
-
-    $query = "select count(*) as cantidadtickets2  from siennatickets where siennaestado=4 and  " . $queryfecha;
-    $resultados2 = DB::select($query);
-    $cantidadtickets2 = 0;
-    foreach ($resultados2 as $val) {
-        $cantidadtickets2 = $val->cantidadtickets2;
-    }
-}
 ?>
 
-
+<script>
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'none')
+          e.style.display = 'block';
+       else
+          e.style.display = 'none';
+    }
+</script>
 <!-- Begin page -->
 
 <div class="wrapper" >
@@ -124,7 +93,7 @@ if (isset($_GET['fecha'])) {
                     }
                     }
                 });
-            }
+                }
                 function grafico2(datosp,subdomain_tmp,divss) {
                     console.log(datosp.data);
 
@@ -480,7 +449,9 @@ if (isset($_GET['fecha'])) {
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-
+<a href="#" onclick="toggle_visibility('foo');">Hide DIV 1 show DIV 2</a>
+<div id="foo"> This is  DIV 1</div></div>
+<div id="foo"> This is  DIV 2</div></div>
             <!-- Start Content-->
             <div class="col2">
                 <div class="row" style="">
