@@ -621,7 +621,24 @@ if (isset($_GET['fecha'])) {
                                                     
                                                 </div>
                 </div>
-                <div id="foo2" style="display:none"> This is  DIV 2</div>
+                <div id="foo2" style="display:none">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-12">
+                            <label class="form-label">Período</label>
+                            <div id="reportrange" class="form-control" data-toggle="date-picker-range" data-target-display="#reportrange" data-cancel-class="btn-light">
+                                <i class="mdi mdi-calendar"></i>&nbsp;
+                                <span></span> <i class="mdi mdi-menu-down"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-12">
+                            <div class="mb-2 position-relative">
+                                <label class="form-label">&nbsp;</label>
+                                <input onclick="reportes()" type="submit" type="button" class="form-control w-25 bg-success text-light" value="Buscar">
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
 </div>
 
 
