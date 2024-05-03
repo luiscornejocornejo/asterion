@@ -498,96 +498,106 @@ if (isset($_GET['fecha'])) {
 <div class="container-fluid" id="main-content">
         <div class="container">
             <div class="row">
-                <div class="col-2"><a href="#" onclick="mostrar();">Dashboard</a></div>
-                <div class="col-10"><a href="#" onclick="mostrar2();">Reportes</a></div>
+                <div class="col-5"><a href="#" onclick="mostrar();">Dashboard</a></div>
+                <div class="col-5"><a href="#" onclick="mostrar2();">Reportes</a></div>
             </div>
         </div>
 </div>
 
+<div class="container-fluid" id="main-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                <div id="foo"> 
 
-<div id="foo"> 
+                    <div class="col2">
+                                    <div class="row" style="">
+                                        <div class="col-xl-4 col-lg-4">
+                                            <div class="card tilebox-one">
+                                                <div class="card-body">
+                                                    <i class='uil uil-users-alt float-end'></i>
+                                                    <h6 class="text-uppercase mt-0">Users</h6>
+                                                    <h2 class="my-2" id="active-users-count2"><?php echo  $cantidaduser; ?></h2>
+                                                    <p class="mb-0 text-muted">
+                                                        <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span></span>
+                                                        <span class="text-nowrap"> day</span>
+                                                    </p>
+                                                </div> <!-- end card-body-->
+                                            </div>
+                                            <!--end card-->
 
-<div class="col2">
-                <div class="row" style="">
-                    <div class="col-xl-4 col-lg-4">
-                        <div class="card tilebox-one">
-                            <div class="card-body">
-                                <i class='uil uil-users-alt float-end'></i>
-                                <h6 class="text-uppercase mt-0">Users</h6>
-                                <h2 class="my-2" id="active-users-count2"><?php echo  $cantidaduser; ?></h2>
-                                <p class="mb-0 text-muted">
-                                    <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span></span>
-                                    <span class="text-nowrap"> day</span>
-                                </p>
-                            </div> <!-- end card-body-->
-                        </div>
-                        <!--end card-->
-
-                        <div class="card tilebox-one">
-                            <div class="card-body">
-                                <i class='uil uil-window-restore float-end'></i>
-                                <h6 class="text-uppercase mt-0">Tickets </h6>
-                                <h2 class="my-2" id="active-views-count2">
-                                    <p id="abiertos"><?php echo $cantidadtickets; ?></p>
-                                </h2>
-                                <p class="mb-0 text-muted">
-                                    <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span></span>
-                                    <span class="text-nowrap"> open</span>
-                                </p>
-                               
-                            </div> <!-- end card-body-->
-                        </div>
-                        <!--end card-->
-
-
-                    </div> <!-- end col -->
-                    <div class="col-xl-8 col-lg-14">
-                        <div class="row" style="">
-                            <div class="col-xl-12 col-lg-24">
-                                <div class="card">
-                                    <div class="card-body" style="width: 400px;">
-
-                                        <h4 class="header-title">Tickets por Depto<i title="" class="ri-information-fill"></i></h4>
-                                        <canvas id="myChart" ></canvas>
-          
-
-                                    </div> <!-- end card-body-->
-                                    <div class="card-body" style="width: 400px;">
-
-                                    <h4 class="header-title">Tickets por estado<i title="" class="ri-information-fill"></i></h4>
-                                    <canvas id="myChart2" ></canvas>
+                                            <div class="card tilebox-one">
+                                                <div class="card-body">
+                                                    <i class='uil uil-window-restore float-end'></i>
+                                                    <h6 class="text-uppercase mt-0">Tickets </h6>
+                                                    <h2 class="my-2" id="active-views-count2">
+                                                        <p id="abiertos"><?php echo $cantidadtickets; ?></p>
+                                                    </h2>
+                                                    <p class="mb-0 text-muted">
+                                                        <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span></span>
+                                                        <span class="text-nowrap"> open</span>
+                                                    </p>
+                                                
+                                                </div> <!-- end card-body-->
+                                            </div>
+                                            <!--end card-->
 
 
-                                    </div> <!-- end card-body-->
-                                    <div class="card-body" style="width: 400px;">
+                                        </div> <!-- end col -->
+                                        <div class="col-xl-8 col-lg-14">
+                                            <div class="row" style="">
+                                                <div class="col-xl-12 col-lg-24">
+                                                    <div class="card">
+                                                        <div class="card-body" style="width: 400px;">
 
-                                    <h4 class="header-title">Tickets por topic<i title="" class="ri-information-fill"></i></h4>
-                                    <canvas id="myChart4" ></canvas>
+                                                            <h4 class="header-title">Tickets por Depto<i title="" class="ri-information-fill"></i></h4>
+                                                            <canvas id="myChart" ></canvas>
+                            
 
+                                                        </div> <!-- end card-body-->
+                                                        <div class="card-body" style="width: 400px;">
 
-                                    </div> <!-- end card-body-->
-                                    <div class="card-body" style="width: 400px;">
-
-                                    <h4 class="header-title">Tickets por canal<i title="" class="ri-information-fill"></i></h4>
-                                    <canvas id="myChart3" ></canvas>
-
-
-                                    </div> <!-- end card-body-->
-
-                                    <div class="card-body" style="width: 400px;">
-
-                                    <h4 class="header-title">Tickets por Agente<i title="" class="ri-information-fill"></i></h4>
-                                    <canvas id="myChart5" ></canvas>
+                                                        <h4 class="header-title">Tickets por estado<i title="" class="ri-information-fill"></i></h4>
+                                                        <canvas id="myChart2" ></canvas>
 
 
-                                    </div> <!-- end card-body-->
-                                </div> <!-- end card-->
-                            </div> <!-- end col-->
-                        </div> <!-- end row-->
-                    </div> <!-- end col -->
-                </div> <!-- end row-->
-            </div>
+                                                        </div> <!-- end card-body-->
+                                                        <div class="card-body" style="width: 400px;">
+
+                                                        <h4 class="header-title">Tickets por topic<i title="" class="ri-information-fill"></i></h4>
+                                                        <canvas id="myChart4" ></canvas>
+
+
+                                                        </div> <!-- end card-body-->
+                                                        <div class="card-body" style="width: 400px;">
+
+                                                        <h4 class="header-title">Tickets por canal<i title="" class="ri-information-fill"></i></h4>
+                                                        <canvas id="myChart3" ></canvas>
+
+
+                                                        </div> <!-- end card-body-->
+
+                                                        <div class="card-body" style="width: 400px;">
+
+                                                        <h4 class="header-title">Tickets por Agente<i title="" class="ri-information-fill"></i></h4>
+                                                        <canvas id="myChart5" ></canvas>
+
+
+                                                        </div> <!-- end card-body-->
+                                                    </div> <!-- end card-->
+                                                </div> <!-- end col-->
+                                            </div> <!-- end row-->
+                                        </div> <!-- end col -->
+                                    </div> <!-- end row-->
+                                    </div>
+                                    </div>
+
+                                                    </div>
+                                                    
+                                                </div>
+                </div>
 </div>
+
 <div id="foo2" style="display:none"> This is  DIV 2</div>
             <!-- Start Content-->
             
