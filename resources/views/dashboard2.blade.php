@@ -512,7 +512,7 @@ if (isset($_GET['fecha'])) {
 
                     <div class="">
                                     <div class="row" style="">
-                                        <div class="col-xl-4 col-lg-4">
+                                        <div class="col-xl-2 col-lg-2">
                                             <div class="card tilebox-one">
                                                 <div class="card-body">
                                                     <i class='uil uil-users-alt float-end'></i>
