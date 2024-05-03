@@ -548,10 +548,18 @@ if (isset($_GET['fecha'])) {
                                             <div class="row" style="">
                                             <div class="col-xl-12 col-lg-24">
                                                     <div class="card">
-                                                        <div class="card-body" style="width: 400px;">
+                                                        <div class="card-body" style="width: 500px;">
                                                         <h4 class="header-title">Tickets por Depto<i title="" class="ri-information-fill"></i></h4>
                                                             <canvas id="myChart" ></canvas>
                             
+
+                                                    </div> <!-- end card-body-->
+                                            </div>
+                                            <div class="col-xl-12 col-lg-24">
+                                                    <div class="card">
+                                                        <div class="card-body" style="width: 500px;">
+                                                        <h4 class="header-title">Tickets por estado<i title="" class="ri-information-fill"></i></h4>
+                                                        <canvas id="myChart2" ></canvas>
 
                                                     </div> <!-- end card-body-->
                                             </div>
@@ -560,8 +568,7 @@ if (isset($_GET['fecha'])) {
                                                         
                                                         <div class="card-body" style="width: 400px;">
 
-                                                        <h4 class="header-title">Tickets por estado<i title="" class="ri-information-fill"></i></h4>
-                                                        <canvas id="myChart2" ></canvas>
+                                                        
 
 
                                                         </div> <!-- end card-body-->
