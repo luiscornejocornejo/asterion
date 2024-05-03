@@ -60,14 +60,14 @@ if (isset($_GET['fecha'])) {
         var f = document.getElementById('foo2');
           e.style.display = 'block';
        
-          e.style.display = 'none';
+          f.style.display = 'none';
     }
     function mostrar2() {
         var e = document.getElementById('foo');
         var f = document.getElementById('foo2');
           e.style.display = 'none';
        
-          e.style.display = 'block';
+          f.style.display = 'block';
     }
 </script>
 <!-- Begin page -->
@@ -497,8 +497,8 @@ if (isset($_GET['fecha'])) {
 
 <a href="#" onclick="mostrar();">DIV 1</a>
 <a href="#" onclick="mostrar2();">DIV 2</a>
-<div id="foo"> This is  DIV 1</div></div>
-<div id="foo2" class="d-none"> This is  DIV 2</div></div>
+<div id="foo"> This is  DIV 1</div>
+<div id="foo2" class="d-none"> This is  DIV 2</div>
             <!-- Start Content-->
             <div class="col2">
                 <div class="row" style="">
