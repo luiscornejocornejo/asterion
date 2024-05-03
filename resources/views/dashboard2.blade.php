@@ -498,7 +498,7 @@ if (isset($_GET['fecha'])) {
 <a href="#" onclick="mostrar();">DIV 1</a>
 <a href="#" onclick="mostrar2();">DIV 2</a>
 <div id="foo"> This is  DIV 1</div>
-<div id="foo2" class="d-none"> This is  DIV 2</div>
+<div id="foo2" style="display:none"> This is  DIV 2</div>
             <!-- Start Content-->
             <div class="col2">
                 <div class="row" style="">
