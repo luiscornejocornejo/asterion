@@ -495,6 +495,14 @@ if (isset($_GET['fecha'])) {
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+<div class="container-fluid" id="main-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">col-2</div>
+                <div class="col-10">col-10</div>
+            </div>
+        </div>
+    </div>
 <a href="#" onclick="mostrar();">Dashboard</a>
 <a href="#" onclick="mostrar2();">Reportes</a>
 <div id="foo"> 
