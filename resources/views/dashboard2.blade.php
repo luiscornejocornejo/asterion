@@ -637,6 +637,36 @@ if (isset($_GET['fecha'])) {
                             </div>
                         </div>
                     </div>
+                    <div class="row" style="">
+                                                    <div class="col-md-4 ">
+                                                            <div class="card">
+                                                                <div class="card-body" style="width: 400px;">
+                                                                <h4 class="header-title">Tickets por Agente<i title="" class="ri-information-fill"></i></h4>
+                                                                <canvas id="myChart5" ></canvas>
+                                    
+                                                                </div>
+                                                            </div> <!-- end card-body-->
+                                                    </div>
+                                                    <div class="col-md-4 ">
+                                                            <div class="card">
+                                                                <div class="card-body" style="width: 400px;">
+                                                                <h4 class="header-title">Tickets por Depto<i title="" class="ri-information-fill"></i></h4>
+                                                                    <canvas id="myChartdeptofecha" ></canvas>
+                                    
+                                                                </div>
+                                                            </div> <!-- end card-body-->
+                                                    </div>
+                                                    <div class="col-md-4 ">
+                                                            <div class="card">
+                                                                <div class="card-body" style="width: 400px;">
+                                                                <h4 class="header-title">Tickets por estado<i title="" class="ri-information-fill"></i></h4>
+                                                                <canvas id="myChartestadofecha" ></canvas>
+                                                                </div>
+                                                            </div> <!-- end card-body-->
+                                                    </div>
+                                                   
+
+                                            </div>
                 
                 </div>
 </div>
