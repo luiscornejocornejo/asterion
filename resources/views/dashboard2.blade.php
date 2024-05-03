@@ -546,23 +546,35 @@ if (isset($_GET['fecha'])) {
                                         </div> <!-- end col -->
                                         <div class="col-xl-8 col-lg-14">
                                             <div class="row" style="">
-                                            <div class="col-xl-12 col-lg-24">
-                                                    <div class="card">
-                                                        <div class="card-body" style="width: 300px;">
-                                                        <h4 class="header-title">Tickets por Depto<i title="" class="ri-information-fill"></i></h4>
-                                                            <canvas id="myChart" ></canvas>
-                            
+                                                    <div class="col-xl-12 col-lg-24">
+                                                            <div class="card">
+                                                                <div class="card-body" style="width: 300px;">
+                                                                <h4 class="header-title">Tickets por Depto<i title="" class="ri-information-fill"></i></h4>
+                                                                    <canvas id="myChart" ></canvas>
+                                    
 
-                                                    </div> <!-- end card-body-->
-                                            </div>
-                                            <div class="col-xl-12 col-lg-24">
-                                                    <div class="card">
-                                                        <div class="card-body" style="width: 300px;">
-                                                        <h4 class="header-title">Tickets por estado<i title="" class="ri-information-fill"></i></h4>
-                                                        <canvas id="myChart2" ></canvas>
+                                                            </div> <!-- end card-body-->
+                                                    </div>
+                                                    <div class="col-xl-12 col-lg-24">
+                                                            <div class="card">
+                                                                <div class="card-body" style="width: 300px;">
+                                                                <h4 class="header-title">Tickets por estado<i title="" class="ri-information-fill"></i></h4>
+                                                                <canvas id="myChart2" ></canvas>
 
-                                                    </div> <!-- end card-body-->
-                                            </div>
+                                                            </div> <!-- end card-body-->
+                                                    </div>
+                                                    <div class="col-xl-12 col-lg-24">
+                                                            <div class="card">
+                                                                <div class="card-body" style="width: 300px;">
+                                                                <h4 class="header-title">Tickets por topic<i title="" class="ri-information-fill"></i></h4>
+                                                                <canvas id="myChart4" ></canvas>
+
+                                                            </div> <!-- end card-body-->
+                                                    </div>
+
+                                            </row>
+                                            <div class="row" style="">
+
                                                 <div class="col-xl-12 col-lg-24">
                                                     <div class="card">
                                                         
@@ -574,9 +586,7 @@ if (isset($_GET['fecha'])) {
                                                         </div> <!-- end card-body-->
                                                         <div class="card-body" style="width: 400px;">
 
-                                                        <h4 class="header-title">Tickets por topic<i title="" class="ri-information-fill"></i></h4>
-                                                        <canvas id="myChart4" ></canvas>
-
+                                                        
 
                                                         </div> <!-- end card-body-->
                                                         <div class="card-body" style="width: 400px;">
