@@ -507,7 +507,7 @@ if (isset($_GET['fecha'])) {
 <div class="container-fluid" id="main-content">
         <div class="container">
             <div class="row">
-                <div class="col-14">
+                <div class="col-16">
                 <div id="foo"> 
 
                     <div class="">
