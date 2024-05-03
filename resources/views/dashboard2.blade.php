@@ -495,12 +495,11 @@ if (isset($_GET['fecha'])) {
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<a href="#" onclick="mostrar();">DIV 1</a>
-<a href="#" onclick="mostrar2();">DIV 2</a>
-<div id="foo"> This is  DIV 1</div>
-<div id="foo2" style="display:none"> This is  DIV 2</div>
-            <!-- Start Content-->
-            <div class="col2">
+<a href="#" onclick="mostrar();">Dashboard</a>
+<a href="#" onclick="mostrar2();">Reportes</a>
+<div id="foo"> 
+
+<div class="col2">
                 <div class="row" style="">
                     <div class="col-xl-4 col-lg-4">
                         <div class="card tilebox-one">
@@ -580,6 +579,10 @@ if (isset($_GET['fecha'])) {
                     </div> <!-- end col -->
                 </div> <!-- end row-->
             </div>
+</div>
+<div id="foo2" style="display:none"> This is  DIV 2</div>
+            <!-- Start Content-->
+            
         </div>
         <!-- container -->
     </div>
