@@ -544,7 +544,7 @@ if (isset($_GET['fecha'])) {
 
 
                                         </div> <!-- end col -->
-                                        <div class="col-xl-8 col-lg-14">
+                                        <div class="col-xl-10 col-lg-14">
                                             <div class="row" style="">
                                                     <div class="col-md-5 ">
                                                             <div class="card">
