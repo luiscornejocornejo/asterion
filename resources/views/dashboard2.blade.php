@@ -507,10 +507,10 @@ if (isset($_GET['fecha'])) {
 <div class="container-fluid" id="main-content">
         <div class="container">
             <div class="row">
-                <div class="col-5">
+                <div class="col-10">
                 <div id="foo"> 
 
-                    <div class="col2">
+                    <div class="">
                                     <div class="row" style="">
                                         <div class="col-xl-4 col-lg-4">
                                             <div class="card tilebox-one">
