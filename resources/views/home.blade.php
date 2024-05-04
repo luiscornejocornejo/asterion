@@ -54,10 +54,25 @@ if (isset($_GET['fecha'])) {
 }
 ?>
 
-
+<script>
+    function mostrar() {
+        var e = document.getElementById('foo');
+        var f = document.getElementById('foo2');
+          e.style.display = 'block';
+       
+          f.style.display = 'none';
+    }
+    function mostrar2() {
+        var e = document.getElementById('foo');
+        var f = document.getElementById('foo2');
+          e.style.display = 'none';
+       
+          f.style.display = 'block';
+    }
+</script>
 <!-- Begin page -->
 
-<div class="wrapper">
+<div class="wrapper" >
 
     <!-- ========== Left Sidebar Start ========== -->
     @include('facu.menu')
@@ -73,24 +88,15 @@ if (isset($_GET['fecha'])) {
         <div class="content">
 
 
-            <div class="row">
-                <div class="col-lg-4 col-sm-12">
-                    <label class="form-label">Período</label>
-                    <div id="reportrange" class="form-control" data-toggle="date-picker-range" data-target-display="#reportrange" data-cancel-class="btn-light">
-                        <i class="mdi mdi-calendar"></i>&nbsp;
-                        <span></span> <i class="mdi mdi-menu-down"></i>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <div class="mb-2 position-relative">
-                        <label class="form-label">&nbsp;</label>
-                        <input onclick="home()" type="submit" type="button" class="form-control w-25 bg-success text-light" value="Buscar">
-                    </div>
-                </div>
-            </div>
+           
 
             <script>
+                window.addEventListener('load', home());
                 let myChart;
+                let myChart2;
+                let myChart3;
+                let myChart4;
+                let myChart5;
                 function grafico(datosp,subdomain_tmp,divss) {
                     console.log(datosp.data);
 
@@ -128,24 +134,206 @@ if (isset($_GET['fecha'])) {
                     options: {
                     scales: {
                         y: {
-                        beginAtZero: true
+                            position: 'right',                display: false,
                         }
                     }
                     }
                 });
+                }
+                function grafico2(datosp,subdomain_tmp,divss) {
+                    console.log(datosp.data);
+
+                    var labels=[];
+                    var datos=[];
+                  
+                    for (i = 0; i < datosp.data.length; i++) {
+                        console.log(datosp.data[i].name);
+                        labels.push(datosp.data[i].name);
+                        console.log(labels);
+
+                        datos.push(datosp.data[i].cant);
+
+                        console.log(datos);
+
+                    }
+                    console.log(labels);
+
+                    console.log(datos);
+
+                    const ctx2 = document.getElementById('myChart2');
+                    if (myChart2) {
+                        myChart2.destroy();
+                    }
+                    myChart2=new Chart(ctx2, {
+                    type: 'doughnut',
+                    data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '# estado',
+                        data: datos,
+                        borderWidth: 1
+                    }]
+                    },
+                    options: {
+                    scales: {
+                        y: {
+                            position: 'right',                display: false,
+                        }
+                    }
+                    }
+                    });
+
 
                 }
+                function grafico3(datosp,subdomain_tmp,divss) {
+                    console.log(datosp.data);
 
+                    var labels=[];
+                    var datos=[];
+                  
+                    for (i = 0; i < datosp.data.length; i++) {
+                        console.log(datosp.data[i].name);
+                        labels.push(datosp.data[i].name);
+                        console.log(labels);
+
+                        datos.push(datosp.data[i].cant);
+
+                        console.log(datos);
+
+                    }
+                    console.log(labels);
+
+                    console.log(datos);
+
+                    const ctx3 = document.getElementById('myChart3');
+                    if (myChart3) {
+                        myChart3.destroy();
+                    }
+                    myChart3=new Chart(ctx3, {
+                    type: 'doughnut',
+                    data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '# canal',
+                        data: datos,
+                        borderWidth: 1
+                    }]
+                    },
+                    options: {
+                    scales: {
+                        y: {
+                            position: 'right',                display: false,
+                        }
+                    }
+                    }
+                    });
+
+
+                }
+                function grafico4(datosp,subdomain_tmp,divss) {
+                    console.log(datosp.data);
+
+                    var labels=[];
+                    var datos=[];
+                  
+                    for (i = 0; i < datosp.data.length; i++) {
+                        console.log(datosp.data[i].name);
+                        labels.push(datosp.data[i].name);
+                        console.log(labels);
+
+                        datos.push(datosp.data[i].cant);
+
+                        console.log(datos);
+
+                    }
+                    console.log(labels);
+
+                    console.log(datos);
+
+                    const ctx4 = document.getElementById('myChart4');
+                    if (myChart4) {
+                        myChart4.destroy();
+                    }
+                    myChart4=new Chart(ctx4, {
+                    type: 'doughnut',
+                    data: {
+                    labels: labels,
+                    legend: {position: 'right'},
+
+                    datasets: [{
+                        label: '# canal',
+                        data: datos,
+                        borderWidth: 1
+                    }]
+                    },
+                    options: {
+                    scales: {
+                        y: {
+                            position: 'right',                display: false,
+
+                        },
+                        yAxes: [{
+                            ticks: {
+                                fontSize: 100
+                            }
+                        }]
+                  
+                    }
+                    }
+                    });
+
+
+                }
+                function grafico5(datosp,subdomain_tmp,divss) {
+                    console.log(datosp.data);
+
+                    var labels=[];
+                    var datos=[];
+                  
+                    for (i = 0; i < datosp.data.length; i++) {
+                        console.log(datosp.data[i].name);
+                        labels.push(datosp.data[i].name);
+                        console.log(labels);
+
+                        datos.push(datosp.data[i].cant);
+
+                        console.log(datos);
+
+                    }
+                    console.log(labels);
+
+                    console.log(datos);
+
+                    const ctx5 = document.getElementById('myChart5');
+                    if (myChart5) {
+                        myChart5.destroy();
+                    }
+                    myChart5=new Chart(ctx5, {
+                    type: 'doughnut',
+                    data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '# agente',
+                        data: datos,
+                        borderWidth: 1
+                    }]
+                    },
+                    options: {
+                    scales: {
+                        y: {
+                            position: 'right',                display: false,
+                        }
+                    }
+                    }
+                    });
+
+
+                }
                 function ticketxdepto(url2,result) {
 
                     axios.get(url2)
                         .then(function(response) {
-                            /*
-                            for (i = 0; i < response.data.length; i++) {
-                                    let ticketabiertos=response.data[i].cantidadtickets2;
-                                    console.log(ticketabiertos);
-                                    document.getElementById("abiertos").innerHTML =ticketabiertos;
-                            }*/
+                          
                             console.log(response);
                             divss="#chart3";
                             grafico(response,result,divss) 
@@ -160,10 +348,87 @@ if (isset($_GET['fecha'])) {
                         });
 
                 }
+                function ticketxestado(url2,result) {
 
+                        axios.get(url2)
+                            .then(function(response) {
+                            
+                                console.log(response);
+                                divss="#chart4";
+                                grafico2(response,result,divss) 
+
+                            })
+                            .catch(function(error) {
+                                // función para capturar el error
+                                console.log(error);
+                            })
+                            .then(function() {
+                                // función que siempre se ejecuta
+                            });
+
+                }
+                function ticketxcanal(url2,result) {
+
+                    axios.get(url2)
+                        .then(function(response) {
+                        
+                            console.log(response);
+                            divss="#chart5";
+                            grafico3(response,result,divss) 
+
+                        })
+                        .catch(function(error) {
+                            // función para capturar el error
+                            console.log(error);
+                        })
+                        .then(function() {
+                            // función que siempre se ejecuta
+                        });
+
+                }
+                
+                function ticketxagente(url2,result) {
+
+                    axios.get(url2)
+                        .then(function(response) {
+                        
+                            console.log(response);
+                            divss="#chart6";
+                            grafico5(response,result,divss) 
+
+                        })
+                        .catch(function(error) {
+                            // función para capturar el error
+                            console.log(error);
+                        })
+                        .then(function() {
+                            // función que siempre se ejecuta
+                        });
+
+                    }
+                function ticketxtopic(url2,result) {
+
+                    axios.get(url2)
+                        .then(function(response) {
+                        
+                            console.log(response);
+                            divss="#chart6";
+                            grafico4(response,result,divss) 
+
+                        })
+                        .catch(function(error) {
+                            // función para capturar el error
+                            console.log(error);
+                        })
+                        .then(function() {
+                            // función que siempre se ejecuta
+                        });
+
+                }
                 function abiertos(urlabiertos) {
                     axios.get(urlabiertos)
                         .then(function(response) {
+                            console.log(response);
                             for (i = 0; i < response.data.length; i++) {
                                 let ticketabiertos = response.data[i].cantidadtickets2;
                                 console.log(ticketabiertos);
@@ -204,20 +469,47 @@ if (isset($_GET['fecha'])) {
 
                 function home() {
 
-                    var endDate = $("#reportrange").data('daterangepicker').endDate.format('YYYY-MM-DD');
-                    var start = $("#reportrange").data('daterangepicker').startDate.format('YYYY-MM-DD');
+                  
                     var URLactual = window.location.href;
                     var porciones = URLactual.split('.');
                     let result = porciones[0].replace("https://", "");
 
-                    urlcerrados = "https://" + result + ".suricata.cloud/api/cerradoscant?ini=" + start + "&fin=" + endDate + "";
-                    cerrados(urlcerrados);
+                 //   urlcerrados = "https://" + result + ".suricata.cloud/api/cerradoscant?ini=" + start + "&fin=" + endDate + "";
+                   // cerrados(urlcerrados);
 
-                    urlabiertos = "https://" + result + ".suricata.cloud/api/abiertoscant?ini=" + start + "&fin=" + endDate + "";
-                    abiertos(urlabiertos);
+                    urlabiertos = "https://" + result + ".suricata.cloud/api/abiertoscant2";
+                    var intervalID = setInterval(abiertos, 60000, urlabiertos);
+                    var intervalIDd = setTimeout(abiertos, 500, urlabiertos);
 
-                    urlticketxdepto = "https://" + result + ".suricata.cloud/api/ticketxdepto?ini=" + start + "&fin=" + endDate + "";
-                    ticketxdepto(urlticketxdepto,result);
+                    //abiertos(urlabiertos);
+
+                    urlticketxdepto = "https://" + result + ".suricata.cloud/api/ticketxdepto2";
+                   // ticketxdepto(urlticketxdepto,result);
+                    var intervalID2 = setInterval(ticketxdepto, 60000, urlticketxdepto,result);
+                    var intervalIDd2 = setTimeout(ticketxdepto, 500, urlticketxdepto,result);
+
+
+                    urlticketxestado = "https://" + result + ".suricata.cloud/api/ticketxestado";
+                   // ticketxestado(urlticketxestado,result);
+                    var intervalID3 = setInterval(ticketxestado, 60000, urlticketxestado,result);
+                    var intervalIDd3 = setTimeout(ticketxestado, 500, urlticketxestado,result);
+
+                    urlticketxcanal = "https://" + result + ".suricata.cloud/api/ticketxcanal";
+                   // ticketxcanal(urlticketxcanal,result);
+                    var intervalID4 = setInterval(ticketxcanal, 60000, urlticketxcanal,result);
+                    var intervalIDd4 = setTimeout(ticketxcanal, 500, urlticketxcanal,result);
+
+                    urlticketxtopic = "https://" + result + ".suricata.cloud/api/ticketxtopic";
+                    //ticketxtopic(urlticketxtopic,result);
+                    var intervalID5 = setInterval(ticketxtopic, 60000, urlticketxtopic,result);
+                    var intervalIDd5 = setTimeout(ticketxtopic, 500, urlticketxtopic,result);
+
+
+                    urlticketxagente = "https://" + result + ".suricata.cloud/api/ticketxagente";
+                   // ticketxagente(urlticketxagente,result);
+                    var intervalID6 = setInterval(ticketxagente, 60000, urlticketxagente,result);
+                    var intervalIDd6 = setTimeout(ticketxagente, 500, urlticketxagente,result);
+
 
                 }
             </script>
@@ -228,67 +520,199 @@ if (isset($_GET['fecha'])) {
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+<div class="container-fluid" id="main-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-5"><a href="#" onclick="mostrar();">Dashboard</a></div>
+                <div class="col-5"><a href="#" onclick="mostrar2();">Reportes</a></div>
+            </div>
+        </div>
+</div>
+
+<div class="container-fluid" id="main-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-16">
+                <div id="foo"> 
+
+                    <div class="">
+                                    <div class="row" style="">
+                                        <div class="col-xl-2 col-lg-2">
+                                            <div class="card tilebox-one">
+                                                <div class="card-body">
+                                                    <i class='uil uil-users-alt float-end'></i>
+                                                    <h6 class="text-uppercase mt-0">Users</h6>
+                                                    <h2 class="my-2" id="active-users-count2"><?php echo  $cantidaduser; ?></h2>
+                                                    <p class="mb-0 text-muted">
+                                                        <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span></span>
+                                                        <span class="text-nowrap"> day</span>
+                                                    </p>
+                                                </div> <!-- end card-body-->
+                                            </div>
+                                            <!--end card-->
+
+                                            <div class="card tilebox-one">
+                                                <div class="card-body">
+                                                    <i class='uil uil-window-restore float-end'></i>
+                                                    <h6 class="text-uppercase mt-0">Tickets </h6>
+                                                    <h2 class="my-2" id="active-views-count2">
+                                                        <p id="abiertos"><?php echo $cantidadtickets; ?></p>
+                                                    </h2>
+                                                    <p class="mb-0 text-muted">
+                                                        <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span></span>
+                                                        <span class="text-nowrap"> Abiertos</span>
+                                                    </p>
+                                                
+                                                </div> <!-- end card-body-->
+                                            </div>
+                                            <!--end card-->
+
+
+                                        </div> <!-- end col -->
+                                        <div class="col-xl-10 col-lg-16">
+                                            <div class="row" style="">
+                                                    <div class="col-md-4 ">
+                                                            <div class="card">
+                                                                <div class="card-body" style="width: 400px;">
+                                                                <h4 class="header-title">Tickets por Agente<i title="" class="ri-information-fill"></i></h4>
+                                                                <canvas id="myChart5" ></canvas>
+                                    
+                                                                </div>
+                                                            </div> <!-- end card-body-->
+                                                    </div>
+                                                    <div class="col-md-4 ">
+                                                            <div class="card">
+                                                                <div class="card-body" style="width: 400px;">
+                                                                <h4 class="header-title">Tickets por Depto<i title="" class="ri-information-fill"></i></h4>
+                                                                    <canvas id="myChart" ></canvas>
+                                    
+                                                                </div>
+                                                            </div> <!-- end card-body-->
+                                                    </div>
+                                                    <div class="col-md-4 ">
+                                                            <div class="card">
+                                                                <div class="card-body" style="width: 400px;">
+                                                                <h4 class="header-title">Tickets por estado<i title="" class="ri-information-fill"></i></h4>
+                                                                <canvas id="myChart2" ></canvas>
+                                                                </div>
+                                                            </div> <!-- end card-body-->
+                                                    </div>
+                                                   
+
+                                            </div>
+                                            <div class="row" style="">
+                                                    
+                                                    <div class="col-md-4 col-sm-5">
+                                                            <div class="card">
+                                                                <div class="card-body" style="width: 400px;">
+                                                                    <h4 class="header-title">Tickets por topic<i title="" class="ri-information-fill"></i></h4>
+                                                                    <canvas id="myChart4" ></canvas>
+                                                                </div>
+                                                            </div> <!-- end card-body-->
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-5">
+                                                            <div class="card">
+                                                                <div class="card-body" style="width: 400px;">
+                                                                    <h4 class="header-title">Tickets por canal<i title="" class="ri-information-fill"></i></h4>
+                                                                    <canvas id="myChart3" ></canvas>
+                                                                </div>
+                                                            </div> <!-- end card-body-->
+                                                    </div>
+
+                                            </div>
+                                            
+                                        </div> <!-- end col -->
+                                    </div> <!-- end row-->
+                                    </div>
+                                    </div>
+
+                                                    </div>
+                                                    
+                                                </div>
+                </div>
+                <div id="foo2" style="display:none">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-12">
+                            <label class="form-label">Período</label>
+                            <div id="reportrange" class="form-control" data-toggle="date-picker-range" data-target-display="#reportrange" data-cancel-class="btn-light">
+                                <i class="mdi mdi-calendar"></i>&nbsp;
+                                <span></span> <i class="mdi mdi-menu-down"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-12">
+                            <div class="mb-2 position-relative">
+                                <label class="form-label">&nbsp;</label>
+                                <input onclick="reportes()" type="submit" type="button" class="form-control w-25 bg-success text-light" value="Buscar">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="">
+                                                    <div class="col-md-4 ">
+                                                            <div class="card">
+                                                                <div class="card-body" style="width: 400px;">
+                                                                <h4 class="header-title">Tickets por Agente<i title="" class="ri-information-fill"></i></h4>
+                                                                <canvas id="myChart5" ></canvas>
+                                    
+                                                                </div>
+                                                            </div> <!-- end card-body-->
+                                                    </div>
+                                                    <div class="col-md-4 ">
+                                                            <div class="card">
+                                                                <div class="card-body" style="width: 400px;">
+                                                                <h4 class="header-title">Tickets por Depto<i title="" class="ri-information-fill"></i></h4>
+                                                                    <canvas id="myChartdeptofecha" ></canvas>
+                                    
+                                                                </div>
+                                                            </div> <!-- end card-body-->
+                                                    </div>
+                                                    <div class="col-md-4 ">
+                                                            <div class="card">
+                                                                <div class="card-body" style="width: 400px;">
+                                                                <h4 class="header-title">Tickets por estado<i title="" class="ri-information-fill"></i></h4>
+                                                                <canvas id="myChartestadofecha" ></canvas>
+                                                                </div>
+                                                            </div> <!-- end card-body-->
+                                                    </div>
+                                                   
+
+                    </div>
+                    <div class="row" style="">
+                                                    <div class="col-md-4 ">
+                                                            <div class="card">
+                                                                <div class="card-body" style="width: 400px;">
+                                                                <h4 class="header-title">Tickets por Topic<i title="" class="ri-information-fill"></i></h4>
+                                                                <canvas id="myChart5" ></canvas>
+                                    
+                                                                </div>
+                                                            </div> <!-- end card-body-->
+                                                    </div>
+                                                    <div class="col-md-4 ">
+                                                            <div class="card">
+                                                                <div class="card-body" style="width: 400px;">
+                                                                <h4 class="header-title">Tickets por Canal<i title="" class="ri-information-fill"></i></h4>
+                                                                    <canvas id="myChartdeptofecha" ></canvas>
+                                    
+                                                                </div>
+                                                            </div> <!-- end card-body-->
+                                                    </div>
+                                                    <div class="col-md-4 ">
+                                                            <div class="card">
+                                                                <div class="card-body" style="width: 400px;">
+                                                                <h4 class="header-title">Tickets por x<i title="" class="ri-information-fill"></i></h4>
+                                                                <canvas id="myChartestadofecha" ></canvas>
+                                                                </div>
+                                                            </div> <!-- end card-body-->
+                                                    </div>
+                                                   
+
+                    </div>
+                
+                </div>
+</div>
+
 
             <!-- Start Content-->
-            <div class="col2">
-                <div class="row" style="">
-                    <div class="col-xl-4 col-lg-4">
-                        <div class="card tilebox-one">
-                            <div class="card-body">
-                                <i class='uil uil-users-alt float-end'></i>
-                                <h6 class="text-uppercase mt-0">Users</h6>
-                                <h2 class="my-2" id="active-users-count2"><?php echo  $cantidaduser; ?></h2>
-                                <p class="mb-0 text-muted">
-                                    <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span></span>
-                                    <span class="text-nowrap"> day</span>
-                                </p>
-                            </div> <!-- end card-body-->
-                        </div>
-                        <!--end card-->
-
-                        <div class="card tilebox-one">
-                            <div class="card-body">
-                                <i class='uil uil-window-restore float-end'></i>
-                                <h6 class="text-uppercase mt-0">Tickets </h6>
-                                <h2 class="my-2" id="active-views-count2">
-                                    <p id="abiertos"><?php echo $cantidadtickets; ?></p>
-                                </h2>
-                                <p class="mb-0 text-muted">
-                                    <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span></span>
-                                    <span class="text-nowrap"> open</span>
-                                </p>
-                                <h2 class="my-2" id="active-views-count2">
-                                    <p id="cerrados"><?php echo $cantidadtickets2; ?></p>
-                                </h2>
-                                <p class="mb-0 text-muted">
-                                    <span class="text-danger me-2"><span class="mdi mdi-arrow-down-bold"></span> </span>
-                                    <span class="text-nowrap"> close</span>
-                                </p>
-                            </div> <!-- end card-body-->
-                        </div>
-                        <!--end card-->
-
-
-                    </div> <!-- end col -->
-                    <div class="col-xl-8 col-lg-14">
-                        <div class="row" style="">
-                            <div class="col-xl-12 col-lg-24">
-                                <div class="card">
-                                    <div class="card-body" style="width: 400px;">
-
-                                        <h4 class="header-title">Tickets por Depto<i title="" class="ri-information-fill"></i></h4>
-                                        <canvas id="myChart" ></canvas>
-                                        <script>
-  
-</script>
-
-                                    </div> <!-- end card-body-->
-                                </div> <!-- end card-->
-                            </div> <!-- end col-->
-                        </div> <!-- end row-->
-                    </div> <!-- end col -->
-                </div> <!-- end row-->
-            </div>
+            
         </div>
         <!-- container -->
     </div>
