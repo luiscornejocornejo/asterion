@@ -274,7 +274,7 @@ if (isset($_GET['fecha'])) {
                         },
                         yAxes: [{
                             ticks: {
-                                fontSize: 40
+                                fontSize: 100
                             }
                         }]
                   
