@@ -257,11 +257,9 @@ if (isset($_GET['fecha'])) {
                     myChart4=new Chart(ctx4, {
                     type: 'pie',
                     data: {
-                    labels: [labels,scales: {
-                        y: {
-                            position: 'right'
-                        }
-                    }]
+                    labels: labels,
+                    legend: {position: 'right'},
+
                     datasets: [{
                         label: '# canal',
                         data: datos,
