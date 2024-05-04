@@ -1611,7 +1611,7 @@ class siennaticketsController extends Controller
         join ".$dom.".siennadepto s 
         on s.id=a.siennadepto 
         where 
-        created_at>='".$ini." 00:00:00' and created_at<='".$fin." 23:59:59'
+        a.created_at>='".$ini." 00:00:00' and a.created_at<='".$fin." 23:59:59'
    
          group by siennadepto";
         $resultados = DB::select($query);
@@ -1628,7 +1628,7 @@ class siennaticketsController extends Controller
         join ".$dom.".siennaestado s 
         on s.id=a.siennaestado
         where 
-        created_at>='".$ini." 00:00:00' and created_at<='".$fin." 23:59:59'
+        a.created_at>='".$ini." 00:00:00' and a.created_at<='".$fin." 23:59:59'
    
          group by siennaestado";
         $resultados = DB::select($query);
@@ -1645,7 +1645,7 @@ class siennaticketsController extends Controller
         join ".$dom.".siennatopic s 
         on s.id=a.siennatopic
         where 
-        created_at>='".$ini." 00:00:00' and created_at<='".$fin." 23:59:59'
+        a.created_at>='".$ini." 00:00:00' and a.created_at<='".$fin." 23:59:59'
    
          group by siennatopic";
         $resultados = DB::select($query);
@@ -1662,7 +1662,7 @@ class siennaticketsController extends Controller
         join ".$dom.".siennasource s 
         on s.id=a.siennasource
         where 
-        created_at>='".$ini." 00:00:00' and created_at<='".$fin." 23:59:59'
+        a.created_at>='".$ini." 00:00:00' and a.created_at<='".$fin." 23:59:59'
    
          group by siennasource";
         $resultados = DB::select($query);
@@ -1680,7 +1680,7 @@ class siennaticketsController extends Controller
         join ".$dom.".users s 
         on s.id=a.asignado
         where 
-        created_at>='".$ini." 00:00:00' and created_at<='".$fin." 23:59:59'
+        a.created_at>='".$ini." 00:00:00' and a.created_at<='".$fin." 23:59:59'
    
          group by asignado";
         $resultados = DB::select($query);
