@@ -483,7 +483,7 @@ if (isset($_GET['fecha'])) {
 
                     //abiertos(urlabiertos);
 
-                    urlticketxdepto = "https://" + result + ".suricata.cloud/api/ticketxdepto2";
+                    urlticketxdepto = "https://" + result + ".suricata.cloud/api/ticketxdepto";
                    // ticketxdepto(urlticketxdepto,result);
                     var intervalID2 = setInterval(ticketxdepto, 60000, urlticketxdepto,result);
                     var intervalIDd2 = setTimeout(ticketxdepto, 500, urlticketxdepto,result);
@@ -512,6 +512,93 @@ if (isset($_GET['fecha'])) {
 
 
                 }
+
+                function reportes() {
+
+                    var endDate = $("#reportrange").data('daterangepicker').endDate.format('YYYY-MM-DD');
+                    var start = $("#reportrange").data('daterangepicker').startDate.format('YYYY-MM-DD');             
+                    var URLactual = window.location.href;
+                    var porciones = URLactual.split('.');
+                    let result = porciones[0].replace("https://", "");
+
+                    urlticketxdeptofecha = "https://" + result + ".suricata.cloud/api/ticketxdeptofecha?ini=" + start + "&fin=" + endDate + "";
+                    ticketxdeptofecha(urlticketxdeptofecha,result);
+                                
+                    urlticketxestadofecha = "https://" + result + ".suricata.cloud/api/ticketxestadofecha?ini=" + start + "&fin=" + endDate + "";
+                    ticketxestadofecha(urlticketxestadofecha,result);
+                                
+                    urlticketxcanalfecha = "https://" + result + ".suricata.cloud/api/ticketxcanalfecha?ini=" + start + "&fin=" + endDate + "";
+                    ticketxcanalfecha(urlticketxcanalfecha,result);
+                               
+                    urlticketxtopicfecha = "https://" + result + ".suricata.cloud/api/ticketxtopicfecha?ini=" + start + "&fin=" + endDate + "";
+                    ticketxtopicfecha(urlticketxtopicfecha,result);
+                               
+                    urlticketxagentefecha = "https://" + result + ".suricata.cloud/api/ticketxagentefecha?ini=" + start + "&fin=" + endDate + "";
+                    ticketxagentefecha(urlticketxagentefecha,result);
+
+                }
+                let myChartdeptofecha;
+                function ticketxdeptofecha(url2,result) {
+
+                    axios.get(url2)
+                        .then(function(response) {
+                        
+                            console.log(response);
+                            graficodeptofecha(response) 
+
+                        })
+                        .catch(function(error) {
+                            // función para capturar el error
+                            console.log(error);
+                        })
+                        .then(function() {
+                            // función que siempre se ejecuta
+                        });
+
+                }
+                function graficodeptofecha(datosp) {
+                    console.log(datosp.data);
+
+                    var labels=[];
+                    var datos=[];
+                  
+                    for (i = 0; i < datosp.data.length; i++) {
+                        console.log(datosp.data[i].name);
+                        labels.push(datosp.data[i].name);
+                        console.log(labels);
+
+                        datos.push(datosp.data[i].cant);
+
+                        console.log(datos);
+
+                    }
+                    
+                    const ctxdeptofecha = document.getElementById('myChartdeptofecha');
+                    if (myChartdeptofecha) {
+                        myChartdeptofecha.destroy();
+                    }
+                    myChartdeptofecha=new Chart(ctxdeptofecha, {
+                    type: 'doughnut',
+                    data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '# deptos',
+                        data: datos,
+                        borderWidth: 1
+                    }]
+                    },
+                    options: {
+                    scales: {
+                        y: {
+                            position: 'right',                display: false,
+                        }
+                    }
+                    }
+                    });
+
+
+                }
+                
             </script>
         
             <div>
@@ -680,8 +767,8 @@ if (isset($_GET['fecha'])) {
                                                     <div class="col-md-4 ">
                                                             <div class="card">
                                                                 <div class="card-body" style="width: 400px;">
-                                                                <h4 class="header-title">Tickets por Topic<i title="" class="ri-information-fill"></i></h4>
-                                                                <canvas id="myChart5" ></canvas>
+                                                                <h4 class="header-title">Tickets por Deptos<i title="" class="ri-information-fill"></i></h4>
+                                                                <canvas id="myChartdeptofecha" ></canvas>
                                     
                                                                 </div>
                                                             </div> <!-- end card-body-->

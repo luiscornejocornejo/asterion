@@ -1518,7 +1518,10 @@ class siennaticketsController extends Controller
         return $resultados;
     }
     
-    public function ticketxdepto2(Request $request)
+
+
+    ///dashboard del dia
+    public function ticketxdepto(Request $request)
     {
    
         $resultados = "";
@@ -1594,6 +1597,105 @@ class siennaticketsController extends Controller
         $resultados = DB::select($query);
         return $resultados;
     }
+
+    ///reportes por fecha
+
+    public function ticketxdeptofecha(Request $request)
+    {
+        $ini=$request->ini;
+        $fin=$request->fin;
+        $resultados = "";
+        $dom=$this->dominio();
+        $query="select count(*) as cant ,s.nombre  as name
+        from ".$dom.".siennatickets a 
+        join ".$dom.".siennadepto s 
+        on s.id=a.siennadepto 
+        where siennaestado<>4
+        and
+        created_at>='".$ini." 00:00:00' and created_at<='".$fin." 23:59:59'
+   
+         group by siennadepto";
+        $resultados = DB::select($query);
+        return $resultados;
+    }
+    public function ticketxestadofecha(Request $request)
+    {
+        $ini=$request->ini;
+        $fin=$request->fin;
+        $resultados = "";
+        $dom=$this->dominio();
+        $query="select count(*) as cant ,s.nombre  as name
+        from ".$dom.".siennatickets a 
+        join ".$dom.".siennaestado s 
+        on s.id=a.siennaestado
+        where siennaestado<>4
+        and
+        created_at>='".$ini." 00:00:00' and created_at<='".$fin." 23:59:59'
+   
+         group by siennaestado";
+        $resultados = DB::select($query);
+        return $resultados;
+    }
+    public function ticketxtopicfecha(Request $request)
+    {
+        $ini=$request->ini;
+        $fin=$request->fin;
+        $resultados = "";
+        $dom=$this->dominio();
+        $query="select count(*) as cant ,s.nombre  as name
+        from ".$dom.".siennatickets a 
+        join ".$dom.".siennatopic s 
+        on s.id=a.siennatopic
+        where siennaestado<>4
+        and
+        created_at>='".$ini." 00:00:00' and created_at<='".$fin." 23:59:59'
+   
+         group by siennatopic";
+        $resultados = DB::select($query);
+        return $resultados;
+    }
+    public function ticketxcanalfecha(Request $request)
+    {
+        $ini=$request->ini;
+        $fin=$request->fin;
+        $resultados = "";
+        $dom=$this->dominio();
+        $query="select count(*) as cant ,s.nombre  as name
+        from ".$dom.".siennatickets a 
+        join ".$dom.".siennasource s 
+        on s.id=a.siennasource
+        where siennaestado<>4
+        and
+        created_at>='".$ini." 00:00:00' and created_at<='".$fin." 23:59:59'
+   
+         group by siennasource";
+        $resultados = DB::select($query);
+        return $resultados;
+    }
+    
+    public function ticketxagentefecha(Request $request)
+    {
+        $ini=$request->ini;
+        $fin=$request->fin;
+        $resultados = "";
+        $dom=$this->dominio();
+        $query="select count(*) as cant ,s.nombre  as name
+        from ".$dom.".siennatickets a 
+        join ".$dom.".users s 
+        on s.id=a.asignado
+        where siennaestado<>4
+        and
+        created_at>='".$ini." 00:00:00' and created_at<='".$fin." 23:59:59'
+   
+         group by asignado";
+        $resultados = DB::select($query);
+        return $resultados;
+    }
+
+
+    //fin de reportes por fecha
+
+
     public function historico(Request $request)
     {
         $cliente=$request->cliente;

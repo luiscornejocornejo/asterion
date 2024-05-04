@@ -85,11 +85,18 @@ Route::get('/ticketsviejo', [siennaticketsController::class, 'ticketsviejo']);
 Route::get('/crearusuario', [siennaticketsController::class, 'crearusuario']);
 Route::get('/cerradoscant', [siennaticketsController::class, 'cerradoscant']);
 Route::get('/abiertoscant2', [siennaticketsController::class, 'abiertoscant2']);
-Route::get('/ticketxdepto2', [siennaticketsController::class, 'ticketxdepto2']);
+
+Route::get('/ticketxdepto', [siennaticketsController::class, 'ticketxdepto']);
 Route::get('/ticketxestado', [siennaticketsController::class, 'ticketxestado']);
 Route::get('/ticketxcanal', [siennaticketsController::class, 'ticketxcanal']);
 Route::get('/ticketxtopic', [siennaticketsController::class, 'ticketxtopic']);
 Route::get('/ticketxagente', [siennaticketsController::class, 'ticketxagente']);
+
+Route::get('/ticketxdeptofecha', [siennaticketsController::class, 'ticketxdeptofecha']);
+Route::get('/ticketxestadofecha', [siennaticketsController::class, 'ticketxestadofecha']);
+Route::get('/ticketxcanalfecha', [siennaticketsController::class, 'ticketxcanalfecha']);
+Route::get('/ticketxtopicfecha', [siennaticketsController::class, 'ticketxtopicfecha']);
+Route::get('/ticketxagentefecha', [siennaticketsController::class, 'ticketxagentefecha']);
 
 
 Route::get('/historico', [siennaticketsController::class, 'historico']);
