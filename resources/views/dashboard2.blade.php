@@ -267,6 +267,8 @@ if (isset($_GET['fecha'])) {
                     options: {
                     scales: {
                         y: {
+                            position: 'right',
+
                         beginAtZero: false
                         }
                     }
