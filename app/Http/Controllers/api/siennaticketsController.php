@@ -1627,8 +1627,7 @@ class siennaticketsController extends Controller
         from ".$dom.".siennatickets a 
         join ".$dom.".siennaestado s 
         on s.id=a.siennaestado
-        where siennaestado<>4
-        and
+        where 
         created_at>='".$ini." 00:00:00' and created_at<='".$fin." 23:59:59'
    
          group by siennaestado";
@@ -1645,8 +1644,7 @@ class siennaticketsController extends Controller
         from ".$dom.".siennatickets a 
         join ".$dom.".siennatopic s 
         on s.id=a.siennatopic
-        where siennaestado<>4
-        and
+        where 
         created_at>='".$ini." 00:00:00' and created_at<='".$fin." 23:59:59'
    
          group by siennatopic";
@@ -1663,8 +1661,7 @@ class siennaticketsController extends Controller
         from ".$dom.".siennatickets a 
         join ".$dom.".siennasource s 
         on s.id=a.siennasource
-        where siennaestado<>4
-        and
+        where 
         created_at>='".$ini." 00:00:00' and created_at<='".$fin." 23:59:59'
    
          group by siennasource";
@@ -1682,8 +1679,7 @@ class siennaticketsController extends Controller
         from ".$dom.".siennatickets a 
         join ".$dom.".users s 
         on s.id=a.asignado
-        where siennaestado<>4
-        and
+        where 
         created_at>='".$ini." 00:00:00' and created_at<='".$fin." 23:59:59'
    
          group by asignado";

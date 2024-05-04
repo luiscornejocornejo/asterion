@@ -538,6 +538,10 @@ if (isset($_GET['fecha'])) {
 
                 }
                 let myChartdeptofecha;
+                let myChartestadofecha;
+                let myChartcanalfecha;
+                let myCharttopicfecha;
+                let myChartagentefecha;
                 function ticketxdeptofecha(url2,result) {
 
                     axios.get(url2)
@@ -595,6 +599,219 @@ if (isset($_GET['fecha'])) {
                     }
                     }
                     });
+
+
+                }
+                function ticketxestadofecha(url2,result) {
+
+                    axios.get(url2)
+                        .then(function(response) {
+                        
+                            console.log(response);
+                            graficoestadofecha(response) 
+
+                        })
+                        .catch(function(error) {
+                            // función para capturar el error
+                            console.log(error);
+                        })
+                        .then(function() {
+                            // función que siempre se ejecuta
+                        });
+
+                    }
+                function graficoestadofecha(datosp) {
+                        var labels=[];
+                        var datos=[];
+                        for (i = 0; i < datosp.data.length; i++) {
+                            labels.push(datosp.data[i].name);
+                            datos.push(datosp.data[i].cant);
+                        }
+
+                        const ctxestadofecha = document.getElementById('myChartestadofecha');
+                        if (myChartestadofecha) {
+                            myChartestadofecha.destroy();
+                        }
+                        myChartestadofecha=new Chart(ctxestadofecha, {
+                        type: 'doughnut',
+                        data: {
+                        labels: labels,
+                        datasets: [{
+                            label: '# estados',
+                            data: datos,
+                            borderWidth: 1
+                        }]
+                        },
+                        options: {
+                        scales: {
+                            y: {
+                                position: 'right',                display: false,
+                            }
+                        }
+                        }
+                        });
+
+
+                }
+                function ticketxcanalfecha(url2,result) {
+
+                        axios.get(url2)
+                            .then(function(response) {
+                            
+                                console.log(response);
+                                graficocanalfecha(response) 
+
+                            })
+                            .catch(function(error) {
+                                // función para capturar el error
+                                console.log(error);
+                            })
+                            .then(function() {
+                                // función que siempre se ejecuta
+                            });
+
+                }
+                function graficocanalfecha(datosp) {
+                        var labels=[];
+                        var datos=[];
+                        for (i = 0; i < datosp.data.length; i++) {
+                            console.log(datosp.data[i].name);
+                            labels.push(datosp.data[i].name);
+                            console.log(labels);
+
+                            datos.push(datosp.data[i].cant);
+
+                            console.log(datos);
+
+                        }
+
+                        const ctxcanalfecha = document.getElementById('myChartcanalfecha');
+                        if (myChartcanalfecha) {
+                            myChartcanalfecha.destroy();
+                        }
+                        myChartcanalfecha=new Chart(ctxcanalfecha, {
+                        type: 'doughnut',
+                        data: {
+                        labels: labels,
+                        datasets: [{
+                            label: '# canal',
+                            data: datos,
+                            borderWidth: 1
+                        }]
+                        },
+                        options: {
+                        scales: {
+                            y: {
+                                position: 'right',                display: false,
+                            }
+                        }
+                        }
+                        });
+
+
+                }
+                function ticketxtopicfecha(url2,result) {
+
+                        axios.get(url2)
+                            .then(function(response) {
+                            
+                                console.log(response);
+                                graficotopicfecha(response) 
+
+                            })
+                            .catch(function(error) {
+                                // función para capturar el error
+                                console.log(error);
+                            })
+                            .then(function() {
+                                // función que siempre se ejecuta
+                            });
+
+                }
+                function graficotopicfecha(datosp) {
+                    var labels=[];
+                    var datos=[];
+
+                    for (i = 0; i < datosp.data.length; i++) {
+                        labels.push(datosp.data[i].name);
+                        datos.push(datosp.data[i].cant);
+                    }
+
+                    const ctxtopicfecha = document.getElementById('myCharttopicfecha');
+                    if (myCharttopicfecha) {
+                        myCharttopicfecha.destroy();
+                    }
+                    myCharttopicfecha=new Chart(ctxtopicfecha, {
+                        type: 'doughnut',
+                        data: {
+                        labels: labels,
+                        datasets: [{
+                            label: '# topic',
+                            data: datos,
+                            borderWidth: 1
+                        }]
+                        },
+                        options: {
+                        scales: {
+                            y: {
+                                position: 'right',                display: false,
+                            }
+                        }
+                        }
+                    });
+
+
+                }
+                function ticketxagentefecha(url2,result) {
+
+                    axios.get(url2)
+                        .then(function(response) {
+                        
+                            console.log(response);
+                            graficoagentefecha(response) 
+
+                        })
+                        .catch(function(error) {
+                            // función para capturar el error
+                            console.log(error);
+                        })
+                        .then(function() {
+                            // función que siempre se ejecuta
+                        });
+
+                }
+                function graficoagentefecha(datosp) {
+
+                            var labels=[];
+                            var datos=[];
+
+                            for (i = 0; i < datosp.data.length; i++) {
+                                labels.push(datosp.data[i].name);
+                                datos.push(datosp.data[i].cant);
+                            }
+
+                            const ctxagentefecha = document.getElementById('myChartagentefecha');
+                            if (myChartagentefecha) {
+                                myChartagentefecha.destroy();
+                            }
+                            myChartagentefecha=new Chart(ctxagentefecha, {
+                            type: 'doughnut',
+                            data: {
+                            labels: labels,
+                            datasets: [{
+                                label: '# agente',
+                                data: datos,
+                                borderWidth: 1
+                            }]
+                            },
+                            options: {
+                            scales: {
+                                y: {
+                                    position: 'right',                display: false,
+                                }
+                            }
+                            }
+                            });
 
 
                 }
@@ -738,7 +955,7 @@ if (isset($_GET['fecha'])) {
                                                             <div class="card">
                                                                 <div class="card-body" style="width: 400px;">
                                                                 <h4 class="header-title">Tickets por Agente<i title="" class="ri-information-fill"></i></h4>
-                                                                <canvas id="myChart5" ></canvas>
+                                                                <canvas id="myChartagentefecha" ></canvas>
                                     
                                                                 </div>
                                                             </div> <!-- end card-body-->
@@ -767,8 +984,8 @@ if (isset($_GET['fecha'])) {
                                                     <div class="col-md-4 ">
                                                             <div class="card">
                                                                 <div class="card-body" style="width: 400px;">
-                                                                <h4 class="header-title">Tickets por Deptos<i title="" class="ri-information-fill"></i></h4>
-                                                                <canvas id="myChartdeptofecha" ></canvas>
+                                                                <h4 class="header-title">Tickets por Topic<i title="" class="ri-information-fill"></i></h4>
+                                                                <canvas id="myCharttopicfecha" ></canvas>
                                     
                                                                 </div>
                                                             </div> <!-- end card-body-->
@@ -786,7 +1003,7 @@ if (isset($_GET['fecha'])) {
                                                             <div class="card">
                                                                 <div class="card-body" style="width: 400px;">
                                                                 <h4 class="header-title">Tickets por x<i title="" class="ri-information-fill"></i></h4>
-                                                                <canvas id="myChartestadofecha" ></canvas>
+                                                                <canvas id="" ></canvas>
                                                                 </div>
                                                             </div> <!-- end card-body-->
                                                     </div>
