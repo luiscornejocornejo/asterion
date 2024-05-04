@@ -271,6 +271,12 @@ if (isset($_GET['fecha'])) {
                         y: {
                             position: 'right'
                         }
+                        yAxes: [{
+                display: false,
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
                     }
                     }
                     });
