@@ -267,7 +267,7 @@ if (isset($_GET['fecha'])) {
                     options: {
                     scales: {
                         y: {
-                        beginAtZero: true
+                        beginAtZero: false
                         }
                     }
                     }
