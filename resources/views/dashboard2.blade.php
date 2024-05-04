@@ -269,14 +269,10 @@ if (isset($_GET['fecha'])) {
                     options: {
                     scales: {
                         y: {
-                            position: 'right'
+                            position: 'right',                display: false,
+
                         }
-                        yAxes: [{
-                display: false,
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
+                  
                     }
                     }
                     });
