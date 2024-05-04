@@ -134,7 +134,7 @@ if (isset($_GET['fecha'])) {
                     options: {
                     scales: {
                         y: {
-                        beginAtZero: true
+                            position: 'right',                display: false,
                         }
                     }
                     }
@@ -177,7 +177,7 @@ if (isset($_GET['fecha'])) {
                     options: {
                     scales: {
                         y: {
-                        beginAtZero: true
+                            position: 'right',                display: false,
                         }
                     }
                     }
@@ -222,7 +222,7 @@ if (isset($_GET['fecha'])) {
                     options: {
                     scales: {
                         y: {
-                        beginAtZero: true
+                            position: 'right',                display: false,
                         }
                     }
                     }
@@ -321,7 +321,7 @@ if (isset($_GET['fecha'])) {
                     options: {
                     scales: {
                         y: {
-                        beginAtZero: true
+                            position: 'right',                display: false,
                         }
                     }
                     }
@@ -560,7 +560,7 @@ if (isset($_GET['fecha'])) {
                                                     </h2>
                                                     <p class="mb-0 text-muted">
                                                         <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span></span>
-                                                        <span class="text-nowrap"> open</span>
+                                                        <span class="text-nowrap"> Abiertos</span>
                                                     </p>
                                                 
                                                 </div> <!-- end card-body-->
