@@ -257,7 +257,11 @@ if (isset($_GET['fecha'])) {
                     myChart4=new Chart(ctx4, {
                     type: 'pie',
                     data: {
-                    labels: labels,
+                    labels: [labels,scales: {
+                        y: {
+                            position: 'right'
+                        }
+                    }]
                     datasets: [{
                         label: '# canal',
                         data: datos,
@@ -267,9 +271,7 @@ if (isset($_GET['fecha'])) {
                     options: {
                     scales: {
                         y: {
-                            position: 'right',
-
-                        beginAtZero: false
+                            position: 'right'
                         }
                     }
                     }
