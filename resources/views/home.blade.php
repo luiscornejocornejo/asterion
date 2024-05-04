@@ -826,9 +826,9 @@ if (isset($_GET['fecha'])) {
 
 <div class="container-fluid" id="main-content">
         <div class="container">
-            <div class="row">
-                <div class="col-5"><a href="#" onclick="mostrar();">Dashboard</a></div>
-                <div class="col-5"><a href="#" onclick="mostrar2();">Reportes</a></div>
+            <div class="row bg-info">
+                <div class="col-5"><a class="btn btn-primary" href="#" onclick="mostrar();">Dashboard</a></div>
+                <div class="col-5"><a class="btn btn-success" href="#" onclick="mostrar2();">Reportes</a></div>
             </div>
         </div>
 </div>
