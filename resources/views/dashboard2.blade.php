@@ -255,7 +255,7 @@ if (isset($_GET['fecha'])) {
                         myChart4.destroy();
                     }
                     myChart4=new Chart(ctx4, {
-                    type: 'pie',
+                    type: 'doughnut',
                     data: {
                     labels: labels,
                     legend: {position: 'right'},
