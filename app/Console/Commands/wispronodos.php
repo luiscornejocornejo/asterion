@@ -53,7 +53,7 @@ class wispronodos extends Command
                     echo $val2->cuantos;
 
                     $prueba = $this->conectar(14);
-                 echo   $query3 = "select * from wispro.ws_cliente where nombre='" . $val->Database . "'";
+                     echo   $query3 = "select * from wispro.ws_cliente where nombre='" . $val->Database . "'";
                     $datos = DB::connection('mysql2')->select($query3);
                    // var_dump($datos);
                     $url = "";
@@ -102,6 +102,9 @@ class wispronodos extends Command
                         $dat = "";
                         }*/
                     }
+                }else{
+
+                    echo "no hay";
                 }
                 
 
