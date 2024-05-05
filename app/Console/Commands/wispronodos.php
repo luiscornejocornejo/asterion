@@ -52,7 +52,7 @@ class wispronodos extends Command
                 if($val2->cuantos>0){
                     echo $val2->cuantos;
 
-                    $prueba = $this->conectar(14);
+                    $prueba = $this->conectar(15);
                      echo   $query3 = "select * from wispro.ws_cliente where nombre='" . $val->Database . "'";
                     $datos = DB::connection('mysql2')->select($query3);
                    // var_dump($datos);
