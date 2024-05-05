@@ -63,7 +63,7 @@ class wispronodos extends Command
 
                         echo  $url = $val->headerlogin;
                         $tokensienna = $val->tokensienna;
-                        $campo = $val->headerendpoint;
+                        $campo = $val->headerendpoint; 
                         $merchant = $val->nombre;
                         echo $query111="truncate " . $merchant . ".nodos";
                        // $resultados111 = DB::select($query111);
@@ -104,7 +104,7 @@ class wispronodos extends Command
                     }
                 }else{
 
-                    echo "no hay";
+                    echo "no hay<br><br>";
                 }
                 
 
