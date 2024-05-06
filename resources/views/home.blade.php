@@ -12,16 +12,17 @@ if (isset($_SERVER['HTTP_HOST'])) {
     $subdomain_tmp =  array_shift($domainParts);
 }
 $subdomain_tmp = trim($subdomain_tmp);
-$query = "select count(*) as cantidaduser  from siennaloginxenioo where login=1 and  DATE(created_at) >= DATE(NOW()) group by idusuario";
+$query = "select idusuario from siennaloginxenioo where login=1 and  DATE(created_at) >= DATE(NOW()) group by idusuario";
 $resultados = DB::select($query);
 $cantidaduser = 0;
 $cantidadtickets = 0;
 $cantidadtickets2 = 0;
 $listamensual = array();
+/*
 foreach ($resultados as $val) {
     $cantidaduser = $val->cantidaduser;
-}
-
+}*/
+$cantidaduser =sizeof($resultados);
 if (isset($_GET['fecha'])) {
 
     $queryfecha = "";
