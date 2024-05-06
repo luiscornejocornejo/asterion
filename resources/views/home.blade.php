@@ -12,7 +12,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
     $subdomain_tmp =  array_shift($domainParts);
 }
 $subdomain_tmp = trim($subdomain_tmp);
-$query = "select count(*) as cantidaduser  from siennaloginxenioo where login=1 and  DATE(created_at) >= DATE(NOW())";
+$query = "select count(*) as cantidaduser  from siennaloginxenioo where login=1 and  DATE(created_at) >= DATE(NOW()) group by idusuario";
 $resultados = DB::select($query);
 $cantidaduser = 0;
 $cantidadtickets = 0;
