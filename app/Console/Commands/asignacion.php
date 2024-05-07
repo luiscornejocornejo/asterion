@@ -41,7 +41,9 @@ class asignacion extends Command
         foreach($resultados11 as $val){
 
              $Database=$val->Database; 
+             dd($Database);
              if($Database=="infitelecom"){
+
                 continue;
              }
             
