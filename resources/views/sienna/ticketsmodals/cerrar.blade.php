@@ -10,6 +10,7 @@
                         ¿Está seguro de cerrar el ticket?
                         <label for="client_number" class="form-label">Por favor agrega el número de cliente correspondiente del usuario :</label>
                     <input required type="number" class="form-control" name="client_number" id="client_number">
+                    <p class="mt-1">Motivo de cierre</p>
                     <div id="motivoc"></div>
                     </div>
                     <div class="modal-footer">
