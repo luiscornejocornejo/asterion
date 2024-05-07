@@ -1767,15 +1767,17 @@ class siennaticketsController extends Controller
      
      public function mandarmail(Request $request){
 
-        echo  $mail=$request->mail;
-        echo  $cc=$request->cc;
+          $mail=$request->mail;
+          $cc=$request->cc;
         $texto=$request->texto;
         $texto = preg_replace('/<input\b[^>]*\bdata-formula="e=mc\^2"[^>]*>/', '', $texto);
 
         $ticket=$request->ticket;
         $merchant=$request->merchant;
         $subject=$request->subject;
-        $for=$mail;//"kayser95@hotmail.com";
+        $for=$mail;
+        dd($for);
+        //"kayser95@hotmail.com";
        // $cc=array('kayser1712@gmail.com','luis.cornejo@suricata.la');
 
         Mail::mailer('suricata')
