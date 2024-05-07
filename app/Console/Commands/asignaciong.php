@@ -35,6 +35,7 @@ class asignaciong extends Command
         echo "entro asignacion";
         $CONE=$this->conectar();
         $queryoriginal="show databases";
+        dd($queryoriginal);
         $resultados11 = DB::connection('mysql2')->select($queryoriginal);
         $os = array("sys","defaultdb", "information_schema", "mysql", "moldemaestro", "performance_schema", "sienna1", "telesmart", "template","anterior","infitelecom");
 
