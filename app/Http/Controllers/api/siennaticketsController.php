@@ -1768,6 +1768,7 @@ class siennaticketsController extends Controller
      public function mandarmail(Request $request){
 
           $mail=$request->mail;
+          return $mail;
           $cc=$request->cc;
         $texto=$request->texto;
         $texto = preg_replace('/<input\b[^>]*\bdata-formula="e=mc\^2"[^>]*>/', '', $texto);
