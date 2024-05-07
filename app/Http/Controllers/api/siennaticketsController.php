@@ -1768,7 +1768,6 @@ class siennaticketsController extends Controller
      public function mandarmail(Request $request){
 
           $mail=$request->mail;
-          return $mail;
           $cc=$request->cc;
         $texto=$request->texto;
         $texto = preg_replace('/<input\b[^>]*\bdata-formula="e=mc\^2"[^>]*>/', '', $texto);
@@ -1777,9 +1776,9 @@ class siennaticketsController extends Controller
         $merchant=$request->merchant;
         $subject=$request->subject;
         $for=$mail;
-        dd($for);
         //"kayser95@hotmail.com";
        // $cc=array('kayser1712@gmail.com','luis.cornejo@suricata.la');
+       return $mail;
 
         Mail::mailer('suricata')
                 ->send('mailsienna', ["fields2" => $texto], function ($msj) use ($subject,$for, $cc) {
