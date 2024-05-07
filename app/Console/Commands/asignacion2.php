@@ -9,14 +9,14 @@ use Mail;
 use App\Models\empresa;
 use App\Models\categoria;
 
-class asignacion extends Command
+class asignacion2 extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'semanal:asignacion';
+    protected $signature = 'semanal:asignacion2';
 
     /**
      * The console command description.
