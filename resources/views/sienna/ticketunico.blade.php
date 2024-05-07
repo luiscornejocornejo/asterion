@@ -137,11 +137,11 @@ function tituloiconos($iconos, $tipo)
                                         </div>
                                         <div class="mb-1">
                                         <i class="mdi mdi-priority-high"></i> <strong>Prioridad: </strong>
-                                        <button onclick="prioridad(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->conversation_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`,`<?php echo $resultados[0]->cliente; ?>`)" class="btn " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smprioridad">
+                                        <span onclick="prioridad(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->conversation_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`,`<?php echo $resultados[0]->cliente; ?>`)" role="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smprioridad">
                                         <span class="badge <?php echo $resultados[0]->colorprioridad; ?> line-h" style="font-size: 13px;">
                                                 <?php echo $resultados[0]->nombreprioridad; ?>
                                             </span>
-                                     </button>
+                                     </span>
                          
                                          
                                         </div>
