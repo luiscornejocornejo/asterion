@@ -516,9 +516,6 @@ class TicketdatosController extends Controller
 
         $tik=$request->tik;
         $estado=$request->estado;
-
-
-
         $query="update siennatickets set siennatopic='".$estado."'  where id='".$tik."'";
         $resultados5 = DB::select($query);
         return redirect()
@@ -921,6 +918,8 @@ class TicketdatosController extends Controller
         }
         //dd($tik);
         $si2 = siennatickets::find($tik);
+        $estadoant=$si2->siennaestado;
+
         $si2->siennaestado=$estado;
         if($estado==4){
             $si2->cliente=$request->client_number;
@@ -931,12 +930,16 @@ class TicketdatosController extends Controller
         }
         $si2->save();
 
+        $estant=siennaestado::find($estadoant);
+        $estnombreant=$estant->nombre;
+
+
         $est=siennaestado::find($estado);
         $estnombre=$est->nombre;
         $se=new siennaseguimientos();
         $se->ticket=$tik;
         $se->tipo="2";
-        $se->descripcion="cambio estado ".$estnombre;
+        $se->descripcion=$estnombreant." => ".$estnombre;
         $usulogear = session('nombreusuario');
 
         $se->autor=$usulogear;
