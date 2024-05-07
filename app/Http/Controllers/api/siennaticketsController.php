@@ -1790,7 +1790,6 @@ class siennaticketsController extends Controller
             }
         });
 
-        return $mail;
 
         $si2 = siennatickets::find($ticket);
         $si2->email = $si2->email ."<hr><h1>Soporte</h1>".$texto;
