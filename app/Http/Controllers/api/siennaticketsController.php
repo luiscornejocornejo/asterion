@@ -1778,7 +1778,6 @@ class siennaticketsController extends Controller
         $for=$mail;
         //"kayser95@hotmail.com";
        // $cc=array('kayser1712@gmail.com','luis.cornejo@suricata.la');
-       return $mail;
 
         Mail::mailer('suricata')
                 ->send('mailsienna', ["fields2" => $texto], function ($msj) use ($subject,$for, $cc) {
@@ -1788,6 +1787,7 @@ class siennaticketsController extends Controller
             $msj->cc($cc);
         });
 
+        return $mail;
 
         $si2 = siennatickets::find($ticket);
         $si2->email = $si2->email ."<hr><h1>Soporte</h1>".$texto;
