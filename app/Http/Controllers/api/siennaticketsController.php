@@ -1175,6 +1175,7 @@ class siennaticketsController extends Controller
         echo   $bot_channel = $request->bot_channel;
         $logeado = $request->logeado;
         $si2 = siennatickets::find($idticketdepto);
+        $antdepto=$si2->siennadepto;
         $si2->siennadepto = $statos;
         $si2->asignado = 0;
         $si2->save();
@@ -1193,7 +1194,7 @@ class siennaticketsController extends Controller
         $se = new siennaseguimientos();
         $se->ticket = $idticketdepto;
         $se->tipo = "3";
-        $se->descripcion = "modificar area:" . $nombrearea;
+        $se->descripcion = $antdepto." =>" . $nombrearea;
         $se->autor = $logeado;
         $se->save();
 
