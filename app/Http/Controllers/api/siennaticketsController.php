@@ -1784,7 +1784,10 @@ class siennaticketsController extends Controller
             $msj->from("support@suricata.la", "soporte");
             $msj->subject($subject);
             $msj->to($for);
-            $msj->cc($cc);
+            if($cc!=null){
+                $msj->cc($cc);
+
+            }
         });
 
         return $mail;
