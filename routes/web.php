@@ -241,6 +241,7 @@ Route::get('/tickets  ','App\Http\Controllers\TicketdatosController@osttickets')
 //sienna cloud tickets
 
 Route::post('/cambiardeptosiennacloud','App\Http\Controllers\cloudtickets@cambiardeptosienna');
+Route::post('/cambiarestadosienna','App\Http\Controllers\cloudtickets@cambiarestadosienna');
 
 });
 //});

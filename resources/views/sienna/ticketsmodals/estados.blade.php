@@ -6,7 +6,7 @@
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="/ventasstatus" method="post">
+                        <form action="/cambiarestadosienna" method="post">
                             @csrf
                             <input type="hidden" name="tik" id="idticketestado2" value="">
                             <input type="hidden" name="idconv" id="conversation_id2" value="">
