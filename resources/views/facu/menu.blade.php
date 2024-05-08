@@ -73,11 +73,18 @@ $resultados = DB::select($query);
     </li>
    
    
-
+<?php
+ $tipodemenu = session('tipodemenu');
+ if($tipodemenu =="8"){?>
     
-
+    <li class="side-nav-item background-buttons">
+                    <a  href="/conversations2"  class="side-nav-link hovering-pan ">
+                        <i class="mdi mdi-account-multiple"></i>
+                        <span> conversaciones </span>
+                    </a>
+                </li>
     <?php
-     $tipodemenu = session('tipodemenu');
+ }
      if(($tipodemenu =="1")or($tipodemenu =="2")or($tipodemenu =="4")){
      ?>
                 <li class="side-nav-item background-buttons">
