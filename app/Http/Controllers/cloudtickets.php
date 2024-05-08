@@ -199,7 +199,7 @@ class cloudtickets extends Controller
         $topnombre=$top->nombre;
         $se=new siennaseguimientos();
         $se->ticket=$tik;
-        $se->tipo="8";
+        $se->tipo="7";
         $se->descripcion=$topicnombreant." => ".$topnombre;
         $usulogear = session('nombreusuario');
 
