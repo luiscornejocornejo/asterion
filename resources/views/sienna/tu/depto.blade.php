@@ -7,10 +7,9 @@
                     </div>
                     <div class="modal-body">
                         <form action="/cambiardeptosiennacloud" method="post">
-                            
-                        @csrf
 
-                            <input type="hidden" name="_token" v-bind:value="csrf">
+                              @csrf
+
                             <input value="<?php  echo $resultados[0]->conversation_id;?>" type="hidden" name="idconv" id="idconv">
                             <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
                             <input value="<?php  echo $resultados[0]->user_id;?>" type="hidden" name="user_id" id="user_id">
