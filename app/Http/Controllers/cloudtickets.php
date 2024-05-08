@@ -179,6 +179,40 @@ class cloudtickets extends Controller
             ->with('success', 'Se asigno  correctamente!');
     }
 
+
+    public function cambiartopicsienna(Request $request)
+    {
+
+        $tik=$request->tik;
+        $estado=$request->estado;
+        //ticket update
+        $si2 = siennatickets::find($tik);
+        $antdepto=$si2->siennadepto;
+        $anttopic=$si2->siennatopic ;
+        $si2->siennatopic = $estado;
+        $si2->save();
+
+        $topant=siennatopic::find($anttopic);
+        $topicnombreant=$topant->nombre;
+
+        $top=siennatopic::find($estado);
+        $topnombre=$top->nombre;
+        $se=new siennaseguimientos();
+        $se->ticket=$tik;
+        $se->tipo="8";
+        $se->descripcion=$topicnombreant." => ".$topnombre;
+        $usulogear = session('nombreusuario');
+
+        $se->autor=$usulogear;
+        $se->save();
+        
+
+        return redirect()
+        ->back()
+        ->with('success', 'Se modifico  el topic  correctamente!');
+
+    }
+
     public function cambiarestadoxennio(){
 
         $url="https://suricata4.com.ar/api/closechat";

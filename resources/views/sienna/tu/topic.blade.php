@@ -6,7 +6,7 @@
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="/topiccambiar" method="post">
+                        <form action="/cambiartopicsienna" method="post">
                             @csrf
                             <input type="hidden" name="tik" id="idticketestado3" value="">
                             <input value="<?php echo $subdomain_tmp; ?>" type="hidden" name="idbot" id="idbot">
