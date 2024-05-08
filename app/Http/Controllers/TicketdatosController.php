@@ -149,7 +149,7 @@ class TicketdatosController extends Controller
 
         $hh= $this->datossuricata($email_suricata,$AccountAPIKey,$BotAPIKey,$BotAPISecret,$url);
         $res=json_decode($hh, true);
-        //dd($res);
+        dd($res);
         if($res<>''){
                     if( $url=='https://publicapi.xenioo.com/sso/authorize'){
 
