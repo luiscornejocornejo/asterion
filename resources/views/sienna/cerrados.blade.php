@@ -128,7 +128,7 @@
                     d="d-none";
                 }
                 tt += '<tr class="text-center">' +
-                    ' <td><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</td>' +
+                    ' <td><a target=blank href=/ticketunico?tick='+response.data[i].ticketid +'><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</a></td>' +
                     ' <td>' + response.data[i].nya + '</td>' +
                     ' <td> <span class="badge '+colordepto+'" style="font-size:medium;">' + response.data[i].depto + '</span>'+
                     ' <td>' + response.data[i].topicnombre + '</td>' +
