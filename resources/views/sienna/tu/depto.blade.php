@@ -7,6 +7,7 @@
                     </div>
                     <div class="modal-body">
                         <form action="/cambiardeptosiennacloud" method="post">
+                            
                         @csrf
 
                             <input type="hidden" name="_token" v-bind:value="csrf">
