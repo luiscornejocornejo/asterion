@@ -18,6 +18,7 @@ use App\Models\siennaseguimientos;
 use App\Models\siennacliente;
 use App\Models\siennadepto;
 use App\Models\siennaestado;
+use App\Models\prioridad;
 use App\Models\siennatopic;
 use App\Models\empresa;
 
@@ -213,6 +214,38 @@ class cloudtickets extends Controller
 
     }
 
+    public function prioridadsienna(Request $request){
+
+        $idticketestadoprioridad = $request->idticketestadoprioridad;
+        $statos = $request->statos;
+        $idconv = $request->idconv;
+        $idbot = $request->idbot;
+        $user_id = $request->user_id;
+         $bot_channel = $request->bot_channel;
+        $logeado = $request->logeado;
+        $si2 = siennatickets::find($idticketestadoprioridad);
+        $prioant=$si2->prioridad ;
+        $si2->prioridad = $statos;
+        $si2->asignado = 0;
+        $si2->save();
+
+        $prioant = prioridad::find($prioant);
+        $nombreprioant=$prioant->nombre;
+
+        $prioact = prioridad::find($statos);
+        $nombreprioact=$prioact->nombre;
+
+        $se = new siennaseguimientos();
+        $se->ticket = $idticketestadoprioridad;
+        $se->tipo = "8";
+        $se->descripcion = $nombreprioant." => ".$nombreprioact ;
+        $se->autor = $logeado;
+        $se->save();
+        return redirect()
+        ->back()
+        ->with('success', 'Se modifico la Prioridad  correctamente!');
+
+     }
     public function cambiarestadoxennio(){
 
         $url="https://suricata4.com.ar/api/closechat";

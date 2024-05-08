@@ -244,6 +244,7 @@ Route::post('/cambiardeptosiennacloud','App\Http\Controllers\cloudtickets@cambia
 Route::post('/cambiarestadosienna','App\Http\Controllers\cloudtickets@cambiarestadosienna');
 Route::post('/asignara','App\Http\Controllers\cloudtickets@asignara');
 Route::post('/cambiartopicsienna','App\Http\Controllers\cloudtickets@cambiartopicsienna');
+Route::post('/prioridadsienna','App\Http\Controllers\cloudtickets@prioridadsienna');
 
 });
 //});

@@ -6,8 +6,8 @@
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="/api/prioridad" method="post">
-                            <input type="hidden" name="_token" v-bind:value="csrf">
+                        <form action="/prioridadsienna" method="post">
+                        @csrf
                             <input value="<?php  echo $resultados[0]->conversation_id;?>" type="hidden" name="idconv" id="idconv">
                             <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
                             <input value="<?php  echo $resultados[0]->user_id;?>" type="hidden" name="user_id" id="user_id">
