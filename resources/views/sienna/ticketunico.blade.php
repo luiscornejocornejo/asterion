@@ -135,7 +135,7 @@ function tituloiconos($iconos, $tipo)
                                         <div class="mb-1">
                                             <i class="mdi mdi-calendar"></i> <strong>Creado: </strong><?php echo $resultados[0]->creacion; ?>
                                         </div>
-                                        <div class="mb-1">
+                                        <div>
                                         <i class="mdi mdi-priority-high"></i> <strong>Prioridad: </strong>
                                         <span onclick="prioridad(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->conversation_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`,`<?php echo $resultados[0]->cliente; ?>`)" role="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smprioridad">
                                         <span class="badge <?php echo $resultados[0]->colorprioridad; ?> line-h" style="font-size: 13px;">
@@ -166,6 +166,7 @@ function tituloiconos($iconos, $tipo)
                                     <div class="d-flex mb-3 mt-1">
                                         <div class="w-100 overflow-hidden">
                                             <small class="text-muted">De: <?php echo $resultados[0]->emailcliente;?></small>
+                                            <br>
                                             <small class="text-muted">CC: <?php echo $resultados[0]->cc;?></small>
                                         </div>
                                     </div>
