@@ -75,6 +75,7 @@ $resultados = DB::select($query);
    
 <?php
  $tipodemenu = session('tipodemenu');
+ echo  $tipodemenu;
  if($tipodemenu =="8"){?>
     
     <li class="side-nav-item background-buttons">
