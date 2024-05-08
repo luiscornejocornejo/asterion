@@ -45,6 +45,7 @@ class cloudtickets extends Controller
         $statos = $request->statos;
         $idconv = $request->idconv;
         $idbot = $request->idbot;
+        $logeado = $request->logeado;
         $user_id = $request->user_id;
         $bot_channel = $request->bot_channel;
 
