@@ -149,6 +149,35 @@ class cloudtickets extends Controller
         ->with('success', 'Se Cambio status correctamente');
     }
 
+    public function asignara(Request $request)
+    {
+
+        $idticketpedir = $request->idticketpedir;
+
+        $usuarioticket = $request->usuarioticket;
+
+
+        $logeado = $request->logeado;
+        $si2 = siennatickets::find($idticketpedir);
+        $si2->asignado = $usuarioticket;
+        $si2->save();
+
+
+        $us=users::find($usuarioticket);
+
+        $se = new siennaseguimientos();
+        $se->ticket = $idticketpedir;
+        $se->tipo = "4";
+        $se->descripcion = "asignado a: ".$us->last_name;
+        $se->autor = $logeado;
+        $se->save();
+
+
+
+        return redirect()
+            ->back()
+            ->with('success', 'Se asigno  correctamente!');
+    }
 
     public function cambiarestadoxennio(){
 

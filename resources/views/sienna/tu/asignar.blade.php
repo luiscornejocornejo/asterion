@@ -6,7 +6,9 @@
                                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="/api/pedir2" method="POST">
+                                    <form action="/asignara" method="POST">
+                                    @csrf
+
                                         <input value="<?php echo $resultados[0]->ticketid; ?>" type="hidden" name="idticketpedir" id="idticketpedir2">
                                         <input value="<?php echo session('nombreusuario'); ?>" type="hidden" name="logeado" id="logeado">
 

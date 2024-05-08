@@ -242,6 +242,7 @@ Route::get('/tickets  ','App\Http\Controllers\TicketdatosController@osttickets')
 
 Route::post('/cambiardeptosiennacloud','App\Http\Controllers\cloudtickets@cambiardeptosienna');
 Route::post('/cambiarestadosienna','App\Http\Controllers\cloudtickets@cambiarestadosienna');
+Route::post('/asignara','App\Http\Controllers\cloudtickets@asignara');
 
 });
 //});
