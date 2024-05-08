@@ -236,6 +236,12 @@ Route::get('/ticketunico','App\Http\Controllers\TicketdatosController@ticketunic
 //sienna y osticket
 Route::get('/tickets  ','App\Http\Controllers\TicketdatosController@osttickets');
 
+
+
+//sienna cloud tickets
+
+Route::post('/cambiardeptosiennacloud','App\Http\Controllers\cloudtickets@cambiardeptosienna');
+
 });
 //});
 
