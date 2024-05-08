@@ -162,25 +162,18 @@ function tituloiconos($iconos, $tipo)
 
                         <div class="card ">
                                 <div class="card-body">
-                                    <h5 class="font-18"><?php echo $resultados[0]->emailnom;?></h5>
-                                    <hr>
+                                    <h5 class="font-18">Asunto: <?php echo $resultados[0]->emailnom;?></h5>
                                     <div class="d-flex mb-3 mt-1">
                                         <div class="w-100 overflow-hidden">
-                                            
-                                            <small class="text-muted">From: <?php echo $resultados[0]->emailcliente;?></small>
+                                            <small class="text-muted">De: <?php echo $resultados[0]->emailcliente;?></small>
+                                            <small class="text-muted">CC: <?php echo $resultados[0]->cc;?></small>
                                         </div>
                                     </div>
-                                    <?php 
-                                
-                                        
 
-                                        
-                                
+                                    <?php 
                                     $b = html_entity_decode($resultados[0]->eltexto);
                                     $b = str_replace('src="cid:', '', $b);
                                     $b = preg_replace('/<img\b(?![^>]*\bsrc=)[^>]*>/i', '', $b);
-
-                                
 
                                         ?>  
                                     {!! $b !!}
@@ -214,10 +207,10 @@ function tituloiconos($iconos, $tipo)
                                     <!-- end row-->
                                    
                                         <div class="mt-5">
-                                        <input id="mailaeviar" readonly type="email" value="<?php echo $resultados[0]->emailcliente;?>">
-                                        <input id="cc2" readonly type="text" value="<?php echo $resultados[0]->cc;?>">
-                                        <input id="subject" readonly type="text" value="<?php echo $resultados[0]->emailnom;?>">
-                                            <div  id="snow-editor" style="height: 300px;">
+                                        <input id="mailaeviar" class="d-none" readonly type="email" value="<?php echo $resultados[0]->emailcliente;?>">
+                                        <input id="cc2" class="d-none" readonly type="text" value="<?php echo $resultados[0]->cc;?>">
+                                        <input id="subject" class="d-none" readonly type="text" value="<?php echo $resultados[0]->emailnom;?>">
+                                            <div id="snow-editor" style="height: 300px;">
                                             </div>
                                             <button onclick="enviaremail2('<?php echo $resultados[0]->ticketid;?>','<?php echo $subdomain_tmp;?>','<?php echo $resultados[0]->cc;?>','<?php echo $resultados[0]->emailnom;?>')" type="button" class="btn me-2 mt-2 rounded-pill" style="background-color: #FFD193;">Responder</button> 
                                         </div>
