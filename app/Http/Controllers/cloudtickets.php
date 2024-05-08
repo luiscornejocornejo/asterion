@@ -124,28 +124,14 @@ class cloudtickets extends Controller
         $idconv=$request->idconv;
         $bot_channel="WhatsAppChannel";
 
-        if($estado==4){
-
-            echo "cerrar";
-    
-        }
-        //dd($tik);
         $si2 = siennatickets::find($tik);
         $estadoant=$si2->siennaestado;
 
         $si2->siennaestado=$estado;
-        if($estado==4){
-            $si2->cliente=$request->client_number;
-            $si2->motivoc=$request->motivoc;
-
-            $si2->t_cerrado=date("Y-m-d H:i:s");
-            
-        }
         $si2->save();
 
         $estant=siennaestado::find($estadoant);
         $estnombreant=$estant->nombre;
-
 
         $est=siennaestado::find($estado);
         $estnombre=$est->nombre;
@@ -161,8 +147,6 @@ class cloudtickets extends Controller
         return redirect() 
         ->back() 
         ->with('success', 'Se Cambio status correctamente');
-
-
     }
 
 
