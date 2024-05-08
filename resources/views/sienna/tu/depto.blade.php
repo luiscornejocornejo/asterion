@@ -6,7 +6,7 @@
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="/api/cambiardeptosienna2" method="post">
+                        <form action="/cambiardeptosiennacloud" method="post">
                             <input type="hidden" name="_token" v-bind:value="csrf">
                             <input value="<?php  echo $resultados[0]->conversation_id;?>" type="hidden" name="idconv" id="idconv">
                             <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
