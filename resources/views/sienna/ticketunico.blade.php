@@ -181,7 +181,6 @@ function tituloiconos($iconos, $tipo)
                                                         <small class="text-muted">De: <?php echo $resultados[0]->emailnom;?></small><br>
                                                         <small class="text-muted">CC: <?php echo $resultados[0]->cc;?></small>
                                                             <p class="mb-1">
-                                                                <?php echo $valormail->autor ?>
                                                                 {!! $b !!}
                                                             </p>
                                                         </div>
