@@ -18,6 +18,7 @@ use App\Models\siennacliente;
 use App\Models\siennadepto;
 use App\Models\siennaestado;
 use App\Models\siennatopic;
+use App\Models\siennamail;
 use App\Models\empresa;
 use App\Models\categoria;
 use Illuminate\Support\Facades\Artisan;
