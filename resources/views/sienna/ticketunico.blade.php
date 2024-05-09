@@ -164,14 +164,18 @@ function tituloiconos($iconos, $tipo)
                                 <div class="card-body">
                                     <h5 class="font-18 mb-2">Asunto: <?php echo $resultados[0]->emailnom;?></h5>
                                     
-                                    
+                                    foreach($resultadosmails as $valormail){?>
+                                        <div id="<?php echo $valormail->autor;?>">
+                                    <?php
+                                        echo $valormail->autor;
+                                        $b = html_entity_decode($valormail->cuerpo);
+                                        $b = str_replace('src="cid:', '', $b);
+                                        $b = preg_replace('/<img\b(?![^>]*\bsrc=)[^>]*>/i', '', $b);
+                                    ?>  
+                                    {!! $b !!}
                                     <ul class="conversation-list p-0" data-simplebar="init">
-                                        <?php foreach($resultadosmails as $valormail) :
-                                            $b = html_entity_decode($valormail->cuerpo);
-                                            $b = str_replace('src="cid:', '', $b);
-                                            $b = preg_replace('/<img\b(?![^>]*\bsrc=)[^>]*>/i', '', $b); 
-                                        ?>
-                                            <?php if($valormail->autor = 0): ?>
+                                        <?php foreach($resultadosmails as $valormail) :?>
+                                            <?php if($valormail->autor === 0): ?>
                                                 <li class="clearfix">
                                                     <div class="chat-avatar">
                                                         <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" class="rounded-circle border" alt="Usuario">
@@ -202,6 +206,13 @@ function tituloiconos($iconos, $tipo)
                                                     </div>
                                                 </li>
                                             <?php endif; ?>
+                                            <div id="<?php echo $valormail->autor; ?>">
+                                                <?php
+                                                    $b = html_entity_decode($valormail->cuerpo);
+                                                    $b = str_replace('src="cid:', '', $b);
+                                                    $b = preg_replace('/<img\b(?![^>]*\bsrc=)[^>]*>/i', '', $b);
+                                                ?>  
+                                            </div>
                                         <?php endforeach; ?>
                                     </ul>
 
