@@ -162,29 +162,49 @@ function tituloiconos($iconos, $tipo)
 
                         <div class="card ">
                                 <div class="card-body">
-                                    <h5 class="font-18">Asunto: <?php echo $resultados[0]->emailnom;?></h5>
-                                    <div class="d-flex mb-3 mt-1">
-                                        <div class="w-100 overflow-hidden">
-                                            <small class="text-muted">De: <?php echo $resultados[0]->emailcliente;?></small>
-                                            <br>
-                                            <small class="text-muted">CC: <?php echo $resultados[0]->cc;?></small>
-                                        </div>
-                                    </div>
+                                    <h5 class="font-18 mb-2">Asunto: <?php echo $resultados[0]->emailnom;?></h5>
 
-                                    <?php 
-                                    foreach($resultadosmails as $valormail){?>
-                                        <div id="<?php echo $valormail->autor;?>">
-                                    <?php
-                                    echo $valormail->autor;
-                                    $b = html_entity_decode($valormail->cuerpo);
-                                    $b = str_replace('src="cid:', '', $b);
-                                    $b = preg_replace('/<img\b(?![^>]*\bsrc=)[^>]*>/i', '', $b);
+                                    <ul class="conversation-list p-0" data-simplebar="init">
+                                        <?php foreach($resultadosmails as $valormail) :
+                                            $b = html_entity_decode($valormail->cuerpo);
+                                            $b = str_replace('src="cid:', '', $b);
+                                            $b = preg_replace('/<img\b(?![^>]*\bsrc=)[^>]*>/i', '', $b); 
+                                        ?>
+                                            <?php if($valormail->autor === 0): ?>
+                                                <li class="clearfix">
+                                                    <div class="chat-avatar">
+                                                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" class="rounded-circle border" alt="Usuario">
+                                                    </div>
+                                                    <div class="conversation-text">
+                                                        <div class="ctext-wrap bg-white border">
+                                                        <small class="text-muted">De: <?php echo $resultados[0]->emailcliente;?></small><br>
+                                                        <small class="text-muted">CC: <?php echo $resultados[0]->cc;?></small>
+                                                            <p class="mb-1">
+                                                                {!! $b !!}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            <?php else: ?>
+                                                <li class="clearfix odd">
+                                                    <div class="chat-avatar">
+                                                        <img src="https://static.thenounproject.com/png/535375-200.png" class="rounded-circle border" alt="Operador">
+                                                    </div>
+                                                    <div class="conversation-text">
+                                                        <div class="ctext-wrap">
+                                                            <i>Soporte Suricata</i>
+                                                            <p>
+                                                                {!! $b !!}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            <?php endif; ?>
+                                        <?php endforeach; ?>
+                                    </ul>
 
-                                        ?>  
-                                    {!! $b !!}
 
-                                    </div>
-                                    <?php }?>
+                                    
 
                                     <h5 class="mb-3">Adjuntos</h5>
 
