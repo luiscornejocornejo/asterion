@@ -162,7 +162,7 @@ function tituloiconos($iconos, $tipo)
 
                         <div class="card ">
                                 <div class="card-body">
-                                    <h5 class="font-18 mb-2">Asunto: <?php echo $resultados[0]->emailnom;?></h5>
+                                <h5 class="font-18 mb-2">Asunto: <?php echo $resultados[0]->emailcliente;?></h5>
                                     
                                     
                                     <ul class="conversation-list p-0" data-simplebar="init">
