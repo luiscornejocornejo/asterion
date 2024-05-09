@@ -1779,7 +1779,6 @@ class siennaticketsController extends Controller
         $merchant=$request->merchant;
         $subject=$request->subject;
         $for=$mail;
-        return $mail;
         //"kayser95@hotmail.com";
        // $cc=array('kayser1712@gmail.com','luis.cornejo@suricata.la');
 
@@ -1793,6 +1792,7 @@ class siennaticketsController extends Controller
 
             }
         });
+        return $mail;
 
 
         $si2 = siennamail::find($ticket);
