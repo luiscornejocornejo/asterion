@@ -174,8 +174,12 @@ function tituloiconos($iconos, $tipo)
                                     ?>  
                                     {!! $b !!}
                                     <ul class="conversation-list p-0" data-simplebar="init">
-                                        <?php foreach($resultadosmails as $valormail) :?>
-                                            <?php if($valormail->autor === 0): ?>
+                                        <?php foreach($resultadosmails as $valormail) :
+                                            $b = html_entity_decode($valormail->cuerpo);
+                                            $b = str_replace('src="cid:', '', $b);
+                                            $b = preg_replace('/<img\b(?![^>]*\bsrc=)[^>]*>/i', '', $b); 
+                                        ?>
+                                            <?php if($valormail->autor = 0): ?>
                                                 <li class="clearfix">
                                                     <div class="chat-avatar">
                                                         <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" class="rounded-circle border" alt="Usuario">
@@ -211,6 +215,7 @@ function tituloiconos($iconos, $tipo)
                                                     $b = html_entity_decode($valormail->cuerpo);
                                                     $b = str_replace('src="cid:', '', $b);
                                                     $b = preg_replace('/<img\b(?![^>]*\bsrc=)[^>]*>/i', '', $b);
+                                                    echo $b;
                                                 ?>  
                                             </div>
                                         <?php endforeach; ?>
