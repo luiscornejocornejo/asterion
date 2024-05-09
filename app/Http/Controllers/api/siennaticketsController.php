@@ -1802,6 +1802,10 @@ class siennaticketsController extends Controller
         $si2->autor =1;
         $si2->from ="support@suricata.la";
         $si2->save();
+
+        $si3 = siennatickets::find($ticket);
+        $si3->estadoconv =0;
+        $si3->save();
         return $ticket;
      }
      public function motic(Request $request){
