@@ -1794,12 +1794,12 @@ class siennaticketsController extends Controller
             }
         });
 
-/*
+
         $si2 = siennamail::find($ticket);
         $si2->cuerpo = $texto;
         $si2->autor =1;
         $si2->from ="support@suricata.la";
-        $si2->save();*/
+        $si2->save();
         return $ticket;
      }
      public function motic(Request $request){
