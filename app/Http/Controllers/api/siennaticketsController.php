@@ -1782,7 +1782,6 @@ class siennaticketsController extends Controller
         //"kayser95@hotmail.com";
        // $cc=array('kayser1712@gmail.com','luis.cornejo@suricata.la');
 
-       return $texto;
 
         Mail::mailer('suricata')
                 ->send('mailsienna', ["fields2" => $texto], function ($msj) use ($subject,$for, $cc) {
@@ -1795,12 +1794,12 @@ class siennaticketsController extends Controller
             }
         });
 
-
+/*
         $si2 = siennamail::find($ticket);
         $si2->cuerpo = $texto;
         $si2->autor =1;
         $si2->from ="support@suricata.la";
-        $si2->save();
+        $si2->save();*/
         return $ticket;
      }
      public function motic(Request $request){
