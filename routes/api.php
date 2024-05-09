@@ -48,7 +48,7 @@ Route::post('/creartickessiennacharlie', [siennaticketsController::class, 'crear
 Route::post('/creartickessiennacharlie2', [siennaticketsController::class, 'creartickessiennacharlie2']);
 
    
-Route::get('/mandarmail', [siennaticketsController::class, 'mandarmail']);
+Route::post('/mandarmail', [siennaticketsController::class, 'mandarmail']);
 Route::get('/motic', [siennaticketsController::class, 'motic']);
 
 
