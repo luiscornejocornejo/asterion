@@ -1782,7 +1782,7 @@ class siennaticketsController extends Controller
         //"kayser95@hotmail.com";
        // $cc=array('kayser1712@gmail.com','luis.cornejo@suricata.la');
 
-       return $subject;
+       return $texto;
 
         Mail::mailer('suricata')
                 ->send('mailsienna', ["fields2" => $texto], function ($msj) use ($subject,$for, $cc) {
