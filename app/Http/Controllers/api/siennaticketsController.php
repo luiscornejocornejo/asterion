@@ -1795,7 +1795,9 @@ class siennaticketsController extends Controller
         });
 
 
-        $si2 = siennamail::find($ticket);
+        $si2 = new siennamail();
+        $si2->siennatickets = $ticket;
+
         $si2->cuerpo = $texto;
         $si2->autor =1;
         $si2->from ="support@suricata.la";
