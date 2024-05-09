@@ -1537,6 +1537,8 @@ class TicketdatosController extends Controller
        $querydeptos="select * from siennadepto";
        $resultadosdeptos = DB::select($querydeptos);
 
+       $querymails="select * from siennamail where siennatickets='".$tick."'";
+       $resultadosmails = DB::select($querymails);
        $emp=empresa::all();
        $pri=prioridad::all();
        if($siennasource==70){
@@ -1558,6 +1560,8 @@ class TicketdatosController extends Controller
         ->with('iconos', $resultados5)
         ->with('emp', $emp)
         ->with('pri', $pri)
+        ->with('resultadosmails', $resultadosmails)
+        
          ->with('resultados', $resultados);
        }
 
