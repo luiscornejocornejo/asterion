@@ -171,7 +171,7 @@ function tituloiconos($iconos, $tipo)
                                             $b = str_replace('src="cid:', '', $b);
                                             $b = preg_replace('/<img\b(?![^>]*\bsrc=)[^>]*>/i', '', $b); 
                                         ?>
-                                            <?php if($valormail->autor = 0): ?>
+                                            <?php if($valormail->autor == 0): ?>
                                                 <li class="clearfix">
                                                     <div class="chat-avatar">
                                                         <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" class="rounded-circle border" alt="Usuario">
