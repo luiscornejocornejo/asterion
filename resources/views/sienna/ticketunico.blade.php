@@ -302,7 +302,7 @@ function tituloiconos($iconos, $tipo)
                                     </button>
                                 </div>
                                 <script>
-                                                    function reabrir(tel2,url){
+                                                    function reabrir2(tel2,url){
                                                     
                                                         const xhr = new XMLHttpRequest();
                                                     // url="https://publicapi.xenioo.com/broadcasts/jjjTNjqyv3gGCFnsGDT3JA7G8dgHzpjr/4iQCeaeFBmdGvLZSo3dKzM9Q1H36cLlrTCrsFImZTxVR7BJ1dJVdjMCiZzBMXXdp/direct";
@@ -657,8 +657,15 @@ function tituloiconos($iconos, $tipo)
                     ¿Confirma la reapertura de conversación?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">No</button>
-                    <button onclick="reabrir('<?php echo $resultados[0]->cel;?>','<?php echo $urlreabrir;?>')"  type="button" class="btn btn-success">Si, enviar</button>
+                    <form method='post'action='/reabrirconversacion'>
+                    <input type="hidden" value="<?php echo $resultados[0]->urlreabrir;?>" name="url"/>
+                    <input type="hidden" value="<?php echo $resultados[0]->cel;?>" name="tel"/>
+                    <input type="hidden" value="<?php echo session('nombreusuario');?>" name="asignado"/>
+                    <input type="hidden" value="<?php echo $resultados[0]->ticketid;?>" name="ticket"/>
+
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">NO</button>
+                        <button type="submit" class="btn btn-success">Si</button>
+                </form>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->

@@ -245,7 +245,7 @@ class cloudtickets extends Controller
         ->back()
         ->with('success', 'Se modifico la Prioridad  correctamente!');
 
-     }
+    }
     public function cambiarestadoxennio(){
 
         $url="https://suricata4.com.ar/api/closechat";
@@ -290,5 +290,25 @@ class cloudtickets extends Controller
             // Close the cURL resource
             curl_close($curl);
 
+    }
+
+
+
+    public function reabrirconversacion(Request $request){
+
+        $tel2 = $request->tel;
+        $url = $request->url;
+        $ticket = $request->ticket;
+        $logeado = $request->asignado;
+        $urlprincipal2="https://suricata4.com.ar/api/broadcast?url=".$url."&tel2=".$tel2."&token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM";
+                            
+        $página_inicio = file_get_contents($urlprincipal2);
+
+        $se = new siennaseguimientos();
+        $se->ticket = $ticket;
+        $se->tipo = "10";
+        $se->descripcion = " reabrir conversacion:".$tel2 ;
+        $se->autor = $logeado;
+        $se->save();
     }
 }
