@@ -1772,24 +1772,19 @@ class siennaticketsController extends Controller
 
           $mail=$request->mail;
           $cc=$request->cc;
-          
-          $coma= substr($cc,-1);
-         // echo $coma;
-          
-          if($coma==","){
-            $cc= substr($cc,0,-1);
-          //  echo $cc;
+          $cc2="";
+          if (strpos($cc, ',') !== false) {
+            $sep=explode(",",$cc);
+            foreach($sep as $val){
+                if($val<>''){
+                    $cc2.=$val.",";
+                }
+            }
+            $cc3= substr($cc2,-1);
+            echo $cc3;
 
-          }
-
-          $coma2= substr($cc,0,1);
-          echo $coma2;
-          
-          if($coma2==","){
-            $cc= substr($cc,1,strlen($cc));
-            echo $cc;
-
-          }
+        }
+         
 /*
         $texto=$request->texto;
         $texto = preg_replace('/<input\b[^>]*\bdata-formula="e=mc\^2"[^>]*>/', '', $texto);
