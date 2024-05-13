@@ -1774,7 +1774,8 @@ class siennaticketsController extends Controller
           $cc=$request->cc;
           
           $coma= substr($cc,-1);
-          dd($coma);
+          echo $coma;
+          /*
           if($coma==","){
             $cc= substr($cc,0,-1);
             dd($cc);
@@ -1815,7 +1816,7 @@ class siennaticketsController extends Controller
         $si3 = siennatickets::find($ticket);
         $si3->estadoconv =0;
         $si3->save();
-        return $ticket;
+        return $ticket;*/
      }
      public function motic(Request $request){
 
