@@ -1778,7 +1778,7 @@ class siennaticketsController extends Controller
           
           if($coma==","){
             $cc= substr($cc,0,-1);
-            dd($cc);
+            echo $cc;
 
           }
 /*
