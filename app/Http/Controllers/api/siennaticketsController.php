@@ -1786,8 +1786,10 @@ class siennaticketsController extends Controller
             $cc3=$cc;
 
         }
-         
 
+        echo $cc3;
+         
+/*
         $texto=$request->texto;
         $texto = preg_replace('/<input\b[^>]*\bdata-formula="e=mc\^2"[^>]*>/', '', $texto);
 
@@ -1822,7 +1824,7 @@ class siennaticketsController extends Controller
         $si3 = siennatickets::find($ticket);
         $si3->estadoconv =0;
         $si3->save();
-        return $ticket;
+        return $ticket;*/
      }
      public function motic(Request $request){
 
