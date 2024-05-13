@@ -1780,7 +1780,7 @@ class siennaticketsController extends Controller
                      $cc2.=$val.",";
                 }
             }
-            $cc3= substr($cc2,-1);
+            $cc3= substr($cc2,0,-1);
             echo $cc3;
 
         }
