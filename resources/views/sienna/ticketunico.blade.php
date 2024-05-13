@@ -268,7 +268,7 @@ function tituloiconos($iconos, $tipo)
                                                     .then(function (response) {
                                                         console.log("respuesta");
                                                         console.log(response);
-                                                      //  window.location.reload();
+                                                        window.location.reload();
 
                                                     })
                                                     .catch(function (error) {
