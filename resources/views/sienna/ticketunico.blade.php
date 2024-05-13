@@ -658,6 +658,8 @@ function tituloiconos($iconos, $tipo)
                 </div>
                 <div class="modal-footer">
                     <form method='post'action='/reabrirconversacion'>
+                    @csrf
+
                     <input type="hidden" value="<?php echo $urlreabrir;?>" name="url"/>
                     <input type="hidden" value="<?php echo $resultados[0]->cel;?>" name="tel"/>
                     <input type="hidden" value="<?php echo session('nombreusuario');?>" name="asignado"/>
