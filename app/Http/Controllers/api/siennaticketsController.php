@@ -1777,7 +1777,7 @@ class siennaticketsController extends Controller
             $sep=explode(",",$cc);
             foreach($sep as $val){
                 if($val<>''){
-                    echo $cc2.=$val.",";
+                     $cc2.=$val.",";
                 }
             }
             $cc3= substr($cc2,-1);
