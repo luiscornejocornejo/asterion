@@ -235,12 +235,15 @@ function tituloiconos($iconos, $tipo)
                                     <!-- end row-->
                                    
                                         <div class="mt-5">
+                                        <form method='post'action='/api/mandarmail'>
+                                         @csrf
                                         <input id="subject" class="d-none" readonly type="email" value="<?php echo $resultados[0]->emailcliente;?>">
                                         <input id="cc2" class="d-none" readonly type="text" value="<?php echo $resultados[0]->cc;?>">
                                         <input id="mailaeviar" class="d-none" readonly type="text" value="<?php echo $resultados[0]->emailnom;?>">
                                             <div id="snow-editor" style="height: 300px;">
                                             </div>
                                             <button onclick="enviaremail2('<?php echo $resultados[0]->ticketid;?>','<?php echo $subdomain_tmp;?>','<?php echo $resultados[0]->cc;?>','<?php echo $resultados[0]->emailnom;?>')" type="button" class="btn me-2 mt-2 rounded-pill" style="background-color: #FFD193;">Responder</button> 
+                                        </form>
                                         </div>
                                         <script>
                                             function enviaremail2(ticket,merchant,cc,subject){
@@ -301,29 +304,7 @@ function tituloiconos($iconos, $tipo)
                                             <i class="mdi mdi-whatsapp me-1" ></i>Reabrir conversación 
                                     </button>
                                 </div>
-                                <script>
-                                                    function reabrir2(tel2,url){
-                                                    
-                                                        const xhr = new XMLHttpRequest();
-                                                    // url="https://publicapi.xenioo.com/broadcasts/jjjTNjqyv3gGCFnsGDT3JA7G8dgHzpjr/4iQCeaeFBmdGvLZSo3dKzM9Q1H36cLlrTCrsFImZTxVR7BJ1dJVdjMCiZzBMXXdp/direct";
-                                                        //tel2="541133258450";
-                                                        urlprincipal2="https://suricata4.com.ar/api/broadcast?url="+url+"&tel2="+tel2+"&token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM";
                             
-                                                        xhr.open("GET", urlprincipal2.trim());
-                                                        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                                                    
-                                                        xhr.onload = () => {
-                                                        if (xhr.readyState == 4 && xhr.status == 200) {
-                                                            console.log(JSON.parse(xhr.responseText));
-                                                        } else {
-                                                            console.log(`Error: ${xhr.status}`);
-                                                        }
-                                                        };
-                                                        xhr.send();
-
-
-                                                    }
-                                </script>
 
                             </div>  
                     <?php }?>
