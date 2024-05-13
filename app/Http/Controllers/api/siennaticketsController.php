@@ -1781,11 +1781,13 @@ class siennaticketsController extends Controller
                 }
             }
             $cc3= substr($cc2,0,-1);
-            echo $cc3;
+
+        }else{
+            $cc3=$cc;
 
         }
          
-/*
+
         $texto=$request->texto;
         $texto = preg_replace('/<input\b[^>]*\bdata-formula="e=mc\^2"[^>]*>/', '', $texto);
 
@@ -1798,12 +1800,12 @@ class siennaticketsController extends Controller
 
 
         Mail::mailer('suricata')
-                ->send('mailsienna', ["fields2" => $texto], function ($msj) use ($subject,$for, $cc) {
+                ->send('mailsienna', ["fields2" => $texto], function ($msj) use ($subject,$for, $cc3) {
             $msj->from("support@suricata.la", "soporte");
             $msj->subject($subject);
             $msj->to($for);
             if($cc!=null){
-                $msj->cc($cc);
+                $msj->cc($cc3);
 
             }
         });
@@ -1820,7 +1822,7 @@ class siennaticketsController extends Controller
         $si3 = siennatickets::find($ticket);
         $si3->estadoconv =0;
         $si3->save();
-        return $ticket;*/
+        return $ticket;
      }
      public function motic(Request $request){
 
