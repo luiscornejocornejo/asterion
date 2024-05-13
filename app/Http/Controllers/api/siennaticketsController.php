@@ -1775,13 +1775,13 @@ class siennaticketsController extends Controller
           
           $coma= substr($cc,-1);
           echo $coma;
-          /*
+          
           if($coma==","){
             $cc= substr($cc,0,-1);
             dd($cc);
 
           }
-
+/*
         $texto=$request->texto;
         $texto = preg_replace('/<input\b[^>]*\bdata-formula="e=mc\^2"[^>]*>/', '', $texto);
 
