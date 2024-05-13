@@ -1787,9 +1787,9 @@ class siennaticketsController extends Controller
 
         }
 
-        echo $cc3;
+        //echo $cc3;
          
-/*
+
         $texto=$request->texto;
         $texto = preg_replace('/<input\b[^>]*\bdata-formula="e=mc\^2"[^>]*>/', '', $texto);
 
@@ -1806,7 +1806,7 @@ class siennaticketsController extends Controller
             $msj->from("support@suricata.la", "soporte");
             $msj->subject($subject);
             $msj->to($for);
-            if($cc!=null){
+            if($cc3!=null){
                 $msj->cc($cc3);
 
             }
@@ -1824,7 +1824,7 @@ class siennaticketsController extends Controller
         $si3 = siennatickets::find($ticket);
         $si3->estadoconv =0;
         $si3->save();
-        return $ticket;*/
+        return $ticket;
      }
      public function motic(Request $request){
 
