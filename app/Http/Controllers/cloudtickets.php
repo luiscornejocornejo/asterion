@@ -310,5 +310,9 @@ class cloudtickets extends Controller
         $se->descripcion = " reabrir conversacion:".$tel2 ;
         $se->autor = $logeado;
         $se->save();
+
+        return redirect()
+        ->back()
+        ->with('success', 'Se reabrio  correctamente!');
     }
 }
