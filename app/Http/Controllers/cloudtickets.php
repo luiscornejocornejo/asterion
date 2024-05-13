@@ -306,7 +306,7 @@ class cloudtickets extends Controller
 
         $se = new siennaseguimientos();
         $se->ticket = $ticket;
-        $se->tipo = "10";
+        $se->tipo = "11";
         $se->descripcion = " reabrir conversacion:".$tel2 ;
         $se->autor = $logeado;
         $se->save();
