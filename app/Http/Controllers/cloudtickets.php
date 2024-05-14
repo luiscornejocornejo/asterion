@@ -350,7 +350,7 @@ class cloudtickets extends Controller
 
     public function cerrarall(Request $request){
 
-        echo $ticketss=$request->tikall;
+         $ticketss=$request->tikall;
         $estado=4;
         $motivoc=1;
 
@@ -391,6 +391,9 @@ class cloudtickets extends Controller
             }
 
         }
+        return redirect()
+        ->back()
+        ->with('success', 'Se cerro  correctamente!');
 
     }
 
