@@ -95,6 +95,8 @@ class asignaciong extends Command
         $query2="select * from ".$merchant.".categoria where area='".$area."'";
         $cat = DB::connection('mysql2')->select($query2);
 
+
+        echo "luis".$merchant;
         foreach($cat as $val){
 
         echo $fecha=$val->$diaSemana;
