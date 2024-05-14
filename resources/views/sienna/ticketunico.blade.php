@@ -219,7 +219,7 @@ function tituloiconos($iconos, $tipo)
                                                     
                                                         <div class="col-auto">
                                                             <!-- Button -->
-                                                    <a target=_blank href="<?php echo $adj->descripcion;?>"><img  src='<?php echo $adj->descripcion;?>' width="40px;"></a>
+                                                    <a target=_blank href="<?php echo $adj->descripcion;?>"><img  src='<?php echo $adj->descripcion."_".$adj->logo;?>' width="40px;"></a>
                                                             
                                                         
                                                             
