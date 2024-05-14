@@ -106,6 +106,22 @@
           document.getElementById("tc").value = area_interes;
 
         }
+        function selects(){  
+                var ele=document.getElementsByName('chk');  
+                for(var i=0; i<ele.length; i++){  
+                    if(ele[i].type=='checkbox')  
+                        ele[i].checked=true;  
+                }  
+        }  
+        function deSelect(){  
+                var ele=document.getElementsByName('chk');  
+                for(var i=0; i<ele.length; i++){  
+                    if(ele[i].type=='checkbox')  
+                        ele[i].checked=false;  
+                      
+                }  
+        }             
+        
         function maxid() {
             var URLactual = window.location.href;
             var porciones = URLactual.split('.');
@@ -121,7 +137,9 @@
                 sd='<button  onclick="pedirall()"  class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><i class="mdi mdi-account-arrow-left" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="" data-bs-title="Reclamar ticket."></i></button> '+
                 '<button onclick="areaall()"  class="btn btn-info " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><i class="mdi mdi-account-group" data-bs-toggle="tooltip" data-bs-placement="top"     data-bs-custom-class="" data-bs-title="Asignar departamento."></i> </button>'+
                '<button onclick="cerrarall()"  class="btn btn-success  " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrarall">  <i class="mdi mdi-check-circle" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="" data-bs-title="Cambiar cerrar."></i></button> '+
-                '<br><br><table id="example"  class="table table-striped dt-responsive nowrap w-100 text-light">'+
+               '  <input type="button" onclick="selects()" value="Select All"/>'+  
+              ' <input type="button" onclick="deSelect()" value="Deselect All"/>'+
+               '<br><br><table id="example"  class="table table-striped dt-responsive nowrap w-100 text-light">'+
                                 '<thead>'+
                               '     <tr class="text-center bg-dark" >'+
                               
@@ -174,7 +192,7 @@
                   
                     tt += '<tr class="text-center">' +
         
-                        ' <td><input class="form-check-input me-1" type="checkbox" value="'+response.data[i].ticketid +'" id="flexCheckDefault"><a target=blank href=/ticketunico?tick='+response.data[i].ticketid +'><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</a></td>' +
+                        ' <td><input "chk" class="form-check-input me-1" type="checkbox" value="'+response.data[i].ticketid +'" id="flexCheckDefault"><a target=blank href=/ticketunico?tick='+response.data[i].ticketid +'><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</a></td>' +
                         ' <td>' + response.data[i].nya + '</td>' + 
                         ' <td>' + $nombreamostrar+ '</td>' + 
                         ' <td> <span class="badge '+colordepto+'" style="font-size:medium;">' + response.data[i].depto + '</span>'+
