@@ -64,8 +64,8 @@
             .then(function (response) {
                 // función que se ejecutará al recibir una respuesta
             
-                sd='<button  onclick="pedirall()"  class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><i class="mdi mdi-account-arrow-left" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="" data-bs-title="Reclamar ticket."></i></button> 
-                 <table id="example"  class="table table-striped dt-responsive nowrap w-100 text-light">'+
+                sd='<button  onclick="pedirall()"  class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><i class="mdi mdi-account-arrow-left" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="" data-bs-title="Reclamar ticket."></i></button> '+
+                 '<table id="example"  class="table table-striped dt-responsive nowrap w-100 text-light">'+
                                 '<thead>'+
                               '     <tr class="text-center bg-dark" >'+
                               '        <th class="text-light"><i></i>Ticket</th>'+
