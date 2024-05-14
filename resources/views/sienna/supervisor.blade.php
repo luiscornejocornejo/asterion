@@ -204,7 +204,7 @@
                         ' <td>' + response.data[i].cel + '</td>' +
                         ' <td>' + response.data[i].creado + '</td>' +
                       
-                        ' <td> <span class="badge '+colorestado+'" style="font-size:medium; ">' + response.data[i].estadoname + '</span>'+
+                        ' <td> <a onclick="estado2(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"><span class="badge '+colorestado+'" style="font-size:medium; ">' + response.data[i].estadoname + '</span></a>'+
 
                         ' <td>'+
                         
