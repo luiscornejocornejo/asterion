@@ -62,6 +62,12 @@
               // there are some checked checkboxes
               console.log(checked.length + ' checkboxes checked');
           }
+
+          let area_interes = "";
+          for (let i = 0, length = checked.length; i < length; i++) {
+              area_interes += checked[i].value + ",";             
+          }
+          alert(area_interes);
         }
         function maxid() {
             var URLactual = window.location.href;
