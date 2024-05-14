@@ -105,6 +105,7 @@ Route::get('/prueba', [siennaticketsController::class, 'prueba']);
 
 ///version 2.0
 Route::post('/pedir20', [siennaticketsController::class, 'pedir20']);
+Route::post('/cambiardeptosienna20', [siennaticketsController::class, 'cambiardeptosienna20']);
 
 
 

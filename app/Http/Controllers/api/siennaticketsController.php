@@ -1241,6 +1241,47 @@ class siennaticketsController extends Controller
             ->back()
             ->with('success', 'Se modifico el departamento  correctamente!');
     }
+    public function cambiardeptosienna20(Request $request)
+    {
+
+        echo   $ticketss = $request->idticketdepto;
+        echo   $statos = $request->statos;
+
+        $idconv = $request->idconv;
+        $idbot = $request->idbot;
+        $user_id = $request->user_id;
+        $bot_channel = $request->bot_channel;
+        $logeado = $request->logeado;
+
+        $sep=explode(",",$ticketss);
+        foreach($sep as $val){
+
+            if($val<>""){
+
+                $si2 = siennatickets::find($val);
+                $antdepto=$si2->siennadepto;
+                $si2->siennadepto = $statos;
+                $si2->asignado = 0;
+                $si2->save();
+
+                $deptoant = siennadepto::find($antdepto);
+
+                $se = new siennaseguimientos();
+                $se->ticket = $idticketdepto;
+                $se->tipo = "3";
+                $se->descripcion = $deptoant->nombre." =>" . $nombrearea;
+                $se->autor = $logeado;
+                $se->save();
+
+            }
+        }
+
+       
+
+        return redirect()
+            ->back()
+            ->with('success', 'Se modifico el departamento  correctamente!');
+    }
     public function pedir2(Request $request)
     {
 
