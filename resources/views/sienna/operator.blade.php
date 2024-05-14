@@ -361,7 +361,7 @@ function listadoseguimientos(result,dd) {
       @include('sienna.ticketsmodals.estados')
       @include('sienna.ticketsmodals.topic')
 
-      @include('sienna.ticketsmodals.departamentos')
+      @include('sienna.ticketsmodals.departamentosagente')
       @include('sienna.ticketsmodals.pedir')
       @include('sienna.ticketsmodals.seguimientos')
       @include('sienna.ticketsmodals.historialtickets')
