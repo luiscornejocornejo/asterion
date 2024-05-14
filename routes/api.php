@@ -103,6 +103,8 @@ Route::get('/historico', [siennaticketsController::class, 'historico']);
 Route::get('/prueba', [siennaticketsController::class, 'prueba']);
 
 
+///version 2.0
+Route::post('/pedir20', [siennaticketsController::class, 'pedir20']);
 
 
 

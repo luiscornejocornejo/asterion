@@ -1269,6 +1269,52 @@ class siennaticketsController extends Controller
             ->back()
             ->with('success', 'Se asigno  correctamente!');
     }
+
+    public function pedir20(Request $request)
+    {
+
+        //echo   $idticketpedir = $request->idticketpedir;
+
+        echo   $usuarioticket = $request->usuarioticket;
+
+        echo   $ticketss = $request->ticketss;
+        $logeado = $request->logeado;
+
+        $sep=explode(",",$ticketss);
+        foreach($sep as $val){
+
+            if($val<>""){
+                $si2 = siennatickets::find($val);
+                $si2->asignado = $usuarioticket;
+                $si2->save();
+
+                $se = new siennaseguimientos();
+                $se->ticket = $val;
+                $se->tipo = "4";
+                $se->descripcion = "asignarse ";
+                $se->autor = $logeado;
+                $se->save();
+
+            }
+
+        }
+
+
+        
+
+
+        
+
+
+
+        
+
+
+
+        return redirect()
+            ->back()
+            ->with('success', 'Se asigno  correctamente!');
+    }
     public function pedir(Request $request)
     {
 
