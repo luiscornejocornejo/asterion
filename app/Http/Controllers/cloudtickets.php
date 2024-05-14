@@ -161,6 +161,9 @@ class cloudtickets extends Controller
         $logeado = $request->logeado;
         $si2 = siennatickets::find($idticketpedir);
         $si2->asignado = $usuarioticket;
+        $horaticket=$si2->created_at ;
+        $asuntoticket=$si2->siennatopic ;
+        $nyaticket=$si2->nya ;
         $si2->save();
 
 
@@ -172,6 +175,33 @@ class cloudtickets extends Controller
         $se->descripcion = "asignado a: ".$us->last_name;
         $se->autor = $logeado;
         $se->save();
+
+
+        $envialmail=$us->avisoemail;
+        if($envialmail==1){
+
+            $emailusuario=$us->email;
+            $nombreusuario=$us->nombre;
+            $apellidousuario=$us->last_name;
+            $numeroticket=$idticketpedir;
+            $horaticket=$horaticket;
+            $topusut=siennatopic::find($asuntoticket);
+            $asuntoticket=$topusut->nombre;
+            $nyaticket=$nyaticket;
+            $subject="nuevo ticket";
+
+            Mail::mailer('suricata')
+                ->send('mailavisoticket', ["nombreusuario" => $nombreusuario,"apellidousuario" => $apellidousuario,"numeroticket" => $numeroticket,"horaticket" => $horaticket,"asuntoticket" => $asuntoticket,"nyaticket" => $nyaticket], function ($msj) use ($subject,$for) {
+            $msj->from("support@suricata.la", "soporte");
+            $msj->subject($subject);
+            $msj->to($emailusuario);
+           
+        });
+
+            
+
+
+        }
 
 
 
