@@ -52,6 +52,24 @@
                 // función que siempre se ejecuta
             });
         }
+        fuction pedirall(){
+          let checked = this.querySelectorAll('input[type=checkbox]:checked');
+                if (checked.length == 0) {
+                    //SINO HA SELECCIONADO
+                    alert("ERROR");
+                    return false;
+                } else if (checked.length > 5) {
+                    //SINO HA SELECCIONADO MAS DE (5 o N) OPCIONES DISPONIBLES.
+                    alert("ERROR");
+                    return false;
+                } 
+
+                let area_interes = "";
+                for (let i = 0, length = checked.length; i < length; i++) {
+                    area_interes += checked[i].value + ",";             
+                }
+                alert(area_interes);
+        }
         function maxid() {
             var URLactual = window.location.href;
             var porciones = URLactual.split('.');
@@ -118,7 +136,7 @@
                     }
                   
                     tt += '<tr class="text-center">' +
-                    ' <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>' + 
+                    ' <td><input class="form-check-input" type="checkbox" value="'+response.data[i].ticketid +'" id="flexCheckDefault"></td>' + 
 
                     
                         ' <td><a target=blank href=/ticketunico?tick='+response.data[i].ticketid +'><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</a></td>' +
