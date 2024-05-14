@@ -2,7 +2,6 @@
 
 <?php
 
-echo        $emailusuario;
 echo        $nombreusuario;
 echo        $apellidousuario;
 echo        $numeroticket;
