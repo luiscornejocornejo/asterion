@@ -192,7 +192,7 @@ class cloudtickets extends Controller
             $subject="nuevo ticket";
 
             Mail::mailer('suricata')
-                ->send('mailavisoticket', ["nombreusuario" => $nombreusuario,"apellidousuario" => $apellidousuario,"numeroticket" => $numeroticket,"horaticket" => $horaticket,"asuntoticket" => $asuntoticket,"nyaticket" => $nyaticket], function ($msj) use ($subject,$for) {
+                ->send('mailavisoticket', ["nombreusuario" => $nombreusuario,"apellidousuario" => $apellidousuario,"numeroticket" => $numeroticket,"horaticket" => $horaticket,"asuntoticket" => $asuntoticket,"nyaticket" => $nyaticket], function ($msj) use ($subject,$emailusuario) {
             $msj->from("support@suricata.la", "soporte");
             $msj->subject($subject);
             $msj->to($emailusuario);
