@@ -1244,7 +1244,7 @@ class siennaticketsController extends Controller
     public function cambiardeptosienna20(Request $request)
     {
 
-        echo   $ticketss = $request->idticketdepto;
+        echo   $ticketss = $request->ticketss;
         echo   $statos = $request->statos;
 
         $idconv = $request->idconv;
