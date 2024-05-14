@@ -1277,10 +1277,10 @@ class siennaticketsController extends Controller
         }
 
        
-
+/*
         return redirect()
             ->back()
-            ->with('success', 'Se modifico el departamento  correctamente!');
+            ->with('success', 'Se modifico el departamento  correctamente!');*/
     }
     public function pedir2(Request $request)
     {
