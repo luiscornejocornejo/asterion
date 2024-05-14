@@ -2,7 +2,7 @@
            <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header bg-dark">
-                        <h4 class="modal-title text-light" id="dark-header-modalLabel">Reclamar ticket</h4>
+                        <h4 class="modal-title text-light" id="dark-header-modalLabel">Asignar ticket</h4>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
@@ -21,7 +21,7 @@
                             <?php }?>   
                                              </div>
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
-                        <button type="submit" class="btn btn-success">Si, reclamar</button>
+                        <button type="submit" class="btn btn-success">Si, asignar</button>
                                 </form>
                     </div>
                 </div><!-- /.modal-content -->
