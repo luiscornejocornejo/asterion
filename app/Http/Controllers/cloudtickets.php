@@ -181,7 +181,7 @@ class cloudtickets extends Controller
         $envialmail=$us->avisoemail;
         if($envialmail==1){
 
-           echo  $emailusuario=$us->email;
+            $emailusuario=$us->email;
             $nombreusuario=$us->nombre;
             $apellidousuario=$us->last_name;
             $numeroticket=$idticketpedir;
@@ -204,11 +204,11 @@ class cloudtickets extends Controller
 
         }
 
-/*
+
 
         return redirect()
             ->back()
-            ->with('success', 'Se asigno  correctamente!');*/
+            ->with('success', 'Se asigno  correctamente!');
     }
 
 
