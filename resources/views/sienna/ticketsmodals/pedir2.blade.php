@@ -12,7 +12,7 @@
                         <form action="/api/pedir20" method="POST">
                             <input value="" type="hidden" name="idticketpedir" id="idticketpedir2">
                             <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
-                            <input value="" readonly type="text" name="ticketss" id="idticketpedir20">
+                            <input value="" readonly type="hidden" name="ticketss" id="idticketpedir20">
 
                             <div v-for="department in departments ">
                                 <?php foreach($usersmerchant as $dep){?>

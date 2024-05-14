@@ -13,7 +13,7 @@
                         <input value="" type="hidden" name="user_id" id="user_id">
                         <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
                         <input value=""  type="hidden" name="idticketdepto" id="idticketdepto">
-                        <input value="" readonly type="text" name="ticketss" id="idticketdepto22">
+                        <input value="" readonly type="hidden" name="ticketss" id="idticketdepto22">
                         <input value="" type="hidden" name="bot_channel" id="bot_channel">
   
                         <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $subdomain_tmp;?> ">
