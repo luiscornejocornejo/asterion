@@ -6,13 +6,14 @@
                     <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="/api/cambiardeptosienna2" method="post">
+                    <form action="/api/cambiardeptosienna20" method="post">
                         <input type="hidden" name="_token" v-bind:value="csrf">
                         <input value="" type="hidden" name="idconv" id="idconv">
                         <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
                         <input value="" type="hidden" name="user_id" id="user_id">
                         <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
                         <input value=""  type="hidden" name="idticketdepto" id="idticketdepto">
+                        <input value="" readonly type="text" name="idticketdepto22" id="idticketdepto">
                         <input value="" type="hidden" name="bot_channel" id="bot_channel">
   
                         <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $subdomain_tmp;?> ">
