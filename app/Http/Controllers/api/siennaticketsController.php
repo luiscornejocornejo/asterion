@@ -1267,7 +1267,7 @@ class siennaticketsController extends Controller
                 $deptoant = siennadepto::find($antdepto);
 
                 $se = new siennaseguimientos();
-                $se->ticket = $idticketdepto;
+                $se->ticket = $val;
                 $se->tipo = "3";
                 $se->descripcion = $deptoant->nombre." =>" . $nombrearea;
                 $se->autor = $logeado;
