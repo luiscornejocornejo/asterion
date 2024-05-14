@@ -52,7 +52,7 @@
                 // función que siempre se ejecuta
             });
         }
-        fuction pedirall(){
+        function pedirall(){
           let checked = this.querySelectorAll('input[type=checkbox]:checked');
                 if (checked.length == 0) {
                     //SINO HA SELECCIONADO
