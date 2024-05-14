@@ -67,7 +67,11 @@
           for (let i = 0, length = checked.length; i < length; i++) {
               area_interes += checked[i].value + ",";             
           }
-          alert(area_interes);
+         // alert(area_interes);
+
+          
+          document.getElementById("idticketpedir20").value = area_interes;
+
         }
         function maxid() {
             var URLactual = window.location.href;
