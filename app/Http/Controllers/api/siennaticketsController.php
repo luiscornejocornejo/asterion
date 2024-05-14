@@ -1291,7 +1291,7 @@ class siennaticketsController extends Controller
                 $se = new siennaseguimientos();
                 $se->ticket = $val;
                 $se->tipo = "4";
-                $se->descripcion = "asignarse ";
+                $se->descripcion = "asignado ";
                 $se->autor = $logeado;
                 $se->save();
 
