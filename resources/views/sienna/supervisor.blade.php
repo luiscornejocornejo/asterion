@@ -53,22 +53,15 @@
             });
         }
         function pedirall(){
-          let checked = this.querySelectorAll('input[type=checkbox]:checked');
-                if (checked.length == 0) {
-                    //SINO HA SELECCIONADO
-                    alert("ERROR");
-                    return false;
-                } else if (checked.length > 5) {
-                    //SINO HA SELECCIONADO MAS DE (5 o N) OPCIONES DISPONIBLES.
-                    alert("ERROR");
-                    return false;
-                } 
+          var checked = document.querySelectorAll('input:checked');
 
-                let area_interes = "";
-                for (let i = 0, length = checked.length; i < length; i++) {
-                    area_interes += checked[i].value + ",";             
-                }
-                alert(area_interes);
+          if (checked.length === 0) {
+              // there are no checked checkboxes
+              console.log('no checkboxes checked');
+          } else {
+              // there are some checked checkboxes
+              console.log(checked.length + ' checkboxes checked');
+          }
         }
         function maxid() {
             var URLactual = window.location.href;
