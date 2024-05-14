@@ -92,7 +92,7 @@ class asignaciong extends Command
         echo $diaSemana = date('l');
         //$cat=categoria::where('area','=',$area)->get();
 
-        $query2="select * from ".$merchant.".categoria where area='".$area."'";
+       echo $query2="select * from ".$merchant.".categoria where area='".$area."'";
         $cat = DB::connection('mysql2')->select($query2);
 
 
