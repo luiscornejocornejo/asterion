@@ -918,7 +918,7 @@ if (isset($_GET['fecha'])) {
                                                     <div class="col-md-4 col-sm-5">
                                                             <div class="card">
                                                                 <div class="card-body" style="width: 400px;">
-                                                                    <h4 class="header-title">Tickets x Agente< i title="" class="ri-information-fill"></i></h4>
+                                                                    <h4 class="header-title">Tickets x Agente <i title="" class="ri-information-fill"></i></h4>
                                                                     <canvas id="myChart5" ></canvas>
                                                                 </div>
                                                             </div> <!-- end card-body-->
