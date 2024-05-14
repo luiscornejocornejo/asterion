@@ -360,6 +360,7 @@ class cloudtickets extends Controller
         foreach($sep as $val){
 
             if($val<>""){
+                echo $val;
                 $si2 = siennatickets::find($val);
                 $estadoant=$si2->siennaestado;
                 $conv=$si2->conversation_url;
