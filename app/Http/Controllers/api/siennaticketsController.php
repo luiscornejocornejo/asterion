@@ -1265,7 +1265,12 @@ class siennaticketsController extends Controller
                 $si2->save();
 
                 $deptoant = siennadepto::find($antdepto);
+                $depto = siennadepto::find($statos);
 
+                $behaviour = $depto->behaviour;
+                $interaction = $depto->interaction;
+                $nombrearea = $depto->nombre;
+                
                 $se = new siennaseguimientos();
                 $se->ticket = $val;
                 $se->tipo = "3";
