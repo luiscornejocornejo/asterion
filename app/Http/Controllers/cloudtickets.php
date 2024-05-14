@@ -21,6 +21,7 @@ use App\Models\siennaestado;
 use App\Models\prioridad;
 use App\Models\siennatopic;
 use App\Models\empresa;
+use Mail;
 
 class cloudtickets extends Controller
 {
