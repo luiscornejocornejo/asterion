@@ -88,6 +88,24 @@
           document.getElementById("idticketdepto22").value = area_interes;
 
         }
+        function cerrarall(){
+          var checked = document.querySelectorAll('input:checked');
+
+          if (checked.length === 0) {
+              // there are no checked checkboxes
+              console.log('no checkboxes checked');
+          } else {
+              // there are some checked checkboxes
+              console.log(checked.length + ' checkboxes checked');
+          }
+
+          let area_interes = "";
+          for (let i = 0, length = checked.length; i < length; i++) {
+              area_interes += checked[i].value + ",";             
+          }
+          document.getElementById("tc").value = area_interes;
+
+        }
         function maxid() {
             var URLactual = window.location.href;
             var porciones = URLactual.split('.');
@@ -102,6 +120,7 @@
             
                 sd='<button  onclick="pedirall()"  class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><i class="mdi mdi-account-arrow-left" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="" data-bs-title="Reclamar ticket."></i></button> '+
                 '<button onclick="areaall()"  class="btn btn-info " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><i class="mdi mdi-account-group" data-bs-toggle="tooltip" data-bs-placement="top"     data-bs-custom-class="" data-bs-title="Asignar departamento."></i> </button>'+
+               '<button onclick="cerrarall()"  class="btn btn-success  " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrarall">  <i class="mdi mdi-check-circle" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="" data-bs-title="Cambiar cerrar."></i></button> '+
                 '<br><br><table id="example"  class="table table-striped dt-responsive nowrap w-100 text-light">'+
                                 '<thead>'+
                               '     <tr class="text-center bg-dark" >'+
@@ -415,6 +434,7 @@
       @include('sienna.ticketsmodals.seguimientos')
       @include('sienna.ticketsmodals.historialtickets')
       @include('sienna.ticketsmodals.cerrar')
+      @include('sienna.ticketsmodals.cerrarall')
       
 
     </div>
