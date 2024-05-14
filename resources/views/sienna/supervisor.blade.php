@@ -68,6 +68,9 @@
                  '<br><br><table id="example"  class="table table-striped dt-responsive nowrap w-100 text-light">'+
                                 '<thead>'+
                               '     <tr class="text-center bg-dark" >'+
+                              
+                              '        <th class="text-light">check</th>'+
+
                               '        <th class="text-light"><i></i>Ticket</th>'+
                               '        <th class="text-light">Cliente</th>'+
                               '        <th class="text-light">Asignado</th>'+
@@ -115,6 +118,9 @@
                     }
                   
                     tt += '<tr class="text-center">' +
+                    ' <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></td>' + 
+
+                    
                         ' <td><a target=blank href=/ticketunico?tick='+response.data[i].ticketid +'><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</a></td>' +
                         ' <td>' + response.data[i].nya + '</td>' + 
                         ' <td>' + $nombreamostrar+ '</td>' + 
