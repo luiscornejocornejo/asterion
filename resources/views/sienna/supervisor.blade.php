@@ -85,7 +85,7 @@
           for (let i = 0, length = checked.length; i < length; i++) {
               area_interes += checked[i].value + ",";             
           }
-          document.getElementById("idticketpedir20").value = area_interes;
+          document.getElementById("idticketdepto22").value = area_interes;
 
         }
         function maxid() {
