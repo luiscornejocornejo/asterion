@@ -1,4 +1,4 @@
-<div class="modal fade" id="bs-example-modal-smprioridad" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<div class="modal fade" id="bs-example-modal-prioridadall" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
                     <div class="modal-header bg-dark text-white">
