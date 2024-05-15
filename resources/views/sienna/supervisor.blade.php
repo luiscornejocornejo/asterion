@@ -138,7 +138,7 @@
                 '<button onclick="areaall()"  class="btn btn-info " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><i class="mdi mdi-account-group" data-bs-toggle="tooltip" data-bs-placement="top"     data-bs-custom-class="" data-bs-title="Asignar departamento."></i> </button>'+
                 '<button onclick="cerrarall()"  class="btn btn-success  " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrarall">  <i class="mdi mdi-check-circle" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="" data-bs-title="Cambiar cerrar."></i></button> '+
                 '<button onclick="prioridadall()"  class="btn btn-success  " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-prioridad">p</button> '+
-               '  <button type="button" onclick="selects()" ><i class="mdi mdi-select-all" ></i></button>'+  
+               '  <button type="button" onclick="selects()" ><i class="mdi mdi-format-list-checks" ></i></button>'+  
               ' <button type="button" onclick="deSelect()" ><i class="mdi mdi-Deselect-all" ></i></button>'+
                '<br><br><table id="example"  class="table table-striped dt-responsive nowrap w-100 text-light">'+
                                 '<thead>'+
