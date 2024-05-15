@@ -8,11 +8,8 @@
                     <div class="modal-body">
                         <form action="/prioridadsiennaall" method="post">
                         @csrf
-                            <input value="<?php  echo $resultados[0]->conversation_id;?>" type="hidden" name="idconv" id="idconv">
                             <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
-                            <input value="<?php  echo $resultados[0]->user_id;?>" type="hidden" name="user_id" id="user_id">
                             <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
-                            <input value="<?php  echo $resultados[0]->ticketid;?>"  type="hidden" name="idticketestadoprioridad" id="idticketestadoprioridad">
                             <input value="" type="hidden" name="tp" id="tp">
     
                             <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $subdomain_tmp;?> ">
