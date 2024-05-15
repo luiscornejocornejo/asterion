@@ -406,7 +406,7 @@ if (isset($_GET['fecha'])) {
                             // función que siempre se ejecuta
                         });
 
-                    }
+                }
                 function ticketxtopic(url2,result) {
 
                     axios.get(url2)
@@ -537,12 +537,17 @@ if (isset($_GET['fecha'])) {
                     urlticketxagentefecha = "https://" + result + ".suricata.cloud/api/ticketxagentefecha?ini=" + start + "&fin=" + endDate + "";
                     ticketxagentefecha(urlticketxagentefecha,result);
 
+                    urlticketxmotivocfecha = "https://" + result + ".suricata.cloud/api/ticketxmotivocfecha?ini=" + start + "&fin=" + endDate + "";
+                    ticketxmotivocfecha(urlticketxmotivocfecha,result);
+
+                    
                 }
                 let myChartdeptofecha;
                 let myChartestadofecha;
                 let myChartcanalfecha;
                 let myCharttopicfecha;
                 let myChartagentefecha;
+                let myChartmotivocfecha;
                 function ticketxdeptofecha(url2,result) {
 
                     axios.get(url2)
@@ -620,7 +625,7 @@ if (isset($_GET['fecha'])) {
                             // función que siempre se ejecuta
                         });
 
-                    }
+                }
                 function graficoestadofecha(datosp) {
                         var labels=[];
                         var datos=[];
@@ -813,6 +818,59 @@ if (isset($_GET['fecha'])) {
                             }
                             }
                             });
+
+
+                }
+                function ticketxmotivocfecha(url2,result) {
+
+                    axios.get(url2)
+                    .then(function(response) {
+                    
+                        console.log(response);
+                        graficomotivocfecha(response) 
+
+                    })
+                    .catch(function(error) {
+                        // función para capturar el error
+                        console.log(error);
+                    })
+                    .then(function() {
+                        // función que siempre se ejecuta
+                    });
+
+                }
+                function graficomotivocfecha(datosp) {
+
+                    var labels=[];
+                    var datos=[];
+
+                    for (i = 0; i < datosp.data.length; i++) {
+                        labels.push(datosp.data[i].name);
+                        datos.push(datosp.data[i].cant);
+                    }
+
+                    const ctxmotivocfecha = document.getElementById('myChartmotivocfecha');
+                    if (myChartmotivocfecha) {
+                        myChartmotivocfecha.destroy();
+                    }
+                    myChartmotivocfecha=new Chart(ctxmotivocfecha, {
+                    type: 'doughnut',
+                    data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '# motivo cierre',
+                        data: datos,
+                        borderWidth: 1
+                    }]
+                    },
+                    options: {
+                    scales: {
+                        y: {
+                            position: 'right',                display: false,
+                        }
+                    }
+                    }
+                    });
 
 
                 }

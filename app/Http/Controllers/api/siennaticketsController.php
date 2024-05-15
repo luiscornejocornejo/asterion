@@ -1783,6 +1783,26 @@ class siennaticketsController extends Controller
     }
 
 
+    
+    public function ticketxmotivocfecha(Request $request)
+    {
+        $ini=$request->ini;
+        $fin=$request->fin;
+        $resultados = "";
+        $dom=$this->dominio();
+        $query="select count(*) as cant ,s.nombre  as name
+        from ".$dom.".siennatickets a 
+        join ".$dom.".motivoc s 
+        on s.id=a.motivoc
+        where 
+        a.created_at>='".$ini." 00:00:00' and a.created_at<='".$fin." 23:59:59'
+   
+         group by motivoc";
+        $resultados = DB::select($query);
+        return $resultados;
+    }
+
+
     //fin de reportes por fecha
 
 
