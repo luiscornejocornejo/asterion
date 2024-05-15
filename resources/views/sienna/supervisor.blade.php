@@ -520,7 +520,6 @@
       @include('sienna.ticketsmodals.historialtickets')
       @include('sienna.ticketsmodals.cerrar')
       @include('sienna.ticketsmodals.cerrarall')
-      @include('sienna.ticketsmodals.prioridadall')
       
 
     </div>
