@@ -429,4 +429,46 @@ class cloudtickets extends Controller
 
 
     }
+
+    
+    public function prioridadsiennaall(Request $request){
+
+        $ticketss=$request->tp;
+       
+       $statos=$request->statos;
+       $logeado = $request->logeado;
+
+       $sep=explode(",",$ticketss);
+       foreach($sep as $val){
+
+           if($val<>""){
+            $si2 = siennatickets::find($val);
+            $prioant=$si2->prioridad ;
+            $si2->prioridad = $statos;
+            $si2->asignado = 0;
+            $si2->save();
+    
+            $prioant = prioridad::find($prioant);
+            $nombreprioant=$prioant->nombre;
+    
+            $prioact = prioridad::find($statos);
+            $nombreprioact=$prioact->nombre;
+    
+            $se = new siennaseguimientos();
+            $se->ticket = $idticketestadoprioridad;
+            $se->tipo = "8";
+            $se->descripcion = $nombreprioant." => ".$nombreprioact ;
+            $se->autor = $logeado;
+            $se->save();
+
+
+
+           }
+
+       }
+       return redirect()
+       ->back()
+       ->with('success', 'Se modifico  correctamente!');
+
+   }
 }

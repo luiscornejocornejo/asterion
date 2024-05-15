@@ -247,6 +247,7 @@ Route::post('/cambiartopicsienna','App\Http\Controllers\cloudtickets@cambiartopi
 Route::post('/prioridadsienna','App\Http\Controllers\cloudtickets@prioridadsienna');
 Route::post('/reabrirconversacion','App\Http\Controllers\cloudtickets@reabrirconversacion');
 Route::post('/cerrarall','App\Http\Controllers\cloudtickets@cerrarall');
+Route::post('/prioridadsiennaall','App\Http\Controllers\cloudtickets@prioridadsiennaall');
 
 
 });
