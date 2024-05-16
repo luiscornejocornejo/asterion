@@ -56,6 +56,13 @@ if (isset($_GET['fecha'])) {
 ?>
 
 <script>
+        window.addEventListener("beforeunload", (evento) => {
+            if (true) {
+                evento.preventDefault();
+                evento.returnValue = "";
+                return "";
+            }
+        });
     function mostrar() {
         var e = document.getElementById('foo');
         var f = document.getElementById('foo2');
