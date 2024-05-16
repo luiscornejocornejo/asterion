@@ -1,0 +1,54 @@
+/* CSS */
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 50px;
+  }
+  
+  #main-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 25px;
+    transition: transform 0.3s ease;
+  }
+  
+  #main-button.rotated {
+    transform: rotate(135deg);
+  }
+
+  #menu {
+    display: flex;
+    flex-direction: column; /* Cambiado */
+    align-items: center;
+    margin-top: 0px;
+    
+  }
+  
+  #menu button {
+    width: 50px; /* Cambiado */
+    height: 50px; /* Cambiado */
+    margin-top: 10px;
+    border-radius: 50%; /* Cambiado */
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 25px;
+  }
+  
+  .hidden {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-120px); /* Cambiado */
+    transition: all 0.3s;
+  }
+  
+  .visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-180px);
+    transition: all 0.3s ease;
+  }
+  
