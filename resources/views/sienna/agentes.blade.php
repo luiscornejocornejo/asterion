@@ -163,26 +163,7 @@ document.getElementById("idagente").value = dd;
 
     </div>
   <!-- END wrapper -->
-  <script>
-    $(function() {
-    console.log( "ready!" );
-
-
-var url      = 'https://view-chat.pagoralia.dev/ctxSip/phone/',
-    features = 'menubar=no,location=no,resizable=no,scrollbars=no,status=no,addressbar=no,width=320,height=480';
-
-    $('#launchPhone').on('click', function(event) {
-        event.preventDefault();
-        // This is set when the phone is open and removed on close
-        if (!localStorage.getItem('ctxPhone')) {
-            window.open(url, 'ctxPhone', features);
-            return false;
-        } else {
-            window.alert('Phone already open.');
-        }
-    })
-});
-</script>
+  
   @include('facu.footer')
 
   
