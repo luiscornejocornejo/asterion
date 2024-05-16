@@ -144,7 +144,7 @@ document.getElementById("idagente").value = dd;
                                     <p>Esta seguro que quiere borrar al Agente</p>
                                     <form method="post" action="/eliminaragente">
 
-                                        <input type="hidden" name="idagente" id="idregistro">
+                                        <input type="hidden" name="idagente" id="idagente" value="">
                                         
 
                                         @csrf
