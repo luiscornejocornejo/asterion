@@ -60,16 +60,33 @@ if (isset($_GET['fecha'])) {
     function mostrar() {
         var e = document.getElementById('foo');
         var f = document.getElementById('foo2');
+        var g = document.getElementById('foo3');
           e.style.display = 'block';
        
           f.style.display = 'none';
+          g.style.display = 'none';
     }
     function mostrar2() {
         var e = document.getElementById('foo');
         var f = document.getElementById('foo2');
+        var g = document.getElementById('foo3');
+
           e.style.display = 'none';
        
           f.style.display = 'block';
+          g.style.display = 'none';
+
+    }
+    function mostrar3() {
+        var e = document.getElementById('foo');
+        var f = document.getElementById('foo2');
+        var g = document.getElementById('foo3');
+
+          e.style.display = 'none';
+       
+          f.style.display = 'none';
+          g.style.display = 'block';
+
     }
 </script>
 <!-- Begin page -->
@@ -943,6 +960,7 @@ if (isset($_GET['fecha'])) {
             <div class="row p-3">
                 <div class="col-5"><a class="btn btn-outline-primary" href="#" onclick="mostrar();">Dashboard</a></div>
                 <div class="col-5"><a class="btn btn-outline-success" href="#" onclick="mostrar2();">Reportes</a></div>
+                <div class="col-5"><a class="btn btn-outline-info" href="#" onclick="mostrar3();">Logeados</a></div>
             </div>
         </div>
 </div>
@@ -985,14 +1003,7 @@ if (isset($_GET['fecha'])) {
                                                 </div> <!-- end card-body-->
                                             </div>
 
-                                            <div class="card tilebox-one">
-                                                <div class="card-body">
-                                                    <h6 class="text-uppercase mt-0">Logeados </h6>
-                                                    <div id="logeados">
-                                                    </div>
-                                                
-                                                </div> <!-- end card-body-->
-                                            </div>
+                                           
                                             <!--end card-->
 
 
@@ -1140,6 +1151,12 @@ if (isset($_GET['fecha'])) {
 
                     </div>
                 
+                </div>
+                <div id="foo3" style="display:none">
+                    <div class="row">
+                        <div id="logeados">
+                        </div>
+                    </div>
                 </div>
 </div>
 
