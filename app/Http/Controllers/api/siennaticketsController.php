@@ -1832,6 +1832,18 @@ class siennaticketsController extends Controller
             $return.=$value->nombre;
 
         }
+        $return=' {
+            //  User Name
+            "User" : "305",
+            //  Password
+            "Pass" : "afef575-Prueba",
+            //  Auth Realm
+            "Realm"   : "45.65.149.68",
+            // Display Name
+            "Display" : "Alberto",
+            // WebSocket URL
+            "WSServer"  : "wss://suricata99.llamadaip.org:8089/ws"
+        }'';
 
         return $return;
     }
