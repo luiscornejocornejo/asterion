@@ -476,8 +476,9 @@ class cloudtickets extends Controller
 
     $idagente=$request->idagente;
 
-    
-    return redirect()
+    $user=users::find($idagente);
+    $user->delete();   
+      return redirect()
     ->back()
     ->with('success', 'Se elimino el agente  correctamente!');
 

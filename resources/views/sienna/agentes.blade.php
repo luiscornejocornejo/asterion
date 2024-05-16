@@ -34,7 +34,6 @@ document.getElementById("idagente").value = dd;
 
       <div class="content-page" style="padding: 0!important;">
           <div class="content">
-          <a href="phone" id="launchPhone">Launch</a>
 
               <!-- Start Content-->
                 <div class="container-fluid pt-2">
