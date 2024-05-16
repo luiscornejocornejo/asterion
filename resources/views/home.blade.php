@@ -497,6 +497,8 @@ if (isset($_GET['fecha'])) {
 
                               '        <th class="text-light">Usuario</th>'+
                               '        <th class="text-light">Area</th>'+
+                              '        <th class="text-light">Tipo</th>'+
+                              '        <th class="text-light">Inicio</th>'+
                             
                               '        '+
                               '    </tr>'+
@@ -515,8 +517,10 @@ if (isset($_GET['fecha'])) {
                                 console.log(area);
                                // document.getElementById("abiertos").innerHTML = ticketabiertos;
                                tt += '<tr class="text-center">' +
-                                        ' <td>' + response.data[i].usu + '</td>' + 
-                                        ' <td>' + response.data[i].area + '</td></tr>' ;
+                                        ' <td>' + response.data[i].usu + '</td>' +
+                                        ' <td>' + response.data[i].area + '</td>' + 
+                                        ' <td>' + response.data[i].tipo + '</td>' + 
+                                        ' <td>' + response.data[i].inicio + '</td></tr>' ;
 
                             }
 
