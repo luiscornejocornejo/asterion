@@ -472,6 +472,23 @@ if (isset($_GET['fecha'])) {
                     axios.get(urllogeados)
                         .then(function(response) {
                             console.log(response);
+                            sd='<table id="example"  class="table table-striped dt-responsive nowrap w-100 text-light">'+
+                                '<thead>'+
+                              '     <tr class="text-center bg-dark" >'+
+                              
+
+                              '        <th class="text-light">Usuario</th>'+
+                              '        <th class="text-light">Area</th>'+
+                            
+                              '        '+
+                              '    </tr>'+
+                              ' </thead>'+
+                              ' <tbody id="tb">'+
+                              
+                              ' </tbody>'+
+                              ' </table>';
+                
+                            tt = "";
                             for (i = 0; i < response.data.length; i++) {
                                 let usu = response.data[i].usu;
                                 let area = response.data[i].area;
@@ -479,7 +496,7 @@ if (isset($_GET['fecha'])) {
                                 console.log(usu);
                                 console.log(area);
                                // document.getElementById("abiertos").innerHTML = ticketabiertos;
-
+                                logeados
 
                             }
                         })
@@ -940,6 +957,8 @@ if (isset($_GET['fecha'])) {
                                                         <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span></span>
                                                         <span class="text-nowrap"> day</span>
                                                     </p>
+                                                    <div id="logeados">
+                                                    </div>
                                                 </div> <!-- end card-body-->
                                             </div>
                                             <!--end card-->
