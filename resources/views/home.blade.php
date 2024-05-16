@@ -286,24 +286,24 @@ if (isset($_GET['fecha'])) {
 
                 }
                 function grafico5(datosp,subdomain_tmp,divss) {
-                    console.log(datosp.data);
+                    //console.log(datosp.data);
 
                     var labels=[];
                     var datos=[];
                   
                     for (i = 0; i < datosp.data.length; i++) {
-                        console.log(datosp.data[i].name);
+                        //console.log(datosp.data[i].name);
                         labels.push(datosp.data[i].name);
-                        console.log(labels);
+                        //console.log(labels);
 
                         datos.push(datosp.data[i].cant);
 
-                        console.log(datos);
+                        //console.log(datos);
 
                     }
-                    console.log(labels);
+                    //console.log(labels);
 
-                    console.log(datos);
+                    //console.log(datos);
 
                     const ctx5 = document.getElementById('myChart5');
                     if (myChart5) {
@@ -335,7 +335,7 @@ if (isset($_GET['fecha'])) {
                     axios.get(url2)
                         .then(function(response) {
                           
-                            console.log(response);
+                           // console.log(response);
                             divss="#chart3";
                             grafico(response,result,divss) 
 
@@ -354,7 +354,7 @@ if (isset($_GET['fecha'])) {
                         axios.get(url2)
                             .then(function(response) {
                             
-                                console.log(response);
+                                //console.log(response);
                                 divss="#chart4";
                                 grafico2(response,result,divss) 
 
@@ -373,7 +373,7 @@ if (isset($_GET['fecha'])) {
                     axios.get(url2)
                         .then(function(response) {
                         
-                            console.log(response);
+                            //console.log(response);
                             divss="#chart5";
                             grafico3(response,result,divss) 
 
@@ -393,7 +393,7 @@ if (isset($_GET['fecha'])) {
                     axios.get(url2)
                         .then(function(response) {
                         
-                            console.log(response);
+                           // console.log(response);
                             divss="#chart6";
                             grafico5(response,result,divss) 
 
@@ -412,7 +412,7 @@ if (isset($_GET['fecha'])) {
                     axios.get(url2)
                         .then(function(response) {
                         
-                            console.log(response);
+                           // console.log(response);
                             divss="#chart6";
                             grafico4(response,result,divss) 
 
@@ -429,10 +429,10 @@ if (isset($_GET['fecha'])) {
                 function abiertos(urlabiertos) {
                     axios.get(urlabiertos)
                         .then(function(response) {
-                            console.log(response);
+                            //console.log(response);
                             for (i = 0; i < response.data.length; i++) {
                                 let ticketabiertos = response.data[i].cantidadtickets2;
-                                console.log(ticketabiertos);
+                                //console.log(ticketabiertos);
                                 document.getElementById("abiertos").innerHTML = ticketabiertos;
 
 
@@ -452,7 +452,7 @@ if (isset($_GET['fecha'])) {
                         .then(function(response) {
                             for (i = 0; i < response.data.length; i++) {
                                 let ticketcerrados = response.data[i].cantidadtickets2;
-                                console.log(ticketcerrados);
+                               // console.log(ticketcerrados);
                                 document.getElementById("cerrados").innerHTML = ticketcerrados;
 
 
