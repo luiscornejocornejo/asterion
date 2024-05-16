@@ -62,10 +62,15 @@ if (isset($_GET['fecha'])) {
                 evento.preventDefault();
                 evento.returnValue = "Debe Deslogearse previamente";
                 window.location.href = '/salir';
-
+                console.log('Inicio de la función de prueba.');
+                sleepES5(3000); 
                 return "Debe Deslogearse previamente";
             }
         });
+        var sleepES5 = function(ms){
+                var esperarHasta = new Date().getTime() + ms;
+                while(new Date().getTime() < esperarHasta) continue;
+            };
     function mostrar() {
         var e = document.getElementById('foo');
         var f = document.getElementById('foo2');
