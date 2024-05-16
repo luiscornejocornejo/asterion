@@ -164,6 +164,10 @@ document.getElementById("idagente").value = dd;
     </div>
   <!-- END wrapper -->
   <script>
+    $(function() {
+    console.log( "ready!" );
+
+
 var url      = 'https://view-chat.pagoralia.dev/ctxSip/phone/',
     features = 'menubar=no,location=no,resizable=no,scrollbars=no,status=no,addressbar=no,width=320,height=480';
 
@@ -176,7 +180,8 @@ var url      = 'https://view-chat.pagoralia.dev/ctxSip/phone/',
         } else {
             window.alert('Phone already open.');
         }
-    });
+    })
+});
 </script>
   @include('facu.footer')
 
