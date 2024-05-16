@@ -569,7 +569,7 @@ class TicketdatosController extends Controller
      
         $query5="select * ,b.nombre as tipousuario,a.id idusu,a.nombre nom from users a
         join tipousers b on a.tipousers=b.id
-        where tipousers<>'1'  and suricata<>'1'";
+        where tipousers<>'1' ";
 
        
         $resultados5 = DB::select($query5);
