@@ -1828,7 +1828,7 @@ class siennaticketsController extends Controller
         $query="select * from ".$dom.".users  where id='".$tok."'";
         $resultados = DB::select($query);
         $return="";
-        foreach($resultado as $value){
+        foreach($resultados as $value){
             $return.=$email;
 
         }
