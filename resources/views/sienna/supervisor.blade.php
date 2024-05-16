@@ -2,7 +2,7 @@
 
 
 <script>
-
+ 
 
         let departamentoslista = {!! json_encode($deptos,JSON_FORCE_OBJECT) !!};
         let sourcelista = {!! json_encode($source,JSON_FORCE_OBJECT) !!};
@@ -141,6 +141,8 @@
         }             
         
         function maxid() {
+           document.body.style.zoom = "80%";
+
             var URLactual = window.location.href;
             var porciones = URLactual.split('.');
             let result = porciones[0].replace("https://", "");
