@@ -1820,6 +1820,22 @@ class siennaticketsController extends Controller
         return $resultados;
     }
 
+    public function ctx(Request $request){
+
+
+        $tok=$request->token;
+        $dom=$request->dom;
+        $query="select * from ".$dom.".users  where id='".$tok."'";
+        $resultados = DB::select($query);
+        $return="";
+        foreach($resultado as $value){
+            $return.=$email;
+
+        }
+
+        return $return;
+    }
+
     //fin de reportes por fecha
 
 
