@@ -124,9 +124,9 @@ class siennaController extends Controller
     
       //
     echo   $query1="
-   
+    ALTER TABLE ".$val->Database.".users ADD suricata INT NULL;
 
-    ALTER TABLE ".$val->Database.".users ADD avisoemail INT NULL;
+
 
     
 
