@@ -133,7 +133,7 @@ document.getElementById("idagente").value = dd;
 
 <!-- Modal users register -->
  
-<div class="modal fade tandard-modalticketeliminar" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="standard-modalticketeliminar" class="modal fade standard-modalticketeliminar" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
