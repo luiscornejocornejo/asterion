@@ -496,7 +496,9 @@ if (isset($_GET['fecha'])) {
                                 console.log(usu);
                                 console.log(area);
                                // document.getElementById("abiertos").innerHTML = ticketabiertos;
-                                logeados
+                               tt += '<tr class="text-center">' +
+                                        ' <td>' + response.data[i].usu + '</td>' + 
+                                        ' <td>' + response.data[i].area + '</td></tr>' ;
 
                             }
 
