@@ -1809,9 +1809,9 @@ class siennaticketsController extends Controller
         $resultados = "";
         $dom=$this->dominio();
         $query="        
-        select concat(u.nombre,' ',u.last_name) as usu,s2.nombre as area ,t.nombre as tipo,convertirTiempo(s.created_at) as  inicio  from ".$dom.".siennaloginxenioo s
+        select concat(u.nombre,' ',u.last_name) as usu,s2.nombre as area ,t.nombre as tipo,convertirTiempo(s.created_at) as  inicio 
+         from ".$dom.".siennaloginxenioo s
         join ".$dom.".users u on u.id=s.idusuario 
-        join ".$dom.".siennadepto s2 on s2.id =s.areas 
         join ".$dom.".siennadepto s2 on s2.id =s.areas 
         join ".$dom.".tipousers t on t.id=u.tipousers 
         where s.login =1 and u.tipousers <>'1'
