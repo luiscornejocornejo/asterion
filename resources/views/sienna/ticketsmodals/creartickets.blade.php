@@ -56,7 +56,7 @@
                 </div>
             </div>
             <div class="toast-body">
-                El numero de ticket es {{ct_sienna}}.
+                El numero de ticket es ct_sienna.
             </div>
         </div>
     </div> <!--end toast-->
@@ -91,8 +91,8 @@
                         <div class="mb-3">
                             <label for="type-user" class="form-label">Tipo de busqueda</label>
                             <select class="form-select" id="type-user">
-                                <option value="{{id}}">Cliente</option>
-                                <option value="{{id}}">Telefono</option>
+                                <option value="id">Cliente</option>
+                                <option value="id">Telefono</option>
                             </select>
                         </div>                                                                                            
                         <div class="mb-3">
@@ -126,10 +126,10 @@ tabindex="-1">
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                         <label for="type-user" class="form-label">Tipo de busqueda</label>
                         <select class="form-select" id="type-user">
-                            <option value="{{id}}">Cliente</option>
-                            <option value="{{id}}">DNI o CUIT</option>
-                            <option value="{{id}}">Cédula o RUC</option>
-                            <option value="{{id}}">Telefono</option>
+                            <option value="id">Cliente</option>
+                            <option value="id">DNI o CUIT</option>
+                            <option value="id">Cédula o RUC</option>
+                            <option value="id">Telefono</option>
                         </select>
                     </div>                                                                                            
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
