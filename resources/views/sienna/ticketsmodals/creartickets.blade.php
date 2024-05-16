@@ -18,7 +18,7 @@
   <!-- Vector Map css -->
   <link rel="stylesheet" href="assetsfacu/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css">
 
-  <!-- Theme Config Js -->
+  <!-- Theme Config Js --> 
   <script src="assetsfacu/js/hyper-config.js"></script>
 
   <!-- App css -->
