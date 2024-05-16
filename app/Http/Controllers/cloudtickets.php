@@ -471,4 +471,15 @@ class cloudtickets extends Controller
        ->with('success', 'Se modifico  correctamente!');
 
    }
+
+   public function eliminaragente(Request $request){
+
+    $idagente=$request->idagente;
+
+    
+    return redirect()
+    ->back()
+    ->with('success', 'Se elimino el agente  correctamente!');
+
+   }
 }
