@@ -61,7 +61,7 @@ if (isset($_GET['fecha'])) {
 
                 evento.preventDefault();
                 evento.returnValue = "Debe Deslogearse previamente";
-                window.location.href = '/salir';
+                window.location 'https://soporte.suricata.cloud/salir';
                 console.log('Inicio de la función de prueba.');
                 sleepES5(3000); 
                 return "Debe Deslogearse previamente";
