@@ -1845,7 +1845,8 @@ class siennaticketsController extends Controller
             "WSServer"  : "wss://suricata99.llamadaip.org:8089/ws"
         }';
 
-        return $return;
+        return response()->json(['User' => '305', 'Pass' => 'fef575-Prueba', 'Realm' => '45.65.149.68', 'Display' => 'Alberto', 'WSServer' => 'wss://suricata99.llamadaip.org:8089/ws']);
+
     }
 
     //fin de reportes por fecha
