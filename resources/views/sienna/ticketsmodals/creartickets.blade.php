@@ -6,26 +6,26 @@
     <title>Document</title>
     <link rel="stylesheet" href="/flotante.css">
      <!-- App favicon -->
-  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <link rel="shortcut icon" href="assetsfacu/images/favicon.ico">
 
   <!-- Daterangepicker css -->
-  <link rel="stylesheet" href="assets/vendor/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="assetsfacu/vendor/daterangepicker/daterangepicker.css">
 
   <!-- Datables-->
-  <link href="assets/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-  <link href="assets/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+  <link href="assetsfacu/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+  <link href="assetsfacu/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
 
   <!-- Vector Map css -->
-  <link rel="stylesheet" href="assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css">
+  <link rel="stylesheet" href="assetsfacu/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css">
 
   <!-- Theme Config Js -->
-  <script src="assets/js/hyper-config.js"></script>
+  <script src="assetsfacu/js/hyper-config.js"></script>
 
   <!-- App css -->
-  <link href="assets/css/app-saas.min.css" rel="stylesheet" type="text/css" id="app-style">
+  <link href="assetsfacu/css/app-saas.min.css" rel="stylesheet" type="text/css" id="app-style">
 
   <!-- Icons css -->
-  <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
+  <link href="assetsfacu/css/icons.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <!-- HTML -->
@@ -213,10 +213,10 @@ tabindex="-1">
             
     <!--End  Between Modal -->
 <!-- Vendor js -->
-<script src="assets/js/vendor.min.js"></script>
+<script src="assetsfacu/js/vendor.min.js"></script>
 
 <!-- App js -->
-<script src="assets/js/app.min.js"></script>
+<script src="assetsfacu/js/app.min.js"></script>
   <script src="flotante.js"></script>
 </body>
 </html>
