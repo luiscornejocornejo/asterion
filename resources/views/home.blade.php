@@ -54,31 +54,24 @@ if (isset($_GET['fecha'])) {
     }
 }
 ?>
-        <script type="text/javascript">
-        var message='No debe cerrar el navegador. Si presiona Aceptar lo cerrará y perderá los cambios no guardados.';
-        function salir(e)
-        {
-                var evtobj=window.event? event : e;
-                if(evtobj == e)
-                {
-                //firefox
-                if (!evtobj.clientY)
-                {
-                evtobj.returnValue = message;
-                }
-                }
-                else //IE
-                {
-                if (evtobj.clientY < 0)
-                {
-                evtobj.returnValue = message;
-                }
 
-                }
-        }
-        </script>
 <script>
-        
+        window.addEventListener("beforeunload", (evento) => {
+            if (true) {
+
+                evento.preventDefault();
+                evento.returnValue = "Debe Deslogearse previamente";
+                alert("Debe Deslogearse previamente");
+                window.location 'https://soporte.suricata.cloud/salir';
+                console.log('Inicio de la función de prueba.');
+                sleepES5(3000); 
+                return "Debe Deslogearse previamente";
+            }
+        });
+        var sleepES5 = function(ms){
+                var esperarHasta = new Date().getTime() + ms;
+                while(new Date().getTime() < esperarHasta) continue;
+            };
     function mostrar() {
         var e = document.getElementById('foo');
         var f = document.getElementById('foo2');
@@ -109,7 +102,7 @@ if (isset($_GET['fecha'])) {
     <!-- ============================================================== -->
 
     <div class="content-page" style="padding:0 !important;">
-        <div class="content" onbeforeunload="salir(event)">
+        <div class="content">
 
 
            
