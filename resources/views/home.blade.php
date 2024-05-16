@@ -58,10 +58,11 @@ if (isset($_GET['fecha'])) {
 <script>
         window.addEventListener("beforeunload", (evento) => {
             if (true) {
-                window.location.href = '/salir';
 
                 evento.preventDefault();
                 evento.returnValue = "Debe Deslogearse previamente";
+                window.location.href = '/salir';
+
                 return "Debe Deslogearse previamente";
             }
         });
