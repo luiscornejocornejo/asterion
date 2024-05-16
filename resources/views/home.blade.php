@@ -60,7 +60,7 @@ if (isset($_GET['fecha'])) {
             if (true) {
                 evento.preventDefault();
                 evento.returnValue = "";
-                return "debe cerrar session previamente";
+                return "";
             }
         });
     function mostrar() {
