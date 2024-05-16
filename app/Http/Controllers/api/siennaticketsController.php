@@ -1843,7 +1843,7 @@ class siennaticketsController extends Controller
             "Display" : "Alberto",
             // WebSocket URL
             "WSServer"  : "wss://suricata99.llamadaip.org:8089/ws"
-        }'';
+        }';
 
         return $return;
     }
