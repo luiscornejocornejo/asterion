@@ -18,6 +18,11 @@ function ticket(dd) {
 document.getElementById("user_id4").value = dd;
 
 }
+function eliminar(dd) {
+
+document.getElementById("idagente").value = dd;
+
+}
 </script>
   <!-- Begin page -->
   <div class="wrapper">
@@ -128,6 +133,27 @@ document.getElementById("user_id4").value = dd;
 
 <!-- Modal users register -->
  
+<div class="modal fade tandard-modalticketeliminar" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Eliminar</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Esta seguro que quiere borrar al Agente</p>
+                                    <form method="post" action="/eliminaragente">
+
+                                        <input type="hidden" name="idagente" id="idregistro">
+                                        
+
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    </form>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
       <!-- End users register -->
       <div class="newAgent"  data-bs-toggle="modal" data-bs-target="#standard-modal23">
         <i class="mdi mdi-account-plus" style="font-size: 25px;"></i>
