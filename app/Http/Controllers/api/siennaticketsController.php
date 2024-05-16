@@ -1803,6 +1803,21 @@ class siennaticketsController extends Controller
     }
 
 
+    public function logeados(Request $request)
+    {
+        
+        $resultados = "";
+        $dom=$this->dominio();
+        $query="        
+        select concat(u.nombre,' ',u.last_name) as usu,s2.nombre as area  from ".$dom.".siennaloginxenioo s
+        join ".$dom.".users u on u.id=s.idusuario 
+        join ".$dom.".siennadepto s2 on s2.id =s.areas 
+        where s.login =1 and u.tipousers <>'1'
+        order by s2.nombre desc";
+        $resultados = DB::select($query);
+        return $resultados;
+    }
+
     //fin de reportes por fecha
 
 
