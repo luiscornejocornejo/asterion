@@ -59,8 +59,8 @@ if (isset($_GET['fecha'])) {
         window.addEventListener("beforeunload", (evento) => {
             if (true) {
                 evento.preventDefault();
-                evento.returnValue = "debe cerrar session previamente";
-                return "";
+                evento.returnValue = "";
+                return "debe cerrar session previamente";
             }
         });
     function mostrar() {
