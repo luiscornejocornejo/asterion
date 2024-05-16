@@ -469,7 +469,7 @@ if (isset($_GET['fecha'])) {
                 }
 
                 function logeados(urllogeados) {
-                    axios.get(urlabiertos)
+                    axios.get(urllogeados)
                         .then(function(response) {
                             console.log(response);
                             for (i = 0; i < response.data.length; i++) {
