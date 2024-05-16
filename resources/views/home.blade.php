@@ -475,6 +475,7 @@ if (isset($_GET['fecha'])) {
                             for (i = 0; i < response.data.length; i++) {
                                 let usu = response.data[i].usu;
                                 let area = response.data[i].area;
+                                console.log("logeados");
                                 console.log(usu);
                                 console.log(area);
                                // document.getElementById("abiertos").innerHTML = ticketabiertos;
