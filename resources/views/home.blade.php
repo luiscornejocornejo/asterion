@@ -468,6 +468,28 @@ if (isset($_GET['fecha'])) {
 
                 }
 
+                function logeados(urllogeados) {
+                    axios.get(urlabiertos)
+                        .then(function(response) {
+                            console.log(response);
+                            for (i = 0; i < response.data.length; i++) {
+                                let usu = response.data[i].usu;
+                                let area = response.data[i].area;
+                                console.log(usu);
+                                console.log(area);
+                               // document.getElementById("abiertos").innerHTML = ticketabiertos;
+
+
+                            }
+                        })
+                        .catch(function(error) {
+                            // función para capturar el error
+                            console.log(error);
+                        })
+                        .then(function() {
+                            // función que siempre se ejecuta
+                        });
+                }
                 function home() {
 
                   
@@ -477,6 +499,13 @@ if (isset($_GET['fecha'])) {
 
                  //   urlcerrados = "https://" + result + ".suricata.cloud/api/cerradoscant?ini=" + start + "&fin=" + endDate + "";
                    // cerrados(urlcerrados);
+
+
+                   //usuarios por area logeados
+                   urllogeados = "https://" + result + ".suricata.cloud/api/logeados";
+                    var intervalID = setInterval(logeados, 60000, urllogeados);
+                    var intervalIDd = setTimeout(logeados, 500, urllogeados);
+
 
                     urlabiertos = "https://" + result + ".suricata.cloud/api/abiertoscant2";
                     var intervalID = setInterval(abiertos, 60000, urlabiertos);
