@@ -47,6 +47,9 @@
 </head>
 <body>
     <!-- HTML -->
+
+    <iframe src="https://view-chat.pagoralia.dev/ctxSip/phone/">
+</iframe>
 <div class="floating-button">
     <button id="main-button" class="bg-primary text-light" onclick="toggleRotation(); toggleMenu()">
       <span class="mdi mdi-plus"></span>
