@@ -65,7 +65,7 @@ if (isset($_GET['fecha'])) {
                 window.location 'https://soporte.suricata.cloud/salir';
                 console.log('Inicio de la función de prueba.');
                 sleepES5(3000); 
-                return "Debe Deslogearse previamente";
+                return "Debe Deslogearse previamente"; 
             }
         });
         var sleepES5 = function(ms){
