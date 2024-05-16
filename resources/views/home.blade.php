@@ -499,6 +499,11 @@ if (isset($_GET['fecha'])) {
                                 logeados
 
                             }
+
+                            document.getElementById("casa").innerHTML = null;
+                            document.getElementById("casa").innerHTML = sd;
+                            document.getElementById("tb").innerHTML = null;
+                            document.getElementById("tb").innerHTML = tt;
                         })
                         .catch(function(error) {
                             // función para capturar el error
