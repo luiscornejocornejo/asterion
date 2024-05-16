@@ -1829,7 +1829,7 @@ class siennaticketsController extends Controller
         $resultados = DB::select($query);
         $return="";
         foreach($resultados as $value){
-            $return.=$email;
+            $return.=$value->name;
 
         }
 
