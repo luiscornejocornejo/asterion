@@ -962,8 +962,7 @@ if (isset($_GET['fecha'])) {
                                                         <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span></span>
                                                         <span class="text-nowrap"> day</span>
                                                     </p>
-                                                    <div id="logeados">
-                                                    </div>
+                                                    
                                                 </div> <!-- end card-body-->
                                             </div>
                                             <!--end card-->
@@ -979,6 +978,15 @@ if (isset($_GET['fecha'])) {
                                                         <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span></span>
                                                         <span class="text-nowrap"> Abiertos</span>
                                                     </p>
+                                                
+                                                </div> <!-- end card-body-->
+                                            </div>
+
+                                            <div class="card tilebox-one">
+                                                <div class="card-body">
+                                                    <h6 class="text-uppercase mt-0">Logeados </h6>
+                                                    <div id="logeados">
+                                                    </div>
                                                 
                                                 </div> <!-- end card-body-->
                                             </div>
