@@ -500,8 +500,8 @@ if (isset($_GET['fecha'])) {
 
                             }
 
-                            document.getElementById("casa").innerHTML = null;
-                            document.getElementById("casa").innerHTML = sd;
+                            document.getElementById("logeados").innerHTML = null;
+                            document.getElementById("logeados").innerHTML = sd;
                             document.getElementById("tb").innerHTML = null;
                             document.getElementById("tb").innerHTML = tt;
                         })
