@@ -45,6 +45,10 @@ class limpiezacloud extends Command
 
                 continue;
              }
+             if($Database=="futurity"){
+
+                continue;
+             }
             
             if (!in_array($Database, $os)) {
                 echo $Database;
