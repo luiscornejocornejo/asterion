@@ -1836,8 +1836,14 @@ class siennaticketsController extends Controller
             $ws=$value->ws;
 
         }
+        if(isset($display)){
+            return response()->json(['User' => $interno, 'Pass' => $pass, 'Realm' => $realm, 'Display' => $display, 'WSServer' => $ws]);
+
+        }else{
+            return response()->json(['error' => "token incorrecto"]);
+
+        }
       
-        return response()->json(['User' => $interno, 'Pass' => $pass, 'Realm' => $realm, 'Display' => $display, 'WSServer' => $ws]);
 
     }
 
