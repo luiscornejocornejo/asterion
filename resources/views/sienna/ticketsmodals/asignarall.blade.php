@@ -10,6 +10,8 @@
                                 </div>
                     <div class="modal-footer mx-auto">
                         <form action="/asignarall" method="POST">
+                        @csrf
+
                             <input value="" type="hidden" name="idticketpedir" id="idticketpedir2">
                             <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
                             <input value="" readonly type="hidden" name="ticketss" id="idticketpedir20">
