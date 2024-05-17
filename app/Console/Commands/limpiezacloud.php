@@ -73,9 +73,12 @@ class limpiezacloud extends Command
      
         ";
 
-        $query="select count(*) from ".$merchant.".siennaticketsc ";
+        $query="select count(*) as cuantos from ".$merchant.".siennaticketsc ";
         try {
             $resultados = DB::connection('mysql2')->select($query);
+            foreach($resultados as $val){
+                echo $val->cuantos;
+            }
             echo sizeof($resultados);
                           }
          catch(\Illuminate\Database\QueryException$ex){
