@@ -171,6 +171,7 @@
                               '        <th class="text-light">Asignado</th>'+
                               '          <th class="text-light">Area</th>'+
                               '        <th class="text-light">Topic</th>'+
+                              '        <th class="text-light">Prioridad</th>'+
                               '        <th class="text-light">Telefono</th>'+
                               '        <th class="text-light">Creado</th>'+
                               
@@ -222,6 +223,7 @@
                         ' <td>' + $nombreamostrar+ '</td>' + 
                         ' <td> <span class="badge '+colordepto+'" style="font-size:medium;">' + response.data[i].depto + '</span>'+
                         ' <td><button onclick="topic(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="btn btn-info " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smtopic">  ' + response.data[i].topicnombre + '</button></td>' +
+                        ' <td>' + response.data[i].pri + '</td>' +
                         ' <td>' + response.data[i].cel + '</td>' +
                         ' <td>' + response.data[i].creado + '</td>' +
                       
