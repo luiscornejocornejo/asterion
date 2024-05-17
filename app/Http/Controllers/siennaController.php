@@ -127,19 +127,8 @@ class siennaController extends Controller
       
 
         
-        CREATE TABLE ".$val->Database.".siennainternos (
-          id INT auto_increment NOT NULL,
-          users INT NULL,
-          pass varchar(100) NULL,
-          realm varchar(100) NULL,
-          ws varchar(1000) NULL,
-          interno varchar(100) NULL,
-          created_at DATETIME NULL,
-          CONSTRAINT siennainternos_pk PRIMARY KEY (id)
-        )
-        ENGINE=InnoDB
-        DEFAULT CHARSET=utf8mb4
-        COLLATE=utf8mb4_0900_ai_ci;
+          ALTER TABLE ".$val->Database.".siennainternos ADD token varchar(1000) NULL;
+
         
       
 
