@@ -1542,6 +1542,16 @@ class TicketdatosController extends Controller
 
        $querymails="select * from siennamail where siennatickets='".$tick."'";
        $resultadosmails = DB::select($querymails);
+
+       $queryhistorico="select s.id,s.cliente,s2.nombre as depto,s3.nombre as tema,s4.nombre as estado,convertirTiempo(s.created_at) as inicio
+         from 
+            siennatickets s
+       left join siennadepto s2 on s2.id =s.siennadepto 
+       left join siennatopic s3   on s3.id =s.siennatopic 
+       left join siennaestado s4     on s4.id =s.siennaestado  
+       where cliente =(select cliente from siennatickets where id='".$tick."')";
+       $resultadoshistoricos = DB::select($queryhistorico);
+
        $emp=empresa::all();
        $pri=prioridad::all();
        if($siennasource==70){
@@ -1564,6 +1574,7 @@ class TicketdatosController extends Controller
         ->with('emp', $emp)
         ->with('pri', $pri)
         ->with('resultadosmails', $resultadosmails)
+        ->with('resultadoshistoricos', $resultadoshistoricos)
         
          ->with('resultados', $resultados);
        }
