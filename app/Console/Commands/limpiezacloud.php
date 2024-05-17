@@ -72,7 +72,22 @@ class limpiezacloud extends Command
                 select * from ".$merchant.".siennatickets s where siennaestado ='4' and s.created_at < DATE_SUB(CURRENT_DATE(), INTERVAL 3 MONTH);
      
         ";
+        try {
+            $resultados = DB::connection('mysql2')->select($query);
+           
+                          }
+         catch(\Illuminate\Database\QueryException$ex){
+          echo "no".$ex;
+         }
 
+         $parte2=$this->borrar($merchant);
+
+        
+    }
+
+    public function borrar($merchant){
+
+        $CONE=$this->conectar();
         $query="  delete  from ".$merchant.".siennatickets s where siennaestado ='4' and s.created_at < DATE_SUB(CURRENT_DATE(), INTERVAL 3 MONTH); ";
         try {
             $resultados = DB::connection('mysql2')->select($query);
@@ -81,7 +96,6 @@ class limpiezacloud extends Command
          catch(\Illuminate\Database\QueryException$ex){
           echo "no".$ex;
          }
-        
     }
 
     public function conectar()
