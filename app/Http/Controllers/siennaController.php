@@ -124,9 +124,40 @@ class siennaController extends Controller
     
       //
     echo   $query1="
+    CREATE TABLE ".$val->Database.".siennaticketsc (
+      id int auto_increment NOT NULL,
+      siennadepto smallint NULL,
+      cliente varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+      siennatopic smallint NULL,
+      siennaestado smallint NULL,
+      siennasource varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+      created_at datetime NULL,
+      updated_at datetime NULL,
+      t_cerrado datetime NULL,
+      cel varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+      nya varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+      conversation_url varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+      conversation_id varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+      cedula varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+      user_id varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+      asignado int NULL,
+      estadoconv varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '0' NULL,
+      timeoflive datetime DEFAULT CURRENT_TIMESTAMP  NULL,
+      prioridad smallint DEFAULT 3 NULL,
+      extras varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+      email text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+      motivoc smallint NULL,
+      callid varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+      cc varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
+      CONSTRAINT `PRIMARY` PRIMARY KEY (id)
+    )
+    ENGINE=InnoDB
+    DEFAULT CHARSET=utf8mb4
+    COLLATE=utf8mb4_0900_ai_ci
+    COMMENT='';
 
-    update ".$val->Database.".masterreport set base='1', nombre='motivo de cierre',query='select * from motivoc',crear=1,modificar=1,eliminar=1,tabla='motivoc',servicio='5'
-    where id='18'
+    
+   
 
     
 
