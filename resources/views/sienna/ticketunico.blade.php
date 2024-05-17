@@ -444,7 +444,7 @@ function tituloiconos($iconos, $tipo)
                                             <tbody id="tb">
                                                     <?php foreach($resultadoshistoricos as $valh){?>
                                                         <tr class="text-center">
-                                                        <td><a href='/ticketunico?tick=<?php echo $valh->id;?>' traget="_blank"><?php echo $valh->id;?></a></td>
+                                                        <td><a href='/ticketunico?tick=<?php echo $valh->id;?>' target="_blank"><?php echo $valh->id;?></a></td>
                                                         <td><?php echo $valh->depto;?></td>
                                                         <td><?php echo $valh->tema;?></td>
                                                         <td><?php echo $valh->estado;?></td>
