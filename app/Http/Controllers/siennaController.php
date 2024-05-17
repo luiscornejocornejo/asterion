@@ -127,9 +127,9 @@ class siennaController extends Controller
       
 
         
-          ALTER TABLE ".$val->Database.".siennainternos ADD token varchar(1000) NULL;
-
         
+          ALTER TABLE ".$val->Database.".siennainternos ADD display varchar(100) NULL;
+          
       
 
     

@@ -1825,27 +1825,19 @@ class siennaticketsController extends Controller
 
         $tok=$request->token;
         $dom=$request->dom;
-        $query="select * from ".$dom.".users  where id='".$tok."'";
+        $query="select * from ".$dom.".siennainternos  where token='".$tok."'";
         $resultados = DB::select($query);
         $return="";
         foreach($resultados as $value){
-            $return.=$value->nombre;
+            $display=$value->display;
+            $pass=$value->pass;
+            $realm=$value->realm;
+            $interno=$value->interno;
+            $ws=$value->ws;
 
         }
-        $return=' {
-            //  User Name
-            "User" : "305",
-            //  Password
-            "Pass" : "afef575-Prueba",
-            //  Auth Realm
-            "Realm"   : "45.65.149.68",
-            // Display Name
-            "Display" : "Alberto",
-            // WebSocket URL
-            "WSServer"  : "wss://suricata99.llamadaip.org:8089/ws"
-        }';
-
-        return response()->json(['User' => '305', 'Pass' => 'fef575-Prueba', 'Realm' => '45.65.149.68', 'Display' => 'Alberto', 'WSServer' => 'wss://suricata99.llamadaip.org:8089/ws']);
+      
+        return response()->json(['User' => $interno, 'Pass' => $pass, 'Realm' => $realm, 'Display' => $display, 'WSServer' => $ws]);
 
     }
 
