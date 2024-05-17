@@ -472,7 +472,7 @@
                         
                             <p style="color: #262833;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 24px;line-height: 125%;text-align: left;">Estimado/a <?php echo $nombreusuario." ". $apellidousuario;?>,</p>
 
-<p style="color: #262833;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 24px;line-height: 125%;text-align: left;">Un nuevo ticket de soporte ha sido creado y está asignado a su atención.<br>
+<p style="color: #262833;font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif;font-size: 24px;line-height: 125%;text-align: left;">Un nuevo ticket  ha sido creado y está asignado a su atención.<br>
 <br>
 <span style="color:#034048"><strong>Número de Ticket: <?php echo $numeroticket;?><br>
 Fecha de Creación: <?php echo $horaticket;?><br>
@@ -480,7 +480,7 @@ Asunto: <?php echo $asuntoticket;?><br>
 Usuario: <?php echo $nyaticket;?></strong></span><br>
 <br>
 Por favor, revise el ticket y comience a trabajar en la resolución de la solicitud del usuario. Si requiere más detalles o información,
- puede acceder al ticket a través de este  [<a href='https://soporte.suricata.cloud/ticketunico?tick=<?php echo $numeroticket;?>'>enlace</a>].<br>
+ puede acceder al ticket a través de este  <a href='https://<?php echo $domi;?>.suricata.cloud/ticketunico?tick=<?php echo $numeroticket;?>'>enlace</a>.<br>
 <br>
 Agradecemos su pronta atención a este asunto.<br>
 <br>
@@ -512,7 +512,7 @@ Atentamente,<br>
                     <tbody>
                         <tr>
                             <td align="center" valign="middle" class="mcnButtonContent" style="font-family: Arial; font-size: 16px; padding: 14px;">
-                                <a class="mcnButton " title="Ir al Ticket" href="https://soporte.suricata.cloud/ticketunico?tick=<?php echo $numeroticket;?>" target="_blank" style="font-weight: bold;letter-spacing: 1px;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;">Ir al Ticket</a>
+                                <a class="mcnButton " title="Ir al Ticket" href="https://<?php echo $domi;?>.suricata.cloud/ticketunico?tick=<?php echo $numeroticket;?>" target="_blank" style="font-weight: bold;letter-spacing: 1px;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;">Ir al Ticket</a>
                             </td>
                         </tr>
                     </tbody>

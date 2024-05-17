@@ -179,6 +179,7 @@ class cloudtickets extends Controller
 
 
         $envialmail=$us->avisoemail;
+        $domi=$this->dom();
         if($envialmail==1){
 
             $emailusuario=$us->email;
@@ -192,7 +193,7 @@ class cloudtickets extends Controller
             $subject="nuevo ticket";
 
             Mail::mailer('suricata')
-                ->send('mailavisoticket', ["nombreusuario" => $nombreusuario,"apellidousuario" => $apellidousuario,"numeroticket" => $numeroticket,"horaticket" => $horaticket,"asuntoticket" => $asuntoticket,"nyaticket" => $nyaticket], function ($msj) use ($subject,$emailusuario) {
+                ->send('mailavisoticket', ["domi" => $domi,"nombreusuario" => $nombreusuario,"apellidousuario" => $apellidousuario,"numeroticket" => $numeroticket,"horaticket" => $horaticket,"asuntoticket" => $asuntoticket,"nyaticket" => $nyaticket], function ($msj) use ($subject,$emailusuario) {
             $msj->from("support@suricata.la", "soporte");
             $msj->subject($subject);
             $msj->to($emailusuario);
@@ -490,6 +491,8 @@ class cloudtickets extends Controller
         $ticketss = $request->ticketss;
         $logeado = $request->logeado;
         $sep=explode(",",$ticketss);
+        $domi=$this->dom();
+
         foreach($sep as $val){
 
             if($val<>""){
@@ -522,7 +525,7 @@ class cloudtickets extends Controller
                     $subject="nuevo ticket";
 
                     Mail::mailer('suricata')
-                        ->send('mailavisoticket', ["nombreusuario" => $nombreusuario,"apellidousuario" => $apellidousuario,"numeroticket" => $numeroticket,"horaticket" => $horaticket,"asuntoticket" => $asuntoticket,"nyaticket" => $nyaticket], function ($msj) use ($subject,$emailusuario) {
+                        ->send('mailavisoticket', ["domi" => $domi,"nombreusuario" => $nombreusuario,"apellidousuario" => $apellidousuario,"numeroticket" => $numeroticket,"horaticket" => $horaticket,"asuntoticket" => $asuntoticket,"nyaticket" => $nyaticket], function ($msj) use ($subject,$emailusuario) {
                     $msj->from("support@suricata.la", "soporte");
                     $msj->subject($subject);
                     $msj->to($emailusuario);
