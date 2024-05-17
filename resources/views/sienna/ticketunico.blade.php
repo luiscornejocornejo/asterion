@@ -33,7 +33,7 @@ function tituloiconos($iconos, $tipo)
   if(source=='7'){
     alert(source);
         document.getElementById("client_number").removeAttribute("required");
-        document.getElementById("client_number").display = "none";
+        document.getElementById("client_number").style.display = "none";
   }
 
   ff
