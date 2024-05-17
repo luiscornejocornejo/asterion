@@ -514,7 +514,7 @@ class cloudtickets extends Controller
                     $emailusuario=$us->email;
                     $nombreusuario=$us->nombre;
                     $apellidousuario=$us->last_name;
-                    $numeroticket=$idticketpedir;
+                    $numeroticket=$val;
                     $horaticket=$horaticket;
                     $topusut=siennatopic::find($asuntoticket);
                     $asuntoticket=$topusut->nombre;
