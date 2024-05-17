@@ -9,7 +9,7 @@
                             Asignar los tickets             
                                 </div>
                     <div class="modal-footer mx-auto">
-                        <form action="/api/pedir20" method="POST">
+                        <form action="/asignarall" method="POST">
                             <input value="" type="hidden" name="idticketpedir" id="idticketpedir2">
                             <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
                             <input value="" readonly type="hidden" name="ticketss" id="idticketpedir20">

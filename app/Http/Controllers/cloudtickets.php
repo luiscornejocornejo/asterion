@@ -483,4 +483,33 @@ class cloudtickets extends Controller
     ->with('success', 'Se elimino el agente  correctamente!');
 
    }
+
+   public function asignarall(Request $request)
+    {
+        $usuarioticket = $request->usuarioticket;
+        $ticketss = $request->ticketss;
+        $logeado = $request->logeado;
+        $sep=explode(",",$ticketss);
+        foreach($sep as $val){
+
+            if($val<>""){
+                $si2 = siennatickets::find($val);
+                $si2->asignado = $usuarioticket;
+                $si2->save();
+
+                $se = new siennaseguimientos();
+                $se->ticket = $val;
+                $se->tipo = "4";
+                $se->descripcion = "asignado ";
+                $se->autor = $logeado;
+                $se->save();
+
+            }
+
+        }
+
+        return redirect()
+            ->back()
+            ->with('success', 'Se asigno  correctamente!');
+    }
 }
