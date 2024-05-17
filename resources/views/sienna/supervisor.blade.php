@@ -535,7 +535,7 @@
       @include('sienna.ticketsmodals.topic')
 
       @include('sienna.ticketsmodals.departamentos')
-      @include('sienna.ticketsmodals.pedir2')
+      @include('sienna.ticketsmodals.asignarall')
       @include('sienna.ticketsmodals.seguimientos')
       @include('sienna.ticketsmodals.historialtickets')
       @include('sienna.ticketsmodals.cerrar')
