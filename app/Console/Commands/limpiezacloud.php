@@ -77,9 +77,11 @@ class limpiezacloud extends Command
         try {
             $resultados = DB::connection('mysql2')->select($query);
             foreach($resultados as $val){
+                echo "hay:";
                 echo $val->cuantos;
+                echo "Línea 1\n";
+
             }
-            echo sizeof($resultados);
                           }
          catch(\Illuminate\Database\QueryException$ex){
           echo "no".$ex;
