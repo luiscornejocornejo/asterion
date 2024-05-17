@@ -140,17 +140,20 @@
                       
                 }  
         }             
-        function colorprif(id){
+        function colorprif(idprioridad){
           //alert(id);
-            if(id==1){
+          console.log(idprioridad);
+            if(idprioridad==1){
               return "success";
             }
-            if(id==2){
+            if(idprioridad==2){
               return "warning";
             }
-            if(id==3){
+            if(idprioridad==3){
               return "danger";
             }
+            return "success";
+
         }
         function maxid() {
            document.body.style.zoom = "80%";
