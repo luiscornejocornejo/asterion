@@ -205,7 +205,7 @@
                     im2=colorlogo(response.data[i].siennasource);
                     colordepto=colordeptof(response.data[i].iddepto);
                     colorestado=colorestadof(response.data[i].siennaestado);
-                    colorpri=colorprif(response.data[i].pri);
+                    colorpri=colorprif(response.data[i].prid);
                     if(response.data[i].estadoconv==1){
                       aviso='<button onclick="vista(`' + response.data[i].conversation_url + '`,`' + response.data[i].cliente + '`,`' + result + '`)" class="btn btn-primary position-relative" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg">'+
                                               ' <i class="mdi mdi-wechat" data-bs-toggle="tooltip" data-bs-placement="top"'+
