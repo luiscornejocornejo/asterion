@@ -62,7 +62,21 @@ function maxid() {
     var idusuario =<?php echo session('idusuario');?>;
     var area ="<?php echo session('deptosuser');?>";
 
+    function colorprif(idprioridad){
+          //alert(id);
+          console.log(idprioridad);
+            if(idprioridad==3){
+              return "badge bg-success";
+            }
+            if(idprioridad==2){
+              return "badge bg-warning";
+            }
+            if(idprioridad==1){
+              return " badge bg-danger";
+            }
+            return "badge bg-success";
 
+        }
     url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&area=" + area + "";
     console.log(url);
 
@@ -79,6 +93,7 @@ function maxid() {
                        '        <th class="text-light">Cliente</th>'+
                        '          <th class="text-light">Area</th>'+
                        '        <th class="text-light">Topic</th>'+
+                       '        <th class="text-light">Prioridad</th>'+
                        '        <th class="text-light">Telefono</th>'+
                        '        <th class="text-light">Creado</th>'+
                       
@@ -102,6 +117,8 @@ function maxid() {
             im2=colorlogo(response.data[i].siennasource);
             colordepto=colordeptof(response.data[i].iddepto);
             colorestado=colorestadof(response.data[i].siennaestado);
+            colorpri=colorprif(response.data[i].prid);
+
             if(response.data[i].asignado !='99999'){
                 d="d-none";
             }
@@ -123,7 +140,8 @@ function maxid() {
               
                 '<td><span onclick="area(`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].user_id + '`)"  class="badge bg-info" style="font-size: medium" role="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2">'+response.data[i].depto+' </span></td>' +
                 '<td><span onclick="topic(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="badge badge-info-lighten border" style="font-size: medium" role="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smtopic"> ' + response.data[i].topicnombre + '</span></td> ' +
-               
+                ' <td><span style="font-size:medium;" class="'+colorpri+'">' + response.data[i].pri + '</span></td>' +
+
          
                 ' <td>' + response.data[i].cel + '</td>' +
                 ' <td>' + response.data[i].creado + '</td>' +
