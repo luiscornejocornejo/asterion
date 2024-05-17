@@ -428,7 +428,7 @@ function tituloiconos($iconos, $tipo)
                                 </div>
                                 <hr style="margin-top: 10px;" />
                                 <div class="row">
-                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12">
+                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-sm-12">
                                         
                                         
                                         <table id="example"  class="table table-striped dt-responsive nowrap w-100 text-light">
