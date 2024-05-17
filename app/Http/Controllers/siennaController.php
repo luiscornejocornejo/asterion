@@ -126,19 +126,21 @@ class siennaController extends Controller
     echo   $query1="
       
 
-      CREATE TABLE ".$val->Database.".siennainternos (
-        id INT auto_increment NOT NULL,
-        users SMALLINT NULL,
-        interno varchar(100) NULL,
-        pass varchar(100) NULL,
-        display varchar(100) NULL,
-        realm varchar(100) NULL,
-        wss varchar(1000) NULL
-      )
-      ENGINE=InnoDB
-      DEFAULT CHARSET=utf8mb4
-      COLLATE=utf8mb4_0900_ai_ci;
-      CREATE INDEX internos_id_IDX USING BTREE ON amecom2.siennainternos (id);
+        
+        CREATE TABLE ".$val->Database.".siennainternos (
+          id INT auto_increment NOT NULL,
+          users INT NULL,
+          pass varchar(100) NULL,
+          realm varchar(100) NULL,
+          ws varchar(1000) NULL,
+          interno varchar(100) NULL,
+          created_at DATETIME NULL,
+          CONSTRAINT siennainternos_pk PRIMARY KEY (id)
+        )
+        ENGINE=InnoDB
+        DEFAULT CHARSET=utf8mb4
+        COLLATE=utf8mb4_0900_ai_ci;
+        
       
 
     
