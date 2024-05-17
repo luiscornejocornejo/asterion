@@ -143,13 +143,13 @@
         function colorprif(idprioridad){
           //alert(id);
           console.log(idprioridad);
-            if(idprioridad==1){
+            if(idprioridad==3){
               return "badge bg-success";
             }
             if(idprioridad==2){
               return "badge bg-warning";
             }
-            if(idprioridad==3){
+            if(idprioridad==1){
               return " badge bg-danger";
             }
             return "badge bg-success";
@@ -238,7 +238,7 @@
                         ' <td>' + $nombreamostrar+ '</td>' + 
                         ' <td> <span class="badge '+colordepto+'" style="font-size:medium;">' + response.data[i].depto + '</span>'+
                         ' <td><button onclick="topic(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="btn btn-info " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smtopic">  ' + response.data[i].topicnombre + '</button></td>' +
-                        ' <td><span style="font-size:medium;" class="'+colorpri+'">' + response.data[i].pri + ' ' + response.data[i].prid + '</span></td>' +
+                        ' <td><span style="font-size:medium;" class="'+colorpri+'">' + response.data[i].pri + '</span></td>' +
                         ' <td>' + response.data[i].cel + '</td>' +
                         ' <td>' + response.data[i].creado + '</td>' +
                       
