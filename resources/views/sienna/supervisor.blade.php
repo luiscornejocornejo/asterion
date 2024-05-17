@@ -144,15 +144,15 @@
           //alert(id);
           console.log(idprioridad);
             if(idprioridad==1){
-              return "badge badge-success";
+              return "badge bg-success";
             }
             if(idprioridad==2){
-              return "badge badge-warning";
+              return "badge bg-warning";
             }
             if(idprioridad==3){
-              return " badge badge-danger";
+              return " badge bg-danger";
             }
-            return "badge badge-success";
+            return "badge bg-success";
 
         }
         function maxid() {
