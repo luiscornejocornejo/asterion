@@ -17,15 +17,15 @@
                             <input value="" readonly type="hidden" name="ticketss" id="idticketpedir20">
 
                             <div v-for="department in departments ">
-                                <?php foreach($prioridades as $dep){?>
-                                    <input value="<?php echo $dep->id;?>" class="form-radio" type="radio" name="usuarioticket">&nbsp;
-                                <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo$dep->nombre." ".$dep->last_name;?></span>
-                                    <br><br>
+                            <?php foreach($prioridades as $dep){?>
+                                <input value="<?php echo $dep->id;?>" class="form-radio" type="radio" name="statos">&nbsp;
+                            <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo$dep->nombre;?></span>
+                                <br><br>
 
-                                    <?php }?>   
-                            </div>
+                                <?php }?>   
+                                                </div>
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
-                            <button type="submit" class="btn btn-success">Si</button>
+                            <button type="submit" class="btn btn-success">Si, asignar</button>
                         </form>
                     </div>
                 </div><!-- /.modal-content -->
