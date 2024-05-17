@@ -124,9 +124,9 @@ class siennaController extends Controller
     
       //
     echo   $query1="
-    ALTER TABLE ".$val->Database.".users ADD suricata INT NULL;
 
-
+    update ".$val->Database.".masterreport set base='1', nombre='motivo de cierre',query='select * from motivoc',crear=1,modificar=1,eliminar=1,tabla='motivoc',servicio='5'
+    where id='18'
 
     
 
