@@ -455,7 +455,7 @@ class cloudtickets extends Controller
             $nombreprioact=$prioact->nombre;
     
             $se = new siennaseguimientos();
-            $se->ticket = $idticketestadoprioridad;
+            $se->ticket = $val;
             $se->tipo = "8";
             $se->descripcion = $nombreprioant." => ".$nombreprioact ;
             $se->autor = $logeado;
