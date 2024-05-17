@@ -140,7 +140,17 @@
                       
                 }  
         }             
-        
+        function colorprif(id){
+            if(id=="1"){
+              return "success";
+            }
+            if(id=="2"){
+              return "warning";
+            }
+            if(id=="3"){
+              return "danger";
+            }
+        }
         function maxid() {
            document.body.style.zoom = "80%";
 
@@ -195,6 +205,7 @@
                     im2=colorlogo(response.data[i].siennasource);
                     colordepto=colordeptof(response.data[i].iddepto);
                     colorestado=colorestadof(response.data[i].siennaestado);
+                    colorpri=colorprif(response.data[i].pri);
                     if(response.data[i].estadoconv==1){
                       aviso='<button onclick="vista(`' + response.data[i].conversation_url + '`,`' + response.data[i].cliente + '`,`' + result + '`)" class="btn btn-primary position-relative" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-lg">'+
                                               ' <i class="mdi mdi-wechat" data-bs-toggle="tooltip" data-bs-placement="top"'+
@@ -223,7 +234,7 @@
                         ' <td>' + $nombreamostrar+ '</td>' + 
                         ' <td> <span class="badge '+colordepto+'" style="font-size:medium;">' + response.data[i].depto + '</span>'+
                         ' <td><button onclick="topic(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="btn btn-info " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smtopic">  ' + response.data[i].topicnombre + '</button></td>' +
-                        ' <td>' + response.data[i].pri + '</td>' +
+                        ' <td><span class="badge '+colorpri+'">' + response.data[i].pri + '</span></td>' +
                         ' <td>' + response.data[i].cel + '</td>' +
                         ' <td>' + response.data[i].creado + '</td>' +
                       

@@ -41,6 +41,8 @@ function colorestadof(id){
     }
     return colorestado;
 }
+
+
 function estado2(result,dd, ee, ff) {
 
     document.getElementById("idticketestado2").value = dd;
