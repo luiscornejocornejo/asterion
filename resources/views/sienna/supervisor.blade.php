@@ -9,6 +9,7 @@
         let estadoslista = {!! json_encode($estados,JSON_FORCE_OBJECT) !!};
         let iconos = {!! json_encode($iconos,JSON_FORCE_OBJECT) !!};
         let usersmerchant = {!! json_encode($usersmerchant,JSON_FORCE_OBJECT) !!};
+        let proridades = {!! json_encode($prioridades,JSON_FORCE_OBJECT) !!};
 
 
 
@@ -522,6 +523,7 @@
       @include('sienna.ticketsmodals.historialtickets')
       @include('sienna.ticketsmodals.cerrar')
       @include('sienna.ticketsmodals.cerrarall')
+      @include('sienna.ticketsmodals.prioridadall')
       
 
     </div>
