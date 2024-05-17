@@ -15,7 +15,7 @@
                             <input  type="hidden" name="merchant" id="merchant" value=" <?php echo $subdomain_tmp;?> ">
 
                             <div v-for="department in departments ">
-                            <?php foreach($pri as $dep){?>
+                            <?php foreach($prioridades as $dep){?>
                                 <input value="<?php echo $dep->id;?>" class="form-radio" type="radio" name="statos">&nbsp;
                             <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo$dep->nombre;?></span>
                                 <br><br>
