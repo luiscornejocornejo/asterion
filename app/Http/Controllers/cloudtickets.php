@@ -179,7 +179,7 @@ class cloudtickets extends Controller
 
 
         $envialmail=$us->avisoemail;
-        $domi=$this->dom();
+        $domi=$this->dominio();
         if($envialmail==1){
 
             $emailusuario=$us->email;
@@ -491,7 +491,7 @@ class cloudtickets extends Controller
         $ticketss = $request->ticketss;
         $logeado = $request->logeado;
         $sep=explode(",",$ticketss);
-        $domi=$this->dom();
+        $domi=$this->dominio();
 
         foreach($sep as $val){
 
