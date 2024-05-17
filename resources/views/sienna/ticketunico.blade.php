@@ -30,7 +30,7 @@ function tituloiconos($iconos, $tipo)
   document.getElementById("client_number").value = cliente;
   document.getElementById("source").value = source;
 
-  ff
+  
   url = "https://"+result+".suricata.cloud/api/motic?depto=" + ff + "";
     console.log(url);
 
