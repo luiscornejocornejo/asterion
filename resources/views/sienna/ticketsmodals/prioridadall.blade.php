@@ -1,20 +1,23 @@
 
 
-<div id="bs-example-modal-prioridadall" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dark-header-modalLabel" aria-hidden="true">
-           <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header bg-dark">
-                        <h4 class="modal-title text-light" id="dark-header-modalLabel">Asignar ticket</h4>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
-                    </div>
+
+<div class="modal fade" id="bs-example-modal-prioridadall" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h4 class="modal-title" id="mySmallModalLabel">Cerrar ticket all</h4>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
+                </div>
+                <form method="post" action="/prioridadsiennaall">
                     <div class="modal-body">
-                            Cambiar la Prioridad de los tickets             
-                                </div>
-                    <div class="modal-footer mx-auto">
-                        <form action="/prioridadsiennaall" method="POST">
-                            <input value="" type="hidden" name="idticketpedir" id="idticketpedir2">
+                    Cambiar la Prioridad de los tickets             
+                      
+                  
+                    <div class="modal-footer">
+                    @csrf
+                    <input value="" type="hidden" name="idticketpedir" id="idticketpedir2">
                             <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
-                            <input value="" readonly type="hidden" name="ticketss" id="idticketpedir20">
+                            <input value="" readonly type="hidden" name="ticketss" id="tp">
 
                             <div v-for="department in departments ">
                             <?php foreach($prioridades as $dep){?>
@@ -24,10 +27,11 @@
 
                                 <?php }?>   
                                                 </div>
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
-                            <button type="submit" class="btn btn-success">Si, asignar</button>
-                        </form>
+                            
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success">Si, cerrar</button>
                     </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+                </form>
+            </div>
+        </div>
+</div>
