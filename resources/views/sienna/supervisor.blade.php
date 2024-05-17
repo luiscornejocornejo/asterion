@@ -144,15 +144,15 @@
           //alert(id);
           console.log(idprioridad);
             if(idprioridad==1){
-              return "success";
+              return "badge badge-success";
             }
             if(idprioridad==2){
-              return "warning";
+              return "badge badge-warning";
             }
             if(idprioridad==3){
-              return "danger";
+              return " badge badge-danger";
             }
-            return "success";
+            return "badge badge-success";
 
         }
         function maxid() {
@@ -238,7 +238,7 @@
                         ' <td>' + $nombreamostrar+ '</td>' + 
                         ' <td> <span class="badge '+colordepto+'" style="font-size:medium;">' + response.data[i].depto + '</span>'+
                         ' <td><button onclick="topic(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="btn btn-info " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smtopic">  ' + response.data[i].topicnombre + '</button></td>' +
-                        ' <td><span class="badge badge-'+colorpri+'">' + response.data[i].pri + ' ' + response.data[i].prid + '</span></td>' +
+                        ' <td><span class="'+colorpri+'">' + response.data[i].pri + ' ' + response.data[i].prid + '</span></td>' +
                         ' <td>' + response.data[i].cel + '</td>' +
                         ' <td>' + response.data[i].creado + '</td>' +
                       
