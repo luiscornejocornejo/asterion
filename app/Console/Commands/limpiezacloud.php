@@ -74,8 +74,13 @@ class limpiezacloud extends Command
         ";
 
         //$query="truncate table ".$merchant.".siennaticketsc ";
-
-        $resultados = DB::connection('mysql2')->select($query);
+        try {
+            $resultados = DB::connection('mysql2')->select($query);
+                          }
+         catch(\Illuminate\Database\QueryException$ex){
+          echo "no".$ex;
+         }
+        
     }
 
     public function conectar()
