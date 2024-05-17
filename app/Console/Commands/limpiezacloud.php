@@ -73,7 +73,7 @@ class limpiezacloud extends Command
      
         ";
 
-       // $query="  delete  from ".$merchant.".siennatickets s where siennaestado ='4' and s.created_at < DATE_SUB(CURRENT_DATE(), INTERVAL 3 MONTH); ";
+        $query="  delete  from ".$merchant.".siennatickets s where siennaestado ='4' and s.created_at < DATE_SUB(CURRENT_DATE(), INTERVAL 3 MONTH); ";
         try {
             $resultados = DB::connection('mysql2')->select($query);
            
