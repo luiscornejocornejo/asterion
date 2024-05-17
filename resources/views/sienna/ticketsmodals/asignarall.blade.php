@@ -6,7 +6,7 @@
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
-                            Asignar el ticket             
+                            Asignar los tickets             
                                 </div>
                     <div class="modal-footer mx-auto">
                         <form action="/api/pedir20" method="POST">
