@@ -34,6 +34,7 @@ function tituloiconos($iconos, $tipo)
    // alert(source);
         document.getElementById("client_number").removeAttribute("required");
         document.getElementById("client_number").style.display = "none";
+        document.getElementById("texto").style.display = "none";
   }
 
   ff
