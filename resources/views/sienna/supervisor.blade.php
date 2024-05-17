@@ -141,14 +141,14 @@
                 }  
         }             
         function colorprif(id){
-          alert(id);
-            if(id=="1"){
+          //alert(id);
+            if(id==1){
               return "success";
             }
-            if(id=="2"){
+            if(id==2){
               return "warning";
             }
-            if(id=="3"){
+            if(id==3){
               return "danger";
             }
         }
