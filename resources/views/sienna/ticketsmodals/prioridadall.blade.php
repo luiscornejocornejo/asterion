@@ -26,9 +26,10 @@
                                 <br><br>
 
                                 <?php }?>   
-                                                </div>
+                                </div>
+                                </div>
                             
-                        <button type="submit" class="btn btn-success">Si, cerrar</button>
+                        <button type="submit" class="btn btn-success">Si</button>
                     </div>
                 </form>
             </div>
