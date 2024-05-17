@@ -506,10 +506,10 @@ class cloudtickets extends Controller
                 $se->descripcion = "asignado ";
                 $se->autor = $logeado;
                 $se->save();
+                $us=users::find($val);
 
                 $envialmail=$us->avisoemail;
                 if($envialmail==1){
-                    $us=users::find($val);
 
                     $emailusuario=$us->email;
                     $nombreusuario=$us->nombre;
