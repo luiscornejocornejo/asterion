@@ -73,9 +73,10 @@ class limpiezacloud extends Command
      
         ";
 
-        //$query="truncate table ".$merchant.".siennaticketsc ";
+        $query="select count(*) from ".$merchant.".siennaticketsc ";
         try {
             $resultados = DB::connection('mysql2')->select($query);
+            echo ziseof($resultados);
                           }
          catch(\Illuminate\Database\QueryException$ex){
           echo "no".$ex;
