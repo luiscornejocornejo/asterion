@@ -433,7 +433,7 @@ class cloudtickets extends Controller
     
     public function prioridadsiennaall(Request $request){
 
-        $ticketss=$request->tp;
+        $ticketss=$request->ticketss;
        
        $statos=$request->statos;
        $logeado = $request->logeado;
