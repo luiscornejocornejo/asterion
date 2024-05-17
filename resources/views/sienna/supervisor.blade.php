@@ -141,6 +141,7 @@
                 }  
         }             
         function colorprif(id){
+          alert(id);
             if(id=="1"){
               return "success";
             }
