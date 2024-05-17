@@ -73,15 +73,11 @@ class limpiezacloud extends Command
      
         ";
 
-        $query="select count(*) as cuantos from ".$merchant.".siennaticketsc ";
+        $query="  delete  from ".$merchant.".siennatickets s where siennaestado ='4' and s.t_cerrado < DATE_SUB(CURRENT_DATE(), INTERVAL 3 MONTH);
+        ";
         try {
             $resultados = DB::connection('mysql2')->select($query);
-            foreach($resultados as $val){
-                echo "hay:";
-                echo $val->cuantos;
-                echo "Línea 1\n";
-
-            }
+           
                           }
          catch(\Illuminate\Database\QueryException$ex){
           echo "no".$ex;
