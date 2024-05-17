@@ -5,7 +5,7 @@
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-header bg-dark text-white">
-                    <h4 class="modal-title" id="mySmallModalLabel">Cerrar ticket all</h4>
+                    <h4 class="modal-title" id="mySmallModalLabel">Prioridad ticket all</h4>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                 </div>
                 <form method="post" action="/prioridadsiennaall">
