@@ -122,6 +122,12 @@ $resultados = DB::select($query);
                         <span> Topics </span>
                     </a>
                 </li>
+                <li class="side-nav-item background-buttons">
+                    <a  href="/siennaabm?id=18"  class="side-nav-link hovering-pan ">
+                        <i class="mdi mdi-notebook"></i>
+                        <span> Motivos cierre </span>
+                    </a>
+                </li>
                
                 <li class="side-nav-item background-buttons">
                     <a  href="/nodes"  class="side-nav-link hovering-pan ">
