@@ -76,7 +76,7 @@ class limpiezacloud extends Command
         $query="select count(*) from ".$merchant.".siennaticketsc ";
         try {
             $resultados = DB::connection('mysql2')->select($query);
-            echo ziseof($resultados);
+            echo sizeof($resultados);
                           }
          catch(\Illuminate\Database\QueryException$ex){
           echo "no".$ex;
