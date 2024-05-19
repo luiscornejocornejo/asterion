@@ -261,6 +261,7 @@
                 document.getElementById("tb").innerHTML = tt;
                 $('#example').dataTable({
                     "order": [[0, 'desc']],
+                    "responsive": true,
                     "pageLength": 25,
                     select: true,
           "language" : {
