@@ -350,7 +350,20 @@ if ($categoria == 1) {?>
     <div class="whatsapp" data-bs-toggle="modal" data-bs-target="#warning-alert-modal">
     <i class="mdi mdi-send ms-1" style="font-size: 25px;margin-left: 0.785rem!important;"></i>
 </div>
-
+<div class="floating-button">
+    <button id="main-button" class="bg-primary text-light" onclick="toggleRotation(); toggleMenu()">
+      <span class="mdi mdi-plus"></span>
+    </button>
+    <div id="menu" class="hidden">
+      <button 
+        id="button-2" 
+        class="mdi mdi-ticket-account bg-warning text-light"
+        data-bs-toggle="modal" href="#exampleModalToggle"
+       >
+    </button>
+      <button id="button-3" class="mdi mdi-send bg-success text-light "></button>
+    </div>
+</div>
 <?php }?>
     <div class="clearfix"></div>
 </div></div></div></div>

@@ -63,7 +63,7 @@
     </button>
       <button id="button-3" class="mdi mdi-send bg-success text-light "></button>
     </div>
-  </div>
+</div>
 
     <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-end align-items-center me-2 mt-2">
         <!-- Then put toasts within -->
