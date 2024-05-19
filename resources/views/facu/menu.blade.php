@@ -350,6 +350,23 @@ if ($categoria == 1) {?>
     <div class="whatsapp" data-bs-toggle="modal" data-bs-target="#warning-alert-modal">
     <i class="mdi mdi-send ms-1" style="font-size: 25px;margin-left: 0.785rem!important;"></i>
 </div>
+<script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.classList.contains("hidden")) {
+            menu.classList.remove("hidden");
+            menu.classList.add("visible");
+            } else {
+            menu.classList.remove("visible");
+            menu.classList.add("hidden");
+            }
+        }
+  
+        function toggleRotation() {
+            var button = document.getElementById('main-button');
+            button.classList.toggle('rotated'); // Agrega o quita la clase 'rotated' al hacer clic
+        }
+</script>
 <div class="floating-button">
     <button id="main-button" class="bg-primary text-light" onclick="toggleRotation(); toggleMenu()">
       <span class="mdi mdi-plus"></span>
