@@ -65,8 +65,8 @@ function topics2(id2){
 
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
-                            <label for="department-prospect" class="form-label">Departamento</label>
-                            <select onchange="topics2(this.value)" class="form-select" id="department-prospect2" name="department-prospect2">
+                            <label for="department-prospect2" class="form-label">Departamento</label>
+                            <select onchange="topic2(this.value)"  name="depto">
                             <option value="0">seleccionar</option>
 
                             <?php foreach($siennadeptosgenericos as $val){?>
