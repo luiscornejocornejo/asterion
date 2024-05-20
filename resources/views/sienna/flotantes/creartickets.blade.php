@@ -18,7 +18,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
         axios.get(url)
             .then(function (response) {
                 console.log(response);
-
+                /*
                 tt = "";
                 for (i = 0; i < response.data.length; i++) {
                         console.log(response.data[i].nombre);
@@ -28,7 +28,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                 document.getElementById("top").innerHTML = null;
 
                 document.getElementById("top").innerHTML = tt;
-
+*/
 
             })
             .catch(function (error) {
