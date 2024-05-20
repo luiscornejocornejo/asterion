@@ -48,7 +48,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="/crearticketsiennacliente" method="get">
+            <form action="crearticketsiennacliente" method="get">
                     <div class="row">
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label for="type-user" class="form-label">Tipo de busqueda</label>
