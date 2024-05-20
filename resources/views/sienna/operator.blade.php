@@ -375,7 +375,7 @@ function listadoseguimientos(result,dd) {
                     </button>
                     <div id="menu" class="hidden">
                     <button  id="button-2" class="mdi mdi-ticket-account bg-warning text-light" data-bs-toggle="modal" href="#exampleModalToggle" >
-                    <button id="button-3" class="mdi mdi-send bg-success text-light " herf="#warning-alert-modal" data-bs-toggle="modal"></button>
+                    <button id="button-3" class="mdi mdi-send bg-success text-light " href="#warning-alert-modal" data-bs-toggle="modal"></button>
                     </div>
                 </div>
               <!-- container -->
