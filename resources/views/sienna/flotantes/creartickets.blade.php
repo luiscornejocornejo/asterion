@@ -1,7 +1,18 @@
 <!-- Modal for Create Ticket -->
 <?php
 $querygenerico="select * from siennadepto";
-$siennadeptosgenericos = DB::select($querygenerico);?>
+$siennadeptosgenericos = DB::select($querygenerico);
+
+
+?>
+
+<script>
+
+    function topic(id){
+        alert(id);
+    }
+</script>
+    
 <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
@@ -27,7 +38,7 @@ $siennadeptosgenericos = DB::select($querygenerico);?>
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="department" class="form-label">Departamento</label>
-                            <select class="form-select">
+                            <select onchange="topics('this.value')" class="form-select">
                                 <?php foreach($siennadeptosgenericos as $val){?>
 
                                     <option id="<?php echo $val->id;?>"><?php echo $val->nombre ;?></option>
