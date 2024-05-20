@@ -26,10 +26,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
 
                 } 
                 document.getElementById("top").innerHTML = null;
-
                 document.getElementById("top").innerHTML = tt;
-
-
             })
             .catch(function (error) {
                 // función para capturar el error
