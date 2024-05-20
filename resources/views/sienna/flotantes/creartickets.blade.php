@@ -25,10 +25,13 @@
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="department" class="form-label">Departamento</label>
                             <select class="form-select">
-                                <option id="1">Administración</option>
-                                <option id="2">Instalaciones</option>
-                                <option id="3">Soporte</option>
-                                <option id="4">Ventas</option>
+                                <?php foreach($siennadeptosgenericos as $val){?>
+
+                                    <option id="<?php echo $val->id;?>"><?php echo $val->nombre ;?></option>
+
+                                <?php
+                                }?>
+                               
                             </select>
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">

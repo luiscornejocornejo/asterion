@@ -11,6 +11,9 @@ join menu m on m.id=cm.menu join icono i on i.id=m.icono WHERE categoria=" . $ca
 ";
 $resultados = DB::select($query);
 
+$querygenerico="select * from siennadepto";
+$siennadeptosgenericos = DB::select($query);
+
 ?>
 <div class="leftside-menu menuitem-active">
 
