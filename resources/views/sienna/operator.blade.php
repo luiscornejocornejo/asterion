@@ -369,7 +369,14 @@ function listadoseguimientos(result,dd) {
                     
                                                      
                 </div>
-               
+                <div class="floating-button">
+                    <button id="main-button" class="bg-primary text-light" onclick="toggleRotation(); toggleMenu()">
+                    <span class="mdi mdi-plus"></span>
+                    </button>
+                    <div id="menu" class="hidden">
+                    <button  id="button-2" class="mdi mdi-ticket-account bg-warning text-light" data-bs-toggle="modal" href="#exampleModalToggle" ><button id="button-3" class="mdi mdi-send bg-success text-light "></button>
+                    </div>
+                </div>
               <!-- container -->
           </div>
           <!-- content -->

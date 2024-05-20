@@ -350,14 +350,7 @@ if ($categoria == 1) {?>
                  
     
 
-<div class="floating-button">
-    <button id="main-button" class="bg-primary text-light" onclick="toggleRotation(); toggleMenu()">
-      <span class="mdi mdi-plus"></span>
-    </button>
-    <div id="menu" class="hidden">
-      <button  id="button-2" class="mdi mdi-ticket-account bg-warning text-light" data-bs-toggle="modal" href="#exampleModalToggle" ><button id="button-3" class="mdi mdi-send bg-success text-light "></button>
-    </div>
-</div>
+
 <!-- Modal for Create Ticket -->
 <div id="create-ticket-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dark-header-modalLabel" aria-hidden="true">
         <div class="modal-dialog">
