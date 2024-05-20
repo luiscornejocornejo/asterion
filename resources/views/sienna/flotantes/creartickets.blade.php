@@ -10,15 +10,12 @@ $siennadeptosgenericos = DB::select($querygenerico);
 
     function topics(id){
         var URLactual = window.location.href;
-
-var porciones = URLactual.split('.');
-
-let result = porciones[0].replace("https://", "");
-let opt="";
+        var porciones = URLactual.split('.');
+        let result = porciones[0].replace("https://", "");
+        let opt="";
         url = "https://"+result+".suricata.cloud/api/topicxdepto?depto=" + id + "";
-            console.log(url);
-
-            axios.get(url)
+        console.log(url);
+        axios.get(url)
             .then(function (response) {
                 console.log(response);
 
