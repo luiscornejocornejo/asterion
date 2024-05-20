@@ -73,7 +73,7 @@ function topics2(id){
 
                                     <?php
                                     }?>
-                            </select>
+                            </select> 
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="reason-prospect" class="form-label">Motivo</label>
