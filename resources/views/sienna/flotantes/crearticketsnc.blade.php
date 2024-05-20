@@ -3,7 +3,7 @@ $querygenerico="select * from siennadepto";
 $siennadeptosgenericos = DB::select($querygenerico);?>
 <script>
 
-function topics(id){
+function topics2(id){
     var URLactual = window.location.href;
     var porciones = URLactual.split('.');
     let result = porciones[0].replace("https://", "");
@@ -64,7 +64,7 @@ function topics(id){
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="department-prospect" class="form-label">Departamento</label>
-                            <select onchange="topics(this.value)" class="form-select" id="department-prospect" name="department-prospect">
+                            <select onchange="topics2(this.value)" class="form-select" id="department-prospect" name="department-prospect">
                             <option value="0">seleccionar</option>
 
                             <?php foreach($siennadeptosgenericos as $val){?>
