@@ -20,8 +20,8 @@ function topics(id){
                     tt+='<option  value='+response.data[i].id+'>'+response.data[i].nombre+'</option>';
 
             } 
-            document.getElementById("top").innerHTML = null;
-            document.getElementById("top").innerHTML = tt;
+            document.getElementById("top2").innerHTML = null;
+            document.getElementById("top2").innerHTML = tt;
         })
         .catch(function (error) {
             // función para capturar el error
@@ -77,7 +77,7 @@ function topics(id){
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="reason-prospect" class="form-label">Motivo</label>
-                            <select id="top" class="form-select">
+                            <select id="top2" class="form-select">
                             </select>
                         </div>
                     </div>
