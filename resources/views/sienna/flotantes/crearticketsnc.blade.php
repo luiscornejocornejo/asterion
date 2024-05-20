@@ -79,7 +79,7 @@ function topics2(id2){
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="reason-prospect" class="form-label">Motivo</label>
-                            <select id="topi2" class="form-select">
+                            <select id="topi2" class="form-select" name="topicos">
                             </select>
                         </div>
                     </div>

@@ -75,16 +75,17 @@ $siennadeptosgenericos = DB::select($querygenerico);
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="reason" class="form-label">Motivo</label>
-                            <select id="top" class="form-select" name="topic">
+                            <select id="top" class="form-select" name="topicos">
                             </select>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer mt-2">
+            <button class="btn btn-success" type="submit" >Crear</button>
+
                 <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
                     data-bs-dismiss="modal">No es cliente</button>
-                    <button class="btn btn-success" type="submit" >Crear</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
