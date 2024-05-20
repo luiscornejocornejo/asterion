@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header " style="background-color:#3c4655">
                 <h5 class="modal-title text-white" id="exampleModalLabel">Iniciar Conversacion</h5>
-                               
+                                
             </div>
             <form id="frmAgregarBienCapitalizable" action="/" method="post"> 
                 @csrf
