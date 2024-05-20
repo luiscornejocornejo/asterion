@@ -1,6 +1,37 @@
 <?php
 $querygenerico="select * from siennadepto";
 $siennadeptosgenericos = DB::select($querygenerico);?>
+<script>
+
+function topics(id){
+    var URLactual = window.location.href;
+    var porciones = URLactual.split('.');
+    let result = porciones[0].replace("https://", "");
+    let opt="";
+    url = "https://"+result+".suricata.cloud/api/topicxdepto?depto=" + id + "";
+    console.log(url);
+    axios.get(url)
+        .then(function (response) {
+            console.log(response);
+           
+            tt = "";
+            for (i = 0; i < response.data.length; i++) {
+                    console.log(response.data[i].nombre);
+                    tt+='<option  value='+response.data[i].id+'>'+response.data[i].nombre+'</option>';
+
+            } 
+            document.getElementById("top").innerHTML = null;
+            document.getElementById("top").innerHTML = tt;
+        })
+        .catch(function (error) {
+            // función para capturar el error
+            console.log(error);
+        })
+        .then(function () {
+            // función que siempre se ejecuta
+        });
+}
+</script>
 <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
@@ -27,18 +58,26 @@ $siennadeptosgenericos = DB::select($querygenerico);?>
                             <input type="text" class="form-control" id="city" name="city">
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
-                            <label for="reason-prospect" class="form-label">Motivo</label>
-                            <input type="text" class="form-control" id="reason-prospect" name="reason-prospect">
+                            <label for="reason-prospect" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email">
+
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="department-prospect" class="form-label">Departamento</label>
-                            <select class="form-select" id="department-prospect" name="department-prospect">
+                            <select onchange="topics(this.value)" class="form-select" id="department-prospect" name="department-prospect">
+                            <option value="0">seleccionar</option>
+
                             <?php foreach($siennadeptosgenericos as $val){?>
 
                                     <option id="<?php echo $val->id;?>"><?php echo $val->nombre ;?></option>
 
                                     <?php
                                     }?>
+                            </select>
+                        </div>
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
+                            <label for="reason-prospect" class="form-label">Motivo</label>
+                            <select id="top" class="form-select">
                             </select>
                         </div>
                     </div>
