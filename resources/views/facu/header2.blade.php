@@ -33,7 +33,24 @@
   <!-- App css -->
   <link href="assetsfacu/css/app-saas.min.css" rel="stylesheet" type="text/css" id="app-style">
   <link href="agents.css" rel="stylesheet" type="text/css" id="app-style">
+  <link href="flotante.css" rel="stylesheet" type="text/css">
+  <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.classList.contains("hidden")) {
+            menu.classList.remove("hidden");
+            menu.classList.add("visible");
+            } else {
+            menu.classList.remove("visible");
+            menu.classList.add("hidden");
+            }
+        }
   
+        function toggleRotation() {
+            var button = document.getElementById('main-button');
+            button.classList.toggle('rotated'); // Agrega o quita la clase 'rotated' al hacer clic
+        }
+</script>
   <!-- Icons css -->
   <link href="assetsfacu/css/icons.min.css" rel="stylesheet" type="text/css">
 <style id="apexcharts-css">
