@@ -43,7 +43,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
 
                                 <?php foreach($siennadeptosgenericos as $val){?>
 
-                                    <option id="<?php echo $val->id;?>"><?php echo $val->nombre ;?></option>
+                                    <option value="<?php echo $val->id;?>"><?php echo $val->nombre ;?></option>
 
                                 <?php
                                 }?>
