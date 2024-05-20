@@ -1,3 +1,6 @@
+<?php
+$querygenerico="select * from siennadepto";
+$siennadeptosgenericos = DB::select($querygenerico);?>
 <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
