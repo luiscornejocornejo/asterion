@@ -28,6 +28,7 @@
 
   <!-- Icons css -->
   <link href="assetsfacu/css/icons.min.css" rel="stylesheet" type="text/css">
+  <link href="flotante.css" rel="stylesheet" type="text/css">
   <script>
         function toggleMenu() {
             var menu = document.getElementById("menu");
