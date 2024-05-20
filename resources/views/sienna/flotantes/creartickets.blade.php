@@ -48,6 +48,8 @@ $siennadeptosgenericos = DB::select($querygenerico);
             </div>
             <div class="modal-body">
             <form action="crearticketsiennacliente" method="post">
+            @csrf
+
                     <div class="row">
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label for="type-user" class="form-label">Tipo de busqueda</label>
