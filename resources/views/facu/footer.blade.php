@@ -57,6 +57,7 @@
   <!-- App js -->
   <script src="assetsfacu/js/app.min.js"></script>
 
+  <script src="flotante.js"></script>
 
   
 
