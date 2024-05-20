@@ -4,7 +4,6 @@ $siennadeptosgenericos = DB::select($querygenerico);?>
 <script>
 
 function topics2(id2){
-    alert(id2);
 
     var URLactual = window.location.href;
     var porciones = URLactual.split('.');
