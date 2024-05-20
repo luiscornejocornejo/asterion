@@ -47,10 +47,9 @@ $siennadeptosgenericos = DB::select($querygenerico);
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
-                    data-bs-dismiss="modal">No es cliente</button>
+           
             <form action="crearticketsiennacliente" method="post">
-            @csrf
+                 @csrf
 
                     <div class="row">
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
@@ -84,14 +83,15 @@ $siennadeptosgenericos = DB::select($querygenerico);
                             </select>
                         </div>
                     </div>
-            </div>
-            <div class="modal-footer mt-2">
-            <button class="btn btn-success" type="submit" >Crear</button>
-            
+                </div>
+                <div class="modal-footer mt-2">
+                <button class="btn btn-success" type="submit" >Crear</button>
                 
-            </div>
+                    
+                </div>
             </form>
-
+            <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+                    data-bs-dismiss="modal">No es cliente</button>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
