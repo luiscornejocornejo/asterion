@@ -3,12 +3,14 @@ $querygenerico="select * from siennadepto";
 $siennadeptosgenericos = DB::select($querygenerico);?>
 <script>
 
-function topics2(id){
+function topics2(id2){
+    alert(id2);
+
     var URLactual = window.location.href;
     var porciones = URLactual.split('.');
     let result = porciones[0].replace("https://", "");
     let opt="";
-    url = "https://"+result+".suricata.cloud/api/topicxdepto?depto=" + id + "";
+    url = "https://"+result+".suricata.cloud/api/topicxdepto?depto=" + id2 + "";
     console.log(url);
     axios.get(url)
         .then(function (response) {
@@ -22,7 +24,6 @@ function topics2(id){
             } 
             document.getElementById("topi2").innerHTML = null;
             document.getElementById("topi2").innerHTML = tt2;
-            alert(tt2);
         })
         .catch(function (error) {
             // función para capturar el error
@@ -65,7 +66,7 @@ function topics2(id){
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="department-prospect" class="form-label">Departamento</label>
-                            <select onchange="topics2(this.value)" class="form-select" id="department-prospect2" name="department-prospect">
+                            <select onchange="topics2(this.value)" class="form-select" id="department-prospect2" name="department-prospect2">
                             <option value="0">seleccionar</option>
 
                             <?php foreach($siennadeptosgenericos as $val){?>
