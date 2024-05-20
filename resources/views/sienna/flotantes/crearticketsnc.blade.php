@@ -14,14 +14,14 @@ function topics2(id){
         .then(function (response) {
             console.log(response);
            
-            tt = "";
+            tt2 = "";
             for (i = 0; i < response.data.length; i++) {
                     console.log(response.data[i].nombre);
-                    tt+='<option  value='+response.data[i].id+'>'+response.data[i].nombre+'</option>';
+                    tt2+='<option  value='+response.data[i].id+'>'+response.data[i].nombre+'</option>';
 
             } 
             document.getElementById("top2").innerHTML = null;
-            document.getElementById("top2").innerHTML = tt;
+            document.getElementById("top2").innerHTML = tt2;
         })
         .catch(function (error) {
             // función para capturar el error
