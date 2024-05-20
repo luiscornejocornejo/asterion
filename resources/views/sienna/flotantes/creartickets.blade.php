@@ -46,7 +46,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="/crearticketsiennacliente" method="post">
                     <div class="row">
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label for="type-user" class="form-label">Tipo de busqueda</label>
@@ -57,7 +57,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                         </div>                                                                                            
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label for="number-client" class="form-label">Número registrado en la cuenta</label>
-                            <input type="number" id="number-client" name="number-client" class="form-control" required>
+                            <input type="number" id="number-client" name="number_client" class="form-control" required>
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="department" class="form-label">Departamento</label>
@@ -75,7 +75,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="reason" class="form-label">Motivo</label>
-                            <select id="top" class="form-select">
+                            <select id="top" class="form-select" name="topic">
                             </select>
                         </div>
                     </div>
