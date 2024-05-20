@@ -351,36 +351,7 @@ if ($categoria == 1) {?>
     
 
 
-<!-- Modal for Create Ticket -->
-<div id="create-ticket-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dark-header-modalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-dark">
-                    <h4 class="modal-title text-light" id="dark-header-modalLabel">Crear ticket</h4>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="type-user" class="form-label">Tipo de busqueda</label>
-                            <select class="form-select" id="type-user">
-                                <option value="id">Cliente</option>
-                                <option value="id">Telefono</option>
-                            </select>
-                        </div>                                                                                            
-                        <div class="mb-3">
-                            <label for="number-client" class="form-label">Numero de cliente</label>
-                            <input type="number" id="number-client" class="form-control" required>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light border" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-success">Crear</button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div>
+
     <!-- End of modal Create Ticket -->
 
     <!-- Between Modal -->
