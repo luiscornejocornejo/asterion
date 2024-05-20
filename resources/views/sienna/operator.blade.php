@@ -392,6 +392,7 @@ function listadoseguimientos(result,dd) {
       @include('sienna.ticketsmodals.historialtickets')
       @include('sienna.ticketsmodals.cerrar')
       @include('sienna.flotantes.creartickets')
+      @include('sienna.flotantes.crearticketsnc')
       
 
     </div>
