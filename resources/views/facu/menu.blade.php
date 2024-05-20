@@ -352,7 +352,14 @@ if ($categoria == 1) {?>
 <div class="simplebar-track simplebar-vertical" style="visibility: hidden;">
 <div class="simplebar-scrollbar" style="height: 0px; transform: translate3d(0px, 0px, 0px); display: none;"></div></div></div>
 </div>
-
+<div class="floating-button">
+<button id="main-button" class="bg-primary text-light" onclick="toggleRotation(); toggleMenu()">
+<span class="mdi mdi-plus"></span>
+</button>
+<div id="menu" class="hidden">
+<button  id="button-2" class="mdi mdi-ticket-account bg-warning text-light" data-bs-toggle="modal" href="#exampleModalToggle" ><button id="button-3" class="mdi mdi-send bg-success text-light "></button>
+</div>
+</div>
 <div id="warning-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
