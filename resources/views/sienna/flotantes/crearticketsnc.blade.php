@@ -40,8 +40,11 @@ function topics2(id2){
                     <h5 class="modal-title text-light" id="exampleModalToggleLabel2">Crear Ticket</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"
+                        data-bs-dismiss="modal">Volver</button>
                 <form action="crearticketsiennanocliente" method="post">
-                    
+                @csrf
+
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
@@ -88,8 +91,7 @@ function topics2(id2){
                 <div class="modal-footer mt-2">
                 <button class="btn btn-success" type="submit" >Crear </button>
 
-                    <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"
-                        data-bs-dismiss="modal">Volver</button>
+                    
                 </div>
 
                 </form>
