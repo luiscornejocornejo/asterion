@@ -43,10 +43,10 @@ $siennadeptosgenericos = DB::select($querygenerico);
         <div class="modal-content">
             <div class="modal-header bg-dark">
                 <h5 class="modal-title text-white" id="exampleModalToggleLabel">Crear ticket</h5>
-                <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
-                    data-bs-dismiss="modal">No es cliente</button>
                 
             </div>
+            <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">No es cliente</button>
+
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
