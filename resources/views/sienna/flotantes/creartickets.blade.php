@@ -24,11 +24,11 @@ $siennadeptosgenericos = DB::select($querygenerico);
                         console.log(response.data[i].nombre);
                         tt+='<option  value='+response.data[i].id+'>'+response.data[i].nombre+'</option>';
 
-                } /*
+                } 
                 document.getElementById("top").innerHTML = null;
 
                 document.getElementById("top").innerHTML = tt;
-*/
+
 
             })
             .catch(function (error) {
