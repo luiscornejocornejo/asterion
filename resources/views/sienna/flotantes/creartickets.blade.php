@@ -14,12 +14,24 @@ $siennadeptosgenericos = DB::select($querygenerico);
 var porciones = URLactual.split('.');
 
 let result = porciones[0].replace("https://", "");
+let opt="";
         url = "https://"+result+".suricata.cloud/api/topicxdepto?depto=" + id + "";
             console.log(url);
 
             axios.get(url)
             .then(function (response) {
                 console.log(response);
+
+                tt = "";
+                for (i = 0; i < response.data.length; i++) {
+                        console.log(response.data[i].nombre);
+                        tt.='<option  value='+response.data[i].id+'>'+response.data[i].nombre+'</option>';
+
+                }
+                document.getElementById("top").innerHTML = null;
+
+                document.getElementById("top").innerHTML = tt;
+
 
             })
             .catch(function (error) {
@@ -46,9 +58,7 @@ let result = porciones[0].replace("https://", "");
                             <label for="type-user" class="form-label">Tipo de busqueda</label>
                             <select class="form-select" id="type-user">
                                 <option value="id">Cliente</option>
-                                <option value="id">DNI o CUIT</option>
-                                <option value="id">Cédula o RUC</option>
-                                <option value="id">Telefono</option>
+                               
                             </select>
                         </div>                                                                                            
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
@@ -71,7 +81,8 @@ let result = porciones[0].replace("https://", "");
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="reason" class="form-label">Motivo</label>
-                            <input type="text" class="form-control" id="reason" name="reason">
+                            <select id="top" class="form-select">
+                            </select>
                         </div>
                     </div>
                 </form>
