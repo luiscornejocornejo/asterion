@@ -18,13 +18,13 @@ $siennadeptosgenericos = DB::select($querygenerico);
         axios.get(url)
             .then(function (response) {
                 console.log(response);
-                /*
+               
                 tt = "";
                 for (i = 0; i < response.data.length; i++) {
                         console.log(response.data[i].nombre);
-                        tt.='<option  value='+response.data[i].id+'>'+response.data[i].nombre+'</option>';
+                        tt+='<option  value='+response.data[i].id+'>'+response.data[i].nombre+'</option>';
 
-                }
+                } /*
                 document.getElementById("top").innerHTML = null;
 
                 document.getElementById("top").innerHTML = tt;
