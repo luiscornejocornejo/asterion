@@ -38,7 +38,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="department" class="form-label">Departamento</label>
-                            <select onchange="topics('this.value')" class="form-select">
+                            <select onchange="topics(this.value)" class="form-select">
                             <option value="0">seleccionar</option>
 
                                 <?php foreach($siennadeptosgenericos as $val){?>
