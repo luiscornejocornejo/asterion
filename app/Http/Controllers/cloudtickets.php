@@ -543,4 +543,11 @@ class cloudtickets extends Controller
             ->back()
             ->with('success', 'Se asigno  correctamente!');
     }
+
+    public function crearticketsiennacliente(Request $request){
+        dd($request);
+    }
+    public function crearticketsiennanocliente(Request $request){
+        dd($request);
+    }
 }

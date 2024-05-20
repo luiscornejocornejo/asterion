@@ -40,7 +40,7 @@ function topics2(id2){
                     <h5 class="modal-title text-light" id="exampleModalToggleLabel2">Crear Ticket</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="crearticketsiennanocliente" method="get">
+                <form action="crearticketsiennanocliente" method="post">
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
