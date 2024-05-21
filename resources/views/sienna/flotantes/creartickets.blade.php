@@ -90,10 +90,10 @@ $siennadeptosgenericos = DB::select($querygenerico);
                 <button class="btn btn-success" type="submit" >Crear</button>
                 
                     
-                </div>
             </form>
             <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
-                    data-bs-dismiss="modal">No es cliente</button>
+            data-bs-dismiss="modal">No es cliente</button>
+        </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
