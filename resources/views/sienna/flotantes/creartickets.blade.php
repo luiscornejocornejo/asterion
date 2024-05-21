@@ -61,11 +61,11 @@ $siennadeptosgenericos = DB::select($querygenerico);
                         </div>                                                                                            
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label for="number-client" class="form-label">Número registrado en la cuenta</label>
-                            <input type="number" id="number-client" name="number_client" class="form-control" required>
+                            <input required type="number" id="number-client" name="number_client" class="form-control" required>
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="department" class="form-label">Departamento</label>
-                            <select onchange="topics(this.value)" class="form-select" name="depto">
+                            <select required onchange="topics(this.value)" class="form-select" name="depto">
                             <option value="0">seleccionar</option>
 
                                 <?php foreach($siennadeptosgenericos as $val){?>
@@ -79,7 +79,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="reason" class="form-label">Motivo</label>
-                            <select id="top" class="form-select" name="topicos">
+                            <select required id="top" class="form-select" name="topicos">
                             </select>
                         </div>
                     </div>

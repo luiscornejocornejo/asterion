@@ -49,11 +49,11 @@ function topics2(id2){
                     <div class="row">
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label for="fullname" class="form-label">Nombre completo</label>
-                            <input type="text" class="form-control" id="fullname" name="fullname">
+                            <input required type="text" class="form-control" id="fullname" name="fullname">
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label for="phone" class="form-label">Telefono de contacto</label>
-                            <input type="text" class="form-control" id="phone" name="phone">
+                            <input required type="text" class="form-control" id="phone" name="phone">
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="address" class="form-label">Dirección</label>
@@ -70,7 +70,7 @@ function topics2(id2){
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="department-prospect2" class="form-label">Departamento</label>
-                            <select onchange="topics2(this.value)" class="form-select" name="depto">
+                            <select required onchange="topics2(this.value)" class="form-select" name="depto">
                             <option value="0">seleccionar</option>
 
                             <?php foreach($siennadeptosgenericos as $val){?>
@@ -83,7 +83,7 @@ function topics2(id2){
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="reason-prospect" class="form-label">Motivo</label>
-                            <select id="topi2" class="form-select" name="topicos">
+                            <select required id="topi2" class="form-select" name="topicos">
                             </select>
                         </div>
                     </div>
