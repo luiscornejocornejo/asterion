@@ -79,6 +79,21 @@ function tituloiconos($iconos, $tipo)
     function checkmensaje(){
         idticketbuscar=<?php echo $resultados[0]->ticketid; ;?>;
         console.log(idticketbuscar);
+        url = "https://"+result+".suricata.cloud/api/estadoconv?tick=" + idticketbuscar + "";
+        console.log(url);
+        axios.get(url)
+            .then(function (response) {
+                console.log(response.data);
+               
+               
+            })
+            .catch(function (error) {
+                // función para capturar el error
+                console.log(error);
+            })
+            .then(function () {
+                // función que siempre se ejecuta
+            });
 
 
     }
