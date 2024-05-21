@@ -328,7 +328,7 @@
           $('#example thead tr')
           .clone(true)
           .addClass('filters')
-        .prependTo('#example thead ');
+        .appendTo('#example thead ');
 
             })
             .catch(function (error) {
