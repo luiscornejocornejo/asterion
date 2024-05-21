@@ -74,7 +74,8 @@ function tituloiconos($iconos, $tipo)
         document.getElementById("conversation_id20").value = ee;
         document.getElementById("client_number").value = cliente;
     }
-    
+    var originalTitle = document.title;
+
     function startBlinking() {
             if (!isBlinking) {
                 isBlinking = true;
@@ -112,7 +113,6 @@ function tituloiconos($iconos, $tipo)
                 console.log(response.data);
                 if(response.data==1){
                     newPageTitle="pendiente";
-                    var originalTitle = document.title;
  
                     var blinkTitle = "¡Mira aquí!";
                     var isBlinking = false;
