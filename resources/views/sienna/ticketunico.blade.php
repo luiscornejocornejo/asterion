@@ -74,7 +74,8 @@ function tituloiconos($iconos, $tipo)
         document.getElementById("conversation_id20").value = ee;
         document.getElementById("client_number").value = cliente;
     }
-   
+    var originalTitle = document.title;
+
     identificadorIntervaloDeTiempo = setInterval(checkmensaje, 6000);
     function checkmensaje(){
         var URLactual = window.location.href;
@@ -108,7 +109,6 @@ function tituloiconos($iconos, $tipo)
 
 
     }
-    var originalTitle = document.title;
 
 function startBlinking() {
         if (!isBlinking) {
