@@ -90,7 +90,7 @@ function tituloiconos($iconos, $tipo)
                 if(response.data==1){
                     newPageTitle="pendiente";
                     document.title = newPageTitle;
-
+ 
                 }
                
                
