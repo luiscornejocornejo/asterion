@@ -75,6 +75,29 @@ function tituloiconos($iconos, $tipo)
         document.getElementById("client_number").value = cliente;
     }
     
+    function startBlinking() {
+            if (!isBlinking) {
+                isBlinking = true;
+                blink();
+            }
+        }
+
+        // Función para detener el titileo
+        function stopBlinking() {
+            isBlinking = false;
+            document.title = originalTitle;
+        }
+        function blink() {
+            if (isBlinking) {
+                document.title = document.title === originalTitle ? blinkTitle : originalTitle;
+                setTimeout(blink, 1000); // Cambia cada segundo
+            }
+        }
+
+        window.onblur = startBlinking;
+
+        // Detener el titileo cuando se recupera el foco
+        window.onfocus = stopBlinking;
     identificadorIntervaloDeTiempo = setInterval(checkmensaje, 6000);
     function checkmensaje(){
         var URLactual = window.location.href;
@@ -89,7 +112,11 @@ function tituloiconos($iconos, $tipo)
                 console.log(response.data);
                 if(response.data==1){
                     newPageTitle="pendiente";
-                    document.title = newPageTitle;
+                    var originalTitle = document.title;
+
+                    var blinkTitle = "¡Mira aquí!";
+                    var isBlinking = false;
+                    //document.title = newPageTitle;
  
                 }
                
