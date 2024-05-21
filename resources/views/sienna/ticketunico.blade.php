@@ -87,6 +87,11 @@ function tituloiconos($iconos, $tipo)
         axios.get(url)
             .then(function (response) {
                 console.log(response.data);
+                if(response.data==1){
+                    newPageTitle="pendiente";
+                    document.title = newPageTitle;
+
+                }
                
                
             })
