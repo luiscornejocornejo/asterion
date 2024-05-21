@@ -522,7 +522,7 @@
 
               <!-- Start Content-->
             
-                <div class="container-lg " id="casa">
+                <div class="container-fluid " id="casa">
                    
                     
                                                      
