@@ -171,7 +171,7 @@ class LoginController extends Controller
             
           
 
-            return Redirect::to('/home?fecha=dia');
+            return Redirect::to('/');
 
          
 
