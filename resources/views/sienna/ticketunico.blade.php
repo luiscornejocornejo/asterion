@@ -24,6 +24,9 @@ function tituloiconos($iconos, $tipo)
 }
 ?>
 <script>
+
+
+
    function cerrar(result,dd, ee, ff,cliente,source){
   document.getElementById("idticketestado20").value = dd;
   document.getElementById("conversation_id20").value = ee;
@@ -72,6 +75,13 @@ function tituloiconos($iconos, $tipo)
         document.getElementById("client_number").value = cliente;
     }
     
+    identificadorIntervaloDeTiempo = setInterval(checkmensaje, 60000);
+    function checkmensaje(){
+        idticketbuscar=<?php echo $resultados[0]->ticketid; ;?>;
+        console.log(idticketbuscar);
+
+
+    }
 </script>
 <div class="wrapper menuitem-active">
     @include('facu.menu')
