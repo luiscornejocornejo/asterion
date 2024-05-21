@@ -8,11 +8,11 @@
             var url = window.location.href;
 
             if(tipo==4){
-                location.href = url+'/supervisor';
+                location.href = url+'supervisor';
 
 
             }else{
-                location.href = url+'/operator';
+                location.href = url+'operator';
 
             }
         } else {
