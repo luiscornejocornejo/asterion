@@ -327,8 +327,8 @@
 
           $('#example thead tr')
           .clone(true)
-          .response(true)
-        .addClass('filters')
+          .addClass('filters')
+          .addClass('responsive')
         .appendTo('#example thead ');
 
             })
