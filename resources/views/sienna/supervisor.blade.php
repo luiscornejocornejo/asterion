@@ -318,7 +318,6 @@
                         });
                 });
         },
-        "responsive": !0,
 
                 buttons: [
                     'copy', 'csv', 'excel', 'pdf', 'print'
