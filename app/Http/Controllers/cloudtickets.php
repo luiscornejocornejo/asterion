@@ -564,9 +564,11 @@ class cloudtickets extends Controller
         $se->descripcion = "created";
         $se->autor = "sistema";
         $se->save();
+
+        /*
         return redirect()
         ->back()
-        ->with('success', 'Se asigno  correctamente!');
+        ->with('success', 'Se asigno  correctamente!');*/
 
     }
     public function crearticketsiennanocliente(Request $request){
