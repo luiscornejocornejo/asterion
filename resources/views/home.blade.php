@@ -73,7 +73,7 @@ if (isset($_GET['fecha'])) {
    
      }
      catch(\Illuminate\Database\QueryException$ex){
-      echo "no".$ex;
+      echo "";.//$ex;
      }
 }
 ?>
