@@ -8,7 +8,7 @@
             console.log("Estás usando un dispositivo móvil!!"+tipo);
 
 
-            if(tipo=="4"){
+            if(tipo=="2"){
                 location.href = url+'supervisor';
 
 
