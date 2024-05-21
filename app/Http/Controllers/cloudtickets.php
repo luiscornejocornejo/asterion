@@ -564,7 +564,7 @@ class cloudtickets extends Controller
         $se->ticket = $si->id;
         $se->tipo = "1";
         $se->descripcion = "created";
-        $se->autor = "sistema";
+        $se->autor = $logeado;
         $se->save();
 
         
@@ -604,7 +604,7 @@ class cloudtickets extends Controller
         $se->ticket = $si->id;
         $se->tipo = "1";
         $se->descripcion = "created";
-        $se->autor = "sistema";
+        $se->autor = $logeado;;
         $se->save();
         $so = new siennacliente();
         $so->nya = $fullname;
