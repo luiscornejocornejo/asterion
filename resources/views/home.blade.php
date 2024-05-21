@@ -54,7 +54,7 @@ if (isset($_GET['fecha'])) {
     }
     $listamensual = array();
 
-
+    try {
 
     $query = "select count(*) as cantidadtickets  from siennatickets where siennaestado=1 and  " . $queryfecha;
     $resultados2 = DB::select($query);
@@ -70,6 +70,11 @@ if (isset($_GET['fecha'])) {
     foreach ($resultados2 as $val) {
         $cantidadtickets2 = $val->cantidadtickets2;
     }
+   
+     }
+     catch(\Illuminate\Database\QueryException$ex){
+      echo "no".$ex;
+     }
 }
 ?>
 
