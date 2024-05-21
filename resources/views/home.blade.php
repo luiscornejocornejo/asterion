@@ -3,11 +3,12 @@
 <script>
         let navegador = navigator.userAgent;
         if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
-            console.log("Estás usando un dispositivo móvil!!");
             tipo=<?php  echo $tipodemenu = session('tipodemenu'); ?>;
             var url = window.location.href;
+            console.log("Estás usando un dispositivo móvil!!"+tipo);
 
-            if(tipo==4){
+
+            if(tipo=="4"){
                 location.href = url+'supervisor';
 
 
