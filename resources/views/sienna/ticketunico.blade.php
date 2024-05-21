@@ -74,31 +74,7 @@ function tituloiconos($iconos, $tipo)
         document.getElementById("conversation_id20").value = ee;
         document.getElementById("client_number").value = cliente;
     }
-    var originalTitle = document.title;
-
-    function startBlinking() {
-            if (!isBlinking) {
-                isBlinking = true;
-                blink();
-            }
-        }
-
-        // Función para detener el titileo
-        function stopBlinking() {
-            isBlinking = false;
-            document.title = originalTitle;
-        }
-        function blink() {
-            if (isBlinking) {
-                document.title = document.title === originalTitle ? blinkTitle : originalTitle;
-                setTimeout(blink, 1000); // Cambia cada segundo
-            }
-        }
-
-        window.onblur = startBlinking;
-
-        // Detener el titileo cuando se recupera el foco
-        window.onfocus = stopBlinking;
+   
     identificadorIntervaloDeTiempo = setInterval(checkmensaje, 6000);
     function checkmensaje(){
         var URLactual = window.location.href;
@@ -132,6 +108,31 @@ function tituloiconos($iconos, $tipo)
 
 
     }
+    var originalTitle = document.title;
+
+function startBlinking() {
+        if (!isBlinking) {
+            isBlinking = true;
+            blink();
+        }
+    }
+
+    // Función para detener el titileo
+    function stopBlinking() {
+        isBlinking = false;
+        document.title = originalTitle;
+    }
+    function blink() {
+        if (isBlinking) {
+            document.title = document.title === originalTitle ? blinkTitle : originalTitle;
+            setTimeout(blink, 1000); // Cambia cada segundo
+        }
+    }
+
+    window.onblur = startBlinking;
+
+    // Detener el titileo cuando se recupera el foco
+    window.onfocus = stopBlinking;
 </script>
 <div class="wrapper menuitem-active">
     @include('facu.menu')
