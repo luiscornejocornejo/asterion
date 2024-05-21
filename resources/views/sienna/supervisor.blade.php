@@ -326,10 +326,8 @@
           });
 
           $('#example thead tr')
-          .clone(true)
           .addClass('filters')
-          .addClass('responsive')
-        .appendTo('#example thead ');
+        .prependTo('#example thead ');
 
             })
             .catch(function (error) {
