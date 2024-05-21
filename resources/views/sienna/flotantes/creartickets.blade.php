@@ -82,6 +82,8 @@ $siennadeptosgenericos = DB::select($querygenerico);
                             <select required id="top" class="form-select" name="topicos">
                             </select>
                         </div>
+                        <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
+
                     </div>
                 </div>
                 <div class="modal-footer mt-2">

@@ -549,6 +549,7 @@ class cloudtickets extends Controller
         $cliente=$request->number_client;
         $depto=$request->depto;
         $siennatopic=$request->topicos;
+        $logeado=$request->logeado;
 
         $si = new siennatickets();
         $si->siennadepto = $depto;
@@ -556,7 +557,7 @@ class cloudtickets extends Controller
         $si->siennatopic = $siennatopic;
         $si->siennasource = "9";
         $si->siennaestado = "1";
-        $si->asignado = "99999";
+        $si->asignado = $logeado;
         $si->save();
 
         $se = new siennaseguimientos();
@@ -578,6 +579,7 @@ class cloudtickets extends Controller
         $city=$request->city;
         $email=$request->email;
         $fullname=$request->fullname;
+        $logeado=$request->logeado;
 
         $depto=$request->depto;
         $siennatopic=$request->topicos;
@@ -588,7 +590,7 @@ class cloudtickets extends Controller
         $si->siennasource = "9";
         $si->siennaestado = "1";
 
-        $si->asignado = "99999";
+        $si->asignado = $logeado;
 
         $si->cel = $phone;
         $si->nya = $fullname;
