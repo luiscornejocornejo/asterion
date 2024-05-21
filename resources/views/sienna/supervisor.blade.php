@@ -261,7 +261,7 @@
                 document.getElementById("tb").innerHTML = tt;
                 $('#example').dataTable({
                     "order": [[0, 'desc']],
-                    "responsive": true,
+                    "responsive": !0,
                     "pageLength": 25,
                     select: true,
           "language" : {
@@ -318,7 +318,7 @@
                         });
                 });
         },
-        "responsive": true,
+        "responsive": !0,
 
                 buttons: [
                     'copy', 'csv', 'excel', 'pdf', 'print'
