@@ -545,9 +545,70 @@ class cloudtickets extends Controller
     }
 
     public function crearticketsiennacliente(Request $request){
-        dd($request);
+
+        $cliente=$request->number_client;
+        $depto=$request->depto;
+        $siennatopic=$request->topicos;
+
+        $si = new siennatickets();
+        $si->siennadepto = $depto;
+        $si->cliente = $cliente;
+        $si->siennatopic = $siennatopic;
+        $si->siennasource = "9";
+        $si->asignado = "99999";
+        $si->save();
+
+        $se = new siennaseguimientos();
+        $se->ticket = $si->id;
+        $se->tipo = "1";
+        $se->descripcion = "created";
+        $se->autor = "sistema";
+        $se->save();
+        return redirect()
+        ->back()
+        ->with('success', 'Se asigno  correctamente!');
+
     }
     public function crearticketsiennanocliente(Request $request){
-        dd($request);
+        $phone=$request->phone;
+        $address=$request->address;
+        $city=$request->city;
+        $email=$request->email;
+
+        $depto=$request->depto;
+        $siennatopic=$request->topicos;
+
+        $si = new siennatickets();
+        $si->siennadepto = $depto;
+        $si->siennatopic = $siennatopic;
+        $si->siennasource = "9";
+        $si->asignado = "99999";
+
+        $si->cel = $phone;
+        $si->nya = $fullname;
+        $si->cliente = $address;
+        $si->cliente = $city;
+        $si->cliente = $email;
+
+        $si->save();
+
+        $se = new siennaseguimientos();
+        $se->ticket = $si->id;
+        $se->tipo = "1";
+        $se->descripcion = "created";
+        $se->autor = "sistema";
+        $se->save();
+        $so = new siennacliente();
+        $so->nya = $fullname;
+        $so->email = $email;
+        $so->cel = $phone;
+        $so->address = $address." / ".$city;
+        $so->save();
+
+
+        return redirect()
+        ->back()
+        ->with('success', 'Se asigno  correctamente!');   
+    
     }
 }
