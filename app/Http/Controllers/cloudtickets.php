@@ -557,7 +557,7 @@ class cloudtickets extends Controller
         $si->siennatopic = $siennatopic;
         $si->siennasource = "9";
         $si->siennaestado = "1";
-        $si->asignado = $logeado;
+        $si->asignado = "99999";
         $si->save();
 
         $se = new siennaseguimientos();
@@ -590,7 +590,7 @@ class cloudtickets extends Controller
         $si->siennasource = "9";
         $si->siennaestado = "1";
 
-        $si->asignado = $logeado;
+        $si->asignado = "99999";
 
         $si->cel = $phone;
         $si->nya = $fullname;
