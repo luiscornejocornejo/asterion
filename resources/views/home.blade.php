@@ -12,7 +12,7 @@
 
 
             }else{
-                location.href = url+'/operador';
+                location.href = url+'/operator';
 
             }
         } else {
