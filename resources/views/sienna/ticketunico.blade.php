@@ -77,6 +77,9 @@ function tituloiconos($iconos, $tipo)
     
     identificadorIntervaloDeTiempo = setInterval(checkmensaje, 6000);
     function checkmensaje(){
+        var URLactual = window.location.href;
+            var porciones = URLactual.split('.');
+            let result = porciones[0].replace("https://", "");
         idticketbuscar=<?php echo $resultados[0]->ticketid; ;?>;
         console.log(idticketbuscar);
         url = "https://"+result+".suricata.cloud/api/estadoconv?tick=" + idticketbuscar + "";
