@@ -175,7 +175,7 @@
                 '<button onclick="prioridadall()"  class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-prioridadall"><i class="mdi mdi-priority-high"></i></button> '+
                 '  <button type="button" onclick="selects()" class="btn btn-primary"><i class="mdi mdi-check-all" ></i></button>'+  
                 ' <button type="button" onclick="deSelect()" class="btn btn-info"><i class="mdi mdi-checkbox-blank-outline"></i></button>'+
-                '<br><br><table id="example"  class="table table-striped dt-responsive nowrap w-100 text-light">'+
+                '<br><br><table id="example"  class="table table-striped display responsive nowrap w-100 text-light">'+
                                 '<thead>'+
                               '     <tr class="text-center bg-dark" >'+
                               
