@@ -75,7 +75,7 @@ function tituloiconos($iconos, $tipo)
         document.getElementById("client_number").value = cliente;
     }
     
-    identificadorIntervaloDeTiempo = setInterval(checkmensaje, 60000);
+    identificadorIntervaloDeTiempo = setInterval(checkmensaje, 6000);
     function checkmensaje(){
         idticketbuscar=<?php echo $resultados[0]->ticketid; ;?>;
         console.log(idticketbuscar);
