@@ -2013,7 +2013,7 @@ class siennaticketsController extends Controller
          $query="select *  from ".$dom.".siennatickets  where id='".$tick."'"; 
         $resultados = DB::select($query);
         $ec=0;
-        foreach($resultados as $vqal){
+        foreach($resultados as $val){
             $ec=$val->estadoconv;
 
         }
