@@ -577,6 +577,7 @@ class cloudtickets extends Controller
         $address=$request->address;
         $city=$request->city;
         $email=$request->email;
+        $fullname=$request->fullname;
 
         $depto=$request->depto;
         $siennatopic=$request->topicos;
