@@ -103,6 +103,7 @@ class asignaciong extends Command
 
         }
 
+        try {
         $fec=explode("-",$fecha);
 
         if(($horaLocal>=$fec[0]) and ($horaLocal<$fec[1])){
@@ -112,6 +113,10 @@ class asignaciong extends Command
             return false;
 
         }
+
+    } catch (\Throwable $th) {
+        return false;
+    }
         // Imprime la hora local
 
 
