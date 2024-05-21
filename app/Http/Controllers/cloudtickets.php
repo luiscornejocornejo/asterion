@@ -555,6 +555,7 @@ class cloudtickets extends Controller
         $si->cliente = $cliente;
         $si->siennatopic = $siennatopic;
         $si->siennasource = "9";
+        $si->siennaestado = "1";
         $si->asignado = "99999";
         $si->save();
 
@@ -565,10 +566,10 @@ class cloudtickets extends Controller
         $se->autor = "sistema";
         $se->save();
 
-        /*
+        
         return redirect()
         ->back()
-        ->with('success', 'Se asigno  correctamente!');*/
+        ->with('success', 'Se asigno  correctamente!');
 
     }
     public function crearticketsiennanocliente(Request $request){
@@ -584,6 +585,8 @@ class cloudtickets extends Controller
         $si->siennadepto = $depto;
         $si->siennatopic = $siennatopic;
         $si->siennasource = "9";
+        $si->siennaestado = "1";
+
         $si->asignado = "99999";
 
         $si->cel = $phone;
