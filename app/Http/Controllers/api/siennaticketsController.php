@@ -2005,5 +2005,20 @@ class siennaticketsController extends Controller
      }
      
      
+     public function estadoconv(Request $request){
+
+        $tick=$request->tick;
+        $dom=$this->dominio();
+       
+         $query="select *  from ".$dom.".siennatickets  where id='".$tick."'"; 
+        $resultados = DB::select($query);
+        $ec=0;
+        foreach($resultados as $vqal){
+            $ec=$val->estadoconv;
+
+        }
+        return $ec;
+        
+     }
      
 }

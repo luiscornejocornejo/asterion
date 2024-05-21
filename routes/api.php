@@ -111,6 +111,8 @@ Route::get('/topics', [siennaticketsController::class, 'topics']);
 Route::post('/pedir20', [siennaticketsController::class, 'pedir20']);
 Route::post('/cambiardeptosienna20', [siennaticketsController::class, 'cambiardeptosienna20']);
 
+Route::get('/estadoconv', [siennaticketsController::class, 'estadoconv']);
+
 
 
 
