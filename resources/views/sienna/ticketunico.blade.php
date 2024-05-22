@@ -123,7 +123,7 @@ function tituloiconos($iconos, $tipo)
     }
     function blink(te) {
             document.title = te;
-            setTimeout(blink, 1000); // Cambia cada segundo
+            setTimeout(blink(te), 1000); // Cambia cada segundo
         
     }
 
