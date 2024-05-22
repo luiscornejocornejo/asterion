@@ -327,6 +327,7 @@
           $('#example thead tr')
           .clone(true)
           .addClass('filters')
+          .width()
         .appendTo('#example thead ');
 
             })
