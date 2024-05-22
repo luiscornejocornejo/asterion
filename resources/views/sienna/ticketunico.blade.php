@@ -119,7 +119,7 @@ function tituloiconos($iconos, $tipo)
             document.title = destellando ? titulo : "¡Contacto del cliente!";
             
             var favicon = document.getElementById("favicon");
-            favicon.href = "assetsfacu/images/favicom.ico";
+            favicon.href = "https://cdn.sstatic.net/Sites/es/Img/favicon.ico?v=9c017e88b153";
             destellando = !destellando;
         }, 500); // Cambiar la duración del destello aquí (en milisegundos)
       
