@@ -113,14 +113,19 @@ function tituloiconos($iconos, $tipo)
 
     function destellarTitulo() {
         var titulo = document.title;
+        var favi = document.favicon.href;
         var destellando = false;
+        var destellando2 = false;
         
         var destelloIntervalo = setInterval(function() {
             document.title = destellando ? titulo : "¡Contacto del cliente!";
             
             var favicon = document.getElementById("favicon");
-            favicon.href = "https://cdn.sstatic.net/Sites/es/Img/favicon.ico?v=9c017e88b153";
+           // favicon.href = "https://cdn.sstatic.net/Sites/es/Img/favicon.ico?v=9c017e88b153";
+            document.favicon.href = destellando2 ? favi : "https://cdn.sstatic.net/Sites/es/Img/favicon.ico?v=9c017e88b153";
+
             destellando = !destellando;
+            destellando2 = !destellando2;
         }, 500); // Cambiar la duración del destello aquí (en milisegundos)
       
         // Detener la animación después de un tiempo
