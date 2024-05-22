@@ -113,14 +113,13 @@ function tituloiconos($iconos, $tipo)
 
     function destellarTitulo() {
         var titulo = document.title;
-        var favi = document.favicon.href;
+        var favi = document.getElementById("favicon");
         var destellando = false;
         var destellando2 = false;
         
         var destelloIntervalo = setInterval(function() {
             document.title = destellando ? titulo : "¡Contacto del cliente!";
             
-            var favicon = document.getElementById("favicon");
            // favicon.href = "https://cdn.sstatic.net/Sites/es/Img/favicon.ico?v=9c017e88b153";
             document.favicon.href = destellando2 ? favi : "https://cdn.sstatic.net/Sites/es/Img/favicon.ico?v=9c017e88b153";
 
