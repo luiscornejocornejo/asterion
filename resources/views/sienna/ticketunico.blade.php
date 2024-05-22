@@ -93,7 +93,7 @@ function tituloiconos($iconos, $tipo)
  
                     var blinkTitle = "¡Mira aquí!";
                     var isBlinking = true;
-                    startBlinking();
+                    blink("¡Mira aquí!");
                     //document.title = newPageTitle;
  
                 }
@@ -113,7 +113,6 @@ function tituloiconos($iconos, $tipo)
 
     function startBlinking() {
             
-                blink();
             
         }
 
@@ -122,11 +121,10 @@ function tituloiconos($iconos, $tipo)
         isBlinking = false;
         document.title = originalTitle;
     }
-    function blink() {
-        if (isBlinking) {
-            document.title = document.title === originalTitle ? blinkTitle : originalTitle;
+    function blink(te) {
+            document.title = te;
             setTimeout(blink, 1000); // Cambia cada segundo
-        }
+        
     }
 
 
