@@ -93,7 +93,7 @@ function tituloiconos($iconos, $tipo)
  
                     var blinkTitle = "¡Mira aquí!";
                     var isBlinking = true;
-                    blink("¡Mira aquí!");
+                    destellarTitulo();
                     //document.title = newPageTitle;
  
                 }
@@ -111,20 +111,19 @@ function tituloiconos($iconos, $tipo)
 
     }
 
-    function startBlinking() {
-            
-            
-        }
-
-    // Función para detener el titileo
-    function stopBlinking() {
-        isBlinking = false;
-        document.title = originalTitle;
-    }
-    function blink(te) {
-            document.title = te;
-            setTimeout(blink(te), 1000); // Cambia cada segundo
-        
+    function destellarTitulo() {
+        var titulo = document.title;
+        var destellando = false;
+        var destelloIntervalo = setInterval(function() {
+            document.title = destellando ? titulo : "¡Título Destellante!";
+            destellando = !destellando;
+        }, 500); // Cambiar la duración del destello aquí (en milisegundos)
+      
+        // Detener la animación después de un tiempo
+        setTimeout(function() {
+            clearInterval(destelloIntervalo);
+            document.title = titulo;
+        }, 5000); // Cambiar la duración total del destello aquí (en milisegundos)
     }
 
 
