@@ -127,6 +127,8 @@ function tituloiconos($iconos, $tipo)
         setTimeout(function() {
             clearInterval(destelloIntervalo);
             document.title = titulo;
+            document.title.style.color = colores[indiceColor];
+            indiceColor = (indiceColor + 1) % colores.length;
         }, 5000); // Cambiar la duración total del destello aquí (en milisegundos)
     }
 
