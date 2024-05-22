@@ -92,7 +92,7 @@ function tituloiconos($iconos, $tipo)
                     newPageTitle="pendiente";
  
                     var blinkTitle = "¡Mira aquí!";
-                    var isBlinking = false;
+                    var isBlinking = true;
                     //document.title = newPageTitle;
  
                 }
@@ -110,12 +110,12 @@ function tituloiconos($iconos, $tipo)
 
     }
 
-function startBlinking() {
-        if (!isBlinking) {
-            isBlinking = true;
-            blink();
+    function startBlinking() {
+            if (!isBlinking) {
+                isBlinking = true;
+                blink();
+            }
         }
-    }
 
     // Función para detener el titileo
     function stopBlinking() {
