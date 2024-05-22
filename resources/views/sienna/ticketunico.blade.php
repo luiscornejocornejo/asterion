@@ -112,10 +112,9 @@ function tituloiconos($iconos, $tipo)
     }
 
     function startBlinking() {
-            if (!isBlinking) {
-                isBlinking = true;
+            
                 blink();
-            }
+            
         }
 
     // Función para detener el titileo
