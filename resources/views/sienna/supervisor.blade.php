@@ -282,7 +282,7 @@
                         $(api.column(colIdx).header()).index()
                     );
                     var title = $(cell).text();
-                    $(cell).html('<input type="text" placeholder="' + title + '" />');
+                    $(cell).html('<input size="50" type="text" placeholder="' + title + '" />');
  
                     // On every keypress in this input
                     $(
