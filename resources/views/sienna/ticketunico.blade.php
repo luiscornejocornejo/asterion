@@ -127,9 +127,7 @@ function tituloiconos($iconos, $tipo)
     }
 
 
-    // Detener el titileo cuando se recupera el foco
-    window.onfocus = stopBlinking;
-</script>
+    </script>
 <div class="wrapper menuitem-active">
     @include('facu.menu')
     <div class="content-page" style="padding: 0!important;">
