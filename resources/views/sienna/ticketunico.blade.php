@@ -122,7 +122,7 @@ function tituloiconos($iconos, $tipo)
             
            // favicon.href = "https://cdn.sstatic.net/Sites/es/Img/favicon.ico?v=9c017e88b153";
             //favi.href = destellando2 ? favi : "";
-            favi.href = destellando2 ? "https://cdn.sstatic.net/Sites/es/Img/favicon.ico?v=9c017e88b153" : "assetsfacu/images/favicom_suricata.png";
+            favi.href = destellando2 ? "ss" : "assetsfacu/images/favicom_suricata.png";
 
             destellando = !destellando;
             destellando2 = !destellando2;
