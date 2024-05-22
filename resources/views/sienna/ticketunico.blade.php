@@ -126,7 +126,7 @@ function tituloiconos($iconos, $tipo)
 
             destellando = !destellando;
             destellando2 = !destellando2;
-        }, 500); // Cambiar la duración del destello aquí (en milisegundos)
+        }, 1000); // Cambiar la duración del destello aquí (en milisegundos)
       
         // Detener la animación después de un tiempo
         setTimeout(function() {
