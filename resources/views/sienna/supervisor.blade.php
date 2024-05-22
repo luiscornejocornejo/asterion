@@ -327,9 +327,9 @@
           $('#example thead tr')
           .clone(true)
           .addClass('filters')
-          .width()
+          
         .appendTo('#example thead ');
-
+        $('#example thead tr').width();
             })
             .catch(function (error) {
                 // función para capturar el error
