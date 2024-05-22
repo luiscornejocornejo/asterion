@@ -115,7 +115,7 @@ function tituloiconos($iconos, $tipo)
         var titulo = document.title;
         var destellando = false;
         var destelloIntervalo = setInterval(function() {
-            document.title = destellando ? titulo : "¡Título Destellante!";
+            document.title = destellando ? titulo : "¡Contacto del cliente!";
             destellando = !destellando;
         }, 500); // Cambiar la duración del destello aquí (en milisegundos)
       
