@@ -118,7 +118,7 @@ function tituloiconos($iconos, $tipo)
         var indiceColor = 0;
         var destelloIntervalo = setInterval(function() {
             document.title = destellando ? titulo : "¡Contacto del cliente!";
-            document.getElementsByTagName('titulo')[0].style.color = colores[indiceColor];
+            document.getElementById('titulo').style.color = colores[indiceColor];
             indiceColor = (indiceColor + 1) % colores.length;
             destellando = !destellando;
         }, 500); // Cambiar la duración del destello aquí (en milisegundos)
