@@ -329,7 +329,7 @@
           .addClass('filters')
           
         .appendTo('#example thead ');
-        $('#example thead tr').width();
+        $('#example thead tr').width('800 px;');
             })
             .catch(function (error) {
                 // función para capturar el error
