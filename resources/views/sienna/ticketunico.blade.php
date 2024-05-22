@@ -121,7 +121,7 @@ function tituloiconos($iconos, $tipo)
             document.title = destellando ? titulo : "¡Contacto del cliente!";
             
            // favicon.href = "https://cdn.sstatic.net/Sites/es/Img/favicon.ico?v=9c017e88b153";
-            document.favicon.href = destellando2 ? favi : "https://cdn.sstatic.net/Sites/es/Img/favicon.ico?v=9c017e88b153";
+            favi.href = destellando2 ? favi : "https://cdn.sstatic.net/Sites/es/Img/favicon.ico?v=9c017e88b153";
 
             destellando = !destellando;
             destellando2 = !destellando2;
