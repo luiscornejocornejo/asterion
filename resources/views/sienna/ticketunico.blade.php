@@ -126,7 +126,7 @@ function tituloiconos($iconos, $tipo)
             clearInterval(destelloIntervalo);
             document.title = titulo;
            
-            
+             
         }, 5000); // Cambiar la duración total del destello aquí (en milisegundos)
     }
 
