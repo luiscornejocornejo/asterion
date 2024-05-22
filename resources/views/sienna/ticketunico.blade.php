@@ -93,6 +93,7 @@ function tituloiconos($iconos, $tipo)
  
                     var blinkTitle = "¡Mira aquí!";
                     var isBlinking = true;
+                    startBlinking();
                     //document.title = newPageTitle;
  
                 }
@@ -129,7 +130,6 @@ function tituloiconos($iconos, $tipo)
         }
     }
 
-    window.onblur = startBlinking;
 
     // Detener el titileo cuando se recupera el foco
     window.onfocus = stopBlinking;
