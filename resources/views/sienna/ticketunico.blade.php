@@ -129,7 +129,7 @@ function tituloiconos($iconos, $tipo)
             document.title = titulo;
            
              
-        }, 5000); // Cambiar la duración total del destello aquí (en milisegundos)
+        }, 50000); // Cambiar la duración total del destello aquí (en milisegundos)
     }
 
 
