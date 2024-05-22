@@ -233,7 +233,7 @@
                   
                     tt += '<tr class="text-center">' +
         
-                        ' <td><input name="chk" class="form-check-input me-1" type="checkbox" value="'+response.data[i].ticketid +'" id="flexCheckDefault"><a target="blank" href="/ticketunico?tick='+response.data[i].ticketid +'"><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</a></td>' +
+                        ' <td><input name="chk" class="form-check-input me-1" type="checkbox" value="'+response.data[i].ticketid +'" id="flexCheckDefault"><a target="_blank" href="/ticketunico?tick='+response.data[i].ticketid +'"><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</a></td>' +
                         ' <td>' + response.data[i].nya + '</td>' + 
                         ' <td>' + $nombreamostrar+ '</td>' + 
                         ' <td> <span class="badge '+colordepto+'" style="font-size:medium;">' + response.data[i].depto + '</span>'+
