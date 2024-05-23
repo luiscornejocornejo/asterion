@@ -71,19 +71,12 @@ class wispronodos extends Command
                         echo "https://" . $merchant . "." . $url . "/api/nodes";
                         
                         if ($url <> "") {
-                        
-                           
-                                $urlfinal="https://" . $merchant . "." . $url . "/api/nodes?token=".$tokensienna;
-
-                            
+                            $urlfinal="https://" . $merchant . "." . $url . "/api/nodes?token=".$tokensienna;
                             $dat = file_get_contents($urlfinal); //7461023535
                             $dat = json_decode($dat);
                            // var_dump($dat);
-                            
                             foreach($dat->data as $nodoval){
-
                                // var_dump($nodoval);
-                                
                                 $nombre=$nodoval->name;
                                 $lat=$nodoval->latitude;
                                 $log=$nodoval->longitude;
@@ -93,10 +86,10 @@ class wispronodos extends Command
                                 $mensaje="";
                                 $estadonodo=1;
                             
-                              echo   $query11="INSERT INTO " . $merchant . ".nodos ( nombre, lat, log, direcion, ciudad, idget, mensaje, estadonodo) 
+                            echo   $query11="INSERT INTO " . $merchant . ".nodos ( nombre, lat, log, direcion, ciudad, idget, mensaje, estadonodo) 
                                 VALUES('".$nombre."', '".$lat."', '".$log."', '".$direcion."', '".$ciudad."', ".$idget.", '".$mensaje."', ".$estadonodo.")
                                 ON DUPLICATE KEY UPDATE nombre='".$nombre."', lat='".$lat."', log='".$log."', direcion='".$direcion."', ciudad='".$ciudad."'";
-                                //$resultados11 = DB::select($query11);
+                                $resultados11 = DB::select($query11);
 
                             }
                         } else {
