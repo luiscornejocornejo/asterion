@@ -17,6 +17,7 @@
 
          identificadorIntervaloDeTiempo = setInterval(maxid, frecuencia);
         function parar(){
+          console.log(identificadorIntervaloDeTiempo);
           clearInterval(identificadorIntervaloDeTiempo);
 
         }
