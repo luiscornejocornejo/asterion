@@ -260,7 +260,7 @@
                         ' <td>' + response.data[i].cel + '</td>' +
                         ' <td>' + response.data[i].creado + '</td>' +
                       
-                        ' <td> <button class="badge '+colorestado+'" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm" onclick="estado2(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"><span class="badge '+colorestado+'" style="font-size:medium; ">' + response.data[i].estadoname + '</span></button>'+
+                        ' <td><span style="font-size:medium;" class="badge '+colorestado+'">' + response.data[i].estadoname + '</span></td>' +
 
                         ' <td>'+
                        '<button  onclick="listadoseguimientos(`' + result + '`,`' + response.data[i].ticketid + '`)"   class="btn btn-secondary " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="mdi mdi-link" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="mb-1" data-bs-title="Seguimiento."></i></button>' +
