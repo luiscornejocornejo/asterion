@@ -168,7 +168,7 @@
 
         
         function maxid() {
-           document.body.style.zoom = "80%";
+           //document.body.style.zoom = "80%";
 
             var URLactual = window.location.href;
             var porciones = URLactual.split('.');
