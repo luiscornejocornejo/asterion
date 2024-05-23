@@ -78,11 +78,11 @@ class wispronodos extends Command
                             
                             $dat = file_get_contents($urlfinal); //7461023535
                             $dat = json_decode($dat);
-                            var_dump($dat);
+                           // var_dump($dat);
                             
                             foreach($dat->data as $nodoval){
 
-                                var_dump($nodoval);
+                               // var_dump($nodoval);
                                 
                                 $nombre=$nodoval->name;
                                 $lat=$nodoval->latitude;
