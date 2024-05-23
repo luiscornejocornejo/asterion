@@ -66,7 +66,7 @@ class wispronodos extends Command
                         $campo = $val->headerendpoint; 
                         $merchant = $val->nombre;
                         echo $query111="truncate " . $merchant . ".nodos";
-                       // $resultados111 = DB::select($query111);
+                       $resultados111 = DB::select($query111);
 
                         echo "https://" . $merchant . "." . $url . "/api/nodes";
                         
