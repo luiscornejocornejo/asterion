@@ -560,6 +560,10 @@ class cloudtickets extends Controller
         $si->asignado = "99999";
         $si->save();
 
+        $so = new siennacliente();
+        $so->cliente = $cliente;
+        $so->save();
+
         $se = new siennaseguimientos();
         $se->ticket = $si->id;
         $se->tipo = "1";
