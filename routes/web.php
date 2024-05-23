@@ -252,6 +252,9 @@ Route::post('/eliminaragente','App\Http\Controllers\cloudtickets@eliminaragente'
 Route::post('/asignarall','App\Http\Controllers\cloudtickets@asignarall');
 Route::post('/crearticketsiennacliente','App\Http\Controllers\cloudtickets@crearticketsiennacliente');
 Route::post('/crearticketsiennanocliente','App\Http\Controllers\cloudtickets@crearticketsiennanocliente');
+Route::post('/notificacionusers','App\Http\Controllers\cloudtickets@notificacionusers');
+
+
 
 
 

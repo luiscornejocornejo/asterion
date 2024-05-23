@@ -619,4 +619,21 @@ class cloudtickets extends Controller
         ->with('success', 'Se asigno  correctamente!');   
     
     }
+
+    
+    public function notificacionusers(Request $request)
+    {
+
+         $user_id=$request->user_id5;
+        $statos=$request->statos;
+
+        $si2 = siennatickets::find($user_id);
+        $si2->avisoemail = $statos;
+        $si2->save();
+      
+        return redirect()
+        ->back()
+        ->with('success', 'Se modifico  el registro  correctamente!');
+
+    }
 }

@@ -19,6 +19,11 @@ function ticket(dd) {
 document.getElementById("user_id4").value = dd;
 
 }
+function notificacion(dd) {
+
+document.getElementById("user_id5").value = dd;
+
+}
 function eliminar(dd) {
 
 document.getElementById("idagente").value = dd;
@@ -105,7 +110,10 @@ document.getElementById("idagente").value = dd;
                                     <i class="mdi mdi-office-building-cog" data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-custom-class="mb-1" data-bs-title="Departamento"></i>
                                     </button> 
-
+                                    <button onclick="notificacion(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalnotificacion"  class="btn btn-success rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="mdi mdi-office-building-cog" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        data-bs-custom-class="mb-1" data-bs-title="Departamento"></i>
+                                    </button> 
                                     <button onclick="eliminar(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalticketeliminar"  class="btn btn-danger rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="mdi mdi-office-building-cog" data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-custom-class="mb-1" data-bs-title="Departamento"></i>
@@ -131,6 +139,7 @@ document.getElementById("idagente").value = dd;
       @include('sienna.usermodal.areas')        
       @include('sienna.usermodal.ticket')        
       @include('sienna.usermodal.nuevo')        
+      @include('sienna.usermodal.notificacion')        
 
 <!-- Modal users register -->
  
