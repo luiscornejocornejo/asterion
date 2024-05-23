@@ -15,7 +15,11 @@
 
         var frecuencia =<?php echo session('frecuencia');?>;
 
-        identificadorIntervaloDeTiempo = setInterval(maxid, frecuencia);
+        var identificadorIntervaloDeTiempo = setInterval(maxid, frecuencia);
+        function parar(){
+          clearInterval(identificadorIntervaloDeTiempo);
+
+        }
         function pedir2(dd) {
               document.getElementById("idticketpedir2").value = dd;
         }
@@ -510,10 +514,7 @@
 
 
         }
-        function parar(){
-          clearInterval(maxid);
-
-        }
+        
 </script>
  
 
