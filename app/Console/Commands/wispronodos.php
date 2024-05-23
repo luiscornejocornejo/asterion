@@ -80,7 +80,7 @@ class wispronodos extends Command
                             $dat = json_decode($dat);
                             var_dump($dat);
                             
-                            foreach($dat["data"] as $nodoval){
+                            foreach($dat->data as $nodoval){
 
                                 var_dump($nodoval);
                                 /*
