@@ -256,7 +256,7 @@ Route::post('/crearticketsiennanocliente','App\Http\Controllers\cloudtickets@cre
 
 
 Route::get('/ctt', function () {
-    return view('/sienna/ticketsmodals/creartickets');
+    return view('/sienna/userprofile');
 });
 });
 //});
