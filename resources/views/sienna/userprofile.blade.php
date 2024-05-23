@@ -195,9 +195,7 @@ foreach ($resultados as $valuee) {
             <!-- end col -->
         </div>
         <!-- end row -->
-        <!--@include('sienna.ticketsmodals.profile_openchat')
-        @include('sienna.ticketsmodals.profile_openpushcall')
-        @include('sienna.ticketsmodals.profile_pushnps')-->
+      
 
     </div> <!-- container-fluid -->
 </div>
