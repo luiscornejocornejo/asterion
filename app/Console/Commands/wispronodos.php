@@ -82,7 +82,7 @@ class wispronodos extends Command
                                 $log=$nodoval->longitude;
                                 $direcion=$nodoval->public_id;
                                 $ciudad=$nodoval->description."  capacity:(".$nodoval->capacity.")";
-                                $idget=$nodoval->id;
+                                $idget=$nodoval->public_id;
                                 $mensaje="";
                                 $estadonodo=1;
                             
