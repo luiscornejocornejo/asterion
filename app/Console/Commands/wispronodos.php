@@ -68,7 +68,7 @@ class wispronodos extends Command
                         echo $query111="truncate " . $merchant . ".nodos";
                        // $resultados111 = DB::select($query111);
 
-                        echo "https://" . $merchant . "." . $url . "/api/nd";
+                        echo "https://" . $merchant . "." . $url . "/api/nodes";
                         /*
                         if ($url <> "") {
                         
