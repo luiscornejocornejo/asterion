@@ -627,7 +627,7 @@ class cloudtickets extends Controller
          $user_id=$request->user_id5;
         $statos=$request->statos;
 
-        $si2 = siennatickets::find($user_id);
+        $si2 = users::find($user_id);
         $si2->avisoemail = $statos;
         $si2->save();
       
