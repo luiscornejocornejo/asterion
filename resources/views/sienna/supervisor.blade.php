@@ -237,6 +237,10 @@
                     }
                     if(response.data[i].siennasource==7){
                       aviso='<a target=blank href=/ticketunico?tick='+response.data[i].ticketid +'><i class="mdi mdi-email  "></i></a>';
+                      aviso=''
+                    }
+                    if(response.data[i].siennasource==5){
+                      aviso=''
                     }
 
                     if(response.data[i].nombreagente ==null){
