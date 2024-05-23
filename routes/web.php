@@ -255,7 +255,7 @@ Route::post('/crearticketsiennanocliente','App\Http\Controllers\cloudtickets@cre
 
 
 
-Route::get('/ctt', function () {
+Route::get('/userprofile', function () {
     return view('/sienna/userprofile');
 });
 });
