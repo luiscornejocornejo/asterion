@@ -69,18 +69,17 @@ class wispronodos extends Command
                        // $resultados111 = DB::select($query111);
 
                         echo "https://" . $merchant . "." . $url . "/api/nodes";
-                        /*
+                        
                         if ($url <> "") {
                         
-                            if($merchant=="giles"){
-                                    $urlfinal="http://" . $merchant . "." . $url . "/api/nd";
-                            }else{
-                                $urlfinal="https://" . $merchant . "." . $url . "/api/nd";
+                           
+                                $urlfinal="https://" . $merchant . "." . $url . "/api/nodes?token=".$tokensienna;
 
-                            }
+                            
                             $dat = file_get_contents($urlfinal); //7461023535
                             $dat = json_decode($dat);
-                           // var_dump($dat);
+                            var_dump($dat);
+                            /*
                             foreach($dat as $nodoval){
 
                                 $nombre=$nodoval->code;
@@ -97,10 +96,10 @@ class wispronodos extends Command
                                 ON DUPLICATE KEY UPDATE nombre='".$nombre."', lat='".$lat."', log='".$log."', direcion='".$direcion."', ciudad='".$ciudad."'";
                                 $resultados11 = DB::select($query11);
 
-                            }
+                            }*/
                         } else {
                         $dat = "";
-                        }*/
+                        }
                     }
                 }else{
 
