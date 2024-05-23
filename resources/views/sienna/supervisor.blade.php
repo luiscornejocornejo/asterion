@@ -156,10 +156,7 @@
 
         }
 
-        funtion parar(){
-          clearInterval(maxid);
-
-        }
+        
         function maxid() {
            document.body.style.zoom = "80%";
 
@@ -511,6 +508,10 @@
               // función que siempre se ejecuta
           });
 
+
+        }
+        funtion parar(){
+          clearInterval(maxid);
 
         }
 </script>
