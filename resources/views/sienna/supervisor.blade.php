@@ -21,6 +21,11 @@
           clearInterval(identificadorIntervaloDeTiempo);
 
         }
+        function star(){
+          identificadorIntervaloDeTiempo = setInterval(maxid, frecuencia);
+
+
+        }
         function pedir2(dd) {
               document.getElementById("idticketpedir2").value = dd;
         }
@@ -183,6 +188,7 @@
                 '  <button type="button" onclick="selects()" class="btn btn-primary"><i class="mdi mdi-check-all" ></i></button>'+  
                 ' <button type="button" onclick="deSelect()" class="btn btn-info"><i class="mdi mdi-checkbox-blank-outline"></i></button>'+
                 ' <button type="button" onclick="parar()" class="btn btn-danger"><i class="mdi mdi-stop"></i></button>'+
+                ' <button type="button" onclick="star()" class="btn btn-success"><i class="mdi mdi-stop"></i></button>'+
                 '<br><br><table style="width: 1500 px !important;" id="example"  class="table table-striped display responsive nowrap w-100 text-light">'+
                                 '<thead>'+
                               '     <tr class="text-center bg-dark" >'+
