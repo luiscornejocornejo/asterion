@@ -554,15 +554,14 @@ class cloudtickets extends Controller
         $si = new siennatickets();
         $si->siennadepto = $depto;
         $si->cliente = $cliente;
+        $si->nya = $cliente;
         $si->siennatopic = $siennatopic;
         $si->siennasource = "9";
         $si->siennaestado = "1";
         $si->asignado = "99999";
         $si->save();
 
-        $so = new siennacliente();
-        $so->cliente = $cliente;
-        $so->save();
+       
 
         $se = new siennaseguimientos();
         $se->ticket = $si->id;
