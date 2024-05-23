@@ -15,7 +15,7 @@
 
         var frecuencia =<?php echo session('frecuencia');?>;
 
-        var identificadorIntervaloDeTiempo = setInterval(maxid, frecuencia);
+         identificadorIntervaloDeTiempo = setInterval(maxid, frecuencia);
         function parar(){
           clearInterval(identificadorIntervaloDeTiempo);
 
