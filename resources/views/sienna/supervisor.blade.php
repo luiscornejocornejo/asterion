@@ -510,7 +510,7 @@
 
 
         }
-        funtion parar(){
+        function parar(){
           clearInterval(maxid);
 
         }
