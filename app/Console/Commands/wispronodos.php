@@ -83,12 +83,12 @@ class wispronodos extends Command
                             foreach($dat->data as $nodoval){
 
                                 var_dump($nodoval);
-                                /*
-                                $nombre=$nodoval->code;
-                                $lat=$nodoval->lat;
-                                $log=$nodoval->lng;
+                                
+                                $nombre=$nodoval->name;
+                                $lat=$nodoval->latitude;
+                                $log=$nodoval->longitude;
                                 $direcion=$nodoval->address;
-                                $ciudad=$nodoval->comment;
+                                $ciudad=$nodoval->public_id;
                                 $idget=$nodoval->id;
                                 $mensaje="";
                                 $estadonodo=1;
@@ -96,7 +96,7 @@ class wispronodos extends Command
                               echo   $query11="INSERT INTO " . $merchant . ".nodos ( nombre, lat, log, direcion, ciudad, idget, mensaje, estadonodo) 
                                 VALUES('".$nombre."', '".$lat."', '".$log."', '".$direcion."', '".$ciudad."', ".$idget.", '".$mensaje."', ".$estadonodo.")
                                 ON DUPLICATE KEY UPDATE nombre='".$nombre."', lat='".$lat."', log='".$log."', direcion='".$direcion."', ciudad='".$ciudad."'";
-                                $resultados11 = DB::select($query11);*/
+                                $resultados11 = DB::select($query11);
 
                             }
                         } else {
