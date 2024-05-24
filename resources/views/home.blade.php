@@ -1058,7 +1058,7 @@ if (isset($_GET['fecha'])) {
                 where a.uri='".$ruta."'";
                 $resultadospaginas = DB::select($querypagina);
                 foreach ($resultadospaginas as $val) {
-                    echo $boton1 = $val->boton1;
+                    echo $boton1 = $val->espanol;
                 }
             ?>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
