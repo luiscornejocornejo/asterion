@@ -1051,8 +1051,11 @@ if (isset($_GET['fecha'])) {
             <?php
 
             $ruta=Request::path();
-                echo "a".$ruta."a";
-                $querypagina="select * from siennapaginas a 
+                $queryempresa="select idioma from empresa";
+                $resultadosempresas = DB::select($querypagina);
+                    echo $idioma = $resultadosempresas->idioma;
+                
+               echo  $querypagina="select b.".$idioma.",b.variable   from siennapaginas a 
                 join  siennavariables b
                 on a.id=b.siennapaginas
                 where a.uri='".$ruta."'";
