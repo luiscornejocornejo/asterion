@@ -366,8 +366,13 @@ class TicketdatosController extends Controller
         $mail=$request->mail;
         $user=$request->user;
         $password=$request->password;
+        $integracion=$request->integracion;
         $query="update empresa set user='".$user."',password='".$password."',mail='".$mail."',zona='".$zona."',frecuencia='".$frecuencia."',reabrir='".$reabrir."' where id='1'";
         $resultados5 = DB::select($query);
+
+        $query2="update siennaintegracion set nombre='".$integracion."'";
+        $resultados52 = DB::select($query2);
+
         return redirect()
         ->back()
         ->with('success', 'Se modifico  el registro  correctamente!');
