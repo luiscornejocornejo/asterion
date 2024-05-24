@@ -127,15 +127,8 @@ class siennaController extends Controller
     echo   $query1="
       
     
-    CREATE TABLE ".$val->Database.".siennaintegraciones (
-      id INT auto_increment NOT NULL,
-      nombre varchar(100) NULL,
-      CONSTRAINT siennaintegraciones_pk PRIMARY KEY (id)
-    )
-    ENGINE=InnoDB
-    DEFAULT CHARSET=utf8mb4
-    COLLATE=utf8mb4_0900_ai_ci;
-    
+   
+    INSERT INTO ".$val->Database.".siennaintegraciones ( nombre) VALUES( 'ispcube2');
     
     
         
