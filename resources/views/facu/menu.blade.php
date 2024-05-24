@@ -61,7 +61,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
     <ul class="side-nav">
    
       <li class="side-nav-item mt-2 background-buttons">
-        <a href="/home?fecha=dia"  class="side-nav-link hovering-pan ">
+        <a href="/"  class="side-nav-link hovering-pan ">
             <i class="uil-dashboard"></i>
             <span> Dashboards </span>
      
