@@ -128,7 +128,7 @@ class siennaController extends Controller
       
     
    
-    INSERT INTO ".$val->Database.".siennaintegraciones ( nombre) VALUES( 'ispbrain');
+    INSERT INTO ".$val->Database.".siennaintegraciones ( nombre) VALUES( 'wisphub');
     
     
         
