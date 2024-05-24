@@ -127,7 +127,7 @@ class siennaController extends Controller
       
 
     
-    INSERT INTO ai".$val->Database."rfibra.siennapaginas ( nombre, uri) VALUES( 'Dashboard', '');
+    INSERT INTO ".$val->Database.".siennapaginas ( nombre, uri) VALUES( 'Dashboard', '');
     
     
         
