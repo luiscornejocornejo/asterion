@@ -544,7 +544,8 @@ class TicketdatosController extends Controller
         
         $query6="select * from zonahoraria";
         $resultados6 = DB::select($query6);
-
+        $query7="select * from siennaintegraciones";
+        $resultados7 = DB::select($query7);
         
             return view('sienna/empresa')
             ->with('subdomain_tmp', $subdomain_tmp)
