@@ -546,10 +546,18 @@ class TicketdatosController extends Controller
         $resultados6 = DB::select($query6);
         $query7="select * from siennaintegraciones";
         $resultados7 = DB::select($query7);
+
+        $query8="select nombre from siennaintegracion";
+        $resultados8 = DB::select($query8);
+        foreach($resultados8 as $val){
+            $inte=$val->nombre;
+        }
         
             return view('sienna/empresa')
             ->with('subdomain_tmp', $subdomain_tmp)
             ->with("zonahoraria",$resultados6)
+            ->with("integraciones",$resultados7)
+            ->with("inte",$inte)
             ->with("empresa",$resultados5); 
 
     }
