@@ -127,7 +127,18 @@ class siennaController extends Controller
       
 
     
-    INSERT INTO ".$val->Database.".siennapaginas ( nombre, uri) VALUES( 'Dashboard', '');
+    CREATE TABLE ".$val->Database.".siennavariables (
+      id INT auto_increment NOT NULL,
+      variable varchar(100) NULL,
+      espanol varchar(100) NULL,
+      portugues varchar(100) NULL,
+      ingles varchar(100) NULL,
+      CONSTRAINT siennavariables_pk PRIMARY KEY (id)
+    )
+    ENGINE=InnoDB
+    DEFAULT CHARSET=utf8mb4
+    COLLATE=utf8mb4_0900_ai_ci;
+    
     
     
         
