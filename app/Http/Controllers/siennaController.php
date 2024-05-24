@@ -127,7 +127,7 @@ class siennaController extends Controller
       
 
  
-   ALTER TABLE ".$val->Database.".empresa ADD idioma varchar(100) NULL;
+   update ".$val->Database.".empresa set idioma='espanol';
 
     
     
