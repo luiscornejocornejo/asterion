@@ -1052,6 +1052,14 @@ if (isset($_GET['fecha'])) {
 
             $ruta=Request::path();
                 echo "a".$ruta."a";
+                $querypagina="select * from siennapaginas a 
+                join  siennavariables b
+                on a.id=b.siennapaginas
+                where a.uri='".$ruta."'";
+                $resultadospaginas = DB::select($querypagina);
+                foreach ($resultadospaginas as $val) {
+                    $boton1 = $val->boton1;
+                }
             ?>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
