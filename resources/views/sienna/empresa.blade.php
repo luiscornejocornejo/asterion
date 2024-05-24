@@ -55,6 +55,21 @@
                       </select>
                     </div>
                     <div class="form-group">
+                      <label for="exampleFormControlSelect1">Zona Horaria </label>
+                      <select  name="integracion" class="form-control" id="exampleFormControlSelect1">
+                      <?php $selected=""; 
+                      foreach ($integraciones as $val){
+                        if($val->nombre==$inte){
+                          $selected="selected";
+                        }else{
+                          $selected=""; 
+                        }
+
+                          echo "<option ".$selected." value='".$val->nombre."'>".$val->nombre."</option>";
+                          }?>
+                      </select>
+                    </div>
+                    <div class="form-group">
                       <label for="exampleFormControlInput1">Reabrir url broadcast</label>
                       <input value="<?php echo $reabrir;?>" type="text" name="reabrir" class="form-control" id="exampleFormControlInput1" placeholder="http://">
                     </div>
