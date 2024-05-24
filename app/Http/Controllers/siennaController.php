@@ -126,7 +126,7 @@ class siennaController extends Controller
     echo   $query1="
       
 
-    INSERT INTO ".$val->Database.".siennavariables ( variable, espanol, portugues, ingles, siennapaginas) VALUES( 'boton2', 'reportes', 'relatórios', 'reports', 1);
+    INSERT INTO ".$val->Database.".siennavariables ( variable, espanol, portugues, ingles, siennapaginas) VALUES( 'boton3', 'logeados', 'logado', 'logged in', 1);
     
     
     
