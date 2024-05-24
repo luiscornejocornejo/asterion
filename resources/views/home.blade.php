@@ -1064,7 +1064,8 @@ if (isset($_GET['fecha'])) {
                 where a.uri='".$ruta."'";
                 $resultadospaginas = DB::select($querypagina);
                 foreach ($resultadospaginas as $val) {
-                    echo $$val->variable = $val->texto;
+                     $$val->variable = $val->texto;
+                     var_dump($$val->variable);
                 }
             ?>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
