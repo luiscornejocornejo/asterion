@@ -126,9 +126,9 @@ class siennaController extends Controller
     echo   $query1="
       
 
-   update ".$val->Database.".siennavariables 
-   set ingles='Dashboard' where ingles='dasboard'
-    
+ 
+   ALTER TABLE ".$val->Database.".empresa ADD idioma varchar(100) NULL;
+
     
     
     
