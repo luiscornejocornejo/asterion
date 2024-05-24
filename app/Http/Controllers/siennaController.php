@@ -128,7 +128,7 @@ class siennaController extends Controller
       
     
    
-    INSERT INTO ".$val->Database.".siennaintegraciones ( nombre) VALUES( 'ispcube2');
+    INSERT INTO ".$val->Database.".siennaintegraciones ( nombre) VALUES( 'wispro');
     
     
         
