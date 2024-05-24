@@ -1054,17 +1054,17 @@ if (isset($_GET['fecha'])) {
                 $queryempresa="select idioma from empresa";
                 $resultadosempresas = DB::select($queryempresa);
                 foreach($resultadosempresas as $vale){
-                    echo $idioma = $vale->idioma;
+                     $idioma = $vale->idioma;
 
                 }
                 
-               echo  $querypagina="select b.".$idioma.",b.variable   from siennapaginas a 
+                 $querypagina="select b.".$idioma." as texto,b.variable   from siennapaginas a 
                 join  siennavariables b
                 on a.id=b.siennapaginas
                 where a.uri='".$ruta."'";
                 $resultadospaginas = DB::select($querypagina);
                 foreach ($resultadospaginas as $val) {
-                    echo $boton1 = $val->espanol;
+                    echo $$val->variable = $val->texto;
                 }
             ?>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
