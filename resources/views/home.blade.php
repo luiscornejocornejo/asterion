@@ -1053,7 +1053,10 @@ if (isset($_GET['fecha'])) {
             $ruta=Request::path();
                 $queryempresa="select idioma from empresa";
                 $resultadosempresas = DB::select($queryempresa);
-                    echo $idioma = $resultadosempresas->idioma;
+                foreach($resultadosempresas as $vale){
+                    echo $idioma = $vale->idioma;
+
+                }
                 
                echo  $querypagina="select b.".$idioma.",b.variable   from siennapaginas a 
                 join  siennavariables b
