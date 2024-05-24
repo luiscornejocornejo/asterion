@@ -1048,6 +1048,11 @@ if (isset($_GET['fecha'])) {
                    
             </div>
 
+            <?php
+
+            $ruta=Request::path();
+                echo "a".$ruta."a";
+            ?>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <div class="container-fluid" id="main-content">
