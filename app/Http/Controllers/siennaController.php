@@ -122,11 +122,11 @@ class siennaController extends Controller
        
     // 
     
-      //
+      //    INSERT INTO ".$val->Database.".siennavariables ( variable, espanol, portugues, ingles, siennapaginas) VALUES( 'boton3', 'logeados', 'logado', 'logged in', 1);
+
     echo   $query1="
       
-
-    INSERT INTO ".$val->Database.".siennavariables ( variable, espanol, portugues, ingles, siennapaginas) VALUES( 'boton3', 'logeados', 'logado', 'logged in', 1);
+    UPDATE ".$val->Database.".siennapaginas SET  uri='/' ;
     
     
     
