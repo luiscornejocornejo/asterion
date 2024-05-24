@@ -126,9 +126,16 @@ class siennaController extends Controller
     echo   $query1="
       
 
+    CREATE TABLE ".$val->Database.".siennapaginas (
+      id INT auto_increment NOT NULL,
+      nombre varchar(100) NULL,
+      uri varchar(100) NULL
+    )
+    ENGINE=InnoDB
+    DEFAULT CHARSET=utf8mb4
+    COLLATE=utf8mb4_0900_ai_ci;
+    
         
-        
-          ALTER TABLE ".$val->Database.".siennainternos ADD display varchar(100) NULL;
           
       
 
