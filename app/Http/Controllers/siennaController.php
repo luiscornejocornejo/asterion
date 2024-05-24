@@ -126,10 +126,13 @@ class siennaController extends Controller
     echo   $query1="
       
 
+    
+    
     CREATE TABLE ".$val->Database.".siennapaginas (
       id INT auto_increment NOT NULL,
       nombre varchar(100) NULL,
-      uri varchar(100) NULL
+      uri varchar(100) NULL,
+      CONSTRAINT siennapaginas_pk PRIMARY KEY (id)
     )
     ENGINE=InnoDB
     DEFAULT CHARSET=utf8mb4
