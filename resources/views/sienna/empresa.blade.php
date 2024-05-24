@@ -55,8 +55,9 @@
                       </select>
                     </div>
                     <div class="form-group">
-                      <label for="exampleFormControlSelect1">Zona Horaria </label>
+                      <label for="exampleFormControlSelect1">Integracion </label>
                       <select  name="integracion" class="form-control" id="exampleFormControlSelect1">
+                        <option>sin</option>
                       <?php $selected=""; 
                       foreach ($integraciones as $val){
                         if($val->nombre==$inte){
