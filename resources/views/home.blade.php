@@ -1066,7 +1066,7 @@ if (isset($_GET['fecha'])) {
                 foreach ($resultadospaginas as $val) {
                     $dinamic=$val->variable;
                      $$dinamic = $val->texto;
-                     var_dump($$dinamic);
+                     //var_dump($$dinamic);
                 }
             ?>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -1074,9 +1074,9 @@ if (isset($_GET['fecha'])) {
 <div class="container-fluid" id="main-content">
         <div class="container">
             <div class="row p-3">
-                <div class="col-4"><a class="btn btn-outline-primary" href="#" onclick="mostrar();">Dashboard</a></div>
-                <div class="col-4"><a class="btn btn-outline-success" href="#" onclick="mostrar2();">Reportes</a></div>
-                <div class="col-4"><a class="btn btn-outline-info" href="#" onclick="mostrar3();">Logeados</a></div>
+                <div class="col-4"><a class="btn btn-outline-primary" href="#" onclick="mostrar();"><?php echo $boton1;?></a></div>
+                <div class="col-4"><a class="btn btn-outline-success" href="#" onclick="mostrar2();"><?php echo $boton2;?></a></div>
+                <div class="col-4"><a class="btn btn-outline-info" href="#" onclick="mostrar3();"><?php echo $boton3;?></a></div>
             </div>
         </div>
 </div>
