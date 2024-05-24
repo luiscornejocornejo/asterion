@@ -1052,7 +1052,7 @@ if (isset($_GET['fecha'])) {
 
             $ruta=Request::path();
                 $queryempresa="select idioma from empresa";
-                $resultadosempresas = DB::select($querypagina);
+                $resultadosempresas = DB::select($queryempresa);
                     echo $idioma = $resultadosempresas->idioma;
                 
                echo  $querypagina="select b.".$idioma.",b.variable   from siennapaginas a 
