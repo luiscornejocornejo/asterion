@@ -125,9 +125,8 @@ class siennaController extends Controller
       //
     echo   $query1="
       
-    ALTER TABLE ".$val->Database.".siennavariables ADD siennapaginas SMALLINT NULL;
 
-    
+    INSERT INTO ".$val->Database.".siennavariables ( variable, espanol, portugues, ingles, siennapaginas) VALUES( 'titulo', 'panel', 'painel', 'dasboard', 1);
     
     
     
