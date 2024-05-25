@@ -228,8 +228,8 @@
             .then(function (response) {
                 // función que se ejecutará al recibir una respuesta
             
-                sd='<button data-bs-toggle="tooltip" data-bs-title="asignar" onclick="pedirall()"  class="btn btn-info tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><span class="mdi mdi-account-arrow-left"><span class="tooltiptext">Reclamar tickets</span></span></button> '+
-                '<button onclick="areaall()"  class="btn btn-info me-1" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><i class="mdi mdi-account-group"Asignar departamento."></i> </button>'+
+                sd='<button  onclick="pedirall()"  class="btn btn-info tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><span class="mdi mdi-account-arrow-left"><span class="tooltiptext">Reclamar tickets</span></span></button> '+
+                '<button onclick="areaall()"  class="btn btn-info me-1" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><i data-bs-toggle="tooltip" data-bs-title="Departamento" class="mdi mdi-account-group"Asignar departamento."></i> </button>'+
                 '<button onclick="cerrarall()"  class="btn btn-success  " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrarall">  <i class="mdi mdi-check-circle"  data-bs-custom-class="" data-bs-title="Cambiar cerrar."></i></button> '+
                 '<button onclick="prioridadall()"  class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-prioridadall"><i class="mdi mdi-priority-high"></i></button> '+
                 '  <button type="button" onclick="selects()" class="btn btn-primary"><i class="mdi mdi-check-all" ></i></button>'+  
