@@ -329,19 +329,7 @@
                     "order": [[0, 'desc']],
                     "responsive": !0,
                     "pageLength": 25,
-                    columnDefs: [
-                      {
-                          orderable: false,
-                          render: DataTable.render.select(),
-                          targets: 0
-                      }
-                  ],fixedColumns: {
-                        start: 2
-                    }, select: {
-                      style: 'os',
-                      selector: 'td:first-child'
-                  },
-                    select: true,
+                    
           "language" : {
             "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
           },
@@ -399,7 +387,18 @@
 
                 buttons: [
                     'copy', 'csv', 'excel', 'pdf', 'print'
-                ]
+                ],columnDefs: [
+                      {
+                          orderable: false,
+                          render: DataTable.render.select(),
+                          targets: 0
+                      }
+                  ],fixedColumns: {
+                        start: 2
+                    }, select: {
+                      style: 'os',
+                      selector: 'td:first-child'
+                  }
           });
 
           $('#example thead tr')
