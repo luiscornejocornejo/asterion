@@ -237,7 +237,7 @@
                 ' <button type="button" onclick="parar()" class="btn btn-danger"><i class="mdi mdi-motion-pause"></i></button>'+
                 ' <button type="button" onclick="star()" class="btn btn-success"><i class="mdi mdi-refresh-auto"></i></button>'+
                 '<br><br><table style="width: 1500 px !important;" id="example"  class="table table-striped display responsive nowrap w-100 text-light">'+
-                                '<thead>'+
+                                '<thead><th></th>'+
                               '     <tr class="text-center bg-dark" >'+
                               
 
@@ -296,7 +296,7 @@
                       $nombreamostrar=response.data[i].nombreagente ;
                     }
                   
-                    tt += '<tr class="text-center">' +
+                    tt += '<tr class="text-center"><td></td>' +
         
                         ' <td><input name="chk" class="form-check-input me-1" type="checkbox" value="'+response.data[i].ticketid +'" id="flexCheckDefault"><a target="_blank" href="/ticketunico?tick='+response.data[i].ticketid +'"><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</a></td>' +
                         ' <td>' + response.data[i].nya + '</td>' + 
@@ -328,6 +328,16 @@
                     "order": [[0, 'desc']],
                     "responsive": !0,
                     "pageLength": 25,
+                    columnDefs: [
+                      {
+                          orderable: false,
+                          render: DataTable.render.select(),
+                          targets: 0
+                      }
+                  ], select: {
+                      style: 'os',
+                      selector: 'td:first-child'
+                  }
                     select: true,
           "language" : {
             "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
