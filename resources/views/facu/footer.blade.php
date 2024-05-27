@@ -26,7 +26,12 @@
     <script src="https://cdn.datatables.net/fixedheader/3.2.3/css/fixedHeader.dataTables.min.css"></script>
 
 
+    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/fixedcolumns/5.0.0/js/fixedColumns.dataTables.js"></script>
+<script src="https://cdn.datatables.net/fixedcolumns/5.0.0/js/dataTables.fixedColumns.js"></script>
 
+ <script src="https://cdn.datatables.net/select/2.0.2/js/dataTables.select.js"></script>
+ <script src="https://cdn.datatables.net/select/2.0.2/js/select.dataTables.js"></script>
  
 
     
