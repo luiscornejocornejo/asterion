@@ -389,7 +389,7 @@
                     'copy', 'csv', 'excel', 'pdf', 'print'
                 ],columnDefs: [
                       {
-                          orderable: false,
+                          orderable: true,
                           render: DataTable.render.select(),
                           targets: 0
                       }
