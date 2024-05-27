@@ -387,18 +387,7 @@
 
                 buttons: [
                     'copy', 'csv', 'excel', 'pdf', 'print'
-                ],columnDefs: [
-                      {
-                          orderable: true,
-                          render: DataTable.render.select(),
-                          targets: 0
-                      }
-                  ],fixedColumns: {
-                        start: 2
-                    }, select: {
-                      style: 'os',
-                      selector: 'td:first-child'
-                  }
+                ]
           });
 
           $('#example thead tr')
