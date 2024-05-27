@@ -2,49 +2,50 @@
 
 <style>
   .tooltip-button {
-  position: relative;
-  display: inline-block;
-}
-
-/* Tooltip text */
-.tooltip-button .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
-
-  /* Position the tooltip text */
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -60px;
-
-  /* Fade in tooltip */
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-/* Tooltip arrow */
-.tooltip-button .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip-button:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
+    position: relative;
+    display: inline-block;
+    
+  }
+  
+  /* Tooltip text */
+  .tooltip-button .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    margin-top: 4.5px;
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%;
+  
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  /* Tooltip arrow */
+  .tooltip-button .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 42%;
+    right: 100%;
+    margin-left: -5px;
+    border-width: -10px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+    transform: rotate(90deg);
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip-button:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
 
 </style>
 
@@ -228,14 +229,14 @@
             .then(function (response) {
                 // función que se ejecutará al recibir una respuesta
             
-                sd='<br><br><button  onclick="pedirall()"  class="btn btn-info tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><span class="mdi mdi-account-arrow-left"><span class="tooltiptext">Asignar tickets</span></span></button> '+
-                '<button onclick="areaall()"  class="btn btn-info me-1" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><i data-toggle="tooltip" data-placement="top" title="Departamento" class="mdi mdi-account-group"Asignar departamento."></i> </button>'+
-                '<button onclick="cerrarall()"  class="btn btn-success  " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrarall">  <i class="mdi mdi-check-circle"  data-bs-custom-class="" data-bs-title="Cambiar cerrar."></i></button> '+
-                '<button onclick="prioridadall()"  class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-prioridadall"><i class="mdi mdi-priority-high"></i></button> '+
-                '  <button type="button" onclick="selects()" class="btn btn-primary"><i class="mdi mdi-check-all" ></i></button>'+  
-                ' <button type="button" onclick="deSelect()" class="btn btn-info"><i class="mdi mdi-checkbox-blank-outline"></i></button>'+
-                ' <button type="button" onclick="parar()" class="btn btn-danger"><i class="mdi mdi-motion-pause"></i></button>'+
-                ' <button type="button" onclick="star()" class="btn btn-success"><i class="mdi mdi-refresh-auto"></i></button>'+
+                sd='<br><br><button  onclick="pedirall()" class="btn btn-info tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><span class="mdi mdi-account-arrow-left"><span class="tooltiptext">Asignar tickets</span></span></button> '+
+                '<button onclick="areaall()"  class="btn btn-info me-1" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><span class="mdi mdi-account-group"> <span class="tooltiptext">Cambiar departamento</span> </span></button>'+
+                '<button onclick="cerrarall()"  class="btn btn-success  " type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrarall"> <span class="mdi mdi-check-circle"> <span class="tooltiptext">Cerrar tickets</span> </span> </button>'+
+                '<button onclick="prioridadall()"  class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-prioridadall"><span class="mdi mdi-priority-high"><span class="tooltiptext">Cambiar prioridad</span></button> '+
+                '<button type="button" onclick="selects()" class="btn btn-primary"><span class="mdi mdi-check-all"> <span class="tooltiptext"> Seleccionar todos los tickets </span> </span></button>'+  
+                '<button type="button" onclick="deSelect()" class="btn btn-info"><span class="mdi mdi-checkbox-blank-outline"> <span class="tooltiptext"> Quitar selección </span> </span></button>'+
+                '<button type="button" onclick="parar()" class="btn btn-danger"><span class="mdi mdi-motion-pause"><span class="tooltiptext"> Detener autosincronización </span></span></button>'+
+                '<button type="button" onclick="star()" class="btn btn-success"><span class="mdi mdi-refresh-auto"> <span class="tooltiptext"> Activar autosincronización </span> </span></button>'+
                 '<br><br><table style="width: 1500 px !important;" id="example"  class="table table-striped display responsive nowrap w-100 text-light">'+
                                 '<thead>'+
                               '     <tr class="text-center bg-dark" >'+
