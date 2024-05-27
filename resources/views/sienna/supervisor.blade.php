@@ -239,7 +239,7 @@
                 '<button type="button" onclick="star()" class="btn btn-success tooltip-button"><span class="mdi mdi-refresh-auto"> <span class="tooltiptext"> Activar autosincronización</span></span></button> '+
                 '<br><br><table style="width: 1500 px !important;" id="example"  class="table table-striped display responsive nowrap w-100 text-light">'+
                                 '<thead>'+
-                              '     <tr class="text-center bg-dark" ><th></th>'+
+                              '     <tr class="text-center bg-dark" >'+
                               
 
                               '        <th class="text-light"><i></i>Ticket</th>'+
@@ -297,7 +297,7 @@
                       $nombreamostrar=response.data[i].nombreagente ;
                     }
                   
-                    tt += '<tr class="text-center"><td></td>' +
+                    tt += '<tr class="text-center">' +
         
                         ' <td><input name="chk" class="form-check-input me-1" type="checkbox" value="'+response.data[i].ticketid +'" id="flexCheckDefault"><a target="_blank" href="/ticketunico?tick='+response.data[i].ticketid +'"><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</a></td>' +
                         ' <td>' + response.data[i].nya + '</td>' + 
