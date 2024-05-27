@@ -25,6 +25,7 @@
     <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
     <script src="https://cdn.datatables.net/fixedheader/3.2.3/css/fixedHeader.dataTables.min.css"></script>
     <script src="https://cdn.datatables.net/select/2.0.2/js/dataTables.select.js"></script>
+    <script src="https://cdn.datatables.net/select/2.0.2/js/select.dataTables.js"></script>
 
     
     <script type="text/javascript">
