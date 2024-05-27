@@ -335,7 +335,9 @@
                           render: DataTable.render.select(),
                           targets: 0
                       }
-                  ], select: {
+                  ],fixedColumns: {
+                        start: 2
+                    }, select: {
                       style: 'os',
                       selector: 'td:first-child'
                   },
