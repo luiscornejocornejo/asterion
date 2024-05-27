@@ -238,8 +238,8 @@
                 '<button type="button" onclick="parar()" class="btn btn-danger tooltip-button"><span class="mdi mdi-motion-pause"><span class="tooltiptext"> Detener autosincronización</span></span></button> '+
                 '<button type="button" onclick="star()" class="btn btn-success tooltip-button"><span class="mdi mdi-refresh-auto"> <span class="tooltiptext"> Activar autosincronización</span></span></button> '+
                 '<br><br><table style="width: 1500 px !important;" id="example"  class="table table-striped display responsive nowrap w-100 text-light">'+
-                                '<thead><th></th>'+
-                              '     <tr class="text-center bg-dark" >'+
+                                '<thead>'+
+                              '     <tr class="text-center bg-dark" ><th></th>'+
                               
 
                               '        <th class="text-light"><i></i>Ticket</th>'+
