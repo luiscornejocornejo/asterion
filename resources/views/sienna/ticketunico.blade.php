@@ -110,29 +110,7 @@ function tituloiconos($iconos, $tipo)
 
 
     }
-    function online(urlonline){
-       
-        console.log(urlonline);
-
-        
-        axios.get(urlonline)
-            .then(function (response) {
-                console.log(response.data);
-                document.getElementById("datosonline").inneHtml = response.data;
-
-               
-               
-            })
-            .catch(function (error) {
-                // función para capturar el error
-                console.log(error);
-            })
-            .then(function () {
-                // función que siempre se ejecuta
-            });
-
-
-    }
+   
     function destellarTitulo() {
         var titulo = document.title;
         var favi = document.getElementById("favicon");
@@ -565,16 +543,15 @@ function tituloiconos($iconos, $tipo)
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div>
-                                        <h4 class="fw-normal text-dark" title="Number of Customers">Datos Online<?php echo $urlinte2;?></h4>
+                                        <h4 class="fw-normal text-dark" title="Number of Customers">Datos Online</h4>
                                     </div>
                                     <div>
-                                    <button onclick="online('<?php echo $urlinte2;?>')" type="button" class="btn me-2 mt-2 rounded-pill" style="background-color: #FFD193;">Get</button> 
                                     </div>
                                 </div>
                                 <hr style="margin-top: 10px;" />
                                 <div class="row">
                                     <div id="datosonline" class="col-xxl-12 col-xl-12 col-lg-12 col-sm-12">
-                                        
+                                        <pre><?php echo $datosonline;?></pre>
                                         
                                        
                                               

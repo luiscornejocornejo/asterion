@@ -1584,6 +1584,8 @@ class TicketdatosController extends Controller
        if($urlinte<>"v1"){
             $numcli=$resultados[0]->cliente;
             $urlinte2=$urlinte.$numcli;
+            $datosonline = file_get_contents($urlinte2);
+
        }
        
         return view("sienna/ticketunico")
@@ -1593,6 +1595,7 @@ class TicketdatosController extends Controller
         ->with('usersmerchant', $usersmerchant)
         ->with('iconos', $resultados5)
         ->with('emp', $emp)
+        ->with('datosonline', $datosonline)
         ->with('urlinte2', $urlinte2)
         ->with('pri', $pri)
         ->with('resultadosmails', $resultadosmails)
