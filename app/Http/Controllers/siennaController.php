@@ -128,7 +128,20 @@ class siennaController extends Controller
       
     
    
-    INSERT INTO ".$val->Database.".siennaintegraciones ( nombre) VALUES( 'wisphub');
+    CREATE TABLE ".$val->Database.".csat (
+      id INT auto_increment NOT NULL,
+      nombre varchar(100) NULL,
+      r1 INT NULL,
+      r2 INT NULL,
+      r3 INT NULL,
+      csat varchar(100) NULL,
+      ticket varchar(100) NULL,
+      userid varchar(100) NULL,
+      CONSTRAINT csat_pk PRIMARY KEY (id)
+    )
+    ENGINE=InnoDB
+    DEFAULT CHARSET=utf8mb4
+    COLLATE=utf8mb4_0900_ai_ci;
     
     
         
