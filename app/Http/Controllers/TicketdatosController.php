@@ -1581,8 +1581,9 @@ class TicketdatosController extends Controller
             $urlinte=$val->version;
        }
        if($urlinte<>"v1"){
-        echo $resultados[0]->cliente;
-            $datosinte=  $json = file_get_contents($urlinte);
+         $numcli=$resultados[0]->cliente;
+        $urlinte2.$urlinte.$numcli;
+            $datosinte=  $json = file_get_contents($urlinte2);
             dd($datosinte);
 
        }
