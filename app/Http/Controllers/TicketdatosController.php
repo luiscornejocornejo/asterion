@@ -1590,6 +1590,8 @@ class TicketdatosController extends Controller
             catch(Exception $e)
             {
                 echo "";
+                $urlinte2="";
+
             }
 
        }
