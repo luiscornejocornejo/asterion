@@ -110,7 +110,27 @@ function tituloiconos($iconos, $tipo)
 
 
     }
+    function online(urlonline){
+       
+        console.log(urlonline);
+        axios.get(urlonline)
+            .then(function (response) {
+                console.log(response.data);
+                document.getElementById("datosonline").inneHtml = response.data;
 
+               
+               
+            })
+            .catch(function (error) {
+                // función para capturar el error
+                console.log(error);
+            })
+            .then(function () {
+                // función que siempre se ejecuta
+            });
+
+
+    }
     function destellarTitulo() {
         var titulo = document.title;
         var favi = document.getElementById("favicon");
