@@ -820,7 +820,6 @@ class siennaticketsController extends Controller
         $si->cel = $cel;
         $si->tel = $tel;
         
-        $si->asignado = $asignado;
         if(isset($request->prioridad)){
             $si->prioridad= $request->prioridad;
         }
