@@ -941,17 +941,7 @@ class TicketdatosController extends Controller
         }
         if($estado==4){
 
-            if($subdomain_tmp =="soporte"){
-                $moti=motivoc::find($motivoc);
-                $urlbroad=$moti->url;
-                $si44 = siennatickets::find($tik);
-                $telbroad=$si44->cel;
-                //$telbroad="+5491160480646";
-                
-                if($urlbroad<>""){
-                    $tt=$this->llamadobroadcast($urlbroad,$telbroad);
-                }
-            }
+           
             $url="https://suricata4.com.ar/api/closechat";
             $curl = curl_init();
             // Prepare data array with account key, bot key, and account secret
@@ -990,6 +980,18 @@ class TicketdatosController extends Controller
           // dd($response);   
             // Close the cURL resource
             curl_close($curl);
+
+            if($subdomain_tmp =="soporte"){
+                $moti=motivoc::find($motivoc);
+                $urlbroad=$moti->url;
+                $si44 = siennatickets::find($tik);
+                $telbroad=$si44->cel;
+                //$telbroad="+5491160480646";
+                
+                if($urlbroad<>""){
+                    $tt=$this->llamadobroadcast($urlbroad,$telbroad);
+                }
+            }
     
         }
         //dd($tik);
