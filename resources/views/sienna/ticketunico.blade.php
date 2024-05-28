@@ -550,7 +550,7 @@ function tituloiconos($iconos, $tipo)
                                 </div>
                                 <hr style="margin-top: 10px;" />
                                 <div class="row">
-                                    <div id="datosonline" class="col-xxl-12 col-xl-12 col-lg-12 col-sm-12">
+                                    <div id="datosonline" class="">
                                         <pre><?php echo $datosonline;?></pre>
                                         
                                        
