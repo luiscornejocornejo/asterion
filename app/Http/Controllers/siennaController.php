@@ -123,14 +123,13 @@ class siennaController extends Controller
     // 
     
       //    INSERT INTO ".$val->Database.".siennavariables ( variable, espanol, portugues, ingles, siennapaginas) VALUES( 'boton3', 'logeados', 'logado', 'logged in', 1);
-     // INSERT INTO ipcoms.masterreport (base,nombre,query,descripcion,crear,modificar,eliminar,parametros,parametrosTipo,tabla,servicio,dashboard,updated_at,created_at) VALUES
-      //(1,'csatp','select * from csatp','',1,1,1,'','','csatp',5,0,'2024-05-28 15:39:27','2024-05-28 15:39:27')
-     
+     //
     echo   $query1="
       
     
-   
-        ALTER TABLE ".$val->Database.".motivoc ADD url varchar(1000) NULL;
+    INSERT INTO ".$val->Database.".masterreport (id,base,nombre,query,descripcion,crear,modificar,eliminar,parametros,parametrosTipo,tabla,servicio,dashboard,updated_at,created_at) VALUES
+      ('138',1,'csatp','select * from csatp','',1,1,1,'','','csatp',5,0,'2024-05-28 15:39:27','2024-05-28 15:39:27')
+     
 
       
     
