@@ -128,20 +128,19 @@ class siennaController extends Controller
       
     
    
-    CREATE TABLE ".$val->Database.".csat (
-      id INT auto_increment NOT NULL,
-      nombre varchar(100) NULL,
-      r1 INT NULL,
-      r2 INT NULL,
-      r3 INT NULL,
-      csat varchar(100) NULL,
-      ticket varchar(100) NULL,
-      userid varchar(100) NULL,
-      CONSTRAINT csat_pk PRIMARY KEY (id)
-    )
-    ENGINE=InnoDB
-    DEFAULT CHARSET=utf8mb4
-    COLLATE=utf8mb4_0900_ai_ci;
+   
+      CREATE TABLE ".$val->Database.".csatp (
+        id INT auto_increment NOT NULL,
+        nombre varchar(100) NULL,
+        p1 VARCHAR(100) NULL,
+        p2 VARCHAR(100) NULL,
+        p3 VARCHAR(100) NULL,
+        CONSTRAINT csatp_pk PRIMARY KEY (id)
+      )
+      ENGINE=InnoDB
+      DEFAULT CHARSET=utf8mb4
+      COLLATE=utf8mb4_0900_ai_ci;
+      
     
     
         
