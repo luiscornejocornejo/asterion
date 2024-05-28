@@ -1836,6 +1836,10 @@ class siennaticketsController extends Controller
         $resultados = "";
         $dom=$this->dominio();
         $tipo=$request->tipo;
+        $token=$request->token;
+        if($token<>"35PTuqhHKY1mfMfDbcuXJ2Qvwfwmr2MttDF93ZQb00GhIIRZ13OPd8l0TMmS20bj"){
+            return "token incorrecto";
+        }
         $query="        
         select *
          from ".$dom.".csatp where nombre='".$tipo."'";
