@@ -1582,7 +1582,9 @@ class TicketdatosController extends Controller
        }
        $urlinte2="";
        $datosonline="";
+           
        /*
+       prueba
        if($urlinte=="luis"){
             $numcli=$resultados[0]->cliente;
             $urlinte2=$urlinte.$numcli;
@@ -1597,7 +1599,7 @@ class TicketdatosController extends Controller
           }
 
        }*/
-       
+           
         return view("sienna/ticketunico")
         ->with('subdomain_tmp', $subdomain_tmp)
         ->with('segui', $segui)
