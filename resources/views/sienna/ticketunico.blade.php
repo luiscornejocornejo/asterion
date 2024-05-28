@@ -551,8 +551,12 @@ function tituloiconos($iconos, $tipo)
                                 <hr style="margin-top: 10px;" />
                                 <div class="row">
                                     <div id="datosonline" class="">
-                                        <pre><?php echo $datosonline;?></pre>
-                                        
+                                        <pre id="json"></pre>
+
+                                    <script>
+                                        let data = <?php echo $datosonline;?>;
+                                        document.getElementById("json").textContent = JSON.stringify(data, undefined, 2);
+                                    </script>
                                        
                                               
                                     </div>
