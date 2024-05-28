@@ -1829,7 +1829,19 @@ class siennaticketsController extends Controller
         $resultados = DB::select($query);
         return $resultados;
     }
-
+    
+    public function preguntas(Request $request)
+    {
+        
+        $resultados = "";
+        $dom=$this->dominio();
+        $tipo=$request->tipo;
+        $query="        
+        select *
+         from ".$dom.".csatp where nombre='".$tipo."'";
+        $resultados = DB::select($query);
+        return $resultados;
+    }
     public function ctx(Request $request){
 
 
