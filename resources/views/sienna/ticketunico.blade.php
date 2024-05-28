@@ -114,23 +114,22 @@ function tituloiconos($iconos, $tipo)
        
         console.log(urlonline);
 
-        $.ajax({
-        type: "GET",
-        url: urlonline,
-        data: {
-                "Nit_ID": "899999284",
-    "UserName": "sasfdm",
-    "Password": "RmFiaWFuMTIzKg=2=",
-    "Public_IP": "123.123.456.789",
-    "Private_IP": "192.168.253.110"
-        },
-        success: function (result) {
-            console.log(result)
-        }
-    });
-    document.getElementById("datosonline").inneHtml = result;
+        
+        axios.get(urlonline)
+            .then(function (response) {
+                console.log(response.data);
+                document.getElementById("datosonline").inneHtml = response.data;
 
-       
+               
+               
+            })
+            .catch(function (error) {
+                // función para capturar el error
+                console.log(error);
+            })
+            .then(function () {
+                // función que siempre se ejecuta
+            });
 
 
     }
