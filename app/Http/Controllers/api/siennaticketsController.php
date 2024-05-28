@@ -816,6 +816,7 @@ class siennaticketsController extends Controller
         $si->siennatopic = $siennatopic;
         $si->siennaestado = $siennaestado;
         $si->siennasource = $siennasource;
+        $si->asigado = "99999";
         $si->cel = $cel;
         $si->tel = $tel;
         
