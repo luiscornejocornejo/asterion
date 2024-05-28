@@ -123,23 +123,15 @@ class siennaController extends Controller
     // 
     
       //    INSERT INTO ".$val->Database.".siennavariables ( variable, espanol, portugues, ingles, siennapaginas) VALUES( 'boton3', 'logeados', 'logado', 'logged in', 1);
-
+     // INSERT INTO ipcoms.masterreport (base,nombre,query,descripcion,crear,modificar,eliminar,parametros,parametrosTipo,tabla,servicio,dashboard,updated_at,created_at) VALUES
+      //(1,'csatp','select * from csatp','',1,1,1,'','','csatp',5,0,'2024-05-28 15:39:27','2024-05-28 15:39:27')
+     
     echo   $query1="
       
     
    
-   
-      CREATE TABLE ".$val->Database.".csatp (
-        id INT auto_increment NOT NULL,
-        nombre varchar(100) NULL,
-        p1 VARCHAR(100) NULL,
-        p2 VARCHAR(100) NULL,
-        p3 VARCHAR(100) NULL,
-        CONSTRAINT csatp_pk PRIMARY KEY (id)
-      )
-      ENGINE=InnoDB
-      DEFAULT CHARSET=utf8mb4
-      COLLATE=utf8mb4_0900_ai_ci;
+        ALTER TABLE ".$val->Database.".motivoc ADD url varchar(1000) NULL;
+
       
     
     

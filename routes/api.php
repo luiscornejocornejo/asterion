@@ -113,6 +113,7 @@ Route::post('/cambiardeptosienna20', [siennaticketsController::class, 'cambiarde
 
 Route::get('/estadoconv', [siennaticketsController::class, 'estadoconv']);
 
+Route::get('/preguntas', [siennaticketsController::class, 'preguntas']);
 
 
 
