@@ -1580,11 +1580,12 @@ class TicketdatosController extends Controller
        foreach($inte as $val){
             $urlinte=$val->version;
        }
+       $datosinte= "";
        if($urlinte<>"v1"){
          $numcli=$resultados[0]->cliente;
-            echo $urlinte2=$urlinte.$numcli;
+             $urlinte2=$urlinte.$numcli;
             $datosinte=  $json = file_get_contents($urlinte2);
-            dd($datosinte);
+           // dd($datosinte);
 
        }
        
@@ -1595,6 +1596,7 @@ class TicketdatosController extends Controller
         ->with('usersmerchant', $usersmerchant)
         ->with('iconos', $resultados5)
         ->with('emp', $emp)
+        ->with('datosinte', $datosinte)
         ->with('pri', $pri)
         ->with('resultadosmails', $resultadosmails)
         ->with('resultadoshistoricos', $resultadoshistoricos)
