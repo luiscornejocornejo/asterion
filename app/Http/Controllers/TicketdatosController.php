@@ -981,7 +981,7 @@ class TicketdatosController extends Controller
             // Close the cURL resource
             curl_close($curl);
 
-            sleep(30);
+            //sleep(30);
             if($subdomain_tmp =="soporte"){
                 $moti=motivoc::find($motivoc);
                 $urlbroad=$moti->url;
