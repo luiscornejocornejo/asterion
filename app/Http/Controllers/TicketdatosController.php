@@ -29,6 +29,7 @@ use App\Models\siennaseguimientos;
 use App\Models\siennaestado;
 use App\Models\empresa;
 use App\Models\prioridad;
+use App\Models\siennaintegracion;
 
 
 class TicketdatosController extends Controller
@@ -1573,17 +1574,17 @@ class TicketdatosController extends Controller
 
        $emp=empresa::all();
        $pri=prioridad::all();
-       if($siennasource==70){
-        return view("sienna/ticketunicoemail")
-        ->with('subdomain_tmp', $subdomain_tmp)
-        ->with('segui', $segui)
-        ->with('deptos', $resultadosdeptos)
-        ->with('usersmerchant', $usersmerchant)
-        ->with('iconos', $resultados5)
-        ->with('emp', $emp)
-        ->with('pri', $pri)
-         ->with('resultados', $resultados);
-       }else{
+
+       $inte=siennaintegracion::all();
+       foreach($inte as $val){
+            $urlinte=$val->version;
+       }
+       if($urlinte<>"v1"){
+            $datosinte=  $json = file_get_contents($urlinte);
+            dd($datosinte);
+
+       }
+       
         return view("sienna/ticketunico")
         ->with('subdomain_tmp', $subdomain_tmp)
         ->with('segui', $segui)
@@ -1596,7 +1597,7 @@ class TicketdatosController extends Controller
         ->with('resultadoshistoricos', $resultadoshistoricos)
         
          ->with('resultados', $resultados);
-       }
+       
 
     }
 }
