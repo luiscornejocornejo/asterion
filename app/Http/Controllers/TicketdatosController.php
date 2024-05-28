@@ -1581,6 +1581,7 @@ class TicketdatosController extends Controller
             $urlinte=$val->version;
        }
        $urlinte2="";
+       $datosonline="";
        if($urlinte<>"v1"){
             $numcli=$resultados[0]->cliente;
             $urlinte2=$urlinte.$numcli;
