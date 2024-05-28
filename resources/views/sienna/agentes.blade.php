@@ -107,15 +107,15 @@ document.getElementById("idagente").value = dd;
                                     </button> 
 
                                     <button onclick="ticket(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalticket"  class="btn btn-success rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="mdi mdi-office-building-cog" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-custom-class="mb-1" data-bs-title="Departamento"></i>
+                                    <i class="mdi mdi-account-arrow-left-outline" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        data-bs-custom-class="mb-1" data-bs-title="Asignación automática"></i>
                                     </button> 
-                                    <button onclick="notificacion(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalnotificacion"  class="btn btn-success rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button onclick="notificacion(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalnotificacion"  class="btn btn-primary rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="mdi mdi-email" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-custom-class="mb-1" data-bs-title="Departamento"></i>
+                                        data-bs-custom-class="mb-1" data-bs-title="Notificación email"></i>
                                     </button> 
                                     <button onclick="eliminar(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalticketeliminar"  class="btn btn-danger rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="mdi mdi-office-building-cog" data-bs-toggle="tooltip" data-bs-placement="top"
+                                    <i class="mdi mdi-delete-outline" data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-custom-class="mb-1" data-bs-title="Departamento"></i>
                                     </button> 
                                 </td>
