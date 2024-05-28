@@ -850,6 +850,7 @@ class siennaticketsController extends Controller
             $sc->cliente = "";
         }
         $sc->cel = $cel;
+        $sc->nya = $nya;
     
         try {
             $sc->save();
