@@ -536,6 +536,35 @@ function tituloiconos($iconos, $tipo)
 
                         </div>
                     </div>
+
+                    <?php if($urlinte2<>""){?>
+                        <div class="mt-2">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h4 class="fw-normal text-dark" title="Number of Customers">Datos Online<?php echo $urlinte2;?></h4>
+                                    </div>
+                                    <div>
+                                    <button onclick="online('<?php echo $urlinte2;?>')" type="button" class="btn me-2 mt-2 rounded-pill" style="background-color: #FFD193;">Get</button> 
+                                    </div>
+                                </div>
+                                <hr style="margin-top: 10px;" />
+                                <div class="row">
+                                    <div id="datosonline" class="col-xxl-12 col-xl-12 col-lg-12 col-sm-12">
+                                        
+                                        
+                                       
+                                              
+                                    </div>
+                                    
+                                </div>                    
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <?php }?>
                 </div>
                 <div class="col-sm-12 col-lg-4 col-xxl-3 card widget-flat">
                     <strong class="mt-2">Seguimiento</strong>

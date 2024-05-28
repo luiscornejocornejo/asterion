@@ -1580,13 +1580,10 @@ class TicketdatosController extends Controller
        foreach($inte as $val){
             $urlinte=$val->version;
        }
-       $datosinte= "";
+       $urlinte2="";
        if($urlinte<>"v1"){
-         $numcli=$resultados[0]->cliente;
-             $urlinte2=$urlinte.$numcli;
-            $datosinte=  $json = file_get_contents($urlinte2);
-           // dd($datosinte);
-
+            $numcli=$resultados[0]->cliente;
+            $urlinte2=$urlinte.$numcli;
        }
        
         return view("sienna/ticketunico")
@@ -1596,7 +1593,7 @@ class TicketdatosController extends Controller
         ->with('usersmerchant', $usersmerchant)
         ->with('iconos', $resultados5)
         ->with('emp', $emp)
-        ->with('datosinte', $datosinte)
+        ->with('urlinte2', $urlinte2)
         ->with('pri', $pri)
         ->with('resultadosmails', $resultadosmails)
         ->with('resultadoshistoricos', $resultadoshistoricos)
