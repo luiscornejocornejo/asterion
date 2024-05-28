@@ -904,7 +904,7 @@ class TicketdatosController extends Controller
             CURLOPT_TIMEOUT => 0,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_CUSTOMREQUEST => 'GET',
             CURLOPT_HTTPHEADER => $headers,
         );
   
@@ -946,7 +946,7 @@ class TicketdatosController extends Controller
                 $urlbroad=$moti->url;
                 $si44 = siennatickets::find($tik);
                 $telbroad=$si44->cel;
-                $telbroad="+5491160480646";
+                //$telbroad="+5491160480646";
                 
                 if($urlbroad<>""){
                     $tt=$this->llamadobroadcast($urlbroad,$telbroad);
