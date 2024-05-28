@@ -1846,6 +1846,25 @@ class siennaticketsController extends Controller
         $resultados = DB::select($query);
         return $resultados;
     }
+    public function preguntas2(Request $request)
+    {
+        
+        $resultados = "";
+        $dom=$this->dominio();
+        $tipo=$request->tipo;
+        $r1=$request->r1;
+        $r2=$request->r2;
+        $r3=$request->r3;
+        $ticket=$request->ticket;
+        $token=$request->token;
+        if($token<>"35PTuqhHKY1mfMfDbcuXJ2Qvwfwmr2MttDF93ZQb00GhIIRZ13OPd8l0TMmS20bj"){
+            return "token incorrecto";
+        }
+        $query="        
+        INSERT INTO ".$dom.".csat ( nombre, r1, r2, r3, csat, ticket, userid) VALUES('".$tipo."', ".$r1.", ".$r2.", ".$r3.", '', '".$ticket."', '')";
+        $resultados = DB::select($query);
+        return $resultados;
+    }
     public function ctx(Request $request){
 
 
