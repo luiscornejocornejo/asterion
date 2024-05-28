@@ -771,6 +771,7 @@ class siennaticketsController extends Controller
         $siennaestado = $request->siennaestado;
         $siennasource = "5";
         $cliente = $request->cliente;
+        $nya = $request->nya;
         $merchant = $request->merchant;
         $valida = $this->valida($cliente,$merchant);//telcontacto
         if($valida>0){
@@ -811,6 +812,7 @@ class siennaticketsController extends Controller
         $si = new siennatickets();
         $si->siennadepto = $siennadepto;
         $si->cliente = $cliente;
+        $si->nya = $nya;
         $si->siennatopic = $siennatopic;
         $si->siennaestado = $siennaestado;
         $si->siennasource = $siennasource;
