@@ -537,7 +537,7 @@ function tituloiconos($iconos, $tipo)
                         </div>
                     </div>
 
-                    <?php if($urlinte2<>""){?>
+                    <?php if($urlinte2=="luis"){?>
                         <div class="mt-2">
                         <div class="card widget-flat">
                             <div class="card-body">

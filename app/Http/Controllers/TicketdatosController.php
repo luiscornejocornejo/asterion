@@ -1582,7 +1582,8 @@ class TicketdatosController extends Controller
        }
        $urlinte2="";
        $datosonline="";
-       if($urlinte<>"v1"){
+       /*
+       if($urlinte=="luis"){
             $numcli=$resultados[0]->cliente;
             $urlinte2=$urlinte.$numcli;
           
@@ -1595,7 +1596,7 @@ class TicketdatosController extends Controller
                 echo "Everything went better than expected";
           }
 
-       }
+       }*/
        
         return view("sienna/ticketunico")
         ->with('subdomain_tmp', $subdomain_tmp)
