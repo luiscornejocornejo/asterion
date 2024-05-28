@@ -125,11 +125,9 @@ class siennaController extends Controller
       //    INSERT INTO ".$val->Database.".siennavariables ( variable, espanol, portugues, ingles, siennapaginas) VALUES( 'boton3', 'logeados', 'logado', 'logged in', 1);
      //
     echo   $query1="
-      
-    
-    INSERT INTO ".$val->Database.".masterreport (id,base,nombre,query,descripcion,crear,modificar,eliminar,parametros,parametrosTipo,tabla,servicio,dashboard,updated_at,created_at) VALUES
-      ('138',1,'csatp','select * from csatp','',1,1,1,'','','csatp',5,0,'2024-05-28 15:39:27','2024-05-28 15:39:27')
-     
+    update ".$val->Database.".masterreport set nombre='csatp',
+    query='select * from csatp',crear=1,modificar=1,eliminar=1,tabla='csatp',servicio=5 where id='20'
+
 
       
     

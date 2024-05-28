@@ -131,7 +131,12 @@ $siennadeptosgenericos = DB::select($querygenerico);
                         <span> Motivos cierre </span>
                     </a>
                 </li>
-               
+                <li class="side-nav-item background-buttons">
+                    <a  href="/siennaabm?id=20"  class="side-nav-link hovering-pan ">
+                        <i class="mdi mdi-notebook"></i>
+                        <span> C-sat </span>
+                    </a>
+                </li>
                
                 <li class="side-nav-item background-buttons">
                     <a  href="/nodes"  class="side-nav-link hovering-pan ">
