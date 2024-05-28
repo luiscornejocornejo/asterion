@@ -1584,15 +1584,15 @@ class TicketdatosController extends Controller
        if($urlinte<>"v1"){
             $numcli=$resultados[0]->cliente;
             $urlinte2=$urlinte.$numcli;
-            try {
-                $datosonline = file_get_contents($urlinte2);
-            }
-            catch(Exception $e)
-            {
-                echo "";
+          
+            if (($datosonline = @file_get_contents(urlinte2)) === false) {
+                $error = error_get_last();
+                //echo "HTTP request failed. Error was: " . $error['message'];
                 $urlinte2="";
 
-            }
+          } else {
+                echo "Everything went better than expected";
+          }
 
        }
        
