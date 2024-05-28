@@ -1576,10 +1576,12 @@ class TicketdatosController extends Controller
        $pri=prioridad::all();
 
        $inte=siennaintegracion::all();
+       
        foreach($inte as $val){
             $urlinte=$val->version;
        }
        if($urlinte<>"v1"){
+        echo $inte->version;
             $datosinte=  $json = file_get_contents($urlinte);
             dd($datosinte);
 
