@@ -319,7 +319,7 @@ function tituloiconos($iconos, $tipo)
                                         <form method='post'action='/api/mandarmail'>
                                          @csrf
                                         <input id="subject" class="" readonly type="email" value="<?php echo $resultados[0]->emailcliente;?>">
-                                        <input id="cc2" class="" readonly type="text" value="<?php echo $resultados[0]->cc;?>">
+                                        <input id="cc2" class=""  type="text" value="<?php echo $resultados[0]->cc;?>">
                                         <input id="mailaeviar" class="" readonly type="text" value="<?php echo $resultados[0]->emailnom;?>">
                                             <div id="snow-editor" style="height: 300px;">
                                             </div>
