@@ -14,7 +14,7 @@
 
                                             <div class="mt-3">
 
-                                                <div v-for="department in departments ">
+                                                <div required v-for="department in departments ">
                                                     <?php foreach ($usersmerchant as $dep) {?>
                                                         <input value="<?php echo $dep->id; ?>" class="form-radio" type="radio" name="usuarioticket">&nbsp;
                                                     <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo $dep->nombre . " " . $dep->last_name; ?></span>
