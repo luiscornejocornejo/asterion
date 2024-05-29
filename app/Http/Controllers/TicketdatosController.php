@@ -406,6 +406,11 @@ class TicketdatosController extends Controller
         $statos=$request->statos;
 
         $nuevo="";
+        if($statos==""){
+            return redirect()
+            ->back()
+            ->with('success', 'Debe seleccionar al menoso una area!');
+        }
         foreach($statos as $val){
 
             $nuevo.=$val.",";
