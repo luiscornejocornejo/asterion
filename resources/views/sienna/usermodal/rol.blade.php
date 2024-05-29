@@ -14,10 +14,10 @@
 
                         <div >
                      
-                            <input value="2" class="form-radio" type="radio" name="statos">&nbsp;
+                            <input required value="2" class="form-radio" type="radio" name="statos">&nbsp;
                         <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;">Supervisor</span>
                             <br><br>
-                            <input value="3" class="form-radio" type="radio" name="statos">&nbsp;
+                            <input required value="3" class="form-radio" type="radio" name="statos">&nbsp;
                         <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;">Agente</span>
                             <br><br>
  
