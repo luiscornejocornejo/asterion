@@ -39,7 +39,13 @@ document.getElementById("idagente").value = dd;
 
       <div class="content-page" style="padding: 0!important;">
           <div class="content">
-
+          @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade
+                            show" role="alert">
+            {{ $message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
               <!-- Start Content-->
                 <div class="container-fluid pt-2">
                     <table id="example" class="table dt-responsive nowrap w-100">
