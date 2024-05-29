@@ -15,7 +15,7 @@
                         <div >
                      
                         <?php foreach($deptos as $dep){?>
-                            <input value="<?php echo $dep->id;?>" class="form-radio" type="checkbox" name="statos[]">&nbsp;
+                            <input required value="<?php echo $dep->id;?>" class="form-radio" type="checkbox" name="statos[]">&nbsp;
                         <span class=" fw-bold" style="color: #98a6ad;font-size: 12px;"><?php echo$dep->nombre;?></span>
                             <br><br>
 
