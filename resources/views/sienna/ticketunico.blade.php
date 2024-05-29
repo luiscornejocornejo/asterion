@@ -143,6 +143,13 @@ function tituloiconos($iconos, $tipo)
     @include('facu.menu')
     <div class="content-page" style="padding: 0!important;">
         <div class="content">
+        @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade
+                            show" role="alert">
+            {{ $message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
             <div class="container pt-2 ">
                 <div class="d-flex justify-content-between pb-2">
                     <div>

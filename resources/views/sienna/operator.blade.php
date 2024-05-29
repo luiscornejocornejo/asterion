@@ -363,7 +363,13 @@ function listadoseguimientos(result,dd) {
           <div class="content">
 
               <!-- Start Content-->
-            
+              @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade
+                            show" role="alert">
+            {{ $message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
                 <div class="container-fluid pt-2" id="casa"  >
                    
                     
