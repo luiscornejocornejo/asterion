@@ -645,7 +645,7 @@ class cloudtickets extends Controller
     public function tareas(Request $request)
     {
         $domi=$this->dominio();
-        $query2="select * from siennatareas";
+        $query2="select * from ".$domi.".siennatareas";
         $tareas = DB::select($query2);
         //$tareas = siennatareas::all()->get();
         return view('sienna/tareas')
