@@ -21,7 +21,7 @@ use App\Models\siennaestado;
 use App\Models\prioridad;
 use App\Models\siennatopic;
 use App\Models\empresa;
-use App\Models\tareas;
+use App\Models\siennatareas;
 use Mail;
 
 class cloudtickets extends Controller
@@ -644,7 +644,7 @@ class cloudtickets extends Controller
     
     public function tareas(Request $request)
     {
-        $tareas = tareas::all()->get();
+        $tareas = siennatareas::all()->get();
         return view('sienna/tareas')
         ->with('tareas', $tareas);
     }
