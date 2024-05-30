@@ -254,6 +254,7 @@ Route::post('/crearticketsiennacliente','App\Http\Controllers\cloudtickets@crear
 Route::post('/crearticketsiennanocliente','App\Http\Controllers\cloudtickets@crearticketsiennanocliente');
 Route::post('/notificacionusers','App\Http\Controllers\cloudtickets@notificacionusers');
 
+Route::get('/tareas','App\Http\Controllers\cloudtickets@tareas');
 
 
 

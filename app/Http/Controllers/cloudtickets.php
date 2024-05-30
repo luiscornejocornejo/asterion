@@ -21,6 +21,7 @@ use App\Models\siennaestado;
 use App\Models\prioridad;
 use App\Models\siennatopic;
 use App\Models\empresa;
+use App\Models\tareas;
 use Mail;
 
 class cloudtickets extends Controller
@@ -638,5 +639,13 @@ class cloudtickets extends Controller
         ->back()
         ->with('success', 'Se modifico  el registro  correctamente!');
 
+    }
+
+    
+    public function tareas(Request $request)
+    {
+        $tareas = tareas::all()->get();
+        return view('sienna/tareas')
+        ->with('tareas', $tareas);
     }
 }
