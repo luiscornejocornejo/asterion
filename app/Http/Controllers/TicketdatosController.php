@@ -987,7 +987,7 @@ class TicketdatosController extends Controller
             curl_close($curl);
 
             //sleep(30);
-            if($subdomain_tmp =="soporte"){
+            //if($subdomain_tmp =="soporte"){
                 $moti=motivoc::find($motivoc);
                 $urlbroad=$moti->url;
                 $si44 = siennatickets::find($tik);
@@ -999,7 +999,7 @@ class TicketdatosController extends Controller
                         $tt=$this->llamadobroadcast($urlbroad,$telbroad);
                     }
                 }
-            }
+           // }
     
         }
         //dd($tik);
