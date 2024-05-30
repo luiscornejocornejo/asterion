@@ -127,22 +127,22 @@ class siennaController extends Controller
     echo   $query1="
    
 
-    CREATE TABLE ".$val->Database.".tareas (
-      id varchar(100) auto_increment NOT NULL,
-      nombre varchar(100) NULL,
-      descripcion TEXT NULL,
-      users SMALLINT NULL,
-      siennaticket SMALLINT NULL,
-      tareaestado INT NULL,
-      fechalimite DATETIME NULL,
-      created_at DATETIME NULL,
-      updated_at DATETIME NULL,
-      CONSTRAINT tareas_pk PRIMARY KEY (id)
-    )
-    ENGINE=InnoDB
-    DEFAULT CHARSET=utf8mb4
-    COLLATE=utf8mb4_0900_ai_ci;
-    
+      CREATE TABLE ".$val->Database.".siennatareas (
+        id INT auto_increment NOT NULL,
+        nombre varchar(100) NULL,
+        descripcion TEXT NULL,
+        users SMALLINT NULL,
+        siennatickets SMALLINT NULL,
+        fechalimite DATETIME NULL,
+        visto varchar(100) NULL,
+        created_at DATETIME NULL,
+        updated_at DATETIME NULL,
+        CONSTRAINT siennatareas_pk PRIMARY KEY (id)
+      )
+      ENGINE=InnoDB
+      DEFAULT CHARSET=utf8mb4
+      COLLATE=utf8mb4_0900_ai_ci;
+      
     
     
         
