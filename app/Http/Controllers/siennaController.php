@@ -125,11 +125,24 @@ class siennaController extends Controller
       //    INSERT INTO ".$val->Database.".siennavariables ( variable, espanol, portugues, ingles, siennapaginas) VALUES( 'boton3', 'logeados', 'logado', 'logged in', 1);
      //
     echo   $query1="
-    update ".$val->Database.".masterreport set nombre='csatp',
-    query='select * from csatp',crear=1,modificar=1,eliminar=1,tabla='csatp',servicio=5 where id='20'
+   
 
-
-      
+    CREATE TABLE ".$val->Database.".tareas (
+      id varchar(100) auto_increment NOT NULL,
+      nombre varchar(100) NULL,
+      descripcion TEXT NULL,
+      users SMALLINT NULL,
+      siennaticket SMALLINT NULL,
+      tareaestado INT NULL,
+      fechalimite DATETIME NULL,
+      created_at DATETIME NULL,
+      updated_at DATETIME NULL,
+      CONSTRAINT tareas_pk PRIMARY KEY (id)
+    )
+    ENGINE=InnoDB
+    DEFAULT CHARSET=utf8mb4
+    COLLATE=utf8mb4_0900_ai_ci;
+    
     
     
         
