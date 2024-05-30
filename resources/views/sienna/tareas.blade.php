@@ -115,11 +115,7 @@ document.getElementById("idagente").value = dd;
           </div>
           <!-- content -->
       </div>
-      @include('sienna.usermodal.rol')        
-      @include('sienna.usermodal.areas')        
-      @include('sienna.usermodal.ticket')        
-      @include('sienna.usermodal.nuevo')        
-      @include('sienna.usermodal.notificacion')        
+        
 
 <!-- Modal users register -->
  
