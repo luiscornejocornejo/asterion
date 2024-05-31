@@ -257,7 +257,7 @@ Route::post('/notificacionusers','App\Http\Controllers\cloudtickets@notificacion
 Route::get('/tareas','App\Http\Controllers\cloudtickets@tareas');
 Route::get('/getdata','App\Http\Controllers\cloudtickets@getdata');
 
-
+ 
 
 
 Route::get('/userprofile', function () {
