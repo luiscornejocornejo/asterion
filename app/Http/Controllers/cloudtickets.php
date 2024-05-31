@@ -685,8 +685,10 @@ class cloudtickets extends Controller
       } else {
            // echo "Everything went better than expected";
       }
-      
-      return $datosonline;
+      return view('sienna/getdata')
+      ->with('datosonline', $datosonline);
+
+
 
     }
 }
