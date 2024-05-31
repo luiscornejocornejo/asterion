@@ -50,6 +50,9 @@
                             </div>
                             <div class="container">
                                 <div class="row">
+                                    <div class="border" class="col-4">
+                                        TWO
+                                    </div>
                                     <div class="border" class="col-2">
                                     <?php if(isset($datosonline)){?>
 
@@ -61,9 +64,7 @@
                                         </script>     
                                      <?php }?>
                                     </div>
-                                    <div class="border" class="col-4">
-                                        TWO
-                                    </div>
+                                    
                                 </div>
                             </div>
 
