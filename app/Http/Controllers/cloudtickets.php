@@ -23,6 +23,7 @@ use App\Models\siennatopic;
 use App\Models\empresa;
 use App\Models\siennatareas;
 use App\Models\siennaintegracion;
+use App\Models\siennagetdata;
 
 use Mail;
 
@@ -671,6 +672,7 @@ class cloudtickets extends Controller
         $domi=$this->dominio();
         $numcli=$cliente;
         $inte=siennaintegracion::all();
+        $getdata=siennagetdata::all();
        
        foreach($inte as $val){
             $urlinte=$val->version;
@@ -686,7 +688,8 @@ class cloudtickets extends Controller
            // echo "Everything went better than expected";
       }
       return view('sienna/getdata')
-      ->with('datosonline', $datosonline);
+      ->with('datosonline', $datosonline)
+      ->with('getdata', $getdata);
 
 
 
