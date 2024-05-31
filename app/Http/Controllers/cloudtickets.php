@@ -656,4 +656,29 @@ class cloudtickets extends Controller
         ->with('usersmerchant', $usersmerchant)
         ->with('tareas', $tareas);
     }
+
+
+    public function getdata(Request $request)
+    {
+        $cliente=$request->cliente;
+        $domi=$this->dominio();
+        $numcli=$cliente;
+        $inte=siennaintegracion::all();
+       
+       foreach($inte as $val){
+            $urlinte=$val->version;
+       }
+        $urlinte2=$urlinte.$numcli;
+      
+        if (($datosonline = @file_get_contents($urlinte2)) === false) {
+            $error = error_get_last();
+            //echo "HTTP request failed. Error was: " . $error['message'];
+            $urlinte2="";
+
+      } else {
+            echo "Everything went better than expected";
+      }
+      dd($datosonline);
+
+    }
 }
