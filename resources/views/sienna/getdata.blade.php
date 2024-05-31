@@ -43,27 +43,31 @@
 
                                         </form>
 
-
-                                        <?php if(isset($datosonline)){?>
-
-                                            <div id="datosonline" class="">
-                                        <pre id="json"></pre>
-
-                                    <script>
-                                        let data = <?php echo $datosonline;?>;
-                                        document.getElementById("json").textContent = JSON.stringify(data, undefined, 2);
-                                    </script>                                       <?php }?>
-
-
-
-
                                     </div>
 
                                 
                                 </div><!-- /.modal-content -->
                             </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                    <?php if(isset($datosonline)){?>
 
+                                        <pre id="json"></pre>
 
+                                        <script>
+                                        let data = <?php echo $datosonline;?>;
+                                        document.getElementById("json").textContent = JSON.stringify(data, undefined, 2);
+                                        </script>     
+                                     <?php }?>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        TWO
+                                    </div>
+                                </div>
+                            </div>
+
+                           
 
 
 
