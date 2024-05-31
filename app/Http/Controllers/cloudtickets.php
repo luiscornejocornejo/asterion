@@ -710,10 +710,10 @@ class cloudtickets extends Controller
         $getdata->nombre=$nombre;
         $getdata->save();
 
-/*
+
         return redirect()
         ->back()
-        ->with('success', 'Se Agrego  el registro  correctamente!');*/
+        ->with('success', 'Se Agrego  el registro  correctamente!');
  
     }
 }
