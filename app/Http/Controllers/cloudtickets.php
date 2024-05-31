@@ -678,7 +678,7 @@ class cloudtickets extends Controller
             $urlinte2="";
 
       } else {
-            echo "Everything went better than expected";
+           // echo "Everything went better than expected";
       }
       dd($datosonline);
 
