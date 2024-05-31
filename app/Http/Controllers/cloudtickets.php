@@ -700,9 +700,9 @@ class cloudtickets extends Controller
     public function newvalor(Request $request)
     {       
         
-        $valor=$request->valor;
-        $icono=$request->icono;
-        $nombre=$request->nombre;
+       echo  $valor=$request->valor;
+       echo $icono=$request->icono;
+       echo  $nombre=$request->nombre;
         
         $getdata=new siennagetdata();
         $getdata->valor=$valor;
