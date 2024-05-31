@@ -7,7 +7,7 @@
                     </div>
                     <div class="modal-body">
                         <form action="/valore" method="POST">
-                                    @csrf
+                            
                             <label class="form-label" for="exampleInputEmail1">Nombre</label>
                             <input type="text" name="nombre" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre" required="">
 
@@ -19,7 +19,7 @@
                             
                            
                             <button type="submit" class="btn btn-success w-100">Crear</button>
-                            
+                            @csrf
                          </form>
                     </div>
                 </div><!-- /.modal-content -->
