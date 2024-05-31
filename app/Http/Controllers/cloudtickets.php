@@ -680,7 +680,7 @@ class cloudtickets extends Controller
       } else {
            // echo "Everything went better than expected";
       }
-      dd($datosonline);
+      echo $datosonline;
 
     }
 }
