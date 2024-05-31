@@ -660,9 +660,11 @@ class cloudtickets extends Controller
         ->with('tareas', $tareas);
     }
     public function getdata(Request $request)
-    {
+    {        $getdata=siennagetdata::all();
 
-        return view('sienna/getdata');
+
+        return view('sienna/getdata')
+        ->with('getdata', $getdata);
  
     }
 
