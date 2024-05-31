@@ -123,20 +123,13 @@ class siennaController extends Controller
     // 
     
       //    INSERT INTO ".$val->Database.".siennavariables ( variable, espanol, portugues, ingles, siennapaginas) VALUES( 'boton3', 'logeados', 'logado', 'logged in', 1);
-     //
+     //          ALTER TABLE ".$val->Database.".siennagetdata ADD created_at DATETIME NULL;
+
     echo   $query1="
    
 
-        CREATE TABLE ".$val->Database.".siennagetdata (
-          id INT auto_increment NOT NULL,
-          nombre varchar(100) NULL,
-          icono varchar(100) NULL,
-          valor varchar(100) NULL,
-          CONSTRAINT siennagetdata_pk PRIMARY KEY (id)
-        )
-        ENGINE=InnoDB
-        DEFAULT CHARSET=utf8mb4
-        COLLATE=utf8mb4_0900_ai_ci;
+          ALTER TABLE ".$val->Database.".siennagetdata ADD updated_at DATETIME NULL;
+          
         
       
     
