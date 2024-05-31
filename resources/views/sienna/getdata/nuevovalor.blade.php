@@ -16,10 +16,10 @@
                             
                             <label class="form-label" for="exampleInputEmail1">Valor</label>
                             <input type="text" name="valor" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Valor" required="">
-                            
+                            @csrf
                            
                             <button type="submit" class="btn btn-success w-100">Crear</button>
-                            @csrf
+                            
                          </form>
                     </div>
                 </div><!-- /.modal-content -->
