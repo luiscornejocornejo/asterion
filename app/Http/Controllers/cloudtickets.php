@@ -696,4 +696,24 @@ class cloudtickets extends Controller
 
 
     }
+
+    public function newvalor(Request $request)
+    {       
+        
+        $valor=$request->valor;
+        $icono=$request->icono;
+        $nombre=$request->nombre;
+        
+        $getdata=new siennagetdata;
+        $getdata->valor=$valor;
+        $getdata->valor=$icono;
+        $getdata->valor=$valor;
+        $getdata->save();
+
+
+        return redirect()
+        ->back()
+        ->with('success', 'Se Agrego  el registro  correctamente!');
+ 
+    }
 }
