@@ -6,7 +6,7 @@
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="/newvalor" method="POST">
+                        <form action="/valore" method="POST">
                                     @csrf
                             <label class="form-label" for="exampleInputEmail1">Nombre</label>
                             <input type="text" name="nombre" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre" required="">
