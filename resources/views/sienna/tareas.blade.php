@@ -118,29 +118,11 @@ document.getElementById("idagente").value = dd;
         
 
 <!-- Modal users register -->
+@include('sienna.tareas.nuevotareas')        
 
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Eliminar</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Esta seguro que quiere borrar al Agente</p>
-                                    <form method="post" action="/eliminaragente">
-
-                                        <input type="hidden" name="idagente" id="idagente" value="">
-                                        
-
-                                        @csrf
-                                        <button type="submit" class="btn btn-danger">Eliminar</button>
-                                    </form>
-                                </div>
-                            </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                    </div><!-- /.modal -->
+                    
       <!-- End users register -->
-      <div class="newAgent"  data-bs-toggle="modal" data-bs-target="#standard-modal23">
+      <div class="newAgent"  data-bs-toggle="modal" data-bs-target="#standard-modaltareas">
         <i class="mdi mdi-account-plus" style="font-size: 25px;"></i>
       </div>
 
