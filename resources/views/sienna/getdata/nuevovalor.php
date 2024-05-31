@@ -13,10 +13,10 @@
                             <input type="text" name="nombre" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre" required="">
 
                             <label class="form-label" for="exampleInputEmail1">Icono </label>
-                            <input type="text" name="icono" class="form-control mb-2" id="" aria-describedby="" placeholder="Apellido" required="">
+                            <input type="text" name="icono" class="form-control mb-2" id="" aria-describedby="" placeholder="Icono" required="">
                             
                             <label class="form-label" for="exampleInputEmail1">Valor</label>
-                            <input type="text" name="valor" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mail logeo" required="">
+                            <input type="text" name="valor" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Valor" required="">
                             
                            
                             <button type="submit" class="btn btn-success w-100">Crear</button>
