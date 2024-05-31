@@ -658,9 +658,14 @@ class cloudtickets extends Controller
         ->with('usersmerchant', $usersmerchant)
         ->with('tareas', $tareas);
     }
-
-
     public function getdata(Request $request)
+    {
+
+        return view('sienna/getdata');
+ 
+    }
+
+    public function getdata2(Request $request)
     {
         $cliente=$request->cliente;
         $domi=$this->dominio();
@@ -680,7 +685,7 @@ class cloudtickets extends Controller
       } else {
            // echo "Everything went better than expected";
       }
-      echo $datosonline;
+      return $datosonline;
 
     }
 }
