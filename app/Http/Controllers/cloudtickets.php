@@ -647,8 +647,13 @@ class cloudtickets extends Controller
         $domi=$this->dominio();
         $query2="select * from ".$domi.".siennatareas";
         $tareas = DB::select($query2);
+
+
+        $query3="select * from ".$domi.".users";
+        $usersmerchant = DB::select($query3);
         //$tareas = siennatareas::all()->get();
         return view('sienna/tareas')
+        ->with('usersmerchant', $usersmerchant)
         ->with('tareas', $tareas);
     }
 }

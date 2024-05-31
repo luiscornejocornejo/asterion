@@ -2,6 +2,7 @@
 
 
 <script>
+        let usersmerchant = {!! json_encode($usersmerchant,JSON_FORCE_OBJECT) !!};
 
 function rol(dd) {
 

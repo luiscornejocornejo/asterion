@@ -20,7 +20,7 @@
                             
                             <label class="form-label" for="exampleInputEmail1">Grupos </label>
                             <select name="grupossso[]" class="form-control mb-2" multiple="">   
-                                <?php foreach ($deptos as $dep){?>
+                                <?php foreach ($usersmerchant as $dep){?>
 
 
                                 
