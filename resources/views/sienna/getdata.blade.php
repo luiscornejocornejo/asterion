@@ -66,7 +66,7 @@
                                                     </tr>
                                             </thead>
                                             <tbody id="tb">
-                                                    <?php foreach($resulgetdatatadoshistoricos as $valh){?>
+                                                    <?php foreach($getdata as $valh){?>
                                                         <tr class="text-center">
                                                         <td><?php echo $valh->nombre;?></td>
                                                         <td><?php echo $valh->icono;?></td>
