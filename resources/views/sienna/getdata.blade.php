@@ -107,9 +107,10 @@
       </div>
         
 
+      @include('sienna.getdata.nuevovalor')        
 
       <!-- End users register -->
-      <div class="newAgent"  data-bs-toggle="modal" data-bs-target="#standard-modalgetdata">
+      <div class="newAgent"  data-bs-toggle="modal" data-bs-target="#standard-modalvalor">
         <i class="mdi mdi-account-plus" style="font-size: 25px;"></i>
       </div>
 
