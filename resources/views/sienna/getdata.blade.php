@@ -50,7 +50,7 @@
                             </div>
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-xs-8">
+                                    <divclass="border" class="col-xs-8">
                                     <?php if(isset($datosonline)){?>
 
                                         <pre id="json"></pre>
@@ -61,7 +61,7 @@
                                         </script>     
                                      <?php }?>
                                     </div>
-                                    <div class="col-xs-4">
+                                    <div class="border" class="col-xs-4">
                                         TWO
                                     </div>
                                 </div>
