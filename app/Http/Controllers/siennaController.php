@@ -123,13 +123,12 @@ class siennaController extends Controller
     // 
     
       //    INSERT INTO ".$val->Database.".siennavariables ( variable, espanol, portugues, ingles, siennapaginas) VALUES( 'boton3', 'logeados', 'logado', 'logged in', 1);
-     //          ALTER TABLE ".$val->Database.".siennagetdata ADD created_at DATETIME NULL;
 
     echo   $query1="
    
 
-          ALTER TABLE ".$val->Database.".siennagetdata ADD updated_at DATETIME NULL;
-          
+             ALTER TABLE ".$val->Database.".siennagetdata ADD created_at DATETIME NULL;
+
         
       
     
