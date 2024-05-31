@@ -58,11 +58,10 @@
                                         <table id="example"  class="table table-striped dt-responsive nowrap w-100 text-light">
                                             <thead>
                                                     <tr class="text-center bg-dark" >                             
-                                                        <th class="text-light">Ticket</th>
-                                                        <th class="text-light">Departamento</th>
-                                                        <th class="text-light">Tema</th>
-                                                        <th class="text-light">Estado</th>
-                                                        <th class="text-light">Inicio</th>
+                                                        <th class="text-light">Nombre</th>
+                                                        <th class="text-light">Icono</th>
+                                                        <th class="text-light">Valor</th>
+                                                      
                                                     </tr>
                                             </thead>
                                             <tbody id="tb">
