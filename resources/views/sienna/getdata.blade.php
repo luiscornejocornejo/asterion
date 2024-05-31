@@ -50,7 +50,7 @@
                             </div>
                             <div class="container">
                                 <div class="row">
-                                    <divclass="border" class="col-xs-8">
+                                    <div class="border" class="col-xs-8">
                                     <?php if(isset($datosonline)){?>
 
                                         <pre id="json"></pre>
