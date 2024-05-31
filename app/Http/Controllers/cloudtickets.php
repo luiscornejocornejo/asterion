@@ -706,8 +706,8 @@ class cloudtickets extends Controller
         
         $getdata=new siennagetdata();
         $getdata->valor=$valor;
-        $getdata->valor=$icono;
-        $getdata->valor=$valor;
+        $getdata->icono=$icono;
+        $getdata->nombre=$nombre;
         $getdata->save();
 
 /*
