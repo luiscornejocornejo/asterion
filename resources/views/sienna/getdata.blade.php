@@ -51,7 +51,34 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="border" class="col-4">
-                                        TWO
+                                    <div class="row">
+                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-sm-12">
+                                        
+                                        
+                                        <table id="example"  class="table table-striped dt-responsive nowrap w-100 text-light">
+                                            <thead>
+                                                    <tr class="text-center bg-dark" >                             
+                                                        <th class="text-light">Ticket</th>
+                                                        <th class="text-light">Departamento</th>
+                                                        <th class="text-light">Tema</th>
+                                                        <th class="text-light">Estado</th>
+                                                        <th class="text-light">Inicio</th>
+                                                    </tr>
+                                            </thead>
+                                            <tbody id="tb">
+                                                    <?php foreach($resulgetdatatadoshistoricos as $valh){?>
+                                                        <tr class="text-center">
+                                                        <td><?php echo $valh->nombre;?></td>
+                                                        <td><?php echo $valh->icono;?></td>
+                                                        <td><?php echo $valh->valor;?></td>
+                                                    </tr>
+                                                        <?php  }?>
+                                            </tbody>
+                                            </table>
+                                              
+                                    </div>
+                                    
+                                </div> 
                                     </div>
                                     <div class="border" class="col-2">
                                     <?php if(isset($datosonline)){?>
