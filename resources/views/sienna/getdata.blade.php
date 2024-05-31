@@ -44,7 +44,7 @@
                                         </form>
 
 
-                                        <?php if(isset($lista)){?>
+                                        <?php if(isset($datosonline)){?>
 
                                             <div id="datosonline" class="">
                                         <pre id="json"></pre>
