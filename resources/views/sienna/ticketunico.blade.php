@@ -76,7 +76,7 @@ function tituloiconos($iconos, $tipo)
     }
     var originalTitle = document.title;
 
-    identificadorIntervaloDeTiempo = setInterval(checkmensaje, 18000);
+    identificadorIntervaloDeTiempo = setInterval(checkmensaje, 180000);
     function checkmensaje(){
         var URLactual = window.location.href;
             var porciones = URLactual.split('.');
