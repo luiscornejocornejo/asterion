@@ -36,10 +36,10 @@
                                                 @csrf
                                                 <br>
                                             <label for="exampleInputEmail1">getdata </label>
-                                            <input type="text" name="cliente" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="merchand" required>
+                                            <input type="text" name="cliente" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="cliente" required>
                                             <br>
                                         
-                                                <button type="submit" style="background-color:#18D777" class="btn  form-control">Crear</button>
+                                                <button type="submit" style="background-color:#18D777" class="btn  form-control">Buscar</button>
 
                                         </form>
 
@@ -50,7 +50,7 @@
                             </div>
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-xs-12">
+                                    <div class="col-xs-4">
                                     <?php if(isset($datosonline)){?>
 
                                         <pre id="json"></pre>
@@ -61,7 +61,7 @@
                                         </script>     
                                      <?php }?>
                                     </div>
-                                    <div class="col-xs-12">
+                                    <div class="col-xs-4">
                                         TWO
                                     </div>
                                 </div>
