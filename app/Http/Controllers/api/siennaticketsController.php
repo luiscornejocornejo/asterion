@@ -2091,13 +2091,12 @@ class siennaticketsController extends Controller
         echo  $nombre=$val->nombre;
         echo  $icono=$val->icono;
         echo $valor=$val->valor;
-        $valor_buscado = $valor;
-         // Buscar el valor dentro del array asociativo
-        if ($this->buscarvalor($array_data, $valor_buscado)) {
-                    echo "El valor \"$valor_buscado\" fue encontrado en el JSON.";
-        } else {
-                    echo "El valor \"$valor_buscado\" no fue encontrado en el JSON.";
-        }
+        $array_data = json_decode($json_data, true);
+
+        // Obtener el valor de la clave 'tax_residence'
+        $tax_residence = $array_data[$valor];
+        echo "El valor de 'tax_residence' es: $tax_residence";
+
 
       }
         
