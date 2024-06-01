@@ -145,16 +145,20 @@ function tituloiconos($iconos, $tipo)
         console.log(url);
         console.log(valor);
         console.log("aca");
+        dato="";
+        document.getElementById("datosonline").innerHTML = "";
 
         axios.get(url)
             .then(function (response) {
-                console.log(response.data);
                 for (i = 0; i < response.data.length; i++) {
-                    console.log(response.data[i]);
+                    console.log(response.data[i].nombre);
                     console.log(response.data[i].icono);
                     console.log(response.data[i].valor);
+                    dato += ' <div class="mt-3">' +response.data[i].icono+response.data[i].nombre+"  "+response.data[i].valor+"</div>";
 
                 }
+                document.getElementById("datosonline").innerHTML = dato;
+
                 
                
                
