@@ -2084,7 +2084,13 @@ class siennaticketsController extends Controller
            // echo "Everything went better than expected";
       }
       var_dump($datosonline);
-      dd($getdata);
+     // dd($getdata);
+      foreach($getdata as $val){
+      echo  $nombre=$val->nombre;
+      echo  $icono=$val->icono;
+       echo $valor=$val->valor;
+
+      }
         
      }
      
