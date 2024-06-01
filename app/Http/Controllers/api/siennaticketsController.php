@@ -2095,7 +2095,7 @@ class siennaticketsController extends Controller
 
         if (strpos($valor, '.') !== false) {
             $separado=explode(".",$valor);
-            $valordevuelto = $array_data[$separado[0]][$separado[1]];
+            $valordevuelto = $array_data[$separado[0]][0][$separado[1]];
 
         } else {
             $valordevuelto = $array_data[$valor];
