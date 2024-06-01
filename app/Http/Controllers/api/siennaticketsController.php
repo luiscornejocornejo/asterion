@@ -2086,7 +2086,7 @@ class siennaticketsController extends Controller
       //var_dump($datosonline);
      // dd($getdata);
      $array_data = json_decode($datosonline, true);
-     var_dump($array_data);
+     print_r($array_data);
       foreach($getdata as $val){
         echo  $nombre=$val->nombre;
         echo  $icono=$val->icono;
