@@ -2090,6 +2090,18 @@ class siennaticketsController extends Controller
       echo  $icono=$val->icono;
        echo $valor=$val->valor;
 
+       $array_data = json_decode($datosonline, true);
+
+// Valor que quieres buscar
+                $valor_buscado = $valor;
+
+                // Buscar el valor dentro del array asociativo
+                if (in_array($valor_buscado, $array_data)) {
+                    echo "El valor \"$valor_buscado\" fue encontrado en el JSON.";
+                } else {
+                    echo "El valor \"$valor_buscado\" no fue encontrado en el JSON.";
+                }
+
       }
         
      }
