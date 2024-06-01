@@ -2083,7 +2083,7 @@ class siennaticketsController extends Controller
       } else {
            // echo "Everything went better than expected";
       }
-      var_dump($datosonline);
+      //var_dump($datosonline);
      // dd($getdata);
       foreach($getdata as $val){
       echo  $nombre=$val->nombre;
@@ -2091,7 +2091,7 @@ class siennaticketsController extends Controller
        echo $valor=$val->valor;
 
        $array_data = json_decode($datosonline, true);
-
+        var_dump($array_data);
 // Valor que quieres buscar
                 $valor_buscado = $valor;
 
