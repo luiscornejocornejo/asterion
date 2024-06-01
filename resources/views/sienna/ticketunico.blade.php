@@ -137,7 +137,7 @@ function tituloiconos($iconos, $tipo)
         }, 50000); // Cambiar la duración total del destello aquí (en milisegundos)
     }
 
-    function extras(valor){
+    function extraordinario(valor){
         var URLactual = window.location.href;
             var porciones = URLactual.split('.');
             let result = porciones[0].replace("https://", "");
@@ -582,7 +582,7 @@ function tituloiconos($iconos, $tipo)
                                 </div>
                                 <hr style="margin-top: 10px;" />
                                 <div class="row">
-                                <button onclick="extras(<?php echo $resultados[0]->cliente;?>)" type="button" class="btn btn-success">traer datos</button>
+                                <button onclick="extraordinario('<?php echo $resultados[0]->cliente;?>')" type="button" class="btn btn-success">traer datos</button>
 
                                     <div id="datosonline" class="">
 
