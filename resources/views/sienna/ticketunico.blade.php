@@ -141,7 +141,6 @@ function tituloiconos($iconos, $tipo)
         var URLactual = window.location.href;
             var porciones = URLactual.split('.');
             let result = porciones[0].replace("https://", "");
-        console.log(idticketbuscar);
         url = "https://"+result+".suricata.cloud/api/getdata?cliente=" + cliente + "";
         console.log(url);
         axios.get(url)
