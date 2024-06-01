@@ -2096,8 +2096,9 @@ class siennaticketsController extends Controller
 // Valor que quieres buscar
                 $valor_buscado = $valor;
 
+                
                 // Buscar el valor dentro del array asociativo
-                if (in_array($valor_buscado, $array_data)) {
+                if (buscar_valor($array_data, $valor_buscado)) {
                     echo "El valor \"$valor_buscado\" fue encontrado en el JSON.";
                 } else {
                     echo "El valor \"$valor_buscado\" no fue encontrado en el JSON.";
@@ -2106,5 +2107,19 @@ class siennaticketsController extends Controller
       }
         
      }
+
+     
+     function buscar_valor($array, $valor) {
+        foreach ($array as $key => $value) {
+            if ($value === $valor) {
+                return true;
+            } elseif (is_array($value)) {
+                if (buscar_valor($value, $valor)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
      
 }
