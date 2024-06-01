@@ -2095,7 +2095,6 @@ class siennaticketsController extends Controller
 
         // Obtener el valor de la clave 'tax_residence'
         $valordevuelto = $array_data[$valor];
-        echo "El valor de 'tax_residence' es: $tax_residence";
         $arraydatos=array("nombre"=>$nombre,"icono"=>$icono,$valor=>$valordevuelto);
         array_push($return,$arraydatos);
       }
