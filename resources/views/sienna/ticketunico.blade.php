@@ -583,7 +583,7 @@ function tituloiconos($iconos, $tipo)
 
                     <?php if($urlinte2<>"luis"){?>
                         <div class="mt-2">
-                        <div class="card widget-flat">
+                        <div class="card widget-flat d-none">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div>
