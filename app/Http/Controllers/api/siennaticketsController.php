@@ -25,6 +25,8 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
+use App\Models\siennaintegracion;
+use App\Models\siennagetdata;
 use Mail;
 
 class siennaticketsController extends Controller
