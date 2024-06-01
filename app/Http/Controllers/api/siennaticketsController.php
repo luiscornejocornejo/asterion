@@ -2093,8 +2093,14 @@ class siennaticketsController extends Controller
         echo  $icono=$val->icono;
         echo $valor=$val->valor;
 
+        if (strpos($valor, '.') !== false) {
+            $separado=explode(".",$valor);
+            $valordevuelto = $array_data[$separado[0]][$separado[1]];
+
+        } else {
+            $valordevuelto = $array_data[$valor];
+        }
         // Obtener el valor de la clave 'tax_residence'
-        $valordevuelto = $array_data[$valor];
         $arraydatos=array("nombre"=>$nombre,"icono"=>$icono,$valor=>$valordevuelto);
         array_push($return,$arraydatos);
       }
