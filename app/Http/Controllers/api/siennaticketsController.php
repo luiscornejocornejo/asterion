@@ -2109,7 +2109,7 @@ class siennaticketsController extends Controller
      }
 
      
-    public  function buscar_valor($array, $valor) {
+     public function buscar_valor($array, $valor) {
         foreach ($array as $key => $value) {
             if ($value === $valor) {
                 return true;
