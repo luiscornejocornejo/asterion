@@ -2085,13 +2085,14 @@ class siennaticketsController extends Controller
       }
       //var_dump($datosonline);
      // dd($getdata);
+     $array_data = json_decode($datosonline, true);
+     var_dump($array_data);
       foreach($getdata as $val){
       echo  $nombre=$val->nombre;
       echo  $icono=$val->icono;
        echo $valor=$val->valor;
 
-       $array_data = json_decode($datosonline, true);
-        var_dump($array_data);
+      
 // Valor que quieres buscar
                 $valor_buscado = $valor;
 
