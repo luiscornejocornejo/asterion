@@ -2087,11 +2087,11 @@ class siennaticketsController extends Controller
      // dd($getdata);
      $array_data = json_decode($datosonline, true);
      $return=array();
-     print_r($array_data);
+     //print_r($array_data);
       foreach($getdata as $val){
-        echo  $nombre=$val->nombre;
-        echo  $icono=$val->icono;
-        echo $valor=$val->valor;
+          $nombre=$val->nombre;
+          $icono=$val->icono;
+         $valor=$val->valor;
 
         if (strpos($valor, '.') !== false) {
             $separado=explode(".",$valor);
@@ -2104,8 +2104,8 @@ class siennaticketsController extends Controller
         $arraydatos=array("nombre"=>$nombre,"icono"=>$icono,$valor=>$valordevuelto);
         array_push($return,$arraydatos);
       }
-      dd($return);
-        
+     // dd($return);
+        return $return;
      }
 
      
