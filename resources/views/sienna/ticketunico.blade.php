@@ -150,7 +150,7 @@ function tituloiconos($iconos, $tipo)
             .then(function (response) {
                 console.log(response.data);
                 for (i = 0; i < response.data.length; i++) {
-                    console.log(response.data[i].nombre);
+                    console.log(response.data[i]);
                     console.log(response.data[i].icono);
                     console.log(response.data[i].valor);
 
