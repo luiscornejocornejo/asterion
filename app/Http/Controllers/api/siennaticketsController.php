@@ -2058,5 +2058,32 @@ class siennaticketsController extends Controller
         return $ec;
         
      }
+
+     
+     public function getdata2(Request $request){
+
+        $cliente=$request->cliente;
+        $domi=$this->dominio();
+        $numcli=$cliente;
+        $inte=siennaintegracion::all();
+        $getdata=siennagetdata::all();
+       
+       foreach($inte as $val){
+            $urlinte=$val->version;
+       }
+        $urlinte2=$urlinte.$numcli;
+      
+        if (($datosonline = @file_get_contents($urlinte2)) === false) {
+            $error = error_get_last();
+            //echo "HTTP request failed. Error was: " . $error['message'];
+            $urlinte2="";
+
+      } else {
+           // echo "Everything went better than expected";
+      }
+      var_dump($datosonline);
+      dd($getdata);
+        
+     }
      
 }
