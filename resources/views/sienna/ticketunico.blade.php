@@ -141,7 +141,7 @@ function tituloiconos($iconos, $tipo)
         var URLactual = window.location.href;
             var porciones = URLactual.split('.');
             let result = porciones[0].replace("https://", "");
-        url = "https://"+result+".suricata.cloud/api/getdata?cliente=" + valor + "";
+        url = "https://"+result+".suricata.cloud/api/getdata2?cliente=" + valor + "";
         console.log(url);
         console.log(valor);
         console.log("aca");
