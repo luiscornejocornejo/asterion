@@ -2091,7 +2091,6 @@ class siennaticketsController extends Controller
         echo  $nombre=$val->nombre;
         echo  $icono=$val->icono;
         echo $valor=$val->valor;
-        $array_data = json_decode($json_data, true);
 
         // Obtener el valor de la clave 'tax_residence'
         $tax_residence = $array_data[$valor];
