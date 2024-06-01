@@ -137,7 +137,30 @@ function tituloiconos($iconos, $tipo)
         }, 50000); // Cambiar la duración total del destello aquí (en milisegundos)
     }
 
+    function extras(cliente){
+        var URLactual = window.location.href;
+            var porciones = URLactual.split('.');
+            let result = porciones[0].replace("https://", "");
+        console.log(idticketbuscar);
+        url = "https://"+result+".suricata.cloud/api/getdata?cliente=" + cliente + "";
+        console.log(url);
+        axios.get(url)
+            .then(function (response) {
+                console.log(response.data);
+                
+               
+               
+            })
+            .catch(function (error) {
+                // función para capturar el error
+                console.log(error);
+            })
+            .then(function () {
+                // función que siempre se ejecuta
+            });
 
+
+    }
     </script>
 <div class="wrapper menuitem-active">
     @include('facu.menu')
@@ -544,7 +567,7 @@ function tituloiconos($iconos, $tipo)
                         </div>
                     </div>
 
-                    <?php if($urlinte2=="luis"){?>
+                    <?php if($urlinte2<>"luis"){?>
                         <div class="mt-2">
                         <div class="card widget-flat">
                             <div class="card-body">
@@ -557,13 +580,11 @@ function tituloiconos($iconos, $tipo)
                                 </div>
                                 <hr style="margin-top: 10px;" />
                                 <div class="row">
-                                    <div id="datosonline" class="">
-                                        <pre id="json"></pre>
+                                <button onclick="extras(<?php echo $resultados[0]->cliente;?>)" type="button" class="btn btn-success">traer datos</button>
 
-                                    <script>
-                                        let data = <?php echo $datosonline;?>;
-                                        document.getElementById("json").textContent = JSON.stringify(data, undefined, 2);
-                                    </script>
+                                    <div id="datosonline" class="">
+
+                                    
                                        
                                               
                                     </div>
