@@ -2086,6 +2086,7 @@ class siennaticketsController extends Controller
       //var_dump($datosonline);
      // dd($getdata);
      $array_data = json_decode($datosonline, true);
+     $return=array();
      print_r($array_data);
       foreach($getdata as $val){
         echo  $nombre=$val->nombre;
@@ -2093,11 +2094,12 @@ class siennaticketsController extends Controller
         echo $valor=$val->valor;
 
         // Obtener el valor de la clave 'tax_residence'
-        $tax_residence = $array_data[$valor];
+        $valordevuelto = $array_data[$valor];
         echo "El valor de 'tax_residence' es: $tax_residence";
-
-
+        $arraydatos=array("nombre"=>$nombre,"icono"=>$icono,$valor=>$valordevuelto);
+        array_push($return,$arraydatos);
       }
+      dd($return);
         
      }
 
