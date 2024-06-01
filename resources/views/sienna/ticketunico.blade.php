@@ -143,6 +143,9 @@ function tituloiconos($iconos, $tipo)
             let result = porciones[0].replace("https://", "");
         url = "https://"+result+".suricata.cloud/api/getdata?cliente=" + cliente + "";
         console.log(url);
+        console.log(cliente);
+        console.log("aca");
+
         axios.get(url)
             .then(function (response) {
                 console.log(response.data);
