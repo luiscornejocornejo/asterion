@@ -137,13 +137,13 @@ function tituloiconos($iconos, $tipo)
         }, 50000); // Cambiar la duración total del destello aquí (en milisegundos)
     }
 
-    function extras(cliente){
+    function extras(valor){
         var URLactual = window.location.href;
             var porciones = URLactual.split('.');
             let result = porciones[0].replace("https://", "");
-        url = "https://"+result+".suricata.cloud/api/getdata?cliente=" + cliente + "";
+        url = "https://"+result+".suricata.cloud/api/getdata?cliente=" + valor + "";
         console.log(url);
-        console.log(cliente);
+        console.log(valor);
         console.log("aca");
 
         axios.get(url)
