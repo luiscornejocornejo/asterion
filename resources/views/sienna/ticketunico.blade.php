@@ -154,7 +154,7 @@ function tituloiconos($iconos, $tipo)
                     console.log(response.data[i].nombre);
                     console.log(response.data[i].icono);
                     console.log(response.data[i].valor);
-                    dato += ' <div class="m-4 p-2 col-md-4" style="float:left;">' +response.data[i].icono+response.data[i].nombre+" : "+response.data[i].valor+"</div>";
+                    dato += ' <div class="m-3 p-2 col-md-2" style="float:left;">' +response.data[i].icono+response.data[i].nombre+" : "+response.data[i].valor+"</div>";
 
                     if(i==2){
                         dato += '<br>';
