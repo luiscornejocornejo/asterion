@@ -2098,7 +2098,7 @@ class siennaticketsController extends Controller
 
                 
                 // Buscar el valor dentro del array asociativo
-                if (buscar_valor($array_data, $valor_buscado)) {
+                if ($this->buscar_valor($array_data, $valor_buscado)) {
                     echo "El valor \"$valor_buscado\" fue encontrado en el JSON.";
                 } else {
                     echo "El valor \"$valor_buscado\" no fue encontrado en el JSON.";
@@ -2109,7 +2109,7 @@ class siennaticketsController extends Controller
      }
 
      
-     function buscar_valor($array, $valor) {
+    public  function buscar_valor($array, $valor) {
         foreach ($array as $key => $value) {
             if ($value === $valor) {
                 return true;
