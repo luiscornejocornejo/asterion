@@ -2101,7 +2101,7 @@ class siennaticketsController extends Controller
             $valordevuelto = $array_data[$valor];
         }
         // Obtener el valor de la clave 'tax_residence'
-        $arraydatos=array("nombre"=>$nombre,"icono"=>$icono,$valor=>$valordevuelto);
+        $arraydatos=array("nombre"=>$nombre,"icono"=>$icono,"valor"=>$valordevuelto);
         array_push($return,$arraydatos);
       }
      // dd($return);
