@@ -154,8 +154,11 @@ function tituloiconos($iconos, $tipo)
                     console.log(response.data[i].nombre);
                     console.log(response.data[i].icono);
                     console.log(response.data[i].valor);
-                    dato += ' <div class="mt-3">' +response.data[i].icono+response.data[i].nombre+"  "+response.data[i].valor+"</div>";
+                    dato += ' <div class="mt-3" style="float:left;">' +response.data[i].icono+response.data[i].nombre+"  "+response.data[i].valor+"</div>";
 
+                    if(i==3){
+                        dato += '<br>';
+                    }
                 }
                 document.getElementById("datosonline").innerHTML = dato;
 
