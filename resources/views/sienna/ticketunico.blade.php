@@ -236,7 +236,8 @@ function tituloiconos($iconos, $tipo)
 
 
                     <?php
-                    }else{?>
+                    }
+                    if($resultados[0]->siennasource<>7){?>
                         @include('sienna.tu.informacionwhatapp')
 
                            
@@ -254,82 +255,14 @@ function tituloiconos($iconos, $tipo)
 
                     </div>
                     <div class="mt-2">
-                        <div class="card widget-flat">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <h4 class="fw-normal text-dark" title="Number of Customers">Historial de tickets</h4>
-                                    </div>
-                                    <div>
-                                        <i class="mdi mdi-card-account-details widget-icon bg-secondary-lighten text-secondary"></i>
-                                    </div>
-                                </div>
-                                <hr style="margin-top: 10px;" />
-                                <div class="row">
-                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-sm-12">
-                                        
-                                        
-                                        <table id="example"  class="table table-striped dt-responsive nowrap w-100 text-light">
-                                            <thead>
-                                                    <tr class="text-center bg-dark" >                             
-                                                        <th class="text-light">Ticket</th>
-                                                        <th class="text-light">Departamento</th>
-                                                        <th class="text-light">Tema</th>
-                                                        <th class="text-light">Estado</th>
-                                                        <th class="text-light">Inicio</th>
-                                                    </tr>
-                                            </thead>
-                                            <tbody id="tb">
-                                                    <?php foreach($resultadoshistoricos as $valh){?>
-                                                        <tr class="text-center">
-                                                        <td><a href='/ticketunico?tick=<?php echo $valh->id;?>' target="_blank"><?php echo $valh->id;?></a></td>
-                                                        <td><?php echo $valh->depto;?></td>
-                                                        <td><?php echo $valh->tema;?></td>
-                                                        <td><?php echo $valh->estado;?></td>
-                                                        <td><?php echo $valh->inicio;?></td>
-                                                    </tr>
-                                                        <?php  }?>
-                                            </tbody>
-                                            </table>
-                                              
-                                    </div>
-                                    
-                                </div>                    
-                            </div>
+                    @include('sienna.tu.informacionhistorial')
 
-
-                        </div>
                     </div>
                
-                    <?php if($urlinte2<>"luis"){?>
                         <div class="mt-2">
-                        <div class="card widget-flat d-none">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <h4 class="fw-normal text-dark" title="Number of Customers">Datos Online</h4>
-                                    </div>
-                                    <div>
-                                    </div>
-                                </div>
-                                <hr style="margin-top: 10px;" />
-                                <div class="row">
-                                <button onclick="extraordinario('<?php echo $resultados[0]->cliente;?>')" type="button" class="btn btn-success">traer datos</button>
+                        @include('sienna.tu.informaciononline')
 
-                                    <div id="datosonline" class="">
-
-                                    
-                                       
-                                              
-                                    </div>
-                                    
-                                </div>                    
-                            </div>
-
-
-                        </div>
                     </div>
-                    <?php }?>
                 </div>
                 <div class="col-sm-12 col-lg-4 col-xxl-3 card widget-flat">
                     <strong class="mt-2">Seguimiento</strong>
