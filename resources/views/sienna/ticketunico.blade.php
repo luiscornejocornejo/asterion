@@ -585,36 +585,34 @@ function tituloiconos($iconos, $tipo)
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div>
-                                        <h4 class="fw-normal text-dark" title="Number of Customers">Notas internas</h4>
+                                        <h4 class="fw-normal text-dark" title="Number of Customers">Notas internas2</h4>
                                     </div>
                                     <div>
                                     </div>
                                 </div>
                                 <hr style="margin-top: 10px;" />
-                                <div class="row">
+
                                 <form action="/api/siennacrearseguimiento2" method="POST" enctype="multipart/form-data">
-                            <div class="mt-2 ">
-                                <div>
-                                    <label class="form-label">Subir archivo</label>
-                                    <input name="logo" class="form-control" type="file" id="inputGroupFile04">
-                                </div>
-                                <div class="mb-2 mt-2">
-                                    <label class="form-label">Nota interna</label>
-                                    <div class="input-group">
-                                        <input value="<?php echo session('nombreusuario'); ?>" type="hidden" name="logeado" id="logeado">
+                                    <div class="mt-2 ">
+                                        <div>
+                                            <label class="form-label">Subir archivo</label>
+                                            <input name="logo" class="form-control" type="file" id="inputGroupFile04">
+                                        </div>
+                                        <div class="mb-2 mt-2">
+                                            <label class="form-label">Nota interna</label>
+                                            <div class="input-group">
+                                                <input value="<?php echo session('nombreusuario'); ?>" type="hidden" name="logeado" id="logeado">
 
-                                        <input value="<?php echo $resultados[0]->ticketid; ?>" type="hidden" name="idticketseguimiento" id="idticketseguimiento">
-                                        <input name="comentario" type="text" class="form-control" aria-label="Recipient's username">
-                                        <button class="btn btn-primary" type="submit"><i class="mdi mdi-send"></i></button>
+                                                <input value="<?php echo $resultados[0]->ticketid; ?>" type="hidden" name="idticketseguimiento" id="idticketseguimiento">
+                                                <input name="comentario" type="text" class="form-control" aria-label="Recipient's username">
+                                                <button class="btn btn-primary" type="submit"><i class="mdi mdi-send"></i></button>
+                                            </div>
+                                        </div>
+
                                     </div>
-                                </div>
-
-                            </div>
-                        </form>
-                                    
+                                </form>
                                        
                                               
-                                    </div>
                                     
                                 </div>                    
                             </div>
