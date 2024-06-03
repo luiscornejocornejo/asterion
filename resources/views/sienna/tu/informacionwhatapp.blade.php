@@ -1,6 +1,5 @@
 
 <?php
-$urlreabrir="";
 $vero="";
                                     foreach($emp as $value){
                                         $urlreabrir=$value->reabrir;
