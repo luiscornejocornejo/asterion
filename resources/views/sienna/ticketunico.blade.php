@@ -655,7 +655,25 @@ function tituloiconos($iconos, $tipo)
                     <hr>
                     <div class="card-body" style="padding-top: 0;">
                         <!-- end sub tasks/checklists -->
-                        
+                        <form action="/api/siennacrearseguimiento2" method="POST" enctype="multipart/form-data">
+                                    <div class="">
+                                        <div>
+                                            <label class="form-label">Subir archivo</label>
+                                            <input name="logo" class="form-control" type="file" id="inputGroupFile04">
+                                        </div>
+                                        <div class="mb-2 mt-2">
+                                            <label class="form-label">Nota interna</label>
+                                            <div class="input-group">
+                                                <input value="<?php echo session('nombreusuario'); ?>" type="hidden" name="logeado" id="logeado">
+
+                                                <input value="<?php echo $resultados[0]->ticketid; ?>" type="hidden" name="idticketseguimiento" id="idticketseguimiento">
+                                                <input name="comentario" type="text" class="form-control" aria-label="Recipient's username">
+                                                <button class="btn btn-primary" type="submit"><i class="mdi mdi-send"></i></button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </form>
                         <div class="mt-2">
                             <div class="card-header d-flex justify-content-between align-items-center mt-2">
                                 <h4 class="header-title">Actividad reciente</h4>
