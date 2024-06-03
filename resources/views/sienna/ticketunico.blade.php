@@ -475,10 +475,7 @@ function tituloiconos($iconos, $tipo)
                                                             <?php $tipo = $val->tipo;
                                                             echo $color = coloriconos($iconos, $tipo); ?>
                                                             <div class="timeline-item-info">
-                                                                <span class="text-info fw-bold mb-1 d-block"><?php 
-                                                                echo $titulo = tituloiconos($iconos, $tipo);
                                                                 
-                                                                ?></span>
                                                                 <small><?php
                                                                 if($val->tipo <> 9){ echo $val->descripcion;} ?></small>
                                                                 <p class="mb-0 pb-2">
