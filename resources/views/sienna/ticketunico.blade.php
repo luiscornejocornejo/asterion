@@ -462,7 +462,7 @@ function tituloiconos($iconos, $tipo)
                         </form>
                         <div class="card ">
                                 <div class="card-body">
-                                <h5 class="font-18 mb-2">Asunto: <?php echo $resultados[0]->emailcliente;?></h5>
+                                <h5 class="font-18 mb-2">Nota: </h5>
                                     
                                     
                                     <ul class="conversation-list p-0" data-simplebar="init">
@@ -472,10 +472,8 @@ function tituloiconos($iconos, $tipo)
                                                     </div>
                                                     <div class="conversation-text">
                                                         <div class="ctext-wrap bg-white border">
-                                                        <small class="text-muted">De: <?php echo $resultados[0]->emailnom;?></small><br>
-                                                        <small class="text-muted">CC: <?php echo $resultados[0]->cc;?></small>
+                                                        
                                                             <p class="mb-1">
-                                                                {!! $b !!}
                                                             </p>
                                                         </div>
                                                     </div>
