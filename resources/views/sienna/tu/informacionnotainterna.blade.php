@@ -34,18 +34,44 @@
                             <div class="card-footer">
                                 <h5 class="font-18 mb-2">Nota: </h5>
                                     <ul class="conversation-list p-0" data-simplebar="init">
+                                          <?php foreach ($segui as $val) {
+                                            if ($val->tipo == 5) {
+                                             if ($val->logo != null) {
+
+                                                if ($val->tipo == 5) {
+                                                    $ht = 'https://sienamedia.sfo3.digitaloceanspaces.com/' . $val->logo;
+                                                } else {
+                                                    $ht = 'https://sienamedia.sfo3.digitaloceanspaces.com/' . $subdomain_tmp . '/xen/enviados/' . $val->logo;
+                                                }
+
+                                                
+                                                $uri = '<a target=_blank href="' . $ht . '"><img  src=' . $ht . ' width="40px;"></a>';
+                                            } else {
+                                                $uri = '';
+                                            }
+                                            ?>
                                         <li class="clearfix">
-                                                    <div class="chat-avatar">
+                                                    <div class="chat-avatar"><?php echo $val->autor; ?>
                                                         <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" class="rounded-circle border" alt="Usuario">
                                                     </div>
                                                     <div class="conversation-text">
                                                         <div class="ctext-wrap bg-white border">
                                                         
                                                             <p class="mb-1">
+                                                            <?php echo $val->autor; ?>
+                                                            </p>
+                                                            <p class="mb-1">
+                                                            <?php echo $val->descripcion; ?>
+                                                            </p>
+                                                            <p class="mb-1">
+                                                            <?php echo $val->created_at; ?>
                                                             </p>
                                                         </div>
                                                     </div>
                                         </li>
+
+
+                                        <?php }}?>
                                     </ul>
                                 </div>
                                     
