@@ -593,7 +593,7 @@ function tituloiconos($iconos, $tipo)
                                 <hr style="margin-top: 10px;" />
 
                                 <form action="/api/siennacrearseguimiento2" method="POST" enctype="multipart/form-data">
-                                    <div class="mt-2 ">
+                                    <div class="">
                                         <div>
                                             <label class="form-label">Subir archivo</label>
                                             <input name="logo" class="form-control" type="file" id="inputGroupFile04">
@@ -651,7 +651,7 @@ function tituloiconos($iconos, $tipo)
                     <?php }?>
                 </div>
                 <div class="col-sm-12 col-lg-4 col-xxl-3 card widget-flat">
-                    <strong class="mt-2">Seguimiento</strong>
+                    <strong class="mt-2">Seguimiento2</strong>
                     <hr>
                     <div class="card-body" style="padding-top: 0;">
                         <!-- end sub tasks/checklists -->
