@@ -25,8 +25,9 @@
 
                                                     <input value="<?php echo $resultados[0]->ticketid; ?>" type="hidden" name="idticketseguimiento" id="idticketseguimiento">
                                                     <textarea  class="form-control" name="comentario"></textarea>
-                                                    <button class="btn btn-primary" type="submit"><i class="mdi mdi-send"></i></button>
                                                 </div>
+                                                <button class="btn btn-primary" type="submit"><i class="mdi mdi-send"></i></button>
+
                                             </div>
 
                                         </div>
