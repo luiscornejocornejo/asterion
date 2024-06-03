@@ -243,7 +243,7 @@ function tituloiconos($iconos, $tipo)
                     <?php }?>
                     <div class="mt-2">
                         <div class="card widget-flat">
-                            <div class="card-head">
+                            <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div>
                                         <h4 class="fw-normal text-dark" title="Number of Customers">Notas Internas</h4>
@@ -275,7 +275,7 @@ function tituloiconos($iconos, $tipo)
 
                                         </div>
                                     </form>
-                            <div class="card-body ">
+                            <div class="card-footer">
                                 <h5 class="font-18 mb-2">Nota: </h5>
                                     <ul class="conversation-list p-0" data-simplebar="init">
                                         <li class="clearfix">
