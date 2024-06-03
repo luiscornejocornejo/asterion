@@ -51,7 +51,7 @@
                                             }
                                             ?>
                                         <li class="clearfix">
-                                                    <div class="chat-avatar"><?php echo $val->autor; ?>
+                                                    <div class="chat-avatar">
                                                         <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" class="rounded-circle border" alt="Usuario">
                                                     </div>
                                                     <div class="conversation-text">
