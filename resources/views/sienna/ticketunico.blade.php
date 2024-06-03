@@ -297,7 +297,10 @@ function tituloiconos($iconos, $tipo)
                         </div>
                                     
                     </div>                    
-                           
+
+
+                        </div>
+                    </div>
                     <div class="mt-2">
                         <div class="card widget-flat">
                             <div class="card-body">
