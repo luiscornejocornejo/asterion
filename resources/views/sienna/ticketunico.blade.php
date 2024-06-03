@@ -431,6 +431,31 @@ function tituloiconos($iconos, $tipo)
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div>
+                                        <h4 class="fw-normal text-dark" title="Number of Customers">Notas Internas</h4>
+                                    </div>
+                                    <div>
+                                        <i class="mdi mdi-card-account-details widget-icon bg-secondary-lighten text-secondary"></i>
+                                    </div>
+                                </div>
+                                <hr style="margin-top: 10px;" />
+                                <div class="row">
+                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-sm-12">
+                                        
+                                        
+                                              
+                                    </div>
+                                    
+                                </div>                    
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
                                         <h4 class="fw-normal text-dark" title="Number of Customers">Información de usuario</h4>
                                     </div>
                                     <div>
