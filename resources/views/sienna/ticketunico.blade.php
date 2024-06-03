@@ -455,16 +455,10 @@ function tituloiconos($iconos, $tipo)
                                                 <div class="simplebar-content" style="padding: 0px 24px;">
 
                                                     <?php foreach ($segui as $val) {
-
+                                                        if ($val->tipo <> 5) {
                                                         if ($val->logo != null) {
-
-                                                            if ($val->tipo == 5) {
-                                                                $ht = 'https://sienamedia.sfo3.digitaloceanspaces.com/' . $val->logo;
-                                                            } else {
-                                                                $ht = 'https://sienamedia.sfo3.digitaloceanspaces.com/' . $subdomain_tmp . '/xen/enviados/' . $val->logo;
-                                                            }
-
-                                                            
+                                                            $ht = 'https://sienamedia.sfo3.digitaloceanspaces.com/' . $subdomain_tmp . '/xen/enviados/' . $val->logo;
+                                                         
                                                             $uri = '<a target=_blank href="' . $ht . '"><img  src=' . $ht . ' width="40px;"></a>';
                                                         } else {
                                                             $uri = '';
@@ -503,7 +497,7 @@ function tituloiconos($iconos, $tipo)
                                                         </div>
                                                 </div>
 
-                                            <?php } ?>
+                                            <?php } }?>
 
                                             </div>
                                         </div>
