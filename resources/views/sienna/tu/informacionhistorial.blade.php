@@ -5,7 +5,7 @@
                                         <h4 class="fw-normal text-dark" title="Number of Customers">Historial de tickets</h4>
                                     </div>
                                     <div>
-                                        <i class="mdi mdi-card-account-details widget-icon bg-secondary-lighten text-secondary"></i>
+                                        <i class="mdi mdi-history widget-icon bg-secondary-lighten text-secondary"></i>
                                     </div>
                                 </div>
                                 <hr style="margin-top: 10px;" />
