@@ -6,6 +6,20 @@
     cursor: pointer;
   }
 
+  .conversation-list .odd .conversation-text {
+    float: right!important;
+    margin-right: 12px;
+    text-align: right;
+    width: 90%!important
+}
+
+.conversation-list .conversation-text {
+    float: left;
+    font-size: 13px;
+    margin-left: 12px;
+    width: 90%
+}
+
 </style>
 
 <div class="card widget-flat">
