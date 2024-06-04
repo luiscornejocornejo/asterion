@@ -1,3 +1,13 @@
+<style>
+    .custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+
+</style>
+
 <div class="card widget-flat">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
@@ -14,22 +24,22 @@
                                         
                                     <form action="/api/siennacrearseguimiento2" method="POST" enctype="multipart/form-data">
                                         <div class="mt-2 ">
-                                            <div>
-                                                <label class="form-label">Subir archivo</label>
-                                                <input name="logo" class="form-control" type="file" id="inputGroupFile04">
-                                            </div>
                                             <div class="mb-2 mt-2">
-                                                <label class="form-label">Nota interna</label>
+                                                <label class="form-label">Cuerpo de nota interna</label>
                                                 <div class="input-group">
                                                     <input value="<?php echo session('nombreusuario'); ?>" type="hidden" name="logeado" id="logeado">
 
                                                     <input value="<?php echo $resultados[0]->ticketid; ?>" type="hidden" name="idticketseguimiento" id="idticketseguimiento">
                                                     <textarea  class="form-control" name="comentario"></textarea>
                                                 </div>
-                                                <button class="btn btn-primary" type="submit"><i class="mdi mdi-send"></i></button>
-
+                                                <div class="mt-2">
+                                                    <label for="file-upload" class="custom-file-upload rounded fw-bold">
+                                                        <i class="mdi mdi-attachment" style="font-size: 20px;"></i>
+                                                    </label>
+                                                    <input id="file-upload" type="file" />
+                                                    <button class="btn btn-primary ms-2" type="submit">Crear</button>
+                                                </div>
                                             </div>
-
                                         </div>
                                     </form>
                             <div class="card-footer">
@@ -56,7 +66,7 @@
                                                         <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" class="rounded-circle border" alt="Usuario">
                                                     </div>
                                                     <div class="conversation-text">
-                                                        <div class="ctext-wrap bg-white border">
+                                                        <div class="ctext-wrap bg-white border w-100">
                                                         
                                                             <p class="mb-1">
                                                             <?php echo $val->autor; ?>
