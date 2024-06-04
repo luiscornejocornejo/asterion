@@ -51,8 +51,8 @@
                                                         <i class="mdi mdi-attachment" style="font-size: 20px;"></i>
                                                     </label>
                                                     <input id="file-upload" type="file" />
-                                                    <button class="btn btn-primary ms-2" type="submit">Crear</button>
                                                 </div>
+                                                    <button class="btn btn-primary ms-2" type="submit">Crear</button>
                                             </div>
                                         </div>
                                     </form>
