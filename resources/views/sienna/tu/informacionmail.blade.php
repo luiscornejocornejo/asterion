@@ -46,7 +46,7 @@
 	                                            <?php else: ?>
                                                 <li class="clearfix odd">
                                                     <div class="chat-avatar">
-                                                        <img src="../../../../public/assetsfacu/images/users/operator.jpeg" class="rounded-circle border" alt="Operador">
+                                                        <img src="/assetsfacu/images/users/operator.jpeg" class="rounded-circle border" alt="Operador">
                                                     </div>
                                                     <div class="conversation-text">
                                                         <div class="ctext-wrap w-100">
