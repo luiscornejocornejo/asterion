@@ -31,8 +31,8 @@
 	                                                    </div>
 	                                                    <div class="conversation-text">
 	                                                        <div class="ctext-wrap bg-white border w-100">
-	                                                        <small class="text-muted">De: <?php echo $resultados[0]->emailnom; ?></small><br>
-	                                                        <small class="text-muted">CC: <?php echo $resultados[0]->cc; ?></small>
+	                                                        <small class="text-muted">De: <?php //echo $resultados[0]->emailnom; ?></small><br>
+	                                                        <small class="text-muted">CC: <?php //echo $resultados[0]->cc; ?></small>
 	                                                        <small class="text-muted">Fecha: </small>
 	                                                            <p class="mb-1">
 	                                                                {!! $b !!}
