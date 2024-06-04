@@ -19632,7 +19632,10 @@ input[data-switch=dark]:checked+label {
     cursor: pointer;
   }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6d194c357e508a022f902867df42830fdaab9e12
 .calendar-widget .datepicker-inline,.calendar-widget table {
     width: 100%
 }
