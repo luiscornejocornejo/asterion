@@ -144,14 +144,12 @@ function coloriconos($iconos, $tipo)
                                 <?php foreach($segui as $adj){
                                     if($adj->tipo==9){?>
                                 <div class="col-xl-4">
-                                    <div class="card mb-1 shadow-none border">
-                                        <div class="p-2">
-                                            <div class="row align-items-center">
-                                            
-                                                <div class="col-auto">
-                                                    <!-- Button -->
-                                               <a target=_blank href="<?php echo $adj->descripcion;?>"><img  src='<?php echo $adj->descripcion;?>' width="40px;"></a>
-                                                    
+                                               
+                                                <div class="input-group flex-nowrap">
+                                                    <span class="input-group-text bg-primary" id="basic-addon1"><i class="mdi mdi-attachment me-1 text-white"></i></span>
+                                                    <a class="form-control ellipsis" placeholder="Archivo adjunto" target=_blank href="<?php echo $adj->descripcion;?>"></a>
+
+                                                </div>
                                                    
                                                        
                                                    

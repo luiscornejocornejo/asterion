@@ -1,3 +1,19 @@
+<style>
+    .conversation-list .odd .conversation-text {
+    float: right!important;
+    margin-right: 12px;
+    text-align: right;
+    width: 90%!important
+}
+
+.conversation-list .conversation-text {
+    float: left;
+    font-size: 13px;
+    margin-left: 12px;
+    width: 90%
+}
+</style>
+
 <div class="card ">
                                 <div class="card-body">
                                 <h5 class="font-18 mb-2">Asunto: <?php echo $resultados[0]->emailcliente; ?></h5>
@@ -17,6 +33,7 @@
 	                                                        <div class="ctext-wrap bg-white border w-100">
 	                                                        <small class="text-muted">De: <?php echo $resultados[0]->emailnom; ?></small><br>
 	                                                        <small class="text-muted">CC: <?php echo $resultados[0]->cc; ?></small>
+	                                                        <small class="text-muted">Fecha: </small>
 	                                                            <p class="mb-1">
 	                                                                {!! $b !!}
 	                                                            </p>
@@ -26,11 +43,13 @@
 	                                            <?php else: ?>
                                                 <li class="clearfix odd">
                                                     <div class="chat-avatar">
-                                                        <img src="https://static.thenounproject.com/png/535375-200.png" class="rounded-circle border" alt="Operador">
+                                                        <img src="/assetsfacu/images/users/operator.jpeg" class="rounded-circle border" alt="Operador">
                                                     </div>
                                                     <div class="conversation-text">
                                                         <div class="ctext-wrap w-100">
-                                                            <i>Soporte Suricata</i>
+	                                                        <small class="text-muted">De (nombre agente): <?php echo $resultados[0]->emailnom; ?></small><br>
+                                                            <small class="text-muted">Para: <?php echo $resultados[0]->emailnom + ', ' + $resultados[0]->cc; ?></small>
+                                                            <small class="text-muted">Fecha: </small>
                                                             <p>
                                                                 {!! $b !!}
                                                             </p>
