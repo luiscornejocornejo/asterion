@@ -1,28 +1,24 @@
 <div class="card ">
                                 <div class="card-body">
                                 <h5 class="font-18 mb-2">Asunto: <?php echo $resultados[0]->emailcliente; ?></h5>
-
-
                                     <ul class="conversation-list p-0" data-simplebar="init">
                                         <?php foreach ($resultadosmails as $valormail):
-    $b = html_entity_decode($valormail->cuerpo);
-    $b = str_replace('src="cid:', '', $b);
-    $b = preg_replace('/<img\b(?![^>]*\bsrc=)[^>]*>/i', '', $b);
+                                            $b = html_entity_decode($valormail->cuerpo);
+                                            $b = str_replace('src="cid:', '', $b);
+                                            $b = preg_replace('/<img\b(?![^>]*\bsrc=)[^>]*>/i', '', $b);
 
-    $clase = "resize-image";
+                                            $clase = "resize-image";
 
-// Utilizar expresiones regulares para agregar la clase a las etiquetas <img>
-$html_modificado = preg_replace('/<img\b[^>]*>/', '$0 class="' . $clase . '"', $b);
-
-
-    ?>
+                                            // Utilizar expresiones regulares para agregar la clase a las etiquetas <img>
+                                            $html_modificado = preg_replace('/<img\b[^>]*>/', '$0 class="' . $clase . '"', $b);
+                                        ?>
 	                                            <?php if ($valormail->autor == 0): ?>
 	                                                <li class="clearfix">
 	                                                    <div class="chat-avatar">
 	                                                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" class="rounded-circle border" alt="Usuario">
 	                                                    </div>
 	                                                    <div class="conversation-text">
-	                                                        <div class="ctext-wrap bg-white border">
+	                                                        <div class="ctext-wrap bg-white border w-100">
 	                                                        <small class="text-muted">De: <?php echo $resultados[0]->emailnom; ?></small><br>
 	                                                        <small class="text-muted">CC: <?php echo $resultados[0]->cc; ?></small>
 	                                                            <p class="mb-1">
@@ -37,7 +33,7 @@ $html_modificado = preg_replace('/<img\b[^>]*>/', '$0 class="' . $clase . '"', $
                                                         <img src="https://static.thenounproject.com/png/535375-200.png" class="rounded-circle border" alt="Operador">
                                                     </div>
                                                     <div class="conversation-text">
-                                                        <div class="ctext-wrap">
+                                                        <div class="ctext-wrap w-100">
                                                             <i>Soporte Suricata</i>
                                                             <p>
                                                                 {!! $b !!}
