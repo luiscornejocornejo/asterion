@@ -47,8 +47,8 @@
                                                     </div>
                                                     <div class="conversation-text">
                                                         <div class="ctext-wrap w-100">
-	                                                        <small class="text-muted">De (nombre agente): <?php echo $resultados[0]->emailnom; ?></small><br>
-                                                            <small class="text-muted">Para: <?php echo $resultados[0]->emailnom + ', ' + $resultados[0]->cc; ?></small>
+	                                                        <small class="text-muted">De (nombre agente): <?php //echo $resultados[0]->emailnom; ?></small><br>
+                                                            <small class="text-muted">Para: <?php //echo $resultados[0]->emailnom + ', ' + $resultados[0]->cc; ?></small>
                                                             <small class="text-muted">Fecha: </small>
                                                             <p>
                                                                 {!! $b !!}
