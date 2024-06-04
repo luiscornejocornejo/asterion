@@ -36,6 +36,7 @@
 	                                                        <small class="text-muted">CC: <?php //echo $resultados[0]->cc; ?></small>
 	                                                        <small class="text-muted">Fecha: </small>
 	                                                            <p class="mb-1">
+                                                                {!! $b !!}
 	                                                            </p>
 	                                                        </div>
 	                                                    </div>
