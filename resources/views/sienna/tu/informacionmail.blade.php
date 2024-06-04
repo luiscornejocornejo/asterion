@@ -1,3 +1,19 @@
+<style>
+    .conversation-list .odd .conversation-text {
+    float: right!important;
+    margin-right: 12px;
+    text-align: right;
+    width: 90%!important
+}
+
+.conversation-list .conversation-text {
+    float: left;
+    font-size: 13px;
+    margin-left: 12px;
+    width: 90%
+}
+</style>
+
 <div class="card ">
                                 <div class="card-body">
                                 <h5 class="font-18 mb-2">Asunto: <?php echo $resultados[0]->emailcliente; ?></h5>
