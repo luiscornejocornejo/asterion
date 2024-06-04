@@ -22,7 +22,7 @@
                                             $b = html_entity_decode($valormail->cuerpo);
                                             $b = str_replace('src="cid:', '', $b);
                                             $b = preg_replace('/<img\b(?![^>]*\bsrc=)[^>]*>/i', '', $b);
-                                            dd($b);
+                                           // dd($b);
 
                                         ?>
 	                                            <?php if ($valormail->autor == 0): ?>
