@@ -8,6 +8,13 @@
     $b = html_entity_decode($valormail->cuerpo);
     $b = str_replace('src="cid:', '', $b);
     $b = preg_replace('/<img\b(?![^>]*\bsrc=)[^>]*>/i', '', $b);
+
+    $clase = "resize-image";
+
+// Utilizar expresiones regulares para agregar la clase a las etiquetas <img>
+$html_modificado = preg_replace('/<img\b[^>]*>/', '$0 class="' . $clase . '"', $b);
+
+
     ?>
 	                                            <?php if ($valormail->autor == 0): ?>
 	                                                <li class="clearfix">
