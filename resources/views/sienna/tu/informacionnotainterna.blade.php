@@ -1,4 +1,8 @@
 <style>
+    input[type="file"] {
+      display: none;
+    }
+
     .custom-file-upload {
     border: 1px solid #ccc;
     display: inline-block;
@@ -51,8 +55,8 @@
                                                         <i class="mdi mdi-attachment" style="font-size: 20px;"></i>
                                                     </label>
                                                     <input id="file-upload" type="file" />
-                                                </div>
                                                     <button class="btn btn-primary ms-2" type="submit">Crear</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </form>
