@@ -716,7 +716,7 @@ class cloudtickets extends Controller
         ->with('success', 'Se Agrego  el registro  correctamente!');
  
     }
-    public function passuser(Request $request)
+    public function cambiopass(Request $request)
     {       
         
        echo  $newpass=$request->newpass;

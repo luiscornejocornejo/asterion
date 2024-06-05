@@ -253,7 +253,7 @@ Route::post('/asignarall','App\Http\Controllers\cloudtickets@asignarall');
 Route::post('/crearticketsiennacliente','App\Http\Controllers\cloudtickets@crearticketsiennacliente');
 Route::post('/crearticketsiennanocliente','App\Http\Controllers\cloudtickets@crearticketsiennanocliente');
 Route::post('/notificacionusers','App\Http\Controllers\cloudtickets@notificacionusers');
-Route::post('/passusers','App\Http\Controllers\cloudtickets@passusers');
+Route::post('/cambiopass','App\Http\Controllers\cloudtickets@cambiopass');
 
 Route::get('/tareas','App\Http\Controllers\cloudtickets@tareas');
 Route::get('/getdata','App\Http\Controllers\cloudtickets@getdata');
