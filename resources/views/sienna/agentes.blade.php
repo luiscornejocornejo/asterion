@@ -24,6 +24,11 @@ function notificacion(dd) {
 document.getElementById("user_id5").value = dd;
 
 }
+function cambiarpass(dd) {
+
+document.getElementById("user_idpass").value = dd;
+
+}
 function eliminar(dd) {
 
 document.getElementById("idagente").value = dd;
@@ -120,10 +125,16 @@ document.getElementById("idagente").value = dd;
                                     <i class="mdi mdi-email" data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-custom-class="mb-1" data-bs-title="Notificación email"></i>
                                     </button> 
+                                    <button onclick="cambiarpass(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalcambiarpass"  class="btn btn-danger rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="mdi mdi-delete-outline" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        data-bs-custom-class="mb-1" data-bs-title="Departamento"></i>
+                                    </button> 
                                     <button onclick="eliminar(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalticketeliminar"  class="btn btn-danger rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="mdi mdi-delete-outline" data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-custom-class="mb-1" data-bs-title="Departamento"></i>
                                     </button> 
+
+                                    
                                 </td>
                                 <?php 
                                 if($vueltas==23){
@@ -146,6 +157,7 @@ document.getElementById("idagente").value = dd;
       @include('sienna.usermodal.ticket')        
       @include('sienna.usermodal.nuevo')        
       @include('sienna.usermodal.notificacion')        
+      @include('sienna.usermodal.cambiarpass')        
 
 <!-- Modal users register -->
  
