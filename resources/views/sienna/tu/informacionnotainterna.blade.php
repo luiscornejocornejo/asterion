@@ -54,7 +54,7 @@
                                                     <label for="file-upload" class="custom-file-upload rounded fw-bold">
                                                         <i class="mdi mdi-attachment"></i>
                                                     </label>
-                                                    <input id="file-upload" type="file" />
+                                                    <input id="file-upload" type="file" name="logo" />
                                                     <button class="btn btn-primary ms-2" type="submit">Crear</button>
                                                 </div>
                                             </div>
