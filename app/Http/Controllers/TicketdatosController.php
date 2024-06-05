@@ -1639,6 +1639,15 @@ class TicketdatosController extends Controller
        where cliente =(select cliente from siennatickets where id='".$tick."')";
        $resultadoshistoricos = DB::select($queryhistorico);
 
+
+       $querycliente="SELECT  c.*
+       FROM siennacliente
+       where cliente =(select cliente from siennatickets where id='".$tick."')
+
+       order by created_at desc limit 1";
+       $resultadoscliente = DB::select($querycliente);
+
+       
        $emp=empresa::all();
        $pri=prioridad::all();
 
@@ -1679,6 +1688,8 @@ class TicketdatosController extends Controller
         ->with('pri', $pri)
         ->with('resultadosmails', $resultadosmails)
         ->with('resultadoshistoricos', $resultadoshistoricos)
+        ->with('resultadoscliente', $resultadoscliente)
+        
         
          ->with('resultados', $resultados);
        

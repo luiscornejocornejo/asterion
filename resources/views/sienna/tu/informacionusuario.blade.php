@@ -11,7 +11,8 @@
                                 <hr style="margin-top: 10px;" />
                                 <div class="row">
                                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12">
-                                        <?php if(isset($resultados[0]->cliente)){?>
+                                        <?php dd($resultadoscliente);
+                                        if(isset($resultados[0]->cliente)){?>
                                             <div class="d-flex mt-2">
                                                 <i class="mdi mdi-card-account-details"></i>&nbsp;Numero cliente:&nbsp;
                                                 <span class="badge badge-secondary-lighten line-h">
