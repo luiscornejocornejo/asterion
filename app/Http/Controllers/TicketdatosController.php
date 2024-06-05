@@ -994,7 +994,7 @@ class TicketdatosController extends Controller
                 $telbroad=$si44->cel;
                 //$telbroad="+5491160480646";
                 
-                if($urlbroad<>""){
+                if($urlbroad<>"0"){
                     if($telbroad<>""){
                         $tt=$this->llamadobroadcast($urlbroad,$telbroad);
                     }
