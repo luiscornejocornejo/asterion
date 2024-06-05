@@ -1640,7 +1640,7 @@ class TicketdatosController extends Controller
        $resultadoshistoricos = DB::select($queryhistorico);
 
 
-       $querycliente="SELECT  c.*
+       $querycliente="SELECT  *
        FROM siennacliente
        where cliente =(select cliente from siennatickets where id='".$tick."')
 
