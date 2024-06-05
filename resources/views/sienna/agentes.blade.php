@@ -125,9 +125,9 @@ document.getElementById("idagente").value = dd;
                                     <i class="mdi mdi-email" data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-custom-class="mb-1" data-bs-title="Notificación email"></i>
                                     </button> 
-                                    <button onclick="cambiarpass(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalcambiarpass"  class="btn btn-danger rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button onclick="cambiarpass(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalcambiarpass"  class="btn btn-info rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="mdi  mdi-account-key" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-custom-class="mb-1" data-bs-title="Departamento"></i>
+                                        data-bs-custom-class="mb-1" data-bs-title="Cambio pass"></i>
                                     </button> 
                                     <button onclick="eliminar(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalticketeliminar"  class="btn btn-danger rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="mdi mdi-delete-outline" data-bs-toggle="tooltip" data-bs-placement="top"
