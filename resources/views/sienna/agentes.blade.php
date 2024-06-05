@@ -131,7 +131,7 @@ document.getElementById("idagente").value = dd;
                                     </button> 
                                     <button onclick="eliminar(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalticketeliminar"  class="btn btn-danger rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="mdi mdi-delete-outline" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-custom-class="mb-1" data-bs-title="Departamento"></i>
+                                        data-bs-custom-class="mb-1" data-bs-title="Eliminar"></i>
                                     </button> 
 
                                     
