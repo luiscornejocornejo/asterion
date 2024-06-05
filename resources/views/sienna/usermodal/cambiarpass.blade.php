@@ -6,7 +6,7 @@
                     <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="/passusers" method="post"  enctype="multipart/form-data">
+                    <form action="/passuser" method="post"  enctype="multipart/form-data">
                     @csrf
                        
                         <input value="" type="hidden" name="user_idpass" id="user_idpass">
