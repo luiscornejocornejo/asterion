@@ -125,21 +125,21 @@ class siennaController extends Controller
       //    INSERT INTO ".$val->Database.".siennavariables ( variable, espanol, portugues, ingles, siennapaginas) VALUES( 'boton3', 'logeados', 'logado', 'logged in', 1);
 
     echo   $query1="
-    CREATE TABLE ".$val->Database.".salientesxennio (
+   
+    
+
+    CREATE TABLE ".$val->Database.".salientesxenniolistado (
       id INT auto_increment NOT NULL,
-      nombre varchar(100) NULL,
-      parametros varchar(100) NULL,
-      url varchar(100) NULL,
-      cantmax INT NULL,
-      cantactual INT NULL,
-      CONSTRAINT salientesxennio_pk PRIMARY KEY (id)
+      cel varchar(100) NULL,
+      valoresparametros varchar(1000) NULL,
+      estado varchar(100) NULL,
+      salientesxennio SMALLINT NULL,
+      CONSTRAINT salientesxenniolistado_pk PRIMARY KEY (id)
     )
     ENGINE=InnoDB
     DEFAULT CHARSET=utf8mb4
     COLLATE=utf8mb4_0900_ai_ci;
     
-
-
         
       
     
