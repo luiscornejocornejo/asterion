@@ -733,4 +733,13 @@ class cloudtickets extends Controller
         ->with('success', 'Se Modifico  la password  correctamente!');
  
     }
+
+    
+    public function salientesb(Request $request)
+    {       
+        
+
+            return view('sienna/salientesb');
+    }
+
 }
