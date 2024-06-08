@@ -34,14 +34,14 @@
                         </div>
                         <div id="carga" class="row d-none">
 
-                                <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
+                                <form action="/salientesb" method="fet" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
                                     data-upload-preview-template="#uploadPreviewTemplate">
                                     @csrf
 
                                     <div class="fallback">
                                         <input name="file" id="inputFile" type="file" multiple />
                                     </div>
-                                    <input type="text" value="numero,nombre" id="headerInput" placeholder="Nombres de las cabeceras (separados por comas)" />
+                                    <input type="hidden" value="numero,nombre" id="headerInput" placeholder="Nombres de las cabeceras (separados por comas)" />
                                     <div id="recordCount"></div>
                                     <table class="table table-striped display responsive nowrap w-100 table-bordered" id="excelTable" >
                                     </table>
