@@ -27,7 +27,7 @@
                                         var element = document.getElementById('carga');
                                         element.classList.remove('d-none');
                                         var headerInput = document.getElementById('headerInput');
-                                        headerInput.value=separar[1];
+                                        headerInput.value="cel,"+separar[1];
 
                                     }
 
