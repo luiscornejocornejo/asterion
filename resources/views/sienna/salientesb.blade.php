@@ -39,8 +39,10 @@
                                     @csrf
 
                                     <div class="fallback">
-                                        <input name="file" type="file" multiple />
+                                        <input name="file" id="inputFile" type="file" multiple />
                                     </div>
+                                    <table id="excelTable" border="1">
+                                    </table>
                                     <div class="col-lg-4 col-sm-12">
                                                             <div class="mb-2 position-relative">
                                                                 <label class="form-label">&nbsp;</label>
@@ -54,5 +56,36 @@
         </div> 
     </div>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script>
+        document.getElementById('inputFile').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
 
+            reader.onload = function(event) {
+                const data = new Uint8Array(event.target.result);
+                const workbook = XLSX.read(data, { type: 'array' });
+
+                const firstSheetName = workbook.SheetNames[0];
+                const worksheet = workbook.Sheets[firstSheetName];
+
+                const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+                const table = document.getElementById('excelTable');
+                table.innerHTML = ''; // Limpiar tabla antes de agregar datos
+
+                jsonData.forEach((row) => {
+                    const tr = document.createElement('tr');
+                    row.forEach((cell) => {
+                        const td = document.createElement('td');
+                        td.textContent = cell;
+                        tr.appendChild(td);
+                    });
+                    table.appendChild(tr);
+                });
+            };
+
+            reader.readAsArrayBuffer(file);
+        });
+    </script>
 @include('facu.footer')
