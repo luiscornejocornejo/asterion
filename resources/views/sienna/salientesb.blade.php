@@ -15,15 +15,20 @@
                                 <select onchange="campos(this)" class="form-select" name="estado" id="example-select">
                                 <option >seleccionar</option>
                                 <?php foreach($listadopadre as $ll){?>
-                                    <option value="<?php echo $ll->id;?>"><?php echo $ll->nombre;?></option>
+                                    <option value="<?php echo $ll->id."|".$ll->parametros;?>"><?php echo $ll->nombre;?></option>
                                 <?php }?>
                                 </select>
                                 <script>
                                     function campos(id){
                                         alert(id.value);
-                                        
+                                        separar=explode("|",id.value);
+                                        var template = document.getElementById('template');
+                                        template.value=separar[0];
                                         var element = document.getElementById('carga');
                                         element.classList.remove('d-none');
+                                        var headerInput = document.getElementById('headerInput');
+                                        headerInput.value=separar[1];
+
                                     }
 
                                 </script>
@@ -41,7 +46,8 @@
                                     <div class="fallback">
                                         <input name="file" id="inputFile" type="file" multiple />
                                     </div>
-                                    <input type="hidden" value="numero,nombre" id="headerInput" placeholder="Nombres de las cabeceras (separados por comas)" />
+                                    <input type="hidden" value="" id="headerInput" placeholder="Nombres de las cabeceras (separados por comas)" />
+                                    <input type="hidden" value="" nombre="template" id="template" placeholder="Nombres de las cabeceras (separados por comas)" />
                                     <div id="recordCount"></div>
                                     <table class="table table-striped display responsive nowrap w-100 table-bordered" id="excelTable" >
                                     </table>
