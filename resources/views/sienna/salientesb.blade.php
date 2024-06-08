@@ -41,7 +41,7 @@
                                     <div class="fallback">
                                         <input name="file" id="inputFile" type="file" multiple />
                                     </div>
-                                    <table class="table table-striped display responsive nowrap w-100 text-light" id="excelTable" border="1">
+                                    <table class="table table-striped display responsive nowrap w-100 table-bordered" id="excelTable" >
                                     </table>
                                     <div class="col-lg-4 col-sm-12">
                                                             <div class="mb-2 position-relative">
