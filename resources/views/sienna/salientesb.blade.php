@@ -41,6 +41,8 @@
                                     <div class="fallback">
                                         <input name="file" id="inputFile" type="file" multiple />
                                     </div>
+                                    <input type="text" value="numero,nombre" id="headerInput" placeholder="Nombres de las cabeceras (separados por comas)" />
+                                    <div id="recordCount"></div>
                                     <table class="table table-striped display responsive nowrap w-100 table-bordered" id="excelTable" >
                                     </table>
                                     <div class="col-lg-4 col-sm-12">
@@ -57,6 +59,7 @@
     </div>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+ 
     <script>
         document.getElementById('inputFile').addEventListener('change', function(event) {
             const file = event.target.files[0];
@@ -74,15 +77,28 @@
                 const table = document.getElementById('excelTable');
                 table.innerHTML = ''; // Limpiar tabla antes de agregar datos
 
-                jsonData.forEach((row) => {
+                const headerInput = document.getElementById('headerInput').value;
+                const headers = headerInput ? headerInput.split(',') : jsonData[0];
+
+                const headerRow = document.createElement('tr');
+                headers.forEach(header => {
+                    const th = document.createElement('th');
+                    th.textContent = header.trim();
+                    headerRow.appendChild(th);
+                });
+                table.appendChild(headerRow);
+
+                jsonData.slice(1).forEach(row => {
                     const tr = document.createElement('tr');
-                    row.forEach((cell) => {
+                    row.forEach(cell => {
                         const td = document.createElement('td');
                         td.textContent = cell;
                         tr.appendChild(td);
                     });
                     table.appendChild(tr);
                 });
+
+                document.getElementById('recordCount').textContent = `Cantidad de registros: ${jsonData.length - 1}`;
             };
 
             reader.readAsArrayBuffer(file);
