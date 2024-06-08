@@ -27,7 +27,9 @@
 
 
     
-
+    <script src="assetsfacu/vendor/dropzone/min/dropzone.min.js"></script>
+<!-- init js -->
+<script src="assetsfacu/js/ui/component.fileupload.js"></script>
     
     
 

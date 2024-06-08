@@ -16,6 +16,9 @@
                             <label for="example-select" class="form-label">Estado del nodo</label>
                             <select class="form-select" name="estado" id="example-select">
                             
+                            <?php foreach($listadopadre as $ll){?>
+                                <option value="<?php echo $ll->id;?>"><?php echo $ll->nombre;?></option>
+                            <?php }?>
                             </select>
                         </div>
                      
@@ -29,9 +32,7 @@
                     </div>
                     <div class="row">
 <!-- plugin js -->
-<script src="assetsfacu/vendor/dropzone/min/dropzone.min.js"></script>
-<!-- init js -->
-<script src="assetsfacu/js/ui/component.fileupload.js"></script>
+
                                                     
 <!-- File Upload -->
 <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"

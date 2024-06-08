@@ -24,6 +24,7 @@ use App\Models\empresa;
 use App\Models\siennatareas;
 use App\Models\siennaintegracion;
 use App\Models\siennagetdata;
+use App\Models\salientesxennio;
 
 use Mail;
 
@@ -738,8 +739,10 @@ class cloudtickets extends Controller
     public function salientesb(Request $request)
     {       
         
-
-            return view('sienna/salientesb');
+            $listadopadre=salientesxennio::all()->get();
+            return view('sienna/salientesb')
+            ->with('listadopadre', $listadopadre)
+            ;
     }
 
 }
