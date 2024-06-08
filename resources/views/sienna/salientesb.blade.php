@@ -27,7 +27,7 @@
                                         var element = document.getElementById('carga');
                                         element.classList.remove('d-none');
                                         var headerInput = document.getElementById('headerInput');
-                                        columnas=separar[1].replace(";", ",");
+                                        const columnas = separar[1].replace(/;/g, ',');
 
                                         headerInput.value="cel,"+columnas;
 
