@@ -11,8 +11,8 @@
                         <div class="row">
                         
                             <div class="col-4 mb-2">
-                                <label for="example-select" class="form-label">Estado del nodo</label>
-                                <select onchange="campos(this->id)" class="form-select" name="estado" id="example-select">
+                                <label for="example-select" class="form-label">Template</label>
+                                <select onchange="campos(this)" class="form-select" name="estado" id="example-select">
                                 <option >seleccionar</option>
                                 <?php foreach($listadopadre as $ll){?>
                                     <option value="<?php echo $ll->id;?>"><?php echo $ll->nombre;?></option>
@@ -20,7 +20,7 @@
                                 </select>
                                 <script>
                                     function campos(id){
-                                        alert(id);
+                                        alert(id.value);
                                     }
 
                                 </script>
