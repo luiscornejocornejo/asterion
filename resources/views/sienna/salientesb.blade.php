@@ -21,6 +21,16 @@
                                 <script>
                                     function campos(id){
                                         alert(id.value);
+                                        
+                                        var url = "{{url('campos')}}/"+id.value;
+                                        $.ajax({
+                                            type: "GET",
+                                            url: url,
+                                            success: function(data){
+                                                $('#carga').removeClass('d-none');
+                                                $('#carga').html(data);
+                                            }
+                                        });
                                     }
 
                                 </script>
@@ -29,7 +39,7 @@
                             
 
                         </div>
-                        <div class="row">
+                        <div id="carga" class="row d-none">
 
                                 <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
                                     data-upload-preview-template="#uploadPreviewTemplate">
