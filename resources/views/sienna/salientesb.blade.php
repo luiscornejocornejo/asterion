@@ -22,15 +22,8 @@
                                     function campos(id){
                                         alert(id.value);
                                         
-                                        var url = "{{url('campos')}}/"+id.value;
-                                        $.ajax({
-                                            type: "GET",
-                                            url: url,
-                                            success: function(data){
-                                                $('#carga').removeClass('d-none');
-                                                $('#carga').html(data);
-                                            }
-                                        });
+                                        var element = document.getElementById('carga');
+                                        element.classList.remove('d-none');
                                     }
 
                                 </script>
