@@ -739,7 +739,7 @@ class cloudtickets extends Controller
     public function salientesb(Request $request)
     {       
         
-            $listadopadre=salientesxennio::all()->get();
+            $listadopadre=salientesxennio::all();
             return view('sienna/salientesb')
             ->with('listadopadre', $listadopadre)
             ;
