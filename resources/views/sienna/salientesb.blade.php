@@ -21,7 +21,7 @@
                                 <script>
                                     function campos(id){
                                         alert(id.value);
-                                        separar=explode("|",id.value);
+                                        separar=id.value.split('|');
                                         var template = document.getElementById('template');
                                         template.value=separar[0];
                                         var element = document.getElementById('carga');
