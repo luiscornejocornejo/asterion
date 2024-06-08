@@ -29,7 +29,7 @@
                                         var headerInput = document.getElementById('headerInput');
                                         columnas=separar[1].replace(";", ",");
 
-                                        headerInput.value="cel,"+separar[1];
+                                        headerInput.value="cel,"+columnas;
 
                                     }
 
