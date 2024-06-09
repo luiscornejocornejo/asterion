@@ -21,6 +21,7 @@
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">Formulario</h1>
                 </div>
+                <div class="mx-auto" style="width: 200px;">
 
                 <form action="" method="post" enctype="multipart/form-data">
            
@@ -73,7 +74,7 @@
                     <button type="submit" class="btn btn-primary">Consultar</button>
 
                 </form>
-
+                </div>
        
 
 
