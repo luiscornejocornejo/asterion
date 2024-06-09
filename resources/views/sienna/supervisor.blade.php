@@ -405,6 +405,10 @@
         .appendTo('#example thead ');
         $('#example thead tr').width('800 px;');
             }//fin del if
+            else{
+              console.log("no hay cambios");
+
+            }
             })
             .catch(function (error) {
                 // función para capturar el error
