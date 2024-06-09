@@ -213,7 +213,22 @@
             return "badge bg-success";
 
         }
+        function displayData(data) {
+            const container = document.getElementById('data-container');
+            container.innerHTML = ''; // Limpia el contenido anterior
 
+            data.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.textContent = JSON.stringify(item);
+
+                // Si es un nuevo registro o ha cambiado, añade una clase CSS
+                if (lastData && JSON.stringify(item) !== JSON.stringify(lastData[index])) {
+                    div.classList.add('new-data');
+                }
+
+                container.appendChild(div);
+            });
+        }
         let lastData = null;
 
         function maxid() {
@@ -230,6 +245,8 @@
             axios.get(url)
             .then(function (response) {
               const newData = response.data;
+              displayData(newData);
+
 
                     // Compara los datos nuevos con los datos anteriores
                     if (JSON.stringify(newData) !== JSON.stringify(lastData)) {
@@ -613,6 +630,8 @@
                     
                                                      
                 </div>
+                <div id="data-container"></div>
+
                 <div class="floating-button">
                     <button id="main-button" class="bg-primary text-light" onclick="toggleRotation(); toggleMenu()">
                     <span class="mdi mdi-plus"></span>
