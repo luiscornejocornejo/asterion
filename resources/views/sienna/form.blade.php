@@ -74,7 +74,7 @@
 
                 </form>
 
-            </div>
+       
 
 
             <?php if($vista=="1"){
@@ -126,6 +126,7 @@
 
 <?php
             }?>
+                 </div>
         </div>
     </div>
 </div>
