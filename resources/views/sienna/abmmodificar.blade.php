@@ -1,39 +1,17 @@
-
-
 @include('facu.header')
-<div class="wrapper">
 
-<!-- ========== Left Sidebar Start ========== -->
+
+
+<div class="wrapper menuitem-active">
 @include('facu.menu')
-<style type="text/css">
-    .pick-a-color-markup .color-menu.color-menu--inline {
-        left: 242px !important;
-    }
-
-    .container {
-        width: 20%;
-    }
-</style>
-<script type="text/javascript">
-    $(document).ready(function() {
-        if ($(".pick-a-color").pickAColor !== undefined) {
-            $(".pick-a-color").pickAColor({
-                showSpectrum: true,
-                showSavedColors: true,
-                saveColorsPerElement: true,
-                fadeMenuToggle: true,
-                showAdvanced: true,
-                showBasicColors: true,
-                showHexInput: true,
-                allowBlank: true,
-                inlineDropdown: true
-            });
-        }
-    });
-</script>
-
-<div class="content-page" style="padding: 0!important;">
-          <div class="content">
+    <div class="content-page" style="padding: 0!important;">
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade
+                            show" role="alert">
+            {{ $message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
 
               <!-- Start Content-->
             
