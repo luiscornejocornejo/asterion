@@ -26,6 +26,7 @@ use App\Models\siennaintegracion;
 use App\Models\siennagetdata;
 use App\Models\salientesxennio;
 use App\Models\salientesxenniolistado;
+use Maatwebsite\Excel\Facades\Excel;
 
 use Mail;
 
@@ -748,8 +749,16 @@ class cloudtickets extends Controller
 
     public function salientesbpost(Request $request)
     {       
-        
-        dd($request);
+        $request->validate([
+            'file' => 'required|mimes:xlsx,xls'
+        ]);
+
+        // Obtener el archivo subido
+        $file = $request->file('file');
+
+        // Leer los datos del archivo Excel
+        $data = Excel::toArray([], $file);
+        dd($data);
             $listadopadre=new salientesxenniolistado();
             return redirect()
             ->back()
