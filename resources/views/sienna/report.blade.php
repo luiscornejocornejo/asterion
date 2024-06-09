@@ -70,6 +70,20 @@
                             @endforeach
 
                         </tbody>
+                        <tfoot>
+            <tr>
+
+                    @foreach($cabezeras as $cabeza)
+                    <?php if ($cabeza <> "id") { ?>
+
+                        <th role="columnheader">{{ $cabeza }}</th>
+                    <?php  } ?>
+
+                    @endforeach
+
+
+            </tr>
+        </tfoot>
                     </table>
 
                 </div>
