@@ -749,9 +749,11 @@ class cloudtickets extends Controller
 
     public function salientesbpost(Request $request)
     {       
+
+        /*
         $request->validate([
             'file' => 'required|mimes:xlsx,xls'
-        ]);
+        ]);*/
 
         // Obtener el archivo subido
         $file = $request->file('file');
