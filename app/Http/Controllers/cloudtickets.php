@@ -760,6 +760,7 @@ class cloudtickets extends Controller
 
         // Obtener el archivo subido
        echo  $valores = $request->cantvalores;
+       $template=$request->template;
        $sepa=explode(",",$valores);
        echo sizeof($sepa);
        echo "<br>";
@@ -773,6 +774,7 @@ class cloudtickets extends Controller
         foreach($data[0] as $val){
             $listado=new salientesxenniolistado();
             $listado->estado="n";
+            $listado->salientesxennio=$template;
             $juntar="";
 
             for($i=0;$i<sizeof($sepa);$i++){
