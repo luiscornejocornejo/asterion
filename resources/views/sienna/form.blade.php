@@ -121,12 +121,18 @@
 
                             <tfoot>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+            <tr role="row">
+
+                    @foreach($cabezeras as $cabeza)
+                    <?php if ($cabeza <> "id") { ?>
+
+                        <th role="columnheader">{{ $cabeza }}</th>
+                    <?php  } ?>
+
+                    @endforeach
+
+
+                    </tr>
             </tr>
         </tfoot>
                         </tbody>
