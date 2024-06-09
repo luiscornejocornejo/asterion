@@ -764,7 +764,8 @@ class cloudtickets extends Controller
 
        // $path1 = $request->file('file')->store('public'); 
             $path=storage_path('app').'/'.$logo;  
-        $data = \Excel::import(new UsersImport,$path);
+            $data = Excel::toArray([], $path);
+
         dd($data);
         /*
             $listadopadre=new salientesxenniolistado();
