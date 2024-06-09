@@ -771,19 +771,23 @@ class cloudtickets extends Controller
 
 
         foreach($data[0] as $val){
+            $listado=new salientesxenniolistado();
+            $listado->estado="n";
+            $juntar="";
 
             for($i=0;$i<sizeof($sepa);$i++){
 
-                echo $val[$i];
-                echo "<br>";
+                if($i==0){
+                    $listado->cel=$val[$i];
+                }
+                $juntar.= $val[$i].",";
             }
-           
-
+            echo $juntar=substr($juntar,0,-1);
+            $listado->valoresparametros=$juntar;
+            $listado->save();
         }
-        dd($data[0]);
 
         /*
-            $listadopadre=new salientesxenniolistado();
             return redirect()
             ->back()
             ->with('success', 'Se Agrego correctamente !');*/
