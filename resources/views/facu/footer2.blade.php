@@ -104,7 +104,7 @@
     },
     fixedHeader: {
         footer: true
-    }
+    },
 
                     buttons: [
                                 'copy', 'csv', 'excel', 'pdf', 'print'
