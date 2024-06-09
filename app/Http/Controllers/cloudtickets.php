@@ -760,10 +760,10 @@ class cloudtickets extends Controller
 
         // Obtener el archivo subido
         //$file = $request->file('file');
-        //$logo = $request->file('logo')->store('public');
+        $logo = $request->file('logo')->store('public');
 
-        $path1 = $request->file('file')->store('public'); 
-            $path=storage_path('app').'/'.$path1;  
+       // $path1 = $request->file('file')->store('public'); 
+            $path=storage_path('app').'/'.$logo;  
         $data = \Excel::import(new UsersImport,$path);
         dd($data);
         /*
