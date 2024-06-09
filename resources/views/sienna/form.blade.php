@@ -121,7 +121,6 @@
 
                             <tfoot>
             <tr>
-            <tr role="row">
 
                     @foreach($cabezeras as $cabeza)
                     <?php if ($cabeza <> "id") { ?>
@@ -132,7 +131,6 @@
                     @endforeach
 
 
-                    </tr>
             </tr>
         </tfoot>
                         </tbody>
