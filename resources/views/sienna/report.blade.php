@@ -67,15 +67,15 @@
                             ]
                 }
             
-                $('#example thead tr')
+            
+            );
+
+        $('#example thead tr')
           .clone(true)
           .addClass('filters')
           
         .appendTo('#example thead ');
         $('#example thead tr').width('800 px;');
-            );
-
-          
           
 
 </script>
@@ -109,7 +109,7 @@
                 <div class="table-responsive">
 
 
-                    <table role="table" id="example" class="table table-bordered dt-responsive nowrap w-100">
+                    <table role="table" id="example" class="table table-bordered dt-responsive nowrap w-100 filters">
                         <thead role="rowgroup" class="text-center bg-dark">
                             <tr role="row">
 
