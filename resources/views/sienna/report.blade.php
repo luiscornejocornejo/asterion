@@ -36,7 +36,7 @@
                 <div class="table-responsive">
 
 
-                    <table role="table" id="example" class="table table-bordered dt-responsive nowrap w-100 filters">
+                    <table role="table" id="example" class="table table-bordered dt-responsive nowrap w-100 ">
                         <thead role="rowgroup" class="text-center bg-dark">
                             <tr role="row">
 
