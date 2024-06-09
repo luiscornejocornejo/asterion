@@ -41,12 +41,12 @@
                         </div>
                         <div id="carga" class="row d-none">
 
-                                <form action="/salientesb" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
+                                <form  enctype="multipart/form-data" action="/salientesb" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
                                     data-upload-preview-template="#uploadPreviewTemplate">
                                     @csrf
 
                                     <div class="fallback">
-                                        <input name="file" id="inputFile" type="file" multiple />
+                                        <input name="logo" id="inputFile" type="file" multiple />
                                     </div>
                                     <input type="hidden" value="" id="headerInput" placeholder="Nombres de las cabeceras (separados por comas)" />
                                     <input type="hidden" value="" name="template" id="template" placeholder="Nombres de las cabeceras (separados por comas)" />
