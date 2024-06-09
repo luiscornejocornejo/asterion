@@ -82,12 +82,11 @@
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">Report</h1>
                 </div>
-                <button class="btn btn-success" onclick="exportTableToExcel('datatable')">Exportar </button>
 
                 <div class="table-responsive">
 
 
-                    <table role="table" id="datatable" class="table table-bordered dt-responsive nowrap w-100">
+                    <table role="table" id="example" class="table table-bordered dt-responsive nowrap w-100">
                         <thead role="rowgroup" class="table-success">
                             <tr role="row">
 
@@ -131,4 +130,4 @@
     </div>
 </div>
 <br><br><br>
-@include('facu.footer')
+@include('facu.footer2')
