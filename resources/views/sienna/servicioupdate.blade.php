@@ -1,6 +1,17 @@
 @include('facu.header')
 
 
+
+<div class="wrapper menuitem-active">
+@include('facu.menu')
+    <div class="content-page" style="padding: 0!important;">
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade
+                            show" role="alert">
+            {{ $message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
 <?php 
 foreach ($report as $valor){
 
@@ -17,17 +28,7 @@ foreach ($report as $valor){
     $dashboard=$valor->dashboard;
     $base=$valor->base;
 }?>
-<div id="principal">
-    <div class="mx-auto" style="width: 1000px;margin-top: 70px;">
 
-        @if ($message = Session::get('success'))
-        <div class="alert alert-success alert-dismissible fade
-                            show" role="alert">
-            {{ $message }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        @endif
-    </div>
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Begin Page Content -->
