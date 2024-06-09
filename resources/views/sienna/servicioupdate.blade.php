@@ -1,4 +1,4 @@
-@include('pp.header')
+@include('facu.header')
 
 
 <?php 
@@ -340,7 +340,7 @@ let valor="";
     }
 </script>
 <br><br><br>
-@include('pp.footer')
+@include('facu.footer')
 <script src="assets/libs/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
 <script src="assets/libs/twitter-bootstrap-wizard/prettify.js"></script>
 
