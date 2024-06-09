@@ -28,6 +28,8 @@ use App\Models\salientesxennio;
 use App\Models\salientesxenniolistado;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\File;
+
 
 use Mail;
 
@@ -760,7 +762,7 @@ class cloudtickets extends Controller
         //$file = $request->file('file');
         //$logo = $request->file('logo')->store('public');
 
-        $path1 = $request->file('file')->store('temp'); 
+        $path1 = $request->file('file')->store('public'); 
             $path=storage_path('app').'/'.$path1;  
         $data = \Excel::import(new UsersImport,$path);
         dd($data);
