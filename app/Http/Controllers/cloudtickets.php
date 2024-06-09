@@ -25,6 +25,7 @@ use App\Models\siennatareas;
 use App\Models\siennaintegracion;
 use App\Models\siennagetdata;
 use App\Models\salientesxennio;
+use App\Models\salientesxenniolistado;
 
 use Mail;
 
@@ -743,6 +744,17 @@ class cloudtickets extends Controller
             return view('sienna/salientesb')
             ->with('listadopadre', $listadopadre)
             ;
+    }
+
+    public function salientesbpost(Request $request)
+    {       
+        
+        dd($request);
+            $listadopadre=new salientesxenniolistado();
+            return redirect()
+            ->back()
+            ->with('success', 'Se Agrego correctamente !');
+     
     }
 
 }

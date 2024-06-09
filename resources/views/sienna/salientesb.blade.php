@@ -41,7 +41,7 @@
                         </div>
                         <div id="carga" class="row d-none">
 
-                                <form action="/salientesb" method="fet" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
+                                <form action="/salientesb" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
                                     data-upload-preview-template="#uploadPreviewTemplate">
                                     @csrf
 
