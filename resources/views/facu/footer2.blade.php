@@ -114,12 +114,7 @@
             
             );
 
-        $('#example thead tr')
-          .clone(true)
-          .addClass('filters')
-          
-        .appendTo('#example thead ');
-        $('#example thead tr').width('800 px;');
+        
           
 
 </script>
