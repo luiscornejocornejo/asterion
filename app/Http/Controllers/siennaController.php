@@ -126,19 +126,10 @@ class siennaController extends Controller
 
     echo   $query1="
    
-    
+    ALTER TABLE ".$val->Database.".salientesxenniolistado ADD updated_at DATETIME NULL;
 
-    CREATE TABLE ".$val->Database.".salientesxenniolistado (
-      id INT auto_increment NOT NULL,
-      cel varchar(100) NULL,
-      valoresparametros varchar(1000) NULL,
-      estado varchar(100) NULL,
-      salientesxennio SMALLINT NULL,
-      CONSTRAINT salientesxenniolistado_pk PRIMARY KEY (id)
-    )
-    ENGINE=InnoDB
-    DEFAULT CHARSET=utf8mb4
-    COLLATE=utf8mb4_0900_ai_ci;
+
+    
     
         
       
