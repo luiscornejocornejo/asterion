@@ -35,7 +35,7 @@
 
     
     <script type="text/javascript">
-   new DataTable('#example', {
+   new DataTable('#example2', {
     "responsive": true,
 
   "language" : {
@@ -74,6 +74,8 @@
 <script>
     $('#example').dataTable({
                     "order": [[0, 'desc']],
+                    "paging": false,
+                    "searching": false,
                     "responsive": !0,
                     "pageLength": 25,           
                     "language" : {
