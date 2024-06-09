@@ -126,7 +126,7 @@ class siennaController extends Controller
 
     echo   $query1="
    
-    ALTER TABLE ".$val->Database.".salientesxenniolistado ADD updated_at DATETIME NULL;
+    ALTER TABLE ".$val->Database.".salientesxenniolistado ADD created_at DATETIME NULL;
 
 
     
