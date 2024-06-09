@@ -4,6 +4,8 @@
 
 <div class="wrapper menuitem-active">
 @include('facu.menu')
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
 <script>
     $('#example').dataTable({
                     "order": [[0, 'desc']],
