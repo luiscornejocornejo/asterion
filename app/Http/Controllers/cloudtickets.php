@@ -789,10 +789,10 @@ class cloudtickets extends Controller
             $listado->save();
         }
 
-        /*
+        
             return redirect()
             ->back()
-            ->with('success', 'Se Agrego correctamente !');*/
+            ->with('success', 'Se Agrego correctamente !');
      
     }
 
