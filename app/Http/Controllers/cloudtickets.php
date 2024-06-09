@@ -780,7 +780,7 @@ class cloudtickets extends Controller
                 if($i==0){
                     $listado->cel=$val[$i];
                 }else{
-                    $juntar.= $val[$i].",";
+                    $juntar.= $val[$i].";";
 
                 }
             }

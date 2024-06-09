@@ -5,7 +5,13 @@
 <div class="wrapper menuitem-active">
 @include('facu.menu')
     <div class="content-page" style="padding: 0!important;">
-
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade
+                            show" role="alert">
+            {{ $message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
         <div class="container-fluid pt-2">
 
                         <div class="row">
@@ -20,7 +26,6 @@
                                 </select>
                                 <script>
                                     function campos(id){
-                                        alert(id.value);
                                         separar=id.value.split('|');
                                         var template = document.getElementById('template');
                                         template.value=separar[0];
