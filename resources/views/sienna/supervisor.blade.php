@@ -250,7 +250,7 @@
                     // Compara los datos nuevos con los datos anteriores
                     if (JSON.stringify(newData) !== JSON.stringify(lastData)) {
                       lastData = newData;
-                      displayData(newData);
+                     // displayData(newData);
 
 
                 // función que se ejecutará al recibir una respuesta
