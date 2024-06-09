@@ -233,6 +233,8 @@
 
                     // Compara los datos nuevos con los datos anteriores
                     if (JSON.stringify(newData) !== JSON.stringify(lastData)) {
+                      lastData = newData;
+
                 // función que se ejecutará al recibir una respuesta
             
                 sd='<br><br><button  onclick="pedirall()" class="btn btn-info tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><span class="mdi mdi-account-arrow-left"><span class="tooltiptext">Asignar tickets</span></span></button> '+
