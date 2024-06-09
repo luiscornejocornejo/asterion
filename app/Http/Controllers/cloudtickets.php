@@ -760,6 +760,8 @@ class cloudtickets extends Controller
 
         // Obtener el archivo subido
        echo  $valores = $request->cantvalores;
+       $sepa=explode(",",$valores);
+       echo sizeof($sepa);
        echo "<br>";
         $logo = $request->file('logo')->store('public');
 

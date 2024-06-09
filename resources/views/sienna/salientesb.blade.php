@@ -48,7 +48,7 @@
                                     <div class="fallback">
                                         <input name="logo" id="inputFile" type="file" multiple />
                                     </div>
-                                    <p id="valoresview"></p>
+                                    <span id="valoresview"></span>
                                     <input type="hidden" name="cantvalores" value="" id="headerInput" placeholder="Nombres de las cabeceras (separados por comas)" />
                                     <input type="hidden" value="" name="template" id="template" placeholder="Nombres de las cabeceras (separados por comas)" />
                                     <div id="recordCount"></div>
@@ -111,7 +111,7 @@
             };
 
             reader.readAsArrayBuffer(file);
-            document.getElementById('valoresview').value=document.getElementById('headerInput').value;
+            document.getElementById('valoresview').textContent=document.getElementById('headerInput').value;
         });
     </script>
 @include('facu.footer')
