@@ -74,8 +74,7 @@
 <script>
     $('#example').dataTable({
                     "order": [[0, 'desc']],
-                    "paging": false,
-                    "searching": false,
+                    
                     "responsive": !0,
                     "pageLength": 25,           
                     "language" : {
