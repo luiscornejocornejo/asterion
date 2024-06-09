@@ -214,7 +214,8 @@
 
         }
 
-        
+        let lastData = null;
+
         function maxid() {
            //document.body.style.zoom = "80%";
 
@@ -225,7 +226,6 @@
             var area =<?php echo session('areas');?>;
             url = "https://"+result+".suricata.cloud/api/maxid2?idusuario=" + idusuario + "&area=" + area + "";
             console.log(url);
-            let lastData = null;
 
             axios.get(url)
             .then(function (response) {
