@@ -48,7 +48,8 @@
                                     <div class="fallback">
                                         <input name="logo" id="inputFile" type="file" multiple />
                                     </div>
-                                    <input type="hidden" value="" id="headerInput" placeholder="Nombres de las cabeceras (separados por comas)" />
+                                    <p id="valoresview"></p>
+                                    <input type="hidden" name="cantvalores" value="" id="headerInput" placeholder="Nombres de las cabeceras (separados por comas)" />
                                     <input type="hidden" value="" name="template" id="template" placeholder="Nombres de las cabeceras (separados por comas)" />
                                     <div id="recordCount"></div>
                                     <table class="table table-striped display responsive nowrap w-100 table-bordered" id="excelTable" >
@@ -110,6 +111,7 @@
             };
 
             reader.readAsArrayBuffer(file);
+            document.getElementById('valoresview').value=document.getElementById('headerInput').value;
         });
     </script>
 @include('facu.footer')

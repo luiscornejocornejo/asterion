@@ -759,14 +759,29 @@ class cloudtickets extends Controller
         ]);*/
 
         // Obtener el archivo subido
-        //$file = $request->file('file');
+       echo  $valores = $request->cantvalores;
+       echo "<br>";
         $logo = $request->file('logo')->store('public');
 
        // $path1 = $request->file('file')->store('public'); 
             $path=storage_path('app').'/'.$logo;  
             $data = Excel::toArray([], $path);
 
-        dd($data);
+
+        foreach($data[0] as $val){
+
+            echo $val[0];
+            echo "<br>";
+
+            echo $val[1];
+            echo "<br>";
+
+            echo $val[2];
+            echo "<br>";
+
+        }
+        dd($data[0]);
+
         /*
             $listadopadre=new salientesxenniolistado();
             return redirect()
