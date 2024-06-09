@@ -119,7 +119,9 @@
                             </tr>
                             @endforeach
 
-                            <tfoot>
+             
+                        </tbody>
+                        <tfoot>
             <tr>
 
                     @foreach($cabezeras as $cabeza)
@@ -133,7 +135,6 @@
 
             </tr>
         </tfoot>
-                        </tbody>
                     </table>
 
                 </div>
