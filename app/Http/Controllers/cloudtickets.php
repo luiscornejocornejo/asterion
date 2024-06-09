@@ -772,14 +772,12 @@ class cloudtickets extends Controller
 
         foreach($data[0] as $val){
 
-            echo $val[0];
-            echo "<br>";
+            for($i=0;$i<sizeof($sepa);$i++){
 
-            echo $val[1];
-            echo "<br>";
-
-            echo $val[2];
-            echo "<br>";
+                echo $val[$i];
+                echo "<br>";
+            }
+           
 
         }
         dd($data[0]);
