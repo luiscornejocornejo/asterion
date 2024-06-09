@@ -758,7 +758,7 @@ class cloudtickets extends Controller
         // Obtener el archivo subido
         //$file = $request->file('file');
 
-        $path1 = $request->file('file')->store('temp'); 
+        $path1 = $request->file('mcafile')->store('temp'); 
             $path=storage_path('app').'/'.$path1;  
         $data = \Excel::import(new UsersImport,$path);
         dd($data);
