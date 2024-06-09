@@ -225,8 +225,14 @@
             var area =<?php echo session('areas');?>;
             url = "https://"+result+".suricata.cloud/api/maxid2?idusuario=" + idusuario + "&area=" + area + "";
             console.log(url);
+            let lastData = null;
+
             axios.get(url)
             .then(function (response) {
+              const newData = response.data;
+
+                    // Compara los datos nuevos con los datos anteriores
+                    if (JSON.stringify(newData) !== JSON.stringify(lastData)) {
                 // función que se ejecutará al recibir una respuesta
             
                 sd='<br><br><button  onclick="pedirall()" class="btn btn-info tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><span class="mdi mdi-account-arrow-left"><span class="tooltiptext">Asignar tickets</span></span></button> '+
@@ -396,6 +402,7 @@
           
         .appendTo('#example thead ');
         $('#example thead tr').width('800 px;');
+            }//fin del if
             })
             .catch(function (error) {
                 // función para capturar el error
