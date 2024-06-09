@@ -4,6 +4,81 @@
 
 <div class="wrapper menuitem-active">
 @include('facu.menu')
+<script>
+    $('#example').dataTable({
+                    "order": [[0, 'desc']],
+                    "responsive": !0,
+                    "pageLength": 25,
+                    
+          "language" : {
+            "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
+          },
+          dom: 'Bfrtip',
+          initComplete: function () {
+            var api = this.api();
+ 
+            // For each column
+          
+            api
+                .columns()
+                .eq(0)
+                .each(function (colIdx) {
+                    // Set the header cell to contain the input element
+                    var cell = $('.filters th').eq(
+                        $(api.column(colIdx).header()).index()
+                    );
+                    var title = $(cell).text();
+                    $(cell).html('<input size="10" type="text" placeholder="' + title + '" />');
+ 
+                    // On every keypress in this input
+                    $(
+                        'input',
+                        $('.filters th').eq($(api.column(colIdx).header()).index())
+                    )
+                        .off('keyup change')
+                        .on('change', function (e) {
+                            // Get the search value
+                            $(this).attr('title', $(this).val());
+                            var regexr = '({search})'; //$(this).parents('th').find('select').val();
+ 
+                            var cursorPosition = this.selectionStart;
+                            // Search the column for that value
+                            api
+                                .column(colIdx)
+                                .search(
+                                    this.value != ''
+                                        ? regexr.replace('{search}', '(((' + this.value + ')))')
+                                        : '',
+                                    this.value != '',
+                                    this.value == ''
+                                )
+                                .draw();
+                        })
+                        .on('keyup', function (e) {
+                            e.stopPropagation();
+ 
+                            $(this).trigger('change');
+                            $(this)
+                                .focus()[0]
+                                .setSelectionRange(cursorPosition, cursorPosition);
+                        });
+                });
+        },
+
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+          });
+
+          $('#example thead tr')
+          .clone(true)
+          .addClass('filters')
+          
+        .appendTo('#example thead ');
+        $('#example thead tr').width('800 px;');
+          
+
+</script>
     <div class="content-page" style="padding: 0!important;">
 
         @if ($message = Session::get('success'))
@@ -30,12 +105,11 @@
                     }}
                     ?>
                 </div>
-                <button class="btn btn-success" onclick="exportTableToExcel('datatable')">Exportar </button>
 
                 <div class="table-responsive">
 
 
-                    <table role="table" id="datatable" class="table table-bordered dt-responsive nowrap w-100">
+                    <table role="table" id="example" class="table table-bordered dt-responsive nowrap w-100">
                         <thead role="rowgroup" class="table-success">
                             <tr role="row">
 
