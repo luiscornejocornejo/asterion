@@ -756,10 +756,11 @@ class cloudtickets extends Controller
         ]);*/
 
         // Obtener el archivo subido
-        $file = $request->file('file');
+        //$file = $request->file('file');
 
-        // Leer los datos del archivo Excel
-        $data = Excel::toArray([], $file);
+        $path1 = $request->file('file')->store('temp'); 
+            $path=storage_path('app').'/'.$path1;  
+        $data = \Excel::import(new UsersImport,$path);
         dd($data);
         /*
             $listadopadre=new salientesxenniolistado();
