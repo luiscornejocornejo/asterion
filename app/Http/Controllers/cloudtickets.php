@@ -759,10 +759,11 @@ class cloudtickets extends Controller
         // Leer los datos del archivo Excel
         $data = Excel::toArray([], $file);
         dd($data);
+        /*
             $listadopadre=new salientesxenniolistado();
             return redirect()
             ->back()
-            ->with('success', 'Se Agrego correctamente !');
+            ->with('success', 'Se Agrego correctamente !');*/
      
     }
 
