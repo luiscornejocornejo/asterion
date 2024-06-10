@@ -2060,7 +2060,27 @@ class siennaticketsController extends Controller
         return $ec;
         
      }
+     
+     public function estadoconv2(Request $request){
 
+        $conversation_id=$request->conversation_id;
+        $dom=$this->dominio();
+       
+         $query="select *  from ".$dom.".siennatickets  where id='".$tick."'"; 
+
+         $query="select tipo from conversations_".$dom." ca where ca.conversationsid ='".$conversation_id."'
+         and tipo in ('0','1')
+         order by ca.created_at  desc
+         limit 1";
+        $resultados = DB::select($query);
+        $ec=0;
+        foreach($resultados as $val){
+            $ec=$val->tipo;
+
+        }
+        return $ec;
+        
+     }
      
      public function getdata2(Request $request){
 

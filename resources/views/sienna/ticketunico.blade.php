@@ -83,7 +83,7 @@ function tituloiconos($iconos, $tipo)
             let result = porciones[0].replace("https://", "");
         idticketbuscar=<?php echo $resultados[0]->ticketid; ;?>;
         console.log(idticketbuscar);
-        url = "https://"+result+".suricata.cloud/api/estadoconv?tick=" + idticketbuscar + "";
+        url = "https://"+result+".suricata.cloud/api/estadoconv2?conversation_id=" + conversation_id + "";
         console.log(url);
         axios.get(url)
             .then(function (response) {

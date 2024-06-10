@@ -61,7 +61,7 @@ class ispcubenodos extends Command
                    
                     foreach ($datos as $val) {
 
-                        echo  $url = $val->headerlogin;
+                          $url = $val->headerlogin;
                         $tokensienna = $val->tokensienna;
                         $campo = $val->headerendpoint;
                         $merchant = $val->nombre;
