@@ -82,7 +82,7 @@ function tituloiconos($iconos, $tipo)
             var porciones = URLactual.split('.');
             let result = porciones[0].replace("https://", "");
             idticketbuscar=<?php echo $resultados[0]->ticketid; ;?>;
-            conversation_id=<?php echo $resultados[0]->conversation_id; ;?>;
+            conversation_id='<?php echo $resultados[0]->conversation_id ;?>';
         console.log(conversation_id);
         url = "https://"+result+".suricata.cloud/api/estadoconv2?conversation_id=" + conversation_id + "";
 
