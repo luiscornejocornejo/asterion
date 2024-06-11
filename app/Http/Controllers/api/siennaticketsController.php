@@ -604,6 +604,9 @@ class siennaticketsController extends Controller
         $email = $request->email;
         $user_id = $request->user_id;
         $cliente = $request->cliente;
+        $extra1 = $request->extra1;
+        $extra2 = $request->extra2;
+        $extra3 = $request->extra3;
        
         if(isset($request->ostickettopic)){
             $ostickettopic=$request->ostickettopic;
@@ -638,6 +641,10 @@ class siennaticketsController extends Controller
 
         $si = new siennatickets();
         $si->siennadepto = $siennadepto;
+        $si->extra1 = $extra1;
+        $si->extra2 = $extra2;
+        $si->extra3 = $extra3;
+        
         $si->cliente = $cliente;
         $si->siennatopic = $siennatopic;
         $si->cedula = $cedula;
