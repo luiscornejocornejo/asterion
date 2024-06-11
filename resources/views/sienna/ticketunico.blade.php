@@ -84,9 +84,9 @@ function tituloiconos($iconos, $tipo)
             idticketbuscar=<?php echo $resultados[0]->ticketid; ;?>;
             conversation_id='<?php echo $resultados[0]->conversation_id ;?>';
         console.log(conversation_id);
-        url = "https://"+result+".suricata.cloud/api/estadoconv2?conversation_id=" + conversation_id + "";
+        //url = "https://"+result+".suricata.cloud/api/estadoconv2?conversation_id=" + conversation_id + "";
 
-       // url = "https://"+result+".suricata.cloud/api/estadoconv?tick=" + idticketbuscar + "";
+        url = "https://"+result+".suricata.cloud/api/estadoconv?tick=" + idticketbuscar + "";
         console.log(url);
         axios.get(url)
             .then(function (response) {
