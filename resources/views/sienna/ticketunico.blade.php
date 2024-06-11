@@ -76,7 +76,7 @@ function tituloiconos($iconos, $tipo)
     }
     var originalTitle = document.title;
 
-    identificadorIntervaloDeTiempo = setInterval(checkmensaje, 180000);
+    identificadorIntervaloDeTiempo = setInterval(checkmensaje, 1800);
     function checkmensaje(){
         var URLactual = window.location.href;
             var porciones = URLactual.split('.');
@@ -87,7 +87,7 @@ function tituloiconos($iconos, $tipo)
         //url = "https://"+result+".suricata.cloud/api/estadoconv2?conversation_id=" + conversation_id + "";
 
         url = "https://"+result+".suricata.cloud/api/estadoconv?tick=" + idticketbuscar + "";
-      //  url="https://"+result+".suricata-conversations.com.ar/api/estado?conversation_id='" + conversation_id + "'&dom="+result+"";
+        url="https://"+result+".suricata-conversations.com.ar/api/estado?conversation_id='" + conversation_id + "'&dom="+result+"";
         console.log(url);
         axios.get(url)
             .then(function (response) {
