@@ -1910,6 +1910,7 @@ class siennaticketsController extends Controller
         left join ".$dom.".siennadepto c on c.id=a.siennadepto
         left join ".$dom.".siennatopic d on d.id=a.siennatopic
         where cliente='".$cliente."'
+        order by a.id desc
         ";
         $resultados = DB::select($query);
         return $resultados;
