@@ -2072,8 +2072,12 @@ class siennaticketsController extends Controller
          and tipo in ('0','1')
          order by ca.created_at  desc
          limit 1";
-        $resultados = DB::select($query);
-        $ec=0;
+         $db=20;
+         $prueba = $this->conectar2($db);
+
+         //si es distinta a 1 aa otra base
+         $fields2 = DB::connection('mysql2')->select($query); 
+                $ec=0;
         foreach($resultados as $val){
             $ec=$val->tipo;
 
