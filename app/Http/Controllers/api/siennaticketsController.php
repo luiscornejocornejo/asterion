@@ -2066,7 +2066,7 @@ class siennaticketsController extends Controller
         $conversation_id=$request->conversation_id;
         $dom=$this->dominio();
        
-         $query="select *  from ".$dom.".siennatickets  where id='".$tick."'"; 
+        // $query="select *  from ".$dom.".siennatickets  where id='".$tick."'"; 
 
          $query="select tipo from conversations_".$dom." ca where ca.conversationsid ='".$conversation_id."'
          and tipo in ('0','1')
