@@ -149,7 +149,6 @@ document.getElementById("idagente").value = dd;
                                                      
                 </div>
               <!-- container -->
-              <div class="d-none"><iframe allow="camera;microphone" src="https://view-chat.pagoralia.dev/?token=987654321&merchant=soporte" width="100%" class="border rounded-3" style="height: 500px!important;"></iframe>
 </div>
           </div>
           <!-- content -->
