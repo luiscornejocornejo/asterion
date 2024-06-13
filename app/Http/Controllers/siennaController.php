@@ -1084,7 +1084,8 @@ $cabezeras = $this->cabezerasgraficos($datosget);
 
     $queryoriginal = $resultados->query;
     $dbexterna = $resultados->base;
-
+    $nombrereporte=$resultados->nombre;
+    $descripcion=$resultados->descripcion;
     $pos3 = stripos($resultados->parametros, ",");
     if ($pos3 !== false) {
 
@@ -1126,6 +1127,8 @@ $cabezeras = $this->cabezerasgraficos($datosget);
     return view('sienna/form')
       ->with('id', $id)
       ->with('vista', "1")
+      ->with('nombrereporte', $nombrereporte)
+    ->with('descripcion', $descripcion)
       ->with('datos', $resultados)
       ->with('cabezeras', $cabezeras)
       ->with('resultados', $return);

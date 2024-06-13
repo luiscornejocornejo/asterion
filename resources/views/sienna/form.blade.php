@@ -21,9 +21,7 @@
               
                 <div class="mx-auto" style="width: 200px;">
                 <h1   title="<?php echo $descripcion;?>" class="h3 mb-0 text-gray-800"><?php echo ucfirst($nombrereporte);?></h1>
-                </div>
-                <br>
-                <br>
+                
 
                 <form action="" method="post" enctype="multipart/form-data">
            
