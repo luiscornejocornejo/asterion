@@ -122,7 +122,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                   aria-controls="sidebarDashboards"
                   class="side-nav-link hovering-pan"
                 >
-                  <i class="uil-ticket"></i>
+                  <i class="mdi-book-search-outline"></i>
                   <span>Reportes</span>
                   <span class="menu-arrow"></span>
                 </a>
