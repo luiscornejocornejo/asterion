@@ -57,6 +57,26 @@
                                         </select>
                                     </div>
                                 <?php
+                                }elseif($$key == "usuario"){?>
+
+                                        <div class="form-check form-switch">
+                                        <select class="form-select" aria-label="Default select example" name="<?php echo $key; ?>">
+                                            <?php
+                                            $querysoption = "select * from  users where tipousers<>'1' ";
+                                            $resultadosoption = DB::select($querysoption);
+                                            foreach ($resultadosoption as $resultoption) {
+
+                                                $idoption = $resultoption->id;
+                                                $nombreoption = $resultoption->last_name;
+
+                                                echo "<option  value='" . $idoption . "' >" . $nombreoption . "</option>";
+                                            } ?>
+
+                                        </select>
+                                    </div>
+                                <?php
+
+
                                 } else {
                                 ?>
                                     <input class="form-control" require type="<?php echo $$key; ?>" name="<?php echo $key; ?>">
