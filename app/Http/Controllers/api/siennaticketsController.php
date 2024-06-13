@@ -1879,7 +1879,7 @@ class siennaticketsController extends Controller
 
         $tok=$request->token;
         $dom=$request->dom;
-       echo  $query="select * from ".$dom.".siennainternos  where token='".$tok."'";
+         $query="select * from ".$dom.".siennainternos  where token='".$tok."'";
         $resultados = DB::select($query);
         $return="";
         foreach($resultados as $value){
