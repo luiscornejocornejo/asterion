@@ -67,7 +67,7 @@
                                             foreach ($resultadosoption as $resultoption) {
 
                                                 $idoption = $resultoption->id;
-                                                $nombreoption = $resultoption->last_name;
+                                                $nombreoption =$resultoption->nombre." ". $resultoption->last_name;
 
                                                 echo "<option  value='" . $idoption . "' >" . $nombreoption . "</option>";
                                             } ?>
