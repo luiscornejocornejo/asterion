@@ -113,6 +113,33 @@ $siennadeptosgenericos = DB::select($querygenerico);
                   </ul>
                 </div>
 </li>
+
+<li class="side-nav-item background-buttons">
+                <a
+                  data-bs-toggle="collapse"
+                  href="/supervisor"
+                  aria-expanded="false"
+                  aria-controls="sidebarDashboards"
+                  class="side-nav-link hovering-pan"
+                >
+                  <i class="uil-ticket"></i>
+                  <span>Reportes</span>
+                  <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarEcommerce">
+                  <ul class="side-nav-second-level">
+                    <li>
+                      <a href="/siennaform?id=1000">Reporte CSAT</a>
+                    </li>
+                    <li>
+                      <a href="/siennaform?id=1001">Reporte Tickets Cerrados </a>
+                    </li>
+                    <li>
+                      <a href="/siennaform?id=1002">Reporte Tickets por Agente</a>
+                    </li>
+                  </ul>
+                </div>
+</li>
                 <li class="side-nav-item background-buttons">
                     <a  href="/agentes"  class="side-nav-link hovering-pan ">
                         <i class="mdi mdi-account-multiple"></i>
