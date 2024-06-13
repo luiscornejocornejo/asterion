@@ -27,7 +27,7 @@
                                 <div class="modal-content">
                                     <div class="modal-header  text-white" style="background-color:#3C3F50">
                                         <h5 class="modal-title text-white"></h5>
-
+                                        <button onclick="notifyMe()">noti</button>
                                     </div>
                                     <div class="modal-body" style="text-align:center">
 
