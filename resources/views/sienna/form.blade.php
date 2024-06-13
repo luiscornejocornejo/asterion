@@ -20,7 +20,8 @@
                 <!-- Page Heading -->
               
                 <div class="mx-auto" style="width: 200px;">
-                <h1 class="h3 mb-0 text-gray-800">Formulario</h1>
+                <h1 class="h3 mb-0 text-gray-800"><?php echo $nombrereporte;?></h1>
+                <h6 class="h3 mb-0 text-gray-800"><?php echo $descripcion;?></h6>
 
                 <form action="" method="post" enctype="multipart/form-data">
            
