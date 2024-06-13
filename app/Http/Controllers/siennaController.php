@@ -1018,6 +1018,8 @@ $cabezeras = $this->cabezerasgraficos($datosget);
     foreach ($resultados as $value) {
 
 
+      $nombrereporte=$value->nombre;
+      $descripcion=$value->descripcion;
       $pos3 = stripos($value->parametros, ",");
       if ($pos3 !== false) {
         $parametros = explode(",", $value->parametros);
@@ -1036,8 +1038,10 @@ $cabezeras = $this->cabezerasgraficos($datosget);
     }
 
     return view('sienna/form')
-      ->with('id', $id)
-      ->with('vista', "0")
+    ->with('id', $id)
+    ->with('nombrereporte', $nombrereporte)
+    ->with('descripcion', $descripcion)
+    ->with('vista', "0")
 
       ->with('resultados', $return);
   }
