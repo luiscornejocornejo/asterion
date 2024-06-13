@@ -24,7 +24,6 @@
                 </div>
                 <br>
                 <br>
-                <h6 class="h3 mb-0 text-gray-800"><?php echo $descripcion;?></h6>
 
                 <form action="" method="post" enctype="multipart/form-data">
            
