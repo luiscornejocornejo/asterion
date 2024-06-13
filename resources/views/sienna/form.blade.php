@@ -20,7 +20,10 @@
                 <!-- Page Heading -->
               
                 <div class="mx-auto" style="width: 200px;">
-                <h1 class="h3 mb-0 text-gray-800"><?php echo $nombrereporte;?></h1>
+                <h1   title="<?php echo $descripcion;?>" class="h3 mb-0 text-gray-800"><?php echo ucfirst($nombrereporte);?></h1>
+                </div>
+                <br>
+                <br>
                 <h6 class="h3 mb-0 text-gray-800"><?php echo $descripcion;?></h6>
 
                 <form action="" method="post" enctype="multipart/form-data">
