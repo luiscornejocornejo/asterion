@@ -76,14 +76,18 @@ function tituloiconos($iconos, $tipo)
     }
     var originalTitle = document.title;
 
-    identificadorIntervaloDeTiempo = setInterval(checkmensaje, 180000);
+    identificadorIntervaloDeTiempo = setInterval(checkmensaje, 60000);
     function checkmensaje(){
         var URLactual = window.location.href;
             var porciones = URLactual.split('.');
             let result = porciones[0].replace("https://", "");
-        idticketbuscar=<?php echo $resultados[0]->ticketid; ;?>;
-        console.log(idticketbuscar);
+            idticketbuscar=<?php echo $resultados[0]->ticketid; ;?>;
+            conversation_id='<?php echo $resultados[0]->conversation_id ;?>';
+        console.log(conversation_id);
+        //url = "https://"+result+".suricata.cloud/api/estadoconv2?conversation_id=" + conversation_id + "";
+
         url = "https://"+result+".suricata.cloud/api/estadoconv?tick=" + idticketbuscar + "";
+        url="https://"+result+".suricata-conversations.com.ar/api/estado?conversation_id=" + conversation_id + "&dom="+result+"";
         console.log(url);
         axios.get(url)
             .then(function (response) {

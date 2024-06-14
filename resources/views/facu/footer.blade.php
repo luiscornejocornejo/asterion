@@ -37,6 +37,8 @@
     <script type="text/javascript">
    new DataTable('#example', {
     "responsive": true,
+    "order": [[0, 'desc']],
+
 
   "language" : {
     "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"

@@ -18,10 +18,10 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 <!-- Page Heading -->
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Formulario</h1>
-                </div>
+              
                 <div class="mx-auto" style="width: 200px;">
+                <h1   title="<?php echo $descripcion;?>" class="h3 mb-0 text-gray-800"><?php echo ucfirst($nombrereporte);?></h1>
+                
 
                 <form action="" method="post" enctype="multipart/form-data">
            
@@ -57,6 +57,26 @@
                                         </select>
                                     </div>
                                 <?php
+                                }elseif($$key == "usuario"){?>
+
+                                        <div class="form-check form-switch">
+                                        <select class="form-select" aria-label="Default select example" name="<?php echo $key; ?>">
+                                            <?php
+                                            $querysoption = "select * from  users where tipousers<>'1' ";
+                                            $resultadosoption = DB::select($querysoption);
+                                            foreach ($resultadosoption as $resultoption) {
+
+                                                $idoption = $resultoption->id;
+                                                $nombreoption =$resultoption->nombre." ". $resultoption->last_name;
+
+                                                echo "<option  value='" . $idoption . "' >" . $nombreoption . "</option>";
+                                            } ?>
+
+                                        </select>
+                                    </div>
+                                <?php
+
+
                                 } else {
                                 ?>
                                     <input class="form-control" require type="<?php echo $$key; ?>" name="<?php echo $key; ?>">

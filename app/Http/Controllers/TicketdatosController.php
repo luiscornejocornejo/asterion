@@ -1614,7 +1614,7 @@ class TicketdatosController extends Controller
                 $siennasource=$valu->siennasource;
         }
 
-        $query50="select *, convertirTiempo(created_at) as created_at  from siennaseguimientos where ticket='".$tick."'";
+        $query50="select *, convertirTiempo(created_at) as created_at  from siennaseguimientos where ticket='".$tick."'  order by id desc";
         $segui = DB::select($query50);
        // $segui = siennaseguimientos::where('ticket', $tick)->get();
 

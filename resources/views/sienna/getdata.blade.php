@@ -2,6 +2,38 @@
 
 
 </script>
+
+<script>
+      function  noti()  {  
+    if  (!("Notification"  in  window))  {   
+        alert("Este navegador no soporta notificaciones de escritorio");  
+    }  
+    else  if  (Notification.permission  ===  "granted")  {
+        var  options  =   {
+            body:   "Descripción o cuerpo de la notificación",
+            icon:   "url_del_icono.jpg",
+            dir :   "ltr"
+        };
+        var  notification  =  new  Notification("Hola :D", options);
+    }  
+    else  if  (Notification.permission  !==  'denied')  {
+        Notification.requestPermission(function (permission)  {
+            if  (!('permission'  in  Notification))  {
+                Notification.permission  =  permission;
+            }
+            if  (permission  ===  "granted")  {
+                var  options  =   {
+                    body:   "Descripción o cuerpo de la notificación",
+		            icon:   "url_del_icono.jpg",
+		            dir :   "ltr"
+                };     
+                var  notification  =  new  Notification("Hola :)", options);
+            }   
+        });  
+    }
+}
+</script>
+
   <!-- Begin page -->
   <div class="wrapper">
 
@@ -27,7 +59,7 @@
                                 <div class="modal-content">
                                     <div class="modal-header  text-white" style="background-color:#3C3F50">
                                         <h5 class="modal-title text-white"></h5>
-
+                                        <button onclick="noti()">noti</button>
                                     </div>
                                     <div class="modal-body" style="text-align:center">
 

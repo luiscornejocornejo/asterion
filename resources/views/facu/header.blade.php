@@ -45,6 +45,8 @@
             var button = document.getElementById('main-button');
             button.classList.toggle('rotated'); // Agrega o quita la clase 'rotated' al hacer clic
         }
+
+      
 </script>
 <style id="apexcharts-css">@keyframes opaque {
 0% {

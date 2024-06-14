@@ -604,6 +604,9 @@ class siennaticketsController extends Controller
         $email = $request->email;
         $user_id = $request->user_id;
         $cliente = $request->cliente;
+        $extra1 = $request->extra1;
+        $extra2 = $request->extra2;
+        $extra3 = $request->extra3;
        
         if(isset($request->ostickettopic)){
             $ostickettopic=$request->ostickettopic;
@@ -638,6 +641,10 @@ class siennaticketsController extends Controller
 
         $si = new siennatickets();
         $si->siennadepto = $siennadepto;
+        $si->extra1 = $extra1;
+        $si->extra2 = $extra2;
+        $si->extra3 = $extra3;
+        
         $si->cliente = $cliente;
         $si->siennatopic = $siennatopic;
         $si->cedula = $cedula;
@@ -1872,7 +1879,7 @@ class siennaticketsController extends Controller
 
         $tok=$request->token;
         $dom=$request->dom;
-        $query="select * from ".$dom.".siennainternos  where token='".$tok."'";
+         $query="select * from ".$dom.".siennainternos  where token='".$tok."'";
         $resultados = DB::select($query);
         $return="";
         foreach($resultados as $value){
@@ -1910,6 +1917,7 @@ class siennaticketsController extends Controller
         left join ".$dom.".siennadepto c on c.id=a.siennadepto
         left join ".$dom.".siennatopic d on d.id=a.siennatopic
         where cliente='".$cliente."'
+        order by a.id desc
         ";
         $resultados = DB::select($query);
         return $resultados;
@@ -2060,7 +2068,30 @@ class siennaticketsController extends Controller
         return $ec;
         
      }
+     
+     public function estadoconv2(Request $request){
 
+        $conversation_id=$request->conversation_id;
+        $dom=$this->dominio();
+       
+        // $query="select *  from ".$dom.".siennatickets  where id='".$tick."'"; 
+
+         $query="select tipo from conversations_".$dom." ca where ca.conversationsid ='".$conversation_id."'
+         and tipo in ('0','1')
+         order by ca.created_at  desc
+         limit 1";
+        
+
+         //si es distinta a 1 aa otra base
+         $fields2 = DB::connection('pgsql')->select($query); 
+                $ec=0;
+        foreach($resultados as $val){
+            $ec=$val->tipo;
+
+        }
+        return $ec;
+        
+     }
      
      public function getdata2(Request $request){
 

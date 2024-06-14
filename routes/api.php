@@ -112,6 +112,7 @@ Route::post('/pedir20', [siennaticketsController::class, 'pedir20']);
 Route::post('/cambiardeptosienna20', [siennaticketsController::class, 'cambiardeptosienna20']);
 
 Route::get('/estadoconv', [siennaticketsController::class, 'estadoconv']);
+Route::get('/estadoconv2', [siennaticketsController::class, 'estadoconv2']);
 
 Route::get('/preguntas', [siennaticketsController::class, 'preguntas']);
 Route::post('/preguntas', [siennaticketsController::class, 'preguntas2']);

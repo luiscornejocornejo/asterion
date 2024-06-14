@@ -776,13 +776,16 @@ class cloudtickets extends Controller
             $listado->estado="n";
             $listado->salientesxennio=$template;
             $juntar="";
-
+            echo "aca".sizeof($sepa);
             for($i=0;$i<sizeof($sepa);$i++){
 
                 if($i==0){
                     $listado->cel=$val[$i];
                 }else{
-                    $juntar.= $val[$i].";";
+                    if(isset($val[$i])){
+                        $juntar.= $val[$i].";";
+
+                    }
 
                 }
             }
