@@ -154,8 +154,7 @@ function tituloiconos($iconos, $tipo)
                     console.log(response.data[i].nombre);
                     console.log(response.data[i].icono);
                     console.log(response.data[i].valor);
-                    dato += ' <div class="m-3 p-2 col-md-3" style="float:left;">' +response.data[i].icono+response.data[i].nombre+" :<span class='badge badge-secondary-lighten line-h'> "+response.data[i].valor+"</span></div>";
-
+                    dato += ' <div class="col-md-6 mb-2">' +response.data[i].icono+response.data[i].nombre+": <span class='badge badge-secondary-lighten line-h'> "+response.data[i].valor+"</span></div>";
                 }
                 dato += '</div>';
 
