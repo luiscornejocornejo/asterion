@@ -32,9 +32,9 @@
 	                                                    </div>
 	                                                    <div class="conversation-text">
 	                                                        <div class="ctext-wrap bg-white border w-100">
-	                                                        <small class="text-muted">De: <?php //echo $resultados[0]->emailnom; ?></small><br>
-	                                                        <small class="text-muted">CC: <?php //echo $resultados[0]->cc; ?></small>
-	                                                        <small class="text-muted">Fecha: </small>
+	                                                        <small class="text-muted">De: <?php echo $resultados[0]->emailcliente; ?></small><br>
+	                                                        <small class="text-muted">CC: <?php echo $resultados[0]->cc; ?></small><br>
+	                                                        <small class="text-muted">Fecha: <?php echo $resultados[0]->creacion; ?> </small>
 	                                                            <p class="mb-1">
                                                                 {!! $b !!}
 	                                                            </p>
@@ -48,9 +48,9 @@
                                                     </div>
                                                     <div class="conversation-text">
                                                         <div class="ctext-wrap w-100">
-	                                                        <small class="text-muted">De (nombre agente): <?php //echo $resultados[0]->emailnom; ?></small><br>
-                                                            <small class="text-muted">Para: <?php //echo $resultados[0]->emailnom + ', ' + $resultados[0]->cc; ?></small>
-                                                            <small class="text-muted">Fecha: </small>
+                                                        <small class="text-muted">De: <?php echo $resultados[0]->emailnom; ?></small><br>
+                                                            <small class="text-muted">Para: <?php echo "{$resultados[0]->emailcliente}, {$resultados[0]->cc}" ?></small><br>
+                                                            <small class="text-muted">Fecha: <?php echo $resultados[0]->creacion; ?> </small>
                                                             <p>
                                                                 {!! $b !!}
                                                             </p>
