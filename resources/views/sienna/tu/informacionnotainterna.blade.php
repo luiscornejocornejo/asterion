@@ -48,14 +48,14 @@
                                                     <input value="<?php echo session('nombreusuario'); ?>" type="hidden" name="logeado" id="logeado">
 
                                                     <input value="<?php echo $resultados[0]->ticketid; ?>" type="hidden" name="idticketseguimiento" id="idticketseguimiento">
-                                                    <textarea  class="form-control" name="comentario"></textarea>
+                                                    <textarea  class="form-control" name="comentario" rows="4"></textarea>
                                                 </div>
                                                 <div class="mt-2">
-                                                    <label for="file-upload" class="custom-file-upload rounded fw-bold">
-                                                        <i class="mdi mdi-attachment"></i>
+                                                    <button class="btn btn-primary rounded-pill me-1" type="submit">Crear</button>
+                                                    <label for="fileInput" class="btn btn-secondary rounded-pill">
+                                                        <i class="mdi mdi-attachment"></i> Adjuntar
+                                                        <input type="file" id="fileInput" class="d-none">
                                                     </label>
-                                                    <input id="file-upload" type="file" name="logo" />
-                                                    <button class="btn btn-primary ms-2" type="submit">Crear</button>
                                                 </div>
                                             </div>
                                         </div>
