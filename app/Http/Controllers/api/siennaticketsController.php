@@ -495,7 +495,7 @@ class siennaticketsController extends Controller
         $resultados2 = DB::select($query2);
         foreach($resultados2 as $val2){
 
-            $areas=$val->deptouser;
+            $areas=$val2->deptouser;
         }
 
         $merchant=$this->dominio();
