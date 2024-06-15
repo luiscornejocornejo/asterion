@@ -433,7 +433,17 @@
             let result = porciones[0].replace("https://", "");
             var idusuario =<?php echo session('idusuario');?>;
             var area =<?php echo session('areas');?>;
-            url = "https://"+result+".suricata.cloud/api/maxid2?idusuario=" + idusuario + "&area=" + area + "";
+            var tipodemenu =<?php echo session('tipodemenu');?>;
+                   
+                    
+                    if (tipomenu==3) {
+                      url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&area=" + area + "";
+
+          
+                      // el código se ejecuta
+                    } else {
+                      url = "https://"+result+".suricata.cloud/api/maxid2?idusuario=" + idusuario + "&area=" + area + "";
+                    }
             console.log(url);
 
             axios.get(url)
