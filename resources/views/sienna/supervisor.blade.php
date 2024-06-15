@@ -418,7 +418,7 @@
         @endif
               <!-- Start Content-->
             
-                <div class="container-fluid " id="casa">
+                <div onload="maxid()" class="container-fluid " id="casa">
                    
                     
                                                      
@@ -632,9 +632,9 @@
                 console.log("Ha pasado 1 segundo.");
 
         }
-        var frecuencia =<?php echo session('frecuencia');?>;
+                  var frecuencia =<?php echo session('frecuencia');?>;
 
-identificadorIntervaloDeTiempo = setInterval(maxid, frecuencia);
+                  identificadorIntervaloDeTiempo = setInterval(maxid, frecuencia);
                   </script>
                 <div id="data-container"></div>
 
