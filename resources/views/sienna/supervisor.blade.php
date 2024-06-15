@@ -231,7 +231,203 @@
         }
         let lastData = null;
 
-        function maxid() {
+        
+
+
+        function topic(result,dd, ee, ff) {
+
+          document.getElementById("idticketestado3").value = dd;
+
+
+
+
+          url = "https://"+result+".suricata.cloud/api/topicxdepto?depto=" + ff;
+          axios.get(url)
+          .then(function (response) {
+            // función que se ejecutará al recibir una respuesta
+            console.log(response.data);
+
+            dato = "";
+            for (i = 0; i < response.data.length; i++) {
+                console.log(response.data[i].id);
+                console.log(response.data[i].nombre);
+
+
+                dato += ' <div class="mt-3">' +
+
+                    '<div class="form-check mb-2">' +
+                    ' <input type="radio" id="customRadio' + response.data[i].id + '" name="estado" value="' + response.data[i].id + '"  class="form-check-input">' +
+
+                    '<label class="form-check-label" for="customRadio' + response.data[i].id + '">' + response.data[i].nombre + '</label>' +
+                    '</div>' +
+
+                    ' </div>';
+
+
+            }
+            document.getElementById("estunico2").innerHTML = dato;
+
+
+
+          })
+          .catch(function (error) {
+              // función para capturar el error
+              console.log(error);
+          })
+          .then(function () {
+              // función que siempre se ejecuta
+          });
+
+
+        }
+
+        function historico(result,dd) {
+
+
+          document.getElementById("historico").innerHTML = "";
+          url = "https://"+result+".suricata.cloud/api/historico?cliente=" + dd;
+          axios.get(url)
+          .then(function (response) {
+          // función que se ejecutará al recibir una respuesta
+          console.log(response.data);
+
+          dato = "";
+          for (i = 0; i < response.data.length; i++) {
+              console.log(response.data[i].id);
+              console.log(response.data[i].nombre);
+
+
+              dato += ' <div class="mt-3"> ' +
+
+                  '<div class="form-check mb-2">' +
+                  'estado:'+response.data[i].nombreestado +'<br> ' +
+                  'depto:'+response.data[i].nombredepto +'<br> ' +
+                  'fecha:'+response.data[i].created_at +'<br> ' +
+
+                  '<a target="_blank" href="https://ispgroup.suricata.cloud/ticketunico?tick='+ response.data[i].ticketid+'" class="form-check-label" >' + response.data[i].siennatopicnombre + '</a>' +
+                  '</div><hr />' +
+
+                  ' </div>';
+
+
+          }
+          document.getElementById("historico").innerHTML = dato;
+
+
+
+            })
+            .catch(function (error) {
+                // función para capturar el error
+                console.log(error);
+            })
+            .then(function () {
+                // función que siempre se ejecuta
+            });
+
+
+        }
+
+        function coloriconos(id){
+            coloricono="";
+            for (var listado2 in iconos){
+                if(iconos[listado2]["id"]==id){
+                    coloricono=iconos[listado2]["descripcion"];
+                }
+            }
+            return coloricono;
+        }
+
+        function listadoseguimientos(result,dd) {
+
+          document.getElementById("idticketseguimiento").value = dd;
+
+
+
+
+          url = "https://"+result+".suricata.cloud/api/listadoseguimientos?ticket=" + dd;
+          axios.get(url)
+          .then(function (response) {
+            // función que se ejecutará al recibir una respuesta
+            console.log(response.data);
+            document.getElementById("seguimientounico").innerHTML = null;
+
+            dato = "";
+            for (i = 0; i < response.data.length; i++) {
+                console.log(response.data[i].id);
+                console.log(response.data[i].descripcion);
+                console.log(response.data[i].autor);
+                console.log(response.data[i].created_at);
+                console.log(response.data[i].tipo);
+                uri="";
+                if(response.data[i].logo!=null){
+
+                  ht='https://sienamedia.sfo3.digitaloceanspaces.com/ispgroup/xen/enviados/'+response.data[i].logo;
+                  uri='<a target=_blank href="'+ht+'">'+response.data[i].logo+'</a>';
+                }else{
+                  uri='';
+                }
+              coloreicono= coloriconos(response.data[i].tipo);
+
+                dato += ' <div class="timeline-item">'+
+                        coloreicono+
+                        '<div class="timeline-item-info">'+
+                        '<span class="text-info fw-bold mb-1 d-block">'+response.data[i].descripcion+'</span>'+
+                        '<small>'+response.data[i].autor+'</small>'+
+                        '<p class="mb-0 pb-2">'+
+                        '<small class="text-muted">'+response.data[i].created_at+'</small>'+
+                      
+                        '</p> '+uri+'</div> </div>';
+                                                    
+                                                    
+                                        
+
+
+            }
+            document.getElementById("seguimientounico").innerHTML = dato;
+
+
+
+          })
+          .catch(function (error) {
+              // función para capturar el error
+              console.log(error);
+          })
+          .then(function () {
+              // función que siempre se ejecuta
+          });
+
+
+        }
+        
+</script>
+ 
+
+  <!-- Begin page -->
+  <div class="wrapper" >
+
+      <!-- ========== Left Sidebar Start ========== -->
+      @include('facu.menu')
+
+
+      <div class="content-page" style="padding: 0!important;">
+          <div class="content">
+          @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade
+                            show" role="alert">
+            {{ $message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
+              <!-- Start Content-->
+            
+                <div class="container-fluid " id="casa">
+                   
+                    
+                                                     
+                </div>
+
+                <script>
+                  function maxid() {
            //document.body.style.zoom = "80%";
 
             var URLactual = window.location.href;
@@ -439,198 +635,7 @@
 
         }
 
-
-        function topic(result,dd, ee, ff) {
-
-          document.getElementById("idticketestado3").value = dd;
-
-
-
-
-          url = "https://"+result+".suricata.cloud/api/topicxdepto?depto=" + ff;
-          axios.get(url)
-          .then(function (response) {
-            // función que se ejecutará al recibir una respuesta
-            console.log(response.data);
-
-            dato = "";
-            for (i = 0; i < response.data.length; i++) {
-                console.log(response.data[i].id);
-                console.log(response.data[i].nombre);
-
-
-                dato += ' <div class="mt-3">' +
-
-                    '<div class="form-check mb-2">' +
-                    ' <input type="radio" id="customRadio' + response.data[i].id + '" name="estado" value="' + response.data[i].id + '"  class="form-check-input">' +
-
-                    '<label class="form-check-label" for="customRadio' + response.data[i].id + '">' + response.data[i].nombre + '</label>' +
-                    '</div>' +
-
-                    ' </div>';
-
-
-            }
-            document.getElementById("estunico2").innerHTML = dato;
-
-
-
-          })
-          .catch(function (error) {
-              // función para capturar el error
-              console.log(error);
-          })
-          .then(function () {
-              // función que siempre se ejecuta
-          });
-
-
-        }
-
-        function historico(result,dd) {
-
-
-          document.getElementById("historico").innerHTML = "";
-          url = "https://"+result+".suricata.cloud/api/historico?cliente=" + dd;
-          axios.get(url)
-          .then(function (response) {
-          // función que se ejecutará al recibir una respuesta
-          console.log(response.data);
-
-          dato = "";
-          for (i = 0; i < response.data.length; i++) {
-              console.log(response.data[i].id);
-              console.log(response.data[i].nombre);
-
-
-              dato += ' <div class="mt-3"> ' +
-
-                  '<div class="form-check mb-2">' +
-                  'estado:'+response.data[i].nombreestado +'<br> ' +
-                  'depto:'+response.data[i].nombredepto +'<br> ' +
-                  'fecha:'+response.data[i].created_at +'<br> ' +
-
-                  '<a target="_blank" href="https://ispgroup.suricata.cloud/ticketunico?tick='+ response.data[i].ticketid+'" class="form-check-label" >' + response.data[i].siennatopicnombre + '</a>' +
-                  '</div><hr />' +
-
-                  ' </div>';
-
-
-          }
-          document.getElementById("historico").innerHTML = dato;
-
-
-
-            })
-            .catch(function (error) {
-                // función para capturar el error
-                console.log(error);
-            })
-            .then(function () {
-                // función que siempre se ejecuta
-            });
-
-
-        }
-
-        function coloriconos(id){
-            coloricono="";
-            for (var listado2 in iconos){
-                if(iconos[listado2]["id"]==id){
-                    coloricono=iconos[listado2]["descripcion"];
-                }
-            }
-            return coloricono;
-        }
-
-        function listadoseguimientos(result,dd) {
-
-          document.getElementById("idticketseguimiento").value = dd;
-
-
-
-
-          url = "https://"+result+".suricata.cloud/api/listadoseguimientos?ticket=" + dd;
-          axios.get(url)
-          .then(function (response) {
-            // función que se ejecutará al recibir una respuesta
-            console.log(response.data);
-            document.getElementById("seguimientounico").innerHTML = null;
-
-            dato = "";
-            for (i = 0; i < response.data.length; i++) {
-                console.log(response.data[i].id);
-                console.log(response.data[i].descripcion);
-                console.log(response.data[i].autor);
-                console.log(response.data[i].created_at);
-                console.log(response.data[i].tipo);
-                uri="";
-                if(response.data[i].logo!=null){
-
-                  ht='https://sienamedia.sfo3.digitaloceanspaces.com/ispgroup/xen/enviados/'+response.data[i].logo;
-                  uri='<a target=_blank href="'+ht+'">'+response.data[i].logo+'</a>';
-                }else{
-                  uri='';
-                }
-              coloreicono= coloriconos(response.data[i].tipo);
-
-                dato += ' <div class="timeline-item">'+
-                        coloreicono+
-                        '<div class="timeline-item-info">'+
-                        '<span class="text-info fw-bold mb-1 d-block">'+response.data[i].descripcion+'</span>'+
-                        '<small>'+response.data[i].autor+'</small>'+
-                        '<p class="mb-0 pb-2">'+
-                        '<small class="text-muted">'+response.data[i].created_at+'</small>'+
-                      
-                        '</p> '+uri+'</div> </div>';
-                                                    
-                                                    
-                                        
-
-
-            }
-            document.getElementById("seguimientounico").innerHTML = dato;
-
-
-
-          })
-          .catch(function (error) {
-              // función para capturar el error
-              console.log(error);
-          })
-          .then(function () {
-              // función que siempre se ejecuta
-          });
-
-
-        }
-        
-</script>
- 
-
-  <!-- Begin page -->
-  <div class="wrapper" >
-
-      <!-- ========== Left Sidebar Start ========== -->
-      @include('facu.menu')
-
-
-      <div class="content-page" style="padding: 0!important;">
-          <div class="content">
-          @if ($message = Session::get('success'))
-        <div class="alert alert-success alert-dismissible fade
-                            show" role="alert">
-            {{ $message }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        @endif
-              <!-- Start Content-->
-            
-                <div class="container-fluid " id="casa">
-                   
-                    
-                                                     
-                </div>
+                  </script>
                 <div id="data-container"></div>
 
                 <div class="floating-button">
