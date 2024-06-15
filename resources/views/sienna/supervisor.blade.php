@@ -434,15 +434,17 @@
             var idusuario =<?php echo session('idusuario');?>;
             var area =<?php echo session('areas');?>;
             var tipodemenu =<?php echo session('tipodemenu');?>;
-                   
+            var deptosuser =<?php echo session('deptosuser');?>;
+
+            
                     
                     if (tipodemenu==3) {
-                      url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&area=" + area + "";
+                      url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&area=" + deptosuser + "";
 
           
                       // el código se ejecuta
                     } else {
-                      url = "https://"+result+".suricata.cloud/api/maxid2?idusuario=" + idusuario + "&area=" + area + "";
+                      url = "https://"+result+".suricata.cloud/api/maxid2?idusuario=" + idusuario + "&area=" + deptosuser + "";
                     }
             console.log(url);
 
