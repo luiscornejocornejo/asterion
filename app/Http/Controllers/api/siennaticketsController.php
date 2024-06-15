@@ -496,7 +496,7 @@ class siennaticketsController extends Controller
         foreach($resultados2 as $val2){
 
             $areas=$val2->deptosuser;
-            $tipouser=$val2->tipousers;
+            $tipousers=$val2->tipousers;
         }
 
         $merchant=$this->dominio();
