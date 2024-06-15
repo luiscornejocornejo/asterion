@@ -436,7 +436,7 @@
             var tipodemenu =<?php echo session('tipodemenu');?>;
                    
                     
-                    if (tipomenu==3) {
+                    if (tipodemenu==3) {
                       url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&area=" + area + "";
 
           
