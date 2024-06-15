@@ -244,7 +244,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                 <div class="collapse" id="sidebarEcommerce">
                   <ul class="side-nav-second-level">
                     <li>
-                      <a href="/operator">Abiertos</a>
+                      <a href="/viewtickets">Abiertos</a>
                     </li>
                     <li>
                       <a href="/cerrados">Cerrados</a>
