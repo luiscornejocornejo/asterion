@@ -487,6 +487,70 @@ class siennaticketsController extends Controller
         return $resultados;
     }
     
+
+    public function maxidjuntos(Request $request)
+    {
+        $idusuario = $request->idusuario;
+        $query2="select * from users where id='".$idusuario."'";
+        $resultados2 = DB::select($query2);
+        foreach($resultados2 as $val2){
+
+            $areas=$val->deptouser;
+        }
+
+        $merchant=$this->dominio();
+
+        $pos = strpos($areas, ",");
+
+            // Nótese el uso de ===. Puesto que == simple no funcionará como se espera
+            // porque la posición de 'a' está en el 1° (primer) caracter.
+            if ($pos === false) {
+                $final="'".$areas."'";
+               // echo "La cadena '$findme' no fue encontrada en la cadena '$mystring'";
+            } else {
+                
+                $sepa=explode(",",$areas);
+                $final="";
+                foreach($sepa as $val){
+                    $final.="'".$val."',";
+                }
+                $final=substr($final,0,-1);
+            }
+         $query = "select *,a.conversation_id,a.user_id,
+        b.nombre as depto,b.id as iddepto,d.nombre topicnombre,convertirTiempo(a.created_at)  as creado,
+        a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado,e.nombre as pri,e.id as prid
+        from ".$merchant.".siennatickets a
+        left join ".$merchant.".siennadepto b on b.id=a.siennadepto 
+        left join  ".$merchant.".siennaestado c on c.id=a.siennaestado
+
+        left join  ".$merchant.".siennatopic d on d.id=a.siennatopic
+        left join  ".$merchant.".prioridad e on e.id=a.prioridad
+        where a.siennaestado not in('3','4')  
+         and a.asignado='" . $idusuario . "' 
+
+         union 
+
+         select *,a.conversation_id,a.user_id,
+        b.nombre as depto,b.id as iddepto,d.nombre topicnombre,convertirTiempo(a.created_at)  as creado,
+
+        a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado ,e.nombre as pri,e.id as prid
+        from ".$merchant.".siennatickets a
+        left join ".$merchant.".siennadepto b on b.id=a.siennadepto 
+        left join  ".$merchant.".siennaestado c on c.id=a.siennaestado
+
+        left join  ".$merchant.".siennatopic d on d.id=a.siennatopic
+        left join  ".$merchant.".prioridad e on e.id=a.prioridad
+
+        where a.siennaestado not in('3','4')  
+         and a.asignado='99999'
+         and a.siennadepto in (" . $final . ")
+
+         order by ticketid desc
+        ";
+ 
+        $resultados = DB::select($query);
+        return $resultados;
+    }
     public function cerrados(Request $request)
     {
         
