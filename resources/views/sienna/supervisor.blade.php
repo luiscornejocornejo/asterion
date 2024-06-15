@@ -632,6 +632,10 @@
                 console.log("Ha pasado 1 segundo.");
 
         }
+        document.addEventListener('DOMContentLoaded', () => {
+        
+        maxid();
+      })
                   var frecuencia =<?php echo session('frecuencia');?>;
 
                   identificadorIntervaloDeTiempo = setInterval(maxid, frecuencia);
