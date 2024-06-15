@@ -439,12 +439,12 @@
             
                     
                     if (tipodemenu==3) {
-                      url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&area=" + <?php echo session('deptosuser');?> + "";
+                      url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "";
 
           
                       // el código se ejecuta
                     } else {
-                      url = "https://"+result+".suricata.cloud/api/maxid2?idusuario=" + idusuario + "&area=" + deptosuser + "";
+                      url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "";
                     }
             console.log(url);
 
