@@ -61,9 +61,7 @@
 
 
 
-        var frecuencia =<?php echo session('frecuencia');?>;
-
-         identificadorIntervaloDeTiempo = setInterval(maxid, frecuencia);
+       
         function parar(){
           console.log(identificadorIntervaloDeTiempo);
           clearInterval(identificadorIntervaloDeTiempo);
@@ -634,7 +632,9 @@
                 console.log("Ha pasado 1 segundo.");
 
         }
+        var frecuencia =<?php echo session('frecuencia');?>;
 
+identificadorIntervaloDeTiempo = setInterval(maxid, frecuencia);
                   </script>
                 <div id="data-container"></div>
 
