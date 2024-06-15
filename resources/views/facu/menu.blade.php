@@ -93,7 +93,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                 <li class="side-nav-item background-buttons">
                 <a
                   data-bs-toggle="collapse"
-                  href="/supervisor"
+                  href="/viewtickets"
                   aria-expanded="false"
                   aria-controls="sidebarDashboards"
                   class="side-nav-link hovering-pan"
@@ -232,7 +232,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
            <li class="side-nav-item background-buttons">
                 <a
                   data-bs-toggle="collapse"
-                  href="/operator"
+                  href="/viewtickets"
                   aria-expanded="false"
                   aria-controls="sidebarDashboards"
                   class="side-nav-link hovering-pan"
