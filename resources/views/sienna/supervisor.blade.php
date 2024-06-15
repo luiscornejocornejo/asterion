@@ -434,12 +434,12 @@
             var idusuario =<?php echo session('idusuario');?>;
             var area =<?php echo session('areas');?>;
             var tipodemenu =<?php echo session('tipodemenu');?>;
-            var deptosuser =<?php echo session('deptosuser');?>;
+           // var deptosuser =<?php echo session('deptosuser');?>;
 
             
                     
                     if (tipodemenu==3) {
-                      url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&area=" + deptosuser + "";
+                      url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&area=" + <?php echo session('deptosuser');?> + "";
 
           
                       // el código se ejecuta
