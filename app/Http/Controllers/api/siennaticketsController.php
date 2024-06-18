@@ -1544,6 +1544,7 @@ class siennaticketsController extends Controller
             ->back()
             ->with('success', 'Se asigno  correctamente!');
     }
+    
     public function siennacrearseguimiento(Request $request)
     {
 
