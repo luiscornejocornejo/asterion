@@ -1,13 +1,5 @@
 
-<?php
-$vero="";
-                                    foreach($emp as $value){
-                                        $urlreabrir=$value->reabrir;
-                                    }
-                                    if(strlen($urlreabrir)<2){
-                                        $vero="d-none";
-                                    }
-?>
+
 <iframe allow="camera;microphone"  src="<?php echo $resultados[0]->conversation_url; ?>" width="100%" class="border rounded-3" style="height: 500px!important;"></iframe>
 
 <div class="<?php  echo $vero;?> d-flex justify-content-between mt-2 mb-2">

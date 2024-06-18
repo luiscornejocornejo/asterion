@@ -232,6 +232,14 @@ function tituloiconos($iconos, $tipo)
                     </div>
                     <?php
                      $urlreabrir="";
+                        $vero="";
+                                    foreach($emp as $value){
+                                        $urlreabrir=$value->reabrir;
+                                    }
+                                    if(strlen($urlreabrir)<2){
+                                        $vero="d-none";
+                                    }
+
                      if($resultados[0]->siennasource==7){?>
 
                        
