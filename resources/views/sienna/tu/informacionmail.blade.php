@@ -68,7 +68,7 @@
 
                                     <div class="row">
                                         <?php foreach ($segui as $adj) {
-    if ($adj->tipo == 9) {?>
+                                        if ($adj->tipo == 9) {?>
                                         <div class="col-xl-4">
                                             <div class="card mb-1 shadow-none border">
                                                 <div class="p-2">
@@ -87,7 +87,7 @@
                                             </div>
                                         </div> <!-- end col -->
                                         <?php }
-}?>
+                                        }?>
 
                                     </div>
                                     <!-- end row-->
