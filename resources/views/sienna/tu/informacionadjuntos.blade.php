@@ -6,8 +6,8 @@
                                 <div class="row">
                                     <?php foreach ($segui as $adj) {
                                                 if ($adj->tipo == 9) {?>
-                                                                    <div class="col-xl-4">
-                                                                        <div class="card mb-1 shadow-none border">
+                                                                    <div class="col-xl-2">
+                                                                        <div class="card mb-1 ">
                                                                             <div class="p-2">
                                                                                 <div class="row align-items-center">
 
