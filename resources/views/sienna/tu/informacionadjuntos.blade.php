@@ -14,7 +14,7 @@
                                                                                     <div class="col-auto">
                                                                                         <!-- Button -->
                                                                                          <?php $ht = 'https://sienamedia.sfo3.digitaloceanspaces.com/' . $subdomain_tmp . '/xen/enviados/' . $adj->logo;?>
-                                                                                <a target=_blank href="<?php echo $ht; ?>"><img  src='<?php echo $ht; ?>' width="40px;"></a>
+                                                                                <a target=_blank href="<?php echo $ht; ?>"><img  src='/adjunto.png' width="40px;"></a>
 
 
 
