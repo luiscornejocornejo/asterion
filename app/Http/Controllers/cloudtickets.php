@@ -457,7 +457,7 @@ class cloudtickets extends Controller
             $si2 = siennatickets::find($val);
             $prioant=$si2->prioridad ;
             $si2->prioridad = $statos;
-            $si2->asignado = 0;
+            //$si2->asignado = 0;
             $si2->save();
     
             $prioant = prioridad::find($prioant);
