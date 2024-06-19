@@ -2069,7 +2069,7 @@ class siennaticketsController extends Controller
         $logeado = $request->logeado;
         $si2 = siennatickets::find($idticketestadoprioridad);
         $si2->prioridad = $statos;
-        $si2->asignado = 0;
+       // $si2->asignado = 0;
         $si2->save();
         echo "<br>";
         $se = new siennaseguimientos();
