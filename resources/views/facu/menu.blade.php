@@ -143,7 +143,11 @@ $siennadeptosgenericos = DB::select($querygenerico);
                     <li>
                       <a href="/siennareport?id=1004">Reporte Tickets Por Dia</a>
                     </li>
+                    <li>
+                      <a href="/siennareport?id=1005">Promedio de resolución por dia</a>
+                    </li>
                     
+
                   </ul>
                 </div>
 </li>
