@@ -137,6 +137,9 @@ $siennadeptosgenericos = DB::select($querygenerico);
                     <li>
                       <a href="/siennaform?id=1002">Reporte Tickets por Agente</a>
                     </li>
+                    <li>
+                      <a href="/siennaform?id=1003">Reporte Tickets Abiertos</a>
+                    </li>
                   </ul>
                 </div>
 </li>
