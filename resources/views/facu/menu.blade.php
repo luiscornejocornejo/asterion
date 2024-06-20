@@ -140,6 +140,10 @@ $siennadeptosgenericos = DB::select($querygenerico);
                     <li>
                       <a href="/siennaform?id=1003">Reporte Tickets Abiertos</a>
                     </li>
+                    <li>
+                      <a href="/siennareport?id=1004">Reporte Tickets Por Dia</a>
+                    </li>
+                    
                   </ul>
                 </div>
 </li>
