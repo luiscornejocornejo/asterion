@@ -3,9 +3,9 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class MailTickets extends Command
+class MailTickets2 extends Command
 {
-    protected $signature = 'ma:mailtickets';
+    protected $signature = 'ma:mailtickets2';
     protected $description = 'Descripción del comando';
 
     public function __construct()
