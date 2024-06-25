@@ -370,6 +370,7 @@ class siennaticketsController extends Controller
         $merchant = $request->merchant;
 
         
+        $dat = "";
 
         $query = "select * from siennacliente where cliente='" . $clientid . "'";
         $resultados = DB::select($query);
