@@ -247,8 +247,20 @@ function tituloiconos($iconos, $tipo)
 
 
                     <?php
+                    } if($resultados[0]->siennasource==10){?>
+
+                       
+                        @include('sienna.tu.informacionsuricata')
+
+
+                    <?php
                     }
-                    if($resultados[0]->siennasource<>7){?>
+                    $excludedProductIds = [10, 7];
+
+                    if (!in_array($resultados[0]->siennasource, $excludedProductIds)) {
+
+                    //if($resultados[0]->siennasource 7){
+                        ?>
                         @include('sienna.tu.informacionwhatapp')
 
                            
