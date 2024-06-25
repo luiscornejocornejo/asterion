@@ -1636,7 +1636,7 @@ class siennaticketsController extends Controller
     }
     public function quispe(Request $request){
 
-        Artisan::call("ma:mailtickets");
+        //Artisan::call("ma:mailtickets");
     }
 
     public function dominio(){
