@@ -6,10 +6,7 @@
         date_default_timezone_set("America/Argentina/Buenos_Aires");
 
 $date = date('d-m-y H:i:s');
-    use Illuminate\Support\Facades\DB;
-
-    $query = "select * from login";
-    $resultados = DB::select($query);
+    
 
 
    $empresasss= explode(".",$_SERVER['HTTP_HOST']);
@@ -143,12 +140,7 @@ $date = date('d-m-y H:i:s');
 
 
 
-       <?php
-                                            $vuelta=0;
-                                            foreach ($resultados as $resultado){
-
-?>
-<div class="carousel-item  <?php if($vuelta==0){ echo "active";}?>">
+  
                                                 <div class="testi-contain text-white">
                                                     <i class="bx bxs-quote-alt-left text-success display-6"></i>
 
@@ -157,8 +149,8 @@ $date = date('d-m-y H:i:s');
                                                         <div class="d-flex align-items-start">
                                                             <img src="diseno/Minia_Ajax_v1.2.0/Admin/assets/images/users/avatar-3.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
                                                             <div class="flex-1 ms-3 mb-4">
-                                                                <h5 class="font-size-18 text-white"><?php echo $resultado->contacto;?></h5>
-                                                                <p class="mb-0 text-white-50"><?php echo $resultado->puesto;?>
+                                                                <h5 class="font-size-18 text-white"></h5>
+                                                                <p class="mb-0 text-white-50">
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -166,11 +158,7 @@ $date = date('d-m-y H:i:s');
                                                 </div>
                                             </div>
 
-         <?php
-
-                                                $vuelta++;
-
-                                            }?>
+      
                                        
                                         </div>
                                         <!-- end carousel-inner -->
