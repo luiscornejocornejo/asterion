@@ -1647,7 +1647,9 @@ class TicketdatosController extends Controller
        order by created_at desc limit 1";
        $resultadoscliente = DB::select($querycliente);
 
-       
+       $querysuri="select * from siennasuricata where siennatickets='".$tick."'";
+       $resultadossuri = DB::select($querysuri);
+
        $emp=empresa::all();
        $pri=prioridad::all();
 
@@ -1689,6 +1691,7 @@ class TicketdatosController extends Controller
         ->with('resultadosmails', $resultadosmails)
         ->with('resultadoshistoricos', $resultadoshistoricos)
         ->with('resultadoscliente', $resultadoscliente)
+        ->with('resultadossuri', $resultadossuri)
         
         
          ->with('resultados', $resultados);
