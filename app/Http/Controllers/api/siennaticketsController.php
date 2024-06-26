@@ -1635,10 +1635,7 @@ class siennaticketsController extends Controller
         $resultados = DB::select($query);
         return $resultados;
     }
-    public function quispe(Request $request){
-
-        //Artisan::call("ma:mailtickets");
-    }
+  
 
     public function dominio(){
         $subdomain_tmp = 'localhost';

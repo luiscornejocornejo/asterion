@@ -68,7 +68,7 @@ Route::get('/maxid', [siennaticketsController::class, 'maxidjuntos']);
 Route::get('/maxid2', [siennaticketsController::class, 'maxid2']);
 Route::get('/datoscliente', [siennaticketsController::class, 'datoscliente']);
 Route::get('/cerrados', [siennaticketsController::class, 'cerrados']);
-Route::get('/quispe', [siennaticketsController::class, 'quispe']);
+//Route::get('/quispe', [siennaticketsController::class, 'quispe']);
 Route::get('/nodos', [siennaticketsController::class, 'nodos']);
 Route::get('/getdata', [siennaticketsController::class, 'getdata']);
 Route::get('/difhora', [siennaticketsController::class, 'difhora']);
