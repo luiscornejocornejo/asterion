@@ -137,14 +137,12 @@ $date = date('d-m-y H:i:s');
                                         </div>
                                         <!-- end carouselIndicators -->
                                         <div class="carousel-inner">
-
-
+ 
 
   
+  
                                                 <div class="testi-contain text-white">
-                                                    <i class="bx bxs-quote-alt-left text-success display-6"></i>
 
-                                                    <h4 class="mt-4 fw-medium lh-base text-white"></h4>
                                                   
                                                 </div>
                                             </div>
