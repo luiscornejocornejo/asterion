@@ -145,16 +145,7 @@ $date = date('d-m-y H:i:s');
                                                     <i class="bx bxs-quote-alt-left text-success display-6"></i>
 
                                                     <h4 class="mt-4 fw-medium lh-base text-white"></h4>
-                                                    <div class="mt-4 pt-3 pb-5">
-                                                        <div class="d-flex align-items-start">
-                                                            <img src="diseno/Minia_Ajax_v1.2.0/Admin/assets/images/users/avatar-3.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
-                                                            <div class="flex-1 ms-3 mb-4">
-                                                                <h5 class="font-size-18 text-white"></h5>
-                                                                <p class="mb-0 text-white-50">
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                  
                                                 </div>
                                             </div>
 
