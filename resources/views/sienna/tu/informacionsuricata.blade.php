@@ -33,9 +33,9 @@
 	                                                        <small class="text-muted">Fecha: <?php echo $valor->created_at; ?> </small>
 	                                                            <p class="mb-1">
                                                                 <?php if($valor->tipo==1){
-                                                                        echo $valor->descripcion; 
+                                                                        echo $valor->cuerpo; 
                                                                 }else{
-                                                                    echo "img".$valor->descripcion; 
+                                                                    echo "img".$valor->cuerpo; 
                                                                 }?>
 	                                                            </p>
 	                                                        </div>
@@ -52,9 +52,9 @@
                                                             <small class="text-muted">Fecha: <?php echo $valor->created_at;?> </small>
                                                             <p>
                                                             <?php if($valor->tipo==1){
-                                                                        echo $valor->descripcion; 
+                                                                        echo $valor->cuerpo; 
                                                                 }else{
-                                                                    echo "img".$valor->descripcion; 
+                                                                    echo "img".$valor->cuerpo; 
                                                                 }?>
                                                             </p>
                                                         </div>
