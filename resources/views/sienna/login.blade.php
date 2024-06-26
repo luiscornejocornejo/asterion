@@ -144,7 +144,7 @@ $date = date('d-m-y H:i:s');
                                                 <div class="testi-contain text-white">
                                                     <i class="bx bxs-quote-alt-left text-success display-6"></i>
 
-                                                    <h4 class="mt-4 fw-medium lh-base text-white"><?php echo $resultado->texto;?></h4>
+                                                    <h4 class="mt-4 fw-medium lh-base text-white"></h4>
                                                     <div class="mt-4 pt-3 pb-5">
                                                         <div class="d-flex align-items-start">
                                                             <img src="diseno/Minia_Ajax_v1.2.0/Admin/assets/images/users/avatar-3.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
