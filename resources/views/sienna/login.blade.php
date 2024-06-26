@@ -12,35 +12,11 @@ $date = date('d-m-y H:i:s');
    $empresasss= explode(".",$_SERVER['HTTP_HOST']);
 
 
-   function getClientIp() {
-    // Verificar si estamos detrás de un proxy o balanceador de carga
-    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-        // IP en el cliente HTTP (utilizado por algunos proxies)
-        $ip = $_SERVER['HTTP_CLIENT_IP'];
-    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-        // IP en el encabezado X-Forwarded-For (lista de IPs, primero es la IP original del cliente)
-        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-        // Si hay más de una IP en la lista, tomar la primera que no sea una dirección privada o reservada
-        $ips = explode(',', $ip);
-        foreach ($ips as $ip) {
-            $ip = trim($ip);
-            if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)) {
-                return $ip;
-            }
-        }
-    } elseif (!empty($_SERVER['HTTP_X_REAL_IP'])) {
-        // IP en el encabezado X-Real-IP (utilizado por algunos proxies)
-        $ip = $_SERVER['HTTP_X_REAL_IP'];
-    } else {
-        // Si no se encontró ninguna IP en los encabezados anteriores, usar REMOTE_ADDR
-        $ip = $_SERVER['REMOTE_ADDR'];
-    }
-
-    return $ip;
-}
+  
 
 // Obtener la IP del cliente
-$clientIp = getClientIp();
+$clientIp = $_SERVER['SERVER_ADDR'] ?? 'No disponible';
+
 
     ?>
     <meta charset="utf-8" />
