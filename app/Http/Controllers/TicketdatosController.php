@@ -989,13 +989,13 @@ class TicketdatosController extends Controller
 
             //sleep(30);
             //if($subdomain_tmp =="soporte"){
-                dd($url);
+               
                 $moti=motivoc::find($motivoc);
                 $urlbroad=$moti->url;
                 $si44 = siennatickets::find($tik);
                 $telbroad=$si44->cel;
                 //$telbroad="+5491160480646";
-                
+                dd($url);
                 if($urlbroad<>"0"){
                     if($telbroad<>""){
                         $tt=$this->llamadobroadcast($urlbroad,$telbroad);
