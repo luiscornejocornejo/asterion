@@ -986,7 +986,7 @@ class TicketdatosController extends Controller
           // dd($response);   
             // Close the cURL resource
             curl_close($curl);
-
+            dd($url);
             //sleep(30);
             //if($subdomain_tmp =="soporte"){
                
@@ -999,7 +999,7 @@ class TicketdatosController extends Controller
                     echo "entra";
 
                     if($telbroad<>""){
-                        //dd($url);
+                        //
 
                         $tt=$this->llamadobroadcast($urlbroad,$telbroad);
                     }
