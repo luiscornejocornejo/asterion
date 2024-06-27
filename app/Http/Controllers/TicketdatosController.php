@@ -999,7 +999,7 @@ class TicketdatosController extends Controller
                     echo "entra";
 
                     if($telbroad<>""){
-                        dd($url);
+                        //dd($url);
 
                         $tt=$this->llamadobroadcast($urlbroad,$telbroad);
                     }
