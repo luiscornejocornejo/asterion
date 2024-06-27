@@ -986,7 +986,7 @@ class TicketdatosController extends Controller
           // dd($response);   
             // Close the cURL resource
             curl_close($curl);
-            dd($url);
+            //dd($url);
             //sleep(30);
             //if($subdomain_tmp =="soporte"){
                
