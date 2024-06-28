@@ -20,6 +20,7 @@
                   $reabrir=$val->reabrir;
                   $user=$val->user;
                   $password=$val->password;
+                  $botfrontdesk=$val->botfrontdesk;
                 }?>
                  <form action="/empresadatos" method="post">
                  @csrf
@@ -73,6 +74,10 @@
                     <div class="form-group">
                       <label for="exampleFormControlInput1">Reabrir url broadcast</label>
                       <input value="<?php echo $reabrir;?>" type="text" name="reabrir" class="form-control" id="exampleFormControlInput1" placeholder="http://">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">bot web</label>
+                      <input value="<?php echo $botfrontdesk;?>" type="text" name="botfrontdesk" class="form-control" id="exampleFormControlInput1" placeholder="http://">
                     </div>
                     <div class="form-group">
                     <label for="exampleFormControlInput1"></label>

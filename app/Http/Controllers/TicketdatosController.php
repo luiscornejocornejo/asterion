@@ -368,7 +368,9 @@ class TicketdatosController extends Controller
         $user=$request->user;
         $password=$request->password;
         $integracion=$request->integracion;
-        $query="update empresa set user='".$user."',password='".$password."',mail='".$mail."',zona='".$zona."',frecuencia='".$frecuencia."',reabrir='".$reabrir."' where id='1'";
+        $botfrontdesk=$request->botfrontdesk;
+        
+        $query="update empresa set botfrontdesk='".$botfrontdesk."',user='".$user."',password='".$password."',mail='".$mail."',zona='".$zona."',frecuencia='".$frecuencia."',reabrir='".$reabrir."' where id='1'";
         $resultados5 = DB::select($query);
 
         $query2="update siennaintegracion set nombre='".$integracion."'";
