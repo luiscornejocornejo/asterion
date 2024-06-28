@@ -55,7 +55,8 @@ $siennadeptosgenericos = DB::select($querygenerico);
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label for="type-user" class="form-label">Tipo de busqueda</label>
                             <select class="form-select" id="type-user">
-                                <option value="id">Cliente</option>
+                            <option value="id">Cliente</option>
+                            <option value="id">Cedula</option>
                                
                             </select>
                         </div>                                                                                            
