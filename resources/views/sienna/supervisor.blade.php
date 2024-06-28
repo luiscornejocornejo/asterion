@@ -669,7 +669,7 @@
                             $uribotfrontdesk=$val->botfrontdesk;
                         }
                         ?>
-                        <?php if($botfrontdesk<>""){?>
+                        <?php if($uribotfrontdesk<>""){?>
                     <button id="button-4" class="mdi mdi-storefront bg-primary text-light " href="#warning-alert-modal2" data-bs-toggle="modal"></button>
                     <?php }?>
                     </div>
