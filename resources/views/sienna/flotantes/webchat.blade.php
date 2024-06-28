@@ -44,7 +44,7 @@ foreach($siennadeptosgenericos as $val){
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-dark">
-                <h5 class="modal-title text-white" id="exampleModalToggleLabel">Web Chat</h5>
+                <h5 class="modal-title text-white" id="exampleModalToggleLabel">Ticket  Manual</h5>
                
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
