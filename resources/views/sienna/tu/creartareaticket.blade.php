@@ -17,7 +17,11 @@
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-3">
                         <label for="agent" class="form-label">Agente a asignar:</label>
                         <select name="agent" id="agent" class="form-select">
-                            <option value="1">Pepito</option>
+                            <?php foreach($usersmerchant as $val){?>
+                                <option value="<?php echo $val->id; ?>"><?php echo $val->nombre . " " . $val->last_name; ?></option>
+
+
+                            <?php }?>
                         </select>
                     </div>
 
