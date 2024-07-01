@@ -82,11 +82,21 @@
                                     <!-- end row-->
 
                                         <div class="mt-5">
-                                        <form method='post'action='/api/mandarmail'>
+                                        <form method='post'action='/nuevost'>
                                          @csrf
                                         
-                                            <div  style="height: 300px;">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Descripcion</label>
+                                                <texarea name="descripcion"></texarea>
                                             </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Adjunto</label>
+                                                <input type="file" class="form-control" name="logo" id="exampleInputPassword1" placeholder="Password">
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="hidden" name="tarea" value="" class="form-check-input" id="exampleCheck1">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
                                         </form>
                                         </div>
                                        
