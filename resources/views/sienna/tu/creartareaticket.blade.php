@@ -11,18 +11,18 @@
             @csrf
             <div class="row">
                         <label for="task-text" class="form-label">Titulo:</label>
-                        <input type="text" name="titulo">
+                        <input class="form-group" type="text" name="titulo">
             </div>
             <div class="row">
                 <label for="task-text" class="form-label">Descripción:</label>
-                <textarea id="task-text" name="texttask" class="form-control mb-3" rows="4" required></textarea>
+                <textarea class="form-group" id="task-text" name="texttask" class="form-control mb-3" rows="4" required></textarea>
                 <input type="hidden"  value="<?php echo $resultados[0]->ticketid; ?>"  name="ticketid"/>
             </div>
             <div class="row" class="form-group">
                     
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-3">
                         <label for="agent" class="form-label">Agente a asignar:</label>
-                        <select name="agent" id="agent" class="form-select">
+                        <select class="form-group" name="agent" id="agent" class="form-select">
                             <?php foreach($usersmerchant as $val){?>
                                 <option value="<?php echo $val->id; ?>"><?php echo $val->nombre . " " . $val->last_name; ?></option>
 
@@ -33,8 +33,8 @@
 
                 </div>
                 <div class="row" class="form-group">
-                        <label for="task-text" class="form-label">Fecha Limite:</label>
-                        <input type="date" name="fecha">
+                        <label class="form-group" for="task-text" class="form-label">Fecha Limite:</label>
+                        <input class="form-group" ="date" name="fecha">
             </div>
                 <div class="modal-footer">
                     <input value="<?php echo $subdomain_tmp; ?>" type="hidden" name="idbot" id="idbot">
