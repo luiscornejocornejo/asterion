@@ -1638,7 +1638,7 @@ class TicketdatosController extends Controller
        $resultadosmails = DB::select($querymails);
 
 
-       $querytareas="select *,(select nombre from users where id=st.users) as usuario,(select nombre from estadotarea where id=st.estadotarea) as estadoname
+       $querytareas="select *,(select concat(nombre,' ',last_name) from users where id=st.users) as usuario,(select nombre from estadotarea where id=st.estadotarea) as estadoname
         from siennatareas st where st.siennatickets='".$tick."'";
        $resultadostareas = DB::select($querytareas);
 
