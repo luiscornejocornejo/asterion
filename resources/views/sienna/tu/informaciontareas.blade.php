@@ -30,8 +30,8 @@
                                                         <tr class="text-center">
                                                         <td><?php echo $valh->nombre;?></td>
                                                         <td><?php echo $valh->descripcion;?></td>
-                                                        <td><?php echo $valh->estadotarea;?></td>
-                                                        <td><?php echo $valh->users;?></td>
+                                                        <td><?php echo $valh->estadoname;?></td>
+                                                        <td><?php echo $valh->usuario;?></td>
                                                         <td><?php echo $valh->fechalimite;?></td>
                                                     </tr>
                                                         <?php  }?>
