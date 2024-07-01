@@ -1637,6 +1637,10 @@ class TicketdatosController extends Controller
        $querymails="select * from siennamail where siennatickets='".$tick."'";
        $resultadosmails = DB::select($querymails);
 
+
+       $querytareas="select * from siennatareas where siennatickets='".$tick."'";
+       $resultadostareas = DB::select($querytareas);
+
        $queryhistorico="select s.id,s.cliente,s2.nombre as depto,s3.nombre as tema,s4.nombre as estado,convertirTiempo(s.created_at) as inicio
          from 
             siennatickets s
@@ -1699,6 +1703,7 @@ class TicketdatosController extends Controller
         ->with('resultadoshistoricos', $resultadoshistoricos)
         ->with('resultadoscliente', $resultadoscliente)
         ->with('resultadossuri', $resultadossuri)
+        ->with('resultadostareas', $resultadostareas)
         
         
          ->with('resultados', $resultados);
