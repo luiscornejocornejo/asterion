@@ -802,7 +802,15 @@ class cloudtickets extends Controller
      
     }
 
+    public function mistareas(Request $request)
+    {   
+        $idusuario=session('idusuario');
 
+
+        $datos = siennatareas::where('estadotarea', '<>', '3', 'and')->where('users', '=', $idusuario, 'and')->get();
+
+        dd($datos);
+    }
     public function creartarea(Request $request)
     {       
         
@@ -813,11 +821,21 @@ class cloudtickets extends Controller
        echo $fecha=$request->fecha;
        $merchant=$this->dominio();
 
+       $ta=new siennatareas();
+       $ta->nombre=$nombre;
+       $ta->descripcion=$texttask;
+       $ta->users=$users;
+       $ta->siennatickets=$tick;
+       $ta->estadotarea=1;
+       $ta->visto=0;
+       $ta->fechalimite=$fecha;
+       $ta->save();
+       /*
        $query="INSERT INTO ".$merchant.".siennatareas (nombre, descripcion, users, siennatickets, fechalimite, visto, created_at, updated_at, estadotarea) 
        VALUES('".$nombre."', '".$texttask."', ".$user.", ".$tick.", '".$fecha."', '0', now(), now(),1);";
        $usersmerchant = DB::select($query);
 
-
+*/
         return redirect()
         ->back()
         ->with('success', 'Se Modifico  la password  correctamente!');
