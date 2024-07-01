@@ -87,7 +87,7 @@
                                         
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Descripcion</label>
-                                                <texarea name="descripcion"></texarea>
+                                                <textarea name="descripcion"></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Adjunto</label>
