@@ -838,7 +838,7 @@ class cloudtickets extends Controller
        $ta=new siennatareas();
        $ta->nombre=$nombre;
        $ta->descripcion=$texttask;
-       $ta->users=$users;
+       $ta->users=$user;
        $ta->siennatickets=$tick;
        $ta->estadotarea=1;
        $ta->visto=0;
