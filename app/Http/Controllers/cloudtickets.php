@@ -806,7 +806,7 @@ class cloudtickets extends Controller
     public function creartarea(Request $request)
     {       
         
-       echo  $tick=$request->ticketsid;
+       echo  $tick=$request->ticketid;
        echo $user=$request->agent;
        echo $texttask=$request->texttask;
        echo $nombre=$request->titulo;
