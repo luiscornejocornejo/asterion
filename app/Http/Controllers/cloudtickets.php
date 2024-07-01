@@ -823,7 +823,9 @@ class cloudtickets extends Controller
 
         $datos = siennatareassegui::where('siennatareas', '=', $idtarea)->get();
 
-        dd($datos);
+        return view('sienna/informaciontareasegui')
+        ->with('resultadostareasegui', $datos)
+        ;
     }
     public function creartarea(Request $request)
     {       
