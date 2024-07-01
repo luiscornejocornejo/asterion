@@ -804,7 +804,7 @@ class cloudtickets extends Controller
 
     public function mistareas(Request $request)
     {   
-        $idusuario=session('idusuario');
+       echo  $idusuario=session('idusuario');
 
 
         $datos = siennatareas::where('estadotarea', '<>', '3', 'and')->where('users', '=', $idusuario, 'and')->get();
