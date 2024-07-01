@@ -261,8 +261,9 @@ Route::get('/tareas','App\Http\Controllers\cloudtickets@tareas');
 Route::get('/getdata','App\Http\Controllers\cloudtickets@getdata');
 Route::post('/getdata','App\Http\Controllers\cloudtickets@getdata2');
 Route::post('/valore','App\Http\Controllers\cloudtickets@newvalor');
+Route::post('/creartarea','App\Http\Controllers\cloudtickets@creartarea');
 
- 
+
 
 
 Route::get('/userprofile', function () {

@@ -802,4 +802,26 @@ class cloudtickets extends Controller
      
     }
 
+
+    public function creartarea(Request $request)
+    {       
+        
+       echo  $tick=$request->ticketsid;
+       echo $user=$request->agent;
+       echo $texttask=$request->texttask;
+       echo $nombre=$request->titulo;
+       echo $fecha=$request->fecha;
+       echo $merchant=$request->merchant;
+        
+       $query="INSERT INTO ".$merchant.".siennatareas (nombre, descripcion, users, siennatickets, fechalimite, visto, created_at, updated_at, estadotarea) 
+       VALUES('".$nombre."', '".$texttask."', ".$user.", ".$tick.", '".$fecha."', '0', now(), now(),1);";
+       $usersmerchant = DB::select($query);
+
+
+        return redirect()
+        ->back()
+        ->with('success', 'Se Modifico  la password  correctamente!');
+ 
+    }
+
 }
