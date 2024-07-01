@@ -26,6 +26,9 @@ use App\Models\siennaintegracion;
 use App\Models\siennagetdata;
 use App\Models\salientesxennio;
 use App\Models\salientesxenniolistado;
+use App\Models\siennatareassegui;
+
+
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\File;
@@ -808,6 +811,17 @@ class cloudtickets extends Controller
 
 
         $datos = siennatareas::where('estadotarea', '<>', '3', 'and')->where('users', '=', $idusuario)->get();
+
+        dd($datos);
+    }
+
+
+    public function ts(Request $request)
+    {   
+         $idtarea=$request->idtarea;
+
+
+        $datos = siennatareassegui::where('siennatareas', '=', $idtarea)->get();
 
         dd($datos);
     }
