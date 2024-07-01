@@ -158,6 +158,12 @@ $siennadeptosgenericos = DB::select($querygenerico);
                     </a>
                 </li>
                 <li class="side-nav-item background-buttons">
+                    <a  href="/siennaabm?id=1006"  class="side-nav-link hovering-pan ">
+                        <i class="mdi mdi-notebook"></i>
+                        <span> Tareas Estados </span>
+                    </a>
+                </li>
+                <li class="side-nav-item background-buttons">
                     <a  href="/siennaabm?id=124"  class="side-nav-link hovering-pan ">
                         <i class="mdi mdi-notebook"></i>
                         <span> Topics </span>
