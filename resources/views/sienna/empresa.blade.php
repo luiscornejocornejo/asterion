@@ -19,11 +19,16 @@
                   $zona=$val->zona;
                   $reabrir=$val->reabrir;
                   $user=$val->user;
+                  $token=$val->token;
                   $password=$val->password;
                   $botfrontdesk=$val->botfrontdesk;
                 }?>
                  <form action="/empresadatos" method="post">
                  @csrf
+                 <div class="form-group">
+                      <label for="exampleFormControlInput1">Token</label>
+                      <input readonly value="<?php echo $token;?>" type="text" class="form-control" id="exampleFormControlInput1" placeholder="token">
+                    </div>
                     <div class="form-group">
                       <label for="exampleFormControlInput1">Frecuencia</label>
                       <input value="<?php echo $fre;?>" type="number" name="frecuencia" class="form-control" id="exampleFormControlInput1" placeholder="60000">
