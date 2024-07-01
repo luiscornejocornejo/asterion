@@ -87,7 +87,7 @@
                                         
                                             <div id="snow-editor" style="height: 300px;">
                                             </div>
-                                            <button onclick="enviaremail2('<?php echo $resultados[0]->ticketid; ?>','<?php echo $subdomain_tmp; ?>')" type="button" class="btn me-2 mt-2 rounded-pill" style="background-color: #FFD193;">Responder</button>
+                                            <button onclick="enviaremail2('<?php //echo $resultados[0]->ticketid; ?>','<?php //echo $subdomain_tmp; ?>')" type="button" class="btn me-2 mt-2 rounded-pill" style="background-color: #FFD193;">Responder</button>
                                         </form>
                                         </div>
                                         <script>
