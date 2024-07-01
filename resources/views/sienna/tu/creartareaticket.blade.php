@@ -18,7 +18,7 @@
                 <textarea id="task-text" name="texttask" class="form-control mb-3" rows="4" required></textarea>
                 <input type="hidden"  value="<?php echo $resultados[0]->ticketid; ?>"  name="ticketid"/>
             </div>
-            <div class="row">
+            <div class="row" class="form-group">
                     
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-3">
                         <label for="agent" class="form-label">Agente a asignar:</label>
@@ -32,7 +32,7 @@
                     </div>
 
                 </div>
-                <div class="row">
+                <div class="row" class="form-group">
                         <label for="task-text" class="form-label">Fecha Limite:</label>
                         <input type="date" name="fecha">
             </div>
