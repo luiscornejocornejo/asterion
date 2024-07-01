@@ -88,9 +88,8 @@
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Descripcion</label>
                                                 <br>
-                                                <br>
-                                                <br>
-                                                <textarea name="descripcion" rows="10" cols="50"></textarea>
+                                                
+                                                <textarea name="descripcion" rows="10" cols="100"></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Adjunto</label>
