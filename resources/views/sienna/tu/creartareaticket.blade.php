@@ -9,16 +9,16 @@
             <div class="modal-body">
             <form action="/creartarea" method="POST">
             @csrf
-            <div class="row">
+            <div class="form-group">
                         <label for="task-text" class="form-label">Titulo:</label>
-                        <input class="form-group" type="text" name="titulo">
+                        <input class="" type="text" name="titulo">
             </div>
-            <div class="row">
+            <div class="form-group">
                 <label for="task-text" class="form-label">Descripción:</label>
                 <textarea class="form-group" id="task-text" name="texttask" class="form-control mb-3" rows="4" required></textarea>
                 <input type="hidden"  value="<?php echo $resultados[0]->ticketid; ?>"  name="ticketid"/>
             </div>
-            <div class="row" class="form-group">
+            <div  class="form-group">
                     
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-3">
                         <label for="agent" class="form-label">Agente a asignar:</label>
@@ -32,7 +32,7 @@
                     </div>
 
                 </div>
-                <div class="row" class="form-group">
+                <div  class="form-group">
                         <label class="form-group" for="task-text" class="form-label">Fecha Limite:</label>
                         <input class="form-group" ="date" name="fecha">
             </div>
