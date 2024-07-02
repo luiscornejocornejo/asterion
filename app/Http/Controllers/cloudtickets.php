@@ -825,8 +825,53 @@ class cloudtickets extends Controller
 
         return view('sienna/informaciontareasegui')
         ->with('resultadostareasegui', $datos)
+        ->with('idtarea', $idtarea)
         ;
     }
+    
+    public function nuevost(Request $request)
+    {       
+        
+       echo  $idtarea=$request->idtarea;
+       echo $des=$request->descripcion;
+       echo $texttask=$request->logo;
+      
+       echo  $idusuario=session('idusuario');
+
+       
+       
+      
+       $logo="";
+       if ($request->file('logo')->isValid()) {
+        $ta=new siennatareassegui();
+
+        $logo = $request->file('logo')->store('public');
+        $ta->tipo=1;
+        $ta->autor=1;
+        $ta->siennatareas=$idtarea;
+        $ta->cuerpo=$logo;
+        $ta->idusuario=$idusuario;
+        $ta->save();
+
+       }
+       if($request->descripcion){
+        $ta=new siennatareassegui();
+
+        $ta->tipo=0;
+        $ta->autor=0;
+        $ta->siennatareas=$idtarea;
+        $ta->cuerpo=$request->descripcion;
+        $ta->idusuario=$idusuario;
+        $ta->save();
+
+       }
+  
+        return redirect()
+        ->back()
+        ->with('success', 'Se Agrego   correctamente!');
+ 
+    }
+
     public function creartarea(Request $request)
     {       
         
@@ -837,6 +882,8 @@ class cloudtickets extends Controller
        echo $fecha=$request->fecha;
        $merchant=$this->dominio();
 
+      
+
        $ta=new siennatareas();
        $ta->nombre=$nombre;
        $ta->descripcion=$texttask;
@@ -846,15 +893,10 @@ class cloudtickets extends Controller
        $ta->visto=0;
        $ta->fechalimite=$fecha;
        $ta->save();
-       /*
-       $query="INSERT INTO ".$merchant.".siennatareas (nombre, descripcion, users, siennatickets, fechalimite, visto, created_at, updated_at, estadotarea) 
-       VALUES('".$nombre."', '".$texttask."', ".$user.", ".$tick.", '".$fecha."', '0', now(), now(),1);";
-       $usersmerchant = DB::select($query);
-
-*/
+     
         return redirect()
         ->back()
-        ->with('success', 'Se Modifico  la password  correctamente!');
+        ->with('success', 'Se Agrego correctamente!');
  
     }
 

@@ -88,6 +88,7 @@
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Descripcion</label>
                                                 <br>
+                                                <input type="hidden" name="idtarea" value="<?php echo $idtarea;?>"/>
                                                 
                                                 <textarea name="descripcion" rows="10" cols="100"></textarea>
                                             </div>
@@ -96,7 +97,6 @@
                                                 <input type="file" class="form-control" name="logo" id="exampleInputPassword1" placeholder="Password">
                                             </div>
                                             <div class="form-check">
-                                                <input type="hidden" name="tarea" value="" class="form-check-input" id="exampleCheck1">
                                             </div>
                                             <button type="submit" class="btn btn-primary">Submit</button>
                                         </form>
