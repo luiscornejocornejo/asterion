@@ -82,7 +82,7 @@
                                     <!-- end row-->
 
                                         <div class="mt-5">
-                                        <form method='post'action='/nuevost'>
+                                        <form method='post'action='/nuevost' enctype="multipart/form-data">
                                          @csrf
                                         
                                             <div class="form-group">
