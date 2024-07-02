@@ -842,7 +842,7 @@ class cloudtickets extends Controller
        
       
        $logo="";
-       if ($request->file('logo')->isValid()) {
+       if ($request->hasFile('logo')) {
         $ta=new siennatareassegui();
 
         $logo = $request->file('logo')->store('public');
