@@ -40,7 +40,7 @@
 	                                                    </div>
 	                                                    <div class="conversation-text">
 	                                                        <div class="ctext-wrap bg-white border w-100">
-	                                                        <small class="text-muted">De: <?php echo $valor->idusuario; ?></small><br>
+	                                                        <small class="text-muted">De: <?php echo $valor->nombre." ".$valor->last_name; ?></small><br>
 	                                                        <small class="text-muted">Fecha: <?php echo $valor->created_at; ?> </small>
 	                                                            <p class="mb-1">
                                                                 <?php if($valor->tipo==1){
@@ -59,7 +59,7 @@
                                                     </div>
                                                     <div class="conversation-text">
                                                         <div class="ctext-wrap w-100">
-                                                        <small class="text-muted">De: <?php echo $valor->idusuario;?></small><br>
+                                                        <small class="text-muted">De: <?php echo $valor->nombre." ".$valor->last_name;?></small><br>
                                                             <small class="text-muted">Fecha: <?php echo $valor->created_at;?> </small>
                                                             <p>
                                                             <?php if($valor->tipo==1){
