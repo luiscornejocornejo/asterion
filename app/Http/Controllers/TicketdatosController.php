@@ -355,7 +355,7 @@ class TicketdatosController extends Controller
 
         return view('sienna/siennacrearusuarios')->with("deptos",$resultados); 
 
-
+   
     }
 
     public function empresadatos2(Request $request)
