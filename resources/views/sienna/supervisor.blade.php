@@ -461,7 +461,7 @@
 
                 // función que se ejecutará al recibir una respuesta
             
-                sd='<br><br><button  onclick="pedirall()" class="btn btn-info tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><span class="mdi mdi-account-arrow-left"><span class="tooltiptext">Asignar tickets</span></span></button> '+
+                sd='<br><button  onclick="pedirall()" class="btn btn-info tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><span class="mdi mdi-account-arrow-left"><span class="tooltiptext">Asignar tickets</span></span></button> '+
                 '<button onclick="areaall()"  class="btn btn-info tooltip-button me-1" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><span class="mdi mdi-account-group"><span class="tooltiptext">Cambiar departamento</span></span></button> '+
                 '<button onclick="cerrarall()"  class="btn btn-success tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrarall"><span class="mdi mdi-check-circle"><span class="tooltiptext">Cerrar tickets</span></span></button> '+
                 '<button onclick="prioridadall()"  class="btn btn-success tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-prioridadall"><span class="mdi mdi-priority-high"><span class="tooltiptext">Cambiar prioridad</span></button> '+
