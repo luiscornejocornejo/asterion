@@ -469,7 +469,7 @@
                 '<button type="button" onclick="deSelect()" class="btn btn-info tooltip-button"><span class="mdi mdi-checkbox-blank-outline"><span class="tooltiptext">Quitar selección</span></span></button> '+
                 '<button type="button" onclick="parar()" class="btn btn-danger tooltip-button"><span class="mdi mdi-motion-pause"><span class="tooltiptext"> Detener autosincronización</span></span></button> '+
                 '<button type="button" onclick="star()" class="btn btn-success tooltip-button"><span class="mdi mdi-refresh-auto"> <span class="tooltiptext"> Activar autosincronización</span></span></button> '+
-                '<br><br><table style="width: 1500 px !important;" id="example"  class="table table-striped display responsive nowrap w-100 text-light">'+
+                '<br><br><table style="width: 100%;" id="example"  class="table table-hover display responsive nowrap text-light">'+
                                 '<thead>'+
                               '     <tr class="text-center bg-dark" >'+
                               
@@ -491,6 +491,24 @@
                               ' <tbody id="tb">'+
                               
                               ' </tbody>'+
+                              '<tfoot>'+
+                              '     <tr class="bg-secondary">'+
+                              
+
+                              '        <th class="text-light"><i></i>Ticket</th>'+
+                              '        <th class="text-light">Cliente</th>'+
+                              '        <th class="text-light">Asignado</th>'+
+                              '          <th class="text-light">Area</th>'+
+                              '        <th class="text-light">Topic</th>'+
+                              '        <th class="text-light">Prioridad</th>'+
+                              '        <th class="text-light">Telefono</th>'+
+                              '        <th class="text-light">Creado</th>'+
+                              
+                              '        <th class="text-light">Estado</th>'+
+                              '        <th class="text-light">Acciones</th>'+
+                              '        '+
+                              '    </tr>'+
+                              ' </tfoot>'+
                               ' </table>';
                 
                 tt = "";
@@ -559,76 +577,37 @@
                 document.getElementById("tb").innerHTML = tt;
                 $('#example').dataTable({
                     "order": [[0, 'desc']],
-                    "responsive": !0,
-                    "pageLength": 25,
-                    
-          "language" : {
-            "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
-          },
-          dom: 'Bfrtip',
-          initComplete: function () {
-            var api = this.api();
- 
-            // For each column
-          
-            api
-                .columns()
-                .eq(0)
-                .each(function (colIdx) {
-                    // Set the header cell to contain the input element
-                    var cell = $('.filters th').eq(
-                        $(api.column(colIdx).header()).index()
-                    );
-                    var title = $(cell).text();
-                    $(cell).html('<input size="10" type="text" placeholder="' + title + '" />');
- 
-                    // On every keypress in this input
-                    $(
-                        'input',
-                        $('.filters th').eq($(api.column(colIdx).header()).index())
-                    )
-                        .off('keyup change')
-                        .on('change', function (e) {
-                            // Get the search value
-                            $(this).attr('title', $(this).val());
-                            var regexr = '({search})'; //$(this).parents('th').find('select').val();
- 
-                            var cursorPosition = this.selectionStart;
-                            // Search the column for that value
-                            api
-                                .column(colIdx)
-                                .search(
-                                    this.value != ''
-                                        ? regexr.replace('{search}', '(((' + this.value + ')))')
-                                        : '',
-                                    this.value != '',
-                                    this.value == ''
-                                )
-                                .draw();
-                        })
-                        .on('keyup', function (e) {
-                            e.stopPropagation();
- 
-                            $(this).trigger('change');
-                            $(this)
-                                .focus()[0]
-                                .setSelectionRange(cursorPosition, cursorPosition);
+                    "responsive": !0,                    
+                    "language" : {
+                      "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
+                    },
+                    dom: 'Bfrtip',
+                    initComplete: function () {
+                    this.api()
+                      .columns()
+                      .every(function () {
+                        let column = this;
+                        let title = column.footer().textContent;
+
+                        // Create input element
+                        let input = document.createElement("input");
+                        input.placeholder = title;
+                        input.className = "form-control";
+                        column.footer().replaceChildren(input);
+
+                        // Event listener for user input
+                        input.addEventListener("keyup", () => {
+                          if (column.search() !== this.value) {
+                            column.search(input.value).draw();
+                          }
                         });
-                });
-        },
-
-                buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
-                ]
-          });
-
-          $('#example thead tr')
-          .clone(true)
-          .addClass('filters')
-          
-        .appendTo('#example thead ');
-        $('#example thead tr').width('800 px;');
-            }//fin del if
+                  });
+              },
+                    buttons: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
+                    });
+          }//fin del if
             else{
               console.log("no hay cambios");
 
