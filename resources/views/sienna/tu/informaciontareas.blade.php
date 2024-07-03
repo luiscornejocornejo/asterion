@@ -7,8 +7,8 @@
             <div>
                 <button class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#create-task">
                     <i class="mdi mdi-clipboard-list me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Crear Tarea."></i>
+                    Crear tarea
                 </button>
-                Crear tarea
             </div>
         </div>
         <hr style="margin-top: 10px;" />
