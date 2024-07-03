@@ -18,7 +18,7 @@
                     <input type="hidden" value="<?php echo $resultados[0]->ticketid; ?>" name="ticketid" />
 
                     <div class="row">
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label for="agent" class="form-label">Agente a asignar:</label>
                             <select class="form-control mb-3" name="agent" id="agent" class="form-select">
                                 <?php foreach ($usersmerchant as $val) { ?>
@@ -26,7 +26,7 @@
                                 <?php } ?>
                             </select>
                         </div>
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-3">
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label class="form-label" for="task-text" class="form-label">Fecha Limite:</label>
                             <input class="form-control mb-3" type="date" name="fecha">
                         </div>
