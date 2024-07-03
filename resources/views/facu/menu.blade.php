@@ -190,7 +190,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                 </li>   
                 <li class="side-nav-item background-buttons">
                     <a  href="/siennaabm?id=135"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-radio-tower"></i>
+                        <i class="mdi mdi-account-multiple"></i>
                         <span> Clientes </span>
                     </a>
                 </li>   
@@ -210,13 +210,13 @@ $siennadeptosgenericos = DB::select($querygenerico);
                 </li>
                 <li class="side-nav-item background-buttons">
                     <a  href="/empresadatos"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-cog"></i>
+                        <i class="mdi mdi-office-building-cog"></i>
                         <span> Empresa </span>
                     </a>
                 </li>
                 <li class="side-nav-item background-buttons">
                     <a  href="/siennaabm?id=57"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-cog"></i>
+                        <i class="mdi mdi-view-list"></i>
                         <span> Categoria </span>
                     </a>
                 </li>
