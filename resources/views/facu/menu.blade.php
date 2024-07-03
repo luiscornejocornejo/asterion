@@ -190,7 +190,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                 </li>   
                 <li class="side-nav-item background-buttons">
                     <a  href="/siennaabm?id=135"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-account-multiple"></i>
+                        <i class="mdi mdi-table-account"></i>
                         <span> Clientes </span>
                     </a>
                 </li>   
