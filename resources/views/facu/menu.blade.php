@@ -69,8 +69,8 @@ $siennadeptosgenericos = DB::select($querygenerico);
     </li>
     <li class="side-nav-item mt-2 background-buttons">
         <a target="_blank" href="/gpt"  class="side-nav-link hovering-pan ">
-            <i class="mdi-robot-happy-outline"></i>
-            <span> Gpt </span>
+            <i class="mdi mdi-robot-happy-outline"></i>
+            <span> Asistente virtual </span>
      
         </a>
     </li>
@@ -122,7 +122,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                   aria-controls="sidebarDashboards"
                   class="side-nav-link hovering-pan"
                 >
-                  <i class="mdi-book-search-outline"></i>
+                  <i class="mdi mdi-book-search-outline"></i>
                   <span>Reportes</span>
                   <span class="menu-arrow"></span>
                 </a>
@@ -159,7 +159,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                 </li>
                 <li class="side-nav-item background-buttons">
                     <a  href="/siennaabm?id=1006"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-notebook"></i>
+                        <i class="mdi mdi-clipboard-list"></i>
                         <span> Tareas Estados </span>
                     </a>
                 </li>
@@ -171,13 +171,13 @@ $siennadeptosgenericos = DB::select($querygenerico);
                 </li>
                 <li class="side-nav-item background-buttons">
                     <a  href="/siennaabm?id=18"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-notebook"></i>
+                        <i class="mdi mdi-message-question"></i>
                         <span> Motivos cierre </span>
                     </a>
                 </li>
                 <li class="side-nav-item background-buttons">
                     <a  href="/siennaabm?id=20"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-notebook"></i>
+                        <i class="mdi mdi-message-star"></i>
                         <span> C-sat </span>
                     </a>
                 </li>
