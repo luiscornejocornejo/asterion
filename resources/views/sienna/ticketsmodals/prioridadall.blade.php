@@ -20,8 +20,9 @@
                             </div>
                         <?php } ?>
                     </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-success">Si</button>
+                    <div class="modal-footer mt-2">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success">Cambiar</button>
                     </div>
                 </div>
             </form>
