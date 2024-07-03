@@ -14,8 +14,10 @@
 
                     <div v-for="department in departments ">
                         <?php foreach ($prioridades as $dep) { ?>
-                            <input value="<?php echo $dep->id; ?>" id="<?php echo $dep->id; ?>" class="form-check-input" type="radio" name="statos">
-                            <label for="<?php echo $dep->id; ?>" class="form-check-label"><?php echo $dep->nombre; ?></label>
+                            <div class="form-check mt-2">
+                                <input value="<?php echo $dep->id; ?>" id="<?php echo $dep->id; ?>" class="form-check-input" type="radio" name="statos">
+                                <label for="<?php echo $dep->id; ?>" class="form-check-label"><?php echo $dep->nombre; ?></label>
+                            </div>
                         <?php } ?>
                     </div>
                     <div class="modal-footer">
