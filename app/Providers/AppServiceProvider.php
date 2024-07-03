@@ -24,8 +24,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        if (env('REDIRECT_HTTPS')) {
+        //if (env('REDIRECT_HTTPS')) {
             $this->app['request']->server->set('HTTPS', true);
-        }
+        //}
+        
     }  
 }
