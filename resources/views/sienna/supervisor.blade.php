@@ -59,6 +59,8 @@
         let usersmerchant = {!! json_encode($usersmerchant,JSON_FORCE_OBJECT) !!};
         let pri = {!! json_encode($prioridades,JSON_FORCE_OBJECT) !!};
         let extras = {!! json_encode($resultadosextras,JSON_FORCE_OBJECT) !!};
+        console.log(extras);
+
 
 
 
