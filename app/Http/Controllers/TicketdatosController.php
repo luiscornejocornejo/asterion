@@ -822,7 +822,7 @@ class TicketdatosController extends Controller
         $query3="select * from siennadepto";
         $resultados3 = DB::select($query3);
 
-        $queryextras="select * from extras";
+        $queryextras="select * from extras where view='1'";
         $resultadosextras = DB::select($queryextras);
 
         
