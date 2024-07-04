@@ -9,11 +9,11 @@
 
 
             if(tipo=="2"){
-                location.href = url+'supervisor';
+                location.href = url+'viewtickets';
 
 
             }else{
-                location.href = url+'operator';
+                location.href = url+'viewtickets';
 
             }
         } else {
