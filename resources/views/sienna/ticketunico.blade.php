@@ -265,6 +265,11 @@ function tituloiconos($iconos, $tipo)
 
                            
                     <?php }?>
+
+                    <div class="mt-2">
+                    @include('sienna.tu.informacionusuario')
+
+                    </div>
                     <div class="mt-2">
                          @include('sienna.tu.informacionadjuntos')
 
@@ -277,10 +282,7 @@ function tituloiconos($iconos, $tipo)
 
                         </div>
                     </div>
-                    <div class="mt-2">
-                    @include('sienna.tu.informacionusuario')
-
-                    </div>
+                    
                     <div class="mt-2">
                     @include('sienna.tu.informaciontareas')
 
