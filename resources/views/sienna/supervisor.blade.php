@@ -440,7 +440,8 @@
            // var deptosuser =<?php echo session('deptosuser');?>;
 
             
-                    
+           url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "";
+
                     if (tipodemenu==3) {
                       url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "";
 
