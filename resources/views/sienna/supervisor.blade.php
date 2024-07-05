@@ -581,11 +581,15 @@
                 document.getElementById("tb").innerHTML = tt;
                 $('#example').dataTable({
                     "order": [[0, 'desc']],
-                    "responsive": !0,                    
+                    "responsive": !0,
+                    "pageLength": 25,                    
                     "language" : {
                       "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
                     },
-                    
+                    dom: 'Bfrtip',
+                    buttons: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ],
                     initComplete: function () {
                     this.api()
                       .columns()
@@ -606,10 +610,7 @@
                           }
                         });
                   });
-              },
-                    buttons: [
-                        'copy', 'csv', 'excel', 'pdf', 'print'
-                    ]
+              }
                     });
           }//fin del if
             else{
