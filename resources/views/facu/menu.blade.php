@@ -169,12 +169,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                         <span> Topics </span>
                     </a>
                 </li>
-                <li class="side-nav-item background-buttons">
-                    <a  href="/siennaabm?id=18"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-message-question"></i>
-                        <span> Motivos cierre </span>
-                    </a>
-                </li>
+                
                 <li class="side-nav-item background-buttons">
                     <a  href="/siennaabm?id=20"  class="side-nav-link hovering-pan ">
                         <i class="mdi mdi-message-star"></i>
@@ -206,6 +201,12 @@ $siennadeptosgenericos = DB::select($querygenerico);
                     <a  href="/conversations2"  class="side-nav-link hovering-pan ">
                         <i class="uil uil-comment-message"></i>
                         <span> Conversaciones </span>
+                    </a>
+                </li>
+                <li class="side-nav-item background-buttons">
+                    <a  href="/siennaabm?id=18"  class="side-nav-link hovering-pan ">
+                        <i class="mdi mdi-message-question"></i>
+                        <span> Motivos cierre </span>
                     </a>
                 </li>
                 <li class="side-nav-item background-buttons">
