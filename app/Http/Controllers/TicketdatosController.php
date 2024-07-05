@@ -1000,7 +1000,18 @@ class TicketdatosController extends Controller
             //if($subdomain_tmp =="soporte"){
                
                 $moti=motivoc::find($motivoc);
-                $urlbroad=$moti->url;
+                try {
+                    if (!isset($moti->url)) {
+                        echo $motivoc;
+                       // throw new Exception("La propiedad 'url' no existe en el objeto.");
+                    }
+                    $urlbroad = $moti->url;
+                    echo "La URL es: $urlbroad";
+                } catch (Exception $e) {
+                    echo 'Error: ' . $e->getMessage();
+                    $urlbroad="0";
+                }
+
                 $si44 = siennatickets::find($tik);
                 $telbroad=$si44->cel;
                 //$telbroad="+5491160480646";
