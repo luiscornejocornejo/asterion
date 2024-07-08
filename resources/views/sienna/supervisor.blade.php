@@ -60,7 +60,6 @@
         let pri = {!! json_encode($prioridades,JSON_FORCE_OBJECT) !!};
         let extras = {!! json_encode($resultadosextras,JSON_FORCE_OBJECT) !!};
         console.log(extras);
-        console.log(extras.length);  
 
 
 
@@ -490,6 +489,10 @@
                               '        <th class="text-light">Creado</th>'+
                               
                               '        <th class="text-light">Estado</th>'+
+
+                              <?php foreach($resultadosextras as $valo){
+                                      echo '<th class="text-light">'.$valo->pseudo.'</th>';
+                              }?>
                               '        <th class="text-light">Acciones</th>'+
                               '        '+
                               '    </tr>'+
