@@ -113,22 +113,18 @@
                         
                         ' </tbody>'+
                         '<tfoot>'+
-                              '     <tr class="bg-secondary">'+
-                              
-
-                              '        <th class="text-light"><i></i>Ticket</th>'+
-                              '        <th class="text-light">Cliente</th>'+
-                              '        <th class="text-light">Asignado</th>'+
-                              '          <th class="text-light">Area</th>'+
-                              '        <th class="text-light">Topic</th>'+
-                              '        <th class="text-light">Prioridad</th>'+
-                              '        <th class="text-light">Telefono</th>'+
-                              '        <th class="text-light">Creado</th>'+
-                              
-                              '        <th class="text-light">Estado</th>'+
-                              '        <th class="text-light">Acciones</th>'+
-                              '        '+
-                              '    </tr>'+
+                        '     <tr class="text-center bg-dark" >'+
+                        '        <th class="text-light"><i></i>Ticket</th>'+
+                        '        <th class="text-light">Cliente</th>'+
+                        '          <th class="text-light">Area</th>'+
+                        '        <th class="text-light">Topic</th>'+
+                        '        <th class="text-light">Telefono</th>'+
+                        '        <th class="text-light">Creado</th>'+
+                        '        <th class="text-light">Cerrado</th>'+
+                        '        <th class="text-light">Estado</th>'+
+                        '        <th class="text-light">Acciones</th>'+
+                        '        '+
+                        '    </tr>'+
                               ' </tfoot>'+
                         ' </table>';
             
