@@ -92,7 +92,7 @@
                                 <textarea name="descripcion" rows="5" class="form-control mb-3"></textarea>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Responder</button>
+                                <button type="submit" class="btn btn-primary rounded-pill me-1">Responder</button>
                                 <label for="exampleInputPassword1" class="btn btn-secondary rounded-pill">
                                     <i class="mdi mdi-attachment"></i> Adjuntar
                                     <input name="logo" type="file" id="exampleInputPassword1" class="d-none">
