@@ -663,7 +663,7 @@
                         }
                         ?>
                         <?php if($uribotfrontdesk<>""){?>
-                    <button id="button-4" class="mdi mdi-storefront bg-primary text-light " href="#warning-alert-modal2" data-bs-toggle="modal"></button>
+                    <button id="button-4" class="mdi mdi-robot bg-primary text-light " href="#warning-alert-modal2" data-bs-toggle="modal"></button>
                     <?php } else {
                       ?>
                       <button  id="button-2" class="mdi mdi-ticket-account bg-warning text-light" data-bs-toggle="modal" href="#exampleModalToggle" >
