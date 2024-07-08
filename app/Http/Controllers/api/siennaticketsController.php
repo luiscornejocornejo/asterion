@@ -607,6 +607,7 @@ class siennaticketsController extends Controller
         CONVERT_TZ(created_at, '+00:00', '".$zona.":00') as created_at2,
         CONVERT_TZ(t_cerrado, '+00:00', '".$zona.":00') as t_cerrado2,
         b.nombre as depto,b.id as iddepto,d.nombre topicnombre,
+        (select concat(nombre,' ',last_name) as elasignado from users where id=a.asignado) as elasignado,
         a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado from siennatickets a
         left join siennadepto b on b.id=a.siennadepto 
         left join  siennaestado c on c.id=a.siennaestado
