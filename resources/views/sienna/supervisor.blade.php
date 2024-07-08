@@ -491,7 +491,7 @@
                               '        <th class="text-light">Estado</th>'+
 
                               <?php foreach($resultadosextras as $valo){
-                                      echo '<th class="text-light">'.$valo->pseudo.'</th>';
+                                      echo "'<th class=text-light>".$valo->pseudo."</th>'+";
                               }?>
                               '        <th class="text-light">Acciones</th>'+
                               '        '+
