@@ -18,7 +18,6 @@
             </div>
             @endif
             <!-- Start Content-->
-             <?php var_dump($mistareas)  ?>
             <h1>Mis Tareas</h1>
             <div class="container-fluid pt-2">
                 <table id="example" class="table dt-responsive nowrap w-100">
