@@ -811,8 +811,8 @@ class cloudtickets extends Controller
 
 
         $datos = siennatareas::where('estadotarea', '<>', '3', 'and')->where('users', '=', $idusuario)->get();
-
-        dd($datos);
+        return view('sienna/mistareas')
+        ->with('mistareas', $datos);
     }
 
 
@@ -902,5 +902,8 @@ class cloudtickets extends Controller
         ->with('success', 'Se Agrego correctamente!');
  
     }
+
+    
+    
 
 }
