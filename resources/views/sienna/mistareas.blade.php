@@ -38,10 +38,10 @@
 
                         ?>
                             <tr class="text-center">
-                                <td><a href="{{ url('ts?ticket=' . $val3->id) }}">{{$val3->id}}</a></td>
+                                <td><a href="{{ url('ts?ticket=' . $val3->id) }}" target="_blank">{{$val3->id}}</a></td>
                                 <td>{{$val3->nombre}}</td>
                                 <td>{{$val3->descripcion}}</td>
-                                <td>{{$val3->siennatickets}}</td>
+                                <td><a href="{{ url('ticketunico?tick=' . $val3->siennatickets) }}" target="_blank">{{$val3->siennatickets}}</a></td>
                                 <td>{{$val3->fechalimite}}</td>
                                 <td>{{$val3->estadotarea}}</td>
                             </tr>
