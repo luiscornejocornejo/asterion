@@ -654,8 +654,6 @@
                     <span class="mdi mdi-plus"></span>
                     </button>
                     <div id="menu" class="hidden">
-                    <button  id="button-2" class="mdi mdi-ticket-account bg-warning text-light" data-bs-toggle="modal" href="#exampleModalToggle" >
-                    <button id="button-3" class="mdi mdi-send bg-success text-light " href="#warning-alert-modal" data-bs-toggle="modal"></button>
                     <?php
                         $querygenerico="select * from empresa";
                         $siennadeptosgenericos = DB::select($querygenerico);
@@ -665,8 +663,13 @@
                         }
                         ?>
                         <?php if($uribotfrontdesk<>""){?>
-                    <button id="button-4" class="mdi mdi-storefront bg-primary text-light " href="#warning-alert-modal2" data-bs-toggle="modal"></button>
+                    <button id="button-4" class="mdi mdi-robot bg-primary text-light " href="#warning-alert-modal2" data-bs-toggle="modal"></button>
+                    <?php } else {
+                      ?>
+                      <button  id="button-2" class="mdi mdi-ticket-account bg-warning text-light" data-bs-toggle="modal" href="#exampleModalToggle" >
                     <?php }?>
+                    <button id="button-3" class="mdi mdi-send bg-success text-light " href="#warning-alert-modal" data-bs-toggle="modal"></button>
+
                     </div>
                 </div>
                
