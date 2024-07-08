@@ -22,7 +22,7 @@
                <h1>Mis Tareas</h1>
                 <div class="container-fluid pt-2">
                     <table id="example" class="table dt-responsive nowrap w-100">
-                        <thead class="bg-dark">
+                        <thead class="bg-dark">   
                             <tr class="text-center">
                             <th class="text-light">Nombre</th>
                                 <th class="text-light">Descripcion</th>
