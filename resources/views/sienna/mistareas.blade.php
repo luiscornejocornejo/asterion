@@ -23,6 +23,7 @@
                 <table id="example" class="table dt-responsive nowrap w-100">
                     <thead class="bg-dark">
                         <tr class="text-center">
+                            <th class="text-light">#</th>
                             <th class="text-light">Nombre</th>
                             <th class="text-light">Descripcion</th>
                             <th class="text-light">Ticket</th>
@@ -37,6 +38,7 @@
 
                         ?>
                             <tr class="text-center">
+                                <td><a href="{{ url('ts?ticket=' . $val3->id) }}">{{$val3->id}}</a></td>
                                 <td>{{$val3->nombre}}</td>
                                 <td>{{$val3->descripcion}}</td>
                                 <td>{{$val3->siennatickets}}</td>
