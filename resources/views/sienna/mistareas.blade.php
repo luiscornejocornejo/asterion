@@ -19,6 +19,7 @@
         </div>
         @endif
               <!-- Start Content-->
+               <h1>Mis Tareas</h1>
                 <div class="container-fluid pt-2">
                     <table id="example" class="table dt-responsive nowrap w-100">
                         <thead class="bg-dark">
@@ -29,9 +30,7 @@
                                 <th class="text-light">F. Limite</th>
 
                                 <th class="text-light">Estado</th>
-                                <th class="text-light">Rol</th>
-                                <th class="text-light">Interno</th>
-                                <th class="text-light">Acciones</th>
+                               
                             </tr>
                         </thead>
                         <tbody>
@@ -42,7 +41,7 @@
                            
                             ?>
                             <tr class="text-center">
-                            <td>{{$val3->nom}}</td>
+                            <td>{{$val3->nombre}}</td>
                                 <td>{{$val3->descripcion}}</td>
                                 <td>{{$val3->siennatickets}}</td>
                                 <td>{{$val3->fechalimite}}</td>
