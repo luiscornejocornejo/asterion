@@ -112,6 +112,24 @@
                         ' <tbody id="tb">'+ 
                         
                         ' </tbody>'+
+                        '<tfoot>'+
+                              '     <tr class="bg-secondary">'+
+                              
+
+                              '        <th class="text-light"><i></i>Ticket</th>'+
+                              '        <th class="text-light">Cliente</th>'+
+                              '        <th class="text-light">Asignado</th>'+
+                              '          <th class="text-light">Area</th>'+
+                              '        <th class="text-light">Topic</th>'+
+                              '        <th class="text-light">Prioridad</th>'+
+                              '        <th class="text-light">Telefono</th>'+
+                              '        <th class="text-light">Creado</th>'+
+                              
+                              '        <th class="text-light">Estado</th>'+
+                              '        <th class="text-light">Acciones</th>'+
+                              '        '+
+                              '    </tr>'+
+                              ' </tfoot>'+
                         ' </table>';
             
             tt = "";
@@ -159,14 +177,35 @@
                     $('#example').dataTable({
                         "order": [[0, 'desc']],
                         "pageLength": 25,
-                "language" : {
-                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
-                },
-  dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-                });
+                        "language" : {
+                        "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
+                        },
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'copy', 'csv', 'excel', 'pdf', 'print'
+                        ],
+                        initComplete: function () {
+                        this.api()
+                        .columns()
+                        .every(function () {
+                            let column = this;
+                            let title = column.footer().textContent;
+
+                            // Create input element
+                            let input = document.createElement("input");
+                            input.placeholder = title;
+                            input.className = "form-control";
+                            column.footer().replaceChildren(input);
+
+                            // Event listener for user input
+                            input.addEventListener("keyup", () => {
+                            if (column.search() !== this.value) {
+                                column.search(input.value).draw();
+                            }
+                            });
+                        });
+                     }
+                    });
 
 
 
