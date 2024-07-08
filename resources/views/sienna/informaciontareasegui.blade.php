@@ -89,7 +89,7 @@
                                 <br>
                                 <input type="hidden" name="idtarea" value="<?php echo $idtarea; ?>" />
 
-                                <textarea name="descripcion" rows="5" class="form-control"></textarea>
+                                <textarea name="descripcion" rows="5" class="form-control mb-3"></textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Responder</button>
