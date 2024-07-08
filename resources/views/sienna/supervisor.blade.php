@@ -572,7 +572,8 @@
                       
                         ' <td><span style="font-size:medium;" class="badge '+colorestado+'">' + response.data[i].estadoname + '</span></td>' +
                         <?php foreach($resultadosextras as $valo){
-                                      echo "'<td class=text-light>".$valo->pseudo."</td>'+";
+                                      $busco=$valo->nombre;
+                                      echo "'<td class=text-light>' + response.data[i].".$busco." + '</td>'+";
                               }?>
                         ' <td>'+
                        '<button  onclick="listadoseguimientos(`' + result + '`,`' + response.data[i].ticketid + '`)"   class="btn btn-secondary " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="mdi mdi-link" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="mb-1" data-bs-title="Seguimiento."></i></button>' +
