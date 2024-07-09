@@ -55,6 +55,7 @@
     </div>
     <!-- content -->
 </div>
+</div>
 
 
 <!-- Modal users register -->
