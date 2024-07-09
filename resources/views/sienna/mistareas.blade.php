@@ -26,35 +26,35 @@
                 }
             </style>
 
-<h1>Mis Tareas2</h1>
+                <h1>Mis Tareas</h1>
 
-<table id="example" class="table dt-responsive nowrap w-100">
-    <thead class="bg-dark">
-        <tr class="text-center">
-            <th class="text-light">#</th>
-            <th class="text-light">Nombre</th>
-            <th class="text-light">Descripcion</th>
-            <th class="text-light">Ticket</th>
-            <th class="text-light">F. Limite</th>
-            <th class="text-light">Estado</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-        foreach ($mistareas as $val3) {
+                <table id="example" class="table dt-responsive nowrap w-100">
+                    <thead class="bg-dark">
+                        <tr class="text-center">
+                            <th class="text-light">#</th>
+                            <th class="text-light">Nombre</th>
+                            <th class="text-light">Descripcion</th>
+                            <th class="text-light">Ticket</th>
+                            <th class="text-light">F. Limite</th>
+                            <th class="text-light">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach ($mistareas as $val3) {
 
-        ?>
-            <tr class="text-center">
-                <td><a href="{{ url('ts?ticket=' . $val3->id) }}" target="_blank">{{$val3->id}}</a></td>
-                <td>{{$val3->nombre}}</td>
-                <td>{{$val3->descripcion}}</td>
-                <td><a href="{{ url('ticketunico?tick=' . $val3->siennatickets) }}" target="_blank">{{$val3->siennatickets}}</a></td>
-                <td>{{$val3->fechalimite}}</td>
-                <td>{{$val3->nomestado}}</td>
-            </tr>
-        <?php } ?>
-    </tbody>
-</table>
+                        ?>
+                            <tr class="text-center">
+                                <td><a href="{{ url('ts?ticket=' . $val3->id) }}" target="_blank">{{$val3->id}}</a></td>
+                                <td>{{$val3->nombre}}</td>
+                                <td>{{$val3->descripcion}}</td>
+                                <td><a href="{{ url('ticketunico?tick=' . $val3->siennatickets) }}" target="_blank">{{$val3->siennatickets}}</a></td>
+                                <td>{{$val3->fechalimite}}</td>
+                                <td>{{$val3->nomestado}}</td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
 
         </div>
 
