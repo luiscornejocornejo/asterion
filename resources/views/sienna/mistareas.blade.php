@@ -26,7 +26,7 @@
                 }
             </style>
 
-<h1>Mis Tareas</h1>
+<h1>Mis Tareas2</h1>
 
 <table id="example" class="table dt-responsive nowrap w-100">
     <thead class="bg-dark">
