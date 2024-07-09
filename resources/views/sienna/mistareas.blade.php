@@ -33,7 +33,6 @@
                     </thead>
                     <tbody>
                         <?php
-                        $vueltas = 0;
                         foreach ($mistareas as $val3) {
 
                         ?>
@@ -59,6 +58,7 @@
 
 
 <!-- Modal users register -->
+<br><br><br>
 
 
 @include('facu.footer')
