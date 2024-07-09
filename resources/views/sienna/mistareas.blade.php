@@ -1,10 +1,9 @@
 @include('facu.header2')
 
-@include('facu.menu')
 
 
 <!-- Begin page -->
-<div class="wrapper">
+<div class="wrapper menuitem-active">
 
     <!-- ========== Left Sidebar Start ========== -->
     @include('facu.menu')
@@ -19,8 +18,9 @@
             </div>
             @endif
             <!-- Start Content-->
-            <h1>Mis Tareas</h1>
             <div class="container-fluid pt-2">
+                <h1>Mis Tareas</h1>
+
                 <table id="example" class="table dt-responsive nowrap w-100">
                     <thead class="bg-dark">
                         <tr class="text-center">

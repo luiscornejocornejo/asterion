@@ -5,7 +5,7 @@
 <div class="wrapper menuitem-active">
 @include('facu.menu')
     <div class="content-page" style="padding: 0!important;">
-    @if ($message = Session::get('success'))
+         @if ($message = Session::get('success'))
         <div class="alert alert-success alert-dismissible fade
                             show" role="alert">
             {{ $message }}
