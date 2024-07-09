@@ -50,7 +50,7 @@
                 <td>{{$val3->descripcion}}</td>
                 <td><a href="{{ url('ticketunico?tick=' . $val3->siennatickets) }}" target="_blank">{{$val3->siennatickets}}</a></td>
                 <td>{{$val3->fechalimite}}</td>
-                <td>{{$val3->estadotarea}}</td>
+                <td>{{$val3->nomestado}}</td>
             </tr>
         <?php } ?>
     </tbody>

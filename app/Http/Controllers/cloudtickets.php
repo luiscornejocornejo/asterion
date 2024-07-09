@@ -810,7 +810,12 @@ class cloudtickets extends Controller
        echo  $idusuario=session('idusuario');
 
 
-        $datos = siennatareas::where('estadotarea', '<>', '3', 'and')->where('users', '=', $idusuario)->get();
+       // $datos = siennatareas::where('estadotarea', '<>', '3', 'and')->where('users', '=', $idusuario)->get();
+        $datos = siennatareas::leftJoin('estadotarea', 'siennatareas.estadotarea', '=', 'estadotarea.id')
+        ->where('siennatareas.estadotarea', '<>', '3')
+        ->where('siennatareas.users', '=', $idusuario)
+        ->select('siennatareas.*', 'estadotarea.nombre as nomestado')
+        ->get();
         return view('sienna/mistareas')
         ->with('mistareas', $datos);
     }
