@@ -1,5 +1,6 @@
 @include('facu.header2')
 
+@include('facu.menu')
 
 
 <!-- Begin page -->
