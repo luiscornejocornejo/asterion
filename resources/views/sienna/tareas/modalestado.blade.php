@@ -17,7 +17,7 @@
                                 <?php foreach ($datos3 as $val3) { ?>
                                 <div class="form-check mt-2">
                                     <input value="<?php echo $val3->id; ?>" id="<?php echo $val3->id; ?>" class="form-check-input" type="radio" name="usuarioticket">
-                                    <label for="<?php echo $val3->nombretarea; ?>" class="form-check-label"><?php echo ucfirst($val3->estadotarea); ?></label>
+                                    <label for="<?php echo $val3->nombre; ?>" class="form-check-label"><?php echo ucfirst($val3->estadotarea); ?></label>
                                 </div>
                                 <?php } ?>    
                             <div class="modal-footer">
