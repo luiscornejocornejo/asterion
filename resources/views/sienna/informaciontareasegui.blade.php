@@ -43,10 +43,12 @@
                         echo "<br>";
 
                         echo "<select name='estado'>";
-                        $selected="";
                         foreach($datos3 as $val3){
                             if($val3->id==$val->estadotarea){
                                 $selected=" selected ";
+
+                            }else{
+                                $selected="";
 
                             }
                             echo "<option ".$selected."  value='".$val3->id."'>".$val3->nombre."</option>";
