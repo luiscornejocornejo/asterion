@@ -7,7 +7,7 @@
                     </div>
                     <div class="modal-body">
                         <form action="" method="post">
-                            @csrf
+                            
                             <!-- Fields to use on status tasks
                                 <input type="hidden" name="tik" id="idticketestado2" value="">
                                 <input type="hidden" name="idconv" id="conversation_id2" value="">
