@@ -841,6 +841,20 @@ class cloudtickets extends Controller
         ->with('idtarea', $idtarea)
         ;
     }
+
+    
+    public function soporte(Request $request)
+    {   
+        $merchant=$this->dominio();
+
+        $query ="select * from soporte.siennatickets where siennaestado<>'4' and siennasource=10  and merchat='".$merchant."'";
+        $tsoporte = DB::select($query);
+
+        return view('sienna/soporte')
+        ->with('tsoporte', $tsoporte)
+       
+        ;
+    }
     
     public function nuevost(Request $request)
     {       
