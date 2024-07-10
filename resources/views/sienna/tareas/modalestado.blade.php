@@ -8,7 +8,7 @@
                     <div class="modal-body">
                         <form action="" method="post">
                             <!-- Fields to use on status tasks
-                            @csrf
+                            
                                 <input type="hidden" name="tik" id="idticketestado2" value="">
                                 <input type="hidden" name="idconv" id="conversation_id2" value="">
                                 <input value="<?php //echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
