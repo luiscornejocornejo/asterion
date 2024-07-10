@@ -45,5 +45,6 @@
         </div>
     <?php } ?>
     </div>
+    @include('sienna.tareas.modalestado')
 
 </div>
