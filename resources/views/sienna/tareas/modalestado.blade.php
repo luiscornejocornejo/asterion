@@ -7,12 +7,12 @@
                     </div>
                     <div class="modal-body">
                         <form action="" method="post">
-                            
                             <!-- Fields to use on status tasks
+                            @csrf
                                 <input type="hidden" name="tik" id="idticketestado2" value="">
                                 <input type="hidden" name="idconv" id="conversation_id2" value="">
-                                <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
-                                <input value="<?php  $bot_channel="WhatsAppChannel"; echo $bot_channel;?>" type="hidden" name="bot_channel" id="bot_channel">
+                                <input value="<?php //echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
+                                <input value="<?php  //$bot_channel="WhatsAppChannel"; echo $bot_channel;?>" type="hidden" name="bot_channel" id="bot_channel">
                                 -->
                                 <?php foreach ($datos3 as $val3) { ?>
                                 <div class="form-check mt-2">
