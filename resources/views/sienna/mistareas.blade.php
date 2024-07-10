@@ -9,7 +9,7 @@
     @include('facu.menu')
     <div class="content-page" style="padding: 0!important;">
 
-        <div class="container pt-5">
+        <div class="container-fluid pt-2">
             <style>
                 .conversation-list .odd .conversation-text {
                     float: right !important;
@@ -26,7 +26,7 @@
                 }
             </style>
 
-                <h1>Mis Tareas</h1>
+                <h2>Mis Tareas</h2>
 
                 <table id="example" class="table dt-responsive nowrap w-100">
                     <thead class="bg-dark">
@@ -50,7 +50,7 @@
                                 <td>{{$val3->descripcion}}</td>
                                 <td><a href="{{ url('ticketunico?tick=' . $val3->siennatickets) }}" target="_blank">{{$val3->siennatickets}}</a></td>
                                 <td>{{$val3->fechalimite}}</td>
-                                <td>{{$val3->nomestado}}</td>
+                                <td>{{ ucfirst($val3->nomestado) }}</td>
                             </tr>
                         <?php } ?>
                     </tbody>
@@ -61,5 +61,5 @@
 
     </div>
 </div>
-<br><br><br>
+
 @include('facu.footer')
