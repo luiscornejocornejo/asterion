@@ -23,18 +23,11 @@
                 </div>
                 <div class="mb-1">
                     <i class="mdi mdi-format-list-checks"></i> <strong>Estado: </strong>
-                    <select name='estado' class='form-control'>
-                        <?php
-                        foreach ($datos3 as $val3) {
-                            if ($val3->id == $val->estadotarea) {
-                                $selected = "selected";
-                            } else {
-                                $selected = "";
-                            }
-                            echo "<option " . $selected . "  value='" . $val3->id . "'>" . $val3->nombre . "</option>";
-                        }
-                        ?>
-                    </select>
+                    <span role="button" data-bs-toggle="modal" data-bs-target="#task_modal">
+                        <span class="badge bg-secondary line-h" style="font-size: 13px;">
+                            <?php echo $resultados[0]->nombreprioridad; ?>
+                        </span>
+                    </span>
                 </div>
             </div>
 
