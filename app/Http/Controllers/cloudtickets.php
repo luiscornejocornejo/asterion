@@ -825,7 +825,7 @@ class cloudtickets extends Controller
     {   
          $idtarea=$request->idtarea;
 
-
+        $datos2=siennatareas::find($idtarea);
        // $datos = siennatareassegui::where('siennatareas', '=', $idtarea)->get();
         $datos = Siennatareassegui::leftJoin('users', 'users.id', '=', 'siennatareassegui.idusuario')
         ->where('siennatareassegui.siennatareas', '=', $idtarea)
@@ -833,6 +833,7 @@ class cloudtickets extends Controller
     
         return view('sienna/informaciontareasegui')
         ->with('resultadostareasegui', $datos)
+        ->with('datos2', $datos2)
         ->with('idtarea', $idtarea)
         ;
     }

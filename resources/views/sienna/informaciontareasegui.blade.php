@@ -25,6 +25,7 @@
 
             <div class="card ">
                 <div class="card-body">
+                    <?php var_dump($datos2);?>
                     <h5 class="font-18 mb-2">Tarea: <?php //echo $resultados[0]->merchant; 
                                                     ?></h5>
                     <ul class="conversation-list p-0" data-simplebar="init">
