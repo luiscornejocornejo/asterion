@@ -1,7 +1,6 @@
 <div class="card widget-flat">
     <div class="card-body">
         <div class="d-flex justify-content-between">
-            <?php var_dump($datos3); ?>
             <?php foreach ($datos2 as $val) { ?>
                 <div>
                     <h4 class="fw-normal text-dark" title="Number of Customers">Información de tarea #<?php echo $val->id; ?></h4>
