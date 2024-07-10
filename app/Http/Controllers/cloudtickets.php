@@ -825,8 +825,8 @@ class cloudtickets extends Controller
     {   
          $idtarea=$request->idtarea;
 
-        $datos2=siennatareas::find($idtarea);
-       // $datos = siennatareassegui::where('siennatareas', '=', $idtarea)->get();
+        //$datos2=siennatareas::find($idtarea);
+       $datos2 = siennatareas::where('id', '=', $idtarea)->get();
         $datos = Siennatareassegui::leftJoin('users', 'users.id', '=', 'siennatareassegui.idusuario')
         ->where('siennatareassegui.siennatareas', '=', $idtarea)
         ->get(['siennatareassegui.cuerpo', 'siennatareassegui.siennatareas', 'siennatareassegui.tipo', 'siennatareassegui.autor', 'siennatareassegui.created_at', 'siennatareassegui.id', 'users.nombre', 'users.last_name']);
