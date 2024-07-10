@@ -39,6 +39,9 @@
                         echo "<br>";
                         echo $val->created_at;
                         echo "<br>";
+                        echo $val->estadotarea;
+                        echo "<br>";
+                        
                     }?>
                     <h5 class="font-18 mb-2">Tarea: <?php //echo $resultados[0]->merchant; 
                                                     ?></h5>
