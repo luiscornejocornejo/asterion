@@ -27,7 +27,6 @@
                 <div class="card-body">
                     <?php 
                     
-                    var_dump($datos3);
                     foreach ($datos2 as $val){
                         
                         echo $val->nombre;
@@ -42,6 +41,11 @@
                         echo "<br>";
                         echo $val->created_at;
                         echo "<br>";
+
+                        foreach($datos3 as $val3){
+                            echo $val3->nombre;
+                            echo "<br>";
+                        }
                         echo $val->estadotarea;
                         echo "<br>";
                         
