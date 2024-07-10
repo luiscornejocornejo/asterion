@@ -29,25 +29,29 @@
                     
                     foreach ($datos2 as $val){
                         
-                        echo $val->nombre;
+                        echo "<p>nombre: ".$val->nombre."</p>";
                         echo "<br>";
-                        echo $val->descripcion;
+                        echo "<p>Descripcion: ".$val->descripcion."</p>";
                         echo "<br>";
-                        echo $val->users;
+                        echo "<p>usuario: ".$val->users."</p>";
                         echo "<br>";
-                        echo $val->siennatickets;
+                        echo "<p>ticket: ".$val->siennatickets."</p>";
                         echo "<br>";
-                        echo $val->fechalimite;
+                        echo "<p>F. limite: ".$val->fechalimite."</p>";
                         echo "<br>";
-                        echo $val->created_at;
+                        echo "<p>creado: ".$val->created_at."</p>";
                         echo "<br>";
 
+                        echo "<select name='estado'>";
+                        $selected="";
                         foreach($datos3 as $val3){
-                            echo $val3->nombre;
-                            echo "<br>";
+                            if($val3->id==$val->estadotarea){
+                                $selected=" selected ";
+
+                            }
+                            echo "<option ".$selected."  value='".$val3->id."'>".$val3->nombre."</option>";
                         }
-                        echo $val->estadotarea;
-                        echo "<br>";
+                        echo "</select>";
                         
                     }?>
                     <h5 class="font-18 mb-2">Tarea: <?php //echo $resultados[0]->merchant; 
