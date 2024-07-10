@@ -27,6 +27,7 @@ use App\Models\siennagetdata;
 use App\Models\salientesxennio;
 use App\Models\salientesxenniolistado;
 use App\Models\siennatareassegui;
+use App\Models\estadotarea;
 
 
 use Maatwebsite\Excel\Facades\Excel;
@@ -827,6 +828,8 @@ class cloudtickets extends Controller
 
         //$datos2=siennatareas::find($idtarea);
        $datos2 = siennatareas::where('id', '=', $idtarea)->get();
+       $datos3 = estadotarea::all();
+
         $datos = Siennatareassegui::leftJoin('users', 'users.id', '=', 'siennatareassegui.idusuario')
         ->where('siennatareassegui.siennatareas', '=', $idtarea)
         ->get(['siennatareassegui.cuerpo', 'siennatareassegui.siennatareas', 'siennatareassegui.tipo', 'siennatareassegui.autor', 'siennatareassegui.created_at', 'siennatareassegui.id', 'users.nombre', 'users.last_name']);
@@ -834,6 +837,7 @@ class cloudtickets extends Controller
         return view('sienna/informaciontareasegui')
         ->with('resultadostareasegui', $datos)
         ->with('datos2', $datos2)
+        ->with('datos3', $datos3)
         ->with('idtarea', $idtarea)
         ;
     }

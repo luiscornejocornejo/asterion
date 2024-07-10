@@ -25,7 +25,10 @@
 
             <div class="card ">
                 <div class="card-body">
-                    <?php foreach ($datos2 as $val){
+                    <?php 
+                    
+                    var_dump($datos3);
+                    foreach ($datos2 as $val){
                         
                         echo $val->nombre;
                         echo "<br>";
