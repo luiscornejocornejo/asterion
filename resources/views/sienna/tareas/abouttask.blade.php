@@ -25,7 +25,7 @@
                     <i class="mdi mdi-format-list-checks"></i> <strong>Estado: </strong>
                     <span role="button" data-bs-toggle="modal" data-bs-target="#task_modal">
                         <span class="badge bg-secondary line-h" style="font-size: 13px;">
-                            <?php echo $resultados[0]->nombreprioridad; ?>
+                            <?php echo $val->estadotarea; ?>
                         </span>
                     </span>
                 </div>
