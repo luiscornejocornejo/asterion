@@ -45,7 +45,7 @@
 
                         ?>
                             <tr class="text-center">
-                                <td><a href="{{ url('ts?ticket=' . $val3->id) }}" target="_blank">{{$val3->id}}</a></td>
+                                <td><a href="{{ url('ts?idtarea=' . $val3->id) }}" target="_blank">{{$val3->id}}</a></td>
                                 <td>{{$val3->nombre}}</td>
                                 <td>{{$val3->descripcion}}</td>
                                 <td><a href="{{ url('ticketunico?tick=' . $val3->siennatickets) }}" target="_blank">{{$val3->siennatickets}}</a></td>
