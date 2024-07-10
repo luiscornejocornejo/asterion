@@ -25,7 +25,7 @@
 
             <div class="card ">
                 <div class="card-body">
-                    <?php foreach($datos2 as $val){
+                    <?php foreach ($datos2 as $val){
                         
                         echo $val->nombre;
                         echo "<br>";
