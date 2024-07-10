@@ -22,7 +22,7 @@
                     width: 90%
                 }
             </style>
-            @include('tareas.about_task')
+            @include('tareas.abouttask')
 
             <div class="card ">
                 <div class="card-body">
