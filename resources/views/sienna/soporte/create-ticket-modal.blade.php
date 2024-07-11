@@ -23,7 +23,7 @@
                     </label>
 
                     <div class="modal-footer">
-                        <input value="<?php echo $subdomain_tmp; ?>" type="hidden" name="idbot" id="idbot">
+                        <input value="<?php // echo $subdomain_tmp; ?>" type="hidden" name="idbot" id="idbot">
                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
                         <button type="submit" class="btn btn-success" id="liveToastBtn" data-bs-dismiss="modal">Crear</button>
                     </div>
