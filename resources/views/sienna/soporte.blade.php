@@ -42,7 +42,7 @@
                         <?php
                         
                         foreach ($tsoporte as $val3) {
-                            dd($val3);
+                            dd($val3->siennaestado);
                         ?>
                             <tr class="text-center">
                                 <td><a href="{{ url('soporte?ticket=' . $val3->id) }}" target="_blank">{{$val3->id}}</a></td>
