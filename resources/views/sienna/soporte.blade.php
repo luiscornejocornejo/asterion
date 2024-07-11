@@ -45,12 +45,12 @@
 
                         ?>
                             <tr class="text-center">
-                                <td><a href="{{ url('ts?idtarea=' . $val3->id) }}" target="_blank">{{$val3->id}}</a></td>
+                                <td><a href="{{ url('soporte?ticket=' . $val3->id) }}" target="_blank">{{$val3->id}}</a></td>
                                 <td>{{$val3->nombre}}</td>
-                                <td>{{$val3->descripcion}}</td>
-                                <td><a href="{{ url('ticketunico?tick=' . $val3->siennatickets) }}" target="_blank">{{$val3->siennatickets}}</a></td>
-                                <td>{{$val3->fechalimite}}</td>
-                                <td>{{$val3->nomestado}}</td>
+                                <td>{{$val3->cliente}}</td>
+                                <td>{{$val3->siennaestado}}</td>
+                                <td>{{$val3->timeoflive}}</td>
+                                <td>{{$val3->merchant}}</td>
                             </tr>
                         <?php } ?>
                     </tbody>
