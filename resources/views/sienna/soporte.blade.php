@@ -9,7 +9,7 @@
     @include('facu.menu')
     <div class="content-page" style="padding: 0!important;">
 
-        <div class="container pt-5">
+        <div class="container-fluid pt-5">
             <style>
                 .conversation-list .odd .conversation-text {
                     float: right !important;
@@ -32,16 +32,15 @@
                     <thead class="bg-dark">
                         <tr class="text-center">
                             <th class="text-light">#</th>
-                            <th class="text-light">Nombre</th>
+                            <th class="text-light">Motivo</th>
                             <th class="text-light">Descripcion</th>
-                            <th class="text-light">Ticket</th>
-                            <th class="text-light">F. Limite</th>
                             <th class="text-light">Estado</th>
+                            <th class="text-light">Fecha de creación</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        dd($tsoporte);
+                        
                         foreach ($tsoporte as $val3) {
 
                         ?>
@@ -58,7 +57,9 @@
                 </table>
 
         </div>
-
+        <div class="newAgent" data-bs-toggle="modal" data-bs-target="#create-ticket">
+            <i class="ri-chat-new-fill" style="font-size: 25px;"></i>
+        </div>
 
     </div>
 </div>

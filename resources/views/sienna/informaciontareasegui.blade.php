@@ -47,7 +47,7 @@
                                                 <?php if ($valor->tipo == 1) {
                                                     echo $valor->cuerpo;
                                                 } else {
-                                                    echo "img" . $valor->cuerpo;
+                                                    echo $valor->cuerpo;
                                                 } ?>
                                             </p>
                                         </div>
@@ -66,7 +66,7 @@
                                                 <?php if ($valor->tipo == 1) {
                                                     echo $valor->cuerpo;
                                                 } else {
-                                                    echo "img" . $valor->cuerpo;
+                                                    echo $valor->cuerpo;
                                                 } ?>
                                             </p>
                                         </div>
