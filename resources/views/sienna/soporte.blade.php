@@ -39,18 +39,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php
-                        
-                        foreach ($tsoporte as $val3) {
-                            dd($val3->siennaestado);
-                        ?>
+                        <?php foreach ($tsoporte as $val3) { ?>
                             <tr class="text-center">
                                 <td><a href="{{ url('soporte?ticket=' . $val3->id) }}" target="_blank">{{$val3->id}}</a></td>
                                 <td>{{$val3->nombre}}</td>
                                 <td>{{$val3->cliente}}</td>
                                 <td>{{$val3->siennaestado}}</td>
-                                <td>{{$val3->timeoflive}}</td>
-                                
+                                <td>{{$val3->siennatopic}}</td>
                             </tr>
                         <?php } ?>
                     </tbody>
