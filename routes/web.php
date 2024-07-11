@@ -265,6 +265,7 @@ Route::post('/creartarea','App\Http\Controllers\cloudtickets@creartarea');
 Route::get('/mistareas','App\Http\Controllers\cloudtickets@mistareas');
 Route::get('/ts','App\Http\Controllers\cloudtickets@ts');
 Route::get('/soporte','App\Http\Controllers\cloudtickets@soporte');
+Route::get('/envios','App\Http\Controllers\cloudtickets@envios');
 Route::post('/nuevost','App\Http\Controllers\cloudtickets@nuevost');
 
 
