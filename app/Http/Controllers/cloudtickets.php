@@ -874,10 +874,11 @@ class cloudtickets extends Controller
     {   
         $merchant=$this->dominio();
 
-        $query ="select * from salientesxenniolistado ";
+        $id=$request->envio;
+        $query ="select * from salientesxenniolistado  where salientesxennio='".$id."'";
         $tsoporte = DB::select($query);
 
-        return view('sienna/enviolistado')
+        return view('sienna/envioslistado')
         ->with('tsoporte', $tsoporte)
        
         ;
