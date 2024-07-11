@@ -2,25 +2,26 @@
 <div class="wrapper menuitem-active">
     @include('facu.menu')
     <style>
-        .background-buttons :hover{
-        background-color: #FFD193!important;
-        color: #3C4665!important;
+        .background-buttons :hover {
+            background-color: #FFD193 !important;
+            color: #3C4665 !important;
         }
+
         .newTicket {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 9999;
-        cursor: pointer;
-        color: #7a7a7a;
-        background-color: #FFD193;
-        border-radius: 50%;
-        text-align: center;
-        width: 50px;
-        height: 50px;
-        line-height: 50px;
-        font-size: 16px;
-        box-shadow: 2px 2px 3px #999;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            cursor: pointer;
+            color: #7a7a7a;
+            background-color: #FFD193;
+            border-radius: 50%;
+            text-align: center;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            box-shadow: 2px 2px 3px #999;
         }
     </style>
     <div class="content-page">
@@ -72,5 +73,7 @@
         </div>
 
     </div>
+    @include('sienna.soporte.create-ticket-modal')
+
 </div>
 @include('facu.footer')
