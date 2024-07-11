@@ -42,7 +42,7 @@
                         <?php foreach ($tsoporte as $val3) { ?>
                             <tr class="text-center">
                                 <td><a href="{{ url('soporte?ticket=' . $val3->id) }}" target="_blank">{{$val3->id}}</a></td>
-                                <td>{{$val3->nombre}}</td>
+                                <td>{{$val3->nya}}</td>
                                 <td>{{$val3->cliente}}</td>
                                 <td>{{$val3->siennaestado}}</td>
                                 <td>{{$val3->siennatopic}}</td>
