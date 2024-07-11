@@ -49,7 +49,7 @@
                                 <td>{{$val3->nombre}}</td>
                                 <td>{{$val3->cliente}}</td>
                                 <td>{{$val3->siennaestado}}</td>
-                                <td>{{$val3->timeoflive}}</td>
+                                <td>{{$val3->siennaestado}}</td>
                                 
                             </tr>
                         <?php } ?>
