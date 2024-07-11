@@ -22,40 +22,11 @@
                     width: 90%
                 }
             </style>
+            @include('sienna.tareas.abouttask')
 
             <div class="card ">
                 <div class="card-body">
-                    <?php 
                     
-                    foreach ($datos2 as $val){
-                        
-                        echo "<p>nombre: ".$val->nombre."</p>";
-                        echo "<br>";
-                        echo "<p>Descripcion: ".$val->descripcion."</p>";
-                        echo "<br>";
-                        echo "<p>usuario: ".$val->users."</p>";
-                        echo "<br>";
-                        echo "<p>ticket: ".$val->siennatickets."</p>";
-                        echo "<br>";
-                        echo "<p>F. limite: ".$val->fechalimite."</p>";
-                        echo "<br>";
-                        echo "<p>creado: ".$val->created_at."</p>";
-                        echo "<br>";
-
-                        echo "<select name='estado'>";
-                        foreach($datos3 as $val3){
-                            if($val3->id==$val->estadotarea){
-                                $selected=" selected ";
-
-                            }else{
-                                $selected="";
-
-                            }
-                            echo "<option ".$selected."  value='".$val3->id."'>".$val3->nombre."</option>";
-                        }
-                        echo "</select>";
-                        
-                    }?>
                     <h5 class="font-18 mb-2">Tarea: <?php //echo $resultados[0]->merchant; 
                                                     ?></h5>
                     <ul class="conversation-list p-0" data-simplebar="init">
@@ -144,5 +115,4 @@
 
     </div>
 </div>
-<br><br><br>
 @include('facu.footer')

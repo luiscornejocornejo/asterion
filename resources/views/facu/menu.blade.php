@@ -203,7 +203,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                         <span> Conversaciones </span>
                     </a>
                 </li>
-                <li class="side-nav-item background-buttons">
+                <li class="side-nav-item background-buttons d-none">
                     <a  href="/siennaabm?id=18"  class="side-nav-link hovering-pan ">
                         <i class="mdi mdi-message-question"></i>
                         <span> Motivos cierre </span>
