@@ -8,7 +8,6 @@
 
             <div class="modal-body">
                 <form action="/create/ticket" method="POST">
-                    @csrf
 
                     <label for="reason" class="form-label">Motivo:</label>
                     <input class="form-control mb-3" type="text" name="reason" required>
