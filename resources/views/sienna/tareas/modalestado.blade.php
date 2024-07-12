@@ -20,7 +20,7 @@
                                     <label for="<?php echo $val3->id; ?>" class="form-check-label"><?php echo ucfirst($val3->nombre); ?></label>
                                 </div>
                                 <?php } ?>    
-                            <div class="modal-footer">
+                            <div class="modal-footer mt-2">
                                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
                                 <button type="submit" class="btn btn-success">Cambiar</button>
                             </div>

@@ -8,9 +8,24 @@
 
             <div class="modal-body">
                 <form action="/create/ticket" method="POST">
-
-                    <label for="reason" class="form-label">Motivo:</label>
-                    <input class="form-control mb-3" type="text" name="reason" required>
+                    <div class="row">
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <label for="department" class="form-label">Departamento:</label>
+                            <select class="form-control mb-3" name="department" id="department" class="form-select">
+                                <?php // foreach ($usersmerchant as $val) { ?>
+                                    <option value="<?php // echo $val->id; ?>"><?php //echo $val->nombre; ?></option>
+                                    <?php // } ?>
+                            </select>
+                        </div>
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <label for="reason" class="form-label">Motivo:</label>
+                            <select class="form-control mb-3" name="reason" id="reason" class="form-select">
+                                <?php // foreach ($usersmerchant as $val) { ?>
+                                    <option value="<?php // echo $val->id; ?>"><?php // echo $val->nombre ; ?></option>
+                                <?php // } ?>
+                            </select>
+                        </div>
+                    </div>
 
                     <label for="ticket-text" class="form-label">Descripción:</label>
                     <textarea class="form-control mb-3" id="task-text" name="text-ticket" class="form-control mb-3" rows="4" required></textarea>
@@ -23,7 +38,8 @@
                     </label>
 
                     <div class="modal-footer">
-                        <input value="<?php // echo $subdomain_tmp; ?>" type="hidden" name="idbot" id="idbot">
+                        <input value="<?php // echo $subdomain_tmp; 
+                                        ?>" type="hidden" name="idbot" id="idbot">
                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
                         <button type="submit" class="btn btn-success" id="liveToastBtn" data-bs-dismiss="modal">Crear</button>
                     </div>
