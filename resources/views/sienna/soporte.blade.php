@@ -74,6 +74,35 @@
 
     </div>
     @include('sienna.soporte.create-ticket-modal')
-
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-dark">
+                <strong class="me-auto text-light">Ticket generado</strong>
+                <small class="text-light">Ahora</small>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Nuestro equipo recibido el caso y estaremos en contacto contigo a la brevedad.
+            </div>
+        </div>
+    </div>
 </div>
 @include('facu.footer')
+
+
+
+<script>
+    const toastTrigger = document.getElementById('liveToastBtn')
+    const toastLiveExample = document.getElementById('liveToast')
+
+    if (toastTrigger) {
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+        toastTrigger.addEventListener('click', () => {
+            toastBootstrap.show()
+            setTimeout(() => {
+                toastBootstrap.hide()
+                location.reload()
+            }, 5000)
+        })
+    }
+</script>
