@@ -99,6 +99,7 @@
                                     <i class="mdi mdi-attachment"></i> Adjuntar
                                     <input name="logo" type="file" id="exampleInputPassword1" class="d-none">
                                 </label>
+                                <span id="fileName" class="ms-1"></span>
                             </div>
                         </form>
                     </div>
@@ -115,4 +116,6 @@
 
     </div>
 </div>
+<script src="assetsfacu/js/showFiles.js"></script>
+
 @include('facu.footer')
