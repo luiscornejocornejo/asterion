@@ -47,7 +47,7 @@
                                                 <?php if ($valor->tipo == 1) {
                                                     echo $valor->cuerpo;
                                                 } else {
-                                                    echo "img" . $valor->cuerpo;
+                                                    echo $valor->cuerpo;
                                                 } ?>
                                             </p>
                                         </div>
@@ -66,7 +66,7 @@
                                                 <?php if ($valor->tipo == 1) {
                                                     echo $valor->cuerpo;
                                                 } else {
-                                                    echo "img" . $valor->cuerpo;
+                                                    echo $valor->cuerpo;
                                                 } ?>
                                             </p>
                                         </div>
@@ -99,6 +99,7 @@
                                     <i class="mdi mdi-attachment"></i> Adjuntar
                                     <input name="logo" type="file" id="exampleInputPassword1" class="d-none">
                                 </label>
+                                <span id="fileName" class="ms-1"></span>
                             </div>
                         </form>
                     </div>
@@ -115,4 +116,14 @@
 
     </div>
 </div>
+<script>
+    function init() {
+    document.getElementById('exampleInputPassword1').addEventListener('change', showName, false);
+  }
+  function showName (event) {
+    document.getElementById('fileName').innerHTML = event.target.files[0].name
+  }
+  init()
+</script>
+
 @include('facu.footer')
