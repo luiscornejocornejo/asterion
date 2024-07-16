@@ -755,6 +755,15 @@ class cloudtickets extends Controller
             ;
     }
 
+    public function salientesc(Request $request)
+    {       
+        
+            $listadopadre=salientesxennio::all();
+            return view('sienna/salientesfacu')
+            ->with('listadopadre', $listadopadre)
+            ;
+    }
+
     public function salientesbpost(Request $request)
     {       
 

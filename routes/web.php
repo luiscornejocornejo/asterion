@@ -275,9 +275,8 @@ Route::post('/actualizartarea','App\Http\Controllers\cloudtickets@actualizartare
 Route::post('/nuevost','App\Http\Controllers\cloudtickets@nuevost');
 
 
-Route::get('/salientesc',  function () {
-    return view('sienna/salientesfacu');
-});
+Route::get('/salientesc','App\Http\Controllers\cloudtickets@salientesc');
+
 
 Route::get('/userprofile', function () {
     return view('/sienna/userprofile');
