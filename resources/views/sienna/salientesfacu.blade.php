@@ -169,7 +169,7 @@
             });
         }
 
-        function showFields(fields) {
+        public function showFields(fields) {
 
 
             document.getElementById('dataBody').innerHTML = null
