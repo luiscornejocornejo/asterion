@@ -136,7 +136,7 @@
         });
 
         function createTableFromExcel(data) {
-            const tableHead = document.getElementById('tableHead');
+            const tableHead = document.getElementById('dataBody');
             const tableBody = document.getElementById('tableBody');
 
             // Clear the existing table
