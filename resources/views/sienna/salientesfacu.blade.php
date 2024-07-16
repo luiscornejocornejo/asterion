@@ -109,30 +109,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 
     <script>
-        document.getElementById('inputFile').addEventListener('change', function(event) {
+       document.getElementById('inputFile').addEventListener('change', function(event) {
             const file = event.target.files[0];
             const reader = new FileReader();
 
             reader.onload = function(event) {
                 const data = new Uint8Array(event.target.result);
-                const workbook = XLSX.read(data, {
-                    type: 'array'
-                });
+                const workbook = XLSX.read(data, { type: 'array' });
 
-                // Supongamos que queremos leer la primera hoja
+                // Read the first sheet
                 const firstSheetName = workbook.SheetNames[0];
                 const worksheet = workbook.Sheets[firstSheetName];
 
-                // Convertir la hoja a JSON
-                const json = XLSX.utils.sheet_to_json(worksheet, {
-                    header: 1
-                });
+                // Convert the sheet to JSON
+                const json = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
-                // Crear la tabla
+                // Create the table
                 createTableFromExcel(json);
 
-                // Mostrar la cantidad de filas
-                const rowCount = json.length - 1; // Restamos 1 para no contar el encabezado
+                // Show the number of rows
+                const rowCount = json.length - 1; // Subtract 1 to not count the header
                 document.getElementById('rowCount').textContent = `${rowCount}`;
             };
 
@@ -143,11 +139,11 @@
             const tableHead = document.getElementById('tableHead');
             const tableBody = document.getElementById('tableBody');
 
-            // Limpiar la tabla existente
+            // Clear the existing table
             tableHead.innerHTML = '';
             tableBody.innerHTML = '';
 
-            // Crear el encabezado de la tabla
+            // Create the table header
             const headerRow = document.createElement('tr');
             data[0].forEach(headerText => {
                 const header = document.createElement('th');
@@ -156,7 +152,7 @@
             });
             tableHead.appendChild(headerRow);
 
-            // Crear el cuerpo de la tabla
+            // Create the table body
             data.slice(1).forEach(rowData => {
                 const row = document.createElement('tr');
                 rowData.forEach(cellData => {
@@ -169,16 +165,11 @@
         }
 
         function showFields(fields) {
-
-
-            document.getElementById('dataBody').innerHTML = null
+            document.getElementById('dataBody').innerHTML = null;
             
             const parts = fields.split('|');
-
             const values = parts[1].split(';');
-
-            tableBody = document.getElementById('dataBody');
-
+            const tableBody = document.getElementById('dataBody');
             const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
             values.forEach((value, index) => {
@@ -195,6 +186,7 @@
                 tableBody.appendChild(row);
             });
         }
+
     </script>
 
     @include('facu.footer')
