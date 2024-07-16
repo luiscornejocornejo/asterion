@@ -23,9 +23,8 @@
                             <a href="#" rel="no-referrer">En este enlace puedes consultar el siguiente artículo para completar los campos en el documento</a>.
                         </p>
                         <p class="card-text mt-3">2. Seleccione la plantilla que deseas enviar.</p>
-                        <form enctype="multipart/form-data" action="/salientesb" method="post" class="dropzone" id="myAwesomeDropzone" >
+                        <form enctype="multipart/form-data" action="/salientesb" method="post" id="myAwesomeDropzone" >
                             @csrf
-                            <span id="valoresview"></span>
                             <input type="hidden" name="cantvalores" value="" id="headerInput" placeholder="Nombres de las cabeceras (separados por comas)" />
                             <input type="hidden" value="" name="template" id="template" placeholder="Nombres de las cabeceras (separados por comas)" />
                             <select name="template" class="form-select w-25" onchange="showFields(this.value)">
