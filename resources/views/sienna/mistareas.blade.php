@@ -61,5 +61,4 @@
     </div>
 </div>
 
-@include('sienna.tareas.modalestado')
 @include('facu.footer')
