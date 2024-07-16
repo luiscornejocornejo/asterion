@@ -23,10 +23,11 @@
                             <a href="#" rel="no-referrer">En este enlace puedes consultar el siguiente artículo para completar los campos en el documento</a>.
                         </p>
                         <p class="card-text mt-3">2. Seleccione la plantilla que deseas enviar.</p>
-                        <select class="form-select w-25">
-                        <?php foreach($listadopadre as $ll){?>
-                            <option value="<?php echo $ll->id."|".$ll->parametros;?>"><?php echo $ll->nombre;?></option>
-                        <?php }?>
+                        <select name="template" class="form-select w-25" onchange="showFields(this.value)">
+                            <option selected disabled>Seleccione plantilla</option>
+                            <?php foreach ($listadopadre as $ll) { ?>
+                                <option value="<?php echo $ll->id . "|" . $ll->parametros; ?>"><?php echo $ll->nombre; ?></option>
+                            <?php } ?>
                         </select>
                         <p class="card-text mt-3">Puedes descargar el modelo de planilla de datos desde <a href="#">aquí</a>.</p>
                         <table class="table table-centered mb-0">
@@ -168,6 +169,10 @@
                 });
                 tableBody.appendChild(row);
             });
+        }
+
+        function showFields(fields) {
+            alert(fields);
         }
     </script>
 
