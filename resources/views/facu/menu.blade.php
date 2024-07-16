@@ -280,6 +280,16 @@ $siennadeptosgenericos = DB::select($querygenerico);
                   </ul>
                 </div>
 </li>
+                <li class="side-nav-item background-buttons">
+                    <?php 
+                        if($tipodemenu == 3) $routeToTask = '/mistareas';
+                        else $routeToTask ='/tareas';
+                    ?>
+                    <a  href="<?php echo $routeToTask; ?>"  class="side-nav-link hovering-pan ">
+                        <i class="uil-clipboard-alt"></i>
+                        <span> Mis tareas </span>
+                    </a>
+                </li>
              
     <?php
      }
