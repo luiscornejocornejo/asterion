@@ -883,6 +883,20 @@ class cloudtickets extends Controller
        
         ;
     }
+
+    
+    public function getsaliente(Request $request)
+    {   
+        $merchant=$this->dominio();
+
+       // $id=$request->envio;
+        //$query ="select * from salientesxenniolistado  where salientesxennio='".$id."'";
+        //$tsoporte = DB::select($query);
+
+        return view('sienna/getsaliente')
+       
+        ;
+    }
     public function nuevost(Request $request)
     {       
         
