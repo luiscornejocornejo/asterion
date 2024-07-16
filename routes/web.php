@@ -275,7 +275,7 @@ Route::post('/actualizartarea','App\Http\Controllers\cloudtickets@actualizartare
 Route::post('/nuevost','App\Http\Controllers\cloudtickets@nuevost');
 
 
-Route::get('/salientesc','App\Http\Controllers\cloudtickets@salientesc');
+Route::get('/salientesc','App\Http\Controllers\cloudtickets@salientesc')->middleware('supervisorsienna');
 
 
 Route::get('/userprofile', function () {

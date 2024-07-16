@@ -23,34 +23,29 @@
                             <a href="#" rel="no-referrer">En este enlace puedes consultar el siguiente artículo para completar los campos en el documento</a>.
                         </p>
                         <p class="card-text mt-3">2. Seleccione la plantilla que deseas enviar.</p>
-                        <form enctype="multipart/form-data" action="/salientesb" method="post" id="myAwesomeDropzone" >
-                            @csrf
-                            <input type="hidden" name="cantvalores" value="" id="headerInput" placeholder="Nombres de las cabeceras (separados por comas)" />
-                            <input type="hidden" value="" name="template" id="template" placeholder="Nombres de las cabeceras (separados por comas)" />
-                            <select name="template" class="form-select w-25" onchange="showFields(this.value)">
-                                <option selected disabled>Seleccione plantilla</option>
-                                <?php foreach ($listadopadre as $ll) { ?>
-                                    <option value="<?php echo $ll->id . "|" . $ll->parametros; ?>"><?php echo $ll->nombre; ?></option>
-                                <?php } ?>
-                            </select>
-                            <p class="card-text mt-3">Puedes descargar el modelo de planilla de datos desde <a href="#">aquí</a>.</p>
-                            <table class="table table-centered mb-0">
-                                <thead>
-                                    <tr>
-                                        <th>Columna en el documento</th>
-                                        <th>Dato</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="dataBody">
+                        <select name="template" class="form-select w-25" onchange="showFields(this.value)">
+                            <option selected disabled>Seleccione plantilla</option>
+                            <?php foreach ($listadopadre as $ll) { ?>
+                                <option value="<?php echo $ll->id . "|" . $ll->parametros; ?>"><?php echo $ll->nombre; ?></option>
+                            <?php } ?>
+                        </select>
+                        <p class="card-text mt-3">Puedes descargar el modelo de planilla de datos desde <a href="#">aquí</a>.</p>
+                        <table class="table table-centered mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Columna en el documento</th>    
+                                    <th>Dato</th>    
+                                </tr>
+                            </thead>
+                            <tbody id="dataBody">
 
-                                </tbody>
-                            </table>
-                        
+                            </tbody>
+                        </table>
                         <div>
                             <p class="card-text mt-3">3. Suba el documento con el listado de los usuarios a contactar.</p>
                             <label for="inputFile" class="btn btn-primary rounded-pill">
                                 <i class="fas fa-upload"></i> Documento requerido
-                                <input type="file" name="logo" id="inputFile" class="d-none" multiple>
+                                <input type="file" id="inputFile" class="d-none">
                             </label>
                             <span id="fileName" class="ms-1"></span>
                             <p class="card-text text-black mt-3"><strong>Resumen:</strong></p>
@@ -62,7 +57,6 @@
                             <button class="btn btn-primary rounded" data-bs-toggle="modal" data-bs-target="#confirm-outbound">Enviar</button>
                         </div>
                     </div> <!-- end card-body-->
-                    </form>
                 </div> <!-- end card-->
             </div>
         </div>
@@ -104,7 +98,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light border" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" id="send-outbound" form="myAwesomeDropzone" type="submit">Si, enviar</button>
+                    <button type="button" class="btn btn-primary" id="send-outbound">Si, enviar</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -145,17 +139,26 @@
         });
 
         function createTableFromExcel(data) {
+            const tableHead = document.getElementById('tableHead');
             const tableBody = document.getElementById('tableBody');
 
             // Limpiar la tabla existente
-
+            tableHead.innerHTML = '';
             tableBody.innerHTML = '';
 
             // Crear el encabezado de la tabla
-
+            const headerInput = document.getElementById('headerInput').value;
+                const headers = headerInput ? headerInput.split(',')
+            const headerRow = document.createElement('tr');
+            data[0].forEach(headerText => {
+                const header = document.createElement('th');
+                header.textContent = headerText;
+                headerRow.appendChild(header);
+            });
+            tableHead.appendChild(headerRow);
 
             // Crear el cuerpo de la tabla
-            data.slice(0).forEach(rowData => {
+            data.slice(1).forEach(rowData => {
                 const row = document.createElement('tr');
                 rowData.forEach(cellData => {
                     const cell = document.createElement('td');
@@ -170,7 +173,7 @@
 
 
             document.getElementById('dataBody').innerHTML = null
-
+            
             const parts = fields.split('|');
 
             const values = parts[1].split(';');
