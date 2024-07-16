@@ -4,6 +4,7 @@
    
 <script>
         document.getElementById('inputFile').addEventListener('change', function(event) {
+            console.log("entro2");
             const file = event.target.files[0];
             const reader = new FileReader();
 
