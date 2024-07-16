@@ -34,13 +34,12 @@
                             <thead>
                                 <tr>
                                     <th>Columna en documento</th>
-                                    <th>Dato</th>
+                                    <th>Dato</th
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Columna A:</td>
-                                    <td>data</td>
+                                <tr id="data">
+                                    
                                 </tr>
                             </tbody>
                         </table>
@@ -172,7 +171,8 @@
         }
 
         function showFields(fields) {
-            alert(fields);
+           
+           console.log(fields)
         }
     </script>
 
