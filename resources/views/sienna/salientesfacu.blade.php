@@ -122,7 +122,7 @@
                                             tableBody.appendChild(row);
                                         });
                                 }
-                                </script>
+                        </script>
                         <p class="card-text mt-3">Puedes descargar el modelo de planilla de datos desde <a href="#">aquí</a>.</p>
                         <table class="table table-centered mb-0">
                             <thead>
@@ -139,7 +139,7 @@
                             <p class="card-text mt-3">3. Suba el documento con el listado de los usuarios a contactar.</p>
                             <label for="inputFile" class="btn btn-primary rounded-pill">
                                 <i class="fas fa-upload"></i> Documento requerido
-                                <input type="file" id="inputFile" class="d-none">
+                                <input type="file" id="inputFile" class="">
                             </label>
                             <span id="fileName" class="ms-1"></span>
                             <p class="card-text text-black mt-3"><strong>Resumen:</strong></p>
