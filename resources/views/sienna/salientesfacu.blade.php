@@ -123,7 +123,7 @@
 
             // Crear el encabezado de la tabla
             const headerInput = document.getElementById('headerInput').value;
-                const headers = headerInput ? headerInput.split(',')
+                const headers = headerInput ? headerInput.split(',');
             const headerRow = document.createElement('tr');
             data[0].forEach(headerText => {
                 const header = document.createElement('th');
