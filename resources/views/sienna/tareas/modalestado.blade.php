@@ -7,6 +7,7 @@
                     </div>
                     <div class="modal-body">
                         <form action="/actualizartarea" method="post">
+                        @csrf
                         <input type="hidden" name="idtarea" id="idticketestado2" value="<?php echo $idtarea; ?>">
 
                             <!-- Fields to use on status tasks
