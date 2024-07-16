@@ -72,7 +72,7 @@
                 </div>
                 <div class="modal-body">
                     <table id="example" class="table table-bordered table-centered table-hover  responsive nowrap w-100">
-                        <thead id="tableHead"></thead>
+                        <thead id="dataBody"></thead>
                         <tbody id="tableBody"></tbody>
                     </table>
                 </div>
