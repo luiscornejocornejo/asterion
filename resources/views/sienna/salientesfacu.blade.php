@@ -41,7 +41,7 @@
                                         <th>Dato</th>
                                     </tr>
                                 </thead>
-                                <tbody id="valoresview">
+                                <tbody id="dataBody">
 
                                 </tbody>
                             </table>
@@ -54,7 +54,7 @@
                             </label>
                             <span id="fileName" class="ms-1"></span>
                             <p class="card-text text-black mt-3"><strong>Resumen:</strong></p>
-                            <p>Total de usuarios en el documento: <span id="recordCount"></span></p>
+                            <p>Total de usuarios en el documento: <span id="rowCount"></span></p>
                             <a role="button" data-bs-toggle="modal" data-bs-target="#preview" class="text-primary">Ver listado de usuarios cargados</a>
                         </div>
                         <div class="container d-flex justify-content-end">
@@ -114,7 +114,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 
     <script>
-       document.getElementById('inputFile').addEventListener('change', function(event) {
+        document.getElementById('inputFile').addEventListener('change', function(event) {
             const file = event.target.files[0];
             const reader = new FileReader();
 
@@ -151,23 +151,19 @@
                     table.appendChild(tr);
                 });
 
-                document.getElementById('recordCount').textContent = `${jsonData.length - 1}`;
+                document.getElementById('recordCount').textContent = `Cantidad de registros: ${jsonData.length - 1}`;
             };
 
             reader.readAsArrayBuffer(file);
-            document.getElementById('valoresview').textContent=document.getElementById('headerInput').value;
+            document.getElementById('valoresview').textContent = document.getElementById('headerInput').value;
+        });
 
         function showFields(fields) {
-
-
-            document.getElementById('dataBody').innerHTML = null
+            document.getElementById('dataBody').innerHTML = '';
 
             const parts = fields.split('|');
-
             const values = parts[1].split(';');
-
-            tableBody = document.getElementById('dataBody');
-
+            const tableBody = document.getElementById('dataBody');
             const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
             values.forEach((value, index) => {
@@ -184,6 +180,7 @@
                 tableBody.appendChild(row);
             });
         }
+
     </script>
 
     @include('facu.footer')
