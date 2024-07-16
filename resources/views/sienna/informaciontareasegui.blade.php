@@ -41,8 +41,8 @@
                                     </div>
                                     <div class="conversation-text">
                                         <div class="ctext-wrap bg-white border w-100">
-                                            <small class="text-muted">De: <?php echo $valor->nombre . " " . $valor->last_name; ?></small><br>
-                                            <small class="text-muted">Fecha: <?php echo $valor->created_at; ?> </small>
+                                            <small class="text-muted"> <strong> <?php echo ucfirst($valor->nombre) . " " . ucfirst($valor->last_name); ?> </strong> </small><br>
+                                            <small class="text-muted"><?php echo $valor->created_at; ?> </small>
                                             <p class="mb-1">
                                                 <?php if ($valor->tipo == 1) {
                                                     echo $valor->cuerpo;
@@ -60,12 +60,13 @@
                                     </div>
                                     <div class="conversation-text">
                                         <div class="ctext-wrap w-100">
-                                            <small class="text-muted">De: <?php echo $valor->nombre . " " . $valor->last_name; ?></small><br>
-                                            <small class="text-muted">Fecha: <?php echo $valor->created_at; ?> </small>
-                                            <p>
+                                            <small class="text-muted"> <strong><?php echo ucfirst($valor->nombre) . " " . ucfirst($valor->last_name); ?> </strong> </small><br>
+                                            <small class="text-muted"> <?php echo $valor->created_at; ?> </small>
+                                            <p class="mt-2">
                                                 <?php if ($valor->tipo == 1) {
-                                                    echo $valor->cuerpo;
-                                                } else {
+                                                    $url_new = str_replace('public', 'storage', $valor->cuerpo)
+                                                    ?> <a href="<?php $url_new ?>" target="_blank"><?php echo $valor->cuerpo; ?> </a>
+                                               <?php } else {
                                                     echo $valor->cuerpo;
                                                 } ?>
                                             </p>
@@ -82,7 +83,7 @@
 
                     <!-- end row-->
 
-                    <div class="mt-5">
+                    <div class="mt-4">
                         <form method='post' action='/nuevost' enctype="multipart/form-data">
                             @csrf
 

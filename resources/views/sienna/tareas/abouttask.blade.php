@@ -25,7 +25,7 @@
                     <i class="mdi mdi-format-list-checks"></i> <strong>Estado: </strong>
                     <span role="button" data-bs-toggle="modal" data-bs-target="#task_modal">
                         <span class="badge bg-secondary line-h" style="font-size: 13px;">
-                            <?php echo $val->estadotarea; ?>
+                            <?php echo $datos3->nombre; ?>
                         </span>
                     </span>
                 </div>
@@ -36,7 +36,7 @@
                     <i class="mdi mdi-ticket-confirmation"></i> <strong>Ticket de referencia: </strong><?php echo $val->siennatickets; ?>
                 </div>
                 <div class="mb-1">
-                    <i class="mdi mdi-calendar-clock-outline"></i> <strong>Expira el: </strong><?php echo $val->fechalimite; ?>
+                    <i class="mdi mdi-calendar-clock-outline"></i> <strong>Vencimiento: </strong><?php echo $val->fechalimite; ?>
                 </div>
                 <div class="mb-1">
                     <i class="mdi mdi-calendar"></i> <strong>Creado el </strong><?php echo $val->created_at; ?>
