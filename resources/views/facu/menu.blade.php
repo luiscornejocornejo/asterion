@@ -110,6 +110,9 @@ $siennadeptosgenericos = DB::select($querygenerico);
                     <li>
                       <a href="/cerrados">Cerrados</a>
                     </li>
+                    <li>
+                      <a href="/mistareas">Mis tareas</a>
+                    </li>
                   </ul>
                 </div>
 </li>
