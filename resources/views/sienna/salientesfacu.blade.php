@@ -24,8 +24,9 @@
                         </p>
                         <p class="card-text mt-3">2. Seleccione la plantilla que deseas enviar.</p>
                         <select class="form-select w-25">
-                            <option selected disabled>Listado de plantillas</option>
-                            <option value="$id">Bienvenida</option>
+                        <?php foreach($listadopadre as $ll){?>
+                            <option value="<?php echo $ll->id."|".$ll->parametros;?>"><?php echo $ll->nombre;?></option>
+                        <?php }?>
                         </select>
                         <p class="card-text mt-3">Puedes descargar el modelo de planilla de datos desde <a href="#">aquí</a>.</p>
                         <table class="table table-centered mb-0">
