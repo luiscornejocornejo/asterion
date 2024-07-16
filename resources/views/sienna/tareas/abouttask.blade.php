@@ -28,7 +28,7 @@
                             <?php
                             foreach($datos3 as $val4) {
                                 if($val4->id == $val->estadotarea) {
-                                    echo $val4->nombre;
+                                    echo ucfirst($val4->nombre);
                                 }
                             } ?>
                         </span>
