@@ -6,7 +6,9 @@
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="" method="post">
+                        <form action="/actualizartarea" method="post">
+                        <input type="hidden" name="idtarea" id="idticketestado2" value="<?php echo $idtarea; ?>">
+
                             <!-- Fields to use on status tasks
                             
                                 <input type="hidden" name="tik" id="idticketestado2" value="">
@@ -16,7 +18,7 @@
                                 -->
                                 <?php foreach ($datos3 as $val3) { ?>
                                 <div class="form-check mt-2">
-                                    <input value="<?php echo $val3->id; ?>" id="<?php echo $val3->id; ?>" class="form-check-input" type="radio" name="usuarioticket">
+                                    <input value="<?php echo $val3->id; ?>" id="<?php echo $val3->id; ?>" class="form-check-input" type="radio" name="estadotarea">
                                     <label for="<?php echo $val3->id; ?>" class="form-check-label"><?php echo ucfirst($val3->nombre); ?></label>
                                 </div>
                                 <?php } ?>    

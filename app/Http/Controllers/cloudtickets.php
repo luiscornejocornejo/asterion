@@ -969,6 +969,11 @@ class cloudtickets extends Controller
     }
 
     
-    
+    public function actualizartarea(Request $request)
+    {
+        echo $idtarea = $request->idtarea;
+        echo $idestadotarea = $request->estadotarea;
+         
+    }
 
 }
