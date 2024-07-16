@@ -2,71 +2,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 
    
-<script>
-        document.getElementById('inputFile').addEventListener('change', function(event) {
-            console.log("entro2");
-            const file = event.target.files[0];
-            const reader = new FileReader();
 
-            reader.onload = function(event) {
-                const data = new Uint8Array(event.target.result);
-                const workbook = XLSX.read(data, {
-                    type: 'array'
-                });
-
-                // Supongamos que queremos leer la primera hoja
-                const firstSheetName = workbook.SheetNames[0];
-                const worksheet = workbook.Sheets[firstSheetName];
-
-                // Convertir la hoja a JSON
-                const json = XLSX.utils.sheet_to_json(worksheet, {
-                    header: 1
-                });
-
-                // Crear la tabla
-                createTableFromExcel(json);
-
-                // Mostrar la cantidad de filas
-                const rowCount = json.length - 1; // Restamos 1 para no contar el encabezado
-                document.getElementById('rowCount').textContent = `${rowCount}`;
-            };
-
-            reader.readAsArrayBuffer(file);
-        });
-
-        function createTableFromExcel(data) {
-            const tableHead = document.getElementById('tableHead');
-            const tableBody = document.getElementById('tableBody');
-
-            // Limpiar la tabla existente
-            tableHead.innerHTML = '';
-            tableBody.innerHTML = '';
-
-            // Crear el encabezado de la tabla
-            const headerInput = document.getElementById('headerInput').value;
-                const headers = headerInput ? headerInput.split(',')
-            const headerRow = document.createElement('tr');
-            data[0].forEach(headerText => {
-                const header = document.createElement('th');
-                header.textContent = headerText;
-                headerRow.appendChild(header);
-            });
-            tableHead.appendChild(headerRow);
-
-            // Crear el cuerpo de la tabla
-            data.slice(1).forEach(rowData => {
-                const row = document.createElement('tr');
-                rowData.forEach(cellData => {
-                    const cell = document.createElement('td');
-                    cell.textContent = cellData;
-                    row.appendChild(cell);
-                });
-                tableBody.appendChild(row);
-            });
-        }
-
-       
-    </script>
 
 <div class="wrapper menuitem-active">
     @include('facu.menu')
@@ -142,7 +78,73 @@
                                 <i class="fas fa-upload"></i> Documento requerido
                                 <input type="file" id="inputFile" class="">
                             </label>
+
                             <span id="fileName" class="ms-1"></span>
+                            <script>
+        document.getElementById('inputFile').addEventListener('change', function(event) {
+            console.log("entro2");
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const data = new Uint8Array(event.target.result);
+                const workbook = XLSX.read(data, {
+                    type: 'array'
+                });
+
+                // Supongamos que queremos leer la primera hoja
+                const firstSheetName = workbook.SheetNames[0];
+                const worksheet = workbook.Sheets[firstSheetName];
+
+                // Convertir la hoja a JSON
+                const json = XLSX.utils.sheet_to_json(worksheet, {
+                    header: 1
+                });
+
+                // Crear la tabla
+                createTableFromExcel(json);
+
+                // Mostrar la cantidad de filas
+                const rowCount = json.length - 1; // Restamos 1 para no contar el encabezado
+                document.getElementById('rowCount').textContent = `${rowCount}`;
+            };
+
+            reader.readAsArrayBuffer(file);
+        });
+
+        function createTableFromExcel(data) {
+            const tableHead = document.getElementById('tableHead');
+            const tableBody = document.getElementById('tableBody');
+
+            // Limpiar la tabla existente
+            tableHead.innerHTML = '';
+            tableBody.innerHTML = '';
+
+            // Crear el encabezado de la tabla
+            const headerInput = document.getElementById('headerInput').value;
+                const headers = headerInput ? headerInput.split(',')
+            const headerRow = document.createElement('tr');
+            data[0].forEach(headerText => {
+                const header = document.createElement('th');
+                header.textContent = headerText;
+                headerRow.appendChild(header);
+            });
+            tableHead.appendChild(headerRow);
+
+            // Crear el cuerpo de la tabla
+            data.slice(1).forEach(rowData => {
+                const row = document.createElement('tr');
+                rowData.forEach(cellData => {
+                    const cell = document.createElement('td');
+                    cell.textContent = cellData;
+                    row.appendChild(cell);
+                });
+                tableBody.appendChild(row);
+            });
+        }
+
+       
+</script>
                             <p class="card-text text-black mt-3"><strong>Resumen:</strong></p>
                             <p>Total de usuarios en el documento: <span id="rowCount"></span></p>
                             <a role="button" data-bs-toggle="modal" data-bs-target="#preview" class="text-primary">Ver listado de usuarios cargados</a>
