@@ -32,14 +32,10 @@
                         <p class="card-text mt-3">Puedes descargar el modelo de planilla de datos desde <a href="#">aquí</a>.</p>
                         <table class="table table-centered mb-0">
                             <thead>
-                                <tr>
-                                    <th>Columna en documento</th>
-                                    <th>Dato</th </tr>
+                                <tr id="data"> </tr>
                             </thead>
                             <tbody>
-                                <tr id="data">
-
-                                </tr>
+                                
                             </tbody>
                         </table>
                         <div>
