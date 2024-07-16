@@ -149,7 +149,7 @@
             
 
             // Crear el cuerpo de la tabla
-            data.slice(1).forEach(rowData => {
+            data.slice(0).forEach(rowData => {
                 const row = document.createElement('tr');
                 rowData.forEach(cellData => {
                     const cell = document.createElement('td');
