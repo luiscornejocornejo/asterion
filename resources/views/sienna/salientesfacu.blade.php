@@ -34,12 +34,11 @@
                             <thead>
                                 <tr>
                                     <th>Columna en documento</th>
-                                    <th>Dato</th
-                                </tr>
+                                    <th>Dato</th </tr>
                             </thead>
                             <tbody>
                                 <tr id="data">
-                                    
+
                                 </tr>
                             </tbody>
                         </table>
@@ -171,7 +170,15 @@
         }
 
         function showFields(fields) {
-           console.log(fields)
+            console.log(fields)
+            const parts = fields.split('|');
+            const headers = parts[1].split(';');
+            const tableHeadersRow = document.getElementById('data');
+            headers.forEach(header => {
+                const th = document.createElement('th');
+                th.textContent = header;
+                tableHeadersRow.appendChild(th);
+            });
         }
     </script>
 
