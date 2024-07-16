@@ -25,7 +25,12 @@
                     <i class="mdi mdi-format-list-checks"></i> <strong>Estado: </strong>
                     <span role="button" data-bs-toggle="modal" data-bs-target="#task_modal">
                         <span class="badge bg-secondary line-h" style="font-size: 13px;">
-                            <?php echo $val->estadotarea; ?>
+                            <?php
+                            foreach($datos3 as $val4) {
+                                if($val4->id == $val->estadotarea) {
+                                    echo $val4->nombre;
+                                }
+                            } ?>
                         </span>
                     </span>
                 </div>
