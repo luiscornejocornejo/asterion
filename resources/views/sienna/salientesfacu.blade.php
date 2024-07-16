@@ -171,14 +171,12 @@
         function showFields(fields) {
 
 
-            let tableBody = document.getElementById('dataBody')
+            let tableBody = document.getElementById('dataBody').innerHTML
             tableBody = null
             
             const parts = fields.split('|');
 
             const values = parts[1].split(';');
-
-            tableBody = document.getElementById('dataBody');
 
             const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
