@@ -93,7 +93,7 @@
 
                 const headerInput = document.getElementById('headerInput').value;
                 const headers = headerInput ? headerInput.split(',') : jsonData[0];
-
+                console.log(headers)
                 const headerRow = document.createElement('tr');
                 headers.forEach(header => {
                     const th = document.createElement('th');
