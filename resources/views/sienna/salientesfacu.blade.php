@@ -120,50 +120,63 @@
 
             reader.onload = function(event) {
                 const data = new Uint8Array(event.target.result);
-                const workbook = XLSX.read(data, { type: 'array' });
+                const workbook = XLSX.read(data, {
+                    type: 'array'
+                });
 
+                // Supongamos que queremos leer la primera hoja
                 const firstSheetName = workbook.SheetNames[0];
                 const worksheet = workbook.Sheets[firstSheetName];
 
-                const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-
-                const table = document.getElementById('excelTable');
-                table.innerHTML = ''; // Limpiar tabla antes de agregar datos
-
-                const headerInput = document.getElementById('headerInput').value;
-                const headers = headerInput ? headerInput.split(',') : jsonData[0];
-
-                const headerRow = document.createElement('tr');
-                headers.forEach(header => {
-                    const th = document.createElement('th');
-                    th.textContent = header.trim();
-                    headerRow.appendChild(th);
-                });
-                table.appendChild(headerRow);
-
-                jsonData.slice(1).forEach(row => {
-                    const tr = document.createElement('tr');
-                    row.forEach(cell => {
-                        const td = document.createElement('td');
-                        td.textContent = cell;
-                        tr.appendChild(td);
-                    });
-                    table.appendChild(tr);
+                // Convertir la hoja a JSON
+                const json = XLSX.utils.sheet_to_json(worksheet, {
+                    header: 1
                 });
 
-                document.getElementById('recordCount').textContent = `Cantidad de registros: ${jsonData.length - 1}`;
+                // Crear la tabla
+                createTableFromExcel(json);
+
+                // Mostrar la cantidad de filas
+                const rowCount = json.length - 1; // Restamos 1 para no contar el encabezado
+                document.getElementById('rowCount').textContent = `${rowCount}`;
             };
 
             reader.readAsArrayBuffer(file);
-            document.getElementById('valoresview').textContent = document.getElementById('headerInput').value;
         });
 
+        function createTableFromExcel(data) {
+            const tableBody = document.getElementById('tableBody');
+
+            // Limpiar la tabla existente
+
+            tableBody.innerHTML = '';
+
+            // Crear el encabezado de la tabla
+
+
+            // Crear el cuerpo de la tabla
+            data.slice(0).forEach(rowData => {
+                const row = document.createElement('tr');
+                rowData.forEach(cellData => {
+                    const cell = document.createElement('td');
+                    cell.textContent = cellData;
+                    row.appendChild(cell);
+                });
+                tableBody.appendChild(row);
+            });
+        }
+
         function showFields(fields) {
-            document.getElementById('dataBody').innerHTML = '';
+
+
+            document.getElementById('dataBody').innerHTML = null
 
             const parts = fields.split('|');
+
             const values = parts[1].split(';');
-            const tableBody = document.getElementById('dataBody');
+
+            tableBody = document.getElementById('dataBody');
+
             const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
             values.forEach((value, index) => {
@@ -180,7 +193,6 @@
                 tableBody.appendChild(row);
             });
         }
-
     </script>
 
     @include('facu.footer')
