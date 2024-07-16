@@ -1,5 +1,5 @@
 @include('facu.header')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
 
    
 
@@ -76,12 +76,13 @@
                             <p class="card-text mt-3">3. Suba el documento con el listado de los usuarios a contactar.</p>
                             <label for="inputFile" class="btn btn-primary rounded-pill">
                                 <i class="fas fa-upload"></i> Documento requerido
-                                <input type="file" id="inputFile" class="">
+                                <input type="file" id="inputFile2" class="" >
                             </label>
 
                             <span id="fileName" class="ms-1"></span>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
                             <script>
-        document.getElementById('inputFile').addEventListener('change', function(event) {
+        document.getElementById('inputFile2').addEventListener('change', function(event) {
             console.log("entro2");
             const file = event.target.files[0];
             const reader = new FileReader();
