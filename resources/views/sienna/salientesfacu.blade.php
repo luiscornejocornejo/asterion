@@ -32,10 +32,13 @@
                         <p class="card-text mt-3">Puedes descargar el modelo de planilla de datos desde <a href="#">aquí</a>.</p>
                         <table class="table table-centered mb-0">
                             <thead>
-                                <tr id="data"> </tr>
+                                <tr>
+                                    <th>Columna en el documento</th>    
+                                    <th>Dato</th>    
+                                </tr>
                             </thead>
-                            <tbody>
-                                
+                            <tbody id="dataBody">
+
                             </tbody>
                         </table>
                         <div>
@@ -166,14 +169,31 @@
         }
 
         function showFields(fields) {
-            console.log(fields)
+
+
+            let tableBody = document.getElementById('dataBody')
+            tableBody = null
+            
             const parts = fields.split('|');
-            const headers = parts[1].split(';');
-            const tableHeadersRow = document.getElementById('data');
-            headers.forEach(header => {
-                const th = document.createElement('th');
-                th.textContent = header;
-                tableHeadersRow.appendChild(th);
+
+            const values = parts[1].split(';');
+
+            tableBody = document.getElementById('dataBody');
+
+            const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+            values.forEach((value, index) => {
+                const row = document.createElement('tr');
+
+                const columnCell = document.createElement('td');
+                columnCell.textContent = `Columna ${alphabet[index]}`;
+                row.appendChild(columnCell);
+
+                const dataCell = document.createElement('td');
+                dataCell.textContent = value;
+                row.appendChild(dataCell);
+
+                tableBody.appendChild(row);
             });
         }
     </script>
