@@ -54,10 +54,6 @@
             </table>
 
         </div>
-
-        <div class="newAgent" data-bs-toggle="modal" data-bs-target="#create-task">
-            <i class="mdi mdi-clipboard-plus" style="font-size: 25px;"></i>
-        </div>
     </div>
 </div>
 
