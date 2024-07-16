@@ -46,7 +46,7 @@
                                             <p class="mb-1">
                                                 <?php if ($valor->tipo == 1) {
                                                     $url_new = str_replace('public', 'storage', $valor->cuerpo)
-                                                ?> <a href="<?php $url_new ?>" target="_blank"><?php echo $valor->cuerpo; ?> </a>
+                                                ?> <a href="<?php echo $url_new ?>" target="_blank">Ver archivo </a>
                                                 <?php } else {
                                                     echo $valor->cuerpo;
                                                 } ?>
@@ -66,7 +66,7 @@
                                             <p class="mt-2">
                                                 <?php if ($valor->tipo == 1) {
                                                     $url_new = str_replace('public', 'storage', $valor->cuerpo)
-                                                ?> <a href="<?php $url_new ?>" target="_blank"><?php echo $valor->cuerpo; ?> </a>
+                                                ?> <a href="<?php echo $url_new ?>" target="_blank"><i class="ri-attachment-line"></i> Ver archivo </a>
                                                 <?php } else {
                                                     echo $valor->cuerpo;
                                                 } ?>
