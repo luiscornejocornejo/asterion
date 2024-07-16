@@ -20,7 +20,7 @@ class supervisorsienna
 
         $categoria=session('categoria');
 
-        if($categoria==2){
+        if($categoria=2){
 
             return $next($request);
 
