@@ -171,7 +171,6 @@
         }
 
         function showFields(fields) {
-           
            console.log(fields)
         }
     </script>
