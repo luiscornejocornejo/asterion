@@ -5,7 +5,7 @@
     <div class="content-page" style="padding: 0!important;">
         <div class="container-fluid pt-2">
             <h2>Mis Tareas</h2>
-            <table id="example" class="table dt-responsive nowrap w-100">
+            <table id="example" class="table dt-responsive w-100">
                 <thead class="bg-dark">
                     <tr class="text-center">
                         <th class="text-light">#</th>
