@@ -28,7 +28,7 @@
                     <tbody id="tb">
                         <?php foreach ($resultadostareas as $valh) { ?>
                             <tr class="text-center">
-                                <td><a href="ts?idtarea=<?php echo $valh->id ?>" target="_blank""></a><?php echo $valh->id; ?></td>
+                                <td><a href="ts?idtarea=<?php echo $valh->id ?>" target="_blank""><?php echo $valh->id; ?></a></td>
                                 <td><?php echo $valh->nombre; ?></td>
                                 <td><?php echo $valh->descripcion; ?></td>
                                 <td><?php echo $valh->estadoname; ?></td>
