@@ -23,29 +23,35 @@
                             <a href="#" rel="no-referrer">En este enlace puedes consultar el siguiente artículo para completar los campos en el documento</a>.
                         </p>
                         <p class="card-text mt-3">2. Seleccione la plantilla que deseas enviar.</p>
-                        <select name="template" class="form-select w-25" onchange="showFields(this.value)">
-                            <option selected disabled>Seleccione plantilla</option>
-                            <?php foreach ($listadopadre as $ll) { ?>
-                                <option value="<?php echo $ll->id . "|" . $ll->parametros; ?>"><?php echo $ll->nombre; ?></option>
-                            <?php } ?>
-                        </select>
-                        <p class="card-text mt-3">Puedes descargar el modelo de planilla de datos desde <a href="#">aquí</a>.</p>
-                        <table class="table table-centered mb-0">
-                            <thead>
-                                <tr>
-                                    <th>Columna en el documento</th>    
-                                    <th>Dato</th>    
-                                </tr>
-                            </thead>
-                            <tbody id="dataBody">
+                        <form enctype="multipart/form-data" action="/salientesb" method="post" class="dropzone" id="myAwesomeDropzone" >
+                            @csrf
+                            <span id="valoresview"></span>
+                            <input type="hidden" name="cantvalores" value="" id="headerInput" placeholder="Nombres de las cabeceras (separados por comas)" />
+                            <input type="hidden" value="" name="template" id="template" placeholder="Nombres de las cabeceras (separados por comas)" />
+                            <select name="template" class="form-select w-25" onchange="showFields(this.value)">
+                                <option selected disabled>Seleccione plantilla</option>
+                                <?php foreach ($listadopadre as $ll) { ?>
+                                    <option value="<?php echo $ll->id . "|" . $ll->parametros; ?>"><?php echo $ll->nombre; ?></option>
+                                <?php } ?>
+                            </select>
+                            <p class="card-text mt-3">Puedes descargar el modelo de planilla de datos desde <a href="#">aquí</a>.</p>
+                            <table class="table table-centered mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Columna en el documento</th>
+                                        <th>Dato</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="dataBody">
 
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </form>
                         <div>
                             <p class="card-text mt-3">3. Suba el documento con el listado de los usuarios a contactar.</p>
                             <label for="inputFile" class="btn btn-primary rounded-pill">
                                 <i class="fas fa-upload"></i> Documento requerido
-                                <input type="file" id="inputFile" class="d-none">
+                                <input type="file" name="logo" id="inputFile" class="d-none" multiple>
                             </label>
                             <span id="fileName" class="ms-1"></span>
                             <p class="card-text text-black mt-3"><strong>Resumen:</strong></p>
@@ -54,7 +60,7 @@
                         </div>
                         <div class="container d-flex justify-content-end">
                             <button class="btn btn-light rounded me-2 d-none">Cancelar</button>
-                            <button class="btn btn-primary rounded" data-bs-toggle="modal" data-bs-target="#confirm-outbound">Enviar</button>
+                            <button class="btn btn-primary rounded" data-bs-toggle="modal" data-bs-target="#confirm-outbound" form="myAwesomeDropzone" type="submit">Enviar</button>
                         </div>
                     </div> <!-- end card-body-->
                 </div> <!-- end card-->
@@ -139,14 +145,14 @@
         });
 
         function createTableFromExcel(data) {
-           const tableBody = document.getElementById('tableBody');
+            const tableBody = document.getElementById('tableBody');
 
             // Limpiar la tabla existente
 
             tableBody.innerHTML = '';
 
             // Crear el encabezado de la tabla
-            
+
 
             // Crear el cuerpo de la tabla
             data.slice(0).forEach(rowData => {
@@ -164,7 +170,7 @@
 
 
             document.getElementById('dataBody').innerHTML = null
-            
+
             const parts = fields.split('|');
 
             const values = parts[1].split(';');
