@@ -45,7 +45,7 @@
 
                                 </tbody>
                             </table>
-                        </form>
+                        
                         <div>
                             <p class="card-text mt-3">3. Suba el documento con el listado de los usuarios a contactar.</p>
                             <label for="inputFile" class="btn btn-primary rounded-pill">
@@ -62,6 +62,7 @@
                             <button class="btn btn-primary rounded" data-bs-toggle="modal" data-bs-target="#confirm-outbound" form="myAwesomeDropzone" type="submit">Enviar</button>
                         </div>
                     </div> <!-- end card-body-->
+                    </form>
                 </div> <!-- end card-->
             </div>
         </div>
