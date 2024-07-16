@@ -72,7 +72,6 @@
                 </div>
                 <div class="modal-body">
                     <table id="example" class="table table-bordered table-centered table-hover  responsive nowrap w-100">
-                        <thead id="dataBody"></thead>
                         <tbody id="tableBody"></tbody>
                     </table>
                 </div>
@@ -140,21 +139,14 @@
         });
 
         function createTableFromExcel(data) {
-            const tableHead = document.getElementById('tableHead');
-            const tableBody = document.getElementById('tableBody');
+           const tableBody = document.getElementById('tableBody');
 
             // Limpiar la tabla existente
-            tableHead.innerHTML = '';
+
             tableBody.innerHTML = '';
 
             // Crear el encabezado de la tabla
-            const headerRow = document.createElement('tr');
-            data[0].forEach(headerText => {
-                const header = document.createElement('th');
-                header.textContent = headerText;
-                headerRow.appendChild(header);
-            });
-            tableHead.appendChild(headerRow);
+            
 
             // Crear el cuerpo de la tabla
             data.slice(1).forEach(rowData => {
