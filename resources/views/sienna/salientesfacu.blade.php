@@ -59,7 +59,7 @@
                         </div>
                         <div class="container d-flex justify-content-end">
                             <button class="btn btn-light rounded me-2 d-none">Cancelar</button>
-                            <button class="btn btn-primary rounded" data-bs-toggle="modal" data-bs-target="#confirm-outbound" form="myAwesomeDropzone" type="submit">Enviar</button>
+                            <button class="btn btn-primary rounded" data-bs-toggle="modal" data-bs-target="#confirm-outbound">Enviar</button>
                         </div>
                     </div> <!-- end card-body-->
                     </form>
@@ -104,7 +104,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light border" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" id="send-outbound">Si, enviar</button>
+                    <button type="button" class="btn btn-primary" id="send-outbound" form="myAwesomeDropzone" type="submit">Si, enviar</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
