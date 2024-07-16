@@ -821,6 +821,17 @@ class cloudtickets extends Controller
         ->with('mistareas', $datos);
     }
 
+    public function tareassupervisor(Request $request)
+    {   
+      
+     // $datos = siennatareas::where('estadotarea', '<>', '3', 'and')->where('users', '=', $idusuario)->get();
+        $datos = siennatareas::leftJoin('estadotarea', 'siennatareas.estadotarea', '=', 'estadotarea.id')
+        ->where('siennatareas.estadotarea', '<>', '3')
+        ->select('siennatareas.*', 'estadotarea.nombre as nomestado')
+        ->get();
+        return view('sienna/supervisortareas')
+        ->with('tareas', $datos);
+    }
 
     public function ts(Request $request)
     {   
