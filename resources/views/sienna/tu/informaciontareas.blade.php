@@ -17,6 +17,7 @@
                 <table id="example" class="table table-striped dt-responsive nowrap w-100 text-light">
                     <thead>
                         <tr class="text-center bg-dark">
+                            <th class="text-light">#</th>
                             <th class="text-light">Nombre</th>
                             <th class="text-light">Descripcion</th>
                             <th class="text-light">Estado</th>
@@ -27,6 +28,7 @@
                     <tbody id="tb">
                         <?php foreach ($resultadostareas as $valh) { ?>
                             <tr class="text-center">
+                                <td><a href="ts?idtarea=<?php echo $valh->id ?>" target="_blank""></a><?php echo $valh->id; ?></td>
                                 <td><?php echo $valh->nombre; ?></td>
                                 <td><?php echo $valh->descripcion; ?></td>
                                 <td><?php echo $valh->estadoname; ?></td>
