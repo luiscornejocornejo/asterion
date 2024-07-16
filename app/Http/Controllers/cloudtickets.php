@@ -973,7 +973,15 @@ class cloudtickets extends Controller
     {
         echo $idtarea = $request->idtarea;
         echo $idestadotarea = $request->estadotarea;
-         
+
+        $si2 = siennatareas::find($idtarea);
+        $si2->estadotarea = $idestadotarea;
+        $si2->save();
+
+        return redirect()
+
+        ->back()
+        ->with('success', 'Se modificó correctamente el estado de la tarea!');
     }
 
 }
