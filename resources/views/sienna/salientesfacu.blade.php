@@ -29,6 +29,35 @@
                                 <option value="<?php echo $ll->id . "|" . $ll->parametros; ?>"><?php echo $ll->nombre; ?></option>
                             <?php } ?>
                         </select>
+                        <script>
+                              function showFields(fields) {
+
+
+                                        document.getElementById('dataBody').innerHTML = null
+
+                                        const parts = fields.split('|');
+
+                                        const values = parts[1].split(';');
+
+                                        tableBody = document.getElementById('dataBody');
+
+                                        const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+                                        values.forEach((value, index) => {
+                                            const row = document.createElement('tr');
+
+                                            const columnCell = document.createElement('td');
+                                            columnCell.textContent = `Columna ${alphabet[index]}`;
+                                            row.appendChild(columnCell);
+
+                                            const dataCell = document.createElement('td');
+                                            dataCell.textContent = value;
+                                            row.appendChild(dataCell);
+
+                                            tableBody.appendChild(row);
+                                        });
+                                }
+                                </script>
                         <p class="card-text mt-3">Puedes descargar el modelo de planilla de datos desde <a href="#">aquí</a>.</p>
                         <table class="table table-centered mb-0">
                             <thead>
@@ -169,33 +198,7 @@
             });
         }
 
-        public function showFields(fields) {
-
-
-            document.getElementById('dataBody').innerHTML = null
-            
-            const parts = fields.split('|');
-
-            const values = parts[1].split(';');
-
-            tableBody = document.getElementById('dataBody');
-
-            const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-
-            values.forEach((value, index) => {
-                const row = document.createElement('tr');
-
-                const columnCell = document.createElement('td');
-                columnCell.textContent = `Columna ${alphabet[index]}`;
-                row.appendChild(columnCell);
-
-                const dataCell = document.createElement('td');
-                dataCell.textContent = value;
-                row.appendChild(dataCell);
-
-                tableBody.appendChild(row);
-            });
-        }
+       
     </script>
 
     @include('facu.footer')
