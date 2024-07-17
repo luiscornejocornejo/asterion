@@ -74,7 +74,10 @@
                                 </tr>
                             </thead>
                             <tbody id="dataBody">
-
+                                <tr>
+                                    <td>Columna A</td>
+                                    <td>Numero de teléfono (completo)</td>
+                                </tr>
                             </tbody>
                         </table>
                         <div>
