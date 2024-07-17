@@ -139,19 +139,7 @@
             document.getElementById('valoresview').textContent=document.getElementById('headerInput').value;
         });
 
-        $('#myform').on('submit', function(e) {
-  var quantityUser = $('#quantityUser').val(); // Read the user input
-  var quantityW9 = $('#quantityW9').text();    //the number to compare
-  if (+quantityUser > +quantityW9) {
-    e.preventDefault();
-    $('#alertQuantity').modal('show');
-  }
-});
-
-$('#cfmContinue').click("click", function(e) {
-  console.log("submitttt");
-  $('#myform')[0].submit();
-});
+       
     </script>
                             <p class="card-text text-black mt-3"><strong>Resumen:</strong></p>
                                                                <div id="recordCount"></div>
