@@ -11,9 +11,9 @@
 
                     ?>
                        
-                       <p>{{$tsoporte[0]->nombre}}: <input type="text" name="extra1" value="{{$tsoporte[0]->pseudo}}"></p>
-                       <p>{{$tsoporte[1]->nombre}}: <input type="text" name="extra2" value="{{$tsoporte[1]->pseudo}}"></p>
-                       <p>{{$tsoporte[2]->nombre}}: <input type="text" name="extra3" value="{{$tsoporte[2]->pseudo}}"></p>
+                       <p>{{$tsoporte[0]->nombre}}: <input type="text" name="extra1" value="{{$tsoporte[0]->pseudo}}"> <select name="view"><option value="1">si</option><option value="0">no</option></select></p>
+                       <p>{{$tsoporte[1]->nombre}}: <input type="text" name="extra2" value="{{$tsoporte[1]->pseudo}}"> <select name="view"><option value="1">si</option><option value="0">no</option></select></p>
+                       <p>{{$tsoporte[2]->nombre}}: <input type="text" name="extra3" value="{{$tsoporte[2]->pseudo}}"> <select name="view"><option value="1">si</option><option value="0">no</option></select></p>
                         
                     <?php //} ?>
               
