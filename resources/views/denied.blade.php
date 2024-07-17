@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="utf-8" />
-        <title>404 Error | Minia - Minimal Admin & Dashboard Template</title>
+        <title>403 Error </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesbrand" name="author" />
@@ -32,7 +32,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="text-center mb-5">
-                            <h1 class="display-1 fw-semibold">4<span class="text-primary mx-2">0</span></h1>
+                            <h1 class="display-1 fw-semibold">4<span class="text-primary mx-2">0</span>3</h1>
                             <h4 class="text-uppercase">No tenes permiso para ver esta pagina</h4>
                             <div class="mt-5 text-center">
                                 <a class="btn btn-primary waves-effect waves-light" href="/">Back to Dashboard</a>
