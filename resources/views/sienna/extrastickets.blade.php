@@ -38,7 +38,7 @@
                             <td>{{$val3->nombre}}</td>
                             <td class="ellipsis">{{$val3->pseudo}}</td>
                             <td>{{$val3->view}}</td>
-                            <td><a onclick="pasar({{$val3->nombre}},{{$val3->pseudo}},{{$val3->view}})"  role="button" data-bs-toggle="modal" data-bs-target="#preview" class="text-primary">Modificar datos</a>
+                            <td><a onclick="pasar('{{$val3->nombre}}','{{$val3->pseudo}}','{{$val3->view}})'"  role="button" data-bs-toggle="modal" data-bs-target="#preview" class="text-primary">Modificar datos</a>
                             </td>
                         </tr>
                     <?php } ?>
