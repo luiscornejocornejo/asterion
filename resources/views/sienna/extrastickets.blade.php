@@ -12,6 +12,7 @@
                         <th class="text-light">Nombre</th>
                         <th class="text-light">Pseudo</th>
                         <th class="text-light">View</th>
+                        <th class="text-light">Modificar</th>
                         
                     </tr>
                 </thead>
@@ -25,23 +26,35 @@
                             <td>{{$val3->nombre}}</td>
                             <td class="ellipsis">{{$val3->pseudo}}</td>
                             <td>{{$val3->view}}</td>
+                            <td><a role="button" data-bs-toggle="modal" data-bs-target="#preview" class="text-primary">Modificar datos</a>
+                            </td>
                         </tr>
                     <?php } ?>
                 </tbody>
             </table>
-                    <?php
-                   // foreach ($tsoporte as $val3) {
-
-                    ?>
-                       
-                       <p>{{$tsoporte[0]->nombre}}: <input type="text" name="extra1" value="{{$tsoporte[0]->pseudo}}"> <select name="view"><option value="1">si</option><option value="0">no</option></select></p>
-                       <p>{{$tsoporte[1]->nombre}}: <input type="text" name="extra2" value="{{$tsoporte[1]->pseudo}}"> <select name="view"><option value="1">si</option><option value="0">no</option></select></p>
-                       <p>{{$tsoporte[2]->nombre}}: <input type="text" name="extra3" value="{{$tsoporte[2]->pseudo}}"> <select name="view"><option value="1">si</option><option value="0">no</option></select></p>
-                        
-                    <?php //} ?>
+                 
               
         </div>
     </div>
 </div>
+<!-- Modal Preview -->
+<div class="modal fade" id="preview" tabindex="-1" role="dialog" aria-labelledby="modalTitlePreview" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-light">
+                    <h5 class="modal-title" id="modalTitlePreview">Listado de usuarios</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
+                </div>
+                <div class="modal-body">
 
+                    <table class="table table-striped display responsive nowrap w-100 table-bordered" id="excelTable">
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light border" data-bs-dismiss="modal">Cerrar</button>
+
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
 @include('facu.footer')
