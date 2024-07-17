@@ -41,17 +41,17 @@
                             </tr>
                         </thead>
                         <tbody id="tb">
-                            <?php foreach ($getdata as $valh) { ?>
+                            <?php // foreach ($getdata as $valh) { ?>
                                 <tr class="text-center">
                                     <td><?php echo $valh->nombre; ?></td>
                                     <td><?php echo $valh->icono; ?></td>
                                     <td><?php echo $valh->valor; ?></td>
                                 </tr>
-                            <?php  } ?>
+                            <?php  //} ?>
                         </tbody>
                     </table>
                     <div class="border" class="col-2">
-                        <?php if (isset($datosonline)) { ?>
+                        <?php // if (isset($datosonline)) { ?>
 
                             <pre id="json"></pre>
 
@@ -59,7 +59,7 @@
                                 let data = <?php echo $datosonline; ?>;
                                 document.getElementById("json").textContent = JSON.stringify(data, undefined, 2);
                             </script>
-                        <?php } ?>
+                        <?php // } ?>
                     </div>
         </div>
     </div>
