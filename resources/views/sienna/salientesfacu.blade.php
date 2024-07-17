@@ -148,11 +148,11 @@
                                         // document.getElementById('valoresview').textContent = document.getElementById('headerInput').value;
                                     });
                                 </script>
-                                <p class="card-text text-black mt-3"><strong>Total de usuarios en el documento: </strong> <div id="recordCount"></div></p>
+                                <p class="card-text text-black mt-3"><strong>Total de usuarios en el documento: </strong> <span id="recordCount"></span></p>
                                 
 
-                                <a role="button" data-bs-toggle="modal" data-bs-target="#preview" class="text-primary">Ver listado de usuarios cargados</a>
-                                <p>❕ IMPORTANTE: verifica que todos los campos del documento se encuentren completos con las cabeceras que requiere el envío. No deben quedar espacios en blancos.</p>
+                                <a role="button" data-bs-toggle="modal" data-bs-target="#preview" class="text-primary mb-3">Ver listado de usuarios cargados</a>
+                                <p>⚠️ IMPORTANTE: verifica que todos los campos del documento se encuentren completos con las cabeceras que requiere el envío. No deben quedar espacios en blancos.</p>
                         </div>
                         <div class="container d-flex justify-content-end">
                             <button class="btn btn-light rounded me-2 d-none">Cancelar</button>
