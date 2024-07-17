@@ -78,7 +78,7 @@
                             </tbody>
                         </table>
                         <div>
-                        <form  enctype="multipart/form-data" action="/salientesb" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
+                        <form  id="myform" enctype="multipart/form-data" action="/salientesb" method="post" class="dropzone" id="" data-plugin="dropzone" data-previews-container="#file-previews"
                                     data-upload-preview-template="#uploadPreviewTemplate">
                                     @csrf
                             <p class="card-text mt-3">3. Suba el documento con el listado de los usuarios a contactar.</p>
@@ -138,6 +138,20 @@
             reader.readAsArrayBuffer(file);
             document.getElementById('valoresview').textContent=document.getElementById('headerInput').value;
         });
+
+        $('#myform').on('submit', function(e) {
+  var quantityUser = $('#quantityUser').val(); // Read the user input
+  var quantityW9 = $('#quantityW9').text();    //the number to compare
+  if (+quantityUser > +quantityW9) {
+    e.preventDefault();
+    $('#alertQuantity').modal('show');
+  }
+});
+
+$('#cfmContinue').click("click", function(e) {
+  console.log("submitttt");
+  $('#myform')[0].submit();
+});
     </script>
                             <p class="card-text text-black mt-3"><strong>Resumen:</strong></p>
                                                                <div id="recordCount"></div>
@@ -146,7 +160,7 @@
                         </div>
                         <div class="container d-flex justify-content-end">
                             <button class="btn btn-light rounded me-2 d-none">Cancelar</button>
-                            <button class="btn btn-primary rounded" data-bs-toggle="modal" data-bs-target="#confirm-outbound">Enviar</button>
+                            <button id="cfmContinue"  class="btn btn-primary rounded" data-bs-toggle="modal" data-bs-target="#confirm-outbound">Enviar</button>
                         </div>
                     </div> <!-- end card-body-->
                  </form>
