@@ -78,6 +78,12 @@
                                 <input name="logo" id="inputFile" type="file" multiple />
 
                             </label>
+                            <span id="valoresview"></span>
+                                    <input type="hidden" name="cantvalores" value="" id="headerInput" placeholder="Nombres de las cabeceras (separados por comas)" />
+                                    <input type="hidden" value="" name="template" id="template" placeholder="Nombres de las cabeceras (separados por comas)" />
+                                    <div id="recordCount"></div>
+                                    <table class="table table-striped display responsive nowrap w-100 table-bordered" id="excelTable" >
+                                    </table>
 
                             <span id="fileName" class="ms-1"></span>
                             <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
@@ -149,12 +155,7 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                 </div>
                 <div class="modal-body">
-                <span id="valoresview"></span>
-
-                <input type="hidden" value="" name="template" id="template" placeholder="Nombres de las cabeceras (separados por comas)" />
-                                    <div id="recordCount"></div>
-                                    <table class="table table-striped display responsive nowrap w-100 table-bordered" id="excelTable" >
-                                    </table>
+                
                    
                 </div>
                 <div class="modal-footer">
