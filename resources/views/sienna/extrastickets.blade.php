@@ -1,5 +1,17 @@
 @include('facu.header')
 
+
+<script>
+    function pasar(uno,dos,tres){
+          
+        document.getElementById("campo").value = uno;
+        document.getElementById("pseudo").value = dos;
+        document.getElementById("view").value = tres;
+
+        }
+</script>
+
+    
 <div class="wrapper menuitem-active">
     @include('facu.menu')
     <div class="content-page" style="padding: 0!important;">
@@ -26,7 +38,7 @@
                             <td>{{$val3->nombre}}</td>
                             <td class="ellipsis">{{$val3->pseudo}}</td>
                             <td>{{$val3->view}}</td>
-                            <td><a role="button" data-bs-toggle="modal" data-bs-target="#preview" class="text-primary">Modificar datos</a>
+                            <td><a onclick="pasar({{$val3->nombre}},{{$val3->pseudo}},{{$val3->view}})"  role="button" data-bs-toggle="modal" data-bs-target="#preview" class="text-primary">Modificar datos</a>
                             </td>
                         </tr>
                     <?php } ?>
@@ -49,8 +61,9 @@
 
                 <form method="post" action="/extrasmod">
                 @csrf
-                <input type="text" name="campo" value="">
-                <input type="text" name="pseudoS" value="">
+                <input type="text" name="campo" id="campo" value="">
+                <input type="text" name="pseudo" id="pseudo" value="">
+                <input type="text" name="view" id="view" value="">
                 <select name="view">
 
                 <option value="0">No</option>
