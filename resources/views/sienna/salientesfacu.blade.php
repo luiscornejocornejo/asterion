@@ -132,12 +132,13 @@
                                             table.appendChild(headerRow);
                                             
                                             console.log("JSON DATA:" + jsonData)
-
-                                            jsonData.slice(1,51).forEach((row, index) => {
+                                            let i = 0;
+                                            jsonData.slice(1,51).forEach(row => {
                                                 const tr = document.createElement('tr');
                                                 row.forEach(cell => {
+                                                    i++
                                                     const td = document.createElement('td');
-                                                    td.textContent = `${index} + ${cell}`;
+                                                    td.textContent = `${i} ${cell}`;
                                                     tr.appendChild(td);
                                                 });
                                                 table.appendChild(tr);
