@@ -133,11 +133,11 @@
                                             
                                             console.log("JSON DATA:" + jsonData)
 
-                                            jsonData.slice(1).forEach(row => {
+                                            jsonData.slice(1,51).forEach((row, index) => {
                                                 const tr = document.createElement('tr');
                                                 row.forEach(cell => {
                                                     const td = document.createElement('td');
-                                                    td.textContent = cell;
+                                                    td.textContent = `${index} + ${cell}`;
                                                     tr.appendChild(td);
                                                 });
                                                 table.appendChild(tr);
