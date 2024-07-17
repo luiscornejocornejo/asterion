@@ -591,7 +591,7 @@
 
                 document.getElementById("tb").innerHTML = tt;
                 $('#example').dataTable({
-                    "order": [[0, 'desc']],
+                    "order": [[5, 'desc'],[0, 'desc']],
                     "responsive": !0,
                     "pageLength": 25,                    
                     "language" : {
