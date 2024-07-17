@@ -1,7 +1,7 @@
 @include('facu.header')
 
 
-   
+
 
 
 <div class="wrapper menuitem-active">
@@ -32,45 +32,45 @@
                             <?php } ?>
                         </select>
                         <script>
-                              function showFields(fields) {
+                            function showFields(fields) {
 
 
-                                        document.getElementById('dataBody').innerHTML = null
+                                document.getElementById('dataBody').innerHTML = null
 
-                                        const parts = fields.split('|');
+                                const parts = fields.split('|');
 
-                                        const values = parts[1].split(';');
+                                const values = parts[1].split(';');
 
-                                        tableBody = document.getElementById('dataBody');
-                                        var template = document.getElementById('template');
-                                        template.value=parts[0];
-                                        var headerInput = document.getElementById('headerInput');
-                                        const columnas = parts[1].replace(/;/g, ',');
+                                tableBody = document.getElementById('dataBody');
+                                var template = document.getElementById('template');
+                                template.value = parts[0];
+                                var headerInput = document.getElementById('headerInput');
+                                const columnas = parts[1].replace(/;/g, ',');
 
-                                        headerInput.value="cel,"+columnas;
+                                headerInput.value = "cel," + columnas;
 
-                                        const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+                                const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
-                                        values.forEach((value, index) => {
-                                            const row = document.createElement('tr');
+                                values.forEach((value, index) => {
+                                    const row = document.createElement('tr');
 
-                                            const columnCell = document.createElement('td');
-                                            columnCell.textContent = `Columna ${alphabet[index]}`;
-                                            row.appendChild(columnCell);
+                                    const columnCell = document.createElement('td');
+                                    columnCell.textContent = `Columna ${alphabet[index]}`;
+                                    row.appendChild(columnCell);
 
-                                            const dataCell = document.createElement('td');
-                                            dataCell.textContent = value;
-                                            row.appendChild(dataCell);
+                                    const dataCell = document.createElement('td');
+                                    dataCell.textContent = value;
+                                    row.appendChild(dataCell);
 
-                                            tableBody.appendChild(row);
-                                        });
-                                }
+                                    tableBody.appendChild(row);
+                                });
+                            }
                         </script>
                         <table class="table table-centered mb-0">
                             <thead>
                                 <tr>
-                                    <th>Columna en el documento</th>    
-                                    <th>Dato</th>    
+                                    <th>Columna en el documento</th>
+                                    <th>Dato</th>
                                 </tr>
                             </thead>
                             <tbody id="dataBody">
@@ -78,80 +78,80 @@
                             </tbody>
                         </table>
                         <div>
-                        <form  id="myform" enctype="multipart/form-data" action="/salientesb" method="post" class="dropzone" id="" data-plugin="dropzone" data-previews-container="#file-previews"
-                                    data-upload-preview-template="#uploadPreviewTemplate">
-                                    @csrf
-                            <p class="card-text mt-3">3. Suba el documento con el listado de los usuarios a contactar.</p>
-                            <label for="inputFile" class="btn btn-primary rounded-pill">
-                                <i class="fas fa-upload"></i> Documento requerido
-                                <input name="logo" id="inputFile" type="file" multiple />
+                            <form id="myform" enctype="multipart/form-data" action="/salientesb" method="post" class="dropzone" id="" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate">
+                                @csrf
+                                <p class="card-text mt-3">3. Suba el documento con el listado de los usuarios a contactar.</p>
+                                <label for="inputFile" class="btn btn-primary rounded-pill">
+                                    <i class="fas fa-upload"></i> Documento requerido
+                                    <input name="logo" id="inputFile" type="file" class="d-none" multiple />
+                                </label>
+                                <span id="fileName" class="ms-1"></span>
+                                <span id="valoresview"></span>
+                                <input type="hidden" name="cantvalores" value="" id="headerInput" placeholder="Nombres de las cabeceras (separados por comas)" />
+                                <input type="hidden" value="" name="template" id="template" placeholder="Nombres de las cabeceras (separados por comas)" />
 
-                            </label>
-                            <span id="valoresview"></span>
-                                    <input type="hidden" name="cantvalores" value="" id="headerInput" placeholder="Nombres de las cabeceras (separados por comas)" />
-                                    <input type="hidden" value="" name="template" id="template" placeholder="Nombres de las cabeceras (separados por comas)" />
-                                   
 
-                            <span id="fileName" class="ms-1"></span>
-                            <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
-                            <script>
-        document.getElementById('inputFile').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            const reader = new FileReader();
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+                                <script>
+                                    document.getElementById('inputFile').addEventListener('change', function(event) {
+                                        const file = event.target.files[0];
+                                        const reader = new FileReader();
 
-            reader.onload = function(event) {
-                const data = new Uint8Array(event.target.result);
-                const workbook = XLSX.read(data, { type: 'array' });
+                                        reader.onload = function(event) {
+                                            const data = new Uint8Array(event.target.result);
+                                            const workbook = XLSX.read(data, {
+                                                type: 'array'
+                                            });
 
-                const firstSheetName = workbook.SheetNames[0];
-                const worksheet = workbook.Sheets[firstSheetName];
+                                            const firstSheetName = workbook.SheetNames[0];
+                                            const worksheet = workbook.Sheets[firstSheetName];
 
-                const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+                                            const jsonData = XLSX.utils.sheet_to_json(worksheet, {
+                                                header: 1
+                                            });
 
-                const table = document.getElementById('excelTable');
-                table.innerHTML = ''; // Limpiar tabla antes de agregar datos
+                                            const table = document.getElementById('excelTable');
+                                            table.innerHTML = ''; // Limpiar tabla antes de agregar datos
 
-                const headerInput = document.getElementById('headerInput').value;
-                const headers = headerInput ? headerInput.split(',') : jsonData[0];
-                console.log(headers)
-                const headerRow = document.createElement('tr');
-                headers.forEach(header => {
-                    const th = document.createElement('th');
-                    th.textContent = header.trim();
-                    headerRow.appendChild(th);
-                });
-                table.appendChild(headerRow);
+                                            const headerInput = document.getElementById('headerInput').value;
+                                            const headers = headerInput ? headerInput.split(',') : jsonData[0];
+                                            console.log(headers)
+                                            const headerRow = document.createElement('tr');
+                                            headers.forEach(header => {
+                                                const th = document.createElement('th');
+                                                th.textContent = header.trim();
+                                                headerRow.appendChild(th);
+                                            });
+                                            table.appendChild(headerRow);
 
-                jsonData.slice(1).forEach(row => {
-                    const tr = document.createElement('tr');
-                    row.forEach(cell => {
-                        const td = document.createElement('td');
-                        td.textContent = cell;
-                        tr.appendChild(td);
-                    });
-                    table.appendChild(tr);
-                });
+                                            jsonData.slice(1).forEach(row => {
+                                                const tr = document.createElement('tr');
+                                                row.forEach(cell => {
+                                                    const td = document.createElement('td');
+                                                    td.textContent = cell;
+                                                    tr.appendChild(td);
+                                                });
+                                                table.appendChild(tr);
+                                            });
 
-                document.getElementById('recordCount').textContent = `Total de usuarios en el documento: ${jsonData.length }`;
-            };
+                                            document.getElementById('recordCount').textContent = `Total de usuarios en el documento: ${jsonData.length }`;
+                                        };
 
-            reader.readAsArrayBuffer(file);
-            document.getElementById('valoresview').textContent=document.getElementById('headerInput').value;
-        });
+                                        reader.readAsArrayBuffer(file);
+                                        document.getElementById('valoresview').textContent = document.getElementById('headerInput').value;
+                                    });
+                                </script>
+                                <p class="card-text text-black mt-3"><strong>Resumen:</strong></p>
+                                <div id="recordCount"></div>
 
-       
-    </script>
-                            <p class="card-text text-black mt-3"><strong>Resumen:</strong></p>
-                                                               <div id="recordCount"></div>
-                            
-                            <a role="button" data-bs-toggle="modal" data-bs-target="#preview" class="text-primary">Ver listado de usuarios cargados</a>
+                                <a role="button" data-bs-toggle="modal" data-bs-target="#preview" class="text-primary">Ver listado de usuarios cargados</a>
                         </div>
                         <div class="container d-flex justify-content-end">
-                        <button class="btn btn-light rounded me-2 d-none">Cancelar</button>
-                        <button class="btn btn-primary rounded" data-bs-toggle="modal">Enviar</button>
+                            <button class="btn btn-light rounded me-2 d-none">Cancelar</button>
+                            <button class="btn btn-primary rounded" data-bs-toggle="modal">Enviar</button>
                         </div>
                     </div> <!-- end card-body-->
-             
+
                 </div> <!-- end card-->
             </div>
         </div>
@@ -166,9 +166,9 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                 </div>
                 <div class="modal-body">
-                
-                <table class="table table-striped display responsive nowrap w-100 table-bordered" id="excelTable" >
-                </table>
+
+                    <table class="table table-striped display responsive nowrap w-100 table-bordered" id="excelTable">
+                    </table>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light border" data-bs-dismiss="modal">Cerrar</button>
@@ -202,6 +202,6 @@
     </form>
     <!-- End of Modal Confirm Outbound -->
 
-  
+
 
     @include('facu.footer')
