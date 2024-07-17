@@ -91,7 +91,7 @@
                                     <input name="logo" id="inputFile" type="file" class="d-none" multiple />
                                 </label>
                                 <span id="fileName" class="ms-1"></span>
-                                <!-- <span id="valoresview"></span> -->
+                                <span class="d-none" id="valoresview"></span>
                                 <input type="hidden" name="cantvalores" value="" id="headerInput" placeholder="Nombres de las cabeceras (separados por comas)" />
                                 <input type="hidden" value="" name="template" id="template" placeholder="Nombres de las cabeceras (separados por comas)" />
 
