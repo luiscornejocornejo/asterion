@@ -18,9 +18,10 @@ class supervisorsienna
     public function handle(Request $request, Closure $next)
     {
 
-        $categoria=session('tipodemenu');
+        $tipo=session('tipodemenu');
+        $categoria=session('categoria');
 
-        if($categoria==2){
+        if(($tipo==2) or($categoria==1)){
 
             return $next($request);
 
