@@ -106,7 +106,7 @@
                 const firstSheetName = workbook.SheetNames[0];
                 const worksheet = workbook.Sheets[firstSheetName];
 
-                const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+                const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 0 });
 
                 const table = document.getElementById('excelTable');
                 table.innerHTML = ''; // Limpiar tabla antes de agregar datos
@@ -132,7 +132,7 @@
                     table.appendChild(tr);
                 });
 
-                document.getElementById('recordCount').textContent = `Total de usuarios en el documento: ${jsonData.length - 1}`;
+                document.getElementById('recordCount').textContent = `Total de usuarios en el documento: ${jsonData.length }`;
             };
 
             reader.readAsArrayBuffer(file);
