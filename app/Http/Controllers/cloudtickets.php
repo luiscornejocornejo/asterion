@@ -917,6 +917,19 @@ class cloudtickets extends Controller
        
         ;
     }
+    
+    public function extrastickets(Request $request)
+    {   
+        $merchant=$this->dominio();
+
+       // $id=$request->envio;
+        $query ="select * from extras ";
+        $tsoporte = DB::select($query);
+
+        return view('sienna/extrastickets')
+        ->with('tsoporte', $tsoporte)
+        ;
+    }
     public function nuevost(Request $request)
     {       
         
