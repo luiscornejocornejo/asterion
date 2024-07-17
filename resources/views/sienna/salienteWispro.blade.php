@@ -56,7 +56,7 @@
                             <pre id="json"></pre>
 
                             <script>
-                                let data = <?php echo $datosonline; ?>;
+                                let data = <?php // echo $datosonline; ?>;
                                 document.getElementById("json").textContent = JSON.stringify(data, undefined, 2);
                             </script>
                         <?php // } ?>
