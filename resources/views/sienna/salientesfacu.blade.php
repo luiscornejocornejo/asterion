@@ -122,7 +122,7 @@
 
                                             const headerInput = document.getElementById('headerInput').value;
                                             const headers = headerInput ? headerInput.split(',') : jsonData[0];
-                                            
+                                       
                                             const headerRow = document.createElement('tr');
                                             headers.forEach(header => {
                                                 const th = document.createElement('th');
@@ -131,6 +131,7 @@
                                             });
                                             table.appendChild(headerRow);
                                             
+                                            console.log("JSON DATA:" + jsonData)
 
                                             jsonData.slice(1).forEach(row => {
                                                 const tr = document.createElement('tr');
