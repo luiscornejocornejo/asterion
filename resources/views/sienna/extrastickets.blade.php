@@ -4,7 +4,7 @@
 <script>
     function pasar(uno,dos,tres){
           
-        document.getElementById("campo").value = uno;
+        document.getElementById("campo").name = uno;
         document.getElementById("pseudo").value = dos;
         document.getElementById("view").value = tres;
 
@@ -64,11 +64,7 @@
                 <input type="text" name="campo" id="campo" value="">
                 <input type="text" name="pseudo" id="pseudo" value="">
                 <input type="text" name="view" id="view" value="">
-                <select name="view">
-
-                <option value="0">No</option>
-                <option value="1">Si</option>
-                    </select>
+                
                 <input type="submit"  value="enviar">
 
 
