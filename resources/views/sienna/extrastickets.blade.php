@@ -42,13 +42,26 @@
         <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-dark text-light">
-                    <h5 class="modal-title" id="modalTitlePreview">Listado de usuarios</h5>
+                    <h5 class="modal-title" id="modalTitlePreview">Modificar <div id="nombre"></div></h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                 </div>
                 <div class="modal-body">
 
-                    <table class="table table-striped display responsive nowrap w-100 table-bordered" id="excelTable">
-                    </table>
+                <form method="post" action="/extrasmod">
+                @csrf
+                <input type="text" name="campo" value="">
+                <input type="text" name="pseudoS" value="">
+                <select name="view">
+
+                <option value="0">No</option>
+                <option value="1">Si</option>
+                    </select>
+                <input type="submit"  value="enviar">
+
+
+
+                    </form>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light border" data-bs-dismiss="modal">Cerrar</button>
