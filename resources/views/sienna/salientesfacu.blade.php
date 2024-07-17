@@ -132,13 +132,12 @@
                                             table.appendChild(headerRow);
                                             
                                             console.log("JSON DATA:" + jsonData)
-                                            let i = 0;
+
                                             jsonData.slice(1,51).forEach(row => {
                                                 const tr = document.createElement('tr');
                                                 row.forEach(cell => {
-                                                    i++
                                                     const td = document.createElement('td');
-                                                    td.textContent = `${i} ${cell}`;
+                                                    td.textContent = cell;
                                                     tr.appendChild(td);
                                                 });
                                                 table.appendChild(tr);
@@ -148,7 +147,7 @@
                                         };
 
                                         reader.readAsArrayBuffer(file);
-                                        // document.getElementById('valoresview').textContent = document.getElementById('headerInput').value;
+                                        document.getElementById('valoresview').textContent = document.getElementById('headerInput').value;
                                     });
                                 </script>
                                 <p class="card-text text-black mt-3"><strong>Total de usuarios en el documento: </strong> <span id="recordCount"></span></p>
