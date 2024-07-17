@@ -42,7 +42,8 @@
                                         const values = parts[1].split(';');
 
                                         tableBody = document.getElementById('dataBody');
-
+                                        var template = document.getElementById('template');
+                                        template.value=parts[0];
                                         const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
                                         values.forEach((value, index) => {
@@ -123,7 +124,7 @@
                     table.appendChild(tr);
                 });
 
-                document.getElementById('recordCount').textContent = `Cantidad de registros: ${jsonData.length - 1}`;
+                document.getElementById('recordCount').textContent = `Total de usuarios en el documento: ${jsonData.length - 1}`;
             };
 
             reader.readAsArrayBuffer(file);
@@ -131,8 +132,8 @@
         });
     </script>
                             <p class="card-text text-black mt-3"><strong>Resumen:</strong></p>
-                            <p>Total de usuarios en el documento:                                     <div id="recordCount"></div>
-                            </p>
+                                                               <div id="recordCount"></div>
+                            
                             <a role="button" data-bs-toggle="modal" data-bs-target="#preview" class="text-primary">Ver listado de usuarios cargados</a>
                         </div>
                         <div class="container d-flex justify-content-end">
