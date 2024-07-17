@@ -79,11 +79,11 @@
                                 </tr>
                             </thead>
                             <tbody id="dataBody">
-                                
+
                             </tbody>
                         </table>
                         <div>
-                            <form id="myform" enctype="multipart/form-data" action="/salientesb" method="post" class="dropzone" id="" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate">
+                            <form id="myform" enctype="multipart/form-data" action="/salientesb" method="post" id="" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate">
                                 @csrf
                                 <p class="card-text mt-3">3. Suba el documento con el listado de los usuarios a contactar.</p>
                                 <label for="inputFile" class="btn btn-primary rounded-pill">
@@ -152,6 +152,7 @@
                                 <div id="recordCount"></div>
 
                                 <a role="button" data-bs-toggle="modal" data-bs-target="#preview" class="text-primary">Ver listado de usuarios cargados</a>
+                                <p>❕ IMPORTANTE: verifica que todos los campos del documento se encuentren completos con las cabeceras que requiere el envío. No deben quedar espacios en blancos.</p>
                         </div>
                         <div class="container d-flex justify-content-end">
                             <button class="btn btn-light rounded me-2 d-none">Cancelar</button>
