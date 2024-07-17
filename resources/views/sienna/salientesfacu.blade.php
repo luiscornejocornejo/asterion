@@ -147,11 +147,11 @@
                             <a role="button" data-bs-toggle="modal" data-bs-target="#preview" class="text-primary">Ver listado de usuarios cargados</a>
                         </div>
                         <div class="container d-flex justify-content-end">
-                            <button class="btn btn-light rounded me-2 d-none">Cancelar</button>
-                            <button id="cfmContinue"  class="btn btn-primary rounded" data-bs-toggle="modal" data-bs-target="#confirm-outbound">Enviar</button>
+                        <button class="btn btn-light rounded me-2 d-none">Cancelar</button>
+                        <button class="btn btn-primary rounded" data-bs-toggle="modal">Enviar</button>
                         </div>
                     </div> <!-- end card-body-->
-                 </form>
+             
                 </div> <!-- end card-->
             </div>
         </div>
@@ -198,6 +198,8 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div>
+
+    </form>
     <!-- End of Modal Confirm Outbound -->
 
   
