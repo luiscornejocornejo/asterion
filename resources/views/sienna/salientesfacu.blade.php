@@ -106,7 +106,7 @@
                 const firstSheetName = workbook.SheetNames[0];
                 const worksheet = workbook.Sheets[firstSheetName];
 
-                const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 0 });
+                const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
                 const table = document.getElementById('excelTable');
                 table.innerHTML = ''; // Limpiar tabla antes de agregar datos
