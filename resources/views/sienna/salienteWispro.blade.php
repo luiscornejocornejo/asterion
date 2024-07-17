@@ -43,9 +43,9 @@
                         <tbody id="tb">
                             <?php // foreach ($getdata as $valh) { ?>
                                 <tr class="text-center">
-                                    <td><?php echo $valh->nombre; ?></td>
-                                    <td><?php echo $valh->icono; ?></td>
-                                    <td><?php echo $valh->valor; ?></td>
+                                    <td><?php // echo $valh->nombre; ?></td>
+                                    <td><?php //echo $valh->icono; ?></td>
+                                    <td><?php //echo $valh->valor; ?></td>
                                 </tr>
                             <?php  //} ?>
                         </tbody>
