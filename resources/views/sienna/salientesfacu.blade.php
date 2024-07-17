@@ -44,6 +44,11 @@
                                         tableBody = document.getElementById('dataBody');
                                         var template = document.getElementById('template');
                                         template.value=parts[0];
+                                        var headerInput = document.getElementById('headerInput');
+                                        const columnas = parts[1].replace(/;/g, ',');
+
+                                        headerInput.value="cel,"+columnas;
+
                                         const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
                                         values.forEach((value, index) => {
