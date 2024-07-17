@@ -35,7 +35,12 @@
                             function showFields(fields) {
 
 
-                                document.getElementById('dataBody').innerHTML = null
+                                document.getElementById('dataBody').innerHTML = `
+                                <tr>
+                                    <td>Columna A</td>
+                                    <td>Numero de teléfono (completo)</td>
+                                </tr>
+                                `
 
                                 const parts = fields.split('|');
 
@@ -49,7 +54,7 @@
 
                                 headerInput.value = "cel," + columnas;
 
-                                const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+                                const alphabet = 'BCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
                                 values.forEach((value, index) => {
                                     const row = document.createElement('tr');
@@ -74,10 +79,7 @@
                                 </tr>
                             </thead>
                             <tbody id="dataBody">
-                                <tr>
-                                    <td>Columna A</td>
-                                    <td>Numero de teléfono (completo)</td>
-                                </tr>
+                                
                             </tbody>
                         </table>
                         <div>
