@@ -130,7 +130,7 @@
                                                 headerRow.appendChild(th);
                                             });
                                             table.appendChild(headerRow);
-                                            console.log(headerRow)
+                                            
 
                                             jsonData.slice(1).forEach(row => {
                                                 const tr = document.createElement('tr');
@@ -141,7 +141,7 @@
                                                 });
                                                 table.appendChild(tr);
                                             });
-                                            console.log("JSON DATA:", jsonData)
+                                            console.log("JSON DATA:" + jsonData)
 
                                             document.getElementById('recordCount').textContent = `${jsonData.length }`;
                                         };
