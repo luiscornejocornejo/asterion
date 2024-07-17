@@ -11,9 +11,9 @@
 
                     ?>
                        
-                       <p>extra1: <input type="text" name="extra1" value="{{$tsoporte[0]->nombre}}"></p>
-                       <p>extra2: <input type="text" name="extra2" value="{{$tsoporte[1]->nombre}}"></p>
-                       <p>extra3: <input type="text" name="extra3" value="{{$tsoporte[2]->nombre}}"></p>
+                       <p>{{$tsoporte[0]->nombre}}: <input type="text" name="extra1" value="{{$tsoporte[0]->pseudo}}"></p>
+                       <p>{{$tsoporte[1]->nombre}}: <input type="text" name="extra2" value="{{$tsoporte[1]->pseudo}}"></p>
+                       <p>{{$tsoporte[2]->nombre}}: <input type="text" name="extra3" value="{{$tsoporte[2]->pseudo}}"></p>
                         
                     <?php //} ?>
               
