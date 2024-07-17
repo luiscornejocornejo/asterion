@@ -91,7 +91,7 @@
                                     <input name="logo" id="inputFile" type="file" class="d-none" multiple />
                                 </label>
                                 <span id="fileName" class="ms-1"></span>
-                                <span id="valoresview"></span>
+                                <!-- <span id="valoresview"></span> -->
                                 <input type="hidden" name="cantvalores" value="" id="headerInput" placeholder="Nombres de las cabeceras (separados por comas)" />
                                 <input type="hidden" value="" name="template" id="template" placeholder="Nombres de las cabeceras (separados por comas)" />
 
@@ -141,15 +141,15 @@
                                                 table.appendChild(tr);
                                             });
 
-                                            document.getElementById('recordCount').textContent = `Total de usuarios en el documento: ${jsonData.length }`;
+                                            document.getElementById('recordCount').textContent = `${jsonData.length }`;
                                         };
 
                                         reader.readAsArrayBuffer(file);
-                                        document.getElementById('valoresview').textContent = document.getElementById('headerInput').value;
+                                        // document.getElementById('valoresview').textContent = document.getElementById('headerInput').value;
                                     });
                                 </script>
-                                <p class="card-text text-black mt-3"><strong>Resumen:</strong></p>
-                                <div id="recordCount"></div>
+                                <p class="card-text text-black mt-3"><strong>Total de usuarios en el documento: </strong> <div id="recordCount"></div></p>
+                                
 
                                 <a role="button" data-bs-toggle="modal" data-bs-target="#preview" class="text-primary">Ver listado de usuarios cargados</a>
                                 <p>❕ IMPORTANTE: verifica que todos los campos del documento se encuentren completos con las cabeceras que requiere el envío. No deben quedar espacios en blancos.</p>
