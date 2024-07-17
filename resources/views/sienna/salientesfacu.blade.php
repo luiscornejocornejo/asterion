@@ -60,7 +60,6 @@
                                         });
                                 }
                         </script>
-                        <p class="card-text mt-3">Puedes descargar el modelo de planilla de datos desde <a href="#">aquí</a>.</p>
                         <table class="table table-centered mb-0">
                             <thead>
                                 <tr>
@@ -84,69 +83,49 @@
                             <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
                             <script>
         document.getElementById('inputFile').addEventListener('change', function(event) {
-            console.log("entro2");
             const file = event.target.files[0];
             const reader = new FileReader();
 
             reader.onload = function(event) {
                 const data = new Uint8Array(event.target.result);
-                const workbook = XLSX.read(data, {
-                    type: 'array'
-                });
+                const workbook = XLSX.read(data, { type: 'array' });
 
-                // Supongamos que queremos leer la primera hoja
                 const firstSheetName = workbook.SheetNames[0];
                 const worksheet = workbook.Sheets[firstSheetName];
 
-                // Convertir la hoja a JSON
-                const json = XLSX.utils.sheet_to_json(worksheet, {
-                    header: 1
+                const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+                const table = document.getElementById('excelTable');
+                table.innerHTML = ''; // Limpiar tabla antes de agregar datos
+
+                const headerInput = document.getElementById('headerInput').value;
+                const headers = headerInput ? headerInput.split(',') : jsonData[0];
+                console.log(headers)
+                const headerRow = document.createElement('tr');
+                headers.forEach(header => {
+                    const th = document.createElement('th');
+                    th.textContent = header.trim();
+                    headerRow.appendChild(th);
+                });
+                table.appendChild(headerRow);
+
+                jsonData.slice(1).forEach(row => {
+                    const tr = document.createElement('tr');
+                    row.forEach(cell => {
+                        const td = document.createElement('td');
+                        td.textContent = cell;
+                        tr.appendChild(td);
+                    });
+                    table.appendChild(tr);
                 });
 
-                // Crear la tabla
-                createTableFromExcel(json);
-
-                // Mostrar la cantidad de filas
-                const rowCount = json.length - 1; // Restamos 1 para no contar el encabezado
-                document.getElementById('rowCount').textContent = `${rowCount}`;
+                document.getElementById('recordCount').textContent = `Cantidad de registros: ${jsonData.length - 1}`;
             };
 
             reader.readAsArrayBuffer(file);
+            document.getElementById('valoresview').textContent=document.getElementById('headerInput').value;
         });
-
-        function createTableFromExcel(data) {
-            const tableHead = document.getElementById('tableHead');
-            const tableBody = document.getElementById('tableBody');
-
-            // Limpiar la tabla existente
-            tableHead.innerHTML = '';
-            tableBody.innerHTML = '';
-
-            // Crear el encabezado de la tabla
-            const headerInput = document.getElementById('headerInput').value;
-                const headers = headerInput ? headerInput.split(',');
-            const headerRow = document.createElement('tr');
-            data[0].forEach(headerText => {
-                const header = document.createElement('th');
-                header.textContent = headerText;
-                headerRow.appendChild(header);
-            });
-            tableHead.appendChild(headerRow);
-
-            // Crear el cuerpo de la tabla
-            data.slice(1).forEach(rowData => {
-                const row = document.createElement('tr');
-                rowData.forEach(cellData => {
-                    const cell = document.createElement('td');
-                    cell.textContent = cellData;
-                    row.appendChild(cell);
-                });
-                tableBody.appendChild(row);
-            });
-        }
-
-       
-</script>
+    </script>
                             <p class="card-text text-black mt-3"><strong>Resumen:</strong></p>
                             <p>Total de usuarios en el documento: <span id="rowCount"></span></p>
                             <a role="button" data-bs-toggle="modal" data-bs-target="#preview" class="text-primary">Ver listado de usuarios cargados</a>
@@ -170,9 +149,11 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                 </div>
                 <div class="modal-body">
-                    <table id="example" class="table table-bordered table-centered table-hover  responsive nowrap w-100">
-                        <tbody id="tableBody"></tbody>
-                    </table>
+                <input type="hidden" value="" name="template" id="template" placeholder="Nombres de las cabeceras (separados por comas)" />
+                                    <div id="recordCount"></div>
+                                    <table class="table table-striped display responsive nowrap w-100 table-bordered" id="excelTable" >
+                                    </table>
+                   
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light border" data-bs-dismiss="modal">Cerrar</button>
