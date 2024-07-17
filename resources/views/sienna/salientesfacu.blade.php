@@ -73,6 +73,9 @@
                             </tbody>
                         </table>
                         <div>
+                        <form  enctype="multipart/form-data" action="/salientesb" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
+                                    data-upload-preview-template="#uploadPreviewTemplate">
+                                    @csrf
                             <p class="card-text mt-3">3. Suba el documento con el listado de los usuarios a contactar.</p>
                             <label for="inputFile" class="btn btn-primary rounded-pill">
                                 <i class="fas fa-upload"></i> Documento requerido
@@ -141,6 +144,7 @@
                             <button class="btn btn-primary rounded" data-bs-toggle="modal" data-bs-target="#confirm-outbound">Enviar</button>
                         </div>
                     </div> <!-- end card-body-->
+                 </form>
                 </div> <!-- end card-->
             </div>
         </div>
