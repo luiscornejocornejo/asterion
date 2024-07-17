@@ -255,7 +255,7 @@ Route::post('/crearticketsiennanocliente','App\Http\Controllers\cloudtickets@cre
 Route::post('/notificacionusers','App\Http\Controllers\cloudtickets@notificacionusers');
 Route::post('/cambiopass','App\Http\Controllers\cloudtickets@cambiopass');
 
-Route::get('/salientesb','App\Http\Controllers\cloudtickets@salientesb');
+Route::get('/salientesb','App\Http\Controllers\cloudtickets@salientesb')->middleware('supervisorsienna');
 Route::post('/salientesb','App\Http\Controllers\cloudtickets@salientesbpost');
 Route::get('/tareas','App\Http\Controllers\cloudtickets@tareas');
 Route::get('/getdata','App\Http\Controllers\cloudtickets@getdata');
