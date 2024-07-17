@@ -279,7 +279,7 @@ Route::get('/salientesc','App\Http\Controllers\cloudtickets@salientesc')->middle
 Route::get('/extrastickets','App\Http\Controllers\cloudtickets@extrastickets')->middleware('adminsienna');
 
 Route::get('/salientes/wispro', function () {
-    return view('/sienna/salienteWispro')
+    return view('/sienna/salienteWispro');
 });
 
 Route::get('/userprofile', function () {
