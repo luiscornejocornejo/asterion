@@ -149,6 +149,8 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
                 </div>
                 <div class="modal-body">
+                <span id="valoresview"></span>
+
                 <input type="hidden" value="" name="template" id="template" placeholder="Nombres de las cabeceras (separados por comas)" />
                                     <div id="recordCount"></div>
                                     <table class="table table-striped display responsive nowrap w-100 table-bordered" id="excelTable" >
