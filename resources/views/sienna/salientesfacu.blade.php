@@ -81,9 +81,7 @@
                             <span id="valoresview"></span>
                                     <input type="hidden" name="cantvalores" value="" id="headerInput" placeholder="Nombres de las cabeceras (separados por comas)" />
                                     <input type="hidden" value="" name="template" id="template" placeholder="Nombres de las cabeceras (separados por comas)" />
-                                    <div id="recordCount"></div>
-                                    <table class="table table-striped display responsive nowrap w-100 table-bordered" id="excelTable" >
-                                    </table>
+                                   
 
                             <span id="fileName" class="ms-1"></span>
                             <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
@@ -133,7 +131,8 @@
         });
     </script>
                             <p class="card-text text-black mt-3"><strong>Resumen:</strong></p>
-                            <p>Total de usuarios en el documento: <span id="rowCount"></span></p>
+                            <p>Total de usuarios en el documento:                                     <div id="recordCount"></div>
+                            </p>
                             <a role="button" data-bs-toggle="modal" data-bs-target="#preview" class="text-primary">Ver listado de usuarios cargados</a>
                         </div>
                         <div class="container d-flex justify-content-end">
@@ -156,7 +155,8 @@
                 </div>
                 <div class="modal-body">
                 
-                   
+                <table class="table table-striped display responsive nowrap w-100 table-bordered" id="excelTable" >
+                </table>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light border" data-bs-dismiss="modal">Cerrar</button>
