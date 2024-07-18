@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </form>
-            <label class="form-label">Plantilla Whatsapp</label>
+            <label class="form-label mb-3">Plantilla a enviar</label>
             <div class="row">
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <select name="template" id="template" class="form-select w-25">
