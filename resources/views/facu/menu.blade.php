@@ -123,7 +123,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                         <span> Mis tareas </span>
                     </a>
                 </li>
-                <li class="side-nav-item background-buttons d-none">
+                <li class="side-nav-item background-buttons ">
                     <a  href="/salientesc"  class="side-nav-link hovering-pan ">
                         <i class="mdi mdi-whatsapp"></i>
                         <span> Saliente masivo </span>
