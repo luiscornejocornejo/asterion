@@ -20,8 +20,34 @@
                         <script>
                             function moti(dep){
                                 var value = dep.value;  
+                                var aficiones = document.getElementById("reason");
 
-                                alert(value);
+                                aficiones.innerHTML = '';
+                                if(value==2){
+                                    var option = document.createElement("option");
+                                    option.text = "Ticket";
+                                    aficiones.add(option);
+                                    var option2 = document.createElement("option");
+                                    option2.text = "Bot";
+                                    aficiones.add(option2);
+                                    var option3 = document.createElement("option");
+                                    option3.text = "IVR";
+                                    aficiones.add(option3);
+                                    var option4 = document.createElement("option");
+                                    option4.text = "Telefonia";
+                                    aficiones.add(option4);
+                                    var option5 = document.createElement("option");
+                                    option5.text = "Otros";
+                                    aficiones.add(option5);
+                                }
+                                if(value==3){
+                                    var option = document.createElement("option");
+                                    option.text = "Facturacion";
+                                    aficiones.add(option);
+                                    var option2 = document.createElement("option");
+                                    option2.text = "Otros";
+                                    aficiones.add(option2);
+                                }
                             }
                         </script>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
