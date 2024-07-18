@@ -25,7 +25,7 @@
                                 <a href="#" rel="no-referrer">En este enlace puedes consultar el siguiente artículo para completar los campos en el documento</a>.
                             </p>
                          -->
-                        <p class="card-title">2. Seleccione la plantilla que deseas enviar.</p>
+                        <h5 class="card-title">1. Seleccione la plantilla que deseas enviar.</h5>
                         <select name="template" class="form-select w-25" onchange="showFields(this.value)">
                             <option selected disabled>Seleccione plantilla</option>
                             <?php foreach ($listadopadre as $ll) { ?>
@@ -72,7 +72,7 @@
                                 });
                             }
                         </script>
-                        <h5 class="card-text my-3">1. ¿Qué variables tiene tu documento?</h5>
+                        <p class="card-text my-3">2. ¿Qué variables tiene tu documento?</p>
                         <table class="table table-centered mb-0">
                             <thead>
                                 <tr>
