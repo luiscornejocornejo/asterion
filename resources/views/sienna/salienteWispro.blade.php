@@ -35,11 +35,10 @@
             <label class="form-label">Plantilla a enviar</label>
             <div class="row mb-3">
                 <div class="col-lg-4 col-sm-12">
-                <select name="template" id="template" class="form-select w-25">
+                <select name="template" id="template" class="form-select">
                     <option value="0">1</option>
                 </select>
                 </div>
-
             </div>
            
             <table id="example" class="table table-striped dt-responsive nowrap w-100 text-light">
