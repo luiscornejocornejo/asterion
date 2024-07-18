@@ -29,6 +29,7 @@
                   $token=$val->token;
                   $password=$val->password;
                   $botfrontdesk=$val->botfrontdesk;
+                  $local=$val->local;
                 }?>
                  <form action="/empresadatos" method="post">
                  @csrf
@@ -66,6 +67,10 @@
                           echo "<option ".$selected." value='".$val->nombre."'>".$val->nombre."</option>";
                           }?>
                       </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Diff hora local GMT</label>
+                      <input value="<?php echo $local;?>" type="text" name="local" class="form-control" id="exampleFormControlInput1" placeholder="5">
                     </div>
                     <div class="form-group">
                       <label for="exampleFormControlSelect1">Integracion </label>

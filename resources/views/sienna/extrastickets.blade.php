@@ -60,7 +60,7 @@
                 </div>
                 <div class="modal-body">
 
-                <form method="get" action="/extrasmod">
+                <form method="post" action="">
                 @csrf
                 <input type="hidden" name="campo" id="campo" value="">
                 <input type="text" name="pseudo" id="pseudo" value="">
