@@ -10,15 +10,18 @@
                 <form action="/create/ticket" method="POST">
                     <div class="row">
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <label for="department" class="form-label">Departamento:</label>
+                            <label for="department" class="form-label">Departamento2:</label>
                             <select onchange="moti(this)" class="form-control mb-3" name="department" id="department" class="form-select">
+                            <option value="1">Seleccione</option>
                             <option value="2">Soporte</option>
                             <option value="3">Administracion</option> 
                             </select>
                         </div>
                         <script>
                             function moti(dep){
-                                alert(dep);
+                                var value = dep.value;  
+
+                                alert(value);
                             }
                         </script>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
