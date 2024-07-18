@@ -32,8 +32,8 @@
                     </div>
                 </div>
             </form>
-            <label class="form-label mb-3">Plantilla a enviar</label>
-            <div class="row">
+            <label class="form-label">Plantilla a enviar</label>
+            <div class="row mb-3">
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <select name="template" id="template" class="form-select w-25">
                     <option value="0">1</option>
