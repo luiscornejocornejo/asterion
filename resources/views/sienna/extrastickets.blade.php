@@ -5,6 +5,7 @@
     function pasar(uno,dos,tres){
           
         document.getElementById("campo").name = uno;
+        document.getElementById("campo").value = uno;
         document.getElementById("pseudo").value = dos;
         document.getElementById("view").value = tres;
 
@@ -59,9 +60,9 @@
                 </div>
                 <div class="modal-body">
 
-                <form method="post" action="/extrasmod">
+                <form method="get" action="/extrasmod">
                 @csrf
-                <input type="text" name="campo" id="campo" value="">
+                <input type="hidden" name="campo" id="campo" value="">
                 <input type="text" name="pseudo" id="pseudo" value="">
                 <input type="text" name="view" id="view" value="">
                 
