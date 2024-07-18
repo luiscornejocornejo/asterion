@@ -12,9 +12,9 @@
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label for="department" class="form-label">Departamento2:</label>
                             <select onchange="moti(this)" class="form-control mb-3" name="department" id="department" class="form-select">
-                            <option value="1">Seleccione</option>
-                            <option value="2">Soporte</option>
-                            <option value="3">Administracion</option> 
+                            <option value="0">Seleccione</option>
+                            <option value="1">Soporte</option>
+                            <option value="2">Administracion</option> 
                             </select>
                         </div>
                         <script>
@@ -23,29 +23,42 @@
                                 var aficiones = document.getElementById("reason");
 
                                 aficiones.innerHTML = '';
-                                if(value==2){
+                                if(value==1){
                                     var option = document.createElement("option");
                                     option.text = "Ticket";
+                                    option.value = "21";
+
                                     aficiones.add(option);
                                     var option2 = document.createElement("option");
                                     option2.text = "Bot";
+                                    option2.value = "22";
+
                                     aficiones.add(option2);
                                     var option3 = document.createElement("option");
                                     option3.text = "IVR";
+                                    option3.value = "23";
+
                                     aficiones.add(option3);
                                     var option4 = document.createElement("option");
                                     option4.text = "Telefonia";
+                                    option4.value = "24";
+
                                     aficiones.add(option4);
                                     var option5 = document.createElement("option");
                                     option5.text = "Otros";
+                                    option5.value = "25";
+
                                     aficiones.add(option5);
                                 }
-                                if(value==3){
+                                if(value==2){
                                     var option = document.createElement("option");
                                     option.text = "Facturacion";
+                                    option.value = "27";
                                     aficiones.add(option);
                                     var option2 = document.createElement("option");
                                     option2.text = "Otros";
+                                    option2.value = "26";
+
                                     aficiones.add(option2);
                                 }
                             }
