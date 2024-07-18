@@ -13,7 +13,7 @@
                             <label for="department" class="form-label">Departamento:</label>
                             <select onchange="moti(this)" class="form-control mb-3" name="department" id="department" class="form-select">
                             <option value="2">Soporte</option>
-                            <option value="3">Administracion</option>
+                            <option value="3">Administracion</option> 
                             </select>
                         </div>
                         <script>
