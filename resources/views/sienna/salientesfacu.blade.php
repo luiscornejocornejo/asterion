@@ -19,12 +19,13 @@
                 <div class="card">
                     <h6 class="card-header bg-light">Saliente Masivo</h6>
                     <div class="card-body">
-                        <h5 class="card-title">1. ¿Qué variables tiene tu documento?</h5>
-                        <p class="card-text">
-                            Antes de que realices la carga del documento debes indicar las variables (nombre, teléfono, etc.), el dato que contiene y a qué columna pertenece. Las variables marcadas con <span class="text-primary">*</span> son obligatorias<br>
-                            <a href="#" rel="no-referrer">En este enlace puedes consultar el siguiente artículo para completar los campos en el documento</a>.
-                        </p>
-                        <p class="card-text mt-3">2. Seleccione la plantilla que deseas enviar.</p>
+                        <!-- 
+                            <p class="card-text">
+                                Antes de que realices la carga del documento debes indicar las variables (nombre, teléfono, etc.), el dato que contiene y a qué columna pertenece. Las variables marcadas con <span class="text-primary">*</span> son obligatorias<br>
+                                <a href="#" rel="no-referrer">En este enlace puedes consultar el siguiente artículo para completar los campos en el documento</a>.
+                            </p>
+                         -->
+                        <p class="card-title">2. Seleccione la plantilla que deseas enviar.</p>
                         <select name="template" class="form-select w-25" onchange="showFields(this.value)">
                             <option selected disabled>Seleccione plantilla</option>
                             <?php foreach ($listadopadre as $ll) { ?>
@@ -71,6 +72,7 @@
                                 });
                             }
                         </script>
+                        <h5 class="card-text my-3">1. ¿Qué variables tiene tu documento?</h5>
                         <table class="table table-centered mb-0">
                             <thead>
                                 <tr>
@@ -101,7 +103,7 @@
                                     document.getElementById('inputFile').addEventListener('change', function(event) {
                                         const file = event.target.files[0];
                                         document.getElementById('fileName').textContent = file.name
-                                        
+
                                         const reader = new FileReader();
 
                                         reader.onload = function(event) {
@@ -122,7 +124,7 @@
 
                                             const headerInput = document.getElementById('headerInput').value;
                                             const headers = headerInput ? headerInput.split(',') : jsonData[0];
-                                       
+
                                             const headerRow = document.createElement('tr');
                                             headers.forEach(header => {
                                                 const th = document.createElement('th');
@@ -130,10 +132,10 @@
                                                 headerRow.appendChild(th);
                                             });
                                             table.appendChild(headerRow);
-                                            
+
                                             console.log("JSON DATA:" + jsonData)
 
-                                            jsonData.slice(1,51).forEach(row => {
+                                            jsonData.slice(1, 51).forEach(row => {
                                                 const tr = document.createElement('tr');
                                                 row.forEach(cell => {
                                                     const td = document.createElement('td');
@@ -142,7 +144,7 @@
                                                 });
                                                 table.appendChild(tr);
                                             });
-                                           
+
                                             document.getElementById('recordCount').textContent = `${jsonData.length }`;
                                         };
 
@@ -151,7 +153,7 @@
                                     });
                                 </script>
                                 <p class="card-text text-black mt-3"><strong>Total de usuarios en el documento: </strong> <span id="recordCount"></span></p>
-                                
+
 
                                 <a role="button" data-bs-toggle="modal" data-bs-target="#preview" class="text-primary">Ver listado de usuarios cargados</a>
                                 <p class="mt-3">⚠️ IMPORTANTE: verifica que todos los campos del documento se encuentren completos con las cabeceras que requiere el envío. No deben quedar espacios en blancos.</p>
