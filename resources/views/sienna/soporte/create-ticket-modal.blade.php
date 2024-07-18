@@ -11,17 +11,21 @@
                     <div class="row">
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label for="department" class="form-label">Departamento:</label>
-                            <select class="form-control mb-3" name="department" id="department" class="form-select">
-                                <?php // foreach ($usersmerchant as $val) { ?>
-                                    <option value="<?php // echo $val->id; ?>"><?php //echo $val->nombre; ?></option>
-                                    <?php // } ?>
+                            <select onchange="moti(this)" class="form-control mb-3" name="department" id="department" class="form-select">
+                            <option value="2">Soporte</option>
+                            <option value="3">Administracion</option>
                             </select>
                         </div>
+                        <script>
+                            function moti(dep){
+                                alert(dep);
+                            }
+                        </script>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label for="reason" class="form-label">Motivo:</label>
                             <select class="form-control mb-3" name="reason" id="reason" class="form-select">
                                 <?php // foreach ($usersmerchant as $val) { ?>
-                                    <option value="<?php // echo $val->id; ?>"><?php // echo $val->nombre ; ?></option>
+                               
                                 <?php // } ?>
                             </select>
                         </div>
