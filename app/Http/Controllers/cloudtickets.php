@@ -972,7 +972,7 @@ class cloudtickets extends Controller
         'siennasource' => 10,
         'cel' => "",
         'nya' => "",
-        'asignado' => "",
+        'asignado' => 99999,
         'prioridad' => 1,
         'user_id' => "",
         'conversation_url' => "",
