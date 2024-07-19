@@ -981,7 +981,7 @@ class cloudtickets extends Controller
         'updated_at' =>  \Carbon\Carbon::now(),
         ]);;
 
-        $idnewseguimiento = DB::reconnect('mysql4')->table("soporte.siennaseguimientos")->insertGetId([
+        $idnewseguimiento = DB::reconnect('mysql')->table("soporte.siennaseguimientos")->insertGetId([
             'ticket' => $idnewticket,
             'tipo' => '1',
             'descripcion' => 'created',
