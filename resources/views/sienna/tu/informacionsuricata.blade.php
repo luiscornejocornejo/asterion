@@ -19,8 +19,7 @@
 <div class="card ">
                 <div class="card-body">
 
-                    <h5 class="font-18 mb-2">Tarea: <?php //echo $resultados[0]->merchant; 
-                                                    ?></h5>
+                    <h5 class="font-18 mb-2">Cliente: <?php echo $resultadossuri[0]->merchant;?></h5>
                     <ul class="conversation-list p-0" data-simplebar="init">
                         <?php foreach ($resultadossuri as $valor) :
 
@@ -83,7 +82,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Descripcion</label>
                                 <br>
-                                <input type="hidden" name="idtarea" value="<?php echo "";//$idtarea; ?>" />
+                                <input type="hidden" name="idnewticket" value="<?php echo $resultadossuri[0]->siennatickets;?>" />
 
                                 <textarea name="descripcion" rows="5" class="form-control mb-3"></textarea>
                             </div>
@@ -91,7 +90,7 @@
                                 <button type="submit" class="btn btn-primary rounded-pill me-1">Responder</button>
                                 <label for="exampleInputPassword1" class="btn btn-secondary rounded-pill">
                                     <i class="mdi mdi-attachment"></i> Adjuntar
-                                    <input name="logo" type="file" id="exampleInputPassword1" class="d-none">
+                                    <input name="evicence" type="file" id="exampleInputPassword1" class="">
                                 </label>
                                 <span id="fileName" class="ms-1"></span>
                             </div>
