@@ -19,7 +19,7 @@
 <div class="card ">
                 <div class="card-body">
 
-                    <h5 class="font-18 mb-2">Cliente: <?php echo $resultadossuri[0]->merchant;?></h5>
+                    <h5 class="font-18 mb-2">Cliente: <?php echo $resultados[0]->merchant;?></h5>
                     <ul class="conversation-list p-0" data-simplebar="init">
                         <?php foreach ($resultadossuri as $valor) :
 
@@ -82,7 +82,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Descripcion</label>
                                 <br>
-                                <input type="hidden" name="idnewticket" value="<?php echo $resultadossuri[0]->siennatickets;?>" />
+                                <input type="hidden" name="idnewticket" value="<?php echo $resultados[0]->siennatickets;?>" />
 
                                 <textarea name="descripcion" rows="5" class="form-control mb-3"></textarea>
                             </div>
