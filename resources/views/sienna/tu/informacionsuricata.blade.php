@@ -82,7 +82,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Descripcion</label>
                                 <br>
-                                <input type="hidden" name="idnewticket" value="<?php echo $resultados[0]->id;?>" />
+                                <input type="hidden" name="idnewticket" value="<?php echo $resultados[0]->ticketid;?>" />
 
                                 <textarea name="descripcion" rows="5" class="form-control mb-3"></textarea>
                             </div>
