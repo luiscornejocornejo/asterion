@@ -37,7 +37,7 @@
                                             <p class="mb-1">
                                                 <?php if ($valor->tipo == 2) {
                                                     $url_new = $valor->cuerpo;
-                                                ?> <a href="<?php echo $url_new ?>" target="_blank">Ver archivo </a>
+                                                ?> <a href="https://sienamedia.sfo3.digitaloceanspaces.com/<?php echo $url_new ?>" target="_blank">Ver archivo </a>
                                                 <?php } else {
                                                     echo $valor->cuerpo;
                                                 } ?>
@@ -57,7 +57,7 @@
                                             <p class="mt-2">
                                                 <?php if ($valor->tipo == 2) {
                                                     $url_new = $valor->cuerpo;
-                                                ?> <a href="<?php echo $url_new ?>" target="_blank"><span class="ri-attachment-line pt-1"></span> Ver archivo </a>
+                                                ?> <a href="https://sienamedia.sfo3.digitaloceanspaces.com/<?php echo $url_new ?>" target="_blank"><span class="ri-attachment-line pt-1"></span> Ver archivo </a>
                                                 <?php } else {
                                                     echo $valor->cuerpo;
                                                 } ?>
