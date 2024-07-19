@@ -14,105 +14,93 @@
 }
 </style>
 
+
+
 <div class="card ">
-                                <div class="card-body">
-                                <h5 class="font-18 mb-2">Cliente: <?php echo $resultados[0]->merchant; ?></h5>
-                                    <ul class="conversation-list p-0" data-simplebar="init">
-                                        <?php foreach ($resultadossuri as $valor):
-                                           
+                <div class="card-body">
 
-                                        ?>
-	                                            <?php if ($valor->autor == 0): ?>
-	                                                <li class="clearfix">
-	                                                    <div class="chat-avatar">
-	                                                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" class="rounded-circle border" alt="Usuario">
-	                                                    </div>
-	                                                    <div class="conversation-text">
-	                                                        <div class="ctext-wrap bg-white border w-100">
-	                                                        <small class="text-muted">De: <?php echo $valor->idusuario; ?></small><br>
-	                                                        <small class="text-muted">Fecha: <?php echo $valor->created_at; ?> </small>
-	                                                            <p class="mb-1">
-                                                                <?php if($valor->tipo==1){
-                                                                        echo $valor->cuerpo; 
-                                                                }else{
-                                                                    echo "img".$valor->cuerpo; 
-                                                                }?>
-	                                                            </p>
-	                                                        </div>
-	                                                    </div>
-	                                                </li>
-	                                            <?php else: ?>
-                                                <li class="clearfix odd">
-                                                    <div class="chat-avatar">
-                                                        <img src="/assetsfacu/images/users/operator.jpeg" class="rounded-circle border" alt="Operador">
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap w-100">
-                                                        <small class="text-muted">De: <?php echo $valor->idusuario;?></small><br>
-                                                            <small class="text-muted">Fecha: <?php echo $valor->created_at;?> </small>
-                                                            <p>
-                                                            <?php if($valor->tipo==1){
-                                                                        echo $valor->cuerpo; 
-                                                                }else{
-                                                                    echo "img".$valor->cuerpo; 
-                                                                }?>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            <?php endif;?>
-                                        <?php endforeach;?>
-                                    </ul>
+                    <h5 class="font-18 mb-2">Tarea: <?php //echo $resultados[0]->merchant; 
+                                                    ?></h5>
+                    <ul class="conversation-list p-0" data-simplebar="init">
+                        <?php foreach ($resultadossuri as $valor) :
 
 
-
-
-                                    
-                                    <!-- end row-->
-
-                                        <div class="mt-5">
-                                        <form method='post'action='/api/mandarmail'>
-                                         @csrf
-                                        
-                                            <div id="snow-editor" style="height: 300px;">
-                                            </div>
-                                            <button onclick="enviaremail2('<?php echo $resultados[0]->ticketid; ?>','<?php echo $subdomain_tmp; ?>')" type="button" class="btn me-2 mt-2 rounded-pill" style="background-color: #FFD193;">Responder</button>
-                                        </form>
+                        ?>
+                            <?php if ($valor->autor == 0) : ?>
+                                <li class="clearfix">
+                                    <div class="chat-avatar">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" class="rounded-circle border" alt="Usuario">
+                                    </div>
+                                    <div class="conversation-text">
+                                        <div class="ctext-wrap bg-white border w-100">
+                                            <small class="text-muted"> <strong> <?php echo ucfirst($valor->idusuario); ?> </strong> </small><br>
+                                            <small class="text-muted"><?php echo $valor->created_at; ?> </small>
+                                            <p class="mb-1">
+                                                <?php if ($valor->tipo == 2) {
+                                                    $url_new = $valor->cuerpo;
+                                                ?> <a href="<?php echo $url_new ?>" target="_blank">Ver archivo </a>
+                                                <?php } else {
+                                                    echo $valor->cuerpo;
+                                                } ?>
+                                            </p>
                                         </div>
-                                        <script>
-                                            function enviaremail2(ticket,merchant,cc,subject){
-
-                                                let mail=document.getElementById("mailaeviar").value;
-                                                 cc=document.getElementById("cc2").value;
-                                                 subject=document.getElementById("subject").value;
-                                                let texto=document.getElementById("snow-editor").innerHTML;
-
-                                                url='/api/mandarmail';
-
-
-                                                axios.post(url, {
-                                                    mail: mail,
-                                                    cc: cc,
-                                                        texto: texto,
-                                                        ticket: ticket,
-                                                        merchant: merchant,
-                                                        subject: subject,
-
-                                                    })
-                                                    .then(function (response) {
-                                                        console.log("respuesta");
-                                                        console.log(response);
-                                                        window.location.reload();
-
-                                                    })
-                                                    .catch(function (error) {
-                                                        console.log(error);
-                                                    });
-                                            }
-                                        </script>
+                                    </div>
+                                </li>
+                            <?php else : ?>
+                                <li class="clearfix odd">
+                                    <div class="chat-avatar">
+                                        <img src="/assetsfacu/images/users/operator.jpeg" class="rounded-circle border" alt="Operador">
+                                    </div>
+                                    <div class="conversation-text">
+                                        <div class="ctext-wrap w-100">
+                                            <small class="text-muted"> <strong><?php echo ucfirst($valor->idusuario); ?> </strong> </small><br>
+                                            <small class="text-muted"> <?php echo $valor->created_at; ?> </small>
+                                            <p class="mt-2">
+                                                <?php if ($valor->tipo == 1) {
+                                                    $url_new = $valor->cuerpo;
+                                                ?> <a href="<?php echo $url_new ?>" target="_blank"><span class="ri-attachment-line pt-1"></span> Ver archivo </a>
+                                                <?php } else {
+                                                    echo $valor->cuerpo;
+                                                } ?>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </ul>
 
 
-                                </div>
-                        <!-- end .mt-4 -->
 
-                        </div>
+
+
+                    <!-- end row-->
+
+                    <div class="mt-4">
+                        <form method='post' action='/createticketsoporte2' enctype="multipart/form-data">
+                            @csrf
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Descripcion</label>
+                                <br>
+                                <input type="hidden" name="idtarea" value="<?php echo $idtarea; ?>" />
+
+                                <textarea name="descripcion" rows="5" class="form-control mb-3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary rounded-pill me-1">Responder</button>
+                                <label for="exampleInputPassword1" class="btn btn-secondary rounded-pill">
+                                    <i class="mdi mdi-attachment"></i> Adjuntar
+                                    <input name="logo" type="file" id="exampleInputPassword1" class="d-none">
+                                </label>
+                                <span id="fileName" class="ms-1"></span>
+                            </div>
+                        </form>
+                    </div>
+
+
+
+                </div>
+                <!-- end .mt-4 -->
+
+            </div>
