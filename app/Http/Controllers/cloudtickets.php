@@ -994,7 +994,7 @@ class cloudtickets extends Controller
 
             
             $idnewsconv = DB::reconnect('mysql')->table("soporte.siennasuricata")->insertGetId([
-                'ticket' => $idnewticket,
+                'siennatickets' => $idnewticket,
                 'tipo' => '1',
                 'cuerpo' => $textticket,
                 'autor' => 0,
@@ -1013,7 +1013,7 @@ class cloudtickets extends Controller
             $ruta=$merchant."/seguimientos";
             $logo= Storage::disk('do')->put($ruta, $logo);
             $idnewsconv = DB::reconnect('mysql')->table("soporte.siennasuricata")->insertGetId([
-                'ticket' => $idnewticket,
+                'siennatickets' => $idnewticket,
                 'tipo' => '2',
                 'cuerpo' => $logo,
                 'autor' => 0,
