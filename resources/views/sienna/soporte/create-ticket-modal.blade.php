@@ -8,6 +8,8 @@
 
             <div class="modal-body">
                 <form action="/createticketsoporte" method="POST"  enctype="multipart/form-data">
+                @csrf
+
                     <div class="row">
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label for="department" class="form-label">Departamento2:</label>
