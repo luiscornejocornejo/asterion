@@ -1011,7 +1011,7 @@ class cloudtickets extends Controller
     
     
             $archi=Str::of($logo)->basename();
-            $ruta=$merchant."/seguimientos";
+            $ruta="soporte/suricata";
             $logo= Storage::disk('do')->put($ruta, $logo);
             $idnewsconv = DB::reconnect('mysql')->table("soporte.siennasuricata")->insertGetId([
                 'siennatickets' => $idnewticket,
@@ -1064,7 +1064,7 @@ class cloudtickets extends Controller
     
     
             $archi=Str::of($logo)->basename();
-            $ruta=$merchant."/seguimientos";
+            $ruta="soporte/suricata";
             $logo= Storage::disk('do')->put($ruta, $logo);
             $idnewsconv = DB::reconnect('mysql')->table("soporte.siennasuricata")->insertGetId([
                 'siennatickets' => $idnewticket,
