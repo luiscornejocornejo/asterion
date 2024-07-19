@@ -55,7 +55,7 @@
                                             <small class="text-muted"> <strong><?php echo ucfirst($valor->idusuario); ?> </strong> </small><br>
                                             <small class="text-muted"> <?php echo $valor->created_at; ?> </small>
                                             <p class="mt-2">
-                                                <?php if ($valor->tipo == 1) {
+                                                <?php if ($valor->tipo == 2) {
                                                     $url_new = $valor->cuerpo;
                                                 ?> <a href="<?php echo $url_new ?>" target="_blank"><span class="ri-attachment-line pt-1"></span> Ver archivo </a>
                                                 <?php } else {
