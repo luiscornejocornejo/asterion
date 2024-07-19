@@ -945,6 +945,72 @@ class cloudtickets extends Controller
         ->with('tsoporte', $tsoporte)
         ;
     }
+
+    
+    public function createticketsoporte(Request $request)
+    {       
+        
+       echo  $department=$request->department;
+       echo $reason=$request->reason;
+       echo $textticket=$request->textticket;
+       echo $textticket=$request->textticket;
+       $merchant=$this->dominio();
+
+       echo  $idusuario=session('idusuario');
+
+      // $base=12;
+      //$fields3 = $this->conectar2($base);
+       $idnewticket = DB::reconnect('mysql')->table("soporte.siennatickets")->insertGetId([
+        'siennadepto' => $department,
+        'extra1' => "",
+        'extra2' => "",
+        'extra3' => "",
+        'cliente' => $merchant,
+        'siennatopic' => $reason,
+        'cedula' => "",
+        'siennaestado' => 1,
+        'siennasource' => 10,
+        'cel' => "",
+        'nya' => "",
+        'asignado' => "",
+        'prioridad' => 1,
+        'user_id' => "",
+        'conversation_url' => "",
+        'merchant' => $merchant,
+        'created_at' =>  \Carbon\Carbon::now(),
+        'updated_at' =>  \Carbon\Carbon::now(),
+        ]);;
+
+        $idnewseguimiento = DB::reconnect('mysql4')->table("soporte.siennaseguimientos")->insertGetId([
+            'ticket' => $idnewticket,
+            'tipo' => '1',
+            'descripcion' => 'created',
+            'autor' => 'sistema',
+            'created_at' =>  \Carbon\Carbon::now(),
+            'updated_at' =>  \Carbon\Carbon::now(),
+  
+            ]);;
+      /*
+       $logo="";
+       if ($request->hasFile('evicence')) {
+        $ta=new siennatareassegui();
+
+        $logo = $request->file('logo')->store('public');
+        $ta->tipo=1;
+        $ta->autor=1;
+        $ta->siennatareas=$idtarea;
+        $ta->cuerpo=$logo;
+        $ta->idusuario=$idusuario;
+        $ta->save();
+
+       }*/
+      
+        return redirect()
+        ->back()
+        ->with('success', 'Se Agrego   correctamente!');
+ 
+    }
+
     public function nuevost(Request $request)
     {       
         

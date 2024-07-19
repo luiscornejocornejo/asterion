@@ -7,7 +7,7 @@
             </div>
 
             <div class="modal-body">
-                <form action="/create/ticket" method="POST">
+                <form action="/createticketsoporte" method="POST"  enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label for="department" class="form-label">Departamento2:</label>
@@ -74,13 +74,13 @@
                     </div>
 
                     <label for="ticket-text" class="form-label">Descripción:</label>
-                    <textarea class="form-control mb-3" id="task-text" name="text-ticket" class="form-control mb-3" rows="4" required></textarea>
+                    <textarea class="form-control mb-3" id="task-text" name="textticket" class="form-control mb-3" rows="4" required></textarea>
                     <input type="hidden" value="<?php // echo $resultados[0]->ticketid; 
                                                 ?>" name="ticketid" />
 
                     <label for="evidence" class="btn btn-secondary rounded-pill">
                         <i class="mdi mdi-attachment"></i> Evidencia
-                        <input name="evicence" type="file" id="evidence" class="d-none">
+                        <input name="evicence" type="file" id="evidence" class="">
                     </label>
 
                     <div class="modal-footer">

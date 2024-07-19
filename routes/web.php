@@ -278,6 +278,9 @@ Route::post('/nuevost','App\Http\Controllers\cloudtickets@nuevost');
 Route::get('/salientesc','App\Http\Controllers\cloudtickets@salientesc')->middleware('supervisorsienna');
 Route::get('/extrastickets','App\Http\Controllers\cloudtickets@extrastickets')->middleware('adminsienna');
 Route::post('/extrastickets','App\Http\Controllers\cloudtickets@extrastickets2')->middleware('adminsienna');
+Route::post('/createticketsoporte','App\Http\Controllers\cloudtickets@createticketsoporte')->middleware('supervisorsienna');
+
+
 
 Route::get('/wisprosaliente', function () {
     return view('/sienna/salienteWispro');
