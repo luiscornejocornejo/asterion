@@ -990,20 +990,39 @@ class cloudtickets extends Controller
             'updated_at' =>  \Carbon\Carbon::now(),
   
             ]);;
-      /*
-       $logo="";
-       if ($request->hasFile('evicence')) {
-        $ta=new siennatareassegui();
 
-        $logo = $request->file('logo')->store('public');
-        $ta->tipo=1;
-        $ta->autor=1;
-        $ta->siennatareas=$idtarea;
-        $ta->cuerpo=$logo;
-        $ta->idusuario=$idusuario;
-        $ta->save();
 
-       }*/
+            
+            $idnewsconv = DB::reconnect('mysql')->table("soporte.siennasuricata")->insertGetId([
+                'ticket' => $idnewticket,
+                'tipo' => '1',
+                'cuerpo' => $textticket,
+                'autor' => 0,
+                'created_at' =>  \Carbon\Carbon::now(),
+                'updated_at' =>  \Carbon\Carbon::now(),
+      
+                ]);;
+      
+       if (isset($request->evicence)) {
+            $logo = $request->file('evicence');
+           // dd($logo);
+          //  $content = file_get_contents($url);
+    
+    
+            $archi=Str::of($logo)->basename();
+            $ruta=$merchant."/seguimientos";
+            $logo= Storage::disk('do')->put($ruta, $logo);
+            $idnewsconv = DB::reconnect('mysql')->table("soporte.siennasuricata")->insertGetId([
+                'ticket' => $idnewticket,
+                'tipo' => '2',
+                'cuerpo' => $logo,
+                'autor' => 0,
+                'created_at' =>  \Carbon\Carbon::now(),
+                'updated_at' =>  \Carbon\Carbon::now(),
+      
+                ]);;
+       
+       }
       
         return redirect()
         ->back()
