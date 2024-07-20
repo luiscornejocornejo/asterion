@@ -965,6 +965,7 @@ class cloudtickets extends Controller
 
        echo  $idusuario=session('idusuario');
        $nombreusuario=$this->datosusuario($idusuario);
+       $datosuser=$nombreusuario->last_name;
       // $base=12;
       //$fields3 = $this->conectar2($base);
        $idnewticket = DB::reconnect('mysql')->table("soporte.siennatickets")->insertGetId([
@@ -1007,6 +1008,8 @@ class cloudtickets extends Controller
                 'tipo' => '1',
                 'cuerpo' => $textticket,
                 'autor' => 0,
+                'idusuario' => $datosuser,
+
                 'created_at' =>  \Carbon\Carbon::now(),
                 'updated_at' =>  \Carbon\Carbon::now(),
       
@@ -1026,6 +1029,8 @@ class cloudtickets extends Controller
                 'tipo' => '2',
                 'cuerpo' => $logo,
                 'autor' => 0,
+                'idusuario' => $datosuser,
+
                 'created_at' =>  \Carbon\Carbon::now(),
                 'updated_at' =>  \Carbon\Carbon::now(),
       
@@ -1049,13 +1054,16 @@ class cloudtickets extends Controller
        echo $reason=$request->reason;
        echo $textticket=$request->descripcion;
        $merchant=$this->dominio();
-       echo  $idusuario=session('idusuario');       
+       echo  $idusuario=session('idusuario');  
+       $nombreusuario=$this->datosusuario($idusuario); 
+       $datosuser=$nombreusuario->last_name;
+    
             $idnewsconv = DB::reconnect('mysql')->table("soporte.siennasuricata")->insertGetId([
                 'siennatickets' => $idnewticket,
                 'tipo' => '1',
                 'cuerpo' => $textticket,
                 'autor' => 1,
-                'idusuario' => $idusuario,
+                'idusuario' => $datosuser,
                 'created_at' =>  \Carbon\Carbon::now(),
                 'updated_at' =>  \Carbon\Carbon::now(),
       
@@ -1075,7 +1083,7 @@ class cloudtickets extends Controller
                 'tipo' => '2',
                 'cuerpo' => $logo,
                 'autor' => 1,
-                'idusuario' => $idusuario,
+                'idusuario' => $datosuser,
                 'created_at' =>  \Carbon\Carbon::now(),
                 'updated_at' =>  \Carbon\Carbon::now(),
       
@@ -1114,13 +1122,15 @@ class cloudtickets extends Controller
        echo $reason=$request->reason;
        echo $textticket=$request->descripcion;
        $merchant=$this->dominio();
-       echo  $idusuario=session('idusuario');       
+       echo  $idusuario=session('idusuario');   
+       $nombreusuario=$this->datosusuario($idusuario); 
+       $datosuser=$nombreusuario->last_name;    
             $idnewsconv = DB::reconnect('mysql')->table("soporte.siennasuricata")->insertGetId([
                 'siennatickets' => $idnewticket,
                 'tipo' => '1',
                 'cuerpo' => $textticket,
                 'autor' => 0,
-                'idusuario' => $idusuario,
+                'idusuario' => $datosuser,
                 'created_at' =>  \Carbon\Carbon::now(),
                 'updated_at' =>  \Carbon\Carbon::now(),
       
@@ -1140,7 +1150,7 @@ class cloudtickets extends Controller
                 'tipo' => '2',
                 'cuerpo' => $logo,
                 'autor' => 0,
-                'idusuario' => $idusuario,
+                'idusuario' => $datosuser,
                 'created_at' =>  \Carbon\Carbon::now(),
                 'updated_at' =>  \Carbon\Carbon::now(),
       
