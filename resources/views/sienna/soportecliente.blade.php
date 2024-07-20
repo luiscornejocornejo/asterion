@@ -29,7 +29,7 @@
                     <ul class="conversation-list p-0" data-simplebar="init">
                         <?php foreach ($tsoporte as $valor) :
 
-
+                            $idnewticket=$valor->siennatickets;
                         ?>
                             <?php if ($valor->autor == 0) : ?>
                                 <li class="clearfix">
@@ -88,7 +88,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Descripcion</label>
                                 <br>
-                                <input type="hidden" name="idnewticket" value="<?php //echo $resultados[0]->ticketid;?>" />
+                                <input type="hidden" name="idnewticket" value="<?php echo $idnewticket;?>" />
 
                                 <textarea name="descripcion" rows="5" class="form-control mb-3"></textarea>
                             </div>

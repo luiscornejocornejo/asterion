@@ -281,6 +281,7 @@ Route::post('/extrastickets','App\Http\Controllers\cloudtickets@extrastickets2')
 Route::post('/createticketsoporte','App\Http\Controllers\cloudtickets@createticketsoporte')->middleware('supervisorsienna');
 Route::post('/createticketsoporte2','App\Http\Controllers\cloudtickets@createticketsoporte2')->middleware('supervisorsienna');
 Route::get('/createticketsoportecliente','App\Http\Controllers\cloudtickets@createticketsoportecliente')->middleware('supervisorsienna');
+Route::post('/createticketsoportecliente','App\Http\Controllers\cloudtickets@createticketsoportecliente2')->middleware('supervisorsienna');
 
 
 

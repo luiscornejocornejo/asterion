@@ -1038,20 +1038,13 @@ class cloudtickets extends Controller
        echo $reason=$request->reason;
        echo $textticket=$request->descripcion;
        $merchant=$this->dominio();
-
-       echo  $idusuario=session('idusuario');
-
-     
-
-      
-
-
-            
+       echo  $idusuario=session('idusuario');       
             $idnewsconv = DB::reconnect('mysql')->table("soporte.siennasuricata")->insertGetId([
                 'siennatickets' => $idnewticket,
                 'tipo' => '1',
                 'cuerpo' => $textticket,
                 'autor' => 1,
+                'idusuario' => $idusuario,
                 'created_at' =>  \Carbon\Carbon::now(),
                 'updated_at' =>  \Carbon\Carbon::now(),
       
@@ -1071,6 +1064,7 @@ class cloudtickets extends Controller
                 'tipo' => '2',
                 'cuerpo' => $logo,
                 'autor' => 1,
+                'idusuario' => $idusuario,
                 'created_at' =>  \Carbon\Carbon::now(),
                 'updated_at' =>  \Carbon\Carbon::now(),
       
@@ -1097,6 +1091,54 @@ class cloudtickets extends Controller
         return view('sienna/soportecliente')
         ->with('tsoporte', $tsoporte)
         ;
+    }
+
+    
+    public function createticketsoportecliente2(Request $request)
+    {       
+        
+       echo  $idnewticket=$request->idnewticket;
+       echo $reason=$request->reason;
+       echo $textticket=$request->descripcion;
+       $merchant=$this->dominio();
+       echo  $idusuario=session('idusuario');       
+            $idnewsconv = DB::reconnect('mysql')->table("soporte.siennasuricata")->insertGetId([
+                'siennatickets' => $idnewticket,
+                'tipo' => '1',
+                'cuerpo' => $textticket,
+                'autor' => 2,
+                'idusuario' => $idusuario,
+                'created_at' =>  \Carbon\Carbon::now(),
+                'updated_at' =>  \Carbon\Carbon::now(),
+      
+                ]);;
+      
+       if (isset($request->evicence)) {
+            $logo = $request->file('evicence');
+           // dd($logo);
+          //  $content = file_get_contents($url);
+    
+    
+            $archi=Str::of($logo)->basename();
+            $ruta="soporte/suricata";
+            $logo= Storage::disk('do')->put($ruta, $logo);
+            $idnewsconv = DB::reconnect('mysql')->table("soporte.siennasuricata")->insertGetId([
+                'siennatickets' => $idnewticket,
+                'tipo' => '2',
+                'cuerpo' => $logo,
+                'autor' => 2,
+                'idusuario' => $idusuario,
+                'created_at' =>  \Carbon\Carbon::now(),
+                'updated_at' =>  \Carbon\Carbon::now(),
+      
+                ]);;
+       
+       }
+      
+        return redirect()
+        ->back()
+        ->with('success', 'Se Agrego   correctamente!');
+ 
     }
     public function nuevost(Request $request)
     {       
