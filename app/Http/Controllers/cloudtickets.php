@@ -1083,6 +1083,21 @@ class cloudtickets extends Controller
         ->with('success', 'Se Agrego   correctamente!');
  
     }
+
+    
+    public function createticketsoportecliente(Request $request)
+    {   
+        $merchant=$this->dominio();
+
+        $ticket=$request->ticket;
+       
+        $query ="select * from soporte.siennasuricata where siennatickets='".$ticket."' ";
+        $tsoporte = DB::select($query);
+
+        return view('sienna/soportecliente')
+        ->with('tsoporte', $tsoporte)
+        ;
+    }
     public function nuevost(Request $request)
     {       
         

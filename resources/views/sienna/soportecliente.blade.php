@@ -1,27 +1,34 @@
-<style>
-    .conversation-list .odd .conversation-text {
-    float: right!important;
-    margin-right: 12px;
-    text-align: right;
-    width: 90%!important
-}
-
-.conversation-list .conversation-text {
-    float: left;
-    font-size: 13px;
-    margin-left: 12px;
-    width: 90%
-}
-</style>
+@include('facu.header')
 
 
 
-<div class="card ">
+<div class="wrapper menuitem-active">
+    @include('facu.menu')
+    <div class="content-page" style="padding: 0!important;">
+
+        <div class="container pt-5">
+            <style>
+                .conversation-list .odd .conversation-text {
+                    float: right !important;
+                    margin-right: 12px;
+                    text-align: right;
+                    width: 90% !important
+                }
+
+                .conversation-list .conversation-text {
+                    float: left;
+                    font-size: 13px;
+                    margin-left: 12px;
+                    width: 90%
+                }
+            </style>
+            @include('sienna.tareas.abouttask')
+
+            <div class="card ">
                 <div class="card-body">
 
-                    <h5 class="font-18 mb-2">Cliente: <?php echo $resultados[0]->merchant;?></h5>
                     <ul class="conversation-list p-0" data-simplebar="init">
-                        <?php foreach ($resultadossuri as $valor) :
+                        <?php foreach ($tsoporte as $valor) :
 
 
                         ?>
@@ -76,13 +83,13 @@
                     <!-- end row-->
 
                     <div class="mt-4">
-                        <form method='post' action='/createticketsoporte2' enctype="multipart/form-data">
+                        <form method='post' action='/createticketsoportecliente' enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Descripcion</label>
                                 <br>
-                                <input type="hidden" name="idnewticket" value="<?php echo $resultados[0]->ticketid;?>" />
+                                <input type="hidden" name="idnewticket" value="<?php //echo $resultados[0]->ticketid;?>" />
 
                                 <textarea name="descripcion" rows="5" class="form-control mb-3"></textarea>
                             </div>
@@ -103,3 +110,20 @@
                 <!-- end .mt-4 -->
 
 </div>
+        </div>
+
+
+    </div>
+</div>
+<script>
+    function init() {
+        document.getElementById('exampleInputPassword1').addEventListener('change', showName, false);
+    }
+
+    function showName(event) {
+        document.getElementById('fileName').innerHTML = event.target.files[0].name
+    }
+    init()
+</script>
+
+@include('facu.footer')
