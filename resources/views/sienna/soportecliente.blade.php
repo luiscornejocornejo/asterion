@@ -22,7 +22,6 @@
                     width: 90%
                 }
             </style>
-            @include('sienna.tareas.abouttask')
 
             <div class="card ">
                 <div class="card-body">
