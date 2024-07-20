@@ -947,7 +947,13 @@ class cloudtickets extends Controller
         ;
     }
 
-    
+    //datos del user
+    public function datosusuario($usu){
+
+            $user=user::find($usu);
+            return $user;
+    }
+    // creacion de ticket en soporte dle lado del cliente
     public function createticketsoporte(Request $request)
     {       
         
@@ -958,7 +964,7 @@ class cloudtickets extends Controller
        $merchant=$this->dominio();
 
        echo  $idusuario=session('idusuario');
-
+       $nombreusuario=$this->datosusuario($idusuario);
       // $base=12;
       //$fields3 = $this->conectar2($base);
        $idnewticket = DB::reconnect('mysql')->table("soporte.siennatickets")->insertGetId([
@@ -974,7 +980,9 @@ class cloudtickets extends Controller
         'cel' => "",
         'nya' => "",
         'asignado' => 99999,
-        'prioridad' => 1,
+        'prioridad' => 3,
+        'estadoconv' => 1,
+        
         'user_id' => "",
         'conversation_url' => "",
         'merchant' => $merchant,
@@ -1030,11 +1038,14 @@ class cloudtickets extends Controller
         ->with('success', 'Se Agrego   correctamente!');
  
     }
+    //insert de nuevo registro del lado de soporte
 
     public function createticketsoporte2(Request $request)
     {       
         
        echo  $idnewticket=$request->idnewticket;
+       $query="update soporte.siennatickets set estadoconv='3'  where id='".$idnewticket."'";
+       $resultados5 = DB::select($query);
        echo $reason=$request->reason;
        echo $textticket=$request->descripcion;
        $merchant=$this->dominio();
@@ -1078,7 +1089,7 @@ class cloudtickets extends Controller
  
     }
 
-    
+    //view de tickets del lado del cliente en soporte
     public function createticketsoportecliente(Request $request)
     {   
         $merchant=$this->dominio();
@@ -1093,11 +1104,13 @@ class cloudtickets extends Controller
         ;
     }
 
-    
+    //insert de nuevo registro del lado del cliente
     public function createticketsoportecliente2(Request $request)
     {       
         
        echo  $idnewticket=$request->idnewticket;
+       $query="update soporte.siennatickets set estadoconv='1'  where id='".$idnewticket."'";
+       $resultados5 = DB::select($query);
        echo $reason=$request->reason;
        echo $textticket=$request->descripcion;
        $merchant=$this->dominio();
