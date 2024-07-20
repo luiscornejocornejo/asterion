@@ -108,7 +108,7 @@
                 </div>
                 <!-- end .mt-4 -->
 
-</div>
+            </div>
         </div>
 
 
@@ -124,5 +124,7 @@
     }
     init()
 </script>
-
+</div>
+    </div>
+</div>
 @include('facu.footer')
