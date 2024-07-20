@@ -950,7 +950,7 @@ class cloudtickets extends Controller
     //datos del user
     public function datosusuario($usu){
 
-            $user=user::find($usu);
+            $user=users::find($usu);
             return $user;
     }
     // creacion de ticket en soporte dle lado del cliente
