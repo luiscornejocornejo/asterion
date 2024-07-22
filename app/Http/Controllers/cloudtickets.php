@@ -868,7 +868,12 @@ class cloudtickets extends Controller
     {   
         $merchant=$this->dominio();
 
-        $query ="select * from soporte.siennatickets where siennaestado<>'4' and siennasource=10  and merchant='".$merchant."'";
+        $query ="select a.id,a.created_at,a.estadoconv,b.nombre as deptoname ,c.topicname from soporte.siennatickets as a 
+        left join soporte.siennadepto b
+        on b.id=a.siennadepto
+        left join soporte.siennatopic c
+        on c.id=a.siennatopic
+        where a.siennaestado<>'4' and a.siennasource=10  and a.merchant='".$merchant."'";
         $tsoporte = DB::select($query);
 
         return view('sienna/soporte')

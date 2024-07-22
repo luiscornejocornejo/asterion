@@ -57,8 +57,8 @@
                     <?php foreach ($tsoporte as $val3) { ?>
                         <tr class="text-center">
                             <td><a href="{{ url('createticketsoportecliente?ticket=' . $val3->id) }}" target="_blank">{{$val3->id}}</a></td>
-                            <td>{{$val3->siennatopic}}</td>
-                            <td>{{$val3->siennadepto}}</td>
+                            <td>{{$val3->topicname}}</td>
+                            <td>{{$val3->deptoname}}</td>
                             <td>{{$val3->created_at}}
                                 <?php if($val3->estadoconv==3){
                                     echo '<span class=" translate-middle p-1 bg-danger border border-light rounded-circle">
