@@ -50,7 +50,6 @@
                         <th class="text-light">#</th>
                         <th class="text-light">Motivo</th>
                         <th class="text-light">Descripcion</th>
-                        <th class="text-light">Estado</th>
                         <th class="text-light">Fecha de creación</th>
                     </tr>
                 </thead>
@@ -60,8 +59,13 @@
                             <td><a href="{{ url('createticketsoportecliente?ticket=' . $val3->id) }}" target="_blank">{{$val3->id}}</a></td>
                             <td>{{$val3->nya}}</td>
                             <td>{{$val3->cliente}}</td>
-                            <td>{{$val3->siennaestado}}</td>
-                            <td>{{$val3->siennatopic}}</td>
+                            <td>{{$val3->created_at}}
+                                <?php if($val3->estadoconv==3){
+                                    echo 'span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                                                    <span class="visually-hidden">New alerts</span>
+                                                    </span>';
+                                }?>
+                            </td>
                         </tr>
                     <?php } ?>
                 </tbody>
