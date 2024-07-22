@@ -61,7 +61,7 @@
                             <td>{{$val3->cliente}}</td>
                             <td>{{$val3->created_at}}
                                 <?php if($val3->estadoconv==3){
-                                    echo 'span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                                    echo '<span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
                                                     <span class="visually-hidden">New alerts</span>
                                                     </span>';
                                 }?>
