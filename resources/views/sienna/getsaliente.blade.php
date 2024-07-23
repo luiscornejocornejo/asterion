@@ -71,6 +71,9 @@
                            
                     </div>
                     <div class="border" class="col-2">
+                        <center>
+                            <h1>Datos</h1>
+                        </center>
                             <table id="example" class="table table-striped dt-responsive nowrap w-100 text-light">
                                 <thead>
                                     <tr class="text-center bg-dark">
@@ -89,7 +92,9 @@
                             </table>
                         </div>
                     <div class="border" class="col-2">
+                        <center>
                             <h1>Crear Ticket</h1>
+                        </center>
                             <form action="crearticketsiennacliente" method="post">
                                 @csrf
 
@@ -149,8 +154,10 @@
                             </form>
                     </div>
                     <div class="border" class="col-2">
-
-                        <label class="form-label">Plantilla a enviar</label>
+                        <center>
+                            <h1>Saliente</h1>
+                        </center>
+                                                <label class="form-label">Plantilla a enviar</label>
                         <div class="row mb-3">
                             <div class="col-lg-4 col-sm-12">
                             <select name="template" id="template" class="form-select">
