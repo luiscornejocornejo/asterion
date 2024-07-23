@@ -96,7 +96,7 @@
                                 <button type="submit" class="btn btn-primary rounded-pill me-1">Responder</button>
                                 <label for="exampleInputPassword1" class="btn btn-secondary rounded-pill">
                                     <i class="mdi mdi-attachment"></i> Adjuntar
-                                    <input name="evicence" type="file" id="exampleInputPassword1" class="">
+                                    <input name="evicence" type="file" id="exampleInputPassword1" class="d-none">
                                 </label>
                                 <span id="fileName" class="ms-1"></span>
                             </div>
