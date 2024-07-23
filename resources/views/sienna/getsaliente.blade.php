@@ -36,48 +36,52 @@
             <div class="border" class="col-2">
                         <?php if (isset($datosonline)) {
                             $datosonline2=json_decode($datosonline);
-
+                            var_dump($datosonline2);
                              ?>
 
                            
                     </div>
-                    <form action="crearticketsiennacliente" method="post">
-                 @csrf
+                    <div class="border" class="col-2">
 
-                    <div class="row">
-                                                                                                                  
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <label for="number-client" class="form-label">Número registrado en la cuenta</label>
-                            <input required type="number" value="<?php echo $datosonline2->name; ?>" id="number-client" name="number_client" class="form-control" required>
-                        </div>
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
-                            <label for="department" class="form-label">Departamento</label>
-                            <select required onchange="topics(this.value)" class="form-select" name="depto">
-                            <option value="0">seleccionar</option>
+                            <form action="crearticketsiennacliente" method="post">
+                                @csrf
 
-                                <?php foreach($siennadeptosgenericos as $val){?>
+                                <div class="row">
+                                                                                                                            
+                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                        <label for="number-client" class="form-label">Número registrado en la cuenta</label>
+                                        <input required type="number" value="<?php echo $datosonline2->name; ?>" id="number-client" name="number_client" class="form-control" required>
+                                    </div>
+                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
+                                        <label for="department" class="form-label">Departamento</label>
+                                        <select required onchange="topics(this.value)" class="form-select" name="depto">
+                                        <option value="0">seleccionar</option>
 
-                                    <option value="<?php echo $val->id;?>"><?php echo $val->nombre ;?></option>
+                                            <?php foreach($siennadeptosgenericos as $val){?>
 
-                                <?php
-                                }?>
-                               
-                            </select>
-                        </div>
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
-                            <label for="reason" class="form-label">Motivo</label>
-                            <select required id="top" class="form-select" name="topicos">
-                            </select>
-                        </div>
-                        <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
+                                                <option value="<?php echo $val->id;?>"><?php echo $val->nombre ;?></option>
 
+                                            <?php
+                                            }?>
+                                        
+                                        </select>
+                                    </div>
+                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
+                                        <label for="reason" class="form-label">Motivo</label>
+                                        <select required id="top" class="form-select" name="topicos">
+                                        </select>
+                                    </div>
+                                    <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
+
+                                </div>
+                                </div>
+                                <div class="modal-footer mt-2">
+                                <button class="btn btn-success" type="submit" >Crear</button>
+                                
+                                    
+                            </form>
                     </div>
-                </div>
-                <div class="modal-footer mt-2">
-                <button class="btn btn-success" type="submit" >Crear</button>
-                
-                    
-            </form>
+
                         <label class="form-label">Plantilla a enviar</label>
                         <div class="row mb-3">
                             <div class="col-lg-4 col-sm-12">
