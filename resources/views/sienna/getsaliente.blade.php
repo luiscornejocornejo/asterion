@@ -23,7 +23,7 @@
                     </div>
                     <div class="col-lg-4 col-sm-12">
                         <label for="userNumber" class="form-label">Numero</label>
-                        <input type="text" name="userNumber" class="form-control" id="userNumber" aria-describedby="emailHelp" placeholder="005215" required>
+                        <input type="text" name="cliente" class="form-control" id="userNumber" aria-describedby="emailHelp" placeholder="005215" required>
                     </div>
                     <div class="col-lg-4 col-sm-12">
                         <div class="mb-2 position-relative">
