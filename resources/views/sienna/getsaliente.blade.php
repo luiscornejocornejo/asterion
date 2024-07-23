@@ -70,7 +70,7 @@
 
                            
                     </div>
-                    <div class="border" class="col-2">
+                    <div class="border  mb-3" class="col-2">
                         <center>
                             <h1>Datos</h1>
                         </center>
@@ -91,7 +91,7 @@
                                 </tbody>
                             </table>
                         </div>
-                    <div class="border" class="col-2">
+                    <div class="border  mb-3" class="col-2">
                         <center>
                             <h1>Crear Ticket</h1>
                         </center>
@@ -153,7 +153,7 @@
                                     
                             </form>
                     </div>
-                    <div class="border" class="col-2">
+                    <div class="border  mb-3" class="col-2">
                         <center>
                             <h1>Saliente</h1>
                         </center>
