@@ -267,7 +267,6 @@ Route::get('/ts','App\Http\Controllers\cloudtickets@ts');
 Route::get('/soporte','App\Http\Controllers\cloudtickets@soporte');
 Route::get('/envios','App\Http\Controllers\cloudtickets@envios');
 Route::get('/enviolistado','App\Http\Controllers\cloudtickets@enviolistado');
-Route::get('/getsaliente','App\Http\Controllers\cloudtickets@getsaliente');
 Route::get('/tareas','App\Http\Controllers\cloudtickets@tareassupervisor');
 
 Route::post('/actualizartarea','App\Http\Controllers\cloudtickets@actualizartarea');
@@ -282,6 +281,7 @@ Route::post('/createticketsoporte','App\Http\Controllers\cloudtickets@createtick
 Route::post('/createticketsoporte2','App\Http\Controllers\cloudtickets@createticketsoporte2')->middleware('supervisorsienna');
 Route::get('/createticketsoportecliente','App\Http\Controllers\cloudtickets@createticketsoportecliente')->middleware('supervisorsienna');
 Route::post('/createticketsoportecliente','App\Http\Controllers\cloudtickets@createticketsoportecliente2')->middleware('supervisorsienna');
+Route::get('/getsaliente','App\Http\Controllers\cloudtickets@getsaliente');
 
 
 
