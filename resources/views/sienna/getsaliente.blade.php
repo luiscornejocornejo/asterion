@@ -35,9 +35,9 @@
             </form>
             <div class="border" class="col-2">
                         <?php if (isset($datosonline)) {
-                            dd(json_decode($datosonline));
+                            $datosonline2=json_decode($datosonline);
 
-                            dd($datosonline["name"]);
+                            dd($datosonline2["name"]);
                              ?>
 
                             <p><?php //echo $datosonline;?>
