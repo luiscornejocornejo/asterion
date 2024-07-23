@@ -92,22 +92,6 @@
                     </tbody>
                 </table>
             </div>
-            <div class="border  mb-3" class="col-2">
-                <center>
-                    <h1>Crear Ticket</h1>
-                </center>
-
-            </div>
-            <div class="border  mb-3" class="col-2">
-                <center>
-                    <h1>Saliente</h1>
-                </center>
-                
-            </div>
-
-
-
-
         <?php } ?>
         </div>
     </div>
@@ -117,8 +101,8 @@
 <div id="create-ticket-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="multiple-oneModalLabel">Crear ticket</h4>
+            <div class="modal-header bg-dark">
+                <h4 class="modal-title text-light" id="multiple-oneModalLabel">Crear ticket</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -184,8 +168,8 @@
 <div id="create-ticket-modal-2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-twoModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="multiple-twoModalLabel">Modal Heading</h4>
+            <div class="modal-header bg-dark">
+                <h4 class="modal-title text-light" id="multiple-twoModalLabel">Saliente</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -199,6 +183,7 @@
                 </div>
             </div>
             <div class="modal-footer">
+                <button type="button" class="btn btn-light border" data-bs-toggle="modal" data-bs-target="#create-ticket-modal">Volver</button>
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
             </div>
         </div><!-- /.modal-content -->
