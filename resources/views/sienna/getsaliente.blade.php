@@ -37,7 +37,7 @@
                         <?php if (isset($datosonline)) {
                             var_dump(json_decode($datosonline));
 
-                            //dd($datosonline);
+                            dd($datosonline["name"]);
                              ?>
 
                             <p><?php //echo $datosonline;?>
