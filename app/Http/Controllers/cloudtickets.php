@@ -930,7 +930,8 @@ class cloudtickets extends Controller
         $numcli=$cliente;
         $inte=siennaintegracion::all();
         $getdata=siennagetdata::all();
-       
+        $query3="select * from siennadepto";
+        $siennadeptosgenericos = DB::select($query3);
        foreach($inte as $val){
             $urlinte=$val->version;
        }
@@ -946,6 +947,7 @@ class cloudtickets extends Controller
       }
       return view('sienna/getsaliente')
       ->with('datosonline', $datosonline)
+      ->with('siennadeptosgenericos', $siennadeptosgenericos)
       ->with('getdata', $getdata);
 
 
