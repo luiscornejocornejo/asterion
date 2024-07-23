@@ -120,8 +120,10 @@
 
                                             <label for="ticket-text" class="form-label">Descripción:</label>
                                                 <textarea class="form-control mb-3" id="task-text" name="textticket" class="form-control mb-3" rows="4" required></textarea>
-                                                <input type="hidden" value="<?php // echo $resultados[0]->ticketid; 
-                                                                            ?>" name="ticketid" />
+                                    </div>
+
+                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
+
 
                                                 <label for="evidence" class="btn btn-secondary rounded-pill">
                                                     <i class="mdi mdi-attachment"></i> Evidencia
@@ -131,7 +133,10 @@
                                                 <label for="number-client" class="form-label">Número registrado en la cuenta</label>
                                                 <input readonly type="number" value="<?php echo $cliente; ?>" id="number-client" name="number_client" class="form-control" required>
                                     </div>
+                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
+
                                     <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
+                                    </div>
 
                                 </div>
                                 </div>
