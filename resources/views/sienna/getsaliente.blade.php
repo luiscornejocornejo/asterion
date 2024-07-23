@@ -37,56 +37,39 @@
                         <?php if (isset($datosonline)) {
                             $datosonline2=json_decode($datosonline);
 
-                            dd($datosonline2->name);
                              ?>
 
-                            <p><?php //echo $datosonline;?>
-                            <pre id="json"></pre>
-
-                            <script>
-                                let data = <?php echo $datosonline; ?>;
-                                document.getElementById("json").textContent = JSON.stringify(data, undefined, 2);
-                            </script>
-                        <?php } ?>
+                           
                     </div>
-            <label class="form-label">Plantilla a enviar</label>
-            <div class="row mb-3">
-                <div class="col-lg-4 col-sm-12">
-                <select name="template" id="template" class="form-select">
-                    <option value="0">1</option>
-                </select>
-                </div>
-            </div>
-           
-            <table id="example" class="table table-striped dt-responsive nowrap w-100 text-light">
-                <thead>
-                    <tr class="text-center bg-dark">
-                        <th class="text-light">Nombre</th>
-                        <th class="text-light">Teléfono</th>
-                        <th class="text-light">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="tb">
-                    <?php // foreach ($getdata as $valh) { ?>
-                        <tr class="text-center">
-                            <td><?php // echo $valh->nombre; ?></td>
-                            <td><?php // echo $valh->icono; ?></td>
-                            <td><?php // echo $valh->valor; ?></td>
-                        </tr>
-                    <?php //  } ?>
-                </tbody>
-            </table>
-            <div class="border" class="col-2">
-                <?php // if (isset($datosonline)) { ?>
-
-                    <pre id="json"></pre>
-
-                    <script>
-                        let data = <?php //  echo $datosonline; ?>;
-                        // document.getElementById("json").textContent = JSON.stringify(data, undefined, 2);
-                    </script>
-                <?php // } ?>
-            </div>
+                        <label class="form-label">Plantilla a enviar</label>
+                        <div class="row mb-3">
+                            <div class="col-lg-4 col-sm-12">
+                            <select name="template" id="template" class="form-select">
+                                <option value="0">1</option>
+                            </select>
+                            </div>
+                        </div>
+                    
+                        <table id="example" class="table table-striped dt-responsive nowrap w-100 text-light">
+                            <thead>
+                                <tr class="text-center bg-dark">
+                                    <th class="text-light">Nombre</th>
+                                    <th class="text-light">Teléfono</th>
+                                    <th class="text-light">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tb">
+                                    <tr class="text-center">
+                                        <td><?php echo $datosonline2->name; ?></td>
+                                        <td><?php  echo $datosonline2->phone; ?></td>
+                                        <td><?php // echo $valh->valor; ?></td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                        <div class="border" class="col-2">
+                            
+                        </div>
+            <?php }?>
         </div>
     </div>
 </div>
