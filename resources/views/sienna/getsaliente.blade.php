@@ -79,6 +79,7 @@
                             <th class="text-light">Nombre</th>
                             <th class="text-light">Teléfono</th>
                             <th class="text-light">Móvil</th>
+                            <th class="text-light">Confirmar usuario</th>
                         </tr>
                     </thead>
                     <tbody id="tb">
