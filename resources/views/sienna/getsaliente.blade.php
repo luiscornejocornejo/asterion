@@ -90,7 +90,7 @@
                             </table>
                         </div>
                     <div class="border" class="col-2">
-
+                            <h1>Crear Ticket</h1>
                             <form action="crearticketsiennacliente" method="post">
                                 @csrf
 
@@ -119,6 +119,15 @@
                                         <select required id="top" class="form-select" name="topicos">
                                         </select>
                                     </div>
+                                    <label for="ticket-text" class="form-label">Descripción:</label>
+                                        <textarea class="form-control mb-3" id="task-text" name="textticket" class="form-control mb-3" rows="4" required></textarea>
+                                        <input type="hidden" value="<?php // echo $resultados[0]->ticketid; 
+                                                                    ?>" name="ticketid" />
+
+                                        <label for="evidence" class="btn btn-secondary rounded-pill">
+                                            <i class="mdi mdi-attachment"></i> Evidencia
+                                            <input name="evicence" type="file" id="evidence" class="">
+                                        </label>
                                     <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
 
                                 </div>
