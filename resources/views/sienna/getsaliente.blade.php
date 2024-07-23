@@ -116,7 +116,7 @@
                                         <select required id="top" class="form-select" name="topicos">
                                         </select>
                                     </div>
-                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
+                                    <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-1">
 
                                             <label for="ticket-text" class="form-label">Descripción:</label>
                                                 <textarea class="form-control mb-3" id="task-text" name="textticket" class="form-control mb-3" rows="4" required></textarea>
@@ -129,7 +129,9 @@
                                                     <i class="mdi mdi-attachment"></i> Evidencia
                                                     <input name="evicence" type="file" id="evidence" class="">
                                                 </label>
-                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                    </div>
+
+                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                                                 <label for="number-client" class="form-label">Número registrado en la cuenta</label>
                                                 <input readonly type="number" value="<?php echo $cliente; ?>" id="number-client" name="number_client" class="form-control" required>
                                     </div>
