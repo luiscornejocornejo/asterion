@@ -35,7 +35,7 @@
             </form>
             <div class="border" class="col-2">
                         <?php if (isset($datosonline)) {
-                            var_dump(json_decode($datosonline));
+                            dd(json_decode($datosonline));
 
                             dd($datosonline["name"]);
                              ?>
