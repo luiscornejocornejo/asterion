@@ -60,11 +60,11 @@
                             <td>{{$val3->topicname}}</td>
                             <td>{{$val3->deptoname}}</td>
                             <td>{{$val3->created_at}}
-                                <?php if($val3->estadoconv==3){
+                                <?php if ($val3->estadoconv == 3) {
                                     echo '<span class=" translate-middle p-1 bg-danger border border-light rounded-circle">
                                                     <span class="visually-hidden">New alerts</span>
                                                     </span>';
-                                }?>
+                                } ?>
                             </td>
                         </tr>
                     <?php } ?>
@@ -96,6 +96,14 @@
 
 
 <script>
+    function init() {
+        document.getElementById('evidence').addEventListener('change', showName, false);
+    }
+
+    function showName(event) {
+        document.getElementById('fileName').innerHTML = event.target.files[0].name
+    }
+    init()
     const toastTrigger = document.getElementById('liveToastBtn')
     const toastLiveExample = document.getElementById('liveToast')
 

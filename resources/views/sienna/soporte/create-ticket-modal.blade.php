@@ -82,10 +82,11 @@
 
                     <label for="evidence" class="btn btn-secondary rounded-pill">
                         <i class="mdi mdi-attachment"></i> Evidencia
-                        <input name="evicence" type="file" id="evidence" class="">
+                        <input name="evicence" type="file" id="evidence" class="d-none">
                     </label>
+                    <span id="fileName" class="ms-1"></span>
 
-                    <div class="modal-footer">
+                    <div class="modal-footer mt-3">
                         <input value="<?php // echo $subdomain_tmp; ?>" type="hidden" name="idbot" id="idbot">
                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
                         <button type="submit" class="btn btn-success" id="liveToastBtn" data-bs-dismiss="modal">Crear</button>
