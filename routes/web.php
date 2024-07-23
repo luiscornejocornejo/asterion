@@ -282,6 +282,7 @@ Route::post('/createticketsoporte2','App\Http\Controllers\cloudtickets@createtic
 Route::get('/createticketsoportecliente','App\Http\Controllers\cloudtickets@createticketsoportecliente')->middleware('supervisorsienna');
 Route::post('/createticketsoportecliente','App\Http\Controllers\cloudtickets@createticketsoportecliente2')->middleware('supervisorsienna');
 Route::get('/getsaliente','App\Http\Controllers\cloudtickets@getsaliente');
+Route::post('/getsaliente','App\Http\Controllers\cloudtickets@getsaliente2');
 
 
 

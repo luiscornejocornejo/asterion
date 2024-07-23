@@ -11,7 +11,8 @@
         </div>
         @endif
         <div class="container-fluid pt-2">
-            <form method="post" action="/getdatawispro">
+            <form method="post" action="">
+            @csrf
                 <div class="row">
                     <div class="col-lg-4 col-sm-12">
                         <label for="typeSearch" class="form-label">Tipo de busqueda</label>
@@ -32,6 +33,17 @@
                     </div>
                 </div>
             </form>
+            <div class="border" class="col-2">
+                        <?php if (isset($datosonline)) { ?>
+
+                            <pre id="json"></pre>
+
+                            <script>
+                                let data = <?php echo $datosonline; ?>;
+                                document.getElementById("json").textContent = JSON.stringify(data, undefined, 2);
+                            </script>
+                        <?php } ?>
+                    </div>
             <label class="form-label">Plantilla a enviar</label>
             <div class="row mb-3">
                 <div class="col-lg-4 col-sm-12">
