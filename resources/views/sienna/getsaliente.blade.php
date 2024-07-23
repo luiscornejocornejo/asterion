@@ -137,13 +137,12 @@
                                     </div>
                                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
 
-                                    <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
+                                        <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
                                     </div>
                                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
-                                    <button class="btn btn-success" type="submit" >Crear</button>
+                                        <button class="btn btn-success" type="submit" >Crear</button>
                                     </div>
 
-                                </div>
                                 </div>
                                 
                                 
