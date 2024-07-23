@@ -43,7 +43,7 @@
                 }
             </style>
 
-            <h2>Ticket Soporte Suricata</h2>
+            <h3>Mis Tickets Soporte Suricata</h3>
             <table id="example" class="table dt-responsive nowrap w-100">
                 <thead class="bg-dark">
                     <tr class="text-center">
