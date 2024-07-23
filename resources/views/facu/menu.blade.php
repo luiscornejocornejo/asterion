@@ -113,6 +113,12 @@ $siennadeptosgenericos = DB::select($querygenerico);
                   </ul>
                 </div>
 </li>
+                <li class="side-nav-item background-buttons d-none">
+                    <a  href="/soporte"  class="side-nav-link hovering-pan">
+                        <i class="mdi mdi-lifebuoy"></i>
+                        <span> Soporte Suricata </span>
+                    </a>
+                </li>
                 <li class="side-nav-item background-buttons">
                     <?php 
                         if($tipodemenu == 3) $routeToTask = '/mistareas';
