@@ -947,6 +947,7 @@ class cloudtickets extends Controller
       }
       return view('sienna/getsaliente')
       ->with('datosonline', $datosonline)
+      ->with('cliente', $cliente)
       ->with('siennadeptosgenericos', $siennadeptosgenericos)
       ->with('getdata', $getdata);
 

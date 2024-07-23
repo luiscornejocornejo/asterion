@@ -1,5 +1,35 @@
 @include('facu.header')
+<script>
 
+    function topics(id){
+        var URLactual = window.location.href;
+        var porciones = URLactual.split('.');
+        let result = porciones[0].replace("https://", "");
+        let opt="";
+        url = "https://"+result+".suricata.cloud/api/topicxdepto?depto=" + id + "";
+        console.log(url);
+        axios.get(url)
+            .then(function (response) {
+                console.log(response);
+               
+                tt = "";
+                for (i = 0; i < response.data.length; i++) {
+                        console.log(response.data[i].nombre);
+                        tt+='<option  value='+response.data[i].id+'>'+response.data[i].nombre+'</option>';
+
+                } 
+                document.getElementById("top").innerHTML = null;
+                document.getElementById("top").innerHTML = tt;
+            })
+            .catch(function (error) {
+                // función para capturar el error
+                console.log(error);
+            })
+            .then(function () {
+                // función que siempre se ejecuta
+            });
+    }
+</script>
 <div class="wrapper menuitem-active">
     @include('facu.menu')
     <div class="content-page" style="padding: 0!important;">
@@ -42,6 +72,24 @@
                            
                     </div>
                     <div class="border" class="col-2">
+                            <table id="example" class="table table-striped dt-responsive nowrap w-100 text-light">
+                                <thead>
+                                    <tr class="text-center bg-dark">
+                                        <th class="text-light">Nombre</th>
+                                        <th class="text-light">Teléfono</th>
+                                        <th class="text-light">Mobile</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tb">
+                                        <tr class="text-center">
+                                            <td><?php echo $datosonline2->name; ?></td>
+                                            <td><?php  echo $datosonline2->phone; ?></td>
+                                            <td><?php  echo $datosonline2->phone_mobile; ?></td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    <div class="border" class="col-2">
 
                             <form action="crearticketsiennacliente" method="post">
                                 @csrf
@@ -50,7 +98,7 @@
                                                                                                                             
                                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                         <label for="number-client" class="form-label">Número registrado en la cuenta</label>
-                                        <input required type="number" value="<?php echo $datosonline2->name; ?>" id="number-client" name="number_client" class="form-control" required>
+                                        <input required type="number" value="<?php echo $cliente; ?>" id="number-client" name="number_client" class="form-control" required>
                                     </div>
                                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                                         <label for="department" class="form-label">Departamento</label>
@@ -81,6 +129,7 @@
                                     
                             </form>
                     </div>
+                    <div class="border" class="col-2">
 
                         <label class="form-label">Plantilla a enviar</label>
                         <div class="row mb-3">
@@ -90,26 +139,11 @@
                             </select>
                             </div>
                         </div>
+                    </div>
+
                     
-                        <table id="example" class="table table-striped dt-responsive nowrap w-100 text-light">
-                            <thead>
-                                <tr class="text-center bg-dark">
-                                    <th class="text-light">Nombre</th>
-                                    <th class="text-light">Teléfono</th>
-                                    <th class="text-light">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tb">
-                                    <tr class="text-center">
-                                        <td><?php echo $datosonline2->name; ?></td>
-                                        <td><?php  echo $datosonline2->phone; ?></td>
-                                        <td><?php // echo $valh->valor; ?></td>
-                                    </tr>
-                            </tbody>
-                        </table>
-                        <div class="border" class="col-2">
-                            
-                        </div>
+                        
+                       
             <?php }?>
         </div>
     </div>
