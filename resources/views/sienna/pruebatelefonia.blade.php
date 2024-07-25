@@ -27,7 +27,7 @@
 
                     function getIP(json) {                      
                       necesito=json.ip;
-                      console.log("My public IP address is: ", necesito," mi userid es:",idusuario," mi subdominio es :",result,"  datos:",<?php echo $tokeninterno;?>);
+                      console.log("My public IP address is: ", necesito," mi subdominio es :  datos:",<?php echo $tokeninterno;?>);
 
                       if(<?php echo $tokeninterno;?>==="") {
                             console.log("El string está vacío");
