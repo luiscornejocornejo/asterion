@@ -31,11 +31,15 @@
                     
                       function getIP(json) {
 
-                        axios.get(url)
+                       
+                          necesito=json.ip;
+                      }
+
+                      axios.get(url)
                     .then(function (response) {
                       datos=response.data;
                       console.log(datos);
-                      document.write("My public IP address is: ", json.ip," mi userid es:",idusuario," mi subdominio es :",result,"  datos:",datos);
+                      document.write("My public IP address is: ", necesito," mi userid es:",idusuario," mi subdominio es :",result,"  datos:",datos);
 
 
                     })
@@ -46,8 +50,6 @@
                     .then(function () {
                         // función que siempre se ejecuta
                     });
-
-                      }
 </script>
 
 <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
