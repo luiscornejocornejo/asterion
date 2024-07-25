@@ -2259,5 +2259,19 @@ class siennaticketsController extends Controller
         }
         return false;
     }
+
+    
+    public function tokennn(Request $request){
+
+        $idusuario=$request->idusuario;
+        $dom=$this->dominio();
+       
+        // $query="select *  from ".$dom.".siennatickets  where id='".$tick."'"; 
+
+         $query="select token from siennainternos ca where ca.users ='".$idusuario."'";
+         $resultados = DB::select($query);
+        return $resultados;
+        
+     }
      
 }

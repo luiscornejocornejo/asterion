@@ -24,8 +24,23 @@
                     var URLactual = window.location.href;
                     var porciones = URLactual.split('.');
                     let result = porciones[0].replace("https://", "");
+                    url = "https://"+result+".suricata.cloud/api/tokennn?idusuario=" + idusuario;
+                    console.log(url);
+
+                    axios.get(url)
+                    .then(function (response) {
+                      datos=response.data;
+
+                    })
+                    .catch(function (error) {
+                        // función para capturar el error
+                        console.log(error);
+                    })
+                    .then(function () {
+                        // función que siempre se ejecuta
+                    });
                       function getIP(json) {
-                        document.write("My public IP address is: ", json.ip," mi userid es:",idusuario," mi subdominio es :",result);
+                        document.write("My public IP address is: ", json.ip," mi userid es:",idusuario," mi subdominio es :",result,"  datos:",datos);
                       }
 </script>
 
