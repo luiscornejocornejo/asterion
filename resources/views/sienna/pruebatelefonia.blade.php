@@ -18,8 +18,13 @@
 
 
               <!-- Start Content-->
+              <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
                prueba telefonia
                <script type="application/javascript">
+                    function getIP(json) {                      
+                      necesito=json.ip;
+                    }
                     var idusuario =<?php echo session('idusuario');?>;
                     var URLactual = window.location.href;
                     var datos="";
@@ -27,19 +32,11 @@
                     let result = porciones[0].replace("https://", "");
                     url = "https://"+result+".suricata.cloud/api/tokennn?idusuario=" + idusuario;
                     console.log(url);
-
-                    
-                      function getIP(json) {
-
-                       
-                          necesito=json.ip;
-                      }
-
                       axios.get(url)
                     .then(function (response) {
                       datos=response.data;
                       console.log(datos);
-                      document.write("My public IP address is: ", necesito," mi userid es:",idusuario," mi subdominio es :",result,"  datos:",datos);
+                      console.log("My public IP address is: ", necesito," mi userid es:",idusuario," mi subdominio es :",result,"  datos:",datos);
 
 
                     })
@@ -52,7 +49,6 @@
                     });
 </script>
 
-<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 
               <!-- container -->
           </div>
