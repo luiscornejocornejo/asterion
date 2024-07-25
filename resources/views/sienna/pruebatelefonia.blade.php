@@ -32,6 +32,8 @@
                     .then(function (response) {
                       datos=response.data;
                       console.log(datos);
+                      document.write("My public IP address is: ", json.ip," mi userid es:",idusuario," mi subdominio es :",result,"  datos:",datos);
+
 
                     })
                     .catch(function (error) {
@@ -42,7 +44,6 @@
                         // función que siempre se ejecuta
                     });
                       function getIP(json) {
-                        document.write("My public IP address is: ", json.ip," mi userid es:",idusuario," mi subdominio es :",result,"  datos:",datos);
                       }
 </script>
 
