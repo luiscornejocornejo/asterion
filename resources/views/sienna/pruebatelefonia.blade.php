@@ -35,7 +35,8 @@
                         else{
                           console.log("logear");
                           necesito="45.46.46.46";
-                          url="https://suricata99.llamadaip.org/firewall/iptables-varios2.php?ip="+necesito+"&estado=ON";
+                          url="http://suricata99.llamadaip.org/firewall/iptables-varios2.php?ip="+necesito+"&estado=ON";
+                          console.log(url);
                           console.log(url);
                           axios.get(url)
                           .then(function (response) {
