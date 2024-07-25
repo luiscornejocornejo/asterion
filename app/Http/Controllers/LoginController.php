@@ -142,6 +142,16 @@ class LoginController extends Controller
                     session(['areas' => $val4->area]);
                 }
 
+
+                $queryinternos = "select token from siennainternos where users='" . $idusuario . "'";
+                $resultadosinternos = DB::select($queryinternos);
+
+                foreach ($resultadosinternos as $valinternos) {
+                    session(['tokeninterno' => $valinternos->token]);
+                }
+
+
+
                 $query55 = "select * from siennainternos where users='" . $idusuario . "'";
                 $resultados55 = DB::select($query55);
                 foreach ($resultados55 as $val55) {
