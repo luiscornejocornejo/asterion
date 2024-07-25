@@ -37,7 +37,13 @@
                       console.log(datos);
                       console.log("My public IP address is: ", necesito," mi userid es:",idusuario," mi subdominio es :",result,"  datos:",datos);
 
+                      if(datos === "") {
+                            console.log("El string está vacío");
+                          }
+                        else{
+                          console.log("logear");
 
+                        }
                     })
                     .catch(function (error) {
                         // función para capturar el error
