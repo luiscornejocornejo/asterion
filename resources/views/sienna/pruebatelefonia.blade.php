@@ -36,7 +36,7 @@
                     .then(function (response) {
                       datos=response.data;
                       console.log(datos);
-                      document.write("My public IP address is: ", necesito," mi userid es:",idusuario," mi subdominio es :",result,"  datos:",datos);
+                      console.log("My public IP address is: ", necesito," mi userid es:",idusuario," mi subdominio es :",result,"  datos:",datos);
 
 
                     })
