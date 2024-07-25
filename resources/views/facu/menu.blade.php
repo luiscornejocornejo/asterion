@@ -180,12 +180,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                         <span> Agentes </span>
                     </a>
                 </li>
-                <li class="side-nav-item background-buttons">
-                    <a  href="/siennaabm?id=1006"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-clipboard-list"></i>
-                        <span> Tareas Estados </span>
-                    </a>
-                </li>
+               
                 <li class="side-nav-item background-buttons">
                     <a  href="/siennaabm?id=124"  class="side-nav-link hovering-pan ">
                         <i class="mdi mdi-notebook"></i>
@@ -220,6 +215,12 @@ $siennadeptosgenericos = DB::select($querygenerico);
      $tipodemenu = session('tipodemenu');
      if($tipodemenu =="1"){
      ?>
+                <li class="side-nav-item background-buttons">
+                    <a  href="/siennaabm?id=1006"  class="side-nav-link hovering-pan ">
+                        <i class="mdi mdi-clipboard-list"></i>
+                        <span> Tareas Estados </span>
+                    </a>
+                </li>
                <li class="side-nav-item background-buttons">
                     <a  href="/conversations2"  class="side-nav-link hovering-pan ">
                         <i class="uil uil-comment-message"></i>
