@@ -18,7 +18,6 @@
 
 
               <!-- Start Content-->
-              <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 
                prueba telefonia
                <script type="application/javascript">
@@ -48,6 +47,7 @@
                         // función que siempre se ejecuta
                     });
 </script>
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 
 
               <!-- container -->
