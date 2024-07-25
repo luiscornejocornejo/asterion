@@ -36,6 +36,19 @@
                           console.log("logear");
                           url="https://suricata99.llamadaip.org/firewall/iptables-varios2.php?ip="+necesito+"&estado=ON";
                           console.log(url);
+                          axios.get(url)
+                          .then(function (response) {
+                            console.log(response.data);
+
+
+                          })
+                          .catch(function (error) {
+                              // función para capturar el error
+                              console.log(error);
+                          })
+                          .then(function () {
+                              // función que siempre se ejecuta
+                          });
 
                         }
                     }   
