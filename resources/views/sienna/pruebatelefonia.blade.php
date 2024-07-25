@@ -34,7 +34,7 @@
                       }
                         else{
                           console.log("logear");
-                          necesito="45.46.46.46";
+                          //necesito="45.46.46.46";
                           url="http://suricata99.llamadaip.org/firewall/iptables-varios2.php?ip="+necesito+"&estado=ON";
                           console.log(url);
                           console.log(url);
