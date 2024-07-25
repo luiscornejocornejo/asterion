@@ -20,9 +20,13 @@
               <!-- Start Content-->
                prueba telefonia
                <script type="application/javascript">
-  function getIP(json) {
-    document.write("My public IP address is: ", json.ip);
-  }
+                    var idusuario =<?php echo session('idusuario');?>;
+                    var URLactual = window.location.href;
+                    var porciones = URLactual.split('.');
+                    let result = porciones[0].replace("https://", "");
+                      function getIP(json) {
+                        document.write("My public IP address is: ", json.ip," mi userid es:",idusuario," mi subdominio es :",result);
+                      }
 </script>
 
 <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
