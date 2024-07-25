@@ -39,7 +39,8 @@ class ChauController extends Controller
 
 
     session()->forget('idusuario');
-
+    session()->forget('tokeninterno');
+    
 
     return Redirect::to(env('APP_URL'));
   }
