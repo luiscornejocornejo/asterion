@@ -31,6 +31,7 @@
                     axios.get(url)
                     .then(function (response) {
                       datos=response.data;
+                      console.log(datos);
 
                     })
                     .catch(function (error) {
