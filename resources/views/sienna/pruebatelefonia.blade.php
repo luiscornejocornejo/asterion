@@ -22,10 +22,31 @@
                <script type="application/javascript">
                     var idusuario =<?php echo session('idusuario');?>;
                     var URLactual = window.location.href;
+                    var datos="";
                     var porciones = URLactual.split('.');
                     let result = porciones[0].replace("https://", "");
+                    url = "https://"+result+".suricata.cloud/api/tokennn?idusuario=" + idusuario;
+                    console.log(url);
+
+                    
                       function getIP(json) {
-                        document.write("My public IP address is: ", json.ip," mi userid es:",idusuario," mi subdominio es :",result);
+
+                        axios.get(url)
+                    .then(function (response) {
+                      datos=response.data;
+                      console.log(datos);
+                      document.write("My public IP address is: ", json.ip," mi userid es:",idusuario," mi subdominio es :",result,"  datos:",datos);
+
+
+                    })
+                    .catch(function (error) {
+                        // función para capturar el error
+                        console.log(error);
+                    })
+                    .then(function () {
+                        // función que siempre se ejecuta
+                    });
+
                       }
 </script>
 
