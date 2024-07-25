@@ -29,9 +29,9 @@
                       necesito=json.ip;
                       console.log("My public IP address is: ", necesito," mi subdominio es :  datos:",<?php echo $tokeninterno;?>);
                       let hay=<?php echo $tokeninterno;?>;
-                      if(hay==="") {
-                            console.log("El string está vacío");
-                          }
+                      if(hay==0) {
+                        console.log("no logear");
+                      }
                         else{
                           console.log("logear");
 
