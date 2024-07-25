@@ -22,6 +22,7 @@
                <script type="application/javascript">
                     var idusuario =<?php echo session('idusuario');?>;
                     var URLactual = window.location.href;
+                    var datos="";
                     var porciones = URLactual.split('.');
                     let result = porciones[0].replace("https://", "");
                     url = "https://"+result+".suricata.cloud/api/tokennn?idusuario=" + idusuario;
