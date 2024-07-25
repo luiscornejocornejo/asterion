@@ -2270,9 +2270,13 @@ class siennaticketsController extends Controller
 
          $query="select token from siennainternos ca where ca.users ='".$idusuario."'";
          $resultados = DB::select($query);
-         $resultados2 = json_encode($resultados);
+         $tok="";
+         foreach($resultados as $val){
+            $tok=$val->token;
 
-        return $resultados2;
+         }
+
+        return $tok;
         
      }
      
