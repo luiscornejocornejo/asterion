@@ -154,6 +154,8 @@ class LoginController extends Controller
 
                 $query55 = "select * from siennainternos where users='" . $idusuario . "'";
                 $resultados55 = DB::select($query55);
+                session(['tokeninterno' => 0]);
+
                 foreach ($resultados55 as $val55) {
                     session(['tokeninterno' => $val55->token]);
                 }
