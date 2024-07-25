@@ -39,7 +39,7 @@
 </div>
 
 <script>
-    $('#history').dataTable({
+    new DataTable ('#history', {
         "order": [[0, 'desc']],
         "responsive": true,
         "pageLength": 10,           
