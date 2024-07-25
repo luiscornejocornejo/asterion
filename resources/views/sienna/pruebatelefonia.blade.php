@@ -28,7 +28,10 @@
                     url = "https://"+result+".suricata.cloud/api/tokennn?idusuario=" + idusuario;
                     console.log(url);
 
-                    axios.get(url)
+                    
+                      function getIP(json) {
+
+                        axios.get(url)
                     .then(function (response) {
                       datos=response.data;
                       console.log(datos);
@@ -43,7 +46,7 @@
                     .then(function () {
                         // función que siempre se ejecuta
                     });
-                      function getIP(json) {
+
                       }
 </script>
 
