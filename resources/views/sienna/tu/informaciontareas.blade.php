@@ -14,7 +14,7 @@
         <hr style="margin-top: 10px;" />
         <div class="row">
             <div class="col-xxl-12 col-xl-12 col-lg-12 col-sm-12">
-                <table id="" class="table display table-striped dt-responsive nowrap w-100 text-light">
+                <table id="" class=" display table table-striped dt-responsive nowrap w-100 text-light">
                     <thead>
                         <tr class="text-center bg-dark">
                             <th class="text-light">#</th>
