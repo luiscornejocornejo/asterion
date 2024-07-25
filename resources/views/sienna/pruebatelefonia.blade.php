@@ -39,12 +39,16 @@
                           console.log(url);
                           axios.get(url)
                           .then(function (response) {
+                            console.log("data:");
+
                             console.log(response.data);
 
 
                           })
                           .catch(function (error) {
                               // función para capturar el error
+                              console.log("error:");
+
                               console.log(error);
                           })
                           .then(function () {
