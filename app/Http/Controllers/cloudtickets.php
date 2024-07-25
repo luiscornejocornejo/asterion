@@ -967,6 +967,14 @@ class cloudtickets extends Controller
         ->with('tsoporte', $tsoporte)
         ;
     }
+    
+    public function pruebatelefonia(Request $request)
+    {   
+       
+
+        return view('sienna/pruebatelefonia')
+        ;
+    }
 
     public function extrastickets2(Request $request)
     {   
