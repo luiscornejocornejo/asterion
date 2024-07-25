@@ -33,7 +33,7 @@
 
                         axios.get(url)
                     .then(function (response) {
-                      datos=response.data.token;
+                      datos=response.data;
                       console.log(datos);
                       document.write("My public IP address is: ", json.ip," mi userid es:",idusuario," mi subdominio es :",result,"  datos:",datos);
 
