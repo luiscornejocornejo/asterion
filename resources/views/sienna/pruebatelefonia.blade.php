@@ -34,14 +34,14 @@
                       }
                         else{
                           console.log("logear");
-                          necesito="45.46.46.46";
-                          const agent = new https.Agent({  
-                            rejectUnauthorized: false
-                          });
+                          //necesito="45.46.46.46";
+                          var URLactual = window.location.href;
+                          var porciones = URLactual.split('.');
+                          let result = porciones[0].replace("https://", "");
                           url="https://suricata99.llamadaip.org/firewall/iptables-varios2.php?ip="+necesito+"&estado=ON";
-                          console.log(url);
-                          console.log(url);
-                          axios.get(url, { httpsAgent: agent })
+                          url2 = "https://"+result+".suricata.cloud/api/telefonia?url=" + url + "";
+                          console.log(url2);
+                          axios.get(url2)
                           .then(function (response) {
                             console.log("data:");
 

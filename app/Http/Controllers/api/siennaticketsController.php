@@ -865,6 +865,21 @@ class siennaticketsController extends Controller
 
     }
 
+    
+    public function telefonia(Request $request){
+        $urlprin=$request->url;
+
+        
+        // Set headers for the cURL request
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); // Return data inplace of echoing on screen
+        curl_setopt($ch, CURLOPT_URL, $urlprin);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0); // Skip SSL Verification
+        $rsData = curl_exec($ch);
+        curl_close($ch); 
+        return 1;
+     }
     public function valida($cliente,$merchant){
         $valida=0;
 
