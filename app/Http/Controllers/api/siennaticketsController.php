@@ -887,6 +887,7 @@ class siennaticketsController extends Controller
 
         $logintelefonia =new logintelefonia();
         $logintelefonia->user=0;
+        $logintelefonia->ip=$necesito;
         $logintelefonia->estado=1;
         $logintelefonia->merchant=$merchant;
         $logintelefonia->save();
