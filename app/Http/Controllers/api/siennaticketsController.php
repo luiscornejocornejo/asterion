@@ -27,6 +27,8 @@ use Illuminate\Support\Str;
 use Carbon\Carbon;
 use App\Models\siennaintegracion;
 use App\Models\siennagetdata;
+use App\Models\logintelefonia;
+
 use Mail;
 
 class siennaticketsController extends Controller
@@ -888,7 +890,7 @@ class siennaticketsController extends Controller
         $logintelefonia->estado=1;
         $logintelefonia->merchant=$merchant;
         $logintelefonia->save();
-        
+
         return $rsData ;
      }
     public function valida($cliente,$merchant){
