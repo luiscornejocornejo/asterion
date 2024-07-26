@@ -69,10 +69,7 @@
 
 
             </div>
-            <div class="border  mb-3" class="col-2">
-                <center>
-                    <h1>Datos</h1>
-                </center>
+            <div>
                 <table id="example" class="table table-striped dt-responsive nowrap w-100 text-light">
                     <thead>
                         <tr class="text-center bg-dark">
@@ -100,7 +97,7 @@
                     <div class="modal-content">
                         <div class="modal-header bg-dark">
                             <h4 class="modal-title text-light" id="multiple-oneModalLabel">Crear ticket</h4>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <form action="crearticketsiennacliente" method="post">
@@ -154,8 +151,8 @@
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button class="btn btn-success" type="submit">Crear</button>
-                            <button type="button" class="btn btn-primary" data-bs-target="#create-ticket-modal-2" data-bs-toggle="modal" data-bs-dismiss="modal">Saliente</button>
+                            <button class="btn btn-success" type="submit">Crear ticket</button>
+                            <button type="button" class="btn btn-primary" data-bs-target="#create-ticket-modal-2" data-bs-toggle="modal" data-bs-dismiss="modal">Crear con saliente</button>
                         </div>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
@@ -167,22 +164,22 @@
                     <div class="modal-content">
                         <div class="modal-header bg-dark">
                             <h4 class="modal-title text-light" id="multiple-twoModalLabel">Saliente</h4>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            <label class="form-label">Plantilla a enviar</label>
-                            <div class="row mb-3">
-                                <div class="col-lg-4 col-sm-12">
-                                    <select name="template" id="template" class="form-select">
-                                        <option value="0">1</option>
-                                    </select>
+                        <form method="post" action="/crearticketsaliente">
+                            <div class="modal-body">
+                                <label class="form-label" for="phone">Número teléfono</label>
+                                <div class="row mb-3">
+                                    <div class="col-lg-8 col-sm-12">
+                                        <input type="text" class="form-control" name="phone" id="phone" value="<?php echo $datosonline2->phone_mobile;  ?>" disabled>
+                                        <input type="hidden" name="" id="" value="">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-light border" data-bs-toggle="modal" data-bs-target="#create-ticket-modal">Volver</button>
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Enviar</button>
-                        </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Enviar saliente</button>
+                            </div>
+                        </form>
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
