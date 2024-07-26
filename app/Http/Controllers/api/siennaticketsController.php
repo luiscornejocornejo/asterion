@@ -881,6 +881,14 @@ class siennaticketsController extends Controller
         $rsData = curl_exec($ch);
         curl_close($ch); 
         //dd($rsData);
+        $merchant=$this->dominio();
+
+        $logintelefonia =new logintelefonia();
+        $logintelefonia->user=0;
+        $logintelefonia->estado=1;
+        $logintelefonia->merchant=$merchant;
+        $logintelefonia->save();
+        
         return $rsData ;
      }
     public function valida($cliente,$merchant){
