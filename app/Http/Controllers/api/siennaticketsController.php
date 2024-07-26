@@ -869,7 +869,7 @@ class siennaticketsController extends Controller
     public function telefonia(Request $request){
         $necesito=$request->ip;
 
-        echo $urlprin="https://suricata99.llamadaip.org/firewall/iptables-varios2.php?ip=".$necesito."&estado=ON";
+         $urlprin="https://suricata99.llamadaip.org/firewall/iptables-varios2.php?ip=".$necesito."&estado=ON";
 
         // Set headers for the cURL request
         $ch = curl_init();
@@ -880,7 +880,7 @@ class siennaticketsController extends Controller
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0); // Skip SSL Verification
         $rsData = curl_exec($ch);
         curl_close($ch); 
-        dd($rsData);
+        //dd($rsData);
         return $rsData ;
      }
     public function valida($cliente,$merchant){
