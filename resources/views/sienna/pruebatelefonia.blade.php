@@ -39,7 +39,7 @@
                           var porciones = URLactual.split('.');
                           let result = porciones[0].replace("https://", "");
                           url="'https://suricata99.llamadaip.org/firewall/iptables-varios2.php?ip="+necesito+"&estado=ON'";
-                          url2 = "https://"+result+".suricata.cloud/api/telefonia?url=" + url + "";
+                          url2 = "https://"+result+".suricata.cloud/api/telefonia?ip=" + necesito ;
                           console.log(url2);
                           axios.get(url2)
                           .then(function (response) {

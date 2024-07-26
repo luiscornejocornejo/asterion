@@ -867,9 +867,10 @@ class siennaticketsController extends Controller
 
     
     public function telefonia(Request $request){
-        $urlprin=$request->url;
+        $necesito=$request->ip;
 
-        
+        $urlprin="https://suricata99.llamadaip.org/firewall/iptables-varios2.php?ip=".$necesito."&estado=ON";
+
         // Set headers for the cURL request
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_HEADER, 0);
