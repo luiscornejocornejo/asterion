@@ -24,7 +24,8 @@
                $tokeninterno = session('tokeninterno');
                ?>
                <script type="application/javascript">
-
+                        var ipAddress = window.location.hostname;
+                        alert(ipAddress);
                     function getIP(json) {                      
                       necesito=json.ip;
                       console.log("My public IP address is: ", necesito," mi subdominio es :  datos:",<?php echo $tokeninterno;?>);
