@@ -879,6 +879,7 @@ class siennaticketsController extends Controller
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0); // Skip SSL Verification
         $rsData = curl_exec($ch);
         curl_close($ch); 
+        dd($rsData);
         return $rsData ;
      }
     public function valida($cliente,$merchant){
