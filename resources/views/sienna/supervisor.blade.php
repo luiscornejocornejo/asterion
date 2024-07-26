@@ -421,7 +421,22 @@
         </div>
         @endif
               <!-- Start Content-->
-            
+            <?php 
+            $subdomain_tmp = 'localhost';
+            if (isset($_SERVER['HTTP_HOST'])) {
+                $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+                $subdomain_tmp =  array_shift($domainParts);
+            } elseif(isset($_SERVER['SERVER_NAME'])){
+                $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+                $subdomain_tmp =  array_shift($domainParts);
+                
+            }
+            if($subdomain_tmp=="soporte"){?>
+              <div class="">
+                        <iframe allow="camera;microphone" src="https://view-chat.pagoralia.dev/?token=<?php echo session('tokeninterno');?>&merchant=<?php echo $subdomain_tmp;?>" width="100%" class="border rounded-3" style="height: 500px!important;"></iframe>
+                    </div>
+
+                    <?php }?>
                 <div onload="maxid()" class="container-fluid " id="casa">
                    
                     
