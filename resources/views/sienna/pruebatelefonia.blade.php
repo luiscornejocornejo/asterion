@@ -1,3 +1,6 @@
+@php
+ use Illuminate\Http\Request;
+@endphp
 @include('facu.header2')
 
   <!-- Begin page -->
@@ -22,6 +25,7 @@
                prueba telefonia
                <?php   
                $tokeninterno = session('tokeninterno');
+               var_dump(Request::ip());
                ?>
                <script type="application/javascript">
                         var ipAddress = window.location.hostname;
