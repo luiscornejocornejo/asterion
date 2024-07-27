@@ -25,7 +25,8 @@
                prueba telefonia
                <?php   
                $tokeninterno = session('tokeninterno');
-               var_dump(Request::ip());
+               var_dump(request()->ip());
+               var_dump(request()->getClientIp());
                ?>
                <script type="application/javascript">
                         var ipAddress = window.location.hostname;
