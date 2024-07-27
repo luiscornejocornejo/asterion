@@ -25,14 +25,12 @@
                prueba telefonia
                <?php   
                $tokeninterno = session('tokeninterno');
-               var_dump(request()->ip());
-               var_dump(request()->getClientIp());
+               $miip=request()->ip();
                ?>
                <script type="application/javascript">
-                        var ipAddress = window.location.hostname;
-                        alert(ipAddress);
-                    function getIP(json) {                      
-                      necesito=json.ip;
+                      
+                    
+                      necesito="<?php echo $miip;?>";
                       console.log("My public IP address is: ", necesito," mi subdominio es :  datos:",<?php echo $tokeninterno;?>);
                       let hay=<?php echo $tokeninterno;?>;
                       if(hay==0) {
@@ -44,7 +42,6 @@
                           var URLactual = window.location.href;
                           var porciones = URLactual.split('.');
                           let result = porciones[0].replace("https://", "");
-                          url="'https://suricata99.llamadaip.org/firewall/iptables-varios2.php?ip="+necesito+"&estado=ON'";
                           url2 = "https://"+result+".suricata.cloud/api/telefonia?ip=" + necesito ;
                           console.log(url2);
                           axios.get(url2)
@@ -66,13 +63,12 @@
                           });
 
                         }
-                    }   
+                    
 
                     
                   
                       
 </script>
-<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 
 
               <!-- container -->
