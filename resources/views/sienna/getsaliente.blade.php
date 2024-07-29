@@ -2,6 +2,7 @@
 <script>
 
     function sal(tick,phone){
+        alert(tick, phone);
         document.getElementById("ticketid").value = tick;
         document.getElementById("phone").value = phone;
 
