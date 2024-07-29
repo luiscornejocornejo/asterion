@@ -370,8 +370,9 @@ class TicketdatosController extends Controller
         $integracion=$request->integracion;
         $botfrontdesk=$request->botfrontdesk;
         $local=$request->local;
+        $urlmetabase=$request->urlmetabase;
         
-        $query="update empresa set local='".$local."',botfrontdesk='".$botfrontdesk."',user='".$user."',password='".$password."',mail='".$mail."',zona='".$zona."',frecuencia='".$frecuencia."',reabrir='".$reabrir."' where id='1'";
+        $query="update empresa set urlmetabase='".$urlmetabase."',local='".$local."',botfrontdesk='".$botfrontdesk."',user='".$user."',password='".$password."',mail='".$mail."',zona='".$zona."',frecuencia='".$frecuencia."',reabrir='".$reabrir."' where id='1'";
         $resultados5 = DB::select($query);
 
         $query2="update siennaintegracion set nombre='".$integracion."'";
