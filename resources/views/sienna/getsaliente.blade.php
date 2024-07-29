@@ -160,7 +160,10 @@
             </div><!-- /.modal -->
 
             <!-- Modal -->
-            <div id="create-ticket-modal-2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-twoModalLabel" aria-hidden="true">
+           
+        <?php } ?>
+
+        <div id="create-ticket-modal-2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-twoModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header bg-dark">
@@ -184,7 +187,6 @@
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
-        <?php } ?>
         </div>
     </div>
 </div>
