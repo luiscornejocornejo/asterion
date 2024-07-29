@@ -1325,11 +1325,13 @@ class cloudtickets extends Controller
         $se2->descripcion = $request->textticket;
         $se2->autor = $logeado;
         $se2->save();
+        $id = $si->id;
 
-        
+        $button = '<button onclick="sal(' . $id . ')" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create-ticket-modal-2"><i class="mdi mdi-check"></i></button>';
+
         return redirect()
         ->back()
-        ->with('success', 'Se creó el ticket  <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create-ticket-modal-2"><i class="mdi mdi-check"></i></button>'.$si->id);
+        ->with('success', 'Se creó el ticket ' . $button . $id);
 
     }
 
