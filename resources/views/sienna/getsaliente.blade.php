@@ -175,7 +175,7 @@
                                 <label class="form-label" for="phone">Número teléfono</label>
                                 <div class="row mb-3">
                                     <div class="col-lg-8 col-sm-12">
-                                        <input type="text" class="form-control" name="phone" id="phone" value="<?php echo $datosonline2->phone_mobile;  ?>" disabled>
+                                        <input type="text" class="form-control" name="phone" id="phone" value="<?php //echo $datosonline2->phone_mobile;  ?>" disabled>
                                         <input type="hidden" name="" id="" value="">
                                     </div>
                                 </div>
