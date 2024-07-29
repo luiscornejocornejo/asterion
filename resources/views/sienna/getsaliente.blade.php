@@ -148,12 +148,12 @@
                                         <input value="<?php echo session('nombreusuario'); ?>" type="hidden" name="logeado" id="logeado">
                                     </div>
                                 </div>
-                            </form>
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-success" type="submit">Crear ticket</button>
-                            <button type="button" class="btn btn-primary" data-bs-target="#create-ticket-modal-2" data-bs-toggle="modal" data-bs-dismiss="modal">Crear con saliente</button>
                         </div>
+                        </form>
+
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
