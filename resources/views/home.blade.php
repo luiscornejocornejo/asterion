@@ -1101,7 +1101,7 @@ if (isset($_GET['fecha'])) {
                 <div class="col-4"><a class="btn btn-outline-success" href="#" onclick="mostrar2();"><?php echo $boton2;?></a></div>
                 <div class="col-4"><a class="btn btn-outline-info" href="#" onclick="mostrar3();"><?php echo $boton3;?></a></div>
                 <?php if($urlmetabase<>""){?>
-                    <div class="col-4 m-2"><a class="btn btn-outline-info" href="#" onclick="mostrar4();">Dash</a></div>
+                    <div class="col-4 mt-2"><a class="btn btn-outline-info" href="#" onclick="mostrar4();">Dash</a></div>
                     <?php }?>
             </div>
         </div>
