@@ -1329,7 +1329,7 @@ class cloudtickets extends Controller
         
         return redirect()
         ->back()
-        ->with('success', 'Se creó el ticket  <button type="button" class="btn btn-primary" data-bs-target="#create-ticket-modal-2" data-bs-toggle="modal" data-bs-dismiss="modal">Crear con saliente</button> '.$si->id);
+        ->with('success', 'Se creó el ticket  <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create-ticket-modal-2"><i class="mdi mdi-check"></i></button>'.$si->id);
 
     }
 
