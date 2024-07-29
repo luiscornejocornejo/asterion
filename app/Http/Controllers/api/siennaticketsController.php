@@ -893,7 +893,34 @@ class siennaticketsController extends Controller
         $logintelefonia->save();
 
         return $rsData ;
-     }
+    }
+
+    public function notelefonia(Request $request){
+        $necesito=$request->ip;
+
+         $urlprin="https://suricata99.llamadaip.org/firewall/iptables-varios2.php?ip=".$necesito."&estado=OFF";
+
+        // Set headers for the cURL request
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); // Return data inplace of echoing on screen
+        curl_setopt($ch, CURLOPT_URL, $urlprin);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0); // Skip SSL Verification
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0); // Skip SSL Verification
+        $rsData = curl_exec($ch);
+        curl_close($ch); 
+        //dd($rsData);
+        $merchant=$this->dominio();
+
+        $logintelefonia =new logintelefonia();
+        $logintelefonia->user=0;
+        $logintelefonia->ip=$necesito;
+        $logintelefonia->estado=1;
+        $logintelefonia->merchant=$merchant;
+        $logintelefonia->save();
+
+        return $rsData ;
+    }
     public function valida($cliente,$merchant){
         $valida=0;
 

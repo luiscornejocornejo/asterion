@@ -122,6 +122,7 @@ Route::post('/preguntas', [siennaticketsController::class, 'preguntas2']);
 Route::get('/getdata2', [siennaticketsController::class, 'getdata2']);
 Route::get('/tokennn', [siennaticketsController::class, 'tokennn']);
 Route::get('/telefonia', [siennaticketsController::class, 'telefonia']);
+Route::get('/notelefonia', [siennaticketsController::class, 'notelefonia']);
 
 
 /*
