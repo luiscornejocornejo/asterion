@@ -1329,7 +1329,7 @@ class cloudtickets extends Controller
         $se2->save();
         $id = $si->id;
 
-        $button = '<button onclick="sal("' . $id . '","' . $phone . '")" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create-ticket-modal-2"><i class="mdi mdi-check"></i></button>';
+        $button = '<button onclick="sal(`'. $id .'`,`'. $phone .'`)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create-ticket-modal-2"><i class="mdi mdi-check"></i></button>';
 
         return redirect()
         ->back()

@@ -1,12 +1,7 @@
 @include('facu.header2')
 <script>
 
-    function sal(tick,phone){
-        alert(tick, phone);
-        document.getElementById("ticketid").value = tick;
-        document.getElementById("phone").value = phone;
-
-    }
+    
     function topics(id) {
         var URLactual = window.location.href;
         var porciones = URLactual.split('.');
@@ -42,7 +37,15 @@
         @if ($message = Session::get('success'))
         <div class="alert alert-success alert-dismissible fade
                             show" role="alert">
+                            <script>
+
             {!! session('success') !!}
+            function sal(tick,phone){
+        alert(tick, phone);
+        document.getElementById("ticketid").value = tick;
+        document.getElementById("phone").value = phone;
+
+    }</script>
 
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
