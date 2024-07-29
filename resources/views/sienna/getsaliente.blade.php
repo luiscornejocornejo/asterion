@@ -37,19 +37,21 @@
         @if ($message = Session::get('success'))
         <div class="alert alert-success alert-dismissible fade
                             show" role="alert">
-                            <script>
+                            {!! session('success') !!}
 
-            {!! session('success') !!}
-            function sal(tick,phone){
-        alert(tick, phone);
-        document.getElementById("ticketid").value = tick;
-        document.getElementById("phone").value = phone;
-
-    }</script>
+                   
 
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         @endif
+        <script>
+
+function sal(tick,phone){
+alert(tick, phone);
+document.getElementById("ticketid").value = tick;
+document.getElementById("phone").value = phone;
+
+}</script>
         <div class="container-fluid pt-2">
             <form method="post" action="">
                 @csrf
