@@ -1296,6 +1296,7 @@ class cloudtickets extends Controller
     public function crearticketsiennaclientegetdata(Request $request){
 
         $cliente=$request->number_client;
+        $phone=$request->phone_client;
         $depto=$request->depto;
         $siennatopic=$request->topicos;
         $logeado=$request->logeado;
@@ -1304,6 +1305,7 @@ class cloudtickets extends Controller
         $si->siennadepto = $depto;
         $si->cliente = $cliente;
         $si->nya = $cliente;
+        $si->cel = $phone;
         $si->siennatopic = $siennatopic;
         $si->siennasource = "11";
         $si->siennaestado = "1";
@@ -1327,7 +1329,7 @@ class cloudtickets extends Controller
         $se2->save();
         $id = $si->id;
 
-        $button = '<button onclick="sal(' . $id . ')" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create-ticket-modal-2"><i class="mdi mdi-check"></i></button>';
+        $button = '<button onclick="sal("' . $id . '","' . $phone . '")" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create-ticket-modal-2"><i class="mdi mdi-check"></i></button>';
 
         return redirect()
         ->back()

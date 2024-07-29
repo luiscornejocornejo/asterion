@@ -1,5 +1,11 @@
 @include('facu.header2')
 <script>
+
+    function sal(tick,phone){
+        document.getElementById("ticketid").value = tick;
+        document.getElementById("phone").value = phone;
+
+    }
     function topics(id) {
         var URLactual = window.location.href;
         var porciones = URLactual.split('.');
@@ -142,7 +148,8 @@
                                     </div>
 
                                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
-                                        <input readonly type="hidden" value="<?php echo $cliente; ?>" id="number-client" name="number_client" class="form-control" required>
+                                    <input readonly type="hidden" value="<?php echo $cliente; ?>" id="number-client" name="number_client" class="form-control" required>
+                                    <input readonly type="hidden" value="<?php echo $datosonline2->phone_mobile; ?>" id="phone-client" name="phone_client" class="form-control" required>
                                     </div>
                                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
 
@@ -175,8 +182,8 @@
                                 <label class="form-label" for="phone">Número teléfono</label>
                                 <div class="row mb-3">
                                     <div class="col-lg-8 col-sm-12">
-                                        <input type="text" class="form-control" name="phone" id="phone" value="<?php //echo $datosonline2->phone_mobile;  ?>" disabled>
-                                        <input type="hidden" name="" id="" value="">
+                                        <input type="text" class="form-control" name="phone" id="phone" value="<?php //echo $datosonline2->phone_mobile;  ?>" >
+                                        <input type="hidden" name="ticketid" id="ticketid" value="">
                                     </div>
                                 </div>
                             </div>
