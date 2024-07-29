@@ -1293,5 +1293,44 @@ class cloudtickets extends Controller
         ->back()
         ->with('success', 'Se modificó correctamente el estado de la tarea!');
     }
+    public function crearticketsiennaclientegetdata(Request $request){
+
+        $cliente=$request->number_client;
+        $depto=$request->depto;
+        $siennatopic=$request->topicos;
+        $logeado=$request->logeado;
+
+        $si = new siennatickets();
+        $si->siennadepto = $depto;
+        $si->cliente = $cliente;
+        $si->nya = $cliente;
+        $si->siennatopic = $siennatopic;
+        $si->siennasource = "11";
+        $si->siennaestado = "1";
+        $si->asignado = "99999";
+        $tik=$si->save();
+
+       
+
+        $se = new siennaseguimientos();
+        $se->ticket = $si->id;
+        $se->tipo = "1";
+        $se->descripcion = "created";
+        $se->autor = $logeado;
+        $se->save();
+
+        $se2 = new siennaseguimientos();
+        $se2->ticket = $si->id;
+        $se2->tipo = "2";
+        $se2->descripcion = $request->textticket;
+        $se2->autor = $logeado;
+        $se2->save();
+
+        
+        return redirect()
+        ->back()
+        ->with('success', 'Se creo el ticket  <a href=/tick>ticket:'.$tik.'</a>');
+
+    }
 
 }
