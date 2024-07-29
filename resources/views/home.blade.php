@@ -113,14 +113,14 @@ if (isset($_GET['fecha'])) {
         var h = document.getElementById('foo4');
 
           e.style.display = 'none';
-       
+          h.style.display = 'none';
+
           f.style.display = 'none';
           g.style.display = 'block';
-          h.style.display = 'none';
 
 
     }
-    function mostrar3() {
+    function mostrar4() {
         var e = document.getElementById('foo');
         var f = document.getElementById('foo2');
         var g = document.getElementById('foo3');
