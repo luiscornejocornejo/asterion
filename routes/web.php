@@ -286,6 +286,7 @@ Route::get('/createticketsoportecliente','App\Http\Controllers\cloudtickets@crea
 Route::post('/createticketsoportecliente','App\Http\Controllers\cloudtickets@createticketsoportecliente2')->middleware('supervisorsienna');
 Route::get('/getsaliente','App\Http\Controllers\cloudtickets@getsaliente');
 Route::post('/getsaliente','App\Http\Controllers\cloudtickets@getsaliente2');
+Route::post('/getsalienteticket','App\Http\Controllers\cloudtickets@getsalienteticket');
 
 Route::get('/pruebatelefonia','App\Http\Controllers\cloudtickets@pruebatelefonia');
 

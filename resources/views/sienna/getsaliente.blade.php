@@ -183,7 +183,7 @@ document.getElementById("phone").value = phone;
                             <h4 class="modal-title text-light" id="multiple-twoModalLabel">Saliente</h4>
                             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form method="get" action="/blabla">
+                        <form method="post" action="/getsalienteticket">
                             <div class="modal-body">
                                 <label class="form-label" for="phone">Número teléfono</label>
                                 <div class="row mb-3">
