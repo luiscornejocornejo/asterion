@@ -1051,10 +1051,11 @@ if (isset($_GET['fecha'])) {
             <?php
 
             $ruta=Request::path();
-                $queryempresa="select idioma from empresa";
+                $queryempresa="select * from empresa";
                 $resultadosempresas = DB::select($queryempresa);
                 foreach($resultadosempresas as $vale){
-                     $idioma = $vale->idioma;
+                    $idioma = $vale->idioma;
+                    $urlmetabase = $vale->urlmetabase;
 
                 }
                 
@@ -1077,6 +1078,9 @@ if (isset($_GET['fecha'])) {
                 <div class="col-4"><a class="btn btn-outline-primary" href="#" onclick="mostrar();"><?php echo $boton1;?></a></div>
                 <div class="col-4"><a class="btn btn-outline-success" href="#" onclick="mostrar2();"><?php echo $boton2;?></a></div>
                 <div class="col-4"><a class="btn btn-outline-info" href="#" onclick="mostrar3();"><?php echo $boton3;?></a></div>
+                <?php if($urlmetabase<>""){?>
+                    <div class="col-4"><a class="btn btn-outline-info" href="#" onclick="mostrar4();">Dash</a></div>
+                    <?php }?>
             </div>
         </div>
 </div>
