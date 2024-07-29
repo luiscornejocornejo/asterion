@@ -31,6 +31,8 @@
                   $botfrontdesk=$val->botfrontdesk;
                   $local=$val->local;
                   $urlmetabase=$val->urlmetabase;
+                  $urlchatticketmanual=$val->urlchatticketmanual;
+                  
                 }?>
                  <form action="/empresadatos" method="post">
                  @csrf
@@ -101,7 +103,11 @@
                       <label for="exampleFormControlInput1">urlmetabase</label>
                       <input value="<?php echo $urlmetabase;?>" type="text" name="urlmetabase" class="form-control" id="exampleFormControlInput1" placeholder="http://">
                     </div>
-                    
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">urlchatticketmanual</label>
+                      <input value="<?php echo $urlchatticketmanual;?>" type="text" name="urlchatticketmanual" class="form-control" id="exampleFormControlInput1" placeholder="http://">
+                    </div>
+                     
                     <div class="form-group">
                     <label for="exampleFormControlInput1"></label>
 
