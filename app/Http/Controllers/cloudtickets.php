@@ -1317,7 +1317,7 @@ class cloudtickets extends Controller
         $se->tipo = "1";
         $se->descripcion = "created";
         $se->autor = $logeado;
-        $se->save();
+        $se->save();  
 
         $se2 = new siennaseguimientos();
         $se2->ticket = $si->id;
