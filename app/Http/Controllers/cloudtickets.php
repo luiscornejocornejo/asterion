@@ -1329,7 +1329,7 @@ class cloudtickets extends Controller
         
         return redirect()
         ->back()
-        ->with('success', 'Se creo el ticket  <a href=/tick>ticket:'.$tik.'</a>');
+        ->with('success', 'Se creo el ticket  <a href=/tick>ticket:'.$si->id.'</a>');
 
     }
 
