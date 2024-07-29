@@ -184,6 +184,8 @@ document.getElementById("phone").value = phone;
                             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <form method="post" action="/getsalienteticket">
+                        @csrf
+
                             <div class="modal-body">
                                 <label class="form-label" for="phone">Número teléfono</label>
                                 <div class="row mb-3">
