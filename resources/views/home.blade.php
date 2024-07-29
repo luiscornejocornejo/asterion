@@ -85,31 +85,53 @@ if (isset($_GET['fecha'])) {
         var e = document.getElementById('foo');
         var f = document.getElementById('foo2');
         var g = document.getElementById('foo3');
+        var h = document.getElementById('foo4');
           e.style.display = 'block';
        
           f.style.display = 'none';
           g.style.display = 'none';
+          h.style.display = 'none';
     }
     function mostrar2() {
         var e = document.getElementById('foo');
         var f = document.getElementById('foo2');
         var g = document.getElementById('foo3');
+        var h = document.getElementById('foo4');
 
           e.style.display = 'none';
        
           f.style.display = 'block';
           g.style.display = 'none';
+          h.style.display = 'none';
+
 
     }
     function mostrar3() {
         var e = document.getElementById('foo');
         var f = document.getElementById('foo2');
         var g = document.getElementById('foo3');
+        var h = document.getElementById('foo4');
 
           e.style.display = 'none';
        
           f.style.display = 'none';
           g.style.display = 'block';
+          h.style.display = 'none';
+
+
+    }
+    function mostrar3() {
+        var e = document.getElementById('foo');
+        var f = document.getElementById('foo2');
+        var g = document.getElementById('foo3');
+        var h = document.getElementById('foo4');
+
+          e.style.display = 'none';
+       
+          f.style.display = 'none';
+          g.style.display = 'none';
+          h.style.display = 'block';
+
 
     }
 </script>
@@ -1079,7 +1101,7 @@ if (isset($_GET['fecha'])) {
                 <div class="col-4"><a class="btn btn-outline-success" href="#" onclick="mostrar2();"><?php echo $boton2;?></a></div>
                 <div class="col-4"><a class="btn btn-outline-info" href="#" onclick="mostrar3();"><?php echo $boton3;?></a></div>
                 <?php if($urlmetabase<>""){?>
-                    <div class="col-4"><a class="btn btn-outline-info" href="#" onclick="mostrar4();">Dash</a></div>
+                    <div class="col-4 m-2"><a class="btn btn-outline-info" href="#" onclick="mostrar4();">Dash</a></div>
                     <?php }?>
             </div>
         </div>
@@ -1276,6 +1298,11 @@ if (isset($_GET['fecha'])) {
                     <div class="row">
                         <div id="logeados">
                         </div>
+                    </div>
+                </div>
+                <div id="foo4" style="display:none">
+                    <div class="row">
+                        <iframe src='<?php echo $urlmetabase;?>'>
                     </div>
                 </div>
 </div>
