@@ -1355,6 +1355,7 @@ class cloudtickets extends Controller
             $logo= Storage::disk('do')->put($ruta, $logo);
             $se2 = new siennaseguimientos();
             $se2->ticket = $si->id;
+            $se2->logo = $logo;
             $se2->tipo = "9";
             $se2->descripcion = "ENVIADO";
             $se2->autor = $logeado;
