@@ -99,12 +99,18 @@
                                         <div class="mt-2 ">
                                             <div class="mb-2 mt-2">
                                                 <label class="form-label">Responder</label>
-                                                <div class="input-group">
+                                                <div class="form-group">
+                                                    <label for="comentarios">subject</label>
                                                     <input id="subject" class=""  type="email" value="<?php echo $resultados[0]->asunto; ?>">
+                                                    <label for="comentarios">cc</label>
                                                     <input id="cc2" class=""  type="text" value="<?php echo $resultados[0]->cc; ?>">
+                                                    <label for="comentarios">Destinatario</label>
                                                     <input id="mailaeviar" class=""  type="text" value="<?php echo $resultados[0]->emailnom; ?>">
-                                                    <textarea  class="form-control" name="comentario" rows="4"></textarea>
                                                 </div>
+                                                <div class="form-group"> 
+                                                    <label for="comentarios"></label>
+                                                    <textarea class="form-control" rows="5" id="comentarios" name="comentarios"></textarea>
+                                                </div> 
                                                 <div class="mt-2">
                                                     <button class="btn btn-primary rounded-pill me-1" type="submit">Crear</button>
                                                     <label for="fileInput" class="btn btn-secondary rounded-pill">
