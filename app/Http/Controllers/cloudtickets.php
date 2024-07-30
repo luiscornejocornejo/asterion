@@ -1343,7 +1343,7 @@ class cloudtickets extends Controller
 
         if (isset($request->evicence)) {
             $logo = $request->file('evicence');
-            dd($logo);
+           // dd($logo);
           //  $content = file_get_contents($url);
     
     

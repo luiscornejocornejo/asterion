@@ -114,7 +114,7 @@ document.getElementById("phone").value = phone;
                             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form action="crearticketsiennaclientegetdata" method="post">
+                            <form action="crearticketsiennaclientegetdata" method="post"  enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="row">
