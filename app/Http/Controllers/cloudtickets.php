@@ -1363,11 +1363,11 @@ class cloudtickets extends Controller
        
        }
 
-        $button = '<button onclick="sal(`'. $id .'`,`'. $phone .'`)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create-ticket-modal-2">Haz click aquí para enviar saliente</button>';
+        $button = '<button onclick="sal(`'. $id .'`,`'. $phone .'`)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create-ticket-modal-2"><i class="mdi mdi-whatsapp"></i> Enviar Whatsapp</button>';
 
         return redirect()
         ->back()
-        ->with('success', 'Se creó el ticket ' . $id . $button);
+        ->with('success', 'Se creó el ticket ' . $id . ' ' . $button);
 
     }
 
