@@ -52,9 +52,9 @@
                                                                 <small class="text-muted">De2: <?php // echo $resultados[0]->emailnom; ?></small><br>
                                                                     <small class="text-muted">Para: <?php echo "{$resultados[0]->emailnom}, {$resultados[0]->cc}" ?></small><br>
                                                                     <small class="text-muted">Fecha: <?php echo $resultados[0]->creacion; ?> </small>
-                                                                    <div class="mb-1">
+                                                                    <p class="mb-1">
                                                                     {!! $b !!}
-                                                                    </div>
+                                                        </p>
                                                                 </div>
                                                             </div>
                                                         </li>
