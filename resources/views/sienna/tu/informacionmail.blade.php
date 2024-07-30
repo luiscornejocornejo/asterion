@@ -43,7 +43,7 @@
                                                                 </div>
                                                             </li>
                                                         <?php else: ?>
-                                                        <li class="clearfix odd">
+                                                        <li class="clearfix ">
                                                             <div class="chat-avatar">
                                                                 <img src="/assetsfacu/images/users/operator.jpeg" class="rounded-circle border" alt="Operador">
                                                             </div>
