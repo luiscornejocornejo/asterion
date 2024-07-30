@@ -43,7 +43,7 @@
                                                                 </div>
                                                             </li>
                                                         <?php else: ?>
-                                                        <li class="clearfix ">
+                                                        <li class="clearfix odd">
                                                             <div class="chat-avatar">
                                                                 <img src="/assetsfacu/images/users/operator.jpeg" class="rounded-circle border" alt="Operador">
                                                             </div>
@@ -52,7 +52,7 @@
                                                                 <small class="text-muted">De: <?php // echo $resultados[0]->emailnom; ?></small><br>
                                                                     <small class="text-muted">Para: <?php echo "{$resultados[0]->emailnom}, {$resultados[0]->cc}" ?></small><br>
                                                                     <small class="text-muted">Fecha: <?php echo $resultados[0]->creacion; ?> </small>
-                                                                    <p>
+                                                                    <p class="mb-1">
                                                                         {!! $b !!}
                                                                     </p>
                                                                 </div>
