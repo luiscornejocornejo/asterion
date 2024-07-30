@@ -148,7 +148,7 @@ foreach ($result as $results){
                         <li class="side-nav-item background-buttons ">
                             <a  href="/getsaliente"  class="side-nav-link hovering-pan ">
                                 <i class="mdi mdi-send-circle-outline"></i>
-                                <span> Saliente Wispro </span>
+                                <span> Ticket manual </span>
                             </a>
                         </li>
                 <?php } ?>
