@@ -1363,7 +1363,7 @@ class cloudtickets extends Controller
        
        }
 
-        $button = '<span onclick="sal(`'. $id .'`,`'. $phone .'`)"  data-bs-toggle="modal" data-bs-target="#create-ticket-modal-2"><i class="mdi mdi-check"></i>. Haz click aquí para enviar saliente</span>';
+        $button = '<button onclick="sal(`'. $id .'`,`'. $phone .'`)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create-ticket-modal-2">Haz click aquí para enviar saliente</button>';
 
         return redirect()
         ->back()
