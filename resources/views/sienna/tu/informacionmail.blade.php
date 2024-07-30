@@ -95,7 +95,7 @@
                                         <div class="mt-5">
                                         <h5 class="mb-3">Responder</h5>
 
-                                        <form action="{{asset('')}}/api/mandarmailnuevo" method="GET" enctype="multipart/form-data">
+                                        <form action="{{asset('')}}api/mandarmailnuevo" method="GET" enctype="multipart/form-data">
                                             @csrf
 
                                             <div class="mt-2 ">
