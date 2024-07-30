@@ -93,6 +93,28 @@
                                     <!-- end row-->
 
                                         <div class="mt-5">
+                                        <form action="/api/mandarmailnuevo" method="GET" enctype="multipart/form-data">
+                                        @csrf
+
+                                        <div class="mt-2 ">
+                                            <div class="mb-2 mt-2">
+                                                <label class="form-label">Responder</label>
+                                                <div class="input-group">
+                                                    <input id="subject" class=""  type="email" value="<?php echo $resultados[0]->asunto; ?>">
+                                                    <input id="cc2" class=""  type="text" value="<?php echo $resultados[0]->cc; ?>">
+                                                    <input id="mailaeviar" class=""  type="text" value="<?php echo $resultados[0]->emailnom; ?>">
+                                                    <textarea  class="form-control" name="comentario" rows="4"></textarea>
+                                                </div>
+                                                <div class="mt-2">
+                                                    <button class="btn btn-primary rounded-pill me-1" type="submit">Crear</button>
+                                                    <label for="fileInput" class="btn btn-secondary rounded-pill">
+                                                        <i class="mdi mdi-attachment"></i> Adjuntar
+                                                        <input name="logo" type="file" id="fileInput" class="d-none">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                         <form method='post'action='/api/mandarmail'>
                                          @csrf
                                         <input id="subject" class="" readonly type="email" value="<?php echo $resultados[0]->asunto; ?>">
@@ -100,7 +122,6 @@
                                         <input id="mailaeviar" class="" readonly type="text" value="<?php echo $resultados[0]->emailnom; ?>">
                                             <div id="snow-editor" style="height: 300px;">
                                             </div>
-                                            <textarea class="form-control" rows="5" id="comentarios" name="comentarios"></textarea>
 
                                             <button onclick="enviaremail2('<?php echo $resultados[0]->ticketid; ?>','<?php echo $subdomain_tmp; ?>','<?php echo $resultados[0]->cc; ?>','<?php echo $resultados[0]->emailnom; ?>')" type="button" class="btn me-2 mt-2 rounded-pill" style="background-color: #FFD193;">Responder</button>
                                         </form>
