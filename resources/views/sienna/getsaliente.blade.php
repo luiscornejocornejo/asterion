@@ -59,7 +59,7 @@ document.getElementById("phone").value = phone;
                     <div class="col-lg-4 col-sm-12">
                         <label for="typeSearch" class="form-label">Tipo de busqueda</label>
                         <select name="typeSearch" id="typeSearch" class="form-select">
-                            <?php foreach($busuqedas as $bus){?>
+                            <?php foreach($busquedas as $bus){?>
                             <option value="<?php echo $bus->id;?>"><?php echo $bus->tipows;?>"</option>
                             <?php }?>
                             <option value="1">Número de cliente</option>
