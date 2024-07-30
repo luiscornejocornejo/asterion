@@ -53,7 +53,7 @@
                                                                     <small class="text-muted">Para: <?php echo "{$resultados[0]->emailnom}, {$resultados[0]->cc}" ?></small><br>
                                                                     <small class="text-muted">Fecha: <?php echo $resultados[0]->creacion; ?> </small>
                                                                     <div class="mb-1">aa
-                                                                        {!!! $b !!! }
+                                                                        {!! $b !! }
                                                                     </div>
                                                                 </div>
                                                             </div>
