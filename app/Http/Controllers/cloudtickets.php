@@ -1343,7 +1343,7 @@ class cloudtickets extends Controller
 
         if (isset($request->evicence)) {
             $logo = $request->file('evicence');
-           // dd($logo);
+            dd($logo);
           //  $content = file_get_contents($url);
     
     
@@ -1351,6 +1351,7 @@ class cloudtickets extends Controller
             $domi=$this->dominio();
 
             $ruta=$domi."/interno";
+
             $logo= Storage::disk('do')->put($ruta, $logo);
             $se2 = new siennaseguimientos();
             $se2->ticket = $si->id;
