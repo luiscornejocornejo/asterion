@@ -196,7 +196,7 @@ document.getElementById("phone").value = phone;
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Enviar saliente</button>
+                                <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Enviar saliente</button>
                             </div>
                         </form>
                     </div><!-- /.modal-content -->
