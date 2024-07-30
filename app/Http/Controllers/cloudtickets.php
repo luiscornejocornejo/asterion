@@ -932,13 +932,13 @@ class cloudtickets extends Controller
         $domi=$this->dominio();
         $numcli=$cliente;
        echo $typeSearch=$request->typeSearch;
-        $inte=siennaintegracion::find($typeSearch);
-      //  dd($inte);
+        $inte=siennaintegracion::where('id', '=', $typeSearch)->get();
         $getdata=siennagetdata::all();
         $query3="select * from siennadepto";
         $siennadeptosgenericos = DB::select($query3);
-            $urlinte=$inte->version;
-       
+       foreach($inte as $val){
+            $urlinte=$val->version;
+       }
         $urlinte2=$urlinte.$numcli;
       
         if (($datosonline = @file_get_contents($urlinte2)) === false) {
