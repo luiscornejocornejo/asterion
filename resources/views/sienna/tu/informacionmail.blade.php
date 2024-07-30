@@ -52,9 +52,9 @@
                                                                 <small class="text-muted">De: <?php // echo $resultados[0]->emailnom; ?></small><br>
                                                                     <small class="text-muted">Para: <?php echo "{$resultados[0]->emailnom}, {$resultados[0]->cc}" ?></small><br>
                                                                     <small class="text-muted">Fecha: <?php echo $resultados[0]->creacion; ?> </small>
-                                                                    <p class="mb-1">
+                                                                    <div class="mb-1">aa
                                                                         {!! $b !!}
-                                                                    </p>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </li>
