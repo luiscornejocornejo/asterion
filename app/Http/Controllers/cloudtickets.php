@@ -937,7 +937,7 @@ class cloudtickets extends Controller
         $getdata=siennagetdata::all();
         $query3="select * from siennadepto";
         $siennadeptosgenericos = DB::select($query3);
-            $urlinte=$val->version;
+            $urlinte=$inte->version;
        
         $urlinte2=$urlinte.$numcli;
       
