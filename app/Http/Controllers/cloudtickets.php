@@ -931,7 +931,7 @@ class cloudtickets extends Controller
         $cliente=$request->cliente;
         $domi=$this->dominio();
         $numcli=$cliente;
-       echo $typeSearch=$request->typeSearch;
+        $typeSearch=$request->typeSearch;
         $inte=siennaintegracion::where('id', '=', $typeSearch)->get();
         $getdata=siennagetdata::all();
         $query3="select * from siennadepto";
