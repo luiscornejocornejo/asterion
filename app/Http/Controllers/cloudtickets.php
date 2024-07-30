@@ -918,8 +918,11 @@ class cloudtickets extends Controller
        // $id=$request->envio;
         //$query ="select * from salientesxenniolistado  where salientesxennio='".$id."'";
         //$tsoporte = DB::select($query);
+        $getdata=siennaintegracion::all();
 
         return view('sienna/getsaliente')
+        ->with('busquedas', $getdata)
+
        
         ;
     }
@@ -928,7 +931,8 @@ class cloudtickets extends Controller
         $cliente=$request->cliente;
         $domi=$this->dominio();
         $numcli=$cliente;
-        $inte=siennaintegracion::all();
+        $typeSearch=$request->typeSearch;
+        $inte=siennaintegracion::find($typeSearch);
         $getdata=siennagetdata::all();
         $query3="select * from siennadepto";
         $siennadeptosgenericos = DB::select($query3);
