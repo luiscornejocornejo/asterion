@@ -101,11 +101,11 @@
                                                 <label class="form-label">Responder</label>
                                                 <div class="form-group">
                                                     <label for="comentarios">subject</label>
-                                                    <input id="subject" class=""  type="email" value="<?php echo $resultados[0]->asunto; ?>">
+                                                    <input id="subject" class=""  type="text" value="<?php echo $resultados[0]->asunto; ?>">
                                                     <label for="comentarios">cc</label>
                                                     <input id="cc2" class=""  type="text" value="<?php echo $resultados[0]->cc; ?>">
                                                     <label for="comentarios">Destinatario</label>
-                                                    <input id="mailaeviar" class=""  type="text" value="<?php echo $resultados[0]->emailnom; ?>">
+                                                    <input id="mailaeviar" class=""  type="email" value="<?php echo $resultados[0]->emailnom; ?>">
                                                 </div>
                                                 <div class="form-group"> 
                                                     <label for="comentarios"></label>
