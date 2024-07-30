@@ -17,7 +17,7 @@
 <div class="card ">
                                 <div class="card-body">
                                     <div class="row">
-                                        <h5 class="font-18 mb-2">Asunto: <?php echo $resultados[0]->asunto; ?></h5>
+                                        <h5 class="font-18 mb-2">Asunto: <?php //echo $resultados[0]->asunto; ?></h5>
                                             <ul class="conversation-list p-0" data-simplebar="init">
                                                 <?php foreach ($resultadosmails as $valormail):
                                                     $b = html_entity_decode($valormail->cuerpo);
