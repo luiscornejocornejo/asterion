@@ -910,7 +910,9 @@ class cloudtickets extends Controller
         ;
     }
 
+
     
+    /////////inicio de pagina
     public function getsaliente(Request $request)
     {   
         $merchant=$this->dominio();
@@ -926,6 +928,7 @@ class cloudtickets extends Controller
        
         ;
     }
+    //getdata busuqeda
     public function getsaliente2(Request $request)
     {
         $cliente=$request->cliente;
@@ -1300,6 +1303,8 @@ class cloudtickets extends Controller
         ->back()
         ->with('success', 'Se modificó correctamente el estado de la tarea!');
     }
+
+    //crear tickets getdata
     public function crearticketsiennaclientegetdata(Request $request){
 
         $cliente=$request->number_client;
@@ -1335,6 +1340,26 @@ class cloudtickets extends Controller
         $se2->autor = $logeado;
         $se2->save();
         $id = $si->id;
+
+        if (isset($request->evicence)) {
+            $logo = $request->file('evicence');
+           // dd($logo);
+          //  $content = file_get_contents($url);
+    
+    
+            $archi=Str::of($logo)->basename();
+            $domi=$this->dominio();
+
+            $ruta=$domi."/interno";
+            $logo= Storage::disk('do')->put($ruta, $logo);
+            $se2 = new siennaseguimientos();
+            $se2->ticket = $si->id;
+            $se2->tipo = "9";
+            $se2->descripcion = "ENVIADO";
+            $se2->autor = $logeado;
+            $se2->save();
+       
+       }
 
         $button = '<button onclick="sal(`'. $id .'`,`'. $phone .'`)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create-ticket-modal-2"><i class="mdi mdi-check"></i></button>';
 
