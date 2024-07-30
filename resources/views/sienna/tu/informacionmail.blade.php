@@ -64,7 +64,6 @@
 
 
 
-                                    </div>
 
                                     <div class="row">
                                         <h5 class="mb-3">Adjuntos</h5>
