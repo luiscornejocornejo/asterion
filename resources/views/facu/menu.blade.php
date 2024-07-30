@@ -14,6 +14,13 @@ $resultados = DB::select($query);
 $querygenerico="select * from siennadepto";
 $siennadeptosgenericos = DB::select($querygenerico);
 
+$queryInt = "SELECT nombre from siennaintegracion LIMIT 1";
+$result = DB::select($queryInt);
+
+foreach ($result as $results){
+    $nombreIntegracion = $results->nombre;
+}
+
 ?>
 <div class="leftside-menu menuitem-active">
 
@@ -135,6 +142,16 @@ $siennadeptosgenericos = DB::select($querygenerico);
                         <span> Saliente masivo </span>
                     </a>
                 </li>
+                <?php 
+                
+                    if($nombreIntegracion == "wispro") { ?>
+                        <li class="side-nav-item background-buttons ">
+                            <a  href="/getsaliente"  class="side-nav-link hovering-pan ">
+                                <i class="mdi mdi-send-circle-outline"></i>
+                                <span> Saliente Wispro </span>
+                            </a>
+                        </li>
+                <?php } ?>
 
 
 <li class="side-nav-item background-buttons">
