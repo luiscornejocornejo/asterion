@@ -949,9 +949,12 @@ class cloudtickets extends Controller
       } else {
            // echo "Everything went better than expected";
       }
+      $getdata222=siennaintegracion::all();
       return view('sienna/getsaliente')
       ->with('datosonline', $datosonline)
       ->with('cliente', $cliente)
+      ->with('busquedas', $getdata222)
+
       ->with('siennadeptosgenericos', $siennadeptosgenericos)
       ->with('getdata', $getdata);
 
