@@ -93,12 +93,13 @@
                                     <!-- end row-->
 
                                         <div class="mt-5">
-                                        <form action="/api/mandarmailnuevo" method="GET" enctype="multipart/form-data">
+                                        <h5 class="mb-3">Responder</h5>
+
+                                        <form action="{{url()->current()}}/api/mandarmailnuevo" method="GET" enctype="multipart/form-data">
                                             @csrf
 
                                             <div class="mt-2 ">
                                                 <div class="mb-2 mt-2">
-                                                    <label class="form-label">Responder</label>
                                                     <div class="form-group">
                                                         <label for="comentarios">subject</label>
                                                         <input id="subject" class=""  type="text" value="<?php echo $resultados[0]->asunto; ?>">
