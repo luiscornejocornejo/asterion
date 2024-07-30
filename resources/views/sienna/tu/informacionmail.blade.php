@@ -100,6 +100,8 @@
                                         <input id="mailaeviar" class="" readonly type="text" value="<?php echo $resultados[0]->emailnom; ?>">
                                             <div id="snow-editor" style="height: 300px;">
                                             </div>
+                                            <textarea class="form-control" rows="5" id="comentarios" name="comentarios"></textarea>
+
                                             <button onclick="enviaremail2('<?php echo $resultados[0]->ticketid; ?>','<?php echo $subdomain_tmp; ?>','<?php echo $resultados[0]->cc; ?>','<?php echo $resultados[0]->emailnom; ?>')" type="button" class="btn me-2 mt-2 rounded-pill" style="background-color: #FFD193;">Responder</button>
                                         </form>
                                         </div>
@@ -109,7 +111,7 @@
                                                 let mail=document.getElementById("mailaeviar").value;
                                                  cc=document.getElementById("cc2").value;
                                                  subject=document.getElementById("subject").value;
-                                                let texto=document.getElementById("snow-editor").innerHTML;
+                                                let texto=document.getElementById("comentarios").innerHTML;
 
                                                 url='/api/mandarmail';
 
