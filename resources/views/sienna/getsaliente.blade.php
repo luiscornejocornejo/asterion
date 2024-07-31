@@ -78,6 +78,7 @@ document.getElementById("phone").value = phone;
             <div class="border" class="col-2">
                 <?php if (isset($datosonline)) {
                     $datosonline2 = json_decode($datosonline);
+                    var_dump($datosonline2 );
                 ?>
 
 
