@@ -60,6 +60,7 @@ document.getElementById("phone").value = phone;
                         <select name="typeSearch" id="typeSearch" class="form-select">
                             <?php foreach($busquedas as $bus){
                                 $tipointegracion=$bus->nombre;
+                                dd($tipointegracion);
                                 ?>
                             <option value="<?php echo $bus->id;?>"><?php echo $bus->tipows;?></option>
                             <?php }?>
