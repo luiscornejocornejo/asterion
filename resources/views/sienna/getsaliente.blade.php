@@ -58,7 +58,9 @@ document.getElementById("phone").value = phone;
                     <div class="col-lg-4 col-sm-12">
                         <label for="typeSearch" class="form-label">Tipo de busqueda</label>
                         <select name="typeSearch" id="typeSearch" class="form-select">
-                            <?php foreach($busquedas as $bus){?>
+                            <?php foreach($busquedas as $bus){
+                                $tipointegracion=$bus->nombre;
+                                ?>
                             <option value="<?php echo $bus->id;?>"><?php echo $bus->tipows;?></option>
                             <?php }?>
                         </select>
@@ -79,6 +81,16 @@ document.getElementById("phone").value = phone;
                 <?php if (isset($datosonline)) {
                     $datosonline2 = json_decode($datosonline);
                   //  dd($datosonline2 );
+                  if($tipointegracion=="wispro"){
+                    $tablaname=$datosonline2->name;
+                    $tablaphone=$datosonline2->phone;
+                    $tablamobile=$datosonline2->mobile;
+                }
+                if($tipointegracion=="ispcube"){
+                    $tablaname=$datosonline2->name;
+                    $tablaphone=$datosonline2->phones->number;
+                    $tablamobile=$datosonline2->phones->number;
+                }
                 ?>
 
 
@@ -95,9 +107,9 @@ document.getElementById("phone").value = phone;
                     </thead>
                     <tbody id="tb">
                         <tr class="text-center">
-                            <td><?php echo $datosonline2->name; ?></td>
-                            <td><?php echo $datosonline2->phone; ?></td>
-                            <td><?php echo $datosonline2->phone_mobile; ?></td>
+                            <td><?php echo $tablaname; ?></td>
+                            <td><?php echo $tablaphone; ?></td>
+                            <td><?php echo $tablaphone_mobile; ?></td>
                             <td><button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#create-ticket-modal"><i class="mdi mdi-check"></i></button></td>
                         </tr>
                     </tbody>
@@ -156,7 +168,7 @@ document.getElementById("phone").value = phone;
 
                                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                                     <input readonly type="hidden" value="<?php echo $cliente; ?>" id="number-client" name="number_client" class="form-control" required>
-                                    <input readonly type="hidden" value="<?php echo $datosonline2->phone_mobile; ?>" id="phone-client" name="phone_client" class="form-control" required>
+                                    <input readonly type="hidden" value="<?php echo $tablaphone_mobile; ?>" id="phone-client" name="phone_client" class="form-control" required>
                                     </div>
                                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
 
