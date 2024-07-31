@@ -1385,7 +1385,6 @@ class cloudtickets extends Controller
             $url=$vale->urlchatticketmanual;
 
         }
-        dd($url);
         $t=$this->getsalienteticket2($parametros,$valores,$url,$phone);
         return redirect()
         ->back()
