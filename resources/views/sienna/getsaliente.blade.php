@@ -84,7 +84,7 @@ document.getElementById("phone").value = phone;
                   if($tipointegracion=="wispro"){
                    echo $tablaname=$datosonline2->name;
                    echo $tablaphone=$datosonline2->phone;
-                   echo  $tablamobile=$datosonline2->mobile;
+                   echo  $tablamobile=$datosonline2->phone_mobile;
                    dd($datosonline2 );
                 }
                 if($tipointegracion=="ispcube"){
