@@ -82,10 +82,9 @@ document.getElementById("phone").value = phone;
                     $datosonline2 = json_decode($datosonline);
                   //  dd($datosonline2 );
                   if($tipointegracion=="wispro"){
-                   echo $tablaname=$datosonline2->name;
-                   echo $tablaphone=$datosonline2->phone;
-                   echo  $tablamobile=$datosonline2->phone_mobile;
-                   dd($datosonline2 );
+                    $tablaname=$datosonline2->name;
+                    $tablaphone=$datosonline2->phone;
+                     $tablamobile=$datosonline2->phone_mobile;
                 }
                 if($tipointegracion=="ispcube"){
                     $tablaname=$datosonline2->name;
