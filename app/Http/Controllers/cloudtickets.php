@@ -1379,8 +1379,10 @@ class cloudtickets extends Controller
         $phone=$request->phone;
         $parametros="ticket_id";
         
-        $url="https://publicapi.xenioo.com/broadcasts/5LqtdyZuO2Fw2XNl8lwTuCD6ykjnCvPM/FxhDb5zEOAHq2R75lduIyfCqpVGICso1yHHyA9SsHFt3L84cdqBZ5knZlqN5oh1W/direct";
-
+        //$url="https://publicapi.xenioo.com/broadcasts/5LqtdyZuO2Fw2XNl8lwTuCD6ykjnCvPM/FxhDb5zEOAHq2R75lduIyfCqpVGICso1yHHyA9SsHFt3L84cdqBZ5knZlqN5oh1W/direct";
+        $emp=empresa::all();
+        $url=$emp->urlchatticketmanual;
+        dd($url);
         $t=$this->getsalienteticket2($parametros,$valores,$url,$phone);
         return redirect()
         ->back()
