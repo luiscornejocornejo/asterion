@@ -80,10 +80,11 @@ document.getElementById("phone").value = phone;
             <div class="border" class="col-2">
                 <?php if (isset($datosonline)) {
                     $datosonline2 = json_decode($datosonline);
+                    $tablaname="";
+                    $tablaphone="";
+                    $tablaphone_mobile="";
                     if(isset($datosonline2->name)){
-                        $tablaname="";
-                        $tablaphone="";
-                        $tablaphone_mobile="";
+                        
                         if($tipointegracion=="wispro"){
                             $tablaname=$datosonline2->name;
                             $tablaphone=$datosonline2->phone;
@@ -120,6 +121,7 @@ document.getElementById("phone").value = phone;
                 </table>
             </div>
 
+                        <?php }?>
             <!-- Modal -->
             <div id="create-ticket-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -187,7 +189,6 @@ document.getElementById("phone").value = phone;
                     </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
-            <?php }?>
 
             <!-- Modal -->
            
