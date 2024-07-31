@@ -94,7 +94,7 @@ document.getElementById("phone").value = phone;
                             $tablaphone=$datosonline2->phones->number;
                             $tablaphone_mobile=$datosonline2->phones->number;
                         }
-                    }
+                    
                 ?>
 
 
@@ -120,7 +120,7 @@ document.getElementById("phone").value = phone;
                 </table>
             </div>
 
-
+                        <?php }?>
             <!-- Modal -->
             <div id="create-ticket-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
