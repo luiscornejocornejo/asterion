@@ -121,7 +121,9 @@ document.getElementById("phone").value = phone;
                 </table>
             </div>
 
-                        <?php }?>
+                        <?php }else{
+                            echo "cliente no encontrado";
+                        }?>
             <!-- Modal -->
             <div id="create-ticket-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
