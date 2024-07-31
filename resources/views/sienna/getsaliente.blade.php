@@ -92,8 +92,8 @@ document.getElementById("phone").value = phone;
                             }
                         if($tipointegracion=="ispcube"){
                             $tablaname=$datosonline2->name;
-                            $tablaphone=$datosonline2->phones.number;
-                            $tablaphone_mobile=$datosonline2->phones.number;
+                            $tablaphone=$datosonline2->phones['number'];
+                            $tablaphone_mobile=$datosonline2->phones['number'];
                         }
                     
                 ?>
