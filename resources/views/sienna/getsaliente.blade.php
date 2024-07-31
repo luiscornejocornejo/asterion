@@ -92,9 +92,16 @@ document.getElementById("phone").value = phone;
                             }
                         if($tipointegracion=="ispcube"){
                             $tablaname=$datosonline2->name;
-                            $tablaphone=$datosonline2->phones[0]['number'];
-                            $tablaphone_mobile=$datosonline2->phones[0]['number'];
                             dd($datosonline2);
+                            if($datosonline2->name>0){
+                                foreach($datosonline2->phones as $valphone){
+                                    $tablaphone=$valphone->number;
+                                    $tablaphone_mobile=$valphone->number;
+                                }
+
+                            }
+                            
+                            
 
                         }
                     
