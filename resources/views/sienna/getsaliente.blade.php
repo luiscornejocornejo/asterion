@@ -61,7 +61,7 @@ document.getElementById("phone").value = phone;
                             <?php foreach($busquedas as $bus){
                                 $tipointegracion=$bus->nombre;
                                 ?>
-                            <option value="<?php echo $bus->id;?>"><?php echo $bus->tipows.$tipointegracion;?></option>
+                            <option value="<?php echo $bus->id;?>"><?php echo $bus->tipows;?></option>
                             <?php }?>
                         </select>
                     </div>
@@ -82,9 +82,10 @@ document.getElementById("phone").value = phone;
                     $datosonline2 = json_decode($datosonline);
                   //  dd($datosonline2 );
                   if($tipointegracion=="wispro"){
-                    $tablaname=$datosonline2->name;
-                    $tablaphone=$datosonline2->phone;
-                    $tablamobile=$datosonline2->mobile;
+                   echo $tablaname=$datosonline2->name;
+                   echo $tablaphone=$datosonline2->phone;
+                   echo  $tablamobile=$datosonline2->mobile;
+                   dd($datosonline2 );
                 }
                 if($tipointegracion=="ispcube"){
                     $tablaname=$datosonline2->name;
