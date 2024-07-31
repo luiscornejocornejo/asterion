@@ -80,17 +80,21 @@ document.getElementById("phone").value = phone;
             <div class="border" class="col-2">
                 <?php if (isset($datosonline)) {
                     $datosonline2 = json_decode($datosonline);
-                  //  dd($datosonline2 );
-                  if($tipointegracion=="wispro"){
-                    $tablaname=$datosonline2->name;
-                    $tablaphone=$datosonline2->phone;
-                     $tablaphone_mobile=$datosonline2->phone_mobile;
-                }
-                if($tipointegracion=="ispcube"){
-                    $tablaname=$datosonline2->name;
-                    $tablaphone=$datosonline2->phones->number;
-                    $tablamobile=$datosonline2->phones->number;
-                }
+                    if(isset($datosonline2->name)){
+                        $tablaname="";
+                        $tablaphone="";
+                        $tablaphone_mobile="";
+                        if($tipointegracion=="wispro"){
+                            $tablaname=$datosonline2->name;
+                            $tablaphone=$datosonline2->phone;
+                            $tablaphone_mobile=$datosonline2->phone_mobile;
+                            }
+                        if($tipointegracion=="ispcube"){
+                            $tablaname=$datosonline2->name;
+                            $tablaphone=$datosonline2->phones->number;
+                            $tablaphone_mobile=$datosonline2->phones->number;
+                        }
+                    }
                 ?>
 
 
