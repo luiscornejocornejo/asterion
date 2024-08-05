@@ -10,7 +10,7 @@
                             <div class="d-flex justify-content-between">
                             <div>
                                 <h4 class="fw-normal text-dark" title="Number of Customers">
-                                Información de usuario
+                                Información de usuario2
                                 </h4>
                             </div>
                             <div>
