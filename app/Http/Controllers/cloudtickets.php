@@ -1435,7 +1435,7 @@ class cloudtickets extends Controller
       echo   $logo=$request->logo;
       echo   $mailaeviar=$request->mailaeviar;
 
-      if($request->hasFile('logo')) {
+      if (isset($request->logo)) {
 
         foreach($request->logo as $image) {
           $path = $image->getClientOriginalName();
