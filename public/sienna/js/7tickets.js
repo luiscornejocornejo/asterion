@@ -115,14 +115,7 @@ function pedir(dd) {
 }
 
 function vista(dd,ee,result) {
-    document.getElementById("nyac").innerHTML = "";
-    document.getElementById("clientec").innerHTML = "";
-    document.getElementById("domic").innerHTML = "";
-    document.getElementById("celc").innerHTML = "";
-    document.getElementById("emailc").innerHTML = "";
-    document.getElementById("estadocuentac").innerHTML = "";
-    document.getElementById("estadoservicioc").innerHTML = "";
-    document.getElementById("deuda").innerHTML = "";
+    
     console.log(typeof(ee) );
     if(ee=== ""){
 
