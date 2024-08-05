@@ -1432,7 +1432,6 @@ class cloudtickets extends Controller
     public function mandarmailnuevo(Request $request){
 
       echo  $comentarios=$request->comentarios;
-      echo   $logo=$request->logo;
       echo   $mailaeviar=$request->mailaeviar;
 
       if (isset($request->logo)) {
