@@ -571,7 +571,7 @@ class siennaticketsController extends Controller
         
                 where a.siennaestado not in('3','4')  
                  
-        
+                and a.siennadepto in (" . $final . ")
                  union 
         
                  select *,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
@@ -587,7 +587,7 @@ class siennaticketsController extends Controller
                 left join  ".$merchant.".prioridad f on f.id=a.prioridad
         
                 where a.siennaestado not in('3','4')  
-                 
+                and a.siennadepto in (" . $final . ")
         
                  order by ticketid desc
                 ";
