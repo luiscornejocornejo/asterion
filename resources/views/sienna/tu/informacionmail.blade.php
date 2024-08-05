@@ -118,7 +118,7 @@
                                                         <button class="btn btn-primary rounded-pill me-1" type="submit">Crear</button>
                                                         <label for="fileInput" class="btn btn-secondary rounded-pill">
                                                             <i class="mdi mdi-attachment"></i> Adjuntar
-                                                            <input multiple name="logo" type="file" id="fileInput" class="">
+                                                            <input multiple name="logo[]" type="file" id="fileInput" class="">
                                                         </label>
                                                     </div>
                                                 </div>
