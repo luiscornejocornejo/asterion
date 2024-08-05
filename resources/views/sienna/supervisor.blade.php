@@ -388,7 +388,7 @@
             document.getElementById("seguimientounico").innerHTML = dato;
 
 
-            alert("termina");
+         
 
           })
           .catch(function (error) {
