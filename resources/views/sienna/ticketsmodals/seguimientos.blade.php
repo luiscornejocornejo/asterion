@@ -1,3 +1,4 @@
+</div>
 <div>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header bg-dark text-white">
