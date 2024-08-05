@@ -97,7 +97,7 @@
                                         <div class="mt-5">
                                         <h5 class="mb-3">Responder</h5>
 
-                                        <form action="{{asset('')}}api/mandarmailnuevo" method="GET" enctype="multipart/form-data">
+                                        <form action="{{asset('')}}mandarmailnuevo" method="POST" enctype="multipart/form-data">
                                             @csrf
 
                                             <div class="mt-2 ">
@@ -108,7 +108,7 @@
                                                         <label for="comentarios">cc</label>
                                                         <input id="cc2" class=""  type="text" value="<?php echo $resultados[0]->cc; ?>">
                                                         <label for="comentarios">Destinatario</label>
-                                                        <input id="mailaeviar" class=""  type="email" value="<?php echo $resultados[0]->emailnom; ?>">
+                                                        <input name="mailaeviar"  id="mailaeviar" class=""  type="email" value="<?php echo $resultados[0]->emailnom; ?>">
                                                     </div>
                                                     <div class="form-group"> 
                                                         <label for="comentarios"></label>

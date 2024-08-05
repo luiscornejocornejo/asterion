@@ -1427,4 +1427,31 @@ class cloudtickets extends Controller
         curl_close($curl);
     }
 
+
+    
+    public function mandarmailnuevo(Request $request){
+
+      echo  $comentarios=$request->comentarios;
+      echo   $logo=$request->logo;
+      echo   $mailaeviar=$request->mailaeviar;
+
+      if($request->hasFile('logo')) {
+
+        foreach($request->logo as $image) {
+          $path = $image->getClientOriginalName();
+         echo  $name = time() . '-' . $path;
+    
+          /*
+          $gallery = new GalleryImage();
+          $gallery->image = $image->storeAs('public/gallery-images', $name);
+          $gallery->gallery_id = $request->gallery_id;
+          $gallery->save();*/
+        }
+      }
+
+        
+
+
+    }
+
 }
