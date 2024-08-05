@@ -582,8 +582,8 @@
                         ' <td>' + $nombreamostrar+ '</td>' + 
                         '<td><span class="badge '+colordepto+'" style="font-size:medium;" onclick="area(`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].user_id + '`)"  class="badge bg-info" style="font-size: medium" role="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2">'+response.data[i].depto+' </span></td>' +
                         '<td><span style="font-size:medium;" class="'+colorpri+'" onclick="topic(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="badge badge-info-lighten border" style="font-size: medium" role="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smtopic"> ' + response.data[i].topicnombre + '</span></td> ' +
-
                         ' <td><span style="font-size:medium;" class="'+colorpri+'">' + response.data[i].pri + '</span></td>' +
+
                         ' <td>' + response.data[i].cel + '</td>' +
                         ' <td>' + response.data[i].creado + '</td>' +
                       
