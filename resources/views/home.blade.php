@@ -1,10 +1,8 @@
-@php
- use Illuminate\Http\Request;
-@endphp
+
 @include('facu.header2')
 <?php   
                $tokeninterno = session('tokeninterno');
-               $miip="1.1.1.1";//request()->ip();
+               $miip=request()->ip();
 ?>
 <script type="application/javascript">
     necesito="<?php echo $miip;?>";
