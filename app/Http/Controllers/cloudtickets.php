@@ -1470,8 +1470,8 @@ class cloudtickets extends Controller
             $msj->from("support@suricata.la", "soporte");
             $msj->subject($subject);
             $msj->to($for);
-            if($cc3!=null){
-                $msj->cc($cc3);
+            if($cc!=null){
+                $msj->cc($cc);
 
             }
         });
