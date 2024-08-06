@@ -1452,7 +1452,7 @@ class cloudtickets extends Controller
      echo "<br>";
 
       if (isset($request->logo)) {
-        $rutasimagenes="<br> Archivos Adjuntos:";
+        $rutasimagenes="<br> Archivos Adjuntos:<br>";
         foreach($request->logo as $image) {
           $path = $image->getClientOriginalName();
          echo  $name = time() . '-' . $path;

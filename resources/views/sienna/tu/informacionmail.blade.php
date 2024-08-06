@@ -126,47 +126,7 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <form method='post'action='/api/mandarmail'>
-                                            @csrf
-                                            <input id="subject" class="" readonly type="email" value="<?php echo $resultados[0]->asunto; ?>">
-                                            <input id="cc2" class=""  type="text" value="<?php echo $resultados[0]->cc; ?>">
-                                            <input id="mailaeviar" class="" readonly type="text" value="<?php echo $resultados[0]->emailnom; ?>">
-                                                <div id="snow-editor" style="height: 300px;">
-                                                </div>
-
-                                            <button onclick="enviaremail2('<?php echo $resultados[0]->ticketid; ?>','<?php echo $subdomain_tmp; ?>','<?php echo $resultados[0]->cc; ?>','<?php echo $resultados[0]->emailnom; ?>')" type="button" class="btn me-2 mt-2 rounded-pill" style="background-color: #FFD193;">Responder</button>
-                                        </form>
-                                        <script>
-                                            function enviaremail2(ticket,merchant,cc,subject){
-
-                                                let mail=document.getElementById("mailaeviar").value;
-                                                 cc=document.getElementById("cc2").value;
-                                                 subject=document.getElementById("subject").value;
-                                                let texto=document.getElementById("comentarios").innerHTML;
-
-                                                url='/api/mandarmail';
-
-
-                                                axios.post(url, {
-                                                    mail: mail,
-                                                    cc: cc,
-                                                        texto: texto,
-                                                        ticket: ticket,
-                                                        merchant: merchant,
-                                                        subject: subject,
-
-                                                    })
-                                                    .then(function (response) {
-                                                        console.log("respuesta");
-                                                        console.log(response);
-                                                        window.location.reload();
-
-                                                    })
-                                                    .catch(function (error) {
-                                                        console.log(error);
-                                                    });
-                                            }
-                                        </script>
+                                      
                                     </div>
                                        
 
