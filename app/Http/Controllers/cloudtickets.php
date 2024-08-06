@@ -1452,7 +1452,7 @@ class cloudtickets extends Controller
      echo "<br>";
 
       if (isset($request->logo)) {
-        $rutasimagenes="";
+        $rutasimagenes="<br> Archivos Adjuntos:";
         foreach($request->logo as $image) {
           $path = $image->getClientOriginalName();
          echo  $name = time() . '-' . $path;
@@ -1462,7 +1462,7 @@ class cloudtickets extends Controller
          $ruta=$domi."/mail";
 
          $logo= Storage::disk('do')->put($ruta, $image);
-         $rutasimagenes.=$logo;
+         $rutasimagenes.="<a href='https://sienamedia.sfo3.digitaloceanspaces.com/".$logo."'>adj</a><br>";
          $se2 = new siennaseguimientos();
             $se2->ticket = $ticket;
             $se2->logo = $logo;
