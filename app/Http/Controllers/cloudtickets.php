@@ -1452,11 +1452,17 @@ class cloudtickets extends Controller
      echo "<br>";
 
       if (isset($request->logo)) {
-
+        $rutasimagenes="";
         foreach($request->logo as $image) {
           $path = $image->getClientOriginalName();
          echo  $name = time() . '-' . $path;
          echo "<br>";
+         $domi=$this->dominio();
+
+         $ruta=$domi."/soporte/mail/";
+
+         $logo= Storage::disk('do')->put($ruta, $image);
+         $rutasimagenes.=$logo;
 
           /*
           $gallery = new GalleryImage();
@@ -1464,9 +1470,11 @@ class cloudtickets extends Controller
           $gallery->gallery_id = $request->gallery_id;
           $gallery->save();*/
         }
+
+        $texto.=$rutasimagenes;
       }
 
-
+      
       Mail::mailer('suricata')
                 ->send('mailsienna', ["fields2" => $texto], function ($msj) use ($subject,$for, $cc) {
             $msj->from("support@suricata.la", "soporte");
