@@ -1459,7 +1459,7 @@ class cloudtickets extends Controller
          echo "<br>";
          $domi=$this->dominio();
 
-         $ruta=$domi."/soporte/mail/";
+         $ruta=$domi."/mail";
 
          $logo= Storage::disk('do')->put($ruta, $image);
          $rutasimagenes.=$logo;
@@ -1467,7 +1467,7 @@ class cloudtickets extends Controller
             $se2->ticket = $ticket;
             $se2->logo = $logo;
             $se2->tipo = "9";
-            $se2->descripcion = "ENVIADO";
+            $se2->descripcion = "https://sienamedia.sfo3.digitaloceanspaces.com/".$logo;
             $se2->autor = "yo";
             $se2->save();
 
