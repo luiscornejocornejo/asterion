@@ -1442,7 +1442,7 @@ class cloudtickets extends Controller
       echo "<br>";
 
 
-      echo   $for="kayser95@hotmail.com";
+     // echo   $for="kayser95@hotmail.com";
       echo "<br>";
 
       $ticket=$request->ticket;
