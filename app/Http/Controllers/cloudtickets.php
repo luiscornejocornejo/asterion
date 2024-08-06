@@ -1505,7 +1505,9 @@ class cloudtickets extends Controller
         $si3 = siennatickets::find($ticket);
         $si3->estadoconv =0;
         $si3->save();
-        return $ticket;
+        return redirect()
+        ->back()
+        ->with('success', 'Email enviado ' );
 
         
 
