@@ -1,4 +1,6 @@
-
+@php
+ use Illuminate\Http\Request;
+@endphp
 @include('facu.header2')
 <?php   
                $tokeninterno = session('tokeninterno');
