@@ -1431,15 +1431,31 @@ class cloudtickets extends Controller
     
     public function mandarmailnuevo(Request $request){
 
-      echo  $comentarios=$request->comentarios;
-      echo   $mailaeviar=$request->mailaeviar;
+      echo  $texto=$request->comentarios;
+      echo "<br>";
+      echo   $for=$request->mailaeviar;
+      echo "<br>";
+
+      echo $cc=$request->cc;      
+      echo "<br>";
+
+
+      echo   $for="kayser95@hotmail.com";
+      echo "<br>";
+
+      $ticket=$request->ticket;
+      echo "<br>";
+
+     echo  $subject=$request->subject;
+     echo "<br>";
 
       if (isset($request->logo)) {
 
         foreach($request->logo as $image) {
           $path = $image->getClientOriginalName();
          echo  $name = time() . '-' . $path;
-    
+         echo "<br>";
+
           /*
           $gallery = new GalleryImage();
           $gallery->image = $image->storeAs('public/gallery-images', $name);
@@ -1447,6 +1463,32 @@ class cloudtickets extends Controller
           $gallery->save();*/
         }
       }
+
+
+      Mail::mailer('suricata')
+                ->send('mailsienna', ["fields2" => $texto], function ($msj) use ($subject,$for, $cc) {
+            $msj->from("support@suricata.la", "soporte");
+            $msj->subject($subject);
+            $msj->to($for);
+            if($cc3!=null){
+                $msj->cc($cc3);
+
+            }
+        });
+
+
+        $si2 = new siennamail();
+        $si2->siennatickets = $ticket;
+
+        $si2->cuerpo = $texto;
+        $si2->autor =1;
+        $si2->from ="support@suricata.la";
+        $si2->save();
+
+        $si3 = siennatickets::find($ticket);
+        $si3->estadoconv =0;
+        $si3->save();
+        return $ticket;
 
         
 
