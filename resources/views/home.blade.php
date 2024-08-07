@@ -1,6 +1,4 @@
 
-@include('facu.header2')
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
 <?php   
                $tokeninterno = session('tokeninterno');
@@ -36,6 +34,8 @@
 
     }
 </script>
+@include('facu.header2')
+
 <script>
         let navegador = navigator.userAgent;
         if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
