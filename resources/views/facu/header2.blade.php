@@ -1,3 +1,4 @@
+<!doctype html>
 <html  lang="en" data-bs-theme="light" data-layout-mode="fluid" data-menu-color="dark" data-topbar-color="light" data-layout-position="fixed" data-sidenav-size="condensed" class="menuitem-active"><head>
   <meta charset="utf-8">
   <title id='titulo'>Suricata Cx</title>
