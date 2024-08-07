@@ -1359,4 +1359,4 @@ if (isset($_GET['fecha'])) {
 </div>
 <!-- END wrapper -->
 
-@include('facu.footer')
+@include('facu.footer2')
