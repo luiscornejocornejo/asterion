@@ -434,7 +434,7 @@
             }
             if(($subdomain_tmp=="soporte") and (session('tokeninterno')<>0)){?>
               <div class="">
-                        <iframe sandbox="allow-popups" allow="camera;microphone" src="https://view-chat.pagoralia.dev/?token=<?php echo session('tokeninterno');?>&merchant=<?php echo $subdomain_tmp;?>" width="100%" class="border rounded-3" style="height: 72px!important;"></iframe>
+                        <iframe sandbox="allow-popups, allow-scripts" allow="camera;microphone" src="https://view-chat.pagoralia.dev/?token=<?php echo session('tokeninterno');?>&merchant=<?php echo $subdomain_tmp;?>" width="100%" class="border rounded-3" style="height: 72px!important;"></iframe>
                     </div>
 
                     <?php }?>
