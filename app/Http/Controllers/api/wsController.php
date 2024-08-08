@@ -86,7 +86,41 @@ class wsController extends Controller
             $query2 = str_replace($clave, $valordelcampo, $query);
             return $query2;
         } else {
-            //varios parametros
+            //varios 
+            $vueltas=explode(",",$parametros);
+            $array=array("manuelita");
+            $query2=$query;
+      
+            foreach($vueltas as $valuevuelta){
+      
+      
+               $nombredelcampo = $valuevuelta;
+               $valordelcampo = $request->$nombredelcampo;
+      
+               $clave = "@" . $nombredelcampo;
+      
+             try {
+       
+              // Hacemos algo
+                    if(in_array($nombredelcampo,$array)){
+                    }else{
+                      $query2 = str_replace($clave, $valordelcampo, $query2);
+                    array_push($array, $nombredelcampo);
+      
+      
+                    }
+          
+                } catch (\Throwable $e) {
+                
+                    // Podemos hacer algo aquí si ocurre una excepción
+                
+                } 
+      
+            
+      
+      
+            }
+            return $query2;
         }
 
         return $query;
