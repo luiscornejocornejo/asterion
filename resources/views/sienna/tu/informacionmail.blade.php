@@ -68,8 +68,10 @@
                                             </div>
                                             <div class="row container-fluid">
                                         <h5 class="mb-3">Adjuntos</h5>
-
-                                        <?php foreach ($segui as $adj) {
+                                                            
+                                        <?php 
+                                        $cont = 1;
+                                        foreach ($segui as $adj) {
                                         if ($adj->tipo == 9) {?>
                                         <div class="col-xl-4">
                                             <div class="card mb-1 shadow-none border">
@@ -78,7 +80,7 @@
 
                                                         <div class="col-auto">
                                                             <!-- Button -->
-                                                            <a target=_blank href="<?php echo $adj->descripcion; ?>"><i class="mdi mdi-attachment text-dark"></i><?php echo $adj->descripcion; ?></a>
+                                                            <a target=_blank href="<?php echo $adj->descripcion; ?>"><i class="mdi mdi-attachment text-dark"></i>Adjunto <?php $cont ?></a>
                                                             <!-- <img  src='<?php // echo $adj->descripcion . "_" . $adj->logo; ?>' width="40px;"> -->
                                                         </div>
                                                     </div>
@@ -86,6 +88,7 @@
                                             </div>
                                         </div> <!-- end col -->
                                         <?php }
+                                        $cont ++;
                                         }?>
 
                                     </div>
