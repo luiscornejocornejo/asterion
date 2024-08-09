@@ -103,19 +103,25 @@
                                             <div class="mt-2 ">
                                                 <div class="mb-2 mt-2">
                                                     <div class="form-group">
+                                                        
                                                         <label >Asunto: </label>
-                                                        <span name="subject" id="subject"><?php echo $resultados[0]->asunto; ?></span>
-                                                        <br> 
-                                                        <!-- 
-                                                                            
-                                                        <input name="subject" id="subject" class=""  type="text" value="<?php echo $resultados[0]->asunto; ?>">
-                                                        <input name="mailaeviar"  id="mailaeviar" class=""  type="email" value="<?php echo $resultados[0]->emailnom; ?>">
-                                                        -->             
-                                                      <label for="comentarios">CC:</label>
-                                                      <input name="cc"  id="cc" class=""  type="text" value="<?php echo $resultados[0]->cc; ?>">
+                                                        <?php 
+                                                         if($resultados[0]->asunto <> "") {
+                                                            ?>
+                                                              <input name="subject" id="subject" class="form-control w-50"  type="text" value="<?php echo $resultados[0]->asunto; ?>" disabled>
+                                                            <?php
+                                                         } else { ?>
+                                                              <input name="subject" id="subject" class="form-control w-50"  type="text" value="<?php echo $resultados[0]->asunto; ?>">
+                                                        <?php
+                                                        }
+                                                        ?>
+
+                                                        <br>                             
+                                                        <label for="comentarios">CC:</label>
+                                                        <input name="cc"  id="cc" class="form-control w-50"  type="text" value="<?php echo $resultados[0]->cc; ?>">
                                                         <br>                             
                                                         <label for="comentarios">Destinatario</label>
-                                                        <span name="mailaeviar" id="mailaeviar" class="badge text-bg-secondary rounded-pill" ><?php echo $resultados[0]->emailnom; ?></span>
+                                                        <input name="mailaeviar"  id="mailaeviar" class="form-control w-50"  type="email" value="<?php echo $resultados[0]->emailnom; ?>">
 
                                                         <input type="hidden" name="ticket" value="<?php echo $resultados[0]->ticketid; ?>">
 
