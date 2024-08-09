@@ -103,14 +103,13 @@
                                             <div class="mt-2 ">
                                                 <div class="mb-2 mt-2">
                                                     <div class="form-group">
-                                                        <label for="comentarios">subject</label>
-                                                        <input name="subject" id="subject" class=""  type="text" value="<?php echo $resultados[0]->asunto; ?>">
-                                                        <label for="comentarios">cc</label>
-                                                        <input name="cc"  id="cc" class=""  type="text" value="<?php echo $resultados[0]->cc; ?>">
-                                                        <label for="comentarios">Destinatario</label>
-                                                        <input name="mailaeviar"  id="mailaeviar" class=""  type="email" value="<?php echo $resultados[0]->emailnom; ?>">
+                             
+                         <br>                               <label for="comentarios">CC:</label>
+                         <input name="cc"  id="cc" class=""  type="text" value="<?php echo $resultados[0]->cc; ?>">
+                           <br>                             <label for="comentarios">Destinatario</label>
+                                                        <span name="mailaeviar" id="mailaeviar" class="badge text-bg-secondary rounded-pill" ><?php echo $resultados[0]->emailnom; ?></span>
                                                         <input type="hidden" name="ticket" value="<?php echo $resultados[0]->ticketid; ?>">
-                                                        
+
                                                     </div>
                                                     <div class="form-group"> 
                                                         <label for="comentarios"></label>
