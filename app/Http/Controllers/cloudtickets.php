@@ -1459,24 +1459,24 @@ class cloudtickets extends Controller
          echo  $name = time() . '-' . $path;
          echo "<br>";
          $domi=$this->dominio();
-         $cont++;   
          $ruta=$domi."/mail";
-
+         
          $logo= Storage::disk('do')->put($ruta, $image);
          $rutasimagenes.="<a href='https://sienamedia.sfo3.digitaloceanspaces.com/".$logo."'>Adjunto {$cont} </a><br>";
          $se2 = new siennaseguimientos();
-            $se2->ticket = $ticket;
-            $se2->logo = $logo;
-            $se2->tipo = "9";
-            $se2->descripcion = "https://sienamedia.sfo3.digitaloceanspaces.com/".$logo;
-            $se2->autor = "yo";
-            $se2->save();
-
-          /*
-          $gallery = new GalleryImage();
-          $gallery->image = $image->storeAs('public/gallery-images', $name);
-          $gallery->gallery_id = $request->gallery_id;
-          $gallery->save();*/
+         $se2->ticket = $ticket;
+         $se2->logo = $logo;
+         $se2->tipo = "9";
+         $se2->descripcion = "https://sienamedia.sfo3.digitaloceanspaces.com/".$logo;
+         $se2->autor = "yo";
+         $se2->save();
+         
+         /*
+         $gallery = new GalleryImage();
+         $gallery->image = $image->storeAs('public/gallery-images', $name);
+         $gallery->gallery_id = $request->gallery_id;
+         $gallery->save();*/
+         $cont++;   
         }
 
         $texto.=$rutasimagenes;
