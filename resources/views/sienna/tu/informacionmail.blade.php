@@ -78,11 +78,8 @@
 
                                                         <div class="col-auto">
                                                             <!-- Button -->
-                                                    <a target=_blank href="<?php echo $adj->descripcion; ?>"><img  src='<?php echo $adj->descripcion . "_" . $adj->logo; ?>' width="40px;"></a>
-
-
-
-
+                                                            <a target=_blank href="<?php echo $adj->descripcion; ?>"><i class="mdi mdi-attachment text-dark"></i><?php echo $adj->descripcion; ?></a>
+                                                            <!-- <img  src='<?php // echo $adj->descripcion . "_" . $adj->logo; ?>' width="40px;"> -->
                                                         </div>
                                                     </div>
                                                 </div>
