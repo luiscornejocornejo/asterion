@@ -66,7 +66,7 @@
 
                                             </div>
                                             </div>
-                                            <div class="row">
+                                            <div class="row container-fluid">
                                         <h5 class="mb-3">Adjuntos</h5>
 
                                         <?php foreach ($segui as $adj) {
@@ -93,7 +93,7 @@
 
                                     </div>
                                     <!-- end row-->
-                                    <div class="row">
+                                    <div class="row container-fluid">
                                         <div class="mt-5">
                                         <h5 class="mb-3">Responder</h5>
 
@@ -105,17 +105,8 @@
                                                     <div class="form-group">
                                                         
                                                         <label >Asunto: </label>
-                                                        <?php 
-                                                         if($resultados[0]->asunto <> "") {
-                                                            ?>
-                                                              <input name="subject" id="subject" class="form-control w-50"  type="text" value="<?php echo $resultados[0]->asunto; ?>" disabled>
-                                                            <?php
-                                                         } else { ?>
-                                                              <input name="subject" id="subject" class="form-control w-50"  type="text" value="<?php echo $resultados[0]->asunto; ?>">
-                                                        <?php
-                                                        }
-                                                        ?>
-
+                                                        
+                                                        <input name="subject" id="subject" class="form-control w-50"  type="text" value="<?php echo $resultados[0]->asunto; ?>" >
                                                         <br>                             
                                                         <label for="comentarios">CC:</label>
                                                         <input name="cc"  id="cc" class="form-control w-50"  type="text" value="<?php echo $resultados[0]->cc; ?>">

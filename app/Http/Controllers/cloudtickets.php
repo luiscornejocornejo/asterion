@@ -1462,7 +1462,7 @@ class cloudtickets extends Controller
          $ruta=$domi."/mail";
 
          $logo= Storage::disk('do')->put($ruta, $image);
-         $rutasimagenes.="<a href='https://sienamedia.sfo3.digitaloceanspaces.com/".$logo."'>adj</a><br>";
+         $rutasimagenes = "<a href='https://sienamedia.sfo3.digitaloceanspaces.com/{$logo}'>{$logo}</a><br>";
          $se2 = new siennaseguimientos();
             $se2->ticket = $ticket;
             $se2->logo = $logo;
