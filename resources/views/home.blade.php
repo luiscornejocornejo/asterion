@@ -6,7 +6,7 @@
 ?>
 <script type="application/javascript">
     necesito="<?php echo $miip;?>";
-    console.log("My public IP address is: ", necesito," mi subdominio es :  datos:",<?php echo $tokeninterno;?>);
+    console.log("My public IP address is: ", necesito," mi subdominio es :  datos:","<?php echo $tokeninterno;?>");
     let hay=<?php echo $tokeninterno;?>;
     if(hay==0) {
         console.log("no logear");
