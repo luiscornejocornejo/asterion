@@ -168,6 +168,9 @@ if (isset($_GET['fecha'])) {
 
 
     }
+    function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
 </script>
 <!-- Begin page -->
 
@@ -1336,7 +1339,7 @@ if (isset($_GET['fecha'])) {
                 </div>
                 <div id="foo4" style="display:none">
                     <div class="row">
-                        <iframe frameborder="0" style="height: 100%; width: 100%;" src='<?php echo $urlmetabase;?>'>
+                        <iframe id="if" onload="resizeIframe(this)" frameborder="0" style="height: 100%; width: 100%;" src='<?php echo $urlmetabase;?>'>
                     </div>
                 </div>
 </div>
