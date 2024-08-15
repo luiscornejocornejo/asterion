@@ -1,7 +1,7 @@
 @include('pp.header')
-<script src="https://siennasystem.com//js/Chart.min.js"></script>
-<script src="https://siennasystem.com//js/utils.js"></script>
-<script src="https://siennasystem.com//assets/libs/apexcharts/apexcharts.min.js"></script>
+<script src="/js/Chart.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/assets/libs/apexcharts/apexcharts.min.js"></script>
 
 <!-- apexcharts init -->
 <div id="principal">
