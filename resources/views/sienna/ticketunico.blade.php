@@ -255,7 +255,7 @@ function tituloiconos($iconos, $tipo)
 
                     <?php
                     }
-                    $excludedProductIds = [10, 7];
+                    $excludedProductIds = [10, 7,5];
 
                     if (!in_array($resultados[0]->siennasource, $excludedProductIds)) {
 
