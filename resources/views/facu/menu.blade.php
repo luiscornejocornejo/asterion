@@ -89,7 +89,7 @@ foreach ($result as $results){
                   aria-controls="sidebarDashboards"
                   class="side-nav-link hovering-pan"
                 >
-                    <i class="uil-ticket"></i>
+                    <i class="mdi mdi-history"></i>
                   <span>Historial</span>
                   <span class="menu-arrow"></span>
                 </a>
