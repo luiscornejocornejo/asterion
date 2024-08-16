@@ -82,8 +82,14 @@ foreach ($result as $results){
         </a>
     </li>
     <li class="side-nav-item mt-2 background-buttons">
-
-    <i class="uil-ticket"></i>
+    <a
+                  data-bs-toggle="collapse"
+                  href="/viewtickets"
+                  aria-expanded="false"
+                  aria-controls="sidebarDashboards"
+                  class="side-nav-link hovering-pan"
+                >
+                    <i class="uil-ticket"></i>
                   <span>Historial</span>
                   <span class="menu-arrow"></span>
                 </a>
