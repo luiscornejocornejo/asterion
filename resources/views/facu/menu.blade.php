@@ -81,6 +81,8 @@ foreach ($result as $results){
      
         </a>
     </li>
+    <li class="side-nav-item mt-2 background-buttons">
+
     <i class="uil-ticket"></i>
                   <span>Historial</span>
                   <span class="menu-arrow"></span>
