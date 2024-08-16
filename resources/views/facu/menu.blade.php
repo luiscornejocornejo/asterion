@@ -81,8 +81,22 @@ foreach ($result as $results){
      
         </a>
     </li>
-   
-   
+    <i class="uil-ticket"></i>
+                  <span>Historial</span>
+                  <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarEcommerce">
+
+                        <ul class="side-nav-second-level">
+                            <li>
+                            <a href="/siennaform?id=1012">Busqueda X DNI</a>
+                            </li>
+                            <li>
+                            <a href="/siennaform?id=1011">Busqueda X Cliente</a>
+                            </li>
+                        </ul>
+                </div>
+                </li>
 <?php
  $tipodemenu = session('tipodemenu');
  if($tipodemenu =="8"){?>
