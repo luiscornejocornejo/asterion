@@ -41,22 +41,7 @@ foreach ($resultados as $valuee) {
                         
                         <!-- end page title -->
 
-
-                        <div class="card bg-dark">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-sm order-2 order-sm-1">
-                                        <div class="d-flex align-items-start mt-3
-                                mt-sm-0">
-                                            <div class="flex-shrink-0">
-                                                <div class="avatar-xl me-3">
-                                                    <img src="assets/images/users/avatar-11.png" alt="" class="img-fluid
-                                            rounded-circle d-block">
-                                                </div>
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <div>
-                                                <?php foreach($datoscliente as $val){
+                        <?php foreach($datoscliente as $val){
                                             
                                             $nombrecliente=$val->nya;
                                             $emailcliente=$val->email;
@@ -67,33 +52,24 @@ foreach ($resultados as $valuee) {
                                             $ipcliente=$val->ip;
                                             
                                         }?>
-                                                    <h5 class="font-size-16 mb-1 text-light"><?php echo $nombrecliente; ?></h5>
-                                                    <p class="text-muted font-size-13">Plan: $plan | Valor : $200</p>
-                                                    <p class="text-light font-size-13">Cantidad de tickets: <?php  echo sizeof($tickets);?></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- end card body -->
-                        </div>
+                       
                         <!-- end card -->
                         <div class="row">
                             <div class="col-xl-4 col-lg-6 md-6 sm-12" >
-                                <div class="card">
+                                <div class="card bg-dark">
                                     <div class="card-body h-100">
                                         <strong class="text-uppercase">Información del cliente</strong>
                                         <hr>
                                         
-                                        <p><strong>Nombre: </strong><?php echo $nombrecliente;?></p>
-                                        <p><strong>Email: </strong><?php echo $emailcliente;?></p>
-                                        <p><strong>Dirección: </strong><?php echo $direccioncliente;?></p>
-                                        <p><strong>Whatsapp: </strong><?php echo $celcliente;?></p>
-                                        <p><strong>Deuda: </strong><?php echo $deudacliente;?></p>
-                                        <p><strong>Estado de cuenta: </strong><?php echo $estadocliente;?></p>
-                                        <p><strong>IP: </strong><?php echo $ipcliente;?></p>
+                                        <p class="text-light font-size-13"><strong>Nombre: </strong><?php echo $nombrecliente;?></p>
+                                        <p class="text-light font-size-13"><strong>Email: </strong><?php echo $emailcliente;?></p>
+                                        <p class="text-light font-size-13"><strong>Dirección: </strong><?php echo $direccioncliente;?></p>
+                                        <p class="text-light font-size-13"><strong>Whatsapp: </strong><?php echo $celcliente;?></p>
+                                        <p class="text-light font-size-13" ><strong>Deuda: </strong><?php echo $deudacliente;?></p>
+                                        <p class="text-light font-size-13" ><strong>Estado de cuenta: </strong><?php echo $estadocliente;?></p>
+                                        <p class="text-light font-size-13"><strong>IP: </strong><?php echo $ipcliente;?></p>
+                                        <p class="text-light font-size-13">Cantidad de tickets: <?php  echo sizeof($tickets);?></p>
+
                                     </div>
                                 </div>
                             </div>
@@ -123,7 +99,7 @@ foreach ($resultados as $valuee) {
                                             </div>
                                         </div>
                                         <hr>
-                                        <p class="h1">8,4</p>
+                                        <p class="h1">0</p>
                                     </div>
                                 </div>
                             </div>
@@ -147,7 +123,7 @@ foreach ($resultados as $valuee) {
                                 </div>
                             </div>
                             <div>
-                                <div class="card bg-info" role="button" data-bs-toggle="modal" data-bs-target="#modal-push-nps">
+                                <div class="card bg-secondary" role="button" data-bs-toggle="modal" data-bs-target="#modal-push-nps">
                                     <div class="card-body">
                                         <p class="h3 text-center text-white">
                                             <i class="mdi mdi-file-send-outline me-1"></i>Disparar encuesta NPS
@@ -173,7 +149,6 @@ foreach ($resultados as $valuee) {
                                             <th class="text-white">Area</th>
                                             <th class="text-white">Topic</th>
                                             <th class="text-white">Estado</th>
-                                            <th class="text-white">Agente</th>
                                             <th class="text-white">Fecha creado</th>
                                             <th class="text-white">Fecha cerrado</th>
                                             <th class="text-white">C-SAT</th>
@@ -187,7 +162,6 @@ foreach ($resultados as $valuee) {
                                             <td><?php echo $val2->departamento;?></td>
                                             <td><?php echo $val2->motivo;?></td>
                                             <td><?php echo $val2->estado;?></td>
-                                            <td><?php echo $val2->departamento;?></td>
                                             <td><?php echo $val2->inicio;?></td>
                                             <td><?php echo $val2->cerrado;?></td>
                                             <td><?php echo $val2->csat;?></td>
