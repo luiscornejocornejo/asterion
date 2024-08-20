@@ -1519,7 +1519,7 @@ class cloudtickets extends Controller
 
     public function userprofile(Request $request){
 
-        echo  $cliente=$request->cliente;
+          $cliente=$request->cliente;
         //$datos2 = siennatickets::where('cliente', '=', $cliente)->get();
 
         $datos2 = siennatickets::leftJoin('siennadepto', 'siennadepto.id', '=', 'siennatickets.siennadepto')
