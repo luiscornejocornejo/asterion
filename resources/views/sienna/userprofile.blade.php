@@ -68,7 +68,6 @@ foreach ($resultados as $valuee) {
                                         <p class="text-light font-size-13" ><strong>Deuda: </strong><?php echo $deudacliente;?></p>
                                         <p class="text-light font-size-13" ><strong>Estado de cuenta: </strong><?php echo $estadocliente;?></p>
                                         <p class="text-light font-size-13"><strong>IP: </strong><?php echo $ipcliente;?></p>
-                                        <p class="text-light font-size-13">Cantidad de tickets: <?php  echo sizeof($tickets);?></p>
 
                                     </div>
                                 </div>
@@ -140,7 +139,7 @@ foreach ($resultados as $valuee) {
                         </div>
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title text-uppercase mb-0">Tickets creados</h5>
+                                <h5 class="card-title text-uppercase mb-0">Tickets creados (<?php  echo sizeof($tickets);?>)</h5>
                                 <hr>
                                 <table class="table table-centered mb-0 bg-ligth">
                                     <thead>
