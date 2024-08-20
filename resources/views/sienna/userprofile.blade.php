@@ -58,7 +58,7 @@ foreach ($resultados as $valuee) {
                                                 <div>
                                                     <h5 class="font-size-16 mb-1 text-light"><?php echo $cliente; ?></h5>
                                                     <p class="text-muted font-size-13">Plan: $plan | Valor : $200</p>
-                                                    <p class="text-light font-size-13">Cantidad de tickets: <?php  var_dump($datos2);?></p>
+                                                    <p class="text-light font-size-13">Cantidad de tickets: <?php  var_dump($tickets);?></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -75,7 +75,7 @@ foreach ($resultados as $valuee) {
                                     <div class="card-body h-100">
                                         <strong class="text-uppercase">Información del cliente</strong>
                                         <hr>
-                                        <?php foreach($datos3 as $val){
+                                        <?php foreach($datoscliente as $val){
                                             
                                             $nombrecliente=$val->nya;
                                             

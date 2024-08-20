@@ -1526,7 +1526,7 @@ class cloudtickets extends Controller
         return view('sienna/userprofile')
         ->with('cliente', $cliente)
         ->with('tickets', $datos2)
-        ->with('datocliente', $datos3)
+        ->with('datoscliente', $datos3)
         ;
     }
 
