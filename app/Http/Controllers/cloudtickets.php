@@ -1520,9 +1520,13 @@ class cloudtickets extends Controller
     public function userprofile(Request $request){
 
         echo  $cliente=$request->cliente;
-
+        $datos2 = siennatickets::where('cliente', '=', $cliente)->get();
+        $datos3 = siennacliente::where('cliente', '=', $cliente)->get();
+        
         return view('sienna/userprofile')
         ->with('cliente', $cliente)
+        ->with('tickets', $datos2)
+        ->with('datocliente', $datos3)
         ;
     }
 
