@@ -78,15 +78,21 @@ foreach ($resultados as $valuee) {
                                         <?php foreach($datoscliente as $val){
                                             
                                             $nombrecliente=$val->nya;
+                                            $emailcliente=$val->email;
+                                            $direccioncliente=$val->address;
+                                            $celcliente=$val->cel;
+                                            $deudacliente=$val->deuda;
+                                            $estadocliente=$val->a_status;
+                                            $ipcliente=$val->ip;
                                             
                                         }?>
                                         <p><strong>Nombre: </strong><?php echo $nombrecliente;?></p>
-                                        <p><strong>Email: </strong>ss</p>
-                                        <p><strong>Dirección: </strong>ss</p>
-                                        <p><strong>Whatsapp: </strong>ss</p>
-                                        <p><strong>Deuda: </strong>ss</p>
-                                        <p><strong>Estado de cuenta: </strong>ss</p>
-                                        <p><strong>IP: </strong>ss</p>
+                                        <p><strong>Email: </strong><?php echo $emailcliente;?></p>
+                                        <p><strong>Dirección: </strong><?php echo $direccioncliente;?></p>
+                                        <p><strong>Whatsapp: </strong><?php echo $celcliente;?></p>
+                                        <p><strong>Deuda: </strong><?php echo $deudacliente;?></p>
+                                        <p><strong>Estado de cuenta: </strong><?php echo $estadocliente;?></p>
+                                        <p><strong>IP: </strong><?php echo $ipcliente;?></p>
                                     </div>
                                 </div>
                             </div>
@@ -173,16 +179,20 @@ foreach ($resultados as $valuee) {
                                         </tr>
                                     </thead>
                                     <tbody>
+
+                                    <?php foreach($tickets as $val2){?>
                                         <tr>
-                                            <td><i class="mdi mdi-whatsapp text-success me-1"></i>1</td>
-                                            <td><span class="badge bg-warning">Soporte</span></td>
-                                            <td>General Soporte</td>
-                                            <td><span class="badge bg-success">Cerrado</td>
-                                            <td>Pepito</td>
-                                            <td>12-04-2024 20:02</td>
-                                            <td>12-04-2024 22:02</td>
-                                            <td>3,2</td>
+                                            <td><?php echo $val2->id;?></td>
+                                            <td><?php echo $val2->departamento;?></td>
+                                            <td><?php echo $val2->motivo;?></td>
+                                            <td><?php echo $val2->estado;?></td>
+                                            <td><?php echo $val2->departamento;?></td>
+                                            <td><?php echo $val2->inicio;?></td>
+                                            <td><?php echo $val2->cerrado;?></td>
+                                            <td><?php echo $val2->csat;?></td>
                                         </tr>
+
+                                        <?php }?>
                                     </tbody>
                                 </table>
                             </div>

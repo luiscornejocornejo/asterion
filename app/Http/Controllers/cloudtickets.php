@@ -1520,7 +1520,16 @@ class cloudtickets extends Controller
     public function userprofile(Request $request){
 
         echo  $cliente=$request->cliente;
-        $datos2 = siennatickets::where('cliente', '=', $cliente)->get();
+        //$datos2 = siennatickets::where('cliente', '=', $cliente)->get();
+
+        $datos2 = siennatickets::leftJoin('siennadepto', 'siennadepto.id', '=', 'siennatickets.siennadepto')
+        ->leftJoin('siennatopic', 'siennatopic.id', '=', 'siennatickets.siennatopic')
+        ->leftJoin('siennaestado', 'siennaestado.id', '=', 'siennatickets.siennaestado')
+        ->leftJoin('csat', 'csat.ticket', '=', 'siennatickets.id')
+        ->where('siennatickets.cliente', '=', $cliente)
+        ->get(['siennatickets.id', 'siennadepto.nombre as departamento', 'siennatopic.nombre as motivo', 'siennaestado.nombre as estado', 'siennatickets.created_at as inicio', 'siennatickets.t_cerrado as cerrado', 'csat.csat', 'siennatickets.id']);
+    
+
         $datos3 = siennacliente::where('cliente', '=', $cliente)->get();
         
         return view('sienna/userprofile')
