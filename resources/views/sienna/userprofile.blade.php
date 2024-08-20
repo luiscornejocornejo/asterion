@@ -58,7 +58,7 @@ foreach ($resultados as $valuee) {
                                                 <div>
                                                     <h5 class="font-size-16 mb-1 text-light"><?php echo $cliente; ?></h5>
                                                     <p class="text-muted font-size-13">Plan: $plan | Valor : $200</p>
-                                                    <p class="text-light font-size-13">Cantidad de tickets: <?php  var_dump($tickets);?></p>
+                                                    <p class="text-light font-size-13">Cantidad de tickets: <?php  echo sizeof($tickets);?></p>
                                                 </div>
                                             </div>
                                         </div>
