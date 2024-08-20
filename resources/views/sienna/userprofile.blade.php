@@ -56,7 +56,7 @@ foreach ($resultados as $valuee) {
                                             </div>
                                             <div class="flex-grow-1">
                                                 <div>
-                                                    <h5 class="font-size-16 mb-1 text-light"><?php echo session('nombreusuario'); ?></h5>
+                                                    <h5 class="font-size-16 mb-1 text-light"><?php echo $cliente; ?></h5>
                                                     <p class="text-muted font-size-13">Plan: $plan | Valor : $200</p>
                                                     <p class="text-light font-size-13">Cantidad de tickets: 13</p>
                                                 </div>

@@ -1514,5 +1514,16 @@ class cloudtickets extends Controller
 
 
     }
+    
+
+
+    public function userprofile(Request $request){
+
+        echo  $cliente=$request->cliente;
+
+        return view('sienna/userprofile')
+        ->with('cliente', $cliente)
+        ;
+    }
 
 }

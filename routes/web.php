@@ -290,6 +290,7 @@ Route::post('/getsaliente','App\Http\Controllers\cloudtickets@getsaliente2');
 Route::post('/getsalienteticket','App\Http\Controllers\cloudtickets@getsalienteticket');
 
 Route::get('/pruebatelefonia','App\Http\Controllers\cloudtickets@pruebatelefonia');
+Route::get('/userprofile','App\Http\Controllers\cloudtickets@userprofile');
 
 
 
@@ -298,7 +299,7 @@ Route::get('/wisprosaliente', function () {
     return view('/sienna/salienteWispro');
 });
 
-Route::get('/userprofile', function () {
+Route::get('/userprofile2', function () {
     return view('/sienna/userprofile');
 });
 });
