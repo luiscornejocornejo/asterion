@@ -157,7 +157,7 @@ foreach ($resultados as $valuee) {
 
                                     <?php foreach($tickets as $val2){?>
                                         <tr>
-                                            <td><?php echo $val2->id;?></td>
+                                            <td><a href="{{ url('ticketunico?tick=' . $val2->id) }}" target="_blank"><?php echo $val2->id;?></a></td>
                                             <td><?php echo $val2->departamento;?></td>
                                             <td><?php echo $val2->motivo;?></td>
                                             <td><?php echo $val2->estado;?></td>
