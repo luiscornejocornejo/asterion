@@ -56,7 +56,18 @@ foreach ($resultados as $valuee) {
                                             </div>
                                             <div class="flex-grow-1">
                                                 <div>
-                                                    <h5 class="font-size-16 mb-1 text-light"><?php echo $cliente; ?></h5>
+                                                <?php foreach($datoscliente as $val){
+                                            
+                                            $nombrecliente=$val->nya;
+                                            $emailcliente=$val->email;
+                                            $direccioncliente=$val->address;
+                                            $celcliente=$val->cel;
+                                            $deudacliente=$val->deuda;
+                                            $estadocliente=$val->a_status;
+                                            $ipcliente=$val->ip;
+                                            
+                                        }?>
+                                                    <h5 class="font-size-16 mb-1 text-light"><?php echo $nombrecliente; ?></h5>
                                                     <p class="text-muted font-size-13">Plan: $plan | Valor : $200</p>
                                                     <p class="text-light font-size-13">Cantidad de tickets: <?php  echo sizeof($tickets);?></p>
                                                 </div>
@@ -75,17 +86,7 @@ foreach ($resultados as $valuee) {
                                     <div class="card-body h-100">
                                         <strong class="text-uppercase">Información del cliente</strong>
                                         <hr>
-                                        <?php foreach($datoscliente as $val){
-                                            
-                                            $nombrecliente=$val->nya;
-                                            $emailcliente=$val->email;
-                                            $direccioncliente=$val->address;
-                                            $celcliente=$val->cel;
-                                            $deudacliente=$val->deuda;
-                                            $estadocliente=$val->a_status;
-                                            $ipcliente=$val->ip;
-                                            
-                                        }?>
+                                        
                                         <p><strong>Nombre: </strong><?php echo $nombrecliente;?></p>
                                         <p><strong>Email: </strong><?php echo $emailcliente;?></p>
                                         <p><strong>Dirección: </strong><?php echo $direccioncliente;?></p>
