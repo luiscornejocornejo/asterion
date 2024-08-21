@@ -5,6 +5,8 @@
         <div class="modal-content">
             <div class="modal-header bg-dark">
             <form action="/llamadobroadcast" method="post">
+            @csrf
+
                 <h4 class="modal-title text-light" id="mySmallModalLabel">Envío encuesta C-SAT</h4>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
@@ -33,6 +35,8 @@
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
         <form action="/llamadobroadcast" method="post">
+        @csrf
+
             <div class="modal-header bg-dark">
                 <h4 class="modal-title text-light" id="mySmallModalLabel">Encuesta NPS</h4>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
