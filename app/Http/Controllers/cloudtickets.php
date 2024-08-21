@@ -1540,7 +1540,7 @@ class cloudtickets extends Controller
     }
 
 
-    public function llamadobroadcast($tel,$tipo){
+    public function llamadobroadcast($tel,$url){
 
 
        
