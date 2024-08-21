@@ -11,7 +11,7 @@
             <div class="modal-footer">
                 <form action="" method="post">
                     <button type="button" class="btn btn-light border" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-success">Enviar encuesta</button>
+                    <button type="button" class="btn btn-success">Enviar</button>
                     <input type="hidden" name="id" value="">
                 </form>
             </div></div>
@@ -32,7 +32,7 @@
             <div class="modal-footer">
                 <form action="" method="post">
                     <button type="button" class="btn btn-light border" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-success">Enviar encuesta</button>
+                    <button type="button" class="btn btn-success">Enviar</button>
                     <input type="hidden" name="id" value="">
                 </form>
             </div></div>
