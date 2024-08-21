@@ -209,7 +209,10 @@ foreach ($resultados as $valuee) {
         </div>
         <!-- end row -->
       
-
+        <div class="floating-button">
+            <button id="button-3" class="mdi mdi-send bg-success text-light " data-bs-toggle="modal" data-bs-target="#warning-alert-modal2"></button>
+            
+        </div> 
     </div> <!-- container-fluid -->
 </div>
 </div>
