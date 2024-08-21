@@ -6,7 +6,14 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
-                ¿Confirmas el envío de la encuesta?
+                <div class="mb-3">
+                    <label for="csat-select" class="form-label">Input Select</label>
+                    <select class="form-select" id="csat-select" name="csat-selected">
+                        <?php //foreach($resultados as $values) { ?>
+                           <option value="<?php //echo $values->id; ?>"> <?php //$values->encuestaNombre; ?> </option> 
+                        <?php //} ?>
+                    </select>
+                </div>
             </div>
             <div class="modal-footer">
                 <form action="" method="post">
@@ -27,7 +34,14 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
-                ¿Confirmas el envío de la encuesta?
+                <div class="mb-3">
+                    <label for="nps-select" class="form-label">Input Select</label>
+                    <select class="form-select" id="nps-select" name="nps-selected">
+                        <?php // foreach($resultados as $values) { ?>
+                           <option value="<?php //echo $values->id; ?>"> <?php // echo $values->encuestaNombre; ?> </option> 
+                        <?php // } ?>
+                    </select>
+                </div>
             </div>
             <div class="modal-footer">
                 <form action="" method="post">
