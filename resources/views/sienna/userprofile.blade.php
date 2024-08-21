@@ -104,7 +104,7 @@ foreach ($resultados as $valuee) {
                             </div>
                             <div class="col-xl-4 col-lg-6 md-6 sm-12">
                             <div>
-                                <div class="card bg-success" role="button" href="#warning-alert-modal2"  data-bs-toggle="modal" data-bs-target="#modal-open-chat-profile">
+                                <div class="card bg-success" role="button" href="#warning-alert-modal2"  data-bs-toggle="modal" data-bs-target="#warning-alert-modal2">
                                     <div class="card-body">
                                        
                                     <p class="h3 text-center text-white p-2">
