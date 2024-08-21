@@ -1582,6 +1582,9 @@ class cloudtickets extends Controller
       // dd($response);   
         // Close the cURL resource
         curl_close($curl);
+        return redirect()
+        ->back()
+        ->with('success', 'Enviado ' );
     }
 
 }
