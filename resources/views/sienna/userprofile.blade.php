@@ -104,13 +104,13 @@ foreach ($resultados as $valuee) {
                             </div>
                             <div class="col-xl-4 col-lg-6 md-6 sm-12">
                             <div>
-                                <div class="card bg-success" role="button" data-bs-toggle="modal" data-bs-target="#modal-open-chat-profile">
+                                <div class="card bg-success" role="button" href="#warning-alert-modal2"  data-bs-toggle="modal" data-bs-target="#modal-open-chat-profile">
                                     <div class="card-body">
                                        
-                                            
-                                            <button id="button-3" class="mdi mdi-send bg-success text-light " href="#warning-alert-modal2" data-bs-toggle="modal"><i class="mdi mdi-whatsapp me-1"></i>Abrir ticket por Whatsapp</button>
+                                    <p class="h3 text-center text-white p-2">
+                                        <i class="mdi mdi-whatsapp me-1"></i>Abrir ticket por Whatsapp
 
-                                      
+                                        </p>
                                     </div>
                                 </div>
                             </div>
