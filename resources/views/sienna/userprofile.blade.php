@@ -17,25 +17,27 @@ foreach ($resultados as $valuee) {
 <style>
   .tooltip-button {
     position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted #ccc;
-    color: #006080;
+  display: inline-block;
+  border-bottom: 1px dotted black;
     
   }
   
   /* Tooltip text */
   .tooltip-button .tooltiptext {
     visibility: hidden;
-    position: absolute;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity .6s;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
   }
   
   /* Tooltip arrow */
