@@ -44,21 +44,20 @@ foreach ($resultados as $valuee) {
     opacity: 1;
   }
 
-  .tooltip-left {
-  top: -5px;
-  bottom:auto;
-  right: 128%;  
-}
-
-.tooltip-left::after {
+  .tooltip-bottom {
+  top: 135%;
+  left: 50%;  
+  margin-left: -60px;
+    }
+  .tooltip-bottom::after {
     content: "";
     position: absolute;
-    top: 50%;
-    left: 100%;
-    margin-top: -5px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent transparent transparent #555;
+    border-color: transparent transparent #555 transparent;
 }
 </style>
 
@@ -129,7 +128,7 @@ foreach ($resultados as $valuee) {
                                             </div>
                                             <div class="tooltip-button" role="button">
                                                 <i class="mdi mdi-note-text widget-icon text-white bg-info">
-                                                    <span class="tooltiptext tooltip-left">Enviar encuesta C-SAT</span>
+                                                    <span class="tooltiptext tooltip-bottom">Enviar encuesta C-SAT</span>
                                                 </i>
                                             </div>
                                         </div>
