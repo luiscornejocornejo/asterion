@@ -1543,15 +1543,7 @@ class cloudtickets extends Controller
     public function llamadobroadcast($tel,$tipo){
 
 
-        $query5="select * from empresa";
-        $resultados5 = DB::select($query5);
-
-        foreach($resultados5 as $val){
-
-                if($tipo==1){
-                    $url=$val->
-                }
-        }
+       
         $curl = curl_init();
         // Prepare data array with account key, bot key, and account secret
        
