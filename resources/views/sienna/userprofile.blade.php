@@ -59,6 +59,24 @@ foreach ($resultados as $valuee) {
     border-width: 5px;
     border-style: solid;
     border-color: transparent transparent #555 transparent;
+
+}
+
+.floatButton {
+    position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  cursor: pointer;
+  color: #7a7a7a;
+  background-color: #FFD193;
+  border-radius: 50%;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  box-shadow: 2px 2px 3px #999;
 }
 </style>
 
@@ -209,7 +227,7 @@ foreach ($resultados as $valuee) {
         </div>
         <!-- end row -->
       
-        <div class="floating-button">
+        <div class="floating-button floatButton">
             <button id="button-3" class="mdi mdi-send bg-success text-light " data-bs-toggle="modal" data-bs-target="#warning-alert-modal2"></button>
             
         </div> 
