@@ -1540,9 +1540,10 @@ class cloudtickets extends Controller
     }
 
 
-    public function llamadobroadcast($tel,$url){
+    public function llamadobroadcast(Request $request){
 
-
+        $tel=$request->tel;
+        $url=$request->url;
        
         $curl = curl_init();
         // Prepare data array with account key, bot key, and account secret
