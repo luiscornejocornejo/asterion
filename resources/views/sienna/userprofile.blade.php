@@ -12,6 +12,12 @@ foreach ($resultados as $valuee) {
     $name = $valuee->nombre;
     $dni = $valuee->dni;
 }
+
+$query2 = "SELECT * from motivoc where tipo=1";
+$resultados2 = DB::select($query2);
+
+$query3 = "SELECT * from motivoc where  tipo=2";
+$resultados3 = DB::select($query3);
 ?>
 
 <style>

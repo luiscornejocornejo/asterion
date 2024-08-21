@@ -1,3 +1,5 @@
+
+
 <div class="modal fade" id="encuesta-csat" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
@@ -9,9 +11,9 @@
                 <div class="mb-3">
                     <label for="csat-select" class="form-label">Encuesta</label>
                     <select class="form-select" id="csat-select" name="csat-selected">
-                        <?php //foreach($resultados as $values) { ?>
-                           <option value="<?php //echo $values->id; ?>"> <?php //$values->encuestaNombre; ?> </option> 
-                        <?php //} ?>
+                        <?php foreach($resultados2 as $values) { ?>
+                           <option value="<?php echo $values->url; ?>"> <?php $values->nombre; ?> </option> 
+                        <?php } ?>
                     </select>
                 </div>
             </div>
@@ -37,9 +39,9 @@
                 <div class="mb-3">
                     <label for="nps-select" class="form-label">Encuesta</label>
                     <select class="form-select" id="nps-select" name="nps-selected">
-                        <?php // foreach($resultados as $values) { ?>
-                           <option value="<?php //echo $values->id; ?>"> <?php // echo $values->encuestaNombre; ?> </option> 
-                        <?php // } ?>
+                        <?php  foreach($resultados3 as $values) { ?>
+                           <option value="<?php echo $values->url; ?>"> <?php  echo $values->nombre; ?> </option> 
+                        <?php  } ?>
                     </select>
                 </div>
             </div>

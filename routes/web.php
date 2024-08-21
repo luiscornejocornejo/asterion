@@ -292,6 +292,7 @@ Route::post('/getsalienteticket','App\Http\Controllers\cloudtickets@getsalientet
 Route::get('/pruebatelefonia','App\Http\Controllers\cloudtickets@pruebatelefonia');
 Route::get('/userprofile','App\Http\Controllers\cloudtickets@userprofile');
 
+Route::post('/llamadobroadcast','App\Http\Controllers\cloudtickets@llamadobroadcast');
 
 
 
