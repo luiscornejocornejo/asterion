@@ -75,7 +75,7 @@ foreach ($resultados as $valuee) {
   width: 50px;
   height: 50px;
   line-height: 50px;
-  font-size: 16px;
+  font-size: 20px;
   box-shadow: 2px 2px 3px #999;
 }
 </style>
@@ -228,7 +228,7 @@ foreach ($resultados as $valuee) {
         <!-- end row -->
       
         <div class="floating-button">
-            <span class="mdi mdi-send bg-success text-light floatButton" role="button" data-bs-toggle="modal" data-bs-target="#warning-alert-modal2"></span>
+            <span class="mdi mdi-send bg-success text-light text-center floatButton" role="button" data-bs-toggle="modal" data-bs-target="#warning-alert-modal2"></span>
             
         </div> 
     </div> <!-- container-fluid -->
