@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <div class="mb-3">
-                    <label for="csat-select" class="form-label">Input Select</label>
+                    <label for="csat-select" class="form-label">Encuesta</label>
                     <select class="form-select" id="csat-select" name="csat-selected">
                         <?php //foreach($resultados as $values) { ?>
                            <option value="<?php //echo $values->id; ?>"> <?php //$values->encuestaNombre; ?> </option> 
@@ -35,7 +35,7 @@
             </div>
             <div class="modal-body">
                 <div class="mb-3">
-                    <label for="nps-select" class="form-label">Input Select</label>
+                    <label for="nps-select" class="form-label">Encuesta</label>
                     <select class="form-select" id="nps-select" name="nps-selected">
                         <?php // foreach($resultados as $values) { ?>
                            <option value="<?php //echo $values->id; ?>"> <?php // echo $values->encuestaNombre; ?> </option> 
