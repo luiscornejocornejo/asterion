@@ -36,6 +36,7 @@ foreach ($resultados as $valuee) {
     z-index: 1;
     opacity: 0;
     transition: opacity .6s;
+    font-size: 12px;
   }
   
   /* Show the tooltip text when you mouse over the tooltip container */
