@@ -54,6 +54,12 @@ foreach ($resultados as $valuee) {
     border-color: #555 transparent transparent transparent;
     transform: rotate(90deg);
   }
+
+  .tooltip-bottom {
+  top: 135%;
+  left: 50%;  
+  margin-left: -60px;
+}
   
   /* Show the tooltip text when you mouse over the tooltip container */
   .tooltip-button:hover .tooltiptext {
@@ -130,7 +136,7 @@ foreach ($resultados as $valuee) {
                                             </div>
                                             <div class="tooltip-button" role="button">
                                                 <i class="mdi mdi-note-text widget-icon text-white bg-info">
-                                                    <span class="tooltiptext">Enviar encuesta C-SAT</span>
+                                                    <span class="tooltiptext tooltip-bottom">Enviar encuesta C-SAT</span>
                                                 </i>
                                             </div>
                                         </div>
@@ -146,7 +152,7 @@ foreach ($resultados as $valuee) {
                                             </div>
                                             <div class="tooltip-button" role="button">
                                                 <i class="mdi mdi-note-text widget-icon text-white bg-success">
-                                                <span class="tooltiptext">Enviar encuesta NPS</span>
+                                                <span class="tooltiptext tooltip-bottom">Enviar encuesta NPS</span>
                                                 </i>
                                             </div>
                                         </div>
