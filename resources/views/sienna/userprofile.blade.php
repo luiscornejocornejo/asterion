@@ -106,11 +106,11 @@ foreach ($resultados as $valuee) {
                             <div>
                                 <div class="card bg-success" role="button" data-bs-toggle="modal" data-bs-target="#modal-open-chat-profile">
                                     <div class="card-body">
-                                        <p class="h3 text-center text-white">
+                                       
                                             
                                             <button id="button-3" class="mdi mdi-send bg-success text-light " href="#warning-alert-modal2" data-bs-toggle="modal"><i class="mdi mdi-whatsapp me-1"></i>Abrir ticket por Whatsapp</button>
 
-                                        </p>
+                                      
                                     </div>
                                 </div>
                             </div>
