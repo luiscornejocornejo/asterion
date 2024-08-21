@@ -115,13 +115,7 @@ foreach ($resultados as $valuee) {
                                 </div>
                             </div>
                             <div>
-                                <div class="card bg-secondary" role="button" data-bs-toggle="modal" data-bs-target="#modal-push-call">
-                                    <div class="card-body">
-                                        <p class="h3 text-center text-white p-2">
-                                            <i class="mdi mdi-phone me-1"></i>Llamar al cliente
-                                        </p>
-                                    </div>
-                                </div>
+                            
                             </div>
                             <div>
                                 <div class="card bg-secondary" role="button" data-bs-toggle="modal" data-bs-target="#modal-push-nps">
