@@ -12,7 +12,7 @@
                     <label for="csat-select" class="form-label">Encuesta</label>
                     <select class="form-select" id="csat-select" name="csat-selected">
                         <?php foreach($resultados2 as $values) { ?>
-                           <option value="<?php echo $values->url; ?>"> <?php $values->nombre; ?> </option> 
+                           <option value="<?php echo $values->url; ?>"> <?php echo $values->nombre; ?> </option> 
                         <?php } ?>
                     </select>
                 </div>
