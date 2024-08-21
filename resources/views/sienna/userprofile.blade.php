@@ -127,8 +127,8 @@ foreach ($resultados as $valuee) {
                                                 <h4 class="fw-normal" title="Number of Customers">C-SAT</h4>
                                             </div>
                                             <div class="tooltip-button" role="button">
-                                                <i class="mdi mdi-note-text widget-icon text-white bg-info">
-                                                    <span class="tooltiptext tooltip-bottom">Enviar encuesta C-SAT</span>
+                                                <i class="mdi mdi-comment-check-outline widget-icon text-white bg-info">
+                                                    <span class="tooltiptext tooltip-bottom">Enviar C-SAT</span>
                                                 </i>
                                             </div>
                                         </div>
@@ -143,8 +143,8 @@ foreach ($resultados as $valuee) {
                                                 <h4 class="fw-normal" title="Number of Customers">NPS</h4>
                                             </div>
                                             <div class="tooltip-button" role="button">
-                                                <i class="mdi mdi-note-text widget-icon text-white bg-success">
-                                                <span class="tooltiptext tooltip-bottom">Enviar encuesta NPS</span>
+                                                <i class="mdi mdi-comment-check widget-icon text-white bg-success">
+                                                <span class="tooltiptext tooltip-bottom">Enviar NPS</span>
                                                 </i>
                                             </div>
                                         </div>
