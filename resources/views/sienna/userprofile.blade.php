@@ -14,6 +14,55 @@ foreach ($resultados as $valuee) {
 }
 ?>
 
+<style>
+  .tooltip-button {
+    position: relative;
+    display: inline-block;
+    
+  }
+  
+  /* Tooltip text */
+  .tooltip-button .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    margin-top: 4.5px;
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%;
+  
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  /* Tooltip arrow */
+  .tooltip-button .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 42%;
+    right: 100%;
+    margin-left: -5px;
+    border-width: -10px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+    transform: rotate(90deg);
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip-button:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+
+</style>
+
 
 @include('facu.header')
 <div class="wrapper">
@@ -55,10 +104,10 @@ foreach ($resultados as $valuee) {
                        
                         <!-- end card -->
                         <div class="row">
-                            <div class="col-xl-4 col-lg-6 md-6 sm-12" >
+                            <div class="col-xl-6 col-lg-6 md-6 sm-12" >
                                 <div class="card bg-dark">
                                     <div class="card-body h-100">
-                                        <strong class="text-uppercase">Información del cliente</strong>
+                                        <strong class="text-uppercase text-white">Información del cliente</strong>
                                         <hr>
                                         
                                         <p class="text-light font-size-13"><strong>Nombre: </strong><?php echo $nombrecliente;?></p>
@@ -72,15 +121,17 @@ foreach ($resultados as $valuee) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-lg-6 md-6 sm-12">
+                            <div class="col-xl-6 col-lg-6 md-6 sm-12">
                                 <div class="card bg-info text-light">
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between">
                                             <div>
                                                 <h4 class="fw-normal" title="Number of Customers">C-SAT</h4>
                                             </div>
-                                            <div>
-                                                <i class="mdi mdi-note-text widget-icon text-white bg-info"></i>
+                                            <div class="tooltip-button" role="button">
+                                                <i class="mdi mdi-note-text widget-icon text-white bg-info">
+                                                    <span class="tooltiptext">Enviar encuesta C-SAT</span>
+                                                </i>
                                             </div>
                                         </div>
                                         <hr>
@@ -93,8 +144,10 @@ foreach ($resultados as $valuee) {
                                             <div>
                                                 <h4 class="fw-normal" title="Number of Customers">NPS</h4>
                                             </div>
-                                            <div>
-                                                <i class="mdi mdi-note-text widget-icon text-white bg-success"></i>
+                                            <div class="tooltip-button" role="button">
+                                                <i class="mdi mdi-note-text widget-icon text-white bg-success">
+                                                <span class="tooltiptext">Enviar encuesta NPS</span>
+                                                </i>
                                             </div>
                                         </div>
                                         <hr>
@@ -102,31 +155,7 @@ foreach ($resultados as $valuee) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-lg-6 md-6 sm-12">
-                            <div>
-                                <div class="card bg-success" role="button" href="#warning-alert-modal2"  data-bs-toggle="modal" data-bs-target="#warning-alert-modal2">
-                                    <div class="card-body">
-                                       
-                                    <p class="h3 text-center text-white p-2">
-                                        <i class="mdi mdi-whatsapp me-1"></i>Abrir ticket por Whatsapp
 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                            
-                            </div>
-                            <div>
-                                <div class="card bg-secondary" role="button" data-bs-toggle="modal" data-bs-target="#modal-push-nps">
-                                    <div class="card-body">
-                                        <p class="h3 text-center text-white">
-                                            <i class="mdi mdi-file-send-outline me-1"></i>Disparar encuesta NPS
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
                         </div>
 
                         <div class="row">
