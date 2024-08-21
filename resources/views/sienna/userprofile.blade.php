@@ -38,31 +38,27 @@ foreach ($resultados as $valuee) {
     transition: opacity .6s;
   }
   
-  /* Tooltip arrow */
-  .tooltip-button .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 42%;
-    right: 100%;
-    margin-left: -5px;
-    border-width: -10px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-    transform: rotate(90deg);
-  }
-
-  .tooltip-bottom {
-  top: 135%;
-  left: 50%;  
-  margin-left: -60px;
-}
-  
   /* Show the tooltip text when you mouse over the tooltip container */
   .tooltip-button:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
   }
 
+  .tooltip-bottom {
+  top: 135%;
+  left: 50%;  
+  margin-left: -60px;
+    }
+  .tooltip-bottom::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
 </style>
 
 
