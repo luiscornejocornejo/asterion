@@ -145,7 +145,7 @@ foreach ($resultados as $valuee) {
                                             <div>
                                                 <h4 class="fw-normal" title="Number of Customers">C-SAT</h4>
                                             </div>
-                                            <div class="tooltip-button" role="button">
+                                            <div class="tooltip-button" role="button" data-bs-toggle="modal" data-bs-target="#encuesta-csat">
                                                 <i class="mdi mdi-comment-check-outline widget-icon text-white bg-info">
                                                     <span class="tooltiptext tooltip-bottom">Enviar C-SAT</span>
                                                 </i>
@@ -161,7 +161,7 @@ foreach ($resultados as $valuee) {
                                             <div>
                                                 <h4 class="fw-normal" title="Number of Customers">NPS</h4>
                                             </div>
-                                            <div class="tooltip-button" role="button">
+                                            <div class="tooltip-button" role="button" data-bs-toggle="modal" data-bs-target="#encuesta-csat">
                                                 <i class="mdi mdi-comment-check widget-icon text-white bg-success">
                                                 <span class="tooltiptext tooltip-bottom">Enviar NPS</span>
                                                 </i>
@@ -239,5 +239,6 @@ foreach ($resultados as $valuee) {
 </div>
 <br><br><br>
 @include('sienna.flotantes.salientesunico')
+@include('sienna.flotantes.confirmacionencuestas')
 
 @include('facu.footer')
