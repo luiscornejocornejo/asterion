@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header bg-dark">
-                <h4 class="modal-title" id="mySmallModalLabel">Envío encuesta C-SAT</h4>
+                <h4 class="modal-title text-light" id="mySmallModalLabel">Envío encuesta C-SAT</h4>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
@@ -23,7 +23,7 @@
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header bg-dark">
-                <h4 class="modal-title" id="mySmallModalLabel">Encuesta NPS</h4>
+                <h4 class="modal-title text-light" id="mySmallModalLabel">Encuesta NPS</h4>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
