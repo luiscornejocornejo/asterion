@@ -231,7 +231,7 @@ $resultados3 = DB::select($query3);
                                                     $bgClass = 'bg-success';
                                                 }
                                                 
-                                                if($val2->csat < 1) {
+                                                if($val2->csat >= 0.1 && $val2->csat < 1) {
                                                     $porcentaje = 4;
                                                 }
                                                 ?>
