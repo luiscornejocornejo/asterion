@@ -228,11 +228,11 @@ $resultados3 = DB::select($query3);
                                                 <?php
                                                 $porcentaje = ($val2->csat - 1) / 4 * 100;
                                                 $bgClass = '';
-                                                if ($promedio < 2) {
+                                                if ($val2->csat < 2) {
                                                     $bgClass = 'bg-danger';
-                                                } elseif ($promedio >= 3 && $promedio < 4) {
+                                                } elseif ($val2->csat >= 3 && $val2->csat < 4) {
                                                     $bgClass = 'bg-warning';
-                                                } elseif ($promedio >= 4) {
+                                                } elseif ($val2->csat >= 4) {
                                                     $bgClass = 'bg-success';
                                                 }
                                                 ?>
