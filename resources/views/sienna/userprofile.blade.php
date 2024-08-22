@@ -187,7 +187,7 @@ $resultados3 = DB::select($query3);
                             <div class="card-body">
                                 <h5 class="card-title text-uppercase mb-0">Tickets creados (<?php echo sizeof($tickets); ?>)</h5>
                                 <hr>
-                                <table id="example" class="table table-centered mb-0 bg-ligth responsive">
+                                <table id="example" class="table table-hover display responsive nowrap text-light" style="width: 100%;">
                                     <thead>
                                         <tr class="bg-dark">
                                             <th class="text-white">Ticket</th>
