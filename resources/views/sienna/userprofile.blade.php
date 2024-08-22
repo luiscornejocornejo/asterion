@@ -232,7 +232,7 @@ $resultados3 = DB::select($query3);
                                                 }
                                                 ?>
                                                 <td>
-                                                    <div class="progress" style="height: 3px;">
+                                                    <div class="progress mt-2" style="height: 3px;">
                                                         <div class="progress-bar {{ $bgClass }}" role="progressbar"
                                                             style="width: {{ $porcentaje }}%; height: 20px;"
                                                             aria-valuenow="{{ $porcentaje }}"
