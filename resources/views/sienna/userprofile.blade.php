@@ -230,6 +230,10 @@ $resultados3 = DB::select($query3);
                                                 } elseif ($val2->csat >= 4.5) {
                                                     $bgClass = 'bg-success';
                                                 }
+                                                
+                                                if($val2->csat < 1) {
+                                                    $porcentaje = 4;
+                                                }
                                                 ?>
                                                 <td>
                                                     <div class="progress mt-2" style="height: 3px;">
