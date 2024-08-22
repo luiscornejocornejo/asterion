@@ -154,11 +154,6 @@ $resultados3 = DB::select($query3);
                                             <div>
                                                 <h4 class="fw-normal" title="Number of Customers">C-SAT</h4>
                                             </div>
-                                            <div class="tooltip-button" role="button" data-bs-toggle="modal" data-bs-target="#encuesta-csat">
-                                                <i class="mdi mdi-comment-check-outline widget-icon text-white bg-info">
-                                                    <span class="tooltiptext tooltip-bottom">Enviar C-SAT</span>
-                                                </i>
-                                            </div>
                                         </div>
                                         <hr>
                                         <p class="h1">3,2</p>
@@ -232,7 +227,7 @@ $resultados3 = DB::select($query3);
                                                     $bgClass = 'bg-danger';
                                                 } elseif ($val2->csat >= 3 && $val2->csat < 4) {
                                                     $bgClass = 'bg-warning';
-                                                } elseif ($val2->csat >= 4) {
+                                                } elseif ($val2->csat >= 4.5) {
                                                     $bgClass = 'bg-success';
                                                 }
                                                 ?>
