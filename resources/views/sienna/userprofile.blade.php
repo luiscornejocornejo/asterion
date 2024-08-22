@@ -20,7 +20,7 @@ $query3 = "SELECT * from motivoc where  tipo=2";
 $resultados3 = DB::select($query3);
 
 
-$porcentaje = ($val2->csat - 1) / 4 * 100;
+
 ?>
 
 <style>
@@ -225,6 +225,7 @@ $porcentaje = ($val2->csat - 1) / 4 * 100;
                                                         </div>
                                                         @endif
                                                 </td>
+                                                <?php $porcentaje = ($val2->csat - 1) / 4 * 100;  ?>
                                                 <td>
                                                     <div class="progress-bar bg-info" role="progressbar"
                                                         style="width: {{ $porcentaje }}%; height: 20px;"
