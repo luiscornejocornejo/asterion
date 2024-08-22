@@ -21,69 +21,70 @@ $resultados3 = DB::select($query3);
 ?>
 
 <style>
-  .tooltip-button {
-     position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted #ccc;
-    color: #006080;
-    
-  }
-  
-  /* Tooltip text */
-  .tooltip-button .tooltiptext {
-    visibility: hidden;
-    position: absolute;
-    width: 100px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity .6s;
-    font-size: 15px;
-  }
-  
-  /* Show the tooltip text when you mouse over the tooltip container */
-  .tooltip-button:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-  }
+    .tooltip-button {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted #ccc;
+        color: #006080;
 
-  .tooltip-bottom {
-  top: 135%;
-  left: 50%;  
-  margin-left: -60px;
     }
-  .tooltip-bottom::after {
-    content: "";
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent #555 transparent;
 
-}
+    /* Tooltip text */
+    .tooltip-button .tooltiptext {
+        visibility: hidden;
+        position: absolute;
+        width: 100px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity .6s;
+        font-size: 15px;
+    }
 
-.floatButton {
-    position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  cursor: pointer;
-  color: #7a7a7a;
-  background-color: #FFD193;
-  border-radius: 50%;
-  text-align: center;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  font-size: 20px;
-  box-shadow: 2px 2px 3px #999;
-}
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip-button:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .tooltip-bottom {
+        top: 135%;
+        left: 50%;
+        margin-left: -60px;
+    }
+
+    .tooltip-bottom::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent #555 transparent;
+
+    }
+
+    .floatButton {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+        cursor: pointer;
+        color: #7a7a7a;
+        background-color: #FFD193;
+        border-radius: 50%;
+        text-align: center;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 20px;
+        box-shadow: 2px 2px 3px #999;
+    }
 </style>
 
 
@@ -110,36 +111,35 @@ $resultados3 = DB::select($query3);
                     <div class="container-fluid mt-2">
 
                         <!-- start page title -->
-                        
+
                         <!-- end page title -->
 
-                        <?php foreach($datoscliente as $val){
-                                            
-                                            $nombrecliente=$val->nya;
-                                            $emailcliente=$val->email;
-                                            $direccioncliente=$val->address;
-                                            $celcliente=$val->cel;
-                                            $deudacliente=$val->deuda;
-                                            $estadocliente=$val->a_status;
-                                            $ipcliente=$val->ip;
-                                            
-                                        }?>
-                       
+                        <?php foreach ($datoscliente as $val) {
+
+                            $nombrecliente = $val->nya;
+                            $emailcliente = $val->email;
+                            $direccioncliente = $val->address;
+                            $celcliente = $val->cel;
+                            $deudacliente = $val->deuda;
+                            $estadocliente = $val->a_status;
+                            $ipcliente = $val->ip;
+                        } ?>
+
                         <!-- end card -->
                         <div class="row">
-                            <div class="col-xl-6 col-lg-6 md-6 sm-12" >
+                            <div class="col-xl-6 col-lg-6 md-6 sm-12">
                                 <div class="card bg-dark">
                                     <div class="card-body h-100">
                                         <strong class="text-uppercase text-white">Información del cliente</strong>
                                         <hr>
-                                        
-                                        <p class="text-light font-size-13"><strong>Nombre: </strong><?php echo $nombrecliente;?></p>
-                                        <p class="text-light font-size-13"><strong>Email: </strong><?php echo $emailcliente;?></p>
-                                        <p class="text-light font-size-13"><strong>Dirección: </strong><?php echo $direccioncliente;?></p>
-                                        <p class="text-light font-size-13"><strong>Whatsapp: </strong><?php echo $celcliente;?></p>
-                                        <p class="text-light font-size-13" ><strong>Deuda: </strong><?php echo $deudacliente;?></p>
-                                        <p class="text-light font-size-13" ><strong>Estado de cuenta: </strong><?php echo $estadocliente;?></p>
-                                        <p class="text-light font-size-13"><strong>IP: </strong><?php echo $ipcliente;?></p>
+
+                                        <p class="text-light font-size-13"><strong>Nombre: </strong><?php echo $nombrecliente; ?></p>
+                                        <p class="text-light font-size-13"><strong>Email: </strong><?php echo $emailcliente; ?></p>
+                                        <p class="text-light font-size-13"><strong>Dirección: </strong><?php echo $direccioncliente; ?></p>
+                                        <p class="text-light font-size-13"><strong>Whatsapp: </strong><?php echo $celcliente; ?></p>
+                                        <p class="text-light font-size-13"><strong>Deuda: </strong><?php echo $deudacliente; ?></p>
+                                        <p class="text-light font-size-13"><strong>Estado de cuenta: </strong><?php echo $estadocliente; ?></p>
+                                        <p class="text-light font-size-13"><strong>IP: </strong><?php echo $ipcliente; ?></p>
 
                                     </div>
                                 </div>
@@ -169,7 +169,7 @@ $resultados3 = DB::select($query3);
                                             </div>
                                             <div class="tooltip-button" role="button" data-bs-toggle="modal" data-bs-target="#encuesta-nps">
                                                 <i class="mdi mdi-comment-check widget-icon text-white bg-success">
-                                                <span class="tooltiptext tooltip-bottom">Enviar NPS</span>
+                                                    <span class="tooltiptext tooltip-bottom">Enviar NPS</span>
                                                 </i>
                                             </div>
                                         </div>
@@ -183,13 +183,13 @@ $resultados3 = DB::select($query3);
 
                         <div class="row">
 
-                           
+
                         </div>
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title text-uppercase mb-0">Tickets creados (<?php  echo sizeof($tickets);?>)</h5>
+                                <h5 class="card-title text-uppercase mb-0">Tickets creados (<?php echo sizeof($tickets); ?>)</h5>
                                 <hr>
-                                <table id="example"  class="table table-centered mb-0 bg-ligth">
+                                <table id="example" class="table table-centered mb-0 bg-ligth">
                                     <thead>
                                         <tr class="bg-dark">
                                             <th class="text-white">Ticket</th>
@@ -203,18 +203,27 @@ $resultados3 = DB::select($query3);
                                     </thead>
                                     <tbody>
 
-                                    <?php foreach($tickets as $val2){?>
-                                        <tr>
-                                            <td><a href="{{ url('ticketunico?tick=' . $val2->id) }}" target="_blank"><?php echo $val2->id;?></a></td>
-                                            <td><?php echo $val2->departamento;?></td>
-                                            <td><?php echo $val2->motivo;?></td>
-                                            <td><?php echo $val2->estado;?></td>
-                                            <td><?php echo $val2->inicio;?></td>
-                                            <td><?php echo $val2->cerrado;?></td>
-                                            <td><?php echo $val2->csat;?></td>
-                                        </tr>
+                                        <?php foreach ($tickets as $val2) { ?>
+                                            <tr>
+                                                <td><a href="{{ url('ticketunico?tick=' . $val2->id) }}" target="_blank"><?php echo $val2->id; ?></a></td>
+                                                <td><?php echo $val2->departamento; ?></td>
+                                                <td><?php echo $val2->motivo; ?></td>
+                                                <td><?php echo $val2->estado; ?></td>
+                                                <td><?php echo $val2->inicio; ?></td>
+                                                <td><?php echo $val2->cerrado; ?></td>
+                                                <td>@if($val2->csat)
+                                                    {{ $val2->csat }}
+                                                    @else
+                                                    <div class="tooltip-button" role="button" data-bs-toggle="modal" data-bs-target="#encuesta-csat">
+                                                        <i class="mdi mdi-comment-check-outline widget-icon text-white bg-info">
+                                                            <span class="tooltiptext tooltip-bottom">Enviar C-SAT</span>
+                                                        </i>
+                                                    </div>
+                                                    @endif
+                                                </td>
+                                            </tr>
 
-                                        <?php }?>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -232,11 +241,11 @@ $resultados3 = DB::select($query3);
             <!-- end col -->
         </div>
         <!-- end row -->
-      
+
         <div class="floating-button">
             <span class="mdi mdi-send bg-success text-light text-center floatButton" role="button" data-bs-toggle="modal" data-bs-target="#warning-alert-modal2"></span>
-            
-        </div> 
+
+        </div>
     </div> <!-- container-fluid -->
 </div>
 </div>
