@@ -211,7 +211,7 @@ $resultados3 = DB::select($query3);
                                                 <td><?php echo $val2->estado; ?></td>
                                                 <td><?php echo $val2->inicio; ?></td>
                                                 <td><?php echo $val2->cerrado; ?></td>
-                                                <td>@if($val2->csat)
+                                                <td>@if($val2->csat <> "")
                                                     {{ $val2->csat }}
                                                     @else
                                                     <div class="tooltip-button" role="button" data-bs-toggle="modal" data-bs-target="#encuesta-csat">
