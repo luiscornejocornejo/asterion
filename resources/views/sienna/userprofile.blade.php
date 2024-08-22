@@ -202,7 +202,7 @@ $resultados3 = DB::select($query3);
                                             <th class="text-white">Fecha creado</th>
                                             <th class="text-white">Fecha cerrado</th>
                                             <th class="text-white">C-SAT</th>
-                                            <th style="width: 40%;"></th>
+                                            <th style="width: 10%;"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
