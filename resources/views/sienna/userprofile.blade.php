@@ -18,6 +18,9 @@ $resultados2 = DB::select($query2);
 
 $query3 = "SELECT * from motivoc where  tipo=2";
 $resultados3 = DB::select($query3);
+
+
+$porcentaje = ($val2->csat - 1) / 4 * 100;
 ?>
 
 <style>
@@ -54,7 +57,7 @@ $resultados3 = DB::select($query3);
     .tooltip-bottom {
         top: 135%;
         left: 50%;
-        margin-left: -60px;
+        margin-left: -50px;
     }
 
     .tooltip-bottom::after {
@@ -199,6 +202,7 @@ $resultados3 = DB::select($query3);
                                             <th class="text-white">Fecha creado</th>
                                             <th class="text-white">Fecha cerrado</th>
                                             <th class="text-white">C-SAT</th>
+                                            <th style="width: 40%;"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -212,15 +216,24 @@ $resultados3 = DB::select($query3);
                                                 <td><?php echo $val2->inicio; ?></td>
                                                 <td><?php echo $val2->cerrado; ?></td>
                                                 <td>@if($val2->csat <> "")
-                                                    {{ $val2->csat }}
-                                                    @else
-                                                    <div class="tooltip-button" role="button" data-bs-toggle="modal" data-bs-target="#encuesta-csat">
-                                                        <i class="mdi mdi-comment-check-outline widget-icon text-white bg-info">
-                                                            <span class="tooltiptext tooltip-bottom">Enviar C-SAT</span>
-                                                        </i>
-                                                    </div>
-                                                    @endif
+                                                        {{ $val2->csat }}
+                                                        @else
+                                                        <div class="tooltip-button" role="button" data-bs-toggle="modal" data-bs-target="#encuesta-csat">
+                                                            <i class="mdi mdi-comment-check-outline widget-icon text-white bg-info">
+                                                                <span class="tooltiptext tooltip-bottom">Enviar C-SAT</span>
+                                                            </i>
+                                                        </div>
+                                                        @endif
                                                 </td>
+                                                <td>
+                                                    <div class="progress-bar bg-info" role="progressbar"
+                                                        style="width: {{ $porcentaje }}%; height: 20px;"
+                                                        aria-valuenow="{{ $porcentaje }}"
+                                                        aria-valuemin="0"
+                                                        aria-valuemax="100">
+                                                    </div>
+                                                </td>
+
                                             </tr>
 
                                         <?php } ?>
