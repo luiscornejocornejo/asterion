@@ -165,11 +165,11 @@ $resultados3 = DB::select($query3);
                                             <div>
                                                 <h4 class="fw-normal" title="Number of Customers">NPS</h4>
                                             </div>
-                                            <div class="tooltip-button" role="button" disabled data-bs-toggle="modal" data-bs-target="#encuesta-nps">
+                                            <!--  <div class="tooltip-button" role="button" data-bs-toggle="modal" data-bs-target="#encuesta-nps">
                                                 <i class="mdi mdi-comment-check widget-icon text-white bg-success">
                                                     <span class="tooltiptext tooltip-bottom">Enviar NPS</span>
                                                 </i>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <hr>
                                         <p class="h1">0</p>
