@@ -225,7 +225,7 @@ $resultados3 = DB::select($query3);
                                                 $bgClass = '';
                                                 if ($val2->csat < 2) {
                                                     $bgClass = 'bg-danger';
-                                                } elseif ($val2->csat >= 3 && $val2->csat < 4) {
+                                                } elseif ($val2->csat >= 3 && $val2->csat <= 4.4) {
                                                     $bgClass = 'bg-warning';
                                                 } elseif ($val2->csat >= 4.5) {
                                                     $bgClass = 'bg-success';
