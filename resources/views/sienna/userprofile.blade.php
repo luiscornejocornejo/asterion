@@ -225,13 +225,25 @@ $resultados3 = DB::select($query3);
                                                         </div>
                                                         @endif
                                                 </td>
-                                                <?php $porcentaje = ($val2->csat - 1) / 4 * 100;  ?>
+                                                <?php
+                                                $porcentaje = ($val2->csat - 1) / 4 * 100;
+                                                $bgClass = '';
+                                                if ($promedio < 2) {
+                                                    $bgClass = 'bg-danger';
+                                                } elseif ($promedio >= 3 && $promedio < 4) {
+                                                    $bgClass = 'bg-warning';
+                                                } elseif ($promedio >= 4) {
+                                                    $bgClass = 'bg-success';
+                                                }
+                                                ?>
                                                 <td>
-                                                    <div class="progress-bar bg-info" role="progressbar"
-                                                        style="width: {{ $porcentaje }}%; height: 20px;"
-                                                        aria-valuenow="{{ $porcentaje }}"
-                                                        aria-valuemin="0"
-                                                        aria-valuemax="100">
+                                                    <div class="progress" style="height: 3px;">
+                                                        <div class="progress-bar {{ $bgClass }}" role="progressbar"
+                                                            style="width: {{ $porcentaje }}%; height: 20px;"
+                                                            aria-valuenow="{{ $porcentaje }}"
+                                                            aria-valuemin="0"
+                                                            aria-valuemax="100">
+                                                        </div>
                                                     </div>
                                                 </td>
 
