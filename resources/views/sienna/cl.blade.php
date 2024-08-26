@@ -41,7 +41,6 @@
       <!-- ============================================================== -->
 
       <div class="content-page" style="padding: 0!important;">
-          <div class="content">
 
               <!-- Start Content-->
               <div class="container-fluid">
@@ -63,7 +62,7 @@
       <!-- End Page content -->
       <!-- ============================================================== -->
 
-  </div>
+ 
   <!-- END wrapper -->
 
   @include('facu.footer')
