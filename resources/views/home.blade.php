@@ -1,6 +1,39 @@
 
 @include('facu.header2')
+<?php   
+               $tokeninterno = session('tokeninterno');
+               $miip=request()->ip();
+?>
+<script type="application/javascript">
+    necesito="<?php echo $miip;?>";
+    console.log("My public IP address is: ", necesito," mi subdominio es :  datos:","<?php echo $tokeninterno;?>");
+    let hay=<?php echo $tokeninterno;?>;
+    if(hay==0) {
+        console.log("no logear");
+    }
+    else{
+        console.log("logear");
+        var URLactual = window.location.href;
+        var porciones = URLactual.split('.');
+        let result = porciones[0].replace("https://", "");
+        url2 = "https://"+result+".suricata.cloud/api/telefonia?ip=" + necesito ;
+        console.log(url2);
+        axios.get(url2)
+        .then(function (response) {
+            console.log("data:");
+            console.log(response.data);
+        })
+        .catch(function (error) {
+             // función para capturar el error
+            console.log("error:");
+            console.log(error);
+        })
+        .then(function () {
+             // función que siempre se ejecuta
+        });
 
+    }
+</script>
 <script>
         let navegador = navigator.userAgent;
         if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
@@ -1323,38 +1356,5 @@ if (isset($_GET['fecha'])) {
 
 </div>
 <!-- END wrapper -->
-<?php   
-               $tokeninterno = session('tokeninterno');
-               $miip=request()->ip();
-?>
-<script type="application/javascript">
-    necesito="<?php echo $miip;?>";
-    console.log("My public IP address is: ", necesito," mi subdominio es :  datos:","<?php echo $tokeninterno;?>");
-    let hay=<?php echo $tokeninterno;?>;
-    if(hay==0) {
-        console.log("no logear");
-    }
-    else{
-        console.log("logear");
-        var URLactual = window.location.href;
-        var porciones = URLactual.split('.');
-        let result = porciones[0].replace("https://", "");
-        url2 = "https://"+result+".suricata.cloud/api/telefonia?ip=" + necesito ;
-        console.log(url2);
-        axios.get(url2)
-        .then(function (response) {
-            console.log("data:");
-            console.log(response.data);
-        })
-        .catch(function (error) {
-             // función para capturar el error
-            console.log("error:");
-            console.log(error);
-        })
-        .then(function () {
-             // función que siempre se ejecuta
-        });
 
-    }
-</script>
 @include('facu.footer2')
