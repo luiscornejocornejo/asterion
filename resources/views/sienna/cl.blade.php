@@ -44,9 +44,13 @@
           <div class="content">
 
               <!-- Start Content-->
-              <div class="container-fluid">
+              <div class="container">
                  
-                 <iframe width="100%" height="800" src="<?php echo $url; ?>" sandbox="allow-forms allow-scripts allow-popups allow-same-origin " ></iframe>
+                 <iframe style=" position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;" width="100%" height="800" src="<?php echo $url; ?>" sandbox="allow-forms allow-scripts allow-popups allow-same-origin " ></iframe>
                 
                 
               </div>
