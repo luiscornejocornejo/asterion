@@ -1,22 +1,22 @@
 @include('facu.header2')
 
-<!-- Begin page -->
-<div class="wrapper">
+  <!-- Begin page -->
+  <div class="wrapper">
 
-    <!-- ========== Left Sidebar Start ========== -->
-    @include('facu.menu')
+      <!-- ========== Left Sidebar Start ========== -->
+      @include('facu.menu')
 
 
-    <div class="content-page" style="padding: 0!important;">
-        <div class="content"> @if ($message = Session::get('success'))
-            <div class="alert alert-success alert-dismissible fade
+      <div class="content-page" style="padding: 0!important;">
+          <div class="content"> @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade
                             show" role="alert">
-                {{ $message }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            @endif
+            {{ $message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
 
-            <?php
+      <?php
 
             $subdomain_tmp = 'localhost';
             if (isset($_SERVER['HTTP_HOST'])) {
@@ -28,34 +28,41 @@
             }
             $emailuri = session('email_suricata');
 
+          
+            
 
+         $url="https://cl.suricata-conversations.com.ar/cl?token=prueba&merchant=".$subdomain_tmp."&email_suricata=".$emailuri;
+       //dd($url);
+       ?>
+      <!-- ========== Left Sidebar End ========== -->
 
+      <!-- ============================================================== -->
+      <!-- Start Page Content here -->
+      <!-- ============================================================== -->
 
-            $url = "https://cl.suricata-conversations.com.ar/cl?token=prueba&merchant=" . $subdomain_tmp . "&email_suricata=" . $emailuri;
-            //dd($url);
-            ?>
-            <!-- ========== Left Sidebar End ========== -->
+      <div class="content-page" style="padding: 0!important;">
 
-            <!-- ============================================================== -->
-            <!-- Start Page Content here -->
-            <!-- ============================================================== -->
+              <!-- Start Content-->
+              <div class="container-fluid">
+                 
+                 <iframe style=" position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;" width="100%" height="800" src="<?php echo $url; ?>" sandbox="allow-forms allow-scripts allow-popups allow-same-origin " ></iframe>
+                
+                
+              </div>
+              <!-- container -->
+          </div>
+          <!-- content -->
+      </div>
+  
+      <!-- ============================================================== -->
+      <!-- End Page content -->
+      <!-- ============================================================== -->
 
+ 
+  <!-- END wrapper -->
 
-            <div class="container-fluid">
-                <iframe class="w-100 h-100" src="<?php echo $url; ?>" sandbox="allow-forms allow-scripts allow-popups allow-same-origin "></iframe>
-            </div>
-
-
-
-
-            <!-- content -->
-        </div>
-
-        <!-- ============================================================== -->
-        <!-- End Page content -->
-        <!-- ============================================================== -->
-
-
-        <!-- END wrapper -->
-
-        @include('facu.footer')
+  @include('facu.footer')
