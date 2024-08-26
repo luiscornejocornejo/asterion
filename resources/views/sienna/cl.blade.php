@@ -40,7 +40,7 @@
               <!-- Start Content-->
               <div class="container-fluid">
                  <div>
-                 <iframe onload="resizeIframe(this)" src="<?php echo $url; ?>" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-top-navigation" ></iframe>
+                 <iframe height="800px;"  src="<?php echo $url; ?>" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-top-navigation" ></iframe>
                  </div>
                  <script>
   function resizeIframe(obj) {
