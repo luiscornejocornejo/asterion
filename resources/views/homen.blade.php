@@ -27,8 +27,9 @@ $subdomain_tmp =trim($subdomain_tmp );
       <!-- ============================================================== -->
       <!-- Start Page Content here -->
       <!-- ============================================================== -->
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-
+      <script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script>
       <div class="content-page" style="padding:0 !important;">
           <div class="content">
 
