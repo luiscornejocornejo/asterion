@@ -41,13 +41,10 @@
               <!-- Start Content-->
               <div class="container-fluid">
                  <div>
-                 <iframe height="800px;"  src="<?php echo $url; ?>" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-top-navigation" ></iframe>
+                 <iframe height="800px;"  src="<?php echo $url; ?>" sandbox="allow-forms allow-scripts allow-popups allow-same-origin " ></iframe>
                  </div>
                  <script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
-  }
-</script>
+
               </div>
               <!-- container -->
           </div>
