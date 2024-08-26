@@ -1,5 +1,5 @@
 
-@include('facu.header')
+@include('facu.header2')
 <?php   
                $tokeninterno = session('tokeninterno');
                $miip=request()->ip();
