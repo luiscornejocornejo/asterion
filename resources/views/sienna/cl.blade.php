@@ -1,11 +1,16 @@
-@include('facu.header')
+@include('facu.header2')
 
   <!-- Begin page -->
   <div class="wrapper">
 
       <!-- ========== Left Sidebar Start ========== -->
-      @include('facu.menu')
-
+          <div class="content"> @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade
+                            show" role="alert">
+            {{ $message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
       <?php
 
             $subdomain_tmp = 'localhost';
@@ -21,7 +26,7 @@
           
             
 
-        $url="http://209.38.66.108/cl?token=prueba&merchant=".$subdomain_tmp."&email_suricata=".$subdomain_tmp;
+        $url="https://cl.suricata-conversations.com.ar/cl?token=prueba&merchant=".$subdomain_tmp."&email_suricata=".$subdomain_tmp;
         ?>
       <!-- ========== Left Sidebar End ========== -->
 
@@ -29,7 +34,7 @@
       <!-- Start Page Content here -->
       <!-- ============================================================== -->
 
-      <div class="content-page" style="padding:0 !important;">
+      <div class="content-page" style="padding: 0!important;">
           <div class="content">
 
               <!-- Start Content-->
