@@ -40,18 +40,13 @@
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
 
-            <div class="content-page" style="padding: 0!important;">
 
-                <!-- Start Content-->
-                <div class="container-fluid">
 
-                    <iframe style="width: 100%!important; height: 100%!important;" src="<?php echo $url; ?>" sandbox="allow-forms allow-scripts allow-popups allow-same-origin "></iframe>
+            <iframe style="width: 100%!important; height: 100%!important;" src="<?php echo $url; ?>" sandbox="allow-forms allow-scripts allow-popups allow-same-origin "></iframe>
 
 
 
-                </div>
-                <!-- container -->
-            </div>
+
             <!-- content -->
         </div>
 
