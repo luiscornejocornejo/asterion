@@ -571,7 +571,7 @@ class siennaticketsController extends Controller
                 left join  ".$merchant.".prioridad f on f.id=a.prioridad
         
                 where a.siennaestado not in('3','4')  
-                 
+                 and a.asignado='" . $idusuario . "'
                 and a.siennadepto in (" . $final . ")
                  union 
         
