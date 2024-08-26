@@ -185,7 +185,9 @@ if (isset($_GET['fecha'])) {
     <!-- ============================================================== -->
     <!-- Start Page Content here -->
     <!-- ============================================================== -->
-
+    <script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script>
     <div class="content-page" style="padding:0 !important;">
         <div class="content">
 
@@ -200,24 +202,24 @@ if (isset($_GET['fecha'])) {
                 let myChart4;
                 let myChart5;
                 function grafico(datosp,subdomain_tmp,divss) {
-                    console.log(datosp.data);
+                   // console.log(datosp.data);
 
                     var labels=[];
                     var datos=[];
                   
                     for (i = 0; i < datosp.data.length; i++) {
-                        console.log(datosp.data[i].name);
+                       // console.log(datosp.data[i].name);
                         labels.push(datosp.data[i].name);
-                        console.log(labels);
+                       // console.log(labels);
 
                         datos.push(datosp.data[i].cant);
 
-                        console.log(datos);
+                       // console.log(datos);
 
                     }
-                    console.log(labels);
+                    //console.log(labels);
 
-                    console.log(datos);
+                    //console.log(datos);
 
                     const ctx = document.getElementById('myChart');
                     if (myChart) {
@@ -243,24 +245,24 @@ if (isset($_GET['fecha'])) {
                 });
                 }
                 function grafico2(datosp,subdomain_tmp,divss) {
-                    console.log(datosp.data);
+                    //console.log(datosp.data);
 
                     var labels=[];
                     var datos=[];
                   
                     for (i = 0; i < datosp.data.length; i++) {
-                        console.log(datosp.data[i].name);
+                       // console.log(datosp.data[i].name);
                         labels.push(datosp.data[i].name);
-                        console.log(labels);
+                      //  console.log(labels);
 
                         datos.push(datosp.data[i].cant);
 
-                        console.log(datos);
+                       // console.log(datos);
 
                     }
-                    console.log(labels);
+                   // console.log(labels);
 
-                    console.log(datos);
+                   // console.log(datos);
 
                     const ctx2 = document.getElementById('myChart2');
                     if (myChart2) {
@@ -288,24 +290,24 @@ if (isset($_GET['fecha'])) {
 
                 }
                 function grafico3(datosp,subdomain_tmp,divss) {
-                    console.log(datosp.data);
+                   // console.log(datosp.data);
 
                     var labels=[];
                     var datos=[];
                   
                     for (i = 0; i < datosp.data.length; i++) {
-                        console.log(datosp.data[i].name);
+                        //console.log(datosp.data[i].name);
                         labels.push(datosp.data[i].name);
-                        console.log(labels);
+                       // console.log(labels);
 
                         datos.push(datosp.data[i].cant);
 
-                        console.log(datos);
+                        //console.log(datos);
 
                     }
-                    console.log(labels);
+                   // console.log(labels);
 
-                    console.log(datos);
+                    //console.log(datos);
 
                     const ctx3 = document.getElementById('myChart3');
                     if (myChart3) {
@@ -333,24 +335,24 @@ if (isset($_GET['fecha'])) {
 
                 }
                 function grafico4(datosp,subdomain_tmp,divss) {
-                    console.log(datosp.data);
+                   // console.log(datosp.data);
 
                     var labels=[];
                     var datos=[];
                   
                     for (i = 0; i < datosp.data.length; i++) {
-                        console.log(datosp.data[i].name);
+                       // console.log(datosp.data[i].name);
                         labels.push(datosp.data[i].name);
-                        console.log(labels);
+                      //  console.log(labels);
 
                         datos.push(datosp.data[i].cant);
 
-                        console.log(datos);
+                       // console.log(datos);
 
                     }
-                    console.log(labels);
+                    //console.log(labels);
 
-                    console.log(datos);
+                   // console.log(datos);
 
                     const ctx4 = document.getElementById('myChart4');
                     if (myChart4) {
