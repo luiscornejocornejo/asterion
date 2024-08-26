@@ -551,8 +551,8 @@ class siennaticketsController extends Controller
         
                 where a.siennaestado not in('3','4')  
                  
-         and a.asignado='99999'
-         and a.siennadepto in (" . $final . ")
+         
+         and (a.siennadepto in (" . $final . ") or ( a.asignado='99999'))
                  order by ticketid desc
                 ";
 
