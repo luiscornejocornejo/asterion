@@ -572,7 +572,6 @@ class siennaticketsController extends Controller
         
                 where a.siennaestado not in('3','4')  
                  and a.asignado='" . $idusuario . "'
-                and a.siennadepto in (" . $final . ")
                  union 
         
                  select *,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
