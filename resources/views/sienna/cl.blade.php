@@ -44,7 +44,7 @@
           <div class="content">
 
               <!-- Start Content-->
-              <div class="container">
+              <div class="container-fluid">
                  
                  <iframe style=" position: absolute;
      top: 0;
