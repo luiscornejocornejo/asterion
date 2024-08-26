@@ -27,6 +27,7 @@ $subdomain_tmp =trim($subdomain_tmp );
       <!-- ============================================================== -->
       <!-- Start Page Content here -->
       <!-- ============================================================== -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 
       <div class="content-page" style="padding:0 !important;">
           <div class="content">
