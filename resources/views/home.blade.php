@@ -1127,7 +1127,7 @@ if (isset($_GET['fecha'])) {
                 }
             ?>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
 
 <div class="container-fluid" id="main-content">
         <div class="container">
@@ -1357,5 +1357,5 @@ if (isset($_GET['fecha'])) {
 
 </div>
 <!-- END wrapper -->
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 @include('facu.footer2')
