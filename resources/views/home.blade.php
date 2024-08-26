@@ -570,7 +570,7 @@ if (isset($_GET['fecha'])) {
                     axios.get(urllogeados)
                         .then(function(response) {
                             console.log(response);
-                            sd='<table id="example"  class="table table-striped dt-responsive nowrap w-100 text-light">'+
+                            sd='<table id="example2"  class="table table-striped dt-responsive nowrap w-100 text-light">'+
                                 '<thead>'+
                               '     <tr class="text-center bg-dark" >'+
                               
@@ -1357,5 +1357,4 @@ if (isset($_GET['fecha'])) {
 
 </div>
 <!-- END wrapper -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 @include('facu.footer2')
