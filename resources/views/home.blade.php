@@ -71,10 +71,7 @@ $cantidaduser = 0;
 $cantidadtickets = 0;
 $cantidadtickets2 = 0;
 $listamensual = array();
-/*
-foreach ($resultados as $val) {
-    $cantidaduser = $val->cantidaduser;
-}*/
+
 $cantidaduser =sizeof($resultados);
 if (isset($_GET['fecha'])) {
 
@@ -185,7 +182,6 @@ if (isset($_GET['fecha'])) {
     <!-- ============================================================== -->
     <!-- Start Page Content here -->
     <!-- ============================================================== -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
     <div class="content-page" style="padding:0 !important;">
         <div class="content">
@@ -1361,4 +1357,4 @@ if (isset($_GET['fecha'])) {
 </div>
 <!-- END wrapper -->
 
-@include('facu.footer')
+@include('facu.footer2')
