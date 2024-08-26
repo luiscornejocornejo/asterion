@@ -24,7 +24,9 @@
                 
                     <button type="button" class="btn btn-light border" data-bs-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-success">Enviar</button>
-                    <input type="hidden" id="telcsat" name="tel" value="5491133258450">
+                    <input type="hidden" id="telcsat" name="tel" value="<?php $celcliente; ?>">
+                    <input type="hidden" id="ticket" name="ticket" value="">
+
                 </form>
             </div></div>
         </div><!-- /.modal-content -->
@@ -56,8 +58,10 @@
                     <button type="button" class="btn btn-light border" data-bs-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-success">Enviar</button>
                     <input type="hidden" id="telnps" name="tel" value="">
+                    <input type="hidden" id="ticket" name="ticket" value="">
                 </form>
             </div></div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div>
+

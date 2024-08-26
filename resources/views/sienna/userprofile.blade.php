@@ -213,8 +213,8 @@ $resultados3 = DB::select($query3);
                                                 <td>@if($val2->csat <> "")
                                                         {{ $val2->csat }}
                                                         @else
-                                                        <div class="tooltip-button" role="button" data-bs-toggle="modal" data-bs-target="#encuesta-csat">
-                                                            <i class="mdi mdi-whatsapp widget-icon text-white bg-success rounded-circle">
+                                                        <div class="tooltip-button" role="button" data-bs-toggle="modal" data-bs-target="#encuesta-csat" onclick="getTicket('{{$val2->id}}, {{celcliente}}')">
+                                                            <i class="mdi mdi-whatsapp widget-icon text-white bg-success rounded-circle" data-id="{{ val2->id}}">
                                                                 <span class="tooltiptext tooltip-bottom">Enviar C-SAT</span>
                                                             </i>
                                                         </div>
@@ -282,3 +282,19 @@ $resultados3 = DB::select($query3);
 @include('sienna.flotantes.confirmacionencuestas')
 
 @include('facu.footer')
+
+<script>
+    function getTicket(ticket, phone) {
+        const ticket = ticket
+        const phone = phone
+
+        const telInput = document.getElementById('telcsat');
+        const ticketInput = document.getElementById('ticket');
+
+        telInput.value = telefono;
+        ticketInput.value = id;
+
+        console.log('Teléfono:', phone);
+        console.log('Ticket ID:', ticket);
+    }
+</script>
