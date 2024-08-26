@@ -4,6 +4,10 @@
   <div class="wrapper">
 
       <!-- ========== Left Sidebar Start ========== -->
+      @include('facu.menu')
+
+
+      <div class="content-page" style="padding: 0!important;">
           <div class="content"> @if ($message = Session::get('success'))
         <div class="alert alert-success alert-dismissible fade
                             show" role="alert">
@@ -11,6 +15,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         @endif
+
       <?php
 
             $subdomain_tmp = 'localhost';
@@ -26,7 +31,7 @@
           
             
 
-       echo  $url="https://cl.suricata-conversations.com.ar/cl?token=prueba&merchant=".$subdomain_tmp."&email_suricata=".$emailuri;
+         $url="https://cl.suricata-conversations.com.ar/cl?token=prueba&merchant=".$subdomain_tmp."&email_suricata=".$emailuri;
        //dd($url);
        ?>
       <!-- ========== Left Sidebar End ========== -->
@@ -41,7 +46,7 @@
               <!-- Start Content-->
               <div class="container-fluid">
                  <div>
-                 <iframe width="100%" height="100%" src="<?php echo $url; ?>" sandbox="allow-forms allow-scripts allow-popups allow-same-origin " ></iframe>
+                 <iframe width="100%" height="800 px" src="<?php echo $url; ?>" sandbox="allow-forms allow-scripts allow-popups allow-same-origin " ></iframe>
                  </div>
                 
               </div>
