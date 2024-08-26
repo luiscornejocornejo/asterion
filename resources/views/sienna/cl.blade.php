@@ -27,7 +27,7 @@
             
 
         $url="https://cl.suricata-conversations.com.ar/cl?token=prueba&merchant=".$subdomain_tmp."&email_suricata=".$emailuri;
-       dd($url);
+       //dd($url);
        ?>
       <!-- ========== Left Sidebar End ========== -->
 
