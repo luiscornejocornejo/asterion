@@ -214,7 +214,7 @@ $resultados3 = DB::select($query3);
                                                         {{ $val2->csat }}
                                                         @else
                                                         <div class="tooltip-button" role="button" data-bs-toggle="modal" data-bs-target="#encuesta-csat" onclick="getTicket('{{$val2->id}}, {{$celcliente}}')">
-                                                            <i class="mdi mdi-whatsapp widget-icon text-white bg-success rounded-circle" data-id="{{ val2->id}}">
+                                                            <i class="mdi mdi-whatsapp widget-icon text-white bg-success rounded-circle" data-id="{{ $val2->id}}">
                                                                 <span class="tooltiptext tooltip-bottom">Enviar C-SAT</span>
                                                             </i>
                                                         </div>
