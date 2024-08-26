@@ -550,9 +550,9 @@ class siennaticketsController extends Controller
                 left join  ".$merchant.".prioridad f on f.id=a.prioridad
         
                 where a.siennaestado not in('3','4')  
-                 
-         
-         and (a.siennadepto in (" . $final . ") or ( a.asignado='99999'))
+                 and
+         a.asignado='99999'
+         and a.siennadepto in (" . $final . ") 
                  order by ticketid desc
                 ";
 
