@@ -41,8 +41,9 @@
             <!-- ============================================================== -->
 
 
-
-            <iframe style="width: 100%!important; height: 100%!important;" src="<?php echo $url; ?>" sandbox="allow-forms allow-scripts allow-popups allow-same-origin "></iframe>
+            <div class="container-fluid">
+                <iframe class="w-100 h-100" src="<?php echo $url; ?>" sandbox="allow-forms allow-scripts allow-popups allow-same-origin "></iframe>
+            </div>
 
 
 
