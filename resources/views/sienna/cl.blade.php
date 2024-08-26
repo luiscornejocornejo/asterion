@@ -40,20 +40,23 @@
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
 
+            
+                <!-- Start Content-->
+                <div class="container-fluid">
 
-            <!-- Start Content-->
-            <div class="container-fluid">
-
-                <iframe class="w-100 h-100" src="<?php echo $url; ?>" sandbox="allow-forms allow-scripts allow-popups allow-same-origin "></iframe>
-
-
-            </div>
-
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
+                    <iframe class="w-100 h-100" src="<?php echo $url; ?>" sandbox="allow-forms allow-scripts allow-popups allow-same-origin "></iframe>
 
 
-            <!-- END wrapper -->
+                </div>
+                <!-- container -->
+            <!-- content -->
+        </div>
 
-            @include('facu.footer')
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+
+        <!-- END wrapper -->
+
+        @include('facu.footer')
