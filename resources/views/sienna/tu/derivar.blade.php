@@ -13,14 +13,14 @@
                     <input value="<?php echo session('nombreusuario'); ?>" type="hidden" name="logeado" id="logeado">
                     <div required v-for="department in departments ">
                         <?php 
-                        var_dump($usersmerchant);
-                        foreach ($usersmerchant as $dep) { ?>
+                        foreach ($usersmerchant as $dep) { 
+                            if($dep->tipousers==2){?>
                             <div class="form-check mt-2">
                                 <input checked value="<?php echo $dep->id; ?>" id="<?php echo $dep->id; ?>" class="form-check-input" type="radio" name="usuarioticket">
                                 <label for="<?php echo $dep->id; ?>" class="form-check-label"> <?php echo ucfirst($dep->nombre) . " " . ucfirst($dep->last_name); ?></label>
                             </div>
 
-                        <?php } ?>
+                        <?php }} ?>
                     </div>
             </div>
             <div class="modal-footer">
