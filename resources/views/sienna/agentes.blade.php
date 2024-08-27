@@ -135,7 +135,7 @@ document.getElementById("idagente").value = dd;
                                         data-bs-custom-class="mb-1" data-bs-title="Cambio pass"></i>
                                     </button> 
 
-                                    <button onclick="ct(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalct"  class="btn btn-info rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button onclick="ct(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalct"  class="btn btn-dark rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="mdi  mdi-account-key" data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-custom-class="mb-1" data-bs-title="Cerrar Tickets"></i>
                                     </button> 
