@@ -224,7 +224,7 @@ function tituloiconos($iconos, $tipo)
                         </button>
 
                         <?php }else{?>
-                            <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-derivar">
+                            <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-derivar">
                                 <i class="mdi mdi-account-arrow-right" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Derivar ticket"></i>
                             </button>
 
