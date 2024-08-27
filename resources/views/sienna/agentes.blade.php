@@ -26,12 +26,12 @@ document.getElementById("user_id5").value = dd;
 }
 function cambiarpass(dd) {
 
-document.getElementById("user_idct").value = dd;
+document.getElementById("user_idpass").value = dd;
 
 }
 function ct(dd) {
 
-document.getElementById("user_idpass").value = dd;
+document.getElementById("user_idct").value = dd;
 
 }
 function eliminar(dd) {
