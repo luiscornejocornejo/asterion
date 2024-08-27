@@ -223,8 +223,12 @@ function tituloiconos($iconos, $tipo)
                             <i class="mdi mdi-check-circle" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Cerrar Ticket."></i>
                         </button>
 
-                        <?php }?>
+                        <?php }else{?>
+                            <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-derivar">
+                                <i class="mdi mdi-account-arrow-right" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Derivar ticket"></i>
+                            </button>
 
+                        <?php }?>
 
                     </div>
                 </div>
@@ -409,6 +413,7 @@ function tituloiconos($iconos, $tipo)
     <!-- /.modal-topic -->
 
     @include('sienna.tu.asignar')
+    @include('sienna.tu.derivar')
     @include('sienna.tu.reclamar')
     @include('sienna.tu.topic')
     @include('sienna.tu.depto')
