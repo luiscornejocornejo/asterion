@@ -127,8 +127,10 @@ class LoginController extends Controller
                 $nombreusuario = $value->nombre . " " . $value->last_name;
 
                 $tipodemenu = $value->tipousers;
+                $ctusers = $value->ct;
 
                 session(['tipodemenu' => $tipodemenu]);
+                session(['ctusers' => $ctusers]);
 
 
                 session(['idusuario' => $idusuario]);
