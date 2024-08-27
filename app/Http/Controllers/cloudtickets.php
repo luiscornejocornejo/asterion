@@ -1587,4 +1587,21 @@ class cloudtickets extends Controller
         ->with('success', 'Enviado ' );
     }
 
+
+    
+    public function ctusers(Request $request)
+    {
+
+         $user_id=$request->user_idct;
+        $statos=$request->statos;
+
+        $si2 = users::find($user_id);
+        $si2->ct = $statos;
+        $si2->save();
+      
+        return redirect()
+        ->back()
+        ->with('success', 'Se modifico  el registro  correctamente!');
+
+    }
 }
