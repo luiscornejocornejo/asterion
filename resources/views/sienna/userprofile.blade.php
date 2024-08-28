@@ -156,7 +156,7 @@ $resultados3 = DB::select($query3);
                                             </div>
                                         </div>
                                         <hr>
-                                        <p class="h1">3,2</p>
+                                        <p class="h1"><?php echo $prome;?></p>
                                     </div>
                                 </div>
                                 <div class="card bg-success text-light">

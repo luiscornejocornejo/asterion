@@ -1532,9 +1532,24 @@ class cloudtickets extends Controller
     
 
         $datos3 = siennacliente::where('cliente', '=', $cliente)->get();
+        $domi=$this->dominio();
+        $query2="SELECT AVG(csat) AS promedio_csat
+FROM ".$domi.".csat
+WHERE ticket IN (
+    SELECT id
+    FROM siennatickets
+    WHERE cliente = '".$cliente."'
+);";
+        $csats = DB::select($query2);
+        $prome=0;
+        foreach($csats as $val){
+            $prome=$val->promedio_csat;
+
+        }
         
         return view('sienna/userprofile')
         ->with('cliente', $cliente)
+        ->with('prome', $prome)
         ->with('tickets', $datos2)
         ->with('datoscliente', $datos3)
         ;
