@@ -5,7 +5,12 @@
                 <h4 class="fw-normal text-dark" title="Number of Customers">Registrar Orden en Pagoralia</h4>
             </div>
             <div>
-            <form>
+        
+            </div>
+        </div>
+        <hr style="margin-top: 10px;" />
+        <div class="row">
+        <form>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -21,13 +26,6 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-            </div>
-        </div>
-        <hr style="margin-top: 10px;" />
-        <div class="row">
-            <div id="datosonline">
-
-            </div>
         </div>                    
     </div>
 </div>
