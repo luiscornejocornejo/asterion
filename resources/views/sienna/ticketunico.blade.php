@@ -2,6 +2,15 @@
 
 
 <?php
+
+$querypagoralia="select * from siennapagoralia";
+$datospagoralia = DB::select($querypagoralia);
+$pagohabilitado=0;
+foreach($datospagoralia as $valpago){
+    $pagohabilitado=$valpago->habilitado;
+
+}
+
 function coloriconos($iconos, $tipo)
 {
     $coloricono = "";
@@ -291,7 +300,15 @@ function tituloiconos($iconos, $tipo)
 
                         </div>
                     </div>
+
+                    <?php if($pagohabilitado){?>
                     
+                        <div class="mt-2">
+                    @include('sienna.tu.informacionpagoralia')
+
+                    </div>
+
+                        <?php }?>
                     <div class="mt-2">
                     @include('sienna.tu.informaciontareas')
 
