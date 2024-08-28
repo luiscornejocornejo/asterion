@@ -456,7 +456,7 @@
             var tipodemenu =<?php echo session('tipodemenu');?>;
            // var deptosuser =<?php echo session('deptosuser');?>;
 
-            
+            var ctusersall = <?php echo session('ctusers');?>
            url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "";
 
                     if (tipodemenu==3) {
@@ -483,9 +483,12 @@
                 // función que se ejecutará al recibir una respuesta
             
                 sd='<br><button  onclick="pedirall()" class="btn btn-info tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><span class="mdi mdi-account-arrow-left"><span class="tooltiptext">Asignar tickets</span></span></button> '+
-                '<button onclick="areaall()"  class="btn btn-info tooltip-button me-1" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><span class="mdi mdi-account-group"><span class="tooltiptext">Cambiar departamento</span></span></button> '+
-                '<button onclick="cerrarall()"  class="btn btn-success tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrarall"><span class="mdi mdi-check-circle"><span class="tooltiptext">Cerrar tickets</span></span></button> '+
-                '<button onclick="prioridadall()"  class="btn btn-success tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-prioridadall"><span class="mdi mdi-priority-high"><span class="tooltiptext">Cambiar prioridad</span></button> '+
+                '<button onclick="areaall()"  class="btn btn-info tooltip-button me-1" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><span class="mdi mdi-account-group"><span class="tooltiptext">Cambiar departamento</span></span></button> ';
+                if(ctusersall==1){
+                  sd=sd+'<button onclick="cerrarall()"  class="btn btn-success tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrarall"><span class="mdi mdi-check-circle"><span class="tooltiptext">Cerrar tickets</span></span></button> ';
+
+                }
+                sd=sd+ '<button onclick="prioridadall()"  class="btn btn-success tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-prioridadall"><span class="mdi mdi-priority-high"><span class="tooltiptext">Cambiar prioridad</span></button> '+
                 '<button type="button" onclick="selects()" class="btn btn-primary tooltip-button"><span class="mdi mdi-check-all"><span class="tooltiptext">Seleccionar todos los tickets</span></span></button> '+  
                 '<button type="button" onclick="deSelect()" class="btn btn-info tooltip-button"><span class="mdi mdi-checkbox-blank-outline"><span class="tooltiptext">Quitar selección</span></span></button> '+
                 '<button type="button" onclick="parar()" class="btn btn-danger tooltip-button"><span class="mdi mdi-motion-pause"><span class="tooltiptext"> Detener autosincronización</span></span></button> '+
