@@ -10,26 +10,27 @@
         </div>
         <hr style="margin-top: 10px;" />
         <div class="row">
-        <form>
+        <form method="get" action="/pagoraliaorden">
   <div class="form-group">
     <label for="exampleInputEmail1">Invoice</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="fb101232">
+    <input required name="invoice" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="fb101232">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Descripcion</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="pago por servicio de inet">
+    <input required name="descripcion" type="text" class="form-control" id="exampleInputPassword1" placeholder="pago por servicio de inet">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Monto</label>
-    <input type="float" class="form-control" id="exampleInputPassword1" placeholder="50.00">
+    <input required name="monto" type="float" class="form-control" id="exampleInputPassword1" placeholder="50.00">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Cliente</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="cliente">
-    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="nombre">
-    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="apelido">
+    <input required name="cliente" type="text" class="form-control" id="exampleInputPassword1" placeholder="cliente">
+    <input required name="nombre" type="text" class="form-control" id="exampleInputPassword1" placeholder="nombre">
+    <input required name="apelido" type="text" class="form-control" id="exampleInputPassword1" placeholder="apelido">
   </div>
- 
+  <hr style="margin-top: 10px;" />
+
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
         </div>                    
