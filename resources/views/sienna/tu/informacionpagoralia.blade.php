@@ -21,7 +21,7 @@
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Monto</label>
-    <input required name="monto" type="float" class="form-control" id="exampleInputPassword1" placeholder="50.00">
+    <input required name="monto" type="number" step="0.01" class="form-control" id="exampleInputPassword1" placeholder="50.00">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Cliente</label>
