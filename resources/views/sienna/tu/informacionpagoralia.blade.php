@@ -27,7 +27,7 @@
     <label for="exampleInputPassword1">Cliente</label>
     <input required name="cliente" type="text" class="form-control" id="exampleInputPassword1" placeholder="cliente">
     <input required name="nombre" type="text" class="form-control" id="exampleInputPassword1" placeholder="nombre">
-    <input required name="apelido" type="text" class="form-control" id="exampleInputPassword1" placeholder="apelido">
+    <input required name="apellido" type="text" class="form-control" id="exampleInputPassword1" placeholder="apellido">
   </div>
   <hr style="margin-top: 10px;" />
 
