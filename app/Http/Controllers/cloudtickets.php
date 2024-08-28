@@ -1625,8 +1625,8 @@ class cloudtickets extends Controller
 
         $se = new siennaseguimientos();
         $se->ticket = $idticketpedir;
-        $se->tipo = "4";
-        $se->descripcion = "asignado a: ".$us->last_name;
+        $se->tipo = "13";
+        $se->descripcion = "Derivo a: ".$us->last_name;
         $se->autor = $logeado;
         $se->save();
 
