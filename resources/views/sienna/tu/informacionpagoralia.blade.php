@@ -1,30 +1,4 @@
-<style>
-    input[type="file"] {
-      display: none;
-    }
 
-    .custom-file-upload {
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
-  }
-
-  .conversation-list .odd .conversation-text {
-    float: right!important;
-    margin-right: 12px;
-    text-align: right;
-    width: 90%!important
-}
-
-.conversation-list .conversation-text {
-    float: left;
-    font-size: 13px;
-    margin-left: 12px;
-    width: 90%
-}
-
-</style>
 
 <div class="card widget-flat">
                             <div class="card-body">
@@ -60,57 +34,6 @@
                                             </div>
                                         </div>
                                     </form>
-                            <div class="card-footer">
-                                <h5 class="font-18 mb-2">Nota: </h5>
-                                    <ul class="conversation-list p-0" data-simplebar="init">
-                                          <?php foreach ($segui as $val) {
-                                            if ($val->tipo == 5) {
-                                             if ($val->logo != null) {
-
-                                                if ($val->tipo == 5) {
-                                                    $ht = 'https://sienamedia.sfo3.digitaloceanspaces.com/' . $val->logo;
-                                                } else {
-                                                    $ht = 'https://sienamedia.sfo3.digitaloceanspaces.com/' . $subdomain_tmp . '/xen/enviados/' . $val->logo;
-                                                }
-
-                                                
-                                                $uri = '<a target=_blank href="' . $ht . '"><img  src=' . $ht . ' width="40px;"></a>';
-                                            } else {
-                                                $uri = '';
-                                            }
-                                            ?>
-                                        <li class="clearfix">
-                                                    <div class="chat-avatar">
-                                                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" class="rounded-circle border" alt="Usuario">
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap bg-white border w-100">
-                                                        
-                                                            <p class="mb-1">
-                                                            <?php echo $val->autor; ?>
-                                                            </p>
-                                                            <p class="mb-1">
-                                                            <?php echo $val->descripcion; ?>
-                                                            </p>
-                                                            <p class="mb-1">
-                                                            <?php echo $val->created_at; ?>
-                                                            </p>
-                                                            <span>
-                                                                    <?php if ($uri != "") { ?>
-                                                                        <span onclick="ng(`<?php echo $ht; ?>`)" class="link-primary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-img">
-                                                                            Ver archivo    
-                                                                        </span>
-                                                                    <?php } ?>
-                                                                </span>
-                                                        </div>
-                                                    </div>
-                                        </li>
-
-
-                                        <?php }}?>
-                                    </ul>
-                                </div>
                                     
-                            </div>             
                         </div>
                                   
