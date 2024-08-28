@@ -1505,7 +1505,7 @@ class siennaticketsController extends Controller
                 $si2 = siennatickets::find($ticketss);
                 $antdepto=$si2->siennadepto;
                 $si2->siennadepto = $statos;
-                $si2->asignado = 0;
+                //$si2->asignado = 0;
                 $si2->save();
 
                 $deptoant = siennadepto::find($antdepto);
