@@ -1,4 +1,4 @@
-<div class="card widget-flat d-none">
+<div class="card widget-flat ">
     <div class="card-body">
         <div class="d-flex justify-content-between">
             <div>
