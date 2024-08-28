@@ -29,6 +29,7 @@ use App\Models\salientesxenniolistado;
 use App\Models\siennatareassegui;
 use App\Models\estadotarea;
 use App\Models\siennamail;
+use App\Models\siennaderivados;
 
 use Illuminate\Support\Str;
 
@@ -1630,11 +1631,12 @@ class cloudtickets extends Controller
         $se->autor = $logeado;
         $se->save();
 
-
-        
-
-
-
+        $sd = new siennaderivados();
+        $sd->ticket = $idticketpedir;
+        $sd->supervisor = $usuarioticket;
+        $sd->autor = $logeado;
+        $sd->agente = $logeado;
+        $sd->save();
         return redirect()
             ->back()
             ->with('success', 'Se asigno  correctamente!');
