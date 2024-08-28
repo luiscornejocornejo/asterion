@@ -1516,7 +1516,7 @@ class siennaticketsController extends Controller
                 $nombrearea = $depto->nombre;
 
                 $se = new siennaseguimientos();
-                $se->ticket = $val;
+                $se->ticket = $ticketss;
                 $se->tipo = "3";
                 $se->descripcion = $deptoant->nombre." =>" . $nombrearea;
                 $se->autor = $logeado;
