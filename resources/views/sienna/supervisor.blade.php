@@ -457,6 +457,7 @@
            // var deptosuser =<?php echo session('deptosuser');?>;
 
             var ctusersall = <?php echo session('ctusers');?>
+            console.log(ctusersall);
            url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "";
 
                     if (tipodemenu==3) {
