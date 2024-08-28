@@ -1633,7 +1633,7 @@ class cloudtickets extends Controller
 
         $sd = new siennaderivados();
         $sd->ticket = $idticketpedir;
-        $sd->supervisor = $usuarioticket;
+        $sd->supervisor = $us->last_name;
         $sd->autor = $logeado;
         $sd->agente = $logeado;
         $sd->save();
