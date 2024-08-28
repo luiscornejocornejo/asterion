@@ -1,16 +1,14 @@
 
 
 <div class="card widget-flat">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <h4 class="fw-normal text-dark" title="Number of Customers">Pagoralia</h4>
-                                    </div>
-                                    <div>
-                                        <i class="uil-notes widget-icon bg-secondary-lighten text-secondary"></i>
-                                    </div>
-                                </div>
-                                <hr style="margin-top: 10px;" />
+    <div class="card-body">
+        <div class="d-flex justify-content-between">
+            <div>
+                <h4 class="fw-normal text-dark" title="Number of Customers">Pagoralia</h4>
+            </div>
+        <div>
+        <i class="uil-notes widget-icon bg-secondary-lighten text-secondary"></i>
+        <hr style="margin-top: 10px;" />
                                 <div class="row">
                                     <div class="col-xxl-12 col-xl-12 col-lg-12 col-sm-12">
                                         
@@ -36,4 +34,9 @@
                                     </form>
                                     
                         </div>
+    </div>
+        
+
+</div>
+
                                   
