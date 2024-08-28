@@ -1656,4 +1656,18 @@ WHERE ticket IN (
             ->back()
             ->with('success', 'Se asigno  correctamente!');
     }
+
+
+    
+
+    public function abminternos(Request $request)
+    {
+
+        $cliente=1003;
+        $nodes=array();
+        return view('sienna/abminternos')
+        ->with('cliente', $cliente)
+        ->with('nodes', $nodes);
+
+    }
 }

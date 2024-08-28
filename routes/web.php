@@ -296,6 +296,7 @@ Route::post('/llamadobroadcast','App\Http\Controllers\cloudtickets@llamadobroadc
 
 Route::post('/ctusers','App\Http\Controllers\cloudtickets@ctusers');
 Route::post('/derivar','App\Http\Controllers\cloudtickets@derivarpost');
+Route::get('/abminternos','App\Http\Controllers\cloudtickets@abminternos');
 
 Route::get('/cl', function () {
     return view('/sienna/cl');
