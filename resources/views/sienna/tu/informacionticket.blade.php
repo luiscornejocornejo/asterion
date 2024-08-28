@@ -20,6 +20,9 @@
                                         <div class="mb-1">
                                             <i class="mdi mdi-account-voice"></i> <strong>Asignado a: </strong><?php echo $resultados[0]->nombreagente; ?>
                                         </div>
+                                        <div class="mb-1">
+                                            <i class="mdi mdi-account-circle"></i> <strong>Perfil de cliente: </strong><a href="/userprofile?cliente=<?php echo $resultadoscliente[0]->cliente ?>"><?php echo $resultadoscliente[0]->nya; ?></a>
+                                        </div>
 
                                     </div>
 
