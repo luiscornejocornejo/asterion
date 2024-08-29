@@ -28,7 +28,6 @@
   <script src="js/utils.js"></script>
   <script src="js/Chart.min.js"></script>
   <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
-  <script src="assetsfacu/js/showfiles.js"></script>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
