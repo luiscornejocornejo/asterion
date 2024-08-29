@@ -586,11 +586,16 @@ document.getElementById("user_id").value = ff;
                     }else{
                       $nombreamostrar=response.data[i].nombreagente ;
                     }
+
+                    if(response.data[i].cliente !=''){
+                      url2 = "https://"+result+".suricata.cloud/userprofile?cliente=" + response.data[i].cliente + "";
+
+                    }
                   
                     tt += '<tr class="text-center">' +
         
                         ' <td><input name="chk" class="form-check-input me-1" type="checkbox" value="'+response.data[i].ticketid +'" id="flexCheckDefault"><a target="_blank" href="/ticketunico?tick='+response.data[i].ticketid +'"><i class="mdi '+im+'  '+im2+' me-1 "></i>' + response.data[i].ticketid + '</a></td>' +
-                        ' <td><a href="https://'+result+'.suricata.cloud/userprofile?cliente='+response.data[i].cliente +'' ">' + response.data[i].nya + '</a></td>' + 
+                        ' <td><a target=_blank href="'+url2+'">' + response.data[i].nya + '</a></td>' + 
                         ' <td>' + $nombreamostrar+ '</td>' + 
                         '<td><span class="badge '+colordepto+'" style="font-size:medium;" onclick="area2(`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].user_id + '`)"  class="badge bg-info" style="font-size: medium" role="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm202">'+response.data[i].depto+' </span></td>' +
                         '<td><span style="font-size:medium;" class="'+colorpri+'" onclick="topic(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="badge badge-info-lighten border" style="font-size: medium" role="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smtopic"> ' + response.data[i].topicnombre + '</span></td> ' +
