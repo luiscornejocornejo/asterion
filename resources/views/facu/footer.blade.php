@@ -52,7 +52,7 @@
     </script>
 
 <script type="text/javascript">
-   new DataTable('#example3', {
+   new DataTable('#casadepapel', {
     "responsive": true,
     "order": [[0, 'asc']],
 
