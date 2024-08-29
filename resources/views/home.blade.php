@@ -1076,6 +1076,14 @@ if (isset($_GET['fecha'])) {
             ?>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+<!-- Incluye jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Incluye DataTables CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"/>
+
+<!-- Incluye DataTables JS -->
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
 <div class="container-fluid" id="main-content">
         <div class="container">
