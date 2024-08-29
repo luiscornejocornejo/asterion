@@ -38,7 +38,6 @@
         var porciones = URLactual.split('.');
         let result = porciones[0].replace("https://", "");
         url2 = "https://"+result+".suricata.cloud/api/telefonia?ip=" + necesito ;
-        console.log(url2);
         axios.get(url2)
         .then(function (response) {
             console.log("data:");
@@ -199,24 +198,18 @@ if (isset($_GET['fecha'])) {
                 let myChart4;
                 let myChart5;
                 function grafico(datosp,subdomain_tmp,divss) {
-                   // console.log(datosp.data);
 
                     var labels=[];
                     var datos=[];
                   
                     for (i = 0; i < datosp.data.length; i++) {
-                       // console.log(datosp.data[i].name);
                         labels.push(datosp.data[i].name);
-                       // console.log(labels);
 
                         datos.push(datosp.data[i].cant);
 
-                       // console.log(datos);
 
                     }
-                    //console.log(labels);
 
-                    //console.log(datos);
 
                     const ctx = document.getElementById('myChart');
                     if (myChart) {
@@ -242,24 +235,18 @@ if (isset($_GET['fecha'])) {
                 });
                 }
                 function grafico2(datosp,subdomain_tmp,divss) {
-                    //console.log(datosp.data);
 
                     var labels=[];
                     var datos=[];
                   
                     for (i = 0; i < datosp.data.length; i++) {
-                       // console.log(datosp.data[i].name);
                         labels.push(datosp.data[i].name);
-                      //  console.log(labels);
 
                         datos.push(datosp.data[i].cant);
 
-                       // console.log(datos);
 
                     }
-                   // console.log(labels);
 
-                   // console.log(datos);
 
                     const ctx2 = document.getElementById('myChart2');
                     if (myChart2) {
@@ -287,24 +274,18 @@ if (isset($_GET['fecha'])) {
 
                 }
                 function grafico3(datosp,subdomain_tmp,divss) {
-                   // console.log(datosp.data);
 
                     var labels=[];
                     var datos=[];
                   
                     for (i = 0; i < datosp.data.length; i++) {
-                        //console.log(datosp.data[i].name);
                         labels.push(datosp.data[i].name);
-                       // console.log(labels);
 
                         datos.push(datosp.data[i].cant);
 
-                        //console.log(datos);
 
                     }
-                   // console.log(labels);
 
-                    //console.log(datos);
 
                     const ctx3 = document.getElementById('myChart3');
                     if (myChart3) {
@@ -332,24 +313,18 @@ if (isset($_GET['fecha'])) {
 
                 }
                 function grafico4(datosp,subdomain_tmp,divss) {
-                   // console.log(datosp.data);
 
                     var labels=[];
                     var datos=[];
                   
                     for (i = 0; i < datosp.data.length; i++) {
-                       // console.log(datosp.data[i].name);
                         labels.push(datosp.data[i].name);
-                      //  console.log(labels);
 
                         datos.push(datosp.data[i].cant);
 
-                       // console.log(datos);
 
                     }
-                    //console.log(labels);
 
-                   // console.log(datos);
 
                     const ctx4 = document.getElementById('myChart4');
                     if (myChart4) {
@@ -386,24 +361,18 @@ if (isset($_GET['fecha'])) {
 
                 }
                 function grafico5(datosp,subdomain_tmp,divss) {
-                    //console.log(datosp.data);
 
                     var labels=[];
                     var datos=[];
                   
                     for (i = 0; i < datosp.data.length; i++) {
-                        //console.log(datosp.data[i].name);
                         labels.push(datosp.data[i].name);
-                        //console.log(labels);
 
                         datos.push(datosp.data[i].cant);
 
-                        //console.log(datos);
 
                     }
-                    //console.log(labels);
 
-                    //console.log(datos);
 
                     const ctx5 = document.getElementById('myChart5');
                     if (myChart5) {
@@ -435,7 +404,6 @@ if (isset($_GET['fecha'])) {
                     axios.get(url2)
                         .then(function(response) {
                           
-                           // console.log(response);
                             divss="#chart3";
                             grafico(response,result,divss) 
 
@@ -454,7 +422,6 @@ if (isset($_GET['fecha'])) {
                         axios.get(url2)
                             .then(function(response) {
                             
-                                //console.log(response);
                                 divss="#chart4";
                                 grafico2(response,result,divss) 
 
@@ -473,7 +440,6 @@ if (isset($_GET['fecha'])) {
                     axios.get(url2)
                         .then(function(response) {
                         
-                            //console.log(response);
                             divss="#chart5";
                             grafico3(response,result,divss) 
 
@@ -493,7 +459,6 @@ if (isset($_GET['fecha'])) {
                     axios.get(url2)
                         .then(function(response) {
                         
-                           // console.log(response);
                             divss="#chart6";
                             grafico5(response,result,divss) 
 
@@ -512,7 +477,6 @@ if (isset($_GET['fecha'])) {
                     axios.get(url2)
                         .then(function(response) {
                         
-                           // console.log(response);
                             divss="#chart6";
                             grafico4(response,result,divss) 
 
@@ -529,10 +493,8 @@ if (isset($_GET['fecha'])) {
                 function abiertos(urlabiertos) {
                     axios.get(urlabiertos)
                         .then(function(response) {
-                            //console.log(response);
                             for (i = 0; i < response.data.length; i++) {
                                 let ticketabiertos = response.data[i].cantidadtickets2;
-                                //console.log(ticketabiertos);
                                 document.getElementById("abiertos").innerHTML = ticketabiertos;
 
 
@@ -552,7 +514,6 @@ if (isset($_GET['fecha'])) {
                         .then(function(response) {
                             for (i = 0; i < response.data.length; i++) {
                                 let ticketcerrados = response.data[i].cantidadtickets2;
-                               // console.log(ticketcerrados);
                                 document.getElementById("cerrados").innerHTML = ticketcerrados;
 
 
@@ -571,7 +532,6 @@ if (isset($_GET['fecha'])) {
                 function logeados(urllogeados) {
                     axios.get(urllogeados)
                         .then(function(response) {
-                            console.log(response);
                             sd='<table id="example2"  class="table table-striped dt-responsive nowrap w-100 text-light">'+
                                 '<thead>'+
                               '     <tr class="text-center bg-dark" >'+
@@ -594,10 +554,7 @@ if (isset($_GET['fecha'])) {
                             for (i = 0; i < response.data.length; i++) {
                                 let usu = response.data[i].usu;
                                 let area = response.data[i].area;
-                                console.log("logeados");
-                                console.log(usu);
-                                console.log(area);
-                               // document.getElementById("abiertos").innerHTML = ticketabiertos;
+                                
                                tt += '<tr class="text-center">' +
                                         ' <td>' + response.data[i].usu + '</td>' +
                                         ' <td>' + response.data[i].area + '</td>' + 
@@ -798,13 +755,10 @@ if (isset($_GET['fecha'])) {
                     var datos=[];
                   
                     for (i = 0; i < datosp.data.length; i++) {
-                        console.log(datosp.data[i].name);
                         labels.push(datosp.data[i].name);
-                        console.log(labels);
 
                         datos.push(datosp.data[i].cant);
 
-                        console.log(datos);
 
                     }
                     
@@ -838,7 +792,6 @@ if (isset($_GET['fecha'])) {
                     axios.get(url2)
                         .then(function(response) {
                         
-                            console.log(response);
                             graficoestadofecha(response) 
 
                         })
@@ -889,7 +842,6 @@ if (isset($_GET['fecha'])) {
                         axios.get(url2)
                             .then(function(response) {
                             
-                                console.log(response);
                                 graficocanalfecha(response) 
 
                             })
@@ -908,7 +860,6 @@ if (isset($_GET['fecha'])) {
                         for (i = 0; i < datosp.data.length; i++) {
                             console.log(datosp.data[i].name);
                             labels.push(datosp.data[i].name);
-                            console.log(labels);
 
                             datos.push(datosp.data[i].cant);
 
