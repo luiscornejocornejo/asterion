@@ -20,7 +20,11 @@
                                         <div class="mb-1">
                                             <i class="mdi mdi-account-voice"></i> <strong>Asignado a: </strong><?php echo $resultados[0]->nombreagente; ?>
                                         </div>
-
+                                        @if($resultados[0]->cliente <> '')
+                                        <div class="mb-1">
+                                            <i class="mdi mdi-account-circle"></i> <strong>Perfil de cliente: </strong><a href="/userprofile?cliente=<?php echo $resultadoscliente[0]->cliente ?>" target="_blank"><?php echo $resultadoscliente[0]->nya; ?></a>
+                                        </div>
+                                        @endif
                                     </div>
 
                                     <div>
