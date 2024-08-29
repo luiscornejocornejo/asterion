@@ -1,5 +1,26 @@
 
 @include('facu.header2')
+
+<script>
+        let navegador = navigator.userAgent;
+        if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
+            tipo=<?php  echo $tipodemenu = session('tipodemenu'); ?>;
+            var url = window.location.href;
+            console.log("Estás usando un dispositivo móvil!!"+tipo);
+
+
+            if(tipo=="2"){
+                location.href = url+'viewtickets';
+
+
+            }else{
+                location.href = url+'viewtickets';
+
+            }
+        } else {
+            console.log("No estás usando un móvil");
+        }
+</script>
 <?php   
                $tokeninterno = session('tokeninterno');
                $miip=request()->ip();
@@ -34,26 +55,7 @@
 
     }
 </script>
-<script>
-        let navegador = navigator.userAgent;
-        if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
-            tipo=<?php  echo $tipodemenu = session('tipodemenu'); ?>;
-            var url = window.location.href;
-            console.log("Estás usando un dispositivo móvil!!"+tipo);
 
-
-            if(tipo=="2"){
-                location.href = url+'viewtickets';
-
-
-            }else{
-                location.href = url+'viewtickets';
-
-            }
-        } else {
-            console.log("No estás usando un móvil");
-        }
-    </script>
 <?php
 
 $subdomain_tmp = 'localhost';
