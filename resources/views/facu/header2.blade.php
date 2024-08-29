@@ -128,5 +128,7 @@ z-index: 999;}
     </style>
 
 <script src="sienna/js/7tickets.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
 </head>
 <body class="show" >
