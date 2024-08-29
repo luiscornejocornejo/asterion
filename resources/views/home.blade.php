@@ -347,12 +347,7 @@ if (isset($_GET['fecha'])) {
                         y: {
                             position: 'right',                display: false,
 
-                        },
-                        yAxes: [{
-                            ticks: {
-                                fontSize: 100
-                            }
-                        }]
+                        }
                   
                     }
                     }
