@@ -1129,6 +1129,7 @@ if (isset($_GET['fecha'])) {
                 }
             ?>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 
 
 <div class="container-fluid" id="main-content">
