@@ -590,6 +590,8 @@ document.getElementById("user_id").value = ff;
                     if(response.data[i].cliente !=''){
                       url2 = "https://"+result+".suricata.cloud/userprofile?cliente=" + response.data[i].cliente + "";
 
+                    }else{
+                      url2 ='';
                     }
                   
                     tt += '<tr class="text-center">' +
