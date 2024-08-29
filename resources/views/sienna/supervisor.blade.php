@@ -587,7 +587,7 @@ document.getElementById("user_id").value = ff;
                       $nombreamostrar=response.data[i].nombreagente ;
                     }
 
-                    if(response.data[i].cliente !=''){
+                    if(response.data[i].cliente !== null && response.data[i].cliente !=''){
                       url2 = "<a target=_blank href=https://"+result+".suricata.cloud/userprofile?cliente=" + response.data[i].cliente + ">"+response.data[i].nya +"</a>";
 
                     }else{
