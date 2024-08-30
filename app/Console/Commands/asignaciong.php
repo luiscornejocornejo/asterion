@@ -50,7 +50,7 @@ class asignaciong extends Command
             
             if (!in_array($Database, $os)) {
                 echo $Database;
-                echo "<br>";
+               
                 $sale = $this->asignacion($Database);
             }
             
@@ -96,7 +96,7 @@ class asignaciong extends Command
         $cat = DB::connection('mysql2')->select($query2);
 
 
-        echo "luis".$merchant;
+        //echo "luis".$merchant;
         foreach($cat as $val){
 
          $fecha=$val->$diaSemana;
