@@ -88,18 +88,18 @@ class asignaciong extends Command
         date_default_timezone_set($zona); // Reemplaza 'America/Buenos_Aires' con la zona horaria deseada
 
         // Obtiene la hora actual en formato de 24 horas
-        echo $horaLocal = date('H');
-        echo $diaSemana = date('l');
+         $horaLocal = date('H');
+         $diaSemana = date('l');
         //$cat=categoria::where('area','=',$area)->get();
 
-       echo $query2="select * from ".$merchant.".categoria where area='".$area."'";
+        $query2="select * from ".$merchant.".categoria where area='".$area."'";
         $cat = DB::connection('mysql2')->select($query2);
 
 
         echo "luis".$merchant;
         foreach($cat as $val){
 
-        echo $fecha=$val->$diaSemana;
+         $fecha=$val->$diaSemana;
 
         }
 
@@ -132,6 +132,7 @@ class asignaciong extends Command
 
         $resultados = DB::connection('mysql2')->select($query);
         //echo sizeof($resultados);
+        $this->info(sizeof($resultados));
         foreach($resultados as $value){
           //  echo  $query3="update ".$merchant.".siennatickets set asignado='99999' where id=".$tick."";
             //$resultados3 = DB::connection('mysql2')->select($query3);
@@ -140,7 +141,7 @@ class asignaciong extends Command
 
              $enhora=$this->enhora($merchant,$area);
              if($enhora){
-              echo  $query2="select s.idusuario as uu,(select count(*) from ".$merchant.".siennatickets s2  
+                $query2="select s.idusuario as uu,(select count(*) from ".$merchant.".siennatickets s2  
                 where s2.asignado=s.idusuario and s2.siennaestado not in('3','4'))as cantidad from ".$merchant.".siennaloginxenioo s
                 join ".$merchant.".users s3 on s3.id=s.idusuario 
                 where
@@ -149,20 +150,19 @@ class asignaciong extends Command
                 $resultados2 = DB::connection('mysql2')->select($query2);
 
                 $idusu=0;
-                echo "/r";
                 foreach($resultados2 as $value2){
     
                      $idusu=$value2->uu;
                 }
     
                 if($idusu<>0){
-                   echo  $query3="update ".$merchant.".siennatickets set asignado='".$idusu."' where id=".$tick."";
+                     $query3="update ".$merchant.".siennatickets set asignado='".$idusu."' where id=".$tick."";
                    $resultados3 = DB::connection('mysql2')->select($query3);
 
     
                 }
              }else{
-                echo  $query3="update ".$merchant.".siennatickets set asignado='99999' where id=".$tick."";
+                  $query3="update ".$merchant.".siennatickets set asignado='99999' where id=".$tick."";
                 $resultados3 = DB::connection('mysql2')->select($query3);
             }
 
