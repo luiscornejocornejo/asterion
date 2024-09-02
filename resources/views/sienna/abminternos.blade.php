@@ -50,7 +50,7 @@
                             <td><?php echo $value->display;?></td>
                             <td><?php echo $value->interno;?></td>
                             <td><?php echo $value->pass;?></td>
-                            <td><?php echo $value->real;?></td>
+                            <td><?php echo $value->realm;?></td>
                             <td><?php echo $value->ws;?></td>
                             <td><?php echo $value->token;?></td>
                             <td role="cell">
