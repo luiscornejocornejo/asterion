@@ -39,7 +39,7 @@
                             <td><?php echo $value->pass;?></td>
                             <td><?php echo $value->realm;?></td>
                             <td><?php echo $value->ws;?></td>
-                            <td><?php echo $value->token;?></td>abminternosmodificar
+                            <td><?php echo $value->token;?></td>
                             <td role="cell">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-primary
@@ -47,7 +47,7 @@
                                     mdi-chevron-down"></i></button>
                                     <div class="dropdown-menu">
                                         <?php if ($master->modificar == 1) { ?>
-                                            <<a class="btn btn-warning" href="/abminternosmodificar?registro={{$value->id}}&idreport={{$value->id}}&pk={{$value->id}}" role="button"> <i data-feather="edit"></i></a>
+                                            <a class="btn btn-warning" href="/abminternosmodificar?registro={{$value->id}}&idreport={{$value->id}}&pk={{$value->id}}" role="button"> <i data-feather="edit"></i></a>
                                         <?php } ?>
                                         <?php if ($master->eliminar == 1) { ?>
 
