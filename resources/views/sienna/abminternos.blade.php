@@ -61,7 +61,7 @@
                                     <div class="dropdown-menu">
                                             <a class="btn btn-warning" href="/abminternosmodificar?registro={{$value->id}}&idreport={{$value->id}}&pk={{$value->id}}" role="button"> <i data-feather="edit"></i></a>
 
-                                            <button type="button" onclick="borrar(<?php echo $resultado->$registro; ?>)" class="btn btn-danger waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center"><i data-feather="delete"></i></button>
+                                            <button type="button" onclick="borrar(<?php echo $value->id; ?>)" class="btn btn-danger waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center"><i data-feather="delete"></i></button>
 
                                     </div>
                                 </div><!-- /btn-group -->
