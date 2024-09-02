@@ -1674,21 +1674,21 @@ WHERE ticket IN (
         return view('sienna/tareas')
         ->with('usersmerchant', $usersmerchant)
         ->with('tareas', $tareas);
-*/
+
+        $cliente=1003;
+        $nodes=array();
+        return view('sienna/abminternos')
+        ->with('cliente', $cliente)
+        ->with('nodes', $nodes);
+
+        */
 
         $domi=$this->dominio();
         $query="select * from ".$domi.".siennainternos";
         $sint = DB::select($query);
 
         return view('sienna/abminternos')
-        ->with('internos', $sint)
-/*
-        $cliente=1003;
-        $nodes=array();
-        return view('sienna/abminternos')
-        ->with('cliente', $cliente)
-        ->with('nodes', $nodes);
-        */
+        ->with('internos', $sint);
 
     }
 }
