@@ -1690,6 +1690,7 @@ WHERE ticket IN (
         $master->id = 1;
         $master->crear = 1;
         $master->modificar = 1;
+        $master->eliminar = 1;
         return view('sienna/abminternos')
         ->with('internos', $sint)
         ->with('master', $master);
