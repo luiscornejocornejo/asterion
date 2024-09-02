@@ -34,26 +34,38 @@
                     <thead class=" bg-dark">
                         <tr class="text-center">
                             <th class="text-light">ID</th>
-                            <th class="text-light">Nodo</th>
-                            <th class="text-light">Ciudad</th>
-                            <th class="text-light">Estado del Nodo</th>
-                            <th class="text-light">Mensaje</th>
+                            <th class="text-light">Usuario</th>
+                            <th class="text-light">Interno</th>
+                            <th class="text-light">Password/th>
+                            <th class="text-light">Realm</th>
+                            <th class="text-light">WS</th>
+                            <th class="text-light">Token</th>
+                            <th class="text-light">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($nodes as $value){?>
+                        <?php foreach($internos as $value){?>
                         <tr class="text-center">
-                            <td>
-                                <div class="form-check">
-                                    <input value="<?php echo $value->idnodo;?>" type="checkbox" class="form-check-input" name="lista[]">
-                                    <label class="form-check-label" for="customCheck1"><?php echo $value->idnodo;?></label>
-                                </div>
-                            </td>
-                            <td><?php echo $value->nombredelnodo;?></td>
+                            <td><?php echo $value->id;?></td>
+                            <td><?php echo $value->display;?></td>
+                            <td><?php echo $value->interno;?></td>
+                            <td><?php echo $value->pass;?></td>
+                            <td><?php echo $value->real;?></td>
+                            <td><?php echo $value->ws;?></td>
+                            <td><?php echo $value->token;?></td>
+                            <td role="cell">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-primary
+                                    dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Action <i class="mdi
+                                    mdi-chevron-down"></i></button>
+                                    <div class="dropdown-menu">
+                                            <a class="btn btn-warning" href="/abminternosmodificar?registro={{$value->$id}}&idreport={{$value->$id}}&pk={{$value->$id}}" role="button"> <i data-feather="edit"></i></a>
 
-                            <td><?php echo $value->ciudad;?></td>
-                            <td><?php echo $value->nombredelestadonodo;?></td>
-                            <td><?php echo $value->mensaje;?></td>
+                                            <button type="button" onclick="borrar(<?php echo $resultado->$registro; ?>)" class="btn btn-danger waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center"><i data-feather="delete"></i></button>
+
+                                    </div>
+                                </div><!-- /btn-group -->
+                            </td>
 
                         </tr>
 

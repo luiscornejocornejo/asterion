@@ -1662,12 +1662,33 @@ WHERE ticket IN (
 
     public function abminternos(Request $request)
     {
+        /*
+        $domi=$this->dominio();
+        $query2="select * from ".$domi.".siennatareas";
+        $tareas = DB::select($query2);
 
+
+        $query3="select * from ".$domi.".users";
+        $usersmerchant = DB::select($query3);
+        //$tareas = siennatareas::all()->get();
+        return view('sienna/tareas')
+        ->with('usersmerchant', $usersmerchant)
+        ->with('tareas', $tareas);
+*/
+
+        $domi=$this->dominio();
+        $query="select * from ".$domi.".siennainternos";
+        $sint = DB::select($query);
+
+        return view('sienna/abminternos')
+        ->with('internos', $sint)
+/*
         $cliente=1003;
         $nodes=array();
         return view('sienna/abminternos')
         ->with('cliente', $cliente)
         ->with('nodes', $nodes);
+        */
 
     }
 }
