@@ -960,6 +960,9 @@ class siennaticketsController extends Controller
             $siennadepto = $valuep->siennadepto;
             
             
+        }else{
+            $siennadepto =$ostt;
+
         }
         $query="select id from ".$merchant.".siennatickets 
         where cliente='".$cliente."' 
