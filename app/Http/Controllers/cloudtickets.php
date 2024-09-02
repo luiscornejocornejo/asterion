@@ -1686,9 +1686,9 @@ WHERE ticket IN (
         $domi=$this->dominio();
         $query="select * from ".$domi.".siennainternos";
         $sint = DB::select($query);
-        $master=array();
-        $master["crear"] = 1;
-        $master["modificar"] = 1;
+        $master=(object)[];
+        $master->crear = 1;
+        $master->modificar = 1;
         return view('sienna/abminternos')
         ->with('internos', $sint)
         ->with('master', $master);
