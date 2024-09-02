@@ -1687,6 +1687,7 @@ WHERE ticket IN (
         $query="select * from ".$domi.".siennainternos";
         $sint = DB::select($query);
         $master=(object)[];
+        $master->id = 1;
         $master->crear = 1;
         $master->modificar = 1;
         return view('sienna/abminternos')
