@@ -959,7 +959,7 @@ class siennaticketsController extends Controller
             $siennatopic = $valuep->id;
             $siennadepto = $valuep->siennadepto;
             
-            
+        }
         }else{
             $siennadepto =$ostt;
 

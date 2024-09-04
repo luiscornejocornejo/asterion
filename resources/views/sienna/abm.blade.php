@@ -130,7 +130,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<!-- Modal for Create Ticket -->
+<!-- Modal for Create  -->
 <div id="create-user-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dark-header-modalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content h-100">
@@ -145,6 +145,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
     </div><!-- /.modal-dialog -->
 </div>
 
+<!-- Modal for edit  -->
 
 <div id="edit-user-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dark-header-modalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -153,7 +154,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
-                <iframe src="https://infitelecom.suricata.cloud/siennacreate?report={{$master->id}}" class="w-100 h-100"></iframe>
+                <iframe src="https://<?php echo $subdomain_tmp; ?>.suricata.cloud/siennacreate?report={{$master->id}}" class="w-100 h-100"></iframe>
             </div>
 
         </div><!-- /.modal-content -->
