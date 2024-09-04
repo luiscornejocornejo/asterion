@@ -34,11 +34,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">ABM <?php echo $nombrereporte;?></h1>
                 </div>
-                <button class="btn btn-success" onclick="exportTableToExcel('datatable')">Exportar </button>
-                <?php
-                if ($master->crear == 1) { ?>
-                    <a class="btn btn-primary" href="/siennacreate?report={{$master->id}}" role="button">Nuevo</a>
-                <?php } ?>
+             
 
                 <table role="table" id="example" class="table table-bordered dt-responsive nowrap w-100 mt-2">
                     <thead role="rowgroup" class="table-dark">
@@ -106,10 +102,11 @@ if (isset($_SERVER['HTTP_HOST'])) {
         } 
 </script>
     
-
+<?php if ($master->crear == 1) { ?>
 <div class="newAgent" data-bs-toggle="modal" data-bs-target="#create-user-modal">
     <i class="mdi mdi-plus" style="font-size: 25px;"></i>
 </div>
+<?php }?>
 
 <!-- Modal for delete -->
 <div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-hidden="true">
