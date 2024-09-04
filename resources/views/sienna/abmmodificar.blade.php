@@ -11,8 +11,9 @@
             {{ $message }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             <script>
-            sleep(2000);
-            parent.location.reload();
+            window.setTimeout(() => {
+                    parent.location.reload();}, 2000);
+            
         </script>
         </div>
         @endif
