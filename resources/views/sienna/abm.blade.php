@@ -32,7 +32,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 <!-- Begin Page Content -->
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Reporte</h1>
+                    <h1 class="h3 mb-0 text-gray-800">Reporte2</h1>
                 </div>
                 <button class="btn btn-success" onclick="exportTableToExcel('datatable')">Exportar </button>
                 <?php
