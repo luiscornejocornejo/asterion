@@ -102,8 +102,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 <script>
      function editar(dd) {
         let urleditar="https://<?php echo $subdomain_tmp; ?>.suricata.cloud/"+dd;
-        alert(urleditar);
-              document.getElementById("editariframe").src  = dd;
+              document.getElementById("editariframe").src  = urleditar;
         }
 </script>
     
