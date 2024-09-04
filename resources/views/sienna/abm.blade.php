@@ -145,7 +145,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
-                <iframe id="editariframe" src="" class="w-100 h-100"></iframe>
+                <iframe  src="https://<?php echo $subdomain_tmp; ?>.suricata.cloud/siennacreate?report={{$master->id}}"" class="w-100 h-100"></iframe>
             </div>
 
         </div><!-- /.modal-content -->
@@ -161,7 +161,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
-                <iframe src="https://<?php echo $subdomain_tmp; ?>.suricata.cloud/siennaabmmodificar?idreport={{$master->id}}" class="w-100 h-100"></iframe>
+                <iframe id="editariframe" src="" class="w-100 h-100"></iframe>
             </div>
 
         </div><!-- /.modal-content -->
