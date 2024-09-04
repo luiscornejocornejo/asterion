@@ -32,7 +32,8 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 <!-- Begin Page Content -->
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">ABM <?php echo $nombrereporte;?></h1>
+                <h1 class="text-center">ABM <?php echo $nombrereporte;?></h1>
+
                 </div>
              
 
