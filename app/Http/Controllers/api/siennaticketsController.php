@@ -953,17 +953,14 @@ class siennaticketsController extends Controller
     public function validadepto($cliente,$merchant,$ostt){
         $valida=0;
 
-        if($ostt<>""){
+       
         $resultados222 = siennatopic::where('ostickettopic', '=', $ostt)->get();
         foreach ($resultados222 as $valuep) {
             $siennatopic = $valuep->id;
             $siennadepto = $valuep->siennadepto;
             
         }
-        }else{
-            $siennadepto =$ostt;
-
-        }
+        
         $query="select id from ".$merchant.".siennatickets 
         where cliente='".$cliente."' 
         and siennadepto='".$siennadepto."'
@@ -974,7 +971,7 @@ class siennaticketsController extends Controller
             $valida=$val->id;
         }
 
-    }
+    
 
         return $valida;
     }
