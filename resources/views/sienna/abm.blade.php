@@ -74,7 +74,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                     mdi-chevron-down"></i></button>
                                     <div class="dropdown-menu">
                                         <?php if ($master->modificar == 1) { ?>
-                                            <a class="btn btn-warning" href="/siennaabmmodificar?registro={{$resultado->$registro}}&idreport={{$idreport}}&pk={{$registro}}" role="button"> <i data-feather="edit"></i></a>
+                                            <a onclick="editar('siennaabmmodificar?registro={{$resultado->$registro}}&idreport={{$idreport}}&pk={{$registro}}')" class="btn btn-warning" href="/siennaabmmodificar?registro={{$resultado->$registro}}&idreport={{$idreport}}&pk={{$registro}}" role="button"> <i data-feather="edit"></i></a>
                                         <?php } ?>
                                         <?php if ($master->eliminar == 1) { ?>
 
@@ -99,7 +99,13 @@ if (isset($_SERVER['HTTP_HOST'])) {
 </div>
 
 
-
+<script>
+     function editar(dd) {
+        alert(dd);
+              document.getElementById("idticketpedir2").value = dd;
+        }
+</script>
+    
 
 <div class="newAgent" data-bs-toggle="modal" data-bs-target="#create-user-modal">
     <i class="mdi mdi-plus" style="font-size: 25px;"></i>
@@ -154,7 +160,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
-                <iframe src="https://<?php echo $subdomain_tmp; ?>.suricata.cloud/siennacreate?report={{$master->id}}" class="w-100 h-100"></iframe>
+                <iframe src="https://<?php echo $subdomain_tmp; ?>.suricata.cloud/siennaabmmodificar?idreport={{$master->id}}" class="w-100 h-100"></iframe>
             </div>
 
         </div><!-- /.modal-content -->
