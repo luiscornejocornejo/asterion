@@ -13,6 +13,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         <script>
+            sleep(2000);
             parent.location.reload();
         </script>
  
