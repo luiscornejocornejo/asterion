@@ -473,6 +473,7 @@ class siennaController extends Controller
     $pk = $request->pk;
     $master = masterreport::find($idreport);
     $table = $master->tabla;
+    $nombrereporte = $master->nombre;
     $dbexterna = $master->base;
     $queryupdate = "select * from " . $table . " where " . $pk . "=" . $idregisstro . "";
     $query = "SHOW FIELDS FROM " . $table;
@@ -516,6 +517,7 @@ class siennaController extends Controller
       ->with('extra', $Extraarray)
       ->with('pk', $pk)
       ->with('base', $dbexterna)
+      ->with('nombrereporte', $nombrereporte)
       ->with('tablaa', $table);
   }
 
