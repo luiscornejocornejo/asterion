@@ -334,12 +334,14 @@ class siennaController extends Controller
 
     $cabezeras = $this->cabezerasgraficos($datosget);
     $master = masterreport::find($idreport);
+    $nombrereporte = $master->nombre;
 
     $registro = $this->extra($master->tabla, $master->base);
 
     return view('sienna/abm')->with('cabezeras', $cabezeras)
       ->with('resultados', $datosget)
       ->with('master', $master)
+      ->with('nombrereporte', $nombrereporte)
       ->with('registro', $registro)
       ->with('idreport', $idreport);
   }
