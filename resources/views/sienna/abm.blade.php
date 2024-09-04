@@ -31,10 +31,10 @@ if (isset($_SERVER['HTTP_HOST'])) {
             <div class="container-fluid">
                 <!-- Begin Page Content -->
                 <!-- Page Heading -->
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <center>
                 <h1 class="text-center">ABM <?php echo $nombrereporte;?></h1>
 
-                </div>
+                </center>
              
 
                 <table role="table" id="example" class="table table-bordered dt-responsive nowrap w-100 mt-2">
