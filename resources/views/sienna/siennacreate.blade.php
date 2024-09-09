@@ -60,6 +60,22 @@
                             $pos = stripos($Typearray[$i], "varchar");
                             if ($pos !== false) {
                                 $tipo = "text";
+
+                                $pos = stripos($Typearray[$i], "varchar(51)");
+                                if ($pos !== false) {
+                                    $tipo = "multiselect";
+                                }
+
+                                $pos = stripos($Typearray[$i], "varchar(101)");
+                                if ($pos !== false) {
+                                    $tipo = "multiselect";
+                                }
+
+                                $pos = stripos($Typearray[$i], "varchar(201)");
+                                if ($pos !== false) {
+                                    $tipo = "multiselect";
+                                }
+
                             }
 
                             $pos2 = stripos($Typearray[$i], "text");
@@ -146,6 +162,36 @@
 
                                                  {{ App\Http\Controllers\siennaController::conectar2($base); }}
                                                // $prueba = conectar($dbexterna);
+                                                $resultadosoption = DB::connection('mysql2')->select($querysoption);
+                                            }
+                                            foreach ($resultadosoption as $resultoption) {
+
+                                                $idoption = $resultoption->id;
+                                                $nombreoption = $resultoption->nombre;
+                                                echo "<option value='" . $idoption . "' >" . $nombreoption . "</option>";
+                                            } ?>
+
+                                        </select>
+                                    </div>
+
+                                <?php
+
+
+                                } elseif ($tipo == "multiselect") {
+
+                                ?>
+
+                                    <div class="form-check form-switch">
+                                        <select class="form-select" aria-label="Default select multiple" name="<?php echo $Fieldarray[$i]; ?>" multiple>
+                                            <?php
+                                            $querysoption = "select * from " . $Fieldarray[$i] . " ";
+                                            if ($base == 1) {
+
+                                            $resultadosoption = DB::select($querysoption);
+                                            }else{
+
+                                                {{ App\Http\Controllers\siennaController::conectar2($base); }}
+                                            // $prueba = conectar($dbexterna);
                                                 $resultadosoption = DB::connection('mysql2')->select($querysoption);
                                             }
                                             foreach ($resultadosoption as $resultoption) {
