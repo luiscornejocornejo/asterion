@@ -288,10 +288,7 @@ function tituloiconos($iconos, $tipo)
                     @include('sienna.tu.informacionusuario')
 
                     </div>
-                    <div class="mt-2">
-                    @include('sienna.tu.collectorbot')
-
-                    </div>
+                    
                     <div class="mt-2">
                          @include('sienna.tu.informacionadjuntos')
 
