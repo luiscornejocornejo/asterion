@@ -1,4 +1,4 @@
-@include('facu.header')
+@include('facu.header2')
 
 <?php
 
