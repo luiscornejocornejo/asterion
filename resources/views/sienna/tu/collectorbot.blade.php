@@ -1,3 +1,4 @@
+@php
 @if(isset($resultados[0]->datoCollector)) {
 $chainParsed = explode(';', $resultados[0]->datoCollector)
 <div class="card widget-flat">
@@ -26,3 +27,5 @@ $chainParsed = explode(';', $resultados[0]->datoCollector)
 </div>
 }
 @endif
+
+@endphp
