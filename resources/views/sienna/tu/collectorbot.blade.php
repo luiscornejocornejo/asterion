@@ -22,7 +22,7 @@ $chainParsed = explode(';', $resultados[0]->datoCollector)
         </div>
     </div>
 
-
+ 
 </div>
 }
 @endif

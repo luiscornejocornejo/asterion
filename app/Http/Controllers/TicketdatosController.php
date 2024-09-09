@@ -1633,7 +1633,7 @@ class TicketdatosController extends Controller
         left join  ".$subdomain_tmp.".users e on e.id=a.asignado
         left join  ".$subdomain_tmp.".siennacliente f on f.cliente=a.cliente
         left join  ".$subdomain_tmp.".prioridad g on g.id=a.prioridad
-        left join  ".$subdomain_tmp.".collectorbot cb on cb.ticket=a.id
+        left join  ".$subdomain_tmp.".collectorbot cb on cb.ticket=a.id 
         
 
         
