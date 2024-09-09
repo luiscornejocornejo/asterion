@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Inscripcion;
 use App\Eve;
 use App\Models\categoria;
+use App\Models\collectorBot;
 use App\Models\dashboard;
 use App\Models\graficos;
 use App\Models\users;
@@ -1623,6 +1624,7 @@ class TicketdatosController extends Controller
         $query="select *,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
         b.nombre as depto,b.id as iddepto,g.nombre as nombreprioridad,g.colore as colorprioridad,
         a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado,a.email as asunto,a.nya emailnom,a.cliente emailcliente,
+        cb.dato as datoCollector, 
         convertirTiempo(a.created_at  ) as creacion from 
         ".$subdomain_tmp.".siennatickets a
         left join ".$subdomain_tmp.".siennadepto b on b.id=a.siennadepto 
@@ -1631,6 +1633,7 @@ class TicketdatosController extends Controller
         left join  ".$subdomain_tmp.".users e on e.id=a.asignado
         left join  ".$subdomain_tmp.".siennacliente f on f.cliente=a.cliente
         left join  ".$subdomain_tmp.".prioridad g on g.id=a.prioridad
+        left join  ".$subdomain_tmp.".collectorbot cb on cb.ticket=a.id
         
 
         
@@ -1693,7 +1696,7 @@ class TicketdatosController extends Controller
        }
        $urlinte2="";
        $datosonline="";
-           
+       
        /*
        prueba
        if($urlinte=="luis"){
@@ -1726,10 +1729,7 @@ class TicketdatosController extends Controller
         ->with('resultadoscliente', $resultadoscliente)
         ->with('resultadossuri', $resultadossuri)
         ->with('resultadostareas', $resultadostareas)
-        
-        
-         ->with('resultados', $resultados);
-       
+        ->with('resultados', $resultados);
 
     }
 }
