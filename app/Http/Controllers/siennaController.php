@@ -434,9 +434,9 @@ class siennaController extends Controller
               echo $path = $request->file('logo')->store('public');
               $value2 = $path;
             }
-            if (empty($value2)) {
+            /*if (empty($value2)) {
               $value2 = NULL;
-            }
+            }*/
             if ($key2 == "password") {
               $valores .= "md5('" . $value2 . "'),";
             } else {
@@ -451,7 +451,7 @@ class siennaController extends Controller
 
           if ($key2 == "logo") {
 
-            echo $path = $request->file('logo')->store('public');
+            /*echo*/ $path = $request->file('logo')->store('public');
             // $request->file('logo')->move(public_path(''), $filename);
 
             $value2 = $path;
@@ -464,8 +464,8 @@ class siennaController extends Controller
     $campos = substr($campos, 0, -1);
     $valores = substr($valores, 0, -1);
     // $empre = session('idempresa');
-    echo  $dato = "insert into " . $table . " (" . $campos . ") values (" . $valores . ")";
-
+    /*echo*/  $dato = "insert into " . $table . " (" . $campos . ") values (" . $valores . ")";
+    $dato =  str_replace("''", "NULL",$dato);
 
     if ($deexternareport == 1) {
       $resultados = DB::select($dato);
