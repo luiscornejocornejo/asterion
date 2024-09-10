@@ -182,12 +182,11 @@
                                 ?>
 
                                     <div class="form-check form-switch">
-                                        <select class="form-select" aria-label="Default select multiple" name="<?php echo $Fieldarray[$i]; ?>" multiple>
+                                        <select class="form-select" aria-label="Default select multiple" name="<?php echo $Fieldarray[$i]; ?>[]" multiple>
                                             <?php
                                             $querysoption = "select * from " . $Fieldarray[$i] . " ";
                                             if ($base == 1) {
-
-                                            $resultadosoption = DB::select($querysoption);
+                                                $resultadosoption = DB::select($querysoption);
                                             }else{
 
                                                 {{ App\Http\Controllers\siennaController::conectar2($base); }}
