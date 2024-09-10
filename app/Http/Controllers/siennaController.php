@@ -416,7 +416,6 @@ class siennaController extends Controller
             //print($value2);
             
             if (is_array($value2)) {
-              //var_dump($value2); die;
               $vstr = "";
               foreach($value2 as $k => $v){
                 $vstr .= $v.",";
@@ -434,9 +433,6 @@ class siennaController extends Controller
               echo $path = $request->file('logo')->store('public');
               $value2 = $path;
             }
-            /*if (empty($value2)) {
-              $value2 = NULL;
-            }*/
             if ($key2 == "password") {
               $valores .= "md5('" . $value2 . "'),";
             } else {
@@ -596,8 +592,9 @@ class siennaController extends Controller
     }
     $campos = substr($campos, 0, -1);
 
-
     $dato = "update " . $table . " set  " . $campos . "   where " . $pk . "='" . $registro . "'";
+    $dato =  str_replace("''", "NULL",$dato);
+
     // $resultadosupdate = DB::select($dato);
     if ($dbexterna == 1) {
       $resultados = DB::select($dato);
