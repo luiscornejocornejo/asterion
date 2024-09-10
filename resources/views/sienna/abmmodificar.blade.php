@@ -192,7 +192,7 @@
                                 ?>
 
                                     <div class="form-check form-switch">
-                                        <select class="form-select" aria-label="Default select multiple" name="<?php echo $Fieldarray[$i]; ?>[]">
+                                        <select class="form-select" aria-label="Default select multiple" name="<?php echo $Fieldarray[$i]; ?>[]" multiple>
                                             <?php
                                             $querysoption = "select * from " . $Fieldarray[$i] . " ";
                                             //$resultadosoption = DB::select($querysoption);
