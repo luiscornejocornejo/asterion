@@ -413,14 +413,14 @@ class siennaController extends Controller
             print("<br>");
 
             print($value2);
-            
+            /*
             if (is_array($value2)) {
               foreach($value2 as $v){
                 $value2 .= $v.",";
               }
               $value2 = rtrim($value2, ",");
-            }
-            
+            }*/
+
             if ($value2 == "on") {
               $value2 = "1";
             }
