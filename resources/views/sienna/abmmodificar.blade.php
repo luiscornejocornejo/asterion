@@ -245,7 +245,7 @@
                                     }
 
                                 ?>
-                                    <input <?php if ($Nullarray[$i] == "YES") {
+                                    <input <?php if ($Nullarray[$i] == "NO") {
                                                 echo "required";
                                             } ?> type="<?php echo $tipo; ?>" class="<?php echo $class; ?>form-control" name="<?php echo $Fieldarray[$i]; ?>" aria-describedby="emailHelp" placeholder="<?php echo $Typearray[$i]; ?>" value="<?php echo $elvalor ?>">
 
