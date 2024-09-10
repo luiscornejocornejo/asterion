@@ -434,6 +434,9 @@ class siennaController extends Controller
               echo $path = $request->file('logo')->store('public');
               $value2 = $path;
             }
+            if (empty($value2)) {
+              $value2 = NULL;
+            }
             if ($key2 == "password") {
               $valores .= "md5('" . $value2 . "'),";
             } else {
