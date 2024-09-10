@@ -406,20 +406,20 @@ class siennaController extends Controller
       if ($key == "request") {
         foreach ($value as $key2 => $value2) {
 
-          print($key2);
+          //print($key2);
           if (($key2 <> "_token") and ($key2 <> "table") and ($key2 <> "deexternareport")) {
-            print($key2);
+            //print($key2);
             $campos .= $key2 . ",";
-            print("<br>");
+            //print("<br>");
 
-            print($value2);
-            /*
+            //print($value2);
+            
             if (is_array($value2)) {
               foreach($value2 as $v){
                 $value2 .= $v.",";
               }
               $value2 = rtrim($value2, ",");
-            }*/
+            }
 
             if ($value2 == "on") {
               $value2 = "1";
@@ -436,7 +436,7 @@ class siennaController extends Controller
             } else {
               $valores .= "'" . $value2 . "',";
             }
-            print("<br>");
+            //print("<br>");
           }
         }
       }
