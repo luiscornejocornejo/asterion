@@ -551,6 +551,15 @@ class siennaController extends Controller
         foreach ($value as $key2 => $value2) {
 
           if ($key2 <> "_token") {
+
+            if (is_array($value2)) {
+              $vstr = "";
+              foreach($value2 as $k => $v){
+                $vstr .= $v.",";
+              }
+              $value2 = rtrim($vstr, ",");
+            }
+
             if ($value2 == "on") {
               $value2 = "1";
             }
