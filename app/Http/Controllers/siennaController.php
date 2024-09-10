@@ -416,6 +416,7 @@ class siennaController extends Controller
             //print($value2);
             
             if (is_array($value2)) {
+              var_dump($value2); die;
               $vstr = "";
               foreach($value2 as $k => $v){
                 $vstr .= $v.",";
