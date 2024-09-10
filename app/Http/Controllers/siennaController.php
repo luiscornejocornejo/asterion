@@ -401,7 +401,7 @@ class siennaController extends Controller
 
     $campos = "";
     $valores = "";
-var_dump($request); die;
+    
     foreach ($request as $key => $value) {
 
       if ($key == "request") {
