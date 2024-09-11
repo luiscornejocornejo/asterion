@@ -334,7 +334,8 @@ class siennaController extends Controller
 
     if( $idreport=="1014" ){
 
-      var_dump($datosget); die;
+      //var_dump($datosget); die;
+      die(json_encode($datosget, true));
 
     }
 
