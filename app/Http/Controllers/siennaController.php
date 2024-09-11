@@ -331,9 +331,6 @@ class siennaController extends Controller
     $idreport = $request->id;
     //$datosget = $this->select2($idreport);
     $datosget = $this->select3($idreport,$request);
-
-
-
     $cabezeras = $this->cabezerasgraficos($datosget);
     $master = masterreport::find($idreport);
     $nombrereporte = $master->nombre;
@@ -341,9 +338,95 @@ class siennaController extends Controller
     $registro = $this->extra($master->tabla, $master->base);
 
     if( $idreport=="1014" ){
+          //var_dump($datosget); die;
+          //die(json_encode($master, true));
+          $dbexterna = $master->base;
+          $query = "SHOW FIELDS FROM " . $master->tabla;
+          if ($dbexterna == 1) {
+            $resultados = DB::select($query);
+          } else {
+            $prueba = $this->conectar($dbexterna);
 
-      //var_dump($datosget); die;
-      die(json_encode($master, true));
+            //si es distinta a 1 aa otra base
+            $resultados = DB::connection('mysql2')->select($query);
+          }
+          $Fieldarray = array();
+          $Typearray = array();
+
+          foreach ($resultados as $key => $value) {
+            foreach ($value as $key2 => $value2) {
+              if ($key2 == "Field") {
+                array_push($Fieldarray, $value2);
+              }
+              if ($key2 == "Type") {
+                array_push($Typearray, $value2);
+              }
+            }
+          }
+
+          
+          for ($i = 0; $i < sizeof($Fieldarray); $i++) {
+            
+            $arrayno = array('created_at', 'id', 'updated_at', 'email_verified_at', 'remember_token');
+            if (!(in_array($Fieldarray[$i], $arrayno))) {
+              $tipo = "";
+              $pos = stripos($Typearray[$i], "smallint");
+              if ($pos !== false) {
+                $tipo = "select";
+              }
+              $pos = stripos($Typearray[$i], "varchar(51)");
+              if ($pos !== false) {
+                $tipo = "select";
+              }
+
+              $pos = stripos($Typearray[$i], "varchar(101)");
+              if ($pos !== false) {
+                $tipo = "select";
+              }
+
+              $pos = stripos($Typearray[$i], "varchar(201)");
+              if ($pos !== false) {
+                $tipo = "select";
+              }
+
+              if ($tipo == "select") {
+                foreach ($datosget as $kdato => $vdato) {
+                  if($Fieldarray[$i]==$kdato){
+
+                    $querysoption = "select * from " . $Fieldarray[$i] . " ";
+                    //$resultadosoption = DB::select($querysoption);
+
+                    if ($dbexterna == 1) {
+                        $resultadosoption = DB::select($querysoption);
+                    }else{
+                        //{{ App\Http\Controllers\siennaController::conectar2($dbexterna); }}
+                        $prueba = conectar($dbexterna);
+                        $resultadosoption = DB::connection('mysql2')->select($querysoption);
+                    }
+
+                    foreach ($resultadosoption as $resultoption) {
+
+                        $idoption = $resultoption->id;
+                        $nombreoption = $resultoption->nombre;
+                        $selected = "";
+                        $selects = explode(",", $vdato);
+                        foreach ($selects as $s) {
+                            if ($s == $idoption) {
+                              $selected .= $nombreoption.",";
+                            }
+                        }
+                        $datosget[$kdato] = rtrim($selected, ",");
+                    }                    
+                  }
+
+                }
+              }
+              
+            }
+
+          }
+
+
 
     }
 
