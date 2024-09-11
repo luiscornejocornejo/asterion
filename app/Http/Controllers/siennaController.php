@@ -332,18 +332,20 @@ class siennaController extends Controller
     //$datosget = $this->select2($idreport);
     $datosget = $this->select3($idreport,$request);
 
-    if( $idreport=="1014" ){
 
-      //var_dump($datosget); die;
-      die(json_encode($datosget, true));
-
-    }
 
     $cabezeras = $this->cabezerasgraficos($datosget);
     $master = masterreport::find($idreport);
     $nombrereporte = $master->nombre;
 
     $registro = $this->extra($master->tabla, $master->base);
+
+    if( $idreport=="1014" ){
+
+      //var_dump($datosget); die;
+      die(json_encode($master, true));
+
+    }
 
     return view('sienna/abm')->with('cabezeras', $cabezeras)
       ->with('resultados', $datosget)
