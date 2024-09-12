@@ -392,9 +392,6 @@ class siennaController extends Controller
               if ($tipo == "select") {
                 for ($j = 0; $j < sizeof($datosget); $j++) {
                   foreach ($datosget[$j] as $kdato => $vdato) {
-                    var_dump($Fieldarray[$i]);
-  echo "<br>";
-  var_dump($kdato); die;
                     if($Fieldarray[$i]==$kdato){
                       $querysoption = "select * from " . $Fieldarray[$i] . " ";
                       //$resultadosoption = DB::select($querysoption);
@@ -418,7 +415,7 @@ class siennaController extends Controller
                                 $selected .= $nombreoption.",";
                               }
                           }
-                          $datosget[$kdato] = rtrim($selected, ",");
+                          $datosget[$j][$kdato] = rtrim($selected, ",");
                       }                    
                     }
 
