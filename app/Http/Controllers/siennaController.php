@@ -368,9 +368,7 @@ class siennaController extends Controller
             
             $arrayno = array('created_at', 'id', 'updated_at', 'email_verified_at', 'remember_token');
             if (!(in_array($Fieldarray[$i], $arrayno))) {
-              var_dump($Fieldarray[$i]);
-              echo "<br>";
-              var_dump($Typearray[$i]);die;
+
               $tipo = "";
               $pos = stripos($Typearray[$i], "smallint");
               if ($pos !== false) {
@@ -383,6 +381,9 @@ class siennaController extends Controller
 
               $pos = stripos($Typearray[$i], "varchar(101)");
               if ($pos !== false) {
+                var_dump($Fieldarray[$i]);
+                echo "<br>";
+                var_dump($Typearray[$i]);die;
                 $tipo = "select";
               }
 
