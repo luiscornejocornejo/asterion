@@ -392,6 +392,7 @@ class siennaController extends Controller
               $arrselect = [];
               $arrselectresult = [];
               if ($tipo == "select") {
+
                 if (!(in_array($Fieldarray[$i], $arrselect))) {
                   $querysoption = "select * from " . $Fieldarray[$i] . " ";
                   if ($dbexterna == 1) {
@@ -408,19 +409,14 @@ class siennaController extends Controller
                 }
                 for ($j = 0; $j < sizeof($datosget); $j++) {
                   foreach ($datosget[$j] as $kdato => $vdato) {
+                    if($j==1500){
+                      var_dump($Fieldarray[$i]);
+                      echo "<br><br>";
+                      var_dump($kdato);var_dump($vdato);
+                    }
+
+
                     if($Fieldarray[$i]==$kdato){
-
-                      /*
-                      $querysoption = "select * from " . $Fieldarray[$i] . " ";
-                      //$resultadosoption = DB::select($querysoption);
-
-                      if ($dbexterna == 1) {
-                          $resultadosoption = DB::select($querysoption);
-                      }else{
-                          //{{ App\Http\Controllers\siennaController::conectar2($dbexterna); }}
-                          $prueba = conectar($dbexterna);
-                          $resultadosoption = DB::connection('mysql2')->select($querysoption);
-                      }*/
 
                       foreach ($resultadosoption as $resultoption) {
 
@@ -429,16 +425,18 @@ class siennaController extends Controller
                           $selected = "";
                           $selects = explode(",", $vdato);
                           foreach ($selects as $s) {
-                              if ($s == $idoption) {
+                              if ((int)$s == (int)$idoption) {
                                 $selected .= $nombreoption.",";
                               }
                           }
                           $datosget[$j]->$kdato = rtrim($selected, ",");
-                      }                    
+                      }
+
                     }
 
                   }
                 }
+
               }
               
             }
