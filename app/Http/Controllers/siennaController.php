@@ -415,7 +415,7 @@ class siennaController extends Controller
                                 $selected .= $nombreoption.",";
                               }
                           }
-                          $datosget[$j][$kdato] = rtrim($selected, ",");
+                          $datosget[$j]->$kdato = rtrim($selected, ",");
                       }                    
                     }
 
