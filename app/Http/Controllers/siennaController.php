@@ -364,7 +364,6 @@ class siennaController extends Controller
             }
           }
 
-          var_dump($Fieldarray);die;
           for ($i = 0; $i < sizeof($Fieldarray); $i++) {
             
             $arrayno = array('created_at', 'id', 'updated_at', 'email_verified_at', 'remember_token');
@@ -392,7 +391,9 @@ class siennaController extends Controller
               if ($tipo == "select") {
                 foreach ($datosget as $kdato => $vdato) {
                   if($Fieldarray[$i]==$kdato){
-
+var_dump($Fieldarray[$i]);
+echo "<br>";
+var_dump($kdato); die;
                     $querysoption = "select * from " . $Fieldarray[$i] . " ";
                     //$resultadosoption = DB::select($querysoption);
 
