@@ -441,7 +441,7 @@ class siennaController extends Controller
                             
                             if ($s == $idoption) {
                               $selected .= $nombreoption.",";
-                              break;
+                              //break;
                             }
                         }
                       }
