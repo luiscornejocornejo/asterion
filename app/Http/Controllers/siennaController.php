@@ -419,8 +419,9 @@ class siennaController extends Controller
                         echo "<br>";
                         var_dump($resultadosoption);
                       }
-                      foreach ($resultadosoption as $resultoption) {
-
+                      for ($k = 0; $k < sizeof($resultadosoption); $k++) {
+                      //foreach ($resultadosoption as $resultoption) {
+                          $resultoption = $resultadosoption[$k];
                           $idoption = $resultoption->id;
                           $nombreoption = $resultoption->nombre;
                           $selected = "";
