@@ -409,7 +409,7 @@ class siennaController extends Controller
                 }
                 for ($j = 0; $j < sizeof($datosget); $j++) {
                   foreach ($datosget[$j] as $kdato => $vdato) {
-                    if($j==1500){
+                    if($j==15){
                       var_dump($Fieldarray[$i]);
                       echo "<br><br>";
                       var_dump($kdato);var_dump($vdato);
@@ -425,7 +425,7 @@ class siennaController extends Controller
                           $selected = "";
                           $selects = explode(",", $vdato);
                           foreach ($selects as $s) {
-                              if ((int)$s == (int)$idoption) {
+                              if ($s == $idoption) {
                                 $selected .= $nombreoption.",";
                               }
                           }
