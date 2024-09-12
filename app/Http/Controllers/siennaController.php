@@ -421,13 +421,14 @@ class siennaController extends Controller
                       }
 
                       $selected = "";
-                      //for ($k = 0; $k < sizeof($resultadosoption); $k++) {
-                      foreach ($resultadosoption as $resultoption) {
-                          //$resultoption = $resultadosoption[$k];
+                      for ($k = 0; $k < sizeof($resultadosoption); $k++) {
+                      //foreach ($resultadosoption as $resultoption) {
+                          $resultoption = $resultadosoption[$k];
                           $idoption = $resultoption->id;
                           $nombreoption = $resultoption->nombre;
                           
                           $selects = explode(",", (string)$vdato);
+                          echo "<br> Vuelta:".$k;
                           echo "<br>";
                           var_dump($idoption);
                           echo "<br>";
@@ -440,9 +441,9 @@ class siennaController extends Controller
                                 break;
                               }
                           }
+                          $datosget[$j]->$kdato = rtrim($selected, ",");
                           echo "<br>";
                           var_dump($selected);
-                          $datosget[$j]->$kdato = rtrim($selected, ",");
                       }
 
                     }
