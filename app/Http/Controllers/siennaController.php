@@ -419,12 +419,14 @@ class siennaController extends Controller
                         echo "<br>";
                         var_dump($resultadosoption);
                       }
-                      for ($k = 0; $k < sizeof($resultadosoption); $k++) {
-                      //foreach ($resultadosoption as $resultoption) {
-                          $resultoption = $resultadosoption[$k];
+
+                      $selected = "";
+                      //for ($k = 0; $k < sizeof($resultadosoption); $k++) {
+                      foreach ($resultadosoption as $resultoption) {
+                          //$resultoption = $resultadosoption[$k];
                           $idoption = $resultoption->id;
                           $nombreoption = $resultoption->nombre;
-                          $selected = "";
+                          
                           $selects = explode(",", (string)$vdato);
                           echo "<br>";
                           var_dump($idoption);
@@ -435,6 +437,7 @@ class siennaController extends Controller
                           foreach ($selects as $s) {
                               if ($s == $idoption) {
                                 $selected .= $nombreoption.",";
+                                break;
                               }
                           }
                           echo "<br>";
