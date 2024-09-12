@@ -410,8 +410,9 @@ class siennaController extends Controller
                 for ($j = 0; $j < sizeof($datosget); $j++) {
                   foreach ($datosget[$j] as $kdato => $vdato) {
                     if($j==15){
-                      var_dump($Fieldarray[$i]);
                       echo "<br><br>";
+                      var_dump($Fieldarray[$i]);
+                      echo "<br>";
                       var_dump($kdato);var_dump($vdato);
                     }
 
