@@ -416,15 +416,19 @@ class siennaController extends Controller
                         var_dump($Fieldarray[$i]);
                         echo "<br>";
                         var_dump($kdato);var_dump($vdato);
-                        echo "<br>";
-                        var_dump($resultadosoption);
+                        //echo "<br>";
+                        //var_dump($resultadosoption);
                       }
                       foreach ($resultadosoption as $resultoption) {
 
                           $idoption = $resultoption->id;
                           $nombreoption = $resultoption->nombre;
                           $selected = "";
-                          $selects = explode(",", $vdato);
+                          $selects = explode(",", String $vdato);
+                          echo "<br>";
+                          var_dump($idoption);
+                          echo "<br>";
+                          var_dump($nombreoption);
                           echo "<br>";
                           var_dump($selects);
                           foreach ($selects as $s) {
