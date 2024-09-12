@@ -425,6 +425,8 @@ class siennaController extends Controller
                           $nombreoption = $resultoption->nombre;
                           $selected = "";
                           $selects = explode(",", $vdato);
+                          echo "<br>";
+                          var_dump($selects);
                           foreach ($selects as $s) {
                               if ($s == $idoption) {
                                 $selected .= $nombreoption.",";
