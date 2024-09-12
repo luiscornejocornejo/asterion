@@ -363,13 +363,14 @@ class siennaController extends Controller
               }
             }
           }
-          var_dump($Fieldarray);
-          echo "<br>";
-          var_dump($Typearray);die;
+
           for ($i = 0; $i < sizeof($Fieldarray); $i++) {
             
             $arrayno = array('created_at', 'id', 'updated_at', 'email_verified_at', 'remember_token');
             if (!(in_array($Fieldarray[$i], $arrayno))) {
+              var_dump($Fieldarray[$i]);
+              echo "<br>";
+              var_dump($Typearray[$i]);die;
               $tipo = "";
               $pos = stripos($Typearray[$i], "smallint");
               if ($pos !== false) {
