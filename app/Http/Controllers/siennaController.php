@@ -390,37 +390,39 @@ class siennaController extends Controller
               }
 
               if ($tipo == "select") {
-                foreach ($datosget as $kdato => $vdato) {
-                  var_dump($Fieldarray[$i]);
-echo "<br>";
-var_dump($datosget); die;
-                  if($Fieldarray[$i]==$kdato){
-                    $querysoption = "select * from " . $Fieldarray[$i] . " ";
-                    //$resultadosoption = DB::select($querysoption);
+                for ($j = 0; $j < sizeof($datosget); $j++) {
+                  foreach ($datosget[$j] as $kdato => $vdato) {
+                    var_dump($Fieldarray[$i]);
+  echo "<br>";
+  var_dump($kdato); die;
+                    if($Fieldarray[$i]==$kdato){
+                      $querysoption = "select * from " . $Fieldarray[$i] . " ";
+                      //$resultadosoption = DB::select($querysoption);
 
-                    if ($dbexterna == 1) {
-                        $resultadosoption = DB::select($querysoption);
-                    }else{
-                        //{{ App\Http\Controllers\siennaController::conectar2($dbexterna); }}
-                        $prueba = conectar($dbexterna);
-                        $resultadosoption = DB::connection('mysql2')->select($querysoption);
+                      if ($dbexterna == 1) {
+                          $resultadosoption = DB::select($querysoption);
+                      }else{
+                          //{{ App\Http\Controllers\siennaController::conectar2($dbexterna); }}
+                          $prueba = conectar($dbexterna);
+                          $resultadosoption = DB::connection('mysql2')->select($querysoption);
+                      }
+
+                      foreach ($resultadosoption as $resultoption) {
+
+                          $idoption = $resultoption->id;
+                          $nombreoption = $resultoption->nombre;
+                          $selected = "";
+                          $selects = explode(",", $vdato);
+                          foreach ($selects as $s) {
+                              if ($s == $idoption) {
+                                $selected .= $nombreoption.",";
+                              }
+                          }
+                          $datosget[$kdato] = rtrim($selected, ",");
+                      }                    
                     }
 
-                    foreach ($resultadosoption as $resultoption) {
-
-                        $idoption = $resultoption->id;
-                        $nombreoption = $resultoption->nombre;
-                        $selected = "";
-                        $selects = explode(",", $vdato);
-                        foreach ($selects as $s) {
-                            if ($s == $idoption) {
-                              $selected .= $nombreoption.",";
-                            }
-                        }
-                        $datosget[$kdato] = rtrim($selected, ",");
-                    }                    
                   }
-
                 }
               }
               
