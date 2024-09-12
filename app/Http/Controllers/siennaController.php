@@ -416,8 +416,8 @@ class siennaController extends Controller
                         var_dump($Fieldarray[$i]);
                         echo "<br>";
                         var_dump($kdato);var_dump($vdato);
-                        //echo "<br>";
-                        //var_dump($resultadosoption);
+                        echo "<br>";
+                        var_dump($resultadosoption);
                       }
                       foreach ($resultadosoption as $resultoption) {
 
