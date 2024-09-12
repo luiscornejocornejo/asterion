@@ -393,7 +393,7 @@ class siennaController extends Controller
                 foreach ($datosget as $kdato => $vdato) {
                   var_dump($Fieldarray[$i]);
 echo "<br>";
-var_dump($kdato); die;
+var_dump($datosget); die;
                   if($Fieldarray[$i]==$kdato){
                     $querysoption = "select * from " . $Fieldarray[$i] . " ";
                     //$resultadosoption = DB::select($querysoption);
