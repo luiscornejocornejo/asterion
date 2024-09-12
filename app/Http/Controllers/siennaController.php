@@ -421,31 +421,33 @@ class siennaController extends Controller
                       }
 
                       $selected = "";
-                      for ($k = 0; $k < sizeof($resultadosoption); $k++) {
-                      //foreach ($resultadosoption as $resultoption) {
-                          $resultoption = $resultadosoption[$k];
-                          $idoption = $resultoption->id;
-                          $nombreoption = $resultoption->nombre;
-                          
-                          $selects = explode(",", (string)$vdato);
-                          echo "<br> Vuelta:".$k;
-                          echo "<br>";
-                          var_dump($idoption);
-                          echo "<br>";
-                          var_dump($nombreoption);
-                          echo "<br>";
-                          var_dump($selects);
-                          foreach ($selects as $s) {
-                              if ($s == $idoption) {
-                                $selected .= $nombreoption.",";
-                                break;
-                              }
-                          }
-                          $datosget[$j]->$kdato = rtrim($selected, ",");
-                          echo "<br>";
-                          var_dump($selected);
-                      }
 
+                      $selects = explode(",", (string)$vdato);
+                      echo "<br>";
+                      var_dump($selects);
+                      foreach ($selects as $s) {
+                        for ($k = 0; $k < sizeof($resultadosoption); $k++) {
+                        //foreach ($resultadosoption as $resultoption) {
+                            $resultoption = $resultadosoption[$k];
+                            $idoption = $resultoption->id;
+                            $nombreoption = $resultoption->nombre;
+                            
+                            
+                            echo "<br>";
+                            var_dump($idoption);
+                            echo "<br>";
+                            var_dump($nombreoption);
+
+                            
+                            if ($s == $idoption) {
+                              $selected .= $nombreoption.",";
+                              break;
+                            }
+                        }
+                      }
+                      $datosget[$j]->$kdato = rtrim($selected, ",");
+                      echo "<br>";
+                      var_dump($selected);
                     }
 
                   }
