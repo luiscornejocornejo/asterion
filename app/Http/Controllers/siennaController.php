@@ -337,8 +337,8 @@ class siennaController extends Controller
 
     $registro = $this->extra($master->tabla, $master->base);
 
-    if( $idreport=="1014" ){
-      
+    if($idreport=="1013" || $idreport=="1014"){
+
           $dbexterna = $master->base;
           $query = "SHOW FIELDS FROM " . $master->tabla;
           if ($dbexterna == 1) {
