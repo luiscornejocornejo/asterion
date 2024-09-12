@@ -381,9 +381,6 @@ class siennaController extends Controller
 
               $pos = stripos($Typearray[$i], "varchar(101)");
               if ($pos !== false) {
-                var_dump($Fieldarray[$i]);
-                echo "<br>";
-                var_dump($Typearray[$i]);die;
                 $tipo = "select";
               }
 
@@ -394,10 +391,10 @@ class siennaController extends Controller
 
               if ($tipo == "select") {
                 foreach ($datosget as $kdato => $vdato) {
-                  if($Fieldarray[$i]==$kdato){
-var_dump($Fieldarray[$i]);
+                  var_dump($Fieldarray[$i]);
 echo "<br>";
 var_dump($kdato); die;
+                  if($Fieldarray[$i]==$kdato){
                     $querysoption = "select * from " . $Fieldarray[$i] . " ";
                     //$resultadosoption = DB::select($querysoption);
 
