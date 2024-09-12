@@ -338,8 +338,7 @@ class siennaController extends Controller
     $registro = $this->extra($master->tabla, $master->base);
 
     if( $idreport=="1014" ){
-          //var_dump($datosget); die;
-          //die(json_encode($master, true));
+      
           $dbexterna = $master->base;
           $query = "SHOW FIELDS FROM " . $master->tabla;
           if ($dbexterna == 1) {
@@ -411,43 +410,21 @@ class siennaController extends Controller
                   foreach ($datosget[$j] as $kdato => $vdato) {
 
                     if($Fieldarray[$i]==$kdato){
-                      if($j==15){
-                        echo "<br><br>";
-                        var_dump($Fieldarray[$i]);
-                        echo "<br>";
-                        var_dump($kdato);var_dump($vdato);
-                        echo "<br>";
-                        var_dump($resultadosoption);
-                      }
-
                       $selected = "";
 
                       $selects = explode(",", (string)$vdato);
-                      echo "<br>";
-                      var_dump($selects);
                       foreach ($selects as $s) {
-                        for ($k = 0; $k < sizeof($resultadosoption); $k++) {
-                        //foreach ($resultadosoption as $resultoption) {
-                            $resultoption = $resultadosoption[$k];
+                        foreach ($resultadosoption as $resultoption) {
                             $idoption = $resultoption->id;
                             $nombreoption = $resultoption->nombre;
-                            
-                            
-                            echo "<br>";
-                            var_dump($idoption);
-                            echo "<br>";
-                            var_dump($nombreoption);
 
-                            
                             if ($s == $idoption) {
                               $selected .= $nombreoption.",";
-                              //break;
+                              break;
                             }
                         }
                       }
                       $datosget[$j]->$kdato = rtrim($selected, ",");
-                      echo "<br>";
-                      var_dump($selected);
                     }
 
                   }
@@ -458,8 +435,6 @@ class siennaController extends Controller
             }
 
           }
-
-
 
     }
 
