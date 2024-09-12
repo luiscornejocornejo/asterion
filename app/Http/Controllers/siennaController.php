@@ -389,10 +389,28 @@ class siennaController extends Controller
                 $tipo = "select";
               }
 
+              $arrselect = [];
+              $arrselectresult = [];
               if ($tipo == "select") {
+                if (!(in_array($Fieldarray[$i], $arrselect))) {
+                  $querysoption = "select * from " . $Fieldarray[$i] . " ";
+                  if ($dbexterna == 1) {
+                      $resultadosoption = DB::select($querysoption);
+                  }else{
+                      $prueba = conectar($dbexterna);
+                      $resultadosoption = DB::connection('mysql2')->select($querysoption);
+                  }
+                  $arrselect[$i] = $Fieldarray[$i];
+                  $arrselectresult[$i] = $resultadosoption;
+                }
+                else{
+                  $resultadosoption = $arrselectresult[$i];
+                }
                 for ($j = 0; $j < sizeof($datosget); $j++) {
                   foreach ($datosget[$j] as $kdato => $vdato) {
                     if($Fieldarray[$i]==$kdato){
+
+                      /*
                       $querysoption = "select * from " . $Fieldarray[$i] . " ";
                       //$resultadosoption = DB::select($querysoption);
 
@@ -402,7 +420,7 @@ class siennaController extends Controller
                           //{{ App\Http\Controllers\siennaController::conectar2($dbexterna); }}
                           $prueba = conectar($dbexterna);
                           $resultadosoption = DB::connection('mysql2')->select($querysoption);
-                      }
+                      }*/
 
                       foreach ($resultadosoption as $resultoption) {
 
