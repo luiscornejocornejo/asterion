@@ -363,9 +363,9 @@ class siennaController extends Controller
               }
             }
           }
-          var_dump($Fieldarray[$i]);
+          var_dump($Fieldarray);
           echo "<br>";
-          var_dump($Typearray[$i]);die;
+          var_dump($Typearray);die;
           for ($i = 0; $i < sizeof($Fieldarray); $i++) {
             
             $arrayno = array('created_at', 'id', 'updated_at', 'email_verified_at', 'remember_token');
