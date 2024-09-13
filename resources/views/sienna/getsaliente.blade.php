@@ -92,6 +92,7 @@ document.getElementById("phone").value = phone;
                             }
 
                         if($tipointegracion=="futu"){
+                            echo "acaaaaaaaaaaaa";
                             dd($datosonline);
                                 $tablaname=$datosonline2->nombres;
                                 $tablaphone=111;//$datosonline2->telefonolocal;
