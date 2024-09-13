@@ -92,7 +92,7 @@ document.getElementById("phone").value = phone;
                             }
 
                         if($tipointegracion=="futu"){
-                                $tablaname=$datosonline2->nombre;
+                                $tablaname=$datosonline2->nombres;
                                 $tablaphone=111;//$datosonline2->telefonolocal;
                                 $tablaphone_mobile=111;//$datosonline2->telefonolocal;
                                 }
