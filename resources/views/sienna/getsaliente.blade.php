@@ -83,13 +83,21 @@ document.getElementById("phone").value = phone;
                     $tablaname="";
                     $tablaphone="";
                     $tablaphone_mobile="";
-                    if(isset($datosonline2->name)){
+                  //  if(isset($datosonline2->name)){
                         
                         if($tipointegracion=="wispro"){
                             $tablaname=$datosonline2->name;
                             $tablaphone=$datosonline2->phone;
                             $tablaphone_mobile=$datosonline2->phone_mobile;
                             }
+
+                        if($tipointegracion=="futu"){
+                                $tablaname=$datosonline2->nombre;
+                                $tablaphone=111;//$datosonline2->telefonolocal;
+                                $tablaphone_mobile=111;//$datosonline2->telefonolocal;
+                                }
+
+
                         if($tipointegracion=="ispcube"){
                             $tablaname=$datosonline2->name;
                             if($datosonline2->phones_qty>0){
@@ -129,9 +137,10 @@ document.getElementById("phone").value = phone;
                 </table>
             </div>
 
-                        <?php }else{
+                        <?php
+                        /* }else{
                             echo "cliente no encontrado";
-                        }?>
+                        }*/?>
             <!-- Modal -->
             <div id="create-ticket-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
