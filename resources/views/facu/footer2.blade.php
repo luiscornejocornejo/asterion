@@ -33,7 +33,13 @@
 <script src="assetsfacu/js/ui/component.fileupload.js"></script>
     
     
+<script>
+        function borrar(x) {
 
+
+document.getElementById("idregistro").value = x;
+}
+</script>
     
     <script type="text/javascript">
    new DataTable('#example2', {

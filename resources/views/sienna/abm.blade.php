@@ -80,7 +80,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                         <?php } ?>
                                         <?php if ($master->tickets == 1) { ?>
 
-                                        <button type="button" onclick="borrar(<?php echo $resultado->$registro; ?>)" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#ctabm">T</button>
+                                        <button type="button" onclick="ticket(<?php echo $resultado->$registro; ?>)" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#ctabm">T</button>
 
                                         <?php } ?>
                                         
