@@ -164,7 +164,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
-                <iframe id="editariframe" src="" class="w-100 h-100"></iframe>
+                <iframe style="display:block; width:35vw; height:100vh;"  id="editariframe" src="" ></iframe>
             </div>
 
         </div><!-- /.modal-content -->
