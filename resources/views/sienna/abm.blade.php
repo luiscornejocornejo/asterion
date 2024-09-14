@@ -75,7 +75,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                         <?php } ?>
                                         <?php if ($master->eliminar == 1) { ?>
 
-                                            <button type="button" onclick="borrar(<?php echo $resultado->$registro; ?>)" class="btn btn-danger waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center"><i data-feather="delete">D</i></button>
+                                            <button type="button" onclick="borrar(<?php echo $resultado->$registro; ?>)" class="btn btn-danger waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center"><i data-feather="delete">E</i></button>
 
                                         <?php } ?>
                                         <?php if ($master->tickets == 1) { ?>
