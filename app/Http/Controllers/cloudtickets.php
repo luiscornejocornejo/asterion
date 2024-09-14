@@ -946,7 +946,6 @@ class cloudtickets extends Controller
             $urlinte=$val->version;
        }
         $urlinte2=$urlinte.$numcli;
-     dd($urlinte2);
         if (($datosonline = @file_get_contents($urlinte2)) === false) {
             dd($datosonline);
             $error = error_get_last();
@@ -954,8 +953,8 @@ class cloudtickets extends Controller
             $urlinte2="";
 
       } else {
-           // echo "Everything went better than expected";
-      }
+        dd($urlinte2);
+    }
       $getdata222=siennaintegracion::all();
       return view('sienna/getsaliente')
       ->with('datosonline', $datosonline)
