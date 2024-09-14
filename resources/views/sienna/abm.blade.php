@@ -71,16 +71,16 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                     mdi-chevron-down"></i></button>
                                     <div class="dropdown-menu">
                                         <?php if ($master->modificar == 1) { ?>
-                                            <a onclick="editar('siennaabmmodificar?registro={{$resultado->$registro}}&idreport={{$idreport}}&pk={{$registro}}')" class="btn btn-warning" role="button" data-bs-toggle="modal" data-bs-target="#edit-user-modal"> <i data-feather="edit"></i></a>
+                                            <a onclick="editar('siennaabmmodificar?registro={{$resultado->$registro}}&idreport={{$idreport}}&pk={{$registro}}')" class="btn btn-warning" role="button" data-bs-toggle="modal" data-bs-target="#edit-user-modal"> <i data-feather="edit">M</i></a>
                                         <?php } ?>
                                         <?php if ($master->eliminar == 1) { ?>
 
-                                            <button type="button" onclick="borrar(<?php echo $resultado->$registro; ?>)" class="btn btn-danger waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center"><i data-feather="delete"></i></button>
+                                            <button type="button" onclick="borrar(<?php echo $resultado->$registro; ?>)" class="btn btn-danger waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center"><i data-feather="delete">D</i></button>
 
                                         <?php } ?>
                                         <?php if ($master->tickets == 1) { ?>
 
-                                        <button type="button" onclick="borrar(<?php echo $resultado->$registro; ?>)" class="btn btn-danger waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#ctabm">Ticket</button>
+                                        <button type="button" onclick="borrar(<?php echo $resultado->$registro; ?>)" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#ctabm">T</button>
 
                                         <?php } ?>
                                         
