@@ -953,6 +953,7 @@ class cloudtickets extends Controller
             $urlinte2="";
 
       } else {
+        echo "aca";
         dd($urlinte2);
     }
       $getdata222=siennaintegracion::all();
