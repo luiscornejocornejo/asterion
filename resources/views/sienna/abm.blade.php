@@ -13,7 +13,13 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
 ?>
 <link rel="stylesheet" href="agents.css">
+<script>
+        function borrar(x) {
 
+alert(x);
+document.getElementById("idregistro").value = x;
+}
+</script>
 <!-- ========== Left Sidebar Start ========== -->
 <div class="wrapper menuitem-active">
     @include('facu.menu')
