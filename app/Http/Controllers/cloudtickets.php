@@ -956,7 +956,7 @@ class cloudtickets extends Controller
 
       } else {
         echo "aca2";
-        dd($urlinte2);
+        dd($datosonline);
     }
       $getdata222=siennaintegracion::all();
       return view('sienna/getsaliente')
