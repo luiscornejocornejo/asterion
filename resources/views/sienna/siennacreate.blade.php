@@ -1,6 +1,8 @@
+@include('facu.header')
 <div class="wrapper">
 
 <!-- ========== Left Sidebar Start ========== -->
+@include('facu.menu')
 
 <div id="principal">
     <div class="container" >
@@ -248,3 +250,4 @@
     </div>
 </div>
 <br><br><br>
+@include('facu.footer')
