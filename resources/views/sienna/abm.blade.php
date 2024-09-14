@@ -142,13 +142,13 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
 <!-- Modal for Create  -->
 <div id="create-user-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dark-header-modalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content h-100">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content ">
             <div class="modal-header bg-dark">
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
-                <iframe  src="https://<?php echo $subdomain_tmp; ?>.suricata.cloud/siennacreate?report={{$master->id}}"" class="w-100 h-100"></iframe>
+                <iframe  src="https://<?php echo $subdomain_tmp; ?>.suricata.cloud/siennacreate?report={{$master->id}}"" "></iframe>
             </div>
 
         </div><!-- /.modal-content -->
