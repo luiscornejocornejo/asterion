@@ -16,7 +16,6 @@ if (isset($_SERVER['HTTP_HOST'])) {
 <script>
         function borrar(x) {
 
-alert(x);
 document.getElementById("idregistro").value = x;
 }
 </script>
