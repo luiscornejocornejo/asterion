@@ -93,7 +93,6 @@ document.getElementById("phone").value = phone;
 
                         if($tipointegracion=="futu"){
                                 $tablaname=$datosonline2->nombres;
-                               dd($tablaname);
                                 $tablaphone= $datosonline2->infocontratos[0]->telefonolocal ;
                                 $tablaphone_mobile= $datosonline2->infocontratos[0]->telefonolocal ;
                                 }
