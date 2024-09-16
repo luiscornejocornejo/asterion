@@ -947,13 +947,14 @@ class cloudtickets extends Controller
        }
         $urlinte2=$urlinte.$numcli;
         if (($datosonline = @file_get_contents($urlinte2)) === false) {
-            $error = error_get_last();
             dd($datosonline);
 
             //echo "HTTP request failed. Error was: " . $error['message'];
             $urlinte2="";
 
       } else {
+        $error = error_get_last();
+        dd($error );
         echo "aca2";
     }
       $getdata222=siennaintegracion::all();
