@@ -85,7 +85,7 @@ document.getElementById("idregistro").value = x;
                                         <?php } ?>
                                         <?php if ($master->tickets == 1) { ?>
 
-                                        <button type="button" onclick="idticket(<?php echo $resultado->servicio; ?>)" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#ctabm">T</button>
+                                        <button type="button" onclick="idticket(<?php echo $resultado->servicio; ?>,<?php echo $resultado->telefono; ?>)" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#ctabm">T</button>
 
                                         <?php } ?>
                                         
@@ -187,9 +187,10 @@ $siennadeptosgenericos = DB::select($querygenerico);
 <script>
 
 
-        function idticket(cli){
+        function idticket(cli,tel){
             
             document.getElementById("numberclient").value = cli;
+            document.getElementById("phone_client").value = tel;
 
         }
     function topics(id){
@@ -232,7 +233,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
             </div>
             <div class="modal-body">
            
-            <form action="crearticketsiennacliente" method="post">
+            <form action="crearticketsiennaclientegetdata" method="post">
                  @csrf
 
                     <div class="row">
@@ -240,6 +241,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label for="number-client" class="form-label">Número de Cliente</label>
                             <input readonly type="number" id="numberclient" name="number_client" class="form-control" required>
+                            <input  type="text" id="phone_client" name="phone_client" class="form-control" >
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="department" class="form-label">Departamento</label>
@@ -262,7 +264,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="reason" class="form-label">Detalle</label>
-                            <textarea  class="form-select" name="texto">
+                            <textarea  class="form-select" name="textticket">
                             </textarea>
                         </div>
                         <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
