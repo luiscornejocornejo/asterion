@@ -974,6 +974,7 @@ class cloudtickets extends Controller
         $response = curl_exec($curl);
         // Close the cURL resource
         curl_close($curl);
+        dd($response);
 
 /*
         var_dump($urlinte2);
