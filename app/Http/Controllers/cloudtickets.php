@@ -946,6 +946,7 @@ class cloudtickets extends Controller
             $urlinte=$val->version;
        }
         $urlinte2=$urlinte.$numcli;
+        var_dump($urlinte2);
         if (($datosonline = @file_get_contents($urlinte2)) === false) {
             dd($datosonline);
 
