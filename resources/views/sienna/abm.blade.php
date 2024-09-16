@@ -85,7 +85,7 @@ document.getElementById("idregistro").value = x;
                                         <?php } ?>
                                         <?php if ($master->tickets == 1) { ?>
 
-                                        <button type="button" onclick="idticket(<?php echo $resultado->$servicio; ?>)" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#ctabm">T</button>
+                                        <button type="button" onclick="idticket(<?php echo $resultado->servicio; ?>)" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#ctabm">T</button>
 
                                         <?php } ?>
                                         
