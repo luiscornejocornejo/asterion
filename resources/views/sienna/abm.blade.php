@@ -85,7 +85,7 @@ document.getElementById("idregistro").value = x;
                                         <?php } ?>
                                         <?php if ($master->tickets == 1) { ?>
 
-                                        <button type="button" onclick="idticket(<?php echo $resultado->$registro; ?>)" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#ctabm">T</button>
+                                        <button type="button" onclick="idticket(<?php echo $resultado->$servicio; ?>)" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#ctabm">T</button>
 
                                         <?php } ?>
                                         
@@ -236,14 +236,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                  @csrf
 
                     <div class="row">
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                            <label for="type-user" class="form-label">Tipo de busqueda</label>
-                            <select class="form-select" id="type-user">
-                            <option value="id">Cliente</option>
-                            <option value="id">Cedula</option>
-                               
-                            </select>
-                        </div>                                                                                            
+                                                                                                               
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label for="number-client" class="form-label">Número registrado en la cuenta</label>
                             <input readonly type="number" id="numberclient" name="number_client" class="form-control" required>
@@ -266,6 +259,11 @@ $siennadeptosgenericos = DB::select($querygenerico);
                             <label for="reason" class="form-label">Motivo</label>
                             <select required id="top" class="form-select" name="topicos">
                             </select>
+                        </div>
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
+                            <label for="reason" class="form-label">Detalle</label>
+                            <textarea name="texto">
+                            </textarea>
                         </div>
                         <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
 
