@@ -35,6 +35,13 @@ document.getElementById("idregistro").value = x;
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         @endif
+        <script>
+
+function sal(tick,phone){
+document.getElementById("ticketid").value = tick;
+document.getElementById("phone").value = phone;
+
+}</script>
 
             <!-- Page Wrapper -->
             <div class="container-fluid">
@@ -280,7 +287,6 @@ $siennadeptosgenericos = DB::select($querygenerico);
                 
                     
             </form>
-            <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
         </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
