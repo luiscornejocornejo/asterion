@@ -293,5 +293,32 @@ $siennadeptosgenericos = DB::select($querygenerico);
 </div><!-- /.modal -->
             
 <!-- End of modal Create Ticket -->
+<div id="create-ticket-modal-2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-twoModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header bg-dark">
+                            <h4 class="modal-title text-light" id="multiple-twoModalLabel">Saliente</h4>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form method="post" action="/getsalienteticket">
+                        @csrf
+
+                            <div class="modal-body">
+                                <label class="form-label" for="phone">Número teléfono</label>
+                                <div class="row mb-3">
+                                    <div class="col-lg-8 col-sm-12">
+                                        <input type="text" class="form-control" name="phone" id="phone" value="<?php //echo $datosonline2->phone_mobile;  ?>" >
+                                        <input type="hidden" name="ticketid" id="ticketid" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Enviar saliente</button>
+                            </div>
+                        </form>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        </div>
 <br><br><br>
 @include('facu.footer')
