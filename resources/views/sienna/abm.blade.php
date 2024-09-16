@@ -240,7 +240,8 @@ $siennadeptosgenericos = DB::select($querygenerico);
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <label for="number-client" class="form-label">Número de Cliente</label>
                             <input readonly type="number" id="numberclient" name="number_client" class="form-control" required>
-                        
+                        </div>
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="department" class="form-label">Departamento</label>
                             <select required onchange="topics(this.value)" class="form-select" name="depto">
                             <option value="0">seleccionar</option>
@@ -261,7 +262,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="reason" class="form-label">Detalle</label>
-                            <textarea class="form-select" name="texto">
+                            <textarea  class="form-select" name="texto">
                             </textarea>
                         </div>
                         <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
