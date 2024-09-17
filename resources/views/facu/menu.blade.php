@@ -21,6 +21,15 @@ foreach ($result as $results){
     $nombreIntegracion = $results->nombre;
 }
 
+$subdomain_tmp = 'localhost';
+if (isset($_SERVER['HTTP_HOST'])) {
+    $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+    $subdomain_tmp =  array_shift($domainParts);
+} elseif (isset($_SERVER['SERVER_NAME'])) {
+    $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+    $subdomain_tmp =  array_shift($domainParts);
+}
+
 ?>
 <div class="leftside-menu menuitem-active">
 
@@ -166,7 +175,7 @@ foreach ($result as $results){
                 </li>
                 <?php 
                 
-                    if($nombreIntegracion == "wispro") { ?>
+                    if($nombreIntegracion == "wispro" || $nombreIntegracion == "futu") { ?>
                         <li class="side-nav-item background-buttons ">
                             <a  href="/getsaliente"  class="side-nav-link hovering-pan ">
                                 <i class="mdi mdi-send-circle-outline"></i>
@@ -174,6 +183,15 @@ foreach ($result as $results){
                             </a>
                         </li>
                 <?php } ?>
+
+                <?php if($$subdomain_tmp == "ispgroup") { ?>
+                    <li class="side-nav-item background-buttons ">
+                        <a  href="/siennaabm?id=1013"  class="side-nav-link hovering-pan ">
+                            <i class="mdi mdi-send-circle-outline"></i>
+                            <span> Ticket manual </span>
+                        </a>
+                    </li>
+            <?php } ?>
 
 
 <li class="side-nav-item background-buttons">
