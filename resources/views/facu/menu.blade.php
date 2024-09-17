@@ -184,7 +184,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                         </li>
                 <?php } ?>
 
-                <?php if($$subdomain_tmp == "ispgroup") { ?>
+                <?php if($subdomain_tmp == "ispgroup") { ?>
                     <li class="side-nav-item background-buttons ">
                         <a  href="/siennaabm?id=1013"  class="side-nav-link hovering-pan ">
                             <i class="mdi mdi-send-circle-outline"></i>
