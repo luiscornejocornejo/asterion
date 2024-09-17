@@ -86,6 +86,7 @@ function tituloiconos($iconos, $tipo)
     var originalTitle = document.title;
 
    // identificadorIntervaloDeTiempo = setInterval(checkmensaje, 60000);
+   /*
     function checkmensaje(){
         var URLactual = window.location.href;
             var porciones = URLactual.split('.');
@@ -123,7 +124,7 @@ function tituloiconos($iconos, $tipo)
 
 
     }
-   
+   */
     function destellarTitulo() {
         var titulo = document.title;
         var favi = document.getElementById("favicon");
