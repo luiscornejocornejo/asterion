@@ -274,7 +274,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                         </div>
                         <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-1">
                             <label for="reason" class="form-label">Detalle</label>
-                            <textarea class="form-control" name="textticket"></textarea>
+                            <textarea class="form-control" name="textticket" rows="4"></textarea>
                         </div>
                         <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
 
