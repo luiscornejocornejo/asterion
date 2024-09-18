@@ -235,7 +235,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
 </script>
     
 <div class="modal fade" id="ctabm" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header bg-dark">
                 <h5 class="modal-title text-white" id="exampleModalToggleLabel">Crear ticket</h5>
