@@ -193,11 +193,12 @@ if (isset($_SERVER['HTTP_HOST'])) {
 <div id="edit-user-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dark-header-modalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content h-100">
-            <div class="modal-header bg-dark">
+            <div class="modal-header bg-dark text-white">
+                <h4 class="modal-title">Modificar</h4>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
             </div>
             <div class="modal-body">
-                <iframe style="display:block; width:35vw; height:100vh;"  id="editariframe" src="" ></iframe>
+                <iframe class="w-100"  id="editariframe" src="" ></iframe>
             </div>
 
         </div><!-- /.modal-content -->
