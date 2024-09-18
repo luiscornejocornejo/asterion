@@ -87,14 +87,14 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                             <a onclick="editar('siennaabmmodificar?registro={{ $resultado->$registro }}&idreport={{ $idreport }}&pk={{ $registro }}')"
                                                 class="ms-1 btn btn-warning" role="button" data-bs-toggle="modal"
                                                 data-bs-target="#edit-user-modal"> <i data-feather="edit"
-                                                    class="mdi mdi-square-edit-outline"></i></a>
+                                                    class="mdi mdi-square-edit-outline" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Editar"></i></a>
                                             <?php } ?>
                                             <?php if ($master->eliminar == 1) { ?>
 
                                             <button type="button" onclick="borrar(<?php echo $resultado->$registro; ?>)"
                                                 class="btn btn-danger waves-effect waves-light" data-bs-toggle="modal"
                                                 data-bs-target=".bs-example-modal-center"><i data-feather="delete"
-                                                    class="mdi mdi-delete-outline"></i></button>
+                                                    class="mdi mdi-delete-outline" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Eliminar"></i></button>
 
                                             <?php } ?>
                                             <?php if ($master->tickets == 1) { ?>
@@ -102,7 +102,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                             <button type="button"
                                                 onclick="idticket(<?php echo $resultado->servicio; ?>,<?php echo $resultado->telefono; ?>)"
                                                 class="btn btn-success waves-effect waves-light" data-bs-toggle="modal"
-                                                data-bs-target="#ctabm"><i class="mdi mdi-whatsapp"></i></button>
+                                                data-bs-target="#ctabm"><i class="mdi mdi-whatsapp" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Crear Ticket Manual"></i></button>
 
                                             <?php } ?>
 
@@ -117,7 +117,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                         @endforeach
 
                     </tbody>
-                    <tfoot>
+                    <tfoot class="bg-secondary">
                         <tr role="row">
                             @foreach ($cabezeras as $cabeza)
                                 <th role="columnheader">{{ $cabeza }}</th>
