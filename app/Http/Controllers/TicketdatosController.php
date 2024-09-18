@@ -999,7 +999,6 @@ class TicketdatosController extends Controller
             */
 
             $curl = curl_init();
-
             curl_setopt_array($curl, array(
             CURLOPT_URL => ''.$url.'',
             CURLOPT_RETURNTRANSFER => true,
@@ -1010,7 +1009,6 @@ class TicketdatosController extends Controller
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
             ));
-
             $response = curl_exec($curl);
 
             curl_close($curl);
