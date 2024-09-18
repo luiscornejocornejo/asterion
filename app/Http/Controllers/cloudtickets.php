@@ -350,9 +350,9 @@ class cloudtickets extends Controller
         $url = $request->url;
         $ticket = $request->ticket;
         $logeado = $request->asignado;
-        $urlprincipal2="https://suricata4.com.ar/api/broadcast?url=".$url."&tel2=".$tel2."&token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM";
+        $urlprincipal2="https://suricata4.com.ar/api/broadcastconparametros?url=".$url."&tel2=".$tel2."&parametros=ticket&valores=".$ticket."&token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM";
                             
-        //dd($urlprincipal2);
+       // dd($urlprincipal2);
         $página_inicio = file_get_contents($urlprincipal2);
 
         $se = new siennaseguimientos();

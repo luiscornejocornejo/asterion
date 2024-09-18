@@ -977,6 +977,8 @@ class TicketdatosController extends Controller
          
                  $url="https://suricata4.com.ar/api/closechat?token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM&idbot=".$idbot."&idconv=".$idconv."&bot_channel=".$bot_channel."&merchant=".$subdomain_tmp;
             //
+
+            //dd($url);
                  // Set options for the cURL request
             $options = array(
                 CURLOPT_URL => $url,
