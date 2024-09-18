@@ -53,7 +53,7 @@ document.getElementById("phone").value = phone;
                 </center>
              
 
-                <table role="table" id="example" class="table table-striped dt-responsive nowrap w-100 mt-2">
+                <table role="table" id="abm" class="table table-striped dt-responsive nowrap w-100 mt-2">
                     <thead role="rowgroup" class="table-dark">
                         <tr role="row">
 
@@ -83,11 +83,11 @@ document.getElementById("phone").value = phone;
 
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-primary
-                                    dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Action <i class="mdi
+                                    dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Acción <i class="mdi
                                     mdi-chevron-down"></i></button>
                                     <div class="dropdown-menu">
                                         <?php if ($master->modificar == 1) { ?>
-                                            <a onclick="editar('siennaabmmodificar?registro={{$resultado->$registro}}&idreport={{$idreport}}&pk={{$registro}}')" class="btn btn-warning" role="button" data-bs-toggle="modal" data-bs-target="#edit-user-modal"> <i data-feather="edit" class="mdi mdi-square-edit-outline"></i></a>
+                                            <a onclick="editar('siennaabmmodificar?registro={{$resultado->$registro}}&idreport={{$idreport}}&pk={{$registro}}')" class="ms-1 btn btn-warning" role="button" data-bs-toggle="modal" data-bs-target="#edit-user-modal"> <i data-feather="edit" class="mdi mdi-square-edit-outline"></i></a>
                                         <?php } ?>
                                         <?php if ($master->eliminar == 1) { ?>
 
@@ -327,4 +327,21 @@ $siennadeptosgenericos = DB::select($querygenerico);
             </div><!-- /.modal -->
         </div>
 <br><br><br>
+
+<script type="text/javascript">
+    new DataTable('#abm', {
+     "responsive": true,
+     "order": [[0, 'desc']],
+ 
+ 
+   "language" : {
+     "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
+   },
+   dom: 'Bfrtip',
+         buttons: [
+             'copy', 'csv', 'excel', 'pdf', 'print'
+         ]
+ }
+ )
+     </script>
 @include('facu.footer')
