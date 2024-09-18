@@ -960,7 +960,7 @@ class TicketdatosController extends Controller
         if($estado==4){
 
            
-            $url="https://suricata4.com.ar/api/closechat";
+            //$url="https://suricata4.com.ar/api/closechat";
             $curl = curl_init();
             // Prepare data array with account key, bot key, and account secret
             $data = array(
@@ -992,7 +992,6 @@ class TicketdatosController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'POST',
-                CURLOPT_HTTPHEADER => $headers,
             );
       
             // Set the options for cURL resource
