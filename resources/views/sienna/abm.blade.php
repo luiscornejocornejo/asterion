@@ -53,7 +53,7 @@ document.getElementById("phone").value = phone;
                 </center>
              
 
-                <table role="table" id="example" class="table table-bordered dt-responsive nowrap w-100 mt-2">
+                <table role="table" id="example" class="table table-striped dt-responsive nowrap w-100 mt-2">
                     <thead role="rowgroup" class="table-dark">
                         <tr role="row">
 
@@ -63,7 +63,7 @@ document.getElementById("phone").value = phone;
 
 
                             @endforeach
-                            <th role="columnheader">Action</th>
+                            <th role="columnheader">Acción</th>
 
 
                         </tr>
@@ -87,16 +87,16 @@ document.getElementById("phone").value = phone;
                                     mdi-chevron-down"></i></button>
                                     <div class="dropdown-menu">
                                         <?php if ($master->modificar == 1) { ?>
-                                            <a onclick="editar('siennaabmmodificar?registro={{$resultado->$registro}}&idreport={{$idreport}}&pk={{$registro}}')" class="btn btn-warning" role="button" data-bs-toggle="modal" data-bs-target="#edit-user-modal"> <i data-feather="edit">M</i></a>
+                                            <a onclick="editar('siennaabmmodificar?registro={{$resultado->$registro}}&idreport={{$idreport}}&pk={{$registro}}')" class="btn btn-warning" role="button" data-bs-toggle="modal" data-bs-target="#edit-user-modal"> <i data-feather="edit" class="mdi mdi-square-edit-outline"></i></a>
                                         <?php } ?>
                                         <?php if ($master->eliminar == 1) { ?>
 
-                                            <button type="button" onclick="borrar(<?php echo $resultado->$registro; ?>)" class="btn btn-danger waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center"><i data-feather="delete">E</i></button>
+                                            <button type="button" onclick="borrar(<?php echo $resultado->$registro; ?>)" class="btn btn-danger waves-effect waves-light" data-bs-toggle="modal" data-bs-target=".bs-example-modal-center"><i data-feather="delete" class="mdi mdi-delete-outline"></i></button>
 
                                         <?php } ?>
                                         <?php if ($master->tickets == 1) { ?>
 
-                                        <button type="button" onclick="idticket(<?php echo $resultado->servicio; ?>,<?php echo $resultado->telefono; ?>)" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#ctabm">T</button>
+                                        <button type="button" onclick="idticket(<?php echo $resultado->servicio; ?>,<?php echo $resultado->telefono; ?>)" class="btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#ctabm"><i class="mdi mdi-whatsapp"></i></button>
 
                                         <?php } ?>
                                         
@@ -111,6 +111,14 @@ document.getElementById("phone").value = phone;
                         @endforeach
 
                     </tbody>
+                    <tfoot>
+                        <tr role="row">
+                            @foreach($cabezeras as $cabeza)
+                                <th role="columnheader">{{ $cabeza }}</th>
+                            @endforeach
+                            <th role="columnheader">Acción</th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>
