@@ -979,7 +979,7 @@ class TicketdatosController extends Controller
             //
                  // Set options for the cURL request
             $options = array(
-                CURLOPT_URL => $url,
+                CURLOPT_URL => ''.$url.'',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
