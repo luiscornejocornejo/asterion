@@ -53,7 +53,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 </center>
 
 
-                <table id="example" class="table table-striped dt-responsive nowrap w-100 mt-2">
+                <table id="abm" class="table table-striped dt-responsive nowrap w-100 mt-2">
                     <thead role="rowgroup" class="table-dark">
                         <tr role="row">
 
@@ -349,7 +349,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
         @include('facu.footer')
 
         <script>
-            $('#example').dataTable({
+            $('#abm').dataTable({
                 "order": [
                     [0, 'desc']
                 ],
