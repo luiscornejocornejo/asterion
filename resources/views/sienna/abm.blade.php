@@ -53,7 +53,7 @@ document.getElementById("phone").value = phone;
                 </center>
              
 
-                <table role="table" id="example" class="table table-striped dt-responsive nowrap w-100 mt-2">
+                <table id="example" class="table table-striped dt-responsive nowrap w-100 mt-2">
                     <thead role="rowgroup" class="table-dark">
                         <tr role="row">
 
