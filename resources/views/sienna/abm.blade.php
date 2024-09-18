@@ -254,18 +254,18 @@ $siennadeptosgenericos = DB::select($querygenerico);
                             <input readonly type="number" id="numberclient" name="number_client" class="form-control" required>
                             <input  type="text" id="phone_client" name="phone_client" class="form-control" >
                         </div>
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <label for="number-client" class="form-label">Teléfono</label>
+                            <input  type="text" id="phone_client" name="phone_client" class="form-control" >
+                        </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="department" class="form-label">Departamento</label>
                             <select required onchange="topics(this.value)" class="form-select" name="depto">
                             <option value="0">seleccionar</option>
-
                                 <?php foreach($siennadeptosgenericos as $val){?>
-
                                     <option value="<?php echo $val->id;?>"><?php echo $val->nombre ;?></option>
-
                                 <?php
                                 }?>
-                               
                             </select>
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
@@ -273,9 +273,9 @@ $siennadeptosgenericos = DB::select($querygenerico);
                             <select required id="top" class="form-select" name="topicos">
                             </select>
                         </div>
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
+                        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-1">
                             <label for="reason" class="form-label">Detalle</label>
-                            <textarea  class="form-select" name="textticket">
+                            <textarea  class="form-control" name="textticket">
                             </textarea>
                         </div>
                         <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
