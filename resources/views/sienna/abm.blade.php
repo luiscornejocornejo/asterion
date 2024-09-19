@@ -78,7 +78,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                     <div class="btn-group">
                                         <?php if ($master->modificar == 1) { ?>
                                         <a onclick="editar('siennaabmmodificar?registro={{ $resultado->$registro }}&idreport={{ $idreport }}&pk={{ $registro }}')"
-                                            class="ms-1 btn btn-warning" role="button" data-bs-toggle="modal"
+                                            class="ms-1 btn btn-warning me-1" role="button" data-bs-toggle="modal"
                                             data-bs-target="#edit-user-modal"> <i data-feather="edit"
                                                 class="mdi mdi-square-edit-outline" data-bs-toggle="tooltip"
                                                 data-bs-placement="top" data-bs-title="Editar"></i></a>
@@ -86,7 +86,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                         <?php if ($master->eliminar == 1) { ?>
 
                                         <button type="button" onclick="borrar(<?php echo $resultado->$registro; ?>)"
-                                            class="btn btn-danger waves-effect waves-light" data-bs-toggle="modal"
+                                            class="btn btn-danger waves-effect waves-light me-1" data-bs-toggle="modal"
                                             data-bs-target=".bs-example-modal-center"><i data-feather="delete"
                                                 class="mdi mdi-delete-outline" data-bs-toggle="tooltip"
                                                 data-bs-placement="top" data-bs-title="Eliminar"></i></button>
