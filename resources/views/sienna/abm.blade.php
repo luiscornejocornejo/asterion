@@ -76,42 +76,32 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                 <td role="cell">
 
                                     <div class="btn-group">
+                                        <?php if ($master->modificar == 1) { ?>
+                                        <a onclick="editar('siennaabmmodificar?registro={{ $resultado->$registro }}&idreport={{ $idreport }}&pk={{ $registro }}')"
+                                            class="ms-1 btn btn-warning" role="button" data-bs-toggle="modal"
+                                            data-bs-target="#edit-user-modal"> <i data-feather="edit"
+                                                class="mdi mdi-square-edit-outline" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" data-bs-title="Editar"></i></a>
+                                        <?php } ?>
+                                        <?php if ($master->eliminar == 1) { ?>
+
+                                        <button type="button" onclick="borrar(<?php echo $resultado->$registro; ?>)"
+                                            class="btn btn-danger waves-effect waves-light" data-bs-toggle="modal"
+                                            data-bs-target=".bs-example-modal-center"><i data-feather="delete"
+                                                class="mdi mdi-delete-outline" data-bs-toggle="tooltip"
+                                                data-bs-placement="top" data-bs-title="Eliminar"></i></button>
+
+                                        <?php } ?>
+                                        <?php if ($master->tickets == 1) { ?>
+
                                         <button type="button"
-                                            class="btn btn-primary
-                                    dropdown-toggle"
-                                            data-bs-toggle="dropdown" aria-expanded="false">Acción<i
-                                                class="mdi
-                                    mdi-chevron-down"></i></button>
-                                        <div class="dropdown-menu">
-                                            <?php if ($master->modificar == 1) { ?>
-                                            <a onclick="editar('siennaabmmodificar?registro={{ $resultado->$registro }}&idreport={{ $idreport }}&pk={{ $registro }}')"
-                                                class="ms-1 btn btn-warning" role="button" data-bs-toggle="modal"
-                                                data-bs-target="#edit-user-modal"> <i data-feather="edit"
-                                                    class="mdi mdi-square-edit-outline" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" data-bs-title="Editar"></i></a>
-                                            <?php } ?>
-                                            <?php if ($master->eliminar == 1) { ?>
+                                            onclick="idticket(<?php echo $resultado->servicio; ?>,<?php echo $resultado->telefono; ?>)"
+                                            class="btn btn-success waves-effect waves-light" data-bs-toggle="modal"
+                                            data-bs-target="#ctabm"><i class="mdi mdi-whatsapp" data-bs-toggle="tooltip"
+                                                data-bs-placement="top"
+                                                data-bs-title="Crear Ticket Manual"></i></button>
 
-                                            <button type="button" onclick="borrar(<?php echo $resultado->$registro; ?>)"
-                                                class="btn btn-danger waves-effect waves-light" data-bs-toggle="modal"
-                                                data-bs-target=".bs-example-modal-center"><i data-feather="delete"
-                                                    class="mdi mdi-delete-outline" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" data-bs-title="Eliminar"></i></button>
-
-                                            <?php } ?>
-                                            <?php if ($master->tickets == 1) { ?>
-
-                                            <button type="button"
-                                                onclick="idticket(<?php echo $resultado->servicio; ?>,<?php echo $resultado->telefono; ?>)"
-                                                class="btn btn-success waves-effect waves-light" data-bs-toggle="modal"
-                                                data-bs-target="#ctabm"><i class="mdi mdi-whatsapp"
-                                                    data-bs-toggle="tooltip" data-bs-placement="top"
-                                                    data-bs-title="Crear Ticket Manual"></i></button>
-
-                                            <?php } ?>
-
-
-                                        </div>
+                                        <?php } ?>
                                     </div><!-- /btn-group -->
 
 
@@ -155,7 +145,8 @@ if (isset($_SERVER['HTTP_HOST'])) {
         <div class="modal-content">
             <div class="modal-header bg-dark">
                 <h5 class="modal-title text-white">Eliminar</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <p>Esta seguro que quiere borrar el registro el sevicio></p>
@@ -175,8 +166,8 @@ if (isset($_SERVER['HTTP_HOST'])) {
 </div><!-- /.modal -->
 
 <!-- Modal for Create  -->
-<div id="create-user-modal" class="modal fade" tabindex="-1" role="dialog"
-    aria-labelledby="dark-header-modalLabel" aria-hidden="true">
+<div id="create-user-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dark-header-modalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content ">
             <div class="modal-header bg-dark text-white">
@@ -185,7 +176,8 @@ if (isset($_SERVER['HTTP_HOST'])) {
                     aria-hidden="true"></button>
             </div>
             <div class="modal-body">
-                <iframe style="display:block; height:500px;" class="w-100" src="https://<?php echo $subdomain_tmp; ?>.suricata.cloud/siennacreate?report={{ $master->id }}"" "></iframe>
+                <iframe style="display:block; height:500px;" class="w-100"
+                    src="https://<?php echo $subdomain_tmp; ?>.suricata.cloud/siennacreate?report={{ $master->id }}"" "></iframe>
             </div>
 
         </div><!-- /.modal-content -->
