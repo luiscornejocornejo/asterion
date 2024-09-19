@@ -60,7 +60,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                             @foreach ($cabezeras as $cabeza)
                                 <th role="columnheader">{{ $cabeza }}</th>
                             @endforeach
-                            <th role="columnheader">Acción</th>
+                            <th role="columnheader">Acciones</th>
 
 
                         </tr>
