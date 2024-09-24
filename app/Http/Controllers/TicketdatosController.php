@@ -947,7 +947,7 @@ class TicketdatosController extends Controller
 
         $idbot=$request->idbot;
         $idconv=$request->idconv;
-        $bot_channel="WhatsAppChannel";
+        $bot_channel=$request->bot_channel;
         $subdomain_tmp = 'localhost';
         if (isset($_SERVER['HTTP_HOST'])) {
             $domainParts = explode('.', $_SERVER['HTTP_HOST']);
@@ -976,7 +976,7 @@ class TicketdatosController extends Controller
             );
          
                  //$url="https://suricata4.com.ar/api/closechat?token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM&idbot=".$idbot."&idconv=".$idconv."&bot_channel=".$bot_channel."&merchant=".$subdomain_tmp;
-                 $url="https://suricata4.com.ar/api/closechat?token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM&idbot=".$idbot."&idconv=".$idconv;
+                 $url="https://suricata4.com.ar/api/closechat?token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM&idbot=".$idbot."&idconv=".$idconv."&bot_channel=".$bot_channel;
             //
                  // Set options for the cURL request
             $options = array(
