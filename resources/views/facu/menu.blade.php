@@ -126,7 +126,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 </li>
     <?php
  }
-     if(($tipodemenu =="1")or($tipodemenu =="2")or($tipodemenu =="4")){
+     if(($tipodemenu =="1")or($tipodemenu =="2")or($tipodemenu =="4")or($tipodemenu =="3")){
      ?>
                 <li class="side-nav-item background-buttons">
                 <a
