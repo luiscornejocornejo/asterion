@@ -126,7 +126,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 </li>
     <?php
  }
-     if(($tipodemenu =="1")or($tipodemenu =="2")or($tipodemenu =="4")){
+     if(($tipodemenu =="1")or($tipodemenu =="2")or($tipodemenu =="4")or($tipodemenu =="30")){
      ?>
                 <li class="side-nav-item background-buttons">
                 <a
@@ -326,8 +326,15 @@ if (isset($_SERVER['HTTP_HOST'])) {
                <?php
      $tipodemenu = session('tipodemenu');
      if($tipodemenu =="3"){
-     ?>
-           
+ 
+               if($nombreIntegracion == "wispro" || $nombreIntegracion == "futu") { ?>
+                        <li class="side-nav-item background-buttons ">
+                            <a  href="/getsaliente"  class="side-nav-link hovering-pan ">
+                                <i class="mdi mdi-send-circle-outline"></i>
+                                <span> Ticket manual </span>
+                            </a>
+                        </li>
+                <?php } ?>
            <li class="side-nav-item background-buttons">
                 <a
                   data-bs-toggle="collapse"
