@@ -595,6 +595,7 @@ document.getElementById("user_id").value = ff;
                     }
                   // Fecha específica en formato 'YYYY-MM-DD HH:MM:SS'
                   const fechaDada = response.data[i].created_at;
+                  console.log(response.data[i].created_at);
 
                   // Convertir la fecha dada en un objeto Date
                   const fechaDadaDate = new Date(fechaDada);
