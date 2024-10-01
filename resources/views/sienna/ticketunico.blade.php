@@ -33,7 +33,7 @@ function tituloiconos($iconos, $tipo)
 }
 ?>
 <script>
-
+document.title = <?php echo $resultados[0]->ticketid;?>;
 
 
    function cerrar(result,dd, ee, ff,cliente,source){
