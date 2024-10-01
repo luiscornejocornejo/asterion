@@ -453,6 +453,18 @@ document.getElementById("user_id").value = ff;
 
 
 }
+function obtenerFechaUTC() {
+    const fechaActualUTC = new Date();
+
+    const año = fechaActualUTC.getUTCFullYear();
+    const mes = String(fechaActualUTC.getUTCMonth() + 1).padStart(2, '0'); // Los meses empiezan desde 0
+    const dia = String(fechaActualUTC.getUTCDate()).padStart(2, '0');
+    const hora = String(fechaActualUTC.getUTCHours()).padStart(2, '0');
+    const minutos = String(fechaActualUTC.getUTCMinutes()).padStart(2, '0');
+    const segundos = String(fechaActualUTC.getUTCSeconds()).padStart(2, '0');
+
+    return `${año}-${mes}-${dia} ${hora}:${minutos}:${segundos}`;
+}
                   function maxid() {
            //document.body.style.zoom = "80%";
 
@@ -605,7 +617,7 @@ document.getElementById("user_id").value = ff;
                   console.log(fechaDadaDate);
 
                   // Obtener la fecha y hora actual
-                  const fechaActual = new Date();
+                  const fechaActual = obtenerFechaUTC();
                   console.log(fechaActual);
 
                   // Calcular la diferencia en milisegundos
