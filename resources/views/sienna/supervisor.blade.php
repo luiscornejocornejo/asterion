@@ -619,7 +619,7 @@ document.getElementById("user_id").value = ff;
                       console.log("No han pasado más de 1440 minutos.");
                   }
 
-                    tt += '<tr class="text-center" style=" '+valcol+'">' +
+                    tt += '<tr class="text-center">' +
         
                         ' <td><input name="chk" class="form-check-input me-1" type="checkbox" value="'+response.data[i].ticketid +'" id="flexCheckDefault"><a target="_blank" href="/ticketunico?tick='+response.data[i].ticketid +'"><i class="mdi '+im+'  '+im2+' me-1 "></i><strong>' + response.data[i].ticketid + '</strong></a></td>' +
                         ' <td>'+url2 + '</td>' + 
