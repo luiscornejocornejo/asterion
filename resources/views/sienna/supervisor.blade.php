@@ -597,8 +597,8 @@ document.getElementById("user_id").value = ff;
                     console.log(response.data[i].ticketid);
 
                   // Fecha específica en formato 'YYYY-MM-DD HH:MM:SS'
-                  const fechaDada = response.data[i].created_at;
-                  console.log(response.data[i].created_at);
+                  const fechaDada = response.data[i].fn;
+                  console.log(response.data[i].fn);
 
                   // Convertir la fecha dada en un objeto Date
                   const fechaDadaDate = new Date(fechaDada);
