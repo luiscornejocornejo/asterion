@@ -618,6 +618,8 @@ function obtenerFechaUTC() {
 
                   // Obtener la fecha y hora actual
                   const fechaActual =  obtenerFechaUTC();
+                  const fechaActual = new Date(fechaActual);
+
                   console.log(fechaActual);
 
                   // Calcular la diferencia en milisegundos
