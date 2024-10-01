@@ -611,11 +611,15 @@ document.getElementById("user_id").value = ff;
                   // Verificar si han pasado más de 1440 minutos (24 horas)
                   if (diferenciaMinutos > 1440) {
                       console.log("Han pasado más de 1440 minutos.");
+                      valcol="background-color: #f97a5f !important;";
+
                   } else {
+                    valcol="";
+
                       console.log("No han pasado más de 1440 minutos.");
                   }
 
-                    tt += '<tr class="text-center">' +
+                    tt += '<tr class="text-center" style=" '+$valcol+'">' +
         
                         ' <td><input name="chk" class="form-check-input me-1" type="checkbox" value="'+response.data[i].ticketid +'" id="flexCheckDefault"><a target="_blank" href="/ticketunico?tick='+response.data[i].ticketid +'"><i class="mdi '+im+'  '+im2+' me-1 "></i><strong>' + response.data[i].ticketid + '</strong></a></td>' +
                         ' <td>'+url2 + '</td>' + 
