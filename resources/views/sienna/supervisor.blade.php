@@ -643,8 +643,8 @@ function obtenerFechaUTC() {
                     tt += '<tr class="text-center">' +
         
                         ' <td><input name="chk" class="form-check-input me-1" type="checkbox" value="'+response.data[i].ticketid +'" id="flexCheckDefault"><a target="_blank" href="/ticketunico?tick='+response.data[i].ticketid +'"><i class="mdi '+im+'  '+im2+' me-1 "></i><strong>' + response.data[i].ticketid + '</strong></a></td>' +
-                        ' <td>'+url2 + '</td>' + 
-                        ' <td><b>' + $nombreamostrar+ '</b></td>' + 
+                        ' <td><b>'+url2 + '</b></td>' + 
+                        ' <td>' + $nombreamostrar+ '</td>' + 
                         '<td><span class="badge '+colordepto+'" style="font-size:medium;" onclick="area2(`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].user_id + '`)"  class="badge bg-info" style="font-size: medium" role="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm202">'+response.data[i].depto+' </span></td>' +
                         '<td><span style="font-size:medium;" class="'+colorpri+'" onclick="topic(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="badge badge-info-lighten border" style="font-size: medium" role="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smtopic"> ' + response.data[i].topicnombre + '</span></td> ' +
                         ' <td><span style="font-size:medium;" class="'+colorpri+'">' + response.data[i].pri + '</span></td>' +
