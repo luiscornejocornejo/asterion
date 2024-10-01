@@ -593,6 +593,9 @@ document.getElementById("user_id").value = ff;
                     }else{
                       url2 =response.data[i].nya;
                     }
+
+                    console.log(response.data[i].ticketid);
+
                   // Fecha específica en formato 'YYYY-MM-DD HH:MM:SS'
                   const fechaDada = response.data[i].created_at;
                   console.log(response.data[i].created_at);
