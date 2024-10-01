@@ -615,14 +615,14 @@ document.getElementById("user_id").value = ff;
                   const diferenciaMinutos = diferenciaMilisegundos / (1000 * 60);
 
                   // Verificar si han pasado más de 1440 minutos (24 horas)
-                  if (diferenciaMinutos > 1440) {
-                      console.log("Han pasado más de 1440 minutos.");
+                  if (diferenciaMinutos > response.data[i].sla) {
+                      console.log("Han pasado más de "+response.data[i].fn+" minutos.");
                       valcol="background-color: #f97a5f !important;";
 
                   } else {
                     valcol="background-color: white !important;";
 
-                      console.log("No han pasado más de 1440 minutos.");
+                      console.log("No han pasado más de "+response.data[i].fn+" minutos.");
                   }
 
                     tt += '<tr class="text-center">' +
