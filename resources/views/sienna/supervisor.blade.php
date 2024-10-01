@@ -598,9 +598,11 @@ document.getElementById("user_id").value = ff;
 
                   // Convertir la fecha dada en un objeto Date
                   const fechaDadaDate = new Date(fechaDada);
+                  console.log(fechaDadaDate);
 
                   // Obtener la fecha y hora actual
                   const fechaActual = new Date();
+                  console.log(fechaActual);
 
                   // Calcular la diferencia en milisegundos
                   const diferenciaMilisegundos = fechaActual - fechaDadaDate;
