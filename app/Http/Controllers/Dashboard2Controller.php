@@ -136,4 +136,248 @@ class Dashboard2Controller extends Controller
         }
   
     }
+
+     public function getTicketsCreated()
+    {
+        $queryTicketsCreated = "SELECT COUNT(*) AS `count`FROM `siennatickets_view` 
+        LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
+        LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
+        LEFT JOIN `users` AS `Users - Siennaestado` ON `siennatickets_view`.`siennaestado` = `Users - Siennaestado`.`id`";
+        $resultTicketCreated = DB::select($queryTicketsCreated);
+        
+        return $resultTicketCreated;
+    } 
+    public function getTicketsByStatus()
+    {
+        $queryByStatus = "SELECT `Siennaestado`.`nombre` AS `Siennaestado__nombre`, COUNT(*) AS `count` FROM `siennatickets_view`
+        LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
+        LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
+        LEFT JOIN `siennaestado` AS `Siennaestado` ON `siennatickets_view`.`siennaestado` = `Siennaestado`.`id`
+        GROUP BY
+            `Siennaestado`.`nombre`
+        ORDER BY
+            `count` DESC,
+            `Siennaestado`.`nombre` ASC";
+        $resultByStatus = DB::select($queryByStatus);
+
+        return $resultByStatus;       
+    }
+    public function getTicketPerAgent() 
+    {
+        $queryPerAgent = "SELECT `Users - Asignado`.`last_name` AS `Users - Asignado__last_name`, COUNT(*) AS `count`
+        FROM
+        `siennatickets_view`
+        LEFT JOIN `users` AS `Users - Asignado` ON `siennatickets_view`.`asignado` = `Users - Asignado`.`id`
+        GROUP BY
+        `Users - Asignado`.`last_name`
+        ORDER BY
+        `Users - Asignado`.`last_name` ASC";
+
+        $resultPerAgent = DB::select($queryPerAgent);
+        
+        return $resultPerAgent;
+    }
+
+    public function getTicketPerChannel()
+    {
+        $queryPerChannel = "SELECT
+        `Siennasource`.`nombre` AS `Siennasource__nombre`, COUNT(*) AS `count`
+        FROM `siennatickets_view`
+        LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
+        LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
+        LEFT JOIN `users` AS `Users` ON `siennatickets_view`.`user_id` = `Users`.`id`
+        GROUP BY
+        `Siennasource`.`nombre`
+        ORDER BY
+        `count` DESC,
+        `Siennasource`.`nombre` ASC";
+
+        $resultPerChannel = DB::select($queryPerChannel);
+
+        return $resultPerChannel;
+    }
+
+    public function getTicketByDepartment()
+    {
+        $queryByDepartment = "SELECT
+        `Siennadepto`.`nombre` AS `Siennadepto__nombre`,
+        COUNT(*) AS `count`
+        FROM `siennatickets_view`
+        LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
+        LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
+        LEFT JOIN `users` AS `Users` ON `siennatickets_view`.`user_id` = `Users`.`id`
+        GROUP BY
+        `Siennadepto`.`nombre`
+        ORDER BY
+        `count` DESC,
+        `Siennadepto`.`nombre` ASC";
+
+        $resultByDepartment = DB::select($queryByDepartment);
+
+        return $resultByDepartment;
+    }
+
+    public function getTicketPendings()
+    {
+        $queryTicketPendings = "SELECT `Siennadepto`.`nombre` AS `Siennadepto__nombre`, COUNT(*) AS `count` FROM `siennatickets_view`
+        LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
+        LEFT JOIN `users` AS `Users` ON `siennatickets_view`.`user_id` = `Users`.`id`
+        LEFT JOIN `siennaestado` AS `Siennaestado` ON `siennatickets_view`.`siennaestado` = `Siennaestado`.`id`
+        LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
+        WHERE
+        (`Siennaestado`.`nombre` <> 'Cerrado')
+        OR (`Siennaestado`.`nombre` IS NULL)
+        GROUP BY
+        `Siennadepto`.`nombre`";
+        
+        $resultTicketPendings = DB::select($queryTicketPendings);
+
+        return $resultTicketPendings;
+    }
+
+    public function getTimeOfLiveOfTickets()
+    {
+            $queryTimeOfLive = "SELECT
+            DATE(`siennatickets_view`.`timeoflife`) AS `timeoflife`,
+            COUNT(*) AS `count`
+            FROM
+            `siennatickets_view`
+
+            LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
+            LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
+            GROUP BY
+            DATE(`siennatickets_view`.`timeoflife`)
+            ORDER BY
+            DATE(`siennatickets_view`.`timeoflife`) ASC";
+
+            $resultTimeOfLive = DB::select($queryTimeOfLive);
+
+            return $resultTimeOfLive;
+    }
+
+    public function getTicketPerDepartmentByDay() {
+        $queryDepartmentByDay = "SELECT
+            `Siennadepto`.`nombre` AS `Siennadepto__nombre`,
+            DATE(`siennatickets_view`.`Creado`) AS `Creado`,
+            COUNT(*) AS `count`
+            FROM
+            `siennatickets_view`
+
+            LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
+            LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
+            LEFT JOIN `users` AS `Users` ON `siennatickets_view`.`user_id` = `Users`.`id`
+            GROUP BY
+            `Siennadepto`.`nombre`,
+            DATE(`siennatickets_view`.`Creado`)
+            ORDER BY
+            `Siennadepto`.`nombre` ASC,
+            DATE(`siennatickets_view`.`Creado`) ASC LIMIT 50" ;
+
+            $resultDepartmentByDay = DB::select($queryDepartmentByDay);
+
+            return $resultDepartmentByDay;
+    }
+
+    public function getTicketPendingByTopic()
+    {
+        $queryPendigByTopic = "SELECT
+            `Siennatopic`.`nombre` AS `Siennatopic__nombre`,
+            COUNT(*) AS `count`
+            FROM
+            `siennatickets_view`
+
+            LEFT JOIN `siennaestado` AS `Siennaestado - Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennaestado - Siennadepto`.`id`
+            LEFT JOIN `siennatopic` AS `Siennatopic` ON `siennatickets_view`.`siennatopic` = `Siennatopic`.`id`
+            WHERE
+            (`Siennaestado - Siennadepto`.`nombre` <> 'Cerrado')
+
+            OR (`Siennaestado - Siennadepto`.`nombre` IS NULL)
+            GROUP BY
+            `Siennatopic`.`nombre`
+            ORDER BY
+            `count` DESC,
+            `Siennatopic`.`nombre` ASC";
+
+             $resultPendingByTopic = DB::select($queryPendigByTopic);
+
+            return $resultPendingByTopic;
+    }
+
+    public function getTicketTopicPerDay() 
+    {
+        $queryTopicPerDay = "SELECT
+        DATE(`siennatickets_view`.`Creado`) AS `Creado`,
+        `Siennatopic`.`nombre` AS `Siennatopic__nombre`,
+        COUNT(*) AS `count`
+        FROM
+        `siennatickets_view`
+
+        LEFT JOIN `siennaestado` AS `Siennaestado` ON `siennatickets_view`.`siennaestado` = `Siennaestado`.`id`
+        LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
+        LEFT JOIN `siennatopic` AS `Siennatopic` ON `siennatickets_view`.`siennatopic` = `Siennatopic`.`id`
+        GROUP BY
+        DATE(`siennatickets_view`.`Creado`),
+        `Siennatopic`.`nombre`
+        ORDER BY
+        `count` ASC,
+        DATE(`siennatickets_view`.`Creado`) ASC,
+        `Siennatopic`.`nombre` ASC LIMIT 50";
+
+        $resultTopicPerDay = DB::select($queryTopicPerDay);
+
+        return $resultTopicPerDay;
+    }
+
+    public function getAgents() 
+    {
+        $queryGetAgent = "SELECT id, nombre, last_name, deptosuser FROM users";
+        $resultAgents = DB::select($queryGetAgent);
+        return $resultAgents;
+    }
+
+    public function getSources() 
+    {
+        $queryGetSource = "SELECT id, nombre FROM siennasource";
+        $resultGetSource = DB::select($queryGetSource);
+        return $resultGetSource;
+    }
+
+    public function getDepartments() 
+    {
+        $queryGetDepartment = "SELECT id, nombre FROM siennadepto";
+        $resultGetDepartment = DB::select($queryGetDepartment);
+        return $resultGetDepartment;
+    }
+    public function dashboardgeneric()
+    {
+        $ticketCreated = $this->getTicketsCreated();
+        $ticketByStatus = $this->getTicketsByStatus();
+        $ticketPerAgent = $this->getTicketPerAgent();
+        $ticketPerChannel = $this->getTicketPerChannel();
+        $ticketByDepartment = $this->getTicketByDepartment();
+        $ticketPendings = $this->getTicketPendings();
+        $ticketTimeOfLive = $this->getTimeOfLiveOfTickets();
+        $ticketPerDepartmentByDay = $this->getTicketPerDepartmentByDay();
+        $ticketPendingByTopic = $this->getTicketPendingByTopic();
+        $ticketTopicPerDay = $this->getTicketTopicPerDay();
+        $getAgent = $this->getAgents();
+        $getSource = $this->getSources();
+        $getDepartment = $this->getDepartments();
+
+        return view('sienna/dash', [
+            'tickets' => $ticketCreated,
+            'status' => $ticketByStatus,
+            'perAgent' => $ticketPerAgent,
+            'perChannel' => $ticketPerChannel,
+            'byDepartment' => $ticketByDepartment,
+            'tickets_pendings' => $ticketPendings,
+            'ticket_timeLive' => $ticketTimeOfLive,
+            'departmentByDay' => $ticketPerDepartmentByDay,
+            'pendingByTopic' => $ticketPendingByTopic,
+            'topicPerDay' => $ticketTopicPerDay,
+            'agents' => $getAgent,
+            'sources' => $getSource,
+            'departments' => $getDepartment
+        ]);
+    }
 }

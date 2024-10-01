@@ -66,6 +66,42 @@
         ]
 }
 )
+
+$('input[name="daterange"]').daterangepicker({
+ "locale": {
+        "format": "MM/DD/YYYY",
+        "separator": " - ",
+        "applyLabel": "Buscar",
+        "cancelLabel": "Cancelar",
+        "fromLabel": "Desde",
+        "toLabel": "Hasta",
+        "customRangeLabel": "Personalizado",
+        "daysOfWeek": [
+            "Dom",
+            "Lun",
+            "Mar",
+            "Mier",
+            "Jue",
+            "Vie",
+            "Sáb"
+        ],
+        "monthNames": [
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agusto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre"
+        ],
+        "firstDay": 1
+    }
+})
     </script>
   <!-- Daterangepicker js -->
   <script src="assetsfacu/vendor/daterangepicker/moment.min.js"></script>
