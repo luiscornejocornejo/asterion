@@ -593,7 +593,7 @@ document.getElementById("user_id").value = ff;
                     }else{
                       url2 =response.data[i].nya;
                     }
-
+                    console.log("yo");
                     console.log(response.data[i].ticketid);
 
                   // Fecha específica en formato 'YYYY-MM-DD HH:MM:SS'
