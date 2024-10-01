@@ -617,7 +617,7 @@ function obtenerFechaUTC() {
                   console.log(fechaDadaDate);
 
                   // Obtener la fecha y hora actual
-                  const fechaActual = new Date();
+                  const fechaActual =  obtenerFechaUTC();
                   console.log(fechaActual);
 
                   // Calcular la diferencia en milisegundos
@@ -625,6 +625,7 @@ function obtenerFechaUTC() {
 
                   // Convertir la diferencia a minutos (1000 ms = 1 segundo, 60 segundos = 1 minuto)
                   const diferenciaMinutos = diferenciaMilisegundos / (1000 * 60);
+                  console.log(diferenciaMinutos);
 
                   // Verificar si han pasado más de 1440 minutos (24 horas)
                   if (diferenciaMinutos > response.data[i].sla) {
