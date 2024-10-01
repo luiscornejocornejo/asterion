@@ -593,7 +593,28 @@ document.getElementById("user_id").value = ff;
                     }else{
                       url2 =response.data[i].nya;
                     }
-                  
+                  // Fecha específica en formato 'YYYY-MM-DD HH:MM:SS'
+                  const fechaDada = response.data[i].created_at;
+
+                  // Convertir la fecha dada en un objeto Date
+                  const fechaDadaDate = new Date(fechaDada);
+
+                  // Obtener la fecha y hora actual
+                  const fechaActual = new Date();
+
+                  // Calcular la diferencia en milisegundos
+                  const diferenciaMilisegundos = fechaActual - fechaDadaDate;
+
+                  // Convertir la diferencia a minutos (1000 ms = 1 segundo, 60 segundos = 1 minuto)
+                  const diferenciaMinutos = diferenciaMilisegundos / (1000 * 60);
+
+                  // Verificar si han pasado más de 1440 minutos (24 horas)
+                  if (diferenciaMinutos > 1440) {
+                      console.log("Han pasado más de 1440 minutos.");
+                  } else {
+                      console.log("No han pasado más de 1440 minutos.");
+                  }
+
                     tt += '<tr class="text-center">' +
         
                         ' <td><input name="chk" class="form-check-input me-1" type="checkbox" value="'+response.data[i].ticketid +'" id="flexCheckDefault"><a target="_blank" href="/ticketunico?tick='+response.data[i].ticketid +'"><i class="mdi '+im+'  '+im2+' me-1 "></i><strong>' + response.data[i].ticketid + '</strong></a></td>' +
