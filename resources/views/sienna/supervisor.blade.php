@@ -614,7 +614,7 @@ document.getElementById("user_id").value = ff;
                       valcol="background-color: #f97a5f !important;";
 
                   } else {
-                    valcol="";
+                    valcol="background-color: white !important;";
 
                       console.log("No han pasado más de 1440 minutos.");
                   }
