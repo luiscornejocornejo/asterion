@@ -179,6 +179,12 @@ if (isset($_SERVER['HTTP_HOST'])) {
                         <span> Feriados </span>
                     </a>
                 </li>
+                <li class="side-nav-item background-buttons ">
+                    <a  href="/siennaabm?id=1101"  class="side-nav-link hovering-pan ">
+                        <i class="mdi mdi-tags"></i>
+                        <span> Tags </span>
+                    </a>
+                </li>
                 <?php 
                 
                     if($nombreIntegracion == "wispro" || $nombreIntegracion == "futu") { ?>
