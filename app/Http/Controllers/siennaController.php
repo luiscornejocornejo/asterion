@@ -336,11 +336,19 @@ class siennaController extends Controller
     $nombrereporte = $master->nombre;
     $tienepermiso = $master->permiso;
     $tipodemenu = session('tipodemenu');
-    /*
-    if($tienepermiso<>$tipodemenu){
+   
+
+    // Convertir la cadena de permisos a un arreglo
+    $arrayPermisos = explode(",", $tienepermiso);
+
+    // Verificar si el $userid está en el arreglo de permisos
+    if (in_array($tipodemenu, $arrayPermisos)) {
+        echo "El usuario tiene permiso.";
+    } else {
       return view('denied');
- 
-    }*/
+
+    }
+    
 
     $registro = $this->extra($master->tabla, $master->base);
 
