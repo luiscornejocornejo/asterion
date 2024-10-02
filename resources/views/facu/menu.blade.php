@@ -73,91 +73,77 @@ if (isset($_SERVER['HTTP_HOST'])) {
         </a>
     </div>
 
-    <!--- Sidemenu -->
+    <!--- menu -->
     <ul class="side-nav">
-   
-      <li class="side-nav-item mt-2 background-buttons">
-        <a href="/"  class="side-nav-link hovering-pan ">
-            <i class="uil-dashboard"></i>
-            <span> Dashboards </span>
-     
-        </a>
-    </li>
-    <li class="side-nav-item mt-2 background-buttons">
-        <a target="_blank" href="/gpt"  class="side-nav-link hovering-pan ">
-            <i class="mdi mdi-robot-happy-outline"></i>
-            <span> Asistente virtual </span>
-     
-        </a>
-    </li>
-    <li class="side-nav-item mt-2 background-buttons">
-    <a
-                  data-bs-toggle="collapse"
-                  href="/viewtickets"
-                  aria-expanded="false"
-                  aria-controls="sidebarDashboards"
-                  class="side-nav-link hovering-pan"
-                >
-                    <i class="mdi mdi-history"></i>
-                  <span>Historial</span>
-                  <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarEcommerce">
-
-                        <ul class="side-nav-second-level">
-                            <li>
-                            <a href="/siennaform?id=1012">Busqueda X DNI</a>
-                            </li>
-                            <li>
-                            <a href="/siennaform?id=1011">Busqueda X Cliente</a>
-                            </li>
-                        </ul>
-                </div>
-                </li>
-<?php
- $tipodemenu = session('tipodemenu');
- if($tipodemenu =="8"){?>
-    
-    <li class="side-nav-item background-buttons">
-                    <a  href="/conversations2"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-account-multiple"></i>
-                        <span> conversaciones </span>
-                    </a>
-                </li>
-    <?php
- }
-     if(($tipodemenu =="1")or($tipodemenu =="2")or($tipodemenu =="4")or($tipodemenu =="30")){
-     ?>
-                <li class="side-nav-item background-buttons">
-                <a
-                  data-bs-toggle="collapse"
-                  href="/viewtickets"
-                  aria-expanded="false"
-                  aria-controls="sidebarDashboards"
-                  class="side-nav-link hovering-pan"
-                >
-                  <i class="uil-ticket"></i>
-                  <span>Tickets</span>
-                  <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarEcommerce">
-                  <ul class="side-nav-second-level">
+        <!--- generico -->
+        <li class="side-nav-item mt-2 background-buttons">
+            <a href="/"  class="side-nav-link hovering-pan ">
+                <i class="uil-dashboard"></i>
+                <span> Dashboards </span>
+            </a>
+        </li>
+        <li class="side-nav-item mt-2 background-buttons">
+            <a target="_blank" href="/gpt"  class="side-nav-link hovering-pan ">
+                <i class="mdi mdi-robot-happy-outline"></i>
+                <span> Asistente virtual </span>
+            </a>
+        </li>
+        <li class="side-nav-item mt-2 background-buttons">
+            <a data-bs-toggle="collapse"    href="/viewtickets" aria-expanded="false"   aria-controls="sidebarDashboards" class="side-nav-link hovering-pan">
+                <i class="mdi mdi-history"></i>
+                <span>Historial</span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="sidebarEcommerce">
+                <ul class="side-nav-second-level">
                     <li>
-                      <a href="/viewtickets">Abiertos</a>
+                        <a href="/siennaform?id=1012">Busqueda X DNI</a>
                     </li>
                     <li>
-                      <a href="/cerrados">Cerrados</a>
+                        <a href="/siennaform?id=1011">Busqueda X Cliente</a>
                     </li>
-                  </ul>
+                </ul>
+            </div>
+        </li>
+        <!--- master -->
+        <?php
+        $tipodemenu = session('tipodemenu');
+        if($tipodemenu =="1"){?>
+            <li class="side-nav-item background-buttons">
+                <a  href="/conversations2"  class="side-nav-link hovering-pan ">
+                    <i class="mdi mdi-account-multiple"></i>
+                    <span> conversaciones </span>
+                </a>
+            </li>
+            <?php
+        }?>
+        <!--- master/supervisor -->
+        <?php 
+        if(($tipodemenu =="1")or($tipodemenu =="2")or($tipodemenu =="4")){?>
+            <li class="side-nav-item background-buttons">
+                <a data-bs-toggle="collapse" href="/viewtickets" aria-controls="sidebarDashboards" class="side-nav-link hovering-pan">
+                    <i class="uil-ticket"></i>
+                    <span>Tickets</span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarEcommerce">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="/viewtickets">Abiertos</a>
+                        </li>
+                        <li>
+                            <a href="/cerrados">Cerrados</a>
+                        </li>
+                    </ul>
                 </div>
-</li>
-                <li class="side-nav-item background-buttons ">
-                    <a  href="/soporte"  class="side-nav-link hovering-pan">
-                        <i class="mdi mdi-lifebuoy"></i>
-                        <span> Soporte Suricata </span>
-                    </a>
-                </li>
-                <li class="side-nav-item background-buttons">
+            </li>
+            <li class="side-nav-item background-buttons ">
+                <a  href="/soporte"  class="side-nav-link hovering-pan">
+                    <i class="mdi mdi-lifebuoy"></i>
+                    <span> Soporte Suricata </span>
+                </a>
+            </li>
+            <li class="side-nav-item background-buttons">
                     <?php 
                         if($tipodemenu == 3) $routeToTask = '/mistareas';
                         else $routeToTask ='/tareas';
