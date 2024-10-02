@@ -632,7 +632,7 @@ function obtenerFechaUTC() {
                   // Verificar si han pasado más de 1440 minutos (24 horas)
                   if (diferenciaMinutos > response.data[i].sla) {
                       console.log("Han pasado más de "+response.data[i].sla+" minutos.");
-                      valcol="background-color: #f97a5f !important;";
+                      valcol="background-color: #ffeff2 !important;";
 
                   } else {
                     valcol="background-color: white !important;";
@@ -640,7 +640,7 @@ function obtenerFechaUTC() {
                       console.log("No han pasado más de "+response.data[i].sla+" minutos.");
                   }
 
-                    tt += '<tr class="text-center">' +
+                    tt += '<tr style=" '+valcol+'" class="text-center">' +
         
                         ' <td><input name="chk" class="form-check-input me-1" type="checkbox" value="'+response.data[i].ticketid +'" id="flexCheckDefault"><a target="_blank" href="/ticketunico?tick='+response.data[i].ticketid +'"><i class="mdi '+im+'  '+im2+' me-1 "></i><strong>' + response.data[i].ticketid + '</strong></a></td>' +
                         ' <td><b>'+url2 + '</b></td>' + 
