@@ -212,18 +212,34 @@ if (isset($_SERVER['HTTP_HOST'])) {
         <?php 
         if(($tipodemenu =="1")or($tipodemenu =="2")or($tipodemenu =="4")){?>
             
-            <li class="side-nav-item background-buttons ">
-                <a  href="/soporte"  class="side-nav-link hovering-pan">
-                    <i class="mdi mdi-lifebuoy"></i>
-                    <span> Soporte Suricata </span>
-                </a>
-            </li>
+            
             <li class="side-nav-item background-buttons">
-                <a  href="/tareas"  class="side-nav-link hovering-pan ">
-                    <i class="uil-clipboard-alt"></i>
-                    <span>  tareas </span>
+                <a data-bs-toggle="collapse" href="/configuracion" aria-controls="sidebarDashboards" class="side-nav-link hovering-pan">
+                    <i class="mdi-tools"></i>
+                    <span>Configuracion</span>
+                    <span class="menu-arrow"></span>
                 </a>
-            </li>
+                <div class="collapse" id="sidebarEcommerce">
+                    <ul class="side-nav-second-level">
+                        <li class="side-nav-item background-buttons ">
+                            <a  href="/soporte"  class="side-nav-link hovering-pan">
+                                <i class="mdi mdi-lifebuoy"></i>
+                                <span> Soporte Suricata </span>
+                            </a>
+                        </li>
+                        <li class="side-nav-item background-buttons">
+                            <a  href="/tareas"  class="side-nav-link hovering-pan ">
+                                <i class="uil-clipboard-alt"></i>
+                                <span>  tareas </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+        </li>
+
+
+            
+            
             <li class="side-nav-item background-buttons ">
                 <a  href="/salientesc"  class="side-nav-link hovering-pan ">
                     <i class="mdi mdi-whatsapp"></i>
