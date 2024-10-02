@@ -334,6 +334,12 @@ class siennaController extends Controller
     $cabezeras = $this->cabezerasgraficos($datosget);
     $master = masterreport::find($idreport);
     $nombrereporte = $master->nombre;
+    $tienepermiso = $master->permiso;
+    $tipodemenu = session('tipodemenu');
+    if($tienepermiso<>$tipodemenu){
+      return view('denied');
+ 
+    }
 
     $registro = $this->extra($master->tabla, $master->base);
 
