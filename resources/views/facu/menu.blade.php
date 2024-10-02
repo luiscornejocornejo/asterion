@@ -74,6 +74,8 @@ if (isset($_SERVER['HTTP_HOST'])) {
     </div>
 
     <!--- menu -->
+    <?php $tipodemenu = session('tipodemenu');?>
+
     <ul class="side-nav">
         <!--- generico -->
         <li class="side-nav-item mt-2 background-buttons">
@@ -105,6 +107,23 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 </ul>
             </div>
         </li>
+        <li class="side-nav-item background-buttons">
+                <a data-bs-toggle="collapse" href="/viewtickets" aria-controls="sidebarDashboards" class="side-nav-link hovering-pan">
+                    <i class="uil-ticket"></i>
+                    <span>Tickets</span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarEcommerce">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="/viewtickets">Abiertos</a>
+                        </li>
+                        <li>
+                            <a href="/cerrados">Cerrados</a>
+                        </li>
+                    </ul>
+                </div>
+        </li>
         <!--- ispgroup -->
         <?php if($subdomain_tmp == "ispgroup") { ?>
                 <li class="side-nav-item background-buttons ">
@@ -126,7 +145,6 @@ if (isset($_SERVER['HTTP_HOST'])) {
         <?php } ?>
         <!--- master -->
         <?php
-        $tipodemenu = session('tipodemenu');
         if($tipodemenu =="1"){?>
             <li class="side-nav-item background-buttons">
                 <a  href="/conversations2"  class="side-nav-link hovering-pan ">
@@ -134,28 +152,66 @@ if (isset($_SERVER['HTTP_HOST'])) {
                     <span> conversaciones </span>
                 </a>
             </li>
+            <li class="side-nav-item background-buttons">
+                <a  href="/siennaabm?id=1006"  class="side-nav-link hovering-pan ">
+                    <i class="mdi mdi-clipboard-list"></i>
+                    <span> Tareas Estados </span>
+                </a>
+            </li>
+            
+            <li class="side-nav-item background-buttons d-none">
+                <a  href="/siennaabm?id=18"  class="side-nav-link hovering-pan ">
+                    <i class="mdi mdi-message-question"></i>
+                    <span> Motivos cierre </span>
+                </a>
+            </li>
+            <li class="side-nav-item background-buttons">
+                <a  href="/empresadatos"  class="side-nav-link hovering-pan ">
+                    <i class="mdi mdi-office-building-cog"></i>
+                    <span> Empresa </span>
+                </a>
+            </li>
+            <li class="side-nav-item background-buttons">
+                <a  href="/siennaabm?id=57"  class="side-nav-link hovering-pan ">
+                    <i class="mdi mdi-view-list"></i>
+                    <span> Categoria </span>
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                    <i class="uil-home-alt"></i>
+                    <span class="badge bg-success float-end"></span>
+                    <span> Sienna </span>
+                </a>
+                <div class="collapse" id="sidebarDashboards">
+                    <ul class="side-nav-second-level">
+                        <li>
+                        <a target="_self" href="/siennai">
+                                    <span id="sienna" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Sienna</span>
+                                </a>
+                        </li>
+                        <li>
+                        <a target="_self" href="/siennaabm?id=13">
+                                    <span id="Usuarios" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Usuarios</span>
+                                </a>
+                        </li>
+                        <li>
+                        <a target="_self" href="/siennamenu?id=1">
+                                    <span id="report" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Report</span>
+                                </a>
+                        </li>
+           
+                  
+
+                    </ul>
+                </div>
+            </li>
             <?php
         }?>
         <!--- master/supervisor -->
         <?php 
         if(($tipodemenu =="1")or($tipodemenu =="2")or($tipodemenu =="4")){?>
-            <li class="side-nav-item background-buttons">
-                <a data-bs-toggle="collapse" href="/viewtickets" aria-controls="sidebarDashboards" class="side-nav-link hovering-pan">
-                    <i class="uil-ticket"></i>
-                    <span>Tickets</span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarEcommerce">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="/viewtickets">Abiertos</a>
-                        </li>
-                        <li>
-                            <a href="/cerrados">Cerrados</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
+            
             <li class="side-nav-item background-buttons ">
                 <a  href="/soporte"  class="side-nav-link hovering-pan">
                     <i class="mdi mdi-lifebuoy"></i>
@@ -186,240 +242,94 @@ if (isset($_SERVER['HTTP_HOST'])) {
                     <span> Tags </span>
                 </a>
             </li>
-            
-
-            
-
-
-<li class="side-nav-item background-buttons">
-                <a
-                  data-bs-toggle="collapse"
-                  href="/supervisor"
-                  aria-expanded="false"
-                  aria-controls="sidebarDashboards"
-                  class="side-nav-link hovering-pan"
-                >
-                  <i class="mdi mdi-book-search-outline"></i>
-                  <span>Reportes</span>
-                  <span class="menu-arrow"></span>
+            <li class="side-nav-item background-buttons">
+                <a  href="/agentes"  class="side-nav-link hovering-pan ">
+                    <i class="mdi mdi-account-multiple"></i>
+                    <span> Agentes </span>
+                </a>
+            </li>
+            <li class="side-nav-item background-buttons">
+                <a  href="/siennaabm?id=124"  class="side-nav-link hovering-pan ">
+                    <i class="mdi mdi-notebook"></i>
+                    <span> Topics </span>
+                </a>
+            </li>
+            <li class="side-nav-item background-buttons">
+                <a  href="/siennaabm?id=20"  class="side-nav-link hovering-pan ">
+                    <i class="mdi mdi-message-star"></i>
+                    <span> C-sat </span>
+                </a>
+            </li>
+            <li class="side-nav-item background-buttons">
+                <a  href="/nodes"  class="side-nav-link hovering-pan ">
+                    <i class="mdi mdi-radio-tower"></i>
+                    <span> Nodos </span>
+                </a>
+            </li>   
+            <li class="side-nav-item background-buttons">
+                <a  href="/siennaabm?id=135"  class="side-nav-link hovering-pan ">
+                    <i class="mdi mdi-table-account"></i>
+                    <span> Clientes </span>
+                </a>
+            </li> 
+            <li class="side-nav-item background-buttons">
+                <a data-bs-toggle="collapse" href="/supervisor" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link hovering-pan">
+                    <i class="mdi mdi-book-search-outline"></i>
+                    <span>Reportes</span>
+                    <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarEcommerce">
-                  <ul class="side-nav-second-level">
-                    <li>
-                      <a href="/siennaform?id=1000">Reporte CSAT</a>
-                    </li>
-                    <li>
-                      <a href="/siennaform?id=1001">Reporte Tickets Cerrados </a>
-                    </li>
-                    <li>
-                      <a href="/siennaform?id=1002">Reporte Tickets por Agente</a>
-                    </li>
-                    <li>
-                      <a href="/siennaform?id=1003">Reporte Tickets Abiertos</a>
-                    </li>
-                    <li>
-                      <a href="/siennareport?id=1004">Reporte Tickets Por Dia</a>
-                    </li>
-                    <li>
-                      <a href="/siennareport?id=1005">Promedio de resolución por dia</a>
-                    </li>
-                    
-
-                  </ul>
-                </div>
-</li>
-                <li class="side-nav-item background-buttons">
-                    <a  href="/agentes"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-account-multiple"></i>
-                        <span> Agentes </span>
-                    </a>
-                </li>
-               
-                <li class="side-nav-item background-buttons">
-                    <a  href="/siennaabm?id=124"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-notebook"></i>
-                        <span> Topics </span>
-                    </a>
-                </li>
-                
-                <li class="side-nav-item background-buttons">
-                    <a  href="/siennaabm?id=20"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-message-star"></i>
-                        <span> C-sat </span>
-                    </a>
-                </li>
-               
-                <li class="side-nav-item background-buttons">
-                    <a  href="/nodes"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-radio-tower"></i>
-                        <span> Nodos </span>
-                    </a>
-                </li>   
-                <li class="side-nav-item background-buttons">
-                    <a  href="/siennaabm?id=135"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-table-account"></i>
-                        <span> Clientes </span>
-                    </a>
-                </li>   
-                
-    <?php
-     }
-    ?>
- <?php
-     $tipodemenu = session('tipodemenu');
-     if($tipodemenu =="1"){
-     ?>
-                <li class="side-nav-item background-buttons">
-                    <a  href="/siennaabm?id=1006"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-clipboard-list"></i>
-                        <span> Tareas Estados </span>
-                    </a>
-                </li>
-               <li class="side-nav-item background-buttons">
-                    <a  href="/conversations2"  class="side-nav-link hovering-pan ">
-                        <i class="uil uil-comment-message"></i>
-                        <span> Conversaciones </span>
-                    </a>
-                </li>
-                <li class="side-nav-item background-buttons d-none">
-                    <a  href="/siennaabm?id=18"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-message-question"></i>
-                        <span> Motivos cierre </span>
-                    </a>
-                </li>
-                <li class="side-nav-item background-buttons">
-                    <a  href="/empresadatos"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-office-building-cog"></i>
-                        <span> Empresa </span>
-                    </a>
-                </li>
-                <li class="side-nav-item background-buttons">
-                    <a  href="/siennaabm?id=57"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-view-list"></i>
-                        <span> Categoria </span>
-                    </a>
-                </li>
-                
-             
-    <?php
-     }
-    ?>
-            
-            <?php
-     $tipodemenu = session('tipodemenu');
-     if($tipodemenu =="4"){
-     ?>
-           
-           <li class="side-nav-item background-buttons">
-                    <a  href="/conversations2"  class="side-nav-link hovering-pan ">
-                        <i class="uil uil-comment-message"></i>
-                        <span> Conversaciones </span>
-                    </a>
-                </li>
-             
-    <?php
-     }
-    ?>
-               <?php
-     $tipodemenu = session('tipodemenu');
-     if($tipodemenu =="3"){
- 
-               if($nombreIntegracion == "wispro" || $nombreIntegracion == "futu") { ?>
-                        <li class="side-nav-item background-buttons ">
-                            <a  href="/getsaliente"  class="side-nav-link hovering-pan ">
-                                <i class="mdi mdi-send-circle-outline"></i>
-                                <span> Ticket manual </span>
-                            </a>
-                        </li>
-                <?php } ?>
-           <li class="side-nav-item background-buttons">
-                <a
-                  data-bs-toggle="collapse"
-                  href="/viewtickets"
-                  aria-expanded="false"
-                  aria-controls="sidebarDashboards"
-                  class="side-nav-link hovering-pan"
-                >
-                  <i class="uil-ticket"></i>
-                  <span>Tickets</span>
-                  <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarEcommerce">
-                  <ul class="side-nav-second-level">
-                    <li>
-                      <a href="/viewtickets">Abiertos</a>
-                    </li>
-                    <li>
-                      <a href="/cerrados">Cerrados</a>
-                    </li>
-                  </ul>
-                </div>
-</li>
-                <li class="side-nav-item background-buttons">
-                    <?php 
-                        if($tipodemenu == 3) $routeToTask = '/mistareas';
-                        else $routeToTask ='/tareas';
-                    ?>
-                    <a  href="<?php echo $routeToTask; ?>"  class="side-nav-link hovering-pan ">
-                        <i class="uil-clipboard-alt"></i>
-                        <span> Mis tareas </span>
-                    </a>
-                </li>
-             
-    <?php
-     }
-    ?>
-
-
-
-                <li class="side-nav-item background-buttons">
-                    <a href="/profile"   class="side-nav-link background-buttons">
-                        <i class="uil-user"></i>
-                        <span> <?php echo session('nombreusuario');?> </span>
-                    </a>    
-                </li>
-                  <li class="side-nav-item background-buttons">
-                      <a  href="/salir" class="side-nav-link background-buttons">
-                          <i class="uil-exit"></i>
-                          <span> Cerrar sesión </span>
-                      </a>    
-                  </li>
-  
-
-    <?php
-if ($categoria == 1) {?>
-
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
-                    <i class="uil-home-alt"></i>
-                    <span class="badge bg-success float-end"></span>
-                    <span> Sienna </span>
-                </a>
-                <div class="collapse" id="sidebarDashboards">
                     <ul class="side-nav-second-level">
                         <li>
-                        <a target="_self" href="/siennai">
-                                    <span id="sienna" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Sienna</span>
-                                </a>
+                            <a href="/siennaform?id=1000">Reporte CSAT</a>
                         </li>
                         <li>
-                        <a target="_self" href="/siennaabm?id=13">
-                                    <span id="Usuarios" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Usuarios</span>
-                                </a>
+                            <a href="/siennaform?id=1001">Reporte Tickets Cerrados </a>
                         </li>
                         <li>
-                        <a target="_self" href="/siennamenu?id=1">
-                                    <span id="report" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Report</span>
-                                </a>
+                            <a href="/siennaform?id=1002">Reporte Tickets por Agente</a>
                         </li>
-           
-                  
-
+                        <li>
+                            <a href="/siennaform?id=1003">Reporte Tickets Abiertos</a>
+                        </li>
+                        <li>
+                            <a href="/siennareport?id=1004">Reporte Tickets Por Dia</a>
+                        </li>
+                        <li>
+                            <a href="/siennareport?id=1005">Promedio de resolución por dia</a>
+                        </li>
                     </ul>
                 </div>
             </li>
-            <?php 
-}?>
+        <?php } ?>
+        <!--- master/agente -->
+        <?php
+        if($tipodemenu =="3"){?>
+           
+            <li class="side-nav-item background-buttons">
+                <a  href="/mistareas"  class="side-nav-link hovering-pan ">
+                    <i class="uil-clipboard-alt"></i>
+                    <span> Mis tareas </span>
+                </a>
+            </li>
+             
+        <?php  }?>
+
+        <!--- generico -->
+        <li class="side-nav-item background-buttons">
+            <a href="/profile"   class="side-nav-link background-buttons">
+                <i class="uil-user"></i>
+                <span> <?php echo session('nombreusuario');?> </span>
+            </a>    
+        </li>
+        <li class="side-nav-item background-buttons">
+            <a  href="/salir" class="side-nav-link background-buttons">
+                <i class="uil-exit"></i>
+                <span> Cerrar sesión </span>
+            </a>    
+        </li>
+        <!--- sistema sienna -->
+
        <?php
             if (sizeof($resultados) > 0) {
 
