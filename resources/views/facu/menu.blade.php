@@ -233,55 +233,52 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                 <span>  tareas </span>
                             </a>
                         </li>
+                        <li >
+                            <a  href="/salientesc"  >
+                                <i class="mdi mdi-whatsapp"></i>
+                                <span> Saliente masivo </span>
+                            </a>
+                        </li>
+                        <li >
+                            <a  href="/siennaabm?id=1100"  >
+                                <i class="mdi mdi-calendar"></i>
+                                <span> Feriados </span>
+                            </a>
+                        </li>
+                        <li >
+                            <a  href="/siennaabm?id=1101"  >
+                                <i class="mdi mdi-cloud-tags"></i>
+                                <span> Tags </span>
+                            </a>
+                        </li>
+                        <li >
+                            <a  href="/agentes" >
+                                <i class="mdi mdi-account-multiple"></i>
+                                <span> Agentes </span>
+                            </a>
+                        </li>
+                        <li >
+                            <a  href="/siennaabm?id=124"  >
+                                <i class="mdi mdi-notebook"></i>
+                                <span> Topics </span>
+                            </a>
+                        </li>
+                        <li >
+                            <a  href="/siennaabm?id=20"  >
+                                <i class="mdi mdi-message-star"></i>
+                                <span> C-sat </span>
+                            </a>
+                        </li>
+                        <li >
+                            <a  href="/nodes"  >
+                                <i class="mdi mdi-radio-tower"></i>
+                                <span> Nodos </span>
+                            </a>
+                        </li>   
+            
                     </ul>
                 </div>
-        </li>
-
-
-            
-            
-            <li class="side-nav-item background-buttons ">
-                <a  href="/salientesc"  class="side-nav-link hovering-pan ">
-                    <i class="mdi mdi-whatsapp"></i>
-                    <span> Saliente masivo </span>
-                </a>
             </li>
-            <li class="side-nav-item background-buttons ">
-                <a  href="/siennaabm?id=1100"  class="side-nav-link hovering-pan ">
-                    <i class="mdi mdi-calendar"></i>
-                    <span> Feriados </span>
-                </a>
-            </li>
-            <li class="side-nav-item background-buttons ">
-                <a  href="/siennaabm?id=1101"  class="side-nav-link hovering-pan ">
-                    <i class="mdi mdi-cloud-tags"></i>
-                    <span> Tags </span>
-                </a>
-            </li>
-            <li class="side-nav-item background-buttons">
-                <a  href="/agentes"  class="side-nav-link hovering-pan ">
-                    <i class="mdi mdi-account-multiple"></i>
-                    <span> Agentes </span>
-                </a>
-            </li>
-            <li class="side-nav-item background-buttons">
-                <a  href="/siennaabm?id=124"  class="side-nav-link hovering-pan ">
-                    <i class="mdi mdi-notebook"></i>
-                    <span> Topics </span>
-                </a>
-            </li>
-            <li class="side-nav-item background-buttons">
-                <a  href="/siennaabm?id=20"  class="side-nav-link hovering-pan ">
-                    <i class="mdi mdi-message-star"></i>
-                    <span> C-sat </span>
-                </a>
-            </li>
-            <li class="side-nav-item background-buttons">
-                <a  href="/nodes"  class="side-nav-link hovering-pan ">
-                    <i class="mdi mdi-radio-tower"></i>
-                    <span> Nodos </span>
-                </a>
-            </li>   
             <li class="side-nav-item background-buttons">
                 <a  href="/siennaabm?id=135"  class="side-nav-link hovering-pan ">
                     <i class="mdi mdi-table-account"></i>
@@ -317,6 +314,11 @@ if (isset($_SERVER['HTTP_HOST'])) {
                     </ul>
                 </div>
             </li>
+
+
+            
+            
+            
         <?php } ?>
         <!--- master/agente -->
         <?php
