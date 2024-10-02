@@ -222,13 +222,13 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 <div class="collapse" id="sidebarEcommerce">
                     <ul class="side-nav-second-level">
                         <li >
-                            <a  href="/soporte"  class="side-nav-link hovering-pan">
+                            <a  href="/soporte"  >
                                 <i class="mdi mdi-lifebuoy"></i>
                                 <span> Soporte Suricata </span>
                             </a>
                         </li>
                         <li >
-                            <a  href="/tareas"  class="side-nav-link hovering-pan ">
+                            <a  href="/tareas"  >
                                 <i class="uil-clipboard-alt"></i>
                                 <span>  tareas </span>
                             </a>
