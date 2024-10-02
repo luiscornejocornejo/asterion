@@ -343,7 +343,7 @@ class siennaController extends Controller
 
     // Verificar si el $userid está en el arreglo de permisos
     if (in_array($tipodemenu, $arrayPermisos)) {
-        echo "El usuario tiene permiso.";
+        $c= "El usuario tiene permiso.";
     } else {
       return view('denied');
 
