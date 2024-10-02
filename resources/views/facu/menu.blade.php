@@ -105,6 +105,15 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 </ul>
             </div>
         </li>
+        <!--- ispgroup -->
+        <?php if($subdomain_tmp == "ispgroup") { ?>
+                <li class="side-nav-item background-buttons ">
+                    <a  href="/siennaabm?id=1013"  class="side-nav-link hovering-pan ">
+                        <i class="mdi mdi-send-circle-outline"></i>
+                        <span> Grandes Clientes </span>
+                    </a>
+                </li>
+            <?php } ?>
         <!--- master -->
         <?php
         $tipodemenu = session('tipodemenu');
@@ -144,52 +153,40 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 </a>
             </li>
             <li class="side-nav-item background-buttons">
-                    <?php 
-                        if($tipodemenu == 3) $routeToTask = '/mistareas';
-                        else $routeToTask ='/tareas';
-                    ?>
-                    <a  href="<?php echo $routeToTask; ?>"  class="side-nav-link hovering-pan ">
-                        <i class="uil-clipboard-alt"></i>
-                        <span> Mis tareas </span>
-                    </a>
-                </li>
-                <li class="side-nav-item background-buttons ">
-                    <a  href="/salientesc"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-whatsapp"></i>
-                        <span> Saliente masivo </span>
-                    </a>
-                </li>
-                <li class="side-nav-item background-buttons ">
-                    <a  href="/siennaabm?id=1100"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-calendar"></i>
-                        <span> Feriados </span>
-                    </a>
-                </li>
-                <li class="side-nav-item background-buttons ">
-                    <a  href="/siennaabm?id=1101"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-cloud-tags"></i>
-                        <span> Tags </span>
-                    </a>
-                </li>
-                <?php 
-                
-                    if($nombreIntegracion == "wispro" || $nombreIntegracion == "futu") { ?>
-                        <li class="side-nav-item background-buttons ">
-                            <a  href="/getsaliente"  class="side-nav-link hovering-pan ">
-                                <i class="mdi mdi-send-circle-outline"></i>
-                                <span> Ticket manual </span>
-                            </a>
-                        </li>
-                <?php } ?>
-
-                <?php if($subdomain_tmp == "ispgroup") { ?>
+                <a  href="/tareas"  class="side-nav-link hovering-pan ">
+                    <i class="uil-clipboard-alt"></i>
+                    <span>  tareas </span>
+                </a>
+            </li>
+            <li class="side-nav-item background-buttons ">
+                <a  href="/salientesc"  class="side-nav-link hovering-pan ">
+                    <i class="mdi mdi-whatsapp"></i>
+                    <span> Saliente masivo </span>
+                </a>
+            </li>
+            <li class="side-nav-item background-buttons ">
+                <a  href="/siennaabm?id=1100"  class="side-nav-link hovering-pan ">
+                    <i class="mdi mdi-calendar"></i>
+                    <span> Feriados </span>
+                </a>
+            </li>
+            <li class="side-nav-item background-buttons ">
+                <a  href="/siennaabm?id=1101"  class="side-nav-link hovering-pan ">
+                    <i class="mdi mdi-cloud-tags"></i>
+                    <span> Tags </span>
+                </a>
+            </li>
+            <?php     
+                if($nombreIntegracion == "wispro" || $nombreIntegracion == "futu") { ?>
                     <li class="side-nav-item background-buttons ">
-                        <a  href="/siennaabm?id=1013"  class="side-nav-link hovering-pan ">
+                        <a  href="/getsaliente"  class="side-nav-link hovering-pan ">
                             <i class="mdi mdi-send-circle-outline"></i>
                             <span> Ticket manual </span>
                         </a>
                     </li>
             <?php } ?>
+
+            
 
 
 <li class="side-nav-item background-buttons">
