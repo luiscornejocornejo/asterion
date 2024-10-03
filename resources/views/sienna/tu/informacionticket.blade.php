@@ -46,14 +46,14 @@
                                         </div>
                                         <div class="mb-1">
                                         <i class="mdi mdi-code-tags" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Tags."></i>
-
+                                        <strong>Tags: </strong>
                                         <button onclick="tags(`<?php echo $resultados[0]->ticketid; ?>`)" class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-tag">
-                                            <strong>Tags: </strong>
-                                        </button>
-                                            
-                                            <?php foreach ($siennatagstickets as $valtags){
+                                        <?php foreach ($siennatagstickets as $valtags){
                                                     echo '<strong  class="badge badge-primary" style="background-color: '.$valtags->color.' !important;">'.$valtags->nombre.'</strong>';
                                             }?>
+                                        </button>
+                                            
+                                           
                                         </div>
                                         
                                         <?php //var_dump();?>
