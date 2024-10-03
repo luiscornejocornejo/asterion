@@ -226,9 +226,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         <button onclick="estado2(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->conversation_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`)" class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
                             <i class="mdi mdi-flag" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Cambiar estado."></i>
                         </button>
-                        <button onclick="tags(`<?php echo $resultados[0]->ticketid; ?>`)" class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-tag">
-                            <i class="mdi mdi-flag" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Tags."></i>
-                        </button>
+                        
                         <?php  $ctusers = session('ctusers');
 
                                 if($ctusers=="1"){?>
