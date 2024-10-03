@@ -14,7 +14,7 @@
                     <div v-for="department in departments">
                         <?php foreach ($siennatags as $dep) { ?>
                             <div class="form-check mt-2">
-                                <input value="<?php echo $dep->id; ?>" id="<?php echo $dep->id; ?>" class="form-check-input" type="radio" name="usuarioticket">
+                                <input style="backgroung-color='<?php echo $dep->color;?>'" value="<?php echo $dep->id; ?>" id="<?php echo $dep->id; ?>" class="form-check-input" type="checkbox" name="operacion[]">
                                 <label for="<?php echo $dep->id; ?>" class="form-check-label"><?php echo ucfirst($dep->nombre) ; ?></label>
                             </div>
                         <?php } ?>
