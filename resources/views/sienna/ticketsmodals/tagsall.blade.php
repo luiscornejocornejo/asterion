@@ -13,9 +13,9 @@
                     <input value="" readonly type="hidden" name="ticketss" id="idticketpedir20">
                     <div v-for="department in departments">
                         <?php foreach ($siennatags as $dep) { ?>
-                            <div class="form-check mt-2">
-                                <input value="<?php echo $dep->id; ?>" id="<?php echo $dep->id; ?>" class="form-check-input" type="checkbox" name="operacion[]">
-                                <label style="color='<?php echo $dep->color;?>'"  for="<?php echo $dep->id; ?>" class="form-check-label"><?php echo ucfirst($dep->nombre) ; ?></label>
+                            <div style="backgroung-color='<?php echo $dep->color;?>'" class="form-check mt-2">
+                                <input  value="<?php echo $dep->id; ?>" id="<?php echo $dep->id; ?>" class="form-check-input" type="checkbox" name="operacion[]">
+                                <label for="<?php echo $dep->id; ?>" class="form-check-label"><?php echo ucfirst($dep->nombre) ; ?></label>
                             </div>
                         <?php } ?>
                     </div>
