@@ -1667,6 +1667,10 @@ class TicketdatosController extends Controller
 
         $query7="select * from siennatags";
         $resultados7 = DB::select($query7);
+        $query8="SELECT * 
+                        FROM soporte.siennatags 
+                WHERE FIND_IN_SET(id, REPLACE((SELECT tags FROM soporte.siennatickets WHERE id = '".$tick."'), ' ', ''));";
+        $resultados8 = DB::select($query8);
        // dd($resultados);
        $querydeptos="select * from siennadepto";
        $resultadosdeptos = DB::select($querydeptos);
@@ -1743,6 +1747,7 @@ class TicketdatosController extends Controller
         ->with('resultadossuri', $resultadossuri)
         ->with('resultadostareas', $resultadostareas)
         ->with('siennatags', $resultados7)
+        ->with('siennatagstickets', $resultados8)
         ->with('resultados', $resultados);
 
     }

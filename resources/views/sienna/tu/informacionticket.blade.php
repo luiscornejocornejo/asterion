@@ -44,6 +44,7 @@
                                         <div class="mb-1">
                                             <i class="mdi mdi-information"></i> <strong>Tema de ayuda: </strong><?php echo $resultados[0]->topicname; ?>
                                         </div>
+                                        <?php var_dump($siennatagstickets);?>
                                     </div>
                                 </div>
 
