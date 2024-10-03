@@ -47,7 +47,7 @@
                                         <div class="mb-1">
                                             <i class="mdi mdi-code-tags"></i> <strong>Tags: </strong>
                                             <?php foreach ($siennatagstickets as $valtags){
-                                                    echo '<p  class="badge badge-primary" style="background-color: '.$valtags->color.' !important;">'.$valtags->nombre.'</p>';
+                                                    echo '<strong  class="badge badge-primary" style="background-color: '.$valtags->color.' !important;">'.$valtags->nombre.'</strong>';
                                             }?>
                                         </div>
                                         
