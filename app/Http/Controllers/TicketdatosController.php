@@ -1025,7 +1025,6 @@ class TicketdatosController extends Controller
 
                 $si44 = siennatickets::find($tik);
                 $telbroad=$si44->cel;
-                $descp=$si44->descp;
                 
                 //$telbroad="+5491160480646";
                 if($urlbroad<>"0"){
@@ -1045,6 +1044,8 @@ class TicketdatosController extends Controller
         $estadoant=$si2->siennaestado;
 
         $si2->siennaestado=$estado;
+        $si2->descripciondelcierre= $descp;
+
         if($estado==4){
 
             if($source<>'7'){
