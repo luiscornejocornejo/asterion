@@ -14,6 +14,8 @@
                     <span class="mt-2">Motivo de cierre:</span>
                     <div id="motivoc" class="mt-1"></div>
                     <div id="descierre" class="mt-1">
+                    <span class="mt-2">Descripcion del cierre:</span>
+
                         <texarea class="form-control mb-1"  name="descripciondelcierre"></textarea>
                     </div>
                     </div>
