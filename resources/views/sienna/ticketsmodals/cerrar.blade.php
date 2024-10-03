@@ -13,10 +13,10 @@
                     <br>
                     <span class="mt-2">Motivo de cierre:</span>
                     <div id="motivoc" class="mt-1"></div>
-                    <div id="descierre" class="mt-1">
+                    <div id="descierre" class="mt-3">
                     <span class="mt-2">Descripcion del cierre:</span>
 
-                        <texarea class="form-control mb-1"  name="descripciondelcierre"></textarea>
+                    <textarea name="descp" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                     </div>
                     
