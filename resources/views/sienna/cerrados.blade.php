@@ -106,6 +106,7 @@
                         '        <th class="text-light">Asignado</th>'+
                         
                         '        <th class="text-light">Estado</th>'+
+                        '        <th class="text-light">Descripcion</th>'+
                         '        <th class="text-light">Acciones</th>'+
                         '        '+
                         '    </tr>'+
@@ -125,6 +126,8 @@
                         '        <th class="text-light">Asignado</th>'+
 
                         '        <th class="text-light">Estado</th>'+
+                        '        <th class="text-light">Descripcion</th>'+
+
                         '        <th class="text-light">Acciones</th>'+
                         '        '+
                         '    </tr>'+
@@ -156,6 +159,7 @@
                     
 
                     ' <td> <span class="badge '+colorestado+'" style="font-size:medium;">' + response.data[i].estadoname + '</span>'+
+                    ' <td> <span  style="font-size:medium;">' + response.data[i].descripciondelcierre + '</span>'+
 
                     ' <td>'+
                     
