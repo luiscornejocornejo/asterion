@@ -10,7 +10,7 @@
                     @csrf
                     <input value="" type="hidden" name="idtickettags" id="idtickettags">
                     <input value="<?php echo session('nombreusuario'); ?>" type="hidden" name="logeado" id="logeado">
-                    <input value="" readonly type="hidden" name="ticketss" id="idticketpedir20">
+                    <input value="" readonly type="hidden" name="ticketss" id="idtickettags">
                     <div v-for="department in departments">
                         <?php foreach ($siennatags as $dep) { ?>
                             <div style="background-color: <?php echo $dep->color;?>;" class="form-check mt-2">
