@@ -949,7 +949,8 @@ class TicketdatosController extends Controller
         echo   $estado=$request->estado;
         echo   $source=$request->source;
         echo   $motivoc=$request->motivoc;
-
+        echo   $descp=$request->descp;
+        
         $idbot=$request->idbot;
         $idconv=$request->idconv;
         $bot_channel=$request->bot_channel;
@@ -1024,6 +1025,8 @@ class TicketdatosController extends Controller
 
                 $si44 = siennatickets::find($tik);
                 $telbroad=$si44->cel;
+                $descp=$si44->descp;
+                
                 //$telbroad="+5491160480646";
                 if($urlbroad<>"0"){
                     echo "entra";
