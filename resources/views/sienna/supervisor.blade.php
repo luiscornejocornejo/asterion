@@ -787,7 +787,7 @@ function obtenerFechaUTC() {
       @include('sienna.ticketsmodals.departamentos')
       @include('sienna.ticketsmodals.departamentos2')
       @include('sienna.ticketsmodals.asignarall')
-      @include('sienna.ticketsmodals.tagall')
+      @include('sienna.ticketsmodals.tagsall')
       @include('sienna.ticketsmodals.seguimientos')
       @include('sienna.ticketsmodals.historialtickets')
       @include('sienna.ticketsmodals.cerrar')
