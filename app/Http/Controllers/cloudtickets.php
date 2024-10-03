@@ -1740,7 +1740,7 @@ WHERE ticket IN (
         $ticketss = $request->idtickettags;
         $logeado = $request->logeado;
         $sep=explode(",",$ticketss);
-        $domi=$this->dominio();
+        echo $domi=$this->dominio();
 
         foreach($sep as $val){
 
