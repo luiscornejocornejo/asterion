@@ -839,11 +839,16 @@ class TicketdatosController extends Controller
         $resultados5 = DB::select($query5);
         $query6="select * from prioridad";
         $resultados6 = DB::select($query6);
+
+        $query7="select * from siennatags";
+        $resultados7 = DB::select($query7);
+
             return view('sienna/supervisor')
             ->with('subdomain_tmp', $subdomain_tmp)
             ->with("tickets",$resultados)
             ->with("maxid",$maxid)
             ->with("prioridades",$resultados6)
+            ->with("siennatags",$resultados7)
             ->with("deptos",$resultados3)
             ->with("iconos",$resultados5)
             ->with("source",$resultados4)

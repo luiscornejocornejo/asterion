@@ -12,10 +12,10 @@
                     <input value="<?php echo session('nombreusuario'); ?>" type="hidden" name="logeado" id="logeado">
                     <input value="" readonly type="hidden" name="ticketss" id="idticketpedir20">
                     <div v-for="department in departments">
-                        <?php foreach ($usersmerchant as $dep) { ?>
+                        <?php foreach ($siennatags as $dep) { ?>
                             <div class="form-check mt-2">
                                 <input value="<?php echo $dep->id; ?>" id="<?php echo $dep->id; ?>" class="form-check-input" type="radio" name="usuarioticket">
-                                <label for="<?php echo $dep->id; ?>" class="form-check-label"><?php echo ucfirst($dep->nombre) . " " . ucfirst($dep->last_name); ?></label>
+                                <label for="<?php echo $dep->id; ?>" class="form-check-label"><?php echo ucfirst($dep->nombre) ; ?></label>
                             </div>
                         <?php } ?>
                     </div>
