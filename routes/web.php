@@ -251,6 +251,7 @@ Route::post('/prioridadsiennaall','App\Http\Controllers\cloudtickets@prioridadsi
 Route::post('/eliminaragente','App\Http\Controllers\cloudtickets@eliminaragente');
 Route::post('/asignarall','App\Http\Controllers\cloudtickets@asignarall');
 Route::post('/tagsall','App\Http\Controllers\cloudtickets@tagsall');
+Route::post('/tags','App\Http\Controllers\cloudtickets@tags');
 
 Route::post('/crearticketsiennaclientegetdata','App\Http\Controllers\cloudtickets@crearticketsiennaclientegetdata');
 

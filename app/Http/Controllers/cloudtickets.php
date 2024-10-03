@@ -1747,7 +1747,6 @@ WHERE ticket IN (
             if($val<>""){
                 $si2 = siennatickets::find($val);
                 $si2->tags = $tags;
-                $nyaticket=$si2->nya ;
                 $si2->save();
 
                 $se = new siennaseguimientos();
@@ -1764,6 +1763,29 @@ WHERE ticket IN (
 
         
 
+        return redirect()
+            ->back()
+            ->with('success', 'Se asigno tags correctamente!');
+    }
+
+    public function tags(Request $request)
+    {
+
+        $tags = implode(', ', $request->operacion);
+        $usuarioticket = $request->usuarioticket;
+        $ticketss = $request->idtickettag;
+        $logeado = $request->logeado;
+        $si2 = siennatickets::find($ticketss);
+        $si2->tags = $tags;
+        $si2->save();
+
+        $se = new siennaseguimientos();
+        $se->ticket = $ticketss;
+        $se->tipo = "15";
+        $se->descripcion = "tag ";
+        $se->autor = $logeado;
+        $se->save();
+   
         return redirect()
             ->back()
             ->with('success', 'Se asigno tags correctamente!');

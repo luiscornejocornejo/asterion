@@ -226,6 +226,9 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         <button onclick="estado2(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->conversation_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`)" class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
                             <i class="mdi mdi-flag" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Cambiar estado."></i>
                         </button>
+                        <button onclick="tags(`<?php echo $resultados[0]->ticketid; ?>`)" class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-tag">
+                            <i class="mdi mdi-flag" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Tags."></i>
+                        </button>
                         <?php  $ctusers = session('ctusers');
 
                                 if($ctusers=="1"){?>
@@ -442,6 +445,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
     @include('sienna.ticketsmodals.cerrar')
     @include('sienna.ticketsmodals.estados')
     @include('sienna.tu.imagen')
+    @include('sienna.tu.tags')
     @include('sienna.tu.prioridad')
     <script>
         function topic(result, dd, ee, ff) {
@@ -482,6 +486,11 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
             // g='<iframe allow="camera;microphone"  src="'+dd+'" width="100%" height="800px" class="border rounded-3" style="height:500px !important"></iframe>';
             g = '<embed src="' + ruta + '" type="" width="180" height="auto" quality="high" wmode="transparent">'
             document.getElementById('vista2').innerHTML = g;
+        }
+        function tags(idtag){
+         
+          document.getElementById("idtickettag").value = idtag;
+
         }
     </script>
     <!-- /.modal-topic -->
