@@ -1,4 +1,5 @@
-<div id="standard-modal-reclamobs-example-modal-smtagsallclass="modal-dialog modal-sm">
+<div id="bs-example-modal-smtagsall" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dark-header-modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header bg-dark">
                 <h4 class="modal-title text-light" id="dark-header-modalLabel">Tags</h4>

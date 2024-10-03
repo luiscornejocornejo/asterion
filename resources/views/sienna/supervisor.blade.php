@@ -533,7 +533,7 @@ function obtenerFechaUTC() {
                 '<button type="button" onclick="deSelect()" class="btn btn-info tooltip-button"><span class="mdi mdi-checkbox-blank-outline"><span class="tooltiptext">Quitar selección</span></span></button> '+
                 '<button type="button" onclick="parar()" class="btn btn-danger tooltip-button"><span class="mdi mdi-motion-pause"><span class="tooltiptext"> Detener autosincronización</span></span></button> '+
                 '<button type="button" onclick="star()" class="btn btn-success tooltip-button"><span class="mdi mdi-refresh-auto"> <span class="tooltiptext"> Activar autosincronización</span></span></button> '+
-                '<button type="button" onclick="tags()" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smtagsall" class="btn btn-success tooltip-button"><span class="mdi mdi-refresh-auto"> <span class="tooltiptext"> Tags</span></span></button> '+
+                '<button onclick="tags()"  class="btn btn-success tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smtagsall"><span class="mdi mdi-check-circle"><span class="tooltiptext">Tgas</span></span></button>'+
                 '<br><br><table style="width: 100%;" id="example"  class="table table-hover display responsive nowrap text-light">'+
                                 '<thead>'+
                               '     <tr class="text-center bg-dark" >'+
