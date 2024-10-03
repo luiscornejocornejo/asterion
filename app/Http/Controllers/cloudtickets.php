@@ -1746,7 +1746,6 @@ WHERE ticket IN (
 
             if($val<>""){
                 $si2 = siennatickets::find($val);
-                dd($si2);
                 $si2->tags = $tags;
                 $nyaticket=$si2->nya ;
                 $si2->save();
