@@ -131,6 +131,25 @@
           document.getElementById("idticketpedir20").value = area_interes;
 
         }
+
+        function tags(){
+          var checked = document.querySelectorAll('input:checked');
+
+          if (checked.length === 0) {
+              // there are no checked checkboxes
+              console.log('no checkboxes checked');
+          } else {
+              // there are some checked checkboxes
+              console.log(checked.length + ' checkboxes checked');
+          }
+
+          let area_interes = "";
+          for (let i = 0, length = checked.length; i < length; i++) {
+              area_interes += checked[i].value + ",";             
+          }
+          document.getElementById("idtickettags").value = area_interes;
+
+        }
         function areaall(){
           var checked = document.querySelectorAll('input:checked');
 
@@ -514,6 +533,7 @@ function obtenerFechaUTC() {
                 '<button type="button" onclick="deSelect()" class="btn btn-info tooltip-button"><span class="mdi mdi-checkbox-blank-outline"><span class="tooltiptext">Quitar selección</span></span></button> '+
                 '<button type="button" onclick="parar()" class="btn btn-danger tooltip-button"><span class="mdi mdi-motion-pause"><span class="tooltiptext"> Detener autosincronización</span></span></button> '+
                 '<button type="button" onclick="star()" class="btn btn-success tooltip-button"><span class="mdi mdi-refresh-auto"> <span class="tooltiptext"> Activar autosincronización</span></span></button> '+
+                '<button type="button" onclick="tags()" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smtagsall" class="btn btn-success tooltip-button"><span class="mdi mdi-refresh-auto"> <span class="tooltiptext"> Tags</span></span></button> '+
                 '<br><br><table style="width: 100%;" id="example"  class="table table-hover display responsive nowrap text-light">'+
                                 '<thead>'+
                               '     <tr class="text-center bg-dark" >'+
@@ -767,6 +787,7 @@ function obtenerFechaUTC() {
       @include('sienna.ticketsmodals.departamentos')
       @include('sienna.ticketsmodals.departamentos2')
       @include('sienna.ticketsmodals.asignarall')
+      @include('sienna.ticketsmodals.tagall')
       @include('sienna.ticketsmodals.seguimientos')
       @include('sienna.ticketsmodals.historialtickets')
       @include('sienna.ticketsmodals.cerrar')
