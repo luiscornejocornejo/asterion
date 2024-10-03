@@ -44,7 +44,14 @@
                                         <div class="mb-1">
                                             <i class="mdi mdi-information"></i> <strong>Tema de ayuda: </strong><?php echo $resultados[0]->topicname; ?>
                                         </div>
-                                        <?php //var_dump($siennatagstickets);?>
+                                        <div class="mb-1">
+                                            <i class="mdi mdi-code-tags"></i> <strong>Tags: </strong>
+                                            <?php foreach ($siennatagstickets as $valtags){
+                                                    echo $valtags->nombre;
+                                            }?>
+                                        </div>
+                                        
+                                        <?php //var_dump();?>
                                     </div>
                                 </div>
 
