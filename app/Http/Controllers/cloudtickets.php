@@ -1735,7 +1735,7 @@ WHERE ticket IN (
     public function tagsall(Request $request)
     {
 
-        echo $tags = implode(', ', $operacion);
+        echo $tags = implode(', ', $request->operacion);
         $usuarioticket = $request->usuarioticket;
         $ticketss = $request->idtickettags;
         $logeado = $request->logeado;
