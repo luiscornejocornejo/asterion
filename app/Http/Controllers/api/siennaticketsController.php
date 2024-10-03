@@ -530,6 +530,7 @@ class siennaticketsController extends Controller
                 left join  ".$merchant.".siennatopic d on d.id=a.siennatopic
                 left join  ".$merchant.".users e on e.id=a.asignado
                 left join  ".$merchant.".prioridad f on f.id=a.prioridad
+               
         
                 where a.siennaestado not in('3','4')  
                           and a.asignado='" . $idusuario . "' 

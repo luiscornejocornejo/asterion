@@ -1752,7 +1752,7 @@ WHERE ticket IN (
 
                 $se = new siennaseguimientos();
                 $se->ticket = $val;
-                $se->tipo = "11";
+                $se->tipo = "15";
                 $se->descripcion = "tag ";
                 $se->autor = $logeado;
                 $se->save();
