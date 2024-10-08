@@ -33,7 +33,7 @@
 
                     </div>
             
-                <table class="table table-centered mb-0">
+                <table id="nodes" class="table table-striped dt-responsive nowrap w-100 mt-2">
                     <thead class=" bg-dark">
                         <tr class="text-center">
                             <th class="text-light">ID</th>
@@ -63,6 +63,15 @@
                         <?php }?>
 
                     </tbody>
+                    <tfoot>
+                        <tr class="bg-secondary">
+                            <th>ID</th>
+                            <th>Nodo</th>
+                            <th>Ciudad</th>
+                            <th>Estado del Nodo</th>
+                            <th>Mensaje</th>
+                        </tr>
+                    </tfoot>
                 </table>
         </form>
 
@@ -70,4 +79,43 @@
 </div> 
 </div>
     <br><br><br>
+
+    
     @include('facu.footer')
+
+    <script>
+        $('#nodes').dataTable({
+            "order": [
+                [0, 'desc']
+            ],
+            "pageLength": 25,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
+            },
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+            initComplete: function() {
+                this.api()
+                    .columns()
+                    .every(function() {
+                        let column = this;
+                        let title = column.footer().textContent;
+
+                        // Create input element
+                        let input = document.createElement("input");
+                        input.placeholder = title;
+                        input.className = "form-control";
+                        column.footer().replaceChildren(input);
+
+                        // Event listener for user input
+                        input.addEventListener("keyup", () => {
+                            if (column.search() !== this.value) {
+                                column.search(input.value).draw();
+                            }
+                        });
+                    });
+            }
+        });
+    </script>
