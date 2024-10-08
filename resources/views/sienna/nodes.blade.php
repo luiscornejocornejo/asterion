@@ -33,12 +33,13 @@
 
                     </div>
             
-                <table class="table table-centered mb-0">
+                <table  id="example"  class="table table-centered mb-0">
                     <thead class=" bg-dark">
                         <tr class="text-center">
                             <th class="text-light">ID</th>
                             <th class="text-light">Nodo</th>
                             <th class="text-light">Ciudad</th>
+                            <th class="text-light">ID  ERP</th>
                             <th class="text-light">Estado del Nodo</th>
                             <th class="text-light">Mensaje</th>
                         </tr>
@@ -55,6 +56,7 @@
                             <td><?php echo $value->nombredelnodo;?></td>
 
                             <td><?php echo $value->ciudad;?></td>
+                            <td><?php echo $value->iddelerp;?></td>
                             <td><?php echo $value->nombredelestadonodo;?></td>
                             <td><?php echo $value->mensaje;?></td>
 
