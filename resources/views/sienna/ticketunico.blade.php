@@ -241,7 +241,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                         <?php }?>
                         <button onclick="printScreen()" class="btn btn-secondary" type="button">
-                            <i class="mdi mdi-print-cloud" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Imprimir ticket."></i>
+                            <i class="mdi mdi-cloud-print-outline" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Imprimir ticket."></i>
                         </button>
                     </div>
                 </div>
