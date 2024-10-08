@@ -240,7 +240,9 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                             </button>
 
                         <?php }?>
-
+                        <button onclick="printScreen()" class="btn btn-secondary" type="button">
+                            <i class="mdi mdi-cloud-print-outline" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Imprimir ticket."></i>
+                        </button>
                     </div>
                 </div>
 
@@ -329,7 +331,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                     </div>
                 </div>
-                <div class="col-sm-12 col-lg-4 col-xxl-3 card widget-flat">
+                <div class="col-sm-12 col-lg-4 col-xxl-3 card widget-flat" id="forwardTicket">
                     <strong class="mt-2">Seguimiento</strong>
                     <hr>
                     <div class="card-body" style="padding-top: 0;">
@@ -490,6 +492,37 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
           document.getElementById("idtickettag").value = idtag;
 
         }
+
+        function printScreen() {
+        let infoTicket = document.getElementById("infoTicket").innerHTML
+        let infoUser = document.getElementById("infoUser").innerHTML
+        let ticketHistory = document.getElementById("ticketHistory").innerHTML
+        let forwardTicket = document.getElementById("forwardTicket").innerHTML
+
+        let printWindow = window.open('', '', 'height=500, width=500');
+        printWindow.document.open();
+        printWindow.document.write(`
+            <html>
+            <head>
+                <title>Print Div Content</title>
+                <style>
+                    body { font-family: Arial, sans-serif; }
+                    h1 { color: #333; }
+                </style>
+            </head>
+            <body>
+                ${infoTicket}
+                ${infoUser}
+                ${ticketHistory}
+                <br>
+                ${forwardTicket}
+            </body>
+            </html>
+        `);
+        printWindow.document.close();
+        printWindow.print()
+    }
+
     </script>
     <!-- /.modal-topic -->
 
