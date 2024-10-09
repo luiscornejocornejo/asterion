@@ -326,7 +326,7 @@ class Dashboard2Controller extends Controller
         LEFT JOIN `siennaestado` AS `Siennaestado` ON `siennatickets_view`.`siennaestado` = `Siennaestado`.`id`
         LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
         ".$subquery."
-        (`Siennaestado`.`nombre` <> 'Cerrado')
+       and (`Siennaestado`.`nombre` <> 'Cerrado')
         OR (`Siennaestado`.`nombre` IS NULL)
         GROUP BY
         `Siennadepto`.`nombre`";
