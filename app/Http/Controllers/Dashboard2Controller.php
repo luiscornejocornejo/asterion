@@ -139,11 +139,22 @@ class Dashboard2Controller extends Controller
 
      public function getTicketsCreated($source,$department,$agent,$daterange)
     {
+        $subquery = " WHERE 1=1"; 
         if($source<>null){
             $source = implode(', ', $source);
-           $subquery=" where siennatickets_view.siennasource in(".$source.")";
-        }else{
-            $subquery="";
+           $subquery=" and siennatickets_view.siennasource in(".$source.")";
+        }
+        if($department<>null){
+            $department = implode(', ', $department);
+           $subquery=" and siennatickets_view.siennadepto in(".$department.")";
+        }
+        if($daterange<>null){
+           // $department = implode(', ', $department);
+           //$subquery=" and siennatickets_view.siennadepto in(".$department.")";
+        }
+        if($agent<>null){
+            $agent = implode(', ', $agent);
+           $subquery=" and siennatickets_view.asignado in(".$agent.")";
         }
         $queryTicketsCreated = "SELECT COUNT(*) AS `count`FROM `siennatickets_view` 
         LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
