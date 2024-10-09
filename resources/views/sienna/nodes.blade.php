@@ -73,6 +73,7 @@
                             <th>ID</th>
                             <th>Nodo</th>
                             <th>Ciudad</th>
+                            <th>ID ERP</th>
                             <th>Estado del Nodo</th>
                             <th>Mensaje</th>
                         </tr>
