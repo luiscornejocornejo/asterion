@@ -150,8 +150,8 @@ class Dashboard2Controller extends Controller
             $department = implode(', ', $department);
            $subquery.=" and siennatickets_view.siennadepto in(".$department.")";
         }
-        if ($periodo !== null && isset($daterange['start']) && isset($daterange['end'])) {
-            // $department = implode(', ', $department);
+        if ($periodo !== null) {
+           // $department = implode(', ', $department);
         
             $daterange = null;
            switch ($periodo) {
@@ -211,7 +211,10 @@ class Dashboard2Controller extends Controller
                     $daterange = null;
                     break;
             }
+            if (isset($daterange['start']) && isset($daterange['end'])) {
+
            $subquery .= " AND siennatickets_view.created_at BETWEEN '".$daterange['start']."' AND '".$daterange['end']."'";
+            }
         }
         if($agent<>null){
             $agent = implode(', ', $agent);
