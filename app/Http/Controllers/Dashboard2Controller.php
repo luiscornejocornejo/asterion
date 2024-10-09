@@ -350,6 +350,7 @@ class Dashboard2Controller extends Controller
     }
     public function dashboardgeneric()
     {
+        
         $ticketCreated = $this->getTicketsCreated();
         $ticketByStatus = $this->getTicketsByStatus();
         $ticketPerAgent = $this->getTicketPerAgent();
