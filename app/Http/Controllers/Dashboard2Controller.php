@@ -314,12 +314,13 @@ class Dashboard2Controller extends Controller
         LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
         LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
         LEFT JOIN `siennaestado` AS `Siennaestado` ON `siennatickets_view`.`siennaestado` = `Siennaestado`.`id`
+        ".$subquery."
         GROUP BY
             `Siennaestado`.`nombre`
         ORDER BY
             `count` DESC,
             `Siennaestado`.`nombre` ASC";
-        $resultByStatus = DB::select($queryByStatus.$subquery);
+        $resultByStatus = DB::select($queryByStatus);
 
         return $resultByStatus;       
     }
