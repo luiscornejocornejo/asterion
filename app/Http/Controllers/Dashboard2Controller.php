@@ -150,8 +150,8 @@ class Dashboard2Controller extends Controller
             $department = implode(', ', $department);
            $subquery.=" and siennatickets_view.siennadepto in(".$department.")";
         }
-        if ($periodo !== null) {
-           // $department = implode(', ', $department);
+        if ($periodo !== null && isset($daterange['start']) && isset($daterange['end'])) {
+            // $department = implode(', ', $department);
         
             $daterange = null;
            switch ($periodo) {
