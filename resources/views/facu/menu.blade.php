@@ -133,6 +133,16 @@ if (isset($_SERVER['HTTP_HOST'])) {
                     </a>
                 </li>
         <?php } ?>
+        <!--- ispgroup -->
+        <?php if($subdomain_tmp == "wiber") { ?>
+                <li class="side-nav-item background-buttons ">
+                    <a  href="/siennaabm?id=1013"  class="side-nav-link hovering-pan ">
+                        <i class="mdi mdi-send-circle-outline"></i>
+                        <span> Subcategorias Anatod </span>
+                    </a>
+                </li>
+        <?php } ?>
+     
         <!--- integracion -->
         <?php     
             if($nombreIntegracion == "wispro" || $nombreIntegracion == "futu") { ?>
