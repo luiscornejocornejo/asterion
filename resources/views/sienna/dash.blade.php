@@ -30,12 +30,17 @@
                                 <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
                                     <div class="mb-3">
                                         <label class="form-label">Período</label>
-                                        <div id="reportrange" name="daterange" class="form-control"
-                                            data-toggle="date-picker-range" data-target-display="#selectedValue"
-                                            data-cancel-class="btn-light">
-                                            <i class="mdi mdi-calendar"></i>&nbsp;
-                                            <span id="selectedValue"></span> <i class="mdi mdi-menu-down"></i>
-                                        </div>
+                                        <select name="periodo" id="periodo" class="form-select">
+                                        <option value="0">Hoy</option>
+                                        <option value="1">Ayer</option>
+                                        <option value="2">Ultmos 7 Dias</option>
+                                        <option value="3">Ultmos 30 Dias</option>
+                                        <option value="4">Mes Actual</option>
+                                        <option value="5">Mes Anterior</option>
+                                        <option value="6">Rango</option>
+                                        </select>
+
+                                     
                                     </div>
                                 </div>
                                 <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
