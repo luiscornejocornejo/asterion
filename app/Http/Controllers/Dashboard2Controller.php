@@ -213,7 +213,7 @@ class Dashboard2Controller extends Controller
             }
             if (isset($daterange['start']) && isset($daterange['end'])) {
 
-           $subquery .= " AND siennatickets_view.created_at BETWEEN '".$daterange['start']."' AND '".$daterange['end']."'";
+           $subquery .= " AND siennatickets_view.created_at > '".$daterange['start']." 00:00:00' AND siennatickets_view.created_at < '".$daterange['end']." 23:59:59'";
             }
         }
         if($agent<>null){
