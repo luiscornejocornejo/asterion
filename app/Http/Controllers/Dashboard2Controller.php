@@ -340,7 +340,7 @@ class Dashboard2Controller extends Controller
     {
         $subquery=$this->subquery($source,$department,$agent,$periodo);
 
-            $queryTimeOfLive = "SELECT
+       echo     $queryTimeOfLive = "SELECT
             DATE(`siennatickets_view`.`timeoflife`) AS `timeoflife`,
             COUNT(*) AS `count`
             FROM
