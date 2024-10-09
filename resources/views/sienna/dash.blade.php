@@ -40,8 +40,7 @@
                                 </div>
                                 <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
                                     <label for="channel" class="form-label">Canales</label>
-                                    <select multiple name="channel" id="channel" class="form-select">
-                                        <option>Todos</option>
+                                    <select name="channel[]" id="channel" multiple="multiple" class="form-select">
                                         @foreach ($sources as $source)
                                             <option id="{{ $source->id }}">
                                                 {{ $source->nombre }}
@@ -51,8 +50,7 @@
                                 </div>
                                 <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
                                     <label for="deparment" class="form-label">Departamento</label>
-                                    <select multiple name="department" id="department" class="form-select">
-                                    <option>Todos</option>
+                                    <select name="department[]" id="department" multiple="multiple"  class="form-select">
 
                                         @foreach ($departments as $department)
                                             <option id="{{ $department->id }}">
@@ -63,8 +61,7 @@
                                 </div>
                                 <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
                                     <label for="agent" class="form-label">Agente</label>
-                                    <select multiple name="agent" id="agent" class="form-select">
-                                    <option>Todos</option>
+                                    <select name="agent[]" id="agent" multiple="multiple" class="form-select">
 
                                         @foreach ($agents as $agent)
                                             <option id="{{ $agent->id }}">
