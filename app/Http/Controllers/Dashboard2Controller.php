@@ -297,7 +297,7 @@ class Dashboard2Controller extends Controller
     public function getTicketByDepartment($source,$department,$agent,$periodo)
     {
         $subquery=$this->subquery($source,$department,$agent,$periodo);
-        $queryByDepartment = "SELECT
+       echo $queryByDepartment = "SELECT
         `Siennadepto`.`nombre` AS `Siennadepto__nombre`,
         COUNT(*) AS `count`
         FROM `siennatickets_view`
