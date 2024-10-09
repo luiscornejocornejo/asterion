@@ -142,11 +142,11 @@ class Dashboard2Controller extends Controller
         $subquery = " WHERE 1=1"; 
         if($source<>null){
             $source = implode(', ', $source);
-           $subquery=" and siennatickets_view.siennasource in(".$source.")";
+           $subquery.=" and siennatickets_view.siennasource in(".$source.")";
         }
         if($department<>null){
             $department = implode(', ', $department);
-           $subquery=" and siennatickets_view.siennadepto in(".$department.")";
+           $subquery.=" and siennatickets_view.siennadepto in(".$department.")";
         }
         if($daterange<>null){
            // $department = implode(', ', $department);
@@ -154,7 +154,7 @@ class Dashboard2Controller extends Controller
         }
         if($agent<>null){
             $agent = implode(', ', $agent);
-           $subquery=" and siennatickets_view.asignado in(".$agent.")";
+           $subquery.=" and siennatickets_view.asignado in(".$agent.")";
         }
         $queryTicketsCreated = "SELECT COUNT(*) AS `count`FROM `siennatickets_view` 
         LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
