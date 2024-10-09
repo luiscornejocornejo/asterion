@@ -53,7 +53,7 @@
                                     <select name="department[]" id="department" multiple="multiple"  class="form-select">
 
                                         @foreach ($departments as $department)
-                                            <option id="{{ $department->id }}">
+                                            <option value="{{ $department->id }}">
                                                 {{ $department->nombre }}
                                             </option>
                                         @endforeach
@@ -64,7 +64,7 @@
                                     <select name="agent[]" id="agent" multiple="multiple" class="form-select">
 
                                         @foreach ($agents as $agent)
-                                            <option id="{{ $agent->id }}">
+                                            <option value="{{ $agent->id }}">
                                                 {{ $agent->nombre }} {{ $agent->last_name }}
                                             </option>
                                         @endforeach

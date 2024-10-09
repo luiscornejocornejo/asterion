@@ -139,14 +139,17 @@ class Dashboard2Controller extends Controller
 
      public function getTicketsCreated($source,$department,$agent,$daterange)
     {
-        if($source<>"Todos"){
-           //$subquery=" where siennatickets_view.siennasource='""'";
+        if($source<>null){
+            $source = implode(', ', $source);
+           $subquery=" where siennatickets_view.siennasource in(".$source.")";
+        }else{
+            $subquery="";
         }
         $queryTicketsCreated = "SELECT COUNT(*) AS `count`FROM `siennatickets_view` 
         LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
         LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
         LEFT JOIN `users` AS `Users - Siennaestado` ON `siennatickets_view`.`siennaestado` = `Users - Siennaestado`.`id`";
-        $resultTicketCreated = DB::select($queryTicketsCreated);
+        $resultTicketCreated = DB::select($queryTicketsCreated.$subquery);
         
         return $resultTicketCreated;
     } 
