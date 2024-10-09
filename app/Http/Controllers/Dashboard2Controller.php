@@ -316,14 +316,16 @@ class Dashboard2Controller extends Controller
         return $resultByDepartment;
     }
 
-    public function getTicketPendings()
+    public function getTicketPendings($source,$department,$agent,$periodo)
     {
+        $subquery=$this->subquery($source,$department,$agent,$periodo);
+
         $queryTicketPendings = "SELECT `Siennadepto`.`nombre` AS `Siennadepto__nombre`, COUNT(*) AS `count` FROM `siennatickets_view`
         LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
         LEFT JOIN `users` AS `Users` ON `siennatickets_view`.`user_id` = `Users`.`id`
         LEFT JOIN `siennaestado` AS `Siennaestado` ON `siennatickets_view`.`siennaestado` = `Siennaestado`.`id`
         LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
-        WHERE
+        ".$subquery."
         (`Siennaestado`.`nombre` <> 'Cerrado')
         OR (`Siennaestado`.`nombre` IS NULL)
         GROUP BY
@@ -334,8 +336,10 @@ class Dashboard2Controller extends Controller
         return $resultTicketPendings;
     }
 
-    public function getTimeOfLiveOfTickets()
+    public function getTimeOfLiveOfTickets($source,$department,$agent,$periodo)
     {
+        $subquery=$this->subquery($source,$department,$agent,$periodo);
+
             $queryTimeOfLive = "SELECT
             DATE(`siennatickets_view`.`timeoflife`) AS `timeoflife`,
             COUNT(*) AS `count`
@@ -344,6 +348,8 @@ class Dashboard2Controller extends Controller
 
             LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
             LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
+                    ".$subquery."
+
             GROUP BY
             DATE(`siennatickets_view`.`timeoflife`)
             ORDER BY
@@ -458,8 +464,8 @@ class Dashboard2Controller extends Controller
         $ticketPerAgent = $this->getTicketPerAgent($source,$department,$agent,$daterange);
         $ticketPerChannel = $this->getTicketPerChannel($source,$department,$agent,$daterange);
         $ticketByDepartment = $this->getTicketByDepartment($source,$department,$agent,$daterange);
-        $ticketPendings = $this->getTicketPendings();
-        $ticketTimeOfLive = $this->getTimeOfLiveOfTickets();
+        $ticketPendings = $this->getTicketPendings($source,$department,$agent,$daterange);
+        $ticketTimeOfLive = $this->getTimeOfLiveOfTickets($source,$department,$agent,$daterange);
         $ticketPerDepartmentByDay = $this->getTicketPerDepartmentByDay();
         $ticketPendingByTopic = $this->getTicketPendingByTopic();
         $ticketTopicPerDay = $this->getTicketTopicPerDay();
@@ -496,8 +502,8 @@ class Dashboard2Controller extends Controller
         $ticketPerAgent = $this->getTicketPerAgent($source,$department,$agent,$daterange);
         $ticketPerChannel = $this->getTicketPerChannel($source,$department,$agent,$daterange);
         $ticketByDepartment = $this->getTicketByDepartment($source,$department,$agent,$daterange);
-        $ticketPendings = $this->getTicketPendings();
-        $ticketTimeOfLive = $this->getTimeOfLiveOfTickets();
+        $ticketPendings = $this->getTicketPendings($source,$department,$agent,$daterange);
+        $ticketTimeOfLive = $this->getTimeOfLiveOfTickets($source,$department,$agent,$daterange);
         $ticketPerDepartmentByDay = $this->getTicketPerDepartmentByDay();
         $ticketPendingByTopic = $this->getTicketPendingByTopic();
         $ticketTopicPerDay = $this->getTicketTopicPerDay();
