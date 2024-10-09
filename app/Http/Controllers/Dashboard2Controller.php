@@ -137,8 +137,11 @@ class Dashboard2Controller extends Controller
   
     }
 
-     public function getTicketsCreated()
+     public function getTicketsCreated($source,$department,$agent,$daterange)
     {
+        if($source<>"Todos"){
+            $subquery=" where siennatickets_view.siennasource='""'";
+        }
         $queryTicketsCreated = "SELECT COUNT(*) AS `count`FROM `siennatickets_view` 
         LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
         LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
@@ -350,12 +353,51 @@ class Dashboard2Controller extends Controller
     }
     public function dashboardgeneric()
     {
-        
+
         $ticketCreated = $this->getTicketsCreated();
         $ticketByStatus = $this->getTicketsByStatus();
         $ticketPerAgent = $this->getTicketPerAgent();
         $ticketPerChannel = $this->getTicketPerChannel();
         $ticketByDepartment = $this->getTicketByDepartment();
+        $ticketPendings = $this->getTicketPendings();
+        $ticketTimeOfLive = $this->getTimeOfLiveOfTickets();
+        $ticketPerDepartmentByDay = $this->getTicketPerDepartmentByDay();
+        $ticketPendingByTopic = $this->getTicketPendingByTopic();
+        $ticketTopicPerDay = $this->getTicketTopicPerDay();
+        $getAgent = $this->getAgents();
+        $getSource = $this->getSources();
+        $getDepartment = $this->getDepartments();
+
+        return view('sienna/dash', [
+            'tickets' => $ticketCreated,
+            'status' => $ticketByStatus,
+            'perAgent' => $ticketPerAgent,
+            'perChannel' => $ticketPerChannel,
+            'byDepartment' => $ticketByDepartment,
+            'tickets_pendings' => $ticketPendings,
+            'ticket_timeLive' => $ticketTimeOfLive,
+            'departmentByDay' => $ticketPerDepartmentByDay,
+            'pendingByTopic' => $ticketPendingByTopic,
+            'topicPerDay' => $ticketTopicPerDay,
+            'agents' => $getAgent,
+            'sources' => $getSource,
+            'departments' => $getDepartment
+        ]);
+    }
+    public function dashboardgeneric2(Request $request)
+    {
+        
+        $source=$request->channel;
+        dd($source);
+        $department=$request->department;
+        $agent=$request->agent;
+        $daterange=$request->daterange;
+
+        $ticketCreated = $this->getTicketsCreated($source,$department,$agent,$daterange);
+        $ticketByStatus = $this->getTicketsByStatus($source,$department,$agent,$daterange);
+        $ticketPerAgent = $this->getTicketPerAgent($source,$department,$agent,$daterange);
+        $ticketPerChannel = $this->getTicketPerChannel($source,$department,$agent,$daterange);
+        $ticketByDepartment = $this->getTicketByDepartment($source,$department,$agent,$daterange);
         $ticketPendings = $this->getTicketPendings();
         $ticketTimeOfLive = $this->getTimeOfLiveOfTickets();
         $ticketPerDepartmentByDay = $this->getTicketPerDepartmentByDay();

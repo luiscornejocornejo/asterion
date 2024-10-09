@@ -108,6 +108,7 @@ Route::get('/endpointentrantes','App\Http\Controllers\siennaController@endpointe
 Route::get('/profile','App\Http\Controllers\LoginController@profile');
 Route::post('/actualizardatos','App\Http\Controllers\LoginController@actualizardatos');
 Route::get('/dash', 'App\Http\Controllers\Dashboard2Controller@dashboardgeneric');
+Route::post('/dash', 'App\Http\Controllers\Dashboard2Controller@dashboardgeneric2');
 
 Route::get('/chatsienna','App\Http\Controllers\ChatsiennaController@index');
 Route::get('/chatsiennacrear','App\Http\Controllers\ChatsiennaController@creardb');
