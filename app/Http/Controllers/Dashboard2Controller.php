@@ -320,7 +320,7 @@ class Dashboard2Controller extends Controller
     {
         $subquery=$this->subquery($source,$department,$agent,$periodo);
 
-        $queryTicketPendings = "SELECT `Siennadepto`.`nombre` AS `Siennadepto__nombre`, COUNT(*) AS `count` FROM `siennatickets_view`
+      echo  $queryTicketPendings = "SELECT `Siennadepto`.`nombre` AS `Siennadepto__nombre`, COUNT(*) AS `count` FROM `siennatickets_view`
         LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
         LEFT JOIN `users` AS `Users` ON `siennatickets_view`.`user_id` = `Users`.`id`
         LEFT JOIN `siennaestado` AS `Siennaestado` ON `siennatickets_view`.`siennaestado` = `Siennaestado`.`id`
