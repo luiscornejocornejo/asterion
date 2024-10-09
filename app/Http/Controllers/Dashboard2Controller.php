@@ -160,6 +160,7 @@ class Dashboard2Controller extends Controller
         LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
         LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
         LEFT JOIN `users` AS `Users - Siennaestado` ON `siennatickets_view`.`siennaestado` = `Users - Siennaestado`.`id`";
+        echo $queryTicketsCreated.$subquery;
         $resultTicketCreated = DB::select($queryTicketsCreated.$subquery);
         
         return $resultTicketCreated;
