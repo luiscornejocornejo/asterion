@@ -324,13 +324,14 @@ class Dashboard2Controller extends Controller
 
         return $resultByStatus;       
     }
-    public function getTicketPerAgent() 
+    public function getTicketPerAgent($source,$department,$agent,$periodo) 
     {
         $queryPerAgent = "SELECT `Users - Asignado`.`last_name` AS `Users - Asignado__last_name`, COUNT(*) AS `count`
         FROM
         `siennatickets_view`
         LEFT JOIN `users` AS `Users - Asignado` ON `siennatickets_view`.`asignado` = `Users - Asignado`.`id`
-        GROUP BY
+         ".$subquery."
+         GROUP BY
         `Users - Asignado`.`last_name`
         ORDER BY
         `Users - Asignado`.`last_name` ASC";
@@ -518,7 +519,7 @@ class Dashboard2Controller extends Controller
         $daterange="";
         $ticketCreated = $this->getTicketsCreated($source,$department,$agent,$daterange);
         $ticketByStatus = $this->getTicketsByStatus($source,$department,$agent,$daterange);
-        $ticketPerAgent = $this->getTicketPerAgent();
+        $ticketPerAgent = $this->getTicketPerAgent($source,$department,$agent,$daterange);
         $ticketPerChannel = $this->getTicketPerChannel();
         $ticketByDepartment = $this->getTicketByDepartment();
         $ticketPendings = $this->getTicketPendings();
