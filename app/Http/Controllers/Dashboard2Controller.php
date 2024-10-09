@@ -319,7 +319,7 @@ class Dashboard2Controller extends Controller
         ORDER BY
             `count` DESC,
             `Siennaestado`.`nombre` ASC";
-        $resultByStatus = DB::select($queryByStatus);
+        $resultByStatus = DB::select($queryByStatus.$subquery);
 
         return $resultByStatus;       
     }
