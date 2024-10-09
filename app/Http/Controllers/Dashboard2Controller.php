@@ -394,7 +394,6 @@ class Dashboard2Controller extends Controller
     {
         
         $source=$request->channel;
-        dd($source);
         $department=$request->department;
         $agent=$request->agent;
         $daterange=$request->daterange;
