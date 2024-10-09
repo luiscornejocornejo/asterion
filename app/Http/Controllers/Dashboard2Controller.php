@@ -353,8 +353,11 @@ class Dashboard2Controller extends Controller
     }
     public function dashboardgeneric()
     {
-
-        $ticketCreated = $this->getTicketsCreated();
+        $source="";
+        $department="";
+        $agent="";
+        $daterange="";
+        $ticketCreated = $this->getTicketsCreated($source,$department,$agent,$daterange);
         $ticketByStatus = $this->getTicketsByStatus();
         $ticketPerAgent = $this->getTicketPerAgent();
         $ticketPerChannel = $this->getTicketPerChannel();
