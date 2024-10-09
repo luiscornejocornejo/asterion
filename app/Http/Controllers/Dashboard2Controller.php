@@ -420,14 +420,100 @@ class Dashboard2Controller extends Controller
         return $resultPerAgent;
     }
 
-    public function getTicketPerChannel()
+    public function subquery($source,$department,$agent,$periodo){
+        $subquery = " WHERE 1=1"; 
+        if($source<>null){
+            $source = implode(', ', $source);
+           $subquery.=" and siennatickets_view.siennasource in(".$source.")";
+        }
+        if($department<>null){
+            $department = implode(', ', $department);
+           $subquery.=" and siennatickets_view.siennadepto in(".$department.")";
+        }
+        if ($periodo !== null) {
+           // $department = implode(', ', $department);
+        
+            $daterange = null;
+           switch ($periodo) {
+            case '0':  // Hoy
+                $daterange = [
+                    'start' => Carbon::today()->toDateString(),
+                    'end' => Carbon::today()->toDateString()
+                ];
+                break;
+        
+                case '1':  // Ayer
+                    $daterange = [
+                        'start' => Carbon::yesterday()->toDateString(),
+                        'end' => Carbon::yesterday()->toDateString()
+                    ];
+                    break;
+            
+                case '2':  // Últimos 7 días
+                    $daterange = [
+                        'start' => Carbon::today()->subDays(7)->toDateString(),
+                        'end' => Carbon::today()->toDateString()
+                    ];
+                    break;
+            
+                case '3':  // Últimos 30 días
+                    $daterange = [
+                        'start' => Carbon::today()->subDays(30)->toDateString(),
+                        'end' => Carbon::today()->toDateString()
+                    ];
+                    break;
+            
+                case '4':  // Mes actual
+                    $daterange = [
+                        'start' => Carbon::now()->startOfMonth()->toDateString(),
+                        'end' => Carbon::now()->toDateString()
+                    ];
+                    break;
+            
+                case '5':  // Mes anterior
+                    $daterange = [
+                        'start' => Carbon::now()->subMonth()->startOfMonth()->toDateString(),
+                        'end' => Carbon::now()->subMonth()->endOfMonth()->toDateString()
+                    ];
+                    break;
+            
+                case '6':  // Rango personalizado
+                    // En este caso, deberías capturar las fechas de inicio y fin de un formulario adicional
+                    // Aquí se debe manejar las entradas del usuario
+                    $daterange = [
+                        'start' => $_POST['start_date'],  // Capturar el valor del input de inicio
+                        'end' => $_POST['end_date']  // Capturar el valor del input de fin
+                    ];
+                    break;
+            
+                default:
+                    // No hacer nada si no hay selección válida
+                    $daterange = null;
+                    break;
+            }
+            if (isset($daterange['start']) && isset($daterange['end'])) {
+
+           $subquery .= " AND siennatickets_view.created_at > '".$daterange['start']." 00:00:00' AND siennatickets_view.created_at < '".$daterange['end']." 23:59:59'";
+            }
+        }
+        if($agent<>null){
+            $agent = implode(', ', $agent);
+           $subquery.=" and siennatickets_view.asignado in(".$agent.")";
+        }
+
+        return $subquery;
+    }
+    public function getTicketPerChannel($source,$department,$agent,$periodo)
     {
+        $subquery=$this->subquery($source,$department,$agent,$periodo);
+
         $queryPerChannel = "SELECT
         `Siennasource`.`nombre` AS `Siennasource__nombre`, COUNT(*) AS `count`
         FROM `siennatickets_view`
         LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
         LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
         LEFT JOIN `users` AS `Users` ON `siennatickets_view`.`user_id` = `Users`.`id`
+         ".$subquery."
         GROUP BY
         `Siennasource`.`nombre`
         ORDER BY
@@ -439,8 +525,9 @@ class Dashboard2Controller extends Controller
         return $resultPerChannel;
     }
 
-    public function getTicketByDepartment()
+    public function getTicketByDepartment($source,$department,$agent,$periodo)
     {
+        $subquery=$this->subquery($source,$department,$agent,$periodo);
         $queryByDepartment = "SELECT
         `Siennadepto`.`nombre` AS `Siennadepto__nombre`,
         COUNT(*) AS `count`
@@ -448,6 +535,7 @@ class Dashboard2Controller extends Controller
         LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
         LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
         LEFT JOIN `users` AS `Users` ON `siennatickets_view`.`user_id` = `Users`.`id`
+         ".$subquery."
         GROUP BY
         `Siennadepto`.`nombre`
         ORDER BY
@@ -599,8 +687,8 @@ class Dashboard2Controller extends Controller
         $ticketCreated = $this->getTicketsCreated($source,$department,$agent,$daterange);
         $ticketByStatus = $this->getTicketsByStatus($source,$department,$agent,$daterange);
         $ticketPerAgent = $this->getTicketPerAgent($source,$department,$agent,$daterange);
-        $ticketPerChannel = $this->getTicketPerChannel();
-        $ticketByDepartment = $this->getTicketByDepartment();
+        $ticketPerChannel = $this->getTicketPerChannel($source,$department,$agent,$daterange);
+        $ticketByDepartment = $this->getTicketByDepartment($source,$department,$agent,$daterange);
         $ticketPendings = $this->getTicketPendings();
         $ticketTimeOfLive = $this->getTimeOfLiveOfTickets();
         $ticketPerDepartmentByDay = $this->getTicketPerDepartmentByDay();
