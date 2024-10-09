@@ -42,7 +42,7 @@
                                     <label for="channel" class="form-label">Canales</label>
                                     <select name="channel[]" id="channel" multiple="multiple" class="form-select">
                                         @foreach ($sources as $source)
-                                            <option id="{{ $source->id }}">
+                                            <option value="{{ $source->id }}">
                                                 {{ $source->nombre }}
                                             </option>
                                         @endforeach
