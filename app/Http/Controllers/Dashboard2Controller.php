@@ -139,7 +139,7 @@ class Dashboard2Controller extends Controller
   
     }
 
-     public function getTicketsCreated($source,$department,$agent,$daterange)
+     public function getTicketsCreated($source,$department,$agent,$periodo)
     {
         $subquery = " WHERE 1=1"; 
         if($source<>null){
@@ -150,9 +150,10 @@ class Dashboard2Controller extends Controller
             $department = implode(', ', $department);
            $subquery.=" and siennatickets_view.siennadepto in(".$department.")";
         }
-        if ($daterange !== null) {
+        if ($periodo !== null) {
            // $department = implode(', ', $department);
-           $periodo=$daterange;
+        
+            $daterange = null;
            switch ($periodo) {
             case '0':  // Hoy
                 $daterange = [
