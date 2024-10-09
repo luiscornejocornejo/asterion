@@ -24,6 +24,8 @@
             <div class="container py-4">
                 <div class="card">
                     <form action="/dash" method="POST">
+                              @csrf
+
                             <div class="row mx-1 my-1">
                                 <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
                                     <div class="mb-3">
