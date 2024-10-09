@@ -17,6 +17,8 @@ use Illuminate\Support\File;
 use App\Models\cronmail;
 use App\Models\masterreport;
 use Mail;
+use Carbon\Carbon;
+
 class Dashboard2Controller extends Controller
 {
     //
@@ -148,9 +150,67 @@ class Dashboard2Controller extends Controller
             $department = implode(', ', $department);
            $subquery.=" and siennatickets_view.siennadepto in(".$department.")";
         }
-        if($daterange<>null){
+        if ($daterange !== null) {
            // $department = implode(', ', $department);
-           //$subquery=" and siennatickets_view.siennadepto in(".$department.")";
+           $periodo=$daterange;
+           switch ($periodo) {
+            case '0':  // Hoy
+                $daterange = [
+                    'start' => Carbon::today()->toDateString(),
+                    'end' => Carbon::today()->toDateString()
+                ];
+                break;
+        
+                case '1':  // Ayer
+                    $daterange = [
+                        'start' => Carbon::yesterday()->toDateString(),
+                        'end' => Carbon::yesterday()->toDateString()
+                    ];
+                    break;
+            
+                case '2':  // Últimos 7 días
+                    $daterange = [
+                        'start' => Carbon::today()->subDays(7)->toDateString(),
+                        'end' => Carbon::today()->toDateString()
+                    ];
+                    break;
+            
+                case '3':  // Últimos 30 días
+                    $daterange = [
+                        'start' => Carbon::today()->subDays(30)->toDateString(),
+                        'end' => Carbon::today()->toDateString()
+                    ];
+                    break;
+            
+                case '4':  // Mes actual
+                    $daterange = [
+                        'start' => Carbon::now()->startOfMonth()->toDateString(),
+                        'end' => Carbon::now()->toDateString()
+                    ];
+                    break;
+            
+                case '5':  // Mes anterior
+                    $daterange = [
+                        'start' => Carbon::now()->subMonth()->startOfMonth()->toDateString(),
+                        'end' => Carbon::now()->subMonth()->endOfMonth()->toDateString()
+                    ];
+                    break;
+            
+                case '6':  // Rango personalizado
+                    // En este caso, deberías capturar las fechas de inicio y fin de un formulario adicional
+                    // Aquí se debe manejar las entradas del usuario
+                    $daterange = [
+                        'start' => $_POST['start_date'],  // Capturar el valor del input de inicio
+                        'end' => $_POST['end_date']  // Capturar el valor del input de fin
+                    ];
+                    break;
+            
+                default:
+                    // No hacer nada si no hay selección válida
+                    $daterange = null;
+                    break;
+            }
+           $subquery .= " AND siennatickets_view.created_at BETWEEN '".$daterange['start']."' AND '".$daterange['end']."'";
         }
         if($agent<>null){
             $agent = implode(', ', $agent);
@@ -408,7 +468,7 @@ class Dashboard2Controller extends Controller
         $source=$request->channel;
         $department=$request->department;
         $agent=$request->agent;
-        $daterange=$request->daterange;
+        $daterange=$request->periodo ;
 
         $ticketCreated = $this->getTicketsCreated($source,$department,$agent,$daterange);
         $ticketByStatus = $this->getTicketsByStatus($source,$department,$agent,$daterange);

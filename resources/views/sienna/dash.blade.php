@@ -42,6 +42,20 @@
 
                                      
                                     </div>
+                                    <div id="rango-fechas" style="display:none;">
+                                        <label for="start_date">Fecha de Inicio:</label>
+                                        <input type="date" name="start_date" id="start_date">
+
+                                        <label for="end_date">Fecha de Fin:</label>
+                                        <input type="date" name="end_date" id="end_date">
+                                    </div>
+                                    <script>
+                                        // Mostrar los campos de fecha si el usuario selecciona "Rango"
+                                        document.getElementById('periodo').addEventListener('change', function() {
+                                            var display = this.value === '6' ? 'block' : 'none';
+                                            document.getElementById('rango-fechas').style.display = display;
+                                        });
+                                    </script>
                                 </div>
                                 <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
                                     <label for="channel" class="form-label">Canales</label>
