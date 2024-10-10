@@ -103,7 +103,7 @@
                                 </div>
 
                                 <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-12 mt-2">
-                                    <div class="border rounded" style="min-height: 200px!important;">
+                                    <div class="border rounded" style="min-height: 380px!important;">
                                         <p class="m-1">Ticket por estado</p>
                                         @php
                                             $series = array_map(function ($item) {
