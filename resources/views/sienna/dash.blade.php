@@ -179,7 +179,8 @@
                                                         breakpoint: 480,
                                                         options: {
                                                             chart: {
-                                                                width: 380
+                                                                width: 380,
+                                                                height: 250
                                                             },
                                                             legend: {
                                                                 position: 'bottom'
