@@ -431,7 +431,7 @@
 
                                         <script>
                                             document.addEventListener('DOMContentLoaded', function() {
-                                                console.log(@json($labelsDeptPending))
+                                                console.log(@json($seriesDeptPending))
                                                 var options = {
                                                     series: [{
                                                         name: @json($labelsDeptPending),
