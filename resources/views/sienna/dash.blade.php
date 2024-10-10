@@ -357,13 +357,13 @@
                                     <div class="border rounded">
                                         <p class="m-1">Ticket por Departamento</p>
                                         @php
-                                            $ticketByDepartment = json_decode(
-                                                '[{ "qty": "30", "name": "Soporte" }, {"qty": "25", "name": "Atención al cliente", "colorBg": "warning"}, {"qty": "25", "name": "Ventas", "colorBg": "warning"}]',
-                                                true,
-                                            ); // Decodificar como array asociativo
+                                             $seriesDept = array_map(function ($item) {
+                                                return $item->count;
+                                            }, $byDepartment);
 
-                                            $seriesDept = array_column($ticketByDepartment, 'qty');
-                                            $labelsDept = array_column($ticketByDepartment, 'name');
+                                            $labelsDept = array_map(function ($item) {
+                                                return $item->Siennadepto__nombre ?? 'Desconocido';
+                                            }, $byDepartment);
 
                                         @endphp
                                         <div id="chartDepartment"></div>
