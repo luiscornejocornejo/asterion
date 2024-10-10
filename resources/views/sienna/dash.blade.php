@@ -124,7 +124,7 @@
                                                 var options = {
                                                     series: @json($series),
                                                     chart: {
-                                                        width: 380,
+                                                        width: 200,
                                                         type: 'donut',
                                                         dropShadow: {
                                                             enabled: true,
@@ -217,7 +217,7 @@
                                                 var options = {
                                                     series: @json($agentSeries),
                                                     chart: {
-                                                        width: 380,
+                                                        width: 200,
                                                         type: 'donut',
                                                         dropShadow: {
                                                             enabled: true,
@@ -676,7 +676,7 @@
                                                 var options = {
                                                     series: @json($seriesTopicPending),
                                                     chart: {
-                                                        width: 380,
+                                                        width: 200,
                                                         type: 'donut',
                                                         dropShadow: {
                                                             enabled: true,
