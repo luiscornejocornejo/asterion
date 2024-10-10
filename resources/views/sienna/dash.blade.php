@@ -431,7 +431,6 @@
 
                                         <script>
                                             document.addEventListener('DOMContentLoaded', function() {
-                                                console.log(@json($seriesDeptPending))
                                                 var options = {
                                                     series: [{
                                                         name: @json($labelsDeptPending),
@@ -661,17 +660,16 @@
                                     <div class="border rounded">
                                         <p class="m-1">Topics pendientes</p>
                                         @php
-                                            $ticketByTopicPending = json_decode(
-                                                '[{ "qty": "30", "name": "Soporte" }, {"qty": "25", "name": "Atención al cliente", "colorBg": "warning"}, {"qty": "25", "name": "Ventas", "colorBg": "warning"},{ "qty": "18", "name": "Calidad" }]',
-                                                true,
-                                            );
+                                            $seriesTopicPending = array_map(function ($item) {
+                                                return $item->count;
+                                            }, $pendingByTopic);
 
-                                            $seriesTopicPending = array_map(
-                                                'intval',
-                                                array_column($pendingByTopic, 'count'),
-                                            );
-                                            $labelsTopicPending = array_column($pendingByTopic, 'Siennatopic__nombre');
+                                            $labelsTopicPending = array_map(function ($item) {
+                                                return $item->Siennatopic__nombre ?? 'Sin Topic';
+                                            }, $pendingByTopic);
 
+
+                                            
                                         @endphp
                                         <div id="ticketPendingTopic"></div>
 
