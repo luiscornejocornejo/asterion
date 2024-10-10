@@ -808,7 +808,7 @@
                                                             }
                                                         }
                                                     }],
-                                                    labels: {
+                                                    xaxis: {
                                                         categories: @json($cat), // Aseguramos que las categorías sean un array de strings
                                                     },
                                                     fill: {
