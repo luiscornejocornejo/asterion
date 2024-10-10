@@ -613,8 +613,8 @@
                                                     chart: {
                                                         type: 'bar',
                                                         height: 350,
-                                                        stacked: true, // Barras apiladas
-                                                        stackType: '100%' // Tipo de apilamiento para que se muestre como porcentaje total
+                                                        stacked: true, 
+                                                        stackType: '100%' 
                                                     },
                                                     responsive: [{
                                                         breakpoint: 480,
@@ -626,8 +626,8 @@
                                                             }
                                                         }
                                                     }],
-                                                    labels: {
-                                                        categories: @json($categorias), // Aseguramos que las categorías sean un array de strings
+                                                    xaxis: {
+                                                        categories: @json($categorias), 
                                                     },
                                                     fill: {
                                                         opacity: 1
