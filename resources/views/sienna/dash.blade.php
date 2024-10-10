@@ -102,7 +102,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-12 mt-2" style="min-height: 200px">
+                                <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-12 mt-2" style="min-height: 200px!important;">
                                     <div class="border rounded">
                                         <p class="m-1">Ticket por estado</p>
                                         @php
