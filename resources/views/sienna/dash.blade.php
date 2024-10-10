@@ -181,7 +181,7 @@
                                                         breakpoint: 480,
                                                         options: {
                                                             chart: {
-                                                                width: 400
+                                                                width: 380
                                                             },
                                                             legend: {
                                                                 position: 'bottom'
@@ -271,10 +271,10 @@
                                                         palette: 'palette2'
                                                     },
                                                     responsive: [{
-                                                        breakpoint: 200,
+                                                        breakpoint: 380,
                                                         options: {
                                                             chart: {
-                                                                width: 200
+                                                                width: 380
                                                             },
                                                             legend: {
                                                                 position: 'bottom'
@@ -326,10 +326,10 @@
                                                         offsetY: 80
                                                     },
                                                     responsive: [{
-                                                        breakpoint: 480,
+                                                        breakpoint: 380,
                                                         options: {
                                                             chart: {
-                                                                width: 200
+                                                                width: 380
                                                             },
                                                             legend: {
                                                                 position: 'bottom'
@@ -387,10 +387,10 @@
                                                         offsetY: 80
                                                     },
                                                     responsive: [{
-                                                        breakpoint: 480,
+                                                        breakpoint: 380,
                                                         options: {
                                                             chart: {
-                                                                width: 200
+                                                                width: 380
                                                             },
                                                             legend: {
                                                                 position: 'bottom'
@@ -416,7 +416,7 @@
 
                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
                                     <div class="border rounded">
-                                        <p class="m-1">Ticket por Pendientes</p>
+                                        <p class="m-1">Ticket Pendientes</p>
                                         @php
                                             $seriesDeptPending = array_map(function ($item) {
                                                 return $item->count;
@@ -730,10 +730,10 @@
                                                         palette: 'palette2'
                                                     },
                                                     responsive: [{
-                                                        breakpoint: 480,
+                                                        breakpoint: 380,
                                                         options: {
                                                             chart: {
-                                                                width: 400
+                                                                width: 380
                                                             },
                                                             legend: {
                                                                 position: 'bottom'
