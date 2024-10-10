@@ -607,6 +607,7 @@
 
                                         <script>
                                             document.addEventListener('DOMContentLoaded', function() {
+                                                console.log(@json($categorias))
                                                 var options = {
                                                     series: @json($series),
                                                     chart: {
