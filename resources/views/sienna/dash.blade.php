@@ -92,7 +92,7 @@
                                 <input type="submit" class="btn btn-success">
                             <div>
                             <div class="row mx-1 my-1">
-                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-6">
+                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12">
                                     <div class="border rounded text-center">
                                         <div class="my-5">
                                             <span class="h1 hoverDataTicket"
@@ -102,7 +102,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-6 mt-2">
+                                <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-12 mt-2" style="min-height: 200px">
                                     <div class="border rounded">
                                         <p class="m-1">Ticket por estado</p>
                                         @php
@@ -199,7 +199,7 @@
 
                                 </div>
 
-                                <div class="col-xxl-4 col-xl-4 col-lg-12 col-sm-6 mt-2">
+                                <div class="col-xxl-4 col-xl-4 col-lg-12 col-sm-12 mt-2">
                                     <div class="border rounded">
                                         <p class="m-1">Ticket por agentes</p>
                                         @php
@@ -411,7 +411,7 @@
 
                                 </div>
 
-                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
+                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
                                     <div class="border rounded">
                                         <p class="m-1">Ticket Pendientes</p>
                                         @php
