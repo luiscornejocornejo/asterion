@@ -411,7 +411,7 @@
 
                                 </div>
 
-                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
+                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
                                     <div class="border rounded">
                                         <p class="m-1">Ticket Pendientes</p>
                                         @php
