@@ -92,7 +92,7 @@
                                 <input type="submit" class="btn btn-success">
                             <div>
                             <div class="row mx-1 my-1">
-                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12">
+                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
                                     <div class="border rounded text-center" style="min-height: 250px!important;">
                                         <div class="my-5">
                                             <span class="h1 hoverDataTicket"
