@@ -1,7 +1,4 @@
 @include('facu.header')
-<script>
-    console.log(@json($topicPerDay))
-</script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
 <div class="wrapper menuitem-active">
@@ -271,7 +268,7 @@
                                                         palette: 'palette2'
                                                     },
                                                     responsive: [{
-                                                        breakpoint: 380,
+                                                        breakpoint: 480,
                                                         options: {
                                                             chart: {
                                                                 width: 380
@@ -326,7 +323,7 @@
                                                         offsetY: 80
                                                     },
                                                     responsive: [{
-                                                        breakpoint: 380,
+                                                        breakpoint: 480,
                                                         options: {
                                                             chart: {
                                                                 width: 380
@@ -387,7 +384,7 @@
                                                         offsetY: 80
                                                     },
                                                     responsive: [{
-                                                        breakpoint: 380,
+                                                        breakpoint: 480,
                                                         options: {
                                                             chart: {
                                                                 width: 380
@@ -729,7 +726,7 @@
                                                         palette: 'palette2'
                                                     },
                                                     responsive: [{
-                                                        breakpoint: 380,
+                                                        breakpoint: 480,
                                                         options: {
                                                             chart: {
                                                                 width: 380
