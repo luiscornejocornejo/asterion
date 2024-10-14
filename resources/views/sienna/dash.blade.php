@@ -42,7 +42,7 @@
                                     </div>
                                     <div id="rango-fechas" style="display:none;">
                                         <label for="start_date" class="form-label">Fecha de Inicio:</label>
-                                        <input type="date" name="start_date" id="start_date" class="form-control">
+                                        <input type="date" name="start_date" id="start_date" class="form-control mb-2">
 
                                         <label for="end_date" class="form-label">Fecha de Fin:</label>
                                         <input type="date" name="end_date" id="end_date" class="form-control">
@@ -90,7 +90,9 @@
 
                             </div>
                             <div class="row mx-1 my-1">
-                                <input type="submit" class="btn btn-success">
+                                <div class="col-xxl-2 col-xl-2 col-lg-4 col-sm-12 mt-2">
+                                    <input type="submit" class="btn btn-success">
+                                </div>
                                 <div>
                                     <div class="row mx-1 my-1">
                                         <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
