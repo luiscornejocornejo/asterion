@@ -248,7 +248,7 @@ function obtenerFechaUTC() {
     const segundos = String(fechaActualUTC.getUTCSeconds()).padStart(2, '0');
 
     return `${año}-${mes}-${dia} ${hora}:${minutos}:${segundos}`;
-}
+} 
 
 
 
