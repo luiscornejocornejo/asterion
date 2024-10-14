@@ -1845,4 +1845,139 @@ class TicketdatosController extends Controller
         ->with('resultados', $resultados);
 
     }
+
+    public function ticketunico2(Request $request)
+    {
+
+        $subdomain_tmp = 'localhost';
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+            $subdomain_tmp =  array_shift($domainParts);
+        } elseif(isset($_SERVER['SERVER_NAME'])){
+            $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+            $subdomain_tmp =  array_shift($domainParts);
+            
+        }
+
+        $tick=$request->tick;
+        $query="select *,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
+        b.nombre as depto,b.id as iddepto,g.nombre as nombreprioridad,g.colore as colorprioridad,
+        a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado,a.email as asunto,a.nya emailnom,a.cliente emailcliente,
+        cb.dato as datoCollector, 
+        convertirTiempo(a.created_at  ) as creacion from 
+        ".$subdomain_tmp.".siennatickets a
+        left join ".$subdomain_tmp.".siennadepto b on b.id=a.siennadepto 
+        left join  ".$subdomain_tmp.".siennaestado c on c.id=a.siennaestado
+        left join  ".$subdomain_tmp.".siennatopic d on d.id=a.siennatopic
+        left join  ".$subdomain_tmp.".users e on e.id=a.asignado
+        left join  ".$subdomain_tmp.".siennacliente f on f.cliente=a.cliente
+        left join  ".$subdomain_tmp.".prioridad g on g.id=a.prioridad
+        left join  ".$subdomain_tmp.".collectorbot cb on cb.ticket=a.id 
+        
+
+        
+        where a.id='".$tick."'";
+
+        $resultados = DB::select($query);
+        foreach($resultados as $valu){
+
+                $siennasource=$valu->siennasource;
+        }
+
+        $query50="select *, convertirTiempo(created_at) as created_at  from siennaseguimientos where ticket='".$tick."'  order by id desc";
+        $segui = DB::select($query50);
+       // $segui = siennaseguimientos::where('ticket', $tick)->get();
+
+        $query5="select * from iconostipo";
+        $resultados5 = DB::select($query5);
+
+        $query6="select * from users where tipousers in ('2','3')";
+        $usersmerchant= DB::select($query6);
+
+        $query7="select * from siennatags";
+        $resultados7 = DB::select($query7);
+        $query8="SELECT * 
+                        FROM soporte.siennatags 
+                WHERE FIND_IN_SET(id, REPLACE((SELECT tags FROM soporte.siennatickets WHERE id = '".$tick."'), ' ', ''));";
+        $resultados8 = DB::select($query8);
+       // dd($resultados);
+       $querydeptos="select * from siennadepto";
+       $resultadosdeptos = DB::select($querydeptos);
+
+       $querymails="select * from siennamail where siennatickets='".$tick."'";
+       $resultadosmails = DB::select($querymails);
+
+
+       $querytareas="select *,(select concat(nombre,' ',last_name) from users where id=st.users) as usuario,(select nombre from estadotarea where id=st.estadotarea) as estadoname
+        from siennatareas st where st.siennatickets='".$tick."'";
+       $resultadostareas = DB::select($querytareas);
+
+       $queryhistorico="select s.id,s.cliente,s2.nombre as depto,s3.nombre as tema,s4.nombre as estado,convertirTiempo(s.created_at) as inicio
+         from 
+            siennatickets s
+       left join siennadepto s2 on s2.id =s.siennadepto 
+       left join siennatopic s3   on s3.id =s.siennatopic 
+       left join siennaestado s4     on s4.id =s.siennaestado  
+       where cliente =(select cliente from siennatickets where id='".$tick."')";
+       $resultadoshistoricos = DB::select($queryhistorico);
+
+
+       $querycliente="SELECT  *
+       FROM siennacliente
+       where cliente =(select cliente from siennatickets where id='".$tick."')
+
+       order by created_at desc limit 1";
+       $resultadoscliente = DB::select($querycliente);
+
+       $querysuri="select * from siennasuricata where siennatickets='".$tick."'";
+       $resultadossuri = DB::select($querysuri);
+
+       $emp=empresa::all();
+       $pri=prioridad::all();
+
+       $inte=siennaintegracion::all();
+       
+       foreach($inte as $val){
+            $urlinte=$val->version;
+       }
+       $urlinte2="";
+       $datosonline="";
+       
+       /*
+       prueba
+       if($urlinte=="luis"){
+            $numcli=$resultados[0]->cliente;
+            $urlinte2=$urlinte.$numcli;
+          
+            if (($datosonline = @file_get_contents($urlinte2)) === false) {
+                $error = error_get_last();
+                //echo "HTTP request failed. Error was: " . $error['message'];
+                $urlinte2="";
+
+          } else {
+                echo "Everything went better than expected";
+          }
+
+       }*/
+           
+        return view("sienna/ticketunico2")
+        ->with('subdomain_tmp', $subdomain_tmp)
+        ->with('segui', $segui)
+        ->with('deptos', $resultadosdeptos)
+        ->with('usersmerchant', $usersmerchant)
+        ->with('iconos', $resultados5)
+        ->with('emp', $emp)
+        ->with('datosonline', $datosonline)
+        ->with('urlinte2', $urlinte2)
+        ->with('pri', $pri)
+        ->with('resultadosmails', $resultadosmails)
+        ->with('resultadoshistoricos', $resultadoshistoricos)
+        ->with('resultadoscliente', $resultadoscliente)
+        ->with('resultadossuri', $resultadossuri)
+        ->with('resultadostareas', $resultadostareas)
+        ->with('siennatags', $resultados7)
+        ->with('siennatagstickets', $resultados8)
+        ->with('resultados', $resultados);
+
+    }
 }
