@@ -319,6 +319,7 @@
 
                                                 <script>
                                                     document.addEventListener('DOMContentLoaded', function() {
+                                                        var colors = ['#1E90FF', '#FF6347', '#32CD32', '#FFD700', '#FF69B4'];
                                                         var options = {
                                                             series: [{
                                                                 data: @json($seriesChannel)
