@@ -42,7 +42,8 @@
                                     </div>
                                     <div id="rango-fechas" style="display:none;">
                                         <label for="start_date" class="form-label">Fecha de Inicio:</label>
-                                        <input type="date" name="start_date" id="start_date" class="form-control mb-2">
+                                        <input type="date" name="start_date" id="start_date"
+                                            class="form-control mb-2">
 
                                         <label for="end_date" class="form-label">Fecha de Fin:</label>
                                         <input type="date" name="end_date" id="end_date" class="form-control">
@@ -91,7 +92,7 @@
                             </div>
                             <div class="row mx-1 my-1">
                                 <div class="col-xxl-2 col-xl-2 col-lg-4 col-sm-12 mt-2">
-                                    <input type="submit" class="btn btn-success">
+                                    <input type="submit" class="btn btn-primary" placeholder="Buscar">
                                 </div>
                                 <div>
                                     <div class="row mx-1 my-1">
@@ -802,12 +803,11 @@
                                                 <script>
                                                     document.addEventListener('DOMContentLoaded', function() {
                                                         var options = {
-                                                            series: @json($series), // Series formateadas correctamente
+                                                            series: @json($series),
                                                             chart: {
                                                                 type: 'bar',
                                                                 height: 350,
-                                                                stacked: true, // Barras apiladas
-                                                                stackType: '100%' // Tipo de apilamiento para que se muestre como porcentaje total
+                                                                stacked: true
                                                             },
                                                             responsive: [{
                                                                 breakpoint: 480,
@@ -820,7 +820,7 @@
                                                                 }
                                                             }],
                                                             xaxis: {
-                                                                categories: @json($cat), // Aseguramos que las categorías sean un array de strings
+                                                                categories: @json($cat),
                                                             },
                                                             fill: {
                                                                 opacity: 1
