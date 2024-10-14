@@ -437,6 +437,8 @@
                                                                 }
                                                             },
                                                             tooltip: {
+                                                                enabled: true,
+                                                                followCursor: false,
                                                                 y: {
                                                                     formatter: function(value) {
                                                                         return 'Total: ' + value;
