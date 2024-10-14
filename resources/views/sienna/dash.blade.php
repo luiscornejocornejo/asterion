@@ -319,33 +319,33 @@
 
                                                 <script>
                                                     document.addEventListener('DOMContentLoaded', function() {
-                                                        var optionDonut = {
+                                                        var options = {
                                                             series: @json($seriesChannel),
-                                                            labels: @json($labelsChannel),
                                                             chart: {
-                                                                type: 'polarArea',
+                                                                height: 350,
+                                                                type: 'radialBar',
                                                             },
-                                                            stroke: {
-                                                                colors: ['#fff']
-                                                            },
-                                                            fill: {
-                                                                opacity: 0.8
-                                                            },
-                                                            legend: {
-                                                                position: 'left',
-                                                                offsetY: 80
-                                                            },
-                                                            responsive: [{
-                                                                breakpoint: 480,
-                                                                options: {
-                                                                    chart: {
-                                                                        width: 380
-                                                                    },
-                                                                    legend: {
-                                                                        position: 'bottom'
+                                                            plotOptions: {
+                                                                radialBar: {
+                                                                    dataLabels: {
+                                                                        name: {
+                                                                            fontSize: '22px',
+                                                                        },
+                                                                        value: {
+                                                                            fontSize: '16px',
+                                                                        },
+                                                                        total: {
+                                                                            show: true,
+                                                                            label: 'Total',
+                                                                            formatter: function(w) {
+                                                                                // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
+                                                                                return {{$tickets[0]->count}}
+                                                                            }
+                                                                        }
                                                                     }
                                                                 }
-                                                            }]
+                                                            },
+                                                            labels: @json($labelsChannel),
                                                         };
 
                                                         var donut = new ApexCharts(
