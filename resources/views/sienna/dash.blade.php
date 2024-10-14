@@ -403,7 +403,7 @@
                                                         ];
                                                         var options = {
                                                             series: [{
-                                                                name: @json($seriesDept),
+                                                                name: "Total: ",
                                                                 data: @json($seriesDept)
                                                             }],
                                                             chart: {
