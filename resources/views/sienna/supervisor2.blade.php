@@ -195,21 +195,7 @@
           document.getElementById("tp").value = area_interes;
 
         }
-        function selects(){  
-                var ele=document.getElementsByName('chk');  
-                for(var i=0; i<ele.length; i++){  
-                    if(ele[i].type=='checkbox')  
-                        ele[i].checked=true;  
-                }  
-        }  
-        function deSelect(){  
-                var ele=document.getElementsByName('chk');  
-                for(var i=0; i<ele.length; i++){  
-                    if(ele[i].type=='checkbox')  
-                        ele[i].checked=false;  
-                      
-                }  
-        }             
+                    
         function colorprif(idprioridad){
           //alert(id);
           console.log(idprioridad);
@@ -414,6 +400,7 @@
         
 </script>
 <script src="sienna/js/supervisor/parar.js"></script>
+<script src="sienna/js/supervisor/select.js"></script>
 
   <!-- Begin page -->
   <div class="wrapper" >
