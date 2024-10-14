@@ -322,6 +322,7 @@
                                                         var colors = ['#1E90FF', '#FF6347', '#32CD32', '#FFD700', '#FF69B4'];
                                                         var options = {
                                                             series: [{
+                                                                name: "Total",
                                                                 data: @json($seriesChannel)
                                                             }],
                                                             chart: {
@@ -403,7 +404,7 @@
                                                         ];
                                                         var options = {
                                                             series: [{
-                                                                name: "Total: ",
+                                                                name: "Total",
                                                                 data: @json($seriesDept)
                                                             }],
                                                             chart: {
