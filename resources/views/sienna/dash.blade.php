@@ -476,7 +476,7 @@
                                                         var options = {
                                                             series: @json($seriesDeptPending),
                                                             chart: {
-                                                                height: 390,
+                                                                height: 380,
                                                                 type: 'radialBar',
                                                             },
                                                             plotOptions: {
@@ -486,7 +486,7 @@
                                                                     endAngle: 270,
                                                                     hollow: {
                                                                         margin: 5,
-                                                                        size: '30%',
+                                                                        size: '20%',
                                                                         background: 'transparent',
                                                                         image: undefined,
                                                                     },
@@ -502,7 +502,7 @@
                                                                         enabled: true,
                                                                         useSeriesColors: true,
                                                                         offsetX: -8,
-                                                                        fontSize: '16px',
+                                                                        fontSize: '12px',
                                                                         formatter: function(seriesName, opts) {
                                                                             return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex]
                                                                         },
