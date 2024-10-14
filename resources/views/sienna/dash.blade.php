@@ -440,8 +440,9 @@
                                                                 enabled: true,
                                                                 followCursor: false,
                                                                 y: {
-                                                                    formatter: function(value) {
-                                                                        return 'Total: ' + value;
+                                                                    formatter: undefined
+                                                                    title: {
+                                                                        formatter: (seriesName) => seriesName,
                                                                     }
                                                                 }
                                                             }
