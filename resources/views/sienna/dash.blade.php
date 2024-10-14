@@ -1,5 +1,9 @@
 @include('facu.header')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+    console.log(@json($topicPerDay))
+</script>
+
 @if ($tickets[0]->count)
     <div class="wrapper menuitem-active">
         @include('facu.menu')
