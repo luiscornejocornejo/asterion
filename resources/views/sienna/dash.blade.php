@@ -435,6 +435,13 @@
                                                                         fontSize: '12px'
                                                                     }
                                                                 }
+                                                            },
+                                                            tooltip: {
+                                                                y: {
+                                                                    formatter: function(value) {
+                                                                        return 'Total: ' + value;
+                                                                    }
+                                                                }
                                                             }
                                                         }
 
