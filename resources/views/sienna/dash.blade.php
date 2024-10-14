@@ -1,6 +1,6 @@
 @include('facu.header')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-@if ($ticketCreated > 0)
+@if ($tickets[0]->count)
     <div class="wrapper menuitem-active">
         @include('facu.menu')
         <div class="content-page" style="padding: 0!important;">
