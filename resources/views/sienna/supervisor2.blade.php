@@ -61,23 +61,6 @@
         let extras = {!! json_encode($resultadosextras,JSON_FORCE_OBJECT) !!};
         console.log(extras);
 
-
-
-
-
-       
-        
-        
-
-      
-       
-
-       
-        
-      
-
-        
-        
 </script>
 <script src="sienna/js/supervisor/parar.js"></script>
 <script src="sienna/js/supervisor/select.js"></script>
@@ -126,12 +109,12 @@
                 <script>
                   function area2(dd, ee, ff) {
 
-document.getElementById("idticketdepto202").value = dd;
-document.getElementById("idconv").value = ee;
-document.getElementById("user_id").value = ff;
+                    document.getElementById("idticketdepto202").value = dd;
+                    document.getElementById("idconv").value = ee;
+                    document.getElementById("user_id").value = ff;
 
 
-}
+                    }
 
                   function maxid() {
            //document.body.style.zoom = "80%";
