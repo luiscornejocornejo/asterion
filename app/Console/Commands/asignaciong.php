@@ -36,7 +36,7 @@ class asignaciong extends Command
         $CONE=$this->conectar();
         $queryoriginal="show databases";
         $resultados11 = DB::connection('mysql2')->select($queryoriginal);
-        $os = array("sys","defaultdb", "information_schema", "mysql", "moldemaestro", "performance_schema", "sienna1", "telesmart", "template","anterior","infitelecom");
+        $os = array("sys","defaultdb", "information_schema", "mysql", "moldemaestro", "performance_schema", "sienna1","template","anterior","infitelecom");
         //dd($resultados11);
 
         foreach($resultados11 as $val){
