@@ -439,6 +439,11 @@
                                                             tooltip: {
                                                                 enabled: true,
                                                                 followCursor: false,
+                                                                x: {
+                                                                    show: true,
+                                                                    format: 'Total',
+                                                                    formatter: undefined,
+                                                                },
                                                                 y: {
                                                                     formatter: undefined,
                                                                     title: {
