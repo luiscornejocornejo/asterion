@@ -66,16 +66,7 @@
 
 
        
-        function parar(){
-          console.log(identificadorIntervaloDeTiempo);
-          clearInterval(identificadorIntervaloDeTiempo);
-
-        }
-        function star(){
-          identificadorIntervaloDeTiempo = setInterval(maxid, frecuencia);
-
-
-        }
+        
         function pedir2(dd) {
               document.getElementById("idticketpedir2").value = dd;
         }
@@ -422,7 +413,7 @@
         }
         
 </script>
- 
+<script src="sienna/js/supervisor/parar.js"></script>
 
   <!-- Begin page -->
   <div class="wrapper" >
