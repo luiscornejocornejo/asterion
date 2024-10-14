@@ -440,7 +440,7 @@
                                                                 enabled: true,
                                                                 followCursor: false,
                                                                 y: {
-                                                                    formatter: undefined
+                                                                    formatter: undefined,
                                                                     title: {
                                                                         formatter: (seriesName) => seriesName,
                                                                     }
