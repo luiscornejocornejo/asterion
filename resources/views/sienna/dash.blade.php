@@ -476,7 +476,7 @@
                                                         var options = {
                                                             series: @json($seriesDeptPending),
                                                             chart: {
-                                                                height: 350,
+                                                                height: 360,
                                                                 type: 'radialBar',
                                                             },
                                                             plotOptions: {
@@ -522,7 +522,7 @@
                                                             ],
                                                             labels: @json($labelsDeptPending),
                                                             responsive: [{
-                                                                breakpoint: 380,
+                                                                breakpoint: 350,
                                                                 options: {
                                                                     legend: {
                                                                         show: false
