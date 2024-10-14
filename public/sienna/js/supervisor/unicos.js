@@ -237,6 +237,19 @@ function cerrar(result,dd, ee, ff,cliente){
     document.getElementById("idticketpedir2").value = dd;
 }
 
+function obtenerFechaUTC() {
+    const fechaActualUTC = new Date();
+
+    const año = fechaActualUTC.getUTCFullYear();
+    const mes = String(fechaActualUTC.getUTCMonth() + 1).padStart(2, '0'); // Los meses empiezan desde 0
+    const dia = String(fechaActualUTC.getUTCDate()).padStart(2, '0');
+    const hora = String(fechaActualUTC.getUTCHours()).padStart(2, '0');
+    const minutos = String(fechaActualUTC.getUTCMinutes()).padStart(2, '0');
+    const segundos = String(fechaActualUTC.getUTCSeconds()).padStart(2, '0');
+
+    return `${año}-${mes}-${dia} ${hora}:${minutos}:${segundos}`;
+}
+
 
 
 

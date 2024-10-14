@@ -132,18 +132,7 @@ document.getElementById("user_id").value = ff;
 
 
 }
-function obtenerFechaUTC() {
-    const fechaActualUTC = new Date();
 
-    const año = fechaActualUTC.getUTCFullYear();
-    const mes = String(fechaActualUTC.getUTCMonth() + 1).padStart(2, '0'); // Los meses empiezan desde 0
-    const dia = String(fechaActualUTC.getUTCDate()).padStart(2, '0');
-    const hora = String(fechaActualUTC.getUTCHours()).padStart(2, '0');
-    const minutos = String(fechaActualUTC.getUTCMinutes()).padStart(2, '0');
-    const segundos = String(fechaActualUTC.getUTCSeconds()).padStart(2, '0');
-
-    return `${año}-${mes}-${dia} ${hora}:${minutos}:${segundos}`;
-}
                   function maxid() {
            //document.body.style.zoom = "80%";
 
@@ -193,7 +182,7 @@ function obtenerFechaUTC() {
                 '<button type="button" onclick="deSelect()" class="btn btn-info tooltip-button"><span class="mdi mdi-checkbox-blank-outline"><span class="tooltiptext">Quitar selección</span></span></button> '+
                 '<button type="button" onclick="parar()" class="btn btn-danger tooltip-button"><span class="mdi mdi-motion-pause"><span class="tooltiptext"> Detener autosincronización</span></span></button> '+
                 '<button type="button" onclick="star()" class="btn btn-success tooltip-button"><span class="mdi mdi-refresh-auto"> <span class="tooltiptext"> Activar autosincronización</span></span></button> '+
-                '<button onclick="tags()"  class="btn btn-success tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smtagsall"><span class="mdi mdi-check-circle"><span class="tooltiptext">Tgas</span></span></button>'+
+                '<button onclick="tags()"  class="btn btn-success tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smtagsall"><span class="mdi mdi-check-circle"><span class="tooltiptext">Tags</span></span></button>'+
                 '<br><br><table style="width: 100%;" id="example"  class="table table-hover display responsive nowrap text-light">'+
                                 '<thead>'+
                               '     <tr class="text-center bg-dark" >'+
