@@ -328,8 +328,8 @@
                                                     $source = $regChannel['Siennasource__nombre'];
                                                     $count = $regChannel['count'];
 
-                                                    if (!in_array($fecha, $categorias)) {
-                                                        $catPerChannel[] = $fecha;
+                                                    if (!in_array($source, $catPerChannel)) {
+                                                        $catPerChannel[] = $source;
                                                     }
 
                                                     if (!isset($seriesChannel[$depto])) {
