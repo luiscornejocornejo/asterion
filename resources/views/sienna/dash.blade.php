@@ -337,22 +337,25 @@
                                                                         total: {
                                                                             show: true,
                                                                             label: 'Total',
-                                                                            
+                                                                            formatter: function(w) {
+                                                                                // Se usa PHP para insertar el valor de los tickets
+                                                                                return {{$tickets[0]->count}};
+                                                                            }
                                                                         }
                                                                     }
                                                                 }
                                                             },
                                                             labels: @json($labelsChannel),
                                                         };
-
+                                                
                                                         var donut = new ApexCharts(
                                                             document.querySelector("#donut"),
-                                                            optionDonut
-                                                        )
+                                                            options // Cambiar de 'optionDonut' a 'options'
+                                                        );
                                                         donut.render();
-
                                                     });
                                                 </script>
+                                                
 
 
                                             </div>
