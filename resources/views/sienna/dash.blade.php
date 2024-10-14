@@ -403,6 +403,7 @@
                                                         ];
                                                         var options = {
                                                             series: [{
+                                                                name: @json($seriesDept),
                                                                 data: @json($seriesDept)
                                                             }],
                                                             chart: {
@@ -436,21 +437,7 @@
                                                                     }
                                                                 }
                                                             },
-                                                            tooltip: {
-                                                                enabled: true,
-                                                                followCursor: false,
-                                                                x: {
-                                                                    show: true,
-                                                                    format: 'Total',
-                                                                    formatter: undefined,
-                                                                },
-                                                                y: {
-                                                                    formatter: undefined,
-                                                                    title: {
-                                                                        formatter: "Total",
-                                                                    }
-                                                                }
-                                                            }
+                                                            
                                                         }
 
                                                         var donut = new ApexCharts(
