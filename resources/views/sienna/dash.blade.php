@@ -509,10 +509,20 @@
                                                                     },
                                                                 }
                                                             },
-                                                            colors: ['#1ab7ea', '#0084ff', '#39539E', '#0077B5'],
+                                                            colors: ['#FF4500', // Naranja fuerte
+                                                                '#32CD32', // Verde lima
+                                                                '#1E90FF', // Azul cielo
+                                                                '#FFD700', // Dorado
+                                                                '#DA70D6', // Orquídea
+                                                                '#8A2BE2', // Azul violeta
+                                                                '#7FFF00', // Verde chartreuse
+                                                                '#FF1493', // Rosa intenso
+                                                                '#00CED1', // Turquesa oscuro
+                                                                '#FF6347'
+                                                            ],
                                                             labels: @json($labelsDeptPending),
                                                             responsive: [{
-                                                                breakpoint: 480,
+                                                                breakpoint: 380,
                                                                 options: {
                                                                     legend: {
                                                                         show: false
