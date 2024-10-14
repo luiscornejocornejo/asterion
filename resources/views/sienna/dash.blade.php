@@ -329,7 +329,7 @@
                                                     $count = $regChannel['count'];
 
                                                     if (!in_array($fecha, $categorias)) {
-                                                        $categorias[] = $fecha;
+                                                        $catPerChannel[] = $fecha;
                                                     }
 
                                                     if (!isset($seriesChannel[$depto])) {
@@ -352,33 +352,35 @@
 
                                                 <script>
                                                     document.addEventListener('DOMContentLoaded', function() {
-                                                        var optionDonut = {
+                                                        document.addEventListener('DOMContentLoaded', function() {
+                                                        var options = {
                                                             series: @json($seriesChannel),
-                                                            labels: @json($labelsChannel),
                                                             chart: {
-                                                                type: 'polarArea',
-                                                            },
-                                                            stroke: {
-                                                                colors: ['#fff']
-                                                            },
-                                                            fill: {
-                                                                opacity: 0.8
-                                                            },
-                                                            legend: {
-                                                                position: 'left',
-                                                                offsetY: 80
+                                                                type: 'bar',
+                                                                height: 350,
+                                                                stacked: true
                                                             },
                                                             responsive: [{
                                                                 breakpoint: 480,
                                                                 options: {
-                                                                    chart: {
-                                                                        width: 380
-                                                                    },
                                                                     legend: {
-                                                                        position: 'bottom'
+                                                                        position: 'bottom',
+                                                                        offsetX: -10,
+                                                                        offsetY: 0
                                                                     }
                                                                 }
-                                                            }]
+                                                            }],
+                                                            xaxis: {
+                                                                categories: @json($catPerChannel),
+                                                            },
+                                                            fill: {
+                                                                opacity: 1
+                                                            },
+                                                            legend: {
+                                                                position: 'right',
+                                                                offsetX: 0,
+                                                                offsetY: 50
+                                                            },
                                                         };
 
                                                         var donut = new ApexCharts(
