@@ -927,6 +927,7 @@
             <div class="border rounded text-center" style="min-height: 250px!important;">
                 <div class="my-5">
                     <h2 class="text-center">No hay información que mostrar</h2>
+                    <a class="btn btn-primary text-white" href="/viewtickets" target="_blank">Ver tickets abiertos</a> 
                 </div>
             </div>
         </div>
