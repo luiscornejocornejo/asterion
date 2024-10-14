@@ -96,7 +96,7 @@
                             </div>
                             <div class="row mx-1 my-1">
                                 <div class="col-xxl-2 col-xl-2 col-lg-4 col-sm-12 mt-2">
-                                    <input type="submit" class="btn btn-primary" placeholder="Buscar">
+                                    <input type="submit" class="btn btn-primary" value="Buscar">
                                 </div>
                                 <div>
                                     <div class="row mx-1 my-1">
@@ -438,7 +438,7 @@
                                                                     }
                                                                 }
                                                             },
-                                                            
+
                                                         }
 
                                                         var donut = new ApexCharts(
@@ -474,25 +474,52 @@
                                                 <script>
                                                     document.addEventListener('DOMContentLoaded', function() {
                                                         var options = {
-                                                            series: [{
-                                                                name: @json($labelsDeptPending),
-                                                                data: @json($seriesDeptPending),
-                                                            }],
+                                                            series: @json($seriesDeptPending),
                                                             chart: {
-                                                                height: 350,
-                                                                type: 'radar',
+                                                                height: 390,
+                                                                type: 'radialBar',
                                                             },
-                                                            dataLabels: {
-                                                                enabled: true
+                                                            plotOptions: {
+                                                                radialBar: {
+                                                                    offsetY: 0,
+                                                                    startAngle: 0,
+                                                                    endAngle: 270,
+                                                                    hollow: {
+                                                                        margin: 5,
+                                                                        size: '30%',
+                                                                        background: 'transparent',
+                                                                        image: undefined,
+                                                                    },
+                                                                    dataLabels: {
+                                                                        name: {
+                                                                            show: false,
+                                                                        },
+                                                                        value: {
+                                                                            show: false,
+                                                                        }
+                                                                    },
+                                                                    barLabels: {
+                                                                        enabled: true,
+                                                                        useSeriesColors: true,
+                                                                        offsetX: -8,
+                                                                        fontSize: '16px',
+                                                                        formatter: function(seriesName, opts) {
+                                                                            return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex]
+                                                                        },
+                                                                    },
+                                                                }
                                                             },
-                                                            yaxis: {
-                                                                stepSize: 20
-                                                            },
-                                                            xaxis: {
-                                                                categories: @json($labelsDeptPending)
-                                                            }
+                                                            colors: ['#1ab7ea', '#0084ff', '#39539E', '#0077B5'],
+                                                            labels: @json($labelsDeptPending),
+                                                            responsive: [{
+                                                                breakpoint: 480,
+                                                                options: {
+                                                                    legend: {
+                                                                        show: false
+                                                                    }
+                                                                }
+                                                            }]
                                                         };
-
                                                         var chart = new ApexCharts(document.querySelector("#radarTickets"), options);
                                                         chart.render();
 
