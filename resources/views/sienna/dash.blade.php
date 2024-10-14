@@ -442,7 +442,7 @@
                                                                 y: {
                                                                     formatter: undefined,
                                                                     title: {
-                                                                        formatter: (seriesName) => seriesName,
+                                                                        formatter: "Total",
                                                                     }
                                                                 }
                                                             }
