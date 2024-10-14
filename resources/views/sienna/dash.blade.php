@@ -41,11 +41,11 @@
 
                                     </div>
                                     <div id="rango-fechas" style="display:none;">
-                                        <label for="start_date">Fecha de Inicio:</label>
-                                        <input type="date" name="start_date" id="start_date">
+                                        <label for="start_date" class="form-label">Fecha de Inicio:</label>
+                                        <input type="date" name="start_date" id="start_date" class="form-control">
 
-                                        <label for="end_date">Fecha de Fin:</label>
-                                        <input type="date" name="end_date" id="end_date">
+                                        <label for="end_date" class="form-label">Fecha de Fin:</label>
+                                        <input type="date" name="end_date" id="end_date" class="form-control">
                                     </div>
                                     <script>
                                         // Mostrar los campos de fecha si el usuario selecciona "Rango"
