@@ -1,7 +1,7 @@
 @include('facu.header')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script>
-    console.log("Ticket Per Day:", @json($topicPerDay))
+    console.log("Ticket Per Channel:", @json($perChannel))
 </script>
 
 @if ($tickets[0]->count)
@@ -319,43 +319,52 @@
 
                                                 <script>
                                                     document.addEventListener('DOMContentLoaded', function() {
-                                                        var optionDonut = {
-                                                            series: @json($seriesChannel),
-                                                            labels: @json($labelsChannel),
+                                                        var colors = ['#1E90FF', '#FF6347', '#32CD32', '#FFD700', '#FF69B4'];
+                                                        var options = {
+                                                            series: [{
+                                                                data: @json($seriesChannel)
+                                                            }],
                                                             chart: {
-                                                                type: 'polarArea',
-                                                            },
-                                                            stroke: {
-                                                                colors: ['#fff']
-                                                            },
-                                                            fill: {
-                                                                opacity: 0.8
-                                                            },
-                                                            legend: {
-                                                                position: 'left',
-                                                                offsetY: 80
-                                                            },
-                                                            responsive: [{
-                                                                breakpoint: 480,
-                                                                options: {
-                                                                    chart: {
-                                                                        width: 380
-                                                                    },
-                                                                    legend: {
-                                                                        position: 'bottom'
+                                                                height: 350,
+                                                                type: 'bar',
+                                                                events: {
+                                                                    click: function(chart, w, e) {
+                                                                        // console.log(chart, w, e)
                                                                     }
                                                                 }
-                                                            }]
-                                                        };
+                                                            },
+                                                            colors: colors,
+                                                            plotOptions: {
+                                                                bar: {
+                                                                    columnWidth: '45%',
+                                                                    distributed: true,
+                                                                }
+                                                            },
+                                                            dataLabels: {
+                                                                enabled: false
+                                                            },
+                                                            legend: {
+                                                                show: false
+                                                            },
+                                                            xaxis: {
+                                                                categories: @json($labelsChannel),
+                                                                labels: {
+                                                                    style: {
+                                                                        colors: colors,
+                                                                        fontSize: '12px'
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
 
                                                         var donut = new ApexCharts(
                                                             document.querySelector("#donut"),
-                                                            optionDonut
-                                                        )
+                                                            options // Cambiar de 'optionDonut' a 'options'
+                                                        );
                                                         donut.render();
-
                                                     });
                                                 </script>
+
 
 
                                             </div>
@@ -380,38 +389,73 @@
 
                                                 <script>
                                                     document.addEventListener('DOMContentLoaded', function() {
-                                                        var optionDonut = {
-                                                            series: @json($seriesDept),
-                                                            labels: @json($labelsDept),
+                                                        var colors = [
+                                                            '#FF5733',
+                                                            '#33FF57',
+                                                            '#3357FF',
+                                                            '#FF33A1',
+                                                            '#33FFF9',
+                                                            '#FF9633',
+                                                            '#A133FF',
+                                                            '#FFDB33',
+                                                            '#33FF8A',
+                                                            '#335EFF'
+                                                        ];
+                                                        var options = {
+                                                            series: [{
+                                                                data: @json($seriesDept)
+                                                            }],
                                                             chart: {
-                                                                type: 'polarArea',
-                                                            },
-                                                            stroke: {
-                                                                colors: ['#fff']
-                                                            },
-                                                            fill: {
-                                                                opacity: 0.8
-                                                            },
-                                                            legend: {
-                                                                position: 'left',
-                                                                offsetY: 80
-                                                            },
-                                                            responsive: [{
-                                                                breakpoint: 480,
-                                                                options: {
-                                                                    chart: {
-                                                                        width: 380
-                                                                    },
-                                                                    legend: {
-                                                                        position: 'bottom'
+                                                                height: 350,
+                                                                type: 'bar',
+                                                                events: {
+                                                                    click: function(chart, w, e) {
+                                                                        // console.log(chart, w, e)
                                                                     }
                                                                 }
-                                                            }]
-                                                        };
+                                                            },
+                                                            colors: colors,
+                                                            plotOptions: {
+                                                                bar: {
+                                                                    columnWidth: '45%',
+                                                                    distributed: true,
+                                                                }
+                                                            },
+                                                            dataLabels: {
+                                                                enabled: false
+                                                            },
+                                                            legend: {
+                                                                show: false
+                                                            },
+                                                            xaxis: {
+                                                                categories: @json($labelsDept),
+                                                                labels: {
+                                                                    style: {
+                                                                        colors: colors,
+                                                                        fontSize: '12px'
+                                                                    }
+                                                                }
+                                                            },
+                                                            tooltip: {
+                                                                enabled: true,
+                                                                followCursor: false,
+                                                                x: {
+                                                                    show: true,
+                                                                    format: 'Total',
+                                                                    formatter: undefined,
+                                                                },
+                                                                y: {
+                                                                    formatter: undefined,
+                                                                    title: {
+                                                                        formatter: "Total",
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
 
                                                         var donut = new ApexCharts(
                                                             document.querySelector("#chartDepartment"),
-                                                            optionDonut
+                                                            options
                                                         )
                                                         donut.render();
 
@@ -620,7 +664,6 @@
 
                                                 <script>
                                                     document.addEventListener('DOMContentLoaded', function() {
-                                                        console.log(@json($categorias))
                                                         var options = {
                                                             series: @json($series),
                                                             chart: {
@@ -661,11 +704,6 @@
                                                         chart.render();
                                                     });
                                                 </script>
-
-
-
-
-
 
                                             </div>
 
