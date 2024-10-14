@@ -1,7 +1,7 @@
 @include('facu.header')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script>
-    console.log(@json($topicPerDay))
+    console.log("Ticket Per Day:", @json($topicPerDay))
 </script>
 
 @if ($tickets[0]->count)
