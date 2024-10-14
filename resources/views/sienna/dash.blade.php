@@ -1,7 +1,4 @@
 @include('facu.header')
-<script>
-    console.log(@json($topicPerDay))
-</script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
 <div class="wrapper menuitem-active">
@@ -95,8 +92,8 @@
                                 <input type="submit" class="btn btn-success">
                             <div>
                             <div class="row mx-1 my-1">
-                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-6">
-                                    <div class="border rounded text-center">
+                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
+                                    <div class="border rounded text-center" style="min-height: 250px!important;">
                                         <div class="my-5">
                                             <span class="h1 hoverDataTicket"
                                                 style="font-size: 3.4rem;">{{ $tickets[0]->count }}</span><br>
@@ -105,8 +102,8 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-6 mt-2">
-                                    <div class="border rounded">
+                                <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-12 mt-2">
+                                    <div class="border rounded" style="min-height: 250px!important;">
                                         <p class="m-1">Ticket por estado</p>
                                         @php
                                             $series = array_map(function ($item) {
@@ -127,7 +124,8 @@
                                                 var options = {
                                                     series: @json($series),
                                                     chart: {
-                                                        width: 380,
+                                                        width: '100%',
+                                                        height: 380,
                                                         type: 'donut',
                                                         dropShadow: {
                                                             enabled: true,
@@ -181,7 +179,8 @@
                                                         breakpoint: 480,
                                                         options: {
                                                             chart: {
-                                                                width: 400
+                                                                width: 380,
+                                                                height: 250
                                                             },
                                                             legend: {
                                                                 position: 'bottom'
@@ -202,8 +201,8 @@
 
                                 </div>
 
-                                <div class="col-xxl-4 col-xl-4 col-lg-12 col-sm-6 mt-2">
-                                    <div class="border rounded">
+                                <div class="col-xxl-4 col-xl-4 col-lg-12 col-sm-12 mt-2">
+                                    <div class="border rounded" style="min-height: 250px!important;">
                                         <p class="m-1">Ticket por agentes</p>
                                         @php
                                             $agentSeries = array_map(function ($item) {
@@ -220,7 +219,8 @@
                                                 var options = {
                                                     series: @json($agentSeries),
                                                     chart: {
-                                                        width: 380,
+                                                        width: '100%',
+                                                        height: 380,
                                                         type: 'donut',
                                                         dropShadow: {
                                                             enabled: true,
@@ -271,10 +271,11 @@
                                                         palette: 'palette2'
                                                     },
                                                     responsive: [{
-                                                        breakpoint: 200,
+                                                        breakpoint: 480,
                                                         options: {
                                                             chart: {
-                                                                width: 200
+                                                                width: 380,
+                                                                height: 250
                                                             },
                                                             legend: {
                                                                 position: 'bottom'
@@ -329,7 +330,7 @@
                                                         breakpoint: 480,
                                                         options: {
                                                             chart: {
-                                                                width: 200
+                                                                width: 380
                                                             },
                                                             legend: {
                                                                 position: 'bottom'
@@ -357,13 +358,13 @@
                                     <div class="border rounded">
                                         <p class="m-1">Ticket por Departamento</p>
                                         @php
-                                            $ticketByDepartment = json_decode(
-                                                '[{ "qty": "30", "name": "Soporte" }, {"qty": "25", "name": "Atención al cliente", "colorBg": "warning"}, {"qty": "25", "name": "Ventas", "colorBg": "warning"}]',
-                                                true,
-                                            ); // Decodificar como array asociativo
+                                             $seriesDept = array_map(function ($item) {
+                                                return $item->count;
+                                            }, $byDepartment);
 
-                                            $seriesDept = array_column($ticketByDepartment, 'qty');
-                                            $labelsDept = array_column($ticketByDepartment, 'name');
+                                            $labelsDept = array_map(function ($item) {
+                                                return $item->Siennadepto__nombre ?? 'Desconocido';
+                                            }, $byDepartment);
 
                                         @endphp
                                         <div id="chartDepartment"></div>
@@ -390,7 +391,7 @@
                                                         breakpoint: 480,
                                                         options: {
                                                             chart: {
-                                                                width: 200
+                                                                width: 380
                                                             },
                                                             legend: {
                                                                 position: 'bottom'
@@ -416,7 +417,7 @@
 
                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
                                     <div class="border rounded">
-                                        <p class="m-1">Ticket por Pendientes</p>
+                                        <p class="m-1">Ticket Pendientes</p>
                                         @php
                                             $seriesDeptPending = array_map(function ($item) {
                                                 return $item->count;
@@ -610,13 +611,14 @@
 
                                         <script>
                                             document.addEventListener('DOMContentLoaded', function() {
+                                                console.log(@json($categorias))
                                                 var options = {
                                                     series: @json($series),
                                                     chart: {
                                                         type: 'bar',
                                                         height: 350,
-                                                        stacked: true, // Barras apiladas
-                                                        stackType: '100%' // Tipo de apilamiento para que se muestre como porcentaje total
+                                                        stacked: true, 
+                                                        stackType: '100%' 
                                                     },
                                                     responsive: [{
                                                         breakpoint: 480,
@@ -628,8 +630,8 @@
                                                             }
                                                         }
                                                     }],
-                                                    labels: {
-                                                        categories: @json($categorias), // Aseguramos que las categorías sean un array de strings
+                                                    xaxis: {
+                                                        categories: @json($categorias), 
                                                     },
                                                     fill: {
                                                         opacity: 1
@@ -660,17 +662,16 @@
                                     <div class="border rounded">
                                         <p class="m-1">Topics pendientes</p>
                                         @php
-                                            $ticketByTopicPending = json_decode(
-                                                '[{ "qty": "30", "name": "Soporte" }, {"qty": "25", "name": "Atención al cliente", "colorBg": "warning"}, {"qty": "25", "name": "Ventas", "colorBg": "warning"},{ "qty": "18", "name": "Calidad" }]',
-                                                true,
-                                            );
+                                            $seriesTopicPending = array_map(function ($item) {
+                                                return $item->count;
+                                            }, $pendingByTopic);
 
-                                            $seriesTopicPending = array_map(
-                                                'intval',
-                                                array_column($pendingByTopic, 'count'),
-                                            );
-                                            $labelsTopicPending = array_column($pendingByTopic, 'Siennatopic__nombre');
+                                            $labelsTopicPending = array_map(function ($item) {
+                                                return $item->Siennatopic__nombre ?? 'Sin Topic';
+                                            }, $pendingByTopic);
 
+
+                                            
                                         @endphp
                                         <div id="ticketPendingTopic"></div>
 
@@ -733,7 +734,7 @@
                                                         breakpoint: 480,
                                                         options: {
                                                             chart: {
-                                                                width: 400
+                                                                width: 380
                                                             },
                                                             legend: {
                                                                 position: 'bottom'
@@ -811,7 +812,7 @@
                                                             }
                                                         }
                                                     }],
-                                                    labels: {
+                                                    xaxis: {
                                                         categories: @json($cat), // Aseguramos que las categorías sean un array de strings
                                                     },
                                                     fill: {

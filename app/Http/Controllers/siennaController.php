@@ -430,8 +430,12 @@ class siennaController extends Controller
                       $selects = explode(",", (string)$vdato);
                       foreach ($selects as $s) {
                         foreach ($resultadosoption as $resultoption) {
-                            $idoption = $resultoption->id;
-                            $nombreoption = $resultoption->nombre;
+                          
+                            $idoption = isset($resultoption->id) ? $resultoption->id : 0;
+                            $nombreoption = isset($resultoption->nombre) ? $resultoption->nombre : "Opcion ".$idoption;
+
+                            //$idoption = $resultoption->id;
+                            //$nombreoption = $resultoption->nombre;
 
                             if ($s == $idoption) {
                               $selected .= $nombreoption.",";
