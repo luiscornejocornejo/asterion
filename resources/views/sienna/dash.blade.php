@@ -476,7 +476,7 @@
                                                         var options = {
                                                             series: @json($seriesDeptPending),
                                                             chart: {
-                                                                height: 380,
+                                                                height: 350,
                                                                 type: 'radialBar',
                                                             },
                                                             plotOptions: {
@@ -485,7 +485,7 @@
                                                                     startAngle: 0,
                                                                     endAngle: 270,
                                                                     hollow: {
-                                                                        margin: 5,
+                                                                        margin: 3,
                                                                         size: '20%',
                                                                         background: 'transparent',
                                                                         image: undefined,
