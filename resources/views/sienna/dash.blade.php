@@ -306,81 +306,46 @@
                                             <div class="border rounded">
                                                 <p class="m-1">Ticket por Canal</p>
                                                 @php
-                                                    /*
                                                     $seriesChannel = array_map(function ($item) {
                                                         return $item->count;
                                                     }, $perChannel);
 
-
                                                     $labelsChannel = array_map(function ($item) {
                                                         return $item->Siennasource__nombre ?? 'Desconocido';
                                                     }, $perChannel);
-                                                      */  
-                                                    $perChannel = array_map(function($item) {
-                                                        return (array) $item;
-                                                    }, $perChannel)
-
-                                                    $catPerChannel = [];
-                                                    $seriesChannel = [];
-
-                                                    foreach ($departmentByDay as $regChannel) {
-                                                    $fecha = $regChannel['Creado'];
-                                                    $source = $regChannel['Siennasource__nombre'];
-                                                    $count = $regChannel['count'];
-
-                                                    if (!in_array($source, $catPerChannel)) {
-                                                        $catPerChannel[] = $source;
-                                                    }
-
-                                                    if (!isset($seriesChannel[$depto])) {
-                                                        $seriesChannel[$depto] = [];
-                                                    }
-
-                                                    $seriesChannel[$depto][] = $count;
-                                                    
-                                                    }
-                                                    $seriesPerChannel = [];
-                                                    foreach ($seriesChannel as $depto => $data) {
-                                                        $seriesPerChannel[] = [
-                                                            'name' => $depto,
-                                                            'data' => $data,
-                                                        ];
-                                                    }
 
                                                 @endphp
                                                 <div id="donut"></div>
 
                                                 <script>
                                                     document.addEventListener('DOMContentLoaded', function() {
-                                                        document.addEventListener('DOMContentLoaded', function() {
-                                                        var options = {
+                                                        var optionDonut = {
                                                             series: @json($seriesChannel),
+                                                            labels: @json($labelsChannel),
                                                             chart: {
-                                                                type: 'bar',
-                                                                height: 350,
-                                                                stacked: true
+                                                                type: 'polarArea',
+                                                            },
+                                                            stroke: {
+                                                                colors: ['#fff']
+                                                            },
+                                                            fill: {
+                                                                opacity: 0.8
+                                                            },
+                                                            legend: {
+                                                                position: 'left',
+                                                                offsetY: 80
                                                             },
                                                             responsive: [{
                                                                 breakpoint: 480,
                                                                 options: {
+                                                                    chart: {
+                                                                        width: 380
+                                                                    },
                                                                     legend: {
-                                                                        position: 'bottom',
-                                                                        offsetX: -10,
-                                                                        offsetY: 0
+                                                                        position: 'bottom'
                                                                     }
                                                                 }
-                                                            }],
-                                                            xaxis: {
-                                                                categories: @json($catPerChannel),
-                                                            },
-                                                            fill: {
-                                                                opacity: 1
-                                                            },
-                                                            legend: {
-                                                                position: 'right',
-                                                                offsetX: 0,
-                                                                offsetY: 50
-                                                            },
+                                                            }]
                                                         };
 
                                                         var donut = new ApexCharts(
@@ -695,6 +660,7 @@
                                                         chart.render();
                                                     });
                                                 </script>
+
                                             </div>
 
 
