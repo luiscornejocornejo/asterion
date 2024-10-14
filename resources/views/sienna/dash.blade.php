@@ -926,6 +926,7 @@
         <div class="mt-2">
             <div class="border rounded text-center" style="min-height: 250px!important;">
                 <div class="my-5">
+                    <img src="assetsfacu/images/svg/file-searching.svg" height="90" alt="Without information">
                     <h2 class="text-center">No hay información que mostrar.</h2>
                     <a class="btn btn-primary text-white" href="/viewtickets" target="_blank">Ir a ticketera</a> 
                 </div>
