@@ -320,36 +320,41 @@
                                                 <script>
                                                     document.addEventListener('DOMContentLoaded', function() {
                                                         var options = {
-                                                            series: @json($seriesChannel),
+                                                            series: [{
+                                                                data: @json($seriesChannel)
+                                                            }],
                                                             chart: {
                                                                 height: 350,
-                                                                type: 'radialBar',
-                                                            },
-                                                            plotOptions: {
-                                                                radialBar: {
-                                                                    dataLabels: {
-                                                                        name: {
-                                                                            fontSize: '22px',
-                                                                        },
-                                                                        value: {
-                                                                            fontSize: '16px',
-                                                                            formatter: function(val) {
-                                                                                return Math.round(val); 
-                                                                            }
-                                                                        },
-                                                                        total: {
-                                                                            show: true,
-                                                                            label: 'Total',
-                                                                            formatter: function(w) {
-                                                                                // Se usa PHP para insertar el valor de los tickets
-                                                                                return {{ $tickets[0]->count }};
-                                                                            }
-                                                                        }
+                                                                type: 'bar',
+                                                                events: {
+                                                                    click: function(chart, w, e) {
+                                                                        // console.log(chart, w, e)
                                                                     }
                                                                 }
                                                             },
-                                                            labels: @json($labelsChannel),
-                                                        };
+                                                            colors: colors,
+                                                            plotOptions: {
+                                                                bar: {
+                                                                    columnWidth: '45%',
+                                                                    distributed: true,
+                                                                }
+                                                            },
+                                                            dataLabels: {
+                                                                enabled: false
+                                                            },
+                                                            legend: {
+                                                                show: false
+                                                            },
+                                                            xaxis: {
+                                                                categories: @json($labelsChannel),
+                                                                labels: {
+                                                                    style: {
+                                                                        colors: colors,
+                                                                        fontSize: '12px'
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
 
                                                         var donut = new ApexCharts(
                                                             document.querySelector("#donut"),
