@@ -897,6 +897,9 @@
                                                             }],
                                                             xaxis: {
                                                                 categories: @json($cat),
+                                                                labels: {
+                                                                    show: false
+                                                                },
                                                             },
                                                             fill: {
                                                                 opacity: 1
