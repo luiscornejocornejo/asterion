@@ -608,7 +608,10 @@
                                                                     }
                                                                 },
                                                                 tooltip: {
-                                                                    enabled: true,
+                                                                    enabled: false,
+                                                                },
+                                                                labels: {
+                                                                    show: false
                                                                 }
                                                             },
                                                             yaxis: {
