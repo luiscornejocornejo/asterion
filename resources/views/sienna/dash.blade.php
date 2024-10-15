@@ -589,6 +589,9 @@
                                                             xaxis: {
                                                                 categories: @json($labelsPending),
                                                                 position: 'top',
+                                                                labels: {
+                                                                    show: false
+                                                                },
                                                                 axisBorder: {
                                                                     show: false
                                                                 },
@@ -717,6 +720,9 @@
                                                             }],
                                                             xaxis: {
                                                                 categories: @json($categorias),
+                                                                labels: {
+                                                                    show: false
+                                                                },
                                                             },
                                                             fill: {
                                                                 opacity: 1
