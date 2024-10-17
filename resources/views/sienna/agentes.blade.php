@@ -145,7 +145,7 @@ document.getElementById("idagente").value = dd;
                                         data-bs-custom-class="mb-1" data-bs-title="Cerrar Tickets"></i>
                                     </button> 
 
-                                    <button onclick="ha(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalha"  class="btn btn-dark rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button onclick="hb(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalha"  class="btn btn-warning rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="mdi  mdi-account-key" data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-custom-class="mb-1" data-bs-title="Habilitado"></i>
                                     </button> 
