@@ -28,7 +28,7 @@
                             @csrf
 
                             <div class="row mx-1 my-1">
-                                <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
+                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-6">
                                     <div class="mb-3">
                                         <label class="form-label">Período</label>
                                         <select name="periodo" id="periodo" class="form-select">
@@ -59,7 +59,7 @@
                                         });
                                     </script>
                                 </div>
-                                <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
+                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-6">
                                     <label for="channel" class="form-label">Canales</label>
                                     <select name="channel[]" id="channel" multiple="multiple" class="form-select">
                                         @foreach ($sources as $source)
@@ -69,18 +69,8 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
-                                    <label for="deparment" class="form-label">Departamento</label>
-                                    <select name="department[]" id="department" multiple="multiple" class="form-select">
-
-                                        @foreach ($departments as $department)
-                                            <option value="{{ $department->id }}">
-                                                {{ $department->nombre }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
+                                
+                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-6">
                                     <label for="agent" class="form-label">Agente</label>
                                     <select name="agent[]" id="agent" multiple="multiple" class="form-select">
 
