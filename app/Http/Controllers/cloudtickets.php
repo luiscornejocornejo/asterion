@@ -884,7 +884,23 @@ class cloudtickets extends Controller
        
         ;
     }
+    public function soportec(Request $request)
+    {   
+        $merchant=$this->dominio();
 
+        $query ="select a.id,a.created_at,a.estadoconv,b.nombre as deptoname ,c.nombre as topicname from soporte.siennatickets as a 
+        left join soporte.siennadepto b
+        on b.id=a.siennadepto
+        left join soporte.siennatopic c
+        on c.id=a.siennatopic
+        where a.siennaestado='4' and a.siennasource=10  and a.merchant='".$merchant."'";
+        $tsoporte = DB::select($query);
+
+        return view('sienna/soportec')
+        ->with('tsoporte', $tsoporte)
+       
+        ;
+    }
     
     public function envios(Request $request)
     {   
