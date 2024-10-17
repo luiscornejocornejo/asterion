@@ -815,6 +815,8 @@
                                                             },
                                                             labels: @json($labelsTopicPending),
                                                             legend: {
+                                                                position: 'bottom', 
+                                                                horizontalAlign: 'center',
                                                                 formatter: function(label, opts) {
                                                                     if (label.length > 10) {
                                                                         return label.substring(0, 10) + '...';
