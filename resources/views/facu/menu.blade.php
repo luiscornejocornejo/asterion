@@ -255,12 +255,36 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 </a>
                 <div class="collapse" id="sidebarEcommerce">
                     <ul class="side-nav-second-level">
-                        <li >
-                            <a  href="/soporte"  >
-                                <i class="mdi mdi-lifebuoy"></i>
-                                <span> Soporte Suricata </span>
-                            </a>
-                        </li>
+                        
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                            <i class="mdi mdi-sitemap-outline"></i>
+                            <span class="badge bg-success float-end"></span>
+                            <span> Soporte </span>
+                        </a>
+                        <div class="collapse" id="sidebarDashboards">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                <a target="_self" href="/soporte">
+                                            <span id="sienna" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Abiertos</span>
+                                        </a>
+                                </li>
+                                <li>
+                                <a target="_self" href="/soportec">
+                                            <span id="Usuarios" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Cerrados</span>
+                                        </a>
+                                </li>
+                            
+                            
+                                
+                                
+                                
+
+                            </ul>
+                        </div>
+                    </li>
+
                         <li >
                             <a  href="/tareas"  >
                                 <i class="uil-clipboard-alt"></i>
