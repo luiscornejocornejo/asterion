@@ -1806,4 +1806,21 @@ WHERE ticket IN (
             ->back()
             ->with('success', 'Se asigno tags correctamente!');
     }
+
+    
+    public function habilitadousers(Request $request)
+    {
+
+         $user_id=$request->user_id5;
+        $statos=$request->statos;
+
+        $si2 = users::find($user_id);
+        $si2->habilitado = $statos;
+        $si2->save();
+      
+        return redirect()
+        ->back()
+        ->with('success', 'Se modifico  el registro  correctamente!');
+
+    }
 }
