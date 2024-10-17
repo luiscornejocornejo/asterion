@@ -136,7 +136,7 @@ $resultados3 = DB::select($query3);
                                         <strong class="text-uppercase text-white">Información del cliente</strong>
                                         <hr>
 
-                                        <p class="text-light font-size-13"><strong>Nombre: </strong><?php echo ($nombrecliente) ? $nombrecliente : ''; ?></p>
+                                        <p class="text-light font-size-13"><strong>Nombre: </strong><?php echo isset($nombrecliente) ? $nombrecliente : ''; ?></p>
                                         <p class="text-light font-size-13"><strong>Email: </strong><?php echo $emailcliente; ?></p>
                                         <p class="text-light font-size-13"><strong>Dirección: </strong><?php echo $direccioncliente; ?></p>
                                         <p class="text-light font-size-13"><strong>Whatsapp: </strong><?php echo $celcliente; ?></p>
