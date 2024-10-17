@@ -112,7 +112,7 @@
                                         </div>
 
                                         <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-12 mt-2">
-                                            <div class="border rounded" >
+                                            <div class="border rounded">
                                                 <p class="m-1">Ticket por estado</p>
                                                 @php
                                                     $series = array_map(function ($item) {
@@ -164,6 +164,8 @@
                                                             },
                                                             labels: @json($labels),
                                                             legend: {
+                                                                position: 'bottom', 
+                                                                horizontalAlign: 'center',
                                                                 formatter: function(label, opts) {
                                                                     if (label.length > 10) {
                                                                         return label.substring(0, 10) + '...';
@@ -268,6 +270,8 @@
                                                             },
                                                             labels: @json($agentLabels),
                                                             legend: {
+                                                                position: 'bottom',
+                                                                horizontalAlign: 'center',
                                                                 formatter: function(label, opts) {
                                                                     if (label.length > 10) {
                                                                         return label.substring(0, 10) + '...';
