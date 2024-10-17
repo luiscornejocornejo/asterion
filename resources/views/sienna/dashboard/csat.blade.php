@@ -1,7 +1,7 @@
 @include('facu.header')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script>
-    console.log("TOTAL CSAT:", @json($totalCsat))
+    console.log("Encuestas realizadas:", @json($surveySended))
 </script>
 
     <div class="wrapper menuitem-active">
