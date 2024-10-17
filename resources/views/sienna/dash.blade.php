@@ -101,9 +101,9 @@
                                 <div>
                                     <div class="row mx-1 my-1">
                                         <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
-                                            <div class="border rounded text-center"
-                                                style="min-height: 250px!important;">
-                                                <div class="my-5">
+                                            <div class="border rounded position-relative"
+                                                style="min-height: 387px;!important;">
+                                                <div class="position-absolute top-50 start-50 translate-middle">
                                                     <span class="h1 hoverDataTicket"
                                                         style="font-size: 3.4rem;">{{ $tickets[0]->count }}</span><br>
                                                     <span class="hoverDataTicket">Tickets creados</span>
