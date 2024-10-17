@@ -441,6 +441,107 @@ class Dashboard2Controller extends Controller
         return $resultTopicPerDay;
     }
 
+
+    public function getAgents() 
+    {
+        $queryGetAgent = "SELECT id, nombre, last_name, deptosuser FROM users";
+        $resultAgents = DB::select($queryGetAgent);
+        return $resultAgents;
+    }
+
+    public function getSources() 
+    {
+        $queryGetSource = "SELECT id, nombre FROM siennasource";
+        $resultGetSource = DB::select($queryGetSource);
+        return $resultGetSource;
+    }
+
+    public function getDepartments() 
+    {
+        $queryGetDepartment = "SELECT id, nombre FROM siennadepto";
+        $resultGetDepartment = DB::select($queryGetDepartment);
+        return $resultGetDepartment;
+    }
+    public function dashboardgeneric()
+    {
+        $source="";
+        $department="";
+        $agent="";
+        $daterange="";
+        $ticketCreated = $this->getTicketsCreated($source,$department,$agent,$daterange);
+        $ticketByStatus = $this->getTicketsByStatus($source,$department,$agent,$daterange);
+        $ticketPerAgent = $this->getTicketPerAgent($source,$department,$agent,$daterange);
+        $ticketPerChannel = $this->getTicketPerChannel($source,$department,$agent,$daterange);
+        $ticketByDepartment = $this->getTicketByDepartment($source,$department,$agent,$daterange);
+        $ticketPendings = $this->getTicketPendings($source,$department,$agent,$daterange);
+        $ticketTimeOfLive = $this->getTimeOfLiveOfTickets($source,$department,$agent,$daterange);
+        $ticketPerDepartmentByDay = $this->getTicketPerDepartmentByDay($source,$department,$agent,$daterange);
+        $ticketPendingByTopic = $this->getTicketPendingByTopic($source,$department,$agent,$daterange);
+        $ticketTopicPerDay = $this->getTicketTopicPerDay($source,$department,$agent,$daterange);
+        $getAgent = $this->getAgents();
+        $getSource = $this->getSources();
+        $getDepartment = $this->getDepartments();
+        
+        return view('sienna/dash', [
+            'tickets' => $ticketCreated,
+            'status' => $ticketByStatus,
+            'perAgent' => $ticketPerAgent,
+            'perChannel' => $ticketPerChannel,
+            'byDepartment' => $ticketByDepartment,
+            'tickets_pendings' => $ticketPendings,
+            'ticket_timeLive' => $ticketTimeOfLive,
+            'departmentByDay' => $ticketPerDepartmentByDay,
+            'pendingByTopic' => $ticketPendingByTopic,
+            'topicPerDay' => $ticketTopicPerDay,
+            'agents' => $getAgent,
+            'sources' => $getSource,
+            'departments' => $getDepartment
+            
+        ]);
+    }
+    public function dashboardgeneric2(Request $request)
+    {
+        
+        $source=$request->channel;
+        $department=$request->department;
+        $agent=$request->agent;
+        $daterange=$request->periodo ;
+
+        $ticketCreated = $this->getTicketsCreated($source,$department,$agent,$daterange);
+        $ticketByStatus = $this->getTicketsByStatus($source,$department,$agent,$daterange);
+        $ticketPerAgent = $this->getTicketPerAgent($source,$department,$agent,$daterange);
+        $ticketPerChannel = $this->getTicketPerChannel($source,$department,$agent,$daterange);
+        $ticketByDepartment = $this->getTicketByDepartment($source,$department,$agent,$daterange);
+        $ticketPendings = $this->getTicketPendings($source,$department,$agent,$daterange);
+        $ticketTimeOfLive = $this->getTimeOfLiveOfTickets($source,$department,$agent,$daterange);
+        $ticketPerDepartmentByDay = $this->getTicketPerDepartmentByDay($source,$department,$agent,$daterange);
+        $ticketPendingByTopic = $this->getTicketPendingByTopic($source,$department,$agent,$daterange);
+        $ticketTopicPerDay = $this->getTicketTopicPerDay($source,$department,$agent,$daterange);
+        $getAgent = $this->getAgents();
+        $getSource = $this->getSources();
+        $getDepartment = $this->getDepartments();
+        
+
+
+        return view('sienna/dash', [
+            'tickets' => $ticketCreated,
+            'status' => $ticketByStatus,
+            'perAgent' => $ticketPerAgent,
+            'perChannel' => $ticketPerChannel,
+            'byDepartment' => $ticketByDepartment,
+            'tickets_pendings' => $ticketPendings,
+            'ticket_timeLive' => $ticketTimeOfLive,
+            'departmentByDay' => $ticketPerDepartmentByDay,
+            'pendingByTopic' => $ticketPendingByTopic,
+            'topicPerDay' => $ticketTopicPerDay,
+            'agents' => $getAgent,
+            'sources' => $getSource,
+            'departments' => $getDepartment
+            
+        ]);
+    }
+
+
     public function getTotalCsat($source,$department,$agent,$periodo) 
     {
         $subquery=$this->subquery($source,$department,$agent,$periodo);
@@ -486,113 +587,5 @@ class Dashboard2Controller extends Controller
 
         $resultSurverPerChannel = DB::select($querySurveyPerChannel);
         return $resultSurverPerChannel;
-    }
-
-    public function getAgents() 
-    {
-        $queryGetAgent = "SELECT id, nombre, last_name, deptosuser FROM users";
-        $resultAgents = DB::select($queryGetAgent);
-        return $resultAgents;
-    }
-
-    public function getSources() 
-    {
-        $queryGetSource = "SELECT id, nombre FROM siennasource";
-        $resultGetSource = DB::select($queryGetSource);
-        return $resultGetSource;
-    }
-
-    public function getDepartments() 
-    {
-        $queryGetDepartment = "SELECT id, nombre FROM siennadepto";
-        $resultGetDepartment = DB::select($queryGetDepartment);
-        return $resultGetDepartment;
-    }
-    public function dashboardgeneric()
-    {
-        $source="";
-        $department="";
-        $agent="";
-        $daterange="";
-        $ticketCreated = $this->getTicketsCreated($source,$department,$agent,$daterange);
-        $ticketByStatus = $this->getTicketsByStatus($source,$department,$agent,$daterange);
-        $ticketPerAgent = $this->getTicketPerAgent($source,$department,$agent,$daterange);
-        $ticketPerChannel = $this->getTicketPerChannel($source,$department,$agent,$daterange);
-        $ticketByDepartment = $this->getTicketByDepartment($source,$department,$agent,$daterange);
-        $ticketPendings = $this->getTicketPendings($source,$department,$agent,$daterange);
-        $ticketTimeOfLive = $this->getTimeOfLiveOfTickets($source,$department,$agent,$daterange);
-        $ticketPerDepartmentByDay = $this->getTicketPerDepartmentByDay($source,$department,$agent,$daterange);
-        $ticketPendingByTopic = $this->getTicketPendingByTopic($source,$department,$agent,$daterange);
-        $ticketTopicPerDay = $this->getTicketTopicPerDay($source,$department,$agent,$daterange);
-        $getAgent = $this->getAgents();
-        $getSource = $this->getSources();
-        $getDepartment = $this->getDepartments();
-        $totalCsat = $this->getTotalCsat($source,$department,$agent,$daterange);
-        $surverSended = $this->surveySended($source,$department,$agent,$daterange);
-        $surveyPerChannel = $this->surveyPerChannel($source,$department,$agent,$daterange);
-
-        return view('sienna/dash', [
-            'tickets' => $ticketCreated,
-            'status' => $ticketByStatus,
-            'perAgent' => $ticketPerAgent,
-            'perChannel' => $ticketPerChannel,
-            'byDepartment' => $ticketByDepartment,
-            'tickets_pendings' => $ticketPendings,
-            'ticket_timeLive' => $ticketTimeOfLive,
-            'departmentByDay' => $ticketPerDepartmentByDay,
-            'pendingByTopic' => $ticketPendingByTopic,
-            'topicPerDay' => $ticketTopicPerDay,
-            'agents' => $getAgent,
-            'sources' => $getSource,
-            'departments' => $getDepartment,
-            'totalCsat' => $totalCsat,
-            'surveySended' => $surverSended,
-            'surverPerChannel' => $surveyPerChannel
-        ]);
-    }
-    public function dashboardgeneric2(Request $request)
-    {
-        
-        $source=$request->channel;
-        $department=$request->department;
-        $agent=$request->agent;
-        $daterange=$request->periodo ;
-
-        $ticketCreated = $this->getTicketsCreated($source,$department,$agent,$daterange);
-        $ticketByStatus = $this->getTicketsByStatus($source,$department,$agent,$daterange);
-        $ticketPerAgent = $this->getTicketPerAgent($source,$department,$agent,$daterange);
-        $ticketPerChannel = $this->getTicketPerChannel($source,$department,$agent,$daterange);
-        $ticketByDepartment = $this->getTicketByDepartment($source,$department,$agent,$daterange);
-        $ticketPendings = $this->getTicketPendings($source,$department,$agent,$daterange);
-        $ticketTimeOfLive = $this->getTimeOfLiveOfTickets($source,$department,$agent,$daterange);
-        $ticketPerDepartmentByDay = $this->getTicketPerDepartmentByDay($source,$department,$agent,$daterange);
-        $ticketPendingByTopic = $this->getTicketPendingByTopic($source,$department,$agent,$daterange);
-        $ticketTopicPerDay = $this->getTicketTopicPerDay($source,$department,$agent,$daterange);
-        $getAgent = $this->getAgents();
-        $getSource = $this->getSources();
-        $getDepartment = $this->getDepartments();
-        $totalCsat = $this->getTotalCsat($source,$department,$agent,$daterange);
-        $surverSended = $this->surveySended($source,$department,$agent,$daterange);
-        $surveyPerChannel = $this->surveyPerChannel($source,$department,$agent,$daterange);
-
-
-        return view('sienna/dash', [
-            'tickets' => $ticketCreated,
-            'status' => $ticketByStatus,
-            'perAgent' => $ticketPerAgent,
-            'perChannel' => $ticketPerChannel,
-            'byDepartment' => $ticketByDepartment,
-            'tickets_pendings' => $ticketPendings,
-            'ticket_timeLive' => $ticketTimeOfLive,
-            'departmentByDay' => $ticketPerDepartmentByDay,
-            'pendingByTopic' => $ticketPendingByTopic,
-            'topicPerDay' => $ticketTopicPerDay,
-            'agents' => $getAgent,
-            'sources' => $getSource,
-            'departments' => $getDepartment,
-            'totalCsat' => $totalCsat,
-            'surveySended' => $surverSended,
-            'surverPerChannel' => $surveyPerChannel
-        ]);
     }
 }
