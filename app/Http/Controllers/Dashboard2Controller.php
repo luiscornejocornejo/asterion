@@ -545,7 +545,7 @@ class Dashboard2Controller extends Controller
     public function getTotalCsat($source,$department,$agent,$periodo) 
     {
         $subquery=$this->subquery($source,$department,$agent,$periodo);
-        $queryTotalCsat = "SELECT AVG(`csat_view`.`CEILING(csat)`) AS `avg`
+        $queryTotalCsat = "SELECT ROUND(AVG(`csat_view`.`CEILING(csat)`), 2) AS `avg`
             FROM
             `csat_view`
 
