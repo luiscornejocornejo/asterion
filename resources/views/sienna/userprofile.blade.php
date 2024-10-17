@@ -136,13 +136,13 @@ $resultados3 = DB::select($query3);
                                         <strong class="text-uppercase text-white">Información del cliente</strong>
                                         <hr>
 
-                                        <p class="text-light font-size-13"><strong>Nombre: </strong><?php echo isset($nombrecliente) ? $nombrecliente : ''; ?></p>
-                                        <p class="text-light font-size-13"><strong>Email: </strong><?php echo isset($emailcliente ? $emailcliente : ''); ?></p>
-                                        <p class="text-light font-size-13"><strong>Dirección: </strong><?php echo isset($direccioncliente) ? $direccioncliente : '' ; ?></p>
-                                        <p class="text-light font-size-13"><strong>Whatsapp: </strong><?php echo isset($celcliente) ? $celcliente : ''; ?></p>
-                                        <p class="text-light font-size-13"><strong>Deuda: </strong><?php echo isset($deudacliente) ? $deudacliente : ''; ?></p>
-                                        <p class="text-light font-size-13"><strong>Estado de cuenta: </strong><?php echo isset($estadocliente) ? $estadocliente : ''; ?></p>
-                                        <p class="text-light font-size-13"><strong>IP: </strong><?php echo isset($ipcliente) ? $ipcliente : ''; ?></p>
+                                        <p class="text-light font-size-13"><strong>Nombre: </strong><?php echo $nombrecliente ?? ''; ?></p>
+                                        <p class="text-light font-size-13"><strong>Email: </strong><?php echo $emailcliente ?? ''); ?></p>
+                                        <p class="text-light font-size-13"><strong>Dirección: </strong><?php echo $direccioncliente ?? '' ; ?></p>
+                                        <p class="text-light font-size-13"><strong>Whatsapp: </strong><?php echo $celcliente ?? ''; ?></p>
+                                        <p class="text-light font-size-13"><strong>Deuda: </strong><?php echo $deudacliente ?? ''; ?></p>
+                                        <p class="text-light font-size-13"><strong>Estado de cuenta: </strong><?php echo $estadocliente ?? ''; ?></p>
+                                        <p class="text-light font-size-13"><strong>IP: </strong><?php echo $ipcliente ?? ''; ?></p>
 
                                     </div>
                                 </div>
