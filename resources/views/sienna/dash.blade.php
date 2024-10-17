@@ -158,7 +158,7 @@
                                                                                 show: true
                                                                             }
                                                                         },
-                                                                        size: '75%'
+                                                                        size: '70%'
                                                                     }
                                                                 }
                                                             },
@@ -264,7 +264,7 @@
                                                                                 show: true
                                                                             }
                                                                         },
-                                                                        size: '40%'
+                                                                        size: '70%'
                                                                     }
                                                                 }
                                                             },
@@ -766,7 +766,7 @@
 
                                         </div>
 
-                                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
+                                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
                                             <div class="border rounded">
                                                 <p class="m-1">Topics pendientes</p>
                                                 @php
@@ -816,8 +816,8 @@
                                                             labels: @json($labelsTopicPending),
                                                             legend: {
                                                                 formatter: function(label, opts) {
-                                                                    if (label.length > 10) {
-                                                                        return label.substring(0, 10) + '...';
+                                                                    if (label.length > 15) {
+                                                                        return label.substring(0, 15) + '...';
                                                                     }
                                                                     return label;
                                                                 }
@@ -868,7 +868,7 @@
 
                                         </div>
 
-                                        <div class="col-xxl-8 col-xl-8 col-lg-8 col-sm-12 mt-2">
+                                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
                                             <div class="border rounded">
                                                 <p class="m-1">Topics por Día</p>
                                                 @php
@@ -970,7 +970,7 @@
                 <div class="my-5">
                     <img src="assetsfacu/images/svg/file-searching.svg" height="90" alt="Without information">
                     <h2 class="text-center">No hay información que mostrar.</h2>
-                    <a class="btn btn-primary text-white mt-2" href="/viewtickets" target="_blank">Ir a ticketera</a>
+                    <a class="btn btn-primary text-white mt-2" href="/dash" target="_blank">Volver a dashboard</a>
                 </div>
             </div>
         </div>
