@@ -96,6 +96,125 @@
                                         <input type="submit" class="btn btn-primary" value="Buscar">
                                     </div>
                                 </div>
+                                <div class="row mx-1 my-1">
+                                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
+                                        <div class="border rounded position-relative text-center"
+                                            style="min-height: 421.61px;!important;">
+                                            <div class="position-absolute top-50 start-50 translate-middle">
+                                                <span class="h1 hoverDataTicket"
+                                                    style="font-size: 3.4rem;">{{ $totalCsat[0]->avg }}</span><br>
+                                                <span class="hoverDataTicket">Total CSAT</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-12 mt-2">
+                                        <div class="border rounded">
+                                            <p class="m-1">Encuestas realizadas</p>
+                                            @php
+                                                $series = array_map(function ($item) {
+                                                    return $item->count;
+                                                }, $surveySended);
+
+                                                $labels = array_map(function ($item) {
+                                                    return $item->SiennaticketsViewTicket ?? 'Sin dato';
+                                                }, $surveySended);
+
+                                            @endphp
+                                            <div id="chart"></div>
+
+
+
+                                            <script>
+                                                document.addEventListener('DOMContentLoaded', function() {
+                                                    var options = {
+                                                        series: @json($series),
+                                                        chart: {
+                                                            width: '100%',
+                                                            height: 380,
+                                                            type: 'donut',
+                                                            dropShadow: {
+                                                                enabled: true,
+                                                                color: '#111',
+                                                                top: -1,
+                                                                left: 3,
+                                                                blur: 3,
+                                                                opacity: 0.2
+                                                            }
+                                                        },
+                                                        stroke: {
+                                                            width: 0,
+                                                        },
+                                                        plotOptions: {
+                                                            pie: {
+                                                                donut: {
+                                                                    labels: {
+                                                                        show: true,
+                                                                        total: {
+                                                                            showAlways: true,
+                                                                            show: true
+                                                                        }
+                                                                    },
+                                                                    size: '70%'
+                                                                }
+                                                            }
+                                                        },
+                                                        labels: @json($labels),
+                                                        legend: {
+                                                            position: 'bottom', 
+                                                            horizontalAlign: 'center',
+                                                            formatter: function(label, opts) {
+                                                                if (label.length > 10) {
+                                                                    return label.substring(0, 10) + '...';
+                                                                }
+                                                                return label;
+                                                            }
+                                                        },
+                                                        dataLabels: {
+                                                            dropShadow: {
+                                                                blur: 3,
+                                                                opacity: 0.8
+                                                            }
+                                                        },
+                                                        fill: {
+                                                            type: 'donut',
+                                                            opacity: 1,
+                                                            pattern: {
+                                                                enabled: true,
+                                                                style: ['verticalLines', 'squares', 'horizontalLines', 'circles', 'slantedLines'],
+                                                            },
+                                                        },
+                                                        states: {
+                                                            hover: {
+                                                                filter: 'none'
+                                                            }
+                                                        },
+                                                        theme: {
+                                                            palette: 'palette2'
+                                                        },
+                                                        responsive: [{
+                                                            breakpoint: 480,
+                                                            options: {
+                                                                chart: {
+                                                                    width: 380,
+                                                                    height: 250
+                                                                },
+                                                                legend: {
+                                                                    position: 'bottom'
+                                                                }
+                                                            }
+                                                        }]
+                                                    };
+
+                                                    var chart = new ApexCharts(document.querySelector("#chart"), options);
+                                                    chart.render();
+
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </form>
                     </div>
