@@ -96,7 +96,7 @@
                             </div>
                             <div class="row mx-1 my-1">
                                 <div class="col-xxl-2 col-xl-2 col-lg-4 col-sm-12 mt-2">
-                                    <input type="submit" class="btn btn-primary" placeholder="Buscar">
+                                    <input type="submit" class="btn btn-primary" value="Buscar">
                                 </div>
                                 <div>
                                     <div class="row mx-1 my-1">
@@ -322,6 +322,7 @@
                                                         var colors = ['#1E90FF', '#FF6347', '#32CD32', '#FFD700', '#FF69B4'];
                                                         var options = {
                                                             series: [{
+                                                                name: "Total",
                                                                 data: @json($seriesChannel)
                                                             }],
                                                             chart: {
@@ -403,6 +404,7 @@
                                                         ];
                                                         var options = {
                                                             series: [{
+                                                                name: "Total",
                                                                 data: @json($seriesDept)
                                                             }],
                                                             chart: {
@@ -436,21 +438,7 @@
                                                                     }
                                                                 }
                                                             },
-                                                            tooltip: {
-                                                                enabled: true,
-                                                                followCursor: false,
-                                                                x: {
-                                                                    show: true,
-                                                                    format: 'Total',
-                                                                    formatter: undefined,
-                                                                },
-                                                                y: {
-                                                                    formatter: undefined,
-                                                                    title: {
-                                                                        formatter: "Total",
-                                                                    }
-                                                                }
-                                                            }
+
                                                         }
 
                                                         var donut = new ApexCharts(
@@ -486,25 +474,62 @@
                                                 <script>
                                                     document.addEventListener('DOMContentLoaded', function() {
                                                         var options = {
-                                                            series: [{
-                                                                name: @json($labelsDeptPending),
-                                                                data: @json($seriesDeptPending),
-                                                            }],
+                                                            series: @json($seriesDeptPending),
                                                             chart: {
-                                                                height: 350,
-                                                                type: 'radar',
+                                                                height: 360,
+                                                                type: 'radialBar',
                                                             },
-                                                            dataLabels: {
-                                                                enabled: true
+                                                            plotOptions: {
+                                                                radialBar: {
+                                                                    offsetY: 0,
+                                                                    startAngle: 0,
+                                                                    endAngle: 270,
+                                                                    hollow: {
+                                                                        margin: 3,
+                                                                        size: '20%',
+                                                                        background: 'transparent',
+                                                                        image: undefined,
+                                                                    },
+                                                                    dataLabels: {
+                                                                        name: {
+                                                                            show: false,
+                                                                        },
+                                                                        value: {
+                                                                            show: false,
+                                                                        }
+                                                                    },
+                                                                    barLabels: {
+                                                                        enabled: true,
+                                                                        useSeriesColors: true,
+                                                                        offsetX: -8,
+                                                                        fontSize: '12px',
+                                                                        formatter: function(seriesName, opts) {
+                                                                            return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex]
+                                                                        },
+                                                                    },
+                                                                }
                                                             },
-                                                            yaxis: {
-                                                                stepSize: 20
-                                                            },
-                                                            xaxis: {
-                                                                categories: @json($labelsDeptPending)
-                                                            }
+                                                            colors: ['#FF4500', // Naranja fuerte
+                                                                '#32CD32', // Verde lima
+                                                                '#1E90FF', // Azul cielo
+                                                                '#FFD700', // Dorado
+                                                                '#DA70D6', // Orquídea
+                                                                '#8A2BE2', // Azul violeta
+                                                                '#7FFF00', // Verde chartreuse
+                                                                '#FF1493', // Rosa intenso
+                                                                '#00CED1', // Turquesa oscuro
+                                                                '#FF6347'
+                                                            ],
+                                                            labels: @json($labelsDeptPending),
+                                                            responsive: [{
+                                                                breakpoint: 350,
+                                                                options: {
+                                                                    legend: {
+                                                                        show: false
+                                                                    }
+                                                                }
+                                                            }]
                                                         };
-
                                                         var chart = new ApexCharts(document.querySelector("#radarTickets"), options);
                                                         chart.render();
 
@@ -564,6 +589,9 @@
                                                             xaxis: {
                                                                 categories: @json($labelsPending),
                                                                 position: 'top',
+                                                                labels: {
+                                                                    show: false
+                                                                },
                                                                 axisBorder: {
                                                                     show: false
                                                                 },
@@ -583,7 +611,10 @@
                                                                     }
                                                                 },
                                                                 tooltip: {
-                                                                    enabled: true,
+                                                                    enabled: false,
+                                                                },
+                                                                labels: {
+                                                                    show: false
                                                                 }
                                                             },
                                                             yaxis: {
@@ -689,6 +720,9 @@
                                                             }],
                                                             xaxis: {
                                                                 categories: @json($categorias),
+                                                                labels: {
+                                                                    show: false
+                                                                },
                                                             },
                                                             fill: {
                                                                 opacity: 1
@@ -863,6 +897,9 @@
                                                             }],
                                                             xaxis: {
                                                                 categories: @json($cat),
+                                                                labels: {
+                                                                    show: false
+                                                                },
                                                             },
                                                             fill: {
                                                                 opacity: 1
@@ -901,7 +938,9 @@
         <div class="mt-2">
             <div class="border rounded text-center" style="min-height: 250px!important;">
                 <div class="my-5">
-                    <h2 class="text-center">No hay información que mostrar</h2>
+                    <img src="assetsfacu/images/svg/file-searching.svg" height="90" alt="Without information">
+                    <h2 class="text-center">No hay información que mostrar.</h2>
+                    <a class="btn btn-primary text-white mt-2" href="/viewtickets" target="_blank">Ir a ticketera</a> 
                 </div>
             </div>
         </div>
