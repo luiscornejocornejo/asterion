@@ -1144,11 +1144,56 @@ class cloudtickets extends Controller
        
        }
       
+
+       ///nuevo
+       if($merchant<>""){
+        $buscarcliente=$this->buscarcliente($merchant,$merchant);
+
+      
+
+        if($buscarcliente){
+            //update
+            $tickets = DB::reconnect('mysql4')->table($merchant.".siennacliente")
+            ->where('cliente', $merchant)
+            ->update(['nya' => $merchant]);
+        }else{
+          //insert
+          
+
+          $idnewcliente = DB::reconnect('mysql4')->table($merchant.".siennacliente")->insertGetId([
+            'cliente' => $merchant,
+            
+            'created_at' =>  \Carbon\Carbon::now(),
+            'updated_at' =>  \Carbon\Carbon::now(),
+
+            ]);;
+        }
+
+      }
+      
+       ///fin
         return redirect()
         ->back()
         ->with('success', 'Se Agrego   correctamente!');
  
     }
+
+    public function buscarcliente($merchant,$cliente){
+        $cuantos=0;
+        $query="select count(*) as cuantos from " . $merchant . ".siennacliente where cliente='".$cliente."'";
+        $sal = DB::reconnect('mysql2')->select($query); 
+        foreach($sal as $val){
+            $cuantos=$val->cuantos;
+        }
+    
+        if($cuantos==0){
+          return false;
+    
+        }else{
+          return true;
+    
+        }
+      }
     //insert de nuevo registro del lado de soporte
 
     public function createticketsoporte2(Request $request)
