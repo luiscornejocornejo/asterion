@@ -124,7 +124,7 @@
                                                     }, $status);
 
                                                 @endphp
-                                                <div id="chart" style="min-height: 250px!important;"></div>
+                                                <div id="chart"></div>
 
 
 
@@ -158,7 +158,7 @@
                                                                                 show: true
                                                                             }
                                                                         },
-                                                                        size: '65%'
+                                                                        size: '40%'
                                                                     }
                                                                 }
                                                             },
@@ -233,7 +233,7 @@
                                                         return $item->{'Users - Asignado__last_name'} ?? 'Sin asignar';
                                                     }, $perAgent);
                                                 @endphp
-                                                <div id="agentPieChart" style="min-height: 250px!important;"></div>
+                                                <div id="agentPieChart" ></div>
                                                 <script>
                                                     document.addEventListener('DOMContentLoaded', function() {
                                                         var options = {
@@ -264,7 +264,7 @@
                                                                                 show: true
                                                                             }
                                                                         },
-                                                                        size: '65%'
+                                                                        size: '40%'
                                                                     }
                                                                 }
                                                             },
