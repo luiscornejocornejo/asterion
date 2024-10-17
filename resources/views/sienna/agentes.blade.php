@@ -24,6 +24,11 @@ function notificacion(dd) {
 document.getElementById("user_id5").value = dd;
 
 }
+function hb(dd) {
+
+document.getElementById("user_idhb").value = dd;
+
+}
 function cambiarpass(dd) {
 
 document.getElementById("user_idpass").value = dd;
@@ -139,6 +144,11 @@ document.getElementById("idagente").value = dd;
                                     <i class="mdi  mdi-account-key" data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-custom-class="mb-1" data-bs-title="Cerrar Tickets"></i>
                                     </button> 
+
+                                    <button onclick="ha(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalha"  class="btn btn-dark rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="mdi  mdi-account-key" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        data-bs-custom-class="mb-1" data-bs-title="Habilitado"></i>
+                                    </button> 
                                     <button onclick="eliminar(`{{$val3->idusu}}`)"  data-bs-toggle="modal" data-bs-target="#standard-modalticketeliminar"  class="btn btn-danger rounded" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="mdi mdi-delete-outline" data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-custom-class="mb-1" data-bs-title="Eliminar"></i>
@@ -170,6 +180,7 @@ document.getElementById("idagente").value = dd;
       @include('sienna.usermodal.notificacion')        
       @include('sienna.usermodal.cambiarpass')        
       @include('sienna.usermodal.ct')        
+      @include('sienna.usermodal.hb')        
 
 <!-- Modal users register -->
  
