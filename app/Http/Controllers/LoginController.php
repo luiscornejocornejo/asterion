@@ -109,7 +109,9 @@ class LoginController extends Controller
             $query = "select * from users where email='" . $email . "' ";
 
         }else{
-            $query = "select * from users where email='" . $email . "' and password=md5('" . $password . "')";
+            $query = "select * from users where
+            habilitado='1' and
+            email='" . $email . "' and password=md5('" . $password . "')";
 
 
         }
