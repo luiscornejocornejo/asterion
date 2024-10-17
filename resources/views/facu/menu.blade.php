@@ -245,19 +245,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
         <!--- master/supervisor -->
         <?php 
         if(($tipodemenu =="1")or($tipodemenu =="2")or($tipodemenu =="4")){?>
-            
-            
-            <li class="side-nav-item background-buttons">
-                <a data-bs-toggle="collapse" href="/configuracion" aria-controls="sidebarDashboards" class="side-nav-link hovering-pan">
-                    <i class="mdi-tools"></i>
-                    <span>Configuracion</span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarEcommerce">
-                    <ul class="side-nav-second-level">
-                        
-
-                    <li class="side-nav-item">
+             <li class="side-nav-item">
                         <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                             <i class="mdi mdi-sitemap-outline"></i>
                             <span class="badge bg-success float-end"></span>
@@ -284,6 +272,18 @@ if (isset($_SERVER['HTTP_HOST'])) {
                             </ul>
                         </div>
                     </li>
+            
+            <li class="side-nav-item background-buttons">
+                <a data-bs-toggle="collapse" href="/configuracion" aria-controls="sidebarDashboards" class="side-nav-link hovering-pan">
+                    <i class="mdi-tools"></i>
+                    <span>Configuracion</span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarEcommerce">
+                    <ul class="side-nav-second-level">
+                        
+
+                   
 
                         <li >
                             <a  href="/tareas"  >
