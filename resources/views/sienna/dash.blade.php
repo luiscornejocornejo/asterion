@@ -157,7 +157,8 @@
                                                                                 showAlways: true,
                                                                                 show: true
                                                                             }
-                                                                        }
+                                                                        },
+                                                                        size: '65%'
                                                                     }
                                                                 }
                                                             },
@@ -260,7 +261,8 @@
                                                                                 showAlways: true,
                                                                                 show: true
                                                                             }
-                                                                        }
+                                                                        },
+                                                                        size: '65%'
                                                                     }
                                                                 }
                                                             },
