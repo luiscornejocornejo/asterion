@@ -1811,7 +1811,7 @@ WHERE ticket IN (
     public function habilitadousers(Request $request)
     {
 
-         $user_id=$request->user_id5;
+         $user_id=$request->user_idhb;
         $statos=$request->statos;
    
         $si2 = users::find($user_id);

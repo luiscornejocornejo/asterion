@@ -9,7 +9,7 @@
                     <form action="/habilitadousers" method="post">
                     @csrf
                        
-                        <input value="" type="hidden" name="user_id5" id="user_id5">
+                        <input value="" type="hidden" name="user_idhb" id="user_idhb">
                        
 
                         <div >
