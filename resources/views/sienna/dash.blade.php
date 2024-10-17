@@ -162,6 +162,14 @@
                                                                 }
                                                             },
                                                             labels: @json($labels),
+                                                            legend: {
+                                                                formatter: function(label, opts) {
+                                                                    if (label.length > 10) {
+                                                                        return label.substring(0, 10) + '...';
+                                                                    }
+                                                                    return label;
+                                                                }
+                                                            },
                                                             dataLabels: {
                                                                 dropShadow: {
                                                                     blur: 3,
@@ -257,6 +265,14 @@
                                                                 }
                                                             },
                                                             labels: @json($agentLabels),
+                                                            legend: {
+                                                                formatter: function(label, opts) {
+                                                                    if (label.length > 10) {
+                                                                        return label.substring(0, 10) + '...';
+                                                                    }
+                                                                    return label;
+                                                                }
+                                                            },
                                                             dataLabels: {
                                                                 dropShadow: {
                                                                     blur: 3,
@@ -792,6 +808,14 @@
                                                                 }
                                                             },
                                                             labels: @json($labelsTopicPending),
+                                                            legend: {
+                                                                formatter: function(label, opts) {
+                                                                    if (label.length > 10) {
+                                                                        return label.substring(0, 10) + '...';
+                                                                    }
+                                                                    return label;
+                                                                }
+                                                            },
                                                             dataLabels: {
                                                                 dropShadow: {
                                                                     blur: 3,
@@ -940,7 +964,7 @@
                 <div class="my-5">
                     <img src="assetsfacu/images/svg/file-searching.svg" height="90" alt="Without information">
                     <h2 class="text-center">No hay información que mostrar.</h2>
-                    <a class="btn btn-primary text-white mt-2" href="/viewtickets" target="_blank">Ir a ticketera</a> 
+                    <a class="btn btn-primary text-white mt-2" href="/viewtickets" target="_blank">Ir a ticketera</a>
                 </div>
             </div>
         </div>
