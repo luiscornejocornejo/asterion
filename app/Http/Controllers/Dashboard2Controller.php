@@ -441,6 +441,53 @@ class Dashboard2Controller extends Controller
         return $resultTopicPerDay;
     }
 
+    public function getTotalCsat($source,$department,$agent,$periodo) 
+    {
+        $subquery=$this->subquery($source,$department,$agent,$periodo);
+        $queryTotalCsat = "SELECT AVG(`csat_view`.`CEILING(csat)`) AS `avg`
+            FROM
+            `csat_view`
+
+            LEFT JOIN `siennatickets_view` AS `Siennatickets View - Ticket` ON `csat_view`.`ticket` = `Siennatickets View - Ticket`.`id`" .$subquery;
+
+            $resultTotalCsat = DB::select($queryTotalCsat);
+            return $resultTotalCsat;
+    }
+
+    public function surveySended($source,$department,$agent,$periodo)
+    {
+        $subquery=$this->subquery($source,$department,$agent,$periodo);
+        $querySurveySended = "SELECT COUNT(*) AS `count`
+            FROM
+            `csat_view`
+            LEFT JOIN `siennatickets_view` AS `Siennatickets View - Ticket` ON `csat_view`.`ticket` = `Siennatickets View - Ticket`.`id`" .$subquery;
+
+        $resultSurveySended = DB::select($querySurveySended);
+        return $resultSurveySended;
+    }
+
+    public function surveyPerChannel($source,$department,$agent,$periodo)
+    {
+        $subquery=$this->subquery($source,$department,$agent,$periodo);
+        $querySurveyPerChannel = "SELECT
+            `Siennasource`.`nombre` AS `Siennasource__nombre`,
+            COUNT(*) AS `count`
+            FROM
+            `csat_view`
+
+            LEFT JOIN `siennatickets_view` AS `Siennatickets View - Ticket` ON `csat_view`.`ticket` = `Siennatickets View - Ticket`.`id`
+            LEFT JOIN `siennasource` AS `Siennasource` ON `Siennatickets View - Ticket`.`siennasource` = `Siennasource`.`id`
+            ".$subquery."
+            GROUP BY
+            `Siennasource`.`nombre`
+            ORDER BY
+            `count` DESC,
+            `Siennasource`.`nombre` ASC";
+
+        $resultSurverPerChannel = DB::select($querySurveyPerChannel);
+        return $resultSurverPerChannel;
+    }
+
     public function getAgents() 
     {
         $queryGetAgent = "SELECT id, nombre, last_name, deptosuser FROM users";
@@ -480,6 +527,9 @@ class Dashboard2Controller extends Controller
         $getAgent = $this->getAgents();
         $getSource = $this->getSources();
         $getDepartment = $this->getDepartments();
+        $totalCsat = $this->getTotalCsat($source,$department,$agent,$daterange);
+        $surverSended = $this->surveySended($source,$department,$agent,$daterange);
+        $surveyPerChannel = $this->surveyPerChannel($source,$department,$agent,$daterange);
 
         return view('sienna/dash', [
             'tickets' => $ticketCreated,
@@ -494,7 +544,10 @@ class Dashboard2Controller extends Controller
             'topicPerDay' => $ticketTopicPerDay,
             'agents' => $getAgent,
             'sources' => $getSource,
-            'departments' => $getDepartment
+            'departments' => $getDepartment,
+            'totalCsat' => $totalCsat,
+            'surveySended' => $surverSended,
+            'surverPerChannel' => $surveyPerChannel
         ]);
     }
     public function dashboardgeneric2(Request $request)
@@ -518,6 +571,10 @@ class Dashboard2Controller extends Controller
         $getAgent = $this->getAgents();
         $getSource = $this->getSources();
         $getDepartment = $this->getDepartments();
+        $totalCsat = $this->getTotalCsat($source,$department,$agent,$daterange);
+        $surverSended = $this->surveySended($source,$department,$agent,$daterange);
+        $surveyPerChannel = $this->surveyPerChannel($source,$department,$agent,$daterange);
+
 
         return view('sienna/dash', [
             'tickets' => $ticketCreated,
@@ -532,7 +589,10 @@ class Dashboard2Controller extends Controller
             'topicPerDay' => $ticketTopicPerDay,
             'agents' => $getAgent,
             'sources' => $getSource,
-            'departments' => $getDepartment
+            'departments' => $getDepartment,
+            'totalCsat' => $totalCsat,
+            'surveySended' => $surverSended,
+            'surverPerChannel' => $surveyPerChannel
         ]);
     }
 }
