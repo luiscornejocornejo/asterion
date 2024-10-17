@@ -599,11 +599,18 @@ class Dashboard2Controller extends Controller
         $totalCsat = $this->getTotalCsat($source,$department,$agent,$daterange);
         $surverSended = $this->surveySended($source,$department,$agent,$daterange);
         $surveyPerChannel = $this->surveyPerChannel($source,$department,$agent,$daterange);
+        $getAgent = $this->getAgents();
+        $getSource = $this->getSources();
+        $getDepartment = $this->getDepartments();
 
         return view('sienna/dashboard/csat', [
             'totalCsat' => $totalCsat,
             'surveySended' => $surverSended,
-            'surverPerChannel' => $surveyPerChannel
+            'surverPerChannel' => $surveyPerChannel,
+            'agents' => $getAgent,
+            'sources' => $getSource,
+            'departments' => $getDepartment
+            
         ]);
     }
 
@@ -617,11 +624,18 @@ class Dashboard2Controller extends Controller
         $totalCsat = $this->getTotalCsat($source,$department,$agent,$daterange);
         $surverSended = $this->surveySended($source,$department,$agent,$daterange);
         $surveyPerChannel = $this->surveyPerChannel($source,$department,$agent,$daterange);
+        $getAgent = $this->getAgents();
+        $getSource = $this->getSources();
+        $getDepartment = $this->getDepartments();
 
         return view('sienna/dashboard/csat', [
             'totalCsat' => $totalCsat,
             'surveySended' => $surverSended,
-            'surverPerChannel' => $surveyPerChannel
+            'surverPerChannel' => $surveyPerChannel,
+            'agents' => $getAgent,
+            'sources' => $getSource,
+            'departments' => $getDepartment
+            
         ]);
     }
 
