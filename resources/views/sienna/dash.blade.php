@@ -766,7 +766,7 @@
 
                                         </div>
 
-                                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
+                                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
                                             <div class="border rounded">
                                                 <p class="m-1">Topics pendientes</p>
                                                 @php
@@ -816,8 +816,8 @@
                                                             labels: @json($labelsTopicPending),
                                                             legend: {
                                                                 formatter: function(label, opts) {
-                                                                    if (label.length > 15) {
-                                                                        return label.substring(0, 15) + '...';
+                                                                    if (label.length > 10) {
+                                                                        return label.substring(0, 10) + '...';
                                                                     }
                                                                     return label;
                                                                 }
@@ -868,7 +868,7 @@
 
                                         </div>
 
-                                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
+                                        <div class="col-xxl-8 col-xl-8 col-lg-8 col-sm-12 mt-2">
                                             <div class="border rounded">
                                                 <p class="m-1">Topics por Día</p>
                                                 @php
