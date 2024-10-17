@@ -549,7 +549,7 @@ class Dashboard2Controller extends Controller
             FROM
             `csat_view`
 
-            LEFT JOIN `siennatickets_view` AS `Siennatickets View - Ticket` ON `csat_view`.`ticket` = `Siennatickets View - Ticket`.`id`" .$subquery;
+            LEFT JOIN `siennatickets_view` AS `SiennaticketsViewTicket` ON `csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`" .$subquery;
 
             $resultTotalCsat = DB::select($queryTotalCsat);
             return $resultTotalCsat;
@@ -561,7 +561,7 @@ class Dashboard2Controller extends Controller
         $querySurveySended = "SELECT COUNT(*) AS `count`
             FROM
             `csat_view`
-            LEFT JOIN `siennatickets_view` AS `SiennaticketsViewTicket` ON `csat_view`.`ticket` = `Siennatickets View - Ticket`.`id`" .$subquery;
+            LEFT JOIN `siennatickets_view` AS `SiennaticketsViewTicket` ON `csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`" .$subquery;
 
         $resultSurveySended = DB::select($querySurveySended);
         return $resultSurveySended;
@@ -576,7 +576,7 @@ class Dashboard2Controller extends Controller
             FROM
             `csat_view`
 
-            LEFT JOIN `siennatickets_view` AS `Siennatickets View - Ticket` ON `csat_view`.`ticket` = `Siennatickets View - Ticket`.`id`
+            LEFT JOIN `siennatickets_view` AS `SiennaticketsViewTicket` ON `csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`
             LEFT JOIN `siennasource` AS `Siennasource` ON `SiennaticketsViewTicket`.`siennasource` = `Siennasource`.`id`
             ".$subquery."
             GROUP BY
