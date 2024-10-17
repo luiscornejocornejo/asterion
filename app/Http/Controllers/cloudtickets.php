@@ -1813,7 +1813,7 @@ WHERE ticket IN (
 
          $user_id=$request->user_id5;
         $statos=$request->statos;
-
+   
         $si2 = users::find($user_id);
         $si2->habilitado = $statos;
         $si2->save();
