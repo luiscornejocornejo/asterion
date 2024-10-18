@@ -141,9 +141,9 @@ class Dashboard2Controller extends Controller
 
      public function getTicketsCreated($source,$department,$agent,$periodo)
     {
+        $dom=$this->dominio();
         $subquery=$this->subquery($source,$department,$agent,$periodo);
 
-        $dom=$this->dominio();
         $queryTicketsCreated = "SELECT COUNT(*) AS `count`FROM ".$dom.".`siennatickets_view` 
         LEFT JOIN ".$dom.".`siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
         LEFT JOIN ".$dom.".`siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
@@ -158,12 +158,13 @@ class Dashboard2Controller extends Controller
     } 
     public function getTicketsByStatus($source,$department,$agent,$periodo)
     {
+        $dom=$this->dominio();
         $subquery=$this->subquery($source,$department,$agent,$periodo);
 
-        $queryByStatus = "SELECT `Siennaestado`.`nombre` AS `Siennaestado__nombre`, COUNT(*) AS `count` FROM `siennatickets_view`
-        LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
-        LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
-        LEFT JOIN `siennaestado` AS `Siennaestado` ON `siennatickets_view`.`siennaestado` = `Siennaestado`.`id`
+        $queryByStatus = "SELECT `Siennaestado`.`nombre` AS `Siennaestado__nombre`, COUNT(*) AS `count` FROM ".$dom.".`siennatickets_view`
+        LEFT JOIN ".$dom.".`siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
+        LEFT JOIN ".$dom.".`siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
+        LEFT JOIN ".$dom.".`siennaestado` AS `Siennaestado` ON `siennatickets_view`.`siennaestado` = `Siennaestado`.`id`
         ".$subquery."
         GROUP BY
             `Siennaestado`.`nombre`
@@ -176,12 +177,13 @@ class Dashboard2Controller extends Controller
     }
     public function getTicketPerAgent($source,$department,$agent,$periodo) 
     {
+        $dom=$this->dominio();
         $subquery=$this->subquery($source,$department,$agent,$periodo);
 
         $queryPerAgent = "SELECT `Users - Asignado`.`last_name` AS `Users - Asignado__last_name`, `Users - Asignado`.`nombre` AS `Users - Asignado__nombre`, 
         COUNT(*) AS `count`
-        FROM `siennatickets_view`
-        LEFT JOIN `users` AS `Users - Asignado` ON `siennatickets_view`.`asignado` = `Users - Asignado`.`id`
+        FROM ".$dom.".`siennatickets_view`
+        LEFT JOIN ".$dom.".`users` AS `Users - Asignado` ON `siennatickets_view`.`asignado` = `Users - Asignado`.`id`
          ".$subquery."
          GROUP BY
         `Users - Asignado`.`last_name`,
@@ -189,7 +191,7 @@ class Dashboard2Controller extends Controller
         ORDER BY
         `Users - Asignado`.`last_name` ASC";
 
-        $resultPerAgent = DB::select($queryPerAgent);
+        $resultPerAgent =  DB::connection('mysql2')->select($queryPerAgent);
         
         return $resultPerAgent;
     }
@@ -279,14 +281,15 @@ class Dashboard2Controller extends Controller
     }
     public function getTicketPerChannel($source,$department,$agent,$periodo)
     {
+        $dom=$this->dominio();
         $subquery=$this->subquery($source,$department,$agent,$periodo);
 
         $queryPerChannel = "SELECT
         `Siennasource`.`nombre` AS `Siennasource__nombre`, COUNT(*) AS `count`
-        FROM `siennatickets_view`
-        LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
-        LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
-        LEFT JOIN `users` AS `Users` ON `siennatickets_view`.`user_id` = `Users`.`id`
+        FROM ".$dom.".`siennatickets_view`
+        LEFT JOIN ".$dom.".`siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
+        LEFT JOIN ".$dom.".`siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
+        LEFT JOIN ".$dom.".`users` AS `Users` ON `siennatickets_view`.`user_id` = `Users`.`id`
          ".$subquery."
         GROUP BY
         `Siennasource`.`nombre`
@@ -294,21 +297,22 @@ class Dashboard2Controller extends Controller
         `count` DESC,
         `Siennasource`.`nombre` ASC";
 
-        $resultPerChannel = DB::select($queryPerChannel);
+        $resultPerChannel =  DB::connection('mysql2')->select($queryPerChannel);
 
         return $resultPerChannel;
     }
 
     public function getTicketByDepartment($source,$department,$agent,$periodo)
     {
+        $dom=$this->dominio();
         $subquery=$this->subquery($source,$department,$agent,$periodo);
        $queryByDepartment = "SELECT
         `Siennadepto`.`nombre` AS `Siennadepto__nombre`,
         COUNT(*) AS `count`
-        FROM `siennatickets_view`
-        LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
-        LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
-        LEFT JOIN `users` AS `Users` ON `siennatickets_view`.`user_id` = `Users`.`id`
+        FROM ".$dom.".`siennatickets_view`
+        LEFT JOIN ".$dom.".`siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
+        LEFT JOIN ".$dom.".`siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
+        LEFT JOIN ".$dom.".`users` AS `Users` ON `siennatickets_view`.`user_id` = `Users`.`id`
          ".$subquery."
         GROUP BY
         `Siennadepto`.`nombre`
@@ -316,43 +320,45 @@ class Dashboard2Controller extends Controller
         `count` DESC,
         `Siennadepto`.`nombre` ASC";
 
-        $resultByDepartment = DB::select($queryByDepartment);
+        $resultByDepartment = DB::connection('mysql2')->select($queryByDepartment);
 
         return $resultByDepartment;
     }
 
     public function getTicketPendings($source,$department,$agent,$periodo)
     {
+        $dom=$this->dominio();
         $subquery=$this->subquery($source,$department,$agent,$periodo);
 
-        $queryTicketPendings = "SELECT `Siennadepto`.`nombre` AS `Siennadepto__nombre`, COUNT(*) AS `count` FROM `siennatickets_view`
-        LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
-        LEFT JOIN `users` AS `Users` ON `siennatickets_view`.`user_id` = `Users`.`id`
-        LEFT JOIN `siennaestado` AS `Siennaestado` ON `siennatickets_view`.`siennaestado` = `Siennaestado`.`id`
-        LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
+        $queryTicketPendings = "SELECT `Siennadepto`.`nombre` AS `Siennadepto__nombre`, COUNT(*) AS `count` FROM ".$dom.".`siennatickets_view`
+        LEFT JOIN ".$dom.".`siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
+        LEFT JOIN ".$dom.".`users` AS `Users` ON `siennatickets_view`.`user_id` = `Users`.`id`
+        LEFT JOIN ".$dom.".`siennaestado` AS `Siennaestado` ON `siennatickets_view`.`siennaestado` = `Siennaestado`.`id`
+        LEFT JOIN ".$dom.".`siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
         ".$subquery."
        and (`Siennaestado`.`nombre` <> 'Cerrado')
         OR (`Siennaestado`.`nombre` IS NULL)
         GROUP BY
         `Siennadepto`.`nombre`";
         
-        $resultTicketPendings = DB::select($queryTicketPendings);
+        $resultTicketPendings = DB::connection('mysql2')->select($queryTicketPendings);
 
         return $resultTicketPendings;
     }
 
     public function getTimeOfLiveOfTickets($source,$department,$agent,$periodo)
     {
+        $dom=$this->dominio();
         $subquery=$this->subquery($source,$department,$agent,$periodo);
 
             $queryTimeOfLive = "SELECT
             DATE(`siennatickets_view`.`timeoflife`) AS `timeoflife`,
             COUNT(*) AS `count`
             FROM
-            `siennatickets_view`
+            ".$dom.".`siennatickets_view`
 
-            LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
-            LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
+            LEFT JOIN ".$dom.".`siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
+            LEFT JOIN ".$dom.".`siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
                     ".$subquery."
 
             GROUP BY
@@ -360,49 +366,51 @@ class Dashboard2Controller extends Controller
             ORDER BY
             DATE(`siennatickets_view`.`timeoflife`) ASC";
 
-            $resultTimeOfLive = DB::select($queryTimeOfLive);
+            $resultTimeOfLive = DB::connection('mysql2')->select($queryTimeOfLive);
 
             return $resultTimeOfLive;
     }
 
     public function getTicketPerDepartmentByDay($source,$department,$agent,$periodo) {
+        $dom=$this->dominio();
         $subquery=$this->subquery($source,$department,$agent,$periodo);
 
         $queryDepartmentByDay = "SELECT
             `Siennadepto`.`nombre` AS `Siennadepto__nombre`,
-            DATE(`siennatickets_view`.`Creado`) AS `Creado`,
+            DATE(".$dom.".`siennatickets_view`.`Creado`) AS `Creado`,
             COUNT(*) AS `count`
             FROM
             `siennatickets_view`
 
-            LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
-            LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
-            LEFT JOIN `users` AS `Users` ON `siennatickets_view`.`user_id` = `Users`.`id`
+            LEFT JOIN ".$dom.".`siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
+            LEFT JOIN ".$dom.".`siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
+            LEFT JOIN ".$dom.".`users` AS `Users` ON `siennatickets_view`.`user_id` = `Users`.`id`
               ".$subquery."
               GROUP BY
             `Siennadepto`.`nombre`,
             DATE(`siennatickets_view`.`Creado`)
             ORDER BY
             `Siennadepto`.`nombre` ASC,
-            DATE(`siennatickets_view`.`Creado`) ASC LIMIT 50" ;
+            DATE(".$dom.".`siennatickets_view`.`Creado`) ASC" ;
 
-            $resultDepartmentByDay = DB::select($queryDepartmentByDay);
+            $resultDepartmentByDay = DB::connection('mysql2')->select($queryDepartmentByDay);
 
             return $resultDepartmentByDay;
     }
 
     public function getTicketPendingByTopic($source,$department,$agent,$periodo)
     {
+        $dom=$this->dominio();
         $subquery=$this->subquery($source,$department,$agent,$periodo);
 
         $queryPendigByTopic = "SELECT
             `Siennatopic`.`nombre` AS `Siennatopic__nombre`,
             COUNT(*) AS `count`
             FROM
-            `siennatickets_view`
+            ".$dom.".`siennatickets_view`
 
-            LEFT JOIN `siennaestado` AS `Siennaestado - Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennaestado - Siennadepto`.`id`
-            LEFT JOIN `siennatopic` AS `Siennatopic` ON `siennatickets_view`.`siennatopic` = `Siennatopic`.`id`
+            LEFT JOIN ".$dom.".`siennaestado` AS `Siennaestado - Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennaestado - Siennadepto`.`id`
+            LEFT JOIN ".$dom.".`siennatopic` AS `Siennatopic` ON `siennatickets_view`.`siennatopic` = `Siennatopic`.`id`
               ".$subquery." and
             (`Siennaestado - Siennadepto`.`nombre` <> 'Cerrado')
 
@@ -413,13 +421,14 @@ class Dashboard2Controller extends Controller
             `count` DESC,
             `Siennatopic`.`nombre` ASC";
 
-             $resultPendingByTopic = DB::select($queryPendigByTopic);
+             $resultPendingByTopic = DB::connection('mysql2')->select($queryPendigByTopic);
 
             return $resultPendingByTopic;
     }
 
     public function getTicketTopicPerDay($source,$department,$agent,$periodo) 
     {
+        $dom=$this->dominio();
         $subquery=$this->subquery($source,$department,$agent,$periodo);
 
         $queryTopicPerDay = "SELECT
@@ -427,21 +436,21 @@ class Dashboard2Controller extends Controller
         `Siennatopic`.`nombre` AS `Siennatopic__nombre`,
         COUNT(*) AS `count`
         FROM
-        `siennatickets_view`
+        ".$dom.".`siennatickets_view`
 
-        LEFT JOIN `siennaestado` AS `Siennaestado` ON `siennatickets_view`.`siennaestado` = `Siennaestado`.`id`
-        LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
-        LEFT JOIN `siennatopic` AS `Siennatopic` ON `siennatickets_view`.`siennatopic` = `Siennatopic`.`id`
+        LEFT JOIN ".$dom.".`siennaestado` AS `Siennaestado` ON `siennatickets_view`.`siennaestado` = `Siennaestado`.`id`
+        LEFT JOIN ".$dom.".`siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
+        LEFT JOIN ".$dom.".`siennatopic` AS `Siennatopic` ON `siennatickets_view`.`siennatopic` = `Siennatopic`.`id`
           ".$subquery."
           GROUP BY
-        DATE(`siennatickets_view`.`Creado`),
+        DATE(".$dom.".`siennatickets_view`.`Creado`),
         `Siennatopic`.`nombre`
         ORDER BY
         `count` ASC,
-        DATE(`siennatickets_view`.`Creado`) ASC,
+        DATE(".$dom.".`siennatickets_view`.`Creado`) ASC,
         `Siennatopic`.`nombre` ASC LIMIT 50";
 
-        $resultTopicPerDay = DB::select($queryTopicPerDay);
+        $resultTopicPerDay = DB::connection('mysql2')->select($queryTopicPerDay);
 
         return $resultTopicPerDay;
     }
