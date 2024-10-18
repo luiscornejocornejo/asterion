@@ -562,7 +562,8 @@ class Dashboard2Controller extends Controller
             FROM
             `csat_view`
             LEFT JOIN `siennatickets_view` AS `SiennaticketsViewTicket` ON `csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`
-            GROUP BY `SiennaticketsViewTicket`.`Creado`";
+            GROUP BY `SiennaticketsViewTicket`.`Creado`
+            LIMIT 100";
 
         $resultSurveySended = DB::select($querySurveySended);
         return $resultSurveySended;
@@ -585,7 +586,8 @@ class Dashboard2Controller extends Controller
             `SiennaticketsViewTicket`.`Creado`
             ORDER BY
             `count` DESC,
-            `Siennasource`.`nombre` ASC";
+            `Siennasource`.`nombre` ASC
+            LIMIT 100";
 
         $resultSurverPerChannel = DB::select($querySurveyPerChannel);
         return $resultSurverPerChannel;
