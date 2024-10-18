@@ -1068,6 +1068,7 @@ class cloudtickets extends Controller
        echo $textticket=$request->textticket;
        echo $textticket=$request->textticket;
        $merchant=$this->dominio();
+       dd($merchant);
 
        echo  $idusuario=session('idusuario');
        $nombreusuario=$this->datosusuario($idusuario);
@@ -1149,7 +1150,6 @@ class cloudtickets extends Controller
        if($merchant<>""){
         $buscarcliente=$this->buscarcliente($merchant);
 
-      dd($buscarcliente);
 
         if($buscarcliente){
             //update
