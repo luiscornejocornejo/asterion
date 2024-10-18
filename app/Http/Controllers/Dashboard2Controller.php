@@ -505,7 +505,7 @@ class Dashboard2Controller extends Controller
             order by id desc limit 1
         ) s2 on s2.ticket = a.id
         where 
-            a.id(".$ticket.")
+            a.id in(".$ticket.")
         order by 
             timestampdiff(minute, a.created_at, a.t_cerrado) desc;";
 
