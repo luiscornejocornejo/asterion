@@ -1085,7 +1085,7 @@ class cloudtickets extends Controller
         'siennaestado' => 1,
         'siennasource' => 10,
         'cel' => "",
-        'nya' => "",
+        'nya' => $merchant,
         'asignado' => 99999,
         'prioridad' => 3,
         'estadoconv' => 1,
