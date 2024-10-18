@@ -180,7 +180,7 @@ class Dashboard2Controller extends Controller
         LEFT JOIN `users` AS `Users - Asignado` ON `siennatickets_view`.`asignado` = `Users - Asignado`.`id`
          ".$subquery."
          GROUP BY
-        `Users - Asignado`.`last_name`
+        `Users - Asignado`.`last_name`,
         `Users - Asignado`.`nombre`
         ORDER BY
         `Users - Asignado`.`last_name` ASC";
