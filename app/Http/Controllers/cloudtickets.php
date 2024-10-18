@@ -1156,14 +1156,14 @@ class cloudtickets extends Controller
 
         if($buscarcliente){
             //update
-            $tickets = DB::reconnect('mysql4')->table("soporte.siennacliente")
+            $tickets = DB::reconnect('mysql')->table("soporte.siennacliente")
             ->where('cliente', $merchant)
             ->update(['nya' => $merchant]);
         }else{
           //insert
           
 
-          $idnewcliente = DB::reconnect('mysql4')->table("soporte.siennacliente")->insertGetId([
+          $idnewcliente = DB::reconnect('mysql')->table("soporte.siennacliente")->insertGetId([
             'cliente' => $merchant,
             
             'created_at' =>  \Carbon\Carbon::now(),
@@ -1184,7 +1184,7 @@ class cloudtickets extends Controller
     public function buscarcliente($cliente){
         $cuantos=0;
        echo $query="select count(*) as cuantos from soporte.siennacliente where cliente='".$cliente."'";
-        $sal = DB::reconnect('mysql2')->select($query); 
+        $sal = DB::reconnect('mysql')->select($query); 
         foreach($sal as $val){
             $cuantos=$val->cuantos;
         }
