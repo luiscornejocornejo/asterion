@@ -181,6 +181,7 @@ class Dashboard2Controller extends Controller
          ".$subquery."
          GROUP BY
         `Users - Asignado`.`last_name`
+        `Users - Asignado`.`nombre`
         ORDER BY
         `Users - Asignado`.`last_name` ASC";
 
