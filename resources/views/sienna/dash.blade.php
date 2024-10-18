@@ -105,9 +105,10 @@
                                 <!-- Aca van los filtros -->
                                 @if($filter[0])
                                     @if(count($perAgent) > 1)
-                                    @foreach($perAgent as $agent)
-                                    <span class="badge bg-primary rounded-pill">{{ $agent }}</span>
-                                    @endforeach
+                                        @foreach($perAgent as $agent)
+                                            <span class="badge bg-primary rounded-pill">{{ $agent }}</span>
+                                        @endforeach
+                                    @endif
                                 @endif
                             </div>
                                 <div>
