@@ -269,7 +269,7 @@ class Dashboard2Controller extends Controller
             $agent = implode(', ', $agent);
            $subquery.=" and siennatickets_view.asignado in(".$agent.")";
         }
-
+        
         return $subquery;
     }
     public function getTicketPerChannel($source,$department,$agent,$periodo)
@@ -442,6 +442,14 @@ class Dashboard2Controller extends Controller
     }
 
 
+    public function getAgentSelected ($agentSelected)
+    {
+        $queryGetAgentSelected = "SELECT nombre, last_name FROM users WHERE id IN ($agentSelected)";
+        $resultAgentSelected = DB::select($queryGetAgentSelected);
+
+        return $resultAgentSelected;
+    }
+
     public function getAgents() 
     {
         $queryGetAgent = "SELECT id, nombre, last_name, deptosuser FROM users";
@@ -508,15 +516,6 @@ class Dashboard2Controller extends Controller
         $agent=$request->agent;
         $daterange=$request->periodo;
 
-       if ($agent) {
-            dd($agent);
-            $searchAgent = "SELECT nombre, last_name FROM users WHERE id IN ($agent)";
-            $resultAgent = DB::select($searchAgent);
-            foreach ($resultAgent as $agentObj) {
-                echo 'Nombre: ' . $agentObj->nombre . ', Apellido: ' . $agentObj->last_name . '<br>';
-            }
-        }
-
         $ticketCreated = $this->getTicketsCreated($source,$department,$agent,$daterange);
         $ticketByStatus = $this->getTicketsByStatus($source,$department,$agent,$daterange);
         $ticketPerAgent = $this->getTicketPerAgent($source,$department,$agent,$daterange);
@@ -547,7 +546,7 @@ class Dashboard2Controller extends Controller
             'agents' => $getAgent,
             'sources' => $getSource,
             'departments' => $getDepartment,
-            'filter' => [$source, $department, $resultAgent, $daterange]
+            'filter' => [$source, $department, $agent, $daterange]
             
         ]);
     }
