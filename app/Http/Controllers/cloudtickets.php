@@ -1144,7 +1144,7 @@ class cloudtickets extends Controller
        
        }
       
-       var_dump($merchant);
+       dd($merchant);
 
        ///nuevo
 
