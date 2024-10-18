@@ -511,7 +511,7 @@ class Dashboard2Controller extends Controller
         if ($agent) {
             if (is_array($agent)) {
                 $agentIds = implode(',', $agent);
-                dd($agentIds);
+                //dd($agentIds);
                 $searchAgent = "SELECT nombre, last_name FROM users WHERE id IN ($agentIds)";
             } else {
                 $searchAgent = "SELECT nombre, last_name FROM users WHERE id = $agent[0]";
