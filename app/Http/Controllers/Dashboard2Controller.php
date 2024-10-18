@@ -388,7 +388,7 @@ class Dashboard2Controller extends Controller
               ".$subquery."
               GROUP BY
             `Siennadepto`.`nombre`,
-            DATE(`siennatickets_view`.`Creado`)
+            DATE(".$dom.".`siennatickets_view`.`Creado`)
             ORDER BY
             `Siennadepto`.`nombre` ASC,
             DATE(".$dom.".`siennatickets_view`.`Creado`) ASC" ;
