@@ -508,6 +508,16 @@ class Dashboard2Controller extends Controller
         $agent=$request->agent;
         $daterange=$request->periodo;
 
+        if ($agent) {
+            if (is_array($agent)) {
+                $agentIds = implode(',', $agent);
+                $searchAgent = "SELECT nombre, last_name FROM users WHERE id IN ($agentIds)";
+            } else {
+                $searchAgent = "SELECT nombre, last_name FROM users WHERE id = $agent";
+            }
+            $resultAgent = DB::select($searchAgent);
+        }
+
         $ticketCreated = $this->getTicketsCreated($source,$department,$agent,$daterange);
         $ticketByStatus = $this->getTicketsByStatus($source,$department,$agent,$daterange);
         $ticketPerAgent = $this->getTicketPerAgent($source,$department,$agent,$daterange);
@@ -517,7 +527,7 @@ class Dashboard2Controller extends Controller
         $ticketTimeOfLive = $this->getTimeOfLiveOfTickets($source,$department,$agent,$daterange);
         $ticketPerDepartmentByDay = $this->getTicketPerDepartmentByDay($source,$department,$agent,$daterange);
         $ticketPendingByTopic = $this->getTicketPendingByTopic($source,$department,$agent,$daterange);
-        $ticketTopicPerDay = $this->getTicketTopicPerDay($source,$department,$agent,$daterange);
+        $ticketTopicPerDay = $this->getTicketTopicPerDay($source,$department,$resultAgent,$daterange);
         $getAgent = $this->getAgents();
         $getSource = $this->getSources();
         $getDepartment = $this->getDepartments();
