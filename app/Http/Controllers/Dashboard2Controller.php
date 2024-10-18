@@ -536,7 +536,8 @@ class Dashboard2Controller extends Controller
             'topicPerDay' => $ticketTopicPerDay,
             'agents' => $getAgent,
             'sources' => $getSource,
-            'departments' => $getDepartment
+            'departments' => $getDepartment,
+            'filter' => [$source, $department, $agent, $daterange]
             
         ]);
     }
@@ -639,7 +640,6 @@ class Dashboard2Controller extends Controller
             'agents' => $getAgent,
             'sources' => $getSource,
             'departments' => $getDepartment
-            
         ]);
     }
 

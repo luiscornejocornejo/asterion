@@ -1,7 +1,7 @@
 @include('facu.header')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script>
-    console.log("Ticket Per Channel:", @json($perChannel))
+    console.log("Fitler:", @json($filter))
 </script>
 
 @if ($tickets[0]->count)
