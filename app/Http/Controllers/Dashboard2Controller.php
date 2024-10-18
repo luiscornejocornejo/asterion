@@ -174,9 +174,9 @@ class Dashboard2Controller extends Controller
     {
         $subquery=$this->subquery($source,$department,$agent,$periodo);
 
-        $queryPerAgent = "SELECT `Users - Asignado`.`last_name` AS `Users - Asignado__last_name`, COUNT(*) AS `count`
-        FROM
-        `siennatickets_view`
+        $queryPerAgent = "SELECT `Users - Asignado`.`last_name` AS `Users - Asignado__last_name`, `Users - Asignado`.`nombre` AS `Users - Asignado__nombre`, 
+        COUNT(*) AS `count`
+        FROM `siennatickets_view`
         LEFT JOIN `users` AS `Users - Asignado` ON `siennatickets_view`.`asignado` = `Users - Asignado`.`id`
          ".$subquery."
          GROUP BY
