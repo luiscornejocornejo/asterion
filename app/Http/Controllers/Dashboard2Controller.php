@@ -509,7 +509,7 @@ class Dashboard2Controller extends Controller
         $daterange=$request->periodo;
 
        if ($agent) {
-            
+            dd($agent);
             $searchAgent = "SELECT nombre, last_name FROM users WHERE id IN ($agent)";
             $resultAgent = DB::select($searchAgent);
             foreach ($resultAgent as $agentObj) {
