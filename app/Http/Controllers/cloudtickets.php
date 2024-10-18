@@ -1145,13 +1145,10 @@ class cloudtickets extends Controller
        }
        $buscarcliente=$this->buscarcliente($merchant);
 
-       dd($merchant);
 
        ///nuevo
 
-        dd($buscarcliente);
 
-       dd($merchant);
 
 
         if($buscarcliente){
@@ -1183,17 +1180,17 @@ class cloudtickets extends Controller
 
     public function buscarcliente($cliente){
         $cuantos=0;
-       echo $query="select count(*) as cuantos from soporte.siennacliente where cliente='".$cliente."'";
+        $query="select count(*) as cuantos from soporte.siennacliente where cliente='".$cliente."'";
         $sal = DB::reconnect('mysql')->select($query); 
         foreach($sal as $val){
             $cuantos=$val->cuantos;
         }
     
         if($cuantos==0){
-          return 0;
+          return false;
     
         }else{
-          return 1;
+          return true;
     
         }
       }
