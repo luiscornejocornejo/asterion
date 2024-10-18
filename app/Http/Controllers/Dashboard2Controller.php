@@ -581,6 +581,7 @@ class Dashboard2Controller extends Controller
             LEFT JOIN `siennasource` AS `Siennasource` ON `SiennaticketsViewTicket`.`siennasource` = `Siennasource`.`id`
             ".$subquery."
             GROUP BY
+            `Siennasource`.`nombre`,
             `SiennaticketsViewTicket`.`Creado`
             ORDER BY
             `count` DESC,
