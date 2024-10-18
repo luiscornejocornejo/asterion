@@ -1149,7 +1149,7 @@ class cloudtickets extends Controller
        if($merchant<>""){
         $buscarcliente=$this->buscarcliente($merchant);
 
-      
+      dd($buscarcliente);
 
         if($buscarcliente){
             //update
@@ -1180,7 +1180,7 @@ class cloudtickets extends Controller
 
     public function buscarcliente($cliente){
         $cuantos=0;
-        $query="select count(*) as cuantos from soporte.siennacliente where cliente='".$cliente."'";
+       echo $query="select count(*) as cuantos from soporte.siennacliente where cliente='".$cliente."'";
         $sal = DB::reconnect('mysql2')->select($query); 
         foreach($sal as $val){
             $cuantos=$val->cuantos;
