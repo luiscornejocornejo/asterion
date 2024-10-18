@@ -380,7 +380,7 @@ class Dashboard2Controller extends Controller
             DATE(".$dom.".`siennatickets_view`.`Creado`) AS `Creado`,
             COUNT(*) AS `count`
             FROM
-            `siennatickets_view`
+            ".$dom.".`siennatickets_view`
 
             LEFT JOIN ".$dom.".`siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
             LEFT JOIN ".$dom.".`siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
