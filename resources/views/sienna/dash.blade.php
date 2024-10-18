@@ -104,10 +104,12 @@
                             </div>
                                 <!-- Aca van los filtros -->
                                 @if($filter[0])
-                                    @if(count($perAgent) > 0)
-                                        @foreach($perAgent as $agent)
-                                            <span class="badge bg-primary rounded-pill">{{ $agent }}</span>
+                                    @if(count($perAgent) > 1)
+                                        @foreach($perAgent as $agentSelected)
+                                            <span class="badge bg-primary rounded-pill">{{ $agentSelected }}</span>
                                         @endforeach
+                                        @else
+                                        <span class="badge bg-primary rounded-pill">{{ $perAgent[0]->{'Users - Asignado__nombre'} }}</span>
                                     @endif
                                 @endif
                             </div>
