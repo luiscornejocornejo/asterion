@@ -510,6 +510,7 @@ class Dashboard2Controller extends Controller
 
         if ($agent) {
             if (count($agent) > 1) {
+                dd($agent);
                 $searchAgent = "SELECT nombre, last_name FROM users WHERE id IN ($agent)";
             } else {
                 $searchAgent = "SELECT nombre, last_name FROM users WHERE id = $agent";
