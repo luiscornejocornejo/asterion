@@ -552,7 +552,7 @@ class Dashboard2Controller extends Controller
             'agents' => $getAgent,
             'sources' => $getSource,
             'departments' => $getDepartment,
-            'filter' => [$source, $department, $agent, $daterange]
+            'filter' => [$source, $department, $resultAgent, $daterange]
             
         ]);
     }
