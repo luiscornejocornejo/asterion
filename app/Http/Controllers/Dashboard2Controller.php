@@ -143,10 +143,11 @@ class Dashboard2Controller extends Controller
     {
         $subquery=$this->subquery($source,$department,$agent,$periodo);
 
-        $queryTicketsCreated = "SELECT COUNT(*) AS `count`FROM `siennatickets_view` 
-        LEFT JOIN `siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
-        LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
-        LEFT JOIN `users` AS `Users - Siennaestado` ON `siennatickets_view`.`siennaestado` = `Users - Siennaestado`.`id`";
+        $dom=$this->dominio();
+        $queryTicketsCreated = "SELECT COUNT(*) AS `count`FROM ".$dom.".`siennatickets_view` 
+        LEFT JOIN ".$dom.".`siennasource` AS `Siennasource` ON `siennatickets_view`.`siennasource` = `Siennasource`.`id`
+        LEFT JOIN ".$dom.".`siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
+        LEFT JOIN ".$dom.".`users` AS `Users - Siennaestado` ON `siennatickets_view`.`siennaestado` = `Users - Siennaestado`.`id`";
         
 
         $resultTicketCreated = DB::connection('mysql2')->select($queryTicketsCreated.$subquery);
@@ -659,6 +660,19 @@ class Dashboard2Controller extends Controller
             'departments' => $getDepartment
         ]);
     }
+    public function dominio()
+    {
 
+        $subdomain_tmp = 'localhost';
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+            $subdomain_tmp =  array_shift($domainParts);
+        } elseif (isset($_SERVER['SERVER_NAME'])) {
+            $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+            $subdomain_tmp =  array_shift($domainParts);
+        }
+
+        return $subdomain_tmp;
+    }
     
 }
