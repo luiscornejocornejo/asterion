@@ -1147,13 +1147,13 @@ class cloudtickets extends Controller
 
        ///nuevo
        if($merchant<>""){
-        $buscarcliente=$this->buscarcliente($merchant,$merchant);
+        $buscarcliente=$this->buscarcliente($merchant);
 
       
 
         if($buscarcliente){
             //update
-            $tickets = DB::reconnect('mysql4')->table($merchant.".siennacliente")
+            $tickets = DB::reconnect('mysql4')->table("soporte.siennacliente")
             ->where('cliente', $merchant)
             ->update(['nya' => $merchant]);
         }else{
@@ -1178,9 +1178,9 @@ class cloudtickets extends Controller
  
     }
 
-    public function buscarcliente($merchant,$cliente){
+    public function buscarcliente($cliente){
         $cuantos=0;
-        $query="select count(*) as cuantos from " . $merchant . ".siennacliente where cliente='".$cliente."'";
+        $query="select count(*) as cuantos from soporte.siennacliente where cliente='".$cliente."'";
         $sal = DB::reconnect('mysql2')->select($query); 
         foreach($sal as $val){
             $cuantos=$val->cuantos;
