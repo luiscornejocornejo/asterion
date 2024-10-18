@@ -103,8 +103,7 @@
                                 </div>
                                 <div class="mt-2">
                                     <!-- Aca van los filtros -->
-                                    @if ($filter[0])
-                                    dd(count($perAgent));
+                                    @if($filter[2])
                                         @if (count($perAgent) > 1)
                                             @foreach ($perAgent as $agentSelected)
                                                 <span
