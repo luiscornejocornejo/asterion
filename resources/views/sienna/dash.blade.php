@@ -101,7 +101,7 @@
                                 <div class="col-xxl-2 col-xl-2 col-lg-4 col-sm-12 mt-2">
                                     <input type="submit" class="btn btn-primary" value="Buscar">
                                 </div>
-                            </div>
+                                <div>
                                 <!-- Aca van los filtros -->
                                 @if($filter[0])
                                     @if(count($perAgent) > 1)
