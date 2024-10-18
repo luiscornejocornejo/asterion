@@ -509,11 +509,12 @@ class Dashboard2Controller extends Controller
         $daterange=$request->periodo;
 
         if ($agent) {
-            if (count($agent) > 1) {
-                dd($agent);
-                $searchAgent = "SELECT nombre, last_name FROM users WHERE id IN ($agent)";
+            if (is_array($agent)) {
+                $agentIds = implode(',', $agent);
+                dd($agentIds);
+                $searchAgent = "SELECT nombre, last_name FROM users WHERE id IN ($agentIds)";
             } else {
-                $searchAgent = "SELECT nombre, last_name FROM users WHERE id = $agent";
+                $searchAgent = "SELECT nombre, last_name FROM users WHERE id = $agent[0]";
             }
             $resultAgent = DB::select($searchAgent);
             foreach ($resultAgent as $agentObj) {
