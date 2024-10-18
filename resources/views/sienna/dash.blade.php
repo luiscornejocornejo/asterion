@@ -1,11 +1,5 @@
 @include('facu.header')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-<script>
-    console.log("Por agente:", @json($perAgent))
-    console.log("Por departamento:", @json($byDepartment))
-    console.log("Por Canal:", @json($perChannel))
-    console.log("Filtros:", @json($filter))
-</script>
 
 @if ($tickets[0]->count)
     <div class="wrapper menuitem-active">
