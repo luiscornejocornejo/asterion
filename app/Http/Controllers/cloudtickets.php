@@ -1160,7 +1160,7 @@ class cloudtickets extends Controller
           //insert
           
 
-          $idnewcliente = DB::reconnect('mysql4')->table($merchant.".siennacliente")->insertGetId([
+          $idnewcliente = DB::reconnect('mysql4')->table("soporte.siennacliente")->insertGetId([
             'cliente' => $merchant,
             
             'created_at' =>  \Carbon\Carbon::now(),
