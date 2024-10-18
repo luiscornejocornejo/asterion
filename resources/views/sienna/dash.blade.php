@@ -101,6 +101,15 @@
                                 <div class="col-xxl-2 col-xl-2 col-lg-4 col-sm-12 mt-2">
                                     <input type="submit" class="btn btn-primary" value="Buscar">
                                 </div>
+                            </div>
+                                <!-- Aca van los filtros -->
+                                @if($filter[0])
+                                    @if(count($perAgent) > 1)
+                                    @foreach($perAgent as $agent)
+                                    <span class="badge bg-primary rounded-pill">{{ $agent }}</span>
+                                    @endforeach
+                                @endif
+                            </div>
                                 <div>
                                     <div class="row mx-1 my-1">
                                         <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
