@@ -151,11 +151,21 @@ class Dashboard2Controller extends Controller
         
 
         $resultTicketCreated = DB::connection('mysql2')->select($queryTicketsCreated.$subquery);
-
-        //$resultTicketCreated = DB::select($queryTicketsCreated.$subquery);
         
         return $resultTicketCreated;
     } 
+
+    public function getTicketsCreatedQty($source,$department,$agent,$periodo)
+    {
+        $dom=$this->dominio();
+        $subquery=$this->subquery($source,$department,$agent,$periodo);
+
+        $queryTicketsCreatedQty = "SELECT id FROM ".$dom.".`siennatickets_view`";
+        
+        $resultTicketCreatedQty = DB::connection('mysql2')->select($queryTicketsCreatedQty.$subquery);
+        return $resultTicketCreatedQty;
+    } 
+
     public function getTicketsByStatus($source,$department,$agent,$periodo)
     {
         $dom=$this->dominio();
@@ -456,12 +466,54 @@ class Dashboard2Controller extends Controller
     }
 
 
-    public function getAgentSelected ($agentSelected)
+    public function getTickets (Request $request)
     {
-        $queryGetAgentSelected = "SELECT nombre, last_name FROM users WHERE id IN ($agentSelected)";
-        $resultAgentSelected = DB::select($queryGetAgentSelected);
+        $dom = $this->dominio();
+        $ticket = $request->ticket;
+        
+        $queryGetTickets = "select 
+        a.cliente,
+        a.nya as nombre,
+        a.cel as callid,
+        a.id as ticketid,
+        b.nombre as departamento,
+        d.nombre as tema,
+        g.nombre as fuente,
+        c.nombre as estado,
+        cs.r1,
+        cs.r2,
+        cs.r3,
+        cs.csat,
+        concat(u.nombre, ' ', u.last_name) as asignado,
+        a.t_cerrado as cerrado,
+        s2.autor,
+        timestampdiff(minute, a.created_at, a.t_cerrado) as lifetime,
+        date_sub(a.created_at, interval (select local from " . $dom . ".empresa limit 1) hour) as creado,
+        date_sub(a.t_cerrado, interval (select local from " . $dom . ".empresa limit 1) hour) as cerrado
+        from 
+            " . $dom . ".siennatickets as a
+        left join " . $dom . ".siennadepto b on b.id = a.siennadepto 
+        left join " . $dom . ".siennaestado c on c.id = a.siennaestado
+        left join " . $dom . ".csat cs on cs.ticket = a.id
+        left join " . $dom . ".siennatopic d on d.id = a.siennatopic
+        left join " . $dom . ".siennasource g on g.id = a.siennasource
+        left join " . $dom . ".users u on u.id = a.asignado
+        left join (
+            select ticket, autor 
+            from " . $dom . ".siennaseguimientos 
+            where tipo = 2 
+            order by id desc limit 1
+        ) s2 on s2.ticket = a.id
+        where 
+            a.id(".$ticket.")
+        order by 
+            timestampdiff(minute, a.created_at, a.t_cerrado) desc;";
 
-        return $resultAgentSelected;
+        $resultGetTicket = DB::connection('mysql2')->select($queryGetTickets);
+        return view('sienna/dashboard/report', [
+            'qtyTickets' => $resultGetTicket
+        ]);
+        
     }
 
     public function getAgents() 
@@ -507,6 +559,7 @@ class Dashboard2Controller extends Controller
         $getAgent = $this->getAgents();
         $getSource = $this->getSources();
         $getDepartment = $this->getDepartments();
+        $getTicketsCreatedQty = $this->getTicketsCreatedQty($source,$department,$agent,$daterange);
 
         return view('sienna/dash', [
             'tickets' => $ticketCreated,
@@ -522,7 +575,8 @@ class Dashboard2Controller extends Controller
             'agents' => $getAgent,
             'sources' => $getSource,
             'departments' => $getDepartment,
-            'filter' => [$source, $department, $agent, $daterange]
+            'filter' => [$source, $department, $agent, $daterange],
+            'qtyTickets' => $getTicketsCreatedQty
             
         ]);
     }
@@ -549,8 +603,7 @@ class Dashboard2Controller extends Controller
         $getAgent = $this->getAgents();
         $getSource = $this->getSources();
         $getDepartment = $this->getDepartments();
-        
-
+        $getTicketsCreatedQty = $this->getTicketsCreatedQty($source,$department,$agent,$daterange);
 
         return view('sienna/dash', [
             'tickets' => $ticketCreated,
@@ -566,7 +619,8 @@ class Dashboard2Controller extends Controller
             'agents' => $getAgent,
             'sources' => $getSource,
             'departments' => $getDepartment,
-            'filter' => [$source, $department, $agent, $daterange]
+            'filter' => [$source, $department, $agent, $daterange],
+            'qtyTickets' => $getTicketsCreatedQty
             
         ]);
     }
