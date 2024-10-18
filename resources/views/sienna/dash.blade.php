@@ -123,7 +123,7 @@
                                             @endforeach
                                         @else
                                             <span class="badge bg-info rounded-pill"
-                                                style="font-size: 12px">{{ $departmentSelected[0]->{'Siennadepto__nombre'} }}</span>
+                                                style="font-size: 12px">{{ $byDepartment[0]->{'Siennadepto__nombre'} }}</span>
                                         @endif
                                     @endif
 
@@ -135,7 +135,7 @@
                                             @endforeach
                                         @else
                                             <span class="badge bg-info rounded-pill"
-                                                style="font-size: 12px">{{ $channelSelected[0]->{'Siennasource__nombre'} }}</span>
+                                                style="font-size: 12px">{{ $perChannel[0]->{'Siennasource__nombre'} }}</span>
                                         @endif
                                     @endif
 
