@@ -100,11 +100,11 @@
                                     @if ($filter[2])
                                         @if (count($perAgent) > 1)
                                             @foreach ($perAgent as $agentSelected)
-                                                <span class="badge bg-primary rounded-pill"
+                                                <span class="badge bg-secondary rounded-pill"
                                                     style="font-size: 14px">{{ $agentSelected->{'Users - Asignado__nombre'} }}</span>
                                             @endforeach
                                         @else
-                                            <span class="badge bg-primary rounded-pill"
+                                            <span class="badge bg-secondary rounded-pill"
                                                 style="font-size: 14px">{{ $perAgent[0]->{'Users - Asignado__nombre'} }}</span>
                                         @endif
                                     @endif
