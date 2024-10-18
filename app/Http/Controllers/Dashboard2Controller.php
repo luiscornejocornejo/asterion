@@ -561,7 +561,8 @@ class Dashboard2Controller extends Controller
         $querySurveySended = "SELECT COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`
             FROM
             `csat_view`
-            LEFT JOIN `siennatickets_view` AS `SiennaticketsViewTicket` ON `csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`" .$subquery;
+            LEFT JOIN `siennatickets_view` AS `SiennaticketsViewTicket` ON `csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`" .$subquery.
+            "GROUP BY `SiennaticketsViewTicket`.`Creado`";
 
         $resultSurveySended = DB::select($querySurveySended);
         return $resultSurveySended;
