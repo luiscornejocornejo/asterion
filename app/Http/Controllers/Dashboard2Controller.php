@@ -516,6 +516,9 @@ class Dashboard2Controller extends Controller
                 $searchAgent = "SELECT nombre, last_name FROM users WHERE id = $agent";
             }
             $resultAgent = DB::select($searchAgent);
+            foreach ($resultAgent as $agentObj) {
+                echo 'Nombre: ' . $agentObj->nombre . ', Apellido: ' . $agentObj->last_name . '<br>';
+            }
         }
 
         $ticketCreated = $this->getTicketsCreated($source,$department,$agent,$daterange);
