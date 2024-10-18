@@ -107,11 +107,11 @@
                                         @if (count($perAgent) > 1)
                                             @foreach ($perAgent as $agentSelected)
                                                 <span class="badge bg-primary rounded-pill"
-                                                    style="font-size: 12px">{{ $agentSelected->{'Users - Asignado__nombre'} }}</span>
+                                                    style="font-size: 14px">{{ $agentSelected->{'Users - Asignado__nombre'} }}</span>
                                             @endforeach
                                         @else
                                             <span class="badge bg-primary rounded-pill"
-                                                style="font-size: 12px">{{ $perAgent[0]->{'Users - Asignado__nombre'} }}</span>
+                                                style="font-size: 14px">{{ $perAgent[0]->{'Users - Asignado__nombre'} }}</span>
                                         @endif
                                     @endif
 
@@ -119,23 +119,23 @@
                                         @if (count($byDepartment) > 1)
                                             @foreach ($byDepartment as $departmentSelected)
                                                 <span class="badge bg-info rounded-pill"
-                                                    style="font-size: 12px">{{ $departmentSelected->{'Siennadepto__nombre'} }}</span>
+                                                    style="font-size: 14px">{{ $departmentSelected->{'Siennadepto__nombre'} }}</span>
                                             @endforeach
                                         @else
                                             <span class="badge bg-info rounded-pill"
-                                                style="font-size: 12px">{{ $byDepartment[0]->{'Siennadepto__nombre'} }}</span>
+                                                style="font-size: 14px">{{ $byDepartment[0]->{'Siennadepto__nombre'} }}</span>
                                         @endif
                                     @endif
 
                                     @if ($filter[0])
                                         @if (count($perChannel) > 1)
                                             @foreach ($perChannel as $channelSelected)
-                                                <span class="badge bg-info rounded-pill"
-                                                    style="font-size: 12px">{{ $channelSelected->{'Siennasource__nombre'} }}</span>
+                                                <span class="badge bg-success rounded-pill"
+                                                    style="font-size: 14px">{{ $channelSelected->{'Siennasource__nombre'} }}</span>
                                             @endforeach
                                         @else
-                                            <span class="badge bg-info rounded-pill"
-                                                style="font-size: 12px">{{ $perChannel[0]->{'Siennasource__nombre'} }}</span>
+                                            <span class="badge bg-success rounded-pill"
+                                                style="font-size: 14px">{{ $perChannel[0]->{'Siennasource__nombre'} }}</span>
                                         @endif
                                     @endif
 
