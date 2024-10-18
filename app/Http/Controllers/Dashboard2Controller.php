@@ -148,7 +148,10 @@ class Dashboard2Controller extends Controller
         LEFT JOIN `siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
         LEFT JOIN `users` AS `Users - Siennaestado` ON `siennatickets_view`.`siennaestado` = `Users - Siennaestado`.`id`";
         
-        $resultTicketCreated = DB::select($queryTicketsCreated.$subquery);
+
+        $resultTicketCreated = DB::connection('mysql2')->select($queryTicketsCreated.$subquery);
+
+        //$resultTicketCreated = DB::select($queryTicketsCreated.$subquery);
         
         return $resultTicketCreated;
     } 
@@ -473,6 +476,10 @@ class Dashboard2Controller extends Controller
     }
     public function dashboardgeneric()
     {
+
+        $base=25;
+        $prueba = $this->conectar($base);
+
         $source="";
         $department="";
         $agent="";
