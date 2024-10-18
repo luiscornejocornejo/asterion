@@ -1,7 +1,7 @@
 @include('facu.header')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script>
-    console.log("Fitler:", @json($filter))
+    console.log("Por agente:", @json($perAgent))
 </script>
 
 @if ($tickets[0]->count)
