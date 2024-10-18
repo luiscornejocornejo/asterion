@@ -1143,12 +1143,12 @@ class cloudtickets extends Controller
                 ]);;
        
        }
-      
+       $buscarcliente=$this->buscarcliente($merchant);
+
        dd($merchant);
 
        ///nuevo
 
-        $buscarcliente=$this->buscarcliente($merchant);
         dd($buscarcliente);
 
        dd($merchant);
@@ -1190,10 +1190,10 @@ class cloudtickets extends Controller
         }
     
         if($cuantos==0){
-          return false;
+          return 0;
     
         }else{
-          return true;
+          return 1;
     
         }
       }
