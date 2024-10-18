@@ -101,18 +101,23 @@
                                 <div class="col-xxl-2 col-xl-2 col-lg-4 col-sm-12 mt-2">
                                     <input type="submit" class="btn btn-primary" value="Buscar">
                                 </div>
-                                <div>
-                                <!-- Aca van los filtros -->
-                                @if($filter[0])
-                                    @if(count($perAgent) > 1)
-                                        @foreach($perAgent as $agentSelected)
-                                            <span class="badge bg-primary rounded-pill">{{ $agentSelected }}</span>
-                                        @endforeach
+                                <div class="mt-2">
+                                    <!-- Aca van los filtros -->
+                                    @if ($filter[0])
+                                        @if (count($perAgent) > 1)
+                                            @foreach ($perAgent as $agentSelected)
+                                                <span
+                                                    class="badge bg-primary rounded-pill">{{ $agentSelected->{'Users - Asignado__nombre'} }}</span>
+                                            @endforeach
                                         @else
-                                        <span class="badge bg-primary rounded-pill">{{ $perAgent[0]->{'Users - Asignado__nombre'} }}</span>
+                                            <span
+                                                class="badge bg-primary rounded-pill">{{ $perAgent[0]->{'Users - Asignado__nombre'} }}</span>
+                                        @endif
                                     @endif
-                                @endif
-                            </div>
+
+
+                                    
+                                </div>
                                 <div>
                                     <div class="row mx-1 my-1">
                                         <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
@@ -179,7 +184,7 @@
                                                             },
                                                             labels: @json($labels),
                                                             legend: {
-                                                                position: 'bottom', 
+                                                                position: 'bottom',
                                                                 horizontalAlign: 'center',
                                                                 formatter: function(label, opts) {
                                                                     if (label.length > 10) {
@@ -248,7 +253,7 @@
                                                         return $item->{'Users - Asignado__last_name'} ?? 'Sin asignar';
                                                     }, $perAgent);
                                                 @endphp
-                                                <div id="agentPieChart" ></div>
+                                                <div id="agentPieChart"></div>
                                                 <script>
                                                     document.addEventListener('DOMContentLoaded', function() {
                                                         var options = {
@@ -830,7 +835,7 @@
                                                             },
                                                             labels: @json($labelsTopicPending),
                                                             legend: {
-                                                                position: 'bottom', 
+                                                                position: 'bottom',
                                                                 horizontalAlign: 'center',
                                                                 formatter: function(label, opts) {
                                                                     if (label.length > 10) {
