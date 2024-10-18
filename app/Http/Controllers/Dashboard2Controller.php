@@ -528,6 +528,8 @@ class Dashboard2Controller extends Controller
     }
     public function dashboardgeneric2(Request $request)
     {
+        $base=25;
+        $prueba = $this->conectar($base);
         
         $source=$request->channel;
         $department=$request->department;
