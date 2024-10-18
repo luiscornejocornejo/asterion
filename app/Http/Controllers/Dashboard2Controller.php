@@ -508,7 +508,7 @@ class Dashboard2Controller extends Controller
             a.id in(".$ticket.")
         order by 
             timestampdiff(minute, a.created_at, a.t_cerrado) desc;";
-
+        dd($queryGetTickets)
         $resultGetTicket = DB::connection('mysql2')->select($queryGetTickets);
         return view('sienna/dashboard/report', [
             'qtyTickets' => $resultGetTicket
