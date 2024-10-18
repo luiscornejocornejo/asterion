@@ -1149,7 +1149,7 @@ class cloudtickets extends Controller
        ///nuevo
 
         $buscarcliente=$this->buscarcliente($merchant);
-        var_dump($buscarcliente);
+        dd($buscarcliente);
 
        dd($merchant);
 
