@@ -111,6 +111,8 @@ Route::get('/dash', 'App\Http\Controllers\Dashboard2Controller@dashboardgeneric'
 Route::post('/dash', 'App\Http\Controllers\Dashboard2Controller@dashboardgeneric2');
 Route::get('/surveys', 'App\Http\Controllers\Dashboard2Controller@dashboardSurveyGeneric');
 Route::post('/surveys', 'App\Http\Controllers\Dashboard2Controller@dashboardSurveyGeneric2');
+Route::get('/dashreport', 'App\Http\Controllers\Dashboard2Controller@getTickets');
+
 
 Route::get('/chatsienna','App\Http\Controllers\ChatsiennaController@index');
 Route::get('/chatsiennacrear','App\Http\Controllers\ChatsiennaController@creardb');
