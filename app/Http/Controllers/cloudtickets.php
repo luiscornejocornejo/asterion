@@ -1147,7 +1147,6 @@ class cloudtickets extends Controller
        var_dump($merchant);
 
        ///nuevo
-       if($merchant<>""){
 
         $buscarcliente=$this->buscarcliente($merchant);
         var_dump($buscarcliente);
@@ -1173,7 +1172,7 @@ class cloudtickets extends Controller
             ]);;
         }
 
-      }
+      
       
        ///fin
         return redirect()
