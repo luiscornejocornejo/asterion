@@ -558,7 +558,7 @@ class Dashboard2Controller extends Controller
     public function surveySended($source,$department,$agent,$periodo)
     {
         $subquery=$this->subquery($source,$department,$agent,$periodo);
-        $querySurveySended = "SELECT COUNT(*) AS `count`
+        $querySurveySended = "SELECT COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`
             FROM
             `csat_view`
             LEFT JOIN `siennatickets_view` AS `SiennaticketsViewTicket` ON `csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`" .$subquery;
@@ -572,7 +572,7 @@ class Dashboard2Controller extends Controller
         $subquery=$this->subquery($source,$department,$agent,$periodo);
         $querySurveyPerChannel = "SELECT
             `Siennasource`.`nombre` AS `Siennasource__nombre`,
-            COUNT(*) AS `count`
+            COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`
             FROM
             `csat_view`
 
