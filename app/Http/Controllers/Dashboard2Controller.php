@@ -633,7 +633,7 @@ class Dashboard2Controller extends Controller
 
     public function getTotalCsat($source) 
     {
-        $subquery=$this->subqueryCsat($source, $periodo);
+        $subquery=$this->subqueryCsat($source);
         $queryTotalCsat = "SELECT ROUND(AVG(`csat_view`.`CEILING(csat)`), 2) AS `avg`
             FROM
             `csat_view`
@@ -646,7 +646,7 @@ class Dashboard2Controller extends Controller
 
     public function surveySended($source)
     {
-        $subquery=$this->subqueryCsat($source, $periodo);
+        $subquery=$this->subqueryCsat($source);
         $querySurveySended = "SELECT COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`
             FROM
             `csat_view`
@@ -660,7 +660,7 @@ class Dashboard2Controller extends Controller
 
     public function surveyPerChannel($source)
     {
-        $subquery=$this->subqueryCsat($source, $periodo);
+        $subquery=$this->subqueryCsat($source);
         $querySurveyPerChannel = "SELECT
             `Siennasource`.`nombre` AS `Siennasource__nombre`,
             COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`
