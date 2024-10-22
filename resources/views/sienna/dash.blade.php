@@ -149,7 +149,9 @@
 
                                         <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-12 mt-2">
                                             <div class="border rounded">
-                                                <p class="m-1">Ticket por estado</p>
+                                                <p class="m-1"><a href="https://soporte.suricata.cloud/dashreport?ticket={{ $qtyTickets }}">
+                                                    Ticket por estado
+                                                </a></p>
                                                 @php
                                                     $series = array_map(function ($item) {
                                                         return $item->count;
