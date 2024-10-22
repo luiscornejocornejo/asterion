@@ -163,17 +163,9 @@ class Dashboard2Controller extends Controller
     $queryTicketsCreatedQty = "SELECT id FROM " . $dom . ".`siennatickets_view`";
     $resultTicketCreatedQty = DB::connection('mysql2')->select($queryTicketsCreatedQty . $subquery);
 
-    // Extraer los IDs de los objetos stdClass en un array
-    $ticketIdsArray = array_map(function($ticket) {
-        return $ticket->id; // Accede al campo 'id' de cada objeto
-    }, $resultTicketCreatedQty);
-
-    // Codificar el array de IDs como una cadena base64
-    $ticketIds = base64_encode(implode(',', $ticketIdsArray));
-
-    return $ticketIds;
+    return $resultTicketCreatedQty;
     } 
-
+    
     public function getTicketsByStatus($source,$department,$agent,$periodo)
     {
         $dom=$this->dominio();
@@ -477,14 +469,12 @@ class Dashboard2Controller extends Controller
     }
 
 
-    public function getTickets (Request $request)
+    public function getTickets(Request $request)
     {
         $base=25;
         $prueba = $this->conectar($base);
         $dom = $this->dominio();
-        $ticket = $request->ticket;
-        $tickets = explode(',', base64_decode($ticket));
-        $tickets = implode(',', $tickets);
+        $ticket_ids = $request->input('ticket_ids');
         
         $queryGetTickets = "select 
         a.cliente,
@@ -520,7 +510,7 @@ class Dashboard2Controller extends Controller
             order by id desc limit 1
         ) s2 on s2.ticket = a.id
         where 
-            a.id in(".$tickets.")
+            a.id in(".$ticket_ids.")
         order by 
             timestampdiff(minute, a.created_at, a.t_cerrado) desc;";
 
@@ -528,10 +518,15 @@ class Dashboard2Controller extends Controller
         
         //dd($resultGetTicket); die;
         
-        return view('sienna/dashboard/report', [
-            'tickets' => $resultGetTicket
-        ]);
         
+        return redirect()->route('sienna/dashboard/report')->with('tickets', $resultGetTicket);
+        
+    }
+
+    public function reportDashboard()
+    {
+        $tickets = session('tickets');
+        return view('sienna/dashboard/report', compact('tickets'));
     }
 
     public function getAgents() 
