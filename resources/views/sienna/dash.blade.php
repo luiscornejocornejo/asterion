@@ -108,8 +108,6 @@ if (isset($_SERVER['HTTP_HOST'])) {
                             <div class="row mx-1 my-1">
                                 <div class="col-xxl-2 col-xl-2 col-lg-4 col-sm-12 mt-2">
                                     <input type="submit" class="btn btn-primary" value="Buscar">
-                                </div>
-                                <div class="col-xxl-2 col-xl-2 col-lg-4 col-sm-12 mt-2">
                                     <a href="https://{{$subdomain_tmp}}.suricata.cloud/dashreport?ticket={{ $qtyTickets }}" class="btn btn-success text-light">
                                         Generar reporte
                                     </a>
