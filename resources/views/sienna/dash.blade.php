@@ -1043,7 +1043,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 function sendFormWithAxios() {
    
     var ticket_ids = @json($qtyTickets);
-
+    console.log(ticket_ids)
     axios.post('https://soporte.suricata.cloud/dashreport', {
         ticket_ids: ticket_ids,
         _token: document.querySelector('input[name="_token"]').value
