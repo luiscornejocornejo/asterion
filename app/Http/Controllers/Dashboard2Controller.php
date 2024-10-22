@@ -485,7 +485,7 @@ class Dashboard2Controller extends Controller
         $ticket = $request->ticket;
         $tickets = explode(',', base64_decode($ticket));
         $tickets = implode(',', $tickets);
-        dd($tickets);
+        
         $queryGetTickets = "select 
         a.cliente,
         a.nya as nombre,
