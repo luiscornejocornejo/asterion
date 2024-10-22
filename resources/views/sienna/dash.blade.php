@@ -1,6 +1,20 @@
 @include('facu.header')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script>console.log(@json($qtyTickets))</script>
+
+<?php
+
+$subdomain_tmp = 'localhost';
+if (isset($_SERVER['HTTP_HOST'])) {
+    $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+    $subdomain_tmp = array_shift($domainParts);
+} elseif (isset($_SERVER['SERVER_NAME'])) {
+    $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+    $subdomain_tmp = array_shift($domainParts);
+}
+
+?>
+
 @if ($tickets[0]->count)
     <div class="wrapper menuitem-active">
         @include('facu.menu')
@@ -149,7 +163,7 @@
 
                                         <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-12 mt-2">
                                             <div class="border rounded">
-                                                <p class="m-1"><a href="https://soporte.suricata.cloud/dashreport?ticket={{ $qtyTickets }}">
+                                                <p class="m-1"><a href="https://{{$subdomain_tmp}}.suricata.cloud/dashreport?ticket={{ $qtyTickets }}">
                                                     Ticket por estado
                                                 </a></p>
                                                 @php
