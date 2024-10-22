@@ -13,7 +13,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
     $subdomain_tmp = array_shift($domainParts);
 }
 
-$qtyTicketsImplode = implode(',', $qtyTickets);
+
 
 ?>
 
@@ -113,7 +113,7 @@ $qtyTicketsImplode = implode(',', $qtyTickets);
                                         <input type="submit" class="btn btn-primary rounded-pill" value="Buscar">
                                         <form action="https://{{ $subdomain_tmp }}.suricata.cloud/dashreport" method="POST">
                                             @csrf
-                                            <input type="hidden" name="ticket_ids" value="{{ $qtyTicketsImplode }}">
+                                            <input type="hidden" name="ticket_ids" value="">
                                             <button type="submit" class="btn btn-success text-light rounded-pill">
                                                 Generar reporte
                                             </button>
