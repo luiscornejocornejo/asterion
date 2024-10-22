@@ -1,11 +1,6 @@
 @include('facu.header2')
 
-@php
-    $ticketParam = $request->input('ticket');
-    $tickets = explode(',', base64_decode($ticketParam));
-    //dd($tickets);
 
-@endphp
 
 <div class="wrapper menuitem-active">
     @include('facu.menu')
