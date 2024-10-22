@@ -24,7 +24,7 @@
             <div class="container-fluid">
                 <table id="report" class="table table-striped dt-responsive nowrap w-100 mt-2">
                     <thead class="table-dark">
-                        <tr role="row">
+                        <tr>
                             <th>Ticket</th>
                             <th>Nombre</th>
                             <th>Cliente</th>
@@ -38,7 +38,7 @@
                             <th>Cerrado</th>
                         </tr>
                     </thead>
-                    <tbody role="rowgroup">
+                    <tbody>
                         @foreach ($tickets as $ticket)
                             <tr>
                                 <td> {{ $ticket->ticketid }} </td>
