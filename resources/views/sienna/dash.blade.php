@@ -111,11 +111,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
                                     <div>
                                         <input type="submit" class="btn btn-primary rounded-pill" value="Buscar">
-                                        <form id="myForm" action="https://{{ $subdomain_tmp }}.suricata.cloud/dashreport" method="POST">
-                                            @csrf
-                                            <input type="hidden" name="ticket_ids" value="">
-                                        </form>
-                                        <button type="button" onclick="submitMyForm()" class="btn btn-success text-light rounded-pill">Generar reporte</button>
+                                        <button type="button" onclick="sendFormWithAxios()" class="btn btn-success text-light rounded-pill">Generar reporte</button>
                                     </div>
                                 </div>
                                 <div class="mt-2">
@@ -1042,9 +1038,28 @@ if (isset($_SERVER['HTTP_HOST'])) {
 @include('facu.footer')
 
 
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
-    function submitMyForm() {
-        document.getElementById('myForm').submit();
-    }
+function sendFormWithAxios() {
+   
+    var ticket_ids = @json($qtyTickets);
+
+    axios.post('https://{{ $subdomain_tmp }}.suricata.cloud/dashreport', {
+        ticket_ids: ticket_ids,
+        _token: document.querySelector('input[name="_token"]').value
+    })
+    .then(function (response) {
+        
+        console.log(response.data);
+        
+        alert('Reporte generado con éxito!');
+    })
+    .catch(function (error) {
+       
+        console.error(error);
+        alert('Error al generar el reporte.');
+    });
+}
 </script>
+
     
