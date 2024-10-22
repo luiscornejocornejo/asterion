@@ -513,7 +513,7 @@ class Dashboard2Controller extends Controller
 
         $resultGetTicket = DB::connection('mysql2')->select($queryGetTickets);
         
-        //dd($resultGetTicket); die;
+        dd($resultGetTicket); die;
         
         return view('sienna/dashboard/report', [
             'qtyTickets' => $resultGetTicket
@@ -687,13 +687,10 @@ class Dashboard2Controller extends Controller
         $source="";
         $daterange="";
         
-        $data = [
-            'totalCsat' => $this->getTotalCsat($source, $daterange),
-            'surveySended' => $this->surveySended($source, $daterange),
-            'surveyPerChannel' => $this->surveyPerChannel($source, $daterange),
-            'sources' => $this->getSources(),
-        ];
-            
+        $totalCsat = $this->getTotalCsat($source, $daterange);
+        $surverSended = $this->surveySended($source, $daterange);
+        $surveyPerChannel = $this->surveyPerChannel($source, $daterange);
+        $getSource = $this->getSources();
         
         return view('sienna/dashboard/csat', compact('data'));
     }
@@ -703,14 +700,17 @@ class Dashboard2Controller extends Controller
         $source=$request->channel;
         $daterange=$request->periodo ;
 
-        $data = [
-            'totalCsat' => $this->getTotalCsat($source, $daterange),
-            'surveySended' => $this->surveySended($source, $daterange),
-            'surveyPerChannel' => $this->surveyPerChannel($source, $daterange),
-            'sources' => $this->getSources(),
-        ];
+        $totalCsat = $this->getTotalCsat($source, $daterange);
+        $surverSended = $this->surveySended($source, $daterange);
+        $surveyPerChannel = $this->surveyPerChannel($source, $daterange);
+        $getSource = $this->getSources();
         
-        return view('sienna/dashboard/csat', compact('data'));
+        return view('sienna/dashboard/csat', [
+            'totalCsat' => $totalCsat,
+            'surveySended' => $surverSended,
+            'surverPerChannel' => $surveyPerChannel,
+            'sources' => $getSource,
+        ]);
     }
     public function dominio()
     {

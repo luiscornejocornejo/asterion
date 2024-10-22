@@ -2,7 +2,7 @@
 
 
 <script>
-    console.log(@json($data))
+    console.log(@json($qtyTickets))
 </script>
 
 
