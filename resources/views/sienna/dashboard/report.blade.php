@@ -32,7 +32,7 @@
             <div class="container-fluid">
                 <table id="report" class="table table-striped dt-responsive nowrap w-100 mt-2">
                     <thead class="table-dark">
-                        <tr>
+                        <tr role="row">
                             <th>Ticket</th>
                             <th>Nombre</th>
                             <th>Cliente</th>
@@ -46,25 +46,39 @@
                             <th>Cerrado</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        @foreach($tickets as $ticket)
-                        <tr>
-                                <td> {{ $ticket->ticketid}} </td>
-                                <td> {{ $ticket->nombre}} </td>
-                                <td> {{ $ticket->cliente}} </td>
-                                <td> {{ $ticket->callid}} </td>
-                                <td> {{ $ticket->asignado}} </td>
-                                <td> {{ $ticket->departamento}} </td>
-                                <td> {{ $ticket->fuente}} </td>
-                                <td> {{ $ticket->estado}} </td>
-                                <td> {{ $ticket->tema}} </td>
-                                <td> {{ $ticket->creado}} </td>
-                                <td> {{ $ticket->cerrado}} </td>
+                    <tbody role="rowgroup">
+                        @foreach ($tickets as $ticket)
+                            <tr>
+                                <td> {{ $ticket->ticketid }} </td>
+                                <td> {{ $ticket->nombre }} </td>
+                                <td> {{ $ticket->cliente }} </td>
+                                <td> {{ $ticket->callid }} </td>
+                                <td> {{ $ticket->asignado }} </td>
+                                <td> {{ $ticket->departamento }} </td>
+                                <td> {{ $ticket->fuente }} </td>
+                                <td> {{ $ticket->estado }} </td>
+                                <td> {{ $ticket->tema }} </td>
+                                <td> {{ $ticket->creado }} </td>
+                                <td> {{ $ticket->cerrado }} </td>
                             </tr>
-                            @endforeach
+                        @endforeach
 
                     </tbody>
-                    
+                    <tfoot class="bg-secondary">
+                        <tr>
+                            <th>Ticket</th>
+                            <th>Nombre</th>
+                            <th>Cliente</th>
+                            <th>Teléfono</th>
+                            <th>Asignado a</th>
+                            <th>Departamento</th>
+                            <th>Fuente</th>
+                            <th>Estado</th>
+                            <th>Tema</th>
+                            <th>Creado</th>
+                            <th>Cerrado</th>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>
