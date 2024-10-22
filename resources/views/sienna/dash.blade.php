@@ -1,6 +1,8 @@
 @include('facu.header')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-<script>console.log(@json($qtyTickets))</script>
+<script>
+    console.log(@json($qtyTickets))
+</script>
 
 <?php
 
@@ -107,10 +109,13 @@ if (isset($_SERVER['HTTP_HOST'])) {
                             </div>
                             <div class="row mx-1 my-1">
                                 <div class="col-xxl-2 col-xl-2 col-lg-4 col-sm-12 mt-2">
-                                    <input type="submit" class="btn btn-primary" value="Buscar">
-                                    <a href="https://{{$subdomain_tmp}}.suricata.cloud/dashreport?ticket={{ $qtyTickets }}" class="btn btn-success text-light" role="button">
-                                        Generar reporte
-                                    </a>
+                                    <div class="btn-group">
+                                        <input type="submit" class="btn btn-primary rounded-pill me-2" value="Buscar">
+                                        <a href="https://{{ $subdomain_tmp }}.suricata.cloud/dashreport?ticket={{ $qtyTickets }}"
+                                            class="btn btn-success text-light rounded-pill" role="button">
+                                            Generar reporte
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="mt-2">
                                     <!-- Aca van los filtros -->
