@@ -268,8 +268,8 @@ class Dashboard2Controller extends Controller
                     // En este caso, deberías capturar las fechas de inicio y fin de un formulario adicional
                     // Aquí se debe manejar las entradas del usuario
                     $daterange = [
-                        'start' => $_POST['start_date'],  // Capturar el valor del input de inicio
-                        'end' => $_POST['end_date']  // Capturar el valor del input de fin
+                        'start' => Carbon::today()->toDateString(),
+                        'end' => Carbon::today()->toDateString()
                     ];
                     break;
             
