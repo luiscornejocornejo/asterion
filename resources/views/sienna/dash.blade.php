@@ -109,6 +109,11 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                 <div class="col-xxl-2 col-xl-2 col-lg-4 col-sm-12 mt-2">
                                     <input type="submit" class="btn btn-primary" value="Buscar">
                                 </div>
+                                <div class="col-xxl-2 col-xl-2 col-lg-4 col-sm-12 mt-2">
+                                    <a href="https://{{$subdomain_tmp}}.suricata.cloud/dashreport?ticket={{ $qtyTickets }}" class="btn btn-success text-light">
+                                        Generar reporte
+                                    </a>
+                                </div>
                                 <div class="mt-2">
                                     <!-- Aca van los filtros -->
                                     @if ($filter[2])
@@ -163,9 +168,9 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                         <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-12 mt-2">
                                             <div class="border rounded">
-                                                <p class="m-1"><a href="https://{{$subdomain_tmp}}.suricata.cloud/dashreport?ticket={{ $qtyTickets }}">
+                                                <p class="m-1">
                                                     Ticket por estado
-                                                </a></p>
+                                                </p>
                                                 @php
                                                     $series = array_map(function ($item) {
                                                         return $item->count;
