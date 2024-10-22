@@ -1,6 +1,11 @@
-@include('facu.header')
+@include('facu.header2')
 
 
 <script>
-    console.log(@json($qtyTickets))
+    console.log(@json($data))
 </script>
+
+
+
+
+@include('facu.footer')
