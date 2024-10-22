@@ -1,10 +1,5 @@
 @include('facu.header2')
 
-
-<script>
-    console.log(@json($tickets))
-</script>
-
 <div class="wrapper menuitem-active">
     @include('facu.menu')
 
@@ -14,9 +9,6 @@
                 <div class="alert alert-success alert-dismissible fade
                             show" role="alert">
                     {!! session('success') !!}
-
-
-
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
@@ -50,16 +42,16 @@
                         @foreach ($tickets as $ticket)
                             <tr>
                                 <td> {{ $ticket->ticketid }} </td>
-                                <td> {{ $ticket->nombre }} </td>
-                                <td> {{ $ticket->cliente }} </td>
-                                <td> {{ $ticket->callid }} </td>
-                                <td> {{ $ticket->asignado }} </td>
-                                <td> {{ $ticket->departamento }} </td>
-                                <td> {{ $ticket->fuente }} </td>
-                                <td> {{ $ticket->estado }} </td>
-                                <td> {{ $ticket->tema }} </td>
-                                <td> {{ $ticket->creado }} </td>
-                                <td> {{ $ticket->cerrado }} </td>
+                                <td> {{ $ticket->nombre ?? 'Sin dato'}} </td>
+                                <td> {{ $ticket->cliente ?? 'Sin dato' }} </td>
+                                <td> {{ $ticket->callid ?? 'Sin dato' }} </td>
+                                <td> {{ $ticket->asignado ?? 'Sin dato'}} </td>
+                                <td> {{ $ticket->departamento ?? 'Sin dato'}} </td>
+                                <td> {{ $ticket->fuente ?? 'Sin dato'}} </td>
+                                <td> {{ $ticket->estado ?? 'Sin dato'}} </td>
+                                <td> {{ $ticket->tema ?? 'Sin dato'}} </td>
+                                <td> {{ $ticket->creado ?? 'Sin dato'}} </td>
+                                <td> {{ $ticket->cerrado ?? 'Sin dato'}} </td>
                             </tr>
                         @endforeach
 
