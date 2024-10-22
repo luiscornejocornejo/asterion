@@ -468,6 +468,8 @@ class Dashboard2Controller extends Controller
 
     public function getTickets (Request $request)
     {
+        $base=25;
+        $prueba = $this->conectar($base);
         $dom = $this->dominio();
         $ticket = $request->ticket;
         
@@ -508,8 +510,11 @@ class Dashboard2Controller extends Controller
             a.id in(".$ticket.")
         order by 
             timestampdiff(minute, a.created_at, a.t_cerrado) desc;";
-            dd($queryGetTickets);
-            $resultGetTicket = DB::connection('mysql2')->select($queryGetTickets);
+
+        $resultGetTicket = DB::connection('mysql2')->select($queryGetTickets);
+        
+        dd($resultGetTicket); die;
+        
         return view('sienna/dashboard/report', [
             'qtyTickets' => $resultGetTicket
         ]);
