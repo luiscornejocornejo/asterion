@@ -515,10 +515,7 @@ class Dashboard2Controller extends Controller
             timestampdiff(minute, a.created_at, a.t_cerrado) desc;";
 
         $resultGetTicket = DB::connection('mysql2')->select($queryGetTickets);
-        
-        dd($resultGetTicket); die;
-        
-        
+                
         return redirect()->route('sienna/dashboard/report')->with('tickets', $resultGetTicket);
         
     }
