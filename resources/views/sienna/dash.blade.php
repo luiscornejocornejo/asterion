@@ -1039,27 +1039,33 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.1/xlsx.full.min.js"></script>
 <script>
 function sendFormWithAxios() {
-   
     var ticket_ids = @json($qtyTickets);
-    let tickets = ticket_ids.map(item => item.id).join(',')
-    console.log(tickets)
+    let tickets = ticket_ids.map(item => item.id).join(',');
+    
     axios.post('https://soporte.suricata.cloud/dashreport', {
         ticket_ids: tickets,
+        _token: document.querySelector('input[name="_token"]').value
     })
     .then(function (response) {
-        
         console.log(response.data);
-        
-        alert('Reporte generado con éxito!');
+       
+        var wb = XLSX.utils.book_new();
+        var ws = XLSX.utils.json_to_sheet(response.data);
+
+        XLSX.utils.book_append_sheet(wb, ws, "Reporte");
+        const day = new Date()
+        XLSX.writeFile(wb, `${day}.xlsx`);
+
     })
     .catch(function (error) {
-       
         console.error(error);
         alert('Error al generar el reporte.');
     });
 }
 </script>
+
 
     
