@@ -157,15 +157,21 @@ class Dashboard2Controller extends Controller
 
     public function getTicketsCreatedQty($source,$department,$agent,$periodo)
     {
-        $dom=$this->dominio();
-        $subquery=$this->subquery($source,$department,$agent,$periodo);
+        $dom = $this->dominio();
+    $subquery = $this->subquery($source, $department, $agent, $periodo);
 
-        $queryTicketsCreatedQty = "SELECT id FROM ".$dom.".`siennatickets_view`";
-        
-        $resultTicketCreatedQty = DB::connection('mysql2')->select($queryTicketsCreatedQty.$subquery);
-        $ticketIds = base64_encode(implode(',', $resultTicketCreatedQty));
-        
-        return $ticketIds;
+    $queryTicketsCreatedQty = "SELECT id FROM " . $dom . ".`siennatickets_view`";
+    $resultTicketCreatedQty = DB::connection('mysql2')->select($queryTicketsCreatedQty . $subquery);
+
+    // Extraer los IDs de los objetos stdClass en un array
+    $ticketIdsArray = array_map(function($ticket) {
+        return $ticket->id; // Accede al campo 'id' de cada objeto
+    }, $resultTicketCreatedQty);
+
+    // Codificar el array de IDs como una cadena base64
+    $ticketIds = base64_encode(implode(',', $ticketIdsArray));
+
+    return $ticketIds;
     } 
 
     public function getTicketsByStatus($source,$department,$agent,$periodo)
