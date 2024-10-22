@@ -13,7 +13,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
     $subdomain_tmp = array_shift($domainParts);
 }
 
-$qtyTicketsImplode = implode(',' $qtyTickets);
+$qtyTicketsImplode = implode(',', $qtyTickets);
 
 ?>
 
