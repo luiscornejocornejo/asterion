@@ -111,7 +111,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
                                     <div>
                                         <input type="submit" class="btn btn-primary rounded-pill" value="Buscar">
-                                        <form action="https://{{ $subdomain_tmp }}.suricata.cloud/dashreport" method="POST">
+                                        <form id="myForm" action="https://{{ $subdomain_tmp }}.suricata.cloud/dashreport" method="POST">
                                             @csrf
                                             <input type="hidden" name="ticket_ids" value="">
                                             <button type="submit" class="btn btn-success text-light rounded-pill">
@@ -1042,3 +1042,11 @@ if (isset($_SERVER['HTTP_HOST'])) {
     </div>
 @endif
 @include('facu.footer')
+
+
+<script>
+    function submitMyForm() {
+        document.getElementById('myForm').submit();
+    }
+</script>
+    
