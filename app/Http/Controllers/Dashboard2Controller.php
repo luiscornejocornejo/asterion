@@ -692,7 +692,12 @@ class Dashboard2Controller extends Controller
         $surveyPerChannel = $this->surveyPerChannel($source);
         $getSource = $this->getSources();
         
-        return view('sienna/dashboard/csat', compact('data'));
+        return view('sienna/dashboard/csat', [
+            'totalCsat' => $totalCsat,
+            'surveySended' => $surverSended,
+            'surverPerChannel' => $surveyPerChannel,
+            'sources' => $getSource
+        ]);
     }
 
     public function dashboardSurveyGeneric2(Request $request)
