@@ -476,9 +476,8 @@ class Dashboard2Controller extends Controller
         $prueba = $this->conectar($base);
         $dom = $this->dominio();
         $ticket_ids = $request->ticket_ids;
-        echo $ticket_ids;
-
-        /*if (empty($ticket_ids)) {
+       
+        if (empty($ticket_ids)) {
             return response()->json(['error' => 'No ticket IDs provided'], 400);
         }
 
@@ -521,8 +520,8 @@ class Dashboard2Controller extends Controller
             timestampdiff(minute, a.created_at, a.t_cerrado) desc;";
 
         $resultGetTicket = DB::connection('mysql2')->select($queryGetTickets);
-                
-        return redirect()->route('sienna/dashboard/report')->with('tickets', $resultGetTicket);*/
+        echo $resultGetTicket;        
+        // return redirect()->route('sienna/dashboard/report')->with('tickets', $resultGetTicket);
         
     }
 
