@@ -513,7 +513,7 @@ class Dashboard2Controller extends Controller
 
         $resultGetTicket = DB::connection('mysql2')->select($queryGetTickets);
         
-        dd($resultGetTicket); die;
+        //dd($resultGetTicket); die;
         
         return view('sienna/dashboard/report', [
             'qtyTickets' => $resultGetTicket
