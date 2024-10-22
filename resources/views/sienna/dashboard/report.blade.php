@@ -31,7 +31,7 @@
             <!-- Page Wrapper -->
             <div class="container-fluid">
                 <table id="report" class="table table-striped dt-responsive nowrap w-100 mt-2">
-                    <thead role="rowgroup" class="table-dark">
+                    <thead class="table-dark">
                         <tr role="row">
                             <th>Ticket</th>
                             <th>Nombre</th>
@@ -46,9 +46,9 @@
                             <th>Cerrado</th>
                         </tr>
                     </thead>
-                    <tbody role="rowgroup">
-                        <tr role="row">
-                            @foreach ($tickets as $ticket)
+                    <tbody>
+                        <tr>
+                            @foreach($tickets as $ticket)
                                 <td> {{ $ticket->ticketid}} </td>
                                 <td> {{ $ticket->nombre}} </td>
                                 <td> {{ $ticket->cliente}} </td>
@@ -64,21 +64,7 @@
                         </tr>
 
                     </tbody>
-                    <tfoot class="bg-secondary">
-                        <tr>
-                            <th>Ticket</th>
-                            <th>Nombre</th>
-                            <th>Cliente</th>
-                            <th>Teléfono</th>
-                            <th>Asignado a</th>
-                            <th>Departamento</th>
-                            <th>Fuente</th>
-                            <th>Estado</th>
-                            <th>Tema</th>
-                            <th>Creado</th>
-                            <th>Cerrado</th>
-                        </tr>
-                    </tfoot>
+                    
                 </table>
             </div>
         </div>
