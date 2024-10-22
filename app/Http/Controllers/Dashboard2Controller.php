@@ -513,7 +513,7 @@ class Dashboard2Controller extends Controller
 
         $resultGetTicket = DB::connection('mysql2')->select($queryGetTickets);
         
-        dd($resultGetTicket); die;
+        //dd($resultGetTicket); die;
         
         return view('sienna/dashboard/report', [
             'qtyTickets' => $resultGetTicket
@@ -631,9 +631,9 @@ class Dashboard2Controller extends Controller
     }
 
 
-    public function getTotalCsat($source,$department,$agent,$periodo) 
+    public function getTotalCsat($source, $periodo) 
     {
-        $subquery=$this->subquery($source,$department,$agent,$periodo);
+        $subquery=$this->subqueryCsat($source, $periodo);
         $queryTotalCsat = "SELECT ROUND(AVG(`csat_view`.`CEILING(csat)`), 2) AS `avg`
             FROM
             `csat_view`
@@ -644,23 +644,23 @@ class Dashboard2Controller extends Controller
             return $resultTotalCsat;
     }
 
-    public function surveySended($source,$department,$agent,$periodo)
+    public function surveySended($source, $periodo)
     {
-        $subquery=$this->subquery($source,$department,$agent,$periodo);
+        $subquery=$this->subqueryCsat($source, $periodo);
         $querySurveySended = "SELECT COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`
             FROM
             `csat_view`
             LEFT JOIN `siennatickets_view` AS `SiennaticketsViewTicket` ON `csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`
-            GROUP BY `SiennaticketsViewTicket`.`Creado`
-            LIMIT 100";
+            ".$subquery."
+            GROUP BY `SiennaticketsViewTicket`.`Creado`";
 
         $resultSurveySended = DB::select($querySurveySended);
         return $resultSurveySended;
     }
 
-    public function surveyPerChannel($source,$department,$agent,$periodo)
+    public function surveyPerChannel($source, $periodo)
     {
-        $subquery=$this->subquery($source,$department,$agent,$periodo);
+        $subquery=$this->subqueryCsat($source, $periodo);
         $querySurveyPerChannel = "SELECT
             `Siennasource`.`nombre` AS `Siennasource__nombre`,
             COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`
@@ -670,13 +670,13 @@ class Dashboard2Controller extends Controller
             LEFT JOIN `siennatickets_view` AS `SiennaticketsViewTicket` ON `csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`
             LEFT JOIN `siennasource` AS `Siennasource` ON `SiennaticketsViewTicket`.`siennasource` = `Siennasource`.`id`
             ".$subquery."
+
             GROUP BY
             `Siennasource`.`nombre`,
             `SiennaticketsViewTicket`.`Creado`
             ORDER BY
             `count` DESC,
-            `Siennasource`.`nombre` ASC
-            LIMIT 100";
+            `Siennasource`.`nombre` ASC";
 
         $resultSurverPerChannel = DB::select($querySurveyPerChannel);
         return $resultSurverPerChannel;
@@ -685,50 +685,32 @@ class Dashboard2Controller extends Controller
     public function dashboardSurveyGeneric()
     {   
         $source="";
-        $department="";
-        $agent="";
         $daterange="";
-
-        $totalCsat = $this->getTotalCsat($source,$department,$agent,$daterange);
-        $surverSended = $this->surveySended($source,$department,$agent,$daterange);
-        $surveyPerChannel = $this->surveyPerChannel($source,$department,$agent,$daterange);
-        $getAgent = $this->getAgents();
-        $getSource = $this->getSources();
-        $getDepartment = $this->getDepartments();
-
-        return view('sienna/dashboard/csat', [
-            'totalCsat' => $totalCsat,
-            'surveySended' => $surverSended,
-            'surverPerChannel' => $surveyPerChannel,
-            'agents' => $getAgent,
-            'sources' => $getSource,
-            'departments' => $getDepartment
+        
+        $data = [
+            'totalCsat' => $this->getTotalCsat($source, $daterange),
+            'surveySended' => $this->surveySended($source, $daterange),
+            'surveyPerChannel' => $this->surveyPerChannel($source, $daterange),
+            'sources' => $this->getSources(),
+        ];
             
-        ]);
+        
+        return view('sienna/dashboard/csat', compact('data'));
     }
 
     public function dashboardSurveyGeneric2(Request $request)
     {   
         $source=$request->channel;
-        $department=$request->department;
-        $agent=$request->agent;
         $daterange=$request->periodo ;
 
-        $totalCsat = $this->getTotalCsat($source,$department,$agent,$daterange);
-        $surverSended = $this->surveySended($source,$department,$agent,$daterange);
-        $surveyPerChannel = $this->surveyPerChannel($source,$department,$agent,$daterange);
-        $getAgent = $this->getAgents();
-        $getSource = $this->getSources();
-        $getDepartment = $this->getDepartments();
-
-        return view('sienna/dashboard/csat', [
-            'totalCsat' => $totalCsat,
-            'surveySended' => $surverSended,
-            'surverPerChannel' => $surveyPerChannel,
-            'agents' => $getAgent,
-            'sources' => $getSource,
-            'departments' => $getDepartment
-        ]);
+        $data = [
+            'totalCsat' => $this->getTotalCsat($source, $daterange),
+            'surveySended' => $this->surveySended($source, $daterange),
+            'surveyPerChannel' => $this->surveyPerChannel($source, $daterange),
+            'sources' => $this->getSources(),
+        ];
+        
+        return view('sienna/dashboard/csat', compact('data'));
     }
     public function dominio()
     {
@@ -745,4 +727,83 @@ class Dashboard2Controller extends Controller
         return $subdomain_tmp;
     }
     
+
+    public function subqueryCsat($source, $periodo){
+        $subquery = " WHERE 1=1"; 
+        if($source<>null){
+            $source = implode(', ', $source);
+           $subquery.=" and csat_view.siennasource in(".$source.")";
+        }
+        if ($periodo !== null) {
+
+        
+           $daterange = null;
+           switch ($periodo) {
+            case '0':  // Hoy
+                $daterange = [
+                    'start' => Carbon::today()->toDateString(),
+                    'end' => Carbon::today()->toDateString()
+                ];
+                break;
+        
+                case '1':  // Ayer
+                    $daterange = [
+                        'start' => Carbon::yesterday()->toDateString(),
+                        'end' => Carbon::yesterday()->toDateString()
+                    ];
+                    break;
+            
+                case '2':  // Últimos 7 días
+                    $daterange = [
+                        'start' => Carbon::today()->subDays(7)->toDateString(),
+                        'end' => Carbon::today()->toDateString()
+                    ];
+                    break;
+            
+                case '3':  // Últimos 30 días
+                    $daterange = [
+                        'start' => Carbon::today()->subDays(30)->toDateString(),
+                        'end' => Carbon::today()->toDateString()
+                    ];
+                    break;
+            
+                case '4':  // Mes actual
+                    $daterange = [
+                        'start' => Carbon::now()->startOfMonth()->toDateString(),
+                        'end' => Carbon::now()->toDateString()
+                    ];
+                    break;
+            
+                case '5':  // Mes anterior
+                    $daterange = [
+                        'start' => Carbon::now()->subMonth()->startOfMonth()->toDateString(),
+                        'end' => Carbon::now()->subMonth()->endOfMonth()->toDateString()
+                    ];
+                    break;
+            
+                case '6':  // Rango personalizado
+                    // En este caso, deberías capturar las fechas de inicio y fin de un formulario adicional
+                    // Aquí se debe manejar las entradas del usuario
+                    $daterange = [
+                        'start' => $_POST['start_date'],  // Capturar el valor del input de inicio
+                        'end' => $_POST['end_date']  // Capturar el valor del input de fin
+                    ];
+                    break;
+            
+                default:
+                    // No hacer nada si no hay selección válida
+                    $daterange = [
+                        'start' => Carbon::today()->toDateString(),
+                        'end' => Carbon::today()->toDateString()
+                    ];
+                    break;
+            }
+            if (isset($daterange['start']) && isset($daterange['end'])) {
+
+           $subquery .= " AND siennatickets_view.created_at > '".$daterange['start']." 00:00:00' AND siennatickets_view.created_at < '".$daterange['end']." 23:59:59'";
+            }
+        }
+        
+        return $subquery;
+    }
 }
