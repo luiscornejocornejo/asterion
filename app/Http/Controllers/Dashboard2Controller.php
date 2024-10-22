@@ -483,7 +483,7 @@ class Dashboard2Controller extends Controller
         $prueba = $this->conectar($base);
         $dom = $this->dominio();
         $ticket = $request->ticket;
-        
+        $tickets = explode(',', base64_decode($ticket));
         $queryGetTickets = "select 
         a.cliente,
         a.nya as nombre,
@@ -518,7 +518,7 @@ class Dashboard2Controller extends Controller
             order by id desc limit 1
         ) s2 on s2.ticket = a.id
         where 
-            a.id in(".$ticket.")
+            a.id in(".$tickets.")
         order by 
             timestampdiff(minute, a.created_at, a.t_cerrado) desc;";
 
