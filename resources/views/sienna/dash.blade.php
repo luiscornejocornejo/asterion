@@ -1,7 +1,6 @@
 @include('facu.header')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-<script> console.log(@json($qtyTickets)) </script>
-
+<script>console.log(@json($qtyTickets))</script>
 @if ($tickets[0]->count)
     <div class="wrapper menuitem-active">
         @include('facu.menu')
@@ -434,9 +433,7 @@
 
                                         <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
                                             <div class="border rounded">
-                                                <p class="m-1"><a href="https://soporte.suricata.cloud/dashreport?ticket={{ $qtyTickets->pluck('id')->implode(',') }}">
-                                                    Ticket por Departament
-                                                </a></p>
+                                                <p class="m-1">Ticket por Departamento</p>
                                                 @php
                                                     $seriesDept = array_map(function ($item) {
                                                         return $item->count;
