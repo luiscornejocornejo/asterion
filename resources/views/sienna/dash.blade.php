@@ -1045,7 +1045,7 @@ function sendFormWithAxios() {
     var ticket_ids = @json($qtyTickets);
     let tickets = ticket_ids.map(item => item.id).join(',');
     
-    axios.post('https://soporte.suricata.cloud/dashreport', {
+    axios.post('https://{{subdomain_tmp}}.suricata.cloud/dashreport', {
         ticket_ids: tickets,
         _token: document.querySelector('input[name="_token"]').value
     })
