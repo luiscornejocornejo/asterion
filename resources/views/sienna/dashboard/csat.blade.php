@@ -70,17 +70,7 @@
                                     </select>
                                 </div>
                                 
-                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-6">
-                                    <label for="agent" class="form-label">Agente</label>
-                                    <select name="agent[]" id="agent" multiple="multiple" class="form-select">
-
-                                        @foreach ($agents as $agent)
-                                            <option value="{{ $agent->id }}">
-                                                {{ $agent->nombre }} {{ $agent->last_name }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                                
                                 <div class="row mx-1 my-1">
                                     <div class="col-xxl-2 col-xl-2 col-lg-4 col-sm-12 mt-2">
                                         <input type="submit" class="btn btn-primary" value="Buscar">
