@@ -114,10 +114,8 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                         <form id="myForm" action="https://{{ $subdomain_tmp }}.suricata.cloud/dashreport" method="POST">
                                             @csrf
                                             <input type="hidden" name="ticket_ids" value="">
-                                            <button type="submit" class="btn btn-success text-light rounded-pill">
-                                                Generar reporte
-                                            </button>
                                         </form>
+                                        <button type="button" onclick="submitMyForm()" class="btn btn-success text-light rounded-pill">Generar reporte</button>
                                     </div>
                                 </div>
                                 <div class="mt-2">
