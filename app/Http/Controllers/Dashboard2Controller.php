@@ -275,7 +275,10 @@ class Dashboard2Controller extends Controller
             
                 default:
                     // No hacer nada si no hay selección válida
-                    $daterange = null;
+                    $daterange = [
+                        'start' => Carbon::yesterday()->toDateString(),
+                        'end' => Carbon::yesterday()->toDateString()
+                    ];
                     break;
             }
             if (isset($daterange['start']) && isset($daterange['end'])) {
