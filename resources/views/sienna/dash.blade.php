@@ -111,7 +111,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
                                     <div>
                                         <input type="submit" class="btn btn-primary rounded-pill" value="Buscar">
-                                        <button type="button" onclick="sendFormWithAxios()" class="btn btn-success text-light rounded-pill">Generar reporte</button>
+                                        <button type="button" onclick="sendFormWithAxios()" class="btn btn-success rounded-pill">Generar reporte</button>
                                     </div>
                                 </div>
                                 <div class="mt-2">
