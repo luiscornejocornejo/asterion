@@ -517,7 +517,7 @@ class Dashboard2Controller extends Controller
         //dd($resultGetTicket); die;
         
         return view('sienna/dashboard/report', [
-            'qtyTickets' => $resultGetTicket
+            'tickets' => $resultGetTicket
         ]);
         
     }
