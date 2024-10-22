@@ -2,7 +2,13 @@
 
 <div class="wrapper menuitem-active">
     @include('facu.menu')
-
+@php
+    if (isset($_GET['ticket'])) {
+    $tickets = urldecode($_GET['ticket']);
+    
+    echo 'Texto recibido: ' . $tickets;
+}
+@endphp
     <div class="content-page" style="padding: 0!important;">
         <div class="content">
             @if ($message = Session::get('success'))
