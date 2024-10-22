@@ -32,7 +32,7 @@
             <div class="container-fluid">
                 <table id="report" class="table table-striped dt-responsive nowrap w-100 mt-2">
                     <thead class="table-dark">
-                        <tr role="row">
+                        <tr>
                             <th>Ticket</th>
                             <th>Nombre</th>
                             <th>Cliente</th>
@@ -47,8 +47,8 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($tickets as $ticket)
                         <tr>
-                            @foreach($tickets as $ticket)
                                 <td> {{ $ticket->ticketid}} </td>
                                 <td> {{ $ticket->nombre}} </td>
                                 <td> {{ $ticket->cliente}} </td>
@@ -60,8 +60,8 @@
                                 <td> {{ $ticket->tema}} </td>
                                 <td> {{ $ticket->creado}} </td>
                                 <td> {{ $ticket->cerrado}} </td>
+                            </tr>
                             @endforeach
-                        </tr>
 
                     </tbody>
                     
