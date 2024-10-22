@@ -81,7 +81,8 @@
 @include('facu.footer')
 
 <script>
-    $('#report').dataTable({
+   $(document).ready(function() {
+    $('#report').DataTable({
         "order": [
             [0, 'desc']
         ],
@@ -100,19 +101,21 @@
                     let column = this;
                     let title = column.footer().textContent;
 
-                    // Create input element
+                    // Crear el input
                     let input = document.createElement("input");
                     input.placeholder = title;
                     input.className = "form-control";
                     column.footer().replaceChildren(input);
 
-                    // Event listener for user input
+                    // Event listener para la búsqueda
                     input.addEventListener("keyup", () => {
-                        if (column.search() !== this.value) {
+                        if (column.search() !== input.value) {
                             column.search(input.value).draw();
                         }
                     });
                 });
         }
     });
+});
+
 </script>
