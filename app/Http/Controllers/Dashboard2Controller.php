@@ -471,7 +471,7 @@ class Dashboard2Controller extends Controller
 
     public function getTickets(Request $request)
     {
-        var_dump($request);
+        echo "Hola";
         /*$base=25;
         $prueba = $this->conectar($base);
         $dom = $this->dominio();
