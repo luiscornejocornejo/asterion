@@ -13,8 +13,6 @@ if (isset($_SERVER['HTTP_HOST'])) {
     $subdomain_tmp = array_shift($domainParts);
 }
 
-$qtyTickets = urlencode($qtyTickets);
-
 ?>
 
 @if ($tickets[0]->count)
