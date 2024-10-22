@@ -109,7 +109,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                             </div>
                             <div class="row mx-1 my-1">
                                 <div class="col-xxl-2 col-xl-2 col-lg-4 col-sm-12 mt-2">
-                                    <div class="btn-group">
+                                    <div>
                                         <input type="submit" class="btn btn-primary rounded-pill me-2" value="Buscar">
                                         <a href="https://{{ $subdomain_tmp }}.suricata.cloud/dashreport?ticket={{ $qtyTickets }}"
                                             class="btn btn-success text-light rounded-pill" role="button">
