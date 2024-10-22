@@ -434,8 +434,8 @@
 
                                         <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
                                             <div class="border rounded">
-                                                <p class="m-1"><a href="https://soporte.suricata.cloud/dashreport?ticket=@foreach($qtyTickets as $ticket){{ $ticket->id }}@if(!$loop->last)@endif @endforeach">
-                                                    Ticket por departamento
+                                                <p class="m-1"><a href="https://soporte.suricata.cloud/dashreport?ticket={{ $qtyTickets->pluck('id')->implode(',') }}">
+                                                    Ticket por Departament
                                                 </a></p>
                                                 @php
                                                     $seriesDept = array_map(function ($item) {
