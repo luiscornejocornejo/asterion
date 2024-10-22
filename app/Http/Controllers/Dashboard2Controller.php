@@ -471,13 +471,14 @@ class Dashboard2Controller extends Controller
 
     public function getTickets(Request $request)
     {
-        echo "Hola";
-        /*$base=25;
+        
+        $base=25;
         $prueba = $this->conectar($base);
         $dom = $this->dominio();
         $ticket_ids = $request->ticket_ids;
-        
-        if (empty($ticket_ids)) {
+        echo $ticket_ids;
+
+        /*if (empty($ticket_ids)) {
             return response()->json(['error' => 'No ticket IDs provided'], 400);
         }
 
