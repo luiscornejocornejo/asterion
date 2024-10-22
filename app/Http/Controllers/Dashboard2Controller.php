@@ -476,6 +476,10 @@ class Dashboard2Controller extends Controller
         $dom = $this->dominio();
         $ticket_ids = $request->ticket_ids;
         
+        if (empty($ticket_ids)) {
+            return response()->json(['error' => 'No ticket IDs provided'], 400);
+        }
+
         $queryGetTickets = "select 
         a.cliente,
         a.nya as nombre,
