@@ -471,7 +471,8 @@ class Dashboard2Controller extends Controller
 
     public function getTickets(Request $request)
     {
-        $base=25;
+        var_dump($request);
+        /*$base=25;
         $prueba = $this->conectar($base);
         $dom = $this->dominio();
         $ticket_ids = $request->ticket_ids;
@@ -520,7 +521,7 @@ class Dashboard2Controller extends Controller
 
         $resultGetTicket = DB::connection('mysql2')->select($queryGetTickets);
                 
-        return redirect()->route('sienna/dashboard/report')->with('tickets', $resultGetTicket);
+        return redirect()->route('sienna/dashboard/report')->with('tickets', $resultGetTicket);*/
         
     }
 
