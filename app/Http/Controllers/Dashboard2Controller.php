@@ -474,7 +474,7 @@ class Dashboard2Controller extends Controller
         $base=25;
         $prueba = $this->conectar($base);
         $dom = $this->dominio();
-        $ticket_ids = $request->input('ticket_ids');
+        $ticket_ids = $request->ticket_ids;
         
         $queryGetTickets = "select 
         a.cliente,
