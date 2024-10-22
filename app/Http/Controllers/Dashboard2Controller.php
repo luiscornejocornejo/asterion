@@ -163,7 +163,7 @@ class Dashboard2Controller extends Controller
         $queryTicketsCreatedQty = "SELECT id FROM ".$dom.".`siennatickets_view`";
         
         $resultTicketCreatedQty = DB::connection('mysql2')->select($queryTicketsCreatedQty.$subquery);
-        $ticketIds = implode(',', array_column($resultTicketCreatedQty, 'id'));
+        $ticketIds = base64_encode(implode(',', $resultTicketCreatedQty));
         return $ticketIds;
     } 
 
