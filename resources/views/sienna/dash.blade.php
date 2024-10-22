@@ -3,7 +3,7 @@
 
 
 <?php
-
+dd($qtyTickets);
 $subdomain_tmp = 'localhost';
 if (isset($_SERVER['HTTP_HOST'])) {
     $domainParts = explode('.', $_SERVER['HTTP_HOST']);
