@@ -164,6 +164,7 @@ class Dashboard2Controller extends Controller
         
         $resultTicketCreatedQty = DB::connection('mysql2')->select($queryTicketsCreatedQty.$subquery);
         $ticketIds = base64_encode(implode(',', $resultTicketCreatedQty));
+        dd($ticketIds);
         return $ticketIds;
     } 
 
