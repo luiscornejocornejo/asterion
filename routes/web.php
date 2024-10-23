@@ -113,7 +113,9 @@ Route::get('/surveys', 'App\Http\Controllers\Dashboard2Controller@dashboardSurve
 Route::post('/surveys', 'App\Http\Controllers\Dashboard2Controller@dashboardSurveyGeneric2');
 Route::get('/dashreport', 'App\Http\Controllers\Dashboard2Controller@reportDashboard');
 Route::post('/dashreport', 'App\Http\Controllers\Dashboard2Controller@getTickets');
-
+Route::get('/principal', function () {
+    return view('/sienna/dashboard/tab');
+});
 
 Route::get('/chatsienna','App\Http\Controllers\ChatsiennaController@index');
 Route::get('/chatsiennacrear','App\Http\Controllers\ChatsiennaController@creardb');
