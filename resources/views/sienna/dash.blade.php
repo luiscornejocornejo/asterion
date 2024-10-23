@@ -35,19 +35,19 @@ if (isset($_SERVER['HTTP_HOST'])) {
             <div class="container">
                 <ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
                     <li class="nav-item">
-                        <a href="#home1" data-bs-toggle="tab" aria-expanded="true" class="nav-link rounded-0 active">
+                        <a href="#dashboard" data-bs-toggle="tab" aria-expanded="true" class="nav-link rounded-0 active">
                             <i class="mdi mdi-home-variant d-md-none d-block"></i>
                             <span class="d-none d-md-block">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#profile1" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
+                        <a href="#csat" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
                             <i class="mdi mdi-account-circle d-md-none d-block"></i>
                             <span class="d-none d-md-block">CSAT</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#settings1" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
+                        <a href="#logged" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
                             <i class="mdi mdi-settings-outline d-md-none d-block"></i>
                             <span class="d-none d-md-block">Agentes en línea</span>
                         </a>
@@ -55,7 +55,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 </ul>
 
                 <div class="tab-content">
-                    <div class="tab-pane" id="home1">
+                    <div class="tab-pane show active" id="dashboard">
                         @if ($tickets[0]->count)
                             <div class="card">
                                 <form action="/dash" method="POST">
@@ -1060,10 +1060,10 @@ if (isset($_SERVER['HTTP_HOST'])) {
     </div>
     @endif
 </div>
-<div class="tab-pane show active" id="profile1">
+<div class="tab-pane" id="csat">
     <p>...</p>
 </div>
-<div class="tab-pane" id="settings1">
+<div class="tab-pane" id="logged">
     <p>...</p>
 </div>
 </div>
