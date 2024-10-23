@@ -104,6 +104,7 @@ Route::get('/ticketxtopicfecha', [siennaticketsController::class, 'ticketxtopicf
 Route::get('/ticketxagentefecha', [siennaticketsController::class, 'ticketxagentefecha']);
 Route::get('/ticketxmotivocfecha', [siennaticketsController::class, 'ticketxmotivocfecha']);
 Route::get('/logeados', [siennaticketsController::class, 'logeados']);
+Route::get('/actasignado', [siennaticketsController::class, 'actasignado']);
 
 
 Route::get('/historico', [siennaticketsController::class, 'historico']);

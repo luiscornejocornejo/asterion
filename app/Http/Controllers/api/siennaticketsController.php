@@ -2580,6 +2580,14 @@ class siennaticketsController extends Controller
         
      }
 
-    
+     public function actasignado(Request $request){
+
+        $idusuario=$request->idusuario;
+        $idticket=$request->idticket;
+        $datos=siennatickets::find($idticket);
+        $datos->asignado=$idusuario;
+        $datos->save();
+
+     }
      
 }
