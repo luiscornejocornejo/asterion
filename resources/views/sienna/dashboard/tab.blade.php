@@ -20,7 +20,7 @@
         <div class="content">
             <div class="container py-4">
 
-                <ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
+                <ul class="nav nav-pills bg-nav-pills nav-justified mb-3 container">
                     <li class="nav-item">
                         <a href="#home1" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
                             <i class="mdi mdi-home-variant d-md-none d-block"></i>
