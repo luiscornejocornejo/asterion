@@ -1,5 +1,5 @@
 @include('facu.header')
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="assetsfacu/vendor/apexcharts/apexcharts.min.js"></script>
 
 <script>
     console.log(@json($csatViewExist))
