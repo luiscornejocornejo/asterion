@@ -35,7 +35,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
             <div class="container">
                 <ul class="nav nav-pills bg-nav-pills nav-justified mt-4">
                     <li class="nav-item">
-                        <a href="#dashboard" data-bs-toggle="tab" aria-expanded="true" class="nav-link rounded-0 active">
+                        <a href="#dashboard" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0 active">
                             <i class="mdi mdi-home-variant d-md-none d-block"></i>
                             <span class="d-none d-md-block">Dashboard</span>
                         </a>
