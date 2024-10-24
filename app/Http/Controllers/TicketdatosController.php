@@ -1725,6 +1725,7 @@ class TicketdatosController extends Controller
         }
 
         $tick=$request->tick;
+        $empresa = session('empresa');
         $query="select *,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
         b.nombre as depto,b.id as iddepto,g.nombre as nombreprioridad,g.colore as colorprioridad,
         a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado,a.email as asunto,a.nya emailnom,a.cliente emailcliente,
@@ -1741,7 +1742,7 @@ class TicketdatosController extends Controller
         
 
         
-        where a.id='".$tick."'";
+        where a.id='".$tick."' and e.empresa=".$empresa."";
 
         $resultados = DB::select($query);
         foreach($resultados as $valu){
@@ -1756,7 +1757,7 @@ class TicketdatosController extends Controller
         $query5="select * from iconostipo";
         $resultados5 = DB::select($query5);
 
-        $query6="select * from users where tipousers in ('2','3')";
+        $query6="select * from users where tipousers in ('2','3') and empresa=".$empresa."";
         $usersmerchant= DB::select($query6);
 
         $query7="select * from siennatags";
