@@ -1,9 +1,5 @@
 @include('facu.header')
 <script src="assetsfacu/vendor/apexcharts/apexcharts.min.js"></script>
-
-<script>
-    console.log(@json($csatViewExist))
-</script>
 <?php
 
 $subdomain_tmp = 'localhost';
