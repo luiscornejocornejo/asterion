@@ -575,6 +575,9 @@ class Dashboard2Controller extends Controller
         $getSource = $this->getSources();
         $getDepartment = $this->getDepartments();
         $getTicketsCreatedQty = $this->getTicketsCreatedQty($source,$department,$agent,$daterange);
+        $totalCsat = $this->getTotalCsat($source);
+        $surverSended = $this->surveySended($source);
+        $surveyPerChannel = $this->surveyPerChannel($source);
 
         return view('sienna/dash', [
             'tickets' => $ticketCreated,
@@ -591,7 +594,10 @@ class Dashboard2Controller extends Controller
             'sources' => $getSource,
             'departments' => $getDepartment,
             'filter' => [$source, $department, $agent, $daterange],
-            'qtyTickets' => $getTicketsCreatedQty
+            'qtyTickets' => $getTicketsCreatedQty,
+            'totalCsat' => $totalCsat,
+            'surveySended' => $surverSended,
+            'surverPerChannel' => $surveyPerChannel
             
         ]);
     }
@@ -619,6 +625,9 @@ class Dashboard2Controller extends Controller
         $getSource = $this->getSources();
         $getDepartment = $this->getDepartments();
         $getTicketsCreatedQty = $this->getTicketsCreatedQty($source,$department,$agent,$daterange);
+        $totalCsat = $this->getTotalCsat($source);
+        $surverSended = $this->surveySended($source);
+        $surveyPerChannel = $this->surveyPerChannel($source);
 
         return view('sienna/dash', [
             'tickets' => $ticketCreated,
@@ -635,7 +644,10 @@ class Dashboard2Controller extends Controller
             'sources' => $getSource,
             'departments' => $getDepartment,
             'filter' => [$source, $department, $agent, $daterange],
-            'qtyTickets' => $getTicketsCreatedQty
+            'qtyTickets' => $getTicketsCreatedQty,
+            'totalCsat' => $totalCsat,
+            'surveySended' => $surverSended,
+            'surverPerChannel' => $surveyPerChannel
             
         ]);
     }
