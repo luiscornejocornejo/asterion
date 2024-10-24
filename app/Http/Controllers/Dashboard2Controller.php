@@ -660,7 +660,7 @@ class Dashboard2Controller extends Controller
             FROM
             `csat_view`
 
-            LEFT JOIN `siennatickets_view` AS `SiennaticketsViewTicket` ON `csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`" .$subquery. "LIMIT 100";
+            LEFT JOIN `siennatickets_view` AS `SiennaticketsViewTicket` ON `csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`" .$subquery. " LIMIT 100";
 
             $resultTotalCsat = DB::select($queryTotalCsat);
             return $resultTotalCsat;
