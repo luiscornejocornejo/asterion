@@ -558,7 +558,7 @@ class Dashboard2Controller extends Controller
         $base = 25;
         $prueba = $this->conectar($base);
         $dom = $this->dominio();
-        
+
         $queryGetDepartment = "SELECT id, nombre FROM " . $dom . ".siennadepto";
         $resultGetDepartment = DB::connection('mysql2')->select($queryGetDepartment);
         
@@ -677,7 +677,7 @@ class Dashboard2Controller extends Controller
         $viewName = 'csat_view';
         $exists = DB::connection('mysql2')->select("SHOW FULL TABLES IN ". $dom ." WHERE Table_type = 'VIEW' AND Tables_in_".$dom." = ?", [$viewName]);
         $viewExists = count($exists) > 0;
-
+        dd($viewExists);
         return $viewExists;
     }
 
