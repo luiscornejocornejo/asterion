@@ -215,7 +215,11 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                                         <script>
                                                             document.addEventListener('DOMContentLoaded', function() {
-                                                                var colors=["#727cf5","#0acf97","#fa5c7c"]
+                                                                var colors = [
+                                                                    "#727cf5", "#0acf97", "#fa5c7c", "#39afd1", "#6c757d", "#ffbc00", "#8f75da",
+                                                                    "#ff6f61", "#28a745", "#007bff", "#ff8b00", "#dc3545", "#6610f2", "#fd7e14",
+                                                                    "#20c997", "#17a2b8", "#e83e8c", "#6f42c1", "#ffc107", "#343a40"
+                                                                ]
                                                                 var options = {
                                                                     series: @json($series),
                                                                     chart: {
@@ -324,7 +328,11 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                                         <div id="agentPieChart"></div>
                                                         <script>
                                                             document.addEventListener('DOMContentLoaded', function() {
-                                                                var colors=["#727cf5","#0acf97","#fa5c7c"]
+                                                                var colors = [
+                                                                    "#727cf5", "#0acf97", "#fa5c7c", "#39afd1", "#6c757d", "#ffbc00", "#8f75da",
+                                                                    "#ff6f61", "#28a745", "#007bff", "#ff8b00", "#dc3545", "#6610f2", "#fd7e14",
+                                                                    "#20c997", "#17a2b8", "#e83e8c", "#6f42c1", "#ffc107", "#343a40"
+                                                                ]
                                                                 var options = {
                                                                     series: @json($agentSeries),
                                                                     chart: {
@@ -502,7 +510,11 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                                         <script>
                                                             document.addEventListener('DOMContentLoaded', function() {
-                                                                var colors=["#727cf5","#0acf97","#fa5c7c"]
+                                                                var colors = [
+                                                                    "#727cf5", "#0acf97", "#fa5c7c", "#39afd1", "#6c757d", "#ffbc00", "#8f75da",
+                                                                    "#ff6f61", "#28a745", "#007bff", "#ff8b00", "#dc3545", "#6610f2", "#fd7e14",
+                                                                    "#20c997", "#17a2b8", "#e83e8c", "#6f42c1", "#ffc107", "#343a40"
+                                                                ]
                                                                 var options = {
                                                                     series: [{
                                                                         name: "Total",
@@ -574,7 +586,11 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                                         <script>
                                                             document.addEventListener('DOMContentLoaded', function() {
-                                                                var colors=["#727cf5","#0acf97","#fa5c7c"]
+                                                                var colors = [
+                                                                    "#727cf5", "#0acf97", "#fa5c7c", "#39afd1", "#6c757d", "#ffbc00", "#8f75da",
+                                                                    "#ff6f61", "#28a745", "#007bff", "#ff8b00", "#dc3545", "#6610f2", "#fd7e14",
+                                                                    "#20c997", "#17a2b8", "#e83e8c", "#6f42c1", "#ffc107", "#343a40"
+                                                                ]
                                                                 var options = {
                                                                     series: @json($seriesDeptPending),
                                                                     chart: {
@@ -652,7 +668,11 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                                         <script>
                                                             document.addEventListener('DOMContentLoaded', function() {
-                                                                var colors=["#727cf5","#0acf97","#fa5c7c"]
+                                                                var colors = [
+                                                                    "#727cf5", "#0acf97", "#fa5c7c", "#39afd1", "#6c757d", "#ffbc00", "#8f75da",
+                                                                    "#ff6f61", "#28a745", "#007bff", "#ff8b00", "#dc3545", "#6610f2", "#fd7e14",
+                                                                    "#20c997", "#17a2b8", "#e83e8c", "#6f42c1", "#ffc107", "#343a40"
+                                                                ]
                                                                 var options = {
                                                                     series: [{
                                                                         name: 'Tiempo de Vida de Tickets',
@@ -789,7 +809,11 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                                         <script>
                                                             document.addEventListener('DOMContentLoaded', function() {
-                                                                var colors=["#727cf5","#0acf97","#fa5c7c"]
+                                                                var colors = [
+                                                                    "#727cf5", "#0acf97", "#fa5c7c", "#39afd1", "#6c757d", "#ffbc00", "#8f75da",
+                                                                    "#ff6f61", "#28a745", "#007bff", "#ff8b00", "#dc3545", "#6610f2", "#fd7e14",
+                                                                    "#20c997", "#17a2b8", "#e83e8c", "#6f42c1", "#ffc107", "#343a40"
+                                                                ]
                                                                 var options = {
                                                                     series: @json($series),
                                                                     chart: {
@@ -857,7 +881,11 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                                         <script>
                                                             document.addEventListener('DOMContentLoaded', function() {
-                                                                var colors=["#727cf5","#0acf97","#fa5c7c"]
+                                                                var colors = [
+                                                                    "#727cf5", "#0acf97", "#fa5c7c", "#39afd1", "#6c757d", "#ffbc00", "#8f75da",
+                                                                    "#ff6f61", "#28a745", "#007bff", "#ff8b00", "#dc3545", "#6610f2", "#fd7e14",
+                                                                    "#20c997", "#17a2b8", "#e83e8c", "#6f42c1", "#ffc107", "#343a40"
+                                                                ]
                                                                 var options = {
                                                                     series: @json($seriesTopicPending),
                                                                     chart: {
@@ -986,7 +1014,11 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                                         <script>
                                                             document.addEventListener('DOMContentLoaded', function() {
-                                                                var colors=["#727cf5","#0acf97","#fa5c7c"]
+                                                                var colors = [
+                                                                    "#727cf5", "#0acf97", "#fa5c7c", "#39afd1", "#6c757d", "#ffbc00", "#8f75da",
+                                                                    "#ff6f61", "#28a745", "#007bff", "#ff8b00", "#dc3545", "#6610f2", "#fd7e14",
+                                                                    "#20c997", "#17a2b8", "#e83e8c", "#6f42c1", "#ffc107", "#343a40"
+                                                                ]
                                                                 var options = {
                                                                     series: @json($series),
                                                                     chart: {
