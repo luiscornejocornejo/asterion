@@ -686,16 +686,20 @@ class Dashboard2Controller extends Controller
         $base = 25;
         $prueba = $this->conectar($base);
         $dom = $this->dominio();
-
-        $subquery = $this->subqueryCsat($source);
-        $queryTotalCsat = "SELECT ROUND(AVG(`csat_view`.`CEILING(csat)`), 2) AS `avg`
-            FROM
-            " . $dom . ".`csat_view`
-
-            LEFT JOIN " . $dom . ".`siennatickets_view` AS `SiennaticketsViewTicket` ON " . $dom . ".`csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`" . $subquery . " LIMIT 100";
-
-        $resultTotalCsat = DB::connection('mysql2')->select($queryTotalCsat);
-        return $resultTotalCsat;
+        $checkViewCsat = $this->checkIfViewExists();
+        if($checkViewCsat) {
+            $subquery = $this->subqueryCsat($source);
+            $queryTotalCsat = "SELECT ROUND(AVG(`csat_view`.`CEILING(csat)`), 2) AS `avg`
+                FROM
+                " . $dom . ".`csat_view`
+    
+                LEFT JOIN " . $dom . ".`siennatickets_view` AS `SiennaticketsViewTicket` ON " . $dom . ".`csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`" . $subquery . " LIMIT 100";
+    
+            $resultTotalCsat = DB::connection('mysql2')->select($queryTotalCsat);
+            return $resultTotalCsat;
+        } else {
+            return null;
+        }
     }
 
     public function surveySended($source)
@@ -703,7 +707,9 @@ class Dashboard2Controller extends Controller
         $base = 25;
         $prueba = $this->conectar($base);
         $dom = $this->dominio();
-
+        $checkViewCsat = $this->checkIfViewExists();
+        
+        if($checkViewCsat) {
         $subquery = $this->subqueryCsat($source);
         $querySurveySended = "SELECT COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`
             FROM
@@ -714,6 +720,9 @@ class Dashboard2Controller extends Controller
 
         $resultSurveySended = DB::connection('mysql2')->select($querySurveySended);
         return $resultSurveySended;
+        } else {
+            return null;
+        }
     }
 
     public function surveyPerChannel($source)
@@ -721,7 +730,9 @@ class Dashboard2Controller extends Controller
         $base = 25;
         $prueba = $this->conectar($base);
         $dom = $this->dominio();
-
+        $checkViewCsat = $this->checkIfViewExists();
+        
+        if($checkViewCsat) {
         $subquery = $this->subqueryCsat($source);
         $querySurveyPerChannel = "SELECT
             `Siennasource`.`nombre` AS `Siennasource__nombre`,
@@ -742,6 +753,9 @@ class Dashboard2Controller extends Controller
 
         $resultSurverPerChannel = DB::connection('mysql2')->select($querySurveyPerChannel);
         return $resultSurverPerChannel;
+        } else {
+            return null;
+        }
     }
 
     public function dashboardSurveyGeneric()
