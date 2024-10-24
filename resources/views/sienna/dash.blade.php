@@ -1,7 +1,7 @@
 @include('facu.header')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script>
-    console.log(pendingByTopic)
+    console.log(@json($pendingByTopic))
 </script>
 <?php
 
