@@ -494,7 +494,8 @@ class siennaticketsController extends Controller
     public function maxidjuntos(Request $request)
     {
         $idusuario = $request->idusuario;
-        $query2="select * from users where id='".$idusuario."'";
+        $empresa = session('empresa');
+        $query2="select * from users where id='".$idusuario."' and empresa=".$empresa;
         $resultados2 = DB::select($query2);
         foreach($resultados2 as $val2){
 
@@ -533,7 +534,7 @@ class siennaticketsController extends Controller
                
         
                 where a.siennaestado not in('3','4')  
-                          and a.asignado='" . $idusuario . "' 
+                          and a.asignado='" . $idusuario . "' and e.empresa=".$empresa." 
 
         
                  union 
@@ -552,7 +553,7 @@ class siennaticketsController extends Controller
         
                 where a.siennaestado not in('3','4')  
                  and
-         a.asignado='99999'
+         a.asignado='99999' and e.empresa=".$empresa."
          and a.siennadepto in (" . $final . ") 
                  order by ticketid desc
                 ";
@@ -572,7 +573,7 @@ class siennaticketsController extends Controller
                 left join  ".$merchant.".prioridad f on f.id=a.prioridad
         
                 where a.siennaestado not in('3','4')  
-                 and a.asignado='" . $idusuario . "'
+                 and a.asignado='" . $idusuario . "' and e.empresa=".$empresa."
                  union 
         
                  select *,a.created_at as fn,d.sla,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
@@ -589,7 +590,7 @@ class siennaticketsController extends Controller
         
                 where a.siennaestado not in('3','4')  
                 and a.siennadepto in (" . $final . ")
-        
+                and e.empresa=".$empresa."
                  order by ticketid desc
                 ";
 
