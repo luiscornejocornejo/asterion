@@ -644,6 +644,7 @@ class Dashboard2Controller extends Controller
         $totalCsat = $this->getTotalCsat($source);
         $surverSended = $this->surveySended($source);
         $surveyPerChannel = $this->surveyPerChannel($source);
+        $checkCsatViewExist = $this->checkIfViewExists();
 
         return view('sienna/dash', [
             'tickets' => $ticketCreated,
@@ -663,7 +664,8 @@ class Dashboard2Controller extends Controller
             'qtyTickets' => $getTicketsCreatedQty,
             'totalCsat' => $totalCsat,
             'surveySended' => $surverSended,
-            'surverPerChannel' => $surveyPerChannel
+            'surverPerChannel' => $surveyPerChannel,
+            'csatViewExist' => $checkCsatViewExist
 
         ]);
     }
