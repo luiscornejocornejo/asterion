@@ -127,6 +127,7 @@ class LoginController extends Controller
                 $deptosuser = $value->deptosuser;
                 $email_suricata = $value->email_suricata;
                 $nombreusuario = $value->nombre . " " . $value->last_name;
+                $empresa = $value->empresa;
 
                 $tipodemenu = $value->tipousers;
                 $ctusers = $value->ct;
@@ -136,8 +137,10 @@ class LoginController extends Controller
 
 
                 session(['idusuario' => $idusuario]);
+                session(['empresa' => $empresa]);
                 session(['categoria' => $categoria]);
                 session(['deptosuser' => $deptosuser]);
+                
 
                 $query4 = "select * from categoria where id='" . $categoria . "'";
                 $resultados4 = DB::select($query4);
