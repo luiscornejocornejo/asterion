@@ -1111,7 +1111,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
 
                                 <div class="row mx-1 my-1">
-                                    <div class="col-xxl-2 col-xl-2 col-lg-4 col-sm-12 mt-2">
+                                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
                                         <input type="submit" class="btn btn-primary rounded-pill"
                                                     value="Buscar">
                                                 <button type="button" onclick="sendFormWithAxios()"
