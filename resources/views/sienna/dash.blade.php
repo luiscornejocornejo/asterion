@@ -328,6 +328,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                                         <div id="agentPieChart"></div>
                                                         <script>
                                                             document.addEventListener('DOMContentLoaded', function() {
+                                                                var colors=["#727cf5","#0acf97","#fa5c7c"]
                                                                 var options = {
                                                                     series: @json($agentSeries),
                                                                     chart: {
@@ -343,6 +344,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                                                             opacity: 0.2
                                                                         }
                                                                     },
+                                                                    colors: colors,
                                                                     stroke: {
                                                                         width: 0,
                                                                     },
@@ -504,18 +506,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                                         <script>
                                                             document.addEventListener('DOMContentLoaded', function() {
-                                                                var colors = [
-                                                                    '#FF5733',
-                                                                    '#33FF57',
-                                                                    '#3357FF',
-                                                                    '#FF33A1',
-                                                                    '#33FFF9',
-                                                                    '#FF9633',
-                                                                    '#A133FF',
-                                                                    '#FFDB33',
-                                                                    '#33FF8A',
-                                                                    '#335EFF'
-                                                                ];
+                                                                var colors=["#727cf5","#0acf97","#fa5c7c"]
                                                                 var options = {
                                                                     series: [{
                                                                         name: "Total",
@@ -587,12 +578,14 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                                         <script>
                                                             document.addEventListener('DOMContentLoaded', function() {
+                                                                var colors=["#727cf5","#0acf97","#fa5c7c"]
                                                                 var options = {
                                                                     series: @json($seriesDeptPending),
                                                                     chart: {
                                                                         height: 360,
                                                                         type: 'radialBar',
                                                                     },
+                                                                    colors: colors,
                                                                     plotOptions: {
                                                                         radialBar: {
                                                                             offsetY: 0,
@@ -623,17 +616,6 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                                                             },
                                                                         }
                                                                     },
-                                                                    colors: ['#FF4500', // Naranja fuerte
-                                                                        '#32CD32', // Verde lima
-                                                                        '#1E90FF', // Azul cielo
-                                                                        '#FFD700', // Dorado
-                                                                        '#DA70D6', // Orquídea
-                                                                        '#8A2BE2', // Azul violeta
-                                                                        '#7FFF00', // Verde chartreuse
-                                                                        '#FF1493', // Rosa intenso
-                                                                        '#00CED1', // Turquesa oscuro
-                                                                        '#FF6347'
-                                                                    ],
                                                                     labels: @json($labelsDeptPending),
                                                                     responsive: [{
                                                                         breakpoint: 350,
@@ -674,6 +656,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                                         <script>
                                                             document.addEventListener('DOMContentLoaded', function() {
+                                                                var colors=["#727cf5","#0acf97","#fa5c7c"]
                                                                 var options = {
                                                                     series: [{
                                                                         name: 'Tiempo de Vida de Tickets',
@@ -683,6 +666,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                                                         height: 350,
                                                                         type: 'bar',
                                                                     },
+                                                                    colors: colors,
                                                                     plotOptions: {
                                                                         bar: {
                                                                             borderRadius: 10,
@@ -809,6 +793,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                                         <script>
                                                             document.addEventListener('DOMContentLoaded', function() {
+                                                                var colors=["#727cf5","#0acf97","#fa5c7c"]
                                                                 var options = {
                                                                     series: @json($series),
                                                                     chart: {
@@ -822,6 +807,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                                                             enabled: true
                                                                         }
                                                                     },
+                                                                    colors: colors,
                                                                     responsive: [{
                                                                         breakpoint: 480,
                                                                         options: {
@@ -875,6 +861,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                                         <script>
                                                             document.addEventListener('DOMContentLoaded', function() {
+                                                                var colors=["#727cf5","#0acf97","#fa5c7c"]
                                                                 var options = {
                                                                     series: @json($seriesTopicPending),
                                                                     chart: {
@@ -889,6 +876,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                                                             opacity: 0.2
                                                                         }
                                                                     },
+                                                                    colors: colors,
                                                                     stroke: {
                                                                         width: 0,
                                                                     },
@@ -1002,6 +990,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                                         <script>
                                                             document.addEventListener('DOMContentLoaded', function() {
+                                                                var colors=["#727cf5","#0acf97","#fa5c7c"]
                                                                 var options = {
                                                                     series: @json($series),
                                                                     chart: {
@@ -1009,6 +998,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                                                         height: 350,
                                                                         stacked: true
                                                                     },
+                                                                    colors: colors,
                                                                     responsive: [{
                                                                         breakpoint: 480,
                                                                         options: {
