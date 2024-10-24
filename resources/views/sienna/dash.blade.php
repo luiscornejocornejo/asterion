@@ -1061,7 +1061,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
             </div>
             <div class="tab-pane" id="csat">
                 <div class="content">
-                    <div class="container py-4">
+                    <div class="container">
                         <div class="card">
                             <form action="/surveys" method="POST">
                                 @csrf
