@@ -1110,7 +1110,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                 </div>
 
 
-                                <div class="row mx-1 my-1">
+                                <div class="row my-1">
                                     <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
                                         <input type="submit" class="btn btn-primary rounded-pill"
                                                     value="Buscar">
@@ -1118,7 +1118,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                                     class="btn btn-success rounded-pill">Generar reporte</button>
                                     </div>
                                 </div>
-                                <div class="row mx-1 my-1">
+                                <div class="row my-1">
                                     <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
                                         <div class="border rounded position-relative text-center"
                                             style="min-height: 421.61px;!important;">
