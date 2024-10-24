@@ -2,7 +2,7 @@
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script>
     console.log(pendingByTopic)
-<script>
+</script>
 <?php
 
 $subdomain_tmp = 'localhost';
