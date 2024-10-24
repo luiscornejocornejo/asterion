@@ -219,8 +219,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                                         <script>
                                                             document.addEventListener('DOMContentLoaded', function() {
-                                                                var colors=["#727cf5","#0acf97","#fa5c7c"],
-                                                                dataColors=$("#chart").data("colors")
+                                                                var colors=["#727cf5","#0acf97","#fa5c7c"]
                                                                 var options = {
                                                                     series: @json($series),
                                                                     chart: {
@@ -239,6 +238,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                                                     stroke: {
                                                                         width: 0,
                                                                     },
+                                                                    colors: colors,
                                                                     plotOptions: {
                                                                         pie: {
                                                                             donut: {
