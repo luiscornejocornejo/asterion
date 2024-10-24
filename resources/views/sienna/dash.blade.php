@@ -220,7 +220,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                                         <script>
                                                             document.addEventListener('DOMContentLoaded', function() {
                                                                 var colors=["#727cf5","#0acf97","#fa5c7c"],
-                                                                dataColors=$("#basic-column").data("colors")
+                                                                dataColors=$("#chart").data("colors")
                                                                 var options = {
                                                                     series: @json($series),
                                                                     chart: {
