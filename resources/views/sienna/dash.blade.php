@@ -1,5 +1,5 @@
 @include('facu.header')
-<script src="assetsfacu/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <?php
 
 $subdomain_tmp = 'localhost';
