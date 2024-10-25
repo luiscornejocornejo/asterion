@@ -1742,7 +1742,7 @@ class TicketdatosController extends Controller
         
 
         
-        where a.id='".$tick."' ";
+        where a.id='".$tick."' and a.empresa=".$empresa."";
 
         $resultados = DB::select($query);
         foreach($resultados as $valu){
