@@ -718,8 +718,8 @@ class Dashboard2Controller extends Controller
 
         if ($checkViewCsat) {
             $subquery = $this->subqueryCsat($source);
-            $querySurveySended = "SELECT COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`, `Siennatopic`.`nombre`,
-            `Siennadepto`.`nombre`
+            $querySurveySended = "SELECT COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`, `SiennaticketsViewTicket`.`siennadepto`,
+            `SiennaticketsViewTicket`.`siennatopic`
             FROM
             " . $dom . ".`csat_view`
             LEFT JOIN " . $dom . ".`siennatickets_view` AS `SiennaticketsViewTicket` ON " . $dom . ".`csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`
@@ -728,8 +728,8 @@ class Dashboard2Controller extends Controller
             " . $subquery . "
             GROUP BY 
             `SiennaticketsViewTicket`.`Creado`,
-            `Siennatopic`.`nombre`,
-            `Siennadepto`.`nombre`
+            `SiennaticketsViewTicket`.`siennadepto`,
+            `SiennaticketsViewTicket`.`siennatopic`
 
             LIMIT 100";
 
@@ -756,6 +756,7 @@ class Dashboard2Controller extends Controller
             " . $dom . ".`csat_view`
 
             LEFT JOIN " . $dom . ".`siennatickets_view` AS `SiennaticketsViewTicket` ON " . $dom . ".`csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`
+            LEFT JOIN " . $dom . ".`siennadepto` AS `Siennadepto` ON `SiennaticketsViewTicket`.`siennadepto` = `Siennadepto`.`id`
             LEFT JOIN " . $dom . ".`siennasource` AS `Siennasource` ON " . $dom . ".`SiennaticketsViewTicket`.`siennasource` = `Siennasource`.`id`
             " . $subquery . "
 
