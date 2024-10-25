@@ -416,25 +416,29 @@ class Dashboard2Controller extends Controller
         $dom = $this->dominio();
         $subquery = $this->subquery($source, $department, $agent, $periodo);
 
-        $queryPendigByTopic = "SELECT
+        $queryPendingByTopic = "SELECT
             `Siennatopic`.`nombre` AS `Siennatopic__nombre`,
-            COUNT(*) AS `count`, `Siennaestado`.`nombre`
-            FROM
+            COUNT(*) AS `count`, 
+            `Siennaestado`.`nombre`
+        FROM
             " . $dom . ".`siennatickets_view`
-
-            LEFT JOIN " . $dom . ".`siennaestado` AS `Siennaestado` ON `siennatickets_view`.`siennadepto` = `Siennaestado`.`id`
-            LEFT JOIN " . $dom . ".`siennatopic` AS `Siennatopic` ON `siennatickets_view`.`siennatopic` = `Siennatopic`.`id`
-              " . $subquery . " and
-            (`Siennaestado`.`nombre` <> 'Cerrado')
-
-            OR (`Siennaestado`.`nombre` IS NULL)
-            GROUP BY
+        LEFT JOIN 
+            " . $dom . ".`siennaestado` AS `Siennaestado` 
+            ON `siennatickets_view`.`siennadepto` = `Siennaestado`.`id`
+        LEFT JOIN 
+            " . $dom . ".`siennatopic` AS `Siennatopic` 
+            ON `siennatickets_view`.`siennatopic` = `Siennatopic`.`id`
+        " . $subquery . "
+        AND 
+            (`Siennaestado`.`nombre` <> 'Cerrado' OR `Siennaestado`.`nombre` IS NULL)
+        GROUP BY
             `Siennatopic`.`nombre`
-            ORDER BY
+        ORDER BY
             `count` DESC,
             `Siennatopic`.`nombre` ASC";
 
-        $resultPendingByTopic = DB::connection('mysql2')->select($queryPendigByTopic);
+
+        $resultPendingByTopic = DB::connection('mysql2')->select($queryPendingByTopic);
 
         return $resultPendingByTopic;
     }
@@ -561,7 +565,7 @@ class Dashboard2Controller extends Controller
 
         $queryGetDepartment = "SELECT id, nombre FROM " . $dom . ".siennadepto";
         $resultGetDepartment = DB::connection('mysql2')->select($queryGetDepartment);
-        
+
         return $resultGetDepartment;
     }
 
@@ -675,11 +679,11 @@ class Dashboard2Controller extends Controller
         $base = 25;
         $prueba = $this->conectar($base);
         $dom = $this->dominio();
-        
+
         $viewName = 'csat_view';
-        $exists = DB::connection('mysql2')->select("SHOW FULL TABLES IN ". $dom ." WHERE Table_type = 'VIEW' AND Tables_in_".$dom." = ?", [$viewName]);
+        $exists = DB::connection('mysql2')->select("SHOW FULL TABLES IN " . $dom . " WHERE Table_type = 'VIEW' AND Tables_in_" . $dom . " = ?", [$viewName]);
         $viewExists = count($exists) > 0;
-        
+
         return $viewExists;
     }
 
@@ -689,14 +693,14 @@ class Dashboard2Controller extends Controller
         $prueba = $this->conectar($base);
         $dom = $this->dominio();
         $checkViewCsat = $this->checkIfViewExists();
-        if($checkViewCsat) {
+        if ($checkViewCsat) {
             $subquery = $this->subqueryCsat($source);
             $queryTotalCsat = "SELECT ROUND(AVG(`csat_view`.`CEILING(csat)`), 2) AS `avg`
                 FROM
                 " . $dom . ".`csat_view`
     
                 LEFT JOIN " . $dom . ".`siennatickets_view` AS `SiennaticketsViewTicket` ON " . $dom . ".`csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`" . $subquery . " LIMIT 100";
-    
+
             $resultTotalCsat = DB::connection('mysql2')->select($queryTotalCsat);
             return $resultTotalCsat;
         } else {
@@ -710,18 +714,18 @@ class Dashboard2Controller extends Controller
         $prueba = $this->conectar($base);
         $dom = $this->dominio();
         $checkViewCsat = $this->checkIfViewExists();
-        
-        if($checkViewCsat) {
-        $subquery = $this->subqueryCsat($source);
-        $querySurveySended = "SELECT COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`
+
+        if ($checkViewCsat) {
+            $subquery = $this->subqueryCsat($source);
+            $querySurveySended = "SELECT COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`
             FROM
             " . $dom . ".`csat_view`
             LEFT JOIN " . $dom . ".`siennatickets_view` AS `SiennaticketsViewTicket` ON " . $dom . ".`csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`
             " . $subquery . "
             GROUP BY `SiennaticketsViewTicket`.`Creado` LIMIT 100";
 
-        $resultSurveySended = DB::connection('mysql2')->select($querySurveySended);
-        return $resultSurveySended;
+            $resultSurveySended = DB::connection('mysql2')->select($querySurveySended);
+            return $resultSurveySended;
         } else {
             return null;
         }
@@ -733,10 +737,10 @@ class Dashboard2Controller extends Controller
         $prueba = $this->conectar($base);
         $dom = $this->dominio();
         $checkViewCsat = $this->checkIfViewExists();
-        
-        if($checkViewCsat) {
-        $subquery = $this->subqueryCsat($source);
-        $querySurveyPerChannel = "SELECT
+
+        if ($checkViewCsat) {
+            $subquery = $this->subqueryCsat($source);
+            $querySurveyPerChannel = "SELECT
             `Siennasource`.`nombre` AS `Siennasource__nombre`,
             COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`
             FROM
@@ -753,8 +757,8 @@ class Dashboard2Controller extends Controller
             `count` DESC,
             `Siennasource`.`nombre` ASC LIMIT 100";
 
-        $resultSurverPerChannel = DB::connection('mysql2')->select($querySurveyPerChannel);
-        return $resultSurverPerChannel;
+            $resultSurverPerChannel = DB::connection('mysql2')->select($querySurveyPerChannel);
+            return $resultSurverPerChannel;
         } else {
             return null;
         }
