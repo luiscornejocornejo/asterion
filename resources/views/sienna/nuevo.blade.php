@@ -134,7 +134,6 @@
                                             $empresageneral=session('empresa');
                                             //$querysoption = "select * from " . $Fieldarray[$i] . " ";
                                             //$resultadosoption = DB::select($querysoption);
-
                                             $query = DB::table($Fieldarray[$i]);
                                             // Verificar si la columna 'empres' existe en la tabla 'deptos'
                                             if (Schema::hasColumn($Fieldarray[$i], 'empresa')) {

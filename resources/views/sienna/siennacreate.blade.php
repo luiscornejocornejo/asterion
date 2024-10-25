@@ -155,8 +155,18 @@
                                             <?php
                                             $querysoption = "select * from " . $Fieldarray[$i] . " ";
                                             if ($base == 1) {
-
-                                            $resultadosoption = DB::select($querysoption);
+                                                $empresageneral=session('empresa');
+                                                
+                                                $query = DB::table($Fieldarray[$i]);
+                                                // Verificar si la columna 'empres' existe en la tabla 'deptos'
+                                                if (Schema::hasColumn($Fieldarray[$i], 'empresa')) {
+                                                    // Si existe, agregar el filtro
+                                                    $query->where('empresa', $empresageneral);
+                                                }
+    
+                                                // Obtener los resultados
+                                                $resultadosoption = $query->get();
+                                            //$resultadosoption = DB::select($querysoption);
                                             }else{
 
                                                  {{ App\Http\Controllers\siennaController::conectar2($base); }}
