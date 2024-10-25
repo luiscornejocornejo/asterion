@@ -1726,6 +1726,14 @@ class TicketdatosController extends Controller
         }
 
         $tick=$request->tick;
+        if(isset($request->logueado)){
+
+            $st = nodos::siennatickets($tick);
+            $logeado = session('idusuario');
+
+            $st->asignado=$logeado;
+            $st->save();
+        }
         $empresa = session('empresa');
         $query="select *,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
         b.nombre as depto,b.id as iddepto,g.nombre as nombreprioridad,g.colore as colorprioridad,
