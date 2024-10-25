@@ -718,8 +718,8 @@ class Dashboard2Controller extends Controller
 
         if ($checkViewCsat) {
             $subquery = $this->subqueryCsat($source);
-            $querySurveySended = "SELECT COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`, `Siennatopic`.`id`,
-            `Siennadepto`.`id`
+            $querySurveySended = "SELECT COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`, `Siennatopic`.`nombre`,
+            `Siennadepto`.`nombre`
             FROM
             " . $dom . ".`csat_view`
             LEFT JOIN " . $dom . ".`siennatickets_view` AS `SiennaticketsViewTicket` ON " . $dom . ".`csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`
@@ -728,9 +728,9 @@ class Dashboard2Controller extends Controller
             " . $subquery . "
             GROUP BY 
             `SiennaticketsViewTicket`.`Creado`,
-            `Siennatopic`.`id`,
-            `Siennadepto`.`id`
-            
+            `Siennatopic`.`nombre`,
+            `Siennadepto`.`nombre`
+
             LIMIT 100";
 
             $resultSurveySended = DB::connection('mysql2')->select($querySurveySended);
