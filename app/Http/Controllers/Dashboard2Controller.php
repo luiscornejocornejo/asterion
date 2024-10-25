@@ -418,7 +418,7 @@ class Dashboard2Controller extends Controller
 
         $queryPendigByTopic = "SELECT
             `Siennatopic`.`nombre` AS `Siennatopic__nombre`,
-            COUNT(*) AS `count`, `Siennaestado - Siennadepto`.`siennadepto`
+            COUNT(*) AS `count`
             FROM
             " . $dom . ".`siennatickets_view`
 
