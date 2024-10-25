@@ -724,7 +724,6 @@ class Dashboard2Controller extends Controller
             LEFT JOIN " . $dom . ".`siennatickets_view` AS `SiennaticketsViewTicket` ON " . $dom . ".`csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`
             LEFT JOIN " . $dom . ".`siennaestado` AS `Siennaestado` ON `siennatickets_view`.`siennaestado` = `Siennaestado`.`id`
             LEFT JOIN " . $dom . ".`siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
-            LEFT JOIN " . $dom . ".`siennatopic` AS `Siennatopic` ON `siennatickets_view`.`siennatopic` = `Siennatopic`.`id`
             " . $subquery . "
             GROUP BY `SiennaticketsViewTicket`.`Creado` LIMIT 100";
 
