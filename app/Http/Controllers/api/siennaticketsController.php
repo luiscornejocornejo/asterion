@@ -622,6 +622,7 @@ class siennaticketsController extends Controller
 
         $ini=$request->inicio;
         $fin=$request->fin;
+        $empresa=$request->empresa;
          $zona=$this->zona();
        
         $query = "select *,a.conversation_id,a.user_id,a.descripciondelcierre, 
@@ -636,6 +637,7 @@ class siennaticketsController extends Controller
 
         left join  siennatopic d on d.id=a.siennatopic
         where a.siennaestado  in('4')  
+        and a.empresa='".$empresa."'
         and
         CONVERT_TZ(created_at, '+00:00', '".$zona.":00') >='".$ini." 00:00:00'
          and 

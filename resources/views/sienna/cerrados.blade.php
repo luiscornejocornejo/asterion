@@ -82,8 +82,9 @@
         var URLactual = window.location.href;
         var porciones = URLactual.split('.');
         let result = porciones[0].replace("https://", "");
+        var empresageneral = <?php echo session('empresa');?>;
 
-        url = "https://"+result+".suricata.cloud/api/cerrados?inicio=" + start + "&fin=" + endDate + "";
+        url = "https://"+result+".suricata.cloud/api/cerrados?inicio=" + start + "&fin=" + endDate + "&empresa="+empresageneral;
         console.log(url);
        
         axios.get(url)
