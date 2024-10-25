@@ -1752,7 +1752,7 @@ class TicketdatosController extends Controller
                 $cont++;
         }
         if($cont==0){
-            return view("sienna/ticketunicono");
+            return view("404");
         }
 
         $query50="select *, convertirTiempo(created_at) as created_at  from siennaseguimientos where ticket='".$tick."'  order by id desc";
