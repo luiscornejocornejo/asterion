@@ -1726,7 +1726,7 @@ class TicketdatosController extends Controller
 
         $tick=$request->tick;
         $empresa = session('empresa');
-       echo $query="select *,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
+        $query="select *,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
         b.nombre as depto,b.id as iddepto,g.nombre as nombreprioridad,g.colore as colorprioridad,
         a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado,a.email as asunto,a.nya emailnom,a.cliente emailcliente,
         cb.dato as datoCollector, 
@@ -1742,7 +1742,7 @@ class TicketdatosController extends Controller
         
 
         
-        where a.id='".$tick."' and e.empresa=".$empresa."";
+        where a.id='".$tick."' ";
 
         $resultados = DB::select($query);
         foreach($resultados as $valu){
