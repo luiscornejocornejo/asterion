@@ -594,9 +594,9 @@ class Dashboard2Controller extends Controller
         $getSource = $this->getSources();
         $getDepartment = $this->getDepartments();
         $getTicketsCreatedQty = $this->getTicketsCreatedQty($source, $department, $agent, $daterange);
-        $totalCsat = $this->getTotalCsat($source, $daterange);
-        $surverSended = $this->surveySended($source, $daterange);
-        $surveyPerChannel = $this->surveyPerChannel($source, $daterange);
+        $totalCsat = $this->getTotalCsat($source);
+        $surverSended = $this->surveySended($source);
+        $surveyPerChannel = $this->surveyPerChannel($source);
         $checkCsatViewExist = $this->checkIfViewExists();
 
         return view('sienna/dash', [
@@ -688,14 +688,14 @@ class Dashboard2Controller extends Controller
         return $viewExists;
     }
 
-    public function getTotalCsat($source, $periodo)
+    public function getTotalCsat($source)
     {
         $base = 25;
         $prueba = $this->conectar($base);
         $dom = $this->dominio();
         $checkViewCsat = $this->checkIfViewExists();
         if ($checkViewCsat) {
-            $subquery = $this->subqueryCsat($source, $periodo);
+            $subquery = $this->subqueryCsat($source);
             $queryTotalCsat = "SELECT ROUND(AVG(`csat_view`.`CEILING(csat)`), 2) AS `avg`
                 FROM
                 " . $dom . ".`csat_view`
@@ -709,7 +709,7 @@ class Dashboard2Controller extends Controller
         }
     }
 
-    public function surveySended($source, $periodo)
+    public function surveySended($source)
     {
         $base = 25;
         $prueba = $this->conectar($base);
@@ -717,7 +717,7 @@ class Dashboard2Controller extends Controller
         $checkViewCsat = $this->checkIfViewExists();
 
         if ($checkViewCsat) {
-            $subquery = $this->subqueryCsat($source, $periodo);
+            $subquery = $this->subqueryCsat($source);
             $querySurveySended = "SELECT COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`, `SiennaticketsViewTicket`.`siennadepto`,
             `SiennaticketsViewTicket`.`siennatopic`
             FROM
@@ -740,7 +740,7 @@ class Dashboard2Controller extends Controller
         }
     }
 
-    public function surveyPerChannel($source, $periodo)
+    public function surveyPerChannel($source)
     {
         $base = 25;
         $prueba = $this->conectar($base);
@@ -748,7 +748,7 @@ class Dashboard2Controller extends Controller
         $checkViewCsat = $this->checkIfViewExists();
 
         if ($checkViewCsat) {
-            $subquery = $this->subqueryCsat($source, $periodo);
+            $subquery = $this->subqueryCsat($source);
             $querySurveyPerChannel = "SELECT
             `Siennasource`.`nombre` AS `Siennasource__nombre`,
             COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`
@@ -779,9 +779,9 @@ class Dashboard2Controller extends Controller
         $source = "";
         $daterange = "";
 
-        $totalCsat = $this->getTotalCsat($source, $daterange);
-        $surverSended = $this->surveySended($source, $daterange);
-        $surveyPerChannel = $this->surveyPerChannel($source, $daterange);
+        $totalCsat = $this->getTotalCsat($source);
+        $surverSended = $this->surveySended($source);
+        $surveyPerChannel = $this->surveyPerChannel($source);
         $getSource = $this->getSources();
 
         return view('sienna/dashboard/csat', [
@@ -797,9 +797,9 @@ class Dashboard2Controller extends Controller
         $source = $request->channel;
         $daterange = $request->periodo;
 
-        $totalCsat = $this->getTotalCsat($source, $daterange);
-        $surverSended = $this->surveySended($source, $daterange);
-        $surveyPerChannel = $this->surveyPerChannel($source, $daterange);
+        $totalCsat = $this->getTotalCsat($source);
+        $surverSended = $this->surveySended($source);
+        $surveyPerChannel = $this->surveyPerChannel($source);
         $getSource = $this->getSources();
 
         return view('sienna/dashboard/csat', [
@@ -825,14 +825,14 @@ class Dashboard2Controller extends Controller
     }
 
 
-    public function subqueryCsat($source, $periodo)
+    public function subqueryCsat($source)
     {
         $subquery = " WHERE 1=1";
         if ($source <> null) {
             $source = implode(', ', $source);
             $subquery .= " and csat_view.siennasource in(" . $source . ")";
         }
-        if ($periodo !== null) {
+        /*if ($periodo !== null) {
 
         
            $daterange = null;
@@ -898,9 +898,9 @@ class Dashboard2Controller extends Controller
             }
             if (isset($daterange['start']) && isset($daterange['end'])) {
 
-           $subquery .= " AND csat_view.created_at > '".$daterange['start']." 00:00:00' AND csat_view.created_at < '".$daterange['end']." 23:59:59'";
+           $subquery .= " AND siennatickets_view.created_at > '".$daterange['start']." 00:00:00' AND siennatickets_view.created_at < '".$daterange['end']." 23:59:59'";
             }
-        }
+        }*/
 
         return $subquery;
     }
