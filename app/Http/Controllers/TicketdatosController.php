@@ -1745,9 +1745,14 @@ class TicketdatosController extends Controller
         where a.id='".$tick."' and a.empresa=".$empresa."";
 
         $resultados = DB::select($query);
+        $cont=0;
         foreach($resultados as $valu){
 
                 $siennasource=$valu->siennasource;
+                $cont++;
+        }
+        if($cont==0){
+            return view("sienna/ticketunicono");
         }
 
         $query50="select *, convertirTiempo(created_at) as created_at  from siennaseguimientos where ticket='".$tick."'  order by id desc";
