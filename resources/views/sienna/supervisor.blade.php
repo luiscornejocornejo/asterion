@@ -495,17 +495,18 @@ function obtenerFechaUTC() {
             var tipodemenu =<?php echo session('tipodemenu');?>;
            // var deptosuser =<?php echo session('deptosuser');?>;
 
-            var ctusersall = <?php echo session('ctusers');?>;
-            console.log(ctusersall);
+           var ctusersall = <?php echo session('ctusers');?>;
+           var empresageneral = <?php echo session('empresa');?>;
+           console.log(ctusersall);
            url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "";
 
                     if (tipodemenu==3) {
-                      url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "";
+                      url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&empresa="+empresageneral;
 
           
                       // el código se ejecuta
                     } else {
-                      url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "";
+                      url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&empresa="+empresageneral;
                     }
             console.log(url);
 

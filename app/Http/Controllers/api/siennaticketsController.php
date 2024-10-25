@@ -494,7 +494,7 @@ class siennaticketsController extends Controller
     public function maxidjuntos(Request $request)
     {
         $idusuario = $request->idusuario;
-        $empresa = session('empresa');
+        $empresa = $request->empresa;
         $query2="select * from users where id='".$idusuario."' and empresa=".$empresa;
         $resultados2 = DB::select($query2);
         foreach($resultados2 as $val2){

@@ -86,7 +86,6 @@
             let result = porciones[0].replace("https://", "");
             if(result=="conectared"){
                 urlprincipal2="https://suricata4.com.ar/api/broadcastconparametros?token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM&parametros="+parametros+"&valores="+valores+"&url="+url+"&tel2="+tel2;
-      
             }
             //
             console.log(urlprincipal2.trim());
