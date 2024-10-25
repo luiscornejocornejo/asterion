@@ -688,7 +688,6 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                                                     colors: colors,
                                                                     plotOptions: {
                                                                         bar: {
-                                                                            borderRadius: 10,
                                                                             dataLabels: {
                                                                                 position: 'top', // top, center, bottom
                                                                             },
