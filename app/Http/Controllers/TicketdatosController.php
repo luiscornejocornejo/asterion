@@ -1728,7 +1728,7 @@ class TicketdatosController extends Controller
         $tick=$request->tick;
         if(isset($request->logueado)){
 
-            $st = nodos::siennatickets($tick);
+            $st = siennatickets::find($tick);
             $logeado = session('idusuario');
 
             $st->asignado=$logeado;
