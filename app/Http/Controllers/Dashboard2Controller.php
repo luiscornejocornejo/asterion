@@ -726,7 +726,12 @@ class Dashboard2Controller extends Controller
             LEFT JOIN " . $dom . ".`siennadepto` AS `Siennadepto` ON `SiennaticketsViewTicket`.`siennadepto` = `Siennadepto`.`id`
             LEFT JOIN " . $dom . ".`siennatopic` AS `Siennatopic` ON `SiennaticketsViewTicket`.`siennatopic` = `Siennatopic`.`id`
             " . $subquery . "
-            GROUP BY `SiennaticketsViewTicket`.`Creado` LIMIT 100";
+            GROUP BY 
+            `SiennaticketsViewTicket`.`Creado`,
+            `Siennatopic`.`id`,
+            `Siennadepto`.`id`
+            
+            LIMIT 100";
 
             $resultSurveySended = DB::connection('mysql2')->select($querySurveySended);
             return $resultSurveySended;
