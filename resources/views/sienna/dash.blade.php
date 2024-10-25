@@ -1,7 +1,7 @@
 @include('facu.header')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script>
-    console.log(@json($pendingByTopic))
+    console.log(@json($surveySended))
 </script>
 <?php
 
@@ -1136,7 +1136,44 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                             @endforeach
                                         </select>
                                     </div>
+<div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
+                                            <label for="agent" class="form-label">Agente</label>
+                                            <select name="agent[]" id="agent" multiple="multiple"
+                                                class="form-select">
 
+                                                @foreach ($agents as $agent)
+                                                    <option value="{{ $agent->id }}">
+                                                        {{ $agent->nombre }} {{ $agent->last_name }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
+                                        <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
+                                            <label for="deparment" class="form-label">Departamento</label>
+                                            <select name="department[]" id="department" multiple="multiple"
+                                                class="form-select">
+
+                                                @foreach ($departments as $department)
+                                                    <option value="{{ $department->id }}">
+                                                        {{ $department->nombre }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
+                                            <label for="agent" class="form-label">Agente</label>
+                                            <select name="agent[]" id="agent" multiple="multiple"
+                                                class="form-select">
+
+                                                @foreach ($agents as $agent)
+                                                    <option value="{{ $agent->id }}">
+                                                        {{ $agent->nombre }} {{ $agent->last_name }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
 
                                     <div class="row my-1">
                                         <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
