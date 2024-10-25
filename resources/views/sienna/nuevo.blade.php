@@ -131,8 +131,19 @@
                                     <div class="form-check form-switch">
                                         <select class="form-select" aria-label="Default select example" name="<?php echo $Fieldarray[$i]; ?>">
                                             <?php
-                                            $querysoption = "select * from " . $Fieldarray[$i] . " ";
-                                            $resultadosoption = DB::select($querysoption);
+                                            $empresageneral=session('empresa');
+                                            //$querysoption = "select * from " . $Fieldarray[$i] . " ";
+                                            //$resultadosoption = DB::select($querysoption);
+
+                                            $query = DB::table($Fieldarray[$i]);
+                                            // Verificar si la columna 'empres' existe en la tabla 'deptos'
+                                            if (Schema::hasColumn($Fieldarray[$i], 'empresa')) {
+                                                // Si existe, agregar el filtro
+                                                $query->where('empresa', $empresageneral);
+                                            }
+
+                                            // Obtener los resultados
+                                            $resultadosoption = $query->get();
                                             foreach ($resultadosoption as $resultoption) {
 
                                                 $idoption = $resultoption->id;
