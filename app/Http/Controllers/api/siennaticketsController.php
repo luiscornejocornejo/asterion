@@ -534,7 +534,7 @@ class siennaticketsController extends Controller
                
         
                 where a.siennaestado not in('3','4')  
-                          and a.asignado='" . $idusuario . "' and e.empresa=".$empresa." 
+                          and a.asignado='" . $idusuario . "' and a.empresa=".$empresa." 
 
         
                  union 
@@ -553,7 +553,7 @@ class siennaticketsController extends Controller
         
                 where a.siennaestado not in('3','4')  
                  and
-         a.asignado='99999' and e.empresa=".$empresa."
+         a.asignado='99999' and a.empresa=".$empresa."
          and a.siennadepto in (" . $final . ") 
                  order by ticketid desc
                 ";
@@ -562,7 +562,7 @@ class siennaticketsController extends Controller
             }
             else{
 
-               echo $query = "select *,a.created_at as fn,d.sla,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
+                $query = "select *,a.created_at as fn,d.sla,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
                 b.nombre as depto,b.id as iddepto,d.nombre topicnombre,convertirTiempo(a.created_at) as creado,
                 a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado,f.nombre as pri ,f.id prid
                 from ".$merchant.".siennatickets a
@@ -573,7 +573,7 @@ class siennaticketsController extends Controller
                 left join  ".$merchant.".prioridad f on f.id=a.prioridad
         
                 where a.siennaestado not in('3','4')  
-                 and a.asignado='" . $idusuario . "' and e.empresa=".$empresa."
+                 and a.asignado='" . $idusuario . "' and a.empresa=".$empresa."
                  union 
         
                  select *,a.created_at as fn,d.sla,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
@@ -590,7 +590,7 @@ class siennaticketsController extends Controller
         
                 where a.siennaestado not in('3','4')  
                 and a.siennadepto in (" . $final . ")
-                and e.empresa=".$empresa."
+                and a.empresa=".$empresa."
                  order by ticketid desc
                 ";
 
