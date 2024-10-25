@@ -841,6 +841,12 @@ class siennaController extends Controller
         $clave = "@" . $nombredelcampo;
         $query2 = str_replace($clave, $valordelcampo, $query);
       }
+      if($nombredelcampo=="empresa"){
+
+        $valordelcampo = session('empresa');
+        $clave = "@" . $nombredelcampo;
+        $query2 = str_replace($clave, $valordelcampo, $query);
+      }
       return $query2;
     } else {
 
