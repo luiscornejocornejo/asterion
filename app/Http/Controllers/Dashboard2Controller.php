@@ -418,16 +418,16 @@ class Dashboard2Controller extends Controller
 
         $queryPendigByTopic = "SELECT
             `Siennatopic`.`nombre` AS `Siennatopic__nombre`,
-            COUNT(*) AS `count`
+            COUNT(*) AS `count`, `Siennaestado`.`nombre`
             FROM
             " . $dom . ".`siennatickets_view`
 
-            LEFT JOIN " . $dom . ".`siennaestado` AS `Siennaestado - Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennaestado - Siennadepto`.`id`
+            LEFT JOIN " . $dom . ".`siennaestado` AS `Siennaestado` ON `siennatickets_view`.`siennadepto` = `Siennaestado`.`id`
             LEFT JOIN " . $dom . ".`siennatopic` AS `Siennatopic` ON `siennatickets_view`.`siennatopic` = `Siennatopic`.`id`
               " . $subquery . " and
-            (`Siennaestado - Siennadepto`.`nombre` <> 'Cerrado')
+            (`Siennaestado`.`nombre` <> 'Cerrado')
 
-            OR (`Siennaestado - Siennadepto`.`nombre` IS NULL)
+            OR (`Siennaestado`.`nombre` IS NULL)
             GROUP BY
             `Siennatopic`.`nombre`
             ORDER BY
