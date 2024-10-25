@@ -432,7 +432,8 @@ class Dashboard2Controller extends Controller
         AND 
             (`Siennaestado`.`nombre` <> 'Cerrado' OR `Siennaestado`.`nombre` IS NULL)
         GROUP BY
-            `Siennatopic`.`nombre`
+            `Siennatopic`.`nombre`,
+            `Siennaestado`.`nombre`
         ORDER BY
             `count` DESC,
             `Siennatopic`.`nombre` ASC";
