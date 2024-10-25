@@ -594,9 +594,9 @@ class Dashboard2Controller extends Controller
         $getSource = $this->getSources();
         $getDepartment = $this->getDepartments();
         $getTicketsCreatedQty = $this->getTicketsCreatedQty($source, $department, $agent, $daterange);
-        $totalCsat = $this->getTotalCsat($source);
-        $surverSended = $this->surveySended($source);
-        $surveyPerChannel = $this->surveyPerChannel($source);
+        $totalCsat = $this->getTotalCsat($source, $daterange);
+        $surverSended = $this->surveySended($source, $daterange);
+        $surveyPerChannel = $this->surveyPerChannel($source, $daterange);
         $checkCsatViewExist = $this->checkIfViewExists();
 
         return view('sienna/dash', [
