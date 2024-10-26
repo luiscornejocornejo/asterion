@@ -790,25 +790,25 @@ class Dashboard2Controller extends Controller
             'surverPerChannel' => $surveyPerChannel,
             'sources' => $getSource
         ]);
-    }
+    }*/
 
     public function dashboardSurveyGeneric2(Request $request)
     {
         $source = $request->channel;
         $daterange = $request->periodo;
 
-        $totalCsat = $this->getTotalCsat($source);
-        $surverSended = $this->surveySended($source);
-        $surveyPerChannel = $this->surveyPerChannel($source);
+        $totalCsat = $this->getTotalCsat($source, $daterange);
+        $surverSended = $this->surveySended($source, $daterange);
+        $surveyPerChannel = $this->surveyPerChannel($source, $daterange);
         $getSource = $this->getSources();
 
-        return view('sienna/dashboard/csat', [
+        return view('sienna/dash', [
             'totalCsat' => $totalCsat,
             'surveySended' => $surverSended,
             'surverPerChannel' => $surveyPerChannel,
             'sources' => $getSource,
         ]);
-    }*/
+    }
     public function dominio()
     {
 
