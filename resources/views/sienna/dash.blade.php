@@ -1084,7 +1084,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                     </div>
                     @endif
                 </div>
-            </div>
+            
             @if ($csatViewExist)
                 <div class="tab-pane" id="csat">
                     <div class="content">
