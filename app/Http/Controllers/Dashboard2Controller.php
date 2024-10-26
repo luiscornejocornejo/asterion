@@ -913,7 +913,7 @@ class Dashboard2Controller extends Controller
             }
             if ($agent <> null) {
                 $agent = implode(', ', $agent);
-                $subquery .= " and csat_view.agent_id in(" . $agent . ")";
+                $subquery .= " and csat_view.agentAssigned in(" . $agent . ")";
             }
         }
 
