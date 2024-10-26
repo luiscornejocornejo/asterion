@@ -1187,7 +1187,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                                         }, $surveySended);
 
                                                         $labels = array_map(function ($item) {
-                                                            return $item->SiennaticketsViewTicket ?? 'Sin dato';
+                                                            return $item->siennadepto ?? 'Sin dato';
                                                         }, $surveySended);
 
                                                     @endphp
