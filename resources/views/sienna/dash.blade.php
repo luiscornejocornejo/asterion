@@ -1087,13 +1087,13 @@ if (isset($_SERVER['HTTP_HOST'])) {
                     <div class="tab-pane" id="csat">
                         <div class="content">
                             <div class="card">
-                                <form action="/surveys" method="POST">
+                                <form action="/dash" method="POST">
                                     @csrf
                                     <div class="row mx-1 my-1">
                                         <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
                                             <div class="mb-3">
                                                 <label class="form-label">Período</label>
-                                                <select name="periodo" id="periodoCSAT" class="form-select">
+                                                <select name="periodoCsat" id="periodoCSAT" class="form-select">
                                                     <option value="0">Hoy</option>
                                                     <option value="1">Ayer</option>
                                                     <option value="2">Ultmos 7 Dias</option>
@@ -1122,7 +1122,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                         </div>
                                         <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
                                             <label for="channelCsat" class="form-label">Canales</label>
-                                            <select name="channel[]" id="channelCsat" multiple="multiple"
+                                            <select name="channelCsat[]" id="channelCsat" multiple="multiple"
                                                 class="form-select">
                                                 @foreach ($sources as $source)
                                                     <option value="{{ $source->id }}">
@@ -1134,7 +1134,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                         <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
                                             <label for="deparment" class="form-label">Departamento</label>
-                                            <select name="department[]" id="department" multiple="multiple"
+                                            <select name="departmentCsat[]" id="department" multiple="multiple"
                                                 class="form-select">
 
                                                 @foreach ($departments as $department)
@@ -1147,7 +1147,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                         <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
                                             <label for="agent" class="form-label">Agente</label>
-                                            <select name="agent[]" id="agent" multiple="multiple"
+                                            <select name="agentCsat[]" id="agent" multiple="multiple"
                                                 class="form-select">
 
                                                 @foreach ($agents as $agent)
