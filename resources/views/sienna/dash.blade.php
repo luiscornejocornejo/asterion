@@ -1187,7 +1187,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                                         }, $surveySended);
 
                                                         $labels = array_map(function ($item) {
-                                                            return $item->siennadepto ?? 'Sin dato';
+                                                            return $item->Depto ?? 'Sin dato';
                                                         }, $surveySended);
 
                                                     @endphp
