@@ -837,7 +837,7 @@ class Dashboard2Controller extends Controller
         $subquery = " WHERE 1=1";
         if ($source <> null) {
             $source = implode(', ', $source);
-            $subquery .= " and csat_view.siennasource in(" . $source . ")";
+            $subquery .= " and csat_view.siennaSource_id in(" . $source . ")";
         }
         if ($periodo !== null) {
 
