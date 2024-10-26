@@ -1072,7 +1072,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 @else
                     <div class="container">
                         <div class="mt-2">
-                            <div class="card">
+                            <div class="bg-white">
                                 <div class="border rounded text-center" style="min-height: 250px!important;">
                                     <div class="my-5">
                                         <img src="assetsfacu/images/svg/file-searching.svg" height="90"
