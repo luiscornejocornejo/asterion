@@ -805,6 +805,9 @@ class Dashboard2Controller extends Controller
         $getSource = $this->getSources();
         $checkCsatViewExist = $this->checkIfViewExists();
         $ticketCreated = $this->getTicketsCreated($source, $department, $agent, $daterange);
+        $getAgent = $this->getAgents();
+        $getSource = $this->getSources();
+        $getDepartment = $this->getDepartments();
 
         return view('sienna/dash', [
             'tickets' => $ticketCreated,
@@ -812,7 +815,10 @@ class Dashboard2Controller extends Controller
             'surveySended' => $surverSended,
             'surverPerChannel' => $surveyPerChannel,
             'sources' => $getSource,
-            'csatViewExist' => $checkCsatViewExist
+            'csatViewExist' => $checkCsatViewExist,
+            'agents' => $getAgent,
+            'sources' => $getSource,
+            'departments' => $getDepartment
         ]);
     }
     public function dominio()
