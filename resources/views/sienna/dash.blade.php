@@ -1076,8 +1076,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                 <img src="assetsfacu/images/svg/file-searching.svg" height="90"
                                     alt="Without information">
                                 <h2 class="text-center">No hay información que mostrar.</h2>
-                                <a class="btn btn-primary text-white mt-2" href="/dash">Volver a
-                                    dashboard</a>
+                                <a class="btn btn-primary text-white mt-2" href="/dash">Volver a dashboard</a>
                             </div>
                         </div>
                     </div>
@@ -1090,9 +1089,8 @@ if (isset($_SERVER['HTTP_HOST'])) {
                             <div class="card">
                                 <form action="/surveys" method="POST">
                                     @csrf
-
                                     <div class="row mx-1 my-1">
-                                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-6">
+                                        <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
                                             <div class="mb-3">
                                                 <label class="form-label">Período</label>
                                                 <select name="periodo" id="periodoCSAT" class="form-select">
@@ -1104,8 +1102,6 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                                     <option value="5">Mes Anterior</option>
                                                     <option value="6">Rango</option>
                                                 </select>
-
-
                                             </div>
                                             <div id="rango-fechasCsat" style="display:none;">
                                                 <label for="start_date" class="form-label">Fecha de Inicio:</label>
@@ -1124,25 +1120,13 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                                 });
                                             </script>
                                         </div>
-                                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-6">
+                                        <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
                                             <label for="channelCsat" class="form-label">Canales</label>
                                             <select name="channel[]" id="channelCsat" multiple="multiple"
                                                 class="form-select">
                                                 @foreach ($sources as $source)
                                                     <option value="{{ $source->id }}">
                                                         {{ $source->nombre }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
-                                            <label for="agent" class="form-label">Agente</label>
-                                            <select name="agent[]" id="agent" multiple="multiple"
-                                                class="form-select">
-
-                                                @foreach ($agents as $agent)
-                                                    <option value="{{ $agent->id }}">
-                                                        {{ $agent->nombre }} {{ $agent->last_name }}
                                                     </option>
                                                 @endforeach
                                             </select>
