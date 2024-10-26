@@ -725,7 +725,7 @@ class Dashboard2Controller extends Controller
 
         if ($checkViewCsat) {
             $subquery = $this->subqueryCsat($source, $periodo, $department, $agent);
-            $querySurveySended = "SELECT COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`, `SiennaticketsViewTicket`.`siennadepto`,
+            $querySurveySended = "SELECT COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`, `Siennadepto`.`nombre` AS `Depto`,
             `Siennatopic`.`nombre`
             FROM
             " . $dom . ".`csat_view`
