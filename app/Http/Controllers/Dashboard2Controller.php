@@ -716,7 +716,7 @@ class Dashboard2Controller extends Controller
         }
     }
 
-    public function surveySended($source, $periodo)
+    public function surveySended($source, $periodo, $department, $agent)
     {
         $base = 25;
         $prueba = $this->conectar($base);
