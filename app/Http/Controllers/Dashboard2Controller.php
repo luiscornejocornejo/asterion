@@ -841,7 +841,7 @@ class Dashboard2Controller extends Controller
         }
         if ($department <> null) {
             $department = implode(', ', $department);
-            $subquery .= " and siennatickets_view.siennadepto in(" . $department . ")";
+            $subquery .= " and csat_view.siennaDepto_id in(" . $department . ")";
         }
         if ($periodo !== null) {
 
@@ -913,7 +913,7 @@ class Dashboard2Controller extends Controller
             }
             if ($agent <> null) {
                 $agent = implode(', ', $agent);
-                $subquery .= " and siennatickets_view.asignado in(" . $agent . ")";
+                $subquery .= " and csat_view.agent_id in(" . $agent . ")";
             }
         }
 
