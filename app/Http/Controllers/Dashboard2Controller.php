@@ -818,7 +818,8 @@ class Dashboard2Controller extends Controller
             'csatViewExist' => $checkCsatViewExist,
             'agents' => $getAgent,
             'sources' => $getSource,
-            'departments' => $getDepartment
+            'departments' => $getDepartment,
+            'filter' => [$source, $department, $agent, $daterange]
         ]);
     }
     public function dominio()
