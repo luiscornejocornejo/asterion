@@ -1087,7 +1087,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                     <div class="tab-pane" id="csat">
                         <div class="content">
                             <div class="card">
-                                <form action="/surveys" method="POST">
+                                <form action="/dash" method="POST">
                                     @csrf
                                     <div class="row mx-1 my-1">
                                         <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
