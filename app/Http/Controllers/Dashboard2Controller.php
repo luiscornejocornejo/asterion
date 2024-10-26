@@ -801,12 +801,14 @@ class Dashboard2Controller extends Controller
         $surverSended = $this->surveySended($source, $daterange);
         $surveyPerChannel = $this->surveyPerChannel($source, $daterange);
         $getSource = $this->getSources();
+        $checkCsatViewExist = $this->checkIfViewExists();
 
         return view('sienna/dash', [
             'totalCsat' => $totalCsat,
             'surveySended' => $surverSended,
             'surverPerChannel' => $surveyPerChannel,
             'sources' => $getSource,
+            'csatViewExist' => $checkCsatViewExist
         ]);
     }
     public function dominio()
