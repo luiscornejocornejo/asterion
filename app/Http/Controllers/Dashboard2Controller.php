@@ -594,9 +594,9 @@ class Dashboard2Controller extends Controller
         $getSource = $this->getSources();
         $getDepartment = $this->getDepartments();
         $getTicketsCreatedQty = $this->getTicketsCreatedQty($source, $department, $agent, $daterange);
-        $totalCsat = $this->getTotalCsat($source, $daterange);
-        $surverSended = $this->surveySended($source, $daterange);
-        $surveyPerChannel = $this->surveyPerChannel($source, $daterange);
+        $totalCsat = $this->getTotalCsat($source, $daterange, $department, $agent);
+        $surverSended = $this->surveySended($source, $daterange, $department, $agent);
+        $surveyPerChannel = $this->surveyPerChannel($source, $daterange, $department, $agent);
         $checkCsatViewExist = $this->checkIfViewExists();
 
         return view('sienna/dash', [
@@ -631,7 +631,7 @@ class Dashboard2Controller extends Controller
         $department = $request->department;
         $agent = $request->agent;
         $daterange = $request->periodo;
-        
+
         $sourceCsat = $request->channelCsat;
         $departmentCsat = $request->departmentCsat;
         $agentCsat = $request->agentCsat;
@@ -653,9 +653,9 @@ class Dashboard2Controller extends Controller
         $getSource = $this->getSources();
         $getDepartment = $this->getDepartments();
         $getTicketsCreatedQty = $this->getTicketsCreatedQty($source, $department, $agent, $daterange);
-        $totalCsat = $this->getTotalCsat($sourceCsat, $daterangeCsat);
-        $surverSended = $this->surveySended($sourceCsat, $daterangeCsat);
-        $surveyPerChannel = $this->surveyPerChannel($sourceCsat, $daterangeCsat);
+        $totalCsat = $this->getTotalCsat($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
+        $surverSended = $this->surveySended($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
+        $surveyPerChannel = $this->surveyPerChannel($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
         $checkCsatViewExist = $this->checkIfViewExists();
 
         return view('sienna/dash', [
@@ -695,14 +695,14 @@ class Dashboard2Controller extends Controller
         return $viewExists;
     }
 
-    public function getTotalCsat($source, $periodo)
+    public function getTotalCsat($source, $periodo, $department, $agent)
     {
         $base = 25;
         $prueba = $this->conectar($base);
         $dom = $this->dominio();
         $checkViewCsat = $this->checkIfViewExists();
         if ($checkViewCsat) {
-            $subquery = $this->subqueryCsat($source, $periodo);
+            $subquery = $this->subqueryCsat($source, $periodo, $department, $agent);
             $queryTotalCsat = "SELECT ROUND(AVG(`csat_view`.`CEILING(csat)`), 2) AS `avg`
                 FROM
                 " . $dom . ".`csat_view`
@@ -724,7 +724,7 @@ class Dashboard2Controller extends Controller
         $checkViewCsat = $this->checkIfViewExists();
 
         if ($checkViewCsat) {
-            $subquery = $this->subqueryCsat($source, $periodo);
+            $subquery = $this->subqueryCsat($source, $periodo, $department, $agent);
             $querySurveySended = "SELECT COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`, `SiennaticketsViewTicket`.`siennadepto`,
             `SiennaticketsViewTicket`.`siennatopic`
             FROM
@@ -747,7 +747,7 @@ class Dashboard2Controller extends Controller
         }
     }
 
-    public function surveyPerChannel($source, $periodo)
+    public function surveyPerChannel($source, $periodo, $department, $agent)
     {
         $base = 25;
         $prueba = $this->conectar($base);
@@ -755,7 +755,7 @@ class Dashboard2Controller extends Controller
         $checkViewCsat = $this->checkIfViewExists();
 
         if ($checkViewCsat) {
-            $subquery = $this->subqueryCsat($source, $periodo);
+            $subquery = $this->subqueryCsat($source, $periodo, $department, $agent);
             $querySurveyPerChannel = "SELECT
             `Siennasource`.`nombre` AS `Siennasource__nombre`,
             COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`
@@ -832,60 +832,64 @@ class Dashboard2Controller extends Controller
     }
 
 
-    public function subqueryCsat($source, $periodo)
+    public function subqueryCsat($source, $periodo, $department, $agent)
     {
         $subquery = " WHERE 1=1";
         if ($source <> null) {
             $source = implode(', ', $source);
             $subquery .= " and csat_view.siennaSource_id in(" . $source . ")";
         }
+        if ($department <> null) {
+            $department = implode(', ', $department);
+            $subquery .= " and siennatickets_view.siennadepto in(" . $department . ")";
+        }
         if ($periodo !== null) {
 
-        
-           $daterange = null;
-           switch ($periodo) {
-            case '0':  // Hoy
-                $daterange = [
-                    'start' => Carbon::today()->toDateString(),
-                    'end' => Carbon::today()->toDateString()
-                ];
-                break;
-        
+
+            $daterange = null;
+            switch ($periodo) {
+                case '0':  // Hoy
+                    $daterange = [
+                        'start' => Carbon::today()->toDateString(),
+                        'end' => Carbon::today()->toDateString()
+                    ];
+                    break;
+
                 case '1':  // Ayer
                     $daterange = [
                         'start' => Carbon::yesterday()->toDateString(),
                         'end' => Carbon::yesterday()->toDateString()
                     ];
                     break;
-            
+
                 case '2':  // Últimos 7 días
                     $daterange = [
                         'start' => Carbon::today()->subDays(7)->toDateString(),
                         'end' => Carbon::today()->toDateString()
                     ];
                     break;
-            
+
                 case '3':  // Últimos 30 días
                     $daterange = [
                         'start' => Carbon::today()->subDays(30)->toDateString(),
                         'end' => Carbon::today()->toDateString()
                     ];
                     break;
-            
+
                 case '4':  // Mes actual
                     $daterange = [
                         'start' => Carbon::now()->startOfMonth()->toDateString(),
                         'end' => Carbon::now()->toDateString()
                     ];
                     break;
-            
+
                 case '5':  // Mes anterior
                     $daterange = [
                         'start' => Carbon::now()->subMonth()->startOfMonth()->toDateString(),
                         'end' => Carbon::now()->subMonth()->endOfMonth()->toDateString()
                     ];
                     break;
-            
+
                 case '6':  // Rango personalizado
                     // En este caso, deberías capturar las fechas de inicio y fin de un formulario adicional
                     // Aquí se debe manejar las entradas del usuario
@@ -894,7 +898,7 @@ class Dashboard2Controller extends Controller
                         'end' => $_POST['end_date']  // Capturar el valor del input de fin
                     ];
                     break;
-            
+
                 default:
                     // No hacer nada si no hay selección válida
                     $daterange = [
@@ -905,7 +909,11 @@ class Dashboard2Controller extends Controller
             }
             if (isset($daterange['start']) && isset($daterange['end'])) {
 
-           $subquery .= " AND csat_view.created_at > '".$daterange['start']." 00:00:00' AND csat_view.created_at < '".$daterange['end']." 23:59:59'";
+                $subquery .= " AND csat_view.created_at > '" . $daterange['start'] . " 00:00:00' AND csat_view.created_at < '" . $daterange['end'] . " 23:59:59'";
+            }
+            if ($agent <> null) {
+                $agent = implode(', ', $agent);
+                $subquery .= " and siennatickets_view.asignado in(" . $agent . ")";
             }
         }
 
