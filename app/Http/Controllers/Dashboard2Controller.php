@@ -731,7 +731,7 @@ class Dashboard2Controller extends Controller
             `SiennaticketsViewTicket`.`Creado`,
             `SiennaticketsViewTicket`.`siennadepto`,
             `SiennaticketsViewTicket`.`siennatopic`,
-            `SiennaticketsViewTicket`.`agentAssigned`
+            ". $dom . ".`csat_view`.`agentAssigned`
 
             LIMIT 100";
 
