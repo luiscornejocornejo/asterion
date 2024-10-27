@@ -123,7 +123,7 @@
                                                 @endforeach
                                             @else
                                                 <span class="badge bg-secondary rounded-pill"
-                                                    style="font-size: 14px">{{ $agentSelected[0]->Agent_Name }}</span>
+                                                    style="font-size: 14px">{{ $surveySended[0]->Agent_Name }}</span>
                                             @endif
                                         @endif
 
