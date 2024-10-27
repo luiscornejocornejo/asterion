@@ -632,13 +632,6 @@ class Dashboard2Controller extends Controller
         $agent = $request->agent;
         $daterange = $request->periodo;
 
-        $sourceCsat = $request->channelCsat;
-        $departmentCsat = $request->departmentCsat;
-        $agentCsat = $request->agentCsat;
-        $daterangeCsat = $request->periodoCsat;
-
-
-
         $ticketCreated = $this->getTicketsCreated($source, $department, $agent, $daterange);
         $ticketByStatus = $this->getTicketsByStatus($source, $department, $agent, $daterange);
         $ticketPerAgent = $this->getTicketPerAgent($source, $department, $agent, $daterange);
@@ -653,9 +646,9 @@ class Dashboard2Controller extends Controller
         $getSource = $this->getSources();
         $getDepartment = $this->getDepartments();
         $getTicketsCreatedQty = $this->getTicketsCreatedQty($source, $department, $agent, $daterange);
-        $totalCsat = $this->getTotalCsat($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
-        $surverSended = $this->surveySended($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
-        $surveyPerChannel = $this->surveyPerChannel($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
+        //$totalCsat = $this->getTotalCsat($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
+        //$surverSended = $this->surveySended($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
+        //$surveyPerChannel = $this->surveyPerChannel($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
         $checkCsatViewExist = $this->checkIfViewExists();
 
         return view('sienna/dash', [
@@ -674,9 +667,9 @@ class Dashboard2Controller extends Controller
             'departments' => $getDepartment,
             'filter' => [$source, $department, $agent, $daterange],
             'qtyTickets' => $getTicketsCreatedQty,
-            'totalCsat' => $totalCsat,
-            'surveySended' => $surverSended,
-            'surverPerChannel' => $surveyPerChannel,
+            //'totalCsat' => $totalCsat,
+            //'surveySended' => $surverSended,
+            //'surverPerChannel' => $surveyPerChannel,
             'csatViewExist' => $checkCsatViewExist
 
         ]);
@@ -781,41 +774,55 @@ class Dashboard2Controller extends Controller
         }
     }
 
-    /*public function dashboardSurveyGeneric()
+    public function dashboardSurveyGeneric()
     {
-        $source = "";
-        $daterange = "";
+        $sourceCsat = "";
+        $daterangeCsat = "";
+        $departmentCsat ="";
+        $agentCsat = "";
 
-        $totalCsat = $this->getTotalCsat($source);
-        $surverSended = $this->surveySended($source);
-        $surveyPerChannel = $this->surveyPerChannel($source);
+        $getAgent = $this->getAgents();
         $getSource = $this->getSources();
-
+        $getDepartment = $this->getDepartments();
+        $totalCsat = $this->getTotalCsat($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
+        $surverSended = $this->surveySended($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
+        $surveyPerChannel = $this->surveyPerChannel($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
+        
         return view('sienna/dashboard/csat', [
             'totalCsat' => $totalCsat,
             'surveySended' => $surverSended,
             'surverPerChannel' => $surveyPerChannel,
-            'sources' => $getSource
+            'agents' => $getAgent,
+            'sources' => $getSource,
+            'departments' => $getDepartment
         ]);
     }
 
     public function dashboardSurveyGeneric2(Request $request)
     {
-        $source = $request->channel;
-        $daterange = $request->periodo;
+        $sourceCsat = $request->channelCsat;
+        $departmentCsat = $request->departmentCsat;
+        $agentCsat = $request->agentCsat;
+        $daterangeCsat = $request->periodoCsat;
 
-        $totalCsat = $this->getTotalCsat($source);
-        $surverSended = $this->surveySended($source);
-        $surveyPerChannel = $this->surveyPerChannel($source);
+        $getAgent = $this->getAgents();
         $getSource = $this->getSources();
-
+        $getDepartment = $this->getDepartments();
+        $totalCsat = $this->getTotalCsat($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
+        $surverSended = $this->surveySended($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
+        $surveyPerChannel = $this->surveyPerChannel($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
+        
         return view('sienna/dashboard/csat', [
             'totalCsat' => $totalCsat,
             'surveySended' => $surverSended,
             'surverPerChannel' => $surveyPerChannel,
             'sources' => $getSource,
+            'agents' => $getAgent,
+            'sources' => $getSource,
+            'departments' => $getDepartment
         ]);
-    }*/
+    }
+
     public function dominio()
     {
 

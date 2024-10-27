@@ -24,14 +24,13 @@
             <div class="content">
                 <div class="container py-4">
                     <div class="card">
-                        <form action="/surveys" method="POST">
+                        <form action="/dash" method="POST">
                             @csrf
-
                             <div class="row mx-1 my-1">
-                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-6">
+                                <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
                                     <div class="mb-3">
                                         <label class="form-label">Período</label>
-                                        <select name="periodo" id="periodo" class="form-select">
+                                        <select name="periodoCsat" id="periodoCSAT" class="form-select">
                                             <option value="0">Hoy</option>
                                             <option value="1">Ayer</option>
                                             <option value="2">Ultmos 7 Dias</option>
@@ -40,28 +39,28 @@
                                             <option value="5">Mes Anterior</option>
                                             <option value="6">Rango</option>
                                         </select>
-
-
                                     </div>
-                                    <div id="rango-fechas" style="display:none;">
+                                    <div id="rango-fechasCsat" style="display:none;">
                                         <label for="start_date" class="form-label">Fecha de Inicio:</label>
                                         <input type="date" name="start_date" id="start_date"
                                             class="form-control mb-2">
 
                                         <label for="end_date" class="form-label">Fecha de Fin:</label>
-                                        <input type="date" name="end_date" id="end_date" class="form-control">
+                                        <input type="date" name="end_date" id="end_date"
+                                            class="form-control">
                                     </div>
                                     <script>
                                         // Mostrar los campos de fecha si el usuario selecciona "Rango"
-                                        document.getElementById('periodo').addEventListener('change', function() {
+                                        document.getElementById('periodoCSAT').addEventListener('change', function() {
                                             var display = this.value === '6' ? 'block' : 'none';
-                                            document.getElementById('rango-fechas').style.display = display;
+                                            document.getElementById('rango-fechasCsat').style.display = display;
                                         });
                                     </script>
                                 </div>
-                                <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-6">
-                                    <label for="channel" class="form-label">Canales</label>
-                                    <select name="channel[]" id="channel" multiple="multiple" class="form-select">
+                                <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
+                                    <label for="channelCsat" class="form-label">Canales</label>
+                                    <select name="channelCsat[]" id="channelCsat" multiple="multiple"
+                                        class="form-select">
                                         @foreach ($sources as $source)
                                             <option value="{{ $source->id }}">
                                                 {{ $source->nombre }}
@@ -69,14 +68,42 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                
-                                
-                                <div class="row mx-1 my-1">
-                                    <div class="col-xxl-2 col-xl-2 col-lg-4 col-sm-12 mt-2">
-                                        <input type="submit" class="btn btn-primary" value="Buscar">
+
+                                <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
+                                    <label for="deparment" class="form-label">Departamento</label>
+                                    <select name="departmentCsat[]" id="department" multiple="multiple"
+                                        class="form-select">
+
+                                        @foreach ($departments as $department)
+                                            <option value="{{ $department->id }}">
+                                                {{ $department->nombre }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
+                                    <label for="agent" class="form-label">Agente</label>
+                                    <select name="agentCsat[]" id="agent" multiple="multiple"
+                                        class="form-select">
+
+                                        @foreach ($agents as $agent)
+                                            <option value="{{ $agent->id }}">
+                                                {{ $agent->nombre }} {{ $agent->last_name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="row my-1">
+                                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
+                                        <input type="submit" class="btn btn-primary rounded-pill"
+                                            value="Buscar">
+                                        <button type="button" onclick="sendFormWithAxios()"
+                                            class="btn btn-success rounded-pill">Generar reporte</button>
                                     </div>
                                 </div>
-                                <div class="row mx-1 my-1">
+                                <div class="row my-1">
                                     <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
                                         <div class="border rounded position-relative text-center"
                                             style="min-height: 421.61px;!important;">
@@ -87,7 +114,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-12 mt-2">
                                         <div class="border rounded">
                                             <p class="m-1">Encuestas realizadas</p>
@@ -97,11 +124,11 @@
                                                 }, $surveySended);
 
                                                 $labels = array_map(function ($item) {
-                                                    return $item->SiennaticketsViewTicket ?? 'Sin dato';
+                                                    return $item->Depto ?? 'Sin dato';
                                                 }, $surveySended);
 
                                             @endphp
-                                            <div id="chart"></div>
+                                            <div id="chartCsat"></div>
 
 
 
@@ -141,7 +168,7 @@
                                                         },
                                                         labels: @json($labels),
                                                         legend: {
-                                                            position: 'bottom', 
+                                                            position: 'bottom',
                                                             horizontalAlign: 'center',
                                                             formatter: function(label, opts) {
                                                                 if (label.length > 10) {
@@ -186,7 +213,7 @@
                                                         }]
                                                     };
 
-                                                    var chart = new ApexCharts(document.querySelector("#chart"), options);
+                                                    var chart = new ApexCharts(document.querySelector("#chartCsat"), options);
                                                     chart.render();
 
                                                 });
@@ -198,20 +225,20 @@
                                         <div class="border rounded">
                                             <p class="m-1">Encuestas por canal</p>
                                             @php
-                                                $seriesPerChannel = array_map(function ($item) {
+                                                $seriesPerChannelCsat = array_map(function ($item) {
                                                     return $item->count;
                                                 }, $surverPerChannel);
 
-                                                $labelsperChannel = array_map(function ($item) {
+                                                $labelsperChannelCsat = array_map(function ($item) {
                                                     return $item->Siennasource__nombre ?? 'Desconocido';
                                                 }, $surverPerChannel);
 
                                             @endphp
-                                            <div id="chartPerChannel"></div>
+                                            <div id="chartPerChannelCsat"></div>
                                             <script>
                                                 document.addEventListener('DOMContentLoaded', function() {
                                                     var options = {
-                                                        series: @json($seriesPerChannel),
+                                                        series: @json($seriesPerChannelCsat),
                                                         chart: {
                                                             width: '100%',
                                                             height: 380,
@@ -242,9 +269,9 @@
                                                                 }
                                                             }
                                                         },
-                                                        labels: @json($labelsperChannel),
+                                                        labels: @json($labelsperChannelCsat),
                                                         legend: {
-                                                            position: 'bottom', 
+                                                            position: 'bottom',
                                                             horizontalAlign: 'center',
                                                             formatter: function(label, opts) {
                                                                 if (label.length > 10) {
@@ -289,7 +316,7 @@
                                                         }]
                                                     };
 
-                                                    var chart = new ApexCharts(document.querySelector("#chartPerChannel"), options);
+                                                    var chart = new ApexCharts(document.querySelector("#chartPerChannelCsat"), options);
                                                     chart.render();
 
                                                 });
