@@ -115,7 +115,17 @@
 
                                     <div class="mt-2">
                                         <!-- Aca van los filtros -->
-                                       
+                                        @if ($filter[2])
+                                            @if (count($surveySended) > 1)
+                                                @foreach ($surveySended as $agentSelected)
+                                                    <span class="badge bg-secondary rounded-pill"
+                                                        style="font-size: 14px">{{ $agentSelected->Agent_name }}</span>
+                                                @endforeach
+                                            @else
+                                                <span class="badge bg-secondary rounded-pill"
+                                                    style="font-size: 14px">{{ $agentSelected[0]->Agent_name }}</span>
+                                            @endif
+                                        @endif
 
                                         @if ($filter[1])
                                             @if (count($surveySended) > 1)
