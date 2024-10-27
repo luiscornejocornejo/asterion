@@ -719,12 +719,13 @@ class Dashboard2Controller extends Controller
         if ($checkViewCsat) {
             $subquery = $this->subqueryCsat($source, $periodo, $department, $agent);
             $querySurveySended = "SELECT COUNT(*) AS `count`, `SiennaticketsViewTicket`.`Creado`, `Siennadepto`.`nombre` AS `Depto`,
-            `Siennatopic`.`nombre`
+            `Siennatopic`.`nombre`, `Agent`.`nombre`
             FROM
             " . $dom . ".`csat_view`
             LEFT JOIN " . $dom . ".`siennatickets_view` AS `SiennaticketsViewTicket` ON " . $dom . ".`csat_view`.`ticket` = `SiennaticketsViewTicket`.`id`
             LEFT JOIN " . $dom . ".`siennadepto` AS `Siennadepto` ON `SiennaticketsViewTicket`.`siennadepto` = `Siennadepto`.`id`
             LEFT JOIN " . $dom . ".`siennatopic` AS `Siennatopic` ON `SiennaticketsViewTicket`.`siennatopic` = `Siennatopic`.`id`
+            LEFT JOIN " . $dom . ".`users` AS `Agent` ON `SiennaticketsViewTicket`.`agentAssigned` = `Agent`.`id`
             " . $subquery . "
             GROUP BY 
             `SiennaticketsViewTicket`.`Creado`,
