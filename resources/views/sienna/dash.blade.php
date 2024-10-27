@@ -40,14 +40,6 @@ if (isset($_SERVER['HTTP_HOST'])) {
                             <span class="d-none d-md-block">Dashboard</span>
                         </a>
                     </li>
-                    @if ($csatViewExist)
-                        <li class="nav-item">
-                            <a href="#csat" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
-                                <i class="mdi mdi-account-circle d-md-none d-block"></i>
-                                <span class="d-none d-md-block">CSAT</span>
-                            </a>
-                        </li>
-                    @endif
                     <li class="nav-item">
                         <a href="#logged" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
                             <i class="mdi mdi-settings-outline d-md-none d-block"></i>
@@ -1078,8 +1070,9 @@ if (isset($_SERVER['HTTP_HOST'])) {
                             </div>
                         </div>
                     </div>
-                    @endif
+                @endif
                 </div>
+            </div>
             </div>
                 <div class="tab-pane" id="logged">
                     <p>...</p>
