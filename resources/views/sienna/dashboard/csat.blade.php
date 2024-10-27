@@ -137,7 +137,7 @@
                                                 @endforeach
                                             @else
                                                 <span class="badge bg-success rounded-pill"
-                                                    style="font-size: 14px">{{ $perChannel[0]->{'Siennasource__nombre'} }}</span>
+                                                    style="font-size: 14px">{{ $surverPerChannel[0]->{'Siennasource__nombre'} }}</span>
                                             @endif
                                         @endif
 
