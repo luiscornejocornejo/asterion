@@ -119,11 +119,11 @@
                                             @if (count($surveySended) > 1)
                                                 @foreach ($surveySended as $agentSelected)
                                                     <span class="badge bg-secondary rounded-pill"
-                                                        style="font-size: 14px">{{ $agentSelected->Agent_name }}</span>
+                                                        style="font-size: 14px">{{ $agentSelected->Agent_Name }}</span>
                                                 @endforeach
                                             @else
                                                 <span class="badge bg-secondary rounded-pill"
-                                                    style="font-size: 14px">{{ $agentSelected[0]->Agent_name }}</span>
+                                                    style="font-size: 14px">{{ $agentSelected[0]->Agent_Name }}</span>
                                             @endif
                                         @endif
 
