@@ -730,7 +730,8 @@ class Dashboard2Controller extends Controller
             GROUP BY 
             `SiennaticketsViewTicket`.`Creado`,
             `SiennaticketsViewTicket`.`siennadepto`,
-            `SiennaticketsViewTicket`.`siennatopic`
+            `SiennaticketsViewTicket`.`siennatopic`,
+            `SiennaticketsViewTicket`.`agentAssigned`
 
             LIMIT 100";
 
