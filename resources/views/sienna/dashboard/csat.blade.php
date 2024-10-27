@@ -1,7 +1,8 @@
 @include('facu.header')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script>
-    console.log("Encuestas realizadas:", @json($filter))
+    console.log("Filtros:", @json($filter))
+    console.log("Encuestas realizadas:", @json($surveySended))
 </script>
 
 <div class="wrapper menuitem-active">
@@ -124,7 +125,7 @@
                                                 @endforeach
                                             @else
                                                 <span class="badge bg-info rounded-pill"
-                                                    style="font-size: 14px">{{ $byDepartment[0]->Depto }}</span>
+                                                    style="font-size: 14px">{{ $surveySended[0]->Depto }}</span>
                                             @endif
                                         @endif
 
