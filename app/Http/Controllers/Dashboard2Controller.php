@@ -794,7 +794,8 @@ class Dashboard2Controller extends Controller
             'surverPerChannel' => $surveyPerChannel,
             'agents' => $getAgent,
             'sources' => $getSource,
-            'departments' => $getDepartment
+            'departments' => $getDepartment,
+            'filter' => [$sourceCsat, $departmentCsat, $agentCsat, $daterangeCsat]
         ]);
     }
 
@@ -819,7 +820,8 @@ class Dashboard2Controller extends Controller
             'sources' => $getSource,
             'agents' => $getAgent,
             'sources' => $getSource,
-            'departments' => $getDepartment
+            'departments' => $getDepartment,
+            'filter' => [$sourceCsat, $departmentCsat, $agentCsat, $daterangeCsat]
         ]);
     }
 

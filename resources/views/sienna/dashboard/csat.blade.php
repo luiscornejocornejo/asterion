@@ -111,6 +111,47 @@
                                                 class="btn btn-success rounded-pill">Generar reporte</button>
                                         </div>
                                     </div>
+
+                                    <div class="mt-2">
+                                        <!-- Aca van los filtros -->
+                                        @if ($filter[2])
+                                            @if (count($perAgent) > 1)
+                                                @foreach ($perAgent as $agentSelected)
+                                                    <span class="badge bg-secondary rounded-pill"
+                                                        style="font-size: 14px">{{ $agentSelected->{'Users - Asignado__nombre'} }}</span>
+                                                @endforeach
+                                            @else
+                                                <span class="badge bg-secondary rounded-pill"
+                                                    style="font-size: 14px">{{ $perAgent[0]->{'Users - Asignado__nombre'} }}</span>
+                                            @endif
+                                        @endif
+
+                                        @if ($filter[1])
+                                            @if (count($byDepartment) > 1)
+                                                @foreach ($byDepartment as $departmentSelected)
+                                                    <span class="badge bg-info rounded-pill"
+                                                        style="font-size: 14px">{{ $departmentSelected->{'Siennadepto__nombre'} }}</span>
+                                                @endforeach
+                                            @else
+                                                <span class="badge bg-info rounded-pill"
+                                                    style="font-size: 14px">{{ $byDepartment[0]->{'Siennadepto__nombre'} }}</span>
+                                            @endif
+                                        @endif
+
+                                        @if ($filter[0])
+                                            @if (count($perChannel) > 1)
+                                                @foreach ($perChannel as $channelSelected)
+                                                    <span class="badge bg-success rounded-pill"
+                                                        style="font-size: 14px">{{ $channelSelected->{'Siennasource__nombre'} }}</span>
+                                                @endforeach
+                                            @else
+                                                <span class="badge bg-success rounded-pill"
+                                                    style="font-size: 14px">{{ $perChannel[0]->{'Siennasource__nombre'} }}</span>
+                                            @endif
+                                        @endif
+
+                                    </div>
+
                                     <div class="row my-1">
                                         <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
                                             <div class="border rounded position-relative text-center"
