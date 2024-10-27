@@ -1,8 +1,6 @@
 @include('facu.header')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-<script>
-    console.log(@json($surveySended))
-</script>
+
 <?php
 
 $subdomain_tmp = 'localhost';
@@ -1083,13 +1081,6 @@ if (isset($_SERVER['HTTP_HOST'])) {
                     @endif
                 </div>
             </div>
-                @if ($csatViewExist)
-                    <div class="tab-pane" id="csat">
-                        <div class="content">
-                            
-                        </div>
-                    </div>
-                @endif
                 <div class="tab-pane" id="logged">
                     <p>...</p>
                 </div>

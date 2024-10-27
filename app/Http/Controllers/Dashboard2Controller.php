@@ -766,7 +766,7 @@ class Dashboard2Controller extends Controller
             ORDER BY
             `count` DESC,
             `Siennasource`.`nombre` ASC LIMIT 100";
-
+            echo $querySurveyPerChannel;
             $resultSurverPerChannel = DB::connection('mysql2')->select($querySurveyPerChannel);
             return $resultSurverPerChannel;
         } else {
