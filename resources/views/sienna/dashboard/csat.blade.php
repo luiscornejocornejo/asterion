@@ -114,33 +114,23 @@
 
                                     <div class="mt-2">
                                         <!-- Aca van los filtros -->
-                                        @if ($filter[2])
-                                            @if (count($perAgent) > 1)
-                                                @foreach ($perAgent as $agentSelected)
-                                                    <span class="badge bg-secondary rounded-pill"
-                                                        style="font-size: 14px">{{ $agentSelected->{'Users - Asignado__nombre'} }}</span>
-                                                @endforeach
-                                            @else
-                                                <span class="badge bg-secondary rounded-pill"
-                                                    style="font-size: 14px">{{ $perAgent[0]->{'Users - Asignado__nombre'} }}</span>
-                                            @endif
-                                        @endif
+                                       
 
                                         @if ($filter[1])
-                                            @if (count($byDepartment) > 1)
-                                                @foreach ($byDepartment as $departmentSelected)
+                                            @if (count($surveySended) > 1)
+                                                @foreach ($surveySended as $departmentSelected)
                                                     <span class="badge bg-info rounded-pill"
-                                                        style="font-size: 14px">{{ $departmentSelected->{'Siennadepto__nombre'} }}</span>
+                                                        style="font-size: 14px">{{ $departmentSelected->Depto }}</span>
                                                 @endforeach
                                             @else
                                                 <span class="badge bg-info rounded-pill"
-                                                    style="font-size: 14px">{{ $byDepartment[0]->{'Siennadepto__nombre'} }}</span>
+                                                    style="font-size: 14px">{{ $byDepartment[0]->Depto }}</span>
                                             @endif
                                         @endif
 
                                         @if ($filter[0])
-                                            @if (count($perChannel) > 1)
-                                                @foreach ($perChannel as $channelSelected)
+                                            @if (count($surverPerChannel) > 1)
+                                                @foreach ($surverPerChannel as $channelSelected)
                                                     <span class="badge bg-success rounded-pill"
                                                         style="font-size: 14px">{{ $channelSelected->{'Siennasource__nombre'} }}</span>
                                                 @endforeach
