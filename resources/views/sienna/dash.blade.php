@@ -3,11 +3,11 @@
 
 <script>
     console.log(@json($perAgent))
-    console.log(@json($filter[2]) 
-    console.log(@json($byDepartment[1]) 
-    console.log(@json($filter[1]) 
-    console.log(@json($perChannel) 
-    console.log(@json($filter[0]) 
+    console.log(@json($filter[2]) )
+    console.log(@json($byDepartment[1]) )
+    console.log(@json($filter[1]) )
+    console.log(@json($perChannel) )
+    console.log(@json($filter[0]) )
 
 </script>
 <?php echo "Juanito" . session('empresa');?>
