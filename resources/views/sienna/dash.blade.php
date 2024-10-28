@@ -1,6 +1,7 @@
 @include('facu.header')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
+
 <?php
 
 $subdomain_tmp = 'localhost';
@@ -1090,7 +1091,6 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                                     </div>
                                                 </div>
                                             </div>
-                                            </div>
                                         @endif
                             </form>
                         </div>
@@ -1113,8 +1113,8 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 </table>
             </div>
         </div>
-        </div>
-    </div>
+        
+    
 </div>
 </div>
 
