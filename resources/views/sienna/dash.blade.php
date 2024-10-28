@@ -1095,26 +1095,28 @@ if (isset($_SERVER['HTTP_HOST'])) {
                         </div>
                     </div>
                     <div class="tab-pane" id="logged">
-                        <div id="logeados">
-                            <table id="agentesTable"
-                                class="table table-striped dt-responsive nowrap w-100 text-light">
-                                <thead class="bg-dark">
-                                    <tr>
-                                        <th class="text-light">Usuario</th>
-                                        <th class="text-light">Área</th>
-                                        <th class="text-light">Tipo</th>
-                                        <th class="text-light">Inicio</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
+                        <div class="card">
+                            <div id="logeados">
+                                <table id="agentesTable"
+                                    class="table table-striped dt-responsive nowrap w-100 text-light">
+                                    <thead class="bg-dark">
+                                        <tr>
+                                            <th class="text-light">Usuario</th>
+                                            <th class="text-light">Área</th>
+                                            <th class="text-light">Tipo</th>
+                                            <th class="text-light">Inicio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+</div>
 
 @include('facu.footer')
 
