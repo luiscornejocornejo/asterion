@@ -156,9 +156,21 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                         @if (!empty($filter[0]))
                                             @if (count($surverPerChannel) > 1)
+                                                @php
+                                                    $shownChannels = [];
+                                                @endphp
+
                                                 @foreach ($surverPerChannel as $channelSelected)
-                                                    <span class="badge bg-success rounded-pill"
-                                                        style="font-size: 14px">{{ $channelSelected->{'Siennasource__nombre'} }}</span>
+                                                    @if (!in_array($channelSelected->{'Siennasource__nombre'}, $shownChannels))
+                                                        <span class="badge bg-success rounded-pill"
+                                                            style="font-size: 14px">
+                                                            {{ $channelSelected->{'Siennasource__nombre'} }}
+                                                        </span>
+                                                        @php
+                                                            $shownChannels[] =
+                                                                $channelSelected->{'Siennasource__nombre'};
+                                                        @endphp
+                                                    @endif
                                                 @endforeach
                                             @elseif(count($surverPerChannel) == 1)
                                                 <span class="badge bg-success rounded-pill"
@@ -469,4 +481,3 @@ if (isset($_SERVER['HTTP_HOST'])) {
             });
     }
 </script>
-
