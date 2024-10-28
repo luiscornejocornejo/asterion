@@ -1114,9 +1114,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
             </div>
         </div>
     </div>
-</div>
 
-</div>
 
 @include('facu.footer')
 
