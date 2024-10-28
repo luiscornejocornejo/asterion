@@ -807,7 +807,7 @@ class Dashboard2Controller extends Controller
         $departmentCsat = $request->departmentCsat;
         $agentCsat = $request->agentCsat;
         $daterangeCsat = $request->periodoCsat;
-
+        echo $daterangeCsat;
         $getAgent = $this->getAgents();
         $getSource = $this->getSources();
         $getDepartment = $this->getDepartments();
