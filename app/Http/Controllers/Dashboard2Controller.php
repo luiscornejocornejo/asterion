@@ -816,7 +816,10 @@ class Dashboard2Controller extends Controller
         $surveyPerChannel = $this->surveyPerChannel($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
         
         if($daterangeCsat == 6) {
-            $daterangeCsat = array($request->start_date, $request->end_date);
+            $startDateConverted = date("d-m-Y", strtotime($request->start_date));
+            $endDateConverted = date("d-m-Y", strtotime($request->end_date));
+            
+            $daterangeCsat = array($startDateConverted, $endDateConverted);
         }
 
         return view('sienna/dashboard/csat', [
