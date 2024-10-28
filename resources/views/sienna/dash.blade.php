@@ -1246,10 +1246,10 @@ if (isset($_SERVER['HTTP_HOST'])) {
                     ]
                 });
 
-                $('#example thead tr')
+                $('#example2 thead tr')
                     .clone(true)
                     .addClass('filters')
-                    .appendTo('#example thead');
+                    .appendTo('#example2 thead');
             })
             .catch(function(error) {
                 // función para capturar el error
