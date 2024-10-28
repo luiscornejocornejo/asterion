@@ -1097,8 +1097,8 @@ if (isset($_SERVER['HTTP_HOST'])) {
                         </div>
                     </div>
                     <div class="tab-pane" id="logged">
-                        <div class="card">
-                            <div id="logeados">
+                        <div class="card ">
+                            <div id="logeados" class="mx-1 my-1">
                                 <table id="agentesTable"
                                     class="table table-striped dt-responsive nowrap w-100 text-light">
                                     <thead class="bg-dark">
