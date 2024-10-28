@@ -14,6 +14,8 @@
     console.log(@json($perChannel) )
     console.log("Filtro por canal")
     console.log(@json($filter[0]) )
+    console.log("Filtro por dia")
+    console.log(@json($filter[3]) )
 
 </script>
 <?php echo "Juanito" . session('empresa');?>
