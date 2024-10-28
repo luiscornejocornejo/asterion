@@ -181,7 +181,7 @@
                                                     <span class="badge bg-secondary rounded-pill"
                                                         style="font-size: 14px">{{ $agentSelected->{'Users - Asignado__nombre'} }}</span>
                                                 @endforeach
-                                            @else
+                                            @elseif(count($perAgent) == 1)
                                                 <span class="badge bg-secondary rounded-pill"
                                                     style="font-size: 14px">{{ $perAgent[0]->{'Users - Asignado__nombre'} }}</span>
                                             @endif
