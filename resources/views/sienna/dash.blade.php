@@ -1,18 +1,61 @@
 @include('facu.header')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
-<?php
 
-$subdomain_tmp = 'localhost';
-if (isset($_SERVER['HTTP_HOST'])) {
-    $domainParts = explode('.', $_SERVER['HTTP_HOST']);
-    $subdomain_tmp = array_shift($domainParts);
-} elseif (isset($_SERVER['SERVER_NAME'])) {
-    $domainParts = explode('.', $_SERVER['SERVER_NAME']);
-    $subdomain_tmp = array_shift($domainParts);
-}
+<?php echo "Juanito" . session('empresa');?>
+<script>
+        let navegador = navigator.userAgent;
+        if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
+            tipo=<?php  echo $tipodemenu = session('tipodemenu'); ?>;
+            var url = window.location.href;
+            console.log("Estás usando un dispositivo móvil!!"+tipo);
 
+
+            if(tipo=="2"){
+                location.href = url+'viewtickets';
+
+
+            }else{
+                location.href = url+'viewtickets';
+
+            }
+        } else {
+            console.log("No estás usando un móvil");
+        }
+</script>
+<?php   
+               $tokeninterno = session('tokeninterno');
+               $miip=request()->ip();
 ?>
+<script type="application/javascript">
+    necesito="<?php echo $miip;?>";
+    console.log("My public IP address is: ", necesito," mi subdominio es :  datos:","<?php echo $tokeninterno;?>");
+    let hay=<?php echo $tokeninterno;?>;
+    if(hay==0) {
+        console.log("no logear");
+    }
+    else{
+        console.log("logear");
+        var URLactual = window.location.href;
+        var porciones = URLactual.split('.');
+        let result = porciones[0].replace("https://", "");
+        url2 = "https://"+result+".suricata.cloud/api/telefonia?ip=" + necesito ;
+        axios.get(url2)
+        .then(function (response) {
+            console.log("data:");
+            console.log(response.data);
+        })
+        .catch(function (error) {
+             // función para capturar el error
+            console.log("error:");
+            console.log(error);
+        })
+        .then(function () {
+             // función que siempre se ejecuta
+        });
+
+    }
+</script>
 
 <div class="wrapper menuitem-active">
     @include('facu.menu')
@@ -1126,11 +1169,19 @@ if (isset($_SERVER['HTTP_HOST'])) {
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.1/xlsx.full.min.js"></script>
 <script>
+
+    var URLactual = window.location.href;
+    var porciones = URLactual.split('.');
+    let result = porciones[0].replace("https://", "");
+    let urllogeados = "https://" + result + ".suricata.cloud/api/logeados";
+
+    let tableInitialized = false;
+
     function sendFormWithAxios() {
         var ticket_ids = @json($qtyTickets);
         let tickets = ticket_ids.map(item => item.id).join(',');
 
-        axios.post('https://{{ $subdomain_tmp }}.suricata.cloud/dashreport', {
+        axios.post(`https://${result}.suricata.cloud/dashreport`, {
                 ticket_ids: tickets,
                 _token: document.querySelector('input[name="_token"]').value
             })
@@ -1150,13 +1201,6 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 alert('Error al generar el reporte.');
             });
     }
-
-    var URLactual = window.location.href;
-    var porciones = URLactual.split('.');
-    let result = porciones[0].replace("https://", "");
-    let urllogeados = "https://" + result + ".suricata.cloud/api/logeados";
-
-    let tableInitialized = false;
 
     function logeados() {
 
