@@ -2,11 +2,17 @@
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
 <script>
+    console.log("Por Agente")
     console.log(@json($perAgent))
+    console.log("Filtro por agente")
     console.log(@json($filter[2]) )
+    console.log("Por Departament")
     console.log(@json($byDepartment[1]) )
+    console.log("Filtro por departament")
     console.log(@json($filter[1]) )
+    console.log("Por canal")
     console.log(@json($perChannel) )
+    console.log("Filtro por canal")
     console.log(@json($filter[0]) )
 
 </script>
