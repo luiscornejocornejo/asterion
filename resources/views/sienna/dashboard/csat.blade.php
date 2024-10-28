@@ -169,7 +169,7 @@
                                             @elseif ($filter[3] == 5)
                                                 <span class="badge bg-dark rounded-pill" style="font-size: 14px">Mes
                                                     anterior</span>
-                                            @elseif((count($filter[3] > 2))
+                                            @elseif((count$filter[3]) > 2)
                                                 <span class="badge bg-dark rounded-pill"
                                                     style="font-size: 14px">{{ $filter[3][0] }} a {{ $filter[3][1]}}</span>
                                             @endif
