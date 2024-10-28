@@ -150,35 +150,31 @@
                                             @endif
                                         @endif
 
-                                        @if ($filter[3])
+                                        @if (isset($filter[3]))
                                             @if ($filter[3] == 0)
-                                                <span class="badge bg-dark rounded-pill" style="font-size: 14px">Hoy
-                                                </span>
-                                            @elseif($filter[3] == 1)
-                                                <span class="badge bg-dark rounded-pill" style="font-size: 14px">Ayer
-                                                </span>
-                                            @elseif($filter[3] == 2)
                                                 <span class="badge bg-dark rounded-pill"
-                                                    style="font-size: 14px">Ultimos 7 días
-                                                </span>
-                                            @elseif($filter[3] == 3)
+                                                    style="font-size: 14px">Hoy</span>
+                                            @elseif ($filter[3] == 1)
                                                 <span class="badge bg-dark rounded-pill"
-                                                    style="font-size: 14px">Ultimos 7 días
-                                                </span>
-                                            @elseif($filter[3] == 4)
+                                                    style="font-size: 14px">Ayer</span>
+                                            @elseif ($filter[3] == 2)
+                                                <span class="badge bg-dark rounded-pill"
+                                                    style="font-size: 14px">Últimos 7 días</span>
+                                            @elseif ($filter[3] == 3)
+                                                <span class="badge bg-dark rounded-pill"
+                                                    style="font-size: 14px">Últimos 30 días</span>
+                                            @elseif ($filter[3] == 4)
                                                 <span class="badge bg-dark rounded-pill" style="font-size: 14px">Mes
-                                                    actual
-                                                </span>
-                                            @elseif($filter[3] == 5)
+                                                    actual</span>
+                                            @elseif ($filter[3] == 5)
                                                 <span class="badge bg-dark rounded-pill" style="font-size: 14px">Mes
-                                                    anterior
-                                                </span>
+                                                    anterior</span>
                                             @else
                                                 <span class="badge bg-dark rounded-pill"
-                                                    style="font-size: 14px">{{ $filter[3] }}
-                                                </span>
-
+                                                    style="font-size: 14px">{{ $filter[3] }}</span>
                                             @endif
+                                        @endif
+
 
                                     </div>
 
