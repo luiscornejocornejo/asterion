@@ -34,11 +34,12 @@ Route::get('/recuperar', function () {
 
 });
 Route::post('/recuperar','App\Http\Controllers\LoginController@recuperar');
+
 Route::get('/', function () {
 
      $idusuario=session()->has('idusuario');
 if($idusuario){
-    return view('/home');
+    return view('/dash');
     
 }else{
 
