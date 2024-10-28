@@ -175,7 +175,7 @@
                                     </div>
                                     <div class="mt-2">
                                         <!-- Aca van los filtros -->
-                                        @if ($filter[2])
+                                        @if (isset($filter[2]))
                                             @if (count($perAgent) > 1)
                                                 @foreach ($perAgent as $agentSelected)
                                                     <span class="badge bg-secondary rounded-pill"
@@ -187,7 +187,7 @@
                                             @endif
                                         @endif
 
-                                        @if ($filter[1])
+                                        @if (isset($filter[1]))
                                             @if (count($byDepartment) > 1)
                                                 @foreach ($byDepartment as $departmentSelected)
                                                     <span class="badge bg-info rounded-pill"
@@ -199,7 +199,7 @@
                                             @endif
                                         @endif
 
-                                        @if ($filter[0])
+                                        @if (isset($filter[0]))
                                             @if (count($perChannel) > 1)
                                                 @foreach ($perChannel as $channelSelected)
                                                     <span class="badge bg-success rounded-pill"
