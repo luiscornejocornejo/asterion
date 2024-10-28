@@ -808,13 +808,6 @@ class Dashboard2Controller extends Controller
         $agentCsat = $request->agentCsat;
         $daterangeCsat = $request->periodoCsat;
         
-        $dateCsatStart = $request->start_date;
-        $dateCsatEnd = $request->end_date;
-        echo $dateCsatStart;
-        echo $dateCsatEnd;
-
-
-
         $getAgent = $this->getAgents();
         $getSource = $this->getSources();
         $getDepartment = $this->getDepartments();
@@ -822,6 +815,10 @@ class Dashboard2Controller extends Controller
         $surverSended = $this->surveySended($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
         $surveyPerChannel = $this->surveyPerChannel($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
         
+        if($daterangeCsat == 6) {
+            $daterangeCsat = array($request->start_date, $request->end_date);
+        }
+
         return view('sienna/dashboard/csat', [
             'totalCsat' => $totalCsat,
             'surveySended' => $surverSended,
@@ -830,7 +827,7 @@ class Dashboard2Controller extends Controller
             'agents' => $getAgent,
             'sources' => $getSource,
             'departments' => $getDepartment,
-            'filter' => [$sourceCsat, $departmentCsat, $agentCsat, $daterangeCsat]
+            'filter' => [$sourceCsat, $departmentCsat, $agentCsat, $daterangeCsat],
         ]);
     }
 

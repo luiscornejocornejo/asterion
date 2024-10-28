@@ -166,19 +166,19 @@
                                                     style="font-size: 14px">Ultimos 7 días
                                                 </span>
                                             @elseif($filter[3] == 4)
-                                                <span class="badge bg-dark rounded-pill"
-                                                    style="font-size: 14px">Mes actual
+                                                <span class="badge bg-dark rounded-pill" style="font-size: 14px">Mes
+                                                    actual
                                                 </span>
                                             @elseif($filter[3] == 5)
-                                                <span class="badge bg-dark rounded-pill"
-                                                    style="font-size: 14px">Mes anterior
+                                                <span class="badge bg-dark rounded-pill" style="font-size: 14px">Mes
+                                                    anterior
                                                 </span>
-                                                @elseif($filter[3] == 6)
+                                            @else
                                                 <span class="badge bg-dark rounded-pill"
                                                     style="font-size: 14px">{{ $filter[3] }}
                                                 </span>
+
                                             @endif
-                                        @endif
 
                                     </div>
 
