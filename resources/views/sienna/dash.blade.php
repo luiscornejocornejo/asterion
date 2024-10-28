@@ -168,30 +168,30 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                         @endif
 
                                         @if (isset($filter[3]))
-                                        @if ($filter[3] == 0)
-                                            <span class="badge bg-dark rounded-pill"
-                                                style="font-size: 14px">Hoy</span>
-                                        @elseif ($filter[3] == 1)
-                                            <span class="badge bg-dark rounded-pill"
-                                                style="font-size: 14px">Ayer</span>
-                                        @elseif ($filter[3] == 2)
-                                            <span class="badge bg-dark rounded-pill"
-                                                style="font-size: 14px">Últimos 7 días</span>
-                                        @elseif ($filter[3] == 3)
-                                            <span class="badge bg-dark rounded-pill"
-                                                style="font-size: 14px">Últimos 30 días</span>
-                                        @elseif ($filter[3] == 4)
-                                            <span class="badge bg-dark rounded-pill" style="font-size: 14px">Mes
-                                                actual</span>
-                                        @elseif ($filter[3] == 5)
-                                            <span class="badge bg-dark rounded-pill" style="font-size: 14px">Mes
-                                                anterior</span>
-                                        @elseif (is_array($filter[3]) && count($filter[3]) > 1)
-                                            <span class="badge bg-dark rounded-pill"
-                                                style="font-size: 14px">{{ $filter[3][0] }} a
-                                                {{ $filter[3][1] }}</span>
+                                            @if ($filter[3] == 0)
+                                                <span class="badge bg-dark rounded-pill"
+                                                    style="font-size: 14px">Hoy</span>
+                                            @elseif ($filter[3] == 1)
+                                                <span class="badge bg-dark rounded-pill"
+                                                    style="font-size: 14px">Ayer</span>
+                                            @elseif ($filter[3] == 2)
+                                                <span class="badge bg-dark rounded-pill"
+                                                    style="font-size: 14px">Últimos 7 días</span>
+                                            @elseif ($filter[3] == 3)
+                                                <span class="badge bg-dark rounded-pill"
+                                                    style="font-size: 14px">Últimos 30 días</span>
+                                            @elseif ($filter[3] == 4)
+                                                <span class="badge bg-dark rounded-pill" style="font-size: 14px">Mes
+                                                    actual</span>
+                                            @elseif ($filter[3] == 5)
+                                                <span class="badge bg-dark rounded-pill" style="font-size: 14px">Mes
+                                                    anterior</span>
+                                            @elseif (is_array($filter[3]) && count($filter[3]) > 1)
+                                                <span class="badge bg-dark rounded-pill"
+                                                    style="font-size: 14px">{{ $filter[3][0] }} a
+                                                    {{ $filter[3][1] }}</span>
+                                            @endif
                                         @endif
-                                    @endif
 
                                     </div>
                                     <div>
@@ -1097,7 +1097,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
             </div>
         </div>
         <div class="tab-pane" id="logged">
-            <p>...</p>
+            <div id="logeados"></div>
         </div>
     </div>
 </div>
@@ -1132,6 +1132,130 @@ if (isset($_SERVER['HTTP_HOST'])) {
             .catch(function(error) {
                 console.error(error);
                 alert('Error al generar el reporte.');
+            });
+    }
+
+    var URLactual = window.location.href;
+    var porciones = URLactual.split('.');
+    let result = porciones[0].replace("https://", "");
+    urllogeados = "https://" + result + ".suricata.cloud/api/logeados";
+
+    function logeados(urllogeados) {
+        axios.get(urllogeados)
+            .then(function(response) {
+                sd = '<table id="example2"  class="table table-striped dt-responsive nowrap w-100 text-light">' +
+                    '<thead>' +
+                    '     <tr class="text-center bg-dark" >' +
+
+
+                    '        <th class="text-light">Usuario</th>' +
+                    '        <th class="text-light">Area</th>' +
+                    '        <th class="text-light">Tipo</th>' +
+                    '        <th class="text-light">Inicio</th>' +
+
+                    '        ' +
+                    '    </tr>' +
+                    ' </thead>' +
+                    ' <tbody id="tb">' +
+
+                    ' </tbody>' +
+                    ' </table>';
+
+                tt = "";
+                for (i = 0; i < response.data.length; i++) {
+                    let usu = response.data[i].usu;
+                    let area = response.data[i].area;
+
+                    tt += '<tr class="text-center">' +
+                        ' <td>' + response.data[i].usu + '</td>' +
+                        ' <td>' + response.data[i].area + '</td>' +
+                        ' <td>' + response.data[i].tipo + '</td>' +
+                        ' <td>' + response.data[i].inicio + '</td></tr>';
+
+                }
+
+                document.getElementById("logeados").innerHTML = null;
+                document.getElementById("logeados").innerHTML = sd;
+                document.getElementById("tb").innerHTML = null;
+                document.getElementById("tb").innerHTML = tt;
+                $('#example2').dataTable({
+                    "order": [
+                        [0, 'desc']
+                    ],
+                    "pageLength": 25,
+                    select: true,
+                    "language": {
+                        "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
+                    },
+                    dom: 'Bfrtip',
+                    initComplete: function() {
+                        var api = this.api();
+
+                        // For each column
+
+                        api
+                            .columns()
+                            .eq(0)
+                            .each(function(colIdx) {
+                                // Set the header cell to contain the input element
+                                var cell = $('.filters th').eq(
+                                    $(api.column(colIdx).header()).index()
+                                );
+                                var title = $(cell).text();
+                                $(cell).html('<input type="text" placeholder="' + title + '" />');
+
+                                // On every keypress in this input
+                                $(
+                                        'input',
+                                        $('.filters th').eq($(api.column(colIdx).header()).index())
+                                    )
+                                    .off('keyup change')
+                                    .on('change', function(e) {
+                                        // Get the search value
+                                        $(this).attr('title', $(this).val());
+                                        var regexr =
+                                            '({search})'; //$(this).parents('th').find('select').val();
+
+                                        var cursorPosition = this.selectionStart;
+                                        // Search the column for that value
+                                        api
+                                            .column(colIdx)
+                                            .search(
+                                                this.value != '' ?
+                                                regexr.replace('{search}', '(((' + this.value +
+                                                    ')))') :
+                                                '',
+                                                this.value != '',
+                                                this.value == ''
+                                            )
+                                            .draw();
+                                    })
+                                    .on('keyup', function(e) {
+                                        e.stopPropagation();
+
+                                        $(this).trigger('change');
+                                        $(this)
+                                            .focus()[0]
+                                            .setSelectionRange(cursorPosition, cursorPosition);
+                                    });
+                            });
+                    },
+                    buttons: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
+                });
+
+                $('#example thead tr')
+                    .clone(true)
+                    .addClass('filters')
+                    .appendTo('#example thead');
+            })
+            .catch(function(error) {
+                // función para capturar el error
+                console.log(error);
+            })
+            .then(function() {
+                // función que siempre se ejecuta
             });
     }
 </script>
