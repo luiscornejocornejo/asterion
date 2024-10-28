@@ -41,9 +41,9 @@ if (isset($_SERVER['HTTP_HOST'])) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#logged" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
+                        <a href="#logged" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0" onclick="logeados();">
                             <i class="mdi mdi-settings-outline d-md-none d-block"></i>
-                            <span class="d-none d-md-block" onclick="mostrar3();">Agentes en línea</span>
+                            <span class="d-none d-md-block" >Agentes en línea</span>
                         </a>
                     </li>
                 </ul>
@@ -1261,17 +1261,6 @@ if (isset($_SERVER['HTTP_HOST'])) {
     }
 
     function mostrar3() {
-        var e = document.getElementById('foo');
-        var f = document.getElementById('foo2');
-        var g = document.getElementById('foo3');
-        var h = document.getElementById('foo4');
-
-          e.style.display = 'none';
-          h.style.display = 'none';
-
-          f.style.display = 'none';
-          g.style.display = 'block';
-
-
+      
     }
 </script>
