@@ -33,7 +33,7 @@
                 </ul>
                 <div class="tab-pane show active" id="csat">
                     <div class="content">
-                        @if ($totalCsat[0]->count)
+                        @if ($surveySended[0]->count)
                         <div class="card">
                             <form action="/surveys" method="POST">
                                 @csrf
