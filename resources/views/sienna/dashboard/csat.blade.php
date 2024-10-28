@@ -25,8 +25,7 @@
             <div class="container py-4">
                 <ul class="nav nav-pills bg-nav-pills nav-justified mt-4">
                     <li class="nav-item">
-                        <a href="#csat" data-bs-toggle="tab" aria-expanded="false"
-                            class="nav-link rounded-0 active">
+                        <a href="#csat" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0 active">
                             <i class="mdi mdi-home-variant d-md-none d-block"></i>
                             <span class="d-none d-md-block">CSAT</span>
                         </a>
@@ -148,6 +147,36 @@
                                             @else
                                                 <span class="badge bg-success rounded-pill"
                                                     style="font-size: 14px">{{ $surverPerChannel[0]->{'Siennasource__nombre'} }}</span>
+                                            @endif
+                                        @endif
+
+                                        @if ($filter[3])
+                                            @if ($filter[3] == 0)
+                                                <span class="badge bg-dark rounded-pill" style="font-size: 14px">Hoy
+                                                </span>
+                                            @elseif($filter[3] == 1)
+                                                <span class="badge bg-dark rounded-pill" style="font-size: 14px">Ayer
+                                                </span>
+                                            @elseif($filter[3] == 2)
+                                                <span class="badge bg-dark rounded-pill"
+                                                    style="font-size: 14px">Ultimos 7 días
+                                                </span>
+                                            @elseif($filter[3] == 3)
+                                                <span class="badge bg-dark rounded-pill"
+                                                    style="font-size: 14px">Ultimos 7 días
+                                                </span>
+                                            @elseif($filter[3] == 4)
+                                                <span class="badge bg-dark rounded-pill"
+                                                    style="font-size: 14px">Mes actual
+                                                </span>
+                                            @elseif($filter[3] == 5)
+                                                <span class="badge bg-dark rounded-pill"
+                                                    style="font-size: 14px">Mes anterior
+                                                </span>
+                                                @elseif($filter[3] == 6)
+                                                <span class="badge bg-dark rounded-pill"
+                                                    style="font-size: 14px">{{ $filter[3]['start'] }}
+                                                </span>
                                             @endif
                                         @endif
 
