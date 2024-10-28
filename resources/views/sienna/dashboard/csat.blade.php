@@ -121,7 +121,7 @@
                                                     <span class="badge bg-secondary rounded-pill"
                                                         style="font-size: 14px">{{ $agentSelected->Agent_Name }}</span>
                                                 @endforeach
-                                                @elseif(count($surveySended) = 1)
+                                                @elseif(count($surveySended) == 1)
                                                 <span class="badge bg-secondary rounded-pill"
                                                     style="font-size: 14px">{{ $surveySended[0]->Agent_Name }}</span>
                                             @endif
@@ -133,7 +133,7 @@
                                                     <span class="badge bg-info rounded-pill"
                                                         style="font-size: 14px">{{ $departmentSelected->Depto }}</span>
                                                 @endforeach
-                                            @elseif(count($surveySended) = 1)
+                                            @elseif(count($surveySended) == 1)
                                                 <span class="badge bg-info rounded-pill"
                                                     style="font-size: 14px">{{ $surveySended[0]->Depto }}</span>
                                             @endif
@@ -145,7 +145,7 @@
                                                     <span class="badge bg-success rounded-pill"
                                                         style="font-size: 14px">{{ $channelSelected->{'Siennasource__nombre'} }}</span>
                                                 @endforeach
-                                            @elseif(count($surverPerChannel) = 1)
+                                            @elseif(count($surverPerChannel) == 1)
                                                 <span class="badge bg-success rounded-pill"
                                                     style="font-size: 14px">{{ $surverPerChannel[0]->{'Siennasource__nombre'} }}</span>
                                             @endif
