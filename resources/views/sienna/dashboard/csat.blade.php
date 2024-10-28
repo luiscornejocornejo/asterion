@@ -171,7 +171,7 @@
                                                     anterior</span>
                                             @else
                                                 <span class="badge bg-dark rounded-pill"
-                                                    style="font-size: 14px">{{ $filter[3] }}</span>
+                                                    style="font-size: 14px">{{ $filter[3][0] }}</span>
                                             @endif
                                         @endif
 
