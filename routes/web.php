@@ -39,7 +39,7 @@ Route::get('/', function () {
 
      $idusuario=session()->has('idusuario');
 if($idusuario){
-    return view('/dash');
+    return view('sienna/dash');
     
 }else{
 
