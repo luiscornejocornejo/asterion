@@ -1158,7 +1158,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
     let tableInitialized = false;
 
-    async function logeados() {
+    function logeados() {
         $('#agentesTable').DataTable({
             ajax: {
                 url: urllogeados,
