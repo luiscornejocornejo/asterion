@@ -30,7 +30,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12">
-                        <label for="customer">Número de cliente</label>
+                        <label class="form-label" for="customer">Número de cliente</label>
                         <input required name="cliente" type="text" class="form-control" id="customer"
                             placeholder="cliente">
                     </div>
