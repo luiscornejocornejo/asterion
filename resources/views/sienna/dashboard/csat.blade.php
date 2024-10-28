@@ -169,7 +169,7 @@
                                             @elseif ($filter[3] == 5)
                                                 <span class="badge bg-dark rounded-pill" style="font-size: 14px">Mes
                                                     anterior</span>
-                                            @else
+                                            @elseif($filter[3] == 6)
                                                 <span class="badge bg-dark rounded-pill"
                                                     style="font-size: 14px">{{ $filter[3][0] }}</span>
                                             @endif
