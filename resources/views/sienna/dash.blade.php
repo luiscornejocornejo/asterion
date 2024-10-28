@@ -195,7 +195,7 @@
                                                     <span class="badge bg-secondary rounded-pill"
                                                         style="font-size: 14px">{{ $agentSelected->{'Users - Asignado__nombre'} }}</span>
                                                 @endforeach
-                                            @elseif(count($perAgent) == 1)
+                                            @elseif(count($perAgent) == 1 && count($perAgent) <> "")
                                                 <span class="badge bg-secondary rounded-pill"
                                                     style="font-size: 14px">{{ $perAgent[0]->{'Users - Asignado__nombre'} }}</span>
                                             @endif
@@ -207,7 +207,7 @@
                                                     <span class="badge bg-info rounded-pill"
                                                         style="font-size: 14px">{{ $departmentSelected->{'Siennadepto__nombre'} }}</span>
                                                 @endforeach
-                                            @elseif(count($byDepartment) == 1)
+                                            @elseif(count($byDepartment) == 1 && count($byDepartment) <> "")
                                                 <span class="badge bg-info rounded-pill"
                                                     style="font-size: 14px">{{ $byDepartment[0]->{'Siennadepto__nombre'} }}</span>
                                             @endif
@@ -219,7 +219,7 @@
                                                     <span class="badge bg-success rounded-pill"
                                                         style="font-size: 14px">{{ $channelSelected->{'Siennasource__nombre'} }}</span>
                                                 @endforeach
-                                                @elseif(count($perChannel) == 1)
+                                                @elseif(count($perChannel) == 1 && count($perChannel) <> "")
                                                 <span class="badge bg-success rounded-pill"
                                                     style="font-size: 14px">{{ $perChannel[0]->{'Siennasource__nombre'} }}</span>
                                             @endif
