@@ -43,7 +43,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                     <li class="nav-item">
                         <a href="#logged" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
                             <i class="mdi mdi-settings-outline d-md-none d-block"></i>
-                            <span class="d-none d-md-block">Agentes en línea</span>
+                            <span class="d-none d-md-block" onclick="mostrar3();">Agentes en línea</span>
                         </a>
                     </li>
                 </ul>
