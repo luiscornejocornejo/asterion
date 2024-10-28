@@ -175,7 +175,7 @@
                                                 </span>
                                                 @elseif($filter[3] == 6)
                                                 <span class="badge bg-dark rounded-pill"
-                                                    style="font-size: 14px">{{ $filter[3]['start'] }}
+                                                    style="font-size: 14px">{{ $filter[3] }}
                                                 </span>
                                             @endif
                                         @endif
