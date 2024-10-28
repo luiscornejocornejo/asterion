@@ -33,7 +33,7 @@
                 </ul>
                 <div class="tab-pane show active" id="csat">
                     <div class="content">
-                        @if (isset($totalCsat[0]->avg))
+                       
                         <div class="card">
                             <form action="/surveys" method="POST">
                                 @csrf
@@ -121,7 +121,7 @@
                                                     <span class="badge bg-secondary rounded-pill"
                                                         style="font-size: 14px">{{ $agentSelected->Agent_Name }}</span>
                                                 @endforeach
-                                            @else
+                                                @elseif(count($surveySended) = 1)
                                                 <span class="badge bg-secondary rounded-pill"
                                                     style="font-size: 14px">{{ $surveySended[0]->Agent_Name }}</span>
                                             @endif
@@ -133,7 +133,7 @@
                                                     <span class="badge bg-info rounded-pill"
                                                         style="font-size: 14px">{{ $departmentSelected->Depto }}</span>
                                                 @endforeach
-                                            @else
+                                            @elseif(count($surveySended) = 1)
                                                 <span class="badge bg-info rounded-pill"
                                                     style="font-size: 14px">{{ $surveySended[0]->Depto }}</span>
                                             @endif
@@ -145,7 +145,7 @@
                                                     <span class="badge bg-success rounded-pill"
                                                         style="font-size: 14px">{{ $channelSelected->{'Siennasource__nombre'} }}</span>
                                                 @endforeach
-                                            @else
+                                            @elseif(count($surverPerChannel) = 1)
                                                 <span class="badge bg-success rounded-pill"
                                                     style="font-size: 14px">{{ $surverPerChannel[0]->{'Siennasource__nombre'} }}</span>
                                             @endif
@@ -403,18 +403,7 @@
                                 </div>
                             </form>
                         </div>
-                        @else
-                        <div class="bg-white">
-                            <div class="border rounded text-center" style="min-height: 250px!important;">
-                                <div class="my-5">
-                                    <img src="assetsfacu/images/svg/file-searching.svg" height="90"
-                                        alt="Without information">
-                                    <h2 class="text-center">No hay información que mostrar.</h2>
-                                    <a class="btn btn-primary text-white mt-2" href="/dash">Volver a dashboard</a>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
+                       
                     </div>
                 </div>
             </div>
