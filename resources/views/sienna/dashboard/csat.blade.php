@@ -33,6 +33,7 @@
                 </ul>
                 <div class="tab-pane show active" id="csat">
                     <div class="content">
+                        @if ($totalCsat[0]->count)
                         <div class="card">
                             <form action="/surveys" method="POST">
                                 @csrf
@@ -402,6 +403,18 @@
                                 </div>
                             </form>
                         </div>
+                        @else
+                        <div class="bg-white">
+                            <div class="border rounded text-center" style="min-height: 250px!important;">
+                                <div class="my-5">
+                                    <img src="assetsfacu/images/svg/file-searching.svg" height="90"
+                                        alt="Without information">
+                                    <h2 class="text-center">No hay información que mostrar.</h2>
+                                    <a class="btn btn-primary text-white mt-2" href="/dash">Volver a dashboard</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                     </div>
                 </div>
             </div>
