@@ -594,10 +594,10 @@ class Dashboard2Controller extends Controller
         $getSource = $this->getSources();
         $getDepartment = $this->getDepartments();
         $getTicketsCreatedQty = $this->getTicketsCreatedQty($source, $department, $agent, $daterange);
-        $totalCsat = $this->getTotalCsat($source, $daterange, $department, $agent);
-        $surverSended = $this->surveySended($source, $daterange, $department, $agent);
-        $surveyPerChannel = $this->surveyPerChannel($source, $daterange, $department, $agent);
-        $checkCsatViewExist = $this->checkIfViewExists();
+        //$totalCsat = $this->getTotalCsat($source, $daterange, $department, $agent);
+        //$surverSended = $this->surveySended($source, $daterange, $department, $agent);
+        //$surveyPerChannel = $this->surveyPerChannel($source, $daterange, $department, $agent);
+        //$checkCsatViewExist = $this->checkIfViewExists();
 
         return view('sienna/dash', [
             'tickets' => $ticketCreated,
@@ -614,11 +614,11 @@ class Dashboard2Controller extends Controller
             'sources' => $getSource,
             'departments' => $getDepartment,
             'filter' => [$source, $department, $agent, $daterange],
-            'qtyTickets' => $getTicketsCreatedQty,
-            'totalCsat' => $totalCsat,
-            'surveySended' => $surverSended,
-            'surverPerChannel' => $surveyPerChannel,
-            'csatViewExist' => $checkCsatViewExist
+            'qtyTickets' => $getTicketsCreatedQty
+            //'totalCsat' => $totalCsat,
+           // 'surveySended' => $surverSended,
+           // 'surverPerChannel' => $surveyPerChannel,
+           // 'csatViewExist' => $checkCsatViewExist
 
         ]);
     }
@@ -649,7 +649,7 @@ class Dashboard2Controller extends Controller
         //$totalCsat = $this->getTotalCsat($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
         //$surverSended = $this->surveySended($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
         //$surveyPerChannel = $this->surveyPerChannel($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
-        $checkCsatViewExist = $this->checkIfViewExists();
+        //$checkCsatViewExist = $this->checkIfViewExists();
 
         if($daterange == 6) {
             $startDateConverted = date("d-m-Y", strtotime($request->start_date));
@@ -673,11 +673,11 @@ class Dashboard2Controller extends Controller
             'sources' => $getSource,
             'departments' => $getDepartment,
             'filter' => [$source, $department, $agent, $daterange],
-            'qtyTickets' => $getTicketsCreatedQty,
+            'qtyTickets' => $getTicketsCreatedQty
             //'totalCsat' => $totalCsat,
             //'surveySended' => $surverSended,
             //'surverPerChannel' => $surveyPerChannel,
-            'csatViewExist' => $checkCsatViewExist
+            //'csatViewExist' => $checkCsatViewExist
 
         ]);
     }
