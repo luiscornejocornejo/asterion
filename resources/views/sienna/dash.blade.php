@@ -1090,6 +1090,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                                     </div>
                                                 </div>
                                             </div>
+                                            </div>
                                         @endif
                             </form>
                         </div>
