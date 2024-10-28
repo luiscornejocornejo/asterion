@@ -1139,7 +1139,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
     var porciones = URLactual.split('.');
     let result = porciones[0].replace("https://", "");
     urllogeados = "https://" + result + ".suricata.cloud/api/logeados";
-
+    console.log(urllogeados)
     function logeados(urllogeados) {
         axios.get(urllogeados)
             .then(function(response) {
