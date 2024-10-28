@@ -130,7 +130,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                     <div class="mt-2">
                                         <!-- Aca van los filtros -->
-                                        @if (isset($filter[2]))
+                                        @if (!empty($filter[2]))
                                             @if (count($surveySended) > 1)
                                                 @foreach ($surveySended as $agentSelected)
                                                     <span class="badge bg-secondary rounded-pill"
@@ -142,7 +142,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                             @endif
                                         @endif
 
-                                        @if (isset($filter[1]))
+                                        @if (!empty($filter[1]))
                                             @if (count($surveySended) > 1)
                                                 @foreach ($surveySended as $departmentSelected)
                                                     <span class="badge bg-info rounded-pill"
@@ -154,7 +154,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                             @endif
                                         @endif
 
-                                        @if (isset($filter[0]))
+                                        @if (!empty($filter[0]))
                                             @if (count($surverPerChannel) > 1)
                                                 @foreach ($surverPerChannel as $channelSelected)
                                                     <span class="badge bg-success rounded-pill"
