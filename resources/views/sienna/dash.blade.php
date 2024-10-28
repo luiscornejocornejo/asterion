@@ -193,7 +193,7 @@
                                                     <span class="badge bg-info rounded-pill"
                                                         style="font-size: 14px">{{ $departmentSelected->{'Siennadepto__nombre'} }}</span>
                                                 @endforeach
-                                            @elseif(isset($byDepartment) == 1)
+                                            @elseif(count($byDepartment) == 1)
                                                 <span class="badge bg-info rounded-pill"
                                                     style="font-size: 14px">{{ $byDepartment[0]->{'Siennadepto__nombre'} }}</span>
                                             @endif
