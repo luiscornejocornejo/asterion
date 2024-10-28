@@ -1096,15 +1096,16 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 </div>
             </div>
         </div>
+    </div>
         <div class="tab-pane" id="logged">
             <div id="logeados">
                 <table id="agentesTable" class="table table-striped dt-responsive nowrap w-100 text-light">
-                    <thead>
+                    <thead class="bg-dark">
                         <tr>
-                            <th>Usuario</th>
-                            <th>Área</th>
-                            <th>Tipo</th>
-                            <th>Inicio</th>
+                            <th class="text-light">Usuario</th>
+                            <th class="text-light">Área</th>
+                            <th class="text-light">Tipo</th>
+                            <th class="text-light">Inicio</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -1167,9 +1168,38 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 { data: "tipo" },
                 { data: "inicio" }
             ],
-            language: {
-                url: '//cdn.datatables.net/plug-ins/1.11.5/i18n/es_es.json' // Para español
-            }
+            "order": [
+                    [0, 'desc']
+                ],
+                "pageLength": 25,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
+                },
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ],
+                initComplete: function() {
+                    this.api()
+                        .columns()
+                        .every(function() {
+                            let column = this;
+                            let title = column.footer().textContent;
+
+                            // Create input element
+                            let input = document.createElement("input");
+                            input.placeholder = title;
+                            input.className = "form-control";
+                            column.footer().replaceChildren(input);
+
+                            // Event listener for user input
+                            input.addEventListener("keyup", () => {
+                                if (column.search() !== this.value) {
+                                    column.search(input.value).draw();
+                                }
+                            });
+                        });
+                }
         });
 
         tableInitialized = true;
