@@ -1159,6 +1159,11 @@ if (isset($_SERVER['HTTP_HOST'])) {
     let tableInitialized = false;
 
     function logeados() {
+
+        if ($.fn.DataTable.isDataTable('#agentesTable')) {
+            $('#agentesTable').DataTable().clear().destroy();
+        }
+
         $('#agentesTable').DataTable({
             ajax: {
                 url: urllogeados,
