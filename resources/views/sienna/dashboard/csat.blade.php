@@ -448,7 +448,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
         var ticket_ids = @json($qtyTicketCsat);
         let tickets = ticket_ids.map(item => item.ticket).join(',');
 
-        axios.post('https://{{ $subdomain_tmp }}.suricata.cloud/surveyreport', {
+        axios.post('https://{{ $subdomain_tmp }}.suricata.cloud/dashreport', {
                 ticket_ids: tickets,
                 _token: document.querySelector('input[name="_token"]').value
             })
