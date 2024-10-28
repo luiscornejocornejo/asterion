@@ -1176,6 +1176,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                 document.getElementById("logeados").innerHTML = null;
                 document.getElementById("logeados").innerHTML = sd;
+                console.log(document.getElementById("logeados").innerHTML = sd);
                 document.getElementById("tb").innerHTML = null;
                 document.getElementById("tb").innerHTML = tt;
                 $('#example2').dataTable({
