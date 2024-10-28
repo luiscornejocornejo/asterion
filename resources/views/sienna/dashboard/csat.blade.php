@@ -5,6 +5,19 @@
     console.log("Encuestas realizadas:", @json($surveySended))
 </script>
 
+<?php
+
+$subdomain_tmp = 'localhost';
+if (isset($_SERVER['HTTP_HOST'])) {
+    $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+    $subdomain_tmp = array_shift($domainParts);
+} elseif (isset($_SERVER['SERVER_NAME'])) {
+    $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+    $subdomain_tmp = array_shift($domainParts);
+}
+
+?>
+
 <div class="wrapper menuitem-active">
     @include('facu.menu')
     <div class="content-page" style="padding: 0!important;">
