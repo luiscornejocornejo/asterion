@@ -193,7 +193,7 @@
                                                     <span class="badge bg-info rounded-pill"
                                                         style="font-size: 14px">{{ $departmentSelected->{'Siennadepto__nombre'} }}</span>
                                                 @endforeach
-                                            @else
+                                            @elseif(isset($byDepartment) == 1)
                                                 <span class="badge bg-info rounded-pill"
                                                     style="font-size: 14px">{{ $byDepartment[0]->{'Siennadepto__nombre'} }}</span>
                                             @endif
@@ -205,7 +205,7 @@
                                                     <span class="badge bg-success rounded-pill"
                                                         style="font-size: 14px">{{ $channelSelected->{'Siennasource__nombre'} }}</span>
                                                 @endforeach
-                                            @else
+                                                @elseif(count($perChannel) == 1)
                                                 <span class="badge bg-success rounded-pill"
                                                     style="font-size: 14px">{{ $perChannel[0]->{'Siennasource__nombre'} }}</span>
                                             @endif
