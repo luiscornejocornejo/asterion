@@ -1259,4 +1259,19 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 // función que siempre se ejecuta
             });
     }
+
+    function mostrar3() {
+        var e = document.getElementById('foo');
+        var f = document.getElementById('foo2');
+        var g = document.getElementById('foo3');
+        var h = document.getElementById('foo4');
+
+          e.style.display = 'none';
+          h.style.display = 'none';
+
+          f.style.display = 'none';
+          g.style.display = 'block';
+
+
+    }
 </script>
