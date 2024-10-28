@@ -651,6 +651,13 @@ class Dashboard2Controller extends Controller
         //$surveyPerChannel = $this->surveyPerChannel($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
         $checkCsatViewExist = $this->checkIfViewExists();
 
+        if($daterange == 6) {
+            $startDateConverted = date("d-m-Y", strtotime($request->start_date));
+            $endDateConverted = date("d-m-Y", strtotime($request->end_date));
+            
+            $daterange = array($startDateConverted, $endDateConverted);
+        }
+
         return view('sienna/dash', [
             'tickets' => $ticketCreated,
             'status' => $ticketByStatus,
@@ -776,6 +783,17 @@ class Dashboard2Controller extends Controller
         }
     }
 
+    public function getTicketsCreatedForCsat($source, $periodo, $department, $agent)
+    {
+        $dom = $this->dominio();
+        $subquery = $this->subqueryCsat($source, $periodo, $department, $agent);
+
+        $queryTicketsCreatedQty = "SELECT ticket FROM " . $dom . ".`csat_view`";
+        $resultTicketCreatedQty = DB::connection('mysql2')->select($queryTicketsCreatedQty . $subquery);
+
+        return $resultTicketCreatedQty;
+    }
+
     public function dashboardSurveyGeneric()
     {
         $sourceCsat = "";
@@ -789,6 +807,7 @@ class Dashboard2Controller extends Controller
         $totalCsat = $this->getTotalCsat($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
         $surverSended = $this->surveySended($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
         $surveyPerChannel = $this->surveyPerChannel($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
+        $qtyTicketsCsat = $this->getTicketsCreatedForCsat($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
         
         return view('sienna/dashboard/csat', [
             'totalCsat' => $totalCsat,
@@ -797,7 +816,8 @@ class Dashboard2Controller extends Controller
             'agents' => $getAgent,
             'sources' => $getSource,
             'departments' => $getDepartment,
-            'filter' => [$sourceCsat, $departmentCsat, $agentCsat, $daterangeCsat]
+            'filter' => [$sourceCsat, $departmentCsat, $agentCsat, $daterangeCsat],
+            'qtyTicketCsat' => $qtyTicketsCsat
         ]);
     }
 
@@ -814,7 +834,8 @@ class Dashboard2Controller extends Controller
         $totalCsat = $this->getTotalCsat($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
         $surverSended = $this->surveySended($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
         $surveyPerChannel = $this->surveyPerChannel($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
-        
+        $qtyTicketsCsat = $this->getTicketsCreatedForCsat($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
+
         if($daterangeCsat == 6) {
             $startDateConverted = date("d-m-Y", strtotime($request->start_date));
             $endDateConverted = date("d-m-Y", strtotime($request->end_date));
@@ -831,6 +852,7 @@ class Dashboard2Controller extends Controller
             'sources' => $getSource,
             'departments' => $getDepartment,
             'filter' => [$sourceCsat, $departmentCsat, $agentCsat, $daterangeCsat],
+            'qtyTicketCsat' => $qtyTicketsCsat
         ]);
     }
 

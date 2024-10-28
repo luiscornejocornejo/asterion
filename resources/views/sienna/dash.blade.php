@@ -50,130 +50,152 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                 <div class="tab-content">
                     <div class="tab-pane show active" id="dashboard">
-                        @if ($tickets[0]->count)
-                            <div class="card">
-                                <form action="/dash" method="POST">
-                                    @csrf
 
-                                    <div class="row mx-1 my-1">
-                                        <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
-                                            <div class="mb-3">
-                                                <label class="form-label">Período</label>
-                                                <select name="periodo" id="periodo" class="form-select">
-                                                    <option value="0">Hoy</option>
-                                                    <option value="1">Ayer</option>
-                                                    <option value="2">Ultmos 7 Dias</option>
-                                                    <option value="3">Ultmos 30 Dias</option>
-                                                    <option value="4">Mes Actual</option>
-                                                    <option value="5">Mes Anterior</option>
-                                                    <option value="6">Rango</option>
-                                                </select>
-
-
-                                            </div>
-                                            <div id="rango-fechas" style="display:none;">
-                                                <label for="start_date" class="form-label">Fecha de Inicio:</label>
-                                                <input type="date" name="start_date" id="start_date"
-                                                    class="form-control mb-2">
-
-                                                <label for="end_date" class="form-label">Fecha de Fin:</label>
-                                                <input type="date" name="end_date" id="end_date"
-                                                    class="form-control">
-                                            </div>
-                                            <script>
-                                                // Mostrar los campos de fecha si el usuario selecciona "Rango"
-                                                document.getElementById('periodo').addEventListener('change', function() {
-                                                    var display = this.value === '6' ? 'block' : 'none';
-                                                    document.getElementById('rango-fechas').style.display = display;
-                                                });
-                                            </script>
-                                        </div>
-                                        <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
-                                            <label for="channel" class="form-label">Canales</label>
-                                            <select name="channel[]" id="channel" multiple="multiple"
-                                                class="form-select">
-                                                @foreach ($sources as $source)
-                                                    <option value="{{ $source->id }}">
-                                                        {{ $source->nombre }}
-                                                    </option>
-                                                @endforeach
+                        <div class="card">
+                            <form action="/dash" method="POST">
+                                @csrf
+                                <div class="row mx-1 my-1">
+                                    <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Período</label>
+                                            <select name="periodo" id="periodo" class="form-select">
+                                                <option value="0">Hoy</option>
+                                                <option value="1">Ayer</option>
+                                                <option value="2">Ultmos 7 Dias</option>
+                                                <option value="3">Ultmos 30 Dias</option>
+                                                <option value="4">Mes Actual</option>
+                                                <option value="5">Mes Anterior</option>
+                                                <option value="6">Rango</option>
                                             </select>
                                         </div>
-                                        <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
-                                            <label for="deparment" class="form-label">Departamento</label>
-                                            <select name="department[]" id="department" multiple="multiple"
-                                                class="form-select">
+                                        <div id="rango-fechas" style="display:none;">
+                                            <label for="start_date" class="form-label">Fecha de Inicio:</label>
+                                            <input type="date" name="start_date" id="start_date"
+                                                class="form-control mb-2">
 
-                                                @foreach ($departments as $department)
-                                                    <option value="{{ $department->id }}">
-                                                        {{ $department->nombre }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
+                                            <label for="end_date" class="form-label">Fecha de Fin:</label>
+                                            <input type="date" name="end_date" id="end_date" class="form-control">
                                         </div>
-                                        <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
-                                            <label for="agent" class="form-label">Agente</label>
-                                            <select name="agent[]" id="agent" multiple="multiple"
-                                                class="form-select">
-
-                                                @foreach ($agents as $agent)
-                                                    <option value="{{ $agent->id }}">
-                                                        {{ $agent->nombre }} {{ $agent->last_name }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-
+                                        <script>
+                                            // Mostrar los campos de fecha si el usuario selecciona "Rango"
+                                            document.getElementById('periodo').addEventListener('change', function() {
+                                                var display = this.value === '6' ? 'block' : 'none';
+                                                document.getElementById('rango-fechas').style.display = display;
+                                            });
+                                        </script>
                                     </div>
-                                    <div class="row mx-1 my-1">
-                                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
-                                            <div>
-                                                <input type="submit" class="btn btn-primary rounded-pill"
-                                                    value="Buscar">
+                                    <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
+                                        <label for="channel" class="form-label">Canales</label>
+                                        <select name="channel[]" id="channel" multiple="multiple" class="form-select">
+                                            @foreach ($sources as $source)
+                                                <option value="{{ $source->id }}">
+                                                    {{ $source->nombre }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
+                                        <label for="deparment" class="form-label">Departamento</label>
+                                        <select name="department[]" id="department" multiple="multiple"
+                                            class="form-select">
+
+                                            @foreach ($departments as $department)
+                                                <option value="{{ $department->id }}">
+                                                    {{ $department->nombre }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
+                                        <label for="agent" class="form-label">Agente</label>
+                                        <select name="agent[]" id="agent" multiple="multiple" class="form-select">
+
+                                            @foreach ($agents as $agent)
+                                                <option value="{{ $agent->id }}">
+                                                    {{ $agent->nombre }} {{ $agent->last_name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="row mx-1 my-1">
+                                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
+                                        <div>
+                                            <input type="submit" class="btn btn-primary rounded-pill" value="Buscar">
+                                            @if ($tickets[0]->count)
                                                 <button type="button" onclick="sendFormWithAxios()"
                                                     class="btn btn-success rounded-pill">Generar reporte</button>
-                                            </div>
+                                            @endif
                                         </div>
-                                        <div class="mt-2">
-                                            <!-- Aca van los filtros -->
-                                            @if ($filter[2])
-                                                @if (count($perAgent) > 1)
-                                                    @foreach ($perAgent as $agentSelected)
-                                                        <span class="badge bg-secondary rounded-pill"
-                                                            style="font-size: 14px">{{ $agentSelected->{'Users - Asignado__nombre'} }}</span>
-                                                    @endforeach
-                                                @else
+                                    </div>
+                                    <div class="mt-2">
+                                        <!-- Aca van los filtros -->
+                                        @if ($filter[2])
+                                            @if (count($perAgent) > 1)
+                                                @foreach ($perAgent as $agentSelected)
                                                     <span class="badge bg-secondary rounded-pill"
-                                                        style="font-size: 14px">{{ $perAgent[0]->{'Users - Asignado__nombre'} }}</span>
-                                                @endif
+                                                        style="font-size: 14px">{{ $agentSelected->{'Users - Asignado__nombre'} }}</span>
+                                                @endforeach
+                                            @else
+                                                <span class="badge bg-secondary rounded-pill"
+                                                    style="font-size: 14px">{{ $perAgent[0]->{'Users - Asignado__nombre'} }}</span>
                                             @endif
+                                        @endif
 
-                                            @if ($filter[1])
-                                                @if (count($byDepartment) > 1)
-                                                    @foreach ($byDepartment as $departmentSelected)
-                                                        <span class="badge bg-info rounded-pill"
-                                                            style="font-size: 14px">{{ $departmentSelected->{'Siennadepto__nombre'} }}</span>
-                                                    @endforeach
-                                                @else
+                                        @if ($filter[1])
+                                            @if (count($byDepartment) > 1)
+                                                @foreach ($byDepartment as $departmentSelected)
                                                     <span class="badge bg-info rounded-pill"
-                                                        style="font-size: 14px">{{ $byDepartment[0]->{'Siennadepto__nombre'} }}</span>
-                                                @endif
+                                                        style="font-size: 14px">{{ $departmentSelected->{'Siennadepto__nombre'} }}</span>
+                                                @endforeach
+                                            @else
+                                                <span class="badge bg-info rounded-pill"
+                                                    style="font-size: 14px">{{ $byDepartment[0]->{'Siennadepto__nombre'} }}</span>
                                             @endif
+                                        @endif
 
-                                            @if ($filter[0])
-                                                @if (count($perChannel) > 1)
-                                                    @foreach ($perChannel as $channelSelected)
-                                                        <span class="badge bg-success rounded-pill"
-                                                            style="font-size: 14px">{{ $channelSelected->{'Siennasource__nombre'} }}</span>
-                                                    @endforeach
-                                                @else
+                                        @if ($filter[0])
+                                            @if (count($perChannel) > 1)
+                                                @foreach ($perChannel as $channelSelected)
                                                     <span class="badge bg-success rounded-pill"
-                                                        style="font-size: 14px">{{ $perChannel[0]->{'Siennasource__nombre'} }}</span>
-                                                @endif
+                                                        style="font-size: 14px">{{ $channelSelected->{'Siennasource__nombre'} }}</span>
+                                                @endforeach
+                                            @else
+                                                <span class="badge bg-success rounded-pill"
+                                                    style="font-size: 14px">{{ $perChannel[0]->{'Siennasource__nombre'} }}</span>
                                             @endif
+                                        @endif
 
-                                        </div>
-                                        <div>
+                                        @if (isset($filter[3]))
+                                        @if ($filter[3] == 0)
+                                            <span class="badge bg-dark rounded-pill"
+                                                style="font-size: 14px">Hoy</span>
+                                        @elseif ($filter[3] == 1)
+                                            <span class="badge bg-dark rounded-pill"
+                                                style="font-size: 14px">Ayer</span>
+                                        @elseif ($filter[3] == 2)
+                                            <span class="badge bg-dark rounded-pill"
+                                                style="font-size: 14px">Últimos 7 días</span>
+                                        @elseif ($filter[3] == 3)
+                                            <span class="badge bg-dark rounded-pill"
+                                                style="font-size: 14px">Últimos 30 días</span>
+                                        @elseif ($filter[3] == 4)
+                                            <span class="badge bg-dark rounded-pill" style="font-size: 14px">Mes
+                                                actual</span>
+                                        @elseif ($filter[3] == 5)
+                                            <span class="badge bg-dark rounded-pill" style="font-size: 14px">Mes
+                                                anterior</span>
+                                        @elseif (is_array($filter[3]) && count($filter[3]) > 1)
+                                            <span class="badge bg-dark rounded-pill"
+                                                style="font-size: 14px">{{ $filter[3][0] }} a
+                                                {{ $filter[3][1] }}</span>
+                                        @endif
+                                    @endif
+
+                                    </div>
+                                    <div>
+                                        @if ($tickets[0]->count)
                                             <div class="row mx-1 my-1">
                                                 <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
                                                     <div class="border rounded position-relative text-center"
@@ -1056,60 +1078,60 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                                 </div>
                                             </div>
-                                </form>
-                            </div>
-                    </div>
-                @else
-                    <div class="bg-white">
-                        <div class="border rounded text-center" style="min-height: 250px!important;">
-                            <div class="my-5">
-                                <img src="assetsfacu/images/svg/file-searching.svg" height="90"
-                                    alt="Without information">
-                                <h2 class="text-center">No hay información que mostrar.</h2>
-                                <a class="btn btn-primary text-white mt-2" href="/dash">Volver a dashboard</a>
-                            </div>
+                                        @else
+                                            <div class="bg-white">
+                                                <div class="border rounded text-center"
+                                                    style="min-height: 250px!important;">
+                                                    <div class="my-5">
+                                                        <img src="assetsfacu/images/svg/file-searching.svg"
+                                                            height="90" alt="Without information">
+                                                        <h2 class="text-center">No hay información que mostrar.</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
+                            </form>
                         </div>
                     </div>
-                @endif
-                </div>
-            </div>
-            </div>
-                <div class="tab-pane" id="logged">
-                    <p>...</p>
                 </div>
             </div>
         </div>
+        <div class="tab-pane" id="logged">
+            <p>...</p>
+        </div>
     </div>
+</div>
+</div>
 
 
-    @include('facu.footer')
+@include('facu.footer')
 
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.1/xlsx.full.min.js"></script>
-    <script>
-        function sendFormWithAxios() {
-            var ticket_ids = @json($qtyTickets);
-            let tickets = ticket_ids.map(item => item.id).join(',');
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.1/xlsx.full.min.js"></script>
+<script>
+    function sendFormWithAxios() {
+        var ticket_ids = @json($qtyTickets);
+        let tickets = ticket_ids.map(item => item.id).join(',');
 
-            axios.post('https://{{ $subdomain_tmp }}.suricata.cloud/dashreport', {
-                    ticket_ids: tickets,
-                    _token: document.querySelector('input[name="_token"]').value
-                })
-                .then(function(response) {
-                    console.log(response.data);
+        axios.post('https://{{ $subdomain_tmp }}.suricata.cloud/dashreport', {
+                ticket_ids: tickets,
+                _token: document.querySelector('input[name="_token"]').value
+            })
+            .then(function(response) {
+                console.log(response.data);
 
-                    var wb = XLSX.utils.book_new();
-                    var ws = XLSX.utils.json_to_sheet(response.data);
+                var wb = XLSX.utils.book_new();
+                var ws = XLSX.utils.json_to_sheet(response.data);
 
-                    XLSX.utils.book_append_sheet(wb, ws, "Reporte");
-                    const day = new Date()
-                    XLSX.writeFile(wb, `${day}.xlsx`);
+                XLSX.utils.book_append_sheet(wb, ws, "Reporte");
+                const day = new Date()
+                XLSX.writeFile(wb, `${day}.xlsx`);
 
-                })
-                .catch(function(error) {
-                    console.error(error);
-                    alert('Error al generar el reporte.');
-                });
-        }
-    </script>
+            })
+            .catch(function(error) {
+                console.error(error);
+                alert('Error al generar el reporte.');
+            });
+    }
+</script>

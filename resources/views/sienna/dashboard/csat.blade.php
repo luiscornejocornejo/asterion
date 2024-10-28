@@ -33,7 +33,7 @@
                 </ul>
                 <div class="tab-pane show active" id="csat">
                     <div class="content">
-                       
+
                         <div class="card">
                             <form action="/surveys" method="POST">
                                 @csrf
@@ -108,8 +108,10 @@
                                     <div class="row my-1">
                                         <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
                                             <input type="submit" class="btn btn-primary rounded-pill" value="Buscar">
-                                            <button type="button" onclick="sendFormWithAxios()"
-                                                class="btn btn-success rounded-pill">Generar reporte</button>
+                                            @if (isset($totalCsat[0]->avg))
+                                                <button type="button" onclick="sendFormWithAxios()"
+                                                    class="btn btn-success rounded-pill">Generar reporte</button>
+                                            @endif
                                         </div>
                                     </div>
 
@@ -121,7 +123,7 @@
                                                     <span class="badge bg-secondary rounded-pill"
                                                         style="font-size: 14px">{{ $agentSelected->Agent_Name }}</span>
                                                 @endforeach
-                                                @elseif(count($surveySended) == 1)
+                                            @elseif(count($surveySended) == 1)
                                                 <span class="badge bg-secondary rounded-pill"
                                                     style="font-size: 14px">{{ $surveySended[0]->Agent_Name }}</span>
                                             @endif
@@ -170,252 +172,254 @@
                                             @elseif ($filter[3] == 5)
                                                 <span class="badge bg-dark rounded-pill" style="font-size: 14px">Mes
                                                     anterior</span>
-                                                    @elseif (is_array($filter[3]) && count($filter[3]) > 1)
-                                                    <span class="badge bg-dark rounded-pill" style="font-size: 14px">{{ $filter[3][0] }} a {{ $filter[3][1] }}</span>
+                                            @elseif (is_array($filter[3]) && count($filter[3]) > 1)
+                                                <span class="badge bg-dark rounded-pill"
+                                                    style="font-size: 14px">{{ $filter[3][0] }} a
+                                                    {{ $filter[3][1] }}</span>
                                             @endif
                                         @endif
 
 
                                     </div>
                                     @if (isset($totalCsat[0]->avg))
-                                    <div class="row my-1">
-                                        <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
-                                            <div class="border rounded position-relative text-center"
-                                                style="min-height: 421.61px;!important;">
-                                                <div class="position-absolute top-50 start-50 translate-middle">
-                                                    <span class="h1 hoverDataTicket"
-                                                        style="font-size: 3.4rem;">{{ $totalCsat[0]->avg }}</span><br>
-                                                    <span class="hoverDataTicket">Total CSAT</span>
+                                        <div class="row my-1">
+                                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-sm-12 mt-2">
+                                                <div class="border rounded position-relative text-center"
+                                                    style="min-height: 421.61px;!important;">
+                                                    <div class="position-absolute top-50 start-50 translate-middle">
+                                                        <span class="h1 hoverDataTicket"
+                                                            style="font-size: 3.4rem;">{{ $totalCsat[0]->avg }}</span><br>
+                                                        <span class="hoverDataTicket">Total CSAT</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-12 mt-2">
+                                                <div class="border rounded">
+                                                    <p class="m-1">Encuestas realizadas</p>
+                                                    @php
+                                                        $series = array_map(function ($item) {
+                                                            return $item->count;
+                                                        }, $surveySended);
+
+                                                        $labels = array_map(function ($item) {
+                                                            return $item->Depto ?? 'Sin dato';
+                                                        }, $surveySended);
+
+                                                    @endphp
+                                                    <div id="chartCsat"></div>
+
+
+
+                                                    <script>
+                                                        document.addEventListener('DOMContentLoaded', function() {
+                                                            var options = {
+                                                                series: @json($series),
+                                                                chart: {
+                                                                    width: '100%',
+                                                                    height: 380,
+                                                                    type: 'donut',
+                                                                    dropShadow: {
+                                                                        enabled: true,
+                                                                        color: '#111',
+                                                                        top: -1,
+                                                                        left: 3,
+                                                                        blur: 3,
+                                                                        opacity: 0.2
+                                                                    }
+                                                                },
+                                                                stroke: {
+                                                                    width: 0,
+                                                                },
+                                                                plotOptions: {
+                                                                    pie: {
+                                                                        donut: {
+                                                                            labels: {
+                                                                                show: true,
+                                                                                total: {
+                                                                                    showAlways: true,
+                                                                                    show: true
+                                                                                }
+                                                                            },
+                                                                            size: '70%'
+                                                                        }
+                                                                    }
+                                                                },
+                                                                labels: @json($labels),
+                                                                legend: {
+                                                                    position: 'bottom',
+                                                                    horizontalAlign: 'center',
+                                                                    formatter: function(label, opts) {
+                                                                        if (label.length > 10) {
+                                                                            return label.substring(0, 10) + '...';
+                                                                        }
+                                                                        return label;
+                                                                    }
+                                                                },
+                                                                dataLabels: {
+                                                                    dropShadow: {
+                                                                        blur: 3,
+                                                                        opacity: 0.8
+                                                                    }
+                                                                },
+                                                                fill: {
+                                                                    type: 'donut',
+                                                                    opacity: 1,
+                                                                    pattern: {
+                                                                        enabled: true,
+                                                                        style: ['verticalLines', 'squares', 'horizontalLines', 'circles', 'slantedLines'],
+                                                                    },
+                                                                },
+                                                                states: {
+                                                                    hover: {
+                                                                        filter: 'none'
+                                                                    }
+                                                                },
+                                                                theme: {
+                                                                    palette: 'palette2'
+                                                                },
+                                                                responsive: [{
+                                                                    breakpoint: 480,
+                                                                    options: {
+                                                                        chart: {
+                                                                            width: 380,
+                                                                            height: 250
+                                                                        },
+                                                                        legend: {
+                                                                            position: 'bottom'
+                                                                        }
+                                                                    }
+                                                                }]
+                                                            };
+
+                                                            var chart = new ApexCharts(document.querySelector("#chartCsat"), options);
+                                                            chart.render();
+
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-12 mt-2">
+                                                <div class="border rounded">
+                                                    <p class="m-1">Encuestas por canal</p>
+                                                    @php
+                                                        $seriesPerChannelCsat = array_map(function ($item) {
+                                                            return $item->count;
+                                                        }, $surverPerChannel);
+
+                                                        $labelsperChannelCsat = array_map(function ($item) {
+                                                            return $item->Siennasource__nombre ?? 'Desconocido';
+                                                        }, $surverPerChannel);
+
+                                                    @endphp
+                                                    <div id="chartPerChannelCsat"></div>
+                                                    <script>
+                                                        document.addEventListener('DOMContentLoaded', function() {
+                                                            var options = {
+                                                                series: @json($seriesPerChannelCsat),
+                                                                chart: {
+                                                                    width: '100%',
+                                                                    height: 380,
+                                                                    type: 'donut',
+                                                                    dropShadow: {
+                                                                        enabled: true,
+                                                                        color: '#111',
+                                                                        top: -1,
+                                                                        left: 3,
+                                                                        blur: 3,
+                                                                        opacity: 0.2
+                                                                    }
+                                                                },
+                                                                stroke: {
+                                                                    width: 0,
+                                                                },
+                                                                plotOptions: {
+                                                                    pie: {
+                                                                        donut: {
+                                                                            labels: {
+                                                                                show: true,
+                                                                                total: {
+                                                                                    showAlways: true,
+                                                                                    show: true
+                                                                                }
+                                                                            },
+                                                                            size: '70%'
+                                                                        }
+                                                                    }
+                                                                },
+                                                                labels: @json($labelsperChannelCsat),
+                                                                legend: {
+                                                                    position: 'bottom',
+                                                                    horizontalAlign: 'center',
+                                                                    formatter: function(label, opts) {
+                                                                        if (label.length > 10) {
+                                                                            return label.substring(0, 10) + '...';
+                                                                        }
+                                                                        return label;
+                                                                    }
+                                                                },
+                                                                dataLabels: {
+                                                                    dropShadow: {
+                                                                        blur: 3,
+                                                                        opacity: 0.8
+                                                                    }
+                                                                },
+                                                                fill: {
+                                                                    type: 'donut',
+                                                                    opacity: 1,
+                                                                    pattern: {
+                                                                        enabled: true,
+                                                                        style: ['verticalLines', 'squares', 'horizontalLines', 'circles', 'slantedLines'],
+                                                                    },
+                                                                },
+                                                                states: {
+                                                                    hover: {
+                                                                        filter: 'none'
+                                                                    }
+                                                                },
+                                                                theme: {
+                                                                    palette: 'palette2'
+                                                                },
+                                                                responsive: [{
+                                                                    breakpoint: 480,
+                                                                    options: {
+                                                                        chart: {
+                                                                            width: 380,
+                                                                            height: 250
+                                                                        },
+                                                                        legend: {
+                                                                            position: 'bottom'
+                                                                        }
+                                                                    }
+                                                                }]
+                                                            };
+
+                                                            var chart = new ApexCharts(document.querySelector("#chartPerChannelCsat"), options);
+                                                            chart.render();
+
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    @else
+                                        <div class="bg-white">
+                                            <div class="border rounded text-center"
+                                                style="min-height: 250px!important;">
+                                                <div class="my-5">
+                                                    <img src="assetsfacu/images/svg/file-searching.svg" height="90"
+                                                        alt="Without information">
+                                                    <h2 class="text-center">No hay información que mostrar.</h2>
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-12 mt-2">
-                                            <div class="border rounded">
-                                                <p class="m-1">Encuestas realizadas</p>
-                                                @php
-                                                    $series = array_map(function ($item) {
-                                                        return $item->count;
-                                                    }, $surveySended);
-
-                                                    $labels = array_map(function ($item) {
-                                                        return $item->Depto ?? 'Sin dato';
-                                                    }, $surveySended);
-
-                                                @endphp
-                                                <div id="chartCsat"></div>
-
-
-
-                                                <script>
-                                                    document.addEventListener('DOMContentLoaded', function() {
-                                                        var options = {
-                                                            series: @json($series),
-                                                            chart: {
-                                                                width: '100%',
-                                                                height: 380,
-                                                                type: 'donut',
-                                                                dropShadow: {
-                                                                    enabled: true,
-                                                                    color: '#111',
-                                                                    top: -1,
-                                                                    left: 3,
-                                                                    blur: 3,
-                                                                    opacity: 0.2
-                                                                }
-                                                            },
-                                                            stroke: {
-                                                                width: 0,
-                                                            },
-                                                            plotOptions: {
-                                                                pie: {
-                                                                    donut: {
-                                                                        labels: {
-                                                                            show: true,
-                                                                            total: {
-                                                                                showAlways: true,
-                                                                                show: true
-                                                                            }
-                                                                        },
-                                                                        size: '70%'
-                                                                    }
-                                                                }
-                                                            },
-                                                            labels: @json($labels),
-                                                            legend: {
-                                                                position: 'bottom',
-                                                                horizontalAlign: 'center',
-                                                                formatter: function(label, opts) {
-                                                                    if (label.length > 10) {
-                                                                        return label.substring(0, 10) + '...';
-                                                                    }
-                                                                    return label;
-                                                                }
-                                                            },
-                                                            dataLabels: {
-                                                                dropShadow: {
-                                                                    blur: 3,
-                                                                    opacity: 0.8
-                                                                }
-                                                            },
-                                                            fill: {
-                                                                type: 'donut',
-                                                                opacity: 1,
-                                                                pattern: {
-                                                                    enabled: true,
-                                                                    style: ['verticalLines', 'squares', 'horizontalLines', 'circles', 'slantedLines'],
-                                                                },
-                                                            },
-                                                            states: {
-                                                                hover: {
-                                                                    filter: 'none'
-                                                                }
-                                                            },
-                                                            theme: {
-                                                                palette: 'palette2'
-                                                            },
-                                                            responsive: [{
-                                                                breakpoint: 480,
-                                                                options: {
-                                                                    chart: {
-                                                                        width: 380,
-                                                                        height: 250
-                                                                    },
-                                                                    legend: {
-                                                                        position: 'bottom'
-                                                                    }
-                                                                }
-                                                            }]
-                                                        };
-
-                                                        var chart = new ApexCharts(document.querySelector("#chartCsat"), options);
-                                                        chart.render();
-
-                                                    });
-                                                </script>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xxl-4 col-xl-4 col-lg-8 col-sm-12 mt-2">
-                                            <div class="border rounded">
-                                                <p class="m-1">Encuestas por canal</p>
-                                                @php
-                                                    $seriesPerChannelCsat = array_map(function ($item) {
-                                                        return $item->count;
-                                                    }, $surverPerChannel);
-
-                                                    $labelsperChannelCsat = array_map(function ($item) {
-                                                        return $item->Siennasource__nombre ?? 'Desconocido';
-                                                    }, $surverPerChannel);
-
-                                                @endphp
-                                                <div id="chartPerChannelCsat"></div>
-                                                <script>
-                                                    document.addEventListener('DOMContentLoaded', function() {
-                                                        var options = {
-                                                            series: @json($seriesPerChannelCsat),
-                                                            chart: {
-                                                                width: '100%',
-                                                                height: 380,
-                                                                type: 'donut',
-                                                                dropShadow: {
-                                                                    enabled: true,
-                                                                    color: '#111',
-                                                                    top: -1,
-                                                                    left: 3,
-                                                                    blur: 3,
-                                                                    opacity: 0.2
-                                                                }
-                                                            },
-                                                            stroke: {
-                                                                width: 0,
-                                                            },
-                                                            plotOptions: {
-                                                                pie: {
-                                                                    donut: {
-                                                                        labels: {
-                                                                            show: true,
-                                                                            total: {
-                                                                                showAlways: true,
-                                                                                show: true
-                                                                            }
-                                                                        },
-                                                                        size: '70%'
-                                                                    }
-                                                                }
-                                                            },
-                                                            labels: @json($labelsperChannelCsat),
-                                                            legend: {
-                                                                position: 'bottom',
-                                                                horizontalAlign: 'center',
-                                                                formatter: function(label, opts) {
-                                                                    if (label.length > 10) {
-                                                                        return label.substring(0, 10) + '...';
-                                                                    }
-                                                                    return label;
-                                                                }
-                                                            },
-                                                            dataLabels: {
-                                                                dropShadow: {
-                                                                    blur: 3,
-                                                                    opacity: 0.8
-                                                                }
-                                                            },
-                                                            fill: {
-                                                                type: 'donut',
-                                                                opacity: 1,
-                                                                pattern: {
-                                                                    enabled: true,
-                                                                    style: ['verticalLines', 'squares', 'horizontalLines', 'circles', 'slantedLines'],
-                                                                },
-                                                            },
-                                                            states: {
-                                                                hover: {
-                                                                    filter: 'none'
-                                                                }
-                                                            },
-                                                            theme: {
-                                                                palette: 'palette2'
-                                                            },
-                                                            responsive: [{
-                                                                breakpoint: 480,
-                                                                options: {
-                                                                    chart: {
-                                                                        width: 380,
-                                                                        height: 250
-                                                                    },
-                                                                    legend: {
-                                                                        position: 'bottom'
-                                                                    }
-                                                                }
-                                                            }]
-                                                        };
-
-                                                        var chart = new ApexCharts(document.querySelector("#chartPerChannelCsat"), options);
-                                                        chart.render();
-
-                                                    });
-                                                </script>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    @else
-                                    <div class="bg-white">
-                                        <div class="border rounded text-center" style="min-height: 250px!important;">
-                                            <div class="my-5">
-                                                <img src="assetsfacu/images/svg/file-searching.svg" height="90"
-                                                    alt="Without information">
-                                                <h2 class="text-center">No hay información que mostrar.</h2>
-                                                <a class="btn btn-primary text-white mt-2" href="/surverys">Volver a dashboard</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endif
+                                    @endif
                                 </div>
                             </form>
                         </div>
-                       
+
                     </div>
                 </div>
             </div>
@@ -423,3 +427,33 @@
     </div>
 </div>
 @include('facu.footer')
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.1/xlsx.full.min.js"></script>
+<script>
+    function sendFormWithAxios() {
+        var ticket_ids = @json($qtyTicketCsat);
+        let tickets = ticket_ids.map(item => item.ticket).join(',');
+
+        axios.post('https://{{ $subdomain_tmp }}.suricata.cloud/surveyreport', {
+                ticket_ids: tickets,
+                _token: document.querySelector('input[name="_token"]').value
+            })
+            .then(function(response) {
+                console.log(response.data);
+
+                var wb = XLSX.utils.book_new();
+                var ws = XLSX.utils.json_to_sheet(response.data);
+
+                XLSX.utils.book_append_sheet(wb, ws, "Reporte");
+                const day = new Date()
+                XLSX.writeFile(wb, `${day}.xlsx`);
+
+            })
+            .catch(function(error) {
+                console.error(error);
+                alert('Error al generar el reporte.');
+            });
+    }
+</script>
+
