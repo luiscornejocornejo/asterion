@@ -1097,7 +1097,19 @@ if (isset($_SERVER['HTTP_HOST'])) {
             </div>
         </div>
         <div class="tab-pane" id="logged">
-            <div id="logeados"></div>
+            <div id="logeados">
+                <table id="agentesTable" class="table table-striped dt-responsive nowrap w-100 text-light">
+                    <thead>
+                        <tr>
+                            <th>Usuario</th>
+                            <th>Área</th>
+                            <th>Tipo</th>
+                            <th>Inicio</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
@@ -1138,26 +1150,28 @@ if (isset($_SERVER['HTTP_HOST'])) {
     var URLactual = window.location.href;
     var porciones = URLactual.split('.');
     let result = porciones[0].replace("https://", "");
-    urllogeados = "https://" + result + ".suricata.cloud/api/logeados";
-    console.log(urllogeados)
-    function logeados(urllogeados) {
-        axios.get(urllogeados)
-            .then(function(response) {
-                console.log(response)
-                    .clone(true)
-                    .addClass('filters')
-                    .appendTo('#example2 thead');
-            })
-            .catch(function(error) {
-                // función para capturar el error
-                console.log(error);
-            })
-            .then(function() {
-                // función que siempre se ejecuta
-            });
-    }
+    let urllogeados = "https://" + result + ".suricata.cloud/api/logeados";
 
-    function mostrar3() {
-      
+    let tableInitialized = false;
+
+    async function logeados() {
+        $('#agentesTable').DataTable({
+            ajax: {
+                url: urllogeados,
+                type: "GET",
+                dataSrc: ""
+            },
+            columns: [
+                { data: "usu" },
+                { data: "area" },
+                { data: "tipo" },
+                { data: "inicio" }
+            ],
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.11.5/i18n/es_es.json' // Para español
+            }
+        });
+
+        tableInitialized = true;
     }
 </script>
