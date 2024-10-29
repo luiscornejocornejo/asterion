@@ -18,9 +18,7 @@ else{?>
 <?php }?>
 <div class="<?php echo $vero; ?> d-flex justify-content-between mt-2 mb-2">
     <div></div>
-    <div class="me-4">
-    atajos: 
-</div>
+   
     <div class="me-4">
     
         <select class="form-select" aria-label="Default select example">
@@ -30,6 +28,9 @@ else{?>
 </select>
 
     </div>
+    <div class="me-4">
+ 
+ </div>
     <div class="me-2">
         <button class="btn btn-success " data-bs-toggle="modal" data-bs-target="#open-conversation">
             <i class="mdi mdi-whatsapp me-1"></i>Reabrir conversación
