@@ -18,7 +18,7 @@ else{?>
 <?php }?>
 <div class="<?php echo $vero; ?> d-flex justify-content-between mt-2 mb-2">
     <div></div>
-    <div class="me-2">
+    <div class="me-4">
         atajos
     </div>
     <div class="me-2">
