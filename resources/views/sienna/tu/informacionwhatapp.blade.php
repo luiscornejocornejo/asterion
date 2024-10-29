@@ -4,11 +4,14 @@
     $tipobot=0;
     foreach($datosempresa as $val){
         $tipobot=$val->tipo;
+        $bp_botid=$val->bp_botid;
+        $bp_wsid=$val->bp_wsid;
+        $bt_webhook_id=$val->bt_webhook_id;
     }
     if($resultados[0]->ticketid==317){
    // if($tipobot==1){
             ?>
-<iframe allow="camera;microphone" src="https://frontend-botpress-q74s5.ondigitalocean.app/?conversationId=<?php echo $resultados[0]->conversation_id; ?>&ticketId=<?php echo $resultados[0]->ticketid;?>&agentName=<?php echo session('nombreusuario');?> " width="100%" class="border rounded-3" style="height: 650px!important;"></iframe>
+<iframe allow="camera;microphone" src="https://frontend-botpress-q74s5.ondigitalocean.app/?conversationId=<?php echo $resultados[0]->conversation_id; ?>&ticketId=<?php echo $resultados[0]->ticketid;?>&agentName=<?php echo session('nombreusuario');?>&bp_botid=<?php echo $bp_botid;?>&bp_wsid=<?php echo $bp_wsid;?>&bt_webhook_id=<?php echo $bt_webhook_id;?> " width="100%" class="border rounded-3" style="height: 650px!important;"></iframe>
 <?php }
 else{?>
 <iframe allow="camera;microphone" src="<?php echo $resultados[0]->conversation_url; ?>" width="100%" class="border rounded-3" style="height: 650px!important;"></iframe>
