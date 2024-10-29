@@ -21,9 +21,9 @@ else{?>
    
     <div class="me-4">
     
-        <select class="form-select" aria-label="Default select example">
+        <select onChange="mos(this.options[this.selectedIndex].value)" class="form-select" aria-label="Default select example">
         <?php foreach($datosatajos as $val){?>
-            <option onchange="mos('<?php echo $val->contenido;?>')" ><?php echo $val->nombre."  ".$val->contenido;?></option>
+            <option value="<?php echo $val->contenido;?>" ><?php echo $val->nombre;?></option>
             <?php }?>
 </select>
 <script>
