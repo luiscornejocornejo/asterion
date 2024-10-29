@@ -1077,14 +1077,14 @@ $miip = request()->ip();
                                                                     "#20c997", "#17a2b8", "#e83e8c", "#6f42c1", "#ffc107", "#343a40"
                                                                 ]
                                                                 var options = {
-                                                                        series: @json($series),
-                                                                        chart: {
-                                                                            type: 'bar',
-                                                                            height: 350,
-                                                                            stacked: true,
-                                                                            zoom: {
-                                                                                enabled: true
-                                                                            }
+                                                                    series: @json($series),
+                                                                    chart: {
+                                                                        type: 'bar',
+                                                                        height: 350,
+                                                                        stacked: true,
+                                                                        zoom: {
+                                                                            enabled: true
+                                                                            
                                                                         }
                                                                     },
                                                                     colors: colors,
@@ -1113,8 +1113,9 @@ $miip = request()->ip();
                                                                         offsetX: 0,
                                                                         offsetY: 50
                                                                     },
-                                                            };
-                                                            var chart = new ApexCharts(document.querySelector("#ticketTopicDay"), options); chart.render();
+                                                                };
+                                                                var chart = new ApexCharts(document.querySelector("#ticketTopicDay"), options);
+                                                                chart.render();
                                                             });
                                                         </script>
 
