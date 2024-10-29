@@ -39,6 +39,8 @@
         var porciones = URLactual.split('.');
         let result = porciones[0].replace("https://", "");
         url2 = "https://"+result+".suricata.cloud/api/telefonia?ip=" + necesito ;
+        console.log(url2);
+
         axios.get(url2)
         .then(function (response) {
             console.log("data:");
