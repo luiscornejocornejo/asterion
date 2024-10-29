@@ -11,6 +11,9 @@ foreach($datospagoralia as $valpago){
 
 }
 
+$queryempresa="select * from empresa";
+$datosempresa = DB::select($queryempresa);
+
 function coloriconos($iconos, $tipo)
 {
     $coloricono = "";

@@ -1,5 +1,8 @@
 
-<?php if($resultados[0]->ticketid==317){?>
+<?php if($resultados[0]->ticketid==317){
+    
+    var_dump($datosempresa);
+    ?>
 <iframe allow="camera;microphone" src="https://frontend-botpress-q74s5.ondigitalocean.app/?conversationId=<?php echo $resultados[0]->conversation_id; ?>&ticketId=<?php echo $resultados[0]->ticketid;?>&agentName=<?php echo session('nombreusuario');?> " width="100%" class="border rounded-3" style="height: 650px!important;"></iframe>
 <?php }
 else{?>
