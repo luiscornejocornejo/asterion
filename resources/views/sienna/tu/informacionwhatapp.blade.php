@@ -23,7 +23,7 @@ else{?>
     
         <select class="form-select" aria-label="Default select example">
         <?php foreach($datosatajos as $val){?>
-            <option onclick="mos('<?php echo $val->contenido;?>')" ><?php echo $val->nombre."  ".$val->contenido;?></option>
+            <option onchange="mos('<?php echo $val->contenido;?>')" ><?php echo $val->nombre."  ".$val->contenido;?></option>
             <?php }?>
 </select>
 <script>
