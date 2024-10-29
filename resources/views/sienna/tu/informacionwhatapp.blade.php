@@ -46,5 +46,5 @@ else{?>
 
 </div>
 <div class="me-2">
-<textarea id="cop"></textarea>
+<textarea class="form-control" id="cop"></textarea>
 </div>
