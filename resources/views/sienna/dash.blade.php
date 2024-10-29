@@ -1,5 +1,6 @@
-@include('facu.header2')
+@include('facu.header')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
 
 <?php echo "Juanito" . session('empresa');?>
 <script>
