@@ -19,7 +19,13 @@ else{?>
 <div class="<?php echo $vero; ?> d-flex justify-content-between mt-2 mb-2">
     <div></div>
     <div class="me-4">
-        atajos: <?php var_dump($datosatajos);?>
+        atajos: 
+        <select class="form-select" aria-label="Default select example">
+        <?php foreach($datosatajos as $val){?>
+            <option ><?php echo $val->nombre."  ".$val->contenido;?></option>
+            <?php }?>
+</select>
+
     </div>
     <div class="me-2">
         <button class="btn btn-success " data-bs-toggle="modal" data-bs-target="#open-conversation">
