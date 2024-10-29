@@ -14,7 +14,7 @@ foreach($datospagoralia as $valpago){
 $queryempresa="select * from empresa";
 $datosempresa = DB::select($queryempresa);
 
-echo $queryatajos="select * from siennaatajos where siennadepto='".$resultados[0]->siennadepto."'";
+echo $queryatajos="select * from siennaatajos where siennadepto='".$resultados[0]->iddepto."'";
 $datosatajos = DB::select($queryatajos);
 
 function coloriconos($iconos, $tipo)
