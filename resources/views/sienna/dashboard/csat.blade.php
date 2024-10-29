@@ -130,11 +130,21 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
                                     <div class="mt-2">
                                         <!-- Aca van los filtros -->
-                                        @if (isset($filter[2]))
+                                        @if (!empty($filter[2]))
                                             @if (count($surveySended) > 1)
+                                                @php
+                                                    $showAgent = [];
+                                                @endphp
                                                 @foreach ($surveySended as $agentSelected)
-                                                    <span class="badge bg-secondary rounded-pill"
-                                                        style="font-size: 14px">{{ $agentSelected->Agent_Name }}</span>
+                                                    @if (!in_array($agentSelected->Agent_Name, $showAgent))
+                                                        <span class="badge bg-secondary rounded-pill"
+                                                            style="font-size: 14px">
+                                                            {{ $agentSelected->Agent_Name }}
+                                                        </span>
+                                                        @php
+                                                            $showAgent[] = $agentSelected->Agent_Name;
+                                                        @endphp
+                                                    @endif
                                                 @endforeach
                                             @elseif(count($surveySended) == 1)
                                                 <span class="badge bg-secondary rounded-pill"
@@ -142,11 +152,21 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                             @endif
                                         @endif
 
-                                        @if (isset($filter[1]))
+                                        @if (!empty($filter[1]))
                                             @if (count($surveySended) > 1)
+                                                @php
+                                                    $showDepartment = [];
+                                                @endphp
                                                 @foreach ($surveySended as $departmentSelected)
-                                                    <span class="badge bg-info rounded-pill"
-                                                        style="font-size: 14px">{{ $departmentSelected->Depto }}</span>
+                                                    @if (!in_array($departmentSelected->Depto, $showDepartment))
+                                                        <span class="badge bg-secondary rounded-pill"
+                                                            style="font-size: 14px">
+                                                            {{ $departmentSelected->Depto }}
+                                                        </span>
+                                                        @php
+                                                            $showDepartment[] = $departmentSelected->Depto;
+                                                        @endphp
+                                                    @endif
                                                 @endforeach
                                             @elseif(count($surveySended) == 1)
                                                 <span class="badge bg-info rounded-pill"
@@ -154,11 +174,23 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                             @endif
                                         @endif
 
-                                        @if (isset($filter[0]))
+                                        @if (!empty($filter[0]))
                                             @if (count($surverPerChannel) > 1)
+                                                @php
+                                                    $shownChannels = [];
+                                                @endphp
+
                                                 @foreach ($surverPerChannel as $channelSelected)
-                                                    <span class="badge bg-success rounded-pill"
-                                                        style="font-size: 14px">{{ $channelSelected->{'Siennasource__nombre'} }}</span>
+                                                    @if (!in_array($channelSelected->{'Siennasource__nombre'}, $shownChannels))
+                                                        <span class="badge bg-success rounded-pill"
+                                                            style="font-size: 14px">
+                                                            {{ $channelSelected->{'Siennasource__nombre'} }}
+                                                        </span>
+                                                        @php
+                                                            $shownChannels[] =
+                                                                $channelSelected->{'Siennasource__nombre'};
+                                                        @endphp
+                                                    @endif
                                                 @endforeach
                                             @elseif(count($surverPerChannel) == 1)
                                                 <span class="badge bg-success rounded-pill"
@@ -469,4 +501,3 @@ if (isset($_SERVER['HTTP_HOST'])) {
             });
     }
 </script>
-

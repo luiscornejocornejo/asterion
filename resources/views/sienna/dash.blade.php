@@ -1,7 +1,6 @@
 @include('facu.header')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
-
 <?php echo "Juanito" . session('empresa');?>
 <script>
         let navegador = navigator.userAgent;
@@ -175,37 +174,37 @@
                                     </div>
                                     <div class="mt-2">
                                         <!-- Aca van los filtros -->
-                                        @if ($filter[2])
+                                        @if (!empty($filter[2]) && ($perAgent) > 0)
                                             @if (count($perAgent) > 1)
                                                 @foreach ($perAgent as $agentSelected)
                                                     <span class="badge bg-secondary rounded-pill"
                                                         style="font-size: 14px">{{ $agentSelected->{'Users - Asignado__nombre'} }}</span>
                                                 @endforeach
-                                            @else
+                                            @elseif(count($perAgent) == 1 && count($perAgent) <> "")
                                                 <span class="badge bg-secondary rounded-pill"
                                                     style="font-size: 14px">{{ $perAgent[0]->{'Users - Asignado__nombre'} }}</span>
                                             @endif
                                         @endif
 
-                                        @if ($filter[1])
+                                        @if (!empty($filter[1]) && count($byDepartment) > 0)
                                             @if (count($byDepartment) > 1)
                                                 @foreach ($byDepartment as $departmentSelected)
                                                     <span class="badge bg-info rounded-pill"
                                                         style="font-size: 14px">{{ $departmentSelected->{'Siennadepto__nombre'} }}</span>
                                                 @endforeach
-                                            @else
+                                            @elseif(count($byDepartment) == 1 && count($byDepartment) <> "")
                                                 <span class="badge bg-info rounded-pill"
                                                     style="font-size: 14px">{{ $byDepartment[0]->{'Siennadepto__nombre'} }}</span>
                                             @endif
                                         @endif
 
-                                        @if ($filter[0])
+                                        @if (!empty($filter[0]) && count($perChannel) > 0)
                                             @if (count($perChannel) > 1)
                                                 @foreach ($perChannel as $channelSelected)
                                                     <span class="badge bg-success rounded-pill"
                                                         style="font-size: 14px">{{ $channelSelected->{'Siennasource__nombre'} }}</span>
                                                 @endforeach
-                                            @else
+                                                @elseif(count($perChannel) == 1 && count($perChannel) <> "")
                                                 <span class="badge bg-success rounded-pill"
                                                     style="font-size: 14px">{{ $perChannel[0]->{'Siennasource__nombre'} }}</span>
                                             @endif
