@@ -37,7 +37,7 @@ else{?>
  
  </div>
  <div class="me-2">
-    <p id="cop"></p>
+    <textarea id="cop"></textarea>
     </div>
     <div class="me-2">
         <button class="btn btn-success " data-bs-toggle="modal" data-bs-target="#open-conversation">
