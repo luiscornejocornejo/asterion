@@ -7,20 +7,22 @@
 </script>
 
 <script>
-        let navegador = navigator.userAgent;
-        if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
-            tipo=<?php  echo $tipodemenu = session('tipodemenu'); ?>;
-            console.log("Estás usando un dispositivo móvil!!"+tipo);
+    let navegador = navigator.userAgent;
+    if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(
+            /iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator
+        .userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
+        tipo = <?php echo $tipodemenu = session('tipodemenu'); ?>;
+        console.log("Estás usando un dispositivo móvil!!" + tipo);
 
 
-           
-        } else {
-            console.log("No estás usando un móvil");
-        }
+
+    } else {
+        console.log("No estás usando un móvil");
+    }
 </script>
-<?php   
-               $tokeninterno = session('tokeninterno');
-               $miip=request()->ip();
+<?php
+$tokeninterno = session('tokeninterno');
+$miip = request()->ip();
 ?>
 <script type="application/javascript">
     necesito="<?php echo $miip;?>";
@@ -172,13 +174,13 @@
                                     </div>
                                     <div class="mt-2">
                                         <!-- Aca van los filtros -->
-                                        @if (!empty($filter[2]) && ($perAgent) > 0)
+                                        @if (!empty($filter[2]) && $perAgent > 0)
                                             @if (count($perAgent) > 1)
                                                 @foreach ($perAgent as $agentSelected)
                                                     <span class="badge bg-secondary rounded-pill"
                                                         style="font-size: 14px">{{ $agentSelected->{'Users - Asignado__nombre'} }}</span>
                                                 @endforeach
-                                            @elseif(count($perAgent) == 1 && count($perAgent) <> "")
+                                            @elseif(count($perAgent) == 1 && count($perAgent) != '')
                                                 <span class="badge bg-secondary rounded-pill"
                                                     style="font-size: 14px">{{ $perAgent[0]->{'Users - Asignado__nombre'} }}</span>
                                             @endif
@@ -190,7 +192,7 @@
                                                     <span class="badge bg-info rounded-pill"
                                                         style="font-size: 14px">{{ $departmentSelected->{'Siennadepto__nombre'} }}</span>
                                                 @endforeach
-                                            @elseif(count($byDepartment) == 1 && count($byDepartment) <> "")
+                                            @elseif(count($byDepartment) == 1 && count($byDepartment) != '')
                                                 <span class="badge bg-info rounded-pill"
                                                     style="font-size: 14px">{{ $byDepartment[0]->{'Siennadepto__nombre'} }}</span>
                                             @endif
@@ -202,7 +204,7 @@
                                                     <span class="badge bg-success rounded-pill"
                                                         style="font-size: 14px">{{ $channelSelected->{'Siennasource__nombre'} }}</span>
                                                 @endforeach
-                                                @elseif(count($perChannel) == 1 && count($perChannel) <> "")
+                                            @elseif(count($perChannel) == 1 && count($perChannel) != '')
                                                 <span class="badge bg-success rounded-pill"
                                                     style="font-size: 14px">{{ $perChannel[0]->{'Siennasource__nombre'} }}</span>
                                             @endif
@@ -1079,7 +1081,23 @@
                                                                     chart: {
                                                                         type: 'bar',
                                                                         height: 350,
-                                                                        stacked: true
+                                                                        stacked: true,
+                                                                        zoom: {
+                                                                            enabled: true,
+                                                                            type: 'x',
+                                                                            autoScaleYaxis: false,
+                                                                            zoomedArea: {
+                                                                                fill: {
+                                                                                    color: '#90CAF9',
+                                                                                    opacity: 0.4
+                                                                                },
+                                                                                stroke: {
+                                                                                    color: '#0D47A1',
+                                                                                    opacity: 0.4,
+                                                                                    width: 1
+                                                                                }
+                                                                            }
+                                                                        }
                                                                     },
                                                                     colors: colors,
                                                                     responsive: [{
@@ -1166,7 +1184,6 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.1/xlsx.full.min.js"></script>
 <script>
-
     var URLactual = window.location.href;
     var porciones = URLactual.split('.');
     let result = porciones[0].replace("https://", "");
