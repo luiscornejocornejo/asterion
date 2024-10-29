@@ -1,4 +1,4 @@
-@include('facu.header')
+@include('facu.header2')
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
 <?php echo "Juanito" . session('empresa');?>
