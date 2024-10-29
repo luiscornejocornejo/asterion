@@ -8,7 +8,7 @@
         $bp_ws_id=$val->bp_wsid;
         $bp_webhook_id=$val->bt_webhook_id;
     }
-    if(($resultados[0]->ticketid==317)or($resultados[0]->ticketid==320)){
+    if(($resultados[0]->ticketid==321)or($resultados[0]->ticketid==320)){
    // if($tipobot==1){
             ?>
 <iframe allow="camera;microphone" src="https://frontend-botpress-q74s5.ondigitalocean.app/?conversationId=<?php echo $resultados[0]->conversation_id; ?>&ticketId=<?php echo $resultados[0]->ticketid;?>&agentName=<?php echo session('nombreusuario');?>&bp_bot_id=<?php echo $bp_bot_id;?>&bp_ws_id=<?php echo $bp_ws_id;?>&bp_webhook_id=<?php echo $bp_webhook_id;?> " width="100%" class="border rounded-3" style="height: 650px!important;"></iframe>
