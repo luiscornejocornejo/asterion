@@ -19,6 +19,9 @@ else{?>
 <div class="<?php echo $vero; ?> d-flex justify-content-between mt-2 mb-2">
     <div></div>
     <div class="me-2">
+        atajos
+    </div>
+    <div class="me-2">
         <button class="btn btn-success " data-bs-toggle="modal" data-bs-target="#open-conversation">
             <i class="mdi mdi-whatsapp me-1"></i>Reabrir conversación
         </button>
