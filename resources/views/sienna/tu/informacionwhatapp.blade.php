@@ -4,8 +4,8 @@
     $tipobot=0;
     foreach($datosempresa as $val){
         $tipobot=$val->tipo;
-        $bp_botid=$val->bp_botid;
-        $bp_wsid=$val->bp_wsid;
+        $bp_bot_id=$val->bp_botid;
+        $bp_ws_id=$val->bp_wsid;
         $bt_webhook_id=$val->bt_webhook_id;
     }
     if(($resultados[0]->ticketid==317)or($resultados[0]->ticketid==320)){
