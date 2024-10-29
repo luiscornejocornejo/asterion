@@ -22,6 +22,7 @@ else{?>
     <div class="me-4">
     
         <select onChange="mos(this.options[this.selectedIndex].value)" class="form-select" aria-label="Default select example">
+       <option>Seleccionar</option>
         <?php foreach($datosatajos as $val){?>
             <option value="<?php echo $val->contenido;?>" ><?php echo $val->nombre;?></option>
             <?php }?>
@@ -32,10 +33,10 @@ else{?>
         document.getElementById("cop").innerHTML =dd;
     }
 </script>
-<p id="cop"></p>
-    </div>
+
     <div class="me-4">
- 
+    <p id="cop"></p>
+    </div>
  </div>
     <div class="me-2">
         <button class="btn btn-success " data-bs-toggle="modal" data-bs-target="#open-conversation">
