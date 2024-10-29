@@ -466,7 +466,7 @@ class Dashboard2Controller extends Controller
         ORDER BY
         `count` ASC,
         DATE(" . $dom . ".`siennatickets_view`.`Creado`) ASC,
-        `Siennatopic`.`nombre` ASC LIMIT 50";
+        `Siennatopic`.`nombre` ASC";
 
         $resultTopicPerDay = DB::connection('mysql2')->select($queryTopicPerDay);
 
