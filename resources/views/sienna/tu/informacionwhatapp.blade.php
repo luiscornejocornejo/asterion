@@ -19,26 +19,7 @@ else{?>
 <div class="<?php echo $vero; ?> d-flex justify-content-between mt-2 mb-2">
     <div></div>
    
-    <div class="me-2">
-    
-        <select onChange="mos(this.options[this.selectedIndex].value)" class="form-select" aria-label="Default select example">
-       <option>Seleccionar</option>
-        <?php foreach($datosatajos as $val){?>
-            <option value="<?php echo $val->contenido;?>" ><?php echo $val->nombre;?></option>
-            <?php }?>
-</select>
-<script>
-    function mos(dd){
-        document.getElementById("cop").innerHTML =null;
-        document.getElementById("cop").innerHTML =dd;
-    }
-</script>
 
- 
- </div>
- <div class="me-2">
-    <textarea id="cop"></textarea>
-    </div>
     <div class="me-2">
         <button class="btn btn-success " data-bs-toggle="modal" data-bs-target="#open-conversation">
             <i class="mdi mdi-whatsapp me-1"></i>Reabrir conversación
@@ -46,4 +27,24 @@ else{?>
     </div>
 
 
+</div>
+<div class="me-2">
+    
+    <select onChange="mos(this.options[this.selectedIndex].value)" class="form-select" aria-label="Default select example">
+   <option>Seleccionar</option>
+            <?php foreach($datosatajos as $val){?>
+            <option value="<?php echo $val->contenido;?>" ><?php echo $val->nombre;?></option>
+        <?php }?>
+        </select>
+    <script>
+        function mos(dd){
+            document.getElementById("cop").innerHTML =null;
+            document.getElementById("cop").innerHTML =dd;
+        }
+    </script>
+
+
+</div>
+<div class="me-2">
+<textarea id="cop"></textarea>
 </div>
