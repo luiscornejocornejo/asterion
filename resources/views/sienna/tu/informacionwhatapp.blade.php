@@ -23,10 +23,16 @@ else{?>
     
         <select class="form-select" aria-label="Default select example">
         <?php foreach($datosatajos as $val){?>
-            <option ><?php echo $val->nombre."  ".$val->contenido;?></option>
+            <option onclick="mos('<?php echo $val->contenido;?>')" ><?php echo $val->nombre."  ".$val->contenido;?></option>
             <?php }?>
 </select>
-
+<script>
+    function mos(dd){
+        document.getElementById("cop").innerHTML =null;
+        document.getElementById("cop").innerHTML =dd;
+    }
+</script>
+<p id="cop"></p>
     </div>
     <div class="me-4">
  
