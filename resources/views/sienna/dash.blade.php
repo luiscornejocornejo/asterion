@@ -1077,25 +1077,13 @@ $miip = request()->ip();
                                                                     "#20c997", "#17a2b8", "#e83e8c", "#6f42c1", "#ffc107", "#343a40"
                                                                 ]
                                                                 var options = {
-                                                                    series: @json($series),
-                                                                    chart: {
-                                                                        type: 'bar',
-                                                                        height: 350,
-                                                                        stacked: true,
-                                                                        zoom: {
-                                                                            enabled: true,
-                                                                            type: 'x',
-                                                                            autoScaleYaxis: false,
-                                                                            zoomedArea: {
-                                                                                fill: {
-                                                                                    color: '#90CAF9',
-                                                                                    opacity: 0.4
-                                                                                },
-                                                                                stroke: {
-                                                                                    color: '#0D47A1',
-                                                                                    opacity: 0.4,
-                                                                                    width: 1
-                                                                                }
+                                                                        series: @json($series),
+                                                                        chart: {
+                                                                            type: 'bar',
+                                                                            height: 350,
+                                                                            stacked: true,
+                                                                            zoom: {
+                                                                                enabled: true
                                                                             }
                                                                         }
                                                                     },
@@ -1115,6 +1103,7 @@ $miip = request()->ip();
                                                                         labels: {
                                                                             show: false
                                                                         },
+                                                                        tickPlacement: 'on'
                                                                     },
                                                                     fill: {
                                                                         opacity: 1
@@ -1124,9 +1113,8 @@ $miip = request()->ip();
                                                                         offsetX: 0,
                                                                         offsetY: 50
                                                                     },
-                                                                };
-                                                                var chart = new ApexCharts(document.querySelector("#ticketTopicDay"), options);
-                                                                chart.render();
+                                                            };
+                                                            var chart = new ApexCharts(document.querySelector("#ticketTopicDay"), options); chart.render();
                                                             });
                                                         </script>
 
