@@ -19,7 +19,10 @@ else{?>
 <div class="<?php echo $vero; ?> d-flex justify-content-between mt-2 mb-2">
     <div></div>
     <div class="me-4">
-        atajos: 
+    atajos: 
+</div>
+    <div class="me-4">
+    
         <select class="form-select" aria-label="Default select example">
         <?php foreach($datosatajos as $val){?>
             <option ><?php echo $val->nombre."  ".$val->contenido;?></option>
