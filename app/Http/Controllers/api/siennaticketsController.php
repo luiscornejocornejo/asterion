@@ -994,6 +994,11 @@ class siennaticketsController extends Controller
         $cliente = $request->cliente;
         $nya = $request->nya;
         $merchant = $request->merchant;
+        if(isset($request->cedula)){
+            $cedula=$request->cedula;
+        }else{
+            $cedula="";
+        }
         $valida = $this->valida($cliente,$merchant);//telcontacto
         if($valida>0){
 
@@ -1034,6 +1039,7 @@ class siennaticketsController extends Controller
         $si->siennadepto = $siennadepto;
         $si->cliente = $cliente;
         $si->nya = $nya;
+        $si->cedula = $cedula;
         $si->siennatopic = $siennatopic;
         $si->siennaestado = $siennaestado;
         $si->siennasource = $siennasource;
