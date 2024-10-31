@@ -994,6 +994,11 @@ class siennaticketsController extends Controller
         $cliente = $request->cliente;
         $nya = $request->nya;
         $merchant = $request->merchant;
+        if(isset($request->cedula)){
+            $cedula=$request->cedula;
+        }else{
+            $cedula="";
+        }
         $valida = $this->valida($cliente,$merchant);//telcontacto
         if($valida>0){
 
@@ -1034,6 +1039,7 @@ class siennaticketsController extends Controller
         $si->siennadepto = $siennadepto;
         $si->cliente = $cliente;
         $si->nya = $nya;
+        $si->cedula = $cedula;
         $si->siennatopic = $siennatopic;
         $si->siennaestado = $siennaestado;
         $si->siennasource = $siennasource;
@@ -1048,7 +1054,7 @@ class siennaticketsController extends Controller
             $si->extras= $request->extras;
         }
        
-
+///getdata
         $si->save();
 
         $se = new siennaseguimientos();
@@ -2512,8 +2518,9 @@ class siennaticketsController extends Controller
         $getdata=siennagetdata::all();
        
        foreach($inte as $val){
-            $urlinte=$val->version;
-       }
+        $urlinte=$val->version;
+        $nom=$val->nombre;
+    }
         $urlinte2=$urlinte.$numcli;
       
         if (($datosonline = @file_get_contents($urlinte2)) === false) {
@@ -2524,9 +2531,41 @@ class siennaticketsController extends Controller
       } else {
            // echo "Everything went better than expected";
       }
-      //var_dump($datosonline);
-     // dd($getdata);
+  //   echo $datosonline;
+   // dd("hola");
      $array_data = json_decode($datosonline, true);
+     if($nom="mikrowisp"){
+        $return=array();
+        $data = json_decode($datosonline);
+
+        // Acceder al campo national_id
+        foreach($getdata as $val){
+            $nombre=$val->nombre;
+            $icono=$val->icono;
+           $valor=$val->valor;
+
+           $valor=str_replace(".","->",$valor);
+           $keys = explode("->", $valor);
+
+           // Variable temporal para iterar a través del objeto
+           $result = $data;
+           
+           foreach ($keys as $key) {
+               // Verificar que el nivel actual exista en el objeto para evitar errores
+               if (isset($result->$key)) {
+                   $result = $result->$key;
+               } else {
+                   // Si el nivel no existe, establece null y detén la búsqueda
+                   $result = null;
+                   break;
+               }
+           }
+           $arraydatos=array("nombre"=>$nombre,"icono"=>$icono,"valor"=>$result);
+           array_push($return,$arraydatos);
+        }
+        return $return;
+
+     }
      $return=array();
      //print_r($array_data);
       foreach($getdata as $val){
