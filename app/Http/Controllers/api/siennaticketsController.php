@@ -2530,8 +2530,8 @@ class siennaticketsController extends Controller
       } else {
            // echo "Everything went better than expected";
       }
-      dd($datosonline);
-      //dd($getdata);
+     echo $datosonline;
+    dd("hola");
      $array_data = json_decode($datosonline, true);
      $return=array();
      //print_r($array_data);
