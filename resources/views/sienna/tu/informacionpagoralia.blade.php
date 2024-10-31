@@ -49,5 +49,48 @@
                 <button type="submit" class="btn btn-primary">Registrar</button>
             </form>
         </div>
+        <div class="row">
+        <script>
+            url="https://<?php echo $subdomain_tmp; ?>.pagoralia.com/api/listadocliente?&token=elmasgrandesiguesiendoriverplate&cliente=<?php echo $resultados[0]->cliente; ?>"
+            axios.get(url)
+            .then(function (response) {
+                res='<tr class="text-center">';
+
+              console.log(response.data);
+              for (i = 0; i < response.data.length; i++) {
+                    console.log(response.data[i].nombre);
+                    res+="<td>"+response.data[i].recibo+"</td><td>"+response.data[i].detalle+"</td><td>"+response.data[i].total+"</td><td>"+response.data[i].estado+"</td><td>"+response.data[i].realink+"</td>";
+
+              }
+              res+='</tr>';
+              document.getElementById("log").innerHTML = null;
+
+                document.getElementById("log").innerHTML = res;
+
+            })
+            .catch(function (error) {
+                // función para capturar el error
+                console.log(error);
+            })
+            .then(function () {
+                // función que siempre se ejecuta
+            });
+        </script>
+           <table id="casadepapel" class="table table-striped dt-responsive nowrap w-100 text-light">
+                    <thead>
+                        <tr class="text-center bg-dark">
+                            <th class="text-light">Invoice</th>
+                            <th class="text-light">Detalle</th>
+                            <th class="text-light">Total</th>
+                            <th class="text-light">Estado</th>
+                            <th class="text-light">Link</th>
+                        </tr>
+                    </thead>
+                    <tbody id="log">
+                 
+                    </tbody>
+                </table>
+        </div>
+
     </div>
 </div>
