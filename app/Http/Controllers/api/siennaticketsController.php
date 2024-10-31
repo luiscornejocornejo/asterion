@@ -2535,7 +2535,7 @@ class siennaticketsController extends Controller
    // dd("hola");
      $array_data = json_decode($datosonline, true);
      if($nom="mikrowisp"){
-        $data = json_decode($jsonString);
+        $data = json_decode($datosonline);
 
         // Acceder al campo national_id
         foreach($getdata as $val){
