@@ -2545,9 +2545,22 @@ class siennaticketsController extends Controller
            $valor=$val->valor;
 
            $valor=str_replace(".","->",$valor);
-           dd($valor);
-           $valordevuelto=$data->$valor;
-           $arraydatos=array("nombre"=>$nombre,"icono"=>$icono,"valor"=>$valordevuelto);
+           $keys = explode("->", $valor);
+
+           // Variable temporal para iterar a través del objeto
+           $result = $data;
+           
+           foreach ($keys as $key) {
+               // Verificar que el nivel actual exista en el objeto para evitar errores
+               if (isset($result->$key)) {
+                   $result = $result->$key;
+               } else {
+                   // Si el nivel no existe, establece null y detén la búsqueda
+                   $result = null;
+                   break;
+               }
+           }
+           $arraydatos=array("nombre"=>$nombre,"icono"=>$icono,"valor"=>$result);
            array_push($return,$arraydatos);
         }
         return $return;
