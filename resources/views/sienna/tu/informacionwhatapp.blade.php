@@ -11,7 +11,7 @@
 
    
     $merchantId=$subdomain_tmp;
-    if(($resultados[0]->ticketid==324)or($resultados[0]->ticketid==320)){
+    if(($resultados[0]->ticketid==753)or($resultados[0]->ticketid==320)){
    // if($tipobot==1){
             ?>
 <iframe allow="camera;microphone" 
