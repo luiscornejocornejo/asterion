@@ -2,16 +2,11 @@
 <?php 
     
     $tipobot=0;
-    foreach($datosempresa as $val){
-        $tipobot=$val->tipo;
-        $bp_bot_id=$val->bp_botid;
-        $bp_ws_id=$val->bp_wsid;
-        $bp_webhook_id=$val->bt_webhook_id;
-    }
+  
 
    
     $merchantId=$subdomain_tmp;
-    if(($resultados[0]->ticketid==757)or($resultados[0]->ticketid==320)){
+    if($resultados[0]->ticketid==757){
    // if($tipobot==1){
             ?>
 <iframe allow="camera;microphone" 
