@@ -2544,7 +2544,8 @@ class siennaticketsController extends Controller
             $icono=$val->icono;
            $valor=$val->valor;
 
-           $valordevuelto=str_replace(".","->",$valor);
+           $valor=str_replace(".","->",$valor);
+           $valordevuelto=$data->$valor;
            $arraydatos=array("nombre"=>$nombre,"icono"=>$icono,"valor"=>$valordevuelto);
            array_push($return,$arraydatos);
         }
