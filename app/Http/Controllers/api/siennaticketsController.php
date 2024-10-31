@@ -2518,8 +2518,9 @@ class siennaticketsController extends Controller
         $getdata=siennagetdata::all();
        
        foreach($inte as $val){
-            $urlinte=$val->version;
-       }
+        $urlinte=$val->version;
+        $nom=$val->nombre;
+    }
         $urlinte2=$urlinte.$numcli;
       
         if (($datosonline = @file_get_contents($urlinte2)) === false) {
@@ -2530,9 +2531,25 @@ class siennaticketsController extends Controller
       } else {
            // echo "Everything went better than expected";
       }
-     echo $datosonline;
-    dd("hola");
+  //   echo $datosonline;
+   // dd("hola");
      $array_data = json_decode($datosonline, true);
+     if($nom="mikrowisp"){
+        $data = json_decode($jsonString);
+
+        // Acceder al campo national_id
+        foreach($getdata as $val){
+            $nombre=$val->nombre;
+            $icono=$val->icono;
+           $valor=$val->valor;
+
+           $valordevuelto=str_replace(".","->",$valor);
+           $arraydatos=array("nombre"=>$nombre,"icono"=>$icono,"valor"=>$valordevuelto);
+           array_push($return,$arraydatos);
+        }
+        return $return;
+
+     }
      $return=array();
      //print_r($array_data);
       foreach($getdata as $val){
