@@ -108,6 +108,11 @@
                 <?php }?>
             </div>
         </div>
+<?php if($intehabilitado==1){?>
+        <div>
+                <button onclick="extraordinario('<?php echo $resultados[0]->cliente;?>')" type="button" class="btn btn-success"><i class="mdi mdi-account-search me-1"></i> Buscar datos</button>
+        </div>
+        <?php }?>
     </div>
 
 

@@ -17,6 +17,16 @@ $datosempresa = DB::select($queryempresa);
  $queryatajos="select * from siennaatajos where siennadepto='".$resultados[0]->iddepto."'";
 $datosatajos = DB::select($queryatajos);
 
+$queryintegracion="select * from siennaintegracion";
+$datosintegracion = DB::select($queryintegracion);
+$intehabilitado=0;
+foreach($datosintegracion as $vali){
+
+    $intehabilitado=$vali->habilitado;
+
+}
+
+
 function coloriconos($iconos, $tipo)
 {
     $coloricono = "";
@@ -299,6 +309,10 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                     </div>
                     <div class="mt-2">
+                        @include('sienna.tu.informaciononline')
+
+                    </div>
+                    <div class="mt-2">
                     @include('sienna.tu.collectorbot')
 
                     </div>
@@ -332,10 +346,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                     </div>
                
-                        <div class="mt-2">
-                        @include('sienna.tu.informaciononline')
-
-                    </div>
+                       
                 </div>
                 <div class="col-sm-12 col-lg-4 col-xxl-3 card widget-flat" id="forwardTicket">
                     <strong class="mt-2">Seguimiento</strong>
