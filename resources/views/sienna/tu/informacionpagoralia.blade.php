@@ -51,7 +51,7 @@
         </div>
         <div class="row">
         <script>
-            url="https://<?php echo $subdomain_tmp; ?>.pagoralia.com/api/listadocliente?&token=elmasgrandesiguesiendoriverplate&cliente=<?php echo $resultados[0]->cliente; ?>"
+            url="https://<?php echo $subdomain_tmp; ?>.pagoralia.com/api/listadocliente?&token=elmasgrandesiguesiendoriverplate&cliente=<?php echo $resultados[0]->iddelcliente; ?>"
             axios.get(url)
             .then(function (response) {
                 res='<tr class="text-center">';
