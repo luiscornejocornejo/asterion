@@ -2545,6 +2545,7 @@ class siennaticketsController extends Controller
            $valor=$val->valor;
 
            $valor=str_replace(".","->",$valor);
+           dd($valor);
            $valordevuelto=$data->$valor;
            $arraydatos=array("nombre"=>$nombre,"icono"=>$icono,"valor"=>$valordevuelto);
            array_push($return,$arraydatos);
