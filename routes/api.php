@@ -77,7 +77,7 @@ Route::get('/getdata', [siennaticketsController::class, 'getdata']);
 Route::get('/difhora', [siennaticketsController::class, 'difhora']);
 Route::get('/zone', [siennaticketsController::class, 'zona']);
 Route::post('/prioridad', [siennaticketsController::class, 'prioridad']);
-
+Route::get('/shortucts', [siennaticketsController::class, 'getShortcuts']);
 
 
 Route::get('/enhora', [siennaticketsController::class, 'enhora']);

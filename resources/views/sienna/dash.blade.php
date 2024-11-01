@@ -2,9 +2,7 @@
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
 
-<script>
-    console.log(@json($topicPerDay))
-</script>
+
 
 <script>
     let navegador = navigator.userAgent;
@@ -379,8 +377,10 @@ $miip = request()->ip();
                                                             }, $perAgent);
 
                                                             $agentLabels = array_map(function ($item) {
-                                                                return $item->{'Users - Asignado__last_name'} ??
-                                                                    'Sin asignar';
+                                                                $firstName = $item->{'Users - Asignado__nombre'} ?? '';
+                                                                $lastName = $item->{'Users - Asignado__last_name'} ?? 'Sin asignar';
+
+                                                                return trim("$firstName $lastName");
                                                             }, $perAgent);
                                                         @endphp
                                                         <div id="agentPieChart"></div>
@@ -428,12 +428,12 @@ $miip = request()->ip();
                                                                     legend: {
                                                                         position: 'bottom',
                                                                         horizontalAlign: 'center',
-                                                                        formatter: function(label, opts) {
+                                                                       /* formatter: function(label, opts) {
                                                                             if (label.length > 10) {
                                                                                 return label.substring(0, 10) + '...';
                                                                             }
                                                                             return label;
-                                                                        }
+                                                                        }*/
                                                                     },
                                                                     dataLabels: {
                                                                         dropShadow: {

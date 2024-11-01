@@ -30,7 +30,7 @@ class ChatController extends Controller
 
     $idticketestado = $request->idticketestado;
     $statos = $request->statos;
-     $query = "update ost_ticket set topic_id='" . $statos . "'   where ticket_id ='" . $idticketestado . "'";
+    $query = "update ost_ticket set topic_id='" . $statos . "'   where ticket_id ='" . $idticketestado . "'";
 
     $aa = $this->conectar2(11);
     $actualizado = DB::connection('mysql2')->select($query);
@@ -44,8 +44,8 @@ class ChatController extends Controller
   public function chatcreate(Request $request)
   {
 
-   echo $idtickethistorial = $request->idtickethistorial;
-   echo$notainterna = $request->notainterna;
+    echo $idtickethistorial = $request->idtickethistorial;
+    echo $notainterna = $request->notainterna;
     /*
     $query = "update ost_ticket set topic_id='" . $statos . "'   where ticket_id ='" . $idticketestado . "'";
 
@@ -56,7 +56,7 @@ class ChatController extends Controller
       ->back()
       ->with('success', 'Se modifico el topic  correctamente!');*/
   }
-  
+
   public function cambiardepto(Request $request)
   {
 
@@ -105,14 +105,14 @@ class ChatController extends Controller
       $dbexterna = $valuep->base;
       $parametros = $valuep->parametros;
     }
-   
-    if($parametros=="logeo"){
+
+    if ($parametros == "logeo") {
 
       $valordelcampo = session('email');
       $clave = "@" . $parametros;
       $query2 = str_replace($clave, $valordelcampo, $query2);
     }
-  
+
     if ($dbexterna == 1) {
       $fields2 = DB::select($query2);
     } else {
@@ -122,7 +122,7 @@ class ChatController extends Controller
       //si es distinta a 1 aa otra base
       $fields2 = DB::connection('mysql2')->select($query2);
     }
-   
+
     return $fields2;
   }
   public static function conectar2($id)
@@ -130,7 +130,7 @@ class ChatController extends Controller
 
     $resultados = base::where('id', '=', $id)->get();
     foreach ($resultados as $value) {
-       $host = $value->host;
+      $host = $value->host;
       $base = $value->base;
       $usuario = $value->usuario;
       $pass = $value->pass;
@@ -158,7 +158,7 @@ class ChatController extends Controller
       $valordelcampo = $request->$nombredelcampo;
       $clave = "@" . $nombredelcampo;
       $query2 = str_replace($clave, $valordelcampo, $query);
-      if($nombredelcampo=="logeo"){
+      if ($nombredelcampo == "logeo") {
 
         $valordelcampo = session('email');
         $clave = "@" . $nombredelcampo;
@@ -171,4 +171,30 @@ class ChatController extends Controller
 
     return $query;
   }
+
+  public function dominio()
+  {
+
+    $subdomain_tmp = 'localhost';
+    if (isset($_SERVER['HTTP_HOST'])) {
+      $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+      $subdomain_tmp =  array_shift($domainParts);
+    } elseif (isset($_SERVER['SERVER_NAME'])) {
+      $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+      $subdomain_tmp =  array_shift($domainParts);
+    }
+
+    return $subdomain_tmp;
+  }
+
+  public function getShortcuts($dom) 
+  {
+    
+    $queryGetShortcuts = "SELECT nombre, siennadepto, contenido FROM" . $dom . ".siennaatajos";
+    $resultGetShortcuts = DB::select($queryGetShortcuts);
+
+    return $resultGetShortcuts;
+
+  }
+
 }
