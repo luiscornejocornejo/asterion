@@ -430,12 +430,12 @@ $miip = request()->ip();
                                                                     legend: {
                                                                         position: 'bottom',
                                                                         horizontalAlign: 'center',
-                                                                        formatter: function(label, opts) {
+                                                                       /* formatter: function(label, opts) {
                                                                             if (label.length > 10) {
                                                                                 return label.substring(0, 10) + '...';
                                                                             }
                                                                             return label;
-                                                                        }
+                                                                        }*/
                                                                     },
                                                                     dataLabels: {
                                                                         dropShadow: {
