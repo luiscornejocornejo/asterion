@@ -54,15 +54,15 @@
             url="https://<?php echo $subdomain_tmp; ?>.pagoralia.com/api/listadocliente?&token=elmasgrandesiguesiendoriverplate&cliente=<?php echo $resultados[0]->iddelcliente; ?>"
             axios.get(url)
             .then(function (response) {
-                res='<tr class="text-center">';
+                res='';
 
               console.log(response.data);
               for (i = 0; i < response.data.length; i++) {
                     console.log(response.data[i].nombre);
-                    res+="<td>"+response.data[i].recibo+"</td><td>"+response.data[i].detalle+"</td><td>"+response.data[i].total+"</td><td>"+response.data[i].estado+"</td><td>"+response.data[i].realink+"</td>";
+                    res+="<tr class="text-center"><td>"+response.data[i].recibo+"</td><td>"+response.data[i].detalle+"</td><td>"+response.data[i].total+"</td><td>"+response.data[i].estado+"</td><td>"+response.data[i].realink+"</td></tr>";
 
               }
-              res+='</tr>';
+              res+='';
               document.getElementById("log").innerHTML = null;
 
                 document.getElementById("log").innerHTML = res;
