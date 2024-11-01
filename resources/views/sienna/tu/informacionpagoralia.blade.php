@@ -62,7 +62,7 @@
                     res+="<tr class="text-center"><td>"+response.data[i].recibo+"</td><td>"+response.data[i].detalle+"</td><td>"+response.data[i].total+"</td><td>"+response.data[i].estado+"</td><td>"+response.data[i].realink+"</td></tr>";
 
               }
-              res+='';
+             
               document.getElementById("log").innerHTML = null;
 
                 document.getElementById("log").innerHTML = res;
