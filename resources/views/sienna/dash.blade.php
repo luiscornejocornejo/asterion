@@ -379,8 +379,10 @@ $miip = request()->ip();
                                                             }, $perAgent);
 
                                                             $agentLabels = array_map(function ($item) {
-                                                                return $item->{'Users - Asignado__last_name'} ??
-                                                                    'Sin asignar';
+                                                                $firstName = $item->{'Users - Asignado__nombre'} ?? '';
+                                                                $lastName = $item->{'Users - Asignado__last_name'} ?? 'Sin asignar';
+
+                                                                return trim("$firstName $lastName");
                                                             }, $perAgent);
                                                         @endphp
                                                         <div id="agentPieChart"></div>
