@@ -59,7 +59,7 @@
               console.log(response.data);
               for (i = 0; i < response.data.length; i++) {
                     console.log(response.data[i].nombre);
-                    res+="<tr class="text-center"><td>"+response.data[i].recibo+"</td><td>"+response.data[i].detalle+"</td><td>"+response.data[i].total+"</td><td>"+response.data[i].estado+"</td><td>"+response.data[i].realink+"</td></tr>";
+                    res+="<tr class='text-center'><td>"+response.data[i].recibo+"</td><td>"+response.data[i].detalle+"</td><td>"+response.data[i].total+"</td><td>"+response.data[i].estado+"</td><td>"+response.data[i].realink+"</td></tr>";
 
               }
              
