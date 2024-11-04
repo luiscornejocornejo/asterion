@@ -1147,7 +1147,13 @@ class siennaticketsController extends Controller
         $siennasource = "5";
         $cliente = $request->cliente;
         $nya = $request->nya;
-        $cedula = $request->cedula;
+        if(isset($request->cedula)){
+            $cedula = $request->cedula;
+
+        }else{
+            $cedula = "2";
+
+        }
         $merchant = $request->merchant;
         if($request->ostickettopic<>""){
 
