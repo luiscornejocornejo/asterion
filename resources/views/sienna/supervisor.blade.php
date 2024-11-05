@@ -456,6 +456,7 @@
                         <iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" allow="camera;microphone" src="https://view-sip.pagoralia.dev/?token=<?php echo session('tokeninterno');?>&merchant=<?php echo $subdomain_tmp;?>" width="100%" class="border rounded-3" style="height: 120px!important;"></iframe>
                     </div>
                     <script>
+                      console.log("entra");
                       window.addEventListener('message', (event) => {
                         // Verifica el origen del mensaje por seguridad
                         if (event.origin !== 'https://view-sip.pagoralia.dev') return;
