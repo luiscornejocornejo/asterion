@@ -460,6 +460,7 @@
                       window.addEventListener('message', (event) => {
                         // Verifica el origen del mensaje por seguridad
                         console.log(event.origin);
+                        console.log("sale");
                         if (event.origin !== 'https://view-sip.pagoralia.dev') return;
 
                         const { type, message } = event.data;
