@@ -464,6 +464,7 @@
                        // if (event.origin !== 'https://view-sip.pagoralia.dev') return;
 
                         const { type, message } = event.data;
+                        console.log({type,message});
 
                         if (type === 'INCOMING_CALL') {
                           // Aquí puedes usar el API de Notificaciones, o una librería como toast para mostrar el mensaje
