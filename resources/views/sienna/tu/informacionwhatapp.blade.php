@@ -66,7 +66,7 @@
     <select onChange="mos(this.options[this.selectedIndex].value)" class="form-select" aria-label="Default select example">
    <option>Seleccionar</option>
             <?php foreach($datosatajos as $val){?>
-            <option value="<?php echo $val->contenido;?>" ><?php echo $val->nombre;?></option>
+            <option value="<?php echo htmlspecialchars($val->contenido);?>" ><?php echo $val->nombre;?></option>
         <?php }?>
         </select>
     <script>
