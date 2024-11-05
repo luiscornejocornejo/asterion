@@ -467,6 +467,8 @@
                         console.log({type,message});
 
                         if (type === 'INCOMING_CALL') {
+                          console.log("lanzando notificacion");
+
                           // Aquí puedes usar el API de Notificaciones, o una librería como toast para mostrar el mensaje
                           new Notification('Llamada entrante', { body: message });
                         }
