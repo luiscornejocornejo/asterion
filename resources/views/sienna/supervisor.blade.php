@@ -488,7 +488,7 @@
                           alert('Las notificaciones están deshabilitadas. No recibirás alertas de llamadas entrantes.');
                         }
                       }
-
+                      solicitarPermisosDeNotificacion();
                     </script>
 
                     <?php }?>
