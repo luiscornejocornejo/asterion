@@ -455,6 +455,35 @@
               <div class="">
                         <iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" allow="camera;microphone" src="https://view-sip.pagoralia.dev/?token=<?php echo session('tokeninterno');?>&merchant=<?php echo $subdomain_tmp;?>" width="100%" class="border rounded-3" style="height: 120px!important;"></iframe>
                     </div>
+                    <script>
+                      window.addEventListener('message', (event) => {
+                        // Verifica el origen del mensaje por seguridad
+                        if (event.origin !== 'https://view-sip.pagoralia.dev') return;
+
+                        const { type, message } = event.data;
+
+                        if (type === 'INCOMING_CALL') {
+                          // Aquí puedes usar el API de Notificaciones, o una librería como toast para mostrar el mensaje
+                          new Notification('Llamada entrante', { body: message });
+                        }
+                      });
+
+                      function solicitarPermisosDeNotificacion() {
+                        if (Notification.permission === 'default') {
+                          Notification.requestPermission().then((permission) => {
+                            if (permission === 'granted') {
+                              console.log('Permiso de notificación concedido.');
+                            } else if (permission === 'denied') {
+                              alert('Las notificaciones están deshabilitadas. No recibirás alertas de llamadas entrantes.');
+                            }
+                          });
+                        } else if (Notification.permission === 'denied') {
+                          // Si ya se había denegado anteriormente
+                          alert('Las notificaciones están deshabilitadas. No recibirás alertas de llamadas entrantes.');
+                        }
+                      }
+
+                    </script>
 
                     <?php }?>
                 <div onload="maxid()" class="container-fluid " id="casa">
