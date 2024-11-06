@@ -374,9 +374,7 @@ class Dashboard2Controller extends Controller
             LEFT JOIN " . $dom . ".`siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
                     " . $subquery . "
 
-           
-            ORDER BY
-            DATE(`siennatickets_view`.`timeoflife`) ASC";
+           ";
 
         $resultTimeOfLive = DB::connection('mysql2')->select($queryTimeOfLive);
 
