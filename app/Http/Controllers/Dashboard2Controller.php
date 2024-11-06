@@ -364,9 +364,8 @@ class Dashboard2Controller extends Controller
         $subquery = $this->subquery($source, $department, $agent, $periodo);
 
         $queryTimeOfLive = "SELECT
-               DATE(created_at) as fecha,
-                round(AVG(TIMESTAMPDIFF(HOUR, created_at, t_cerrado)),2) AS count
-
+            DATE(`siennatickets_view`.`timeoflife`) AS `timeoflife`,
+            round(avg(DATE(`siennatickets_view`.`timeoflife`)),2) AS `count`
             FROM
             " . $dom . ".`siennatickets_view`
 
@@ -374,7 +373,10 @@ class Dashboard2Controller extends Controller
             LEFT JOIN " . $dom . ".`siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
                     " . $subquery . "
 
-           ";
+            GROUP BY
+            DATE(`siennatickets_view`.`timeoflife`)
+            ORDER BY
+            DATE(`siennatickets_view`.`timeoflife`) ASC";
 
         $resultTimeOfLive = DB::connection('mysql2')->select($queryTimeOfLive);
 
