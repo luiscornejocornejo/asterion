@@ -370,7 +370,7 @@ class Dashboard2Controller extends Controller
 FROM 
         " . $dom . ".siennatickets_view
  " . $subquery . "
- 
+ and
     siennaestado = 4
     and not ISNULL(t_cerrado) 
     GROUP BY 
