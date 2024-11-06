@@ -1904,7 +1904,6 @@ WHERE ticket IN (
          $header[] = 'Content-type: application/json';
                 $header[] = 'Authorization: Bearer ' . $token;
                 $resuktado = $this->curl($url, $datosjson2, $method, $header);
-        $si2->save();
       
         return redirect()
         ->back()
