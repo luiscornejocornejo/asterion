@@ -368,7 +368,7 @@ class Dashboard2Controller extends Controller
          SELECT 
    DATE(created_at) as fecha, round(AVG(TIMESTAMPDIFF(HOUR, created_at, t_cerrado)),2) AS count
 FROM 
-        " . $dom . "..siennatickets
+        " . $dom . ".siennatickets_view
  " . $subquery . "
  
     siennaestado = 4
