@@ -1869,4 +1869,67 @@ WHERE ticket IN (
         ->with('success', 'Se modifico  el registro  correctamente!');
 
     }
+
+    
+
+    public function pagoraliaorden(Request $request)
+    {
+
+         $invoice=$request->invoice;
+         $descripcion=$request->descripcion;
+         $monto=$request->monto;
+         $cliente=$request->cliente;
+         $nombre=$request->nombre;
+         $apellido=$request->apellido;
+         $domi=$this->dominio();
+        $query="select * from ".$domi.".siennapagoralia where habilitado='1'";
+        $sint = DB::select($query);
+
+        foreach($sint as $val){
+            $token=$val->token;
+            $url=$val->url;
+            $moneda=$val->moneda;
+        }
+         //curl
+         $method="POST";
+         $datosjson2='{
+                        "isUnique":true,
+                        "descripcion":"'.$descripcion.'",
+                        "cliente":"'.$cliente.'",
+                        "nombre":"'.$nombre.'",
+                        "apellido":"'.$apellido.'",
+                        "monto":'.$monto.',
+                        "moneda":"'.$moneda.'"
+                        }';
+         $header[] = 'Content-type: application/json';
+                $header[] = 'Authorization: Bearer ' . $token;
+                $resuktado = $this->curl($url, $datosjson2, $method, $header);
+        $si2->save();
+      
+        return redirect()
+        ->back()
+        ->with('success', 'Se creo  el registro  correctamente!');
+
+    }
+    public function curl($url, $datosjson2, $method, $header)
+    {
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => $method,
+            CURLOPT_POSTFIELDS => $datosjson3,
+            CURLOPT_HTTPHEADER => $header,
+        ));
+
+        $result = curl_exec($curl);
+        $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        curl_close($curl);
+        return [$result, $httpCode];
+    }
 }

@@ -10,7 +10,7 @@
         </div>
         <hr style="margin-top: 10px;" />
         <div class="row">
-            <form method="get" action="/pagoraliaorden">
+            <form method="post" action="/pagoraliaorden">
                 <div class="row">
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
                         <label class="form-label" id="invoice_number">Invoice:</label>
