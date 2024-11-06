@@ -365,7 +365,7 @@ class Dashboard2Controller extends Controller
 
         $queryTimeOfLive = "SELECT
             DATE(`siennatickets_view`.`timeoflife`) AS `timeoflife`,
-            COUNT(*) AS `count`
+            round(avg(DATE(`siennatickets_view`.`timeoflife`))) AS `count`
             FROM
             " . $dom . ".`siennatickets_view`
 
