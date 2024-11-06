@@ -366,7 +366,7 @@ class Dashboard2Controller extends Controller
         $queryTimeOfLive = "
         
          SELECT 
-   DATE(created_at) as fecha, round(AVG(TIMESTAMPDIFF(HOUR, created_at, t_cerrado)),2) AS count
+   DATE(created_at) as fecha, round(AVG(TIMESTAMPDIFF(MINUTE, created_at, t_cerrado)),2) AS count
 FROM 
         " . $dom . ".siennatickets_view
  " . $subquery . "
