@@ -374,8 +374,7 @@ class Dashboard2Controller extends Controller
             LEFT JOIN " . $dom . ".`siennadepto` AS `Siennadepto` ON `siennatickets_view`.`siennadepto` = `Siennadepto`.`id`
                     " . $subquery . "
 
-            GROUP BY
-            DATE(`siennatickets_view`.`timeoflife`)
+           
             ORDER BY
             DATE(`siennatickets_view`.`timeoflife`) ASC";
 
