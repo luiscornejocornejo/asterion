@@ -65,8 +65,6 @@
         </div>
         <div class="row">
             <script>
-                const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-                const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
                 
                 function copyToClipboard(text) {
                     navigator.clipboard.writeText(text)
