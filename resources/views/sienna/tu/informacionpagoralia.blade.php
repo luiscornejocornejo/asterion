@@ -1,3 +1,16 @@
+<style>
+    .zoom {
+        transition: transform .2s;
+        margin: 0 auto;
+    }
+
+    .zoom:hover {
+        -ms-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+</style>
+
 <div class="card widget-flat ">
     <div class="card-body">
         <div class="d-flex justify-content-between">
@@ -56,49 +69,55 @@
                 function copyToClipboard(text) {
                     navigator.clipboard.writeText(text)
                         .then(() => {
-                            alert("Contenido copiado al portapapeles!");
+                            console.log("Contenido copiado al portapapeles!");
+                            let toastEl = document.getElementById('liveToast')
+                            toastEl.querySelector('.toast-body').innerHTML =
+                                'Orden copiada al portapapeles.'
+                            let toast = new bootstrap.Toast(toastEl)
+                            toast.show()
                         })
                         .catch(err => {
                             console.error("Error al copiar el contenido: ", err);
                         });
-                    }
-                    
-                    url =
-                        "https://<?php echo $subdomain_tmp; ?>.pagoralia.com/api/listadocliente?&token=elmasgrandesiguesiendoriverplate&cliente=<?php echo $resultados[0]->iddelcliente; ?>"
-                    axios.get(url)
-                        .then(function(response) {
-                            res = '';
-                            console.log(response.data);
-                            for (i = 0; i < response.data.length; i++) {
-                                let badge = response.data[i].detalle === 'paid' ?
-                                    'badge bg-success' :
-                                    response.data[i].detalle === 'pending' ?
-                                    'badge bg-warning' :
-                                    '';
-                                res += `<tr class="text-center">
+                }
+
+                url =
+                    "https://<?php echo $subdomain_tmp; ?>.pagoralia.com/api/listadocliente?&token=elmasgrandesiguesiendoriverplate&cliente=<?php echo $resultados[0]->iddelcliente; ?>"
+                axios.get(url)
+                    .then(function(response) {
+                        res = '';
+                        console.log(response.data);
+                        for (i = 0; i < response.data.length; i++) {
+                            let badge = response.data[i].detalle === 'paid' ?
+                                'badge bg-success' :
+                                response.data[i].detalle === 'pending' ?
+                                'badge bg-warning' :
+                                '';
+                            console.log(badge)
+                            res += `<tr class="text-center">
                                 <td>${response.data[i].recibo}</td>
                                 <td class="${badge}">${response.data[i].detalle}</td>
                                 <td>${response.data[i].total}</td>
                                 <td>${response.data[i].estado}</td>
                                 <td>
                                     ${response.data[i].realink}
-                                    <i class="me-1 mdi mdi-content-copy" onclick="copyToClipboard('${response.data[i].realink}')"></i>
+                                    <i class="me-1 mdi mdi-content-copy zoom" onclick="copyToClipboard('${response.data[i].realink}')" role="button"></i>
                                 </td>
                             </tr>`;
-                            }
+                        }
 
-                            document.getElementById("log").innerHTML = null;
+                        document.getElementById("log").innerHTML = null;
 
-                            document.getElementById("log").innerHTML = res;
+                        document.getElementById("log").innerHTML = res;
 
-                        })
-                        .catch(function(error) {
-                            // función para capturar el error
-                            console.log(error);
-                        })
-                        .then(function() {
-                            // función que siempre se ejecuta
-                        });
+                    })
+                    .catch(function(error) {
+                        // función para capturar el error
+                        console.log(error);
+                    })
+                    .then(function() {
+                        // función que siempre se ejecuta
+                    });
             </script>
             <table id="casadepapel" class="table table-striped dt-responsive nowrap w-100 text-light">
                 <thead>
@@ -116,5 +135,16 @@
             </table>
         </div>
 
+    </div>
+    <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header bg-dark">
+            <img src="assets/images/logo-dark-sm.png" alt="brand-logo" height="12" class="me-1" />
+            <strong class="me-auto text-light">Copiado!</strong>
+            <small class="text-light">Ahora</small>
+            <button type="button" class="ms-2 btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            
+        </div>
     </div>
 </div>
