@@ -15,7 +15,12 @@
         display: inline-block;
     }
 
-    .tooltip .tooltiptext {
+    .custom-tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    .custom-tooltip .tooltiptext {
         visibility: hidden;
         width: 160px;
         background-color: #555;
@@ -25,14 +30,14 @@
         padding: 5px 0;
         position: absolute;
         z-index: 1;
-        bottom: 125%;
+        bottom: 125%; /* Ubica el tooltip arriba del botón */
         left: 50%;
         transform: translateX(-50%);
         opacity: 0;
         transition: opacity 0.3s;
     }
 
-    .tooltip .tooltiptext::after {
+    .custom-tooltip .tooltiptext::after {
         content: "";
         position: absolute;
         top: 100%;
@@ -43,7 +48,7 @@
         border-color: #555 transparent transparent transparent;
     }
 
-    .tooltip:hover .tooltiptext {
+    .custom-tooltip:hover .tooltiptext {
         visibility: visible;
         opacity: 1;
     }
@@ -137,7 +142,7 @@
                                 <td>${response.data[i].total}</td>
                                 <td><span class="${badge}">${response.data[i].estado}</span></td>
                                 <td>
-                                    <button class="btn btn-success tooltip" onclick="copyToClipboard('${response.data[i].realink}')">
+                                    <button class="btn btn-success custom-tooltip" onclick="copyToClipboard('${response.data[i].realink}')">
                                         <i class="mdi mdi-content-copy text-light"></i>
                                         <span class="tooltiptext">Copiar orden en el portapapeles</span>
                                     </button>
