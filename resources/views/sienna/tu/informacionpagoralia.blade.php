@@ -9,6 +9,45 @@
         -webkit-transform: scale(1.5);
         transform: scale(1.5);
     }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -60px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
 </style>
 
 <div class="card widget-flat ">
@@ -60,12 +99,11 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-success mt-3 mb-2">Generar orden</button>
-                <hr class="mx-1"/>
+                <hr class="mx-1" />
             </form>
         </div>
         <div class="row">
             <script>
-                
                 function copyToClipboard(text) {
                     navigator.clipboard.writeText(text)
                         .then(() => {
@@ -100,7 +138,7 @@
                                 <td>${response.data[i].total}</td>
                                 <td><span class="${badge}">${response.data[i].estado}</span></td>
                                 <td>
-                                    <button class="btn btn-success" onclick="copyToClipboard('${response.data[i].realink}')"><i class="mdi mdi-content-copy text-light" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copiar orden en portapapeles."></i></button">
+                                    <button class="btn btn-success tooltip" onclick="copyToClipboard('${response.data[i].realink}')"><i class="mdi mdi-content-copy text-light"><span class="tooltiptext">Copiar orden en el portapapeles.</span></i></button">
                                 </td>
                             </tr>`;
                         }
