@@ -72,7 +72,7 @@
                                     <td class="${badge}">${response.data[i].detalle}</td>
                                     <td>${response.data[i].total}</td>
                                     <td>${response.data[i].estado}</td>
-                                    <td onclick="copyToClipboard('${response.data[i].realink}')">${response.data[i].realink}</td>
+                                    <td>${response.data[i].realink}<i class="me-1 mdi mdi-content-copy" onclick="copyToClipboard('${response.data[i].realink}')"></i></td>
                                 </tr>`
 
                         }
