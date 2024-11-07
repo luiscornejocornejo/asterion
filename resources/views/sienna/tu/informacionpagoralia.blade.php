@@ -81,16 +81,6 @@
 
                         document.getElementById("log").innerHTML = res;
 
-                        function copyToClipboard(text) {
-                            navigator.clipboard.writeText(text)
-                                .then(() => {
-                                    conso.log("Contenido copiado al portapapeles!");
-                                })
-                                .catch(err => {
-                                    console.error("Error al copiar el contenido: ", err);
-                                });
-                        }
-
                     })
                     .catch(function(error) {
                         // función para capturar el error
@@ -99,6 +89,16 @@
                     .then(function() {
                         // función que siempre se ejecuta
                     });
+
+                    function copyToClipboard(text) {
+                            navigator.clipboard.writeText(text)
+                                .then(() => {
+                                    conso.log("Contenido copiado al portapapeles!");
+                                })
+                                .catch(err => {
+                                    console.error("Error al copiar el contenido: ", err);
+                                });
+                        }
             </script>
             <table id="casadepapel" class="table table-striped dt-responsive nowrap w-100 text-light">
                 <thead>
