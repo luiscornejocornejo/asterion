@@ -144,7 +144,7 @@
                                 <td>
                                     <button class="btn btn-success custom-tooltip" onclick="copyToClipboard('${response.data[i].realink}')">
                                         <i class="mdi mdi-content-copy text-light"></i>
-                                        <span class="tooltiptext">Copiar orden en el portapapeles</span>
+                                        <span class="tooltiptext">Copiar link.</span>
                                     </button>
                                 </td>
                             </tr>`;
