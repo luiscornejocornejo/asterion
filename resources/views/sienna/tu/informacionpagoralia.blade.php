@@ -58,12 +58,23 @@
                 axios.get(url)
                     .then(function(response) {
                         res = '';
-
+                        let badge = response.data[i].detalle === 'paid' ?
+                            'badge bg-success' :
+                            response.data[i].detalle === 'pending' ?
+                            'badge bg-warning' :
+                            '';
                         console.log(response.data);
                         for (i = 0; i < response.data.length; i++) {
-                            console.log(response.data[i].nombre);
-                            res +=
-                                `<tr class='text-center'> <td>${response.data[i].recibo}</td> <td class="${badge}">${response.data[i].detalle}</td> <td>${response.data[i].total}</td> <td>${response.data[i].estado}</td> <td>${response.data[i].realink}<i class="me-1 mdi mdi-content-copy" onclick="copyToClipboard('${response.data[i].realink}')"></i></td> </tr>`
+                            res += `<tr class="text-center">
+                                <td>${response.data[i].recibo}</td>
+                                <td class="${badge}">${response.data[i].detalle}</td>
+                                <td>${response.data[i].total}</td>
+                                <td>${response.data[i].estado}</td>
+                                <td>
+                                    ${response.data[i].realink}
+                                    <i class="me-1 mdi mdi-content-copy" onclick="copyToClipboard('${response.data[i].realink}')"></i>
+                                </td>
+                            </tr>`;
                         }
 
                         document.getElementById("log").innerHTML = null;
