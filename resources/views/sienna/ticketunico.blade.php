@@ -431,10 +431,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                 </div>
             </div>
             <!-- container -->
-        </div>
-        <!-- content -->
-
-        <div class="toast fade bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true" id="liveToast">
+            <div class="toast fade bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true" id="liveToast">
                         <div class="toast-header bg-dark">
                             <img src="assetsfacu/images/favicom_suricata.png" alt="brand-logo" height="12" class="me-1" />
                             <strong class="me-auto text-light">Copiado!</strong>
@@ -446,6 +443,10 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                         </div>
                     </div>
+        </div>
+        <!-- content -->
+
+        
 
 
         <!-- Departament modal Status-->
