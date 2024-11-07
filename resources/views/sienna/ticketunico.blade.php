@@ -427,8 +427,21 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         </div>
                     </div> <!-- end row-->
                 </div>
+                
             </div>
             <!-- container -->
+            <div class="toast fade bottom-right" role="alert" aria-live="assertive" aria-atomic="true" id="liveToast">
+        <div class="toast-header bg-dark">
+            <img src="assetsfacu/images/favicom_suricata.png" alt="brand-logo" height="12" class="me-1" />
+            <strong class="me-auto text-light">Copiado!</strong>
+            <small class="text-light">Ahora</small>
+            <button type="button" class="ms-2 btn-close btn-close-white" data-bs-dismiss="toast"
+                aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+
+        </div>
+    </div>
         </div>
         <!-- content -->
 
@@ -453,18 +466,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
     <!-- End Reclamo Ticket -->
 
     <!-- /.modal-topic -->
-    <div class="toast fade bottom-right" role="alert" aria-live="assertive" aria-atomic="true" id="liveToast">
-        <div class="toast-header bg-dark">
-            <img src="assetsfacu/images/favicom_suricata.png" alt="brand-logo" height="12" class="me-1" />
-            <strong class="me-auto text-light">Copiado!</strong>
-            <small class="text-light">Ahora</small>
-            <button type="button" class="ms-2 btn-close btn-close-white" data-bs-dismiss="toast"
-                aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-
-        </div>
-    </div>
+    
     @include('sienna.tu.asignar')
     @include('sienna.tu.derivar')
     @include('sienna.tu.reclamar')
