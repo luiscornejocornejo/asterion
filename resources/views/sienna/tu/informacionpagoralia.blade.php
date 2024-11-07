@@ -15,7 +15,7 @@
     <div class="card-body">
         <div class="d-flex justify-content-between">
             <div>
-                <h4 class="fw-normal text-dark" title="Number of Customers">Crear orden en Pagoralia</h4>
+                <h4 class="fw-normal text-dark" title="Number of Customers">Crear orden</h4>
             </div>
             <div>
                 <img src="/assetsfacu/images/logo-pagoralia.jpeg" height="30px" alt="logo-pagoralia">
@@ -59,7 +59,7 @@
                             placeholder="apellido">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-success my-2">Generar orden</button>
+                <button type="submit" class="btn btn-success mt-3 mb-2">Generar orden</button>
                 <hr class="mx-1"/>
             </form>
         </div>
@@ -99,7 +99,6 @@
                                 <td>${response.data[i].total}</td>
                                 <td><span class="${badge}">${response.data[i].estado}</span></td>
                                 <td>
-                                    
                                     <button class="btn btn-success" onclick="copyToClipboard('${response.data[i].realink}')"><i class="mdi mdi-content-copy text-light" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copiar orden en portapapeles."></i></button">
                                 </td>
                             </tr>`;
