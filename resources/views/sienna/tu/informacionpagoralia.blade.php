@@ -57,10 +57,14 @@
                     "https://<?php echo $subdomain_tmp; ?>.pagoralia.com/api/listadocliente?&token=elmasgrandesiguesiendoriverplate&cliente=<?php echo $resultados[0]->iddelcliente; ?>"
                 axios.get(url)
                     .then(function(response) {
-                        let res = '';
+                        res = '';
 
                         console.log(response.data);
-                        for (let i = 0; i < response.data.length; i++) { const badge = response.data[i].detalle === 'paid' ? 'badge bg-success' : response.data[i].detalle === 'pending' ? 'badge bg-warning' : ''; console.log(response.data[i].nombre); res += `<tr class='text-center'> <td>${response.data[i].recibo}</td> <td class="${badge}">${response.data[i].detalle}</td> <td>${response.data[i].total}</td> <td>${response.data[i].estado}</td> <td>${response.data[i].realink}<i class="me-1 mdi mdi-content-copy" onclick="copyToClipboard('${response.data[i].realink}')"></i></td> </tr>`;
+                        for (i = 0; i < response.data.length; i++) {
+                            console.log(response.data[i].nombre);
+                            res +=
+                                `<tr class='text-center'> <td>${response.data[i].recibo}</td> <td class="${badge}">${response.data[i].detalle}</td> <td>${response.data[i].total}</td> <td>${response.data[i].estado}</td> <td>${response.data[i].realink}<i class="me-1 mdi mdi-content-copy" onclick="copyToClipboard('${response.data[i].realink}')"></i></td> </tr>`
+                        }
 
                         document.getElementById("log").innerHTML = null;
 
@@ -74,16 +78,6 @@
                     .then(function() {
                         // función que siempre se ejecuta
                     });
-
-                    function copyToClipboard(text) {
-                            navigator.clipboard.writeText(text)
-                                .then(() => {
-                                    conso.log("Contenido copiado al portapapeles!");
-                                })
-                                .catch(err => {
-                                    console.error("Error al copiar el contenido: ", err);
-                                });
-                        }
             </script>
             <table id="casadepapel" class="table table-striped dt-responsive nowrap w-100 text-light">
                 <thead>
