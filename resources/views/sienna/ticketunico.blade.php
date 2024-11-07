@@ -279,7 +279,17 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                     if(strlen($urlreabrir)<2){
                                         $vero="d-none";
                                     }
+                                    if($resultados[0]->siennasource==5){
+                                        if($resultados[0]->siennaestado==4){
 
+                                        ?>
+
+                       
+                                        @include('sienna.tu.informaciongrabaciones')
+                
+                
+                                    <?php
+                                    }}
                      if($resultados[0]->siennasource==7){?>
 
                        
