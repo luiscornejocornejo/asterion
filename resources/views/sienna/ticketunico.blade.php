@@ -348,7 +348,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                     </div>
                
-                       <div aria-live="polite" aria-atomic="true" class="toast fade position-fixed bottom-0 end-0 p-3" role="alert" style="z-index: 1050;" id="liveToast">
+                       <div aria-live="polite" aria-atomic="true" class="toast fade position-fixed bottom-0 end-0 pb-3" role="alert" style="z-index: 1050;" id="liveToast">
                         <div class="toast-header bg-dark">
                             <img src="assetsfacu/images/favicom_suricata.png" alt="brand-logo" height="12" class="me-1" />
                             <strong class="me-auto text-light">Copiado!</strong>
