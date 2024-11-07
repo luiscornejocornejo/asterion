@@ -60,11 +60,11 @@
                         res = '';
                         console.log(response.data);
                         for (i = 0; i < response.data.length; i++) {
-                        let badge = response.data[i].detalle === 'paid' ?
-                            'badge bg-success' :
-                            response.data[i].detalle === 'pending' ?
-                            'badge bg-warning' :
-                            '';
+                            let badge = response.data[i].detalle === 'paid' ?
+                                'badge bg-success' :
+                                response.data[i].detalle === 'pending' ?
+                                'badge bg-warning' :
+                                '';
                             res += `<tr class="text-center">
                                 <td>${response.data[i].recibo}</td>
                                 <td class="${badge}">${response.data[i].detalle}</td>
@@ -89,6 +89,16 @@
                     .then(function() {
                         // función que siempre se ejecuta
                     });
+
+                function copyToClipboard(text) {
+                    navigator.clipboard.writeText(text)
+                        .then(() => {
+                            alert("Contenido copiado al portapapeles!");
+                        })
+                        .catch(err => {
+                            console.error("Error al copiar el contenido: ", err);
+                        });
+                }
             </script>
             <table id="casadepapel" class="table table-striped dt-responsive nowrap w-100 text-light">
                 <thead>
