@@ -58,13 +58,13 @@
                 axios.get(url)
                     .then(function(response) {
                         res = '';
+                        console.log(response.data);
                         for (i = 0; i < response.data.length; i++) {
                         let badge = response.data[i].detalle === 'paid' ?
                             'badge bg-success' :
                             response.data[i].detalle === 'pending' ?
                             'badge bg-warning' :
                             '';
-                        console.log(response.data);
                             res += `<tr class="text-center">
                                 <td>${response.data[i].recibo}</td>
                                 <td class="${badge}">${response.data[i].detalle}</td>
