@@ -263,18 +263,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                     </div>
                 </div>
 
-                <div class="toast fade bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true" id="liveToast">
-                    <div class="toast-header bg-dark">
-                        <img src="assetsfacu/images/favicom_suricata.png" alt="brand-logo" height="12" class="me-1" />
-                        <strong class="me-auto text-light">Copiado!</strong>
-                        <small class="text-light">Ahora</small>
-                        <button type="button" class="ms-2 btn-close btn-close-white" data-bs-dismiss="toast"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="toast-body">
-
-                    </div>
-                </div>
+                
                 <div class="row">
                 <div class="col-sm-12 col-lg-8 col-xxl-9">
                     <div>
@@ -439,6 +428,18 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                             </div> <!-- end slimscroll -->
                         </div>
                     </div> <!-- end row-->
+                    <div class="toast fade bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true" id="liveToast">
+                        <div class="toast-header bg-dark">
+                            <img src="assetsfacu/images/favicom_suricata.png" alt="brand-logo" height="12" class="me-1" />
+                            <strong class="me-auto text-light">Copiado!</strong>
+                            <small class="text-light">Ahora</small>
+                            <button type="button" class="ms-2 btn-close btn-close-white" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- container -->
