@@ -99,8 +99,8 @@
                                 <td>${response.data[i].total}</td>
                                 <td><span class="${badge}">${response.data[i].estado}</span></td>
                                 <td>
-                                    ${response.data[i].realink}
-                                    <i class="me-1 mdi mdi-content-copy zoom" onclick="copyToClipboard('${response.data[i].realink}')" role="button"></i>
+                                    
+                                    <button class="btn btn-success"><i class="mdi mdi-content-copy text-light" onclick="copyToClipboard('${response.data[i].realink}')" </i></button">
                                 </td>
                             </tr>`;
                         }
