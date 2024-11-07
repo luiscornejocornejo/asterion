@@ -13,12 +13,11 @@
     .tooltip {
         position: relative;
         display: inline-block;
-        border-bottom: 1px dotted black;
     }
 
     .tooltip .tooltiptext {
         visibility: hidden;
-        width: 120px;
+        width: 160px;
         background-color: #555;
         color: #fff;
         text-align: center;
@@ -28,7 +27,7 @@
         z-index: 1;
         bottom: 125%;
         left: 50%;
-        margin-left: -60px;
+        transform: translateX(-50%);
         opacity: 0;
         transition: opacity 0.3s;
     }
@@ -139,12 +138,9 @@
                                 <td><span class="${badge}">${response.data[i].estado}</span></td>
                                 <td>
                                     <button class="btn btn-success tooltip" onclick="copyToClipboard('${response.data[i].realink}')">
-                                        <i class="mdi mdi-content-copy text-light ">
-                                            <span class="tooltiptext">
-                                                Copiar orden en el portapapeles.
-                                            </span>
-                                        </i>
-                                    </button">
+                                        <i class="mdi mdi-content-copy text-light"></i>
+                                        <span class="tooltiptext">Copiar orden en el portapapeles</span>
+                                    </button>
                                 </td>
                             </tr>`;
                         }
