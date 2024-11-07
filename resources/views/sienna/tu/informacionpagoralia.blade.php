@@ -61,9 +61,8 @@
                         <input required name="apellido" type="text" class="form-control" id="lastNameUser"
                             placeholder="apellido">
                     </div>
-                    
                 </div>
-                <button type="submit" class="btn btn-success mb-3" style="color: grey">Generar orden</button>
+                <button type="submit" class="btn btn-success my-2">Generar orden</button>
                 <hr class="mx-1"/>
             </form>
         </div>
