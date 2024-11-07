@@ -100,7 +100,7 @@
                                 <td><span class="${badge}">${response.data[i].estado}</span></td>
                                 <td>
                                     
-                                    <button class="btn btn-success" onclick="copyToClipboard('${response.data[i].realink}')" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copiar orden en portapapeles."><i class="mdi mdi-content-copy text-light"</i></button">
+                                    <button class="btn btn-success" onclick="copyToClipboard('${response.data[i].realink}')"><i class="mdi mdi-content-copy text-light" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copiar orden en portapapeles."></i></button">
                                 </td>
                             </tr>`;
                         }
