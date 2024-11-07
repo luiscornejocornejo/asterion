@@ -61,9 +61,10 @@
                         <input required name="apellido" type="text" class="form-control" id="lastNameUser"
                             placeholder="apellido">
                     </div>
-                    <hr style="margin-top: 10px;" />
+                    
                 </div>
-                <button type="submit" class="btn mb-3" style="background-color: #38e991; color: grey">Generar orden</button>
+                <button type="submit" class="btn btn-success mb-3" style="color: grey">Generar orden</button>
+                <hr class="mx-1"/>
             </form>
         </div>
         <div class="row">
