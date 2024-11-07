@@ -11,7 +11,7 @@
         <hr style="margin-top: 10px;" />
         <div class="row">
             <form method="post" action="/pagoraliaorden">
-            @csrf
+                @csrf
 
                 <div class="row">
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
@@ -26,8 +26,8 @@
                     </div>
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
                         <label class="form-label" for="amount">Monto:</label>
-                        <input required name="monto" type="number" step="0.01" class="form-control"
-                            id="amount" placeholder="50.00">
+                        <input required name="monto" type="number" step="0.01" class="form-control" id="amount"
+                            placeholder="50.00">
                     </div>
                 </div>
                 <div class="row">
@@ -42,7 +42,7 @@
                             placeholder="nombre">
                     </div>
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
-                      <label class="form-label" for="lastNameUser">Apellido:</label>
+                        <label class="form-label" for="lastNameUser">Apellido:</label>
                         <input required name="apellido" type="text" class="form-control" id="lastNameUser"
                             placeholder="apellido">
                     </div>
@@ -52,46 +52,68 @@
             </form>
         </div>
         <div class="row">
-        <script>
-            url="https://<?php echo $subdomain_tmp; ?>.pagoralia.com/api/listadocliente?&token=elmasgrandesiguesiendoriverplate&cliente=<?php echo $resultados[0]->iddelcliente; ?>"
-            axios.get(url)
-            .then(function (response) {
-                res='';
+            <script>
+                url =
+                    "https://<?php echo $subdomain_tmp; ?>.pagoralia.com/api/listadocliente?&token=elmasgrandesiguesiendoriverplate&cliente=<?php echo $resultados[0]->iddelcliente; ?>"
+                axios.get(url)
+                    .then(function(response) {
+                        res = '';
 
-              console.log(response.data);
-              for (i = 0; i < response.data.length; i++) {
-                    console.log(response.data[i].nombre);
-                    res+="<tr class='text-center'><td>"+response.data[i].recibo+"</td><td>"+response.data[i].detalle+"</td><td>"+response.data[i].total+"</td><td>"+response.data[i].estado+"</td><td>"+response.data[i].realink+"</td></tr>";
+                        console.log(response.data);
+                        for (i = 0; i < response.data.length; i++) {
+                            badge = response[i].detalle === 'paid' ?
+                                'badge bg-success' :
+                                response[i].detalle === 'pending' ?
+                                'badge bg-warning' :
+                                ''
+                            console.log(response.data[i].nombre);
+                            res += `<tr class='text-center'>
+                                    <td>${response.data[i].recibo}</td>
+                                    <td class="${badge}">${response.data[i].detalle}</td>
+                                    <td>${response.data[i].total}</td>
+                                    <td>${response.data[i].estado}</td>
+                                    <td>${response.data[i].realink}<i class="me-1 mdi mdi-content-copy" onclick="copyToClipboard('${response.data[i].realink}')"></i></td>
+                                </tr>`
 
-              }
-             
-              document.getElementById("log").innerHTML = null;
+                        }
 
-                document.getElementById("log").innerHTML = res;
+                        document.getElementById("log").innerHTML = null;
 
-            })
-            .catch(function (error) {
-                // función para capturar el error
-                console.log(error);
-            })
-            .then(function () {
-                // función que siempre se ejecuta
-            });
-        </script>
-           <table id="casadepapel" class="table table-striped dt-responsive nowrap w-100 text-light">
-                    <thead>
-                        <tr class="text-center bg-dark">
-                            <th class="text-light">Invoice</th>
-                            <th class="text-light">Detalle</th>
-                            <th class="text-light">Total</th>
-                            <th class="text-light">Estado</th>
-                            <th class="text-light">Link</th>
-                        </tr>
-                    </thead>
-                    <tbody id="log">
-                 
-                    </tbody>
-                </table>
+                        document.getElementById("log").innerHTML = res;
+
+                        function copyToClipboard(text) {
+                            navigator.clipboard.writeText(text)
+                                .then(() => {
+                                    conso.log("Contenido copiado al portapapeles!");
+                                })
+                                .catch(err => {
+                                    console.error("Error al copiar el contenido: ", err);
+                                });
+                        }
+
+                    })
+                    .catch(function(error) {
+                        // función para capturar el error
+                        console.log(error);
+                    })
+                    .then(function() {
+                        // función que siempre se ejecuta
+                    });
+            </script>
+            <table id="casadepapel" class="table table-striped dt-responsive nowrap w-100 text-light">
+                <thead>
+                    <tr class="text-center bg-dark">
+                        <th class="text-light">Invoice</th>
+                        <th class="text-light">Detalle</th>
+                        <th class="text-light">Total</th>
+                        <th class="text-light">Estado</th>
+                        <th class="text-light">Link</th>
+                    </tr>
+                </thead>
+                <tbody id="log">
+
+                </tbody>
+            </table>
         </div>
 
     </div>
