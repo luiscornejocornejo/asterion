@@ -53,19 +53,29 @@
         </div>
         <div class="row">
             <script>
-                url =
-                    "https://<?php echo $subdomain_tmp; ?>.pagoralia.com/api/listadocliente?&token=elmasgrandesiguesiendoriverplate&cliente=<?php echo $resultados[0]->iddelcliente; ?>"
-                axios.get(url)
-                    .then(function(response) {
-                        res = '';
-                        console.log(response.data);
-                        for (i = 0; i < response.data.length; i++) {
-                        let badge = response.data[i].detalle === 'paid' ?
-                            'badge bg-success' :
-                            response.data[i].detalle === 'pending' ?
-                            'badge bg-warning' :
-                            '';
-                            res += `<tr class="text-center">
+                function copyToClipboard(text) {
+                    navigator.clipboard.writeText(text)
+                        .then(() => {
+                            alert("Contenido copiado al portapapeles!");
+                        })
+                        .catch(err => {
+                            console.error("Error al copiar el contenido: ", err);
+                        });
+                    }
+                    
+                    url =
+                        "https://<?php echo $subdomain_tmp; ?>.pagoralia.com/api/listadocliente?&token=elmasgrandesiguesiendoriverplate&cliente=<?php echo $resultados[0]->iddelcliente; ?>"
+                    axios.get(url)
+                        .then(function(response) {
+                            res = '';
+                            console.log(response.data);
+                            for (i = 0; i < response.data.length; i++) {
+                                let badge = response.data[i].detalle === 'paid' ?
+                                    'badge bg-success' :
+                                    response.data[i].detalle === 'pending' ?
+                                    'badge bg-warning' :
+                                    '';
+                                res += `<tr class="text-center">
                                 <td>${response.data[i].recibo}</td>
                                 <td class="${badge}">${response.data[i].detalle}</td>
                                 <td>${response.data[i].total}</td>
@@ -75,30 +85,20 @@
                                     <i class="me-1 mdi mdi-content-copy" onclick="copyToClipboard('${response.data[i].realink}')"></i>
                                 </td>
                             </tr>`;
-                        }
+                            }
 
-                        document.getElementById("log").innerHTML = null;
+                            document.getElementById("log").innerHTML = null;
 
-                        document.getElementById("log").innerHTML = res;
+                            document.getElementById("log").innerHTML = res;
 
-                    })
-                    .catch(function(error) {
-                        // función para capturar el error
-                        console.log(error);
-                    })
-                    .then(function() {
-                        // función que siempre se ejecuta
-                    });
-
-                    function copyToClipboard(text) {
-                    navigator.clipboard.writeText(text)
-                        .then(() => {
-                            alert("Contenido copiado al portapapeles!");
                         })
-                        .catch(err => {
-                            console.error("Error al copiar el contenido: ", err);
+                        .catch(function(error) {
+                            // función para capturar el error
+                            console.log(error);
+                        })
+                        .then(function() {
+                            // función que siempre se ejecuta
                         });
-                    }
             </script>
             <table id="casadepapel" class="table table-striped dt-responsive nowrap w-100 text-light">
                 <thead>
