@@ -20,9 +20,6 @@
             <div>
                 <img src="/assetsfacu/images/logo-pagoralia.jpeg" height="30px" alt="logo-pagoralia">
             </div>
-            <div>
-
-            </div>
         </div>
         <hr style="margin-top: 10px;" />
         <div class="row">
