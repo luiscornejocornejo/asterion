@@ -430,18 +430,18 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                 
             </div>
             <!-- container -->
-            <div class="toast fade bottom-right" role="alert" aria-live="assertive" aria-atomic="true" id="liveToast">
-        <div class="toast-header bg-dark">
-            <img src="assetsfacu/images/favicom_suricata.png" alt="brand-logo" height="12" class="me-1" />
-            <strong class="me-auto text-light">Copiado!</strong>
-            <small class="text-light">Ahora</small>
-            <button type="button" class="ms-2 btn-close btn-close-white" data-bs-dismiss="toast"
-                aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
+            <div class="toast fade bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true" id="liveToast">
+                <div class="toast-header bg-dark">
+                    <img src="assetsfacu/images/favicom_suricata.png" alt="brand-logo" height="12" class="me-1" />
+                    <strong class="me-auto text-light">Copiado!</strong>
+                    <small class="text-light">Ahora</small>
+                    <button type="button" class="ms-2 btn-close btn-close-white" data-bs-dismiss="toast"
+                        aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
 
-        </div>
-    </div>
+                </div>
+            </div>
         </div>
         <!-- content -->
 
