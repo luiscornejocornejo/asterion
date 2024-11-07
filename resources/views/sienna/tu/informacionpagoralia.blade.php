@@ -139,11 +139,9 @@
                                 <td><span class="${badge}">${response.data[i].estado}</span></td>
                                 <td>
                                     <button class="btn btn-success" onclick="copyToClipboard('${response.data[i].realink}')">
-                                        <i class="mdi mdi-content-copy text-light ">
-                                            <span class="tooltip">
-                                                <span class="tooltiptext">
-                                                    Copiar orden en el portapapeles.
-                                                </span>
+                                        <i class="mdi mdi-content-copy text-light tooltip">
+                                            <span class="tooltiptext">
+                                                Copiar orden en el portapapeles.
                                             </span>
                                         </i>
                                     </button">
