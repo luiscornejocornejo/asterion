@@ -63,7 +63,7 @@
                     </div>
                     <hr style="margin-top: 10px;" />
                 </div>
-                <button type="submit" class="btn" style="background-color: #38e991; color: grey">Generar orden</button>
+                <button type="submit" class="btn mb-3" style="background-color: #38e991; color: grey">Generar orden</button>
             </form>
         </div>
         <div class="row">
@@ -100,7 +100,7 @@
                                 <td>${response.data[i].recibo}</td>
                                 <td>${response.data[i].detalle}</td>
                                 <td>${response.data[i].total}</td>
-                                <td class="${badge}" >${response.data[i].estado}</td>
+                                <td><span class="${badge}">${response.data[i].estado}</span></td>
                                 <td>
                                     ${response.data[i].realink}
                                     <i class="me-1 mdi mdi-content-copy zoom" onclick="copyToClipboard('${response.data[i].realink}')" role="button"></i>
