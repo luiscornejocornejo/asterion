@@ -217,6 +217,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
         </div>
         @endif
             <div class="container pt-2 ">
+                
                 <div class="d-flex justify-content-between pb-2">
                     <div>
                     </div>
@@ -262,7 +263,19 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                     </div>
                 </div>
 
-            <div class="row">
+                <div class="toast fade bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true" id="liveToast">
+                    <div class="toast-header bg-dark">
+                        <img src="assetsfacu/images/favicom_suricata.png" alt="brand-logo" height="12" class="me-1" />
+                        <strong class="me-auto text-light">Copiado!</strong>
+                        <small class="text-light">Ahora</small>
+                        <button type="button" class="ms-2 btn-close btn-close-white" data-bs-dismiss="toast"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+
+                    </div>
+                </div>
+                <div class="row">
                 <div class="col-sm-12 col-lg-8 col-xxl-9">
                     <div>
                     @include('sienna.tu.informacionticket')
@@ -427,21 +440,8 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         </div>
                     </div> <!-- end row-->
                 </div>
-                
             </div>
             <!-- container -->
-            <div class="toast fade bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true" id="liveToast">
-                <div class="toast-header bg-dark">
-                    <img src="assetsfacu/images/favicom_suricata.png" alt="brand-logo" height="12" class="me-1" />
-                    <strong class="me-auto text-light">Copiado!</strong>
-                    <small class="text-light">Ahora</small>
-                    <button type="button" class="ms-2 btn-close btn-close-white" data-bs-dismiss="toast"
-                        aria-label="Close"></button>
-                </div>
-                <div class="toast-body">
-
-                </div>
-            </div>
         </div>
         <!-- content -->
 
@@ -466,7 +466,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
     <!-- End Reclamo Ticket -->
 
     <!-- /.modal-topic -->
-    
+
     @include('sienna.tu.asignar')
     @include('sienna.tu.derivar')
     @include('sienna.tu.reclamar')
