@@ -348,17 +348,23 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                     </div>
                
-                    <div class="toast fade bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true" id="liveToast">
-                        <div class="toast-header bg-dark">
-                            <img src="assetsfacu/images/favicom_suricata.png" alt="brand-logo" height="12" class="me-1" />
-                            <strong class="me-auto text-light">Copiado!</strong>
-                            <small class="text-light">Ahora</small>
-                            <button type="button" class="ms-2 btn-close btn-close-white" data-bs-dismiss="toast"
-                                aria-label="Close"></button>
+                    <!-- Flexbox container for aligning the toasts -->
+                    <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center" style="min-height: 200px;">
+
+                    <!-- Then put toasts within -->
+                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="liveToast">
+                        <div class="toast-header">
+                        <img src="..." class="rounded mr-2" alt="...">
+                        <strong class="mr-auto">Bootstrap</strong>
+                        <small>11 mins ago</small>
+                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                         </div>
                         <div class="toast-body">
-
+                        Hello, world! This is a toast message.
                         </div>
+                    </div>
                     </div>
                 </div>
                 <div class="col-sm-12 col-lg-4 col-xxl-3 card widget-flat" id="forwardTicket">
