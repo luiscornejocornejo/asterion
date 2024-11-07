@@ -453,7 +453,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
     <!-- End Reclamo Ticket -->
 
     <!-- /.modal-topic -->
-    <div class="toast fade" role="alert" aria-live="assertive" aria-atomic="true" id="liveToast">
+    <div class="toast fade bottom-right" role="alert" aria-live="assertive" aria-atomic="true" id="liveToast">
         <div class="toast-header bg-dark">
             <img src="assetsfacu/images/favicom_suricata.png" alt="brand-logo" height="12" class="me-1" />
             <strong class="me-auto text-light">Copiado!</strong>
