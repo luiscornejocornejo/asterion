@@ -156,7 +156,7 @@ class asignaciong extends Command
                 }
     
                 if($idusu<>0){
-                     $query3="update ".$merchant.".siennatickets set asignado='".$idusu."' where id=".$tick."";
+                     $query3="update ".$merchant.".siennatickets set asignado='".$idusu."',asignado_at=now(),asignado_t='suricata' where id=".$tick."";
                    $resultados3 = DB::connection('mysql2')->select($query3);
 
     
