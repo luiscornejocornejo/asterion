@@ -405,6 +405,11 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                                             //$uri = '<a target=_blank href="' . $ht . '"><img  src=' . $ht . ' width="40px;"></a>';
                                                             continue;
                                                         }
+                                                        if($val->tipo == 12){
+                                                            //$ht = $val->descripcion;
+                                                            //$uri = '<a target=_blank href="' . $ht . '"><img  src=' . $ht . ' width="40px;"></a>';
+                                                            continue;
+                                                        }
 
                                                     ?>
                                                         <div class="timeline-alt py-0 ">
