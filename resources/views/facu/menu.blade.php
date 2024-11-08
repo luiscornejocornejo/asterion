@@ -275,7 +275,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
             
             <li class="side-nav-item background-buttons">
                 <a data-bs-toggle="collapse" href="/configuracion" aria-controls="sidebarDashboards" class="side-nav-link hovering-pan">
-                    <i class="mdi-tools"></i>
+                    <i class="mdi mdi-cog-outline"></i>
                     <span>Configuracion</span>
                     <span class="menu-arrow"></span>
                 </a>
