@@ -5,9 +5,52 @@
     }
 
     .zoom:hover {
-        -ms-transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
+        -ms-transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    .custom-tooltip {
+        position: relative;
+        display: inline-block;
+    }
+
+    .custom-tooltip .tooltiptext {
+        visibility: hidden;
+        width: 160px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%; /* Ubica el tooltip arriba del botón */
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .custom-tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
+
+    .custom-tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
     }
 </style>
 
@@ -15,17 +58,16 @@
     <div class="card-body">
         <div class="d-flex justify-content-between">
             <div>
-                <h4 class="fw-normal text-dark" title="Number of Customers">Registrar Orden en Pagoralia</h4>
+                <h4 class="fw-normal text-dark" title="Number of Customers">Crear orden</h4>
             </div>
             <div>
-
+                <img src="/assetsfacu/images/logo-pagoralia.jpeg" height="30px" alt="logo-pagoralia">
             </div>
         </div>
         <hr style="margin-top: 10px;" />
         <div class="row">
             <form method="post" action="/pagoraliaorden">
                 @csrf
-
                 <div class="row">
                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
                         <label class="form-label" id="invoice_number">Invoice:</label>
@@ -59,9 +101,9 @@
                         <input required name="apellido" type="text" class="form-control" id="lastNameUser"
                             placeholder="apellido">
                     </div>
-                    <hr style="margin-top: 10px;" />
                 </div>
-                <button type="submit" class="btn btn-primary">Registrar</button>
+                <button type="submit" class="btn btn-success mt-3 mb-2">Generar orden</button>
+                <hr class="mx-1" />
             </form>
         </div>
         <div class="row">
@@ -88,20 +130,22 @@
                         res = '';
                         console.log(response.data);
                         for (i = 0; i < response.data.length; i++) {
-                            let badge = response.data[i].detalle === 'paid' ?
+                            let badge = response.data[i].estado === 'paid' ?
                                 'badge bg-success' :
-                                response.data[i].detalle === 'pending' ?
+                                response.data[i].estado === 'pending' ?
                                 'badge bg-warning' :
                                 '';
                             console.log(badge)
                             res += `<tr class="text-center">
                                 <td>${response.data[i].recibo}</td>
-                                <td class="${badge}">${response.data[i].detalle}</td>
+                                <td>${response.data[i].detalle}</td>
                                 <td>${response.data[i].total}</td>
-                                <td>${response.data[i].estado}</td>
+                                <td><span class="${badge}">${response.data[i].estado}</span></td>
                                 <td>
-                                    ${response.data[i].realink}
-                                    <i class="me-1 mdi mdi-content-copy zoom" onclick="copyToClipboard('${response.data[i].realink}')" role="button"></i>
+                                    <button class="btn btn-success custom-tooltip" onclick="copyToClipboard('${response.data[i].realink}')">
+                                        <i class="mdi mdi-content-copy text-light"></i>
+                                        <span class="tooltiptext">Copiar link.</span>
+                                    </button>
                                 </td>
                             </tr>`;
                         }
