@@ -23,7 +23,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
-    <script src="https://cdn.datatables.net/fixedheader/3.2.3/css/fixedHeader.dataTables.min.css"></script>
+{{--    <script src="https://cdn.datatables.net/fixedheader/3.2.3/css/fixedHeader.dataTables.min.css"></script>--}}
+<link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.2.3/css/fixedHeader.dataTables.min.css">
 
 
 
@@ -108,9 +109,9 @@ $('input[name="daterange"]').daterangepicker({
   <!-- Daterangepicker js -->
 
 
-  <script src="assetsfacu/vendor/quill/quill.min.js"></script>
+  <script src="assetsfacu/vendor/quill/quill.min.js?v=2"></script>
  <!-- quill Init js-->
- <script src="assetsfacu/js/pages/demo.quilljs.js"></script>
+ <script src="assetsfacu/js/pages/demo.quilljs.js?v=2"></script>
   <!-- Apex Charts js -->
 
   <!-- Vector Map js -->

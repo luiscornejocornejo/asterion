@@ -23,13 +23,13 @@
       return false;
     }
 
-    const originalTitle = document.title;
+    const originalTitleParent = document.title;
     function showWarning() {
-      document.title = 🟡 ${originalTitle};
+      document.title = `🟡 ${originalTitleParent}`;
     }
 
     function restoreTitle() {
-      document.title = originalTitle;
+      document.title = originalTitleParent;
     }
 
     // Función para disparar la notificación push
