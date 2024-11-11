@@ -3,7 +3,7 @@
     $tipobot=0;
 
     $merchantId=$subdomain_tmp;
-    if($resultados[0]->ticketid==5109) {
+    if($resultados[0]->ticketid==5200) {
    // if($tipobot==1){
             ?>
         <iframe allow="camera;microphone" scrolling="no"
@@ -56,7 +56,7 @@
       if (action === 'triggerPushNotification') {
         triggerPushNotification(title, body);
       }
-      if (action === 'tiggerTitleWarn') {
+      if (action === 'triggerTitleWarn') {
         showWarning()
       }
       if (action === 'triggerTitleDefault') {
