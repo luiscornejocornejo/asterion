@@ -28,10 +28,15 @@
     async function triggerPushNotification(title, body) {
       const hasPermission = await requestNotificationPermission();
       if (hasPermission) {
-        new Notification(title, {
+        const notification = new Notification(title, {
           body: body,
           icon: 'https://via.placeholder.com/150' // Puedes cambiar el icono
         });
+        
+        notification.onclick = () => {
+            window.focus();          // Reenfocar la ventana (pestaña) principal
+            notification.close();    // Cerrar la notificación
+        };
       } else {
         console.log('Permiso de notificación no concedido.');
       }
