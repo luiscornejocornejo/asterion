@@ -6,7 +6,7 @@
     if($resultados[0]->ticketid==5109) {
    // if($tipobot==1){
             ?>
-        <iframe allow="camera;microphone"
+        <iframe allow="camera;microphone" scrolling="no"
         src="https://conversations.suricata.chat/?ticketId=<?php echo $resultados[0]->ticketid;?>&agentName=<?php echo session('nombreusuario');?>&merchant=<?php echo $merchantId;?>" width="100%" class="border rounded-3" style="height: 650px!important;"></iframe>
         <script>
     // Función para verificar y pedir permiso de notificaciones
