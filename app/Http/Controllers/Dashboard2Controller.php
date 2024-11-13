@@ -18,6 +18,7 @@ use App\Models\cronmail;
 use App\Models\masterreport;
 use Mail;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 
 class Dashboard2Controller extends Controller
 {
@@ -513,8 +514,8 @@ FROM
             `source`.`Agente`
             ORDER BY
             `source`.`Agente` ASC";
-
             $resultTimePerAgent = DB::connection('mysql2')->select($queryTimePerAgent);
+            Log::info('Ticket Per TIme: '. $resultTimePerAgent);
             return $resultTimePerAgent;
     }
 
