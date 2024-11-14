@@ -94,11 +94,12 @@
         function mos(dd){
             document.getElementById("cop").innerHTML =null;
             document.getElementById("cop").innerHTML =dd;
-        }
-
-        $(document).ready(function() {
+            $(document).ready(function() {
     $('.js-example-basic-single').select2();
 });
+        }
+
+     
     </script>
 
 
