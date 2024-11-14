@@ -34,6 +34,10 @@ Route::get('/crearticketos', [crearticketController::class, 'crearticketenos']);
 
 */
 
+Route::get('/test', function () {
+    return response()->json(['message' => 'Hello World!']);
+});
+
 Route::get('/ws', [wsController::class, 'ws']);
 Route::get('/ws2', [wsController::class, 'ws2']);
 Route::get('/tickessienna', [siennaticketsController::class, 'tickessienna']); //busqueda por conversacioid
