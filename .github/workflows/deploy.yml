@@ -40,6 +40,7 @@ jobs:
           echo "DEPLOY_HOST: $DEPLOY_HOST"
         env:
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+
       - name: Deploy to VPS
         env:
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
