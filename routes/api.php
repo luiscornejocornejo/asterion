@@ -9,9 +9,6 @@ use App\Http\Controllers\Api\crearticketController;
 use App\Http\Controllers\api\siennaticketsController;
 use App\Http\Controllers\api\ostController;
 
-
-
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -39,9 +36,9 @@ Route::get('/crearticketos', [crearticketController::class, 'crearticketenos']);
 
 Route::get('/ws', [wsController::class, 'ws']);
 Route::get('/ws2', [wsController::class, 'ws2']);
-Route::get('/tickessienna', [siennaticketsController::class, 'tickessienna']);//busqueda por conversacioid
-Route::get('/tickessienna2', [siennaticketsController::class, 'tickessienna2']);//busqyeda por celular
-Route::get('/tickessienna3', [siennaticketsController::class, 'tickessienna3']);//busqueda por numero de cliente
+Route::get('/tickessienna', [siennaticketsController::class, 'tickessienna']); //busqueda por conversacioid
+Route::get('/tickessienna2', [siennaticketsController::class, 'tickessienna2']); //busqyeda por celular
+Route::get('/tickessienna3', [siennaticketsController::class, 'tickessienna3']); //busqueda por numero de cliente
 Route::get('/tickessiennaseguimientos', [siennaticketsController::class, 'tickessiennaseguimientos']);
 Route::post('/creartickessienna', [siennaticketsController::class, 'creartickessienna']);
 Route::post('/creartickessiennacharlie', [siennaticketsController::class, 'creartickessiennacharlie']);
@@ -50,7 +47,7 @@ Route::post('/creartickessiennacharliedepto', [siennaticketsController::class, '
 
 Route::post('/creartickessiennacharlie2', [siennaticketsController::class, 'creartickessiennacharlie2']);
 
-   
+
 Route::post('/mandarmail', [siennaticketsController::class, 'mandarmail']);
 Route::get('/motic', [siennaticketsController::class, 'motic']);
 
@@ -146,9 +143,9 @@ Route::get('/extrasuser/{user_id}',[wsController::class, 'extrasuser']);
 Route::get('/cappi2022', [cappi2022Controller::class, 'crear']);
 */
 
-Route::get('/generico','App\Http\Controllers\api\pasajeController@pasaje');
-Route::get('/especifico','App\Http\Controllers\api\pasajeController@especifico');
-Route::get('/datosextras','App\Http\Controllers\api\ticketController@principal');
+Route::get('/generico', 'App\Http\Controllers\api\pasajeController@pasaje');
+Route::get('/especifico', 'App\Http\Controllers\api\pasajeController@especifico');
+Route::get('/datosextras', 'App\Http\Controllers\api\ticketController@principal');
 
 
 
