@@ -295,7 +295,10 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                        
                         @include('sienna.tu.informacionmail')
 
+                        <div class="mt-2">
+                         @include('sienna.tu.informacionadjuntos')
 
+                    </div>  
                     <?php
                     } if($resultados[0]->siennasource==10){?>
 
@@ -328,10 +331,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                     @include('sienna.tu.collectorbot')
 
                     </div>
-                    <div class="mt-2">
-                         @include('sienna.tu.informacionadjuntos')
-
-                    </div>  
+                    
                     <div class="mt-2">
                          @include('sienna.tu.informacionnotainterna')
 
