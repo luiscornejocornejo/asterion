@@ -639,7 +639,7 @@ FROM
         $getSource = $this->getSources();
         $getDepartment = $this->getDepartments();
         $getTicketsCreatedQty = $this->getTicketsCreatedQty($source, $department, $agent, $daterange);
-        $ticketTimePerAgent = $this->ticketTimePerAgent($source, $department, $agent, $daterange);
+        //$ticketTimePerAgent = $this->ticketTimePerAgent($source, $department, $agent, $daterange);
         //$totalCsat = $this->getTotalCsat($source, $daterange, $department, $agent);
         //$surverSended = $this->surveySended($source, $daterange, $department, $agent);
         //$surveyPerChannel = $this->surveyPerChannel($source, $daterange, $department, $agent);
@@ -660,8 +660,8 @@ FROM
             'sources' => $getSource,
             'departments' => $getDepartment,
             'filter' => [$source, $department, $agent, $daterange],
-            'qtyTickets' => $getTicketsCreatedQty,
-            'timePerAgent' => $ticketTimePerAgent
+            'qtyTickets' => $getTicketsCreatedQty
+            //'timePerAgent' => $ticketTimePerAgent
             //'totalCsat' => $totalCsat,
            // 'surveySended' => $surverSended,
            // 'surverPerChannel' => $surveyPerChannel,
@@ -693,7 +693,7 @@ FROM
         $getSource = $this->getSources();
         $getDepartment = $this->getDepartments();
         $getTicketsCreatedQty = $this->getTicketsCreatedQty($source, $department, $agent, $daterange);
-        $ticketTimePerAgent = $this->ticketTimePerAgent($source, $department, $agent, $daterange);
+        //$ticketTimePerAgent = $this->ticketTimePerAgent($source, $department, $agent, $daterange);
         //$totalCsat = $this->getTotalCsat($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
         //$surverSended = $this->surveySended($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
         //$surveyPerChannel = $this->surveyPerChannel($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
@@ -721,8 +721,8 @@ FROM
             'sources' => $getSource,
             'departments' => $getDepartment,
             'filter' => [$source, $department, $agent, $daterange],
-            'qtyTickets' => $getTicketsCreatedQty,
-            'timePerAgent' => $ticketTimePerAgent
+            'qtyTickets' => $getTicketsCreatedQty
+            //'timePerAgent' => $ticketTimePerAgent
             //'totalCsat' => $totalCsat,
             //'surveySended' => $surverSended,
             //'surverPerChannel' => $surveyPerChannel,
