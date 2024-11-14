@@ -18,6 +18,7 @@ use App\Models\cronmail;
 use App\Models\masterreport;
 use Mail;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 
 class Dashboard2Controller extends Controller
 {
@@ -474,6 +475,49 @@ FROM
         return $resultTopicPerDay;
     }
 
+    public function ticketTimePerAgent($source, $department, $agent, $periodo) 
+    {
+        $base = 25;
+        $prueba = $this->conectar($base);
+        $dom = $this->dominio();
+        $subquery = $this->subquery($source, $department, $agent, $periodo);
+
+        $queryTimePerAgent = "SELECT
+            `source`.`Agente` AS `Agente`,
+            AVG(`source`.`Tiempo`) AS `avg`
+            FROM
+            (
+            SELECT
+            `siennatickets_view`.`Creado` AS `Creado`,
+            `siennatickets_view`.`Actualizado` AS `Actualizado`,
+            `siennatickets_view`.`asignado` AS `asignado`,
+            TIMESTAMPDIFF(
+            minute,
+            `siennatickets_view`.`Creado`,
+            `siennatickets_view`.`Actualizado`
+            ) AS `Tiempo`,
+            CONCAT(
+            `Users - Asignado`.`nombre`,
+            ' ',
+            `Users - Asignado`.`last_name`
+            ) AS `Agente`,
+            `Users - Asignado`.`nombre` AS `Users - Asignado__nombre`,
+            `Users - Asignado`.`last_name` AS `Users - Asignado__last_name`,
+            `Users - Asignado`.`id` AS `Users - Asignado__id`
+            FROM
+            " . $dom . ".`siennatickets_view`
+
+            LEFT JOIN " . $dom . ".`users` AS `Users - Asignado` ON `siennatickets_view`.`asignado` = `Users - Asignado`.`id`
+            ) AS `source`
+             " . $subquery . "
+            GROUP BY
+            `source`.`Agente`
+            ORDER BY
+            `source`.`Agente` ASC";
+            $resultTimePerAgent = DB::connection('mysql2')->select($queryTimePerAgent);
+            Log::info('Ticket Per TIme: '. $resultTimePerAgent);
+            return $resultTimePerAgent;
+    }
 
     public function getTickets(Request $request)
     {
@@ -595,6 +639,7 @@ FROM
         $getSource = $this->getSources();
         $getDepartment = $this->getDepartments();
         $getTicketsCreatedQty = $this->getTicketsCreatedQty($source, $department, $agent, $daterange);
+        $ticketTimePerAgent = $this->ticketTimePerAgent($source, $department, $agent, $daterange);
         //$totalCsat = $this->getTotalCsat($source, $daterange, $department, $agent);
         //$surverSended = $this->surveySended($source, $daterange, $department, $agent);
         //$surveyPerChannel = $this->surveyPerChannel($source, $daterange, $department, $agent);
@@ -615,7 +660,8 @@ FROM
             'sources' => $getSource,
             'departments' => $getDepartment,
             'filter' => [$source, $department, $agent, $daterange],
-            'qtyTickets' => $getTicketsCreatedQty
+            'qtyTickets' => $getTicketsCreatedQty,
+            'timePerAgent' => $ticketTimePerAgent
             //'totalCsat' => $totalCsat,
            // 'surveySended' => $surverSended,
            // 'surverPerChannel' => $surveyPerChannel,
@@ -647,6 +693,7 @@ FROM
         $getSource = $this->getSources();
         $getDepartment = $this->getDepartments();
         $getTicketsCreatedQty = $this->getTicketsCreatedQty($source, $department, $agent, $daterange);
+        $ticketTimePerAgent = $this->ticketTimePerAgent($source, $department, $agent, $daterange);
         //$totalCsat = $this->getTotalCsat($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
         //$surverSended = $this->surveySended($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
         //$surveyPerChannel = $this->surveyPerChannel($sourceCsat, $daterangeCsat, $departmentCsat, $agentCsat);
@@ -674,7 +721,8 @@ FROM
             'sources' => $getSource,
             'departments' => $getDepartment,
             'filter' => [$source, $department, $agent, $daterange],
-            'qtyTickets' => $getTicketsCreatedQty
+            'qtyTickets' => $getTicketsCreatedQty,
+            'timePerAgent' => $ticketTimePerAgent
             //'totalCsat' => $totalCsat,
             //'surveySended' => $surverSended,
             //'surverPerChannel' => $surveyPerChannel,
