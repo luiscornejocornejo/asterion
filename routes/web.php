@@ -15,10 +15,7 @@ use App\Http\Controllers\JornadasController;
 |
 */
 
-
-
 Route::get('/datos','App\Http\Controllers\TicketdatosController@datos');
- 
 
 
 Route::get('/welcome', function () {

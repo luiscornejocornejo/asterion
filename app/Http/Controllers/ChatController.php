@@ -10,7 +10,7 @@ use App\Models\masterreport;
 class ChatController extends Controller
 {
   //
-
+   
   public function cambiarestado(Request $request)
   {
 

@@ -1,0 +1,62 @@
+name: Deploy Front Botpress (develop)
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+
+      - name: Install dependencies
+        run: |
+          composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader
+
+      - name: Clear and cache configuration and routes
+        run: |
+          php artisan config:clear
+          php artisan route:clear
+          php artisan config:cache
+          php artisan route:cache
+
+      - name: Verificar secrets
+        run: |
+          if [ -z "$DEPLOY_HOST" ]; then echo "DEPLOY_HOST está vacío"; else echo "DEPLOY_HOST está configurado"; fi
+          # Muestra si alguna de las variables está vacía o configurada
+          echo "DEPLOY_HOST: $DEPLOY_HOST"
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+
+      - name: Write SSH keys
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          host="${{ secrets.DEPLOY_HOST }}"
+          hosts="$(dig +short "$host" | grep -v '\.$' | sed -z 's|\n|,|g')$host"
+          ssh-keyscan -H "$hosts" > ~/.ssh/known_hosts
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+
+      - name: Deploy to VPS
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_PATH: /var/www/laravel
+        run: |
+          if [ -z "$DEPLOY_HOST" ]; then echo "DEPLOY_HOST está vacío"; exit 1; fi
+          echo "Conectando a $DEPLOY_HOST..."
+          ssh root@$DEPLOY_HOST "cd $DEPLOY_PATH && git pull origin develop && composer install --no-dev && php artisan config:cache"

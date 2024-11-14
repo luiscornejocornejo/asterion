@@ -18,3 +18,4 @@ yarn-error.log
 /.vscode
 subdomains_config/*
 scheduler-output.log
+bootstrap/cache.old/*
