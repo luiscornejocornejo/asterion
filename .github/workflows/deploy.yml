@@ -45,6 +45,8 @@ jobs:
         run: |
           mkdir -p ~/.ssh
           ssh-keyscan -H $DEPLOY_HOST >> ~/.ssh/known_hosts
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
 
       - name: Deploy to VPS
         env:
