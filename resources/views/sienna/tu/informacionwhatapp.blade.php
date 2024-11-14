@@ -98,7 +98,6 @@
     <?php } ?>
 </select>
 
-<div id="cop"></div>
 
 <!-- JavaScript para inicialización -->
 <script>
