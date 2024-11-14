@@ -1,0 +1,34 @@
+name: Deploy Front Botpress
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+
+      - name: Install dependencies
+        run: |
+          composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader
+          php artisan config:cache
+          php artisan route:cache
+          php artisan view:cache
+
+      - name: Deploy to VPS
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_PATH: /var/www/laravel
+        run: |
+          ssh $DEPLOY_USER@$DEPLOY_HOST "cd $DEPLOY_PATH && git pull origin main && composer install --no-dev php artisan config:cache"
