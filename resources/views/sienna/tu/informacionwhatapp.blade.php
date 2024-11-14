@@ -81,30 +81,41 @@
 </div>
 <div class="me-2">
 <!-- CSS de Select2 -->
+<!-- CSS de Select2 -->
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 <!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" defer></script>
 
 <!-- Script de Select2 -->
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script>
 
-  <select onChange="mos(this.options[this.selectedIndex].value)" class="form-select js-example-basic-single" aria-label="Default select example">
-   <option>Seleccionar</option>
-            <?php foreach($datosatajos as $val){?>
-            <option value="<?php echo htmlspecialchars($val->contenido);?>" ><?php echo $val->nombre;?></option>
-        <?php }?>
-        </select>
-    <script>
-        function mos(dd){
-            document.getElementById("cop").innerHTML =null;
-            document.getElementById("cop").innerHTML =dd;
+<!-- HTML del Select -->
+<select onChange="mos(this.options[this.selectedIndex].value)" class="form-select js-example-basic-single" aria-label="Default select example">
+    <option>Seleccionar</option>
+    <?php foreach($datosatajos as $val) { ?>
+        <option value="<?php echo htmlspecialchars($val->contenido); ?>"><?php echo $val->nombre; ?></option>
+    <?php } ?>
+</select>
+
+<div id="cop"></div>
+
+<!-- JavaScript para inicialización -->
+<script>
+    function mos(dd) {
+        document.getElementById("cop").innerHTML = null;
+        document.getElementById("cop").innerHTML = dd;
+    }
+
+    // Espera a que todo el DOM esté listo y las librerías estén cargadas
+    document.addEventListener("DOMContentLoaded", function() {
+        if ($.fn.select2) { // Verifica si select2 está disponible
+            $('.js-example-basic-single').select2();
+        } else {
+            console.error("Select2 no se cargó correctamente");
         }
-
-        $(document).ready(function() {
-    $('.js-example-basic-single').select2();
-});
-    </script>
+    });
+</script>
 
 
 
