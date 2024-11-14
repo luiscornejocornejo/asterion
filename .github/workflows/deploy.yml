@@ -59,4 +59,4 @@ jobs:
         run: |
           if [ -z "$DEPLOY_HOST" ]; then echo "DEPLOY_HOST está vacío"; exit 1; fi
           echo "Conectando a $DEPLOY_HOST..."
-          ssh root@$DEPLOY_HOST "cd $DEPLOY_PATH && git pull origin main && composer install --no-dev && php artisan config:cache"
+          ssh root@$DEPLOY_HOST "cd $DEPLOY_PATH && git pull origin develop && composer install --no-dev && php artisan config:cache"
