@@ -82,9 +82,7 @@
 <div class="me-2">
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <select onChange="mos(this.options[this.selectedIndex].value)" class="form-select js-example-basic-single" aria-label="Default select example">
+  <select onChange="mos(this.options[this.selectedIndex].value)" class="form-select js-example-basic-single" aria-label="Default select example">
    <option>Seleccionar</option>
             <?php foreach($datosatajos as $val){?>
             <option value="<?php echo htmlspecialchars($val->contenido);?>" ><?php echo $val->nombre;?></option>
@@ -94,13 +92,16 @@
         function mos(dd){
             document.getElementById("cop").innerHTML =null;
             document.getElementById("cop").innerHTML =dd;
-            $(document).ready(function() {
-    $('.js-example-basic-single').select2();
-});
         }
 
-     
+        $(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
     </script>
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  
 
 
 
