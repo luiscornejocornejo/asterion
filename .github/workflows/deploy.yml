@@ -1,4 +1,4 @@
-name: Deploy Front Botpress
+name: Deploy Front Botpress (develop)
 
 on:
   push:
