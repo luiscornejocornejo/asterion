@@ -569,6 +569,7 @@ class cloudtickets extends Controller
         $depto=$request->depto;
         $siennatopic=$request->topicos;
         $logeado=$request->logeado;
+        $idlogeado=$request->idlogeado;
 
         $si = new siennatickets();
         $si->siennadepto = $depto;
@@ -577,7 +578,8 @@ class cloudtickets extends Controller
         $si->siennatopic = $siennatopic;
         $si->siennasource = "9";
         $si->siennaestado = "1";
-        $si->asignado = "99999";
+        $si->asignado = $idlogeado;
+        $si->creador_ticket = $idlogeado;
         $si->save();
 
        
@@ -602,6 +604,7 @@ class cloudtickets extends Controller
         $email=$request->email;
         $fullname=$request->fullname;
         $logeado=$request->logeado;
+        $idlogeado=$request->idlogeado;
 
         $depto=$request->depto;
         $siennatopic=$request->topicos;
@@ -612,7 +615,8 @@ class cloudtickets extends Controller
         $si->siennasource = "9";
         $si->siennaestado = "1";
 
-        $si->asignado = "99999";
+        $si->asignado = $idlogeado;
+        $si->creador_ticket = $idlogeado;
 
         $si->cel = $phone;
         $si->nya = $fullname;
@@ -1410,6 +1414,7 @@ class cloudtickets extends Controller
         $depto=$request->depto;
         $siennatopic=$request->topicos;
         $logeado=$request->logeado;
+        $idlogeado=$request->idlogeado;
 
         $si = new siennatickets();
         $si->siennadepto = $depto;
@@ -1419,7 +1424,8 @@ class cloudtickets extends Controller
         $si->siennatopic = $siennatopic;
         $si->siennasource = "11";
         $si->siennaestado = "1";
-        $si->asignado = "99999";
+        $si->asignado = $idlogeado;
+        $si->creador_ticket = $idlogeado;
         $tik=$si->save();
 
        

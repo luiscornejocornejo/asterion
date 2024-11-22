@@ -84,6 +84,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                             </select>
                         </div>
                         <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
+                        <input value="<?php echo session('idusuario');?>" type="hidden" name="idlogeado" id="idlogeado">
 
                     </div>
                 </div>

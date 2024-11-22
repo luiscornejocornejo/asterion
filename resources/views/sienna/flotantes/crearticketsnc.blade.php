@@ -67,6 +67,7 @@ function topics2(id2){
 
                         </div>
                         <input value="<?php echo session('nombreusuario');?>" type="hidden" name="logeado" id="logeado">
+                        <input value="<?php echo session('idusuario');?>" type="hidden" name="idlogeado" id="idlogeado">
 
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mt-1">
                             <label for="department-prospect2" class="form-label">Departamento</label>
