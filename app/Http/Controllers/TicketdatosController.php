@@ -1048,6 +1048,7 @@ class TicketdatosController extends Controller
         
         $idbot=$request->idbot;
         $idconv=$request->idconv;
+        $userId=$request->userId;
         $bot_channel=$request->bot_channel;
         $subdomain_tmp = 'localhost';
         if (isset($_SERVER['HTTP_HOST'])) {
@@ -1139,6 +1140,7 @@ class TicketdatosController extends Controller
         $estadoant=$si2->siennaestado;
 
         $si2->siennaestado=$estado;
+        $si2->creador_ticket = $userId;
         $si2->descripciondelcierre= $descp;
 
         if($estado==4){
