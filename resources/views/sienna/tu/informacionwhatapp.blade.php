@@ -1,10 +1,11 @@
 <?php
 
-    $tipobot=0;
-
+foreach($datosempresa as $val){
+$tipobot=$val->tipo;
+}
     $merchantId=$subdomain_tmp;
-    if($resultados[0]->ticketid==5200) {
-   // if($tipobot==1){
+    //if($resultados[0]->ticketid==5200) {
+    if($tipobot==1){
             ?>
         <iframe allow="camera;microphone" scrolling="no"
         src="https://conversations.suricata.chat/?ticketId=<?php echo $resultados[0]->ticketid;?>&agentName=<?php echo session('nombreusuario');?>&merchant=<?php echo $merchantId;?>" width="100%" class="border rounded-3" style="height: 650px!important;"></iframe>
