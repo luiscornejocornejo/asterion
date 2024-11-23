@@ -375,6 +375,7 @@ class cloudtickets extends Controller
         $motivoc=1;
 
         $idbot=$request->idbot;
+        $userId=$request->userId;
         $bot_channel="WhatsAppChannel";
         $sep=explode(",",$ticketss);
         foreach($sep as $val){
@@ -385,6 +386,7 @@ class cloudtickets extends Controller
                 $estadoant=$si2->siennaestado;
                 $conv=$si2->conversation_url;
                 $si2->siennaestado=$estado;
+                $si2->cerrador_ticket = $userId;
                 $si2->motivoc=$motivoc;
                 $si2->t_cerrado=date("Y-m-d H:i:s");
                 $si2->save();
