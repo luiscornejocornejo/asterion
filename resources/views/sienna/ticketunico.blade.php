@@ -12,11 +12,11 @@ foreach($datospagoralia as $valpago){
 }
 
 
-$queryservicios="select * from sienna_suricata_servicios";
+$queryservicios="select * from sienna_suricata_servicios where nombre='Erp'";
 $datosservicios = DB::select($queryservicios);
 $erp=0;
 foreach($datosservicios as $valservicios){
-    $erp=$valservicios->Erp;
+    $erp=$valservicios->habilitado;
 
 }
 
