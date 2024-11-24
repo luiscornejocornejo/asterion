@@ -11,6 +11,15 @@ foreach($datospagoralia as $valpago){
 
 }
 
+
+$queryservicios="select * from sienna_suricata_servicios";
+$datosservicios = DB::select($queryservicios);
+$erp=0;
+foreach($datosservicios as $valservicios){
+    $erp=$valservicios->Erp;
+
+}
+
 $queryempresa="select * from empresa";
 $datosempresa = DB::select($queryempresa);
 
@@ -317,6 +326,12 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         @include('sienna.tu.informacionwhatapp')
 
                            
+                    <?php }?>
+
+
+                    <?php if($erp){?>
+                        @include('sienna.tu.erp.mikrowisp')
+
                     <?php }?>
 
                     <div class="mt-2">
