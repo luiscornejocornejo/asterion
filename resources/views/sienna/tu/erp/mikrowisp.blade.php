@@ -71,24 +71,13 @@ $ticketserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/tick
                                         ?>
                                         </select>
                             </div>
-                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
-                                <label class="form-label" for="amount">Prioridad:</label>
-                                <input required name="monto" type="number" step="0.01" class="form-control" id="amount"
-                                    placeholder="50.00">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
-                                <label class="form-label" for="customer">Descripcion</label>
-                                
-                            </div>
-                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
-                                <label class="form-label" for="nameUser">Cliente:</label>
-                                <input required name="cliente" type="text" class="form-control" id="nameUser"
-                                    placeholder="cliente" value="47235">
+                            <div class="mb-3">
+                                <label for="example-textarea" class="form-label">Descripcion</label>
+                                <textarea class="form-control" id="example-textarea" rows="4"></textarea>
                             </div>
                             
                         </div>
+                        
                         <button type="submit" class="btn btn-success mt-3 mb-2">Crear Ticket</button>
                         <hr class="mx-1" />
                     </form>
