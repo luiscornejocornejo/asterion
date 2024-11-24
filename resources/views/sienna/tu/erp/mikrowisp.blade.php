@@ -3,7 +3,7 @@
 <?php 
 $subserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/listadodeticketsubcategorias?token=wiber");
 $usuariosserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/usuarios?token=wiber");
-$usuariosserp=json_decode($usuariosserp, true);
+$usuariosserp2=json_decode($usuariosserp, true);
 $ticketserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/tickets?token=wiber&cliente_id=47235");
 ?>
 <div class="card widget-flat" id="infoUser">
@@ -41,8 +41,8 @@ $ticketserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/tick
                         <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
                                         <label for="agent" class="form-label">Usuario</label>
                                         <select name="usuario" id="agent" multiple="multiple" class="form-select">
-
-                                            @foreach ($usuariosserp as $agent)
+    <?php dd($usuariosserp2);?>
+                                            @foreach ($usuariosserp2 as $agent)
                                                 <option value="{{ $agent->usuario_id }}">
                                                     {{ $agent->usuario_nombre }} {{ $agent->usuario_apellido }}
                                                 </option>
