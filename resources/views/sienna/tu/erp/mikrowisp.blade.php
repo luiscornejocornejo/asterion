@@ -1,3 +1,10 @@
+
+
+<?php 
+$subserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/listadodeticketsubcategorias?token=wiber");
+$usuariosserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/usuarios?token=wiber");
+$ticketserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/tickets?token=wiber&cliente_id=47235");
+?>
 <div class="card widget-flat" id="infoUser">
     <div class="card-body">
     <div class="row">
@@ -30,40 +37,41 @@
                     <form method="post" action="/crearispkipper">
                         @csrf
                         <div class="row">
+                        <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
+                                        <label for="agent" class="form-label">Usuario</label>
+                                        <select name="usuario" id="agent" multiple="multiple" class="form-select">
+
+                                            @foreach ($usuariosserp as $agent)
+                                                <option value="{{ $agent->id }}">
+                                                    {{ $agent->usuario_nombre }} {{ $agent->usuario_apellido }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                          </div>
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
-                                <label class="form-label" id="invoice_number">Invoice:</label>
-                                <input required name="invoice" type="text" class="form-control" id="invoice_number"
-                                    aria-describedby="emailHelp" placeholder="fb101232">
-                            </div>
-                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
-                                <label class="form-label" for="description">Descripción</label>
+                                <label class="form-label" for="description">Subcategoria</label>
                                 <input required name="descripcion" type="text" class="form-control" id="description"
                                     placeholder="pago por servicio de inet">
                             </div>
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
-                                <label class="form-label" for="amount">Monto:</label>
+                                <label class="form-label" for="amount">Prioridad:</label>
                                 <input required name="monto" type="number" step="0.01" class="form-control" id="amount"
                                     placeholder="50.00">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
-                                <label class="form-label" for="customer">Número de cliente</label>
-                                <input required name="cliente" type="text" class="form-control" id="customer"
-                                    placeholder="cliente">
+                                <label class="form-label" for="customer">Descripcion</label>
+                                
                             </div>
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
-                                <label class="form-label" for="nameUser">Nombre:</label>
-                                <input required name="nombre" type="text" class="form-control" id="nameUser"
-                                    placeholder="nombre">
+                                <label class="form-label" for="nameUser">Cliente:</label>
+                                <input required name="cliente" type="text" class="form-control" id="nameUser"
+                                    placeholder="cliente" value="47235">
                             </div>
-                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
-                                <label class="form-label" for="lastNameUser">Apellido:</label>
-                                <input required name="apellido" type="text" class="form-control" id="lastNameUser"
-                                    placeholder="apellido">
-                            </div>
+                            
                         </div>
-                        <button type="submit" class="btn btn-success mt-3 mb-2">Generar orden</button>
+                        <button type="submit" class="btn btn-success mt-3 mb-2">Crear Ticket</button>
                         <hr class="mx-1" />
                     </form>
                 </div>
