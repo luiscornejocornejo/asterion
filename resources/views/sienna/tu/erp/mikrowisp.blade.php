@@ -40,13 +40,9 @@ $ticketserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/tick
                         <div class="row">
                         <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
                                         <label for="agent" class="form-label">Usuario</label>
+                                        <?php var_dump($usuariosserp2[0]);?>
 
-                                            @foreach ($usuariosserp2 as $agent2)
-                                            @foreach ($agent2 as $agent)
-                                                <?php var_dump($agent2[0]);?>
-                                               
-                                                @endforeach
-                                                @endforeach
+                                           
                                                 <select name="usuario" id="agent" multiple="multiple" class="form-select">
 
                                                 </select>
