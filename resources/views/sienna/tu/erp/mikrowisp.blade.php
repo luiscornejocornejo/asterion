@@ -40,19 +40,22 @@ $ticketserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/tick
                         <div class="row">
                         <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
                                         <label for="agent" class="form-label">Usuario</label>
-                                        <?php for($i=0;$i<sizeof($usuariosserp2);$i++){
-                                            var_dump($usuariosserp2[$i]["usuario_id"]);
-                                            var_dump($usuariosserp2[$i]["usuario_nombre"]);
-                                            var_dump($usuariosserp2[$i]["usuario_apellido"]);
+                                        <select name="usuarios" id="agent" multiple="multiple" class="form-select">
 
-                                        }
+                                        <?php for($i=0;$i<sizeof($usuariosserp2);$i++){
+                                            ?>
+                                            <option value="{{ $usuariosserp2[$i]["usuario_id"] }}">
+                                                    {{ $usuariosserp2[$i]["usuario_nombre"] }} {{ $usuariosserp2[$i]["usuario_apellido"] }}
+                                                </option>
+
+
+                                        <?php }
                                         
                                         ?>
+                                        </select>
 
                                            
-                                                <select name="usuario" id="agent" multiple="multiple" class="form-select">
-
-                                                </select>
+                                               
                           </div>
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
                                 <label class="form-label" for="description">Subcategoria</label>
