@@ -160,7 +160,7 @@ $ticketserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/tick
                 <p class="mb-0">...</p>
             </div>
             <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                <p class="mb-0">...</p>
+            <div data-tf-live="01JDFRQDH03PQAH7HE59FRXFB0"></div><script src="//embed.typeform.com/next/embed.js"></script>
             </div>
         </div> <!-- end tab-content-->
     </div> <!-- end col-->
