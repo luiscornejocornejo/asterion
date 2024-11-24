@@ -3,10 +3,7 @@
 <?php 
 $subserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/listadodeticketsubcategorias?token=wiber");
 $usuariosserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/usuarios?token=wiber");
-var_dump(json_decode($usuariosserp, true));
-
-
-dd($usuariosserp);
+$usuariosserp=json_decode($usuariosserp, true);
 $ticketserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/tickets?token=wiber&cliente_id=47235");
 ?>
 <div class="card widget-flat" id="infoUser">
