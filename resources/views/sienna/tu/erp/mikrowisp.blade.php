@@ -43,7 +43,7 @@ $ticketserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/tick
 
                                             @foreach ($usuariosserp2 as $agent2)
                                             @foreach ($agent2 as $agent)
-                                                <?php var_dump($agent);?>
+                                                <?php var_dump($agent[0]);?>
                                                
                                                 @endforeach
                                                 @endforeach
