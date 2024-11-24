@@ -2,6 +2,8 @@
 
 <?php 
 $subserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/listadodeticketsubcategorias?token=wiber");
+$subserp2=json_decode($subserp, true);
+
 $usuariosserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/usuarios?token=wiber");
 $usuariosserp2=json_decode($usuariosserp, true);
 $ticketserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/tickets?token=wiber&cliente_id=47235");
@@ -40,15 +42,13 @@ $ticketserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/tick
                         <div class="row">
                         <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
                                         <label for="agent" class="form-label">Usuario</label>
-                                        <select name="usuarios" id="agent" multiple="multiple" class="form-select">
+                                        <select name="usuarios" id="agent"  class="form-select">
 
                                         <?php for($i=0;$i<sizeof($usuariosserp2);$i++){
                                             ?>
                                             <option value="{{ $usuariosserp2[$i]["usuario_id"] }}">
                                                     {{ $usuariosserp2[$i]["usuario_nombre"] }} {{ $usuariosserp2[$i]["usuario_apellido"] }}
                                                 </option>
-
-
                                         <?php }
                                         
                                         ?>
@@ -59,8 +59,17 @@ $ticketserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/tick
                           </div>
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
                                 <label class="form-label" for="description">Subcategoria</label>
-                                <input required name="descripcion" type="text" class="form-control" id="description"
-                                    placeholder="pago por servicio de inet">
+                                <select name="subcategorias" id="agent"  class="form-select">
+
+                                        <?php for($i=0;$i<sizeof($subserp2);$i++){
+                                            ?>
+                                            <option value="{{ $subserp2[$i]["ticket_subcategoria_id"] }}">
+                                                    {{ $subserp2[$i]["ticket_subcategoria_nombre"] }} 
+                                                </option>
+                                        <?php }
+                                        
+                                        ?>
+                                        </select>
                             </div>
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
                                 <label class="form-label" for="amount">Prioridad:</label>
