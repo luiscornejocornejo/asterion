@@ -41,15 +41,14 @@ $ticketserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/tick
                         <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
                                         <label for="agent" class="form-label">Usuario</label>
 
-                                        <select name="usuario" id="agent" multiple="multiple" class="form-select">
                                             @foreach ($usuariosserp2 as $agent2)
                                             @foreach ($agent2 as $agent)
+                                                <?php var_dump($agent);?>
+                                               
+                                                @endforeach
+                                                @endforeach
+                                                <select name="usuario" id="agent" multiple="multiple" class="form-select">
 
-                                                <option value="{{ $agent->usuario_id }}">
-                                                    {{ $agent->usuario_nombre }} {{ $agent->usuario_apellido }}
-                                                </option>
-                                                @endforeach
-                                                @endforeach
                                                 </select>
                           </div>
                             <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
