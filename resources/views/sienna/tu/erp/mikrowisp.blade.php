@@ -43,11 +43,11 @@ $ticketserp2 = json_decode($ticketserp, true);
         </ul>
         <div class="tab-content">
             <div class="tab-pane" id="ticket">
-                <div class="row">
+               
                     <form method="post" action="api/crearispkipper">
                         @csrf
                         <div class="row">
-                            <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12">
                                 <label for="agent" class="form-label">Usuario</label>
                                 <select name="usuarios" id="agent" class="form-select">
 
@@ -61,11 +61,8 @@ $ticketserp2 = json_decode($ticketserp, true);
                                     
                                     ?>
                                 </select>
-
-
-
                             </div>
-                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 mt-2">
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12">
                                 <label class="form-label" for="description">Subcategoria</label>
                                 <select name="subcategorias" id="agent" class="form-select">
 
@@ -107,9 +104,7 @@ $ticketserp2 = json_decode($ticketserp, true);
                         <button type="submit" class="btn btn-success mt-3 mb-2">Crear Ticket</button>
                         <hr class="mx-1" />
                     </form>
-                </div>
-                <div class="row">
-
+                
                     <table id="casadepapel" class="table table-striped dt-responsive nowrap w-100 text-light">
                         <thead>
                             <tr class="text-center bg-dark">
@@ -135,7 +130,7 @@ $ticketserp2 = json_decode($ticketserp, true);
 
                         </tbody>
                     </table>
-                </div>
+                
             </div>
         </div>
         <div class="tab-pane show active" id="data">
