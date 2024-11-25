@@ -4,8 +4,11 @@ if (isset($resultadoscliente[0]->cliente)) {
 } else {
     return '';
 }
-$subserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/categorias?token=wiber");
+$subserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/listadodeticketsubcategorias?token=wiber");
 $subserp2=json_decode($subserp, true);
+
+$cateerp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/categorias?token=wiber");
+$cateerp2=json_decode($cateerp, true);
 
 $usuariosserp = file_get_contents('https://wiber.suricata-ispkeeper.com.ar/api/usuarios?token=wiber');
 $usuariosserp2 = json_decode($usuariosserp, true);
@@ -71,24 +74,38 @@ $ticketserp2 = json_decode($ticketserp, true);
                         </div>
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
                             <label class="form-label" for="description">Subcategoria:</label>
-                            <select name="subcategorias" id="agent" class="form-select">
+                            <select name="categoria" id="agent" class="form-select">
 
                                 <?php
-                                    function buscarNombreSubcategoria($subserp2, $idBuscado) {
-                                        for($j=0;$j<sizeof($subserp2);$j++){
-                                            if ($subserp2[$j]["ticket_subcategoria_id"]== $idBuscado) {
-                                                return $subserp2[$j]["ticket_subcategoria_nombre"];
-                                            }
-                                        }
-                                        return null; // Si no se encuentra, devuelve null o cualquier valor por defecto
-                                    }
-                                    for($i=0;$i<sizeof($subserp2);$i++){
+                                    
+                                    for($i=0;$i<sizeof($cateerp2);$i++){
                                         ?>
-                                <option value="<?php echo $subserp2[$i]['ticket_categoria_id']; ?>">
-                                    <?php echo $subserp2[$i]['ticket_categoria_detalle']; ?>
+                                <option value="<?php echo $cateerp2[$i]['ticket_categoria_id']; ?>">
+                                    <?php echo $cateerp2[$i]['ticket_categoria_detalle']; ?>
 
                                 </option>
                                 <?php }
+
+
+function buscarNombreSubcategoria($subserp2, $idBuscado) {
+    for($j=0;$j<sizeof($subserp2);$j++){
+        if ($subserp2[$j]["ticket_subcategoria_id"]== $idBuscado) {
+            return $subserp2[$j]["ticket_subcategoria_nombre"];
+        }
+    }
+    return null; // Si no se encuentra, devuelve null o cualquier valor por defecto
+}
+                                    
+                                    ?>
+                            </select>
+                        </div>
+                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
+                            <label class="form-label" for="description">Subcategoria:</label>
+                            <select name="subcategoria" id="agent" class="form-select">
+
+                                <?php
+                                   
+                        
                                     
                                     ?>
                             </select>
@@ -119,7 +136,7 @@ $ticketserp2 = json_decode($ticketserp, true);
                             <td>{{ $ticketserp2[$i]['ticket_dia'] }} {{ $ticketserp2[$i]['ticket_hora'] }}
                             </td>
                             <td>{{ $ticketserp2[$i]['ticket_estado'] }} </td>
-                            <td> <?php echo $nomsub = buscarNombreSubcategoria($subserp2, $ticketserp2[$i]['ticket_subcategoria']); ?> </td>
+                            <td> <?php //echo $nomsub = buscarNombreSubcategoria($subserp2, $ticketserp2[$i]['ticket_subcategoria']); ?> </td>
 
 
                         </tr>
