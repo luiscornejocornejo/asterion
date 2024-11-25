@@ -2653,9 +2653,7 @@ class siennaticketsController extends Controller
 
        $url="https://wiber.suricata-ispkeeper.com.ar/api/creart2?token=wiber";
        $curl = curl_init();
-       $data = array(
-                      
-       );
+      
  
        // Set headers for the cURL request
        $headers = array(
@@ -2688,6 +2686,7 @@ class siennaticketsController extends Controller
        curl_setopt_array($curl, $options);
        // Execute the cURL request
        $response = curl_exec($curl); 
+       echo $response;
        // Close the cURL resource
        curl_close($curl);
 
