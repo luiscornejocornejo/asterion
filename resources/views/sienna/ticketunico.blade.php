@@ -329,10 +329,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                     <?php }?>
 
 
-                    <?php if($erp){?>
-                        @include('sienna.tu.erp.mikrowisp')
-
-                    <?php }?>
+                   
 
                     <div class="mt-2">
                     @include('sienna.tu.informacionusuario')
@@ -346,6 +343,10 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                     @include('sienna.tu.collectorbot')
 
                     </div>
+                    <?php if($erp){?>
+                        @include('sienna.tu.erp.mikrowisp')
+
+                    <?php }?>
                     
                     <div class="mt-2">
                          @include('sienna.tu.informacionnotainterna')
