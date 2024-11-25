@@ -576,6 +576,15 @@ class cloudtickets extends Controller
         $si = new siennatickets();
         $si->siennadepto = $depto;
         $si->cliente = $cliente;
+
+        ///getdata traer datos yseteamos los valores
+        $domi=$this->dominio();
+
+        if($domi=="intersat"){
+           $url="https://intersat.suricata-ispkeeper.com.ar/api/wsn?token=inter&cliente_id=".$cliente;
+            $content = file_get_contents($url);
+            dd($content);
+        }
         $si->nya = $cliente;
         $si->siennatopic = $siennatopic;
         $si->siennasource = "9";
