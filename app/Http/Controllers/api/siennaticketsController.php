@@ -2660,6 +2660,7 @@ class siennaticketsController extends Controller
            "cliente" => $cliente,            
            "detalle" => $detalle            
        );
+       $url.="&usuario=".$usuarios."&prioridad=".$prioridad."&subcategoria=".$subcategoria."&cliente=".$cliente."&detalle=".$detalle."";
  
        // Set headers for the cURL request
        $headers = array(
@@ -2677,8 +2678,7 @@ class siennaticketsController extends Controller
            CURLOPT_TIMEOUT => 0,
            CURLOPT_FOLLOWLOCATION => true,
            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-           CURLOPT_POSTFIELDS =>$data,
-           CURLOPT_CUSTOMREQUEST => 'POST',
+           CURLOPT_CUSTOMREQUEST => 'GET',
            CURLOPT_HTTPHEADER => $headers,
        );
        // Set the options for cURL resource
