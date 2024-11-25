@@ -7,6 +7,7 @@ $subserp2=json_decode($subserp, true);
 $usuariosserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/usuarios?token=wiber");
 $usuariosserp2=json_decode($usuariosserp, true);
 $ticketserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/tickets?token=wiber&cliente_id=47235");
+$ticketserp2=json_decode($ticketserp, true);
 ?>
 <div class="card widget-flat" id="infoUser">
     <div class="card-body">
@@ -99,57 +100,27 @@ $ticketserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/tick
                         });
                 }
 
-                url =
-                    "https://<?php echo $subdomain_tmp; ?>.pagoralia.com/api/listadocliente?&token=elmasgrandesiguesiendoriverplate&cliente=<?php echo $resultados[0]->iddelcliente; ?>"
-                axios.get(url)
-                    .then(function(response) {
-                        res = '';
-                        console.log(response.data);
-                        for (i = 0; i < response.data.length; i++) {
-                            let badge = response.data[i].estado === 'paid' ?
-                                'badge bg-success' :
-                                response.data[i].estado === 'pending' ?
-                                'badge bg-warning' :
-                                '';
-                            console.log(badge)
-                            res += `<tr class="text-center">
-                                <td>${response.data[i].recibo}</td>
-                                <td>${response.data[i].detalle}</td>
-                                <td>${response.data[i].total}</td>
-                                <td><span class="${badge}">${response.data[i].estado}</span></td>
-                                <td>
-                                    <button class="btn btn-success custom-tooltip" onclick="copyToClipboard('${response.data[i].realink}')">
-                                        <i class="mdi mdi-content-copy text-light"></i>
-                                        <span class="tooltiptext">Copiar link.</span>
-                                    </button>
-                                </td>
-                            </tr>`;
-                        }
-
-                        document.getElementById("log").innerHTML = null;
-
-                        document.getElementById("log").innerHTML = res;
-
-                    })
-                    .catch(function(error) {
-                        // función para capturar el error
-                        console.log(error);
-                    })
-                    .then(function() {
-                        // función que siempre se ejecuta
-                    });
+              
             </script>
             <table id="casadepapel" class="table table-striped dt-responsive nowrap w-100 text-light">
                 <thead>
                     <tr class="text-center bg-dark">
-                        <th class="text-light">Invoice</th>
-                        <th class="text-light">Detalle</th>
-                        <th class="text-light">Total</th>
-                        <th class="text-light">Estado</th>
-                        <th class="text-light">Link</th>
+                        <th class="text-light">ticket_id</th>
+                        <th class="text-light">ticket_dia</th>
+                        <th class="text-light">ticket_hora</th>
+                        <th class="text-light">ticket_subcategoria</th>
                     </tr>
                 </thead>
                 <tbody id="log">
+                <?php for($i=0;$i<sizeof($ticketserp2);$i++){
+                                            ?>
+                 <tr class="text-center">
+                 <td>{{ $ticketserp2[$i]["ticket_id"] }} </td>
+                 <td>{{ $ticketserp2[$i]["ticket_dia"] }} </td>
+                 <td>{{ $ticketserp2[$i]["ticket_hora"] }} </td>
+                 <td>{{ $ticketserp2[$i]["ticket_subcategoria"] }} </td>
+                </tr>                             
+                                        <?php }?>
 
                 </tbody>
             </table>
