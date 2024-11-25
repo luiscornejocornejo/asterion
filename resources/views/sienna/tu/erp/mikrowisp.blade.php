@@ -74,8 +74,7 @@ $ticketserp2=json_decode($ticketserp, true);
                                         for($i=0;$i<sizeof($subserp2);$i++){
                                             ?>
                                             <option value="<?php echo $subserp2[$i]["ticket_subcategoria_id"];?>">
-                                                <?php echo $i;
-                                                //echo $nomsub=buscarNombreSubcategoria($subserp2, $subserp2[$i]["ticket_subcategoria_id"]);?>
+                                                <?php echo $subserp2[$i]["ticket_subcategoria_nombre"];?>
                                                    
                                                 </option>
                                         <?php }
@@ -112,7 +111,7 @@ $ticketserp2=json_decode($ticketserp, true);
                  <td>{{ $ticketserp2[$i]["ticket_id"] }} </td>
                  <td>{{ $ticketserp2[$i]["ticket_dia"] }} </td>
                  <td>{{ $ticketserp2[$i]["ticket_hora"] }} </td>
-                 <td>{{ $ticketserp2[$i]["ticket_subcategoria"] }} </td>
+                 <td><?php  echo $nomsub=buscarNombreSubcategoria($subserp2, $subserp2[$i]["ticket_subcategoria_id"]);?> </td>
                 </tr>                             
                                         <?php }?>
 
