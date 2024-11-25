@@ -583,6 +583,16 @@ class cloudtickets extends Controller
         if($domi=="intersat"){
            $url="https://intersat.suricata-ispkeeper.com.ar/api/wsn?token=inter&cliente_id=".$cliente;
             $content = file_get_contents($url);
+            $data = json_decode($content, true);
+
+            // Verifica si los campos existen y no están vacíos antes de concatenar
+            if (isset($data["cliente_nombre"], $data["cliente_apellido"]) &&
+                !empty($data["cliente_nombre"]) && !empty($data["cliente_apellido"])) {
+                $nombreCompleto = $data["cliente_nombre"] . " " . $data["cliente_apellido"];
+                echo "Nombre completo del cliente: " . $nombreCompleto;
+            } else {
+                echo "El nombre o apellido del cliente no están disponibles.";
+            }
             dd($content);
         }
         $si->nya = $cliente;
