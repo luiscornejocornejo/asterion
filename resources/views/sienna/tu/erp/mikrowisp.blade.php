@@ -38,7 +38,7 @@ $ticketserp2=json_decode($ticketserp, true);
 
 
                 <div class="row">
-                    <form method="post" action="/crearispkipper">
+                    <form method="post" action="api/crearispkipper">
                         @csrf
                         <div class="row">
                         <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
