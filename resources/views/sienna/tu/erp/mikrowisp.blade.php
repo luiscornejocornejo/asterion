@@ -66,7 +66,7 @@ $ticketserp2=json_decode($ticketserp, true);
                                         function buscarNombreSubcategoria($subserp2, $idBuscado) {
                                             for($j=0;$j<sizeof($subserp2);$j++){
                                                 if ($subserp2[$j]["ticket_subcategoria_id"]== $idBuscado) {
-                                                    return $idBuscado.$subserp2[$j]["ticket_subcategoria_id"].$subserp2[$j]["ticket_subcategoria_nombre"];
+                                                    return "buscado:".$idBuscado."sub encontrada".$subserp2[$j]["ticket_subcategoria_id"].$subserp2[$j]["ticket_subcategoria_nombre"];
                                                 }
                                             }
                                             return null; // Si no se encuentra, devuelve null o cualquier valor por defecto
@@ -119,7 +119,7 @@ $ticketserp2=json_decode($ticketserp, true);
                  <td>{{ $ticketserp2[$i]["ticket_id"] }} </td>
                  <td>{{ $ticketserp2[$i]["ticket_dia"] }} </td>
                  <td>{{ $ticketserp2[$i]["ticket_hora"] }} </td>
-                 <td>{{ $ticketserp2[$i]["ticket_subcategoria"] }}  <?php  echo $nomsub=buscarNombreSubcategoria($subserp2, $subserp2[$i]["ticket_subcategoria_id"]);?> </td>
+                 <td>enviada:{{ $ticketserp2[$i]["ticket_subcategoria"] }}  <?php  echo $nomsub=buscarNombreSubcategoria($subserp2, $subserp2[$i]["ticket_subcategoria_id"]);?> </td>
                 </tr>                             
                                         <?php }?>
 
