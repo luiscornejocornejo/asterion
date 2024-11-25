@@ -2639,5 +2639,18 @@ class siennaticketsController extends Controller
         $datos->save();
 
      }
+
+     
+     
+     public function crearispkipper(Request $request){
+
+       echo $usuarios=$request->usuarios;
+       echo $prioridad=$request->prioridad;
+       echo $subcategorias=$request->subcategorias;
+       echo $cliente=$request->cliente;
+       echo $detalle=$request->detalle;
+        
+
+     }
      
 }

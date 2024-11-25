@@ -38,7 +38,7 @@ $ticketserp2=json_decode($ticketserp, true);
 
 
                 <div class="row">
-                    <form method="get" action="/crearispkipper">
+                    <form method="post" action="/crearispkipper">
                         @csrf
                         <div class="row">
                         <div class="col-xxl-3 col-xl-3 col-lg-4 col-sm-6">
@@ -84,13 +84,13 @@ $ticketserp2=json_decode($ticketserp, true);
                             </div>
                             <div class="mb-3">
                                 <label for="example-textarea" class="form-label">Descripcion</label>
-                                <textarea class="form-control" id="example-textarea" rows="4"></textarea>
+                                <textarea name="detalle" class="form-control" id="example-textarea" rows="4"></textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="example-textarea" class="form-label">Cliente</label>
                                 <input required name="cliente" type="text" class="form-control" id="lastNameUser"
                             value="<?php echo $resultadoscliente[0]->cliente; ?>">
-                            <input  name="priorida" type="hidden" class="form-control" id="lastNameUser"
+                            <input  name="prioridad" type="hidden" class="form-control" id="lastNameUser"
                             value="3">
                             </div>
                             

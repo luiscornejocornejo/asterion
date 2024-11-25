@@ -152,6 +152,9 @@ Route::get('/especifico', 'App\Http\Controllers\api\pasajeController@especifico'
 Route::get('/datosextras', 'App\Http\Controllers\api\ticketController@principal');
 
 
+Route::post('/crearispkipper', [siennaticketsController::class, 'crearispkipper']);
+
+
 
 
 
