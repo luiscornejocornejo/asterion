@@ -2647,7 +2647,7 @@ class siennaticketsController extends Controller
 
        echo $usuarios=$request->usuarios;
        echo $prioridad=$request->prioridad;
-       echo $subcategorias=$request->subcategorias;
+       echo $subcategoria=$request->subcategorias;
        echo $cliente=$request->cliente;
        echo $detalle=$request->detalle;
 
@@ -2656,7 +2656,7 @@ class siennaticketsController extends Controller
        $data = array(
            "usuario" => $usuarios,
            "prioridad" => $prioridad,            
-           "subcategoria" => $subcategorias,            
+           "subcategoria" => $subcategoria,            
            "cliente" => $cliente,            
            "detalle" => $detalle            
        );
