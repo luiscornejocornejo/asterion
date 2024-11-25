@@ -119,7 +119,7 @@ $ticketserp2=json_decode($ticketserp, true);
                  <td>{{ $ticketserp2[$i]["ticket_id"] }} </td>
                  <td>{{ $ticketserp2[$i]["ticket_dia"] }} </td>
                  <td>{{ $ticketserp2[$i]["ticket_hora"] }} </td>
-                 <td>enviada:{{ $ticketserp2[$i]["ticket_subcategoria"] }}  <?php  echo $nomsub=buscarNombreSubcategoria($ticketserp2, $ticketserp2[$i]["ticket_subcategoria"]);?> </td>
+                 <td>enviada:{{ $ticketserp2[$i]["ticket_subcategoria"] }}  <?php  echo $nomsub=buscarNombreSubcategoria($subserp2, $ticketserp2[$i]["ticket_subcategoria"]);?> </td>
                 </tr>                             
                                         <?php }?>
 
