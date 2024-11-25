@@ -6,7 +6,7 @@ $subserp2=json_decode($subserp, true);
 
 $usuariosserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/usuarios?token=wiber");
 $usuariosserp2=json_decode($usuariosserp, true);
-$ticketserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/tickets?token=wiber&cliente_id=47235");
+$ticketserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/tickets?token=wiber&cliente_id=".$resultadoscliente[0]->cliente);
 $ticketserp2=json_decode($ticketserp, true);
 ?>
 <div class="card widget-flat" id="infoUser">
