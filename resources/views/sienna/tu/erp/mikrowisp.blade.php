@@ -62,10 +62,20 @@ $ticketserp2=json_decode($ticketserp, true);
                                 <label class="form-label" for="description">Subcategoria</label>
                                 <select name="subcategorias" id="agent"  class="form-select">
 
-                                        <?php for($i=0;$i<sizeof($subserp2);$i++){
+                                        <?php
+                                        function buscarNombreSubcategoria($subserp2, $idBuscado) {
+                                            foreach ($subserp2 as $subcategoria) {
+                                                if ($subcategoria["ticket_subcategoria_id"] == $idBuscado) {
+                                                    return $subcategoria["ticket_subcategoria_nombre"];
+                                                }
+                                            }
+                                            return null; // Si no se encuentra, devuelve null o cualquier valor por defecto
+                                        }
+                                        for($i=0;$i<sizeof($subserp2);$i++){
                                             ?>
                                             <option value="{{ $subserp2[$i]["ticket_subcategoria_id"] }}">
-                                                    {{ $subserp2[$i]["ticket_subcategoria_nombre"] }} 
+                                                <?php echo $nomsub=buscarNombreSubcategoria($subserp2, $subserp2[$i]["ticket_subcategoria_id"]);?>
+                                                   
                                                 </option>
                                         <?php }
                                         
@@ -84,24 +94,7 @@ $ticketserp2=json_decode($ticketserp, true);
                     </form>
                 </div>
         <div class="row">
-            <script>
-                function copyToClipboard(text) {
-                    navigator.clipboard.writeText(text)
-                        .then(() => {
-                            console.log("Contenido copiado al portapapeles!");
-                            let toastEl = document.getElementById('liveToast')
-                            toastEl.querySelector('.toast-body').innerHTML =
-                                'Orden copiada al portapapeles.'
-                            let toast = new bootstrap.Toast(toastEl)
-                            toast.show()
-                        })
-                        .catch(err => {
-                            console.error("Error al copiar el contenido: ", err);
-                        });
-                }
-
-              
-            </script>
+           
             <table id="casadepapel" class="table table-striped dt-responsive nowrap w-100 text-light">
                 <thead>
                     <tr class="text-center bg-dark">
