@@ -586,9 +586,9 @@ class cloudtickets extends Controller
             $data = json_decode($content, true);
             var_dump($data);
             // Verifica si los campos existen y no están vacíos antes de concatenar
-            if (isset($data["cliente_nombre"], $data["cliente_apellido"]) &&
-                !empty($data["cliente_nombre"]) && !empty($data["cliente_apellido"])) {
-                $nombreCompleto = $data["cliente_nombre"] . " " . $data["cliente_apellido"];
+            if (isset($data[0]["cliente_nombre"], $data[0]["cliente_apellido"]) &&
+                !empty($data[0]["cliente_nombre"]) && !empty($data[0]["cliente_apellido"])) {
+                $nombreCompleto = $data[0]["cliente_nombre"] . " " . $data[0]["cliente_apellido"];
                 echo "Nombre completo del cliente: " . $nombreCompleto;
             } else {
                 echo "El nombre o apellido del cliente no están disponibles.";
