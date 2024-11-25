@@ -579,23 +579,21 @@ class cloudtickets extends Controller
 
         ///getdata traer datos yseteamos los valores
         $domi=$this->dominio();
+        $nombreCompleto = $cliente;
 
         if($domi=="intersat"){
            $url="https://intersat.suricata-ispkeeper.com.ar/api/wsn?token=inter&cliente_id=".$cliente;
             $content = file_get_contents($url);
             $data = json_decode($content, true);
-            var_dump($data);
             // Verifica si los campos existen y no están vacíos antes de concatenar
             if (isset($data[0]["cliente_nombre"], $data[0]["cliente_apellido"]) &&
                 !empty($data[0]["cliente_nombre"]) && !empty($data[0]["cliente_apellido"])) {
                 $nombreCompleto = $data[0]["cliente_nombre"] . " " . $data[0]["cliente_apellido"];
-                echo "Nombre completo del cliente: " . $nombreCompleto;
             } else {
-                echo "El nombre o apellido del cliente no están disponibles.";
+                $nombreCompleto = $cliente;
             }
-            dd($content);
         }
-        $si->nya = $cliente;
+        $si->nya = $nombreCompleto;
         $si->siennatopic = $siennatopic;
         $si->siennasource = "9";
         $si->siennaestado = "1";
