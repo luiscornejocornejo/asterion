@@ -1,6 +1,12 @@
 
 
 <?php 
+
+if(isset($resultadoscliente[0]->cliente)){
+
+}else{
+return "";
+}
 $subserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/listadodeticketsubcategorias?token=wiber");
 $subserp2=json_decode($subserp, true);
 
