@@ -47,8 +47,15 @@ $ticketserp2 = json_decode($ticketserp, true);
                 <form method="post" action="api/crearispkipper">
                     @csrf
                     <div class="row">
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12">
-                            <label for="agent" class="form-label">Usuario</label>
+                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
+                            <label for="example-textarea" class="form-label">Cliente</label>
+                            <input required name="cliente" type="text" class="form-control" id="lastNameUser"
+                                value="<?php echo $resultadoscliente[0]->cliente; ?>">
+                            <input name="prioridad" type="hidden" class="form-control" id="lastNameUser"
+                                value="3">
+                        </div>
+                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
+                            <label for="agent" class="form-label">Agente:</label>
                             <select name="usuarios" id="agent" class="form-select">
 
                                 <?php for($i=0;$i<sizeof($usuariosserp2);$i++){
@@ -62,8 +69,8 @@ $ticketserp2 = json_decode($ticketserp, true);
                                     ?>
                             </select>
                         </div>
-                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12">
-                            <label class="form-label" for="description">Subcategoria</label>
+                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
+                            <label class="form-label" for="description">Subcategoria:</label>
                             <select name="subcategorias" id="agent" class="form-select">
 
                                 <?php
@@ -86,21 +93,11 @@ $ticketserp2 = json_decode($ticketserp, true);
                                     ?>
                             </select>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="example-textarea" class="form-label">Descripcion</label>
                             <textarea name="detalle" class="form-control" id="example-textarea" rows="4"></textarea>
                         </div>
-                        <div class="mb-3">
-                            <label for="example-textarea" class="form-label">Cliente</label>
-                            <input required name="cliente" type="text" class="form-control" id="lastNameUser"
-                                value="<?php echo $resultadoscliente[0]->cliente; ?>">
-                            <input name="prioridad" type="hidden" class="form-control" id="lastNameUser"
-                                value="3">
-                        </div>
-
-
                     </div>
-
                     <button type="submit" class="btn btn-success mt-3 mb-2">Crear Ticket</button>
                     <hr class="mx-1" />
                 </form>
