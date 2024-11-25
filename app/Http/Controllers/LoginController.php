@@ -170,6 +170,13 @@ class LoginController extends Controller
                 session(['nombreusuario' => $nombreusuario]);
                 session(['email' => $email]);
                 session(['email_suricata' => $email_suricata]);
+
+                $queryintegracion = "select * from siennaintegracion ";
+                $resultadosintegracion = DB::select($queryintegracion);
+
+                foreach ($resultadosintegracion as $valintegracion) {
+                    session(['nombreintegracion' => $valintegracion->nombre]);
+                }
             }
 
             $xen = siennaloginxenioo::where('idusuario', '=', session('idusuario'))->get();

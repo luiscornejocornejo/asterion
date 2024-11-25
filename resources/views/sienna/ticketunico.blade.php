@@ -343,10 +343,11 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                     @include('sienna.tu.collectorbot')
 
                     </div>
-                    <?php if($erp){?>
-                        @include('sienna.tu.erp.kipper')
-
-                    <?php }?>
+                    <?php if($erp){
+                        $nombreintegracion = session('nombreintegracion');
+                        if($nombreintegracion=="ispkipper"){?>@include('sienna.tu.erp.kipper')<?php }
+                
+                    }?>
                     
                     <div class="mt-2">
                          @include('sienna.tu.informacionnotainterna')
