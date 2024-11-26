@@ -602,7 +602,7 @@ class cloudtickets extends Controller
         $si->siennasource = "9";
         $si->siennaestado = "1";
         $si->asignado = $idlogeado;
-        $si->extra = $extra;
+        $si->extra1 = $extra;
         $si->creador_ticket = $idlogeado;
         $si->save();
 
