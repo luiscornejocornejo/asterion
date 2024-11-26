@@ -585,6 +585,7 @@ class cloudtickets extends Controller
            $url="https://intersat.suricata-ispkeeper.com.ar/api/wsn?token=inter&cliente_id=".$cliente;
             $content = file_get_contents($url);
             $data = json_decode($content, true);
+            dd($data);
             $idlogeado=99999;
 
             // Verifica si los campos existen y no están vacíos antes de concatenar
