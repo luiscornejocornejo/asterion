@@ -27,7 +27,7 @@ function conectar($id)
         config(['database.connections.mysql2.username' => $usuario]);
         config(['database.connections.mysql2.password' => $pass]);
     }
-$queryws = "SELECT * from ispkeeper.ws_cliente where nombre='" . $subdomain_tmp . "'";
+$queryws = "SELECT * from ispkipper.ws_cliente where nombre='" . $subdomain_tmp . "'";
         $baseget="14";
         $prueba = conectar($baseget);
         $resultadosws = DB::connection('mysql2')->select($queryws);
