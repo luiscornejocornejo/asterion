@@ -96,9 +96,11 @@ function buscarNombreSubcategoria($subserp2, $idBuscado) {
     return null; // Si no se encuentra, devuelve null o cualquier valor por defecto
 }
 function estados($estados2, $idBuscado) {
-    for($j=0;$j<sizeof($estados2);$j++){
-        if ($estados2[$j]["estado_tickets_id"]== $idBuscado) {
-            return $estados2[$j]["estado_tickets_nombre"];
+   
+
+    foreach ($estados2[0]['data'] as $estado) {
+        if ($estado['estado_tickets_id'] === $idBuscado) {
+            return $nombre_estado = $estado['estado_tickets_nombre'];
         }
     }
     return null; // Si no se encuentra, devuelve null o cualquier valor por defecto
