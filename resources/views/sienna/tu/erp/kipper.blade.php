@@ -6,16 +6,20 @@ if (isset($resultadoscliente[0]->cliente)) {
 }
 if($subdomain_tmp=="wiber2"){
     $subdomain_tmp="wiber";
+    $tokensienna="wiber";
 }
-$subserp= file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/listadodeticketsubcategorias?token=wiber");
+if($subdomain_tmp=="intersat"){
+    $tokensienna="inter";
+}
+$subserp= file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/listadodeticketsubcategorias?token=".$tokensienna."");
 $subserp2=json_decode($subserp, true);
 
-$estados= file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/estado?token=wiber");
+$estados= file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/estado?token=".$tokensienna."");
 $estados2=json_decode($estados, true);
 
-$usuariosserp = file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/usuarios?token=wiber");
+$usuariosserp = file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/usuarios?token=".$tokensienna."");
 $usuariosserp2 = json_decode($usuariosserp, true);
-$ticketserp = file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/tickets?token=wiber&cliente_id=" . $resultadoscliente[0]->cliente);
+$ticketserp = file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/tickets?token=".$tokensienna."&cliente_id=" . $resultadoscliente[0]->cliente);
 $ticketserp2 = json_decode($ticketserp, true);
 ?>
 <div class="card widget-flat" id="infoUser">
