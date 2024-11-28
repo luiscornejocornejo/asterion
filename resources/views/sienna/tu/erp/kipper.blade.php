@@ -80,8 +80,8 @@ $ticketserp2 = json_decode($ticketserp, true);
                                     
                                     for($i=0;$i<sizeof($subserp2);$i++){
                                         ?>
-                                <option value="<?php echo $subserp2[$i]['ticket_categoria_id']; ?>">
-                                    <?php echo $subserp2[$i]['ticket_categoria_nombre']; ?>
+                                <option value="<?php echo $subserp2[$i]['ticket_subcategoria_id']; ?>">
+                                    <?php echo $subserp2[$i]['ticket_subcategoria_nombre']; ?>
 
                                 </option>
                                 <?php }
