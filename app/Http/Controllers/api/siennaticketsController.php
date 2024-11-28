@@ -2658,7 +2658,8 @@ class siennaticketsController extends Controller
            "prioridad" => $prioridad,            
            "subcategoria" => $subcategoria,            
            "cliente" => $cliente,            
-           "detalle" => $detalle            
+           "detalle" => $detalle,           
+           "estado" => "1"            
        );
        $url.="&usuario=".$usuarios."&prioridad=".$prioridad."&subcategoria=".$subcategoria."&cliente=".$cliente."&detalle=".$detalle."";
  
