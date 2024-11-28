@@ -1842,20 +1842,10 @@ class TicketdatosController extends Controller
 
        }*/
 
-       $queryws = "SELECT * from ws_cliente where nombre='" . $subdomain_tmp . "'";
-        $baseget="14";
-        $prueba = $this->conectar($baseget);
-        $resultadosws = DB::connection('mysql2')->select($queryws);
-
-        foreach ($resultadosws as $value) {
-
-            $tokensienna = $value->tokensienna;
-
-        }
+       
            
         return view("sienna/ticketunico")
         ->with('subdomain_tmp', $subdomain_tmp)
-        ->with('tokensienna', $tokensienna)
         ->with('segui', $segui)
         ->with('deptos', $resultadosdeptos)
         ->with('usersmerchant', $usersmerchant)

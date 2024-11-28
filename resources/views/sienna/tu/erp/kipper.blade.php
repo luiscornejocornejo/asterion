@@ -11,6 +11,33 @@ if($subdomain_tmp=="wiber2"){
 if($subdomain_tmp=="intersat"){
     $tokensienna="inter";
 }
+function conectar($id)
+    {
+        $query = "SELECT * FROM `base`    where id='" . $id . "'";
+        $resultados = DB::select($query);
+        foreach ($resultados as $value) {
+
+            $host = $value->host;
+            $base = $value->base;
+            $usuario = $value->usuario;
+            $pass = $value->pass;
+        }
+        config(['database.connections.mysql2.host' => $host]);
+        config(['database.connections.mysql2.database' => $base]);
+        config(['database.connections.mysql2.username' => $usuario]);
+        config(['database.connections.mysql2.password' => $pass]);
+    }
+$queryws = "SELECT * from ispkeeper.ws_cliente where nombre='" . $subdomain_tmp . "'";
+        $baseget="14";
+        $prueba = conectar($baseget);
+        $resultadosws = DB::connection('mysql2')->select($queryws);
+
+        foreach ($resultadosws as $value) {
+
+            $tokensienna = $value->tokensienna;
+
+        }
+
 $subserp= file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/listadodeticketsubcategorias?token=".$tokensienna."");
 $subserp2=json_decode($subserp, true);
 
