@@ -2650,8 +2650,10 @@ class siennaticketsController extends Controller
        echo $subcategoria=$request->subcategoria;
        echo $cliente=$request->cliente;
        echo $detalle=$request->detalle;
+       echo $dom=$request->dom;
+       echo $tokensienna=$request->tokensienna;
 
-       $url="https://wiber.suricata-ispkeeper.com.ar/api/creart2?token=wiber";
+       $url="https://".$dom.".suricata-ispkeeper.com.ar/api/creart2?token=".$tokensienna."";
        $curl = curl_init();
        $data = array(
            "usuario" => $usuarios,

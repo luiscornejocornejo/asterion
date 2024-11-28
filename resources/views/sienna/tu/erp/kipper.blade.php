@@ -56,6 +56,8 @@ $ticketserp2 = json_decode($ticketserp, true);
 
                 <form method="post" action="api/crearispkipper">
                     @csrf
+                    <input type="hidden" name="tokensienna" value="<?php echo $tokensienna;?>"/>
+                    <input type="hidden" name="dom" value="<?php echo $subdomain_tmp;?>"/>
                     <div class="row">
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">Cliente</label>
