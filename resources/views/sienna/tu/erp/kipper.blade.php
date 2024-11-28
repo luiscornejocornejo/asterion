@@ -92,7 +92,7 @@ $ticketserp2 = json_decode($ticketserp, true);
                         </div>
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
                             <label for="agent" class="form-label">Agente:</label>
-                            <select name="usuarios" id="agent" class="form-select">
+                            <select name="usuarios" id="agent" class="form-select js-example-basic-single">
 
                                 <?php for($i=0;$i<sizeof($usuariosserp2);$i++){
                                         ?>
@@ -107,7 +107,7 @@ $ticketserp2 = json_decode($ticketserp, true);
                         </div>
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
                             <label class="form-label" for="description">Subcategoria:</label>
-                            <select class="form-select js-example-basic-single" name="subcategoria" id="agent" class="form-select">
+                            <select class="form-select js-example-basic-single" name="subcategoria" id="agent" >
 
                                 <?php
                                     
