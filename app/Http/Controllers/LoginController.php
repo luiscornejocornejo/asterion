@@ -202,8 +202,20 @@ class LoginController extends Controller
 
             }
             
-          
+            $subdomain_tmp = 'localhost';
+            if (isset($_SERVER['HTTP_HOST'])) {
+                $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+                $subdomain_tmp =  array_shift($domainParts);
+            } elseif(isset($_SERVER['SERVER_NAME'])){
+                $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+                $subdomain_tmp =  array_shift($domainParts);
+                
+            }
+    
 
+            if($subdomain_tmp=="opticom"){
+                return Redirect::to('/viewtickets');
+            }
             return Redirect::to('/');
 
          
