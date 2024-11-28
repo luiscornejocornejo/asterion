@@ -122,7 +122,7 @@ function buscarNombreSubcategoria($subserp2, $idBuscado) {
                         <?php for($i=0;$i<sizeof($ticketserp2);$i++){
                                         ?>
                         <tr class="text-center">
-                            <td>{{ $ticketserp2[$i]['ticket_id'] }} </td>
+                            <td><a target='_blank' href='https://malbec.wiber.com.ar/tickets/ver/{{ $ticketserp2[$i]['ticket_id'] }}'>{{ $ticketserp2[$i]['ticket_id'] }}</a> </td>
                             <td>{{ $ticketserp2[$i]['ticket_dia'] }} {{ $ticketserp2[$i]['ticket_hora'] }}
                             </td>
                             <td>{{ $ticketserp2[$i]['ticket_estado'] }} </td>
