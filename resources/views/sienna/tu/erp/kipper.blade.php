@@ -6,11 +6,8 @@ if (isset($resultadoscliente[0]->cliente)) {
 }
 if($subdomain_tmp=="wiber2"){
     $subdomain_tmp="wiber";
-    $tokensienna="wiber";
 }
-if($subdomain_tmp=="intersat"){
-    $tokensienna="inter";
-}
+
 function conectar($id)
     {
         $query = "SELECT * FROM `base`    where id='" . $id . "'";
@@ -35,7 +32,7 @@ $queryws = "SELECT * from ispkipper.ws_cliente where nombre='" . $subdomain_tmp 
         foreach ($resultadosws as $value) {
 
             $tokensienna = $value->tokensienna;
-
+            $urlogin = $value->urlogin;
         }
 
 $subserp= file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/listadodeticketsubcategorias?token=".$tokensienna."");
@@ -169,7 +166,7 @@ function estados($estados2, $idBuscado) {
                         <?php for($i=0;$i<sizeof($ticketserp2);$i++){
                                         ?>
                         <tr class="text-center">
-                            <td><a target='_blank' href='https://malbec.wiber.com.ar/tickets/ver/{{ $ticketserp2[$i]['ticket_id'] }}'>{{ $ticketserp2[$i]['ticket_id'] }}</a> </td>
+                            <td><a target='_blank' href='<?php echo $urlogin;?>{{ $ticketserp2[$i]['ticket_id'] }}'>{{ $ticketserp2[$i]['ticket_id'] }}</a> </td>
                             <td>{{ $ticketserp2[$i]['ticket_dia'] }} {{ $ticketserp2[$i]['ticket_hora'] }}
                             </td>
                             <td> <?php echo $est = estados($estados2, $ticketserp2[$i]['ticket_estado']); ?> </td>
