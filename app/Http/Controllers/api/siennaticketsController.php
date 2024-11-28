@@ -2694,5 +2694,20 @@ class siennaticketsController extends Controller
 
 
      }
+
+     
+     public function siennaservicios(Request $request){
+
+        $dom=$this->dominio();
+       
+        // $query="select *  from ".$dom.".siennatickets  where id='".$tick."'"; 
+
+         $query="select * from sienna_suricata_servicios  ";
+         $resultados = DB::select($query);
+       
+
+        return $resultados;
+        
+     }
      
 }
