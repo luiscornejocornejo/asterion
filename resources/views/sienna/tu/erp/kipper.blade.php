@@ -7,8 +7,8 @@ if (isset($resultadoscliente[0]->cliente)) {
 $subserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/listadodeticketsubcategorias?token=wiber");
 $subserp2=json_decode($subserp, true);
 
-//$cateerp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/categorias?token=wiber");
-//$cateerp2=json_decode($cateerp, true);
+$estados= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/estado?token=wiber");
+$estados2=json_decode($estados, true);
 
 $usuariosserp = file_get_contents('https://wiber.suricata-ispkeeper.com.ar/api/usuarios?token=wiber');
 $usuariosserp2 = json_decode($usuariosserp, true);
@@ -95,6 +95,15 @@ function buscarNombreSubcategoria($subserp2, $idBuscado) {
     }
     return null; // Si no se encuentra, devuelve null o cualquier valor por defecto
 }
+function estados($estados2, $idBuscado) {
+    for($j=0;$j<sizeof($estados2);$j++){
+        if ($estados2[$j]["estado_tickets_id"]== $idBuscado) {
+            return $estados2[$j]["estado_tickets_nombre"];
+        }
+    }
+    return null; // Si no se encuentra, devuelve null o cualquier valor por defecto
+}
+   
                                     
                                     ?>
                             </select>
@@ -125,7 +134,8 @@ function buscarNombreSubcategoria($subserp2, $idBuscado) {
                             <td><a target='_blank' href='https://malbec.wiber.com.ar/tickets/ver/{{ $ticketserp2[$i]['ticket_id'] }}'>{{ $ticketserp2[$i]['ticket_id'] }}</a> </td>
                             <td>{{ $ticketserp2[$i]['ticket_dia'] }} {{ $ticketserp2[$i]['ticket_hora'] }}
                             </td>
-                            <td>{{ $ticketserp2[$i]['ticket_estado'] }} </td>
+                            <td> <?php echo $est = estados($estados2, $ticketserp2[$i]['ticket_estado']); ?> </td>
+
                             <td> <?php echo $nomsub = buscarNombreSubcategoria($subserp2, $ticketserp2[$i]['ticket_subcategoria']); ?> </td>
 
 
