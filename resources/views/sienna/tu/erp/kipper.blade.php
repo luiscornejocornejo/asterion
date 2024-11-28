@@ -32,7 +32,7 @@ $queryws = "SELECT * from ispkipper.ws_cliente where nombre='" . $subdomain_tmp 
         foreach ($resultadosws as $value) {
 
             $tokensienna = $value->tokensienna;
-            $urlogin = $value->urlogin;
+            $urilogin = $value->urilogin;
         }
 
 $subserp= file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/listadodeticketsubcategorias?token=".$tokensienna."");
@@ -166,7 +166,7 @@ function estados($estados2, $idBuscado) {
                         <?php for($i=0;$i<sizeof($ticketserp2);$i++){
                                         ?>
                         <tr class="text-center">
-                            <td><a target='_blank' href='<?php echo $urlogin;?>{{ $ticketserp2[$i]['ticket_id'] }}'>{{ $ticketserp2[$i]['ticket_id'] }}</a> </td>
+                            <td><a target='_blank' href='<?php echo $urilogin;?>{{ $ticketserp2[$i]['ticket_id'] }}'>{{ $ticketserp2[$i]['ticket_id'] }}</a> </td>
                             <td>{{ $ticketserp2[$i]['ticket_dia'] }} {{ $ticketserp2[$i]['ticket_hora'] }}
                             </td>
                             <td> <?php echo $est = estados($estados2, $ticketserp2[$i]['ticket_estado']); ?> </td>
