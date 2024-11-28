@@ -7,8 +7,8 @@ if (isset($resultadoscliente[0]->cliente)) {
 $subserp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/listadodeticketsubcategorias?token=wiber");
 $subserp2=json_decode($subserp, true);
 
-$cateerp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/categorias?token=wiber");
-$cateerp2=json_decode($cateerp, true);
+//$cateerp= file_get_contents("https://wiber.suricata-ispkeeper.com.ar/api/categorias?token=wiber");
+//$cateerp2=json_decode($cateerp, true);
 
 $usuariosserp = file_get_contents('https://wiber.suricata-ispkeeper.com.ar/api/usuarios?token=wiber');
 $usuariosserp2 = json_decode($usuariosserp, true);
@@ -78,10 +78,10 @@ $ticketserp2 = json_decode($ticketserp, true);
 
                                 <?php
                                     
-                                    for($i=0;$i<sizeof($cateerp2);$i++){
+                                    for($i=0;$i<sizeof($subserp2);$i++){
                                         ?>
-                                <option value="<?php echo $cateerp2[$i]['ticket_categoria_id']; ?>">
-                                    <?php echo $cateerp2[$i]['ticket_categoria_detalle']; ?>
+                                <option value="<?php echo $subserp2[$i]['ticket_categoria_id']; ?>">
+                                    <?php echo $subserp2[$i]['ticket_categoria_nombre']; ?>
 
                                 </option>
                                 <?php }
@@ -99,17 +99,7 @@ function buscarNombreSubcategoria($subserp2, $idBuscado) {
                                     ?>
                             </select>
                         </div>
-                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
-                            <label class="form-label" for="description">Subcategoria:</label>
-                            <select name="subcategoria" id="agent" class="form-select">
-
-                                <?php
-                                   
-                        
-                                    
-                                    ?>
-                            </select>
-                        </div>
+                      
                         <div class="mb-2">
                             <label for="example-textarea" class="form-label">Descripcion</label>
                             <textarea name="detalle" class="form-control" id="example-textarea" rows="4"></textarea>
@@ -136,7 +126,7 @@ function buscarNombreSubcategoria($subserp2, $idBuscado) {
                             <td>{{ $ticketserp2[$i]['ticket_dia'] }} {{ $ticketserp2[$i]['ticket_hora'] }}
                             </td>
                             <td>{{ $ticketserp2[$i]['ticket_estado'] }} </td>
-                            <td> <?php //echo $nomsub = buscarNombreSubcategoria($subserp2, $ticketserp2[$i]['ticket_subcategoria']); ?> </td>
+                            <td> <?php echo $nomsub = buscarNombreSubcategoria($subserp2, $ticketserp2[$i]['ticket_subcategoria']); ?> </td>
 
 
                         </tr>
