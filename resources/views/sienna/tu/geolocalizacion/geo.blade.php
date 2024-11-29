@@ -14,8 +14,8 @@
 <div id="map" style="height: 400px; width: 100%;"></div>
 
 <script>
-    const lat = 40.7128; // Ejemplo: Latitud de Nueva York
-    const lng = -74.0060; // Ejemplo: Longitud de Nueva York
+    const lat = -34.545278; // Ejemplo: Latitud de Nueva York
+    const lng = -58.449722; // Ejemplo: Longitud de Nueva York
 
     const map = L.map('map').setView([lat, lng], 13);
 
