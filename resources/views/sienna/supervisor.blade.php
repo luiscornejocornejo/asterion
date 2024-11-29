@@ -526,7 +526,7 @@ function obtenerFechaUTC() {
             var porciones = URLactual.split('.');
             let result = porciones[0].replace("https://", "");
             var idusuario =<?php echo session('idusuario');?>;
-            var area =<?php echo session('areas');?>;
+           // var area =<?php echo session('areas');?>;
             var tipodemenu =<?php echo session('tipodemenu');?>;
            // var deptosuser =<?php echo session('deptosuser');?>;
 
