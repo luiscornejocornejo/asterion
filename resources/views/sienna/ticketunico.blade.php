@@ -12,11 +12,19 @@ foreach($datospagoralia as $valpago){
 }
 
 
-$queryservicios="select * from sienna_suricata_servicios where nombre='Erp'";
+$queryservicios="select * from sienna_suricata_servicios where id=2";
 $datosservicios = DB::select($queryservicios);
 $erp=0;
 foreach($datosservicios as $valservicios){
     $erp=$valservicios->habilitado;
+
+}
+
+$queryservicios2="select * from sienna_suricata_servicios where id=6";
+$datosservicios2 = DB::select($queryservicios2);
+$geo=0;
+foreach($datosservicios2 as $valservicios2){
+    $geo=$valservicios2->habilitado;
 
 }
 
@@ -350,7 +358,10 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         if($nombreintegracion=="ispkipper"){?>@include('sienna.tu.erp.kipper')<?php }
                 
                     }?>
-                    
+                     <?php if($geo){?>
+                        @include('sienna.tu.geolocalizacion.geo')<?php 
+                
+                    }?>
                     <div class="mt-2">
                          @include('sienna.tu.informacionnotainterna')
 
