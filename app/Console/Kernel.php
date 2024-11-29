@@ -19,7 +19,8 @@ class Kernel extends ConsoleKernel
     { 
         // $schedule->command('inspire')->hourly();
         //$schedule->command('semanal:asignacion2')->cron('*/1 * * * *')->withoutOverlapping()->emailOutputOnFailure('kayser1712@gmail.com');
-        $schedule->command('semanal:asignaciong')->cron('*/1 * * * *')->withoutOverlapping()->emailOutputOnFailure('kayser1712@gmail.com');
+       // $schedule->command('semanal:asignaciong')->cron('*/1 * * * *')->withoutOverlapping()->emailOutputOnFailure('kayser1712@gmail.com');
+        $schedule->command('semanal:asignaciontickets')->cron('*/1 * * * *')->withoutOverlapping()->emailOutputOnFailure('kayser1712@gmail.com');
        // $schedule->command('semanal:nodos')->daily()->emailOutputOnFailure('kayser1712@gmail.com');
         $schedule->command('semanal:nodoswispro')->daily()->emailOutputOnFailure('kayser1712@gmail.com');
        // $schedule->command('semanal:limpiezacloud')->daily()->emailOutputOnFailure('kayser1712@gmail.com');
