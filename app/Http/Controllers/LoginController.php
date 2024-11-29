@@ -213,9 +213,7 @@ class LoginController extends Controller
             }
     
 
-            if($subdomain_tmp=="opticom"){
-                return Redirect::to('/viewtickets');
-            }
+            
             return Redirect::to('/');
 
          
