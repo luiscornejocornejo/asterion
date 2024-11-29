@@ -16,8 +16,10 @@
 <script>
     <?php
     if(isset($resultadoscliente[0]->lat)){
-
         $coor=explode(",",$resultadoscliente[0]->lat);?>
+                console.log(<?php echo $coor[0];?>);
+                console.log(<?php echo $coor[1];?>);
+
 const lat = <?php echo $coor[0];?>;
 const lng = <?php echo $coor[1];?>;
     <?php }else{?>
