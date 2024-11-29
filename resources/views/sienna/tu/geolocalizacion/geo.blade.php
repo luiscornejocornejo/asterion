@@ -1,7 +1,7 @@
 
 
 
-<div class="row">
+<div class="row d-none">
     <div class="col-md-12">
         <!-- Portlet card -->
         <div class="card mb-md-0 mb-3">
@@ -14,8 +14,19 @@
 <div id="map" style="height: 400px; width: 100%;"></div>
 
 <script>
-    const lat = -34.545278; // Ejemplo: Latitud de Nueva York
-    const lng = -58.449722; // Ejemplo: Longitud de Nueva York
+    <?php
+    if(isset($resultadoscliente[0]->lat)){
+
+        $coor=explode(",",$resultadoscliente[0]->lat);?>
+const lat = <?php echo $coor[0];?>;
+const lng = <?php echo $coor[1];?>;
+    <?php }else{?>
+const lat = -34.545278; // Ejemplo: Latitud de Nueva York
+const lng = -58.449722; // Ejemplo: Longitud de Nueva York
+
+   <?php } ?>
+
+    
 
     const map = L.map('map').setView([lat, lng], 13);
 
