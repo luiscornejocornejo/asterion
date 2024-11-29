@@ -22,9 +22,14 @@
         $coor=explode(",",$resultados[0]->lat);?>
                 console.log(<?php echo $coor[0];?>);
                 console.log(<?php echo $coor[1];?>); 
+                if(isset($coor[0])){
 
 const lat = <?php echo $coor[0];?>;
-const lng = <?php echo $coor[1];?>;
+                }
+                if(isset($coor[1])){
+                    const lng = <?php echo $coor[1];?>;
+
+                }
     <?php }else{?>
 const lat = -34.545278; // Ejemplo: Latitud de Nueva York
 const lng = -58.449722; // Ejemplo: Longitud de Nueva York
