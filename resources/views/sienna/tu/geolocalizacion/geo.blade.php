@@ -14,7 +14,7 @@
 <div id="map" style="height: 400px; width: 100%;"></div>
 
 <script>
-                    console.log(<?php echo $resultadoscliente[0]->lat;?>); 
+                    console.log(<?php //echo $resultadoscliente[0]->lat;?>); 
 
     <?php
     
