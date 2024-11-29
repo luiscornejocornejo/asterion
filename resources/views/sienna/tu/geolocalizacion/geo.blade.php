@@ -14,12 +14,12 @@
 <div id="map" style="height: 400px; width: 100%;"></div>
 
 <script>
-                    console.log(<?php //echo $resultadoscliente[0]->lat;?>); 
+                    console.log(<?php echo $resultados[0]->lat;?>); 
 
     <?php
     
-    if(isset($resultadoscliente[0]->lat)){
-        $coor=explode(",",$resultadoscliente[0]->lat);?>
+    if(isset($resultados[0]->lat)){
+        $coor=explode(",",$resultados[0]->lat);?>
                 console.log(<?php echo $coor[0];?>);
                 console.log(<?php echo $coor[1];?>); 
 
