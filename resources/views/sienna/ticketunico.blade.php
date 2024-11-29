@@ -359,9 +359,8 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                 
                     }?>
                      <?php
-                     echo $geo;
                       if($geo){?>
-                        hola
+                        
                         @include('sienna.tu.geolocalizacion.geo')<?php 
                 
                     }?>
