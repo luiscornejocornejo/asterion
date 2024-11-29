@@ -358,7 +358,10 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         if($nombreintegracion=="ispkipper"){?>@include('sienna.tu.erp.kipper')<?php }
                 
                     }?>
-                     <?php if($geo){?>
+                     <?php
+                     echo $geo;
+                      if($geo){?>
+                        hola
                         @include('sienna.tu.geolocalizacion.geo')<?php 
                 
                     }?>
