@@ -317,17 +317,11 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                 
                                     <?php
                                     }}
-                     if($resultados[0]->siennasource==7){?>
+                     ?>
 
-                       
-                        @include('sienna.tu.informacionmail')
-
-                        <div class="mt-2">
-                         @include('sienna.tu.informacionadjuntos')
-
-                    </div>  
+                      
                     <?php
-                    } if($resultados[0]->siennasource==10){?>
+                     if($resultados[0]->siennasource==10){?>
 
                        
                         @include('sienna.tu.informacionsuricata')
