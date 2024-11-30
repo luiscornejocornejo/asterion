@@ -303,7 +303,17 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                       </div>
                       <?php 
                       }
-                  }?>
+                  }
+                  if($botpresservicio){
+                    if (in_array($resultados[0]->siennasource, $excludedProductIds)) {
+                        ?>
+                  <div class="mt-2">
+
+                  @include('sienna.tu.bot.botpres')
+                  </div>
+                  <?php 
+                  }
+              }?>
                     
 
 
