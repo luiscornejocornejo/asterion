@@ -12,19 +12,24 @@ foreach($datospagoralia as $valpago){
 }
 
 
-$queryservicios="select * from sienna_suricata_servicios where id=2";
-$datosservicios = DB::select($queryservicios);
-$erp=0;
-foreach($datosservicios as $valservicios){
-    $erp=$valservicios->habilitado;
 
-}
 
-$queryservicios2="select * from sienna_suricata_servicios where id=6";
+$queryservicios2="select * from sienna_suricata_servicios ";
 $datosservicios2 = DB::select($queryservicios2);
 $geo=0;
+$erp=0;
+$pago=0;
+
 foreach($datosservicios2 as $valservicios2){
-    $geo=$valservicios2->habilitado;
+    if($valservicios2->id==6){
+        $geo=$valservicios2->habilitado;
+    }
+    if($valservicios2->id==2){
+        $erp=$valservicios2->habilitado;
+    }
+    if($valservicios2->id==1){
+        $pago=$valservicios2->habilitado;
+    }
 
 }
 
@@ -364,6 +369,15 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         @include('sienna.tu.geolocalizacion.geo')<?php 
                 
                     }?>
+                    <?php
+                      if($pago){?>
+                        <div class="mt-2">
+
+                        @include('sienna.tu.pagoralia.pagoralia')
+                        </div>
+                        <?php 
+                
+                    }?>
                     <div class="mt-2">
                          @include('sienna.tu.informacionnotainterna')
 
@@ -373,14 +387,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         </div>
                     </div>
 
-                    <?php if($pagohabilitado){?>
-                    
-                        <div class="mt-2">
-                    @include('sienna.tu.informacionpagoralia')
-
-                    </div>
-
-                        <?php }?>
+                   
                     <div class="mt-2">
                     @include('sienna.tu.informaciontareas')
 
