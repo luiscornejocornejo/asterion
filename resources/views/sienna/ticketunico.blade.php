@@ -21,8 +21,8 @@ $erpservicio=0;
 $pagoservicio=0;
 $mailservicio=0;
 $grabacionesservicio=0;
-
-
+$botpresservicio=0;
+$xenservicio=0;
 foreach($datosservicios2 as $valservicios2){
     if($valservicios2->id==6){
         $geoservicio=$valservicios2->habilitado;
@@ -38,6 +38,12 @@ foreach($datosservicios2 as $valservicios2){
     }
     if($valservicios2->id==5){
         $grabacionesservicio=$valservicios2->habilitado;
+    }
+    if($valservicios2->id==8){
+        $xenservicio=$valservicios2->habilitado;
+    }
+    if($valservicios2->id==9){
+        $botpresservicio=$valservicios2->habilitado;
     }
 
 }
@@ -134,45 +140,8 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
     }
     var originalTitle = document.title;
 
-   // identificadorIntervaloDeTiempo = setInterval(checkmensaje, 60000);
    /*
-    function checkmensaje(){
-        var URLactual = window.location.href;
-            var porciones = URLactual.split('.');
-            let result = porciones[0].replace("https://", "");
-            idticketbuscar=<?php echo $resultados[0]->ticketid; ;?>;
-            conversation_id='<?php echo $resultados[0]->conversation_id ;?>';
-        console.log(conversation_id);
-        //url = "https://"+result+".suricata.cloud/api/estadoconv2?conversation_id=" + conversation_id + "";
-
-        url = "https://"+result+".suricata.cloud/api/estadoconv?tick=" + idticketbuscar + "";
-        url="https://"+result+".suricata-conversations.com.ar/api/estado?conversation_id=" + conversation_id + "&dom="+result+"";
-        console.log(url);
-        axios.get(url)
-            .then(function (response) {
-                console.log(response.data);
-                if(response.data==1){
-                    newPageTitle="pendiente";
- 
-                    var blinkTitle = "¡Mira aquí!";
-                    var isBlinking = true;
-                    destellarTitulo();
-                    //document.title = newPageTitle;
- 
-                }
-               
-               
-            })
-            .catch(function (error) {
-                // función para capturar el error
-                console.log(error);
-            })
-            .then(function () {
-                // función que siempre se ejecuta
-            });
-
-
-    }
+    
    */
     function destellarTitulo() {
         var titulo = document.title;
@@ -322,16 +291,20 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                     <?php
                     }
-                    $excludedProductIds = [10, 7,5];
 
-                    if (!in_array($resultados[0]->siennasource, $excludedProductIds)) {
+                    
+                    $excludedProductIds = [1,2,3,6];
+                    if($xenservicio){
+                        if (in_array($resultados[0]->siennasource, $excludedProductIds)) {
+                            ?>
+                      <div class="mt-2">
 
-                    //if($resultados[0]->siennasource 7){
-                        ?>
-                        @include('sienna.tu.informacionwhatapp')
-
-                           
-                    <?php }?>
+                      @include('sienna.tu.bot.whatapp')
+                      </div>
+                      <?php 
+                      }
+                  }?>
+                    
 
 
                    
