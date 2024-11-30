@@ -20,6 +20,9 @@ $geoservicio=0;
 $erpservicio=0;
 $pagoservicio=0;
 $mailservicio=0;
+$grabacionesservicio=0;
+
+
 foreach($datosservicios2 as $valservicios2){
     if($valservicios2->id==6){
         $geoservicio=$valservicios2->habilitado;
@@ -32,6 +35,9 @@ foreach($datosservicios2 as $valservicios2){
     }
     if($valservicios2->id==4){
         $mailservicio=$valservicios2->habilitado;
+    }
+    if($valservicios2->id==5){
+        $grabacionesservicio=$valservicios2->habilitado;
     }
 
 }
@@ -306,21 +312,8 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                     if(strlen($urlreabrir)<2){
                                         $vero="d-none";
                                     }
-                                    if($resultados[0]->siennasource==5){
-                                        if($resultados[0]->siennaestado==4){
-
-                                        ?>
-
-                       
-                                        @include('sienna.tu.informaciongrabaciones')
-                
-                
-                                    <?php
-                                    }}
-                     ?>
-
+                                     
                       
-                    <?php
                      if($resultados[0]->siennasource==10){?>
 
                        
@@ -366,6 +359,19 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         <?php 
                         }
                     }?>
+
+                    <?php
+                      if($grabacionesservicio){
+                        if($resultados[0]->siennasource==5){?>
+                        <div class="mt-2">
+
+                        @include('sienna.tu.telefonia.grabaciones')
+                        </div>
+                        <?php 
+                        }
+                    }?>
+
+
                     <?php if($erpservicio){
                         $nombreintegracion = session('nombreintegracion');
                         if($nombreintegracion=="ispkipper"){?>@include('sienna.tu.erp.kipper')<?php }
