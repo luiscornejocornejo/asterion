@@ -16,19 +16,22 @@ foreach($datospagoralia as $valpago){
 
 $queryservicios2="select * from sienna_suricata_servicios ";
 $datosservicios2 = DB::select($queryservicios2);
-$geo=0;
-$erp=0;
-$pago=0;
-
+$geoservicio=0;
+$erpservicio=0;
+$pagoservicio=0;
+$mailservicio=0;
 foreach($datosservicios2 as $valservicios2){
     if($valservicios2->id==6){
-        $geo=$valservicios2->habilitado;
+        $geoservicio=$valservicios2->habilitado;
     }
     if($valservicios2->id==2){
-        $erp=$valservicios2->habilitado;
+        $erpservicio=$valservicios2->habilitado;
     }
     if($valservicios2->id==1){
-        $pago=$valservicios2->habilitado;
+        $pagoservicio=$valservicios2->habilitado;
+    }
+    if($valservicios2->id==4){
+        $mailservicio=$valservicios2->habilitado;
     }
 
 }
@@ -358,19 +361,30 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                     @include('sienna.tu.collectorbot')
 
                     </div>
-                    <?php if($erp){
+                    <?php
+                      if($mailservicio){
+                        if($resultados[0]->siennasource==7){?>
+                        <div class="mt-2">
+
+                        @include('sienna.tu.mail.mail')
+                        @include('sienna.tu.mail.adjuntos')
+                        </div>
+                        <?php 
+                        }
+                    }?>
+                    <?php if($erpservicio){
                         $nombreintegracion = session('nombreintegracion');
                         if($nombreintegracion=="ispkipper"){?>@include('sienna.tu.erp.kipper')<?php }
                 
                     }?>
                      <?php
-                      if($geo){?>
+                      if($geoservicio){?>
                         
                         @include('sienna.tu.geolocalizacion.geo')<?php 
                 
                     }?>
                     <?php
-                      if($pago){?>
+                      if($pagoservicio){?>
                         <div class="mt-2">
 
                         @include('sienna.tu.pagoralia.pagoralia')
