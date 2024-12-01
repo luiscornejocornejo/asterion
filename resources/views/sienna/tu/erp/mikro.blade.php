@@ -58,9 +58,9 @@ $ticketserp2 = json_decode($ticketserp, true);*/
 <div class="card widget-flat" id="infoUser">
     <div class="card-body">
 
-        <div style="background-color: #6D0078;" class="d-flex justify-content-end">
+        <div style="background-color: #38b0de;" class="d-flex justify-content-end">
             <div class="me-2">
-                <img src="https://<?php echo $subdomain_tmp;?>.suricata.cloud/mikrowisp.webp"
+                <img src="https://<?php echo $subdomain_tmp;?>.suricata.cloud/img/erp/mikrowisp.webp"
                     alt="mikrowisp logo" height="55">
             </div>
         </div>
