@@ -43,11 +43,9 @@ $data = json_decode($lista, true);
 $dataContent = $data['data'];
 
 // Acceder específicamente a 'tickets'
-$tickets = $dataContent['tickets'];
+//$tickets = $dataContent['tickets'];
 
 // Mostrar datos separados
-dd($dataContent, $tickets); 
-$subserp2=json_decode($subserp, true);
 /*
 $estados= file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/estado?token=".$tokensienna."");
 $estados2=json_decode($estados, true);
@@ -105,53 +103,19 @@ $ticketserp2 = json_decode($ticketserp, true);*/
                             <label for="agent" class="form-label">Agente:</label>
                             <select class="form-select js-example-basic-single" name="usuarios" id="agent">
 
-                                <?php for($i=0;$i<sizeof($usuariosserp2);$i++){
-                                        ?>
-                                <option value="{{ $usuariosserp2[$i]['usuario_id'] }}">
-                                    {{ $usuariosserp2[$i]['usuario_nombre'] }}
-                                    {{ $usuariosserp2[$i]['usuario_apellido'] }}
-                                </option>
-                                <?php }
-                                    
-                                    ?>
+                               
                             </select>
                         </div> 
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
                             <label class="form-label" for="description">Subcategoria:</label>
                             <select class="form-select js-example-basic-single" name="subcategoria" id="subcategoria" >
 
-                                <?php
-                                    
-                                    for($i=0;$i<sizeof($subserp2);$i++){
-                                        ?>
-                                <option value="<?php echo $subserp2[$i]['ticket_subcategoria_id']; ?>">
-                                    <?php echo $subserp2[$i]['ticket_subcategoria_nombre']; ?>
-
-                                </option>
-                                <?php }
+                               
 
 
-function buscarNombreSubcategoria($subserp2, $idBuscado) {
-    for($j=0;$j<sizeof($subserp2);$j++){
-        if ($subserp2[$j]["ticket_subcategoria_id"]== $idBuscado) {
-            return $subserp2[$j]["ticket_subcategoria_nombre"];
-        }
-    }
-    return null; // Si no se encuentra, devuelve null o cualquier valor por defecto
-}
-function estados($estados2, $idBuscado) {
-   
 
-    foreach ($estados2[0]['data'] as $estado) {
-        if ($estado['estado_tickets_id'] === $idBuscado) {
-            return $nombre_estado = $estado['estado_tickets_nombre'];
-        }
-    }
-    return null; // Si no se encuentra, devuelve null o cualquier valor por defecto
-}
    
                                     
-                                    ?>
                             </select>
                         </div>
                       
@@ -167,22 +131,22 @@ function estados($estados2, $idBuscado) {
                 <table id="casadepapel" class="table table-striped dt-responsive nowrap w-100 text-light">
                     <thead>
                         <tr class="text-center bg-dark">
-                            <th class="text-light">ticket_id</th>
-                            <th class="text-light">ticket_dia</th>
-                            <th class="text-light">ticket_estado</th>
-                            <th class="text-light">ticket_subcategoria</th>
+                            <th class="text-light">Ticket_id</th>
+                            <th class="text-light">Fecha</th>
+                            <th class="text-light">Estado</th>
+                            <th class="text-light">Asunto</th>
                         </tr>
                     </thead>
                     <tbody id="log">
-                        <?php for($i=0;$i<sizeof($ticketserp2);$i++){
+                        <?php for($i=0;$i<sizeof($dataContent['tickets']);$i++){
                                         ?>
                         <tr class="text-center">
-                            <td><a target='_blank' href='<?php echo $urilogin;?>{{ $ticketserp2[$i]['ticket_id'] }}'>{{ $ticketserp2[$i]['ticket_id'] }}</a> </td>
-                            <td>{{ $ticketserp2[$i]['ticket_dia'] }} {{ $ticketserp2[$i]['ticket_hora'] }}
+                            <td><a target='_blank' href='{{ $dataContent['tickets']['id'] }}'>{{ $dataContent['tickets']['id'] }}</a> </td>
+                            <td>{{ $dataContent['tickets']['fecha_soporte'] }}
                             </td>
-                            <td> <?php echo $est = estados($estados2, $ticketserp2[$i]['ticket_estado']); ?> </td>
+                            <td> {{ $dataContent['tickets']['estado'] }} </td>
 
-                            <td> <?php echo $nomsub = buscarNombreSubcategoria($subserp2, $ticketserp2[$i]['ticket_subcategoria']); ?> </td>
+                            <td>{{ $dataContent['tickets']['asunto'] }} </td>
 
 
                         </tr>
