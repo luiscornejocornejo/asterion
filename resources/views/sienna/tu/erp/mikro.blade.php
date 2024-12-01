@@ -40,7 +40,7 @@ $lista= file_get_contents("https://".$subdomain_tmp.".suricata-mikrowisp.com.ar/
 $data = json_decode($lista, true);
 $dataContent = $data['data'];
 
-$getdata= file_get_contents("https://".$subdomain_tmp.".suricata-mikrowisp.com.ar/api/ListTicket?token=".$tokensienna."&c=" . $resultadoscliente[0]->cliente);
+$getdata= file_get_contents("https://".$subdomain_tmp.".suricata-mikrowisp.com.ar/api/ws2?token=".$tokensienna."&c=" . $resultadoscliente[0]->cliente);
 
 ?>
 <div class="card widget-flat" id="infoUser">
