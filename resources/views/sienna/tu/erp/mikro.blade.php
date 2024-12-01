@@ -87,7 +87,7 @@ $ticketserp2 = json_decode($ticketserp, true);*/
         <div class="tab-content">
             <div class="tab-pane show active" id="ticket">
 
-                <form method="post" action="api/crearispkipper">
+                <form method="post" action="api/crearmikrowisp">
                     @csrf
                     <input type="hidden" name="tokensienna" value="<?php echo $tokensienna;?>"/>
                     <input type="hidden" name="dom" value="<?php echo $subdomain_tmp;?>"/>
@@ -99,29 +99,35 @@ $ticketserp2 = json_decode($ticketserp, true);*/
                             <input name="prioridad" type="hidden" class="form-control" id="lastNameUser"
                                 value="3">
                         </div>
-                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
-                            <label for="agent" class="form-label">Agente:</label>
-                            <select class="form-select js-example-basic-single" name="usuarios" id="agent">
+                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
+                            <label for="example-textarea" class="form-label">Asunto</label>
+                            <input required name="asunto" type="text" class="form-control" id="lastNameUser">
+                            <input required value="PAGINA WEB" name="agendado" type="hidden" class="form-control" id="lastNameUser">
+                        </div>
+                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
+                            <label for="example-textarea" class="form-label">Visita Tecnica</label>
+                            <input required name="fecha" type="date" class="form-control" id="lastNameUser">
+                        </div>
+                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
+                            <label for="example-textarea" class="form-label">Turno</label>
+                            <select class="form-select js-example-basic-single" name="turno" id="agent">
 
-                               
-                            </select>
-                        </div> 
-                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
-                            <label class="form-label" for="description">Subcategoria:</label>
-                            <select class="form-select js-example-basic-single" name="subcategoria" id="subcategoria" >
-
-                               
-
-
-
-   
-                                    
+                            <option >MAÑANA</option>
+                            <option >TARDE</option>
                             </select>
                         </div>
+                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
+                            <label for="agent" class="form-label">Departamento:</label>
+                            <select class="form-select js-example-basic-single" name="depto" id="agent">
+
+                               <option value="1">Soporte</option>
+                            </select>
+                        </div> 
+                        
                       
                         <div class="mb-2">
                             <label for="example-textarea" class="form-label">Descripcion</label>
-                            <textarea name="detalle" class="form-control" id="example-textarea" rows="4"></textarea>
+                            <textarea required name="contenido" class="form-control" id="example-textarea" rows="4"></textarea>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-success mt-3 mb-2">Crear Ticket</button>
