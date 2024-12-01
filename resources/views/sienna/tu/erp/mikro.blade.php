@@ -48,7 +48,7 @@ $getdata2 = json_decode($getdata, true);
 $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 
 ?>
-<div class="card widget-flat d-none" id="infoUser">
+<div class="card widget-flat " id="infoUser">
     <div class="card-body">
 
         <div style="background-color: #38b0de;" class="d-flex justify-content-end">
