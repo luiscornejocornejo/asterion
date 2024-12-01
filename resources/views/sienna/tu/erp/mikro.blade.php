@@ -41,9 +41,6 @@ $data = json_decode($lista, true);
 if(isset($data['data'])){
     $dataContent = $data['data'];
 
-}else{
-    return '';
-
 }
 
 $getdata= file_get_contents("https://".$subdomain_tmp.".suricata-mikrowisp.com.ar/api/ws2?token=".$tokensienna."&c=" . $resultadoscliente[0]->cliente);
@@ -128,6 +125,7 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                     <button type="submit" class="btn btn-success mt-3 mb-2">Crear Ticket</button>
                     <hr class="mx-1" />
                 </form>
+<?php if(isset($data['data'])){?>
 
                 <table id="casadepapel" class="table table-striped dt-responsive nowrap w-100 text-light">
                     <thead>
@@ -156,7 +154,7 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                     </tbody>
                 </table>
 
-
+<?php }?>
             </div>
             <div class="tab-pane " id="data">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
