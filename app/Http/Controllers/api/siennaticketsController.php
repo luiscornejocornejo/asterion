@@ -2648,6 +2648,54 @@ class siennaticketsController extends Controller
 
      
      
+     public function crearmikrowisp(Request $request){
+
+        echo $asunto=$request->asunto;
+        echo $agendado=$request->agendado;
+        echo $fecha=$request->fecha;
+        echo $turno=$request->turno;
+        echo $depto=$request->depto;
+        echo $contenido=$request->contenido;
+
+        echo $cliente=$request->cliente;
+        echo $dom=$request->dom;
+        echo $tokensienna=$request->tokensienna;
+ 
+        $url="https://".$dom.".suricata-mikrowisp.com.ar/api/crearticket?token=".$tokensienna."";
+        $curl = curl_init();
+       
+        $url.="&asunto=".$asunto."&turno=".$turno."&depto=".$depto."&agendado=".$agendado."&fecha=".$fecha."&cliente=".$cliente."&contenido=".$contenido."";
+  
+        // Set headers for the cURL request
+        $headers = array(
+            'Accept: application/json',
+            'Content-Type: application/json',
+            'Cookie: xenioo-id=Bearer+ZlHPzQ0ZfubwcHXAjjXMG0hDlJI22S1S0dqgKs0H7O06PghfV3BRy6Wxmn7PLb6RUmfIXRXiijo5X8E7%2flsAUV24IzaB28PYO%2bw90fEOTrp8Hx0WQCQ%2btq69lwpWUZpCg0ga2p%2bQD%2bI9KFMrCB6Ht%2bJM4ZOuekNf%2bYWtUBQ%2bm1prYPb8nDXWuRnU6qgtzr7zInbdRjyNhsdg41gTr7AstZ3sLt2wAXQS%2ba8zSGYe1UZY7gvoYm%2fGKj6TbvAdWnO0WXTVkwnB1jhMbWDX38PYGt2jkNoaUXRWxncuQSxJRzUIBWuTJGju%2b7EZOaoK07cXNk%2bUPBMSV1Q9gV6Gzc8CkA%3d%3d',
+        );
+     
+        // Set options for the cURL request
+        $options = array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => $headers,
+        );
+        // Set the options for cURL resource
+        curl_setopt_array($curl, $options);
+        // Execute the cURL request
+        echo $response = curl_exec($curl); 
+        // Close the cURL resource
+        curl_close($curl);
+        //return   redirect()->back();
+ 
+ 
+      }
+ 
      public function crearispkipper(Request $request){
 
        echo $usuarios=$request->usuarios;
