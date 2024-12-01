@@ -41,6 +41,8 @@ $data = json_decode($lista, true);
 $dataContent = $data['data'];
 
 $getdata= file_get_contents("https://".$subdomain_tmp.".suricata-mikrowisp.com.ar/api/ws2?token=".$tokensienna."&c=" . $resultadoscliente[0]->cliente);
+$getdata2 = json_decode($getdata, true);
+$getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 
 ?>
 <div class="card widget-flat" id="infoUser">
@@ -151,7 +153,8 @@ $getdata= file_get_contents("https://".$subdomain_tmp.".suricata-mikrowisp.com.a
 
             </div>
             <div class="tab-pane " id="data">
-                            <?php echo $getdata;?>
+                            <pre>{{ $getdata3 }}</pre>
+
         </div>
             <div class="tab-pane" id="extra">
                 <div data-tf-live="01JDFRQDH03PQAH7HE59FRXFB0"></div>
