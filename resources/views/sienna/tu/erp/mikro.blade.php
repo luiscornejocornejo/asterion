@@ -60,7 +60,7 @@ $ticketserp2 = json_decode($ticketserp, true);*/
 
         <div style="background-color: #6D0078;" class="d-flex justify-content-end">
             <div class="me-2">
-                <img src="https://"<?php echo $subdomain_tmp;?>.suricata.cloud/mikrowisp.webp"
+                <img src="https://<?php echo $subdomain_tmp;?>.suricata.cloud/mikrowisp.webp"
                     alt="mikrowisp logo" height="55">
             </div>
         </div>
