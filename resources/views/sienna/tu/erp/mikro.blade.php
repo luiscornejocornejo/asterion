@@ -141,12 +141,12 @@ $ticketserp2 = json_decode($ticketserp, true);*/
                         <?php for($i=0;$i<sizeof($dataContent['tickets']);$i++){
                                         ?>
                         <tr class="text-center">
-                            <td><a target='_blank' href='{{ $dataContent['tickets']['id'] }}'>{{ $dataContent['tickets']['id'] }}</a> </td>
-                            <td>{{ $dataContent['tickets']['fecha_soporte'] }}
+                            <td><a target='_blank' href='{{ $dataContent['tickets'][$i]['id'] }}'>{{ $dataContent['tickets'][$i]['id'] }}</a> </td>
+                            <td>{{ $dataContent['tickets'][$i]['fecha_soporte'] }}
                             </td>
-                            <td> {{ $dataContent['tickets']['estado'] }} </td>
+                            <td> {{ $dataContent['tickets'][$i]['estado'] }} </td>
 
-                            <td>{{ $dataContent['tickets']['asunto'] }} </td>
+                            <td>{{ $dataContent['tickets'][$i]['asunto'] }} </td>
 
 
                         </tr>
