@@ -96,19 +96,18 @@ $ticketserp2 = json_decode($ticketserp, true);*/
                             <label for="example-textarea" class="form-label">Cliente</label>
                             <input required name="cliente" type="text" class="form-control" id="lastNameUser"
                                 value="<?php echo $resultadoscliente[0]->cliente; ?>">
-                            <input name="prioridad" type="hidden" class="form-control" id="lastNameUser"
-                                value="3">
+                            
                         </div>
-                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">Asunto</label>
                             <input required name="asunto" type="text" class="form-control" id="lastNameUser">
                             <input required value="PAGINA WEB" name="agendado" type="hidden" class="form-control" id="lastNameUser">
                         </div>
-                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">Visita Tecnica</label>
                             <input required name="fecha" type="date" class="form-control" id="lastNameUser">
                         </div>
-                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
+                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">Turno</label>
                             <select class="form-select js-example-basic-single" name="turno" id="agent">
 
