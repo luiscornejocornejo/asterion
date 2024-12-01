@@ -35,7 +35,7 @@ $queryws = "SELECT * from mikrowisp.ws_cliente where nombre='" . $subdomain_tmp 
             $urilogin = $value->urilogin;
         }
 
-$lista= file_get_contents("https://".$subdomain_tmp.".suricata-mikrowisp.com.ar/api/ListTicket?token=".$tokensienna."");
+$lista= file_get_contents("https://".$subdomain_tmp.".suricata-mikrowisp.com.ar/api/ListTicket?token=".$tokensienna."&idcliente=" . $resultadoscliente[0]->cliente);
 
 dd($lista);
 $subserp2=json_decode($subserp, true);
