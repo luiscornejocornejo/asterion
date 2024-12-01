@@ -38,7 +38,13 @@ $queryws = "SELECT * from mikrowisp.ws_cliente where nombre='" . $subdomain_tmp 
 $lista= file_get_contents("https://".$subdomain_tmp.".suricata-mikrowisp.com.ar/api/ListTicket?token=".$tokensienna."&idcliente=" . $resultadoscliente[0]->cliente);
 
 $data = json_decode($lista, true);
-$dataContent = $data['data'];
+if(isset($data['data'])){
+    $dataContent = $data['data'];
+
+}else{
+    return '';
+
+}
 
 $getdata= file_get_contents("https://".$subdomain_tmp.".suricata-mikrowisp.com.ar/api/ws2?token=".$tokensienna."&c=" . $resultadoscliente[0]->cliente);
 $getdata2 = json_decode($getdata, true);
