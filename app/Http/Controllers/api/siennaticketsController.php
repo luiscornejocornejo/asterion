@@ -2661,7 +2661,7 @@ class siennaticketsController extends Controller
         echo $dom=$request->dom;
         echo $tokensienna=$request->tokensienna;
  
-        $url="https://".$dom.".suricata-mikrowisp.com.ar/api/crearticket?token=".$tokensienna."";
+        echo $url="https://".$dom.".suricata-mikrowisp.com.ar/api/crearticket?token=".$tokensienna."";
         $curl = curl_init();
        
         $url.="&asunto=".$asunto."&turno=".$turno."&depto=".$depto."&agendado=".$agendado."&fecha=".$fecha."&cliente=".$cliente."&contenido=".$contenido."";
