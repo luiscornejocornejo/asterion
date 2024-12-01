@@ -61,7 +61,7 @@ $ticketserp2 = json_decode($ticketserp, true);*/
         <div style="background-color: #6D0078;" class="d-flex justify-content-end">
             <div class="me-2">
                 <img src="https://".$subdomain_tmp.".suricata.cloud/mikrowisp.webp"
-                    alt="ispkeeper logo" height="55">
+                    alt="mikrowisp logo" height="55">
             </div>
         </div>
         <ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
