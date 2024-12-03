@@ -602,7 +602,8 @@ class siennaticketsController extends Controller
             }
 
             if($tipousers==1){
-                $query = "select *,a.created_at as fn,d.sla,a.cliente as cliente,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
+                $query = "select *,a.created_at as fn,
+                convertirTiempo(fn) as nuevotiempo,d.sla,a.cliente as cliente,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
                 b.nombre as depto,b.id as iddepto,d.nombre topicnombre,convertirTiempo(a.created_at) as creado,
                 a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado,f.nombre as pri ,f.id prid
                 from ".$merchant.".siennatickets a

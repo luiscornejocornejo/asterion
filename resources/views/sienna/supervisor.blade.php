@@ -706,7 +706,7 @@ function obtenerFechaUTC() {
                         ' <td><span style="font-size:medium;" class="'+colorpri+'">' + response.data[i].pri + '</span></td>' +
 
                         ' <td>' + response.data[i].cel + '</td>' +
-                        ' <td>' + response.data[i].creado + '</td>' +
+                        ' <td>' + response.data[i].nuevotiempo + '</td>' +
                         '<td> <span onclick="estado2(`' + result + '`,`' + response.data[i].ticketid + '`,`' + response.data[i].conversation_id + '`,`' + response.data[i].iddepto + '`)"  class="badge '+colorestado+' " style="font-size: medium" role="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">' + response.data[i].estadoname + ' </span></td> ' +
 
                         <?php foreach($resultadosextras as $valo){
