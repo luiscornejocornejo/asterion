@@ -35,6 +35,13 @@ $queryws = "SELECT * from ispkipper.ws_cliente where nombre='" . $subdomain_tmp 
             $urilogin = $value->urilogin;
         }
 
+
+$getdata= file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/wsn?token=".$tokensienna."&cliente_id=" . $resultadoscliente[0]->cliente);
+$getdata2 = json_decode($getdata, true);
+dd($getdata2);
+$getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+
+
 $subserp= file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/listadodeticketsubcategorias?token=".$tokensienna."");
 $subserp2=json_decode($subserp, true);
 
