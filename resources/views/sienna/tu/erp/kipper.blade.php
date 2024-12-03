@@ -38,7 +38,7 @@ $queryws = "SELECT * from ispkipper.ws_cliente where nombre='" . $subdomain_tmp 
 
 $getdata= file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/wsn?token=".$tokensienna."&cliente_id=" . $resultadoscliente[0]->cliente);
 $getdata2 = json_decode($getdata, true);
-dd($getdata2);
+dd($getdata2[3]["cantinet"]);
 $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 
 
