@@ -14,7 +14,9 @@ use App\Http\Controllers\JornadasController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/suspendido', function () {
+    echo "servicio suspendido";
+});
 Route::get('/datos','App\Http\Controllers\TicketdatosController@datos');
 
 

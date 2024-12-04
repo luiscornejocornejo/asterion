@@ -122,6 +122,19 @@ class LoginController extends Controller
 
             foreach ($resultados as $value) {
 
+                
+                $queryservicios2="select * from sienna_suricata_servicios where id='11'";
+                $datosservicios2 = DB::select($queryservicios2);
+                $suspendidoservicio=0;
+
+                foreach($datosservicios2 as $valservicios2){
+                  
+                        $suspendidoservicio=$valservicios2->habilitado;
+                    if($suspendidoservicio==1){
+                        return Redirect::to('/suspendido');
+
+                    }
+                }
                 $idusuario = $value->id;
                 $categoria = $value->categoria;
                 $deptosuser = $value->deptosuser;
