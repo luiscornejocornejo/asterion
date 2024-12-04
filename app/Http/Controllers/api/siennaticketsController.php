@@ -527,7 +527,8 @@ class siennaticketsController extends Controller
                 $final=substr($final,0,-1);
             }
             if($tipousers==3){
-                $query = "select *,a.created_at as fn,d.sla,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
+                $query = "select *,a.created_at as fn,
+                convertirTiempo(a.created_at) as nuevotiempo,d.sla,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
                 b.nombre as depto,b.id as iddepto,d.nombre topicnombre,convertirTiempo(a.created_at) as creado,
                 a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado,f.nombre as pri ,f.id prid
                 from ".$merchant.".siennatickets a
@@ -544,7 +545,9 @@ class siennaticketsController extends Controller
         
                  union 
         
-                 select *,a.created_at as fn,d.sla,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
+                 select *,a.created_at as fn,
+                 convertirTiempo(a.created_at) as nuevotiempo,
+                 d.sla,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
                 b.nombre as depto,b.id as iddepto,d.nombre topicnombre,convertirTiempo(a.created_at)  as creado,
         
                 a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado ,f.nombre as pri ,f.id prid
@@ -567,7 +570,9 @@ class siennaticketsController extends Controller
             }
             else{
 
-                $query = "select *,a.created_at as fn,d.sla,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
+                $query = "select *,a.created_at as fn,
+                convertirTiempo(a.created_at) as nuevotiempo,
+                d.sla,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
                 b.nombre as depto,b.id as iddepto,d.nombre topicnombre,convertirTiempo(a.created_at) as creado,
                 a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado,f.nombre as pri ,f.id prid
                 from ".$merchant.".siennatickets a
@@ -581,7 +586,9 @@ class siennaticketsController extends Controller
                  and a.asignado='" . $idusuario . "' and a.empresa=".$empresa."
                  union 
         
-                 select *,a.created_at as fn,d.sla,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
+                 select *,a.created_at as fn,d.sla,
+                 convertirTiempo(a.created_at) as nuevotiempo,
+                 a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
                 b.nombre as depto,b.id as iddepto,d.nombre topicnombre,convertirTiempo(a.created_at)  as creado,
         
                 a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado ,f.nombre as pri ,f.id prid
