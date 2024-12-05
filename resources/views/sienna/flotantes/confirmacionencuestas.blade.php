@@ -2,7 +2,7 @@
     aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
-            <form action="/sendCsatWithParams" method="post" onclick="stopDefAction(event);">
+            <form action="/sendCsatWithParams" method="post" >
                 @csrf
                 <div class="modal-header bg-dark">
 
@@ -23,7 +23,7 @@
                 <div class="modal-footer">
 
                     <button type="button" class="btn btn-light border" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-success">Enviar</button>
+                    <button type="submit" class="btn btn-success" onclick="stopDefAction(event);">Enviar</button>
                     <input type="hidden" id="telcsat" name="tel" value="<?php $celcliente; ?>">
                     <input type="hidden" id="ticket" name="ticket" value="">
 
