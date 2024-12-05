@@ -4,7 +4,7 @@
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header bg-dark">
-            <form action="/llamadobroadcast" method="post">
+            <form action="/sendCsatWithParams" method="post">
             @csrf
 
                 <h4 class="modal-title text-light" id="mySmallModalLabel">Envío encuesta C-SAT</h4>
@@ -14,7 +14,7 @@
                 <div class="mb-3">
                     <label for="csat-select" class="form-label">Encuesta</label>
                     <select class="form-select" id="csat-select" name="url">
-                        <?php foreach($resultados2 as $values) { ?>
+                        <?php foreach($motivosCierre as $values) { ?>
                            <option value="<?php echo $values->url; ?>"> <?php echo $values->nombre; ?> </option> 
                         <?php } ?>
                     </select>
@@ -36,7 +36,7 @@
 <div class="modal fade" id="encuesta-nps" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
-        <form action="/llamadobroadcast" method="post">
+        <form action="/sendCsatWithParams" method="post">
         @csrf
 
             <div class="modal-header bg-dark">
@@ -47,7 +47,7 @@
                 <div class="mb-3">
                     <label for="nps-select" class="form-label">Encuesta</label>
                     <select class="form-select" id="nps-select" name="url">
-                        <?php  foreach($resultados3 as $values) { ?>
+                        <?php  foreach($motivosCierre as $values) { ?>
                            <option value="<?php echo $values->url; ?>"> <?php  echo $values->nombre; ?> </option> 
                         <?php  } ?>
                     </select>

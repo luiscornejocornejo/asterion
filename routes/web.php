@@ -313,6 +313,7 @@ Route::get('/pruebatelefonia','App\Http\Controllers\cloudtickets@pruebatelefonia
 Route::get('/userprofile','App\Http\Controllers\cloudtickets@userprofile');
 
 Route::post('/llamadobroadcast','App\Http\Controllers\cloudtickets@llamadobroadcast');
+Route::post('/sendCsatWithParams','App\Http\Controllers\cloudtickets@sendCsatWithParams');
 
 Route::post('/ctusers','App\Http\Controllers\cloudtickets@ctusers');
 Route::post('/derivar','App\Http\Controllers\cloudtickets@derivarpost');
