@@ -28,6 +28,11 @@ Route::get('/mm', function () {
     return view('sienna/mm');
 
 });
+
+Route::get('/suspendido', function () {
+    return view('sienna/suspendido');
+});
+
 Route::get('/recuperar', function () {
     return view('sienna/password');
 
