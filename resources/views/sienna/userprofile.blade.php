@@ -95,7 +95,7 @@ $resultados3 = DB::select($query3);
 <div class="wrapper">
     @include('facu.menu')
 
-
+    <script> console.log(@json($motivosCierre)) </script>
     <div class="content-page" style="padding: 0!important;">
         <div class="content">
             @if ($message = Session::get('success'))

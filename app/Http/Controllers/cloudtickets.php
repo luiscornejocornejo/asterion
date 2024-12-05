@@ -28,8 +28,10 @@ use App\Models\salientesxennio;
 use App\Models\salientesxenniolistado;
 use App\Models\siennatareassegui;
 use App\Models\estadotarea;
+use App\Models\motivoc;
 use App\Models\siennamail;
 use App\Models\siennaderivados;
+use App\Modes\motivosc;
 
 use Illuminate\Support\Str;
 
@@ -1647,6 +1649,7 @@ class cloudtickets extends Controller
 
           $cliente=$request->cliente;
         //$datos2 = siennatickets::where('cliente', '=', $cliente)->get();
+        $queryMotivoc = motivoc::all();
 
         $datos2 = siennatickets::leftJoin('siennadepto', 'siennadepto.id', '=', 'siennatickets.siennadepto')
         ->leftJoin('siennatopic', 'siennatopic.id', '=', 'siennatickets.siennatopic')
@@ -1677,6 +1680,7 @@ WHERE ticket IN (
         ->with('prome', $prome)
         ->with('tickets', $datos2)
         ->with('datoscliente', $datos3)
+        ->with('motivosCierre', $queryMotivoc)
         ;
     }
 
