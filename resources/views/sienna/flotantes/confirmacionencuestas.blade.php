@@ -2,7 +2,7 @@
     aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
-            <form action="/sendCsatWithParams" method="post">
+            <form action="/sendCsatWithParams" method="post" onclick="stopDefAction(event);">
                 @csrf
                 <div class="modal-header bg-dark">
 
@@ -68,3 +68,11 @@
 </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
 </div>
+
+<script type="text/javascript">
+
+    function stopDefAction(evt) {
+      evt.preventDefault();
+    }
+    </script>
+    
