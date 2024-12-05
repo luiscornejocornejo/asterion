@@ -1649,7 +1649,7 @@ class cloudtickets extends Controller
 
           $cliente=$request->cliente;
         //$datos2 = siennatickets::where('cliente', '=', $cliente)->get();
-        $queryMotivoc = motivoc::where('nombre', 'like', 'csat');
+        $queryMotivoc = motivoc::where('nombre', 'like', 'CSAT');
 
         $datos2 = siennatickets::leftJoin('siennadepto', 'siennadepto.id', '=', 'siennatickets.siennadepto')
         ->leftJoin('siennatopic', 'siennatopic.id', '=', 'siennatickets.siennatopic')
