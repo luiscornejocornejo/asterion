@@ -24,7 +24,7 @@
 
                     <button type="button" class="btn btn-light border" data-bs-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-success">Enviar</button>
-                    <input type="hidden" id="tel" name="tel" value="<?php $celcliente; ?>">
+                    <input type="hidden" id="telcsat" name="tel" value="<?php $celcliente; ?>">
                     <input type="hidden" id="ticket" name="ticket" value="">
 
             </form>
