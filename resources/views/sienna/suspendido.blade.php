@@ -7,7 +7,7 @@
                 <h3 class="">Tu cuenta se encuentra suspendida por falta de pago</h3>
                 <p class="text-muted mt-3">Comunicate con tu asesor para más información.</p>
 
-                <button type="button" class="btn btn-primary btn-sm mt-2 ms-1"><i class="mdi mdi-exit-to-app me-1"></i>Cerrar sesión</button>
+                <a type="button" href="/salir" class="btn btn-primary btn-sm mt-2 ms-1"><i class="mdi mdi-exit-to-app me-1"></i>Cerrar sesión</a>
             </div>
         </div><!-- end col -->
     </div>
