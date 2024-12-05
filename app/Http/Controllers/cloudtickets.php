@@ -1737,7 +1737,7 @@ WHERE ticket IN (
         $tel=$request->telcsat;
         $url=$request->url;
         $ticket=$request->ticket;
-       dd($tel, $url, $ticket);
+       //dd($tel, $url, $ticket);
         $curl = curl_init();
       
         // Set headers for the cURL request
