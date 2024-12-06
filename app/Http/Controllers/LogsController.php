@@ -55,13 +55,8 @@ class LogsController extends Controller
         return $ipaddress;
     }
     public function url(){
-        $url="";
-        if (isset($_SERVER['HTTP_HOST'])) {
-            $url = $_SERVER['HTTP_HOST'];
-        } elseif(isset($_SERVER['SERVER_NAME'])){
-            $url =  $_SERVER['SERVER_NAME'];//array_shift($domainParts); 
-        }
-        return $url;
+        $urlCompleta = \Illuminate\Support\Facades\Request::fullUrl(); // Obtiene https://soporte.suricata.cloud/rolusers
+        return $urlCompleta;
     }
     public function guardarlogs($accion){
         $logs=new logs();
