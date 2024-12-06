@@ -32,6 +32,7 @@ use App\Models\empresa;
 use App\Models\prioridad;
 use App\Models\siennaintegracion;
 use App\Models\motivoc;
+use App\Http\Controllers\LogsController;
 
 class TicketdatosController extends Controller
 {
@@ -387,6 +388,7 @@ class TicketdatosController extends Controller
     }
 
     
+    
     public function rolusers(Request $request)
     {
 
@@ -397,6 +399,8 @@ class TicketdatosController extends Controller
 
         $query="update users set tipousers='".$statos."'  where id='".$user_id."'";
         $resultados5 = DB::select($query);
+        $otroControlador = new LogsController();
+        $resultado = $otroControlador->guardarlogs("modificar tipo usuario");
         return redirect()
         ->back()
         ->with('success', 'Se modifico  el registro  correctamente!');

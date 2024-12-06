@@ -586,7 +586,8 @@ class siennaticketsController extends Controller
                  and a.asignado='" . $idusuario . "' and a.empresa=".$empresa."
                  union 
         
-                 select *,a.created_at as fn,convertirTiempo(a.created_at) as nuevotiempo,d.sla,
+                 select *,a.created_at as fn,
+                 convertirTiempo(a.created_at) as nuevotiempo,d.sla,
                  
                  a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
                 b.nombre as depto,b.id as iddepto,d.nombre topicnombre,convertirTiempo(a.created_at)  as creado,
