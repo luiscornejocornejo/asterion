@@ -566,7 +566,42 @@ class siennaticketsController extends Controller
                  order by ticketid desc
                 ";
 
-        
+                $query = "
+                SELECT 
+                    a.id AS ticketid,
+                    a.created_at AS fn,
+                    convertirTiempo(a.created_at) AS nuevotiempo,
+                    d.sla,
+                    a.conversation_id,
+                    a.user_id,
+                    CONCAT(e.nombre, ' ', e.last_name) AS nombreagente,
+                    b.nombre AS depto,
+                    b.id AS iddepto,
+                    d.nombre AS topicnombre,
+                    convertirTiempo(a.created_at) AS creado,
+                    c.nombre AS estadoname,
+                    d.nombre AS topicname,
+                    a.cel AS numerocel,
+                    a.asignado,
+                    f.nombre AS pri,
+                    f.id AS prid
+                FROM 
+                    ".$merchant.".siennatickets a
+                LEFT JOIN ".$merchant.".siennadepto b ON b.id = a.siennadepto 
+                LEFT JOIN ".$merchant.".siennaestado c ON c.id = a.siennaestado
+                LEFT JOIN ".$merchant.".siennatopic d ON d.id = a.siennatopic
+                LEFT JOIN ".$merchant.".users e ON e.id = a.asignado
+                LEFT JOIN ".$merchant.".prioridad f ON f.id = a.prioridad
+                WHERE 
+                    a.siennaestado NOT IN ('3', '4') 
+                    AND a.empresa = ".$empresa."
+                    AND (
+                        a.asignado = '".$idusuario."' 
+                        OR (a.asignado = '99999' AND a.siennadepto IN (".$final."))
+                    )
+                ORDER BY 
+                    ticketid DESC";
+                
             }
             else{
 
