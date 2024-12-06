@@ -497,17 +497,7 @@ class cloudtickets extends Controller
 
    }
 
-   public function eliminaragente(Request $request){
-
-    $idagente=$request->idagente;
-
-    $user=users::find($idagente);
-    $user->delete();   
-      return redirect()
-    ->back()
-    ->with('success', 'Se elimino el agente  correctamente!');
-
-   }
+   
 
    public function asignarall(Request $request)
     {
@@ -1746,22 +1736,7 @@ WHERE ticket IN (
         ->with('success', 'Enviado ' );
     }
     
-    public function ctusers(Request $request)
-    {
-
-         $user_id=$request->user_idct;
-        $statos=$request->statos;
-
-        $si2 = users::find($user_id);
-        $si2->ct = $statos;
-        $si2->save();
-      
-        return redirect()
-        ->back()
-        ->with('success', 'Se modifico  el registro  correctamente!');
-
-    }
-
+    
     
 
     public function derivarpost(Request $request)
@@ -1900,21 +1875,7 @@ WHERE ticket IN (
     }
 
     
-    public function habilitadousers(Request $request)
-    {
-
-         $user_id=$request->user_idhb;
-        $statos=$request->statos;
-   
-        $si2 = users::find($user_id);
-        $si2->habilitado = $statos;
-        $si2->save();
-      
-        return redirect()
-        ->back()
-        ->with('success', 'Se modifico  el registro  correctamente!');
-
-    }
+    
 
     
 

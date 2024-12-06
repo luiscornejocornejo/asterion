@@ -115,4 +115,47 @@ class AgentesController extends Controller
         ->with('success', 'Se modifico  el registro  correctamente!');
 
     }
+
+    public function ctusers(Request $request)
+    {
+        $user_id=$request->user_idct;
+        $statos=$request->statos;
+        $si2 = users::find($user_id);
+        $si2->ct = $statos;
+        $si2->save();
+        $otroControlador = new LogsController();
+        $resultado3 = $otroControlador->guardarlogs(" cerrar tickets  usuario",$user_id);
+        return redirect()
+        ->back()
+        ->with('success', 'Se modifico  el registro  correctamente!');
+
+    }
+    public function habilitadousers(Request $request)
+    {
+        $user_id=$request->user_idhb;
+        $statos=$request->statos;
+        $si2 = users::find($user_id);
+        $si2->habilitado = $statos;
+        $si2->save();
+        $otroControlador = new LogsController();
+        $resultado3 = $otroControlador->guardarlogs(" habilitar usuario",$user_id);
+        return redirect()
+        ->back()
+        ->with('success', 'Se modifico  el registro  correctamente!');
+
+    }
+
+    public function eliminaragente(Request $request){
+
+        $idagente=$request->idagente;
+        $user=users::find($idagente);
+        $user->delete(); 
+        $otroControlador = new LogsController();
+        $resultado3 = $otroControlador->guardarlogs("Eliminar usuario",$idagente);  
+        return redirect()
+        ->back()
+        ->with('success', 'Se elimino el agente  correctamente!');
+    
+       }
+
 }

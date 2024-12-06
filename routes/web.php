@@ -225,11 +225,15 @@ Route::get('/gpt', function () {
 
 
 //solo sienna
+//Agentes
 Route::post('/rolusers','App\Http\Controllers\AgentesController@rolusers');
 Route::post('/areasusers','App\Http\Controllers\AgentesController@areasusers');
 Route::post('/notificacionusers','App\Http\Controllers\AgentesController@notificacionusers');
 Route::post('/cambiopass','App\Http\Controllers\AgentesController@cambiopass');
 Route::post('/ticketusers','App\Http\Controllers\AgentesController@ticketusers');
+Route::post('/habilitadousers','App\Http\Controllers\AgentesController@habilitadousers');
+Route::post('/ctusers','App\Http\Controllers\AgentesController@ctusers');
+Route::post('/eliminaragente','App\Http\Controllers\AgentesController@eliminaragente');
 
 
 Route::get('/operator','App\Http\Controllers\TicketdatosController@operator');
@@ -267,7 +271,6 @@ Route::post('/prioridadsienna','App\Http\Controllers\cloudtickets@prioridadsienn
 Route::post('/reabrirconversacion','App\Http\Controllers\cloudtickets@reabrirconversacion');
 Route::post('/cerrarall','App\Http\Controllers\cloudtickets@cerrarall');
 Route::post('/prioridadsiennaall','App\Http\Controllers\cloudtickets@prioridadsiennaall');
-Route::post('/eliminaragente','App\Http\Controllers\cloudtickets@eliminaragente');
 Route::post('/asignarall','App\Http\Controllers\cloudtickets@asignarall');
 Route::post('/tagsall','App\Http\Controllers\cloudtickets@tagsall');
 Route::post('/tags','App\Http\Controllers\cloudtickets@tags');
@@ -276,7 +279,6 @@ Route::post('/crearticketsiennaclientegetdata','App\Http\Controllers\cloudticket
 
 Route::post('/crearticketsiennacliente','App\Http\Controllers\cloudtickets@crearticketsiennacliente');
 Route::post('/crearticketsiennanocliente','App\Http\Controllers\cloudtickets@crearticketsiennanocliente');
-Route::post('/habilitadousers','App\Http\Controllers\cloudtickets@habilitadousers');
 
 Route::get('/salientesb','App\Http\Controllers\cloudtickets@salientesb')->middleware('supervisorsienna');
 Route::post('/salientesb','App\Http\Controllers\cloudtickets@salientesbpost');
@@ -317,7 +319,6 @@ Route::get('/userprofile','App\Http\Controllers\cloudtickets@userprofile');
 Route::post('/llamadobroadcast','App\Http\Controllers\cloudtickets@llamadobroadcast');
 Route::post('/sendCsatWithParams','App\Http\Controllers\cloudtickets@sendCsatWithParams');
 
-Route::post('/ctusers','App\Http\Controllers\cloudtickets@ctusers');
 Route::post('/derivar','App\Http\Controllers\cloudtickets@derivarpost');
 Route::get('/abminternos','App\Http\Controllers\cloudtickets@abminternos');
 
