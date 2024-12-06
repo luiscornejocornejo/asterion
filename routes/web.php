@@ -227,7 +227,7 @@ Route::get('/gpt', function () {
 //solo sienna
 Route::post('/rolusers','App\Http\Controllers\AgentesController@rolusers');
 Route::post('/areasusers','App\Http\Controllers\AgentesController@areasusers');
-Route::post('/notificacionusers','App\Http\Controllers\Agentes@notificacionusers');
+Route::post('/notificacionusers','App\Http\Controllers\AgentesController@notificacionusers');
 
 
 Route::get('/operator','App\Http\Controllers\TicketdatosController@operator');
