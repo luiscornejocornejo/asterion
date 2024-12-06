@@ -728,6 +728,8 @@ class siennaController extends Controller
       $resultados = DB::connection('mysql2')->select($dato);
     }
 
+    $otroControlador = new LogsController();
+    $resultado3 = $otroControlador->guardarlogs("modificar ".$table,$dato);
     return redirect()
       ->back()
       ->with('success', 'Se Modifico el registro  correctamente!');
