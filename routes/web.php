@@ -234,6 +234,7 @@ Route::post('/ticketusers','App\Http\Controllers\AgentesController@ticketusers')
 Route::post('/habilitadousers','App\Http\Controllers\AgentesController@habilitadousers');
 Route::post('/ctusers','App\Http\Controllers\AgentesController@ctusers');
 Route::post('/eliminaragente','App\Http\Controllers\AgentesController@eliminaragente');
+Route::post('/newusers','App\Http\Controllers\AgentesController@newusers');
 
 
 Route::get('/operator','App\Http\Controllers\TicketdatosController@operator');
@@ -242,7 +243,6 @@ Route::get('/agentes','App\Http\Controllers\TicketdatosController@agentes')->mid
 Route::get('/empresadatos','App\Http\Controllers\TicketdatosController@empresadatos')->middleware('supervisorsienna');
 Route::post('/empresadatos','App\Http\Controllers\TicketdatosController@empresadatos2');
 Route::post('/topiccambiar','App\Http\Controllers\TicketdatosController@topiccambiar');
-Route::post('/newusers','App\Http\Controllers\TicketdatosController@newusers');
 Route::get('/viewtickets','App\Http\Controllers\TicketdatosController@supervisor');
 Route::get('/viewtickets2','App\Http\Controllers\TicketdatosController@supervisor2');
 Route::get('/nodes','App\Http\Controllers\TicketdatosController@nodes');

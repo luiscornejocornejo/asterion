@@ -158,4 +158,69 @@ class AgentesController extends Controller
     
        }
 
+       public function newusers(Request $request)
+    {
+
+        $grupossso=$request->grupossso;
+        $mailsso=$request->nombre.$request->apellido."@suricata.la";
+        $interno=$request->interno;
+        $grup="";
+        foreach($grupossso as $val){
+          $grup.=$val.";";
+        }
+        $grup=substr($grup,0,-1);
+        
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+            $subdomain_tmp =  array_shift($domainParts);
+        } elseif(isset($_SERVER['SERVER_NAME'])){
+            $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+            $subdomain_tmp =  array_shift($domainParts);
+            
+        }
+
+        if($request->rol=="2"){
+            $rolpasar="supervisor";
+        }
+        if($request->rol=="3"){
+            $rolpasar="agente";
+        }
+      
+        $url="http://146.190.115.238/api/createuser?token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM&botid=".$subdomain_tmp."&grupo=".$grup."&tipo=".$rolpasar."&email=".$mailsso.""; 
+       $curl = curl_init();
+       curl_setopt_array($curl, array(
+         CURLOPT_URL => $url,
+         CURLOPT_RETURNTRANSFER => true,
+         CURLOPT_ENCODING => '',
+         CURLOPT_MAXREDIRS => 10,
+         CURLOPT_TIMEOUT => 0,
+         CURLOPT_FOLLOWLOCATION => true,
+         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+         CURLOPT_CUSTOMREQUEST => 'GET',
+     
+       ));
+         $response = curl_exec($curl);
+
+        curl_close($curl);
+        $us=new users();
+        $us->nombre=$request->nombre;
+        $us->last_name=$request->apellido;
+        $us->email=$request->maill;
+        $grup22=str_replace(";",",",$grup);
+        $us->categoria=3;
+        $us->deptosuser=$grup22;
+        $us->tipousers=$request->rol;
+        $us->tickets=$request->asignar;
+        $us->interno=$request->interno;
+        $us->password=md5($request->pass);
+        $us->email_suricata=$mailsso;
+        $us->save();
+        $otroControlador = new LogsController();
+        $resultado3 = $otroControlador->guardarlogs("crear usuario",$us->id);
+       return redirect() 
+        ->back() 
+        ->with('success', 'Se Creo  correctamente! el usuario');
+
+    }
+
 }
