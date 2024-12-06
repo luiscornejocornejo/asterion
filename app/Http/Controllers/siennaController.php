@@ -776,7 +776,8 @@ class siennaController extends Controller
       $prueba = $this->conectar($dbexterna);
       $resultadosfields = DB::connection('mysql2')->select($query);
     }
-
+    $otroControlador = new LogsController();
+    $resultado3 = $otroControlador->guardarlogs("delete ".$tabla,$query);
     return redirect()
       ->back()
       ->with('success', 'Se borro el registro  correctamente!');
