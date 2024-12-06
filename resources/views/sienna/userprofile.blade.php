@@ -165,7 +165,7 @@ $resultados3 = DB::select($query3);
                                 </div>
                                 <div class="card ribbon-box bg-success text-light">
                                     <div class="card-body">
-                                        <div class="ribbon-two ribbon-two-warning"><span style="font-size: 5px">Próximo</span></div>
+                                        <div class="ribbon-two ribbon-two-warning"><span style="font-size: 12px">Próximmente</span></div>
                                         <div class="d-flex justify-content-between">
                                             <div>
                                                 <h4 class="fw-normal" title="Number of Customers">NPS</h4>
