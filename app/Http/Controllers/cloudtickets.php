@@ -748,24 +748,7 @@ class cloudtickets extends Controller
         ->with('success', 'Se Agrego  el registro  correctamente!');
  
     }
-    public function cambiopass(Request $request)
-    {       
-        
-       echo  $newpass=$request->newpass;
-       echo $user_idpass=$request->user_idpass;
-        
-        $usuario= users::find($user_idpass);
-        $usuario->password=md5($newpass);
-      
-        $usuario->save();
-        $otroControlador = new LogsController();
-        $resultado3 = $otroControlador->guardarlogs("cambio pass usuario",$user_idpass);
-
-        return redirect()
-        ->back()
-        ->with('success', 'Se Modifico  la password  correctamente!');
- 
-    }
+    
 
     
     public function salientesb(Request $request)

@@ -476,23 +476,7 @@ class TicketdatosController extends Controller
         ->with('success', 'Se Creo  correctamente! el usuario');
 
     }
-    public function ticketusers(Request $request)
-    {
-
-         $user_id=$request->user_id4;
-        $statos=$request->statos;
-
-       
-        $query="update users set tickets='".$statos."'  where id='".$user_id."'";
-        
-        $resultados5 = DB::select($query);
-        $otroControlador = new LogsController();
-        $resultado3 = $otroControlador->guardarlogs(" asignar tickets  usuario",$query);
-        return redirect()
-        ->back()
-        ->with('success', 'Se modifico  el registro  correctamente!');
-
-    }
+    
     public function topiccambiar(Request $request)
     {
 

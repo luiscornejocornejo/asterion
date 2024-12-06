@@ -228,6 +228,8 @@ Route::get('/gpt', function () {
 Route::post('/rolusers','App\Http\Controllers\AgentesController@rolusers');
 Route::post('/areasusers','App\Http\Controllers\AgentesController@areasusers');
 Route::post('/notificacionusers','App\Http\Controllers\AgentesController@notificacionusers');
+Route::post('/cambiopass','App\Http\Controllers\AgentesController@cambiopass');
+Route::post('/ticketusers','App\Http\Controllers\AgentesController@ticketusers');
 
 
 Route::get('/operator','App\Http\Controllers\TicketdatosController@operator');
@@ -236,7 +238,6 @@ Route::get('/agentes','App\Http\Controllers\TicketdatosController@agentes')->mid
 Route::get('/empresadatos','App\Http\Controllers\TicketdatosController@empresadatos')->middleware('supervisorsienna');
 Route::post('/empresadatos','App\Http\Controllers\TicketdatosController@empresadatos2');
 Route::post('/topiccambiar','App\Http\Controllers\TicketdatosController@topiccambiar');
-Route::post('/ticketusers','App\Http\Controllers\TicketdatosController@ticketusers');
 Route::post('/newusers','App\Http\Controllers\TicketdatosController@newusers');
 Route::get('/viewtickets','App\Http\Controllers\TicketdatosController@supervisor');
 Route::get('/viewtickets2','App\Http\Controllers\TicketdatosController@supervisor2');
@@ -276,7 +277,6 @@ Route::post('/crearticketsiennaclientegetdata','App\Http\Controllers\cloudticket
 Route::post('/crearticketsiennacliente','App\Http\Controllers\cloudtickets@crearticketsiennacliente');
 Route::post('/crearticketsiennanocliente','App\Http\Controllers\cloudtickets@crearticketsiennanocliente');
 Route::post('/habilitadousers','App\Http\Controllers\cloudtickets@habilitadousers');
-Route::post('/cambiopass','App\Http\Controllers\cloudtickets@cambiopass');
 
 Route::get('/salientesb','App\Http\Controllers\cloudtickets@salientesb')->middleware('supervisorsienna');
 Route::post('/salientesb','App\Http\Controllers\cloudtickets@salientesbpost');

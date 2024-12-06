@@ -85,5 +85,34 @@ class AgentesController extends Controller
         ->back()
         ->with('success', 'Se modifico  el registro  correctamente!');
     }
+    public function cambiopass(Request $request)
+    {       
+        
+        $newpass=$request->newpass;
+        $user_idpass=$request->user_idpass;
+        $usuario= users::find($user_idpass);
+        $usuario->password=md5($newpass);
+        $usuario->save();
+        $otroControlador = new LogsController();
+        $resultado3 = $otroControlador->guardarlogs("cambio pass usuario",$user_idpass);
 
+        return redirect()
+        ->back()
+        ->with('success', 'Se Modifico  la password  correctamente!');
+ 
+    }
+
+    public function ticketusers(Request $request)
+    {
+        $user_id=$request->user_id4;
+        $statos=$request->statos;
+        $query="update users set tickets='".$statos."'  where id='".$user_id."'";
+        $resultados5 = DB::select($query);
+        $otroControlador = new LogsController();
+        $resultado3 = $otroControlador->guardarlogs(" asignar tickets  usuario",$query);
+        return redirect()
+        ->back()
+        ->with('success', 'Se modifico  el registro  correctamente!');
+
+    }
 }
