@@ -67,7 +67,7 @@ class LogsController extends Controller
         $logs=new logs();
         
         $logs->usuario=session('idusuario');
-        $logs->url=$this->url;
+        $logs->url=$this->url();
         $logs->accion=$accion;
         $logs->ip=$this->get_client_ip();
         $logs->save();
