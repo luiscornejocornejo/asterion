@@ -57,9 +57,9 @@ class LogsController extends Controller
     public function url(){
         $url="";
         if (isset($_SERVER['HTTP_HOST'])) {
-            $url = explode('.', $_SERVER['HTTP_HOST']);
+            $url = $_SERVER['HTTP_HOST'];
         } elseif(isset($_SERVER['SERVER_NAME'])){
-            $url =  array_shift($domainParts); 
+            $url =  $_SERVER['SERVER_NAME'];//array_shift($domainParts); 
         }
         return $url;
     }
