@@ -338,7 +338,13 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                 <i class="mdi mdi-radio-tower"></i>
                                 <span> Nodos </span>
                             </a>
-                        </li>   
+                        </li>  
+                        <li >
+                            <a  href="/siennareport?id=1501"  >
+                                <i class="mdi mdi-message-star"></i>
+                                <span> Grabaciones </span>
+                            </a>
+                        </li> 
             
                     </ul>
                 </div>
