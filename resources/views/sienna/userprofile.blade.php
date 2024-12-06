@@ -2,24 +2,21 @@
 
 use Illuminate\Support\Facades\DB;
 
-$idusuario =  session('idusuario');
+$idusuario = session('idusuario');
 $query = "SELECT * from users where id='" . $idusuario . "'";
 $resultados = DB::select($query);
 foreach ($resultados as $valuee) {
-
     $birthdate = $valuee->birthdate;
     $email = $valuee->email;
     $name = $valuee->nombre;
     $dni = $valuee->dni;
 }
 
-$query2 = "SELECT * from motivoc where tipo=1";
+$query2 = 'SELECT * from motivoc where tipo=1';
 $resultados2 = DB::select($query2);
 
-$query3 = "SELECT * from motivoc where  tipo=2";
+$query3 = 'SELECT * from motivoc where  tipo=2';
 $resultados3 = DB::select($query3);
-
-
 
 ?>
 
@@ -95,15 +92,17 @@ $resultados3 = DB::select($query3);
 <div class="wrapper">
     @include('facu.menu')
 
-
+    <script>
+        console.log(@json($motivosCierre))
+    </script>
     <div class="content-page" style="padding: 0!important;">
         <div class="content">
             @if ($message = Session::get('success'))
-            <div class="alert alert-success alert-dismissible fade
+                <div class="alert alert-success alert-dismissible fade
                             show" role="alert">
-                {{ $message }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
+                    {{ $message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
             @endif
 
             <!-- Page Wrapper -->
@@ -118,7 +117,6 @@ $resultados3 = DB::select($query3);
                         <!-- end page title -->
 
                         <?php foreach ($datoscliente as $val) {
-
                             $nombrecliente = $val->nya;
                             $emailcliente = $val->email;
                             $direccioncliente = $val->address;
@@ -136,12 +134,18 @@ $resultados3 = DB::select($query3);
                                         <strong class="text-uppercase text-white">Información del cliente</strong>
                                         <hr>
 
-                                        <p class="text-light font-size-13"><strong>Nombre: </strong><?php echo $nombrecliente ?? ''; ?></p>
-                                        <p class="text-light font-size-13"><strong>Email: </strong><?php echo $emailcliente ?? ''; ?></p>
-                                        <p class="text-light font-size-13"><strong>Dirección: </strong><?php echo $direccioncliente ?? '' ; ?></p>
-                                        <p class="text-light font-size-13"><strong>Whatsapp: </strong><?php echo $celcliente ?? ''; ?></p>
-                                        <p class="text-light font-size-13"><strong>Deuda: </strong><?php echo $deudacliente ?? ''; ?></p>
-                                        <p class="text-light font-size-13"><strong>Estado de cuenta: </strong><?php echo $estadocliente ?? ''; ?></p>
+                                        <p class="text-light font-size-13"><strong>Nombre: </strong><?php echo $nombrecliente ?? ''; ?>
+                                        </p>
+                                        <p class="text-light font-size-13"><strong>Email: </strong><?php echo $emailcliente ?? ''; ?>
+                                        </p>
+                                        <p class="text-light font-size-13"><strong>Dirección:
+                                            </strong><?php echo $direccioncliente ?? ''; ?></p>
+                                        <p class="text-light font-size-13"><strong>Whatsapp:
+                                            </strong><?php echo $celcliente ?? ''; ?></p>
+                                        <p class="text-light font-size-13"><strong>Deuda: </strong><?php echo $deudacliente ?? ''; ?>
+                                        </p>
+                                        <p class="text-light font-size-13"><strong>Estado de cuenta:
+                                            </strong><?php echo $estadocliente ?? ''; ?></p>
                                         <p class="text-light font-size-13"><strong>IP: </strong><?php echo $ipcliente ?? ''; ?></p>
 
                                     </div>
@@ -156,7 +160,7 @@ $resultados3 = DB::select($query3);
                                             </div>
                                         </div>
                                         <hr>
-                                        <p class="h1"><?php echo $prome;?></p>
+                                        <p class="h1"><?php echo $prome; ?></p>
                                     </div>
                                 </div>
                                 <div class="card bg-success text-light">
@@ -187,7 +191,8 @@ $resultados3 = DB::select($query3);
                             <div class="card-body">
                                 <h5 class="card-title text-uppercase mb-0">Tickets creados (<?php echo sizeof($tickets); ?>)</h5>
                                 <hr>
-                                <table id="example" class="table table-hover display responsive nowrap text-light" style="width: 100%;">
+                                <table id="example" class="table table-hover display responsive nowrap text-light"
+                                    style="width: 100%;">
                                     <thead>
                                         <tr class="bg-dark">
                                             <th class="text-white">Ticket</th>
@@ -203,50 +208,55 @@ $resultados3 = DB::select($query3);
                                     <tbody>
 
                                         <?php foreach ($tickets as $val2) { ?>
-                                            <tr>
-                                                <td><a href="{{ url('ticketunico?tick=' . $val2->id) }}" target="_blank"><?php echo $val2->id; ?></a></td>
-                                                <td><?php echo $val2->departamento; ?></td>
-                                                <td><?php echo $val2->motivo; ?></td>
-                                                <td><?php echo $val2->estado; ?></td>
-                                                <td><?php echo $val2->inicio; ?></td>
-                                                <td><?php echo $val2->cerrado; ?></td>
-                                                <td>@if($val2->csat <> "")
-                                                        {{ $val2->csat }}
-                                                        @else
-                                                        <div class="tooltip-button" role="button" data-bs-toggle="modal" data-bs-target="#encuesta-csat" onclick="getTicket('{{$val2->id}}', '{{$celcliente}}')">
-                                                            <i class="mdi mdi-whatsapp widget-icon text-white bg-success rounded-circle" data-id="{{ $val2->id}}">
-                                                                <span class="tooltiptext tooltip-bottom">Enviar C-SAT</span>
-                                                            </i>
-                                                        </div>
-                                                        @endif
-                                                </td>
-                                                <?php
-                                                $porcentaje = ($val2->csat - 1) / 4 * 100;
-                                                $bgClass = '';
-                                                if ($val2->csat < 2) {
-                                                    $bgClass = 'bg-danger';
-                                                } elseif ($val2->csat >= 3 && $val2->csat <= 4.4) {
-                                                    $bgClass = 'bg-warning';
-                                                } elseif ($val2->csat >= 4.5) {
-                                                    $bgClass = 'bg-success';
-                                                }
-                                                
-                                                if($val2->csat >= 0.1 && $val2->csat < 1) {
-                                                    $porcentaje = 4;
-                                                }
-                                                ?>
-                                                <td>
-                                                    <div class="progress mt-2" style="height: 3px;">
-                                                        <div class="progress-bar {{ $bgClass }}" role="progressbar"
-                                                            style="width: {{ $porcentaje }}%; height: 20px;"
-                                                            aria-valuenow="{{ $porcentaje }}"
-                                                            aria-valuemin="0"
-                                                            aria-valuemax="100">
-                                                        </div>
+                                        <tr>
+                                            <td><a href="{{ url('ticketunico?tick=' . $val2->id) }}"
+                                                    target="_blank"><?php echo $val2->id; ?></a></td>
+                                            <td><?php echo $val2->departamento; ?></td>
+                                            <td><?php echo $val2->motivo; ?></td>
+                                            <td><?php echo $val2->estado; ?></td>
+                                            <td><?php echo $val2->inicio; ?></td>
+                                            <td><?php echo $val2->cerrado; ?></td>
+                                            <td>
+                                                @if (!empty($val2->csat) && is_numeric($val2->csat))
+                                                    {{ $val2->csat }}
+                                                @else
+                                                    <div class="tooltip-button" role="button" data-bs-toggle="modal"
+                                                        data-bs-target="#encuesta-csat"
+                                                        onclick="getTicket('{{ $val2->id }}', '{{ $celcliente }}')">
+                                                        <i class="mdi mdi-whatsapp widget-icon text-white bg-success rounded-circle"
+                                                            data-id="{{ $val2->id }}">
+                                                            <span class="tooltiptext tooltip-bottom">Enviar C-SAT</span>
+                                                        </i>
                                                     </div>
-                                                </td>
+                                                @endif
 
-                                            </tr>
+                                            </td>
+                                            <?php
+                                            $porcentaje = (($val2->csat - 1) / 4) * 100;
+                                            $bgClass = '';
+                                            if ($val2->csat < 2) {
+                                                $bgClass = 'bg-danger';
+                                            } elseif ($val2->csat >= 3 && $val2->csat <= 4.4) {
+                                                $bgClass = 'bg-warning';
+                                            } elseif ($val2->csat >= 4.5) {
+                                                $bgClass = 'bg-success';
+                                            }
+                                            
+                                            if ($val2->csat >= 0.1 && $val2->csat < 1) {
+                                                $porcentaje = 4;
+                                            }
+                                            ?>
+                                            <td>
+                                                <div class="progress mt-2" style="height: 3px;">
+                                                    <div class="progress-bar {{ $bgClass }}" role="progressbar"
+                                                        style="width: {{ $porcentaje }}%; height: 20px;"
+                                                        aria-valuenow="{{ $porcentaje }}" aria-valuemin="0"
+                                                        aria-valuemax="100">
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                        </tr>
 
                                         <?php } ?>
                                     </tbody>
@@ -268,7 +278,8 @@ $resultados3 = DB::select($query3);
         <!-- end row -->
 
         <div class="floating-button">
-            <span class="mdi mdi-send bg-success text-light text-center floatButton" role="button" data-bs-toggle="modal" data-bs-target="#warning-alert-modal2"></span>
+            <span class="mdi mdi-send bg-success text-light text-center floatButton" role="button"
+                data-bs-toggle="modal" data-bs-target="#warning-alert-modal2"></span>
 
         </div>
     </div> <!-- container-fluid -->
