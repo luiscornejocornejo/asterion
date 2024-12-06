@@ -78,8 +78,9 @@ class AgentesController extends Controller
         $statos=$request->statos;
         $si2 = users::find($user_id);
         $si2->avisoemail = $statos;
-        $si2->save();
         $query = $si2->newQuery()->toSql();
+
+        $si2->save();
 
         $otroControlador = new LogsController();
         $resultado3 = $otroControlador->guardarlogs(" notificacionusers",$query);
