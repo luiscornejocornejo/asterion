@@ -566,7 +566,7 @@ class siennaticketsController extends Controller
                  order by ticketid desc
                 ";
 
-                $query = "
+                $querynu = "
                 SELECT 
                     a.id AS ticketid,
                     a.created_at AS fn,
