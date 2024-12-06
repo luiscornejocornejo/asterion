@@ -71,5 +71,6 @@ class LogsController extends Controller
         $logs->accion=$accion;
         $logs->ip=$this->get_client_ip();
         $logs->save();
+        return "";
     }
 }
