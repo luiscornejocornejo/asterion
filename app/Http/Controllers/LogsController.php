@@ -58,14 +58,13 @@ class LogsController extends Controller
         $urlCompleta = \Illuminate\Support\Facades\Request::fullUrl(); // Obtiene https://soporte.suricata.cloud/rolusers
         return $urlCompleta;
     }
-    public function guardarlogs($accion){
+    public function guardarlogs($accion,$descripcion){
         $logs=new logs();
-        
         $logs->usuario=session('idusuario');
         $logs->url=$this->url();
+        $logs->descripcion=$descripcion;
         $logs->accion=$accion;
         $logs->ip=$this->get_client_ip();
-
         $dd=$logs->save();
         return "";
     }
