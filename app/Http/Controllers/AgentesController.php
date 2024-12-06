@@ -78,16 +78,12 @@ class AgentesController extends Controller
         $statos=$request->statos;
         $si2 = users::find($user_id);
         $si2->avisoemail = $statos;
-        $query = $si2->newQuery()->toSql();
-
         $si2->save();
-
         $otroControlador = new LogsController();
-        $resultado3 = $otroControlador->guardarlogs(" notificacionusers",$query);
+        $resultado3 = $otroControlador->guardarlogs(" notificacionusers",$user_id);
         return redirect()
         ->back()
         ->with('success', 'Se modifico  el registro  correctamente!');
-
     }
 
 }
