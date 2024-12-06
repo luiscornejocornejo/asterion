@@ -48,4 +48,45 @@ class AgentesController extends Controller
         ->with('success', 'Se modifico  el registro  correctamente!');
 
     }
+    public function areasusers(Request $request)
+    {
+
+         $user_id=$request->user_id2;
+        $statos=$request->statos;
+        $nuevo="";
+        if($statos==""){
+            return redirect()
+            ->back()
+            ->with('success', 'Debe seleccionar al menoso una area!');
+        }
+        foreach($statos as $val){
+            $nuevo.=$val.",";
+        }
+        $nuevo=substr($nuevo,0,-1);
+        $query="update users set deptosuser='".$nuevo."'  where id='".$user_id."'";
+        $resultados5 = DB::select($query);
+        $otroControlador = new LogsController();
+        $resultado3 = $otroControlador->guardarlogs("modificar depto usuario",$query);
+        return redirect()
+        ->back()
+        ->with('success', 'Se modifico  el registro  correctamente!');
+
+    }
+    public function notificacionusers(Request $request)
+    {
+        $user_id=$request->user_id5;
+        $statos=$request->statos;
+        $si2 = users::find($user_id);
+        $si2->avisoemail = $statos;
+        $si2->save();
+        $query = $si2->newQuery()->toSql();
+
+        $otroControlador = new LogsController();
+        $resultado3 = $otroControlador->guardarlogs(" notificacionusers",$query);
+        return redirect()
+        ->back()
+        ->with('success', 'Se modifico  el registro  correctamente!');
+
+    }
+
 }

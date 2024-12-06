@@ -674,22 +674,7 @@ class cloudtickets extends Controller
     }
 
     
-    public function notificacionusers(Request $request)
-    {
-
-         $user_id=$request->user_id5;
-        $statos=$request->statos;
-
-        $si2 = users::find($user_id);
-        $si2->avisoemail = $statos;
-        $si2->save();
-        $otroControlador = new LogsController();
-        $resultado3 = $otroControlador->guardarlogs(" notificacionusers",$user_id);
-        return redirect()
-        ->back()
-        ->with('success', 'Se modifico  el registro  correctamente!');
-
-    }
+   
 
     
     public function tareas(Request $request)

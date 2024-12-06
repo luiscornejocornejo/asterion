@@ -393,34 +393,7 @@ class TicketdatosController extends Controller
 
     
 
-    public function areasusers(Request $request)
-    {
-
-         $user_id=$request->user_id2;
-        $statos=$request->statos;
-
-        $nuevo="";
-        if($statos==""){
-            return redirect()
-            ->back()
-            ->with('success', 'Debe seleccionar al menoso una area!');
-        }
-        foreach($statos as $val){
-
-            $nuevo.=$val.",";
-        }
-        $nuevo=substr($nuevo,0,-1);
-
-        $query="update users set deptosuser='".$nuevo."'  where id='".$user_id."'";
-        
-        $resultados5 = DB::select($query);
-        $otroControlador = new LogsController();
-        $resultado3 = $otroControlador->guardarlogs("modificar depto usuario",$query);
-        return redirect()
-        ->back()
-        ->with('success', 'Se modifico  el registro  correctamente!');
-
-    }
+ 
     
 
 
