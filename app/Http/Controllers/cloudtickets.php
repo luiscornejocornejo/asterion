@@ -39,6 +39,7 @@ use Illuminate\Support\Str;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\File;
+use App\Http\Controllers\LogsController;
 
 
 use Mail;
@@ -682,7 +683,8 @@ class cloudtickets extends Controller
         $si2 = users::find($user_id);
         $si2->avisoemail = $statos;
         $si2->save();
-      
+        $otroControlador = new LogsController();
+        $resultado3 = $otroControlador->guardarlogs(" notificacionusers",$user_id);
         return redirect()
         ->back()
         ->with('success', 'Se modifico  el registro  correctamente!');

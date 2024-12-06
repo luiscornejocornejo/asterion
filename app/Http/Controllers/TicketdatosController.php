@@ -430,6 +430,8 @@ class TicketdatosController extends Controller
         $query="update users set deptosuser='".$nuevo."'  where id='".$user_id."'";
         
         $resultados5 = DB::select($query);
+        $otroControlador = new LogsController();
+        $resultado3 = $otroControlador->guardarlogs("modificar depto usuario",$query);
         return redirect()
         ->back()
         ->with('success', 'Se modifico  el registro  correctamente!');
@@ -527,6 +529,8 @@ class TicketdatosController extends Controller
         $query="update users set tickets='".$statos."'  where id='".$user_id."'";
         
         $resultados5 = DB::select($query);
+        $otroControlador = new LogsController();
+        $resultado3 = $otroControlador->guardarlogs(" asignar tickets  usuario",$query);
         return redirect()
         ->back()
         ->with('success', 'Se modifico  el registro  correctamente!');
