@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\DB;
 
 use Webklex\PHPIMAP\ClientManager;
 use Webklex\PHPIMAP\Client;
+use App\Http\Controllers\LogsController;
+
 class siennaController extends Controller
 {
   //
@@ -590,6 +592,8 @@ class siennaController extends Controller
       //si es distinta a 1 aa otra base
       $resultados = DB::connection('mysql2')->select($dato);
     }
+    $otroControlador = new LogsController();
+    $resultado3 = $otroControlador->guardarlogs("crear ".$table ,$dato);  
     return redirect()
       ->back()
       ->with('success', 'Se creo el registro  correctamente!');
