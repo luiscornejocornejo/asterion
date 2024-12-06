@@ -773,7 +773,8 @@ class cloudtickets extends Controller
         $usuario->password=md5($newpass);
       
         $usuario->save();
-
+        $otroControlador = new LogsController();
+        $resultado3 = $otroControlador->guardarlogs("cambio pass usuario",$user_idpass);
 
         return redirect()
         ->back()

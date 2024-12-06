@@ -225,13 +225,15 @@ Route::get('/gpt', function () {
 
 
 //solo sienna
+Route::post('/rolusers','App\Http\Controllers\AgentesController@rolusers');
+
+
 Route::get('/operator','App\Http\Controllers\TicketdatosController@operator');
 Route::get('/operator2','App\Http\Controllers\TicketdatosController@operator2');
 Route::get('/agentes','App\Http\Controllers\TicketdatosController@agentes')->middleware('supervisorsienna');
 Route::get('/empresadatos','App\Http\Controllers\TicketdatosController@empresadatos')->middleware('supervisorsienna');
 Route::post('/empresadatos','App\Http\Controllers\TicketdatosController@empresadatos2');
 Route::post('/topiccambiar','App\Http\Controllers\TicketdatosController@topiccambiar');
-Route::post('/rolusers','App\Http\Controllers\TicketdatosController@rolusers');
 Route::post('/areasusers','App\Http\Controllers\TicketdatosController@areasusers');
 Route::post('/ticketusers','App\Http\Controllers\TicketdatosController@ticketusers');
 Route::post('/newusers','App\Http\Controllers\TicketdatosController@newusers');
