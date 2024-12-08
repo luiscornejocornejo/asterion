@@ -2843,5 +2843,19 @@ class siennaticketsController extends Controller
         return $resultados;
         
      }
+
+     public function siennadeptos(Request $request){
+
+        $dom=$this->dominio();
+       
+        // $query="select *  from ".$dom.".siennatickets  where id='".$tick."'"; 
+
+         $query="select * from siennadepto  ";
+         $resultados = DB::select($query);
+       
+
+        return $resultados;
+        
+     }
      
 }

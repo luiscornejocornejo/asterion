@@ -130,6 +130,7 @@ Route::get('/tokennn', [siennaticketsController::class, 'tokennn']);
 Route::get('/telefonia', [siennaticketsController::class, 'telefonia']);
 Route::get('/notelefonia', [siennaticketsController::class, 'notelefonia']);
 Route::get('/siennaservicios', [siennaticketsController::class, 'siennaservicios']);
+Route::get('/siennadeptos', [siennaticketsController::class, 'siennadeptos']);
 
 
 /*
