@@ -620,7 +620,6 @@ FROM
 
         $subdomain_tmp=$this->dominio();
         if($subdomain_tmp=="is"){
-           dd("hola");
            return Redirect::to('/viewtickets');
        
         }
