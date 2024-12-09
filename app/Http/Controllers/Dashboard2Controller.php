@@ -653,7 +653,7 @@ FROM
             $subdomain_tmp =  array_shift($domainParts);
             
         }
-       
+        dd($subdomain_tmp);
         if($subdomain_tmp=="is"){
            dd("hola");
            return Redirect::to('/viewtickets');
