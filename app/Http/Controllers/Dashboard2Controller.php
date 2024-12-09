@@ -618,6 +618,13 @@ FROM
     public function dashboardgeneric()
     {
 
+        $subdomain_tmp=$this->dominio();
+        if($subdomain_tmp=="is"){
+           dd("hola");
+           return Redirect::to('/viewtickets');
+       
+        }
+
         $base = 25;
         $prueba = $this->conectar($base);
 
@@ -645,12 +652,7 @@ FROM
         //$surveyPerChannel = $this->surveyPerChannel($source, $daterange, $department, $agent);
         //$checkCsatViewExist = $this->checkIfViewExists();
      
-        $subdomain_tmp=$this->dominio();
-        if($subdomain_tmp=="is"){
-           dd("hola");
-           return Redirect::to('/viewtickets');
-       
-        }
+      
         return view('sienna/dash', [
             'tickets' => $ticketCreated,
             'status' => $ticketByStatus,
