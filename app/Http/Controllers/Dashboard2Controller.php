@@ -644,16 +644,13 @@ FROM
         //$surverSended = $this->surveySended($source, $daterange, $department, $agent);
         //$surveyPerChannel = $this->surveyPerChannel($source, $daterange, $department, $agent);
         //$checkCsatViewExist = $this->checkIfViewExists();
-        $subdomain_tmp = 'localhost';
-        if (isset($_SERVER['HTTP_HOST'])) {
-            $domainParts = explode('.', $_SERVER['HTTP_HOST']);
-            $subdomain_tmp =  array_shift($domainParts);
-        } elseif(isset($_SERVER['SERVER_NAME'])){
-            $domainParts = explode('.', $_SERVER['SERVER_NAME']);
-            $subdomain_tmp =  array_shift($domainParts);
-            
+     
+        $subdomain_tmp=$this->dominio();
+        if($subdomain_tmp=="is"){
+           dd("hola");
+           return Redirect::to('/viewtickets');
+       
         }
-      
         return view('sienna/dash', [
             'tickets' => $ticketCreated,
             'status' => $ticketByStatus,
