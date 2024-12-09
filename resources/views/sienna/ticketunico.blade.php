@@ -293,7 +293,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                     }
 
                     
-                    $excludedProductIds = [1,2,3,6];
+                    $excludedProductIds = [1,2,3,4,6];
                     if($xenservicio){
                         if (in_array($resultados[0]->siennasource, $excludedProductIds)) {
                             ?>
