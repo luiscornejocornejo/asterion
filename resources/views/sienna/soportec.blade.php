@@ -72,7 +72,9 @@
             </table>
 
         </div>
-      
+        <div class="newTicket" data-bs-toggle="modal" data-bs-target="#create-ticket">
+            <i class="ri-chat-new-fill" style="font-size: 25px;"></i>
+        </div>
 
     </div>
     @include('sienna.soporte.create-ticket-modal')
