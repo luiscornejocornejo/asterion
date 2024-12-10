@@ -30,7 +30,7 @@
                         <?php foreach ($tsoporte as $valor) :
 
 $sss=$valor->siennatickets;
-echo $siennaestado=$valor->status;
+//echo $siennaestado=$valor->status;
 ?>
                             <?php if ($valor->autor == 0) : ?>
                                 <li class="clearfix">
@@ -82,6 +82,7 @@ echo $siennaestado=$valor->status;
 
                     <!-- end row-->
 
+                    <?php if($estado<>4){?>
                     <div class="mt-4">
                         <form method='post' action='/createticketsoportecliente' enctype="multipart/form-data">
                             @csrf
@@ -104,7 +105,7 @@ echo $siennaestado=$valor->status;
                         </form>
                     </div>
 
-
+<?php }?>
 
                 </div>
                 <!-- end .mt-4 -->

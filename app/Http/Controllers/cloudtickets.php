@@ -1252,9 +1252,16 @@ class cloudtickets extends Controller
        
         $query ="select * from soporte.siennasuricata where siennatickets='".$ticket."' ";
         $tsoporte = DB::select($query);
+        $query2 ="select siennaestado from soporte.siennatickets where id='".$ticket."' ";
+        $tsoporte2 = DB::select($query2);
+        $estado=0;
+        foreach($tsoporte2 as $val){
+            $estado=$val->siennaestado;
+        }
 
         return view('sienna/soportecliente')
         ->with('tsoporte', $tsoporte)
+        ->with('estado', $estado)
         ;
     }
 
