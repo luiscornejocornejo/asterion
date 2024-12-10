@@ -34,10 +34,11 @@ $queryws = "SELECT * from ispcube2.ws_cliente where nombre='" . $subdomain_tmp .
             $tokensienna = $value->tokensienna;
             $urilogin = $value->urilogin;
         }
-
-$subserp= file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/listadodeticketsubcategorias?token=".$tokensienna."");
+        https://amecom2.suricata2.com.ar/api/ws?token=elcris&q=36736632
+$subserp= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/gettickets?token=".$tokensienna."&idcustomer=" . $resultadoscliente[0]->cliente);
 $subserp2=json_decode($subserp, true);
 
+dd($subserp2);
 $estados= file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/estado?token=".$tokensienna."");
 $estados2=json_decode($estados, true);
 

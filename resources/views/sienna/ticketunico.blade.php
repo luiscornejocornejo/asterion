@@ -359,6 +359,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         $nombreintegracion = session('nombreintegracion');
                         if($nombreintegracion=="ispkipper"){?>@include('sienna.tu.erp.kipper')<?php }
                         if($nombreintegracion=="mikrowisp"){?>@include('sienna.tu.erp.mikro')<?php }
+                        if($nombreintegracion=="ispcube"){?>@include('sienna.tu.erp.ispcube')<?php }
                 
                     }?>
                      <?php
