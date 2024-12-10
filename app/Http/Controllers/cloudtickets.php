@@ -862,7 +862,9 @@ class cloudtickets extends Controller
     {   
         $merchant=$this->dominio();
 
-        $query ="select a.id,a.created_at,a.estadoconv,b.nombre as deptoname ,c.nombre as topicname from soporte.siennatickets as a 
+        $query ="select a.id,a.created_at,a.estadoconv,b.nombre as deptoname ,
+        a.siennaestado,
+        c.nombre as topicname from soporte.siennatickets as a 
         left join soporte.siennadepto b
         on b.id=a.siennadepto
         left join soporte.siennatopic c
