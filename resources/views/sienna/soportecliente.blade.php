@@ -29,8 +29,9 @@
                     <ul class="conversation-list p-0" data-simplebar="init">
                         <?php foreach ($tsoporte as $valor) :
 
-                            $idnewticket=$valor->siennatickets;
-                        ?>
+$idnewticket=$valor->siennatickets;
+echo $siennaestado=$valor->siennaestado;
+?>
                             <?php if ($valor->autor == 0) : ?>
                                 <li class="clearfix">
                                     <div class="chat-avatar">
