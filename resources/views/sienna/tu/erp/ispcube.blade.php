@@ -98,7 +98,7 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                         </div>
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
                             <label for="agent" class="form-label">Categorias:</label>
-                            <select class="form-select js-example-basic-single" name="usuarios" id="agent">
+                            <select class="form-select js-example-basic-single" name="categoria" id="agent">
 
                                 <?php for($i=0;$i<sizeof($categorias2);$i++){
                                         ?>
