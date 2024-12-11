@@ -38,7 +38,6 @@ $queryws = "SELECT * from ispcube2.ws_cliente where nombre='" . $subdomain_tmp .
         echo $urlll="https://".$subdomain_tmp.".suricata2.com.ar/api/gettickets?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente;
  $ticerp= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/gettickets?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente);
 $ticerp2=json_decode($ticerp, true);
-dd($ticerp2);
 $categorias= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/categories?token=".$tokensienna."");
 $categorias2=json_decode($categorias, true);
 
@@ -123,17 +122,16 @@ $categorias2=json_decode($categorias, true);
                     </thead>
                     <tbody id="log">
                         <?php
-dd($ticerp2);
 
                         for($i=0;$i<sizeof($ticerp2);$i++){
                                         ?>
                         <tr class="text-center">
-                            <td><a target='_blank' href='<?php echo $urilogin;?>{{ $ticketserp2[$i]['ticket_id'] }}'>{{ $ticketserp2[$i]['ticket_id'] }}</a> </td>
-                            <td>{{ $ticketserp2[$i]['ticket_dia'] }} {{ $ticketserp2[$i]['ticket_hora'] }}
+                            <td><a target='_blank' href='<?php echo $urilogin;?>{{ $ticerp2[$i]['id'] }}'>{{ $ticerp2[$i]['id'] }}</a> </td>
+                            <td>{{ $ticerp2[$i]['visit_date'] }}
                             </td>
-                            <td> <?php echo $est = estados($estados2, $ticketserp2[$i]['ticket_estado']); ?> </td>
+                            <td> <?php echo $ticerp2[$i]['ticket_status']['name']; ?> </td>
+                            <td> <?php echo $ticerp2[$i]['ticket_category']['name']; ?> </td>
 
-                            <td> <?php echo $nomsub = buscarNombreSubcategoria($subserp2, $ticketserp2[$i]['ticket_subcategoria']); ?> </td>
 
 
                         </tr>
