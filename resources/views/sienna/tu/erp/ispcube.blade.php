@@ -36,17 +36,14 @@ $queryws = "SELECT * from ispcube2.ws_cliente where nombre='" . $subdomain_tmp .
         }
         //http://giles.suricata2.com.ar/api/gettickets?token=thecrisPela&codcli=028842
         echo $urlll="https://".$subdomain_tmp.".suricata2.com.ar/api/gettickets?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente;
-echo $subserp= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/gettickets?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente);
+ $subserp= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/gettickets?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente);
 $subserp2=json_decode($subserp, true);
 
-dd($subserp2);
-$estados= file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/estado?token=".$tokensienna."");
-$estados2=json_decode($estados, true);
+$categorias= file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/categories?token=".$tokensienna."");
+$categorias2=json_decode($estados, true);
+dd($categorias2);
 
-$usuariosserp = file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/usuarios?token=".$tokensienna."");
-$usuariosserp2 = json_decode($usuariosserp, true);
-$ticketserp = file_get_contents("https://".$subdomain_tmp.".suricata-ispkeeper.com.ar/api/tickets?token=".$tokensienna."&cliente_id=" . $resultadoscliente[0]->cliente);
-$ticketserp2 = json_decode($ticketserp, true);
+
 ?>
 <div class="card widget-flat" id="infoUser">
     <div class="card-body">
