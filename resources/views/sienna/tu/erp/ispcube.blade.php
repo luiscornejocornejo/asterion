@@ -36,12 +36,11 @@ $queryws = "SELECT * from ispcube2.ws_cliente where nombre='" . $subdomain_tmp .
         }
         //http://giles.suricata2.com.ar/api/gettickets?token=thecrisPela&codcli=028842
         echo $urlll="https://".$subdomain_tmp.".suricata2.com.ar/api/gettickets?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente;
- $subserp= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/gettickets?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente);
-$subserp2=json_decode($subserp, true);
+ $ticerp= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/gettickets?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente);
+$ticerp2=json_decode($ticerp, true);
 
 $categorias= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/categories?token=".$tokensienna."");
 $categorias2=json_decode($categorias, true);
-dd($categorias2);
 
 
 ?>
@@ -86,62 +85,24 @@ dd($categorias2);
                             <label for="example-textarea" class="form-label">Cliente</label>
                             <input required name="cliente" type="text" class="form-control" id="lastNameUser"
                                 value="<?php echo $resultadoscliente[0]->cliente; ?>">
-                            <input name="prioridad" type="hidden" class="form-control" id="lastNameUser"
-                                value="3">
+                            
                         </div>
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
-                            <label for="agent" class="form-label">Agente:</label>
+                            <label for="agent" class="form-label">Categorias:</label>
                             <select class="form-select js-example-basic-single" name="usuarios" id="agent">
 
-                                <?php for($i=0;$i<sizeof($usuariosserp2);$i++){
+                                <?php for($i=0;$i<sizeof($categorias2);$i++){
                                         ?>
-                                <option value="{{ $usuariosserp2[$i]['usuario_id'] }}">
-                                    {{ $usuariosserp2[$i]['usuario_nombre'] }}
-                                    {{ $usuariosserp2[$i]['usuario_apellido'] }}
+                                <option value="{{ $categorias2[$i]['id'] }}">
+                                    {{ $categorias2[$i]['nombre'] }}
                                 </option>
                                 <?php }
                                     
                                     ?>
                             </select>
                         </div> 
-                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
-                            <label class="form-label" for="description">Subcategoria:</label>
-                            <select class="form-select js-example-basic-single" name="subcategoria" id="subcategoria" >
-
-                                <?php
-                                    
-                                    for($i=0;$i<sizeof($subserp2);$i++){
-                                        ?>
-                                <option value="<?php echo $subserp2[$i]['ticket_subcategoria_id']; ?>">
-                                    <?php echo $subserp2[$i]['ticket_subcategoria_nombre']; ?>
-
-                                </option>
-                                <?php }
-
-
-function buscarNombreSubcategoria($subserp2, $idBuscado) {
-    for($j=0;$j<sizeof($subserp2);$j++){
-        if ($subserp2[$j]["ticket_subcategoria_id"]== $idBuscado) {
-            return $subserp2[$j]["ticket_subcategoria_nombre"];
-        }
-    }
-    return null; // Si no se encuentra, devuelve null o cualquier valor por defecto
-}
-function estados($estados2, $idBuscado) {
-   
-
-    foreach ($estados2[0]['data'] as $estado) {
-        if ($estado['estado_tickets_id'] === $idBuscado) {
-            return $nombre_estado = $estado['estado_tickets_nombre'];
-        }
-    }
-    return null; // Si no se encuentra, devuelve null o cualquier valor por defecto
-}
-   
-                                    
-                                    ?>
-                            </select>
-                        </div>
+                       
+                           
                       
                         <div class="mb-2">
                             <label for="example-textarea" class="form-label">Descripcion</label>
@@ -162,7 +123,10 @@ function estados($estados2, $idBuscado) {
                         </tr>
                     </thead>
                     <tbody id="log">
-                        <?php for($i=0;$i<sizeof($ticketserp2);$i++){
+                        <?php
+dd($ticerp2);
+
+                        for($i=0;$i<sizeof($ticerp2);$i++){
                                         ?>
                         <tr class="text-center">
                             <td><a target='_blank' href='<?php echo $urilogin;?>{{ $ticketserp2[$i]['ticket_id'] }}'>{{ $ticketserp2[$i]['ticket_id'] }}</a> </td>
