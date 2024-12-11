@@ -40,7 +40,7 @@ $queryws = "SELECT * from ispcube2.ws_cliente where nombre='" . $subdomain_tmp .
 $subserp2=json_decode($subserp, true);
 
 $categorias= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/categories?token=".$tokensienna."");
-$categorias2=json_decode($estados, true);
+$categorias2=json_decode($categorias, true);
 dd($categorias2);
 
 
