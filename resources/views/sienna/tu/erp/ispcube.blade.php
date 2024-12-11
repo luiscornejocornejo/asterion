@@ -41,6 +41,11 @@ $ticerp2=json_decode($ticerp, true);
 $categorias= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/categories?token=".$tokensienna."");
 $categorias2=json_decode($categorias, true);
 
+
+$getdata= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/ws?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente);
+$getdata2 = json_decode($getdata, true);
+$getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+
 ?>
 <div class="card widget-flat" id="infoUser">
     <div class="card-body">
@@ -146,8 +151,15 @@ $categorias2=json_decode($categorias, true);
 
             </div>
             <div class="tab-pane " id="data">
-                Aqui va información de datos
-            </div>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/json.min.js"></script>
+                <pre><code class="json">{{ $getdata3 }}</code></pre>
+
+                                        <script>
+                    hljs.highlightAll();
+                </script>
+                </div>
             <div class="tab-pane" id="extra">
                 <div data-tf-live="01JDFRQDH03PQAH7HE59FRXFB0"></div>
                 <script src="//embed.typeform.com/next/embed.js"></script>
