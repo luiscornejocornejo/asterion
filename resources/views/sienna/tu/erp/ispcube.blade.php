@@ -87,7 +87,7 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">Cliente</label>
                             <input required name="cliente" type="text" class="form-control" id="lastNameUser"
-                                value="<?php echo $resultadoscliente[0]->cliente; ?>">
+                                value="">
                             
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
