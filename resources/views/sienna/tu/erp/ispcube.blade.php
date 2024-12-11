@@ -52,8 +52,8 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 
         <div style="background-color: #6D0078;" class="d-flex justify-content-end">
             <div class="me-2">
-                <img src="https://files.readme.io/a2839ba-small-ISPKeeper_Logo_Oficial_Horizontal_white.png"
-                    alt="ispkeeper logo" height="55">
+            <img src="https://<?php echo $subdomain_tmp;?>.suricata.cloud/img/erp/ispcube.png"
+            alt="ispkeeper logo" height="55">
             </div>
         </div>
         <ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
