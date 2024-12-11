@@ -44,6 +44,16 @@ $categorias2=json_decode($categorias, true);
 
 $getdata= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/ws?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente);
 $getdata2 = json_decode($getdata, true);
+if ($getdata2 && isset($getdata2['id'], $getdata2['connections'][0]['id'])) {
+    $iddelcliente = $getdata2['id'];
+    $connectionId = $getdata2['connections'][0]['id'];
+
+   
+} else {
+    $iddelcliente ="";
+    $connectionId = "";
+}
+
 $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 
 ?>
@@ -87,13 +97,13 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">Cliente</label>
                             <input required name="cliente" type="text" class="form-control" id="lastNameUser"
-                                value="">
+                                value="<?php echo $iddelcliente;?>">
                             
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">Conexion</label>
                             <input required name="conexion" type="text" class="form-control" id="lastNameUser"
-                                value="">
+                                value="<?php echo $connectionId;?>">
                             
                         </div>
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
