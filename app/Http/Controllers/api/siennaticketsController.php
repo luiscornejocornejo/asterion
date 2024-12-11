@@ -2874,19 +2874,7 @@ class siennaticketsController extends Controller
      }
 
      
-     public function usermirian(Request $request){
-
-        $dom=$this->dominio();
-       $mer=$request->merchant;
-        // $query="select *  from ".$dom.".siennatickets  where id='".$tick."'"; 
-
-         $query="select * from mirian_merchant_depto_usu where merchant='".$mer."'  ";
-         $resultados = DB::select($query);
-       
-
-        return $resultados;
-        
-     }
+     
      public function siennaservicios(Request $request){
 
         $dom=$this->dominio();
