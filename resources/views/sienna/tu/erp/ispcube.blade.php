@@ -111,6 +111,7 @@ $categorias2=json_decode($categorias, true);
                     <hr class="mx-1" />
                 </form>
 
+                <?php if(isset($ticerp2[0]['id'])){?>
                 <table id="casadepapel" class="table table-striped dt-responsive nowrap w-100 text-light">
                     <thead>
                         <tr class="text-center bg-dark">
@@ -139,6 +140,8 @@ $categorias2=json_decode($categorias, true);
 
                     </tbody>
                 </table>
+
+                <?php }?>
 
 
             </div>
