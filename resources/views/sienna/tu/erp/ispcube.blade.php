@@ -41,7 +41,6 @@ $ticerp2=json_decode($ticerp, true);
 
 $categorias= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/categories?token=".$tokensienna."");
 $categorias2=json_decode($categorias, true);
-dd($categorias2);
 
 ?>
 <div class="card widget-flat" id="infoUser">
@@ -94,7 +93,7 @@ dd($categorias2);
                                 <?php for($i=0;$i<sizeof($categorias2);$i++){
                                         ?>
                                 <option value="{{ $categorias2[$i]['id'] }}">
-                                    {{ $categorias2[$i]['nombre'] }}
+                                    {{ $categorias2[$i]['name'] }}
                                 </option>
                                 <?php }
                                     
