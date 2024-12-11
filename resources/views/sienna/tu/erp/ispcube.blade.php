@@ -38,7 +38,7 @@ $queryws = "SELECT * from ispcube2.ws_cliente where nombre='" . $subdomain_tmp .
         echo $urlll="https://".$subdomain_tmp.".suricata2.com.ar/api/gettickets?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente;
  $ticerp= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/gettickets?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente);
 $ticerp2=json_decode($ticerp, true);
-
+dd($ticerp2);
 $categorias= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/categories?token=".$tokensienna."");
 $categorias2=json_decode($categorias, true);
 
