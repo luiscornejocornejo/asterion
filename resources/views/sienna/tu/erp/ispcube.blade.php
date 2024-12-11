@@ -50,7 +50,7 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 <div class="card widget-flat" id="infoUser">
     <div class="card-body">
 
-        <div style="background-color: #6D0078;" class="d-flex justify-content-end">
+        <div style="background-color: #ffae00;" class="d-flex justify-content-end">
             <div class="me-2">
             <img src="https://<?php echo $subdomain_tmp;?>.suricata.cloud/img/erp/ispcube.png"
             alt="ispkeeper logo" height="55">
