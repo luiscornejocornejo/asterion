@@ -36,7 +36,7 @@ $queryws = "SELECT * from ispcube2.ws_cliente where nombre='" . $subdomain_tmp .
         }
         //http://giles.suricata2.com.ar/api/gettickets?token=thecrisPela&codcli=028842
         echo $urlll="https://".$subdomain_tmp.".suricata2.com.ar/api/gettickets?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente;
-echo $subserp= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/gettickets?token=".$tokensienna."&idcustomer=" . $resultadoscliente[0]->cliente);
+echo $subserp= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/gettickets?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente);
 $subserp2=json_decode($subserp, true);
 
 dd($subserp2);
