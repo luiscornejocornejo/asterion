@@ -41,7 +41,7 @@ $ticerp2=json_decode($ticerp, true);
 
 $categorias= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/categories?token=".$tokensienna."");
 $categorias2=json_decode($categorias, true);
-
+dd($categorias2);
 
 ?>
 <div class="card widget-flat" id="infoUser">
