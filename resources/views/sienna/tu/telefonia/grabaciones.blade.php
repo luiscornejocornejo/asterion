@@ -124,8 +124,6 @@
         const currentTime = document.getElementById("currentTime");
         const totalDuration = document.getElementById("totalDuration");
 
-        audioPlayer.preload = "metadata";
-
         // Play/Pause Toggle
         playPauseBtn.addEventListener("click", () => {
             if (audioPlayer.paused) {
@@ -148,16 +146,9 @@
             currentTime.textContent = formatTime(audioPlayer.currentTime);
         });
 
+        // Set audio duration
         audioPlayer.addEventListener("loadedmetadata", () => {
-            if (audioPlayer.duration) {
-                totalDuration.textContent = formatTime(audioPlayer.duration);
-            } else {
-                console.warn("Audio duration could not be retrieved.");
-            }
-        });
-        
-        audioPlayer.addEventListener("error", () => {
-            console.error("Error loading audio file:", audioPlayer.error);
+            totalDuration.textContent = formatTime(audioPlayer.duration);
         });
 
         // Seek Audio
