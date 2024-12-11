@@ -79,7 +79,7 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
         <div class="tab-content">
             <div class="tab-pane show active" id="ticket">
 
-                <form method="post" action="api/crearispkipper">
+                <form method="post" action="api/crearispcube">
                     @csrf
                     <input type="hidden" name="tokensienna" value="<?php echo $tokensienna;?>"/>
                     <input type="hidden" name="dom" value="<?php echo $subdomain_tmp;?>"/>
@@ -88,6 +88,12 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                             <label for="example-textarea" class="form-label">Cliente</label>
                             <input required name="cliente" type="text" class="form-control" id="lastNameUser"
                                 value="<?php echo $resultadoscliente[0]->cliente; ?>">
+                            
+                        </div>
+                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
+                            <label for="example-textarea" class="form-label">Conexion</label>
+                            <input required name="conexion" type="text" class="form-control" id="lastNameUser"
+                                value="">
                             
                         </div>
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
