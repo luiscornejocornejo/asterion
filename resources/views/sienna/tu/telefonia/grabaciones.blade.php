@@ -147,9 +147,21 @@
         });
 
         // Set audio duration
-        audioPlayer.addEventListener("loadedmetadata", () => {
-            totalDuration.textContent = formatTime(audioPlayer.duration);
-        });
+        const setAudioDuration = () => {
+            if (!isNaN(audioPlayer.duration)) {
+                totalDuration.textContent = formatTime(audioPlayer.duration);
+            }
+        };
+
+        // Evento cuando los metadatos se cargan
+        audioPlayer.addEventListener("loadedmetadata", setAudioDuration);
+
+        // Forzar carga de metadatos al montar el DOM
+        if (audioPlayer.readyState >= 1) {
+            setAudioDuration();
+        } else {
+            audioPlayer.addEventListener("canplay", setAudioDuration);
+        }
 
         // Seek Audio
         progressBar.addEventListener("input", () => {
