@@ -28,7 +28,7 @@
                             <input type="hidden" name="estado" id="es" value="4">
                             <input type="hidden" value="<?php echo session('idusuario');?>" name="userId"/>
                             <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
-                            <input value="<?php  $bot_channel="WhatsAppChannel"; echo $bot_channel;?>" type="hidden" name="bot_channel" id="bot_channel">
+                            <input value="" type="hidden" name="bot_channel" id="bot_channel">
 
 
                             
