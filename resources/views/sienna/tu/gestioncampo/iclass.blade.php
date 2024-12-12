@@ -4,9 +4,9 @@ if (isset($resultadoscliente[0]->cliente)) {
 } else {
     return '';
 }
-if($subdomain_tmp=="wiber2"){
-    $subdomain_tmp="wiber";
-}
+//if($subdomain_tmp=="wiber2"){
+    $subdomain_tmp="demo";
+//}
 
 function conectar($id)
     {
@@ -36,25 +36,22 @@ $queryws = "SELECT * from iclass.ws_cliente where nombre='" . $subdomain_tmp . "
         }
         //http://giles.suricata2.com.ar/api/gettickets?token=thecrisPela&codcli=028842
         //echo $urlll="https://".$subdomain_tmp.".suricata2.com.ar/api/gettickets?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente;
- $ticerp= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/gettickets?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente);
+
+
+
+$type= file_get_contents("https://".$subdomain_tmp.".suricata-custom.com.ar/api/iclass_get_typesso?token=".$tokensienna."");
+$type2=json_decode($type, true);
+
+var_dump($type2);
+$nodos= file_get_contents("https://".$subdomain_tmp.".suricata-custom.com.ar/api/iclass_get_nodes?token=".$tokensienna);
+$nodos2 = json_decode($nodos, true);
+
+var_dump($nodos2);
+
+$ticerp= file_get_contents("https://".$subdomain_tmp.".suricata-custom.com.ar/api/gettickets?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente);
 $ticerp2=json_decode($ticerp, true);
-$categorias= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/categories?token=".$tokensienna."");
-$categorias2=json_decode($categorias, true);
+dd($ticerp2);
 
-
-$getdata= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/ws?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente);
-$getdata2 = json_decode($getdata, true);
-if ($getdata2 && isset($getdata2['id'], $getdata2['connections'][0]['id'])) {
-    $iddelcliente = $getdata2['id'];
-    $connectionId = $getdata2['connections'][0]['id'];
-
-   
-} else {
-    $iddelcliente ="";
-    $connectionId = "";
-}
-
-$getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 
 ?>
 <div class="card widget-flat" id="infoUser">
@@ -73,23 +70,12 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                     <span class="d-none d-md-block">Tickets</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="#data" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
-                    <i class="mdi mdi-account-circle d-md-none d-block"></i>
-                    <span class="d-none d-md-block">Datos</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#extra" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
-                    <i class="mdi mdi-settings-outline d-md-none d-block"></i>
-                    <span class="d-none d-md-block">Extra</span>
-                </a>
-            </li>
+           
         </ul>
         <div class="tab-content">
             <div class="tab-pane show active" id="ticket">
 
-                <form method="post" action="api/crearispcube">
+                <form method="post" action="api/creariclass">
                     @csrf
                     <input type="hidden" name="tokensienna" value="<?php echo $tokensienna;?>"/>
                     <input type="hidden" name="dom" value="<?php echo $subdomain_tmp;?>"/>
@@ -101,8 +87,8 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                             
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
-                            <label for="example-textarea" class="form-label">Conexion</label>
-                            <input required name="conexion" type="text" class="form-control" id="lastNameUser"
+                            <label for="example-textarea" class="form-label">tipo</label>
+                            <input required name="tipo" type="text" class="form-control" id="lastNameUser"
                                 value="<?php echo $connectionId;?>">
                             
                         </div>
@@ -110,10 +96,24 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                             <label for="agent" class="form-label">Categorias:</label>
                             <select class="form-select js-example-basic-single" name="categoria" id="agent">
 
-                                <?php for($i=0;$i<sizeof($categorias2);$i++){
+                                <?php for($i=0;$i<sizeof($nodos2);$i++){
                                         ?>
-                                <option value="{{ $categorias2[$i]['id'] }}">
-                                    {{ $categorias2[$i]['name'] }}
+                                <option value="{{ $nodos2[$i]['nodeId'] }}">
+                                    {{ $nodos2[$i]['descricao'] }}
+                                </option>
+                                <?php }
+                                    
+                                    ?>
+                            </select>
+                        </div> 
+                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
+                            <label for="agent" class="form-label">Categorias:</label>
+                            <select class="form-select js-example-basic-single" name="categoria" id="agent">
+
+                                <?php for($i=0;$i<sizeof($nodos2);$i++){
+                                        ?>
+                                <option value="{{ $nodos2[$i]['nodeId'] }}">
+                                    {{ $nodos2[$i]['descricao'] }}
                                 </option>
                                 <?php }
                                     
