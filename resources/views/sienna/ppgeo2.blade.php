@@ -27,7 +27,24 @@
             maxZoom: 19,
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
+// Crear íconos personalizados
+const iconNormal = L.icon({
+            iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+            shadowSize: [41, 41]
+        });
 
+        const iconAlerta = L.icon({
+            iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-red.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+            shadowSize: [41, 41]
+        });
         // Datos de los puntos (array con objetos de coordenadas y descripciones)
         const puntos = [
             <?php 
@@ -35,15 +52,17 @@
             $resultados = DB::select($query);
 
             foreach($resultados as $val){?>
-            { lat: <?php echo $val->lat;?>, lng: <?php echo $val->log;?>, nombre: "<?php echo $val->nombre;?>" },
+            { lat: <?php echo $val->lat;?>, lng: <?php echo $val->log;?>, nombre: "<?php echo $val->nombre;?>", estado: "<?php echo $val->estadonodo;?>" },
             <?php }?>
         ];
 
         // Agregar los marcadores al mapa
         puntos.forEach(punto => {
+            const icon = punto.estado === 2 ? iconAlerta : iconNormal;
+
             L.marker([punto.lat, punto.lng])
                 .addTo(map)
-                .bindPopup(`<b>${punto.nombre}</b>`); // Mostrar nombre en el popup
+                .bindPopup(`<b>${punto.nombre}</b><br>Estado: ${punto.estado}`);
         });
 
         // Ajustar el mapa para que todos los puntos sean visibles
