@@ -30,10 +30,13 @@
 
         // Datos de los puntos (array con objetos de coordenadas y descripciones)
         const puntos = [
-            { lat: -34.603722, lng: -58.381592, nombre: "Buenos Aires, Argentina" },
-            { lat: 40.712776, lng: -74.005974, nombre: "Nueva York, EE.UU." },
-            { lat: 48.856613, lng: 2.352222, nombre: "París, Francia" },
-            { lat: -33.868820, lng: 151.209290, nombre: "Sídney, Australia" }
+            <?php 
+            $query="select * from nodos";
+            $resultados = DB::select($query);
+
+            foreach($resultados as $val){?>
+            { lat: <?php echo $val->lat;?>, lng: <?php echo $val->log;?>, nombre: "<?php echo $val->nombre;?>" },
+            <?php }?>
         ];
 
         // Agregar los marcadores al mapa
