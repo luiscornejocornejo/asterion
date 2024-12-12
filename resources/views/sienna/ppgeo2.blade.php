@@ -58,7 +58,7 @@ const iconNormal = L.icon({
 
         // Agregar los marcadores al mapa
         puntos.forEach(punto => {
-            const icon = punto.estado === 2 ? iconAlerta : iconNormal;
+            const icon = punto.estado === "2" ? iconAlerta : iconNormal;
 
             L.marker([punto.lat, punto.lng])
                 .addTo(map)
