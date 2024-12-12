@@ -22,8 +22,7 @@ class Kernel extends ConsoleKernel
        // $schedule->command('semanal:asignaciong')->cron('*/1 * * * *')->withoutOverlapping()->emailOutputOnFailure('kayser1712@gmail.com');
         $schedule->command('semanal:asignaciontickets')->cron('*/1 * * * *')->withoutOverlapping()->emailOutputOnFailure('kayser1712@gmail.com');
        // $schedule->command('semanal:nodos')->daily()->emailOutputOnFailure('kayser1712@gmail.com');
-       $schedule->command('semanal:nodoswispro')->daily()->emailOutputOnFailure('kayser1712@gmail.com');
-       $schedule->command('semanal:napswispro')->daily()->emailOutputOnFailure('kayser1712@gmail.com');
+      // $schedule->command('semanal:nodoswispro')->daily()->emailOutputOnFailure('kayser1712@gmail.com');
        // $schedule->command('semanal:limpiezacloud')->daily()->emailOutputOnFailure('kayser1712@gmail.com');
        // $schedule->command('semanal:mailtickets')->cron('*/10 * * * *')->emailOutputOnFailure('kayser1712@gmail.com');
      //   $schedule->command('ma:mailtickets')->everyTwoMinutes()->sendOutputTo("scheduler-output.log");
