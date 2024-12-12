@@ -225,7 +225,9 @@ Route::get('/gpt', function () {
 Route::get('/ppgeo', function () {
     return view('/sienna/ppgeo');
 });
-
+Route::get('/ppgeo2', function () {
+    return view('/sienna/ppgeo2');
+});
 //solo sienna
 //Agentes
 Route::post('/rolusers','App\Http\Controllers\AgentesController@rolusers');
