@@ -222,7 +222,9 @@ Route::post('/cerrados','App\Http\Controllers\TicketdatosController@cerradospost
 Route::get('/gpt', function () {
     return view('/sienna/gpt');
 });
-
+Route::get('/ppgeo', function () {
+    return view('/sienna/ppgeo');
+});
 
 //solo sienna
 //Agentes
