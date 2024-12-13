@@ -1258,6 +1258,7 @@ class cloudtickets extends Controller
         return view('sienna/soportecliente')
         ->with('tsoporte', $tsoporte)
         ->with('estado', $estado)
+        ->with('idnewticket', $ticket)
         ;
     }
 
