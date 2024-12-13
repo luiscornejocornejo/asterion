@@ -1,7 +1,7 @@
 
 
 
-<div class="row d-none">
+<div class="row ">
     <div class="col-md-12">
         <!-- Portlet card -->
         <div class="card mb-md-0 mb-3">

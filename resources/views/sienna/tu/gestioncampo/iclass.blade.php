@@ -86,12 +86,7 @@ dd($ticerp2);
                                 value="<?php echo $iddelcliente;?>">
                             
                         </div>
-                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
-                            <label for="example-textarea" class="form-label">tipo</label>
-                            <input required name="tipo" type="text" class="form-control" id="lastNameUser"
-                                value="<?php echo $connectionId;?>">
-                            
-                        </div>
+                       
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
                             <label for="agent" class="form-label">Categorias:</label>
                             <select class="form-select js-example-basic-single" name="categoria" id="agent">
@@ -107,13 +102,13 @@ dd($ticerp2);
                             </select>
                         </div> 
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
-                            <label for="agent" class="form-label">Categorias:</label>
+                            <label for="agent" class="form-label">Tipos:</label>
                             <select class="form-select js-example-basic-single" name="categoria" id="agent">
 
-                                <?php for($i=0;$i<sizeof($nodos2);$i++){
+                                <?php for($i=0;$i<sizeof($type2);$i++){
                                         ?>
-                                <option value="{{ $nodos2[$i]['nodeId'] }}">
-                                    {{ $nodos2[$i]['descricao'] }}
+                                <option value="{{ $type2[$i]['nodeId'] }}">
+                                    {{ $type2[$i]['descricao'] }}
                                 </option>
                                 <?php }
                                     
