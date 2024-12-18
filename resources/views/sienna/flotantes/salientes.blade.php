@@ -84,7 +84,7 @@
             var URLactual = window.location.href;
             var porciones = URLactual.split('.');
             let result = porciones[0].replace("https://", "");
-            if(result=="conectared" || result=="ultrafibra" || result=="advantun" || result=="conekta" || result=="datavoip" || result=="idycomunicaciones" || result=="wiredcom"){
+            if(result=="conectared" || result=="ultrafibra" || result=="advantun" || result=="conekta" || result=="datavoip" || result=="idycomunicaciones" || result=="wiredcom" || result=="tecnogastre"){
                 urlprincipal2="https://suricata4.com.ar/api/broadcastconparametros?token=EDElDqlQf3RDP5EDK1pHhugV9M6aCXtwAm57SD0G5JYZjw7RxwZbbfdKMhWYdUUM&parametros="+parametros+"&valores="+valores+"&url="+url+"&tel2="+tel2;
             }
             //
