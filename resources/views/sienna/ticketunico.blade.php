@@ -23,6 +23,7 @@ $mailservicio=0;
 $grabacionesservicio=0;
 $botpresservicio=0;
 $xenservicio=0;
+$iclasservicio=0;
 foreach($datosservicios2 as $valservicios2){
     if($valservicios2->id==6){
         $geoservicio=$valservicios2->habilitado;
@@ -44,6 +45,9 @@ foreach($datosservicios2 as $valservicios2){
     }
     if($valservicios2->id==9){
         $botpresservicio=$valservicios2->habilitado;
+    }
+    if($valservicios2->id==12){
+        $iclasservicio=$valservicios2->habilitado;
     }
 
 }
@@ -360,6 +364,12 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         if($nombreintegracion=="ispkipper"){?>@include('sienna.tu.erp.kipper')<?php }
                         if($nombreintegracion=="mikrowisp"){?>@include('sienna.tu.erp.mikro')<?php }
                         if($nombreintegracion=="ispcube2"){?>@include('sienna.tu.erp.ispcube')<?php }
+                
+                    }?>
+                     <?php
+                      if($iclasservicio){?>
+                        
+                        @include('sienna.tu.gestioncampo.iclass')<?php 
                 
                     }?>
                      <?php
