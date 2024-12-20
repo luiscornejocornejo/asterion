@@ -128,14 +128,14 @@ class asignaciontickets extends Command
     {
 
         $CONE=$this->conectar();
-
+/*
         $query0="select * from ".$merchant.".empresa";
         $resultados0 = DB::connection('mysql2')->select($query0);
         $asignacionautomatica=0;
         foreach($resultados0 as $val0){
             $asignacionautomatica=$val0->asignacionautomatica;
 
-        }
+        }*/
 
        
 
@@ -149,11 +149,11 @@ class asignaciontickets extends Command
         $this->info(sizeof($resultados));
         foreach($resultados as $value){
             $tick=$value->id;
-
+/*
             if($asignacionautomatica==0){
                 $query3="update ".$merchant.".siennatickets set asignado='99999' where id=".$tick."";
                 $resultados3 = DB::connection('mysql2')->select($query3);
-            }else{
+            }else{*/
 
                 //  echo  $query3="update ".$merchant.".siennatickets set asignado='99999' where id=".$tick."";
                     //$resultados3 = DB::connection('mysql2')->select($query3);
@@ -186,7 +186,7 @@ class asignaciontickets extends Command
                         $query3="update ".$merchant.".siennatickets set asignado='99999' where id=".$tick."";
                         $resultados3 = DB::connection('mysql2')->select($query3);
                     }
-                }
+                //}
            
         }
     }
