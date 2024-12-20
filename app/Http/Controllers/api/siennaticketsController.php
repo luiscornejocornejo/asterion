@@ -645,7 +645,7 @@ class siennaticketsController extends Controller
             
             if($tipousers == 2) {
                 $query = "
-                    SELECT *,
+                    SELECT a.*,
                         a.id AS ticketid,
                         a.created_at AS fn,
                         convertirTiempo(a.created_at) AS nuevotiempo,
