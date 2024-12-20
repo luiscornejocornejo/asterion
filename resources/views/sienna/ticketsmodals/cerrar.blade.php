@@ -27,7 +27,14 @@
                             <input type="hidden" name="idconv" id="conversation_id20" value="">
                             <input type="hidden" name="estado" id="es" value="4">
                             <input type="hidden" value="<?php echo session('idusuario');?>" name="userId"/>
-                            <input value="<?php echo $subdomain_tmp;?>" type="hidden" name="idbot" id="idbot">
+                            <?php 
+                                if($resultados[0]->empresa<>1){
+                                    $datempresa=$subdomain_tmp.$resultados[0]->empresa;
+                                }else{
+                                    $datempresa=$subdomain_tmp;
+                                }
+                             ?>
+                            <input value="<?php echo $datempresa;?>" type="hidden" name="idbot" id="idbot">
                             <input value="WhatsAppChannel" type="hidden" name="bot_channel" id="bot_channel">
 
 
