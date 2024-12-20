@@ -700,7 +700,7 @@ class siennaticketsController extends Controller
                 left join  ".$merchant.".prioridad f on f.id=a.prioridad
         
                 where a.siennaestado not in('3','4')  
-                 and a.asignado='" . $idusuario . "' and a.empresa=".$empresa."
+                 and a.asignado='" . $idusuario . "'
                  union 
         
                  select *,a.created_at as fn,
@@ -720,7 +720,6 @@ class siennaticketsController extends Controller
         
                 where a.siennaestado not in('3','4')  
                 and a.siennadepto in (" . $final . ")
-                and a.empresa=".$empresa."
                  order by ticketid desc
                 ";
 
