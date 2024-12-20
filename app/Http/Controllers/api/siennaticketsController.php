@@ -687,7 +687,7 @@ class siennaticketsController extends Controller
             */
             else{
 
-                echo  $query = "select *,a.created_at as fn,
+                  $query = "select *,a.created_at as fn,
                 convertirTiempo(a.created_at) as nuevotiempo,
                 d.sla,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
                 b.nombre as depto,b.id as iddepto,d.nombre topicnombre,convertirTiempo(a.created_at) as creado,
