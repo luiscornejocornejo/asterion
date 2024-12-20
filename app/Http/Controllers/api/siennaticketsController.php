@@ -498,7 +498,7 @@ class siennaticketsController extends Controller
         if($idusuario==1){
             $query2="select * from users where id='".$idusuario."'";
         }else{
-            $query2="select * from users where id='".$idusuario."' and empresa=".$empresa;
+            $query2="select * from users where id='".$idusuario."'";
 
         }
         $resultados2 = DB::select($query2);
