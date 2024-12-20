@@ -1918,7 +1918,7 @@ WHERE ticket IN (
          $header[] = 'Content-type: application/json';
                 $header[] = 'Authorization: Bearer ' . $token;
                 $resuktado = $this->curl($url, $datosjson2, $method, $header);
-      dd(v);
+      dd($resuktado );
        /* return redirect()
         ->back()
         ->with('success', 'Se creo  el registro  correctamente!');*/
