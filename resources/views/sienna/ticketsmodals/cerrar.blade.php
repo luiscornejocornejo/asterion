@@ -28,11 +28,11 @@
                             <input type="hidden" name="estado" id="es" value="4">
                             <input type="hidden" value="<?php echo session('idusuario');?>" name="userId"/>
                             <?php 
-                            if(isset($resultados[0]->empresa)){
+                            if(isset($resultados[0]->idempresa)){
 
                             
-                                if($resultados[0]->empresa<>1){
-                                    $datempresa=$subdomain_tmp.$resultados[0]->empresa;
+                                if($resultados[0]->idempresa<>1){
+                                    $datempresa=$subdomain_tmp.$resultados[0]->idempresa;
                                 }else{
                                     $datempresa=$subdomain_tmp;
                                 }
