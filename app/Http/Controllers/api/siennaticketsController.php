@@ -526,7 +526,7 @@ class siennaticketsController extends Controller
                 }
                 $final=substr($final,0,-1);
             }
-            /*
+            
             if($tipousers==3){
                 $query = "select *,a.created_at as fn,
                 convertirTiempo(a.created_at) as nuevotiempo,d.sla,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
@@ -603,7 +603,8 @@ class siennaticketsController extends Controller
                 ORDER BY 
                     ticketid DESC";
                 
-            }*/
+            }
+            /*
             if ($tipousers == 3) {
                 $query = "
                     SELECT *,
@@ -642,7 +643,7 @@ class siennaticketsController extends Controller
                         ticketid DESC;
                 ";
             }
-            
+           
             if($tipousers == 2) {
                 $query = "
                     SELECT a.*,
@@ -683,7 +684,7 @@ class siennaticketsController extends Controller
             
                 $querynu = $query; // Reutilizamos la misma consulta si no hay diferencias.
             }
-            /*
+            */
             else{
 
                 $query = "select *,a.created_at as fn,
@@ -761,7 +762,7 @@ class siennaticketsController extends Controller
                 ";
 
             }
-*/
+
             if($tipousers==1){
                 $query = "select *,a.created_at as fn,
                 convertirTiempo(a.created_at) as nuevotiempo,d.sla,a.cliente as cliente,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
