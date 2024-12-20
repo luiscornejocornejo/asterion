@@ -141,7 +141,7 @@ class asignaciong extends Command
 
              $enhora=$this->enhora($merchant,$area);
              if($enhora){
-                $query2="select s.idusuario as uu,(select count(*) from ".$merchant.".siennatickets s2  
+                echo $query2="select s.idusuario as uu,(select count(*) from ".$merchant.".siennatickets s2  
                 where s2.asignado=s.idusuario and s2.siennaestado not in('3','4'))as cantidad from ".$merchant.".siennaloginxenioo s
                 join ".$merchant.".users s3 on s3.id=s.idusuario 
                 where
