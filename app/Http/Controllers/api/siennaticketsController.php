@@ -526,6 +526,7 @@ class siennaticketsController extends Controller
                 }
                 $final=substr($final,0,-1);
             }
+            /*
             if($tipousers==3){
                 $query = "select *,a.created_at as fn,
                 convertirTiempo(a.created_at) as nuevotiempo,d.sla,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
@@ -548,23 +549,23 @@ class siennaticketsController extends Controller
                  select *,a.created_at as fn,
                  convertirTiempo(a.created_at) as nuevotiempo,
                  d.sla,a.conversation_id,a.user_id,concat(e.nombre,' ',e.last_name) as nombreagente,
-                b.nombre as depto,b.id as iddepto,d.nombre topicnombre,convertirTiempo(a.created_at)  as creado,
+                    b.nombre as depto,b.id as iddepto,d.nombre topicnombre,convertirTiempo(a.created_at)  as creado,
         
-                a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado ,f.nombre as pri ,f.id prid
-                from ".$merchant.".siennatickets a
-                left join ".$merchant.".siennadepto b on b.id=a.siennadepto 
-                left join  ".$merchant.".siennaestado c on c.id=a.siennaestado
-                left join  ".$merchant.".siennatopic d on d.id=a.siennatopic
+                    a.id as ticketid,c.nombre estadoname,d.nombre topicname,a.cel numerocel,a.asignado ,f.nombre as pri ,f.id prid
+                    from ".$merchant.".siennatickets a
+                    left join ".$merchant.".siennadepto b on b.id=a.siennadepto 
+                    left join  ".$merchant.".siennaestado c on c.id=a.siennaestado
+                    left join  ".$merchant.".siennatopic d on d.id=a.siennatopic
         
-                left join  ".$merchant.".users e on e.id=a.asignado
-                left join  ".$merchant.".prioridad f on f.id=a.prioridad
-        
-                where a.siennaestado not in('3','4')  
-                 and
-         a.asignado='99999' and a.empresa=".$empresa."
-         and a.siennadepto in (" . $final . ") 
-                 order by ticketid desc
-                ";
+                    left join  ".$merchant.".users e on e.id=a.asignado
+                    left join  ".$merchant.".prioridad f on f.id=a.prioridad
+            
+                    where a.siennaestado not in('3','4')  
+                    and
+                    a.asignado='99999' and a.empresa=".$empresa."
+                    and a.siennadepto in (" . $final . ") 
+                            order by ticketid desc
+                    ";
 
                 $querynu = "
                 SELECT 
@@ -602,7 +603,46 @@ class siennaticketsController extends Controller
                 ORDER BY 
                     ticketid DESC";
                 
+            }*/
+            if ($tipousers == 3) {
+                $query = "
+                    SELECT 
+                        a.id AS ticketid,
+                        a.created_at AS fn,
+                        convertirTiempo(a.created_at) AS nuevotiempo,
+                        d.sla,
+                        a.conversation_id,
+                        a.user_id,
+                        CONCAT(e.nombre, ' ', e.last_name) AS nombreagente,
+                        b.nombre AS depto,
+                        b.id AS iddepto,
+                        d.nombre AS topicnombre,
+                        convertirTiempo(a.created_at) AS creado,
+                        c.nombre AS estadoname,
+                        d.nombre AS topicname,
+                        a.cel AS numerocel,
+                        a.asignado,
+                        f.nombre AS pri,
+                        f.id AS prid
+                    FROM 
+                        ${merchant}.siennatickets a
+                    LEFT JOIN ${merchant}.siennadepto b ON b.id = a.siennadepto 
+                    LEFT JOIN ${merchant}.siennaestado c ON c.id = a.siennaestado
+                    LEFT JOIN ${merchant}.siennatopic d ON d.id = a.siennatopic
+                    LEFT JOIN ${merchant}.users e ON e.id = a.asignado
+                    LEFT JOIN ${merchant}.prioridad f ON f.id = a.prioridad
+                    WHERE 
+                        a.siennaestado NOT IN ('3', '4') 
+                        AND a.empresa = ${empresa}
+                        AND (
+                            a.asignado = '${idusuario}' 
+                            OR (a.asignado = '99999' AND a.siennadepto IN (${final}))
+                        )
+                    ORDER BY 
+                        ticketid DESC;
+                ";
             }
+            
             else{
 
                 $query = "select *,a.created_at as fn,
