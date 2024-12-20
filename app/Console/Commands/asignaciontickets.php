@@ -128,6 +128,17 @@ class asignaciontickets extends Command
     {
 
         $CONE=$this->conectar();
+
+        $query0="select * from ".$merchant.".empresa";
+        $resultados0 = DB::connection('mysql2')->select($query0);
+        $asignacionautomatica=0;
+        foreach($resultados0 as $val0){
+            $asignacionautomatica=$val0->asignacionautomatica;
+
+        }
+
+       
+
         $query="select *  from ".$merchant.".siennatickets
         where siennaestado not in('3','4')  
          and asignado='0'
@@ -137,38 +148,45 @@ class asignaciontickets extends Command
         //echo sizeof($resultados);
         $this->info(sizeof($resultados));
         foreach($resultados as $value){
-          //  echo  $query3="update ".$merchant.".siennatickets set asignado='99999' where id=".$tick."";
-            //$resultados3 = DB::connection('mysql2')->select($query3);
-             $area=$value->siennadepto;
-             $tick=$value->id;
+            $tick=$value->id;
 
-             $enhora=$this->enhora($merchant,$area);
-             if($enhora){
-             echo    $query2="select s.idusuario as uu,(select count(*) from ".$merchant.".siennatickets s2  
-                where s2.asignado=s.idusuario and s2.siennaestado not in('3','4'))as cantidad from ".$merchant.".siennaloginxenioo s
-                join ".$merchant.".users s3 on s3.id=s.idusuario 
-                where
-                s3.tickets=1 and 
-                s.login=1 and s.areas =".$area." and date(now())=date(s.created_at) group by idusuario order by cantidad limit 1";
-                $resultados2 = DB::connection('mysql2')->select($query2);
-
-                $idusu=0;
-                foreach($resultados2 as $value2){
-    
-                     $idusu=$value2->uu;
-                }
-    
-                if($idusu<>0){
-                     $query3="update ".$merchant.".siennatickets set asignado='".$idusu."',asignado_at=now(),asignado_t='suricata' where id=".$tick."";
-                   $resultados3 = DB::connection('mysql2')->select($query3);
-
-    
-                }
-             }else{
-                  $query3="update ".$merchant.".siennatickets set asignado='99999' where id=".$tick."";
+            if($asignacionautomatica==0){
+                $query3="update ".$merchant.".siennatickets set asignado='99999' where id=".$tick."";
                 $resultados3 = DB::connection('mysql2')->select($query3);
-            }
+            }else{
 
+                //  echo  $query3="update ".$merchant.".siennatickets set asignado='99999' where id=".$tick."";
+                    //$resultados3 = DB::connection('mysql2')->select($query3);
+                    $area=$value->siennadepto;
+                    $tick=$value->id;
+
+                    $enhora=$this->enhora($merchant,$area);
+                    if($enhora){
+                        echo    $query2="select s.idusuario as uu,(select count(*) from ".$merchant.".siennatickets s2  
+                        where s2.asignado=s.idusuario and s2.siennaestado not in('3','4'))as cantidad from ".$merchant.".siennaloginxenioo s
+                        join ".$merchant.".users s3 on s3.id=s.idusuario 
+                        where
+                        s3.tickets=1 and 
+                        s.login=1 and s.areas =".$area." and date(now())=date(s.created_at) group by idusuario order by cantidad limit 1";
+                        $resultados2 = DB::connection('mysql2')->select($query2);
+
+                        $idusu=0;
+                        foreach($resultados2 as $value2){
+            
+                            $idusu=$value2->uu;
+                        }
+            
+                        if($idusu<>0){
+                            $query3="update ".$merchant.".siennatickets set asignado='".$idusu."',asignado_at=now(),asignado_t='suricata' where id=".$tick."";
+                        $resultados3 = DB::connection('mysql2')->select($query3);
+
+            
+                        }
+                    }else{
+                        $query3="update ".$merchant.".siennatickets set asignado='99999' where id=".$tick."";
+                        $resultados3 = DB::connection('mysql2')->select($query3);
+                    }
+                }
            
         }
     }
