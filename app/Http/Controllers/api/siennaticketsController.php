@@ -541,7 +541,7 @@ class siennaticketsController extends Controller
                
         
                 where a.siennaestado not in('3','4')  
-                          and a.asignado='" . $idusuario . "' and a.empresa=".$empresa." 
+                          and a.asignado='" . $idusuario . "' 
 
         
                  union 
@@ -562,7 +562,7 @@ class siennaticketsController extends Controller
             
                     where a.siennaestado not in('3','4')  
                     and
-                    a.asignado='99999' and a.empresa=".$empresa."
+                    a.asignado='99999' 
                     and a.siennadepto in (" . $final . ") 
                             order by ticketid desc
                     ";
@@ -595,7 +595,7 @@ class siennaticketsController extends Controller
                 LEFT JOIN ".$merchant.".prioridad f ON f.id = a.prioridad
                 WHERE 
                     a.siennaestado NOT IN ('3', '4') 
-                    AND a.empresa = ".$empresa."
+               
                     AND (
                         a.asignado = '".$idusuario."' 
                         OR (a.asignado = '99999' AND a.siennadepto IN (".$final."))
