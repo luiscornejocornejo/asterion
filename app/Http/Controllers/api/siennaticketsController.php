@@ -804,7 +804,7 @@ class siennaticketsController extends Controller
 
         left join  siennatopic d on d.id=a.siennatopic
         where a.siennaestado  in('4')  
-        and a.empresa='".$empresa."'
+     
         and
         CONVERT_TZ(created_at, '+00:00', '".$zona.":00') >='".$ini." 00:00:00'
          and 
