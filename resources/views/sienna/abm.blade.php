@@ -341,6 +341,10 @@ $siennadeptosgenericos = DB::select($querygenerico);
             </div><!-- /.modal -->
         </div>
         <br><br><br>
+
+
+        @include('facu.footer')
+
         <script>
             $('#abm').dataTable({
                 "order": [
@@ -352,7 +356,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                 },
                 dom: 'Bfrtip',
                 buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print',  'colvis'
+                    'copy',  'colvis', 'csv', 'excel', 'pdf', 'print'
                 ],
                 initComplete: function() {
                     this.api()
@@ -377,7 +381,3 @@ $siennadeptosgenericos = DB::select($querygenerico);
                 }
             });
         </script>
-
-        @include('facu.footer')
-
-       
