@@ -371,7 +371,8 @@ $siennadeptosgenericos = DB::select($querygenerico);
             'csv',    // Exportar CSV
             'excel',  // Exportar Excel
             'pdf',    // Exportar PDF
-            'print'   // Imprimir
+            'print',   // Imprimir
+            'searchBuilder'
         ],
         initComplete: function() {
             this.api()
