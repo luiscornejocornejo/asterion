@@ -356,7 +356,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
                 },
                 dom: 'Bfrtip',
                 buttons: [
-                    'copy',  'colvis', 'csv', 'excel', 'pdf', 'print'
+                    'copy',  'fixedColumns', 'csv', 'excel', 'pdf', 'print'
                 ],
                 initComplete: function() {
                     this.api()
