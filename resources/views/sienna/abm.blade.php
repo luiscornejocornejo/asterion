@@ -347,13 +347,7 @@ $siennadeptosgenericos = DB::select($querygenerico);
 
         <script>
             $('#abm').dataTable(
-                {<font></font>
-    layout: {<font></font>
-        topStart: {<font></font>
-            buttons: ['columnsToggle']<font></font>
-        }<font></font>
-    }<font></font>
-},{
+                {
                 "order": [
                     [0, 'desc']
                 ],
@@ -362,8 +356,8 @@ $siennadeptosgenericos = DB::select($querygenerico);
                     "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
                 },
                 dom: 'Bfrtip',
-                buttons: [
-                    'copy',  'fixedColumns', 'csv', 'excel', 'pdf', 'print'
+                buttons: ['columnsToggle',
+                    'copy', 'csv', 'excel', 'pdf', 'print'
                 ],
                 initComplete: function() {
                     this.api()
