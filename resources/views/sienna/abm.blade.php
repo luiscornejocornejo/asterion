@@ -346,7 +346,14 @@ $siennadeptosgenericos = DB::select($querygenerico);
         @include('facu.footer')
 
         <script>
-            $('#abm').dataTable({
+            $('#abm').dataTable(
+                {<font></font>
+    layout: {<font></font>
+        topStart: {<font></font>
+            buttons: ['columnsToggle']<font></font>
+        }<font></font>
+    }<font></font>
+},{
                 "order": [
                     [0, 'desc']
                 ],
