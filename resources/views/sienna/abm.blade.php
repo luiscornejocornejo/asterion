@@ -356,8 +356,12 @@ $siennadeptosgenericos = DB::select($querygenerico);
                     "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
                 },
                 dom: 'Bfrtip',
-                buttons: ['columnsToggle',
-                    'copy', 'csv', 'excel', 'pdf', 'print'
+                buttons: [  'colvis', // Mostrar/ocultar columnas
+                            'copy',   // Copiar al portapapeles
+                            'csv',    // Exportar CSV
+                            'excel',  // Exportar Excel
+                            'pdf',    // Exportar PDF
+                            'print'   // Imprimir
                 ],
                 initComplete: function() {
                     this.api()
