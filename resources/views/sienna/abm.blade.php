@@ -355,43 +355,45 @@ $siennadeptosgenericos = DB::select($querygenerico);
         @include('facu.footer')
 
         <script>
-            $('#abm').dataTable(
-                {
-                "order": [
-                    [0, 'desc']
-                ],
-                "pageLength": 25,
-                "language": {
-                    "url": "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
-                },
-                dom: 'Bfrtip',
-                buttons: [  'colvis', // Mostrar/ocultar columnas
-                            'copy',   // Copiar al portapapeles
-                            'csv',    // Exportar CSV
-                            'excel',  // Exportar Excel
-                            'pdf',    // Exportar PDF
-                            'print'   // Imprimir
-                ],
-                initComplete: function() {
-                    this.api()
-                        .columns()
-                        .every(function() {
-                            let column = this;
-                            let title = column.footer().textContent;
+            $(document).ready(function() {
+    $('#abm').DataTable({
+        order: [
+            [0, 'desc']
+        ],
+        pageLength: 25,
+        language: {
+            url: "//cdn.datatables.net/plug-ins/1.10.24/i18n/Spanish.json"
+        },
+        dom: 'Bfrtip',
+        buttons: [
+            'colvis', // Mostrar/ocultar columnas
+            'copy',   // Copiar al portapapeles
+            'csv',    // Exportar CSV
+            'excel',  // Exportar Excel
+            'pdf',    // Exportar PDF
+            'print'   // Imprimir
+        ],
+        initComplete: function() {
+            this.api()
+                .columns()
+                .every(function() {
+                    let column = this;
+                    let title = column.footer()?.textContent || ''; // Revisa si hay footer
+                    if (title) {
+                        let input = document.createElement("input");
+                        input.placeholder = title;
+                        input.className = "form-control";
+                        column.footer().replaceChildren(input);
 
-                            // Create input element
-                            let input = document.createElement("input");
-                            input.placeholder = title;
-                            input.className = "form-control";
-                            column.footer().replaceChildren(input);
-
-                            // Event listener for user input
-                            input.addEventListener("keyup", () => {
-                                if (column.search() !== this.value) {
-                                    column.search(input.value).draw();
-                                }
-                            });
+                        input.addEventListener("keyup", () => {
+                            if (column.search() !== input.value) {
+                                column.search(input.value).draw();
+                            }
                         });
-                }
-            });
+                    }
+                });
+        }
+    });
+});
+
         </script>
