@@ -42,11 +42,11 @@ $queryws = "SELECT * from iclass.ws_cliente where nombre='" . $subdomain_tmp . "
 $type= file_get_contents("https://".$subdomain_tmp.".suricata-custom.com.ar/api/iclass_get_typesso?token=".$tokensienna."");
 $type2=json_decode($type, true);
 
-var_dump($type2);
+//var_dump($type2);
 $nodos= file_get_contents("https://".$subdomain_tmp.".suricata-custom.com.ar/api/iclass_get_nodes?token=".$tokensienna);
 $nodos2 = json_decode($nodos, true);
 
-dd($nodos2[0]["nodeId"]);
+//dd($nodos2[0]["nodeId"]);
 
 $ticerp= file_get_contents("https://".$subdomain_tmp.".suricata-custom.com.ar/api/iclass_get_so?token=".$tokensienna."&codeSO=" . $resultadoscliente[0]->cliente);
 $ticerp2=json_decode($ticerp, true);
@@ -95,7 +95,7 @@ $iddelcliente=$resultadoscliente[0]->cliente;
                                 
                                 for($i=0;$i<sizeof($nodos2);$i++){
                                         ?>
-                                <option value="{{ $nodos2[$i]['nodeId'] }}">
+                                <option value="{{ $nodos2[$i]["nodeId"] }}">
                                     {{ $nodos2[$i]['descricao'] }}
                                 </option>
                                 <?php }
