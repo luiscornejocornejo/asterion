@@ -5,7 +5,7 @@ if (isset($resultadoscliente[0]->cliente)) {
     return '';
 }
 //if($subdomain_tmp=="wiber2"){
-    $subdomain_tmp="demo";
+   // $subdomain_tmp="demo";
 //}
 
 function conectar($id)
