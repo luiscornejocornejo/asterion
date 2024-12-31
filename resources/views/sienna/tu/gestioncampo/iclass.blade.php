@@ -46,7 +46,7 @@ var_dump($type2);
 $nodos= file_get_contents("https://".$subdomain_tmp.".suricata-custom.com.ar/api/iclass_get_nodes?token=".$tokensienna);
 $nodos2 = json_decode($nodos, true);
 
-var_dump($nodos2);
+dd($nodos2[0]);
 
 $ticerp= file_get_contents("https://".$subdomain_tmp.".suricata-custom.com.ar/api/iclass_get_so?token=".$tokensienna."&codeSO=" . $resultadoscliente[0]->cliente);
 $ticerp2=json_decode($ticerp, true);
@@ -92,7 +92,7 @@ $iddelcliente=$resultadoscliente[0]->cliente;
                             <select class="form-select js-example-basic-single" name="categoria" id="agent">
 
                                 <?php 
-                                dd($nodos2[0]['nodeId']);
+                                
                                 for($i=0;$i<sizeof($nodos2);$i++){
                                         ?>
                                 <option value="{{ $nodos2[$i]['nodeId'] }}">
