@@ -90,17 +90,11 @@ $iddelcliente=$resultadoscliente[0]->cliente;
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
                             <label for="agent" class="form-label">Categorias:</label>
                             <select class="form-select js-example-basic-single" name="categoria" id="agent">
-
-                                <?php 
+                            <option value="{{ $nodos2[0]["nodeId"] }}">
+                            {{ $nodos2[0]['descricao'] }}
+                            </option>
                                 
-                                for($i=0;$i<=sizeof($nodos2);$i++){
-                                        ?>
-                                <option value="{{ $nodos2[$i]["nodeId"] }}">
-                                    {{ $nodos2[$i]['descricao'] }}
-                                </option>
-                                <?php }
-                                    
-                                    ?>
+                                
                             </select>
                         </div> 
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
