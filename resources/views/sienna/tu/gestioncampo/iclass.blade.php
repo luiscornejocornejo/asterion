@@ -38,7 +38,7 @@ $queryws = "SELECT * from iclass.ws_cliente where nombre='" . $subdomain_tmp . "
         //echo $urlll="https://".$subdomain_tmp.".suricata2.com.ar/api/gettickets?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente;
 
 
-
+dd("https://".$subdomain_tmp.".suricata-custom.com.ar/api/iclass_get_typesso?token=".$tokensienna."");
 $type= file_get_contents("https://".$subdomain_tmp.".suricata-custom.com.ar/api/iclass_get_typesso?token=".$tokensienna."");
 $type2=json_decode($type, true);
 
