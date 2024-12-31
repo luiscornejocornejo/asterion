@@ -88,7 +88,7 @@ $iddelcliente=$resultadoscliente[0]->cliente;
                         </div>
                        
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
-                            <label for="agent" class="form-label">Categorias:</label>
+                            <label for="agent" class="form-label">Nodos:</label>
                             <select class="form-select js-example-basic-single" name="categoria" id="agent">
                             <option value="{{ $nodos2[0]["nodeId"] }}">
                             {{ $nodos2[0]['descricao'] }}
@@ -130,7 +130,7 @@ $iddelcliente=$resultadoscliente[0]->cliente;
                             <th class="text-light">ticket_id</th>
                             <th class="text-light">ticket_dia</th>
                             <th class="text-light">ticket_estado</th>
-                            <th class="text-light">ticket_subcategoria</th>
+                            <th class="text-light">ticket_tipo</th>
                         </tr>
                     </thead>
                     <tbody id="log">
@@ -140,10 +140,10 @@ $iddelcliente=$resultadoscliente[0]->cliente;
                                         ?>
                         <tr class="text-center">
                             <td><a target='_blank' href='<?php echo $urilogin;?>{{ $ticerp2[$i]['id'] }}'>{{ $ticerp2[$i]['id'] }}</a> </td>
-                            <td>{{ $ticerp2[$i]['visit_date'] }}
+                            <td>{{ $ticerp2[$i]['dataAgendamento'] }}
                             </td>
-                            <td> <?php echo $ticerp2[$i]['ticket_status']['name']; ?> </td>
-                            <td> <?php echo $ticerp2[$i]['ticket_category']['name']; ?> </td>
+                            <td> <?php echo $ticerp2[$i]['status']['descricao']; ?> </td>
+                            <td> <?php echo $ticerp2[$i]['tipoOs']['resumoTipoOs']; ?> </td>
 
 
 
