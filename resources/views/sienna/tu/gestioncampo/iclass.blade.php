@@ -52,7 +52,7 @@ $ticerp= file_get_contents("https://".$subdomain_tmp.".suricata-custom.com.ar/ap
 $ticerp2=json_decode($ticerp, true);
 //dd($ticerp2);
 
-
+$iddelcliente=$resultadoscliente[0]->cliente;
 ?>
 <div class="card widget-flat" id="infoUser">
     <div class="card-body">
