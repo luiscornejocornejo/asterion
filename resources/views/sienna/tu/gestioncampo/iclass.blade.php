@@ -93,7 +93,7 @@ $iddelcliente=$resultadoscliente[0]->cliente;
 
                                 <?php 
                                 
-                                for($i=0;$i<sizeof($nodos2);$i++){
+                                for($i=0;$i<=sizeof($nodos2);$i++){
                                         ?>
                                 <option value="{{ $nodos2[$i]["nodeId"] }}">
                                     {{ $nodos2[$i]['descricao'] }}
