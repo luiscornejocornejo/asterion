@@ -79,12 +79,7 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                     <span class="d-none d-md-block">Datos</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="#extra" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
-                    <i class="mdi mdi-settings-outline d-md-none d-block"></i>
-                    <span class="d-none d-md-block">Extra</span>
-                </a>
-            </li>
+          
         </ul>
         <div class="tab-content">
             <div class="tab-pane show active" id="ticket">
@@ -176,10 +171,7 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                     hljs.highlightAll();
                 </script>
                 </div>
-            <div class="tab-pane" id="extra">
-                <div data-tf-live="01JDFRQDH03PQAH7HE59FRXFB0"></div>
-                <script src="//embed.typeform.com/next/embed.js"></script>
-            </div>
+           
         </div>
     </div>
 </div>
