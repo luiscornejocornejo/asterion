@@ -185,12 +185,16 @@ $iddelcliente=$resultadoscliente[0]->cliente;
       
       <div class="row mb-3">
         <div class="col-md-6">
+            <?php if(isset($resultados[0]->lat)){
+        $coor=explode(",",$resultados[0]->lat);
+               
+             }?>
           <label for="latitude" class="form-label">Latitude</label>
-          <input type="text" class="form-control" id="latitude" name="latitude" value="<?php echo $resultadoscliente[0]->address;?>">
+          <input type="text" class="form-control" id="latitude" name="latitude" value="<?php echo $coor[0];?>">
         </div>
         <div class="col-md-6">
           <label for="longitude" class="form-label">Longitude</label>
-          <input type="text" class="form-control" id="longitude" name="longitude" value="<?php echo $resultadoscliente[0]->address;?>">
+          <input type="text" class="form-control" id="longitude" name="longitude" value="<?php echo $coor[1];?>">
         </div>
       </div>
       
