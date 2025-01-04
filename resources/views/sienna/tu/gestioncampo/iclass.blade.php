@@ -118,6 +118,84 @@ $iddelcliente=$resultadoscliente[0]->cliente;
                             <label for="example-textarea" class="form-label">Descripcion</label>
                             <textarea name="detalle" class="form-control" id="example-textarea" rows="4"></textarea>
                         </div>
+
+                        <div class="row mb-3">
+        <div class="col-md-4">
+          <label for="idCustomer" class="form-label">ID Customer</label>
+          <input type="text" class="form-control" id="idCustomer" name="idCustomer" value="100">
+        </div>
+        <div class="col-md-4">
+          <label for="codeCustomer" class="form-label">Code Customer</label>
+          <input type="text" class="form-control" id="codeCustomer" name="codeCustomer">
+        </div>
+        <div class="col-md-4">
+          <label for="nameCustomer" class="form-label">Name Customer</label>
+          <input type="text" class="form-control" id="nameCustomer" name="nameCustomer" value="Nombre Customer">
+        </div>
+      </div>
+      
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="contactPhone" class="form-label">Contact Phone</label>
+          <input type="text" class="form-control" id="contactPhone" name="contactPhone">
+        </div>
+        <div class="col-md-6">
+          <label for="mobilePhone" class="form-label">Mobile Phone</label>
+          <input type="text" class="form-control" id="mobilePhone" name="mobilePhone" value="549111111111111">
+        </div>
+      </div>
+      
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email">
+      </div>
+      
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="address" class="form-label">Address</label>
+          <input type="text" class="form-control" id="address" name="address" value="Av. San Martin">
+        </div>
+        <div class="col-md-6">
+          <label for="zipCode" class="form-label">Zip Code</label>
+          <input type="text" class="form-control" id="zipCode" name="zipCode">
+        </div>
+      </div>
+      
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="neighborhood" class="form-label">Neighborhood</label>
+          <input type="text" class="form-control" id="neighborhood" name="neighborhood" value="Barrio">
+        </div>
+        <div class="col-md-6">
+          <label for="city" class="form-label">City</label>
+          <input type="text" class="form-control" id="city" name="city" value="Rosario">
+        </div>
+      </div>
+      
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="state" class="form-label">State</label>
+          <input type="text" class="form-control" id="state" name="state" value="Provincia">
+        </div>
+        <div class="col-md-6">
+          <label for="country" class="form-label">Country</label>
+          <input type="text" class="form-control" id="country" name="country" value="Argentina">
+        </div>
+      </div>
+      
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="latitude" class="form-label">Latitude</label>
+          <input type="text" class="form-control" id="latitude" name="latitude" value="0">
+        </div>
+        <div class="col-md-6">
+          <label for="longitude" class="form-label">Longitude</label>
+          <input type="text" class="form-control" id="longitude" name="longitude" value="0">
+        </div>
+      </div>
+      
+
+      
                     </div>
                     <button type="submit" class="btn btn-success mt-3 mb-2">Crear Ticket</button>
                     <hr class="mx-1" />
