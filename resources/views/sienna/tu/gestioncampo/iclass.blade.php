@@ -57,7 +57,7 @@ $iddelcliente=$resultadoscliente[0]->cliente;
 <div class="card widget-flat" id="infoUser">
     <div class="card-body">
 
-        <div style="background-color: #ffae00;" class="d-flex justify-content-end">
+        <div style="background-color:rgb(247, 244, 240);" class="d-flex justify-content-end">
             <div class="me-2">
             <img src="https://<?php echo $subdomain_tmp;?>.suricata.cloud/img/erp/iclass.jpg"
             alt="ispkeeper logo" height="55">
