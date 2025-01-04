@@ -59,7 +59,7 @@ $iddelcliente=$resultadoscliente[0]->cliente;
 
         <div style="background-color: #ffae00;" class="d-flex justify-content-end">
             <div class="me-2">
-            <img src="https://<?php echo $subdomain_tmp;?>.suricata.cloud/img/erp/ispcube.png"
+            <img src="https://<?php echo $subdomain_tmp;?>.suricata.cloud/img/erp/iclass.jpg"
             alt="ispkeeper logo" height="55">
             </div>
         </div>
@@ -195,7 +195,7 @@ $iddelcliente=$resultadoscliente[0]->cliente;
       </div>
       
 
-      
+
                     </div>
                     <button type="submit" class="btn btn-success mt-3 mb-2">Crear Ticket</button>
                     <hr class="mx-1" />
