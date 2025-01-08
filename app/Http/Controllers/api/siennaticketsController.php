@@ -1221,7 +1221,7 @@ class siennaticketsController extends Controller
             $si->extras= $request->extras;
         }
        
-///getdata
+        ///getdata
         $si->save();
 
         $se = new siennaseguimientos();
@@ -2982,6 +2982,119 @@ class siennaticketsController extends Controller
 
         return $resultados;
         
+     }
+
+
+     public function creartickessiennacharlienew(Request $request)
+     {
+         $cel = $request->cel;//callid
+         $tel = $request->tel;//telcontacto
+         $siennaestado = $request->siennaestado;
+         $siennasource = "5";
+         $cliente = $request->cliente;
+         $nya = $request->nya;
+         $merchant = $request->merchant;
+         if(isset($request->cedula)){
+             $cedula=$request->cedula;
+         }else{
+             $cedula="";
+         }
+         $valida = $this->valida($cliente,$merchant);//telcontacto
+         if($valida>0){
+ 
+             return '{"error":"true","ticket":"'.$valida.'"}';
+         }
+         if($request->ostickettopic<>""){
+             $ostickettopic=$request->ostickettopic;
+             $resultados222 = siennatopic::where('ostickettopic', '=', $ostickettopic)->get();
+             foreach ($resultados222 as $valuep) {
+                 $siennatopic = $valuep->id;
+                 $siennadepto = $valuep->siennadepto;
+                 $phone_tranfer = $valuep->phone_tranfer;
+                 
+                 
+             }
+           
+         }else{
+               $siennatopic = $request->siennatopic;
+             $resultados222 = siennatopic::where('id', '=', $siennatopic)->get();
+         // dd($resultados222);
+             foreach ($resultados222 as $valuep) {
+                 $siennatopic = $valuep->id;
+                 $siennadepto = $valuep->siennadepto;
+                 $phone_tranfer = $valuep->phone_tranfer;
+
+             }
+ 
+         }
+ 
+         $asignado=0;
+       
+ 
+         $siebotchanel=siennasource::find($siennasource);
+         $bot_channel=$siebotchanel->nombre;
+
+
+         $siedep=siennadepto::find($siennadepto);
+         $phone_queue=$siedep->phone_queue;
+ 
+ 
+         $si = new siennatickets();
+         $si->siennadepto = $siennadepto;
+         $si->cliente = $cliente;
+         $si->nya = $nya;
+         $si->cedula = $cedula;
+         $si->siennatopic = $siennatopic;
+         $si->siennaestado = $siennaestado;
+         $si->siennasource = $siennasource;
+         $si->asignado = "99999";
+         $si->cel = $cel;
+         $si->tel = $tel;
+         
+         if(isset($request->prioridad)){
+             $si->prioridad= $request->prioridad;
+         }
+         if(isset($request->extras)){
+             $si->extras= $request->extras;
+         }
+        
+         ///getdata
+         $si->save();
+ 
+         $se = new siennaseguimientos();
+         $se->ticket = $si->id;
+         $se->tipo = "1";
+         $se->descripcion = "created";
+         $se->autor = "sistema";
+         $se->save();
+ 
+        
+ 
+ 
+ 
+         $sc = new siennacliente();
+         if ($cliente <> '') {
+ 
+             $sc->cliente = $cliente;
+         } else {
+ 
+             $sc->cliente = "";
+         }
+         $sc->cel = $cel;
+         $sc->nya = $nya;
+     
+         try {
+             $sc->save();
+         } catch (\Illuminate\Database\QueryException $ex) {
+            // echo "existe".$ex;
+         }
+         $merchant=$this->dominio();
+         
+         //return '{"error":"false","ticket":"11"}';
+         return '{"error":"false","ticket":"'.$si->id.'","phone_tranfer":"'.$phone_tranfer.'","phone_queue":"'.$phone_queue.'"}';
+ 
+         //return response()->json(['cliente' => $return2]);
+ 
      }
      
 }

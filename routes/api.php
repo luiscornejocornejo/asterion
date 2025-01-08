@@ -48,6 +48,8 @@ Route::post('/creartickessienna', [siennaticketsController::class, 'creartickess
 Route::post('/creartickessiennacharlie', [siennaticketsController::class, 'creartickessiennacharlie']);
 Route::post('/creartickessiennacharliedepto', [siennaticketsController::class, 'creartickessiennacharliedepto']);
 
+Route::post('/creartickessiennacharlienew', [siennaticketsController::class, 'creartickessiennacharlienew']);
+
 
 Route::post('/creartickessiennacharlie2', [siennaticketsController::class, 'creartickessiennacharlie2']);
 
