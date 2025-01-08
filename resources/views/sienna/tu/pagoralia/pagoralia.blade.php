@@ -68,6 +68,10 @@ if(isset($resultados[0]->iddelcliente)){?>
                 axios.get(url2)
                     .then(function(response) {
                         console.log(response.data);
+                        for (i = 0; i < response.data.length; i++) {
+                            let badge = response.data[i].realink;
+
+                        }
 
                     })
                     .catch(function(error) {
