@@ -71,9 +71,8 @@ if(isset($resultados[0]->iddelcliente)){?>
                         for (i = 0; i < response.data.length; i++) {
                             let link = response.data[i].realink;
                             console.log(link);
-                            document.getElementById("linkpagoralia").href = null;
 
-                        document.getElementById("linkpagoralia").href = link;
+                        document.getElementById("linkpagoralia").href  = link;
 
                         }
 
