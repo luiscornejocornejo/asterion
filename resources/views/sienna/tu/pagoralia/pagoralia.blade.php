@@ -79,7 +79,7 @@ if($subdomain_tmp=="neurotech"){
                                         let link = response.data[i].realink;
                                         console.log(link);
 
-                                    document.getElementById("linkpagoralia").href  = link;
+                                    document.getElementById("limkpagoralia").href  = link;
 
                                     }
 
