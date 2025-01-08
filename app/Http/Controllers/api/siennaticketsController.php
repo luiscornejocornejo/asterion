@@ -2987,6 +2987,7 @@ class siennaticketsController extends Controller
 
      public function creartickessiennacharlienew(Request $request)
      {
+        echo "hola";
          $cel = $request->input('cel');//callid
          $tel = $request->input('tel');//telcontacto
          $siennaestado = $request->input('siennaestado');
