@@ -71,6 +71,9 @@ if(isset($resultados[0]->iddelcliente)){?>
                         for (i = 0; i < response.data.length; i++) {
                             let link = response.data[i].realink;
                             console.log(link);
+                            document.getElementById("linkpagoralia").src = null;
+
+                        document.getElementById("linkpagoralia").src = link;
 
                         }
 
@@ -90,6 +93,8 @@ if(isset($resultados[0]->iddelcliente)){?>
     <div class="card-body">
         <div class="d-flex justify-content-between">
             <div>
+            <a target="_blank" id="limkpagoralia" src="" class="fw-normal text-dark" title="Number of Customers">Link</a>
+
                 <h4 class="fw-normal text-dark" title="Number of Customers">Crear orden</h4>
             </div>
             <div>
