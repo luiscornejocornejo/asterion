@@ -2989,8 +2989,11 @@ class siennaticketsController extends Controller
      {
         echo "hola";
         if ($request->isJson()) {
-            var_dump(json_encode($request->json()->all()));
+            return response()->json(['json_detected' => $request->json()->all()]);
+        } else {
+            return response()->json(['error' => 'JSON not detected']);
         }
+        
          $cel = $request->input('cel');//callid
          $tel = $request->input('tel');//telcontacto
          $siennaestado = $request->input('siennaestado');
