@@ -67,7 +67,8 @@ if(isset($resultados[0]->iddelcliente)){?>
                     "https://<?php echo $subdomain_tmp; ?>.pagoralia.com/api/link?&token=elmasgrandesiguesiendoriverplate&cliente=<?php echo $resultados[0]->iddelcliente; ?>"
                 axios.get(url2)
                     .then(function(response) {
-                        alert(response.data);
+                        console.log(response.data);
+
                     })
                     .catch(function(error) {
                         // función para capturar el error
