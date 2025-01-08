@@ -2987,13 +2987,14 @@ class siennaticketsController extends Controller
 
      public function creartickessiennacharlienew(Request $request)
      {
-         $cel = $request->cel;//callid
-         $tel = $request->tel;//telcontacto
-         $siennaestado = $request->siennaestado;
+         $cel = $request->input('cel');//callid
+         $tel = $request->input('tel');//telcontacto
+         $siennaestado = $request->input('siennaestado');
          $siennasource = "5";
-         $cliente = $request->cliente;
-        echo $nya = $request->nya;
-         echo $merchant = $request->merchant;
+         $cliente =$request->input('cliente');
+        echo $nya = $request->input('nya');
+         echo $merchant =$request->input('merchant') ;
+     
          /*
          if(isset($request->cedula)){
              $cedula=$request->cedula;
