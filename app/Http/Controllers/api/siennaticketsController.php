@@ -2994,7 +2994,7 @@ class siennaticketsController extends Controller
          $cliente = $request->cliente;
          $nya = $request->nya;
          echo $merchant = $request->merchant;
-         
+         /*
          if(isset($request->cedula)){
              $cedula=$request->cedula;
          }else{
@@ -3095,7 +3095,7 @@ class siennaticketsController extends Controller
          return '{"error":"false","ticket":"'.$si->id.'","phone_tranfer":"'.$phone_tranfer.'","phone_queue":"'.$phone_queue.'"}';
  
          //return response()->json(['cliente' => $return2]);
- 
+ */
      }
      
 }
