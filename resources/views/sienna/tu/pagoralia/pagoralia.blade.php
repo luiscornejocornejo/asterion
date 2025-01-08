@@ -53,6 +53,22 @@
         opacity: 1;
     }
 </style>
+<script>
+      url2 =
+                    "https://<?php echo $subdomain_tmp; ?>.pagoralia.com/api/link?&token=elmasgrandesiguesiendoriverplate&cliente=<?php echo $resultados[0]->iddelcliente; ?>"
+                axios.get(url2)
+                    .then(function(response) {
+                        alert(response.data);
+                    })
+                    .catch(function(error) {
+                        // función para capturar el error
+                        console.log(error);
+                    })
+                    .then(function() {
+                        // función que siempre se ejecuta
+                    });
+
+</script>
 
 <div class="card widget-flat ">
     <div class="card-body">
