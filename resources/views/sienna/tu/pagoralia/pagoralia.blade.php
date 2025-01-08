@@ -69,7 +69,8 @@ if(isset($resultados[0]->iddelcliente)){?>
                     .then(function(response) {
                         console.log(response.data);
                         for (i = 0; i < response.data.length; i++) {
-                            let badge = response.data[i].realink;
+                            let link = response.data[i].realink;
+                            console.log(link);
 
                         }
 
