@@ -3117,7 +3117,7 @@ class siennaticketsController extends Controller
         $resultados = DB::select($query);
 
         foreach($resultados as $emp){
-          echo   $zona=$emp->zona;
+             $zona=$emp->zona;
 
         }
         
@@ -3141,10 +3141,7 @@ class siennaticketsController extends Controller
 
         try {
         $fec=explode("-",$fecha);
-        echo $horaLocal;
-        echo $fecha;
-        echo $merchant;
-        echo $area;
+       
         if(($horaLocal>=$fec[0]) and ($horaLocal<$fec[1])){
             
             return true;
