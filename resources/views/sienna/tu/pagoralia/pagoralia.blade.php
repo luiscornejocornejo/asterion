@@ -61,39 +61,39 @@ if($subdomain_tmp=="neurotech"){
     $subdomain_tmp="neurotelco";
 }
 
-if(isset($resultados[0]->iddelcliente)){?>
-<script>
-      url2 =
-                    "https://<?php echo $subdomain_tmp; ?>.pagoralia.com/api/link?&token=elmasgrandesiguesiendoriverplate&cliente=<?php echo $resultados[0]->iddelcliente; ?>"
-                axios.get(url2)
-                    .then(function(response) {
-                        console.log(response.data);
-                        for (i = 0; i < response.data.length; i++) {
-                            let link = response.data[i].realink;
-                            console.log(link);
-
-                        document.getElementById("linkpagoralia").href  = link;
-
-                        }
-
-                    })
-                    .catch(function(error) {
-                        // función para capturar el error
-                        console.log(error);
-                    })
-                    .then(function() {
-                        // función que siempre se ejecuta
-                    });
-
-</script>
-<?php }?>
+?>
 
 <div class="card widget-flat ">
     <div class="card-body">
         <div class="d-flex justify-content-between">
             <div>
-            <a target="_blank" id="limkpagoralia" src="" class="fw-normal text-dark" title="Number of Customers">Link</a>
+            <a target="_blank" id="limkpagoralia" href="" class="fw-normal text-dark" title="Number of Customers">Link</a>
+           <?php if(isset($resultados[0]->iddelcliente)){?>
+            <script>
+                url2 =
+                                "https://<?php echo $subdomain_tmp; ?>.pagoralia.com/api/link?&token=elmasgrandesiguesiendoriverplate&cliente=<?php echo $resultados[0]->iddelcliente; ?>"
+                            axios.get(url2)
+                                .then(function(response) {
+                                    console.log(response.data);
+                                    for (i = 0; i < response.data.length; i++) {
+                                        let link = response.data[i].realink;
+                                        console.log(link);
 
+                                    document.getElementById("linkpagoralia").href  = link;
+
+                                    }
+
+                                })
+                                .catch(function(error) {
+                                    // función para capturar el error
+                                    console.log(error);
+                                })
+                                .then(function() {
+                                    // función que siempre se ejecuta
+                                });
+
+            </script>
+            <?php }?>
                 <h4 class="fw-normal text-dark" title="Number of Customers">Crear orden</h4>
             </div>
             <div>
