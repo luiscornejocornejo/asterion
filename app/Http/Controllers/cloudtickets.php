@@ -386,7 +386,7 @@ class cloudtickets extends Controller
                 echo $val;
                 $si2 = siennatickets::find($val);
                 $estadoant=$si2->siennaestado;
-                $conv=$si2->conversation_url;
+                $conv=$si2->conversation_id;
                 $src=$si2->siennasource;
                 $si2->siennaestado=$estado;
                 $si2->cerrador_ticket = $userId;
