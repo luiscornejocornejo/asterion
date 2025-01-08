@@ -3099,12 +3099,67 @@ class siennaticketsController extends Controller
             // echo "existe".$ex;
          }
          $merchant=$this->dominio();
-         
+         $enhora=$this->enhora2($merchant,$siennadepto);
          //return '{"error":"false","ticket":"11"}';
-         return '{"error":"false","ticket":"'.$si->id.'","phone_tranfer":"'.$phone_tranfer.'","phone_queue":"'.$phone_queue.'"}';
+         return '{"error":"false","ticket":"'.$si->id.'","phone_tranfer":"'.$phone_tranfer.'","phone_queue":"'.$phone_queue.'","phone_intime":"'.$enhora.'"}';
  
          //return response()->json(['cliente' => $return2]);
  
      }
+
+     public function enhora2($merchant,$area){
+        // Configura la zona horaria a la hora local
+
+       // $area=$request->area;
+
+        //$emp=empresa::find(1);
+        $query="select * from ".$merchant.".empresa where id=1";
+        $resultados = DB::connection('mysql2')->select($query);
+
+        foreach($resultados as $emp){
+          echo   $zona=$emp->zona;
+
+        }
+        
+        date_default_timezone_set($zona); // Reemplaza 'America/Buenos_Aires' con la zona horaria deseada
+
+        // Obtiene la hora actual en formato de 24 horas
+         $horaLocal = date('H');
+         $diaSemana = date('l');
+        //$cat=categoria::where('area','=',$area)->get();
+
+        $query2="select * from ".$merchant.".categoria where area='".$area."'";
+        $cat = DB::connection('mysql2')->select($query2);
+
+
+        //echo "luis".$merchant;
+        foreach($cat as $val){
+
+         $fecha=$val->$diaSemana;
+
+        }
+
+        try {
+        $fec=explode("-",$fecha);
+        echo $horaLocal;
+        echo $fecha;
+        echo $merchant;
+        echo $area;
+        if(($horaLocal>=$fec[0]) and ($horaLocal<$fec[1])){
+            
+            return true;
+        }else{
+
+            return false;
+
+        }
+
+        } catch (\Throwable $th) {
+            return false;
+        }
+            // Imprime la hora local
+
+
+    }
      
 }
