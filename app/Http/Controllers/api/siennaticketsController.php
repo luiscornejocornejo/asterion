@@ -2987,12 +2987,13 @@ class siennaticketsController extends Controller
 
      public function creartickessiennacharlienew(Request $request)
      {
+        /*
         echo "hola";
         if ($request->isJson()) {
             return response()->json(['json_detected' => $request->json()->all()]);
         } else {
             return response()->json(['error' => 'JSON not detected']);
-        }
+        }*/
         
          $cel = $request->input('cel');//callid
          $tel = $request->input('tel');//telcontacto
