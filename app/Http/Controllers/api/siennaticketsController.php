@@ -3114,7 +3114,7 @@ class siennaticketsController extends Controller
 
         //$emp=empresa::find(1);
         $query="select * from ".$merchant.".empresa where id=1";
-        $resultados = DB::connection('mysql2')->select($query);
+        $resultados = DB::select($query);
 
         foreach($resultados as $emp){
           echo   $zona=$emp->zona;
@@ -3129,7 +3129,7 @@ class siennaticketsController extends Controller
         //$cat=categoria::where('area','=',$area)->get();
 
         $query2="select * from ".$merchant.".categoria where area='".$area."'";
-        $cat = DB::connection('mysql2')->select($query2);
+        $cat = DB::select($query2);
 
 
         //echo "luis".$merchant;
