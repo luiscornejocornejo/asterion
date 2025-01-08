@@ -2988,6 +2988,9 @@ class siennaticketsController extends Controller
      public function creartickessiennacharlienew(Request $request)
      {
         echo "hola";
+        if ($request->isJson()) {
+            \Log::info('JSON Decoded: ' . json_encode($request->json()->all()));
+        }
          $cel = $request->input('cel');//callid
          $tel = $request->input('tel');//telcontacto
          $siennaestado = $request->input('siennaestado');
