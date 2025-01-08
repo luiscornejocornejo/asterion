@@ -53,6 +53,8 @@
         opacity: 1;
     }
 </style>
+
+<?php if(isset($resultados[0]->iddelcliente)){?>
 <script>
       url2 =
                     "https://<?php echo $subdomain_tmp; ?>.pagoralia.com/api/link?&token=elmasgrandesiguesiendoriverplate&cliente=<?php echo $resultados[0]->iddelcliente; ?>"
@@ -69,6 +71,7 @@
                     });
 
 </script>
+<?php }?>
 
 <div class="card widget-flat ">
     <div class="card-body">
