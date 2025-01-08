@@ -2992,7 +2992,7 @@ class siennaticketsController extends Controller
          $siennaestado = $request->siennaestado;
          $siennasource = "5";
          $cliente = $request->cliente;
-         $nya = $request->nya;
+        echo $nya = $request->nya;
          echo $merchant = $request->merchant;
          /*
          if(isset($request->cedula)){
