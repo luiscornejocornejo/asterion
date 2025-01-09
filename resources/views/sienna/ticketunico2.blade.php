@@ -323,29 +323,41 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                    
 
-                    <div class="mt-2">
-                        <div class="accordion accordion-flush" id="accordionInfoUser">
+                    
+                        <div class="accordion accordion-flush mt-2" id="accordionPanelsStayOpenExample">
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="flush-headingOne">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseOne">
                                         Información de Usuario
                                     </button>
                                 </h2>
-                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-                                    data-bs-parent="#accordionInfoUser">
-                                    <div class="accordion-body">
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-headingOne">
+                                    <div class="accordion-body">    
                                          @include('sienna.tu.informacionusuario')
                                     </div>
                                 </div>
                             </div>
+                        
+                    
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseOne">
+                                        Información de Usuario
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-headingOne">
+                                    <div class="accordion-body">    
+                                     @include('sienna.tu.informaciononline')
+                                </div>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="mt-2">
-                        @include('sienna.tu.informaciononline')
-
-                    </div>
                     <div class="mt-2">
                     @include('sienna.tu.collectorbot')
 
