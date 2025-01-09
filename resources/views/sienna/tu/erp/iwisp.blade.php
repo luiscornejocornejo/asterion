@@ -209,7 +209,7 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">tipo</label>
-                            <select onchange="fetchLocalities(this.value)" class="form-select js-example-basic-single" name="tipo" id="tipo">
+                            <select onchange="fetchLocalities(this.value)" class="form-select " name="tipo" id="tipo">
                             <option value="">Seleccione un Tipo</option>
                             <option value="F">Fibra</option>
                                 <option value="W">Wireless</option>
@@ -218,7 +218,7 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                         </div>
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
                             <label for="agent" class="form-label">Localidades:</label>
-                            <select class="form-select js-example-basic-single" name="categoria" id="localidad">
+                            <select class="form-select " name="categoria" id="localidad">
 
                                 
                             </select>
