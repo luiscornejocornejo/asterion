@@ -52,7 +52,7 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 <div class="card widget-flat" id="infoUser">
     <div class="card-body">
 
-        <div style="background-color: #ffae00;" class="d-flex justify-content-end">
+        <div style="background-color: #00a400;" class="d-flex justify-content-end">
             <div class="me-2">
             <img src="https://<?php echo $subdomain_tmp;?>.suricata.cloud/img/erp/iwisp.png"
             alt="ispkeeper logo" height="55">
@@ -69,6 +69,12 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                 <a href="#data" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
                     <i class="mdi mdi-account-circle d-md-none d-block"></i>
                     <span class="d-none d-md-block">Datos</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#leads" data-bs-toggle="tab" aria-expanded="true" class="nav-link rounded-0 active">
+                    <i class="mdi mdi-home-variant d-md-none d-block"></i>
+                    <span class="d-none d-md-block">Leads</span>
                 </a>
             </li>
           
@@ -150,7 +156,11 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                                         <script>
                     hljs.highlightAll();
                 </script>
-                </div>
+            </div>
+
+            <div class="tab-pane " id="leads">
+                leads
+            </div>
            
         </div>
     </div>
