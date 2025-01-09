@@ -364,6 +364,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         if($nombreintegracion=="ispkipper"){?>@include('sienna.tu.erp.kipper')<?php }
                         if($nombreintegracion=="mikrowisp"){?>@include('sienna.tu.erp.mikro')<?php }
                         if($nombreintegracion=="ispcube2"){?>@include('sienna.tu.erp.ispcube')<?php }
+                        if($nombreintegracion=="iwisp"){?>@include('sienna.tu.erp.iwisp')<?php }
                 
                     }?>
                      <?php
