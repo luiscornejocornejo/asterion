@@ -227,22 +227,27 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                     const uno = {!! json_encode($locaf2, JSON_FORCE_OBJECT) !!};
                                     const dos = {!! json_encode($locaw2, JSON_FORCE_OBJECT) !!};
 
-                                    console.log("Datos uno:", uno);
-                                    console.log("Datos dos:", dos);
 
                                     const localidadSelect = document.getElementById("localidad");
                                     localidadSelect.innerHTML = ""; // Limpiar opciones
 
                                     let localities = [];
                                     if (tipo === "W") {
+                                        console.log("Datos dos:", dos);
+                                        console.log( typeof dos);
+
                                         const localidades = JSON.parse(dos);
 
 
                                     } else if (tipo === "F") {
+                                        console.log("Datos uno:", uno);
+                                        console.log( typeof uno);
+
                                         const localidades = JSON.parse(uno);
 
                                     }
-
+                                    console.log(arr);
+                                    console.log( typeof arr);
 
                                     // Iterar sobre el array y devolver id y localidad
                                     /*
@@ -254,8 +259,7 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                     
 
                                     const fragment = document.createDocumentFragment();
-                                    console.log(arr);
-                                    console.log( typeof arr);
+                                   
                                      
                                     localidades.forEach(localidad => {
                                         console.log(localidad);
