@@ -218,7 +218,7 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                         </div>
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
                             <label for="agent" class="form-label">Localidades:</label>
-                            <select class="form-select " name="categoria" id="localidad">
+                            <select class="form-select " name="localidad" id="localidad">
 
                                 
                             </select>
