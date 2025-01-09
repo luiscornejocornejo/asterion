@@ -234,20 +234,40 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
 
                                     // Llenar el select con las opciones de localidades
                                     if(tipo=="W"){
+                                        const selectElement = document.getElementById('localidad');
+
+                                        // Itera por cada objeto en el array
                                         dos.forEach(localidad => {
-                                            const option = document.createElement("option");
-                                            option.value = localidad.id; // Ajusta según el formato de la respuesta
-                                            option.textContent = localidad.localidad; // Ajusta según el formato de la respuesta
-                                            localidadSelect.appendChild(option);
+                                        // Crea un elemento <option>
+                                        const option = document.createElement('option');
+                                        
+                                        // Asigna el id al atributo value
+                                        option.value = localidad.id;
+                                        
+                                        // Establece el texto de la opción como la localidad
+                                        option.textContent = localidad.localidad;
+                                        
+                                        // Agrega la opción al <select>
+                                        selectElement.appendChild(option);
                                         });
                                     }
                                     if(tipo=="F"){
-                                        uno.forEach(localidad => {
-                                            const option = document.createElement("option");
-                                            option.value = localidad.id; // Ajusta según el formato de la respuesta
-                                            option.textContent = localidad.localidad; // Ajusta según el formato de la respuesta
-                                            localidadSelect.appendChild(option);
-                                        });
+                                        const selectElement = document.getElementById('localidad');
+
+                                            // Itera por cada objeto en el array
+                                            uno.forEach(localidad => {
+                                            // Crea un elemento <option>
+                                            const option = document.createElement('option');
+                                            
+                                            // Asigna el id al atributo value
+                                            option.value = localidad.id;
+                                            
+                                            // Establece el texto de la opción como la localidad
+                                            option.textContent = localidad.localidad;
+                                            
+                                            // Agrega la opción al <select>
+                                            selectElement.appendChild(option);
+                                            });
                                     }
                                     
 
