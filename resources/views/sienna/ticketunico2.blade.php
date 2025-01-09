@@ -324,7 +324,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                    
 
                     
-                        <div class="accordion accordion-flush mt-2" id="accordionPanelsStayOpenExample">
+                        <div class="accordion mt-2" id="accordionPanelsStayOpenExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
