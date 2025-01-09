@@ -247,8 +247,8 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                         for(let i=0; i< claves.length; i++){
                                             let clave = claves[i];
                                             console.log(uno[clave]);
-                                            console.log(uno[0]);
-                                            console.log(uno[1]);
+                                            console.log(uno[clave][0]);
+                                            
                                         }
 
 
