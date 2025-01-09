@@ -272,9 +272,22 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                 
                 <div class="row">
                 <div class="col-sm-12 col-lg-8 col-xxl-9">
-                    <div>
-                    @include('sienna.tu.informacionticket')
-
+                    <div class="accordion accordion-flush" id="accordionInfoUser">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    Información de Usuario
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                                data-bs-parent="#accordionInfoUser">
+                                <div class="accordion-body">
+                                    @include('sienna.tu.informacionticket')
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                     </div>
                     <?php
                      $urlreabrir="";
