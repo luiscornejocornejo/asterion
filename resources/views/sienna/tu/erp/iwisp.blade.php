@@ -225,50 +225,33 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                             <script>
                                 function fetchLocalities(tipo) {
 
-                                    const  uno = {!! json_encode($locaf,JSON_FORCE_OBJECT) !!};
-                                    const  dos = {!! json_encode($locaw,JSON_FORCE_OBJECT) !!};
-                                    console.log(dos);
+                                  
+                                    
+                                                const uno = {!! json_encode($locaf, JSON_FORCE_OBJECT) !!};
+                                                const dos = {!! json_encode($locaw, JSON_FORCE_OBJECT) !!};
+                                                console.log(uno); // Verificar la estructura de 'uno'
+                                                console.log(dos); // Verificar la estructura de 'dos'
 
-                                    const localidadSelect = document.getElementById("localidad");
-                                    localidadSelect.innerHTML = "";
+                                                const localidadSelect = document.getElementById("localidad");
+                                                localidadSelect.innerHTML = "";
 
-                                    // Llenar el select con las opciones de localidades
-                                    if(tipo=="W"){
-                                        const selectElement = document.getElementById('localidad');
+                                                // Llenar el select con las opciones de localidades
+                                                let localities = [];
+                                                if (tipo === "W") {
+                                                    localities = Object.values(dos); // Convertir en array si es necesario
+                                                } else if (tipo === "F") {
+                                                    localities = Object.values(uno); // Convertir en array si es necesario
+                                                }
 
-                                        // Itera por cada objeto en el array
-                                        dos.forEach(localidad => {
-                                        // Crea un elemento <option>
-                                        const option = document.createElement('option');
-                                        
-                                        // Asigna el id al atributo value
-                                        option.value = localidad.id;
-                                        
-                                        // Establece el texto de la opción como la localidad
-                                        option.textContent = localidad.localidad;
-                                        
-                                        // Agrega la opción al <select>
-                                        selectElement.appendChild(option);
-                                        });
-                                    }
-                                    if(tipo=="F"){
-                                        const selectElement = document.getElementById('localidad');
+                                                localities.forEach(localidad => {
+                                                    // Crea un elemento <option>
+                                                    const option = document.createElement('option');
+                                                    option.value = localidad.id; // Asigna el ID como valor
+                                                    option.textContent = localidad.localidad; // Asigna la localidad como texto
+                                                    localidadSelect.appendChild(option);
+                                                });
+                                            }
 
-                                            // Itera por cada objeto en el array
-                                            uno.forEach(localidad => {
-                                            // Crea un elemento <option>
-                                            const option = document.createElement('option');
-                                            
-                                            // Asigna el id al atributo value
-                                            option.value = localidad.id;
-                                            
-                                            // Establece el texto de la opción como la localidad
-                                            option.textContent = localidad.localidad;
-                                            
-                                            // Agrega la opción al <select>
-                                            selectElement.appendChild(option);
-                                            });
-                                    }
                                     
 
 
@@ -278,7 +261,7 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                   
                                      
 
-                                }
+                                
 
                             </script>
                         </div> 
