@@ -228,7 +228,7 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                     let uno = {!! json_encode($locaf,JSON_FORCE_OBJECT) !!};
                                     let dos = {!! json_encode($locaw,JSON_FORCE_OBJECT) !!};
 
-
+                                    const localidadSelect = document.getElementById("localidad");
                                     localidadSelect.innerHTML = "";
 
                                     // Llenar el select con las opciones de localidades
