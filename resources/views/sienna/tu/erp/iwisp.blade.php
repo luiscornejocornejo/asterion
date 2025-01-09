@@ -1,14 +1,6 @@
 <?php
 
-if (isset($resultadoscliente[0]->cliente)) {
-    $iddelcliente=$resultadoscliente[0]->cliente;
-    $getdata= file_get_contents("https://".$subdomain_tmp.".suricata-iwisp.com.ar/api/ws?token=".$tokensienna."&idcliente=" . $iddelcliente);
-    $getdata2 = json_decode($getdata, true);
-    $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-} else {
-    $iddelcliente="";
-    $getdata3 ="";
-}
+
 if($subdomain_tmp=="wiber2"){
     $subdomain_tmp="wiber";
 }
@@ -47,7 +39,15 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
         $locaw= file_get_contents("https://".$subdomain_tmp.".suricata-iwisp.com.ar/api/getLocalities?token=".$tokensienna."&tipo=w ");
         $locaw2=json_decode($locaw, true);
 
-
+        if (isset($resultadoscliente[0]->cliente)) {
+            $iddelcliente=$resultadoscliente[0]->cliente;
+            $getdata= file_get_contents("https://".$subdomain_tmp.".suricata-iwisp.com.ar/api/ws?token=".$tokensienna."&idcliente=" . $iddelcliente);
+            $getdata2 = json_decode($getdata, true);
+            $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+        } else {
+            $iddelcliente="";
+            $getdata3 ="";
+        }
 
 
 
