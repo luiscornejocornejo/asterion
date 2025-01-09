@@ -223,29 +223,40 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                 
                             </select>
                             <script>
-                                function fetchLocalities(tipo) {
-
+                               function fetchLocalities(tipo) {
                                     const uno = {!! json_encode($locaf, JSON_FORCE_OBJECT) !!};
                                     const dos = {!! json_encode($locaw, JSON_FORCE_OBJECT) !!};
-                                    const localidadSelect = document.getElementById("localidad");
-                                    localidadSelect.innerHTML = "";
 
-                                    // Llenar el select con las opciones de localidades
+                                    console.log("Datos uno:", uno);
+                                    console.log("Datos dos:", dos);
+
+                                    const localidadSelect = document.getElementById("localidad");
+                                    localidadSelect.innerHTML = ""; // Limpiar opciones
+
                                     let localities = [];
                                     if (tipo === "W") {
-                                        localities = Object.values(dos); // Convertir en array si es necesario
+                                        localities = Object.values(dos);
                                     } else if (tipo === "F") {
-                                        localities = Object.values(uno); // Convertir en array si es necesario
+                                        localities = Object.values(uno);
                                     }
 
+                                    // Validar datos
+                                    if (!Array.isArray(localities) || localities.length === 0) {
+                                        console.error("No hay localidades válidas.");
+                                        return;
+                                    }
+
+                                    const fragment = document.createDocumentFragment();
                                     localities.forEach(localidad => {
-                                        // Crea un elemento <option>
                                         const option = document.createElement('option');
-                                        option.value = localidad.id; // Asigna el ID como valor
-                                        option.textContent = localidad.localidad; // Asigna la localidad como texto
-                                        localidadSelect.appendChild(option);
+                                        option.value = localidad.id;
+                                        option.textContent = localidad.localidad;
+                                        fragment.appendChild(option);
                                     });
-                            }
+
+                                    localidadSelect.appendChild(fragment);
+                                    console.log("Localidades cargadas exitosamente.");
+                                }
 
                             </script>
                         </div> 
