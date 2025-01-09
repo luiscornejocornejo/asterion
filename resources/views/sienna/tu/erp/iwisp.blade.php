@@ -173,24 +173,38 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                     $nya=$resultadoscliente[0]->nya;
                             }else{
                                 $nya="";
-                            }?>
+                            }
+                            if(isset($resultadoscliente[0]->address)){
+                                $address=$resultadoscliente[0]->address;
+                            }else{
+                                $address="";
+                            }if(isset($resultadoscliente[0]->cel)){
+                                $cel=$resultadoscliente[0]->cel;
+                            }else{
+                                $cel="";
+                            }if(isset($resultadoscliente[0]->email)){
+                                $email=$resultadoscliente[0]->email;
+                            }else{
+                                $email="";
+                            }
+                            ?>
                             <input required name="nombre" type="text" class="form-control" id="lastNameUser" value="<?php echo $nya ;?>">
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">Apellido</label>
-                            <input required name="apellido" type="text" class="form-control" id="lastNameUser" value="<?php echo $resultadoscliente[0]->nya;?>">
+                            <input required name="apellido" type="text" class="form-control" id="lastNameUser" value="<?php echo $nya;?>">
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">Domicilio</label>
-                            <input required name="domicilio" type="text" class="form-control" id="lastNameUser" value="<?php echo $resultadoscliente[0]->address;?>">
+                            <input required name="domicilio" type="text" class="form-control" id="lastNameUser" value="<?php echo $address;?>">
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">Celular</label>
-                            <input required name="cel" type="text" class="form-control" id="lastNameUser" value="<?php echo $resultadoscliente[0]->cel;?>">
+                            <input required name="cel" type="text" class="form-control" id="lastNameUser" value="<?php echo $cel;?>">
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">Email</label>
-                            <input required name="email" type="email" class="form-control" id="lastNameUser" value="<?php echo $resultadoscliente[0]->email;?>">
+                            <input required name="email" type="email" class="form-control" id="lastNameUser" value="<?php echo $email;?>">
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">tipo</label>
