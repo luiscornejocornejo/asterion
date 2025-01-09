@@ -177,7 +177,7 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">Domicilio</label>
-                            <input required name="domicilio" type="text" class="form-control" id="lastNameUser" value="<?php echo $resultadoscliente[0]->nyaaddress;?>">
+                            <input required name="domicilio" type="text" class="form-control" id="lastNameUser" value="<?php echo $resultadoscliente[0]->address;?>">
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">Celular</label>
@@ -210,7 +210,7 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                             <textarea name="detalle" class="form-control" id="example-textarea" rows="4"></textarea>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success mt-3 mb-2">Crear Ticket</button>
+                    <button type="submit" class="btn btn-success mt-3 mb-2">Crear Leads</button>
                     <hr class="mx-1" />
                 </form>
             </div>
