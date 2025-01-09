@@ -11,6 +11,65 @@ foreach($datospagoralia as $valpago){
 
 }
 
+
+
+
+$queryservicios2="select * from sienna_suricata_servicios ";
+$datosservicios2 = DB::select($queryservicios2);
+$geoservicio=0;
+$erpservicio=0;
+$pagoservicio=0;
+$mailservicio=0;
+$grabacionesservicio=0;
+$botpresservicio=0;
+$xenservicio=0;
+$iclasservicio=0;
+foreach($datosservicios2 as $valservicios2){
+    if($valservicios2->id==6){
+        $geoservicio=$valservicios2->habilitado;
+    }
+    if($valservicios2->id==2){
+        $erpservicio=$valservicios2->habilitado;
+    }
+    if($valservicios2->id==1){
+        $pagoservicio=$valservicios2->habilitado;
+    }
+    if($valservicios2->id==4){
+        $mailservicio=$valservicios2->habilitado;
+    }
+    if($valservicios2->id==5){
+        $grabacionesservicio=$valservicios2->habilitado;
+    }
+    if($valservicios2->id==8){
+        $xenservicio=$valservicios2->habilitado;
+    }
+    if($valservicios2->id==9){
+        $botpresservicio=$valservicios2->habilitado;
+    }
+    if($valservicios2->id==12){
+        $iclasservicio=$valservicios2->habilitado;
+    }
+
+}
+
+
+
+$queryempresa="select * from empresa";
+$datosempresa = DB::select($queryempresa);
+
+ $queryatajos="select * from siennaatajos where siennadepto='".$resultados[0]->iddepto."'";
+$datosatajos = DB::select($queryatajos);
+
+$queryintegracion="select * from siennaintegracion";
+$datosintegracion = DB::select($queryintegracion);
+$intehabilitado=0;
+foreach($datosintegracion as $vali){
+
+    $intehabilitado=$vali->habilitado;
+
+}
+
+
 function coloriconos($iconos, $tipo)
 {
     $coloricono = "";
@@ -85,45 +144,8 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
     }
     var originalTitle = document.title;
 
-   // identificadorIntervaloDeTiempo = setInterval(checkmensaje, 60000);
    /*
-    function checkmensaje(){
-        var URLactual = window.location.href;
-            var porciones = URLactual.split('.');
-            let result = porciones[0].replace("https://", "");
-            idticketbuscar=<?php echo $resultados[0]->ticketid; ;?>;
-            conversation_id='<?php echo $resultados[0]->conversation_id ;?>';
-        console.log(conversation_id);
-        //url = "https://"+result+".suricata.cloud/api/estadoconv2?conversation_id=" + conversation_id + "";
-
-        url = "https://"+result+".suricata.cloud/api/estadoconv?tick=" + idticketbuscar + "";
-        url="https://"+result+".suricata-conversations.com.ar/api/estado?conversation_id=" + conversation_id + "&dom="+result+"";
-        console.log(url);
-        axios.get(url)
-            .then(function (response) {
-                console.log(response.data);
-                if(response.data==1){
-                    newPageTitle="pendiente";
- 
-                    var blinkTitle = "¡Mira aquí!";
-                    var isBlinking = true;
-                    destellarTitulo();
-                    //document.title = newPageTitle;
- 
-                }
-               
-               
-            })
-            .catch(function (error) {
-                // función para capturar el error
-                console.log(error);
-            })
-            .then(function () {
-                // función que siempre se ejecuta
-            });
-
-
-    }
+    
    */
     function destellarTitulo() {
         var titulo = document.title;
@@ -201,6 +223,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
         </div>
         @endif
             <div class="container pt-2 ">
+                
                 <div class="d-flex justify-content-between pb-2">
                     <div>
                     </div>
@@ -246,7 +269,8 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                     </div>
                 </div>
 
-            <div class="row">
+                
+                <div class="row">
                 <div class="col-sm-12 col-lg-8 col-xxl-9">
                     <div>
                     @include('sienna.tu.informacionticket')
@@ -261,15 +285,9 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                     if(strlen($urlreabrir)<2){
                                         $vero="d-none";
                                     }
-
-                     if($resultados[0]->siennasource==7){?>
-
-                       
-                        @include('sienna.tu.informacionmail')
-
-
-                    <?php
-                    } if($resultados[0]->siennasource==10){?>
+                                     
+                      
+                     if($resultados[0]->siennasource==10){?>
 
                        
                         @include('sienna.tu.informacionsuricata')
@@ -277,29 +295,99 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                     <?php
                     }
-                    $excludedProductIds = [10, 7,5];
 
-                    if (!in_array($resultados[0]->siennasource, $excludedProductIds)) {
+                    
+                    $excludedProductIds = [1,2,3,4,6];
+                    if($xenservicio){
+                        if (in_array($resultados[0]->siennasource, $excludedProductIds)) {
+                            ?>
+                      <div class="mt-2">
 
-                    //if($resultados[0]->siennasource 7){
+                      @include('sienna.tu.bot.whatapp')
+                      </div>
+                      <?php 
+                      }
+                  }
+                  if($botpresservicio){
+                    if (in_array($resultados[0]->siennasource, $excludedProductIds)) {
                         ?>
-                        @include('sienna.tu.informacionwhatapp')
+                  <div class="mt-2">
 
-                           
-                    <?php }?>
+                  @include('sienna.tu.bot.botpres')
+                  </div>
+                  <?php 
+                  }
+              }?>
+                    
+
+
+                   
 
                     <div class="mt-2">
                     @include('sienna.tu.informacionusuario')
 
                     </div>
                     <div class="mt-2">
-                    @include('sienna.tu.collectorbot')
+                        @include('sienna.tu.informaciononline')
 
                     </div>
                     <div class="mt-2">
-                         @include('sienna.tu.informacionadjuntos')
+                    @include('sienna.tu.collectorbot')
 
-                    </div>  
+                    </div>
+                    <?php
+                      if($mailservicio){
+                        if($resultados[0]->siennasource==7){?>
+                        <div class="mt-2">
+
+                        @include('sienna.tu.mail.mail')
+                        @include('sienna.tu.mail.adjuntos')
+                        </div>
+                        <?php 
+                        }
+                    }?>
+
+                    <?php
+                      if($grabacionesservicio){
+                        if($resultados[0]->siennasource==5){?>
+                        <div class="mt-2">
+
+                        @include('sienna.tu.telefonia.grabaciones')
+                        </div>
+                        <?php 
+                        }
+                    }?>
+
+
+                    <?php if($erpservicio){
+                         $nombreintegracion = session('nombreintegracion');
+                        if($nombreintegracion=="ispkipper"){?>@include('sienna.tu.erp.kipper')<?php }
+                        if($nombreintegracion=="mikrowisp"){?>@include('sienna.tu.erp.mikro')<?php }
+                        if($nombreintegracion=="ispcube2"){?>@include('sienna.tu.erp.ispcube')<?php }
+                        if($nombreintegracion=="iwisp"){?>@include('sienna.tu.erp.iwisp')<?php }
+                
+                    }?>
+                     <?php
+                      if($iclasservicio){?>
+                        
+                        @include('sienna.tu.gestioncampo.iclass')<?php 
+                
+                    }?>
+                     <?php
+                      if($geoservicio){?>
+                        
+                        @include('sienna.tu.geolocalizacion.geo')<?php 
+                
+                    }?>
+                    <?php
+                      if($pagoservicio){?>
+                        <div class="mt-2">
+
+                        @include('sienna.tu.pagoralia.pagoralia')
+                        </div>
+                        <?php 
+                
+                    }?>
                     <div class="mt-2">
                          @include('sienna.tu.informacionnotainterna')
 
@@ -309,14 +397,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         </div>
                     </div>
 
-                    <?php if($pagohabilitado){?>
-                    
-                        <div class="mt-2">
-                    @include('sienna.tu.informacionpagoralia')
-
-                    </div>
-
-                        <?php }?>
+                   
                     <div class="mt-2">
                     @include('sienna.tu.informaciontareas')
 
@@ -326,9 +407,17 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                     </div>
                
-                        <div class="mt-2">
-                        @include('sienna.tu.informaciononline')
+                       <div aria-live="polite" aria-atomic="true" class="toast fade position-fixed bottom-0 end-0 m-3" role="alert" style="z-index: 1050;" id="liveToast">
+                        <div class="toast-header bg-dark">
+                            <img src="assetsfacu/images/logo-mini.png" alt="brand-logo" height="12" class="me-1" />
+                            <strong class="me-auto text-light">Copiado!</strong>
+                            <small class="text-light">Ahora</small>
+                            <button type="button" class="ms-2 btn-close btn-close-white" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
 
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-12 col-lg-4 col-xxl-3 card widget-flat" id="forwardTicket">
@@ -361,6 +450,11 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                                             $uri = '';
                                                         }
                                                         if($val->tipo == 9){
+                                                            //$ht = $val->descripcion;
+                                                            //$uri = '<a target=_blank href="' . $ht . '"><img  src=' . $ht . ' width="40px;"></a>';
+                                                            continue;
+                                                        }
+                                                        if($val->tipo == 12){
                                                             //$ht = $val->descripcion;
                                                             //$uri = '<a target=_blank href="' . $ht . '"><img  src=' . $ht . ' width="40px;"></a>';
                                                             continue;
@@ -415,7 +509,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
         </div>
         <!-- content -->
 
-
+        
 
 
         <!-- Departament modal Status-->
