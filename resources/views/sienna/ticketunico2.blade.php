@@ -378,11 +378,23 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                     <?php
                       if($mailservicio){
                         if($resultados[0]->siennasource==7){?>
-                        <div class="mt-2">
-
-                        @include('sienna.tu.mail.mail')
-                        @include('sienna.tu.mail.adjuntos')
-                        </div>
+                        <span class="mt-2"></span>
+                         <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseFour">
+                                    Adjuntos
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                            aria-labelledby="panelsStayOpen-headingFour">
+                                <div class="accordion-body">        
+                                    @include('sienna.tu.mail.mail')
+                                    @include('sienna.tu.mail.adjuntos')
+                             </div>
+                            </div>
+                         </div>
                         <?php 
                         }
                     }?>
