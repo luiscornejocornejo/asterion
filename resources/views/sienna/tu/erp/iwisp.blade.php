@@ -169,23 +169,23 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                     <div class="row">
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">Nombre</label>
-                            <input required name="nombre" type="text" class="form-control" id="lastNameUser" value="<?php //echo $iddelcliente;?>">
+                            <input required name="nombre" type="text" class="form-control" id="lastNameUser" value="<?php echo $resultadoscliente[0]->nya;?>">
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">Apellido</label>
-                            <input required name="apellido" type="text" class="form-control" id="lastNameUser" value="<?php //echo $iddelcliente;?>">
+                            <input required name="apellido" type="text" class="form-control" id="lastNameUser" value="<?php echo $resultadoscliente[0]->nya;?>">
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
-                            <label for="example-textarea" class="form-label">Domicilios</label>
-                            <input required name="domicilio" type="text" class="form-control" id="lastNameUser" value="<?php //echo $iddelcliente;?>">
+                            <label for="example-textarea" class="form-label">Domicilio</label>
+                            <input required name="domicilio" type="text" class="form-control" id="lastNameUser" value="<?php echo $resultadoscliente[0]->nyaaddress;?>">
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">Celular</label>
-                            <input required name="cel" type="text" class="form-control" id="lastNameUser" value="<?php //echo $iddelcliente;?>">
+                            <input required name="cel" type="text" class="form-control" id="lastNameUser" value="<?php echo $resultadoscliente[0]->cel;?>">
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">Email</label>
-                            <input required name="email" type="email" class="form-control" id="lastNameUser" value="<?php //echo $iddelcliente;?>">
+                            <input required name="email" type="email" class="form-control" id="lastNameUser" value="<?php echo $resultadoscliente[0]->email;?>">
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">tipo</label>
