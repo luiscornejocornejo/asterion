@@ -34,11 +34,11 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
 
         $categorias= file_get_contents("https://".$subdomain_tmp.".suricata-iwisp.com.ar/api/getCategories?token=".$tokensienna."");
         $categorias2=json_decode($categorias, true);
-        /*
+        
         $locaf= file_get_contents("https://".$subdomain_tmp.".suricata-iwisp.com.ar/api/getLocalities?token=".$tokensienna."&tipo=f ");
         $locaf2=json_decode($locaf, true);
         $locaw= file_get_contents("https://".$subdomain_tmp.".suricata-iwisp.com.ar/api/getLocalities?token=".$tokensienna."&tipo=w ");
-        $locaw2=json_decode($locaw, true);*/
+        $locaw2=json_decode($locaw, true);
 
         if (isset($resultadoscliente[0]->cliente)) {
             $iddelcliente=$resultadoscliente[0]->cliente;
@@ -210,7 +210,8 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">tipo</label>
                             <select onchange="fetchLocalities(this.value)" class="form-select js-example-basic-single" name="tipo" id="tipo">
-                                <option value="F">Fibra</option>
+                            <option value="">Seleccione un Tipo</option>
+                            <option value="F">Fibra</option>
                                 <option value="W">Wireless</option>
                             </select>
 
@@ -218,43 +219,40 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
                             <label for="agent" class="form-label">Localidades:</label>
                             <select class="form-select js-example-basic-single" name="categoria" id="localidad">
-                            <option value="">Seleccione una localidad</option>
 
                                 
                             </select>
                             <script>
                                 function fetchLocalities(tipo) {
-                                    const tokenSienna = "<?php echo $tokensienna;?>"; // Reemplaza con el valor real de tu token
-                                    const subdomainTmp = "<?php echo $subdomain_tmp;?>"; // Reemplaza con el valor real de tu subdominio
-                                    const url = `https://${subdomainTmp}.suricata-iwisp.com.ar/api/getLocalities?token=${tokenSienna}&tipo=${tipo}`;
-                                    console.log(url);
 
-                                    axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+                                    let uno = {!! json_encode($locaf,JSON_FORCE_OBJECT) !!};
+                                    let dos = {!! json_encode($locaw,JSON_FORCE_OBJECT) !!};
 
-                                    axios.get(url)
-                                    .then(function (response) {
 
-                                        const localidades = response.data;
+                                    localidadSelect.innerHTML = "";
 
-                                            // Limpia el select de localidades antes de llenarlo
-                                            localidadSelect.innerHTML = "";
+                                    // Llenar el select con las opciones de localidades
+                                    if(tipo=="W"){
+                                        localidades.forEach(dos => {
+                                            const option = document.createElement("option");
+                                            option.value = localidad.id; // Ajusta según el formato de la respuesta
+                                            option.textContent = localidad.localidad; // Ajusta según el formato de la respuesta
+                                            localidadSelect.appendChild(option);
+                                        });
+                                    }
+                                    if(tipo=="F"){
+                                        localidades.forEach(uno => {
+                                            const option = document.createElement("option");
+                                            option.value = localidad.id; // Ajusta según el formato de la respuesta
+                                            option.textContent = localidad.localidad; // Ajusta según el formato de la respuesta
+                                            localidadSelect.appendChild(option);
+                                        });
+                                    }
+                                    
 
-                                            // Llenar el select con las opciones de localidades
-                                            localidades.forEach(localidad => {
-                                                const option = document.createElement("option");
-                                                option.value = localidad.id; // Ajusta según el formato de la respuesta
-                                                option.textContent = localidad.localidad; // Ajusta según el formato de la respuesta
-                                                localidadSelect.appendChild(option);
-                                            });
 
-                                    })
-                                    .catch(function (error) {
-                                        // función para capturar el error
-                                        console.log(error);
-                                    })
-                                    .then(function () {
-                                        // función que siempre se ejecuta
-                                    });
+
+                                    
 
                                   
                                      
