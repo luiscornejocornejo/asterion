@@ -274,7 +274,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         <div>
                             @include('sienna.tu.informacionticket')
                         </div>
-                    </div>
+                    
 
                     <?php
                      $urlreabrir="";
