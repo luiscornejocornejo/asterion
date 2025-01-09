@@ -467,6 +467,8 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                 @include('sienna.tu.informacionnotainterna')
                             </div>                    
                         </div>
+                    </div>
+                </div>
 
                    
                     <div class="mt-2">
