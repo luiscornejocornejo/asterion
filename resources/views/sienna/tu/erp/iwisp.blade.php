@@ -34,10 +34,11 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
 
         $categorias= file_get_contents("https://".$subdomain_tmp.".suricata-iwisp.com.ar/api/getCategories?token=".$tokensienna."");
         $categorias2=json_decode($categorias, true);
+        /*
         $locaf= file_get_contents("https://".$subdomain_tmp.".suricata-iwisp.com.ar/api/getLocalities?token=".$tokensienna."&tipo=f ");
         $locaf2=json_decode($locaf, true);
         $locaw= file_get_contents("https://".$subdomain_tmp.".suricata-iwisp.com.ar/api/getLocalities?token=".$tokensienna."&tipo=w ");
-        $locaw2=json_decode($locaw, true);
+        $locaw2=json_decode($locaw, true);*/
 
         if (isset($resultadoscliente[0]->cliente)) {
             $iddelcliente=$resultadoscliente[0]->cliente;
@@ -208,18 +209,54 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">tipo</label>
-                            <select class="form-select js-example-basic-single" name="tipo" id="agent">
+                            <select onchange="fetchLocalities(this.value)" class="form-select js-example-basic-single" name="tipo" id="agent">
                                 <option value="F">Fibra</option>
                                 <option value="W">Wireless</option>
                             </select>
 
                         </div>
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
-                            <label for="agent" class="form-label">Categorias:</label>
-                            <select class="form-select js-example-basic-single" name="categoria" id="agent">
+                            <label for="agent" class="form-label">Localidades:</label>
+                            <select class="form-select js-example-basic-single" name="categoria" id="localities">
+                            <option value="">Seleccione una localidad</option>
 
                                 
                             </select>
+                            <script>
+                                function fetchLocalities(tipo) {
+                                    const tokenSienna = "<?php echo $tokensienna;?>"; // Reemplaza con el valor real de tu token
+                                    const subdomainTmp = "<?php echo $subdomain_tmp;?>"; // Reemplaza con el valor real de tu subdominio
+                                    const url = `https://${subdomainTmp}.suricata-iwisp.com.ar/api/getLocalities?token=${tokenSienna}&tipo=${tipo}`;
+
+                                    // Realiza la solicitud
+                                    fetch(url)
+                                        .then(response => {
+                                            if (!response.ok) {
+                                                throw new Error("Error en la solicitud: " + response.status);
+                                            }
+                                            return response.json();
+                                        })
+                                        .then(data => {
+                                            const localitiesSelect = document.getElementById("localities");
+
+                                            // Limpia las opciones actuales
+                                            localitiesSelect.innerHTML = '<option value="">Seleccione una localidad</option>';
+
+                                            // Agrega las nuevas opciones
+                                            data.forEach(locality => {
+                                                const option = document.createElement("option");
+                                                option.value = locality.id; // Cambia según la estructura de tu JSON
+                                                option.textContent = locality.localidad; // Cambia según la estructura de tu JSON
+                                                localitiesSelect.appendChild(option);
+                                            });
+                                        })
+                                        .catch(error => {
+                                            console.error("Error:", error);
+                                            alert("No se pudieron cargar las localidades.");
+                                        });
+                                }
+
+                            </script>
                         </div> 
                        
                            
