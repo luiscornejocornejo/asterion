@@ -228,32 +228,33 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                     const subdomainTmp = "<?php echo $subdomain_tmp;?>"; // Reemplaza con el valor real de tu subdominio
                                     const url = `https://${subdomainTmp}.suricata-iwisp.com.ar/api/getLocalities?token=${tokenSienna}&tipo=${tipo}`;
                                     console.log(url);
-                                    // Realiza la solicitud
-                                    const tipoSelect = document.getElementById("tipo");
-                                        const localidadSelect = document.getElementById("localidad"); // Suponiendo que tienes un select para localidades
 
-                                            const tipo = tipoSelect.value;
-                                            
-                                            try {
-                                                const response = await axios.get(url);
-                                                
-                                                // Asumiendo que la respuesta contiene las localidades en un array
-                                                const localidades = response.data;
+                                    axios.get(url)
+                                    .then(function (response) {
 
-                                                // Limpia el select de localidades antes de llenarlo
-                                                localidadSelect.innerHTML = "";
+                                        const localidades = response.data;
 
-                                                // Llenar el select con las opciones de localidades
-                                                localidades.forEach(localidad => {
-                                                    const option = document.createElement("option");
-                                                    option.value = localidad.id; // Ajusta según el formato de la respuesta
-                                                    option.textContent = localidad.localidad; // Ajusta según el formato de la respuesta
-                                                    localidadSelect.appendChild(option);
-                                                });
-                                            } catch (error) {
-                                                console.error("Error al obtener localidades:", error);
-                                                alert("No se pudo cargar la información. Revisa la consola para más detalles.");
-                                            }
+                                            // Limpia el select de localidades antes de llenarlo
+                                            localidadSelect.innerHTML = "";
+
+                                            // Llenar el select con las opciones de localidades
+                                            localidades.forEach(localidad => {
+                                                const option = document.createElement("option");
+                                                option.value = localidad.id; // Ajusta según el formato de la respuesta
+                                                option.textContent = localidad.localidad; // Ajusta según el formato de la respuesta
+                                                localidadSelect.appendChild(option);
+                                            });
+
+                                    })
+                                    .catch(function (error) {
+                                        // función para capturar el error
+                                        console.log(error);
+                                    })
+                                    .then(function () {
+                                        // función que siempre se ejecuta
+                                    });
+
+                                  
                                      
 
                                 }
