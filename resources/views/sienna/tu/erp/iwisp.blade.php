@@ -229,7 +229,7 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                     const url = `https://${subdomainTmp}.suricata-iwisp.com.ar/api/getLocalities?token=${tokenSienna}&tipo=${tipo}`;
 
                                     // Realiza la solicitud
-                                    fetch(url)
+                                    fetch(url, { mode: 'no-cors'})
                                         .then(response => {
                                             if (!response.ok) {
                                                 throw new Error("Error en la solicitud: " + response.status);
