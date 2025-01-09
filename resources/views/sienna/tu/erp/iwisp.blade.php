@@ -277,7 +277,7 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
 
                                    
                                    
-                                    //localidadSelect.appendChild(fragment);
+                                    localidadSelect.appendChild(fragment);
                                     console.log("Localidades cargadas exitosamente.");
                                 }
 
