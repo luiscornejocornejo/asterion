@@ -227,7 +227,7 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                     const tokenSienna = "<?php echo $tokensienna;?>"; // Reemplaza con el valor real de tu token
                                     const subdomainTmp = "<?php echo $subdomain_tmp;?>"; // Reemplaza con el valor real de tu subdominio
                                     const url = `https://${subdomainTmp}.suricata-iwisp.com.ar/api/getLocalities?token=${tokenSienna}&tipo=${tipo}`;
-
+                                    console.log(url);
                                     // Realiza la solicitud
                                     const tipoSelect = document.getElementById("tipo");
                                         const localidadSelect = document.getElementById("localidad"); // Suponiendo que tienes un select para localidades
