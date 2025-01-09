@@ -392,7 +392,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                 <div class="accordion-body">        
                                     @include('sienna.tu.mail.mail')
                                     @include('sienna.tu.mail.adjuntos')
-                             </div>
+                                </div>
                             </div>
                          </div>
                         <?php 
@@ -467,7 +467,6 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                 @include('sienna.tu.informacionnotainterna')
                             </div>                    
                         </div>
-                    </div>
 
                    
                     <div class="mt-2">
