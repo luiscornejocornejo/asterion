@@ -452,12 +452,20 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         <?php 
                 
                     }?>
-                    <div class="mt-2">
-                         @include('sienna.tu.informacionnotainterna')
-
-                    </div>                    
-
-
+                    <span class="mt-2"></span>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingInternNotes">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseInternNotes" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseInternNotes">
+                                Grabaciones
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseInternNotes" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingInternNotes">
+                            <div class="accordion-body">
+                                @include('sienna.tu.informacionnotainterna')
+                            </div>                    
                         </div>
                     </div>
 
