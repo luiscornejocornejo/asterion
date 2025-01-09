@@ -458,7 +458,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#panelsStayOpen-collapseInternNotes" aria-expanded="false"
                             aria-controls="panelsStayOpen-collapseInternNotes">
-                                Grabaciones
+                                Notas Internas
                             </button>
                         </h2>
                         <div id="panelsStayOpen-collapseInternNotes" class="accordion-collapse collapse"
@@ -579,7 +579,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                 </div>
             </div>
             <!-- container -->
-        </div>
+        
         <!-- content -->
 
         
