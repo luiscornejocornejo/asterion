@@ -246,13 +246,13 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                         let claves = Object.keys(uno); // claves = ["nombre", "color", "macho", "edad"]
                                         for(let i=0; i< claves.length; i++){
                                             let clave = claves[i];
-                                            console.log(uno[clave]);
+                                            console.log(uno["id"]);
+                                            console.log(uno["localidad"]);
                                         }
 
 
                                     }
-                                    console.log(arr);
-                                    console.log( typeof arr);
+                                    
 
                                     // Iterar sobre el array y devolver id y localidad
                                     /*
