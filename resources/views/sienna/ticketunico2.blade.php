@@ -289,49 +289,41 @@ function tituloiconos($iconos, $tipo)
                             @include('sienna.tu.informacionticket')
                         </div>
 
-
                         <?php
-                     $urlreabrir="";
-                        $vero="";
-                                    foreach($emp as $value){
-                                        $urlreabrir=$value->reabrir;
-                                    }
-                                    if(strlen($urlreabrir)<2){
-                                        $vero="d-none";
-                                    }
-                                     
-                      
-                     if($resultados[0]->siennasource==10){?>
+                            $urlreabrir="";
+                            $vero="";
+                            foreach($emp as $value){
+                                $urlreabrir=$value->reabrir;
+                            }
+                            if(strlen($urlreabrir)<2){
+                                $vero="d-none";
+                            }
+                                        
+                            if($resultados[0]->siennasource==10) {?>
+                                <div>
+                                    @include('sienna.tu.informacionsuricata')
+                                </div>
+                            <?php }
+                            $excludedProductIds = [1,2,3,4,6];
+                            if($xenservicio){
+                                if (in_array($resultados[0]->siennasource, $excludedProductIds)) {
+                                    ?>
+                                <div class="mt-2">
+                                    @include('sienna.tu.bot.whatapp')
+                                </div>
+                                <?php 
+                            }
+                            }
+                            if($botpresservicio){
+                                if (in_array($resultados[0]->siennasource, $excludedProductIds)) {
+                                    ?>
+                                    <div class="mt-2">
 
-
-                        @include('sienna.tu.informacionsuricata')
-
-
-                        <?php
-                    }
-
-                    
-                    $excludedProductIds = [1,2,3,4,6];
-                    if($xenservicio){
-                        if (in_array($resultados[0]->siennasource, $excludedProductIds)) {
-                            ?>
-                        <div class="mt-2">
-
-                            @include('sienna.tu.bot.whatapp')
-                        </div>
-                        <?php 
-                      }
-                  }
-                  if($botpresservicio){
-                    if (in_array($resultados[0]->siennasource, $excludedProductIds)) {
-                        ?>
-                        <div class="mt-2">
-
-                            @include('sienna.tu.bot.botpres')
-                        </div>
-                        <?php 
-                  }
-              }?>
+                                        @include('sienna.tu.bot.botpres')
+                                    </div>
+                                    <?php 
+                            }
+                        }?>
 
                         <div class="accordion mt-2" id="accordionPanelsStayOpenExample">
                             <div class="accordion-item">
@@ -383,82 +375,75 @@ function tituloiconos($iconos, $tipo)
                             </div>
 
                             <?php
-                      if($mailservicio){
-                        if($resultados[0]->siennasource==7){?>
-                            <span class="mt-2"></span>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="panelsStayOpen-headingFour">
-                                    <button class="accordion-button collapsed" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour"
-                                        aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
-                                        Adjuntos
-                                    </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
-                                    aria-labelledby="panelsStayOpen-headingFour">
-                                    <div class="accordion-body">
-                                        @include('sienna.tu.mail.mail')
-                                        @include('sienna.tu.mail.adjuntos')
-                                    </div>
-                                </div>
-                            </div>
-                            <?php 
-                        }
-                    }?>
+                                if($mailservicio){
+                                    if($resultados[0]->siennasource==7){?>
+                                        <span class="mt-2"></span>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour"
+                                                    aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                                                    Adjuntos
+                                                </button>
+                                            </h2>
+                                            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                                                aria-labelledby="panelsStayOpen-headingFour">
+                                                <div class="accordion-body">
+                                                    @include('sienna.tu.mail.mail')
+                                                    @include('sienna.tu.mail.adjuntos')
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <?php 
+                                    }
+                            }?>
 
                             <?php
-                      if($grabacionesservicio){
-                        if($resultados[0]->siennasource==5){?>
-                            <span class="mt-2"></span>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="panelsStayOpen-headingRecords">
-                                    <button class="accordion-button collapsed" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseRecords"
-                                        aria-expanded="false" aria-controls="panelsStayOpen-collapseRecords">
-                                        Grabaciones
-                                    </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapseRecords" class="accordion-collapse collapse"
-                                    aria-labelledby="panelsStayOpen-headingRecords">
-                                    <div class="accordion-body">
-                                        @include('sienna.tu.telefonia.grabaciones')
-                                    </div>
-                                </div>
-                            </div>
-                            <?php 
-                        }
-                    }?>
+                                if($grabacionesservicio){
+                                    if($resultados[0]->siennasource==5){?>
+                                        <span class="mt-2"></span>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="panelsStayOpen-headingRecords">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseRecords"
+                                                    aria-expanded="false" aria-controls="panelsStayOpen-collapseRecords">
+                                                    Grabaciones
+                                                </button>
+                                            </h2>
+                                            <div id="panelsStayOpen-collapseRecords" class="accordion-collapse collapse"
+                                                aria-labelledby="panelsStayOpen-headingRecords">
+                                                <div class="accordion-body">
+                                                    @include('sienna.tu.telefonia.grabaciones')
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <?php 
+                                    }
+                            }?>
 
 
                             <?php if($erpservicio){
-                         $nombreintegracion = session('nombreintegracion');
-                        if($nombreintegracion=="ispkipper"){?>@include('sienna.tu.erp.kipper')<?php }
-                        if($nombreintegracion=="mikrowisp"){?>@include('sienna.tu.erp.mikro')<?php }
-                        if($nombreintegracion=="ispcube2"){?>@include('sienna.tu.erp.ispcube')<?php }
-                        if($nombreintegracion=="iwisp"){?>@include('sienna.tu.erp.iwisp')<?php }
+                                $nombreintegracion = session('nombreintegracion');
+                                if($nombreintegracion=="ispkipper"){?>@include('sienna.tu.erp.kipper')<?php }
+                                if($nombreintegracion=="mikrowisp"){?>@include('sienna.tu.erp.mikro')<?php }
+                                if($nombreintegracion=="ispcube2"){?>@include('sienna.tu.erp.ispcube')<?php }
+                                if($nombreintegracion=="iwisp"){?>@include('sienna.tu.erp.iwisp')<?php }
                 
-                    }?>
+                             }?>
                             <?php
-                      if($iclasservicio){?>
-
-                            @include('sienna.tu.gestioncampo.iclass')<?php 
-                
-                    }?>
+                                if($iclasservicio){?>
+                                    @include('sienna.tu.gestioncampo.iclass')
+                                <?php } ?>
                             <?php
-                      if($geoservicio){?>
-
-                            @include('sienna.tu.geolocalizacion.geo')<?php 
-                
-                    }?>
+                                if($geoservicio){?>
+                                    @include('sienna.tu.geolocalizacion.geo')<?php 
+                            }?>
                             <?php
-                      if($pagoservicio){?>
-                            <div class="mt-2">
-
-                                @include('sienna.tu.pagoralia.pagoralia')
-                            </div>
-                            <?php 
-                
-                    }?>
+                                if($pagoservicio){?>
+                                    <div class="mt-2">
+                                        @include('sienna.tu.pagoralia.pagoralia')
+                                    </div>
+                                <?php } ?>
                             <span class="mt-2"></span>
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingInternNotes">
@@ -476,16 +461,16 @@ function tituloiconos($iconos, $tipo)
                                 </div>
                             </div>
 
-                        <div class="mt-2">
-                            @include('sienna.tu.informaciontareas')
+                            <div class="mt-2">
+                                @include('sienna.tu.informaciontareas')
 
-                        </div>
-                        <div class="mt-2">
-                            @include('sienna.tu.informacionhistorial')
+                            </div>
+                            <div class="mt-2">
+                                @include('sienna.tu.informacionhistorial')
 
-                        </div>
+                            </div>
 
-                        <div aria-live="polite" aria-atomic="true"
+                            <div aria-live="polite" aria-atomic="true"
                             class="toast fade position-fixed bottom-0 end-0 m-3" role="alert"
                             style="z-index: 1050;" id="liveToast">
                             <div class="toast-header bg-dark">
@@ -498,6 +483,7 @@ function tituloiconos($iconos, $tipo)
                             </div>
                             <div class="toast-body">
 
+                            </div>
                             </div>
                         </div>
                     </div>
