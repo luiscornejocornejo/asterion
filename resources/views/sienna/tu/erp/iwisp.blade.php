@@ -209,7 +209,7 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">tipo</label>
-                            <select onchange="fetchLocalities(this.value)" class="form-select js-example-basic-single" name="tipo" id="agent">
+                            <select onchange="fetchLocalities(this.value)" class="form-select js-example-basic-single" name="tipo" id="tipo">
                                 <option value="F">Fibra</option>
                                 <option value="W">Wireless</option>
                             </select>
@@ -217,7 +217,7 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                         </div>
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
                             <label for="agent" class="form-label">Localidades:</label>
-                            <select class="form-select js-example-basic-single" name="categoria" id="localities">
+                            <select class="form-select js-example-basic-single" name="categoria" id="localidad">
                             <option value="">Seleccione una localidad</option>
 
                                 
@@ -229,31 +229,34 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                     const url = `https://${subdomainTmp}.suricata-iwisp.com.ar/api/getLocalities?token=${tokenSienna}&tipo=${tipo}`;
 
                                     // Realiza la solicitud
-                                    fetch(url, { mode: 'no-cors'})
-                                        .then(response => {
-                                            if (!response.ok) {
-                                                throw new Error("Error en la solicitud: " + response.status);
+                                    const tipoSelect = document.getElementById("tipo");
+                                        const localidadSelect = document.getElementById("localidad"); // Suponiendo que tienes un select para localidades
+
+                                        tipoSelect.addEventListener("change", async function () {
+                                            const tipo = tipoSelect.value;
+                                            
+                                            try {
+                                                const response = await axios.get(url);
+                                                
+                                                // Asumiendo que la respuesta contiene las localidades en un array
+                                                const localidades = response.data;
+
+                                                // Limpia el select de localidades antes de llenarlo
+                                                localidadSelect.innerHTML = "";
+
+                                                // Llenar el select con las opciones de localidades
+                                                localidades.forEach(localidad => {
+                                                    const option = document.createElement("option");
+                                                    option.value = localidad.id; // Ajusta según el formato de la respuesta
+                                                    option.textContent = localidad.localidad; // Ajusta según el formato de la respuesta
+                                                    localidadSelect.appendChild(option);
+                                                });
+                                            } catch (error) {
+                                                console.error("Error al obtener localidades:", error);
+                                                alert("No se pudo cargar la información. Revisa la consola para más detalles.");
                                             }
-                                            return response.json();
-                                        })
-                                        .then(data => {
-                                            const localitiesSelect = document.getElementById("localities");
-
-                                            // Limpia las opciones actuales
-                                            localitiesSelect.innerHTML = '<option value="">Seleccione una localidad</option>';
-
-                                            // Agrega las nuevas opciones
-                                            data.forEach(locality => {
-                                                const option = document.createElement("option");
-                                                option.value = locality.id; // Cambia según la estructura de tu JSON
-                                                option.textContent = locality.localidad; // Cambia según la estructura de tu JSON
-                                                localitiesSelect.appendChild(option);
-                                            });
-                                        })
-                                        .catch(error => {
-                                            console.error("Error:", error);
-                                            alert("No se pudieron cargar las localidades.");
                                         });
+
                                 }
 
                             </script>
