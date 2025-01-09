@@ -326,7 +326,7 @@ function tituloiconos($iconos, $tipo)
                         }?>
 
                        
-                            <div class="accordion-item">
+                            <div class="accordion-item my-2 bg-primary">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
