@@ -232,7 +232,6 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                     const tipoSelect = document.getElementById("tipo");
                                         const localidadSelect = document.getElementById("localidad"); // Suponiendo que tienes un select para localidades
 
-                                        tipoSelect.addEventListener("change", async function () {
                                             const tipo = tipoSelect.value;
                                             
                                             try {
@@ -255,7 +254,7 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                                 console.error("Error al obtener localidades:", error);
                                                 alert("No se pudo cargar la información. Revisa la consola para más detalles.");
                                             }
-                                        });
+                                     
 
                                 }
 
