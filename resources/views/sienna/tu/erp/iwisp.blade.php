@@ -228,6 +228,9 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                     const subdomainTmp = "<?php echo $subdomain_tmp;?>"; // Reemplaza con el valor real de tu subdominio
                                     const url = `https://${subdomainTmp}.suricata-iwisp.com.ar/api/getLocalities?token=${tokenSienna}&tipo=${tipo}`;
                                     console.log(url);
+                                    import axios from 'axios';
+
+                                    axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
                                     axios.get(url)
                                     .then(function (response) {
