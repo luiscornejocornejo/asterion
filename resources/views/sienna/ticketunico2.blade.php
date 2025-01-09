@@ -402,10 +402,22 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                     <?php
                       if($grabacionesservicio){
                         if($resultados[0]->siennasource==5){?>
-                        <div class="mt-2">
-
-                        @include('sienna.tu.telefonia.grabaciones')
-                        </div>
+                        <span class="mt-2"></span>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingRecords">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseRecords" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseRecords">
+                                        Grabaciones
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseRecords" class="accordion-collapse collapse"
+                                aria-labelledby="panelsStayOpen-headingRecords">
+                                    <div class="accordion-body">    
+                                        @include('sienna.tu.telefonia.grabaciones')
+                                    </div>
+                                </div>
+                            </div>
                         <?php 
                         }
                     }?>
