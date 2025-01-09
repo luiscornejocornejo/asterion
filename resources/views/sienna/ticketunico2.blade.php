@@ -328,7 +328,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
                                     aria-controls="panelsStayOpen-collapseOne">
                                         Información de Usuario
                                     </button>
