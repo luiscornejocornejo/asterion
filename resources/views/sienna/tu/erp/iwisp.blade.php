@@ -236,8 +236,12 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                     let localities = [];
                                     if (tipo === "W") {
                                         localities = Object.values(dos);
+                                        const arr = dos.map(elemento => Object.entries(elemento));
+
                                     } else if (tipo === "F") {
                                         localities = Object.values(uno);
+                                        const arr = uno.map(elemento => Object.entries(elemento));
+
                                     }
 
                                     // Validar datos
@@ -247,8 +251,8 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                     }
 
                                     const fragment = document.createDocumentFragment();
-                                    console.log(uno);
-                                    console.log( typeof uno);
+                                    console.log(arr);
+                                    console.log( typeof arr);
                                      
                                     localities.forEach(localidad => {
                                        // console.log(localidad);
