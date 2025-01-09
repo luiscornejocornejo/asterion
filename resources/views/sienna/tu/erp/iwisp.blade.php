@@ -235,32 +235,34 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
 
                                     let localities = [];
                                     if (tipo === "W") {
-                                        localities = Object.values(dos);
-                                        const arr = dos.map(elemento => Object.entries(elemento));
+                                        const localidades = JSON.parse(dos);
+
 
                                     } else if (tipo === "F") {
-                                        localities = Object.values(uno);
-                                        const arr = uno.map(elemento => Object.entries(elemento));
+                                        const localidades = JSON.parse(uno);
 
                                     }
 
-                                    // Validar datos
-                                    if (!Array.isArray(localities) || localities.length === 0) {
-                                        console.error("No hay localidades válidas.");
-                                        return;
-                                    }
+
+                                    // Iterar sobre el array y devolver id y localidad
+                                    localidades.forEach(localidad => {
+                                        console.log("ID:", localidad.id);
+                                        console.log("Localidad:", localidad.localidad);
+                                    });
+
+                                    
 
                                     const fragment = document.createDocumentFragment();
                                     console.log(arr);
                                     console.log( typeof arr);
                                      
-                                    localities.forEach(localidad => {
+                                    //localities.forEach(localidad => {
                                        // console.log(localidad);
                                         //const option = document.createElement('option');
                                         //option.value = localidad.id;
                                         //option.textContent = localidad.localidad;
                                         ///fragment.appendChild(option);
-                                    });
+                                   // });
 
                                     //localidadSelect.appendChild(fragment);
                                     console.log("Localidades cargadas exitosamente.");
