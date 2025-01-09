@@ -245,10 +245,11 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
 
 
                                     // Iterar sobre el array y devolver id y localidad
+                                    /*
                                     localidades.forEach(localidad => {
                                         console.log("ID:", localidad.id);
                                         console.log("Localidad:", localidad.localidad);
-                                    });
+                                    });*/
 
                                     
 
@@ -256,13 +257,13 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                     console.log(arr);
                                     console.log( typeof arr);
                                      
-                                    //localities.forEach(localidad => {
-                                       // console.log(localidad);
+                                    localidades.forEach(localidad => {
+                                        console.log(localidad);
                                         //const option = document.createElement('option');
                                         //option.value = localidad.id;
                                         //option.textContent = localidad.localidad;
                                         ///fragment.appendChild(option);
-                                   // });
+                                    });
 
                                     //localidadSelect.appendChild(fragment);
                                     console.log("Localidades cargadas exitosamente.");
