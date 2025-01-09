@@ -284,7 +284,7 @@ function tituloiconos($iconos, $tipo)
                 </div>
 
                 <div class="row">
-                    <div class="col-sm-12 col-lg-8 col-xxl-9">
+                    <div class="col-sm-12 col-lg-8">
                         <div>
                             @include('sienna.tu.informacionticket')
                         </div>
@@ -487,7 +487,7 @@ function tituloiconos($iconos, $tipo)
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-lg-4 col-xxl-3 card widget-flat" id="forwardTicket">
+                    <div class="col-sm-12 col-lg-4 card widget-flat" id="forwardTicket">
                         <strong class="mt-2">Seguimiento</strong>
                         <hr>
                         <div class="card-body" style="padding-top: 0;">
