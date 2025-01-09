@@ -224,8 +224,8 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                             </select>
                             <script>
                                function fetchLocalities(tipo) {
-                                    const uno = {!! json_encode($locaf, JSON_FORCE_OBJECT) !!};
-                                    const dos = {!! json_encode($locaw, JSON_FORCE_OBJECT) !!};
+                                    const uno = {!! json_encode($locaf2, JSON_FORCE_OBJECT) !!};
+                                    const dos = {!! json_encode($locaw2, JSON_FORCE_OBJECT) !!};
 
                                     console.log("Datos uno:", uno);
                                     console.log("Datos dos:", dos);
