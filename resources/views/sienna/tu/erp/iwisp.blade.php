@@ -39,21 +39,12 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
         $categorias= file_get_contents("https://".$subdomain_tmp.".suricata-iwisp.com.ar/api/getCategories?token=".$tokensienna."");
         $categorias2=json_decode($categorias, true);
 
-        dd($categorias2);
-$categorias2=json_decode($categorias, true);
 
 
-$getdata= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/ws?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente);
+
+$getdata= file_get_contents("https://".$subdomain_tmp.".suricata-iwisp.com.ar/api/ws?token=".$tokensienna."&idcliente=" . $resultadoscliente[0]->cliente);
 $getdata2 = json_decode($getdata, true);
-if ($getdata2 && isset($getdata2['id'], $getdata2['connections'][0]['id'])) {
-    $iddelcliente = $getdata2['id'];
-    $connectionId = $getdata2['connections'][0]['id'];
 
-   
-} else {
-    $iddelcliente ="";
-    $connectionId = "";
-}
 
 $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 
@@ -85,7 +76,7 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
         <div class="tab-content">
             <div class="tab-pane show active" id="ticket">
 
-                <form method="post" action="api/crearispcube">
+                <form method="post" action="api/creariwisp">
                     @csrf
                     <input type="hidden" name="tokensienna" value="<?php echo $tokensienna;?>"/>
                     <input type="hidden" name="dom" value="<?php echo $subdomain_tmp;?>"/>
@@ -97,10 +88,12 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                             
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
-                            <label for="example-textarea" class="form-label">Conexion</label>
-                            <input required name="conexion" type="text" class="form-control" id="lastNameUser"
-                                value="<?php echo $connectionId;?>">
-                            
+                            <label for="example-textarea" class="form-label">tipo</label>
+                            <select class="form-select js-example-basic-single" name="tipo" id="agent">
+                                <option value="R">Remoto</option>
+                                <option value="S">Sitio</option>
+                            </select>
+
                         </div>
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
                             <label for="agent" class="form-label">Categorias:</label>
@@ -109,7 +102,7 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                                 <?php for($i=0;$i<sizeof($categorias2);$i++){
                                         ?>
                                 <option value="{{ $categorias2[$i]['id'] }}">
-                                    {{ $categorias2[$i]['name'] }}
+                                    {{ $categorias2[$i]['descripcion'] }}
                                 </option>
                                 <?php }
                                     
@@ -128,7 +121,7 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                     <hr class="mx-1" />
                 </form>
 
-                <?php if(isset($ticerp2[0]['id'])){?>
+                <?php if(0){?>
                 <table id="casadepapel" class="table table-striped dt-responsive nowrap w-100 text-light">
                     <thead>
                         <tr class="text-center bg-dark">
@@ -139,21 +132,7 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
                         </tr>
                     </thead>
                     <tbody id="log">
-                        <?php
-
-                        for($i=0;$i<sizeof($ticerp2);$i++){
-                                        ?>
-                        <tr class="text-center">
-                            <td><a target='_blank' href='<?php echo $urilogin;?>{{ $ticerp2[$i]['id'] }}'>{{ $ticerp2[$i]['id'] }}</a> </td>
-                            <td>{{ $ticerp2[$i]['visit_date'] }}
-                            </td>
-                            <td> <?php echo $ticerp2[$i]['ticket_status']['name']; ?> </td>
-                            <td> <?php echo $ticerp2[$i]['ticket_category']['name']; ?> </td>
-
-
-
-                        </tr>
-                        <?php }?>
+                     
 
                     </tbody>
                 </table>
