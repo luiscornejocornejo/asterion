@@ -247,8 +247,9 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                     }
 
                                     const fragment = document.createDocumentFragment();
-                                    console.log(localities);
-
+                                    console.log(uno);
+                                    console.log( typeof uno);
+                                     
                                     localities.forEach(localidad => {
                                        // console.log(localidad);
                                         //const option = document.createElement('option');
