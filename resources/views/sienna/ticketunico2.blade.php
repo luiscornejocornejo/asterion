@@ -271,9 +271,11 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                 <div class="row">
                     <div class="col-sm-12 col-lg-8 col-xxl-9">
-                        @include('sienna.tu.informacionticket')
+                        <div>
+                            @include('sienna.tu.informacionticket')
+                        </div>
                     </div>
-                </div>
+
                     <?php
                      $urlreabrir="";
                         $vero="";
