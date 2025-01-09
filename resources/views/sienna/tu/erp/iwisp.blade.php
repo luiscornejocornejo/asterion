@@ -233,7 +233,7 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
 
                                     // Llenar el select con las opciones de localidades
                                     if(tipo=="W"){
-                                        localidades.forEach(dos => {
+                                        dos.forEach(localidad => {
                                             const option = document.createElement("option");
                                             option.value = localidad.id; // Ajusta según el formato de la respuesta
                                             option.textContent = localidad.localidad; // Ajusta según el formato de la respuesta
@@ -241,7 +241,7 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                         });
                                     }
                                     if(tipo=="F"){
-                                        localidades.forEach(uno => {
+                                        uno.forEach(localidad => {
                                             const option = document.createElement("option");
                                             option.value = localidad.id; // Ajusta según el formato de la respuesta
                                             option.textContent = localidad.localidad; // Ajusta según el formato de la respuesta
