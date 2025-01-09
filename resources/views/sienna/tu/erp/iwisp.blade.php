@@ -1,8 +1,13 @@
 <?php
 
 if (isset($resultadoscliente[0]->cliente)) {
+    $iddelcliente=$resultadoscliente[0]->cliente;
+    $getdata= file_get_contents("https://".$subdomain_tmp.".suricata-iwisp.com.ar/api/ws?token=".$tokensienna."&idcliente=" . $iddelcliente);
+    $getdata2 = json_decode($getdata, true);
+    $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 } else {
-    return '';
+    $iddelcliente="";
+    $getdata3 ="";
 }
 if($subdomain_tmp=="wiber2"){
     $subdomain_tmp="wiber";
@@ -35,18 +40,16 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
             $urilogin = $value->urilogin;
         }
 
-        $iddelcliente=$resultadoscliente[0]->cliente;
         $categorias= file_get_contents("https://".$subdomain_tmp.".suricata-iwisp.com.ar/api/getCategories?token=".$tokensienna."");
         $categorias2=json_decode($categorias, true);
+        $locaf= file_get_contents("https://".$subdomain_tmp.".suricata-iwisp.com.ar/api/getLocalities?token=".$tokensienna."&tipo=f ");
+        $locaf2=json_decode($locaf, true);
+        $locaw= file_get_contents("https://".$subdomain_tmp.".suricata-iwisp.com.ar/api/getLocalities?token=".$tokensienna."&tipo=w ");
+        $locaw2=json_decode($locaw, true);
 
 
 
 
-$getdata= file_get_contents("https://".$subdomain_tmp.".suricata-iwisp.com.ar/api/ws?token=".$tokensienna."&idcliente=" . $resultadoscliente[0]->cliente);
-$getdata2 = json_decode($getdata, true);
-
-
-$getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 
 ?>
 <div class="card widget-flat" id="infoUser">
@@ -159,7 +162,57 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
             </div>
 
             <div class="tab-pane " id="leads">
-                leads
+            <form method="post" action="api/creariwispleads">
+                    @csrf
+                    <input type="hidden" name="tokensienna" value="<?php echo $tokensienna;?>"/>
+                    <input type="hidden" name="dom" value="<?php echo $subdomain_tmp;?>"/>
+                    <div class="row">
+                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
+                            <label for="example-textarea" class="form-label">Nombre</label>
+                            <input required name="nombre" type="text" class="form-control" id="lastNameUser" value="<?php //echo $iddelcliente;?>">
+                        </div>
+                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
+                            <label for="example-textarea" class="form-label">Apellido</label>
+                            <input required name="apellido" type="text" class="form-control" id="lastNameUser" value="<?php //echo $iddelcliente;?>">
+                        </div>
+                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
+                            <label for="example-textarea" class="form-label">Domicilios</label>
+                            <input required name="domicilio" type="text" class="form-control" id="lastNameUser" value="<?php //echo $iddelcliente;?>">
+                        </div>
+                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
+                            <label for="example-textarea" class="form-label">Celular</label>
+                            <input required name="cel" type="text" class="form-control" id="lastNameUser" value="<?php //echo $iddelcliente;?>">
+                        </div>
+                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
+                            <label for="example-textarea" class="form-label">Email</label>
+                            <input required name="email" type="email" class="form-control" id="lastNameUser" value="<?php //echo $iddelcliente;?>">
+                        </div>
+                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
+                            <label for="example-textarea" class="form-label">tipo</label>
+                            <select class="form-select js-example-basic-single" name="tipo" id="agent">
+                                <option value="F">Fibra</option>
+                                <option value="W">Wireless</option>
+                            </select>
+
+                        </div>
+                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
+                            <label for="agent" class="form-label">Categorias:</label>
+                            <select class="form-select js-example-basic-single" name="categoria" id="agent">
+
+                                
+                            </select>
+                        </div> 
+                       
+                           
+                      
+                        <div class="mb-2">
+                            <label for="example-textarea" class="form-label">Descripcion</label>
+                            <textarea name="detalle" class="form-control" id="example-textarea" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success mt-3 mb-2">Crear Ticket</button>
+                    <hr class="mx-1" />
+                </form>
             </div>
            
         </div>
