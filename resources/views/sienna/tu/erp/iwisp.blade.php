@@ -36,7 +36,7 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
         }
 
 
-        $categorias= file_get_contents("https://".$subdomain_tmp.".suricata2.com.ar/api/getCategories?token=".$tokensienna."");
+        $categorias= file_get_contents("https://".$subdomain_tmp.".suricata-iwisp.com.ar/api/getCategories?token=".$tokensienna."");
         $categorias2=json_decode($categorias, true);
 
         dd($categorias2);
