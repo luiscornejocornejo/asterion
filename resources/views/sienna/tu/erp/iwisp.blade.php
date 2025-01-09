@@ -232,11 +232,24 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                     localidadSelect.innerHTML = ""; // Limpiar opciones
 
                                     let localities = [];
+                                    const fragment = document.createDocumentFragment();
+
                                     if (tipo === "W") {
                                         console.log("Datos dos:", dos);
                                         console.log( typeof dos);
 
-                                        const localidades = JSON.parse(dos);
+                                        let claves = Object.keys(dos); // claves = ["nombre", "color", "macho", "edad"]
+                                        for(let i=0; i< claves.length; i++){
+                                            let clave = claves[i];
+                                            console.log(dos[clave]);
+                                            console.log(dos[clave]["id"]);
+                                            console.log(dos[clave]["localidad"]);
+                                            const option = document.createElement('option');
+                                            option.value = dos[clave]["id"];
+                                            option.textContent =dos[clave]["localidad"];
+                                            fragment.appendChild(option);
+                                            
+                                        }
 
 
                                     } else if (tipo === "F") {
@@ -249,34 +262,21 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                                             console.log(uno[clave]);
                                             console.log(uno[clave]["id"]);
                                             console.log(uno[clave]["localidad"]);
+                                            const option = document.createElement('option');
+                                            option.value = uno[clave]["id"];
+                                            option.textContent =uno[clave]["localidad"];
+                                            fragment.appendChild(option);
                                             
                                         }
 
 
                                     }
-                                    console.log(arr);
-                                    console.log( typeof arr);
-
-                                    // Iterar sobre el array y devolver id y localidad
-                                    /*
-                                    localidades.forEach(localidad => {
-                                        console.log("ID:", localidad.id);
-                                        console.log("Localidad:", localidad.localidad);
-                                    });*/
+                                   
 
                                     
 
-                                    const fragment = document.createDocumentFragment();
                                    
-                                     
-                                    localidades.forEach(localidad => {
-                                        console.log(localidad);
-                                        //const option = document.createElement('option');
-                                        //option.value = localidad.id;
-                                        //option.textContent = localidad.localidad;
-                                        ///fragment.appendChild(option);
-                                    });
-
+                                   
                                     //localidadSelect.appendChild(fragment);
                                     console.log("Localidades cargadas exitosamente.");
                                 }
