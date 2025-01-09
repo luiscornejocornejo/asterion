@@ -300,28 +300,28 @@ function tituloiconos($iconos, $tipo)
                             }
                                         
                             if($resultados[0]->siennasource==10) {?>
-                                <div>
-                                    @include('sienna.tu.informacionsuricata')
-                                </div>
-                            <?php }
+                        <div>
+                            @include('sienna.tu.informacionsuricata')
+                        </div>
+                        <?php }
                             $excludedProductIds = [1,2,3,4,6];
                             if($xenservicio){
                                 if (in_array($resultados[0]->siennasource, $excludedProductIds)) {
                                     ?>
-                                <div class="mt-2">
-                                    @include('sienna.tu.bot.whatapp')
-                                </div>
-                                <?php 
+                        <div class="mt-2">
+                            @include('sienna.tu.bot.whatapp')
+                        </div>
+                        <?php 
                             }
                             }
                             if($botpresservicio){
                                 if (in_array($resultados[0]->siennasource, $excludedProductIds)) {
                                     ?>
-                                    <div class="mt-2">
+                        <div class="mt-2">
 
-                                        @include('sienna.tu.bot.botpres')
-                                    </div>
-                                    <?php 
+                            @include('sienna.tu.bot.botpres')
+                        </div>
+                        <?php 
                             }
                         }?>
 
@@ -342,7 +342,7 @@ function tituloiconos($iconos, $tipo)
                                 </div>
                             </div>
 
-                            <div class="accordion-item mb-3">
+                            <div class="accordion-item mt-3 mb-3 border">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
                                     <button class="accordion-button collapsed" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo"
@@ -358,7 +358,7 @@ function tituloiconos($iconos, $tipo)
                                 </div>
                             </div>
 
-                            <div class="accordion-item mb-3">
+                            <div class="accordion-item mb-3 border">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingThree">
                                     <button class="accordion-button collapsed" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree"
@@ -377,46 +377,46 @@ function tituloiconos($iconos, $tipo)
                             <?php
                                 if($mailservicio){
                                     if($resultados[0]->siennasource==7){?>
-                                        <span class="mt-2"></span>
-                                        <div class="accordion-item mb-3">
-                                            <h2 class="accordion-header" id="panelsStayOpen-headingFour">
-                                                <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour"
-                                                    aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
-                                                    Adjuntos
-                                                </button>
-                                            </h2>
-                                            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
-                                                aria-labelledby="panelsStayOpen-headingFour">
-                                                <div class="accordion-body">
-                                                    @include('sienna.tu.mail.mail')
-                                                    @include('sienna.tu.mail.adjuntos')
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <?php 
+                            <span class="mt-2"></span>
+                            <div class="accordion-item mb-3 border">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour"
+                                        aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                                        Adjuntos
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingFour">
+                                    <div class="accordion-body">
+                                        @include('sienna.tu.mail.mail')
+                                        @include('sienna.tu.mail.adjuntos')
+                                    </div>
+                                </div>
+                            </div>
+                            <?php 
                                     }
                             }?>
 
                             <?php
                                 if($grabacionesservicio){
                                     if($resultados[0]->siennasource==5){?>
-                                        <div class="accordion-item mb-3">
-                                            <h2 class="accordion-header" id="panelsStayOpen-headingRecords">
-                                                <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseRecords"
-                                                    aria-expanded="false" aria-controls="panelsStayOpen-collapseRecords">
-                                                    Grabaciones
-                                                </button>
-                                            </h2>
-                                            <div id="panelsStayOpen-collapseRecords" class="accordion-collapse collapse"
-                                                aria-labelledby="panelsStayOpen-headingRecords">
-                                                <div class="accordion-body">
-                                                    @include('sienna.tu.telefonia.grabaciones')
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <?php 
+                            <div class="accordion-item mb-3 border">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingRecords">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseRecords"
+                                        aria-expanded="false" aria-controls="panelsStayOpen-collapseRecords">
+                                        Grabaciones
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseRecords" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingRecords">
+                                    <div class="accordion-body">
+                                        @include('sienna.tu.telefonia.grabaciones')
+                                    </div>
+                                </div>
+                            </div>
+                            <?php 
                                     }
                             }?>
 
@@ -431,21 +431,21 @@ function tituloiconos($iconos, $tipo)
                              }?>
                             <?php
                                 if($iclasservicio){?>
-                                    @include('sienna.tu.gestioncampo.iclass')
-                                <?php } ?>
+                            @include('sienna.tu.gestioncampo.iclass')
+                            <?php } ?>
                             <?php
                                 if($geoservicio){?>
-                                    @include('sienna.tu.geolocalizacion.geo')<?php 
+                            @include('sienna.tu.geolocalizacion.geo')<?php 
                             }?>
                             <?php
                                 if($pagoservicio){?>
-                                    <div class="mt-2">
-                                        @include('sienna.tu.pagoralia.pagoralia')
-                                    </div>
-                                <?php } ?>
+                            <div class="mt-2">
+                                @include('sienna.tu.pagoralia.pagoralia')
+                            </div>
+                            <?php } ?>
                             <span class="mt-2"></span>
                             <div class="accordion-item mb-3">
-                                <h2 class="accordion-header" id="panelsStayOpen-headingInternNotes">
+                                <h2 class="accordion-header border" id="panelsStayOpen-headingInternNotes">
                                     <button class="accordion-button collapsed" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseInternNotes"
                                         aria-expanded="false" aria-controls="panelsStayOpen-collapseInternNotes">
@@ -460,55 +460,64 @@ function tituloiconos($iconos, $tipo)
                                 </div>
                             </div>
 
-                            <div class="mt-2">
-                                @include('sienna.tu.informaciontareas')
-
+                            <div class="accordion-item mb-3">
+                                <h2 class="accordion-header border" id="panelsStayOpen-headingTasks">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseInternTasks"
+                                        aria-expanded="false" aria-controls="panelsStayOpen-collapseInternTasks">
+                                        Tareas
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseInternTasks" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingInternTasks">
+                                    <div class="accordion-body">
+                                        @include('sienna.tu.informaciontareas')
+                                    </div>
+                                </div>
                             </div>
-                            <div class="mt-2">
-                                @include('sienna.tu.informacionhistorial')
 
-                            </div>
+                        </div>
 
-                            <div aria-live="polite" aria-atomic="true"
-                            class="toast fade position-fixed bottom-0 end-0 m-3" role="alert"
-                            style="z-index: 1050;" id="liveToast">
-                            <div class="toast-header bg-dark">
-                                <img src="assetsfacu/images/logo-mini.png" alt="brand-logo" height="12"
-                                    class="me-1" />
-                                <strong class="me-auto text-light">Copiado!</strong>
-                                <small class="text-light">Ahora</small>
-                                <button type="button" class="ms-2 btn-close btn-close-white" data-bs-dismiss="toast"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="toast-body">
-
-                            </div>
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header border" id="panelsStayOpen-headingHistory">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseInternHistory" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseInternHistory">
+                                    Historial
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseInternHistory" class="accordion-collapse collapse"
+                                aria-labelledby="panelsStayOpen-headingInternHistory">
+                                <div class="accordion-body">
+                                    @include('sienna.tu.informacionhistorial')
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-lg-4 col-xxl-3 card widget-flat" id="forwardTicket">
-                        <strong class="mt-2">Seguimiento</strong>
-                        <hr>
-                        <div class="card-body" style="padding-top: 0;">
-                            <!-- end sub tasks/checklists -->
+                </div>
+                <div class="col-sm-12 col-lg-4 col-xxl-3 card widget-flat" id="forwardTicket">
+                    <strong class="mt-2">Seguimiento</strong>
+                    <hr>
+                    <div class="card-body" style="padding-top: 0;">
+                        <!-- end sub tasks/checklists -->
 
-                            <div class="mt-2">
-                                <div class="card-header d-flex justify-content-between align-items-center mt-2">
-                                    <h4 class="header-title">Actividad reciente</h4>
-                                </div>
-                                <div class="card-body py-0 mb-3 mt-3 " style="height: 600px;" data-simplebar="init">
-                                    <div class="simplebar-wrapper">
-                                        <div class="simplebar-height-auto-observer-wrapper">
-                                            <div class="simplebar-height-auto-observer"></div>
-                                        </div>
-                                        <div class="simplebar-mask">
-                                            <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
-                                                <div class="simplebar-content-wrapper" tabindex="0" role="region"
-                                                    aria-label="scrollable content"
-                                                    style="height: auto; overflow: hidden scroll;">
-                                                    <div class="simplebar-content" style="padding: 0px 24px;">
+                        <div class="mt-2">
+                            <div class="card-header d-flex justify-content-between align-items-center mt-2">
+                                <h4 class="header-title">Actividad reciente</h4>
+                            </div>
+                            <div class="card-body py-0 mb-3 mt-3 " style="height: 600px;" data-simplebar="init">
+                                <div class="simplebar-wrapper">
+                                    <div class="simplebar-height-auto-observer-wrapper">
+                                        <div class="simplebar-height-auto-observer"></div>
+                                    </div>
+                                    <div class="simplebar-mask">
+                                        <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                                            <div class="simplebar-content-wrapper" tabindex="0" role="region"
+                                                aria-label="scrollable content"
+                                                style="height: auto; overflow: hidden scroll;">
+                                                <div class="simplebar-content" style="padding: 0px 24px;">
 
-                                                        <?php foreach ($segui as $val) {
+                                                    <?php foreach ($segui as $val) {
                                                         if ($val->tipo <> 5) {
                                                         if ($val->logo != null) {
                                                             $ht = 'https://sienamedia.sfo3.digitaloceanspaces.com/' . $subdomain_tmp . '/xen/enviados/' . $val->logo;
@@ -529,153 +538,153 @@ function tituloiconos($iconos, $tipo)
                                                         }
 
                                                     ?>
-                                                        <div class="timeline-alt py-0 ">
-                                                            <div class=" timeline-item">
-                                                                <?php $tipo = $val->tipo;
-                                                                echo $color = coloriconos($iconos, $tipo); ?>
-                                                                <div class="timeline-item-info">
+                                                    <div class="timeline-alt py-0 ">
+                                                        <div class=" timeline-item">
+                                                            <?php $tipo = $val->tipo;
+                                                            echo $color = coloriconos($iconos, $tipo); ?>
+                                                            <div class="timeline-item-info">
 
-                                                                    <small><?php
-                                                                    if ($val->tipo != 9) {
-                                                                        echo $val->descripcion;
-                                                                    } ?></small>
-                                                                    <p class="mb-0 pb-2">
-                                                                        <small
-                                                                            class="text-muted"><?php echo $val->autor; ?></small>
-                                                                        <br>
-                                                                        <small
-                                                                            class="text-muted"><?php echo $val->created_at; ?></small>
-                                                                    </p>
-                                                                    <span>
-                                                                        <?php if ($uri != "") { ?>
-                                                                        <span onclick="ng(`<?php echo $ht; ?>`)"
-                                                                            class="link-primary" type="button"
-                                                                            data-bs-toggle="modal"
-                                                                            data-bs-target="#bs-example-modal-img">
-                                                                            Ver archivo
-                                                                        </span>
-                                                                        <?php } ?>
+                                                                <small><?php
+                                                                if ($val->tipo != 9) {
+                                                                    echo $val->descripcion;
+                                                                } ?></small>
+                                                                <p class="mb-0 pb-2">
+                                                                    <small
+                                                                        class="text-muted"><?php echo $val->autor; ?></small>
+                                                                    <br>
+                                                                    <small
+                                                                        class="text-muted"><?php echo $val->created_at; ?></small>
+                                                                </p>
+                                                                <span>
+                                                                    <?php if ($uri != "") { ?>
+                                                                    <span onclick="ng(`<?php echo $ht; ?>`)"
+                                                                        class="link-primary" type="button"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#bs-example-modal-img">
+                                                                        Ver archivo
                                                                     </span>
-                                                                </div>
+                                                                    <?php } ?>
+                                                                </span>
                                                             </div>
                                                         </div>
-
-                                                        <?php } }?>
-
                                                     </div>
+
+                                                    <?php } }?>
+
                                                 </div>
                                             </div>
-                                            <div class="simplebar-placeholder" style="width: auto; height: 353px;">
-                                            </div>
                                         </div>
-                                        <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
-                                            <div class="simplebar-scrollbar" style="width: 0px; display: none;">
-                                            </div>
+                                        <div class="simplebar-placeholder" style="width: auto; height: 353px;">
                                         </div>
-                                        <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
-                                            <div class="simplebar-scrollbar"
-                                                style="height: 281px; transform: translate3d(0px, 0px, 0px); display: block;">
-                                            </div>
+                                    </div>
+                                    <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+                                        <div class="simplebar-scrollbar" style="width: 0px; display: none;">
                                         </div>
-                                    </div> <!-- end slimscroll -->
-                                </div>
-                            </div> <!-- end row-->
-                        </div>
+                                    </div>
+                                    <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+                                        <div class="simplebar-scrollbar"
+                                            style="height: 281px; transform: translate3d(0px, 0px, 0px); display: block;">
+                                        </div>
+                                    </div>
+                                </div> <!-- end slimscroll -->
+                            </div>
+                        </div> <!-- end row-->
                     </div>
-                    <!-- container -->
                 </div>
-                <!-- content -->
-
-
-
-
-                <!-- Departament modal Status-->
-
-                <!-- End modal Status -->
-
-                <!-- Departament modal Status-->
-
-                <!-- End modal Status -->
-
-
-
-                <!-- Modal Reclamo Ticket -->
-
+                <!-- container -->
             </div>
-            <!-- /.modal -->
-
-            <!-- End Reclamo Ticket -->
-
-            <!-- /.modal-topic -->
-
-            @include('sienna.tu.asignar')
-            @include('sienna.tu.derivar')
-            @include('sienna.tu.reclamar')
-            @include('sienna.tu.topic')
-            @include('sienna.tu.depto')
-            @include('sienna.ticketsmodals.cerrar')
-            @include('sienna.ticketsmodals.estados')
-            @include('sienna.tu.imagen')
-            @include('sienna.tu.tags')
-            @include('sienna.tu.prioridad')
-            <script>
-                function topic(result, dd, ee, ff) {
-
-                    document.getElementById("idticketestado3").value = dd;
-                    url = "https://" + result + ".suricata.cloud/api/topicxdepto?depto=" + ff;
-                    axios.get(url)
-                        .then(function(response) {
-                            // función que se ejecutará al recibir una respuesta
-                            console.log(response.data);
-                            dato = "";
-                            for (i = 0; i < response.data.length; i++) {
-                                console.log(response.data[i].id);
-                                console.log(response.data[i].nombre);
-                                dato += ' <div class="mt-3">' +
-                                    '<div class="form-check mb-2">' +
-                                    ' <input type="radio" id="customRadio' + response.data[i].id + '" name="estado" value="' +
-                                    response.data[i].id + '"  class="form-check-input">' +
-                                    '<label class="form-check-label" for="customRadio' + response.data[i].id + '">' + response
-                                    .data[i].nombre + '</label>' +
-                                    '</div>' +
-                                    ' </div>';
-                            }
-                            document.getElementById("estunico2").innerHTML = dato;
-                        })
-                        .catch(function(error) {
-                            // función para capturar el error
-                            console.log(error);
-                        })
-                        .then(function() {
-                            // función que siempre se ejecuta
-                        });
+            <!-- content -->
 
 
-                }
 
-                function ng(ruta) {
-                    document.getElementById('vista2').innerHTML = "";
-                    // document.getElementById('vista').src = dd;
-                    // g='<iframe allow="camera;microphone"  src="'+dd+'" width="100%" height="800px" class="border rounded-3" style="height:500px !important"></iframe>';
-                    g = '<embed src="' + ruta + '" type="" width="180" height="auto" quality="high" wmode="transparent">'
-                    document.getElementById('vista2').innerHTML = g;
-                }
 
-                function tags(idtag) {
+            <!-- Departament modal Status-->
 
-                    document.getElementById("idtickettag").value = idtag;
+            <!-- End modal Status -->
 
-                }
+            <!-- Departament modal Status-->
 
-                function printScreen() {
-                    let infoTicket = document.getElementById("infoTicket").innerHTML
-                    let infoUser = document.getElementById("infoUser").innerHTML
-                    let ticketHistory = document.getElementById("ticketHistory").innerHTML
-                    let forwardTicket = document.getElementById("forwardTicket").innerHTML
+            <!-- End modal Status -->
 
-                    let printWindow = window.open('', '', 'height=500, width=500');
-                    printWindow.document.open();
-                    printWindow.document.write(`
+
+
+            <!-- Modal Reclamo Ticket -->
+
+        </div>
+        <!-- /.modal -->
+
+        <!-- End Reclamo Ticket -->
+
+        <!-- /.modal-topic -->
+
+        @include('sienna.tu.asignar')
+        @include('sienna.tu.derivar')
+        @include('sienna.tu.reclamar')
+        @include('sienna.tu.topic')
+        @include('sienna.tu.depto')
+        @include('sienna.ticketsmodals.cerrar')
+        @include('sienna.ticketsmodals.estados')
+        @include('sienna.tu.imagen')
+        @include('sienna.tu.tags')
+        @include('sienna.tu.prioridad')
+        <script>
+            function topic(result, dd, ee, ff) {
+
+                document.getElementById("idticketestado3").value = dd;
+                url = "https://" + result + ".suricata.cloud/api/topicxdepto?depto=" + ff;
+                axios.get(url)
+                    .then(function(response) {
+                        // función que se ejecutará al recibir una respuesta
+                        console.log(response.data);
+                        dato = "";
+                        for (i = 0; i < response.data.length; i++) {
+                            console.log(response.data[i].id);
+                            console.log(response.data[i].nombre);
+                            dato += ' <div class="mt-3">' +
+                                '<div class="form-check mb-2">' +
+                                ' <input type="radio" id="customRadio' + response.data[i].id + '" name="estado" value="' +
+                                response.data[i].id + '"  class="form-check-input">' +
+                                '<label class="form-check-label" for="customRadio' + response.data[i].id + '">' + response
+                                .data[i].nombre + '</label>' +
+                                '</div>' +
+                                ' </div>';
+                        }
+                        document.getElementById("estunico2").innerHTML = dato;
+                    })
+                    .catch(function(error) {
+                        // función para capturar el error
+                        console.log(error);
+                    })
+                    .then(function() {
+                        // función que siempre se ejecuta
+                    });
+
+
+            }
+
+            function ng(ruta) {
+                document.getElementById('vista2').innerHTML = "";
+                // document.getElementById('vista').src = dd;
+                // g='<iframe allow="camera;microphone"  src="'+dd+'" width="100%" height="800px" class="border rounded-3" style="height:500px !important"></iframe>';
+                g = '<embed src="' + ruta + '" type="" width="180" height="auto" quality="high" wmode="transparent">'
+                document.getElementById('vista2').innerHTML = g;
+            }
+
+            function tags(idtag) {
+
+                document.getElementById("idtickettag").value = idtag;
+
+            }
+
+            function printScreen() {
+                let infoTicket = document.getElementById("infoTicket").innerHTML
+                let infoUser = document.getElementById("infoUser").innerHTML
+                let ticketHistory = document.getElementById("ticketHistory").innerHTML
+                let forwardTicket = document.getElementById("forwardTicket").innerHTML
+
+                let printWindow = window.open('', '', 'height=500, width=500');
+                printWindow.document.open();
+                printWindow.document.write(`
             <html>
             <head>
                 <title>Print Div Content</title>
@@ -693,32 +702,32 @@ function tituloiconos($iconos, $tipo)
             </body>
             </html>
         `);
-                    printWindow.document.close();
-                    printWindow.print()
-                }
-            </script>
-            <!-- /.modal-topic -->
+                printWindow.document.close();
+                printWindow.print()
+            }
+        </script>
+        <!-- /.modal-topic -->
 
 
 
-            <!-- End Solicita numero de cliente -->
+        <!-- End Solicita numero de cliente -->
 
 
 
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
-
-        </div>
-
-
-
-
-
-
-
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
 
     </div>
+
+
+
+
+
+
+
+
+</div>
 </div>
 <?php
 // dd($resultados);
