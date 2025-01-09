@@ -59,7 +59,7 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
         <div style="background-color: #00a400;" class="d-flex justify-content-end">
             <div class="me-2">
             <img src="https://<?php echo $subdomain_tmp;?>.suricata.cloud/img/erp/iwisp.png"
-            alt="ispkeeper logo" height="55">
+            alt="iwisp logo" height="55" class="py-2">
             </div>
         </div>
         <ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
