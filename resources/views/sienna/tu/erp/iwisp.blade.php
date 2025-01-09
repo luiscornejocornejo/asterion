@@ -169,7 +169,12 @@ $queryws = "SELECT * from iwisp.ws_cliente where nombre='" . $subdomain_tmp . "'
                     <div class="row">
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">Nombre</label>
-                            <input required name="nombre" type="text" class="form-control" id="lastNameUser" value="<?php echo $resultadoscliente[0]->nya;?>">
+                            <?php if(isset($resultadoscliente[0]->nya)){
+                                    $nya=$resultadoscliente[0]->nya;
+                            }else{
+                                $nya="";
+                            }?>
+                            <input required name="nombre" type="text" class="form-control" id="lastNameUser" value="<?php echo $nya ;?>">
                         </div>
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                             <label for="example-textarea" class="form-label">Apellido</label>
