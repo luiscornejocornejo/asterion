@@ -325,7 +325,7 @@ function tituloiconos($iconos, $tipo)
                             }
                         }?>
 
-                        <div class="accordion mt-2" id="accordionPanelsStayOpenExample">
+                        <div class="accordion my-2" id="accordionPanelsStayOpenExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -342,7 +342,7 @@ function tituloiconos($iconos, $tipo)
                                 </div>
                             </div>
 
-                            <div class="accordion-item">
+                            <div class="accordion-item mb-2">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
                                     <button class="accordion-button collapsed" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo"
@@ -358,7 +358,7 @@ function tituloiconos($iconos, $tipo)
                                 </div>
                             </div>
 
-                            <div class="accordion-item">
+                            <div class="accordion-item mb-2">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingThree">
                                     <button class="accordion-button collapsed" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree"
@@ -378,7 +378,7 @@ function tituloiconos($iconos, $tipo)
                                 if($mailservicio){
                                     if($resultados[0]->siennasource==7){?>
                                         <span class="mt-2"></span>
-                                        <div class="accordion-item">
+                                        <div class="accordion-item mb-2">
                                             <h2 class="accordion-header" id="panelsStayOpen-headingFour">
                                                 <button class="accordion-button collapsed" type="button"
                                                     data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour"
@@ -401,8 +401,7 @@ function tituloiconos($iconos, $tipo)
                             <?php
                                 if($grabacionesservicio){
                                     if($resultados[0]->siennasource==5){?>
-                                        <span class="mt-2"></span>
-                                        <div class="accordion-item">
+                                        <div class="accordion-item mb-2">
                                             <h2 class="accordion-header" id="panelsStayOpen-headingRecords">
                                                 <button class="accordion-button collapsed" type="button"
                                                     data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseRecords"
@@ -445,7 +444,7 @@ function tituloiconos($iconos, $tipo)
                                     </div>
                                 <?php } ?>
                             <span class="mt-2"></span>
-                            <div class="accordion-item">
+                            <div class="accordion-item mb-2">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingInternNotes">
                                     <button class="accordion-button collapsed" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseInternNotes"
