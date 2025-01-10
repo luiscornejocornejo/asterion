@@ -2830,7 +2830,6 @@ class siennaticketsController extends Controller
        echo $latitude=$request->latitude;
        echo $longitude=$request->longitude;
 
-       dd($request);
 
 
 
@@ -2839,15 +2838,15 @@ class siennaticketsController extends Controller
 
 
 
-
-
-
-
- 
-        echo $url="https://".$dom.".suricata2.com.ar/api/ct?token=".$tokensienna."";
-        $curl = curl_init();
+       $now = Carbon::now();
+       $fe=$now->format('Y-m-d H:i:s');
+        $codeSO=$cliente."_".$fe;
+         $url="https://".$dom.".suricata-custom.com.ar/api/iclass_create_so?token=".$tokensienna."";
        
-        $url.="&subject=".$subject."&idcustomer=".$idcustomer."&idconnection=".$idconnection."&idcategory=".$idcategory."";
+        $url.="&iclassNode=".$nodo."&longitude=".$longitude."&latitude=".$latitude."&country=".$country."&state=".$state."&city=".$city."&neighborhood=".$neighborhood."&address=".$address."&email=".$email."&mobilePhone=".$mobilePhone."&contactPhone=".$contactPhone."&nameCustomer=".$nameCustomer."&idCustomer=".$cliente."&description=".$detalle."&typeSO=".$tipo."&codeSO=".$codeSO."";
+        echo $url;
+        dd($request);
+        $curl = curl_init();
 
         // Set headers for the cURL request
         $headers = array(
@@ -2874,7 +2873,7 @@ class siennaticketsController extends Controller
         echo $response = curl_exec($curl); 
         // Close the cURL resource
         curl_close($curl);
-        return   redirect()->back();
+       // return   redirect()->back();
  
  
     }
