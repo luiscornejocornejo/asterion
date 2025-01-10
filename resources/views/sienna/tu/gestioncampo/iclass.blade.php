@@ -90,7 +90,7 @@ $iddelcliente=$resultadoscliente[0]->cliente;
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
                             <label for="agent" class="form-label">Nodos:</label>
                             <select class="form-select js-example-basic-single" name="nodo" id="agent">
-                            <option value="{{ $nodos2[0]["nodeId"] }}">
+                            <option value="{{ $nodos2[0]["codigo"] }}">
                             {{ $nodos2[0]['descricao'] }}
                             </option>
                                 
