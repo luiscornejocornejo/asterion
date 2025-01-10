@@ -2811,37 +2811,28 @@ class siennaticketsController extends Controller
      
      public function creariclass(Request $request){
 
-       echo $tokensienna=$request->tokensienna;
-       echo $dom=$request->dom;
-       echo $cliente=$request->cliente;
-       echo $nodo=$request->nodo;
-       echo $tipo=$request->tipo;
-       echo $detalle=$request->detalle;
- 
-       echo $nameCustomer=$request->nameCustomer;
-       echo $contactPhone=$request->contactPhone;
-       echo $mobilePhone=$request->mobilePhone;
-       echo $email=$request->email;
-       echo $address=$request->address;
-       echo $neighborhood=$request->neighborhood;
-       echo $city=$request->city;
-       echo $state=$request->state;
-       echo $country=$request->country;
-       echo $latitude=$request->latitude;
-       echo $longitude=$request->longitude;
+        $tokensienna=$request->tokensienna;
+        $dom=$request->dom;
+        $cliente=$request->cliente;
+        $nodo=$request->nodo;
+        $tipo=$request->tipo;
+        $detalle=$request->detalle;
+        $nameCustomer=$request->nameCustomer;
+        $contactPhone=$request->contactPhone;
+        $mobilePhone=$request->mobilePhone;
+        $email=$request->email;
+        $address=$request->address;
+        $neighborhood=$request->neighborhood;
+        $city=$request->city;
+        $state=$request->state;
+        $country=$request->country;
+        $latitude=$request->latitude;
+        $longitude=$request->longitude;
 
-
-
-
-
-
-
-
-
-       $now = Carbon::now();
-       $fe=$now->format('Y-m-d H:i:s');
+        $now = Carbon::now();
+        $fe=$now->format('Y-m-d H:i:s');
         $codeSO=$cliente."_".$fe;
-         $url="https://".$dom.".suricata-custom.com.ar/api/iclass_create_so?token=".$tokensienna."";
+        $url="https://".$dom.".suricata-custom.com.ar/api/iclass_create_so?token=".$tokensienna."";
        
         $url.="&iclassNode=".$nodo."&longitude=".$longitude."&latitude=".$latitude."&country=".$country."&state=".$state."&city=".$city."&neighborhood=".$neighborhood."&address=".$address."&email=".$email."&mobilePhone=".$mobilePhone."&contactPhone=".$contactPhone."&nameCustomer=".$nameCustomer."&idCustomer=".$cliente."&description=".$detalle."&typeSO=".$tipo."&codeSO=".$codeSO."";
         echo $url;
