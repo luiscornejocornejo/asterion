@@ -18,7 +18,7 @@ $tipobot=$val->tipo;
 
 
 </div>
-<div class="me-2">
+<div class="mt-2">
 <!-- CSS de Select2 -->
 <!-- CSS de Select2 -->
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -30,7 +30,7 @@ $tipobot=$val->tipo;
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script>
 
 <!-- HTML del Select -->
-<select onChange="mos(this.options[this.selectedIndex].value)" class="form-select js-example-basic-single" aria-label="Default select example">
+<select onChange="mos(this.options[this.selectedIndex].value)" class="form-select js-example-basic-single col-sm-12 col-lg-6" aria-label="Default select example">
     <option>Seleccionar</option>
     <?php foreach($datosatajos as $val) { ?>
         <option value="<?php echo htmlspecialchars($val->contenido); ?>"><?php echo $val->nombre; ?></option>
@@ -60,6 +60,6 @@ $tipobot=$val->tipo;
 
 
 </div>
-<div class="me-2">
-<textarea class="form-control" id="cop"></textarea>
+<div class="mt-2">
+    <textarea class="form-control" id="cop"></textarea>
 </div>
