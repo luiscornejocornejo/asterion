@@ -89,7 +89,7 @@ $iddelcliente=$resultadoscliente[0]->cliente;
                        
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
                             <label for="agent" class="form-label">Nodos:</label>
-                            <select class="form-select js-example-basic-single" name="categoria" id="agent">
+                            <select class="form-select js-example-basic-single" name="nodo" id="agent">
                             <option value="{{ $nodos2[0]["nodeId"] }}">
                             {{ $nodos2[0]['descricao'] }}
                             </option>
@@ -99,7 +99,7 @@ $iddelcliente=$resultadoscliente[0]->cliente;
                         </div> 
                         <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
                             <label for="agent" class="form-label">Tipos:</label>
-                            <select class="form-select js-example-basic-single" name="categoria" id="agent">
+                            <select class="form-select js-example-basic-single" name="tipo" id="agent">
 
                                 <?php for($i=0;$i<sizeof($type2);$i++){
                                         ?>
@@ -120,14 +120,7 @@ $iddelcliente=$resultadoscliente[0]->cliente;
                         </div>
 
                         <div class="row mb-3">
-        <div class="col-md-4">
-          <label for="idCustomer" class="form-label">ID Customer</label>
-          <input type="text" class="form-control" id="idCustomer" name="idCustomer" value="<?php echo $resultadoscliente[0]->cliente;?>">
-        </div>
-        <div class="col-md-4">
-          <label for="codeCustomer" class="form-label">Code Customer</label>
-          <input type="text" class="form-control" id="codeCustomer" name="codeCustomer" value="<?php echo $resultadoscliente[0]->cliente;?>">
-        </div>
+        
         <div class="col-md-4">
           <label for="nameCustomer" class="form-label">Name Customer</label>
           <input type="text" class="form-control" id="nameCustomer" name="nameCustomer" value="<?php echo $resultadoscliente[0]->nya;?>">
@@ -155,10 +148,7 @@ $iddelcliente=$resultadoscliente[0]->cliente;
           <label for="address" class="form-label">Address</label>
           <input type="text" class="form-control" id="address" name="address" value="<?php echo $resultadoscliente[0]->address;?>">
         </div>
-        <div class="col-md-6">
-          <label for="zipCode" class="form-label">Zip Code</label>
-          <input type="text" class="form-control" id="zipCode" name="zipCode">
-        </div>
+       
       </div>
       
       <div class="row mb-3">

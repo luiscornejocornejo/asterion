@@ -2811,14 +2811,38 @@ class siennaticketsController extends Controller
      
      public function creariclass(Request $request){
 
-       dd($request);
-        echo $idconnection=$request->conexion;
-        echo $idcategory=$request->categoria;
-        echo $subject=$request->detalle;
+       echo $tokensienna=$request->tokensienna;
+       echo $dom=$request->dom;
+       echo $cliente=$request->cliente;
+       echo $nodo=$request->nodo;
+       echo $tipo=$request->tipo;
+       echo $detalle=$request->detalle;
+ 
+       echo $nameCustomer=$request->nameCustomer;
+       echo $contactPhone=$request->contactPhone;
+       echo $mobilePhone=$request->mobilePhone;
+       echo $email=$request->email;
+       echo $address=$request->address;
+       echo $neighborhood=$request->neighborhood;
+       echo $city=$request->city;
+       echo $state=$request->state;
+       echo $country=$request->country;
+       echo $latitude=$request->latitude;
+       echo $longitude=$request->longitude;
 
-        echo $idcustomer=$request->cliente;
-        echo $dom=$request->dom;
-        echo $tokensienna=$request->tokensienna;
+       dd($request);
+
+
+
+
+
+
+
+
+
+
+
+
  
         echo $url="https://".$dom.".suricata2.com.ar/api/ct?token=".$tokensienna."";
         $curl = curl_init();
