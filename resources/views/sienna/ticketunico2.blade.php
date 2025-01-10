@@ -3,17 +3,66 @@
 
 <?php
 
-$querypagoralia="select * from siennapagoralia";
+$querypagoralia = 'select * from siennapagoralia';
 $datospagoralia = DB::select($querypagoralia);
-$pagohabilitado=0;
-foreach($datospagoralia as $valpago){
-    $pagohabilitado=$valpago->habilitado;
+$pagohabilitado = 0;
+foreach ($datospagoralia as $valpago) {
+    $pagohabilitado = $valpago->habilitado;
+}
 
+$queryservicios2 = 'select * from sienna_suricata_servicios ';
+$datosservicios2 = DB::select($queryservicios2);
+$geoservicio = 0;
+$erpservicio = 0;
+$pagoservicio = 0;
+$mailservicio = 0;
+$grabacionesservicio = 0;
+$botpresservicio = 0;
+$xenservicio = 0;
+$iclasservicio = 0;
+foreach ($datosservicios2 as $valservicios2) {
+    if ($valservicios2->id == 6) {
+        $geoservicio = $valservicios2->habilitado;
+    }
+    if ($valservicios2->id == 2) {
+        $erpservicio = $valservicios2->habilitado;
+    }
+    if ($valservicios2->id == 1) {
+        $pagoservicio = $valservicios2->habilitado;
+    }
+    if ($valservicios2->id == 4) {
+        $mailservicio = $valservicios2->habilitado;
+    }
+    if ($valservicios2->id == 5) {
+        $grabacionesservicio = $valservicios2->habilitado;
+    }
+    if ($valservicios2->id == 8) {
+        $xenservicio = $valservicios2->habilitado;
+    }
+    if ($valservicios2->id == 9) {
+        $botpresservicio = $valservicios2->habilitado;
+    }
+    if ($valservicios2->id == 12) {
+        $iclasservicio = $valservicios2->habilitado;
+    }
+}
+
+$queryempresa = 'select * from empresa';
+$datosempresa = DB::select($queryempresa);
+
+$queryatajos = "select * from siennaatajos where siennadepto='" . $resultados[0]->iddepto . "'";
+$datosatajos = DB::select($queryatajos);
+
+$queryintegracion = 'select * from siennaintegracion';
+$datosintegracion = DB::select($queryintegracion);
+$intehabilitado = 0;
+foreach ($datosintegracion as $vali) {
+    $intehabilitado = $vali->habilitado;
 }
 
 function coloriconos($iconos, $tipo)
 {
-    $coloricono = "";
+    $coloricono = '';
     foreach ($iconos as $valu) {
         if ($valu->id == $tipo) {
             $coloricono = $valu->descripcion;
@@ -23,7 +72,7 @@ function coloriconos($iconos, $tipo)
 }
 function tituloiconos($iconos, $tipo)
 {
-    $tituloiconos = "";
+    $tituloiconos = '';
     foreach ($iconos as $valu) {
         if ($valu->id == $tipo) {
             $tituloiconos = $valu->titulo;
@@ -33,50 +82,50 @@ function tituloiconos($iconos, $tipo)
 }
 ?>
 <script>
-document.title = <?php echo $resultados[0]->ticketid;?>;
+    document.title = <?php echo $resultados[0]->ticketid; ?>;
 
 
-   function cerrar(result,dd, ee, ff,cliente,source){
-  document.getElementById("idticketestado20").value = dd;
-  document.getElementById("conversation_id20").value = ee;
-  document.getElementById("client_number").value = cliente;
-  document.getElementById("source").value = source;
+    function cerrar(result, dd, ee, ff, cliente, source) {
+        document.getElementById("idticketestado20").value = dd;
+        document.getElementById("conversation_id20").value = ee;
+        document.getElementById("client_number").value = cliente;
+        document.getElementById("source").value = source;
 
-  if(source=='7'){
-   // alert(source);
-        document.getElementById("client_number").removeAttribute("required");
-        document.getElementById("client_number").style.display = "none";
-        document.getElementById("texto").style.display = "none";
-  }
+        if (source == '7') {
+            // alert(source);
+            document.getElementById("client_number").removeAttribute("required");
+            document.getElementById("client_number").style.display = "none";
+            document.getElementById("texto").style.display = "none";
+        }
 
-  ff
-  url = "https://"+result+".suricata.cloud/api/motic?depto=" + ff + "";
-    console.log(url);
+        ff
+        url = "https://" + result + ".suricata.cloud/api/motic?depto=" + ff + "";
+        console.log(url);
 
-    axios.get(url)
-    .then(function (response) {
+        axios.get(url)
+            .then(function(response) {
 
-      res="<select name='motivoc' class='form-control'>";
-      console.log(response.data);
-      for (i = 0; i < response.data.length; i++) {
-            console.log(response.data[i].nombre);
-            res+="<option value='"+response.data[i].id+"'>"+response.data[i].nombre+"</option>";
+                res = "<select name='motivoc' class='form-control'>";
+                console.log(response.data);
+                for (i = 0; i < response.data.length; i++) {
+                    console.log(response.data[i].nombre);
+                    res += "<option value='" + response.data[i].id + "'>" + response.data[i].nombre + "</option>";
 
-      }
-      res+="</select>";
-      document.getElementById("motivoc").innerHTML = null;
+                }
+                res += "</select>";
+                document.getElementById("motivoc").innerHTML = null;
 
-        document.getElementById("motivoc").innerHTML = res;
+                document.getElementById("motivoc").innerHTML = res;
 
-    })
-    .catch(function (error) {
-        // función para capturar el error
-        console.log(error);
-    })
-    .then(function () {
-        // función que siempre se ejecuta
-    });
-}
+            })
+            .catch(function(error) {
+                // función para capturar el error
+                console.log(error);
+            })
+            .then(function() {
+                // función que siempre se ejecuta
+            });
+    }
 
     function prioridad(result, dd, ee, ff, cliente) {
         document.getElementById("idticketestadoprioridad").value = dd;
@@ -85,122 +134,89 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
     }
     var originalTitle = document.title;
 
-   // identificadorIntervaloDeTiempo = setInterval(checkmensaje, 60000);
-   /*
-    function checkmensaje(){
-        var URLactual = window.location.href;
-            var porciones = URLactual.split('.');
-            let result = porciones[0].replace("https://", "");
-            idticketbuscar=<?php echo $resultados[0]->ticketid; ;?>;
-            conversation_id='<?php echo $resultados[0]->conversation_id ;?>';
-        console.log(conversation_id);
-        //url = "https://"+result+".suricata.cloud/api/estadoconv2?conversation_id=" + conversation_id + "";
-
-        url = "https://"+result+".suricata.cloud/api/estadoconv?tick=" + idticketbuscar + "";
-        url="https://"+result+".suricata-conversations.com.ar/api/estado?conversation_id=" + conversation_id + "&dom="+result+"";
-        console.log(url);
-        axios.get(url)
-            .then(function (response) {
-                console.log(response.data);
-                if(response.data==1){
-                    newPageTitle="pendiente";
- 
-                    var blinkTitle = "¡Mira aquí!";
-                    var isBlinking = true;
-                    destellarTitulo();
-                    //document.title = newPageTitle;
- 
-                }
-               
-               
-            })
-            .catch(function (error) {
-                // función para capturar el error
-                console.log(error);
-            })
-            .then(function () {
-                // función que siempre se ejecuta
-            });
-
-
-    }
-   */
+    /*
+     
+    */
     function destellarTitulo() {
         var titulo = document.title;
         var favi = document.getElementById("favicon");
         var destellando = false;
         var destellando2 = false;
-        
+
         var destelloIntervalo = setInterval(function() {
             document.title = destellando ? titulo : "¡Contacto del cliente!";
-            
-           // favicon.href = "https://cdn.sstatic.net/Sites/es/Img/favicon.ico?v=9c017e88b153";
+
+            // favicon.href = "https://cdn.sstatic.net/Sites/es/Img/favicon.ico?v=9c017e88b153";
             //favi.href = destellando2 ? favi : "";
-            favi.href = destellando2 ? "assetsfacu/images/favialarma.png" : "assetsfacu/images/favicom_suricata.png";
+            favi.href = destellando2 ? "assetsfacu/images/favialarma.png" :
+                "assetsfacu/images/favicom_suricata.png";
 
             destellando = !destellando;
             destellando2 = !destellando2;
         }, 1000); // Cambiar la duración del destello aquí (en milisegundos)
-      
+
         // Detener la animación después de un tiempo
         setTimeout(function() {
             clearInterval(destelloIntervalo);
             document.title = titulo;
-           
-             
+
+
         }, 50000); // Cambiar la duración total del destello aquí (en milisegundos)
     }
 
-    function extraordinario(valor){
+    function extraordinario(valor) {
         var URLactual = window.location.href;
-            var porciones = URLactual.split('.');
-            let result = porciones[0].replace("https://", "");
-        url = "https://"+result+".suricata.cloud/api/getdata2?cliente=" + valor + "";
+        var porciones = URLactual.split('.');
+        let result = porciones[0].replace("https://", "");
+        url = "https://" + result + ".suricata.cloud/api/getdata2?cliente=" + valor + "";
         console.log(url);
         console.log(valor);
         console.log("aca");
-        dato='<div class="row">';
+        dato = '<div class="row">';
         document.getElementById("datosonline").innerHTML = "";
 
         axios.get(url)
-            .then(function (response) {
+            .then(function(response) {
                 for (i = 0; i < response.data.length; i++) {
                     console.log(response.data[i].nombre);
                     console.log(response.data[i].icono);
                     console.log(response.data[i].valor);
-                    dato += ' <div class="col-md-6 mb-2">' +response.data[i].icono+response.data[i].nombre+": <span class='badge badge-secondary-lighten line-h'> "+response.data[i].valor+"</span></div>";
+                    dato += ' <div class="col-md-6 mb-2">' + response.data[i].icono + response.data[i].nombre +
+                        ": <span class='badge badge-secondary-lighten line-h'> " + response.data[i].valor +
+                        "</span></div>";
                 }
                 dato += '</div>';
 
                 document.getElementById("datosonline").innerHTML = dato;
 
-                
-               
-               
+
+
+
             })
-            .catch(function (error) {
+            .catch(function(error) {
                 // función para capturar el error
                 console.log(error);
             })
-            .then(function () {
+            .then(function() {
                 // función que siempre se ejecuta
             });
 
 
     }
-    </script>
+</script>
 <div class="wrapper menuitem-active">
     @include('facu.menu')
     <div class="content-page" style="padding: 0!important;">
         <div class="content">
-        @if ($message = Session::get('success'))
-        <div class="alert alert-success alert-dismissible fade
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-dismissible fade
                             show" role="alert">
-            {{ $message }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        @endif
+                    {{ $message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <div class="container pt-2 ">
+
                 <div class="d-flex justify-content-between pb-2">
                     <div>
                     </div>
@@ -209,126 +225,274 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         $tipodemenu = session('tipodemenu');
                         if (($tipodemenu == "1") or ($tipodemenu == "2") or ($tipodemenu == "4")) {
                         ?>
-                            <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-assign">
-                                <i class="mdi mdi-account-arrow-right" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Asignar ticket"></i>
-                            </button>
+                        <button class="btn btn-info" type="button" data-bs-toggle="modal"
+                            data-bs-target="#bs-example-modal-sm-assign">
+                            <i class="mdi mdi-account-arrow-right" data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-custom-class="mb-1" data-bs-title="Asignar ticket"></i>
+                        </button>
                         <?php } else { ?>
-                            <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo">
-                                <i class="mdi mdi-account-arrow-left" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Reclamar ticket."></i>
-                            </button>
+                        <button class="btn btn-info" type="button" data-bs-toggle="modal"
+                            data-bs-target="#standard-modal-reclamo">
+                            <i class="mdi mdi-account-arrow-left" data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-custom-class="mb-1" data-bs-title="Reclamar ticket."></i>
+                        </button>
                         <?php } ?>
-                        <button class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-departament">
-                            <i class="mdi mdi-account-group" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Asignar departamento."></i>
+                        <button class="btn btn-info" type="button" data-bs-toggle="modal"
+                            data-bs-target="#bs-example-modal-sm-departament">
+                            <i class="mdi mdi-account-group" data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-custom-class="mb-1" data-bs-title="Asignar departamento."></i>
                         </button>
-                        <button onclick="topic(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->conversation_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`)" class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smt">
-                            <i class="mdi mdi-notebook" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Cambiar topic."></i>
+                        <button
+                            onclick="topic(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->conversation_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`)"
+                            class="btn btn-info" type="button" data-bs-toggle="modal"
+                            data-bs-target="#bs-example-modal-smt">
+                            <i class="mdi mdi-notebook" data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-custom-class="mb-1" data-bs-title="Cambiar topic."></i>
                         </button>
-                        <button onclick="estado2(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->conversation_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`)" class="btn btn-secondary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm">
-                            <i class="mdi mdi-flag" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Cambiar estado."></i>
+                        <button
+                            onclick="estado2(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->conversation_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`)"
+                            class="btn btn-secondary" type="button" data-bs-toggle="modal"
+                            data-bs-target="#bs-example-modal-sm">
+                            <i class="mdi mdi-flag" data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-custom-class="mb-1" data-bs-title="Cambiar estado."></i>
                         </button>
-                        
+
                         <?php  $ctusers = session('ctusers');
 
                                 if($ctusers=="1"){?>
-                        <button onclick="cerrar(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->user_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`,`<?php echo $resultados[0]->cliente; ?>`,`<?php echo $resultados[0]->siennasource; ?>`)" class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrar">
-                            <i class="mdi mdi-check-circle" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Cerrar Ticket."></i>
+                        <button
+                            onclick="cerrar(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->user_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`,`<?php echo $resultados[0]->cliente; ?>`,`<?php echo $resultados[0]->siennasource; ?>`)"
+                            class="btn btn-success" type="button" data-bs-toggle="modal"
+                            data-bs-target="#bs-example-modal-smcerrar">
+                            <i class="mdi mdi-check-circle" data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-custom-class="mb-1" data-bs-title="Cerrar Ticket."></i>
                         </button>
 
                         <?php }else{?>
-                            <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm-derivar">
-                                <i class="mdi mdi-account-arrow-right" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Derivar ticket"></i>
-                            </button>
+                        <button class="btn btn-success" type="button" data-bs-toggle="modal"
+                            data-bs-target="#bs-example-modal-sm-derivar">
+                            <i class="mdi mdi-account-arrow-right" data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-custom-class="mb-1" data-bs-title="Derivar ticket"></i>
+                        </button>
 
                         <?php }?>
                         <button onclick="printScreen()" class="btn btn-secondary" type="button">
-                            <i class="mdi mdi-cloud-print-outline" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Imprimir ticket."></i>
+                            <i class="mdi mdi-cloud-print-outline" data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-custom-class="mb-1" data-bs-title="Imprimir ticket."></i>
                         </button>
                     </div>
                 </div>
 
-            <div class="row">
-                <div class="col-sm-12 col-lg-8 col-xxl-9">
-                    <div>
-                    @include('sienna.tu.informacionticket')
+                <div class="row">
+                    <div class="col-sm-12 col-lg-8 col-xxl-9">
+                        <div>
+                            @include('sienna.tu.informacionticket')
+                        </div>
 
-                    </div>
-                    <?php
-                     $urlreabrir="";
-                        $vero="";
-                                    foreach($emp as $value){
-                                        $urlreabrir=$value->reabrir;
+                        <?php
+                            $urlreabrir="";
+                            $vero="";
+                            foreach($emp as $value){
+                                $urlreabrir=$value->reabrir;
+                            }
+                            if(strlen($urlreabrir)<2){
+                                $vero="d-none";
+                            }
+                                        
+                            if($resultados[0]->siennasource==10) {?>
+                        <div>
+                            @include('sienna.tu.informacionsuricata')
+                        </div>
+                        <?php }
+                            $excludedProductIds = [1,2,3,4,6];
+                            if($xenservicio){
+                                if (in_array($resultados[0]->siennasource, $excludedProductIds)) {
+                                    ?>
+                        <div class="mt-2">
+                            @include('sienna.tu.bot.whatapp')
+                        </div>
+                        <?php 
+                            }
+                            }
+                            if($botpresservicio){
+                                if (in_array($resultados[0]->siennasource, $excludedProductIds)) {
+                                    ?>
+                        <div class="mt-2">
+
+                            @include('sienna.tu.bot.botpres')
+                        </div>
+                        <?php 
+                            }
+                        }?>
+
+                        <div class="accordion mb-3" id="accordionPanelsStayOpenExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseOne">
+                                        Información de Usuario
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingOne">
+                                    <div class="accordion-body">
+                                        @include('sienna.tu.informacionusuario')
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item mt-3 mb-3 border">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo"
+                                        aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                        Información Tiempo Real
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingTwo">
+                                    <div class="accordion-body">
+                                        @include('sienna.tu.informaciononline')
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item mb-3 border">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree"
+                                        aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                        Datos Coleccionados del bot
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingThree">
+                                    <div class="accordion-body">
+                                        @include('sienna.tu.collectorbot')
+                                    </div>
+                                </div>
+                            </div>
+
+                            <?php
+                                if($mailservicio){
+                                    if($resultados[0]->siennasource==7){?>
+                            <span class="mt-2"></span>
+                            <div class="accordion-item mb-3 border">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour"
+                                        aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                                        Adjuntos
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingFour">
+                                    <div class="accordion-body">
+                                        @include('sienna.tu.mail.mail')
+                                        @include('sienna.tu.mail.adjuntos')
+                                    </div>
+                                </div>
+                            </div>
+                            <?php 
                                     }
-                                    if(strlen($urlreabrir)<2){
-                                        $vero="d-none";
+                            }?>
+
+                            <?php
+                                if($grabacionesservicio){
+                                    if($resultados[0]->siennasource==5){?>
+                            <div class="accordion-item mb-3 border">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingRecords">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseRecords"
+                                        aria-expanded="false" aria-controls="panelsStayOpen-collapseRecords">
+                                        Grabaciones
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseRecords" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingRecords">
+                                    <div class="accordion-body">
+                                        @include('sienna.tu.telefonia.grabaciones')
+                                    </div>
+                                </div>
+                            </div>
+                            <?php 
                                     }
-
-                     if($resultados[0]->siennasource==7){?>
-
-                       
-                        @include('sienna.tu.informacionmail')
+                            }?>
 
 
-                    <?php
-                    } if($resultados[0]->siennasource==10){?>
+                            <?php if($erpservicio){
+                                $nombreintegracion = session('nombreintegracion');
+                                if($nombreintegracion=="ispkipper"){?>@include('sienna.tu.erp.kipper')<?php }
+                                if($nombreintegracion=="mikrowisp"){?>@include('sienna.tu.erp.mikro')<?php }
+                                if($nombreintegracion=="ispcube2"){?>@include('sienna.tu.erp.ispcube')<?php }
+                                if($nombreintegracion=="iwisp"){?>@include('sienna.tu.erp.iwisp')<?php }
+                
+                             }?>
+                            <?php
+                                if($iclasservicio){?>
+                            @include('sienna.tu.gestioncampo.iclass')
+                            <?php } ?>
+                            <?php
+                                if($geoservicio){?>
+                            @include('sienna.tu.geolocalizacion.geo')<?php 
+                            }?>
+                            <?php
+                                if($pagoservicio){?>
+                            <div class="mt-2">
+                                @include('sienna.tu.pagoralia.pagoralia')
+                            </div>
+                            <?php } ?>
+                            <span class="mt-2"></span>
+                            <div class="accordion-item mb-3">
+                                <h2 class="accordion-header border" id="panelsStayOpen-headingInternNotes">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseInternNotes"
+                                        aria-expanded="false" aria-controls="panelsStayOpen-collapseInternNotes">
+                                        Notas Internas
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseInternNotes" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingInternNotes">
+                                    <div class="accordion-body">
+                                        @include('sienna.tu.informacionnotainterna')
+                                    </div>
+                                </div>
+                            </div>
 
-                       
-                        @include('sienna.tu.informacionsuricata')
-
-
-                    <?php
-                    }
-                    $excludedProductIds = [10, 7,5];
-
-                    if (!in_array($resultados[0]->siennasource, $excludedProductIds)) {
-
-                    //if($resultados[0]->siennasource 7){
-                        ?>
-                        @include('sienna.tu.informacionwhatapp')
-
-                           
-                    <?php }?>
-
-                    <div class="mt-2">
-                    @include('sienna.tu.informacionusuario')
-
-                    </div>
-                    <div class="mt-2">
-                    @include('sienna.tu.collectorbot')
-
-                    </div>
-                    <div class="mt-2">
-                         @include('sienna.tu.informacionadjuntos')
-
-                    </div>  
-                    <div class="mt-2">
-                         @include('sienna.tu.informacionnotainterna')
-
-                    </div>                    
-
+                            <div class="accordion-item mb-3">
+                                <h2 class="accordion-header border" id="panelsStayOpen-headingTasks">
+                                    <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseInternTasks"
+                                        aria-expanded="false" aria-controls="panelsStayOpen-collapseInternTasks">
+                                        Tareas
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseInternTasks" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingInternTasks">
+                                    <div class="accordion-body">
+                                        @include('sienna.tu.informaciontareas')
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
-                    </div>
 
-                    <?php if($pagohabilitado){?>
-                    
-                        <div class="mt-2">
-                    @include('sienna.tu.informacionpagoralia')
-
-                    </div>
-
-                        <?php }?>
-                    <div class="mt-2">
-                    @include('sienna.tu.informaciontareas')
-
-                    </div>
-                    <div class="mt-2">
-                    @include('sienna.tu.informacionhistorial')
-
-                    </div>
-               
-                        <div class="mt-2">
-                        @include('sienna.tu.informaciononline')
-
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header border" id="panelsStayOpen-headingHistory">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseInternHistory" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseInternHistory">
+                                    Historial
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseInternHistory" class="accordion-collapse collapse"
+                                aria-labelledby="panelsStayOpen-headingInternHistory">
+                                <div class="accordion-body">
+                                    @include('sienna.tu.informacionhistorial')
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-sm-12 col-lg-4 col-xxl-3 card widget-flat" id="forwardTicket">
@@ -336,7 +500,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                     <hr>
                     <div class="card-body" style="padding-top: 0;">
                         <!-- end sub tasks/checklists -->
-                       
+
                         <div class="mt-2">
                             <div class="card-header d-flex justify-content-between align-items-center mt-2">
                                 <h4 class="header-title">Actividad reciente</h4>
@@ -348,7 +512,9 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                     </div>
                                     <div class="simplebar-mask">
                                         <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
-                                            <div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: auto; overflow: hidden scroll;">
+                                            <div class="simplebar-content-wrapper" tabindex="0" role="region"
+                                                aria-label="scrollable content"
+                                                style="height: auto; overflow: hidden scroll;">
                                                 <div class="simplebar-content" style="padding: 0px 24px;">
 
                                                     <?php foreach ($segui as $val) {
@@ -365,143 +531,160 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                                             //$uri = '<a target=_blank href="' . $ht . '"><img  src=' . $ht . ' width="40px;"></a>';
                                                             continue;
                                                         }
+                                                        if($val->tipo == 12){
+                                                            //$ht = $val->descripcion;
+                                                            //$uri = '<a target=_blank href="' . $ht . '"><img  src=' . $ht . ' width="40px;"></a>';
+                                                            continue;
+                                                        }
 
                                                     ?>
-                                                        <div class="timeline-alt py-0 ">
-                                                            <div class=" timeline-item">
+                                                    <div class="timeline-alt py-0 ">
+                                                        <div class=" timeline-item">
                                                             <?php $tipo = $val->tipo;
                                                             echo $color = coloriconos($iconos, $tipo); ?>
                                                             <div class="timeline-item-info">
-                                                                
+
                                                                 <small><?php
-                                                                if($val->tipo <> 9){ echo $val->descripcion;} ?></small>
+                                                                if ($val->tipo != 9) {
+                                                                    echo $val->descripcion;
+                                                                } ?></small>
                                                                 <p class="mb-0 pb-2">
-                                                                <small class="text-muted"><?php echo $val->autor; ?></small>
-                                                                <br>
-                                                                    <small class="text-muted"><?php echo $val->created_at; ?></small>
+                                                                    <small
+                                                                        class="text-muted"><?php echo $val->autor; ?></small>
+                                                                    <br>
+                                                                    <small
+                                                                        class="text-muted"><?php echo $val->created_at; ?></small>
                                                                 </p>
                                                                 <span>
                                                                     <?php if ($uri != "") { ?>
-                                                                        <span onclick="ng(`<?php echo $ht; ?>`)" class="link-primary" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-img">
-                                                                            Ver archivo    
-                                                                        </span>
+                                                                    <span onclick="ng(`<?php echo $ht; ?>`)"
+                                                                        class="link-primary" type="button"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#bs-example-modal-img">
+                                                                        Ver archivo
+                                                                    </span>
                                                                     <?php } ?>
                                                                 </span>
                                                             </div>
                                                         </div>
+                                                    </div>
+
+                                                    <?php } }?>
+
                                                 </div>
-
-                                            <?php } }?>
-
                                             </div>
                                         </div>
+                                        <div class="simplebar-placeholder" style="width: auto; height: 353px;">
+                                        </div>
                                     </div>
-                                    <div class="simplebar-placeholder" style="width: auto; height: 353px;"></div>
-                                </div>
-                                <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
-                                    <div class="simplebar-scrollbar" style="width: 0px; display: none;">
+                                    <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+                                        <div class="simplebar-scrollbar" style="width: 0px; display: none;">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
-                                    <div class="simplebar-scrollbar" style="height: 281px; transform: translate3d(0px, 0px, 0px); display: block;">
+                                    <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+                                        <div class="simplebar-scrollbar"
+                                            style="height: 281px; transform: translate3d(0px, 0px, 0px); display: block;">
+                                        </div>
                                     </div>
-                                </div>
-                            </div> <!-- end slimscroll -->
-                        </div>
-                    </div> <!-- end row-->
+                                </div> <!-- end slimscroll -->
+                            </div>
+                        </div> <!-- end row-->
+                    </div>
                 </div>
+                <!-- container -->
             </div>
-            <!-- container -->
+            <!-- content -->
+
+
+
+
+            <!-- Departament modal Status-->
+
+            <!-- End modal Status -->
+
+            <!-- Departament modal Status-->
+
+            <!-- End modal Status -->
+
+
+
+            <!-- Modal Reclamo Ticket -->
+
         </div>
-        <!-- content -->
+        <!-- /.modal -->
+
+        <!-- End Reclamo Ticket -->
+
+        <!-- /.modal-topic -->
+
+        @include('sienna.tu.asignar')
+        @include('sienna.tu.derivar')
+        @include('sienna.tu.reclamar')
+        @include('sienna.tu.topic')
+        @include('sienna.tu.depto')
+        @include('sienna.ticketsmodals.cerrar')
+        @include('sienna.ticketsmodals.estados')
+        @include('sienna.tu.imagen')
+        @include('sienna.tu.tags')
+        @include('sienna.tu.prioridad')
+        <script>
+            function topic(result, dd, ee, ff) {
+
+                document.getElementById("idticketestado3").value = dd;
+                url = "https://" + result + ".suricata.cloud/api/topicxdepto?depto=" + ff;
+                axios.get(url)
+                    .then(function(response) {
+                        // función que se ejecutará al recibir una respuesta
+                        console.log(response.data);
+                        dato = "";
+                        for (i = 0; i < response.data.length; i++) {
+                            console.log(response.data[i].id);
+                            console.log(response.data[i].nombre);
+                            dato += ' <div class="mt-3">' +
+                                '<div class="form-check mb-2">' +
+                                ' <input type="radio" id="customRadio' + response.data[i].id + '" name="estado" value="' +
+                                response.data[i].id + '"  class="form-check-input">' +
+                                '<label class="form-check-label" for="customRadio' + response.data[i].id + '">' + response
+                                .data[i].nombre + '</label>' +
+                                '</div>' +
+                                ' </div>';
+                        }
+                        document.getElementById("estunico2").innerHTML = dato;
+                    })
+                    .catch(function(error) {
+                        // función para capturar el error
+                        console.log(error);
+                    })
+                    .then(function() {
+                        // función que siempre se ejecuta
+                    });
 
 
+            }
 
+            function ng(ruta) {
+                document.getElementById('vista2').innerHTML = "";
+                // document.getElementById('vista').src = dd;
+                // g='<iframe allow="camera;microphone"  src="'+dd+'" width="100%" height="800px" class="border rounded-3" style="height:500px !important"></iframe>';
+                g = '<embed src="' + ruta + '" type="" width="180" height="auto" quality="high" wmode="transparent">'
+                document.getElementById('vista2').innerHTML = g;
+            }
 
-        <!-- Departament modal Status-->
+            function tags(idtag) {
 
-        <!-- End modal Status -->
+                document.getElementById("idtickettag").value = idtag;
 
-        <!-- Departament modal Status-->
+            }
 
-        <!-- End modal Status -->
+            function printScreen() {
+                let infoTicket = document.getElementById("infoTicket").innerHTML
+                let infoUser = document.getElementById("infoUser").innerHTML
+                let ticketHistory = document.getElementById("ticketHistory").innerHTML
+                let forwardTicket = document.getElementById("forwardTicket").innerHTML
 
-
-
-        <!-- Modal Reclamo Ticket -->
-
-    </div>
-    <!-- /.modal -->
-
-    <!-- End Reclamo Ticket -->
-
-    <!-- /.modal-topic -->
-
-    @include('sienna.tu.asignar')
-    @include('sienna.tu.derivar')
-    @include('sienna.tu.reclamar')
-    @include('sienna.tu.topic')
-    @include('sienna.tu.depto')
-    @include('sienna.ticketsmodals.cerrar')
-    @include('sienna.ticketsmodals.estados')
-    @include('sienna.tu.imagen')
-    @include('sienna.tu.tags')
-    @include('sienna.tu.prioridad')
-    <script>
-        function topic(result, dd, ee, ff) {
-
-            document.getElementById("idticketestado3").value = dd;
-            url = "https://" + result + ".suricata.cloud/api/topicxdepto?depto=" + ff;
-            axios.get(url)
-                .then(function(response) {
-                    // función que se ejecutará al recibir una respuesta
-                    console.log(response.data);
-                    dato = "";
-                    for (i = 0; i < response.data.length; i++) {
-                        console.log(response.data[i].id);
-                        console.log(response.data[i].nombre);
-                        dato += ' <div class="mt-3">' +
-                            '<div class="form-check mb-2">' +
-                            ' <input type="radio" id="customRadio' + response.data[i].id + '" name="estado" value="' + response.data[i].id + '"  class="form-check-input">' +
-                            '<label class="form-check-label" for="customRadio' + response.data[i].id + '">' + response.data[i].nombre + '</label>' +
-                            '</div>' +
-                            ' </div>';
-                    }
-                    document.getElementById("estunico2").innerHTML = dato;
-                })
-                .catch(function(error) {
-                    // función para capturar el error
-                    console.log(error);
-                })
-                .then(function() {
-                    // función que siempre se ejecuta
-                });
-
-
-        }
-
-        function ng(ruta) {
-            document.getElementById('vista2').innerHTML = "";
-            // document.getElementById('vista').src = dd;
-            // g='<iframe allow="camera;microphone"  src="'+dd+'" width="100%" height="800px" class="border rounded-3" style="height:500px !important"></iframe>';
-            g = '<embed src="' + ruta + '" type="" width="180" height="auto" quality="high" wmode="transparent">'
-            document.getElementById('vista2').innerHTML = g;
-        }
-        function tags(idtag){
-         
-          document.getElementById("idtickettag").value = idtag;
-
-        }
-
-        function printScreen() {
-        let infoTicket = document.getElementById("infoTicket").innerHTML
-        let infoUser = document.getElementById("infoUser").innerHTML
-        let ticketHistory = document.getElementById("ticketHistory").innerHTML
-        let forwardTicket = document.getElementById("forwardTicket").innerHTML
-
-        let printWindow = window.open('', '', 'height=500, width=500');
-        printWindow.document.open();
-        printWindow.document.write(`
+                let printWindow = window.open('', '', 'height=500, width=500');
+                printWindow.document.open();
+                printWindow.document.write(`
             <html>
             <head>
                 <title>Print Div Content</title>
@@ -519,24 +702,23 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
             </body>
             </html>
         `);
-        printWindow.document.close();
-        printWindow.print()
-    }
-
-    </script>
-    <!-- /.modal-topic -->
-
-
-
-    <!-- End Solicita numero de cliente -->
+                printWindow.document.close();
+                printWindow.print()
+            }
+        </script>
+        <!-- /.modal-topic -->
 
 
 
-    <!-- ============================================================== -->
-    <!-- End Page content -->
-    <!-- ============================================================== -->
+        <!-- End Solicita numero de cliente -->
 
-</div>
+
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+    </div>
 
 
 
@@ -553,32 +735,34 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 <br><br><br>
 
 <!-- Modal open conversation -->
-<div id="open-conversation" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="open-conversation" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-dark">
-                    <h4 class="modal-title text-light" id="standard-modalLabel">Reabrir conversación</h4>
-                    <button type="button" class="btn-close btn-white" data-bs-dismiss="modal" aria-hidden="true"></button>
-                </div>
-                <div class="modal-body">
-                    ¿Confirma la reapertura de conversación?
-                </div>
-                <div class="modal-footer">
-                    <form method='post'action='/reabrirconversacion'>
+<div id="open-conversation" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="open-conversation"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark">
+                <h4 class="modal-title text-light" id="standard-modalLabel">Reabrir conversación</h4>
+                <button type="button" class="btn-close btn-white" data-bs-dismiss="modal"
+                    aria-hidden="true"></button>
+            </div>
+            <div class="modal-body">
+                ¿Confirma la reapertura de conversación?
+            </div>
+            <div class="modal-footer">
+                <form method='post'action='/reabrirconversacion'>
                     @csrf
 
-                    <input type="hidden" value="<?php echo $urlreabrir;?>" name="url"/>
-                    <input type="hidden" value="<?php echo $resultados[0]->cel;?>" name="tel"/>
-                    <input type="hidden" value="<?php echo session('nombreusuario');?>" name="asignado"/>
-                    <input type="hidden" value="<?php echo $resultados[0]->ticketid;?>" name="ticket"/>
+                    <input type="hidden" value="<?php echo $urlreabrir; ?>" name="url" />
+                    <input type="hidden" value="<?php echo $resultados[0]->cel; ?>" name="tel" />
+                    <input type="hidden" value="<?php echo session('nombreusuario'); ?>" name="asignado" />
+                    <input type="hidden" value="<?php echo $resultados[0]->ticketid; ?>" name="ticket" />
 
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">NO</button>
-                        <button type="submit" class="btn btn-success">Si</button>
+                    <button type="submit" class="btn btn-success">Si</button>
                 </form>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
 
 </div>
 

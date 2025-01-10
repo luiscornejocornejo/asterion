@@ -62,7 +62,7 @@ $ticketserp2 = json_decode($ticketserp, true);
         <div style="background-color: #6D0078;" class="d-flex justify-content-end">
             <div class="me-2">
                 <img src="https://files.readme.io/a2839ba-small-ISPKeeper_Logo_Oficial_Horizontal_white.png"
-                    alt="ispkeeper logo" height="55">
+                    alt="ispkeeper logo" height="55" class="py-1">
             </div>
         </div>
         <ul class="nav nav-pills bg-nav-pills nav-justified mb-3">

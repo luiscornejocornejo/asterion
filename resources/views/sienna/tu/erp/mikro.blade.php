@@ -54,7 +54,7 @@ $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
         <div style="background-color: #38b0de;" class="d-flex justify-content-end">
             <div class="me-2">
                 <img src="https://<?php echo $subdomain_tmp;?>.suricata.cloud/img/erp/mikrowisp.webp"
-                    alt="mikrowisp logo" height="55">
+                    alt="mikrowisp logo" height="55" class="py-2">
             </div>
         </div>
         <ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
