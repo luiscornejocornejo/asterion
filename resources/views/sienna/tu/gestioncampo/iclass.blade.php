@@ -48,7 +48,7 @@ $nodos2 = json_decode($nodos, true);
 
 //dd($nodos2[0]["nodeId"]);
 
-$ticerp= file_get_contents("https://".$subdomain_tmp.".suricata-custom.com.ar/api/iclass_get_so?token=".$tokensienna."&codeSO=" . $resultadoscliente[0]->cliente);
+$ticerp= file_get_contents("https://".$subdomain_tmp.".suricata-custom.com.ar/api/iclass_get_so_bycustomer?token=".$tokensienna."&idCustomer=" . $resultadoscliente[0]->cliente);
 $ticerp2=json_decode($ticerp, true);
 //dd($ticerp2);
 
