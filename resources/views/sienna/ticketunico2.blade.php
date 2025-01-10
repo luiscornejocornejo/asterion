@@ -476,7 +476,7 @@ function tituloiconos($iconos, $tipo)
                                 </div>
                             </div>
 
-                        </div>
+                        
 
                         <div class="accordion-item mb-3">
                             <h2 class="accordion-header border" id="panelsStayOpen-headingHistory">
