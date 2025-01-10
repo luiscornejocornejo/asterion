@@ -104,7 +104,7 @@ $iddelcliente=$resultadoscliente[0]->cliente;
                                 <?php for($i=0;$i<sizeof($type2);$i++){
                                         ?>
                                 <option value="{{ $type2[$i]['classeOS'] }}">
-                                    {{ $type2[$i]['classeOS'] }}
+                                    {{ $type2[$i]['codigo'] }}
                                 </option>
                                 <?php }
                                     
