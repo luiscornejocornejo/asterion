@@ -123,26 +123,26 @@ $iddelcliente=$resultadoscliente[0]->cliente;
         
         <div class="col-md-4">
           <label for="nameCustomer" class="form-label">Name Customer</label>
-          <input type="text" class="form-control" id="nameCustomer" name="nameCustomer" value="<?php echo $resultadoscliente[0]->nya;?>">
+          <input required type="text" class="form-control" id="nameCustomer" name="nameCustomer" value="<?php echo $resultadoscliente[0]->nya;?>">
         </div>
         <div class="col-md-4">
           <label for="address" class="form-label">Address</label>
-          <input type="text" class="form-control" id="address" name="address" value="<?php echo $resultadoscliente[0]->address;?>">
+          <input required type="text" class="form-control" id="address" name="address" value="<?php echo $resultadoscliente[0]->address;?>">
         </div>
         <div class="col-md-4">
           <label for="address" class="form-label">Email</label>
-          <input type="text" class="form-control" id="email" name="email" value="<?php echo $resultadoscliente[0]->email;?>">
+          <input  type="text" class="form-control" id="email" name="email" value="<?php echo $resultadoscliente[0]->email;?>">
         </div>
       </div>
       
       <div class="row mb-3">
         <div class="col-md-6">
           <label for="contactPhone" class="form-label">Contact Phone</label>
-          <input type="text" class="form-control" id="contactPhone" name="contactPhone" value="<?php echo $resultadoscliente[0]->cel;?>">
+          <input  type="text" class="form-control" id="contactPhone" name="contactPhone" value="<?php echo $resultadoscliente[0]->cel;?>">
         </div>
         <div class="col-md-6">
           <label for="mobilePhone" class="form-label">Mobile Phone</label>
-          <input type="text" class="form-control" id="mobilePhone" name="mobilePhone" value="<?php echo $resultadoscliente[0]->cel;?>">
+          <input required type="text" class="form-control" id="mobilePhone" name="mobilePhone" value="<?php echo $resultadoscliente[0]->cel;?>">
         </div>
       </div>
    
@@ -152,22 +152,22 @@ $iddelcliente=$resultadoscliente[0]->cliente;
       <div class="row mb-3">
         <div class="col-md-6">
           <label for="neighborhood" class="form-label">Neighborhood</label>
-          <input type="text" class="form-control" id="neighborhood" name="neighborhood" value="">
+          <input required type="text" class="form-control" id="neighborhood" name="neighborhood" value="">
         </div>
         <div class="col-md-6">
           <label for="city" class="form-label">City</label>
-          <input type="text" class="form-control" id="city" name="city" value="">
+          <input required type="text" class="form-control" id="city" name="city" value="">
         </div>
       </div>
       
       <div class="row mb-3">
         <div class="col-md-6">
           <label for="state" class="form-label">State</label>
-          <input type="text" class="form-control" id="state" name="state" value="">
+          <input required type="text" class="form-control" id="state" name="state" value="">
         </div>
         <div class="col-md-6">
           <label for="country" class="form-label">Country</label>
-          <input type="text" class="form-control" id="country" name="country" value="Argentina">
+          <input required type="text" class="form-control" id="country" name="country" value="Argentina">
         </div>
       </div>
       
@@ -178,11 +178,11 @@ $iddelcliente=$resultadoscliente[0]->cliente;
                
              }?>
           <label for="latitude" class="form-label">Latitude</label>
-          <input type="text" class="form-control" id="latitude" name="latitude" value="<?php echo $coor[0];?>">
+          <input required type="text" class="form-control" id="latitude" name="latitude" value="<?php echo $coor[0];?>">
         </div>
         <div class="col-md-6">
           <label for="longitude" class="form-label">Longitude</label>
-          <input type="text" class="form-control" id="longitude" name="longitude" value="<?php echo $coor[1];?>">
+          <input required type="text" class="form-control" id="longitude" name="longitude" value="<?php echo $coor[1];?>">
         </div>
       </div>
       
