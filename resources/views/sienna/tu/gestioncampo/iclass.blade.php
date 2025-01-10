@@ -164,18 +164,18 @@ $iddelcliente=$resultadoscliente[0]->cliente;
       <div class="row mb-3">
         <div class="col-md-6">
           <label for="neighborhood" class="form-label">Neighborhood</label>
-          <input type="text" class="form-control" id="neighborhood" name="neighborhood" value="Barrio">
+          <input type="text" class="form-control" id="neighborhood" name="neighborhood" value="">
         </div>
         <div class="col-md-6">
           <label for="city" class="form-label">City</label>
-          <input type="text" class="form-control" id="city" name="city" value="Rosario">
+          <input type="text" class="form-control" id="city" name="city" value="">
         </div>
       </div>
       
       <div class="row mb-3">
         <div class="col-md-6">
           <label for="state" class="form-label">State</label>
-          <input type="text" class="form-control" id="state" name="state" value="Provincia">
+          <input type="text" class="form-control" id="state" name="state" value="">
         </div>
         <div class="col-md-6">
           <label for="country" class="form-label">Country</label>
