@@ -394,8 +394,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                     </div>                    
 
 
-                        </div>
-                
+                  
 
                    
                     <div class="mt-2">
