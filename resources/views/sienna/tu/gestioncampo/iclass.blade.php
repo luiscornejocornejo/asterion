@@ -125,9 +125,13 @@ $iddelcliente=$resultadoscliente[0]->cliente;
           <label for="nameCustomer" class="form-label">Name Customer</label>
           <input type="text" class="form-control" id="nameCustomer" name="nameCustomer" value="<?php echo $resultadoscliente[0]->nya;?>">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
           <label for="address" class="form-label">Address</label>
           <input type="text" class="form-control" id="address" name="address" value="<?php echo $resultadoscliente[0]->address;?>">
+        </div>
+        <div class="col-md-4">
+          <label for="address" class="form-label">Email</label>
+          <input type="text" class="form-control" id="email" name="email" value="<?php echo $resultadoscliente[0]->email;?>">
         </div>
       </div>
       
@@ -141,11 +145,7 @@ $iddelcliente=$resultadoscliente[0]->cliente;
           <input type="text" class="form-control" id="mobilePhone" name="mobilePhone" value="<?php echo $resultadoscliente[0]->cel;?>">
         </div>
       </div>
-      
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" name="email" value="<?php echo $resultadoscliente[0]->email;?>">
-      </div>
+   
       
       
       
