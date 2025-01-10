@@ -395,15 +395,15 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
 
                         </div>
-                    </div>
+                
 
                    
                     <div class="mt-2">
-                    @include('sienna.tu.informaciontareas')
+                        @include('sienna.tu.informaciontareas')
 
                     </div>
                     <div class="mt-2">
-                    @include('sienna.tu.informacionhistorial')
+                        @include('sienna.tu.informacionhistorial')
 
                     </div>
                
