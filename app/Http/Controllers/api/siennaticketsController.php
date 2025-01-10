@@ -2836,7 +2836,7 @@ class siennaticketsController extends Controller
        
         $url.="&iclassNode=".$nodo."&longitude=".$longitude."&latitude=".$latitude."&country=".$country."&state=".$state."&city=".$city."&neighborhood=".$neighborhood."&address=".$address."&email=".$email."&mobilePhone=".$mobilePhone."&contactPhone=".$contactPhone."&nameCustomer=".$nameCustomer."&idCustomer=".$cliente."&description=".$detalle."&typeSO=".$tipo."&codeSO=".$codeSO."";
         echo $url;
-        dd($request);
+       // dd($request);
         $curl = curl_init();
 
         // Set headers for the cURL request
