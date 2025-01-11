@@ -6,6 +6,9 @@
         
         <?php
 
+if(isset($pp)){
+    echo $pp;
+}
 if (isset($resultadoscliente[0]->cliente)) {
 } else {
     return '';
