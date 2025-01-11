@@ -2861,10 +2861,10 @@ class siennaticketsController extends Controller
         // Set the options for cURL resource
         curl_setopt_array($curl, $options);
         // Execute the cURL request
-        echo $response = curl_exec($curl); 
+         $response = curl_exec($curl); 
         // Close the cURL resource
         curl_close($curl);
-       // return   redirect()->back();
+        return redirect()->back()->with('success', $response );
  
  
     }
