@@ -3,7 +3,8 @@
 
 <?php
 
-$querypagoralia="select * from siennapagoralia";
+$domi=$_GET['mer'];
+$querypagoralia="select * from ".$domi.".siennapagoralia";
 $datospagoralia = DB::select($querypagoralia);
 $pagohabilitado=0;
 foreach($datospagoralia as $valpago){
@@ -14,7 +15,7 @@ foreach($datospagoralia as $valpago){
 
 
 
-$queryservicios2="select * from sienna_suricata_servicios ";
+$queryservicios2="select * from ".$domi.".sienna_suricata_servicios ";
 $datosservicios2 = DB::select($queryservicios2);
 $geoservicio=0;
 $erpservicio=0;
@@ -54,13 +55,13 @@ foreach($datosservicios2 as $valservicios2){
 
 
 
-$queryempresa="select * from empresa";
+$queryempresa="select * from ".$domi.".empresa";
 $datosempresa = DB::select($queryempresa);
 
- $queryatajos="select * from siennaatajos where siennadepto='".$resultados[0]->iddepto."'";
+ $queryatajos="select * from ".$domi.".siennaatajos where siennadepto='".$resultados[0]->iddepto."'";
 $datosatajos = DB::select($queryatajos);
 
-$queryintegracion="select * from siennaintegracion";
+$queryintegracion="select * from ".$domi.".siennaintegracion";
 $datosintegracion = DB::select($queryintegracion);
 $intehabilitado=0;
 foreach($datosintegracion as $vali){
