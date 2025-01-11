@@ -6,9 +6,7 @@
         
         <?php
 
-if(isset($pp)){
-    echo $pp;
-}
+
 if (isset($resultadoscliente[0]->cliente)) {
 } else {
     return '';
@@ -68,6 +66,9 @@ $iddelcliente=$resultadoscliente[0]->cliente;
 
         <div style="background-color:rgb(247, 244, 240);" class="d-flex justify-content-end">
             <div class="me-2">
+           <?php if(isset($pp)){
+    echo $pp;
+}?>
             <img src="https://<?php echo $subdomain_tmp;?>.suricata.cloud/img/erp/iclass.jpg"
             alt="ispkeeper logo" height="55">
             </div>
