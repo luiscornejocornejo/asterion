@@ -60,7 +60,7 @@ $datosempresa = DB::select($queryempresa);
  $queryatajos="select * from siennaatajos where siennadepto='".$resultados[0]->iddepto."'";
 $datosatajos = DB::select($queryatajos);
 
-$queryintegracion="select * from ".$domi.".siennaintegracion";
+$queryintegracion="select * from siennaintegracion";
 $datosintegracion = DB::select($queryintegracion);
 $intehabilitado=0;
 foreach($datosintegracion as $vali){
