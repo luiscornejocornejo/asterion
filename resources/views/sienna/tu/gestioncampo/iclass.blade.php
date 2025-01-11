@@ -1,4 +1,10 @@
-<?php
+@if (session('success'))
+            <script>
+                toastr.success("{{ session('success') }}");
+            </script>
+        @endif
+        
+        <?php
 
 if (isset($resultadoscliente[0]->cliente)) {
 } else {
