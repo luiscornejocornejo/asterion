@@ -222,6 +222,12 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         @endif
+        @if (session('success'))
+            <script>
+                toastr.success("{{ session('success') }}");
+            </script>
+        @endif
+
             <div class="container pt-2 ">
                 
                 <div class="d-flex justify-content-between pb-2">
