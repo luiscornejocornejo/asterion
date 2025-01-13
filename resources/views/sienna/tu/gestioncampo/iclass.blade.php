@@ -188,8 +188,20 @@ $iddelcliente=$resultadoscliente[0]->cliente;
         <div class="col-md-6">
             <?php if(isset($resultados[0]->lat)){
                         $coor=explode(",",$resultados[0]->lat);
-                        $lati=$coor[0];
-                        $long=$coor[1];
+                        if(isset($coor[0])){
+                            $lati=$coor[0];
+                        }else{
+                            $lati="";
+
+                        }
+
+                        if(isset($coor[1])){
+                            $long=$coor[1];
+                        }else{
+                            $long="";
+
+                        }
+                        
                
              }else{
                         $lati="";
