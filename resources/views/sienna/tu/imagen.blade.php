@@ -12,6 +12,7 @@
 
                     <div class="modal-body" id="vista2">
                        
+                        
                     </div>
                     <div class="modal-footer">
                   

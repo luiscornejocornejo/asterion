@@ -580,7 +580,8 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
             // document.getElementById('vista').src = dd;
             // g='<iframe allow="camera;microphone"  src="'+dd+'" width="100%" height="800px" class="border rounded-3" style="height:500px !important"></iframe>';
             g = '<embed src="' + ruta + '" type="" width="180" height="auto" quality="high" wmode="transparent">'
-            document.getElementById('vista2').innerHTML = g;
+            let linkToNewTab = '<a href="' + ruta + '" target="_blank" rel="noopener noreferrer" class="link-primary">Abrir adjunto</a>'
+            document.getElementById('vista2').innerHTML = g + linkToNewTab;
         }
         function tags(idtag){
          
