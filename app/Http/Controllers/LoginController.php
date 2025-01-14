@@ -150,6 +150,7 @@ class LoginController extends Controller
 
 
                 session(['idusuario' => $idusuario]);
+                session(['emailusuario' => $email]);
                 session(['empresa' => $empresa]);
                 session(['categoria' => $categoria]);
                 session(['deptosuser' => $deptosuser]);
