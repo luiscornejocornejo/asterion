@@ -7,7 +7,7 @@ $tipobot=$val->tipo;
     //if($resultados[0]->ticketid==5200) {
             ?>
         <iframe allow="camera;microphone" scrolling="no"
-        src="https://conversations.suricata.chat/<?php echo $merchantId;?>/t/<?php echo $resultados[0]->ticketid;?>?agentNameMail=<?php echo session('emailusuario');?>" width="100%" class="border rounded-3" style="height: 650px!important;"></iframe>
+        src="https://conversations.suricata.chat/<?php echo $merchantId;?>/t/<?php echo $resultados[0]->ticketid;?>?agentMail=<?php echo session('emailusuario');?>" width="100%" class="border rounded-3" style="height: 650px!important;"></iframe>
         <script>
     // Función para verificar y pedir permiso de notificaciones
     async function requestNotificationPermission() {
