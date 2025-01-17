@@ -9,8 +9,8 @@
                                     </div>
                                 </div>
                                 <hr style="margin-top: 10px;" />
-                                <div class="d-flex justify-content-between">
-                                    <div style="font-size: 10px">
+                                <div class="d-flex justify-content-between " style="font-size: 13px">
+                                    <div>
                                         <div class="mb-1">
                                             <i class="mdi mdi-list-status"></i> <strong>Estado: </strong><?php echo $resultados[0]->estadoname; ?>
                                         </div>
