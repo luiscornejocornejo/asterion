@@ -323,7 +323,16 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                 <a href="#geo" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
                                     onclick="logeados();">
                                     <i class="mdi mdi-settings-outline d-md-none d-block"></i>
-                                    <span class="d-none d-md-block">GEO</span>
+                                    <span class="d-none d-md-block">Geo</span>
+                                </a>
+                            </li>
+                                <?php }?>
+                                <?php if($pagoservicio){?>
+                                <li class="nav-item">
+                                <a href="#pago" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
+                                    onclick="logeados();">
+                                    <i class="mdi mdi-settings-outline d-md-none d-block"></i>
+                                    <span class="d-none d-md-block">Pagoralia</span>
                                 </a>
                             </li>
                                 <?php }?>
@@ -385,7 +394,16 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                             </DIV>
                         </DIV>
                         <?php }?>
+                    <?php if($pagoservicio){?>
+                        <div class="tab-pane" id="pago">
+                        
+                            <div class="card" id="pagoc">
+                            @include('sienna.tu.pagoralia.pagoralia')
 
+                            </DIV>
+                        </DIV>
+                        <?php }?>
+                        
                     <div class="tab-pane" id="ni">
 
                         <div class="card" id="mic">
@@ -445,14 +463,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                     }?>
 
 
-                    <?php if($erpservicio){
-                         $nombreintegracion = session('nombreintegracion');
-                        if($nombreintegracion=="ispkipper"){?>@include('sienna.tu.erp.kipper')<?php }
-                        if($nombreintegracion=="mikrowisp"){?>@include('sienna.tu.erp.mikro')<?php }
-                        if($nombreintegracion=="ispcube2"){?>@include('sienna.tu.erp.ispcube')<?php }
-                        if($nombreintegracion=="iwisp"){?>@include('sienna.tu.erp.iwisp')<?php }
-                
-                    }?>
+                   
                      <?php
                       if($iclasservicio){?>
                         
@@ -460,15 +471,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                 
                     }?>
                     
-                    <?php
-                      if($pagoservicio){?>
-                        <div class="mt-2">
-
-                        @include('sienna.tu.pagoralia.pagoralia')
-                        </div>
-                        <?php 
-                
-                    }?>
+                   
                   
 
                   
