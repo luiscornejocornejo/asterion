@@ -317,6 +317,16 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                 </a>
                             </li>
                                 <?php }?>
+
+                                <?php if($geoservicio){?>
+                                <li class="nav-item">
+                                <a href="#geo" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
+                                    onclick="logeados();">
+                                    <i class="mdi mdi-settings-outline d-md-none d-block"></i>
+                                    <span class="d-none d-md-block">GEO</span>
+                                </a>
+                            </li>
+                                <?php }?>
                         </ul>
 
                 <div class="tab-content">
@@ -364,6 +374,18 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                             </div>
                         </div>
                     <?php }?>
+
+
+                    <?php if($geoservicio){?>
+                        <div class="tab-pane" id="geo">
+                        
+                            <div class="card" id="geoc">
+                            @include('sienna.tu.geolocalizacion.geo') 
+
+                            </DIV>
+                        </DIV>
+                        <?php }?>
+
                     <div class="tab-pane" id="ni">
 
                         <div class="card" id="mic">
@@ -437,12 +459,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         @include('sienna.tu.gestioncampo.iclass')<?php 
                 
                     }?>
-                     <?php
-                      if($geoservicio){?>
-                        
-                        @include('sienna.tu.geolocalizacion.geo')<?php 
-                
-                    }?>
+                    
                     <?php
                       if($pagoservicio){?>
                         <div class="mt-2">
