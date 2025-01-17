@@ -486,23 +486,13 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         <?php 
                 
                     }?>
-                    <div class="mt-2">
-                         @include('sienna.tu.informacionnotainterna')
-
-                    </div>                    
-
+                  
 
                   
 
                    
-                    <div class="mt-2">
-                        @include('sienna.tu.informaciontareas')
-
-                    </div>
-                    <div class="mt-2">
-                        @include('sienna.tu.informacionhistorial')
-
-                    </div>
+                  
+                 
                
                        <div aria-live="polite" aria-atomic="true" class="toast fade position-fixed bottom-0 end-0 m-3" role="alert" style="z-index: 1050;" id="liveToast">
                         <div class="toast-header bg-dark">
