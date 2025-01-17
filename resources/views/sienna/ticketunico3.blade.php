@@ -272,7 +272,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                             $excludedProductIds = [1,2,3,4,6];
                             if($botpresservicio){
                                 if (in_array($resultados[0]->siennasource, $excludedProductIds)) {?>
-                                        <div class="mt-2">
+                                        <div class="">
 
                                         @include('sienna.tu.bot.botpres')
                                         </div>
@@ -473,7 +473,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                         </div>
                     </div>
-                <div class="col-sm-12 col-lg-4 col-xxl-4 card widget-flat" id="forwardTicket">
+                <div class="col-sm-12 col-lg-4 col-xxl-4 card widget-flat mt-2" id="forwardTicket">
                 <div>
                         <?php
                         $tipodemenu = session('tipodemenu');
