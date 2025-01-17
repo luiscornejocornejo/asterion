@@ -269,6 +269,10 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                     <?php 
                                 }
                             }
+                            if($resultados[0]->siennasource==10){?>           
+                                @include('sienna.tu.informacionsuricata')
+                            <?php
+                            }
                             ?>
 
                 <div class="container">
@@ -379,7 +383,8 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                             if($nombreintegracion=="ispkipper"){?>@include('sienna.tu.erp.kipper')<?php }
                             if($nombreintegracion=="mikrowisp"){?>@include('sienna.tu.erp.mikro')<?php }
                             if($nombreintegracion=="ispcube2"){?>@include('sienna.tu.erp.ispcube')<?php }
-                            if($nombreintegracion=="iwisp"){?>@include('sienna.tu.erp.iwisp')<?php }?>
+                            if($nombreintegracion=="iwisp"){?>@include('sienna.tu.erp.iwisp')<?php }
+                            if($nombreintegracion=="sin"){?>@include('sienna.tu.erp.sin')<?php }?>
                             </div>
                         </div>
                     <?php }?>
@@ -421,14 +426,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                      
                                      
                       
-                     if($resultados[0]->siennasource==10){?>
-
-                       
-                        @include('sienna.tu.informacionsuricata')
-
-
-                    <?php
-                    }
+                    
 
                     
                     
