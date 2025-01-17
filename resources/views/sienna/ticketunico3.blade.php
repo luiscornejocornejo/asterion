@@ -395,10 +395,9 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                     <?php if($geoservicio){?>
                         <div class="tab-pane" id="geo">
                         
-                            <div class="card" id="geoc">
                             @include('sienna.tu.geolocalizacion.geo') 
 
-                            </DIV>
+                            
                         </DIV>
                         <?php }?>
                     <?php if($pagoservicio){?>
