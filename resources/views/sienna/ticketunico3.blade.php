@@ -298,16 +298,9 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                     <div class="container">
                             <ul class="nav nav-pills bg-nav-pills nav-justified mt-4">
                                 <li class="nav-item">
-                                    <a href="#infoticket" data-bs-toggle="tab" aria-expanded="false"
+                                    <a href="#infousu" data-bs-toggle="tab" aria-expanded="false"
                                         class="nav-link rounded-0 active">
                                         <i class="mdi mdi-home-variant d-md-none d-block"></i>
-                                        <span class="d-none d-md-block">Información de Ticket</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#infousu" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
-                                        onclick="logeados();">
-                                        <i class="mdi mdi-settings-outline d-md-none d-block"></i>
                                         <span class="d-none d-md-block">Información de usuario</span>
                                     </a>
                                 </li>
