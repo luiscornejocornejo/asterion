@@ -383,11 +383,8 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                 </div>
 
-                
-                    <div>
-                    @include('sienna.tu.informacionticket')
 
-                    </div>
+                  
                     <?php
                      $urlreabrir="";
                         $vero="";
@@ -435,18 +432,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                    
 
-                    <div class="mt-2">
-                    @include('sienna.tu.informacionusuario')
-
-                    </div>
-                    <div class="mt-2">
-                        @include('sienna.tu.informaciononline')
-
-                    </div>
-                    <div class="mt-2">
-                    @include('sienna.tu.collectorbot')
-
-                    </div>
+                   
                     <?php
                       if($mailservicio){
                         if($resultados[0]->siennasource==7){?>
