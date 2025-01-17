@@ -257,6 +257,7 @@ Route::get('/linknetclientes','App\Http\Controllers\TicketdatosController@linkne
 Route::post('/subirclientes','App\Http\Controllers\TicketdatosController@subirclientespost');
 Route::get('/busquedaavanzada','App\Http\Controllers\TicketdatosController@busquedaavanzada');
 Route::get('/ticketunico','App\Http\Controllers\TicketdatosController@ticketunico');
+Route::get('/ticketunico3','App\Http\Controllers\TicketdatosController@ticketunico3');
 Route::get('/ticketunico2','App\Http\Controllers\TicketdatosController@ticketunico2');
 
 
