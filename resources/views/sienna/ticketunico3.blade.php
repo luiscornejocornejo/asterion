@@ -279,6 +279,37 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                 <div class="col-sm-12 col-lg-8 col-xxl-9">
 
+                <?php      
+                            $urlreabrir="";
+                            $vero="";
+                            foreach($emp as $value){
+                                $urlreabrir=$value->reabrir;
+                            }
+                            if(strlen($urlreabrir)<2){
+                                $vero="d-none";
+                            }
+                            $excludedProductIds = [1,2,3,4,6];
+                            if($botpresservicio){
+                                if (in_array($resultados[0]->siennasource, $excludedProductIds)) {?>
+                                        <div class="mt-2">
+
+                                        @include('sienna.tu.bot.botpres')
+                                        </div>
+                                    <?php 
+                                    }
+                            }
+                            if($xenservicio){
+                                if (in_array($resultados[0]->siennasource, $excludedProductIds)) {
+                                    ?>
+                                    <div class="mt-2">
+
+                                    @include('sienna.tu.bot.whatapp')
+                                    </div>
+                                    <?php 
+                                }
+                            }
+                            ?>
+
                 <div class="container">
                         <ul class="nav nav-pills bg-nav-pills nav-justified mt-4">
                             <li class="nav-item">
@@ -386,14 +417,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                   
                     <?php
-                     $urlreabrir="";
-                        $vero="";
-                                    foreach($emp as $value){
-                                        $urlreabrir=$value->reabrir;
-                                    }
-                                    if(strlen($urlreabrir)<2){
-                                        $vero="d-none";
-                                    }
+                     
                                      
                       
                      if($resultados[0]->siennasource==10){?>
@@ -406,27 +430,8 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                     }
 
                     
-                    $excludedProductIds = [1,2,3,4,6];
-                    if($xenservicio){
-                        if (in_array($resultados[0]->siennasource, $excludedProductIds)) {
-                            ?>
-                      <div class="mt-2">
-
-                      @include('sienna.tu.bot.whatapp')
-                      </div>
-                      <?php 
-                      }
-                  }
-                  if($botpresservicio){
-                    if (in_array($resultados[0]->siennasource, $excludedProductIds)) {
-                        ?>
-                  <div class="mt-2">
-
-                  @include('sienna.tu.bot.botpres')
-                  </div>
-                  <?php 
-                  }
-              }?>
+                    
+                ?>
                     
 
 
