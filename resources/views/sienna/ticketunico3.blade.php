@@ -473,7 +473,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                         </div>
                     </div>
-                <div class="col-sm-12 col-lg-4 col-xxl-4 card widget-flat mt-2" id="forwardTicket">
+                <div class="col-sm-12 col-lg-4 col-xxl-4 card widget-flat pt-2" id="forwardTicket">
                 <div>
                         <?php
                         $tipodemenu = session('tipodemenu');
