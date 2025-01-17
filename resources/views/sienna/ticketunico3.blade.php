@@ -224,7 +224,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
         @endif
         
 
-            <div class="container pt-2 ">
+            <div class="container-fluid pt-2">
                 
                 <div class="d-flex justify-content-between pb-2">
                     <div>
@@ -238,7 +238,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
 
 
-                <div class="col-sm-12 col-lg-8 col-xxl-9">
+                <div class="col-sm-12 col-lg-8 col-xxl-8">
                  <?php
                       if($mailservicio){
                         if($resultados[0]->siennasource==7){?>
@@ -372,13 +372,6 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                             </ul>
 
                             <div class="tab-content">
-                                <div class="tab-pane show active" id="infoticket">
-
-                                    <div class="card" id="infoticketc">
-                                    @include('sienna.tu.informacionticket')
-
-                                    </div>
-                                </div>
                                 <div class="tab-pane" id="infousu">
                                     
                                     <div class="card" id="infousuc">
@@ -487,7 +480,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                         </div>
                     </div>
-                <div class="col-sm-12 col-lg-4 col-xxl-3 card widget-flat" id="forwardTicket">
+                <div class="col-sm-12 col-lg-4 col-xxl-4 card widget-flat" id="forwardTicket">
                 <div>
                         <?php
                         $tipodemenu = session('tipodemenu');
@@ -527,6 +520,10 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         <button onclick="printScreen()" class="btn btn-secondary" type="button">
                             <i class="mdi mdi-cloud-print-outline" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Imprimir ticket."></i>
                         </button>
+                    </div>
+                    <div>
+                        @include('sienna.tu.informacionticket')
+    
                     </div>
                     <strong class="mt-2">Seguimiento</strong>
                     <hr>
