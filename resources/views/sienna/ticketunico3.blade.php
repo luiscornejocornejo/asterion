@@ -510,7 +510,8 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         <div class="toast-body">
 
                         </div>
-                    
+                    </div>
+                </div>
                 <div class="col-sm-12 col-lg-4 col-xxl-3 card widget-flat" id="forwardTicket">
                     <strong class="mt-2">Seguimiento</strong>
                     <hr>
