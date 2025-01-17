@@ -239,7 +239,27 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
 
                 <div class="col-sm-12 col-lg-8 col-xxl-9">
+                <?php
+                      if($mailservicio){
+                        if($resultados[0]->siennasource==7){?>
+                        <div class="mt-2">
 
+                        @include('sienna.tu.mail.mail')
+                        @include('sienna.tu.mail.adjuntos')
+                        </div>
+                        <?php 
+                        }
+                    }?>
+                    <?php
+                      if($grabacionesservicio){
+                        if($resultados[0]->siennasource==5){?>
+                        <div class="mt-2">
+
+                        @include('sienna.tu.telefonia.grabaciones')
+                        </div>
+                        <?php 
+                        }
+                    }?>
                 <?php      
                             $urlreabrir="";
                             $vero="";
@@ -410,7 +430,8 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                             </DIV>
                         </DIV>
-                        <?php }?>
+                        <?php 
+                    }?>
                         
                     <div class="tab-pane" id="ni">
 
@@ -425,43 +446,15 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
 
                   
-                    <?php
-                     
-                                     
-                      
-                    
-
-                    
-                    
-                ?>
-                    
+                   
 
 
                    
 
                    
-                    <?php
-                      if($mailservicio){
-                        if($resultados[0]->siennasource==7){?>
-                        <div class="mt-2">
+                    
 
-                        @include('sienna.tu.mail.mail')
-                        @include('sienna.tu.mail.adjuntos')
-                        </div>
-                        <?php 
-                        }
-                    }?>
-
-                    <?php
-                      if($grabacionesservicio){
-                        if($resultados[0]->siennasource==5){?>
-                        <div class="mt-2">
-
-                        @include('sienna.tu.telefonia.grabaciones')
-                        </div>
-                        <?php 
-                        }
-                    }?>
+                    
 
 
                    
@@ -481,7 +474,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                   
                  
                
-                       <div aria-live="polite" aria-atomic="true" class="toast fade position-fixed bottom-0 end-0 m-3" role="alert" style="z-index: 1050;" id="liveToast">
+                    <div aria-live="polite" aria-atomic="true" class="toast fade position-fixed bottom-0 end-0 m-3" role="alert" style="z-index: 1050;" id="liveToast">
                         <div class="toast-header bg-dark">
                             <img src="assetsfacu/images/logo-mini.png" alt="brand-logo" height="12" class="me-1" />
                             <strong class="me-auto text-light">Copiado!</strong>
@@ -493,7 +486,6 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                         </div>
                     </div>
-                </div>
                 <div class="col-sm-12 col-lg-4 col-xxl-3 card widget-flat" id="forwardTicket">
                 <div>
                         <?php
