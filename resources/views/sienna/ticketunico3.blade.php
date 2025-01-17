@@ -360,6 +360,15 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                     </a>
                                 </li>
                                     <?php }?>
+                                <?php if($iclasservicio){?>
+                                <li class="nav-item">
+                                    <a href="#iclass" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
+                                        onclick="logeados();">
+                                        <i class="mdi mdi-settings-outline d-md-none d-block"></i>
+                                        <span class="d-none d-md-block">Iclass</span>
+                                    </a>
+                                </li>
+                                    <?php }?>
                             </ul>
 
                             <div class="tab-content">
@@ -432,6 +441,15 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                     </DIV>
                                     <?php 
                                 }?>
+                                <?php if($iclasservicio){?>
+                                    <div class="tab-pane" id="iclass">
+                                    
+                                        <div class="card" id="iclassc">
+                                        @include('sienna.tu.gestioncampo.iclass')
+                                        </DIV>
+                                    </DIV>
+                                    <?php 
+                                }?>
                                     
                                 <div class="tab-pane" id="ni">
 
@@ -445,12 +463,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                             </div>
 
 
-                        <?php
-                        if($iclasservicio){?>
-                            
-                            @include('sienna.tu.gestioncampo.iclass')<?php 
-                    
-                        }?>
+                      
                         
                     
                     
