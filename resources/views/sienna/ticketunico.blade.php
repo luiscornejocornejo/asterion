@@ -224,12 +224,257 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
         @endif
         
 
-            <div class="container pt-2 ">
+            <div class="container-fluid pt-2">
                 
                 <div class="d-flex justify-content-between pb-2">
                     <div>
                     </div>
-                    <div>
+                   
+                </div>
+
+                
+                <div class="row">
+
+
+
+
+                <div class="col-sm-12 col-lg-8 col-xxl-8">
+                 <?php
+                      if($mailservicio){
+                        if($resultados[0]->siennasource==7){?>
+                        <div class="mt-2">
+
+                        @include('sienna.tu.mail.mail')
+                        @include('sienna.tu.mail.adjuntos')
+                        </div>
+                        <?php 
+                        }
+                    }?>
+                    <?php
+                      if($grabacionesservicio){
+                        if($resultados[0]->siennasource==5){?>
+                        <div class="mt-2">
+
+                        @include('sienna.tu.telefonia.grabaciones')
+                        </div>
+                        <?php 
+                        }
+                    }?>
+                 <?php      
+                            $urlreabrir="";
+                            $vero="";
+                            foreach($emp as $value){
+                                $urlreabrir=$value->reabrir;
+                            }
+                            if(strlen($urlreabrir)<2){
+                                $vero="d-none";
+                            }
+                            $excludedProductIds = [1,2,3,4,6];
+                            if($botpresservicio){
+                                if (in_array($resultados[0]->siennasource, $excludedProductIds)) {?>
+                                        <div class="">
+
+                                        @include('sienna.tu.bot.botpres')
+                                        </div>
+                                    <?php 
+                                    }
+                            }
+                            if($xenservicio){
+                                if (in_array($resultados[0]->siennasource, $excludedProductIds)) {
+                                    ?>
+                                    <div class="mt-2">
+
+                                    @include('sienna.tu.bot.whatapp')
+                                    </div>
+                                    <?php 
+                                }
+                            }
+                            if($resultados[0]->siennasource==10){?>           
+                                @include('sienna.tu.informacionsuricata')
+                            <?php
+                            }
+                            ?>
+
+                    <div class="container">
+                            <ul class="nav nav-pills bg-nav-pills nav-justified mt-4">
+                                <li class="nav-item">
+                                    <a href="#infousu" data-bs-toggle="tab" aria-expanded="false"
+                                        class="nav-link rounded-0 active">
+                                        <i class="mdi mdi-home-variant d-md-none d-block"></i>
+                                        <span class="d-none d-md-block">Información de usuario</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#ni" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
+                                        onclick="logeados();">
+                                        <i class="mdi mdi-settings-outline d-md-none d-block"></i>
+                                        <span class="d-none d-md-block">Notas</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#tareascc" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
+                                        onclick="logeados();">
+                                        <i class="mdi mdi-settings-outline d-md-none d-block"></i>
+                                        <span class="d-none d-md-block">Tareas</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#historialcc" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
+                                        onclick="logeados();">
+                                        <i class="mdi mdi-settings-outline d-md-none d-block"></i>
+                                        <span class="d-none d-md-block">Historial</span>
+                                    </a>
+                                </li>
+                                <?php if($erpservicio){?>
+                                    <li class="nav-item">
+                                    <a href="#erp" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
+                                        onclick="logeados();">
+                                        <i class="mdi mdi-settings-outline d-md-none d-block"></i>
+                                        <span class="d-none d-md-block">ERP</span>
+                                    </a>
+                                </li>
+                                    <?php }?>
+
+                                    <?php if($geoservicio){?>
+                                    <li class="nav-item">
+                                    <a href="#geo" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
+                                        onclick="logeados();">
+                                        <i class="mdi mdi-settings-outline d-md-none d-block"></i>
+                                        <span class="d-none d-md-block">Geo</span>
+                                    </a>
+                                </li>
+                                    <?php }?>
+                                    <?php if($pagoservicio){?>
+                                    <li class="nav-item">
+                                    <a href="#pago" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
+                                        onclick="logeados();">
+                                        <i class="mdi mdi-settings-outline d-md-none d-block"></i>
+                                        <span class="d-none d-md-block">Pagoralia</span>
+                                    </a>
+                                </li>
+                                    <?php }?>
+                                <?php if($iclasservicio){?>
+                                <li class="nav-item">
+                                    <a href="#iclass" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
+                                        onclick="logeados();">
+                                        <i class="mdi mdi-settings-outline d-md-none d-block"></i>
+                                        <span class="d-none d-md-block">Iclass</span>
+                                    </a>
+                                </li>
+                                    <?php }?>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane show active" id="infousu">
+                                    
+                                    <div class="card" id="infousuc">
+                                    @include('sienna.tu.informacionusuario')
+                                    @include('sienna.tu.informaciononline')
+                                    @include('sienna.tu.collectorbot')
+
+
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tareascc">
+                                    
+                                    <div class="card" id="tareasc">
+                                    @include('sienna.tu.informaciontareas')
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="historialcc">
+                                    
+                                    <div class="card" id="historialc">
+                                    @include('sienna.tu.informacionhistorial')
+
+                                    </div>
+                                </div>
+                                <?php if($erpservicio){?>
+                                    <div class="tab-pane" id="erp">
+                                    
+                                        <div class="card" id="erpc">
+                                            <?php 
+                                                                    $nombreintegracion = session('nombreintegracion');
+
+                                        if($nombreintegracion=="ispkipper"){?>@include('sienna.tu.erp.kipper')<?php }
+                                        if($nombreintegracion=="mikrowisp"){?>@include('sienna.tu.erp.mikro')<?php }
+                                        if($nombreintegracion=="ispcube2"){?>@include('sienna.tu.erp.ispcube')<?php }
+                                        if($nombreintegracion=="iwisp"){?>@include('sienna.tu.erp.iwisp')<?php }
+                                        if($nombreintegracion=="sin"){?>@include('sienna.tu.erp.sin')<?php }?>
+                                        </div>
+                                    </div>
+                                <?php }?>
+
+
+                                <?php if($geoservicio){?>
+                                    <div class="tab-pane" id="geo">
+                                    <div class="mt-2">
+
+                                        @include('sienna.tu.geolocalizacion.geo') 
+
+                                        
+                                        </DIV>
+                                        </DIV>
+                                        <?php }?>
+                                <?php if($pagoservicio){?>
+                                    <div class="tab-pane" id="pago">
+                                    
+                                        <div class="card" id="pagoc">
+                                        @include('sienna.tu.pagoralia.pagoralia')
+
+                                        </DIV>
+                                    </DIV>
+                                    <?php 
+                                }?>
+                                <?php if($iclasservicio){?>
+                                    <div class="tab-pane" id="iclass">
+                                    
+                                        <div class="card" id="iclassc">
+                                        @include('sienna.tu.gestioncampo.iclass')
+                                        </DIV>
+                                    </DIV>
+                                    <?php 
+                                }?>
+                                    
+                                <div class="tab-pane" id="ni">
+
+                                    <div class="card" id="mic">
+                                    @include('sienna.tu.informacionnotainterna')
+
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+
+
+                      
+                        
+                    
+                    
+
+                    
+
+                    
+                    
+                    
+                    </div>
+                </div>
+                    <div aria-live="polite" aria-atomic="true" class="toast fade position-fixed bottom-0 end-0 m-3" role="alert" style="z-index: 1050;" id="liveToast">
+                        <div class="toast-header bg-dark">
+                            <img src="assetsfacu/images/logo-mini.png" alt="brand-logo" height="12" class="me-1" />
+                            <strong class="me-auto text-light">Copiado!</strong>
+                            <small class="text-light">Ahora</small>
+                            <button type="button" class="ms-2 btn-close btn-close-white" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+
+                        </div>
+                    </div>
+                <div class="col-sm-12 col-lg-4 col-xxl-4 card widget-flat pt-2" id="forwardTicket">
+                <div>
                         <?php
                         $tipodemenu = session('tipodemenu');
                         if (($tipodemenu == "1") or ($tipodemenu == "2") or ($tipodemenu == "4")) {
@@ -253,7 +498,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                         </button>
                         
                         <?php  $ctusers = session('ctusers');
-
+                        if($xenservicio){
                                 if($ctusers=="1"){?>
                         <button onclick="cerrar(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->user_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`,`<?php echo $resultados[0]->cliente; ?>`,`<?php echo $resultados[0]->siennasource; ?>`)" class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrar">
                             <i class="mdi mdi-check-circle" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Cerrar Ticket."></i>
@@ -264,164 +509,16 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                 <i class="mdi mdi-account-arrow-right" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Derivar ticket"></i>
                             </button>
 
-                        <?php }?>
+                        <?php }
+                        }?>
                         <button onclick="printScreen()" class="btn btn-secondary" type="button">
                             <i class="mdi mdi-cloud-print-outline" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Imprimir ticket."></i>
                         </button>
                     </div>
-                </div>
-
-                
-                <div class="row">
-                <div class="col-sm-12 col-lg-8 col-xxl-9">
                     <div>
-                    @include('sienna.tu.informacionticket')
-
+                        @include('sienna.tu.informacionticket')
+    
                     </div>
-                    <?php
-                     $urlreabrir="";
-                        $vero="";
-                                    foreach($emp as $value){
-                                        $urlreabrir=$value->reabrir;
-                                    }
-                                    if(strlen($urlreabrir)<2){
-                                        $vero="d-none";
-                                    }
-                                     
-                      
-                     if($resultados[0]->siennasource==10){?>
-
-                       
-                        @include('sienna.tu.informacionsuricata')
-
-
-                    <?php
-                    }
-
-                    
-                    $excludedProductIds = [1,2,3,4,6];
-                    if($xenservicio){
-                        if (in_array($resultados[0]->siennasource, $excludedProductIds)) {
-                            ?>
-                      <div class="mt-2">
-
-                      @include('sienna.tu.bot.whatapp')
-                      </div>
-                      <?php 
-                      }
-                  }
-                  if($botpresservicio){
-                    if (in_array($resultados[0]->siennasource, $excludedProductIds)) {
-                        ?>
-                  <div class="mt-2">
-
-                  @include('sienna.tu.bot.botpres')
-                  </div>
-                  <?php 
-                  }
-              }?>
-                    
-
-
-                   
-
-                    <div class="mt-2">
-                    @include('sienna.tu.informacionusuario')
-
-                    </div>
-                    <div class="mt-2">
-                        @include('sienna.tu.informaciononline')
-
-                    </div>
-                    <div class="mt-2">
-                    @include('sienna.tu.collectorbot')
-
-                    </div>
-                    <?php
-                      if($mailservicio){
-                        if($resultados[0]->siennasource==7){?>
-                        <div class="mt-2">
-
-                        @include('sienna.tu.mail.mail')
-                        @include('sienna.tu.mail.adjuntos')
-                        </div>
-                        <?php 
-                        }
-                    }?>
-
-                    <?php
-                      if($grabacionesservicio){
-                        if($resultados[0]->siennasource==5){?>
-                        <div class="mt-2">
-
-                        @include('sienna.tu.telefonia.grabaciones')
-                        </div>
-                        <?php 
-                        }
-                    }?>
-
-
-                    <?php if($erpservicio){
-                         $nombreintegracion = session('nombreintegracion');
-                        if($nombreintegracion=="ispkipper"){?>@include('sienna.tu.erp.kipper')<?php }
-                        if($nombreintegracion=="mikrowisp"){?>@include('sienna.tu.erp.mikro')<?php }
-                        if($nombreintegracion=="ispcube2"){?>@include('sienna.tu.erp.ispcube')<?php }
-                        if($nombreintegracion=="iwisp"){?>@include('sienna.tu.erp.iwisp')<?php }
-                
-                    }?>
-                     <?php
-                      if($iclasservicio){?>
-                        
-                        @include('sienna.tu.gestioncampo.iclass')<?php 
-                
-                    }?>
-                     <?php
-                      if($geoservicio){?>
-                        
-                        @include('sienna.tu.geolocalizacion.geo')<?php 
-                
-                    }?>
-                    <?php
-                      if($pagoservicio){?>
-                        <div class="mt-2">
-
-                        @include('sienna.tu.pagoralia.pagoralia')
-                        </div>
-                        <?php 
-                
-                    }?>
-                    <div class="mt-2">
-                         @include('sienna.tu.informacionnotainterna')
-
-                    </div>                    
-
-
-                  
-
-                   
-                    <div class="mt-2">
-                        @include('sienna.tu.informaciontareas')
-
-                    </div>
-                    <div class="mt-2">
-                        @include('sienna.tu.informacionhistorial')
-
-                    </div>
-               
-                       <div aria-live="polite" aria-atomic="true" class="toast fade position-fixed bottom-0 end-0 m-3" role="alert" style="z-index: 1050;" id="liveToast">
-                        <div class="toast-header bg-dark">
-                            <img src="assetsfacu/images/logo-mini.png" alt="brand-logo" height="12" class="me-1" />
-                            <strong class="me-auto text-light">Copiado!</strong>
-                            <small class="text-light">Ahora</small>
-                            <button type="button" class="ms-2 btn-close btn-close-white" data-bs-dismiss="toast"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="toast-body">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-lg-4 col-xxl-3 card widget-flat" id="forwardTicket">
                     <strong class="mt-2">Seguimiento</strong>
                     <hr>
                     <div class="card-body" style="padding-top: 0;">
