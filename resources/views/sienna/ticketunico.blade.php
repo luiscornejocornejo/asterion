@@ -493,7 +493,6 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                     <div class="tab-pane" id="iclass">
                                     
                                         <div class="card" id="iclassc">
-                                        @include('sienna.tu.gestioncampo.iclass')
                                         </DIV>
                                     </DIV>
                                     <?php 
