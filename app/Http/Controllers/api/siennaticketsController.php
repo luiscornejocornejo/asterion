@@ -3419,26 +3419,26 @@ class siennaticketsController extends Controller
                     
                     <div class="col-md-4">
                     <label for="nameCustomer" class="form-label">Name Customer</label>
-                    <input required type="text" class="form-control" id="nameCustomer" name="nameCustomer" value="<?php echo $resultadoscliente[0]->nya;?>">
+                    <input required type="text" class="form-control" id="nameCustomer" name="nameCustomer" value="<?php //echo $resultadoscliente[0]->nya;?>">
                     </div>
                     <div class="col-md-4">
                     <label for="address" class="form-label">Address</label>
-                    <input required type="text" class="form-control" id="address" name="address" value="<?php echo $resultadoscliente[0]->address;?>">
+                    <input required type="text" class="form-control" id="address" name="address" value="<?php //echo //$resultadoscliente[0]->address;?>">
                     </div>
                     <div class="col-md-4">
                     <label for="address" class="form-label">Email</label>
-                    <input  type="text" class="form-control" id="email" name="email" value="<?php echo $resultadoscliente[0]->email;?>">
+                    <input  type="text" class="form-control" id="email" name="email" value="<?php //echo //$resultadoscliente[0]->email;?>">
                     </div>
                 </div>
                 
                 <div class="row mb-3">
                     <div class="col-md-6">
                     <label for="contactPhone" class="form-label">Contact Phone</label>
-                    <input  type="text" class="form-control" id="contactPhone" name="contactPhone" value="<?php echo $resultadoscliente[0]->cel;?>">
+                    <input  type="text" class="form-control" id="contactPhone" name="contactPhone" value="<?php //echo $resultadoscliente[0]->cel;?>">
                     </div>
                     <div class="col-md-6">
                     <label for="mobilePhone" class="form-label">Mobile Phone</label>
-                    <input required type="text" class="form-control" id="mobilePhone" name="mobilePhone" value="<?php echo $resultadoscliente[0]->cel;?>">
+                    <input required type="text" class="form-control" id="mobilePhone" name="mobilePhone" value="<?php //echo $resultadoscliente[0]->cel;?>">
                     </div>
                 </div>
             
@@ -3469,7 +3469,11 @@ class siennaticketsController extends Controller
                 
                 <div class="row mb-3">
                     <div class="col-md-6">
-                        <?php if(isset($resultados[0]->lat)){
+                        <?php 
+                        
+                        if(0){
+                        //if(isset($resultados[0]->lat)){
+                        /*
                                     $coor=explode(",",$resultados[0]->lat);
                                     if(isset($coor[0])){
                                         $lati=$coor[0];
@@ -3484,7 +3488,7 @@ class siennaticketsController extends Controller
                                         $long="";
 
                                     }
-                                    
+                                    */
                         
                         }else{
                                     $lati="";
