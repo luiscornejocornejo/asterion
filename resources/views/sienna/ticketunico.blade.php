@@ -384,7 +384,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                     <?php if($geoservicio){?>
                                     <li class="nav-item">
                                     <a href="#geo" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
-                                        onclick="geo();">
+                                        onclick="logeados();">
                                         <i class="mdi mdi-settings-outline d-md-none d-block"></i>
                                         <span class="d-none d-md-block">Geo</span>
                                     </a>
@@ -455,8 +455,8 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                                 <?php if($geoservicio){?>
                                     <div class="tab-pane" id="geo">
-                                        <div id="dynamic-map">
-                                        </div>
+                                    @include('sienna.tu.geoocalizacion.geo')
+
                                     </div>
                                         <?php }?>
                                 <?php if($pagoservicio){?>

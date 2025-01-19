@@ -11,7 +11,7 @@
                 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
                 <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
 
-            <div id="map" style="height: 400px; width: 100%;"></div>
+            <div id="map" style="height: 400px; width: 600px;"></div>
 
             <script>
                     console.log(<?php echo $resultados[0]->lat;?>); 
