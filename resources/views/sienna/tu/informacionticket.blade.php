@@ -1,4 +1,4 @@
-<div class="card widget-flat" id="infoTicket">
+<div class="card widget-flat mt-2" id="infoTicket">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div>
@@ -9,8 +9,8 @@
                                     </div>
                                 </div>
                                 <hr style="margin-top: 10px;" />
-                                <div class="d-flex justify-content-between">
-                                    <div style="font-size: 10px">
+                                <div class="d-flex justify-content-between " >
+                                    <div style="font-size: 13px">
                                         <div class="mb-1">
                                             <i class="mdi mdi-list-status"></i> <strong>Estado: </strong><?php echo $resultados[0]->estadoname; ?>
                                         </div>
@@ -27,7 +27,7 @@
                                         @endif
                                     </div>
 
-                                    <div>
+                                    <div style="font-size: 13px">
                                         <div class="mb-1">
                                             <i class="mdi mdi-calendar"></i> <strong>Creado: </strong><?php echo $resultados[0]->creacion; ?>
                                         </div>
