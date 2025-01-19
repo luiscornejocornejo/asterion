@@ -249,7 +249,11 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
             .then(function (response) {
 
               res="<select name='motivoc' class='form-control'>";
+              document.getElementById("magia").innerHTML = null;
+
               console.log(response.data);
+              document.getElementById("magia").innerHTML = response.data;
+
               /*
               for (i = 0; i < response.data.length; i++) {
                     console.log(response.data[i].nombre);
@@ -497,6 +501,8 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                         @include('sienna.tu.gestioncampo.iclass')
 
                                         </DIV>
+                                        <div id="magia">
+                                        </div>
                                     </DIV>
                                     <?php 
                                 }?>
