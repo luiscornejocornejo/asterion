@@ -241,7 +241,6 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
     }
     ?>
  function iclass(){
-    //url = "https://<?php echo $subdomain_tmp;?>.suricata.cloud/api/iclass?cliente=<?php echo $resultados[0]->cliente;?>,subdomain_tmp=<?php echo $subdomain_tmp;?>,resultadoscliente=<?php echo $resultadoscliente;?>,resultados=<?php echo $resultados;?>";
     url="";  
     console.log(url);
 
