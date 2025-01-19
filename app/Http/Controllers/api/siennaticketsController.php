@@ -3378,7 +3378,7 @@ class siennaticketsController extends Controller
                                     <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                                         <label for="example-textarea" class="form-label">Cliente</label>
                                         <input required name="cliente" type="text" class="form-control" id="lastNameUser"
-                                            value="<?php echo $iddelcliente;?>">
+                                            value="<?php echo $cliente;?>">
                                         
                                     </div>
                                 
