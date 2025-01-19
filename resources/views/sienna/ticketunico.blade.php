@@ -236,6 +236,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
         foreach ($resultadosws as $value) {
 
             $tokensienna = $value->tokensienna;
+            dd($tokensienna);
             $urilogin = $value->urilogin;
         }
     }
