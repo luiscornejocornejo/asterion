@@ -210,7 +210,53 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
 
     }
+    function createMap(containerId, lat, lng, zoomLevel = 13) {
+    // Crear el contenedor del mapa dinámicamente
+    const container = document.createElement('div');
+    container.id = containerId; // Asignar el ID al contenedor
+    container.style.height = '400px'; // Estilo para la altura
+    container.style.width = '100%';  // Estilo para el ancho
+
+    // Agregar el contenedor al cuerpo o a otro elemento específico
+    document.body.appendChild(container); // Cambiar "document.body" según dónde quieras el mapa
+
+    // Inicializar el mapa con Leaflet
+    const map = L.map(containerId).setView([lat, lng], zoomLevel);
+
+    // Agregar la capa de OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Agregar un marcador en la ubicación proporcionada
+    L.marker([lat, lng]).addTo(map)
+        .bindPopup('Ubicación seleccionada.')
+        .openPopup();
+
+    return map; // Devolver la instancia del mapa (por si necesitas manipularla)
+}
+
+public function geo(){
+
+    <?php
+    $lat = isset($resultados[0]->lat) ? explode(",", $resultados[0]->lat)[0] : -34.545278;
+    $lng = isset($resultados[0]->lat) ? explode(",", $resultados[0]->lat)[1] : -58.449722;
+    ?>
+
+    const lat = <?php echo $lat; ?>;
+    const lng = <?php echo $lng; ?>;
+
+    // Crear el mapa dinámicamente
+    createMap('dynamic-map', lat, lng);
+
+}
+
+
     </script>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
 <div class="wrapper menuitem-active">
     @include('facu.menu')
     <div class="content-page" style="padding: 0!important;">
@@ -338,7 +384,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                     <?php if($geoservicio){?>
                                     <li class="nav-item">
                                     <a href="#geo" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
-                                        onclick="logeados();">
+                                        onclick="geo();">
                                         <i class="mdi mdi-settings-outline d-md-none d-block"></i>
                                         <span class="d-none d-md-block">Geo</span>
                                     </a>
@@ -409,13 +455,9 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
                                 <?php if($geoservicio){?>
                                     <div class="tab-pane" id="geo">
-                                    <div class="mt-2">
-
-                                        @include('sienna.tu.geolocalizacion.geo') 
-
-                                        
-                                        </DIV>
-                                        </DIV>
+                                        <div id="dynamic-map">
+                                        </div>
+                                    </div>
                                         <?php }?>
                                 <?php if($pagoservicio){?>
                                     <div class="tab-pane" id="pago">
