@@ -252,7 +252,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
               document.getElementById("magia").innerHTML = null;
 
               console.log(response.data);
-              document.getElementById("magia").innerHTML = response.data;
+             // document.getElementById("magia").innerHTML = response.data;
 
               /*
               for (i = 0; i < response.data.length; i++) {
