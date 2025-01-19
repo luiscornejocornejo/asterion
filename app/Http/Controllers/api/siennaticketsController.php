@@ -3385,8 +3385,8 @@ class siennaticketsController extends Controller
                                     <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
                                         <label for="agent" class="form-label">Nodos:</label>
                                         <select class="form-select js-example-basic-single" name="nodo" id="agent">
-                                        <option value="{{ $nodos2[0]["codigo"] }}">
-                                        {{ $nodos2[0]['descricao'] }}
+                                        <option value="<?php echo $nodos2[0]["codigo"] ?>">
+                                        <?php echo $nodos2[0]['descricao'] ?>
                                         </option>
                                             
                                             
@@ -3398,8 +3398,8 @@ class siennaticketsController extends Controller
 
                                             <?php for($i=0;$i<sizeof($type2);$i++){
                                                     ?>
-                                            <option value="{{ $type2[$i]['codigo'] }}">
-                                                {{ $type2[$i]['codigo'] }}
+                                            <option value="<?php echo $type2[$i]['codigo'] ?>">
+                                                <?php echo $type2[$i]['codigo'] ?>
                                             </option>
                                             <?php }
                                                 
@@ -3525,8 +3525,8 @@ class siennaticketsController extends Controller
                                     for($i=0;$i<sizeof($ticerp2);$i++){
                                                     ?>
                                     <tr class="text-center">
-                                        <td><a target='_blank' href='<?php echo $urilogin;?>{{ $ticerp2[$i]['id'] }}'>{{ $ticerp2[$i]['id'] }}</a> </td>
-                                        <td>{{ $ticerp2[$i]['dataAgendamento'] }}
+                                        <td><a target='_blank' href='<?php echo $urilogin;?><?php echo $ticerp2[$i]['id'] ?>'><?php echo $ticerp2[$i]['id'] ?></a> </td>
+                                        <td><?php echo$ticerp2[$i]['dataAgendamento'] ?>
                                         </td>
                                         <td> <?php echo $ticerp2[$i]['status']['descricao']; ?> </td>
                                         <td> <?php echo $ticerp2[$i]['tipoOs']['resumoTipoOs']; ?> </td>
