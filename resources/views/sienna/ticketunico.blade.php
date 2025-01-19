@@ -68,6 +68,7 @@ foreach($datosintegracion as $vali){
     $intehabilitado=$vali->habilitado;
 
 }
+$tokensienna ="";
 function conectar($id)
     {
         $query = "SELECT * FROM `base`    where id='" . $id . "'";
