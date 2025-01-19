@@ -365,7 +365,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                             </ul>
 
                             <div class="tab-content">
-                                <div class="tab-pane" id="infousu">
+                                <div class="tab-pane show active" id="infousu">
                                     
                                     <div class="card" id="infousuc">
                                     @include('sienna.tu.informacionusuario')
