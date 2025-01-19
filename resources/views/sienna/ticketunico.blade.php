@@ -226,7 +226,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
 
     }
-    
+    <?php
     if($iclasservicio){
         $queryws = "SELECT * from iclass.ws_cliente where nombre='" . $subdomain_tmp . "'";
         $baseget="14";
@@ -240,6 +240,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
             $urilogin = $value->urilogin;
         }
     }
+    ?>
  function iclass(){
     url = "https://<?php echo $subdomain_tmp;?>.suricata-custom.com.ar/api/iclass_get_typesso?token=<?php echo $tokensienna;?>";
             console.log(url);
