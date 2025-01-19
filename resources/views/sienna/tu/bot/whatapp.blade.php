@@ -6,7 +6,7 @@ $tipobot=$val->tipo;
     $merchantId=$subdomain_tmp;
     //if($resultados[0]->ticketid==5200) {
     ?>
-    <iframe allow="camera;microphone" src="<?php echo $resultados[0]->conversation_url; ?>" width="100%" class="border rounded-3" style="height: 650px!important;"></iframe>
+    <iframe allow="camera;microphone"  scrolling="no" src="<?php echo $resultados[0]->conversation_url; ?>"width="100%" class="border rounded-3" style="height: 650px!important;""></iframe>
 <div class="<?php echo $vero; ?> d-flex justify-content-between mt-2 mb-2">
     <div></div>
 
