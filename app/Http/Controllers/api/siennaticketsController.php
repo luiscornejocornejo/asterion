@@ -3320,8 +3320,7 @@ class siennaticketsController extends Controller
 
         $cliente=$request->cliente;
         $subdomain_tmp=$request->subdomain_tmp;
-        $resultadoscliente=$request->resultadoscliente;
-        $resultados=$request->resultados;
+    
         
         $queryws = "SELECT * from iclass.ws_cliente where nombre='" . $subdomain_tmp . "'";
         $baseget="14";
