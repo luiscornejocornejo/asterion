@@ -15,32 +15,8 @@ if (isset($resultadoscliente[0]->cliente)) {
    // $subdomain_tmp="demo";
 //}
 
-function conectar($id)
-    {
-        $query = "SELECT * FROM `base`    where id='" . $id . "'";
-        $resultados = DB::select($query);
-        foreach ($resultados as $value) {
 
-            $host = $value->host;
-            $base = $value->base;
-            $usuario = $value->usuario;
-            $pass = $value->pass;
-        }
-        config(['database.connections.mysql2.host' => $host]);
-        config(['database.connections.mysql2.database' => $base]);
-        config(['database.connections.mysql2.username' => $usuario]);
-        config(['database.connections.mysql2.password' => $pass]);
-    }
-$queryws = "SELECT * from iclass.ws_cliente where nombre='" . $subdomain_tmp . "'";
-        $baseget="14";
-        $prueba = conectar($baseget);
-        $resultadosws = DB::connection('mysql2')->select($queryws);
 
-        foreach ($resultadosws as $value) {
-
-            $tokensienna = $value->tokensienna;
-            $urilogin = $value->urilogin;
-        }
         //http://giles.suricata2.com.ar/api/gettickets?token=thecrisPela&codcli=028842
         //echo $urlll="https://".$subdomain_tmp.".suricata2.com.ar/api/gettickets?token=".$tokensienna."&codcli=" . $resultadoscliente[0]->cliente;
 

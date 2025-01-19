@@ -68,8 +68,34 @@ foreach($datosintegracion as $vali){
     $intehabilitado=$vali->habilitado;
 
 }
+function conectar($id)
+    {
+        $query = "SELECT * FROM `base`    where id='" . $id . "'";
+        $resultados = DB::select($query);
+        foreach ($resultados as $value) {
 
+            $host = $value->host;
+            $base = $value->base;
+            $usuario = $value->usuario;
+            $pass = $value->pass;
+        }
+        config(['database.connections.mysql2.host' => $host]);
+        config(['database.connections.mysql2.database' => $base]);
+        config(['database.connections.mysql2.username' => $usuario]);
+        config(['database.connections.mysql2.password' => $pass]);
+    }
+    if($iclasservicio){
+    $queryws = "SELECT * from iclass.ws_cliente where nombre='" . $subdomain_tmp . "'";
+    $baseget="14";
+    $prueba = conectar($baseget);
+    $resultadosws = DB::connection('mysql2')->select($queryws);
 
+    foreach ($resultadosws as $value) {
+
+        $tokensienna = $value->tokensienna;
+        $urilogin = $value->urilogin;
+    }
+}
 function coloriconos($iconos, $tipo)
 {
     $coloricono = "";
@@ -210,44 +236,10 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
 
     }
-    function createMap(containerId, lat, lng, zoomLevel = 13) {
-    // Crear el contenedor del mapa dinámicamente
-    const container = document.createElement('div');
-    container.id = containerId; // Asignar el ID al contenedor
-    container.style.height = '400px'; // Estilo para la altura
-    container.style.width = '100%';  // Estilo para el ancho
+    
 
-    // Agregar el contenedor al cuerpo o a otro elemento específico
-    document.body.appendChild(container); // Cambiar "document.body" según dónde quieras el mapa
+ function iclass(){
 
-    // Inicializar el mapa con Leaflet
-    const map = L.map(containerId).setView([lat, lng], zoomLevel);
-
-    // Agregar la capa de OpenStreetMap
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-    // Agregar un marcador en la ubicación proporcionada
-    L.marker([lat, lng]).addTo(map)
-        .bindPopup('Ubicación seleccionada.')
-        .openPopup();
-
-    return map; // Devolver la instancia del mapa (por si necesitas manipularla)
-}
-
- function geo(){
-
-    <?php
-    $lat = isset($resultados[0]->lat) ? explode(",", $resultados[0]->lat)[0] : -34.545278;
-    $lng = isset($resultados[0]->lat) ? explode(",", $resultados[0]->lat)[1] : -58.449722;
-    ?>
-
-    const lat = <?php echo $lat; ?>;
-    const lng = <?php echo $lng; ?>;
-
-    // Crear el mapa dinámicamente
-    createMap('dynamic-map', lat, lng);
 
 }
 
@@ -402,7 +394,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                 <?php if($iclasservicio){?>
                                 <li class="nav-item">
                                     <a href="#iclass" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
-                                        onclick="logeados();">
+                                        onclick="iclass();">
                                         <i class="mdi mdi-settings-outline d-md-none d-block"></i>
                                         <span class="d-none d-md-block">Iclass</span>
                                     </a>
