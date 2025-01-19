@@ -84,18 +84,7 @@ function conectar($id)
         config(['database.connections.mysql2.username' => $usuario]);
         config(['database.connections.mysql2.password' => $pass]);
     }
-    if($iclasservicio){
-    $queryws = "SELECT * from iclass.ws_cliente where nombre='" . $subdomain_tmp . "'";
-    $baseget="14";
-    $prueba = conectar($baseget);
-    $resultadosws = DB::connection('mysql2')->select($queryws);
-
-    foreach ($resultadosws as $value) {
-
-        $tokensienna = $value->tokensienna;
-        $urilogin = $value->urilogin;
-    }
-}
+  
 function coloriconos($iconos, $tipo)
 {
     $coloricono = "";
@@ -237,9 +226,46 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 
     }
     
+    if($iclasservicio){
+        $queryws = "SELECT * from iclass.ws_cliente where nombre='" . $subdomain_tmp . "'";
+        $baseget="14";
+        $prueba = conectar($baseget);
+        $resultadosws = DB::connection('mysql2')->select($queryws);
 
+        foreach ($resultadosws as $value) {
+
+            $tokensienna = $value->tokensienna;
+            $urilogin = $value->urilogin;
+        }
+    }
  function iclass(){
+    url = "https://<?php echo $subdomain_tmp;?>.suricata-custom.com.ar/api/iclass_get_typesso?token=<?php echo $tokensienna;?>";
+            console.log(url);
 
+            axios.get(url)
+            .then(function (response) {
+
+              res="<select name='motivoc' class='form-control'>";
+              console.log(response.data);
+              /*
+              for (i = 0; i < response.data.length; i++) {
+                    console.log(response.data[i].nombre);
+                    res+="<option value='"+response.data[i].id+"'>"+response.data[i].nombre+"</option>";
+
+              }
+              res+="</select>";
+              document.getElementById("motivoc").innerHTML = null;
+
+                document.getElementById("motivoc").innerHTML = res;
+            */
+            })
+            .catch(function (error) {
+                // función para capturar el error
+                console.log(error);
+            })
+            .then(function () {
+                // función que siempre se ejecuta
+            });
 
 }
 
