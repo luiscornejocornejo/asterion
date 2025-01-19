@@ -236,7 +236,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
     return map; // Devolver la instancia del mapa (por si necesitas manipularla)
 }
 
-public function geo(){
+ function geo(){
 
     <?php
     $lat = isset($resultados[0]->lat) ? explode(",", $resultados[0]->lat)[0] : -34.545278;
