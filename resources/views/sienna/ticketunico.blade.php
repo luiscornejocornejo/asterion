@@ -422,7 +422,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                 <?php if($iclasservicio){?>
                                 <li class="nav-item">
                                     <a href="#iclass" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
-                                        onclick="iclass();">
+                                        onclick="iclass()">
                                         <i class="mdi mdi-settings-outline d-md-none d-block"></i>
                                         <span class="d-none d-md-block">Iclass</span>
                                     </a>
