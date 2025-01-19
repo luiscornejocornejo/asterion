@@ -241,7 +241,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
     }
     ?>
  function iclass(){
-    url = "https://<?php echo $subdomain_tmp;?>.suricata-custom.com.ar/api/iclass_get_typesso?token=<?php echo $tokensienna;?>";
+    url = "https://<?php echo $subdomain_tmp;?>.suricata.cloud/api/iclass?cliente=<?php echo $cliente;?>,subdomain_tmp=<?php echo $subdomain_tmp;?>,resultadoscliente=<?php echo $resultadoscliente;?>,resultados=<?php echo $resultados;?>";
             console.log(url);
 
             axios.get(url)

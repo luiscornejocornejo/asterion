@@ -32,11 +32,7 @@ $iddelcliente=$resultadoscliente[0]->cliente;
 
         <div style="background-color:rgb(247, 244, 240);" class="d-flex justify-content-end">
             <div class="me-2">
-            @if (session('pp'))
-    <div class="alert alert-success">
-        {{ session('pp') }}
-    </div>
-@endif
+      
 
             <img src="https://<?php echo $subdomain_tmp;?>.suricata.cloud/img/erp/iclass.jpg"
             alt="ispkeeper logo" height="55">

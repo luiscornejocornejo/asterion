@@ -156,6 +156,7 @@ Route::get('/especifico', 'App\Http\Controllers\api\pasajeController@especifico'
 Route::get('/datosextras', 'App\Http\Controllers\api\ticketController@principal');
 
 
+Route::get('/iclass', [siennaticketsController::class, 'iclass']);
 
 Route::post('/creariclass', [siennaticketsController::class, 'creariclass']);
 
