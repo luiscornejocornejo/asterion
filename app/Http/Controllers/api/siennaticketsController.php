@@ -3324,7 +3324,7 @@ class siennaticketsController extends Controller
         
         $queryws = "SELECT * from iclass.ws_cliente where nombre='" . $subdomain_tmp . "'";
         $baseget="14";
-        $prueba = conectar($baseget);
+        $prueba = $this->conectar($baseget);
         $resultadosws = DB::connection('mysql2')->select($queryws);
 
         foreach ($resultadosws as $value) {
