@@ -3508,15 +3508,15 @@ class siennaticketsController extends Controller
                                     */
                         
                         }else{
-                                    $lati="";
-                                    $long="";
+                                    $lat="";
+                                    $lng="";
                         }?>
                     <label for="latitude" class="form-label">Latitude</label>
-                    <input required type="text" class="form-control" id="latitude" name="latitude" value="<?php echo $lati;?>">
+                    <input required type="text" class="form-control" id="latitude" name="latitude" value="<?php echo $lat;?>">
                     </div>
                     <div class="col-md-6">
                     <label for="longitude" class="form-label">Longitude</label>
-                    <input required type="text" class="form-control" id="longitude" name="longitude" value="<?php echo $long;?>">
+                    <input required type="text" class="form-control" id="longitude" name="longitude" value="<?php echo $lng;?>">
                     </div>
                 </div>
                 
