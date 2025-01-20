@@ -3489,9 +3489,8 @@ class siennaticketsController extends Controller
                         <?php 
                         
                         if($subdomain_tmp=="interredes"){
-                        //if(isset($resultados[0]->lat)){
-                        /*
-                                    $coor=explode(",",$resultados[0]->lat);
+                       
+                                    $coor=explode(",",$lat);
                                     if(isset($coor[0])){
                                         $lati=$coor[0];
                                     }else{
@@ -3505,18 +3504,18 @@ class siennaticketsController extends Controller
                                         $long="";
 
                                     }
-                                    */
+                                    
                         
                         }else{
-                                    $lat="";
-                                    $lng="";
+                                    $lati="";
+                                    $long="";
                         }?>
                     <label for="latitude" class="form-label">Latitude</label>
-                    <input required type="text" class="form-control" id="latitude" name="latitude" value="<?php echo $lat;?>">
+                    <input required type="text" class="form-control" id="latitude" name="latitude" value="<?php echo $lati;?>">
                     </div>
                     <div class="col-md-6">
                     <label for="longitude" class="form-label">Longitude</label>
-                    <input required type="text" class="form-control" id="longitude" name="longitude" value="<?php echo $lng;?>">
+                    <input required type="text" class="form-control" id="longitude" name="longitude" value="<?php echo $long;?>">
                     </div>
                 </div>
                 
