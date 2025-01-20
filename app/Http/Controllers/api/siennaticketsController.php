@@ -3319,9 +3319,13 @@ class siennaticketsController extends Controller
     {
 
         $cliente=$request->cliente;
+        $lat=$request->lat;
+        $lng=$request->lng;
         $subdomain_tmp=$request->subdomain_tmp;
     
-        
+        $query="select * from ".$subdomain_tmp.".siennacliente where cliente='".$cliente."' limit 1";
+        $datoscliente = DB::select($query);
+
         $queryws = "SELECT * from iclass.ws_cliente where nombre='" . $subdomain_tmp . "'";
         $baseget="14";
         $prueba = $this->conectar($baseget);
@@ -3331,6 +3335,20 @@ class siennaticketsController extends Controller
 
             $tokensienna = $value->tokensienna;
             $urilogin = $value->urilogin;
+        }
+        $nya = "";
+        $address = "";
+        $email = "";
+        $cel = "";
+       
+        
+        foreach ($datoscliente as $value2) {
+
+            $nya = $value2->nya;
+            $address = $value2->address;
+            $email = $value2->email;
+            $cel = $value2->cel;
+       
         }
 
             $type= file_get_contents("https://".$subdomain_tmp.".suricata-custom.com.ar/api/iclass_get_typesso?token=".$tokensienna."");
@@ -3418,26 +3436,26 @@ class siennaticketsController extends Controller
                     
                     <div class="col-md-4">
                     <label for="nameCustomer" class="form-label">Name Customer</label>
-                    <input required type="text" class="form-control" id="nameCustomer" name="nameCustomer" value="<?php //echo $resultadoscliente[0]->nya;?>">
+                    <input required type="text" class="form-control" id="nameCustomer" name="nameCustomer" value="<?php echo $nya;?>">
                     </div>
                     <div class="col-md-4">
                     <label for="address" class="form-label">Address</label>
-                    <input required type="text" class="form-control" id="address" name="address" value="<?php //echo //$resultadoscliente[0]->address;?>">
+                    <input required type="text" class="form-control" id="address" name="address" value="<?php echo $address;?>">
                     </div>
                     <div class="col-md-4">
                     <label for="address" class="form-label">Email</label>
-                    <input  type="text" class="form-control" id="email" name="email" value="<?php //echo //$resultadoscliente[0]->email;?>">
+                    <input  type="text" class="form-control" id="email" name="email" value="<?php echo $email;?>">
                     </div>
                 </div>
                 
                 <div class="row mb-3">
                     <div class="col-md-6">
                     <label for="contactPhone" class="form-label">Contact Phone</label>
-                    <input  type="text" class="form-control" id="contactPhone" name="contactPhone" value="<?php //echo $resultadoscliente[0]->cel;?>">
+                    <input  type="text" class="form-control" id="contactPhone" name="contactPhone" value="<?php echo $cel;?>">
                     </div>
                     <div class="col-md-6">
                     <label for="mobilePhone" class="form-label">Mobile Phone</label>
-                    <input required type="text" class="form-control" id="mobilePhone" name="mobilePhone" value="<?php //echo $resultadoscliente[0]->cel;?>">
+                    <input required type="text" class="form-control" id="mobilePhone" name="mobilePhone" value="<?php echo $cel;?>">
                     </div>
                 </div>
             
@@ -3470,7 +3488,7 @@ class siennaticketsController extends Controller
                     <div class="col-md-6">
                         <?php 
                         
-                        if(0){
+                        if($subdomain_tmp=="interredes"){
                         //if(isset($resultados[0]->lat)){
                         /*
                                     $coor=explode(",",$resultados[0]->lat);

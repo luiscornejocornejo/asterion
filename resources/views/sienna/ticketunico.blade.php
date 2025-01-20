@@ -242,7 +242,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
     ?>
  function iclass(){
     url="";  
-    url = "https://<?php echo $subdomain_tmp;?>.suricata.cloud/api/iclass?cliente=<?php echo $resultados[0]->cliente;?>&subdomain_tmp=<?php echo $subdomain_tmp;?>";
+    url = "https://<?php echo $subdomain_tmp;?>.suricata.cloud/api/iclass?cliente=<?php echo $resultados[0]->cliente;?>&subdomain_tmp=<?php echo $subdomain_tmp;?>&lat=<?php echo $resultados[0]->lat;?>&lng=<?php echo $resultados[0]->lng;?>";
     console.log(url);
 
             axios.get(url)
@@ -252,19 +252,9 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
               document.getElementById("magia").innerHTML = null;
 
               console.log(response.data);
-             // document.getElementById("magia").innerHTML = response.data;
+              document.getElementById("magia").innerHTML = response.data;
 
-              /*
-              for (i = 0; i < response.data.length; i++) {
-                    console.log(response.data[i].nombre);
-                    res+="<option value='"+response.data[i].id+"'>"+response.data[i].nombre+"</option>";
-
-              }
-              res+="</select>";
-              document.getElementById("motivoc").innerHTML = null;
-
-                document.getElementById("motivoc").innerHTML = res;
-            */
+           
             })
             .catch(function (error) {
                 // función para capturar el error
@@ -497,10 +487,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
                                 <?php if($iclasservicio){?>
                                     <div class="tab-pane" id="iclass">
                                     
-                                        <div class="card" id="iclassc">
-                                        @include('sienna.tu.gestioncampo.iclass')
-
-                                        </DIV>
+                                       
                                         <div id="magia">
                                         </div>
                                     </DIV>
