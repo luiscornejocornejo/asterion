@@ -157,6 +157,7 @@ Route::get('/datosextras', 'App\Http\Controllers\api\ticketController@principal'
 
 
 Route::get('/iclass', [siennaticketsController::class, 'iclass']);
+Route::get('/ispcube', [siennaticketsController::class, 'ispcube']);
 
 Route::post('/creariclass', [siennaticketsController::class, 'creariclass']);
 
