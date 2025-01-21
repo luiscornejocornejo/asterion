@@ -79,52 +79,62 @@
                             </div>
                             </div>
                             <hr style="margin-top: 10px" />
-                            <div class="d-flex mt-2">
-                            <i class="mdi mdi-card-account-details"></i>&nbsp;Numero cliente:&nbsp;
-                            <span class="badge badge-secondary-lighten line-h"> <span id="clientec"></span> </span>
-                            </div>
-                            <div class="d-flex mt-2">
-                            <i class="mdi mdi-account"></i>&nbsp;Nombre:&nbsp;
-                            <span class="badge badge-secondary-lighten hover-overlay line-h">
-                                <span id="nyac"></span>
-                            </span>
-                            </div>
-                            <div class="d-flex mt-2">
-                            <i class="mdi mdi-home"></i>&nbsp;Domicilio:&nbsp;
-                            <span class="badge badge-secondary-lighten line-h">
-                            <span id="domic"></span>
-                            </span>
-                            </div>
-                            <div class="d-flex mt-2">
-                            <i class="mdi mdi-whatsapp text"></i>&nbsp;Whatsapp:&nbsp;
-                            <span class="badge badge-secondary-lighten line-h"> <span id="celc"></span> </span>
-                            </div>
-                            <div class="d-flex mt-2">
-                            <i class="mdi mdi-email"></i>&nbsp;Email:&nbsp;
-                            <span class="badge badge-secondary-lighten line-h">
-                            <span id="emailc"></span>
-                            </span>
-                            </div>
-                            <div class="d-flex mt-2">
-                            <i class="mdi mdi-account-cash"></i>&nbsp;Estado de cuenta:&nbsp;
-                            <span class="badge badge-success-lighten line-h"> <span id="estadocuentac"></span> </span>
-                            </div>
-                            <div class="d-flex mt-2">
-                            <i class="mdi mdi-antenna"></i>&nbsp;Estado de servicio:&nbsp;
-                            <span class="badge badge-success-lighten line-h"> <span id="estadoservicioc"></span> </span>
-                            </div>
-                            <div class="d-flex mt-2">
-                            <i class="mdi mdi-antenna"></i>&nbsp;Deuda:&nbsp;
-                            <span class="badge badge-success-lighten line-h"> <span id="deuda"></span> </span>
-                            </div>
-                            <div class="d-flex mt-2">
-                            <i class="mdi mdi-antenna"></i>&nbsp;Ip:&nbsp;
-                            <span class="badge badge-success-lighten line-h"> <span id="ip"></span> </span>
-                            </div>
-                            <div class="d-flex mt-2">
-                            <i class="mdi mdi-antenna"></i>&nbsp;Nodo:&nbsp;
-                            <span class="badge badge-success-lighten line-h"> <span id="nodo"></span> </span>
-                            </div>
+                            <div class="row mt-2">
+    <!-- Primera columna -->
+    <div class="col-md-6">
+        <div class="d-flex mt-2">
+            <i class="mdi mdi-card-account-details"></i>&nbsp;Numero cliente:&nbsp;
+            <span class="badge badge-secondary-lighten line-h"> <span id="clientec"></span> </span>
+        </div>
+        <div class="d-flex mt-2">
+            <i class="mdi mdi-account"></i>&nbsp;Nombre:&nbsp;
+            <span class="badge badge-secondary-lighten hover-overlay line-h">
+                <span id="nyac"></span>
+            </span>
+        </div>
+        <div class="d-flex mt-2">
+            <i class="mdi mdi-home"></i>&nbsp;Domicilio:&nbsp;
+            <span class="badge badge-secondary-lighten line-h">
+                <span id="domic"></span>
+            </span>
+        </div>
+        <div class="d-flex mt-2">
+            <i class="mdi mdi-whatsapp text"></i>&nbsp;Whatsapp:&nbsp;
+            <span class="badge badge-secondary-lighten line-h"> <span id="celc"></span> </span>
+        </div>
+        <div class="d-flex mt-2">
+            <i class="mdi mdi-email"></i>&nbsp;Email:&nbsp;
+            <span class="badge badge-secondary-lighten line-h">
+                <span id="emailc"></span>
+            </span>
+        </div>
+    </div>
+
+    <!-- Segunda columna -->
+    <div class="col-md-6">
+        <div class="d-flex mt-2">
+            <i class="mdi mdi-account-cash"></i>&nbsp;Estado de cuenta:&nbsp;
+            <span class="badge badge-success-lighten line-h"> <span id="estadocuentac"></span> </span>
+        </div>
+        <div class="d-flex mt-2">
+            <i class="mdi mdi-antenna"></i>&nbsp;Estado de servicio:&nbsp;
+            <span class="badge badge-success-lighten line-h"> <span id="estadoservicioc"></span> </span>
+        </div>
+        <div class="d-flex mt-2">
+            <i class="mdi mdi-antenna"></i>&nbsp;Deuda:&nbsp;
+            <span class="badge badge-success-lighten line-h"> <span id="deuda"></span> </span>
+        </div>
+        <div class="d-flex mt-2">
+            <i class="mdi mdi-antenna"></i>&nbsp;Ip:&nbsp;
+            <span class="badge badge-success-lighten line-h"> <span id="ip"></span> </span>
+        </div>
+        <div class="d-flex mt-2">
+            <i class="mdi mdi-antenna"></i>&nbsp;Nodo:&nbsp;
+            <span class="badge badge-success-lighten line-h"> <span id="nodo"></span> </span>
+        </div>
+    </div>
+</div>
+
 
                            
                             
