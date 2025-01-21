@@ -368,7 +368,7 @@ function erp(){
                     </div>
                     <?php 
 
-                 }elseif(is_null($tipobotdes)){
+                 }elseif((is_null($tipobotdes))or($tipobotdes=="")){
                     if($resultados[0]->siennasource==7){?>
                         <div class="mt-2">
 
