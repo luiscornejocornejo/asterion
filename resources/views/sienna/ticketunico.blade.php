@@ -331,6 +331,14 @@ function erp(){
 
                 <div class="col-sm-12 col-lg-8 col-xxl-8">
                  <?php
+                 $urlreabrir="";
+                 $vero="";
+                 foreach($emp as $value){
+                     $urlreabrir=$value->reabrir;
+                 }
+                 if(strlen($urlreabrir)<2){
+                     $vero="d-none";
+                 }
                  /*
                       if($mailservicio){
                         if($resultados[0]->siennasource==7){?>
@@ -383,14 +391,7 @@ function erp(){
                     <?php
                     }
                  }else{
-                    $urlreabrir="";
-                    $vero="";
-                    foreach($emp as $value){
-                        $urlreabrir=$value->reabrir;
-                    }
-                    if(strlen($urlreabrir)<2){
-                        $vero="d-none";
-                    }?>
+                    ?>
                     <div class="">
 
                     @include('sienna.tu.bot.whatapp')
