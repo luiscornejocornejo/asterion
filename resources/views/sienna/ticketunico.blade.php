@@ -3,6 +3,9 @@
 
 <?php
 
+$tipobotdes=$resultados[0]->conversation_url;
+
+
 $querypagoralia="select * from siennapagoralia";
 $datospagoralia = DB::select($querypagoralia);
 $pagohabilitado=0;
@@ -328,6 +331,7 @@ function erp(){
 
                 <div class="col-sm-12 col-lg-8 col-xxl-8">
                  <?php
+                 /*
                       if($mailservicio){
                         if($resultados[0]->siennasource==7){?>
                         <div class="mt-2">
@@ -347,16 +351,56 @@ function erp(){
                         </div>
                         <?php 
                         }
-                    }?>
+                    }*/?>
                  <?php      
-                            $urlreabrir="";
-                            $vero="";
-                            foreach($emp as $value){
-                                $urlreabrir=$value->reabrir;
-                            }
-                            if(strlen($urlreabrir)<2){
-                                $vero="d-none";
-                            }
+                 if($tipobotdes=="botpress"){?>
+                    <div class="">
+
+                    @include('sienna.tu.bot.botpres')
+                    </div>
+                    <?php 
+
+                 }elseif(is_null($tipobotdes)){
+                    if($resultados[0]->siennasource==7){?>
+                        <div class="mt-2">
+
+                        @include('sienna.tu.mail.mail')
+                        @include('sienna.tu.mail.adjuntos')
+                        </div>
+                        <?php 
+                    }
+                    if($grabacionesservicio){
+                        if($resultados[0]->siennasource==5){?>
+                        <div class="mt-2">
+
+                        @include('sienna.tu.telefonia.grabaciones')
+                        </div>
+                        <?php 
+                        }
+                    }
+                    if($resultados[0]->siennasource==10){?>           
+                        @include('sienna.tu.informacionsuricata')
+                    <?php
+                    }
+                 }else{
+                    $urlreabrir="";
+                    $vero="";
+                    foreach($emp as $value){
+                        $urlreabrir=$value->reabrir;
+                    }
+                    if(strlen($urlreabrir)<2){
+                        $vero="d-none";
+                    }?>
+                    <div class="">
+
+                    @include('sienna.tu.bot.whatapp')
+                    </div>
+                    <?php 
+
+                 }
+
+                 
+                 /*
                             $excludedProductIds = [1,2,3,4,6];
                             if($botpresservicio){
                                 if (in_array($resultados[0]->siennasource, $excludedProductIds)) {?>
@@ -381,6 +425,8 @@ function erp(){
                                 @include('sienna.tu.informacionsuricata')
                             <?php
                             }
+
+                            */
                             ?>
 
                     <div class="container">
@@ -583,7 +629,7 @@ function erp(){
                         </button>
                         
                         <?php  $ctusers = session('ctusers');
-                        if($xenservicio){
+                        if($tipobotdes<>"botpress"){
                                 if($ctusers=="1"){?>
                         <button onclick="cerrar(`<?php echo $subdomain_tmp; ?>`,`<?php echo $resultados[0]->ticketid; ?>`,`<?php echo $resultados[0]->user_id; ?>`,`<?php echo $resultados[0]->iddepto; ?>`,`<?php echo $resultados[0]->cliente; ?>`,`<?php echo $resultados[0]->siennasource; ?>`)" class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrar">
                             <i class="mdi mdi-check-circle" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="mb-1" data-bs-title="Cerrar Ticket."></i>
