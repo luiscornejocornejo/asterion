@@ -1,5 +1,5 @@
 <script>
-    function vista(dd,ee,result) {
+    function vista(dd,ee,result,tik) {
     
     console.log(typeof(ee) );
     if(ee=== ""){
@@ -53,7 +53,7 @@
    // document.getElementById('vista').src = dd;
    if (dd === "botpress") {   
     // Acción cuando dd es exactamente "botpress"
-    const g = '<iframe allow="camera;microphone" scrolling="no" src="https://conversations.suricata.chat/<?php echo $subdomain_tmp;?>/t/<?php echo $resultados[0]->ticketid;?>?agentEmail=<?php echo session('emailusuario');?>" width="100%" class="border rounded-3" style="height: 650px!important;"></iframe>';
+    const g = '<iframe allow="camera;microphone" scrolling="no" src="https://conversations.suricata.chat/<?php echo $subdomain_tmp;?>/t/'+tik+'?agentEmail=<?php echo session('emailusuario');?>" width="100%" class="border rounded-3" style="height: 650px!important;"></iframe>';
       console.log(g);
         document.getElementById('vista').innerHTML = g;
 
