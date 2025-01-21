@@ -54,7 +54,8 @@
    if (dd === "botpress") {
     // Acción cuando dd es exactamente "botpress"
 } else if (dd === "" || dd === null || dd === undefined) {
-    // Acción cuando dd está vacío, es nulo o está indefinido
+    // Acción cuando dd está vacío, es nulo o está 
+    document.getElementById('vista').innerHTML ="";
 } else {
     // Crear un iframe con el valor de dd
     const g = '<iframe allow="camera;microphone" src="' + dd + '" width="100%" height="800px" class="border rounded-3" style="height:400px !important"></iframe>';
