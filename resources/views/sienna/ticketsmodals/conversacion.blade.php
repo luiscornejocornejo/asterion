@@ -51,8 +51,15 @@
     }
     document.getElementById('vista').innerHTML = "";
    // document.getElementById('vista').src = dd;
+   if(dd=="botpress"){
+
+   }else if(dd==""){
+
+   }else{
     g='<iframe allow="camera;microphone"  src="'+dd+'" width="100%" height="800px" class="border rounded-3" style="height:400px !important"></iframe>';
     document.getElementById('vista').innerHTML = g;
+   }
+   
 }
 
 </script>
@@ -69,7 +76,7 @@
                             <div class="d-flex justify-content-between">
                             <div>
                                 <h4 class="fw-normal text-dark" title="Number of Customers">
-                                Información de usuario2
+                                Información de usuario
                                 </h4>
                             </div>
                             <div>
