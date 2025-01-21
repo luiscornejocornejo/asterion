@@ -114,59 +114,5 @@ function pedir(dd) {
 
 }
 
-function vista(dd,ee,result) {
-    
-    console.log(typeof(ee) );
-    if(ee=== ""){
 
-    }else{
-
-    
-    url = "https://"+result+".suricata.cloud/api/datoscliente?cliente=" + ee;
-    console.log(url);
-
-    axios.get(url)
-    .then(function (response) {
-        // función que se ejecutará al recibir una respuesta
-       // console.log(response.data);
-
-        dato = "";
-        for (i = 0; i < response.data.length; i++) {
-            console.log(response.data[i].deuda);
-            console.log(response.data[i].nya);
-            console.log(response.data[i].cel);
-
-            document.getElementById("nyac").innerHTML = response.data[i].nya;
-            document.getElementById("clientec").innerHTML = ee;
-            document.getElementById("domic").innerHTML = response.data[i].address;
-            document.getElementById("celc").innerHTML = response.data[i].cel;
-            document.getElementById("emailc").innerHTML = response.data[i].email;
-            document.getElementById("estadocuentac").innerHTML = response.data[i].a_status;
-            document.getElementById("estadoservicioc").innerHTML = response.data[i].s_status;
-            document.getElementById("deuda").innerHTML = response.data[i].deuda;
-            document.getElementById("ip").innerHTML = response.data[i].ip;
-            document.getElementById("nodo").innerHTML = response.data[i].nodo;
-
-
-        }
-       // 
-
-
-
-    })
-    .catch(function (error) {
-        // función para capturar el error
-        console.log(error);
-    })
-    .then(function () {
-        // función que siempre se ejecuta
-    });
-
-
-    }
-    document.getElementById('vista').innerHTML = "";
-   // document.getElementById('vista').src = dd;
-    g='<iframe allow="camera;microphone"  src="'+dd+'" width="100%" height="800px" class="border rounded-3" style="height:400px !important"></iframe>';
-    document.getElementById('vista').innerHTML = g;
-}
 
