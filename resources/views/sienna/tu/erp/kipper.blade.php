@@ -130,25 +130,25 @@ $ticketserp2 = json_decode($ticketserp, true);
                                 <?php }
 
 
-function buscarNombreSubcategoria($subserp2, $idBuscado) {
-    for($j=0;$j<sizeof($subserp2);$j++){
-        if ($subserp2[$j]["ticket_subcategoria_id"]== $idBuscado) {
-            return $subserp2[$j]["ticket_subcategoria_nombre"];
-        }
-    }
-    return null; // Si no se encuentra, devuelve null o cualquier valor por defecto
-}
-function estados($estados2, $idBuscado) {
-   
+                                function buscarNombreSubcategoria($subserp2, $idBuscado) {
+                                    for($j=0;$j<sizeof($subserp2);$j++){
+                                        if ($subserp2[$j]["ticket_subcategoria_id"]== $idBuscado) {
+                                            return $subserp2[$j]["ticket_subcategoria_nombre"];
+                                        }
+                                    }
+                                    return null; // Si no se encuentra, devuelve null o cualquier valor por defecto
+                                }
+                                function estados($estados2, $idBuscado) {
+                                
 
-    foreach ($estados2[0]['data'] as $estado) {
-        if ($estado['estado_tickets_id'] === $idBuscado) {
-            return $nombre_estado = $estado['estado_tickets_nombre'];
-        }
-    }
-    return null; // Si no se encuentra, devuelve null o cualquier valor por defecto
-}
-   
+                                    foreach ($estados2[0]['data'] as $estado) {
+                                        if ($estado['estado_tickets_id'] === $idBuscado) {
+                                            return $nombre_estado = $estado['estado_tickets_nombre'];
+                                        }
+                                    }
+                                    return null; // Si no se encuentra, devuelve null o cualquier valor por defecto
+                                }
+                                
                                     
                                     ?>
                             </select>
