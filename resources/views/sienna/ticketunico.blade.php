@@ -545,7 +545,8 @@ function erp(){
 
                                         if($nombreintegracion=="ispkipper"){?><div id="ispkipper">
                                         </div><?php }
-                                        if($nombreintegracion=="mikrowisp"){?>@include('sienna.tu.erp.mikro')<?php }
+                                        if($nombreintegracion=="mikrowisp"){?><div id="mikrowisp">
+                                        </div><?php }
                                         if($nombreintegracion=="ispcube2"){?> <div id="ispcube2">
                                         </div><?php }
                                         if($nombreintegracion=="iwisp"){?>@include('sienna.tu.erp.iwisp')<?php }
