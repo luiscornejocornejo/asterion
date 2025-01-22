@@ -3591,7 +3591,6 @@ class siennaticketsController extends Controller
         $locaw2=json_decode($locaw, true);
 
         
-        $iddelcliente=$resultadoscliente[0]->cliente;
         $getdata= file_get_contents("https://".$subdomain_tmp.".suricata-iwisp.com.ar/api/ws?token=".$tokensienna."&idcliente=" . $cliente);
         $getdata2 = json_decode($getdata, true);
         $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
