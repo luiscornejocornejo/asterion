@@ -276,6 +276,11 @@ function erp(){
         url = "https://<?php echo $subdomain_tmp;?>.suricata.cloud/api/ispcube?cliente=<?php echo $resultados[0]->cliente;?>&subdomain_tmp=<?php echo $subdomain_tmp;?>&lat=<?php echo $resultados[0]->lat;?>&lng=<?php echo $resultados[0]->lng;?>";
 
     }
+    if(erp="ispkipper"){
+        url = "https://<?php echo $subdomain_tmp;?>.suricata.cloud/api/ispkipper?cliente=<?php echo $resultados[0]->cliente;?>&subdomain_tmp=<?php echo $subdomain_tmp;?>";
+
+    }
+    
     console.log(url);
 
             axios.get(url)
@@ -532,7 +537,8 @@ function erp(){
                                             <?php 
                                                                     $nombreintegracion = session('nombreintegracion');
 
-                                        if($nombreintegracion=="ispkipper"){?>@include('sienna.tu.erp.kipper')<?php }
+                                        if($nombreintegracion=="ispkipper"){?><div id="ispkipper">
+                                        </div><?php }
                                         if($nombreintegracion=="mikrowisp"){?>@include('sienna.tu.erp.mikro')<?php }
                                         if($nombreintegracion=="ispcube2"){?> <div id="ispcube2">
                                         </div><?php }

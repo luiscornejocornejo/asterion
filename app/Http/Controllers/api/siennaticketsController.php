@@ -3740,7 +3740,7 @@ class siennaticketsController extends Controller
                         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/json.min.js"></script>
-                        <pre><code class="json">{{ $getdata3 }}</code></pre>
+                        <pre><code class="json"><?php echo $getdata3 ;?></code></pre>
 
                         <script>
                             hljs.highlightAll();
