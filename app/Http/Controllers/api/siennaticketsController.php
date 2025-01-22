@@ -3736,62 +3736,45 @@ class siennaticketsController extends Controller
                                 </div>
                                 <script>
                                     window.fetchLocalities = function(tipo) { 
-                                            const uno = {!! json_encode($locaf2, JSON_FORCE_OBJECT) !!};
-                                            const dos = {!! json_encode($locaw2, JSON_FORCE_OBJECT) !!};
+    const uno = {!! json_encode($locaf2, JSON_FORCE_OBJECT) !!};
+    const dos = {!! json_encode($locaw2, JSON_FORCE_OBJECT) !!};
 
+    const localidadSelect = document.getElementById("localidad");
+    localidadSelect.innerHTML = ""; // Limpiar opciones
 
-                                            const localidadSelect = document.getElementById("localidad");
-                                            localidadSelect.innerHTML = ""; // Limpiar opciones
+    const fragment = document.createDocumentFragment();
 
-                                            let localities = [];
-                                            const fragment = document.createDocumentFragment();
+    if (tipo === "W") {
+        console.log("Datos dos:", dos);
+        console.log(typeof dos);
 
-                                            if (tipo === "W") {
-                                                console.log("Datos dos:", dos);
-                                                console.log( typeof dos);
+        Object.keys(dos).forEach(clave => {
+            console.log(dos[clave]);
+            console.log(dos[clave]["id"]);
+            console.log(dos[clave]["localidad"]);
+            const option = document.createElement("option");
+            option.value = dos[clave]["id"];
+            option.textContent = dos[clave]["localidad"];
+            fragment.appendChild(option);
+        });
+    } else if (tipo === "F") {
+        console.log("Datos uno:", uno);
+        console.log(typeof uno);
 
-                                                let claves = Object.keys(dos); // claves = ["nombre", "color", "macho", "edad"]
-                                                for(let i=0; i< claves.length; i++){
-                                                    let clave = claves[i];
-                                                    console.log(dos[clave]);
-                                                    console.log(dos[clave]["id"]);
-                                                    console.log(dos[clave]["localidad"]);
-                                                    const option = document.createElement('option');
-                                                    option.value = dos[clave]["id"];
-                                                    option.textContent =dos[clave]["localidad"];
-                                                    fragment.appendChild(option);
-                                                    
-                                                }
+        Object.keys(uno).forEach(clave => {
+            console.log(uno[clave]);
+            console.log(uno[clave]["id"]);
+            console.log(uno[clave]["localidad"]);
+            const option = document.createElement("option");
+            option.value = uno[clave]["id"];
+            option.textContent = uno[clave]["localidad"];
+            fragment.appendChild(option);
+        });
+    }
 
-
-                                            } else if (tipo === "F") {
-                                                console.log("Datos uno:", uno);
-                                                console.log( typeof uno);
-
-                                                let claves = Object.keys(uno); // claves = ["nombre", "color", "macho", "edad"]
-                                                for(let i=0; i< claves.length; i++){
-                                                    let clave = claves[i];
-                                                    console.log(uno[clave]);
-                                                    console.log(uno[clave]["id"]);
-                                                    console.log(uno[clave]["localidad"]);
-                                                    const option = document.createElement('option');
-                                                    option.value = uno[clave]["id"];
-                                                    option.textContent =uno[clave]["localidad"];
-                                                    fragment.appendChild(option);
-                                                    
-                                                }
-
-
-                                            }
-                                        
-
-                                            
-
-                                        
-                                        
-                                            localidadSelect.appendChild(fragment);
-                                            console.log("Localidades cargadas exitosamente.");
-                                        }
+    localidadSelect.appendChild(fragment);
+    console.log("Localidades cargadas exitosamente.");
+};
 
                                     </script>
                                 <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
