@@ -282,7 +282,11 @@ function erp(){
         div="ispkipper";
 
     }
-    
+    if(erp="mikrowisp"){
+        url = "https://<?php echo $subdomain_tmp;?>.suricata.cloud/api/mikrowisp?cliente=<?php echo $resultados[0]->cliente;?>&subdomain_tmp=<?php echo $subdomain_tmp;?>";
+        div="mikrowisp";
+
+    }
     console.log(url);
 
             axios.get(url)
@@ -480,7 +484,7 @@ function erp(){
                                     <?php if($geoservicio){?>
                                     <li class="nav-item">
                                     <a href="#geo" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
-                                        onclick="logeados();">
+                                       >
                                         <i class="mdi mdi-settings-outline d-md-none d-block"></i>
                                         <span class="d-none d-md-block">Geo</span>
                                     </a>
@@ -489,7 +493,7 @@ function erp(){
                                     <?php if($pagoservicio){?>
                                     <li class="nav-item">
                                     <a href="#pago" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
-                                        onclick="logeados();">
+                                       >
                                         <i class="mdi mdi-settings-outline d-md-none d-block"></i>
                                         <span class="d-none d-md-block">Pagoralia</span>
                                     </a>
