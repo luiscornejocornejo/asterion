@@ -3581,7 +3581,19 @@ class siennaticketsController extends Controller
 
             $tokensienna = $value->tokensienna;
             $urilogin = $value->urilogin;
-        }?>
+        }
+        $lista= file_get_contents("https://".$subdomain_tmp.".suricata-mikrowisp.com.ar/api/ListTicket?token=".$tokensienna."&idcliente=" . $cliente);
+
+        $data = json_decode($lista, true);
+        if(isset($data['data'])){
+            $dataContent = $data['data'];
+
+        }
+
+        $getdata= file_get_contents("https://".$subdomain_tmp.".suricata-mikrowisp.com.ar/api/ws2?token=".$tokensienna."&c=" . $cliente);
+        $getdata2 = json_decode($getdata, true);
+        $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+        ?>
         <div class="card widget-flat " id="infoUser">
             <div class="card-body">
 
