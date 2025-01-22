@@ -287,6 +287,11 @@ function erp(){
         div="mikrowisp";
 
     }
+    if(erp="iwisp"){
+        url = "https://<?php echo $subdomain_tmp;?>.suricata.cloud/api/iwisp?cliente=<?php echo $resultados[0]->cliente;?>&subdomain_tmp=<?php echo $subdomain_tmp;?>";
+        div="iwisp";
+
+    }
     console.log(url);
 
             axios.get(url)
@@ -549,7 +554,8 @@ function erp(){
                                         </div><?php }
                                         if($nombreintegracion=="ispcube2"){?> <div id="ispcube2">
                                         </div><?php }
-                                        if($nombreintegracion=="iwisp"){?>@include('sienna.tu.erp.iwisp')<?php }
+                                        if($nombreintegracion=="iwisp"){?><div id="iwisp">
+                                        </div><?php }
                                         if($nombreintegracion=="sin"){?>@include('sienna.tu.erp.sin')<?php }?>
                                         </div>
                                     </div>
