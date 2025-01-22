@@ -3569,8 +3569,11 @@ class siennaticketsController extends Controller
     public function ispcube(Request $request){
 
         $cliente=$request->cliente;
-        
+
         $subdomain_tmp=$request->subdomain_tmp;
+        if($subdomain_tmp=="celer"){
+            $subdomain_tmp="celler";
+        }
         $queryws = "SELECT * from ispcube2.ws_cliente where nombre='" . $subdomain_tmp . "'";
         $baseget="14";
         $prueba = $this->conectar($baseget);
