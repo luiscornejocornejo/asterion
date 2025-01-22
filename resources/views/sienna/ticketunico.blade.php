@@ -273,11 +273,13 @@ function erp(){
     erp= '<?php echo session('nombreintegracion');?>';
     url="";
     if(erp="ispcube2"){
+        div="ispcube2";
         url = "https://<?php echo $subdomain_tmp;?>.suricata.cloud/api/ispcube?cliente=<?php echo $resultados[0]->cliente;?>&subdomain_tmp=<?php echo $subdomain_tmp;?>&lat=<?php echo $resultados[0]->lat;?>&lng=<?php echo $resultados[0]->lng;?>";
 
     }
     if(erp="ispkipper"){
         url = "https://<?php echo $subdomain_tmp;?>.suricata.cloud/api/ispkipper?cliente=<?php echo $resultados[0]->cliente;?>&subdomain_tmp=<?php echo $subdomain_tmp;?>";
+        div="ispkipper";
 
     }
     
@@ -286,10 +288,10 @@ function erp(){
             axios.get(url)
             .then(function (response) {
 
-              document.getElementById("ispcube2").innerHTML = null;
+              document.getElementById(div).innerHTML = null;
 
               console.log(response.data);
-              document.getElementById("ispcube2").innerHTML = response.data;
+              document.getElementById(div).innerHTML = response.data;
 
            
             })
