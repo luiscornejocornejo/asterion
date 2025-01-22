@@ -448,21 +448,21 @@ function erp(){
                                 </li>
                                 <li class="nav-item">
                                     <a href="#ni" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
-                                        onclick="logeados();">
+                                        >
                                         <i class="mdi mdi-settings-outline d-md-none d-block"></i>
                                         <span class="d-none d-md-block">Notas</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#tareascc" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
-                                        onclick="logeados();">
+                                        >
                                         <i class="mdi mdi-settings-outline d-md-none d-block"></i>
                                         <span class="d-none d-md-block">Tareas</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#historialcc" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0"
-                                        onclick="logeados();">
+                                        >
                                         <i class="mdi mdi-settings-outline d-md-none d-block"></i>
                                         <span class="d-none d-md-block">Historial</span>
                                     </a>
