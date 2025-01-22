@@ -3734,22 +3734,7 @@ class siennaticketsController extends Controller
                                     <label for="example-textarea" class="form-label">Email</label>
                                     <input required name="email" type="email" class="form-control" id="lastNameUser" value="<?php echo $email;?>">
                                 </div>
-                                <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
-                                    <label for="example-textarea" class="form-label">tipo</label>
-                                    <select onchange="fetchLocalities(this.value)" class="form-select " name="tipo" id="tipo">
-                                    <option value="">Seleccione un Tipo</option>
-                                    <option value="F">Fibra</option>
-                                        <option value="W">Wireless</option>
-                                    </select>
-
-                                </div>
-                                <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
-                                    <label for="agent" class="form-label">Localidades:</label>
-                                    <select class="form-select " name="localidad" id="localidad">
-
-                                        
-                                    </select>
-                                    <script>
+                                <script>
                                     function fetchLocalities(tipo) {
                                             const uno = {!! json_encode($locaf2, JSON_FORCE_OBJECT) !!};
                                             const dos = {!! json_encode($locaw2, JSON_FORCE_OBJECT) !!};
@@ -3809,6 +3794,22 @@ class siennaticketsController extends Controller
                                         }
 
                                     </script>
+                                <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
+                                    <label for="example-textarea" class="form-label">tipo</label>
+                                    <select onchange="fetchLocalities(this.value)" class="form-select " name="tipo" id="tipo">
+                                    <option value="">Seleccione un Tipo</option>
+                                    <option value="F">Fibra</option>
+                                        <option value="W">Wireless</option>
+                                    </select>
+
+                                </div>
+                                <div class="col-xxl-5 col-xl-5 col-lg-5 col-sm-12 mb-2">
+                                    <label for="agent" class="form-label">Localidades:</label>
+                                    <select class="form-select " name="localidad" id="localidad">
+
+                                        
+                                    </select>
+                                   
                                 </div> 
                             
                                 
