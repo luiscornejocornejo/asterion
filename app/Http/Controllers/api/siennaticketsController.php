@@ -3735,7 +3735,7 @@ class siennaticketsController extends Controller
                                     <input required name="email" type="email" class="form-control" id="lastNameUser" value="<?php echo $email;?>">
                                 </div>
                                 <script>
-                                    function fetchLocalities(tipo) {
+                                    window.fetchLocalities = function(tipo) { 
                                             const uno = {!! json_encode($locaf2, JSON_FORCE_OBJECT) !!};
                                             const dos = {!! json_encode($locaw2, JSON_FORCE_OBJECT) !!};
 
