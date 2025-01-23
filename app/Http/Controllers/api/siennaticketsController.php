@@ -2815,7 +2815,6 @@ class siennaticketsController extends Controller
         $dom=$request->dom;
         $cliente=$request->cliente;
         $tik=$request->tik;
-        dd($tik);
         $nodo=$request->nodo;
         $tipo=$request->tipo;
         $detalle=$request->detalle;
