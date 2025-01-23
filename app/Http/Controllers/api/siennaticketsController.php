@@ -2815,6 +2815,7 @@ class siennaticketsController extends Controller
         $dom=$request->dom;
         $cliente=$request->cliente;
         $tik=$request->tik;
+        dd($tik);
         $nodo=$request->nodo;
         $tipo=$request->tipo;
         $detalle=$request->detalle;
@@ -2832,7 +2833,7 @@ class siennaticketsController extends Controller
 
         $now = Carbon::now();
         $fe=$now->format('Y-m-d H:i:s');
-        $codeSO=$cliente."_".$fe;
+       // $codeSO=$cliente."_".$fe;
         $url="https://".$dom.".suricata-custom.com.ar/api/iclass_create_so?token=".$tokensienna."";
        
         $url.="&iclassNode=".$nodo."&longitude=".$longitude."&latitude=".$latitude."&country=".$country."&state=".$state."&city=".$city."&neighborhood=".$neighborhood."&address=".$address."&email=".$email."&mobilePhone=".$mobilePhone."&contactPhone=".$contactPhone."&nameCustomer=".$nameCustomer."&idCustomer=".$cliente."&description=".$detalle."&typeSO=".$tipo."&codeSO=".$tik."";
