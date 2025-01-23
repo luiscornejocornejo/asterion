@@ -245,7 +245,7 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
     ?>
  function iclass(){
     url="";  
-    url = "https://<?php echo $subdomain_tmp;?>.suricata.cloud/api/iclass?cliente=<?php echo $resultados[0]->cliente;?>&subdomain_tmp=<?php echo $subdomain_tmp;?>&lat=<?php echo $resultados[0]->lat;?>&lng=<?php echo $resultados[0]->lng;?>";
+    url = "https://<?php echo $subdomain_tmp;?>.suricata.cloud/api/iclass?tik=<?php echo $resultados[0]->ticketid;?>&cliente=<?php echo $resultados[0]->cliente;?>&subdomain_tmp=<?php echo $subdomain_tmp;?>&lat=<?php echo $resultados[0]->lat;?>&lng=<?php echo $resultados[0]->lng;?>";
     console.log(url);
 
             axios.get(url)

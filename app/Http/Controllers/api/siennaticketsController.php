@@ -2814,6 +2814,7 @@ class siennaticketsController extends Controller
         $tokensienna=$request->tokensienna;
         $dom=$request->dom;
         $cliente=$request->cliente;
+        $tik=$request->tik;
         $nodo=$request->nodo;
         $tipo=$request->tipo;
         $detalle=$request->detalle;
@@ -2834,7 +2835,7 @@ class siennaticketsController extends Controller
         $codeSO=$cliente."_".$fe;
         $url="https://".$dom.".suricata-custom.com.ar/api/iclass_create_so?token=".$tokensienna."";
        
-        $url.="&iclassNode=".$nodo."&longitude=".$longitude."&latitude=".$latitude."&country=".$country."&state=".$state."&city=".$city."&neighborhood=".$neighborhood."&address=".$address."&email=".$email."&mobilePhone=".$mobilePhone."&contactPhone=".$contactPhone."&nameCustomer=".$nameCustomer."&idCustomer=".$cliente."&description=".$detalle."&typeSO=".$tipo."&codeSO=".$codeSO."";
+        $url.="&iclassNode=".$nodo."&longitude=".$longitude."&latitude=".$latitude."&country=".$country."&state=".$state."&city=".$city."&neighborhood=".$neighborhood."&address=".$address."&email=".$email."&mobilePhone=".$mobilePhone."&contactPhone=".$contactPhone."&nameCustomer=".$nameCustomer."&idCustomer=".$cliente."&description=".$detalle."&typeSO=".$tipo."&codeSO=".$tik."";
         echo $url;
        // dd($request);
         $curl = curl_init();
@@ -3319,6 +3320,7 @@ class siennaticketsController extends Controller
     {
 
         $cliente=$request->cliente;
+        $tik=$request->tik;
         $lat=$request->lat;
         $lng=$request->lng;
         $subdomain_tmp=$request->subdomain_tmp;
@@ -3392,6 +3394,7 @@ class siennaticketsController extends Controller
                                 @csrf
                                 <input type="hidden" name="tokensienna" value="<?php echo $tokensienna;?>"/>
                                 <input type="hidden" name="dom" value="<?php echo $subdomain_tmp;?>"/>
+                                <input type="hidden" name="tik" value="<?php echo $tik;?>"/>
                                 <div class="row">
                                     <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
                                         <label for="example-textarea" class="form-label">Cliente</label>

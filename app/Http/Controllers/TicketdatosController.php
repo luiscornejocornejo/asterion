@@ -1014,7 +1014,6 @@ class TicketdatosController extends Controller
         $si2->siennaestado=$estado;
         $si2->cerrador_ticket = $userId;
         $si2->descripciondelcierre= $descp;
-
         if($estado==4){
 
             if($source<>'7'){
