@@ -272,22 +272,22 @@ document.title = <?php echo $resultados[0]->ticketid;?>;
 function erp(){
     erp= '<?php echo session('nombreintegracion');?>';
     url="";
-    if(erp="ispcube2"){
+    if(erp=="ispcube2"){
         div="ispcube2";
         url = "https://<?php echo $subdomain_tmp;?>.suricata.cloud/api/ispcube?cliente=<?php echo $resultados[0]->cliente;?>&subdomain_tmp=<?php echo $subdomain_tmp;?>&lat=<?php echo $resultados[0]->lat;?>&lng=<?php echo $resultados[0]->lng;?>";
 
     }
-    if(erp="ispkipper"){
+    if(erp=="ispkipper"){
         url = "https://<?php echo $subdomain_tmp;?>.suricata.cloud/api/ispkipper?cliente=<?php echo $resultados[0]->cliente;?>&subdomain_tmp=<?php echo $subdomain_tmp;?>";
         div="ispkipper";
 
     }
-    if(erp="mikrowisp"){
+    if(erp=="mikrowisp"){
         url = "https://<?php echo $subdomain_tmp;?>.suricata.cloud/api/mikrowisp?cliente=<?php echo $resultados[0]->cliente;?>&subdomain_tmp=<?php echo $subdomain_tmp;?>";
         div="mikrowisp";
 
     }
-    if(erp="iwisp"){
+    if(erp=="iwisp"){
         url = "https://<?php echo $subdomain_tmp;?>.suricata.cloud/api/iwisp?cliente=<?php echo $resultados[0]->cliente;?>&subdomain_tmp=<?php echo $subdomain_tmp;?>";
         div="iwisp";
 
