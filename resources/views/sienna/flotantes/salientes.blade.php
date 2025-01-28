@@ -1,3 +1,18 @@
+
+<?php
+$botpresservicio=0;
+
+$queryservicios2="select * from sienna_suricata_servicios ";
+$datosservicios2 = DB::select($queryservicios2);
+foreach($datosservicios2 as $valservicios2){
+    if($valservicios2->id==9){
+        $botpresservicio=$valservicios2->habilitado;
+    }
+
+}
+
+
+?>
 <div id="warning-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
@@ -5,6 +20,10 @@
                 <h5 class="modal-title text-white" id="exampleModalLabel"><i class="mdi mdi-whatsapp text-success"></i> Enviar plantilla de Whatsapp</h5>
 
             </div>
+
+            <?php if($botpresservicio){
+
+            }else{?>
             <form id="frmAgregarBienCapitalizable" action="/" method="post">
                 @csrf
 
@@ -43,6 +62,10 @@
                     <button type="button" style="background-color: #ffc95c;" class="btn  mb-0 " onclick="mensaje('<?php echo $saliente = session('saliente'); ?>')" class="  "><span style="color: #495057;">Enviar</span></button>
                 </div>
             </form>
+
+            <?php }?>
+
+
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
