@@ -38,13 +38,13 @@ foreach($datosservicios2 as $valservicios2){
                         <select class="form-select" id="template">
                         <?php
 
-                        $query22 = "SELECT id, nombre, url, descripcion FROM template";
+                        $query22 = "SELECT * FROM sienna_bp_templates";
 
                         $resultados22 = DB::select($query22);
                         foreach ($resultados22 as $val22) {
-                            $url = $val22->url;
+                            $id = $val22->id;
                             $nombre = $val22->nombre;
-                            $descripcion = $val22->descripcion;
+                            $tipo_bp_salientes = $val22->tipo_bp_salientes;
                             echo "<option value='" . $url . "'>" . $nombre . "</option>";
                         }
                         ?>
@@ -57,7 +57,7 @@ foreach($datosservicios2 as $valservicios2){
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary mb-0" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" style="background-color: #ffc95c;" class="btn  mb-0 " onclick="mensaje('<?php echo $saliente = session('saliente'); ?>')" class="  "><span style="color: #495057;">Enviar</span></button>
+                    <button type="button" style="background-color: #ffc95c;" class="btn  mb-0 " onclick="mensaje2('<?php echo $saliente = session('saliente'); ?>')" class="  "><span style="color: #495057;">Enviar</span></button>
                 </div>
             </form>
             <?php
