@@ -12,7 +12,7 @@
                     <div id="resul"></div>
 
                     <div class="mb-3 mx-2">
-                        <label for="telefono" class="form-label">Whatsapp</label>
+                        <label for="telefono" class="form-label">Whatsapp1</label>
                         <input name="telefono" type="cel" id="telefono" placeholder="+5491133258450" class="form-control" required>
                     </div>
 
