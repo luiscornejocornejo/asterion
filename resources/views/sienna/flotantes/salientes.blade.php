@@ -45,7 +45,7 @@ foreach($datosservicios2 as $valservicios2){
                             $id = $val22->id;
                             $nombre = $val22->nombre;
                             $tipo_bp_salientes = $val22->tipo_bp_salientes;
-                            echo "<option value='" . $url . "'>" . $nombre . "</option>";
+                            echo "<option value='" . $id . "'>" . $nombre . "</option>";
                         }
                         ?>
                     </select>
