@@ -209,7 +209,7 @@ foreach($datosservicios2 as $valservicios2){
                 }
                 console.log(tel2);
                 console.log(idtemplate);
-/*
+
                 const xhr = new XMLHttpRequest();
                 parametros="logeado";
                 valores=<?php echo session('idusuario');?>;
@@ -220,7 +220,7 @@ foreach($datosservicios2 as $valservicios2){
                     "id": idtemplate,
                     "userPhone": "+"+tel2
                             };
-
+/*
                 // Crear la solicitud
                 let xhr = new XMLHttpRequest();
                 xhr.open("POST", urlprincipal2.trim(), true);
