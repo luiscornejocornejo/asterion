@@ -422,10 +422,10 @@ class cloudtickets extends Controller
             }
 
         }
-        /*
+        
         return redirect()
         ->back()
-        ->with('success', 'Se cerro  correctamente!');*/
+        ->with('success', 'Se cerro  correctamente!');
 
     }
 
