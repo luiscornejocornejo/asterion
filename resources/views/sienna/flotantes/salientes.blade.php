@@ -185,7 +185,9 @@ foreach($datosservicios2 as $valservicios2){
 
     window.enviarmensaje = function() {
        
-       
+        var URLactual = window.location.href;
+            var porciones = URLactual.split('.');
+            let result = porciones[0].replace("https://", "");
         var tel = document.getElementById("telefono");
         var telvalor = document.getElementById("telefono").value;
         
@@ -212,17 +214,18 @@ foreach($datosservicios2 as $valservicios2){
                 parametros="logeado";
                 valores=<?php echo session('idusuario');?>;
 
-                let urlprincipal2 = "https://backend.suricata.chat/ultrafibra/callToActions/message-start";
+                let urlprincipal2 = "https://backend.suricata.chat/"+result+"/callToActions/message-start";
 
                 let data = {
                     "id": idtemplate,
                     "userPhone": "+"+tel2
                             };
-
+                let token = "ACk2fknbb35wUwzHANpgU8q2pskCtZQtVpnIoETjqCUor4TyITKdORHwO7UaQeLL";
                 // Crear la solicitud
                 let xhr = new XMLHttpRequest();
                 xhr.open("POST", urlprincipal2.trim(), true);
                 xhr.setRequestHeader("Content-Type", "application/json"); // Indicar que enviamos JSON
+                xhr.setRequestHeader("Authorization", `Bearer ${token}`); // Agregar Bearer Token
 
                 // Manejar la respuesta
                 xhr.onload = () => {
