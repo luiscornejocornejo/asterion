@@ -57,7 +57,7 @@ foreach($datosservicios2 as $valservicios2){
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary mb-0" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" style="background-color: #ffc95c;" class="btn  mb-0 " onclick="mensaje2('<?php echo $saliente = session('saliente'); ?>')" class="  "><span style="color: #495057;">Enviar</span></button>
+                    <button type="button" style="background-color: #ffc95c;" class="btn  mb-0 " onclick="enviarmensaje()" class="  "><span style="color: #495057;">Enviar</span></button>
                 </div>
             </form>
             <?php
@@ -176,7 +176,7 @@ foreach($datosservicios2 as $valservicios2){
         }
     }
 
-     function mensaje2(saliente) {
+     function enviarmensaje() {
 
         var tel = document.getElementById("telefono");
         var telvalor = document.getElementById("telefono").value;
