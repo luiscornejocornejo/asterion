@@ -160,7 +160,7 @@ if (telvalor == "") {
             </div>
 
             <?php if($botpresservicio){?>
-                <form id="frmAgregarBienCapitalizable" action="/" method="post">
+                <form id="frmAgregarBienCapitalizable2" action="/" method="post">
                 @csrf
 
                 <div class="modal-body p-2">
