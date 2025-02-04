@@ -195,7 +195,7 @@ if (telvalor == "") {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary mb-0" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" style="background-color: #ffc95c;" class="btn  mb-0 " onclick="enviarmensaje()" class="  "><span style="color: #495057;">Enviar</span></button>
+                    <button type="button" style="background-color: #ffc95c;" class="btn  mb-0 " onclick="enviarmensaje()" ><span style="color: #495057;">Enviar</span></button>
                 </div>
             </form>
             
