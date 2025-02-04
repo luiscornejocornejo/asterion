@@ -184,10 +184,12 @@ foreach($datosservicios2 as $valservicios2){
 <script>
 
     window.enviarmensaje = function() {
-        alert("2");
-        /*
+       
+       
         var tel = document.getElementById("telefono");
         var telvalor = document.getElementById("telefono").value;
+        alert("2");
+         /*
         if (telvalor == "") {
             var men = document.getElementById("resul");
             men.innerHTML = '<div data-mdb-delay="3000" class="alert alert-danger" role="alert">   ' +
