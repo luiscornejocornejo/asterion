@@ -219,7 +219,7 @@ foreach($datosservicios2 as $valservicios2){
                     "id": idtemplate,
                     "userPhone": "+"+tel2
                             };
-/*
+
                 // Crear la solicitud
                 let xhr = new XMLHttpRequest();
                 xhr.open("POST", urlprincipal2.trim(), true);
@@ -245,7 +245,7 @@ foreach($datosservicios2 as $valservicios2){
                     $(".alert").fadeTo(500, 0).slideUp(500, function() {
                         $(this).remove();
                     });
-                }, 4000);*/
+                }, 4000);
         }
     }
 </script>
