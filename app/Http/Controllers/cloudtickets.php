@@ -383,33 +383,41 @@ class cloudtickets extends Controller
         foreach($sep as $val){
 
             if($val<>""){
-                echo $val;
-                $si2 = siennatickets::find($val);
-                $estadoant=$si2->siennaestado;
-                $conv=$si2->user_id;
-                $src=$si2->siennasource;
-                $si2->siennaestado=$estado;
-                $si2->cerrador_ticket = $userId;
-                $si2->motivoc=$motivoc;
-                $si2->t_cerrado=date("Y-m-d H:i:s");
-                $si2->save();
+                
 
-                $estant=siennaestado::find($estadoant);
-                $estnombreant=$estant->nombre;
-        
-        
-                $est=siennaestado::find($estado);
-                $estnombre=$est->nombre;
-                $se=new siennaseguimientos();
-                $se->ticket=$val;
-                $se->tipo="2";
-                $se->descripcion=$estnombreant." => ".$estnombre;
-                $usulogear = session('nombreusuario');
-        
-                $se->autor=$usulogear;
-                $se->save();
+                $esbotpress=$si2->conversation_url;
+                if($esbotpress=="botpress"){
+                    $domi=$this->dominio();
+                    $gggg=$this->cerrarchatbotpress($domi,$val);
 
-                $pp=$this->cerrarchat($idbot,$conv,$src);
+                }else{
+                    echo $val;
+                    $si2 = siennatickets::find($val);
+                    $estadoant=$si2->siennaestado;                
+                    $conv=$si2->user_id;
+                    $src=$si2->siennasource;
+                    $si2->siennaestado=$estado;
+                    $si2->cerrador_ticket = $userId;
+                    $si2->motivoc=$motivoc;
+                    $si2->t_cerrado=date("Y-m-d H:i:s");
+                    $si2->save();
+
+                    $estant=siennaestado::find($estadoant);
+                    $estnombreant=$estant->nombre;
+            
+                    $est=siennaestado::find($estado);
+                    $estnombre=$est->nombre;
+                    $se=new siennaseguimientos();
+                    $se->ticket=$val;
+                    $se->tipo="2";
+                    $se->descripcion=$estnombreant." => ".$estnombre;
+                    $usulogear = session('nombreusuario');
+        
+                    $se->autor=$usulogear;
+                    $se->save();
+
+                    $pp=$this->cerrarchat($idbot,$conv,$src);
+                }
 
             }
 
@@ -451,7 +459,36 @@ class cloudtickets extends Controller
 
     }
 
-    
+    public function cerrarchatbotpress($merchant,$ticket){
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://backend.suricata.chat/'.$merchant.'calltoactions/ticket-solved',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS =>'{
+                                "ticketId": '.$ticket.',
+                                "clientId": "",
+                                "typeClosed": "1",
+                                "comentario": "cierre masivo"
+                            }',
+        CURLOPT_HTTPHEADER => array(
+            'Content-Type: application/json',
+            'Authorization: ACk2fknbb35wUwzHANpgU8q2pskCtZQtVpnIoETjqCUor4TyITKdORHwO7UaQeLL'
+        ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        echo $response;
+    }
     public function prioridadsiennaall(Request $request){
 
         $ticketss=$request->ticketss;
