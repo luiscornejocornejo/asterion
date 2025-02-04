@@ -14,6 +14,75 @@ foreach($datosservicios2 as $valservicios2){
 
 ?>
 <script>
+
+window.enviarmensaje = function() {
+
+var tel = document.getElementById("telefono");
+var telvalor = document.getElementById("telefono").value;
+if (telvalor == "") {
+    var men = document.getElementById("resul");
+    men.innerHTML = '<div data-mdb-delay="3000" class="alert alert-danger" role="alert">   ' +
+        '<strong>Error - </strong> El campo Whatsapp es obligatorio.</div>';
+
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function() {
+            $(this).remove();
+        });
+    }, 4000);
+} else {
+
+
+
+    var idtemplate = document.getElementById("template").value;
+    //  var url= "https://publicapi.xenioo.com/broadcasts/uD7SL7UMkUeF878WQ5Jat5vE0KqKjY1sUjVi84xKAI781x0x0yy1EVFpHtS0H9dB/rn5HSrzi9xrvW8ZtVw8yVdiJdqoLdsc7kjybZSRbJpax6TEWL0RyWn8E5meb2e4H/direct";///document.getElementById("template").value;
+    var tel2 = tel.value;
+    if (tel2 == "") {
+        tel2 = "5491133258450"
+    }
+    console.log(tel2);
+    console.log(idtemplate);
+
+    const xhr = new XMLHttpRequest();
+    parametros="logeado";
+    valores=<?php echo session('idusuario');?>;
+
+    let urlprincipal2 = "https://backend.suricata.chat/ultrafibra/callToActions/message-start";
+
+    let data = {
+        "id": idtemplate,
+        "userPhone": "+"+tel2
+                };
+
+    // Crear la solicitud
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", urlprincipal2.trim(), true);
+    xhr.setRequestHeader("Content-Type", "application/json"); // Indicar que enviamos JSON
+
+    // Manejar la respuesta
+    xhr.onload = () => {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log(JSON.parse(xhr.responseText)); // Imprimir respuesta JSON
+        } else {
+            console.error(`Error: ${xhr.status} - ${xhr.statusText}`);
+        }
+    };
+
+    // Enviar la solicitud con los datos en formato JSON
+    xhr.send(JSON.stringify(data));
+
+    var men = document.getElementById("resul");
+    men.innerHTML = '<div data-mdb-delay="3000" class="alert alert-success" role="alert">   ' +
+        '<strong>Felicitaciones - </strong>   El mensaje fue enviado correctamente</div>';
+
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function() {
+            $(this).remove();
+        });
+    }, 4000);
+}
+}
+</script>
+<script>
     function mensaje(saliente) {
 
         var tel = document.getElementById("telefono");
@@ -81,75 +150,7 @@ foreach($datosservicios2 as $valservicios2){
 
      
 </script>
-<script>
 
-function enviarmensaje() {
-
-var tel = document.getElementById("telefono");
-var telvalor = document.getElementById("telefono").value;
-if (telvalor == "") {
-    var men = document.getElementById("resul");
-    men.innerHTML = '<div data-mdb-delay="3000" class="alert alert-danger" role="alert">   ' +
-        '<strong>Error - </strong> El campo Whatsapp es obligatorio.</div>';
-
-    window.setTimeout(function() {
-        $(".alert").fadeTo(500, 0).slideUp(500, function() {
-            $(this).remove();
-        });
-    }, 4000);
-} else {
-
-
-
-    var idtemplate = document.getElementById("template").value;
-    //  var url= "https://publicapi.xenioo.com/broadcasts/uD7SL7UMkUeF878WQ5Jat5vE0KqKjY1sUjVi84xKAI781x0x0yy1EVFpHtS0H9dB/rn5HSrzi9xrvW8ZtVw8yVdiJdqoLdsc7kjybZSRbJpax6TEWL0RyWn8E5meb2e4H/direct";///document.getElementById("template").value;
-    var tel2 = tel.value;
-    if (tel2 == "") {
-        tel2 = "5491133258450"
-    }
-    console.log(tel2);
-    console.log(idtemplate);
-
-    const xhr = new XMLHttpRequest();
-    parametros="logeado";
-    valores=<?php echo session('idusuario');?>;
-
-    let urlprincipal2 = "https://backend.suricata.chat/ultrafibra/callToActions/message-start";
-
-    let data = {
-        "id": idtemplate,
-        "userPhone": "+"+tel2
-                };
-
-    // Crear la solicitud
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", urlprincipal2.trim(), true);
-    xhr.setRequestHeader("Content-Type", "application/json"); // Indicar que enviamos JSON
-
-    // Manejar la respuesta
-    xhr.onload = () => {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            console.log(JSON.parse(xhr.responseText)); // Imprimir respuesta JSON
-        } else {
-            console.error(`Error: ${xhr.status} - ${xhr.statusText}`);
-        }
-    };
-
-    // Enviar la solicitud con los datos en formato JSON
-    xhr.send(JSON.stringify(data));
-
-    var men = document.getElementById("resul");
-    men.innerHTML = '<div data-mdb-delay="3000" class="alert alert-success" role="alert">   ' +
-        '<strong>Felicitaciones - </strong>   El mensaje fue enviado correctamente</div>';
-
-    window.setTimeout(function() {
-        $(".alert").fadeTo(500, 0).slideUp(500, function() {
-            $(this).remove();
-        });
-    }, 4000);
-}
-}
-</script>
 <div id="warning-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
@@ -197,6 +198,7 @@ if (telvalor == "") {
                     <button type="button" style="background-color: #ffc95c;" class="btn  mb-0 " onclick="enviarmensaje()" class="  "><span style="color: #495057;">Enviar</span></button>
                 </div>
             </form>
+            
             <?php
 
             }else{?>
