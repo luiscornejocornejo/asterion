@@ -210,7 +210,6 @@ foreach($datosservicios2 as $valservicios2){
                 console.log(tel2);
                 console.log(idtemplate);
 
-                const xhr = new XMLHttpRequest();
                 parametros="logeado";
                 valores=<?php echo session('idusuario');?>;
 
