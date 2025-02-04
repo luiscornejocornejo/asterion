@@ -188,7 +188,6 @@ foreach($datosservicios2 as $valservicios2){
        
         var tel = document.getElementById("telefono");
         var telvalor = document.getElementById("telefono").value;
-        alert("2");
         
         if (telvalor == "") {
             var men = document.getElementById("resul");
