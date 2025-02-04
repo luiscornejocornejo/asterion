@@ -384,15 +384,15 @@ class cloudtickets extends Controller
 
             if($val<>""){
                 
-
+                echo $val;
+                $si2 = siennatickets::find($val);
                 $esbotpress=$si2->conversation_url;
                 if($esbotpress=="botpress"){
                     $domi=$this->dominio();
                     $gggg=$this->cerrarchatbotpress($domi,$val);
 
                 }else{
-                    echo $val;
-                    $si2 = siennatickets::find($val);
+                    
                     $estadoant=$si2->siennaestado;                
                     $conv=$si2->user_id;
                     $src=$si2->siennasource;
