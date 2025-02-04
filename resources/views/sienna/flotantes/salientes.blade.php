@@ -189,7 +189,7 @@ foreach($datosservicios2 as $valservicios2){
         var tel = document.getElementById("telefono");
         var telvalor = document.getElementById("telefono").value;
         alert("2");
-         /*
+        
         if (telvalor == "") {
             var men = document.getElementById("resul");
             men.innerHTML = '<div data-mdb-delay="3000" class="alert alert-danger" role="alert">   ' +
@@ -202,17 +202,14 @@ foreach($datosservicios2 as $valservicios2){
             }, 4000);
         } else {
 
-
-
                 var idtemplate = document.getElementById("template").value;
-                //  var url= "https://publicapi.xenioo.com/broadcasts/uD7SL7UMkUeF878WQ5Jat5vE0KqKjY1sUjVi84xKAI781x0x0yy1EVFpHtS0H9dB/rn5HSrzi9xrvW8ZtVw8yVdiJdqoLdsc7kjybZSRbJpax6TEWL0RyWn8E5meb2e4H/direct";///document.getElementById("template").value;
                 var tel2 = tel.value;
                 if (tel2 == "") {
                     tel2 = "5491133258450"
                 }
                 console.log(tel2);
                 console.log(idtemplate);
-
+/*
                 const xhr = new XMLHttpRequest();
                 parametros="logeado";
                 valores=<?php echo session('idusuario');?>;
@@ -249,7 +246,7 @@ foreach($datosservicios2 as $valservicios2){
                     $(".alert").fadeTo(500, 0).slideUp(500, function() {
                         $(this).remove();
                     });
-                }, 4000);
-        }*/
+                }, 4000);*/
+        }
     }
 </script>
