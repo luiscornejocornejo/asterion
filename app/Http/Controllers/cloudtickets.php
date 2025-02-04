@@ -422,9 +422,10 @@ class cloudtickets extends Controller
             }
 
         }
+        /*
         return redirect()
         ->back()
-        ->with('success', 'Se cerro  correctamente!');
+        ->with('success', 'Se cerro  correctamente!');*/
 
     }
 
@@ -474,7 +475,7 @@ class cloudtickets extends Controller
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS =>'{
                                 "ticketId": '.$ticket.',
-                                "clientId": "",
+                                "clientId": "0",
                                 "typeClosed": "1",
                                 "comentario": "cierre masivo"
                             }',
