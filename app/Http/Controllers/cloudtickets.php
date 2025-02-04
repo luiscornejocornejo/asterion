@@ -481,7 +481,7 @@ class cloudtickets extends Controller
                             }',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'Authorization: ACk2fknbb35wUwzHANpgU8q2pskCtZQtVpnIoETjqCUor4TyITKdORHwO7UaQeLL'
+            'Authorization: Bearer ACk2fknbb35wUwzHANpgU8q2pskCtZQtVpnIoETjqCUor4TyITKdORHwO7UaQeLL'
         ),
         ));
 
