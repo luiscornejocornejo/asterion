@@ -1,6 +1,33 @@
 @include('facu.header2')
 
+<script>
+                                function obtenerCoordenadasNominatim(direccion) {
+                                    let url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(direccion)}`;
 
+                                    fetch(url)
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            if (data.length > 0) {
+                                                let coordenadas = data[0];
+                                                let lat = coordenadas.lat;
+                                                let lon = coordenadas.lon;
+                                                document.getElementById("resultado").innerHTML = `📍 Latitud: ${lat}, Longitud: ${lon}`;
+                                            } else {
+                                                document.getElementById("resultado").innerHTML = "❌ No se encontraron coordenadas.";
+                                            }
+                                        })
+                                        .catch(error => console.error("Error en la solicitud:", error));
+                                }
+
+                                function buscarCoordenadas() {
+                                    let direccion = document.getElementById("direccion").value;
+                                    if (direccion.trim() === "") {
+                                        document.getElementById("resultado").innerHTML = "⚠️ Ingrese una dirección válida.";
+                                        return;
+                                    }
+                                    obtenerCoordenadasNominatim(direccion);
+                                }
+                        </script>
 <?php
 
 $tipobotdes=$resultados[0]->conversation_url;
