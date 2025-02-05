@@ -3513,6 +3513,39 @@ class siennaticketsController extends Controller
                                     $lati="";
                                     $long="";
                         }?>
+                       
+                    <input type="text" id="direccion" placeholder="Ingrese una dirección" size="40">
+                        <button onclick="buscarCoordenadas()">Buscar</button>
+
+                        <p id="resultado"></p>
+                        <script>
+                                function obtenerCoordenadasNominatim(direccion) {
+                                    let url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(direccion)}`;
+
+                                    fetch(url)
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            if (data.length > 0) {
+                                                let coordenadas = data[0];
+                                                let lat = coordenadas.lat;
+                                                let lon = coordenadas.lon;
+                                                document.getElementById("resultado").innerHTML = `📍 Latitud: ${lat}, Longitud: ${lon}`;
+                                            } else {
+                                                document.getElementById("resultado").innerHTML = "❌ No se encontraron coordenadas.";
+                                            }
+                                        })
+                                        .catch(error => console.error("Error en la solicitud:", error));
+                                }
+
+                                function buscarCoordenadas() {
+                                    let direccion = document.getElementById("direccion").value;
+                                    if (direccion.trim() === "") {
+                                        document.getElementById("resultado").innerHTML = "⚠️ Ingrese una dirección válida.";
+                                        return;
+                                    }
+                                    obtenerCoordenadasNominatim(direccion);
+                                }
+                            </script>
                     <label for="latitude" class="form-label">Latitude</label>
                     <input required type="text" class="form-control" id="latitude" name="latitude" value="<?php echo $lati;?>">
                     </div>
