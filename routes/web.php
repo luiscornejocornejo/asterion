@@ -58,6 +58,11 @@ Route::get('/clear-cache', function() {
 });
 Route::post('/login','App\Http\Controllers\LoginController@index');
 Route::group(['middleware' => ['reportes']], function() {
+
+
+    Route::get('/tc','App\Http\Controllers\TicketdatosController@tc');
+
+    
     Route::get('/siennai','App\Http\Controllers\siennaController@principal')->middleware('adminsienna');
     Route::get('/pruebamail','App\Http\Controllers\siennaController@pruebamail');
 
@@ -257,7 +262,6 @@ Route::get('/linknetclientes','App\Http\Controllers\TicketdatosController@linkne
 Route::post('/subirclientes','App\Http\Controllers\TicketdatosController@subirclientespost');
 Route::get('/busquedaavanzada','App\Http\Controllers\TicketdatosController@busquedaavanzada');
 Route::get('/ticketunico','App\Http\Controllers\TicketdatosController@ticketunico');
-Route::get('/aca','App\Http\Controllers\TicketdatosController@tc');
 Route::get('/ticketunico3','App\Http\Controllers\TicketdatosController@ticketunico3');
 Route::get('/ticketunico2','App\Http\Controllers\TicketdatosController@ticketunico2');
 
