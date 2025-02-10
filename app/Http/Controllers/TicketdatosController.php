@@ -1700,7 +1700,7 @@ class TicketdatosController extends Controller
        
     
        
-       dd($query);
+      // dd($query);
 
         return view("sienna/tc")
         ->with('subdomain_tmp', $subdomain_tmp)
