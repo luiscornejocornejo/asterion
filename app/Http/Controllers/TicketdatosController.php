@@ -1715,7 +1715,8 @@ class TicketdatosController extends Controller
        }*/
 
        
-           
+       dd($query);
+
         return view("sienna/tc")
         ->with('subdomain_tmp', $subdomain_tmp)
         ->with('segui', $segui)
