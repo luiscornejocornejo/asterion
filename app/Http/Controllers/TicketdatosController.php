@@ -1627,7 +1627,7 @@ class TicketdatosController extends Controller
         
         where a.id='".$tick."'   limit 1";
 
-        //dd($query);
+        dd($query);
         $resultados = DB::select($query);
         $cont=0;
         foreach($resultados as $valu){
