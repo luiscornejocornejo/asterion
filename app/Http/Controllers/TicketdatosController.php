@@ -1600,6 +1600,7 @@ class TicketdatosController extends Controller
         }
 
         $tick=$request->tick;
+        $tick=$request->id;
         if(isset($request->logueado)){
 
             $st = siennatickets::find($tick);
@@ -1697,23 +1698,7 @@ class TicketdatosController extends Controller
        $urlinte2="";
        $datosonline="";
        
-       /*
-       prueba
-       if($urlinte=="luis"){
-            $numcli=$resultados[0]->cliente;
-            $urlinte2=$urlinte.$numcli;
-          
-            if (($datosonline = @file_get_contents($urlinte2)) === false) {
-                $error = error_get_last();
-                //echo "HTTP request failed. Error was: " . $error['message'];
-                $urlinte2="";
-
-          } else {
-                echo "Everything went better than expected";
-          }
-
-       }*/
-
+    
        
        dd($query);
 
