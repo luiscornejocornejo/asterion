@@ -2865,7 +2865,7 @@ class siennaticketsController extends Controller
          $response = curl_exec($curl); 
         // Close the cURL resource
         curl_close($curl);
-        dd($response);
+        echo $response;
      //  echo  $rrr="res:".$response;
        // return redirect()->back()->with('pp', "hola" );
  
