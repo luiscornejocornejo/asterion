@@ -3501,21 +3501,21 @@ class siennaticketsController extends Controller
                                     if(isset($coor[0])){
                                         $lati=$coor[0];
                                     }else{
-                                        $lati="";
+                                        $lati="0";
 
                                     }
 
                                     if(isset($coor[1])){
                                         $long=$coor[1];
                                     }else{
-                                        $long="";
+                                        $long="0";
 
                                     }
                                     
                         
                         }else{
-                                    $lati="";
-                                    $long="";
+                                    $lati="0";
+                                    $long="0";
                         }?>
                        
                     
