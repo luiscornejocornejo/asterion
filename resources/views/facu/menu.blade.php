@@ -121,6 +121,9 @@ if (isset($_SERVER['HTTP_HOST'])) {
                         <li>
                             <a href="/cerrados">Cerrados</a>
                         </li>
+                        <li>
+                            <a href="/siennaform?id=1600">Historicos</a>
+                        </li>
                     </ul>
                 </div>
         </li>
