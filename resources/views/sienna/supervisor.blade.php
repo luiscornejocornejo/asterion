@@ -469,9 +469,9 @@
                 
             }
             if(session('tokeninterno')<>0){?>
-              <div class="">
+                <div class="">
                         <iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" allow="camera;microphone" src="https://view-sip.suricata.cloud/?token=<?php echo session('tokeninterno');?>&merchant=<?php echo $subdomain_tmp;?>" width="100%" class="border rounded-3" style="height: 120px!important;"></iframe>
-                    </div>
+                </div>
                     <script>
                       console.log("entra");
                       window.addEventListener('message', (event) => {
@@ -508,7 +508,8 @@
                       solicitarPermisosDeNotificacion();
                     </script>
 
-                    <?php }?>
+                    <?php 
+            }?>
                 <div onload="maxid()" class="container-fluid " id="casa">
                    
                     
@@ -517,70 +518,67 @@
 
                 <script>
                   function area2(dd, ee, ff) {
+                          document.getElementById("idticketdepto202").value = dd;
+                          document.getElementById("idconv").value = ee;
+                          document.getElementById("user_id").value = ff;
+                          }
+                  function obtenerFechaUTC() {
+                      const fechaActualUTC = new Date();
 
-document.getElementById("idticketdepto202").value = dd;
-document.getElementById("idconv").value = ee;
-document.getElementById("user_id").value = ff;
+                      const año = fechaActualUTC.getUTCFullYear();
+                      const mes = String(fechaActualUTC.getUTCMonth() + 1).padStart(2, '0'); // Los meses empiezan desde 0
+                      const dia = String(fechaActualUTC.getUTCDate()).padStart(2, '0');
+                      const hora = String(fechaActualUTC.getUTCHours()).padStart(2, '0');
+                      const minutos = String(fechaActualUTC.getUTCMinutes()).padStart(2, '0');
+                      const segundos = String(fechaActualUTC.getUTCSeconds()).padStart(2, '0');
 
-
-}
-function obtenerFechaUTC() {
-    const fechaActualUTC = new Date();
-
-    const año = fechaActualUTC.getUTCFullYear();
-    const mes = String(fechaActualUTC.getUTCMonth() + 1).padStart(2, '0'); // Los meses empiezan desde 0
-    const dia = String(fechaActualUTC.getUTCDate()).padStart(2, '0');
-    const hora = String(fechaActualUTC.getUTCHours()).padStart(2, '0');
-    const minutos = String(fechaActualUTC.getUTCMinutes()).padStart(2, '0');
-    const segundos = String(fechaActualUTC.getUTCSeconds()).padStart(2, '0');
-
-    return `${año}-${mes}-${dia} ${hora}:${minutos}:${segundos}`;
-}
+                      return `${año}-${mes}-${dia} ${hora}:${minutos}:${segundos}`;
+                  }
                   function maxid() {
-           //document.body.style.zoom = "80%";
+                        //document.body.style.zoom = "80%";
 
-            var URLactual = window.location.href;
-            var porciones = URLactual.split('.');
-            let result = porciones[0].replace("https://", "");
-            var idusuario =<?php echo session('idusuario');?>;
-           // var area =<?php echo session('areas');?>;
-            var tipodemenu =<?php echo session('tipodemenu');?>;
-           // var deptosuser =<?php echo session('deptosuser');?>;
+                    var URLactual = window.location.href;
+                    var porciones = URLactual.split('.');
+                    let result = porciones[0].replace("https://", "");
+                    var idusuario =<?php echo session('idusuario');?>;
+                  // var area =<?php echo session('areas');?>;
+                    var tipodemenu =<?php echo session('tipodemenu');?>;
+                  // var deptosuser =<?php echo session('deptosuser');?>;
 
-           var ctusersall = <?php echo session('ctusers');?>;
-           var empresageneral = <?php echo session('empresa');?>;
-           console.log(ctusersall);
-           url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "";
+                  var ctusersall = <?php echo session('ctusers');?>;
+                  var empresageneral = <?php echo session('empresa');?>;
+                  console.log(ctusersall);
+                  url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "";
 
-                    if (tipodemenu==3) {
-                      url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&empresa="+empresageneral;
+                            if (tipodemenu==3) {
+                              url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&empresa="+empresageneral;
 
-          
-                      // el código se ejecuta
-                    } else {
-                      url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&empresa="+empresageneral;
-                    }
-            console.log(url);
+                  
+                              // el código se ejecuta
+                            } else {
+                              url = "https://"+result+".suricata.cloud/api/maxid?idusuario=" + idusuario + "&empresa="+empresageneral;
+                            }
+                    console.log(url);
 
-            axios.get(url)
-            .then(function (response) {
-              const newData = response.data;
-
-
-                    // Compara los datos nuevos con los datos anteriores
-                    if (JSON.stringify(newData) !== JSON.stringify(lastData)) {
-                      lastData = newData;
-                     // displayData(newData);
+                    axios.get(url)
+                    .then(function (response) {
+                      const newData = response.data;
 
 
-                // función que se ejecutará al recibir una respuesta
-            
-                sd='<br><button  onclick="pedirall()" class="btn btn-info tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><span class="mdi mdi-account-arrow-left"><span class="tooltiptext">Asignar tickets</span></span></button> '+
-                '<button onclick="areaall()"  class="btn btn-info tooltip-button me-1" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><span class="mdi mdi-account-group"><span class="tooltiptext">Cambiar departamento</span></span></button> ';
-                if(ctusersall==1){
-                  sd=sd+'<button onclick="cerrarall()"  class="btn btn-success tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrarall"><span class="mdi mdi-check-circle"><span class="tooltiptext">Cerrar tickets</span></span></button> ';
+                            // Compara los datos nuevos con los datos anteriores
+                            if (JSON.stringify(newData) !== JSON.stringify(lastData)) {
+                              lastData = newData;
+                            // displayData(newData);
 
-                }
+
+                        // función que se ejecutará al recibir una respuesta
+                    
+                        sd='<br><button  onclick="pedirall()" class="btn btn-info tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#standard-modal-reclamo"><span class="mdi mdi-account-arrow-left"><span class="tooltiptext">Asignar tickets</span></span></button> '+
+                        '<button onclick="areaall()"  class="btn btn-info tooltip-button me-1" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-sm2"><span class="mdi mdi-account-group"><span class="tooltiptext">Cambiar departamento</span></span></button> ';
+                        if(ctusersall==1){
+                          sd=sd+'<button onclick="cerrarall()"  class="btn btn-success tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-smcerrarall"><span class="mdi mdi-check-circle"><span class="tooltiptext">Cerrar tickets</span></span></button> ';
+
+                        }
                 sd=sd+ '<button onclick="prioridadall()"  class="btn btn-success tooltip-button" type="button" data-bs-toggle="modal" data-bs-target="#bs-example-modal-prioridadall"><span class="mdi mdi-priority-high"><span class="tooltiptext">Cambiar prioridad</span></button> '+
                 '<button type="button" onclick="selects()" class="btn btn-primary tooltip-button"><span class="mdi mdi-check-all"><span class="tooltiptext">Seleccionar todos los tickets</span></span></button> '+  
                 '<button type="button" onclick="deSelect()" class="btn btn-info tooltip-button"><span class="mdi mdi-checkbox-blank-outline"><span class="tooltiptext">Quitar selección</span></span></button> '+
