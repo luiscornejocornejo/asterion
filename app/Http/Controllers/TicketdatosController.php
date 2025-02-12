@@ -716,7 +716,7 @@ class TicketdatosController extends Controller
         $query7="select * from siennatags";
         $resultados7 = DB::select($query7);
         $asiganaciondeusuario=0;
-        $query8="select tickets from users whee id='".$idusuario."'";
+        $query8="select tickets from users where id='".$idusuario."'";
         $resultados8 = DB::select($query8);
         foreach($resultados8 as $val){
             $asiganaciondeusuario=$val->tickets;
