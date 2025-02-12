@@ -715,10 +715,18 @@ class TicketdatosController extends Controller
 
         $query7="select * from siennatags";
         $resultados7 = DB::select($query7);
+        $asiganaciondeusuario=0;
+        $query8="select tickets from users whee id='".$idusuario."'";
+        $resultados8 = DB::select($query8);
+        foreach($resultados8 as $val){
+            $asiganaciondeusuario=$val->tickets;
+
+        }
 
             return view('sienna/supervisor')
             ->with('subdomain_tmp', $subdomain_tmp)
             ->with("tickets",$resultados)
+            ->with("asiganaciondeusuario",$asiganaciondeusuario)
             ->with("maxid",$maxid)
             ->with("prioridades",$resultados6)
             ->with("siennatags",$resultados7)

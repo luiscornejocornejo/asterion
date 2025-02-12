@@ -49,6 +49,23 @@
 
 </style>
 
+<?php
+   $tipodeusuario = "";
+
+   if (session('tokeninterno') != 0 && $asiganaciondeusuario != 0) {
+       $tipodeusuario = "todo"; // Ambos cumplen
+   } elseif (session('tokeninterno') != 0) {
+       $tipodeusuario = "telefonia"; // Solo el primero cumple
+   } elseif ($asiganaciondeusuario != 0) {
+       $tipodeusuario = "chat"; // Solo el segundo cumple
+   } else {
+       $tipodeusuario = "ninguno"; // Ninguno cumple
+   }
+   
+   echo $tipodeusuario;
+   
+
+?>
 <script>
  
 
