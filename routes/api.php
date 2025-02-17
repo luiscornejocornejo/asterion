@@ -161,6 +161,7 @@ Route::get('/ispcube', [siennaticketsController::class, 'ispcube']);
 Route::get('/ispkipper', [siennaticketsController::class, 'ispkipper']);
 Route::get('/mikrowisp', [siennaticketsController::class, 'mikrowisp']);
 Route::get('/iwisp', [siennaticketsController::class, 'iwisp']);
+Route::get('/futurity', [siennaticketsController::class, 'futurity']);
 
 Route::post('/creariclass', [siennaticketsController::class, 'creariclass']);
 

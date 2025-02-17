@@ -320,7 +320,7 @@ function erp(){
 
     }
     if(erp=="futurity"){
-        url = "https://<?php echo $subdomain_tmp;?>.suricata.cloud/api/futurity?cliente=<?php echo $resultados[0]->cliente;?>&subdomain_tmp=<?php echo $subdomain_tmp;?>";
+        url = "https://<?php echo $subdomain_tmp;?>.suricata.cloud/api/futurity?contrato=<?php echo $resultados[0]->cliente;?>&subdomain_tmp=<?php echo $subdomain_tmp;?>";
         div="futurity";
 
     }

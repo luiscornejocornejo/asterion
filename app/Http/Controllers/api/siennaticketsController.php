@@ -3574,7 +3574,66 @@ class siennaticketsController extends Controller
   
 
     }
+    
+    public function futurity(Request $request){
 
+        $contrato=$request->contrato;
+
+        $subdomain_tmp=$request->subdomain_tmp;
+        $getdata="https://suricata-custom.com.ar/api/futurity?contrato=".$contrato."&token=futurity";
+        $getdata2 = json_decode($getdata, true);
+        $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);?>
+        <div class="card widget-flat" id="infoUser">
+        <div class="card-body">
+
+            <div style="background-color:rgb(181, 134, 14);" class="d-flex justify-content-end">
+                <div class="me-2">
+                <img src="https://<?php echo $subdomain_tmp;?>.suricata.cloud/img/erp/futurity.png"
+                alt="iwisp logo" height="55" class="py-2">
+                </div>
+            </div>
+            <ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
+                <li class="nav-item">
+                    <a href="#ticket" data-bs-toggle="tab" aria-expanded="true" class="nav-link rounded-0 active">
+                        <i class="mdi mdi-home-variant d-md-none d-block"></i>
+                        <span class="d-none d-md-block">Tickets</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#data" data-bs-toggle="tab" aria-expanded="false" class="nav-link rounded-0">
+                        <i class="mdi mdi-account-circle d-md-none d-block"></i>
+                        <span class="d-none d-md-block">Datos</span>
+                    </a>
+                </li>
+               
+            
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane show active" id="ticket">
+
+                   
+
+                  
+
+
+                </div>
+                <div class="tab-pane " id="data">
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/json.min.js"></script>
+                    <pre><code class="json"><?php echo $getdata3 ;?></code></pre>
+
+                                            <script>
+                        hljs.highlightAll();
+                    </script>
+                </div>
+
+              
+            </div>
+        </div>
+    </div>
+    <?php
+    }
     
     public function iwisp(Request $request){
 
@@ -3746,45 +3805,45 @@ class siennaticketsController extends Controller
                                 </div>
                                 <script>
                                     window.fetchLocalities = function(tipo) { 
-    const uno = {!! json_encode($locaf2, JSON_FORCE_OBJECT) !!};
-    const dos = {!! json_encode($locaw2, JSON_FORCE_OBJECT) !!};
+                                        const uno = {!! json_encode($locaf2, JSON_FORCE_OBJECT) !!};
+                                        const dos = {!! json_encode($locaw2, JSON_FORCE_OBJECT) !!};
 
-    const localidadSelect = document.getElementById("localidad");
-    localidadSelect.innerHTML = ""; // Limpiar opciones
+                                        const localidadSelect = document.getElementById("localidad");
+                                        localidadSelect.innerHTML = ""; // Limpiar opciones
 
-    const fragment = document.createDocumentFragment();
+                                        const fragment = document.createDocumentFragment();
 
-    if (tipo === "W") {
-        console.log("Datos dos:", dos);
-        console.log(typeof dos);
+                                            if (tipo === "W") {
+                                                console.log("Datos dos:", dos);
+                                                console.log(typeof dos);
 
-        Object.keys(dos).forEach(clave => {
-            console.log(dos[clave]);
-            console.log(dos[clave]["id"]);
-            console.log(dos[clave]["localidad"]);
-            const option = document.createElement("option");
-            option.value = dos[clave]["id"];
-            option.textContent = dos[clave]["localidad"];
-            fragment.appendChild(option);
-        });
-    } else if (tipo === "F") {
-        console.log("Datos uno:", uno);
-        console.log(typeof uno);
+                                                Object.keys(dos).forEach(clave => {
+                                                    console.log(dos[clave]);
+                                                    console.log(dos[clave]["id"]);
+                                                    console.log(dos[clave]["localidad"]);
+                                                    const option = document.createElement("option");
+                                                    option.value = dos[clave]["id"];
+                                                    option.textContent = dos[clave]["localidad"];
+                                                    fragment.appendChild(option);
+                                                });
+                                            } else if (tipo === "F") {
+                                                console.log("Datos uno:", uno);
+                                                console.log(typeof uno);
 
-        Object.keys(uno).forEach(clave => {
-            console.log(uno[clave]);
-            console.log(uno[clave]["id"]);
-            console.log(uno[clave]["localidad"]);
-            const option = document.createElement("option");
-            option.value = uno[clave]["id"];
-            option.textContent = uno[clave]["localidad"];
-            fragment.appendChild(option);
-        });
-    }
+                                                Object.keys(uno).forEach(clave => {
+                                                    console.log(uno[clave]);
+                                                    console.log(uno[clave]["id"]);
+                                                    console.log(uno[clave]["localidad"]);
+                                                    const option = document.createElement("option");
+                                                    option.value = uno[clave]["id"];
+                                                    option.textContent = uno[clave]["localidad"];
+                                                    fragment.appendChild(option);
+                                                });
+                                            }
 
-    localidadSelect.appendChild(fragment);
-    console.log("Localidades cargadas exitosamente.");
-};
+                                            localidadSelect.appendChild(fragment);
+                                            console.log("Localidades cargadas exitosamente.");
+                                        };
 
                                     </script>
                                 <div class="col-xxl-2 col-xl-2 col-lg-2 col-sm-12 mb-2">
