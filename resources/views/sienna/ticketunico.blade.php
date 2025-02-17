@@ -319,6 +319,11 @@ function erp(){
         div="iwisp";
 
     }
+    if(erp=="futurity"){
+        url = "https://<?php echo $subdomain_tmp;?>.suricata.cloud/api/futurity?cliente=<?php echo $resultados[0]->cliente;?>&subdomain_tmp=<?php echo $subdomain_tmp;?>";
+        div="futurity";
+
+    }
     console.log(url);
 
             axios.get(url)
@@ -583,8 +588,11 @@ function erp(){
                                         </div><?php }
                                         if($nombreintegracion=="iwisp"){?><div id="iwisp">
                                         </div><?php }
+                                        if($nombreintegracion=="futurity"){?><div id="futurity">
+                                        </div><?php }
                                         if($nombreintegracion=="sin"){?>@include('sienna.tu.erp.sin')<?php }?>
                                         </div>
+                                        
                                     </div>
                                 <?php }?>
 
