@@ -3588,7 +3588,7 @@ class siennaticketsController extends Controller
         <div class="card widget-flat" id="infoUser">
         <div class="card-body">
 
-            <div style="background-color:rgb(181, 134, 14);" class="d-flex justify-content-end">
+            <div style="background-color:rgb(169, 68, 9);" class="d-flex justify-content-end">
                 <div class="me-2">
                 <img src="https://<?php echo $subdomain_tmp;?>.suricata.cloud/img/erp/futurity.png"
                 alt="iwisp logo" height="55" class="py-2">
