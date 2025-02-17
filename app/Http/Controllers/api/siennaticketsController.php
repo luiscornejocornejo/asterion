@@ -3581,6 +3581,8 @@ class siennaticketsController extends Controller
 
         $subdomain_tmp=$request->subdomain_tmp;
         $getdata="https://suricata-custom.com.ar/api/futurity?contrato=".$contrato."&token=futurity";
+        $getdata= file_get_contents("https://suricata-custom.com.ar/api/futurity?contrato=".$contrato."&token=futurity");
+
         $getdata2 = json_decode($getdata, true);
         $getdata3 = json_encode($getdata2, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);?>
         <div class="card widget-flat" id="infoUser">
