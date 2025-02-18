@@ -212,6 +212,9 @@ Route::get('/salientes  ','App\Http\Controllers\SalientesController@salientes');
 Route::post('/salientes  ','App\Http\Controllers\SalientesController@salientespost');
 Route::get('/template','App\Http\Controllers\SalientesController@template'); 
 
+//salientes botpress
+Route::get('/botsalientes','App\Http\Controllers\SalientesController@botsalientes'); 
+
 
 Route::get('/ticketssienna  ','App\Http\Controllers\TicketdatosController@ticketssienna');
 Route::post('/siennaestado  ','App\Http\Controllers\TicketdatosController@siennaestado');

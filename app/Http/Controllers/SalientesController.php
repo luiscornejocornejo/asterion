@@ -38,6 +38,8 @@ class SalientesController extends Controller
         return response()->download(public_path('templatesaliente.csv'));
 
     }
+
+   
     public function salientes(Request $request)
     {
 
@@ -179,6 +181,19 @@ return view('sienna/salientes')
         $query = str_replace($healthy, $yummy, $query);
 
         return $query;
+    }
+
+
+
+    public function botsalientes(Request $request)
+    {
+
+        $query="select * from sienna_bp_templates";
+        $resultados = DB::select($query);
+        return view('sienna/salientesbot')
+        ->with('listadopadre', $resultados)
+        ;
+
     }
 
 }
