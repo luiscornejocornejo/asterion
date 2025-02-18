@@ -85,7 +85,7 @@
                             </tbody>
                         </table>
                         <div>
-                            <form id="myform" enctype="multipart/form-data" action="/salientesb" method="post" id="" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate">
+                            <form id="myform" enctype="multipart/form-data" action="/botsalientes" method="post" id="" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate">
                                 @csrf
                                 <p class="card-text mt-3">3. Suba el documento con el listado de los usuarios a contactar.</p>
                                 <label for="inputFile" class="btn btn-primary rounded-pill">

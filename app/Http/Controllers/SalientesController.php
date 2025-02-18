@@ -11,6 +11,8 @@ use Flash;
 use App\Models\users;
 use App\Models\graficos;
 use App\Models\salientes;
+use App\Models\salientesbotpresslistado;
+ 
 
 
 use phpDocumentor\Reflection\PseudoTypes\False_;
@@ -193,6 +195,50 @@ return view('sienna/salientes')
         return view('sienna/salientesbot')
         ->with('listadopadre', $resultados)
         ;
+
+    }
+    public function botsalientespost(Request $request)
+    {
+        echo  $valores = $request->cantvalores;
+        $template=$request->template;
+        $sepa=explode(",",$valores);
+        echo sizeof($sepa);
+        echo "<br>";
+         $logo = $request->file('logo')->store('public');
+ 
+        // $path1 = $request->file('file')->store('public'); 
+             $path=storage_path('app').'/'.$logo;  
+             $data = Excel::toArray([], $path);
+ 
+ 
+         foreach($data[0] as $val){
+             $listado=new salientesbotpresslistado();
+             $listado->estado="n";
+             $listado->salientesbotpress=$template;
+             $juntar="";
+             echo "aca".sizeof($sepa);
+             for($i=0;$i<sizeof($sepa);$i++){
+ 
+                 if($i==0){
+                     $listado->cel=$val[$i];
+                 }else{
+                     if(isset($val[$i])){
+                         $juntar.= $val[$i].";";
+ 
+                     }
+ 
+                 }
+             }
+             echo $juntar=substr($juntar,0,-1);
+             $listado->valoresparametros=$juntar;
+             $listado->save();
+         }
+ 
+         
+             return redirect()
+             ->back()
+             ->with('success', 'Se Agrego correctamente !');
+      
 
     }
 
