@@ -616,10 +616,10 @@ class cloudtickets extends Controller
             $idlogeado=99999;
 
             // Verifica si los campos existen y no están vacíos antes de concatenar
-            if (isset($data[0]["cliente_nombre"], $data[0]["cliente_apellido"]) &&
-                !empty($data[0]["cliente_nombre"]) && !empty($data[0]["cliente_apellido"])) {
-                $nombreCompleto = $data[0]["cliente_nombre"] . " " . $data[0]["cliente_apellido"];
-                $extra=$data[0]["categoria"]["cliente_categoria_nombre"];
+            if (isset($data[0][0]["cliente_nombre"], $data[0][0]["cliente_apellido"]) &&
+                !empty($data[0][0]["cliente_nombre"]) && !empty($data[0][0]["cliente_apellido"])) {
+                $nombreCompleto = $data[0][0]["cliente_nombre"] . " " . $data[0][0]["cliente_apellido"];
+                $extra=$data[1]["cliente_categoria_nombre"];
             } else {
                 $nombreCompleto = $cliente;
             }
