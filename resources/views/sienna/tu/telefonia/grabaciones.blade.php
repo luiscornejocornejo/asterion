@@ -88,7 +88,7 @@
             <h5 class="mb-3">Grabaciones</h5>
         </div>
         <div>
-            <a href="https://recordingsuricata.sfo3.digitaloceanspaces.com/<?php echo $adj->descripcion;?>" download="https://recordingsuricata.sfo3.digitaloceanspaces.com/<?php echo $adj->descripcion;?>">
+            <a target="_blank" href="https://recordingsuricata.sfo3.digitaloceanspaces.com/<?php echo $adj->descripcion;?>" download="https://recordingsuricata.sfo3.digitaloceanspaces.com/<?php echo $adj->descripcion;?>">
                 <i class="mdi mdi-headphones widget-icon bg-secondary-lighten text-secondary"></i>
             </a>
         </div>
