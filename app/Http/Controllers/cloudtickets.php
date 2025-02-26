@@ -610,6 +610,7 @@ class cloudtickets extends Controller
         $nombreCompleto = $cliente;
         $extra="";
         if($domi=="intersat"){
+            
             if($lgntipo=="cliente"){
                 $url="https://intersat.suricata-ispkeeper.com.ar/api/wsn?token=inter&cliente_id=".$cliente;
             }
