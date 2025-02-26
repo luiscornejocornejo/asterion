@@ -610,7 +610,7 @@ class cloudtickets extends Controller
         $nombreCompleto = $cliente;
         $extra="";
         if($domi=="intersat"){
-            
+
             if($lgntipo=="cliente"){
                 $url="https://intersat.suricata-ispkeeper.com.ar/api/wsn?token=inter&cliente_id=".$cliente;
             }
@@ -623,7 +623,7 @@ class cloudtickets extends Controller
             if(isset($data[0]["cantclientes"])){
                 return redirect()
                 ->back()
-                ->with('error', 'El Id de usuario es incorrecto.');
+                ->with('success', 'El Id de usuario es incorrecto.');
                 die();
             }
 
