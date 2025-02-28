@@ -594,6 +594,7 @@ class cloudtickets extends Controller
 
     public function crearticketsiennacliente(Request $request){
 
+        $lgntipo=$request->lgntipo;
         $cliente=$request->number_client;
         $depto=$request->depto;
         $siennatopic=$request->topicos;
@@ -609,9 +610,22 @@ class cloudtickets extends Controller
         $nombreCompleto = $cliente;
         $extra="";
         if($domi=="intersat"){
-           $url="https://intersat.suricata-ispkeeper.com.ar/api/wsn?token=inter&cliente_id=".$cliente;
+
+            if($lgntipo=="cliente"){
+                $url="https://intersat.suricata-ispkeeper.com.ar/api/wsn?token=inter&cliente_id=".$cliente;
+            }
+            else if($lgntipo=="cedula"){
+                $url="https://intersat.suricata-ispkeeper.com.ar/api/wsn?token=inter&ident=".$cliente;
+            }
             $content = file_get_contents($url);
             $data = json_decode($content, true);
+
+            if(isset($data[0]["cantclientes"])){
+                return redirect()
+                ->back()
+                ->with('success', 'El Id de usuario es incorrecto.');
+                die();
+            }
 
             $idlogeado=99999;
 
