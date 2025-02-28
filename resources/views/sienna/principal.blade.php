@@ -88,7 +88,10 @@
 
                                     $a="<a href='/siennaforme?id=".$resultado->id ."'>".$resultado->id ."</a>";
                                 }
-                                
+                                elseif($id==9){
+
+                                    $a="<a href='/siennaexcel?id=".$resultado->id ."'>".$resultado->id ."</a>";
+                                }
                                 else{
                                     $a=$resultado->id ;
                                 }?>
