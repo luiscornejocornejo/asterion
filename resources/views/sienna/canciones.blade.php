@@ -51,9 +51,84 @@ function estado($intedb,$ba){
     }
 ?>
 <style>
-  
-  
+    #playPauseBtn {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
 
+    .audio-wave {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        animation: none;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    }
+
+    .playing .audio-wave {
+        animation: wave-animation 1.5s infinite;
+    }
+
+    /* Estilo del input range */
+    #progressBar {
+        width: 100%;
+        appearance: none;
+        background: linear-gradient(to right, #007bff 0%, #00d4ff 100%);
+        height: 8px;
+        border-radius: 5px;
+        outline: none;
+        transition: background-size 0.3s;
+        background-size: 0% 100%;
+        cursor: pointer;
+    }
+
+    /* Estilo del handle (thumb) */
+    #progressBar::-webkit-slider-thumb {
+        appearance: none;
+        width: 15px;
+        height: 15px;
+        background-color: #007bff;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        transition: transform 0.2s;
+    }
+
+    #progressBar::-moz-range-thumb {
+        width: 15px;
+        height: 15px;
+        background-color: #007bff;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        transition: transform 0.2s;
+    }
+
+    /* Animación al reproducir */
+    .playing #progressBar {
+        animation: pulse-animation 1s infinite;
+    }
+
+    @keyframes pulse-animation {
+        0% {
+            background-size: 0% 100%;
+        }
+
+        50% {
+            background-size: 100% 100%;
+        }
+
+        100% {
+            background-size: 0% 100%;
+        }
+    }
 </style>
 
 <script>
@@ -78,7 +153,7 @@ function estado($intedb,$ba){
                 <!-- Page Heading -->
                  <center>
                 <div class="mx-auto" style="width: 200px;">
-                    <h1 class="h3 mb-0 text-gray-800"> Cloud</h1>
+                    <h1 class="h3 mb-0 text-gray-800"> Canciones</h1>
                     
                 </div>
                 </center>
@@ -101,7 +176,21 @@ function estado($intedb,$ba){
                     <center>
 
                     <h3><?php echo htmlspecialchars($value->nombre); ?> </h3>
-
+                    <span role="button" id="playPauseBtn" class="border btn btn-light me-3">
+                        <i class="mdi mdi-play" id="playIcon" style="font-size: 30px;"></i>
+                        <i class="mdi mdi-pause d-none" id="pauseIcon" style="font-size: 30px;"></i>
+                    </span>
+                    <div class="flex-grow-1">
+                        <input type="range" id="progressBar" class="form-range" value="0" min="0" max="100">
+                    </div>
+                    <?php $ht = 'https://ibbvp.suricata.cloud/ibbvp/canciones/' . $value->url; ?>
+                    <span id="currentTime" class="ms-3">00:00</span>
+                    <span>/</span>
+                    <span id="totalDuration" class="ms-1">00:00</span>
+                    <audio id="audioPlayer">
+                        <source src="<?php echo $ht; ?>" type="audio/ogg">
+                        <source src="<?php echo $ht; ?>" type="audio/mpeg">
+                    </audio>
                         
                         
                             
