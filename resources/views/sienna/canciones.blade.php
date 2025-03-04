@@ -238,12 +238,14 @@ function estado($intedb,$ba){
                 audioPlayer.play();
                 playIcon.classList.add("d-none");
                 pauseIcon.classList.remove("d-none");
+                letraDiv.classList.remove("d-none");
+
             } else {
                 audioPlayer.pause();
                 playIcon.classList.remove("d-none");
                 pauseIcon.classList.add("d-none");
 
-                letraDiv.classList.remove("d-none");
+                letraDiv.classList.add("d-none");
             }
         });
 
