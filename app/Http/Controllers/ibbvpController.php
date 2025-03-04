@@ -65,7 +65,7 @@ class ibbvpController extends Controller
         $id=$request->id;
         $estudio = estudio::where('padre', '=', $id)->get();
 
-        return view("sienna/estudio")->with('estudio', $estudios);
+        return view("sienna/estudio")->with('estudio', $estudio);
 
     }
    
