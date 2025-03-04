@@ -85,19 +85,19 @@ if (isset($_SERVER['HTTP_HOST'])) {
             </a>
         </li>
         <li class="side-nav-item mt-2 background-buttons">
-            <a target="_blank" href="/canciones"  class="side-nav-link hovering-pan ">
+            <a  href="/canciones"  class="side-nav-link hovering-pan ">
                 <i class="uil-music"></i>
                 <span>Canciones </span>
             </a>
         </li>
         <li class="side-nav-item mt-2 background-buttons">
-            <a target="_blank" href="/videos"  class="side-nav-link hovering-pan ">
+            <a  href="/videos"  class="side-nav-link hovering-pan ">
                 <i class="uil-video"></i>
                 <span>Videos</span>
             </a>
         </li>
         <li class="side-nav-item mt-2 background-buttons">
-            <a target="_blank" href="/estudios"  class="side-nav-link hovering-pan ">
+            <a  href="/estudios"  class="side-nav-link hovering-pan ">
                 <i class="uil-book-reader"></i>
                 <span>Estudios</span>
             </a>
