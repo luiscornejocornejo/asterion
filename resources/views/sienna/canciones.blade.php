@@ -230,7 +230,7 @@ function estado($intedb,$ba){
         const progressBar = document.getElementById("progressBar");
         const currentTime = document.getElementById("currentTime");
         const totalDuration = document.getElementById("totalDuration");
-
+        letraDiv=document.getElementById("footer-<?php echo htmlspecialchars($value->nombre); ?>");
         // Play/Pause Toggle
         playPauseBtn.addEventListener("click", () => {
             if (audioPlayer.paused) {
@@ -241,6 +241,8 @@ function estado($intedb,$ba){
                 audioPlayer.pause();
                 playIcon.classList.remove("d-none");
                 pauseIcon.classList.add("d-none");
+
+                letraDiv.classList.remove("d-none");
             }
         });
 
