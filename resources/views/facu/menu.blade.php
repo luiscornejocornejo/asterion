@@ -85,76 +85,41 @@ if (isset($_SERVER['HTTP_HOST'])) {
             </a>
         </li>
         <li class="side-nav-item mt-2 background-buttons">
-            <a target="_blank" href="/gpt"  class="side-nav-link hovering-pan ">
-                <i class="mdi mdi-robot-happy-outline"></i>
-                <span> Asistente virtual </span>
+            <a target="_blank" href="/canciones"  class="side-nav-link hovering-pan ">
+                <i class="uil-music"></i>
+                <span>Canciones </span>
             </a>
         </li>
         <li class="side-nav-item mt-2 background-buttons">
-            <a data-bs-toggle="collapse"    href="/viewtickets" aria-expanded="false"   aria-controls="sidebarDashboards" class="side-nav-link hovering-pan">
-                <i class="mdi mdi-history"></i>
-                <span>Historial</span>
-                <span class="menu-arrow"></span>
+            <a target="_blank" href="/videos"  class="side-nav-link hovering-pan ">
+                <i class="uil-video"></i>
+                <span>Videos</span>
             </a>
-            <div class="collapse" id="sidebarEcommerce">
-                <ul class="side-nav-second-level">
-                    <li>
-                        <a href="/siennaform?id=1012">Busqueda X DNI</a>
-                    </li>
-                    <li>
-                        <a href="/siennaform?id=1011">Busqueda X Cliente</a>
-                    </li>
-                </ul>
-            </div>
+        </li>
+        <li class="side-nav-item mt-2 background-buttons">
+            <a target="_blank" href="/estudios"  class="side-nav-link hovering-pan ">
+                <i class="uil-book-reader"></i>
+                <span>Estudios </span>
+            </a>
+        </li>
+          <!--- generico -->
+          <li class="side-nav-item background-buttons">
+            <a href="/profile"   class="side-nav-link background-buttons">
+                <i class="uil-user"></i>
+                <span> <?php echo session('nombreusuario');?> </span>
+            </a>    
         </li>
         <li class="side-nav-item background-buttons">
-                <a data-bs-toggle="collapse" href="/viewtickets" aria-controls="sidebarDashboards" class="side-nav-link hovering-pan">
-                    <i class="uil-ticket"></i>
-                    <span>Tickets</span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarEcommerce">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="/viewtickets">Abiertos</a>
-                        </li>
-                        <li>
-                            <a href="/cerrados">Cerrados</a>
-                        </li>
-                        <li>
-                            <a href="/siennaform?id=1600">Historicos</a>
-                        </li>
-                    </ul>
-                </div>
+            <a  href="/salir" class="side-nav-link background-buttons">
+                <i class="uil-exit"></i>
+                <span> Cerrar sesión </span>
+            </a>    
         </li>
-        <!--- ispgroup -->
-        <?php if($subdomain_tmp == "ispgroup") { ?>
-                <li class="side-nav-item background-buttons ">
-                    <a  href="/siennaabm?id=1013"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-send-circle-outline"></i>
-                        <span> Grandes Clientes </span>
-                    </a>
-                </li>
-        <?php } ?>
-        <!--- ispgroup -->
-        <?php if($subdomain_tmp == "wiber") { ?>
-                <li class="side-nav-item background-buttons ">
-                    <a  href="/siennaabm?id=1013"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-send-circle-outline"></i>
-                        <span> Subcategorias Anatod </span>
-                    </a>
-                </li>
-        <?php } ?>
+      
+      
+    
 
-        <!--- cabase -->
-        <?php if($subdomain_tmp == "cabase") { ?>
-                <li class="side-nav-item background-buttons ">
-                    <a  href="/siennaabm?id=1013"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-send-circle-outline"></i>
-                        <span> Organizaciones </span>
-                    </a>
-                </li>
-        <?php } ?>
+    
     
         <!--- master -->
         <?php
@@ -402,19 +367,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
              
         <?php  }?>
 
-        <!--- generico -->
-        <li class="side-nav-item background-buttons">
-            <a href="/profile"   class="side-nav-link background-buttons">
-                <i class="uil-user"></i>
-                <span> <?php echo session('nombreusuario');?> </span>
-            </a>    
-        </li>
-        <li class="side-nav-item background-buttons">
-            <a  href="/salir" class="side-nav-link background-buttons">
-                <i class="uil-exit"></i>
-                <span> Cerrar sesión </span>
-            </a>    
-        </li>
+      
         <!--- sistema sienna -->
 
        <?php
