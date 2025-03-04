@@ -43,6 +43,13 @@ class ibbvpController extends Controller
         return view("sienna/canciones")->with('canciones', $canciones);
 
     }
+
+    public function videos(Request $request)
+    {
+        $canciones = videos::all();
+        return view("sienna/videos")->with('videos', $canciones);
+
+    }
    
 
 }

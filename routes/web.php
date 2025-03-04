@@ -71,6 +71,7 @@ Route::group(['middleware' => ['reportes']], function() {
         return view('sienna/inicio');
     });
     Route::get('/canciones','App\Http\Controllers\ibbvpController@canciones');
+    Route::get('/videos','App\Http\Controllers\ibbvpController@videos');
 
     //fin ibbvp
 
