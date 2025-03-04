@@ -19,6 +19,7 @@ use App\Http\Controllers\LogsController;
 
 
 use App\Models\ibbvp\canciones;
+use App\Models\ibbvp\videos;
 
 class ibbvpController extends Controller
 {
