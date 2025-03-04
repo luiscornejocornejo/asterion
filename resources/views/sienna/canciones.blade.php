@@ -176,7 +176,7 @@ function estado($intedb,$ba){
                     <center>
 
                     <h3><?php echo htmlspecialchars($value->nombre); ?> </h3>
-                    <audio onplay="mostrarLetra()" id="audio" controls>
+                    <audio onpause="ocultarLetra(<?php echo htmlspecialchars($value->id); ?>)" onplay="mostrarLetra(<?php echo htmlspecialchars($value->id); ?>)" id="audio" controls>
                         <source src="<?php echo 'https://ibbvp.suricata.cloud/ibbvp/canciones/' . $value->url; ?>" type="audio/mpeg">
                         Tu navegador no soporta audio.
                     </audio>
@@ -212,10 +212,16 @@ function estado($intedb,$ba){
 
 <br><br><br>
 <script>
-    function mostrarLetra() {
-        letraDiv=document.getElementById("footer-<?php echo htmlspecialchars($value->id); ?>");
+    function mostrarLetra(id) {
+        letraDiv=document.getElementById("footer-"+id);
 
         letraDiv.classList.remove("d-none"); // Muestra la letra
+        }
+
+        function ocultarLetra(id) {
+        letraDiv=document.getElementById("footer-"+id);
+
+        letraDiv.classList.add("d-none"); // Muestra la letra
         }
   
     document.addEventListener("DOMContentLoaded", function() {
