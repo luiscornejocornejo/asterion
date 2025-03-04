@@ -292,7 +292,7 @@ input.oninput = function() {
 
     for (const key in listageneral) {
         if (Object.hasOwnProperty.call(listageneral, key)) {
-            const database = listageneral[key]["canciones"];
+            const database = listageneral[key]["nombre"];
             const elementId = "base_" + database;
             const element = document.getElementById(elementId);
 
