@@ -296,7 +296,7 @@ function estado($intedb,$ba){
 </script>
 <script>
 
-let listageneral = {!! json_encode($canciones, JSON_FORCE_OBJECT) !!};
+let listageneral = {!! json_encode($videos, JSON_FORCE_OBJECT) !!};
 input.oninput = function() {
     const searchValue = input.value.toLowerCase();
 
