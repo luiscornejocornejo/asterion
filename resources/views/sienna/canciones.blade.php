@@ -195,7 +195,7 @@ function estado($intedb,$ba){
             </div>
         </div>
     <?php } 
-    echo $canti;?>
+?>
 </div>
 
                  
