@@ -58,6 +58,15 @@ class ibbvpController extends Controller
         return view("sienna/estudios")->with('estudios', $estudios);
 
     }
+
+    public function estudio(Request $request)
+    {
+        $id=$request->id;
+        $estudio = estudio::where('padre', '=', $id)->get();
+
+        return view("sienna/estudio")->with('estudio', $estudios);
+
+    }
    
 
 }

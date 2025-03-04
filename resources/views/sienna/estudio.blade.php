@@ -153,18 +153,17 @@ function estado($intedb,$ba){
                 <!-- Page Heading -->
                  <center>
                 <div class="mx-auto" style="width: 200px;">
-                    <h1 class="h3 mb-0 text-gray-800"> Estudios</h1>
+                    <h1 class="h3 mb-0 text-gray-800"> Estudio</h1>
                     
                 </div>
                 </center>
                 <hr>
-                <input class="form-control" type="text" id="input" placeholder="Buscar Estudios" >
-                <br> <br>
+               
             
 <div class="row">
     <?php
     $canti=0;
-    foreach ($estudios as $value) {
+    foreach ($estudio as $value) {
         
         ?>
         
@@ -178,8 +177,7 @@ function estado($intedb,$ba){
                     <h3><?php echo htmlspecialchars($value->nombre); ?> </h3>
                     <h3></h3>
                    
-                   <a target="_blank" href="/estudio/<?php echo $value->id;?>"> <img src="<?php echo 'https://ibbvp.suricata.cloud/ibbvp/portada/' .$value->portada;?>" alt="Descripción de la imagen" width="500">
-                    </a>
+                  
                         
                         
                             
@@ -212,7 +210,7 @@ function estado($intedb,$ba){
 
 <script>
 
-let listageneral = {!! json_encode($estudios, JSON_FORCE_OBJECT) !!};
+let listageneral = {!! json_encode($estudio, JSON_FORCE_OBJECT) !!};
 input.oninput = function() {
     const searchValue = input.value.toLowerCase();
 
