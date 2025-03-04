@@ -178,7 +178,7 @@ function estado($intedb,$ba){
                     <h3><?php echo htmlspecialchars($value->nombre); ?> </h3>
                     <h3></h3>
                    
-                   <a target="_blank" href="/estudio?id<?php echo $value->id;?>"> <img src="<?php echo 'https://ibbvp.suricata.cloud/ibbvp/portada/' .$value->portada;?>" alt="Descripción de la imagen" width="500">
+                   <a target="_blank" href="/estudio?id=<?php echo $value->id;?>"> <img src="<?php echo 'https://ibbvp.suricata.cloud/ibbvp/portada/' .$value->portada;?>" alt="Descripción de la imagen" width="500">
                     </a>
                         
                         
