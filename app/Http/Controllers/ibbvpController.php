@@ -21,6 +21,7 @@ use App\Http\Controllers\LogsController;
 use App\Models\ibbvp\canciones;
 use App\Models\ibbvp\videos;
 use App\Models\ibbvp\estudios;
+use App\Models\ibbvp\estudio;
 
 class ibbvpController extends Controller
 {
