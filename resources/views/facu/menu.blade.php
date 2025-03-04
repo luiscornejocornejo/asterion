@@ -155,17 +155,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                     </a>
                 </li>
         <?php } ?>
-     
-        <!--- integracion -->
-        <?php     
-            if($nombreIntegracion == "wispro" || $nombreIntegracion == "futu") { ?>
-                <li class="side-nav-item background-buttons ">
-                    <a  href="/getsaliente"  class="side-nav-link hovering-pan ">
-                        <i class="mdi mdi-send-circle-outline"></i>
-                        <span> Ticket manual </span>
-                    </a>
-                </li>
-        <?php } ?>
+    
         <!--- master -->
         <?php
         if($tipodemenu =="1"){?>
