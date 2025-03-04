@@ -53,7 +53,7 @@ if($idusuario){
 });
 
 Route::get('/inicio', function () {
-    return view('/inicio');
+    return view('sienna/inicio');
 });
 
 
