@@ -168,7 +168,7 @@ function estado($intedb,$ba){
         
         ?>
         
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div id="base_<?php echo htmlspecialchars($value->nombre); ?>" class="card border-secondary border">
 
                     
