@@ -231,6 +231,7 @@ function estado($intedb,$ba){
         const currentTime = document.getElementById("currentTime");
         const totalDuration = document.getElementById("totalDuration");
         letraDiv=document.getElementById("footer-<?php echo htmlspecialchars($value->nombre); ?>");
+        console.log(letraDiv);
         // Play/Pause Toggle
         playPauseBtn.addEventListener("click", () => {
             if (audioPlayer.paused) {
