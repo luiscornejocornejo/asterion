@@ -194,7 +194,7 @@ function estado($intedb,$ba){
                         
                         
                             
-                        <div id="footer-<?php echo htmlspecialchars($value->nombre); ?>" class="card-footer">
+                        <div id="footer-<?php echo htmlspecialchars($value->nombre); ?>" class="card-footer d-none">
                         
                         <?php echo $value->letra; ?>
                         </div>
