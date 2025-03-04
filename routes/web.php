@@ -52,9 +52,7 @@ if($idusuario){
     
 });
 
-Route::get('/inicio', function () {
-    return view('sienna/inicio');
-});
+
 
 
 
@@ -68,8 +66,18 @@ Route::get('/clear-cache', function() {
 Route::post('/login','App\Http\Controllers\LoginController@index');
 Route::group(['middleware' => ['reportes']], function() {
 
+    //ibbvp
+    Route::get('/inicio', function () {
+        return view('sienna/inicio');
+    });
+    Route::get('/canciones','App\Http\Controllers\ibbvpController@canciones');
 
-    Route::get('/tc','App\Http\Controllers\TicketdatosController@tc');
+    //fin ibbvp
+
+
+
+
+
 
     
     Route::get('/siennai','App\Http\Controllers\siennaController@principal')->middleware('adminsienna');
