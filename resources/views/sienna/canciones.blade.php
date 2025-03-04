@@ -184,7 +184,7 @@ function estado($intedb,$ba){
                         
                         
                             
-                        <div id="footer-<?php echo htmlspecialchars($value->nombre); ?>" class="card-footer d-none">
+                        <div id="footer-<?php echo htmlspecialchars($value->id); ?>" class="card-footer d-none">
                         
                         <?php echo $value->letra; ?>
                         </div>
@@ -213,7 +213,7 @@ function estado($intedb,$ba){
 <br><br><br>
 <script>
     function letra(){
-        letraDiv=document.getElementById("footer-<?php echo htmlspecialchars($value->nombre); ?>");
+        letraDiv=document.getElementById("footer-<?php echo htmlspecialchars($value->id); ?>");
         letraDiv.classList.remove("d-none");
 
     }
