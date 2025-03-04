@@ -175,7 +175,7 @@ function estado($intedb,$ba){
                     <center>
 
                     <h3><?php echo htmlspecialchars($value->nombre); ?> </h3>
-                    <h3><?php echo htmlspecialchars($value->contenido); ?> </h3>
+                    <h3><?php echo $value->contenido; ?> </h3>
                    
                   
                         
