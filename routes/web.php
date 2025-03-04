@@ -72,6 +72,7 @@ Route::group(['middleware' => ['reportes']], function() {
     });
     Route::get('/canciones','App\Http\Controllers\ibbvpController@canciones');
     Route::get('/videos','App\Http\Controllers\ibbvpController@videos');
+    Route::get('/estudios','App\Http\Controllers\ibbvpController@estudios');
 
     //fin ibbvp
 

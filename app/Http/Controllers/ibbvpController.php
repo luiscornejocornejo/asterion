@@ -20,6 +20,7 @@ use App\Http\Controllers\LogsController;
 
 use App\Models\ibbvp\canciones;
 use App\Models\ibbvp\videos;
+use App\Models\ibbvp\estudios;
 
 class ibbvpController extends Controller
 {
@@ -47,8 +48,14 @@ class ibbvpController extends Controller
 
     public function videos(Request $request)
     {
-        $canciones = videos::all();
-        return view("sienna/videos")->with('videos', $canciones);
+        $videos = videos::all();
+        return view("sienna/videos")->with('videos', $videos);
+
+    }
+    public function estudios(Request $request)
+    {
+        $estudios = estudios::all();
+        return view("sienna/estudios")->with('estudios', $estudios);
 
     }
    
