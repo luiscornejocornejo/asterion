@@ -99,7 +99,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
         <li class="side-nav-item mt-2 background-buttons">
             <a target="_blank" href="/estudios"  class="side-nav-link hovering-pan ">
                 <i class="uil-book-reader"></i>
-                <span>Estudios </span>
+                <span>Estudios</span>
             </a>
         </li>
           <!--- generico -->
