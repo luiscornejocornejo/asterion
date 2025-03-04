@@ -222,6 +222,69 @@ function estado($intedb,$ba){
 
 <br><br><br>
 <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const playPauseBtn = document.getElementById("playPauseBtn");
+        const audioPlayer = document.getElementById("audioPlayer");
+        const playIcon = document.getElementById("playIcon");
+        const pauseIcon = document.getElementById("pauseIcon");
+        const progressBar = document.getElementById("progressBar");
+        const currentTime = document.getElementById("currentTime");
+        const totalDuration = document.getElementById("totalDuration");
+
+        // Play/Pause Toggle
+        playPauseBtn.addEventListener("click", () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                playIcon.classList.add("d-none");
+                pauseIcon.classList.remove("d-none");
+            } else {
+                audioPlayer.pause();
+                playIcon.classList.remove("d-none");
+                pauseIcon.classList.add("d-none");
+            }
+        });
+
+        // Update Progress Bar
+        audioPlayer.addEventListener("timeupdate", () => {
+            const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+            progressBar.value = progress;
+
+            // Update time display
+            currentTime.textContent = formatTime(audioPlayer.currentTime);
+        });
+
+        // Set audio duration
+        const setAudioDuration = () => {
+            if (!isNaN(audioPlayer.duration)) {
+                totalDuration.textContent = formatTime(audioPlayer.duration);
+            }
+        };
+
+        // Evento cuando los metadatos se cargan
+        audioPlayer.addEventListener("loadedmetadata", setAudioDuration);
+
+        // Forzar carga de metadatos al montar el DOM
+        if (audioPlayer.readyState >= 1) {
+            setAudioDuration();
+        } else {
+            audioPlayer.addEventListener("canplay", setAudioDuration);
+        }
+
+        // Seek Audio
+        progressBar.addEventListener("input", () => {
+            const seekTime = (progressBar.value / 100) * audioPlayer.duration;
+            audioPlayer.currentTime = seekTime;
+        });
+
+        // Format time in MM:SS
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes < 10 ? '0' : ''}${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+    });
+</script>
+<script>
 
 let listageneral = {!! json_encode($canciones, JSON_FORCE_OBJECT) !!};
 input.oninput = function() {
