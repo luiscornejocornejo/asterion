@@ -43,7 +43,7 @@ Route::get('/', function () {
 
      $idusuario=session()->has('idusuario');
 if($idusuario){
-    return Redirect::to('/dash');
+    return Redirect::to('/inicio');
     
 }else{
 
@@ -51,6 +51,15 @@ if($idusuario){
 }
     
 });
+
+Route::get('/inicio', function () {
+    return view('/inicio');
+});
+
+
+
+
+
 Route::get('/clear-cache', function() {
     $exitCode = Artisan::call('cache:clear');
     var_dump($exitCode);
