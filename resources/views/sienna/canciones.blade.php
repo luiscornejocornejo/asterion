@@ -176,21 +176,11 @@ function estado($intedb,$ba){
                     <center>
 
                     <h3><?php echo htmlspecialchars($value->nombre); ?> </h3>
-                    <span role="button" id="playPauseBtn" class="border btn btn-light me-3">
-                        <i class="mdi mdi-play" id="playIcon" style="font-size: 30px;"></i>
-                        <i class="mdi mdi-pause d-none" id="pauseIcon" style="font-size: 30px;"></i>
-                    </span>
-                    <div class="flex-grow-1">
-                        <input type="range" id="progressBar" class="form-range" value="0" min="0" max="100">
-                    </div>
-                    <?php $ht = 'https://ibbvp.suricata.cloud/ibbvp/canciones/' . $value->url; ?>
-                    <span id="currentTime" class="ms-3">00:00</span>
-                    <span>/</span>
-                    <span id="totalDuration" class="ms-1">00:00</span>
-                    <audio id="audioPlayer">
-                        <source src="<?php echo $ht; ?>" type="audio/ogg">
-                        <source src="<?php echo $ht; ?>" type="audio/mpeg">
+                    <audio id="audio" controls>
+                        <source src="<?php echo 'https://ibbvp.suricata.cloud/ibbvp/canciones/' . $value->url; ?>" type="audio/mpeg">
+                        Tu navegador no soporta audio.
                     </audio>
+                    
                         
                         
                             
