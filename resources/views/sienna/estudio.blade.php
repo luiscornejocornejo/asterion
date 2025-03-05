@@ -161,37 +161,31 @@ function estado($intedb,$ba){
                
             
 
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner" role="listbox">
-                <?php
-    
-                $canti=0;
-                foreach ($estudio as $value) {
-                    if($canti==0){
-                        $active="active";
-                    }else{
-                        $active="";
+                <div id="carouselExampleControls" class="carousel slide">
+    <div class="carousel-inner" role="listbox">
+        <?php
+        $canti = 0;
+        foreach ($estudio as $value) {
+            $active = ($canti == 0) ? "active" : "";
+        ?>
+        <div class="carousel-item <?php echo $active; ?>">
+            <center>
+                <h1><?php echo htmlspecialchars($value->nombre); ?> </h1>
+                <h4><?php echo $value->contenido; ?> </h4>
+            </center>
+        </div>
+        <?php $canti++; } ?>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </a>
+</div>
 
-                    }
-                    ?>
-                <div class="carousel-item <?php echo $active;?>">
-                    <center>
-                        <h1><?php echo htmlspecialchars($value->nombre); ?> </h1>
-                        <h4><?php echo $value->contenido; ?> </h4>
-                    <center>
-
-                </div>
-                <?php $canti++;}?>
-                </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </a>
-                </div>
 
          
           
