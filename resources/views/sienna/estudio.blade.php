@@ -161,9 +161,9 @@ function estado($intedb,$ba){
                
             
 
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-            <?php
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                <?php
     
                 $canti=0;
                 foreach ($estudio as $value) {
