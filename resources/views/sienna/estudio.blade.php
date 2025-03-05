@@ -175,8 +175,11 @@ function estado($intedb,$ba){
                     }
                     ?>
                 <div class="carousel-item <?php echo $active;?>">
-                        <h3><?php echo htmlspecialchars($value->nombre); ?> </h3>
-                        <h3><?php echo $value->contenido; ?> </h3>
+                    <center>
+                        <h1><?php echo htmlspecialchars($value->nombre); ?> </h1>
+                        <h4><?php echo $value->contenido; ?> </h4>
+                    <center>
+
                 </div>
                 <?php $canti++;}?>
             </div>
