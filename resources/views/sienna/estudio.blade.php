@@ -206,30 +206,7 @@ function estado($intedb,$ba){
 
 <br><br><br>
 
-<script>
 
-let listageneral = {!! json_encode($estudio, JSON_FORCE_OBJECT) !!};
-input.oninput = function() {
-    const searchValue = input.value.toLowerCase();
-
-    for (const key in listageneral) {
-        if (Object.hasOwnProperty.call(listageneral, key)) {
-            const database = listageneral[key]["nombre"];
-            const elementId = "base_" + database;
-            const element = document.getElementById(elementId);
-
-            if (element) { // Verifica que el elemento exista
-                const isMatch = database.toLowerCase().includes(searchValue);
-                element.style.display = isMatch ? 'block' : 'none';
-            } else {
-                console.warn(`Elemento con ID '${elementId}' no encontrado.`);
-            }
-        }
-    }
-};
-
-
-</script>
 
 
     @include('facu.footer2')
