@@ -160,38 +160,36 @@ function estado($intedb,$ba){
                 <hr>
                
             
-<div class="row">
-    <?php
-    $canti=0;
-    foreach ($estudio as $value) {
-        
-        ?>
-        
-        <div class="col-md-4">
-            <div id="base_<?php echo htmlspecialchars($value->nombre); ?>" class="card border-secondary border">
 
-                    
-                    <div class="card-body">
-                    <center>
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+            <?php
+    
+                $canti=0;
+                foreach ($estudio as $value) {
+                    if($canti==0){
+                        $active="active";
+                    }else{
+                        $active="";
 
-                    <h3><?php echo htmlspecialchars($value->nombre); ?> </h3>
-                    <h3><?php echo $value->contenido; ?> </h3>
-                   
-                  
-                        
-                        
-                            
-                        <div id="footer-<?php echo htmlspecialchars($value->id); ?>" class="card-footer d-none">
-                        
-                        </div>
-                    </center>
-
-                    </div>
-            
+                    }
+                    ?>
+                <div class="carousel-item <?php echo $active;?>">
+                        <h3><?php echo htmlspecialchars($value->nombre); ?> </h3>
+                        <h3><?php echo $value->contenido; ?> </h3>
+                </div>
+                <?php $canti++;}?>
             </div>
+            <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
         </div>
-    <?php } 
-?>
+          
 </div>
 
                  
