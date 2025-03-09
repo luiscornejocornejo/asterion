@@ -16492,9 +16492,9 @@ html[data-sidenav-size=full]:not([data-layout=topnav]) .button-close-fullsidebar
 }
 
 html[data-sidenav-size=full]:not([data-layout=topnav]) .leftside-menu {
-    margin-left: calc(var(--ct-leftbar-width) * -1);
+   /* margin-left: calc(var(--ct-leftbar-width) * -1);
     border-color: transparent;
-    opacity: 0
+    opacity: 0*/
 }
 
 html[data-sidenav-size=full]:not([data-layout=topnav]) .leftside-menu .logo {
