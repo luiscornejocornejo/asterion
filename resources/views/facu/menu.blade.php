@@ -466,6 +466,6 @@ if (isset($_SERVER['HTTP_HOST'])) {
 <div class="simplebar-track simplebar-horizontal" style="visibility: visible;">
 <div class="simplebar-scrollbar" style="width: 32px; display: block; transform: translate3d(0px, 0px, 0px);"></div></div>
 <div class="simplebar-track simplebar-vertical" style="visibility: hidden;">
-<div class="simplebar-scrollbar" style="height: 0px; transform: translate3d(0px, 0px, 0px); display: none;"></div></div></div>
+<div class="simplebar-scrollbar" style="height: 0px; transform: translate3d(0px, 0px, 0px); "></div></div></div>
 </div>
 
