@@ -384,3 +384,12 @@
         <script src="assetsfacu/libs/simplebar/simplebar.min.js"></script>
         <script src="assetsfacu/libs/node-waves/waves.min.js"></script>
         <script src="assetsfacu/libs/feather-icons/feather.min.js"></script>
+         <!-- pace js -->
+         <script src="assetsfacu/libs/pace-js/pace.min.js"></script>
+
+<script
+src="https://maps.google.com/maps/api/js?key=AIzaSyCtSAR45TFgZjOs4nBFFZnII-6mMHLfSYI"></script>
+
+<script src="assetsfacu/js/app.js"></script>
+
+<script src="assetsfacu/js/ajax.js"></script>
