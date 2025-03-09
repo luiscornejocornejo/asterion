@@ -1,413 +1,471 @@
- <!-- preloader css -->
- <link rel="stylesheet" href="assetsfacu/css/preloader.min.css"
-            type="text/css" />
 
-        <!-- Bootstrap Css -->
-        <link href="assetsfacu/css/bootstrap.min.css" id="bootstrap-style"
-            rel="stylesheet" type="text/css" />
-        <!-- Icons Css -->
-        <link href="assetsfacu/css/icons.min.css" rel="stylesheet" type="text/css"
-            />
-        <!-- App Css-->
-        <link href="assetsfacu/css/app.min.css" id="app-style" rel="stylesheet"
-            type="text/css" />
 
-        <!-- Custom Css -->
-        <link href="assetsfacu/css/custom.css" rel="stylesheet" type="text/css" />
+<?php
 
-        <link href="assetsfacu/css/main.css" rel="stylesheet"
-    type="text/css" />
-            <!-- ========== Left Sidebar Start ========== -->
-            <div class="vertical-menu">
+use Illuminate\Support\Facades\DB;
 
-                <div data-simplebar class="h-100">
+$categoria = session('categoria');
 
-                    <!--- Sidemenu -->
-                    <div id="sidebar-menu">
-                        <!-- Left Menu Start -->
-                        <ul class="metismenu list-unstyled" id="side-menu">
-                            <li class="menu-title" data-key="t-menu">Menu</li>
-                            <li>
-                                <a href="index.html">
-                                    <i data-feather="home"></i>
-                                    <span data-key="t-dashboard">Dashboard</span>
+$query = "SELECT m.nombre as nombremenu,i.nombre as icono,m.id FROM `categoria_menu` cm
+join menu m on m.id=cm.menu join icono i on i.id=m.icono WHERE categoria=" . $categoria . ";
+";
+$resultados = DB::select($query);
+
+$querygenerico="select * from siennadepto";
+$siennadeptosgenericos = DB::select($querygenerico);
+
+$queryInt = "SELECT nombre from siennaintegracion LIMIT 1";
+$result = DB::select($queryInt);
+
+foreach ($result as $results){
+    $nombreIntegracion = $results->nombre;
+}
+
+$subdomain_tmp = 'localhost';
+if (isset($_SERVER['HTTP_HOST'])) {
+    $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+    $subdomain_tmp =  array_shift($domainParts);
+} elseif (isset($_SERVER['SERVER_NAME'])) {
+    $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+    $subdomain_tmp =  array_shift($domainParts);
+}
+
+?>
+<div class="leftside-menu menuitem-active">
+
+<!-- Brand Logo Light -->
+<a href="" class="logo logo-light">
+    <span class="logo-lg">
+        <img src="assetsfacu/images/logo.svg" alt="logo">
+    </span>
+    <span class="logo-sm mt-2 ">
+        <img style="width: 40px; height: 40px;" src="assetsfacu/images/logo.png" alt="small logo">
+    </span>
+</a>
+
+<!-- Brand Logo Dark -->
+<a href="" class="logo logo-dark">
+    <span class="logo-lg">
+        <img src="assetsfacu/images/logo-dark.png" alt="dark logo">
+    </span>
+    <span class="logo-sm">
+        <img src="assetsfacu/images/logo-dark-sm.png" alt="small logo">
+    </span>
+</a>
+
+<!-- Sidebar Hover Menu Toggle Button -->
+<div class="button-sm-hover" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Show Full Sidebar" data-bs-original-title="Show Full Sidebar">
+    <i class="ri-checkbox-blank-circle-line align-middle"></i>
+</div>
+
+<!-- Full Sidebar Menu Close Button -->
+<div class="button-close-fullsidebar">
+    <i class="ri-close-fill align-middle"></i>
+</div>
+
+<!-- Sidebar -left -->
+<div class="h-100 show" id="leftside-menu-container" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: 100%; overflow: scroll hidden;"><div class="simplebar-content" style="padding: 0px;background-color: #313a46!important;">
+    <!-- Leftbar User -->
+    <div class="leftbar-user">
+        <a href="pages-profile.html">
+            <img src="assetsfacu/images/users/avatar-1.jpg" alt="user-image" height="42" class="rounded-circle shadow-sm">
+            <span class="leftbar-user-name mt-2">Dominic Keller</span>
+        </a>
+    </div>
+
+    <!--- menu -->
+    <?php $tipodemenu = session('tipodemenu');?>
+
+    <ul class="side-nav">
+        <!--- generico -->
+        <li class="side-nav-item mt-2 background-buttons">
+            <a href="/"  class="side-nav-link hovering-pan ">
+                <i class="uil-dashboard"></i>
+                <span> Dashboards </span>
+            </a>
+        </li>
+        <li class="side-nav-item mt-2 background-buttons">
+            <a  href="/canciones"  class="side-nav-link hovering-pan ">
+                <i class="uil-music"></i>
+                <span>Canciones </span>
+            </a>
+        </li>
+        <li class="side-nav-item mt-2 background-buttons">
+            <a  href="/videos"  class="side-nav-link hovering-pan ">
+                <i class="uil-video"></i>
+                <span>Videos</span>
+            </a>
+        </li>
+        <li class="side-nav-item mt-2 background-buttons">
+            <a  href="/estudios"  class="side-nav-link hovering-pan ">
+                <i class="uil-book-reader"></i>
+                <span>Estudios</span>
+            </a>
+        </li>
+          <!--- generico -->
+          <li class="side-nav-item background-buttons">
+            <a href="/profile"   class="side-nav-link background-buttons">
+                <i class="uil-user"></i>
+                <span> <?php echo session('nombreusuario');?> </span>
+            </a>    
+        </li>
+        <li class="side-nav-item background-buttons">
+            <a  href="/salir" class="side-nav-link background-buttons">
+                <i class="uil-exit"></i>
+                <span> Cerrar sesión </span>
+            </a>    
+        </li>
+      
+      
+    
+
+    
+    
+        <!--- master -->
+        <?php
+        if($tipodemenu =="1"){?>
+            <li class="side-nav-item background-buttons">
+                <a  href="/conversations2"  class="side-nav-link hovering-pan ">
+                    <i class="mdi mdi-account-multiple"></i>
+                    <span> conversaciones </span>
+                </a>
+            </li>
+            <li class="side-nav-item background-buttons">
+                <a  href="/siennaabm?id=1006"  class="side-nav-link hovering-pan ">
+                    <i class="mdi mdi-clipboard-list"></i>
+                    <span> Tareas Estados </span>
+                </a>
+            </li>
+            
+            <li class="side-nav-item background-buttons d-none">
+                <a  href="/siennaabm?id=18"  class="side-nav-link hovering-pan ">
+                    <i class="mdi mdi-message-question"></i>
+                    <span> Motivos cierre </span>
+                </a>
+            </li>
+            <li class="side-nav-item background-buttons">
+                <a  href="/empresadatos"  class="side-nav-link hovering-pan ">
+                    <i class="mdi mdi-office-building-cog"></i>
+                    <span> Empresa </span>
+                </a>
+            </li>
+            <li class="side-nav-item background-buttons">
+                <a  href="/siennaabm?id=57"  class="side-nav-link hovering-pan ">
+                    <i class="mdi mdi-view-list"></i>
+                    <span> Categoria </span>
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                    <i class="mdi mdi-sitemap-outline"></i>
+                    <span class="badge bg-success float-end"></span>
+                    <span> Sienna </span>
+                </a>
+                <div class="collapse" id="sidebarDashboards">
+                    <ul class="side-nav-second-level">
+                        <li>
+                        <a target="_self" href="/siennai">
+                                    <span id="sienna" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Sienna</span>
                                 </a>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);"
-                                    class="has-arrow">
-                                    <i data-feather="grid"></i>
-                                    <span data-key="t-apps">Apps</span>
+                        </li>
+                        <li>
+                        <a target="_self" href="/siennaabm?id=13">
+                                    <span id="Usuarios" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Usuarios</span>
                                 </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li>
-                                        <a href="calendar.html">
-                                            <span data-key="t-calendar">Calendar</span>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="chat.html">
-                                            <span data-key="t-chat">Chat</span>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="javascript: void(0);"
-                                            class="has-arrow">
-                                            <span data-key="t-email">Email</span>
-                                        </a>
-                                        <ul class="sub-menu"
-                                            aria-expanded="false">
-                                            <li><a href="inbox.html"
-                                                    data-key="t-inbox">Inbox</a></li>
-                                            <li><a href="read-email.html"
-                                                    data-key="t-read-email">Read
-                                                    Email</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="javascript: void(0);"
-                                            class="has-arrow">
-                                            <span data-key="t-invoices">Invoices</span>
-                                        </a>
-                                        <ul class="sub-menu"
-                                            aria-expanded="false">
-                                            <li><a
-                                                    href="invoice-list.html"
-                                                    data-key="t-invoice-list">Invoice
-                                                    List</a></li>
-                                            <li><a
-                                                    href="invoice-detail.html"
-                                                    data-key="t-invoice-detail">Invoice
-                                                    Detail</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="javascript: void(0);"
-                                            class="has-arrow">
-                                            <span data-key="t-contacts">Contacts</span>
-                                        </a>
-                                        <ul class="sub-menu"
-                                            aria-expanded="false">
-                                            <li><a
-                                                    href="user-grid.html"
-                                                    data-key="t-user-grid">User
-                                                    Grid</a></li>
-                                            <li><a
-                                                    href="user-list.html"
-                                                    data-key="t-user-list">User
-                                                    List</a></li>
-                                            <li><a
-                                                    href="profile.html"
-                                                    data-key="t-profile">Profile</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);"
-                                    class="has-arrow">
-                                    <i data-feather="users"></i>
-                                    <span data-key="t-authentication">Authentication</span>
+                        </li>
+                        <li>
+                        <a target="_self" href="/siennamenu?id=1">
+                                    <span id="report" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Report</span>
                                 </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a target="_self" href="login.html"
-                                            data-key="t-login">Login</a></li>
-                                    <li><a target="_self"
-                                            href="register.html"
-                                            data-key="t-register">Register</a></li>
-                                    <li><a target="_self"
-                                            href="recover-password.html"
-                                            data-key="t-recover-password">Recover
-                                            Password</a></li>
-                                    <li><a target="_self"
-                                            href="lock-screen.html"
-                                            data-key="t-lock-screen">Lock Screen</a></li>
-                                    <li><a target="_self"
-                                            href="confirm-mail.html"
-                                            data-key="t-confirm-mail">Confirm
-                                            Mail</a></li>
-                                    <li><a target="_self"
-                                            href="email-verification.html"
-                                            data-key="t-email-verification">Email
-                                            Verification</a></li>
-                                    <li><a target="_self"
-                                            href="two-step-verification.html"
-                                            data-key="t-two-step-verification">Two
-                                            Step Verification</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);"
-                                    class="has-arrow">
-                                    <i data-feather="file-text"></i>
-                                    <span data-key="t-pages">Pages</span>
+                        </li>
+                        <li>
+                        <a target="_self" href="/siennaabm?id=64">
+                                    <span id="report" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Ws</span>
                                 </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="starter-page.html"
-                                            data-key="t-starter-page">Starter
-                                            Page</a></li>
-                                    <li><a target="_self" href="maintenance.html"
-                                            data-key="t-maintenance">Maintenance</a></li>
-                                    <li><a target="_self" href="coming-soon.html"
-                                            data-key="t-coming-soon">Coming Soon</a></li>
-                                    <li><a href="timeline.html"
-                                            data-key="t-timeline">Timeline</a></li>
-                                    <li><a href="faqs.html"
-                                            data-key="t-faqs">FAQs</a></li>
-                                    <li><a href="pricing.html"
-                                            data-key="t-pricing">Pricing</a></li>
-                                    <li><a target="_self" href="404.html"
-                                            data-key="t-error-404">Error 404</a></li>
-                                    <li><a target="_self" href="500.html"
-                                            data-key="t-error-500">Error 500</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a target="_self"
-                                    href="layouts-horizontal.html">
-                                    <i data-feather="layout"></i>
-                                    <span data-key="t-horizontal">Horizontal</span>
+                        </li>
+                        <li>
+                        <a target="_self" href="/siennaabm?id=65">
+                                    <span id="report" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Ws Principal</span>
                                 </a>
-                            </li>
-
-                            <li class="menu-title mt-2" data-key="t-components">Elements</li>
-                            <li>
-                                <a href="javascript: void(0);"
-                                    class="has-arrow">
-                                    <i data-feather="briefcase"></i>
-                                    <span data-key="t-components">Components</span>
+                        </li>
+                        <li>
+                        <a target="_self" href="/siennaabm?id=4">
+                                    <span id="report" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Bases</span>
                                 </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="alerts.html"
-                                            data-key="t-alerts">Alerts</a></li>
-                                    <li><a href="buttons.html"
-                                            data-key="t-buttons">Buttons</a></li>
-                                    <li><a href="cards.html"
-                                            data-key="t-cards">Cards</a></li>
-                                    <li><a href="carousel.html"
-                                            data-key="t-carousel">Carousel</a></li>
-                                    <li><a href="dropdowns.html"
-                                            data-key="t-dropdowns">Dropdowns</a></li>
-                                    <li><a href="grid.html"
-                                            data-key="t-grid">Grid</a></li>
-                                    <li><a href="images.html"
-                                            data-key="t-images">Images</a></li>
-                                    <li><a href="modals.html"
-                                            data-key="t-modals">Modals</a></li>
-                                    <li><a href="offcanvas.html"
-                                            data-key="t-offcanvas">Offcanvas</a></li>
-                                    <li><a href="progress-Bars.html"
-                                            data-key="t-progress-bars">Progress
-                                            Bars</a></li>
-                                    <li><a href="tabs-accordions.html"
-                                            data-key="t-tabs-accordions">Tabs &
-                                            Accordions</a></li>
-                                    <li><a href="typography.html"
-                                            data-key="t-typography">Typography</a></li>
-                                    <li><a href="video.html"
-                                            data-key="t-video">Video</a></li>
-                                    <li><a href="general.html"
-                                            data-key="t-general">General</a></li>
-                                    <li><a href="colors.html"
-                                            data-key="t-colors">Colors</a></li>
-                                </ul>
-                            </li>
+                        </li>
+                        
 
-                            <li>
-                                <a href="javascript: void(0);"
-                                    class="has-arrow">
-                                    <i data-feather="gift"></i>
-                                    <span data-key="t-ui-elements">Extended</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="lightbox.html"
-                                            data-key="t-lightbox">Lightbox</a></li>
-                                    <li><a href="range-Slider.html"
-                                            data-key="t-range-slider">Range
-                                            Slider</a></li>
-                                    <li><a href="sweet-Alert-2.html"
-                                            data-key="t-sweet-alert">SweetAlert
-                                            2</a></li>
-                                    <li><a href="session-Timeout.html"
-                                            data-key="t-session-timeout">Session
-                                            Timeout</a></li>
-                                    <li><a href="rating.html"
-                                            data-key="t-rating">Rating</a></li>
-                                    <li><a href="notifications.html"
-                                            data-key="t-notifications">Notifications</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);">
-                                    <i data-feather="box"></i>
-                                    <span class="badge rounded-pill
-                                        bg-soft-danger text-danger float-end">7</span>
-                                    <span data-key="t-forms">Forms</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="basic-Elements.html"
-                                            data-key="t-form-elements">Basic
-                                            Elements</a></li>
-                                    <li><a href="validation.html"
-                                            data-key="t-form-validation">Validation</a></li>
-                                    <li><a href="advanced-Plugins.html"
-                                            data-key="t-form-advanced">Advanced
-                                            Plugins</a></li>
-                                    <li><a href="editors.html"
-                                            data-key="t-form-editors">Editors</a></li>
-                                    <li><a href="form-upload.html"
-                                            data-key="t-form-upload">File Upload</a></li>
-                                    <li><a href="wizard.html"
-                                            data-key="t-form-wizard">Wizard</a></li>
-                                    <li><a href="mask.html"
-                                            data-key="t-form-mask">Mask</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);"
-                                    class="has-arrow">
-                                    <i data-feather="sliders"></i>
-                                    <span data-key="t-tables">Tables</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="bootstrap-Basic.html"
-                                            data-key="t-basic-tables">Bootstrap
-                                            Basic</a></li>
-                                    <li><a href="datatables.html"
-                                            data-key="t-data-tables">DataTables</a></li>
-                                    <li><a href="responsive.html"
-                                            data-key="t-responsive-table">Responsive</a></li>
-                                    <li><a href="editable.html"
-                                            data-key="t-editable-table">Editable</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);"
-                                    class="has-arrow">
-                                    <i data-feather="pie-chart"></i>
-                                    <span data-key="t-charts">Charts</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="apexcharts.html"
-                                            data-key="t-apex-charts">Apexcharts</a></li>
-                                    <li><a href="echarts.html"
-                                            data-key="t-e-charts">Echarts</a></li>
-                                    <li><a href="chartjs.html"
-                                            data-key="t-chartjs-charts">Chartjs</a></li>
-                                    <li><a href="jquery-Knob.html"
-                                            data-key="t-knob-charts">Jquery Knob</a></li>
-                                    <li><a href="sparkline.html"
-                                            data-key="t-sparkline-charts">Sparkline</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);"
-                                    class="has-arrow">
-                                    <i data-feather="cpu"></i>
-                                    <span data-key="t-icons">Icons</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="boxicons.html"
-                                            data-key="t-boxicons">Boxicons</a></li>
-                                    <li><a href="material-Design.html"
-                                            data-key="t-material-design">Material
-                                            Design</a></li>
-                                    <li><a href="dripicons.html"
-                                            data-key="t-dripicons">Dripicons</a></li>
-                                    <li><a href="font-Awesome-5.html"
-                                            data-key="t-font-awesome">Font
-                                            Awesome 5</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);"
-                                    class="has-arrow">
-                                    <i data-feather="map"></i>
-                                    <span data-key="t-maps">Maps</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="google.html"
-                                            data-key="t-g-maps">Google</a></li>
-                                    <li><a href="vector.html"
-                                            data-key="t-v-maps">Vector</a></li>
-                                    <li><a href="leaflet.html"
-                                            data-key="t-l-maps">Leaflet</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);"
-                                    class="has-arrow">
-                                    <i data-feather="share-2"></i>
-                                    <span data-key="t-multi-level">Multi Level</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="true">
-                                    <li><a href="javascript: void(0);"
-                                            data-key="t-level-1-1">Level 1.1</a></li>
-                                    <li>
-                                        <a href="javascript: void(0);"
-                                            class="has-arrow"
-                                            data-key="t-level-1-2">Level 1.2</a>
-                                        <ul class="sub-menu"
-                                            aria-expanded="true">
-                                            <li><a href="javascript: void(0);"
-                                                    data-key="t-level-2-1">Level
-                                                    2.1</a></li>
-                                            <li><a href="javascript: void(0);"
-                                                    data-key="t-level-2-2">Level
-                                                    2.2</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ul>
-
-                        <div class="card sidebar-alert border-0 text-center mx-4
-                            mb-0 mt-5">
-                            <div class="card-body">
-                                <img src="assets/images/giftbox.png" alt="">
-                                <div class="mt-4">
-                                    <h5 class="alertcard-title font-size-16">Unlimited
-                                        Access</h5>
-                                    <p class="font-size-13">Upgrade your plan
-                                        from a Free trial, to select ‘Business
-                                        Plan’.</p>
-                                    <a href="#!" class="btn btn-primary mt-2">Upgrade
-                                        Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Sidebar -->
+                    </ul>
                 </div>
-            </div>
-            <div class="rightbar-overlay"></div>
+            </li>
+            <?php
+        }?>
+        <!--- master/supervisor -->
+        <?php 
+        if(($tipodemenu =="1")or($tipodemenu =="2")or($tipodemenu =="4")){?>
+             <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                            <i class="mdi mdi-sitemap-outline"></i>
+                            <span class="badge bg-success float-end"></span>
+                            <span> Soporte </span>
+                        </a>
+                        <div class="collapse" id="sidebarDashboards">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                <a target="_self" href="/soporte">
+                                            <span id="sienna" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Abiertos</span>
+                                        </a>
+                                </li>
+                                <li>
+                                <a target="_self" href="/soportec">
+                                            <span id="Usuarios" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Cerrados</span>
+                                        </a>
+                                </li>
+                            
+                            
+                                
+                                
+                                
 
-        <!-- JAVASCRIPT -->
-        <script src="assetsfacu/libs/jquery/jquery.min.js"></script>
-        <script src="assetsfacu/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assetsfacu/libs/metismenu/metisMenu.min.js"></script>
-        <script src="assetsfacu/libs/simplebar/simplebar.min.js"></script>
-        <script src="assetsfacu/libs/node-waves/waves.min.js"></script>
-        <script src="assetsfacu/libs/feather-icons/feather.min.js"></script>
-         <!-- pace js -->
-         <script src="assetsfacu/libs/pace-js/pace.min.js"></script>
+                            </ul>
+                        </div>
+                    </li>
+            
+            <li class="side-nav-item background-buttons">
+                <a data-bs-toggle="collapse" href="/configuracion" aria-controls="sidebarDashboards" class="side-nav-link hovering-pan">
+                    <i class="mdi mdi-cog-outline"></i>
+                    <span>Configuracion</span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarEcommerce">
+                    <ul class="side-nav-second-level">
+                        
 
-<script
-src="https://maps.google.com/maps/api/js?key=AIzaSyCtSAR45TFgZjOs4nBFFZnII-6mMHLfSYI"></script>
+                   
 
-<script src="assetsfacu/js/app.js"></script>
+                        <li >
+                            <a  href="/tareas"  >
+                                <i class="uil-clipboard-alt"></i>
+                                <span>  tareas </span>
+                            </a>
+                        </li>
+                        <li >
+                            <a  href="/salientesc"  >
+                                <i class="mdi mdi-whatsapp"></i>
+                                <span> Saliente masivo </span>
+                            </a>
+                        </li>
+                        <li >
+                            <a  href="/siennaabm?id=1100"  >
+                                <i class="mdi mdi-calendar"></i>
+                                <span> Feriados </span>
+                            </a>
+                        </li>
+                        <li >
+                            <a  href="/siennaabm?id=1101"  >
+                                <i class="mdi mdi-cloud-tags"></i>
+                                <span> Tags </span>
+                            </a>
+                        </li>
+                        <li >
+                            <a  href="/agentes" >
+                                <i class="mdi mdi-account-multiple"></i>
+                                <span> Agentes </span>
+                            </a>
+                        </li>
+                        <li >
+                            <a  href="/siennaabm?id=1303" >
+                                <i class="mdi mdi-account-multiple"></i>
+                                <span> Atajos </span>
+                            </a>
+                        </li>
+                        <li >
+                            <a  href="/siennaabm?id=124"  >
+                                <i class="mdi mdi-notebook"></i>
+                                <span> Topics </span>
+                            </a>
+                        </li>
+                        <li >
+                            <a  href="/siennaabm?id=20"  >
+                                <i class="mdi mdi-message-star"></i>
+                                <span> C-sat </span>
+                            </a>
+                        </li>
+                        <li >
+                            <a  href="/nodes"  >
+                                <i class="mdi mdi-radio-tower"></i>
+                                <span> Nodos </span>
+                            </a>
+                        </li>  
+                        <li >
+                            <a  href="/siennareport?id=1501"  >
+                                <i class="mdi mdi-message-star"></i>
+                                <span> Grabaciones </span>
+                            </a>
+                        </li> 
+                        <li >
+                            <a  href="/siennaform?id=1503"  >
+                                <i class="mdi mdi-message-star"></i>
+                                <span> Tickets por creador </span>
+                            </a>
+                        </li> 
+                        
+                    </ul>
+                </div>
+            </li>
+            <li class="side-nav-item background-buttons">
+                <a  href="/siennaabm?id=135"  class="side-nav-link hovering-pan ">
+                    <i class="mdi mdi-table-account"></i>
+                    <span> Clientes </span>
+                </a>
+            </li> 
+            <li class="side-nav-item background-buttons">
+                <a data-bs-toggle="collapse" href="/supervisor" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link hovering-pan">
+                    <i class="mdi mdi-book-search-outline"></i>
+                    <span>Reportes</span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarEcommerce">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="/siennaform?id=1000">Reporte CSAT</a>
+                        </li>
+                        <li>
+                            <a href="/siennaform?id=1001">Reporte Tickets Cerrados </a>
+                        </li>
+                        <li>
+                            <a href="/siennaform?id=1002">Reporte Tickets por Agente</a>
+                        </li>
+                        <li>
+                            <a href="/siennaform?id=1003">Reporte Tickets Abiertos</a>
+                        </li>
+                        <li>
+                            <a href="/siennareport?id=1004">Reporte Tickets Por Dia</a>
+                        </li>
+                        <li>
+                            <a href="/siennareport?id=1005">Promedio de resolución por dia</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
 
-<script src="assetsfacu/js/ajax.js"></script>
+
+            
+            
+            
+        <?php } ?>
+        <!--- master/agente -->
+        <?php
+        if($tipodemenu =="3"){?>
+           
+            <li class="side-nav-item background-buttons">
+                <a  href="/mistareas"  class="side-nav-link hovering-pan ">
+                    <i class="uil-clipboard-alt"></i>
+                    <span> Mis tareas </span>
+                </a>
+            </li>
+             
+        <?php  }?>
+
+      
+        <!--- sistema sienna -->
+
+       <?php
+            if (sizeof($resultados) > 0) {
+
+                foreach ($resultados as $value) {
+
+            ?>
+
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#<?php echo $value->nombremenu; ?>" aria-expanded="false" aria-controls="<?php echo $value->nombremenu; ?>" class="side-nav-link">
+                    <i class="<?php echo $value->icono; ?>"></i>
+                    <span class="badge bg-success float-end"></span>
+                    <span> <?php echo $value->nombremenu; ?> </span>
+                </a>
+                <div class="collapse" id="<?php echo $value->nombremenu; ?>">
+                <?php
+
+                        $query2 = "SELECT m.servicio,m.id,m.nombre FROM `menu_reporte` mr 
+                        join masterreport m on m.id=mr.masterreport where menu=" . $value->id . ";
+                        ";
+                        $resultados2 = DB::select($query2);
+                        if (sizeof($resultados2) > 0) {
+                        ?>
+                    <ul class="side-nav-second-level">
+                        <li>
+                        <?php
+                                foreach ($resultados2 as $value2) {
+                                    $nom=$value2->nombre;
+                                    $a ="";
+                                    if ($value2->servicio == 2) {
+                                        $a = "siennagraficos?id=" . $value2->id ;
+                                    } elseif ($value2->servicio == 1) {
+                                        $a = "siennareport?id=" . $value2->id ;
+                                    } elseif ($value2->servicio == 3) {
+                                        $a = "siennaendpoint?id=" . $value2->id ;
+                                    } elseif ($value2->servicio == 4) {
+                                        $a = "siennaemail?id=" . $value2->id ;
+                                    } elseif ($value2->servicio == 5) {
+
+                                        $a = "siennaabm?id=" . $value2->id ;
+                                    } elseif ($value2->servicio == 6) {
+
+                                        $a = "siennaform?id=" . $value2->id ;
+                                    }
+                                    elseif ($value2->servicio == 9) {
+
+                                        $a = "chat?id=" . $value2->id ;
+                                    }
+
+                                    
+                                ?>
+                                    <li><a target='_self' href="<?php echo $a; ?>"><span id="<?php echo $nom;?> " onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base"><?php echo $nom;?></span>
+                             </a></li>
+                            <?php
+                                }?>
+                        </li>
+                        
+                
+                       
+                    </ul>
+
+                    <?php }?>
+                </div>
+            </li>
+            <?php }}?>
+
+    </ul>
+    <!--- End Sidemenu -->
+
+    <div class="clearfix"></div>
+</div></div></div></div>
+   
+    <?php
+
+       $saliente = 1;
+
+                if($saliente ==1){?>
+                 
+    
+
+
+
+    <!-- End of modal Create Ticket -->
+
+    <!-- Between Modal -->
+    <!-- Modal -->
+
+<!-- Modal -->
+
+<?php }?>
+   
+
+<div class="simplebar-placeholder" style="width: auto; height: 1195px;"></div>
+</div>
+<div class="simplebar-track simplebar-horizontal" style="visibility: visible;">
+<div class="simplebar-scrollbar" style="width: 32px; display: block; transform: translate3d(0px, 0px, 0px);"></div></div>
+<div class="simplebar-track simplebar-vertical" style="visibility: hidden;">
+<div class="simplebar-scrollbar" style="height: 0px; transform: translate3d(0px, 0px, 0px); "></div></div></div>
+</div>
+
