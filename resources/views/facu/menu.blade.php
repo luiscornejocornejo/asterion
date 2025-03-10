@@ -171,12 +171,12 @@ if (isset($_SERVER['HTTP_HOST'])) {
             ?>
 
 <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                            <a data-bs-toggle="collapse" href="#sidebarDashboards2" aria-expanded="false" aria-controls="sidebarDashboards2" class="side-nav-link">
                                 <i class="mdi mdi-sitemap-outline"></i>
                                 <span class="badge bg-success float-end"></span>
                                 <span> ABM </span>
                             </a>
-                            <div class="collapse" id="sidebarDashboards">
+                            <div class="collapse" id="sidebarDashboards2">
                                 <ul class="side-nav-second-level">
                                    
                                    
