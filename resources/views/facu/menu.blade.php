@@ -83,10 +83,20 @@
         }
     </style>
 
+<?php
+$subdomain_tmp = 'localhost';
+if (isset($_SERVER['HTTP_HOST'])) {
+    $domainParts = explode('.', $_SERVER['HTTP_HOST']);
+    $subdomain_tmp =  array_shift($domainParts);
+} elseif (isset($_SERVER['SERVER_NAME'])) {
+    $domainParts = explode('.', $_SERVER['SERVER_NAME']);
+    $subdomain_tmp =  array_shift($domainParts);
+}
 
+?>
     <!-- Menú -->
     <nav class="navbar">
-        <div class="logo">Mi Web</div>
+        <div class="logo"><?php $subdomain_tmp;?></div>
         <ul class="nav-links">
             <li><a href="/"  class="side-nav-link hovering-pan ">
                 <i class="uil-dashboard"></i>
@@ -104,7 +114,27 @@
                 <i class="uil-book-reader"></i>
                 <span>Estudios</span>
             </a></li>
-            <?php $tipodemenu = session('tipodemenu');?>
+            <?php $tipodemenu = session('tipodemenu');
+            if(($tipodemenu ==1)or($tipodemenu ==2)){
+            ?>
+            <div class=""><?php $subdomain_tmp;?></div>
+            <ul class="nav-links">
+            <li> <a  href="/siennaabm?id=10"  class="side-nav-link hovering-pan ">
+                <i class="uil-book-reader"></i>
+                <span>Estudios</span>
+            </a></li>
+            <li> <a  href="/siennaabm?id=11"  class="side-nav-link hovering-pan ">
+                <i class="uil-music"></i>
+                <span>Canciones </span>
+            </a></li>
+            <li> <a  href="/siennaabm?id=12"  class="side-nav-link hovering-pan ">
+                <i class="uil-video"></i>
+                <span>Videos</span>
+            </a></li>
+            </ul>
+
+
+            <?php }?>
 
         </ul>
         <!-- Botón Hamburguesa -->
