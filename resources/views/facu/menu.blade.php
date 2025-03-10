@@ -185,7 +185,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
 
             <?php }?>
-            <li> <a  href="/estudios"  class="side-nav-link hovering-pan ">
+            <li> <a  href="/salir"  class="side-nav-link hovering-pan ">
             <i class="uil-exit"></i>
             <span>Salir</span>
             </a></li>
