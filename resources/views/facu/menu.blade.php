@@ -165,8 +165,9 @@ if (isset($_SERVER['HTTP_HOST'])) {
             <?php $tipodemenu = session('tipodemenu');
             if(($tipodemenu ==1)or($tipodemenu ==2)){
             ?>
-            <div class=""><?php $subdomain_tmp;?></div>
-            <ul class="submenu">
+            <li>
+                <a href="#" onclick="toggleSubmenu(event)">Abm ▾</a>
+                <ul class="submenu">
             <li> <a  href="/siennaabm?id=10"  class="side-nav-link hovering-pan ">
                 <i class="uil-book-reader"></i>
                 <span>Estudios</span>
@@ -180,6 +181,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
                 <span>Videos</span>
             </a></li>
             </ul>
+            </li>
 
 
             <?php }?>
