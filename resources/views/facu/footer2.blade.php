@@ -142,6 +142,7 @@ document.getElementById("idregistro").value = x;
         function toggleMenu() {
             document.querySelector(".nav-links").classList.toggle("active");
         }
+        
     </script>
 </body>
 </html>

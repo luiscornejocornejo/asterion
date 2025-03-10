@@ -1,5 +1,4 @@
-
-    <style>
+<style>
         /* Reset básico */
         * {
             margin: 0;
@@ -11,7 +10,7 @@
             font-family: Arial, sans-serif;
         }
 
-        /* 🔹 Menú principal */
+        /* 🔹 Estilos del Menú */
         .navbar {
             background-color: #333;
             padding: 10px 20px;
@@ -26,13 +25,14 @@
             font-weight: bold;
         }
 
-        /* 🔹 Links del menú */
+        /* 🔹 Estilos de los Links */
         .nav-links {
             list-style: none;
             display: flex;
         }
 
         .nav-links li {
+            position: relative;
             margin: 0 15px;
         }
 
@@ -40,6 +40,41 @@
             color: white;
             text-decoration: none;
             font-size: 18px;
+            display: block;
+            padding: 10px;
+        }
+
+        /* 🔹 Submenú */
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background-color: #444;
+            list-style: none;
+            width: 150px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .submenu li {
+            padding: 0;
+        }
+
+        .submenu a {
+            font-size: 16px;
+            padding: 10px;
+            display: block;
+            color: white;
+        }
+
+        .submenu a:hover {
+            background-color: #555;
+        }
+
+        /* Mostrar submenú al pasar el mouse (en escritorio) */
+        .nav-links li:hover .submenu {
+            display: block;
         }
 
         /* 🔹 Botón Hamburguesa */
@@ -74,11 +109,24 @@
             }
 
             .nav-links li {
-                padding: 10px 0;
+                margin: 0;
+                border-bottom: 1px solid #444;
             }
 
             .nav-links.active {
                 display: flex;
+            }
+
+            /* Submenú en móviles */
+            .submenu {
+                position: static;
+                background-color: #222;
+                display: none;
+                width: 100%;
+            }
+
+            .nav-links li.show .submenu {
+                display: block;
             }
         }
     </style>
@@ -118,7 +166,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
             if(($tipodemenu ==1)or($tipodemenu ==2)){
             ?>
             <div class=""><?php $subdomain_tmp;?></div>
-            <ul class="nav-links">
+            <ul class="submenu">
             <li> <a  href="/siennaabm?id=10"  class="side-nav-link hovering-pan ">
                 <i class="uil-book-reader"></i>
                 <span>Estudios</span>

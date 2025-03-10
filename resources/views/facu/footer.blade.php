@@ -144,6 +144,11 @@ html[data-sidenav-size=full]:not([data-layout=topnav]) .leftside-menu {
         function toggleMenu() {
             document.querySelector(".nav-links").classList.toggle("active");
         }
+        function toggleSubmenu(event) {
+            event.preventDefault(); // Evita la navegación del enlace
+            let parentLi = event.target.parentElement;
+            parentLi.classList.toggle("show");
+        }
     </script>
 </body>
 </html>
