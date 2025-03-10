@@ -129,6 +129,10 @@
                 display: block;
             }
         }
+        .menu-toggle {
+    z-index: 1100; /* 🔹 Asegura que el botón también esté encima */
+    position: relative;
+}
     </style>
 
 <?php
