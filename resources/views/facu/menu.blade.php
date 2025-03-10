@@ -168,11 +168,11 @@ if (isset($_SERVER['HTTP_HOST'])) {
             <li>
                 <a href="#" onclick="toggleSubmenu(event)">Abm ▾</a>
                 <ul class="submenu">
-            <li> <a  href="/siennaabm?id=10"  class="side-nav-link hovering-pan ">
+            <li> <a  href="/siennaabm?id=1601"  class="side-nav-link hovering-pan ">
                 <i class="uil-book-reader"></i>
                 <span>Estudios</span>
             </a></li>
-            <li> <a  href="/siennaabm?id=11"  class="side-nav-link hovering-pan ">
+            <li> <a  href="/siennaabm?id=1602"  class="side-nav-link hovering-pan ">
                 <i class="uil-music"></i>
                 <span>Canciones </span>
             </a></li>
