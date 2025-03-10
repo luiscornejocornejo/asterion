@@ -144,7 +144,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 ?>
     <!-- Menú -->
     <nav class="navbar">
-        <div class="logo"><?php $subdomain_tmp;?></div>
+        <div class="logo"><?php echo $subdomain_tmp;?></div>
         <ul class="nav-links">
             <li><a href="/"  class="side-nav-link hovering-pan ">
                 <i class="uil-dashboard"></i>
