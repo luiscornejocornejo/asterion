@@ -169,23 +169,33 @@ if (isset($_SERVER['HTTP_HOST'])) {
             <?php $tipodemenu = session('tipodemenu');
             if(($tipodemenu ==1)or($tipodemenu ==2)){
             ?>
-            <li>
-                <a href="#" onclick="toggleSubmenu(event)">Abm ▾</a>
-                <ul class="submenu">
-            <li> <a  href="/siennaabm?id=1601"  class="side-nav-link hovering-pan ">
-                <i class="uil-book-reader"></i>
-                <span>Estudios</span>
-            </a></li>
-            <li> <a  href="/siennaabm?id=1602"  class="side-nav-link hovering-pan ">
-                <i class="uil-music"></i>
-                <span>Canciones </span>
-            </a></li>
-            <li> <a  href="/siennaabm?id=12"  class="side-nav-link hovering-pan ">
-                <i class="uil-video"></i>
-                <span>Videos</span>
-            </a></li>
-            </ul>
-            </li>
+
+<li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                                <i class="mdi mdi-sitemap-outline"></i>
+                                <span class="badge bg-success float-end"></span>
+                                <span> ABM </span>
+                            </a>
+                            <div class="collapse" id="sidebarDashboards">
+                                <ul class="side-nav-second-level">
+                                   
+                                   
+                                    <li>
+                                    <a target="_self" href="/siennaabm?id=1602">
+                                                <span id="report" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Canciones</span>
+                                            </a>
+                                    </li>
+                                    <li>
+                                    <a target="_self" href="/siennaabm?id=1601">
+                                                <span id="report" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Estucios</span>
+                                            </a>
+                                    </li>
+                                    
+            
+                                </ul>
+                            </div>
+                        </li>
+           
 
 
             <?php }
