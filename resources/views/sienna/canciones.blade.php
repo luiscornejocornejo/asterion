@@ -223,6 +223,7 @@ function estado($intedb,$ba){
     let estado = false; // Estado inicial
 
     function letra(id){
+        alert(id);
         if (estado) {
             mostrarLetra(id) 
         } else {
