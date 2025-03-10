@@ -184,7 +184,8 @@ function estado($intedb,$ba){
                     </audio>
 
                     <?php }else{?>
-                        <button onclick="mostrarLetra(<?php echo htmlspecialchars($value->id); ?>)" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Letra"></button>
+
+                        <button onclick="letra(<?php echo htmlspecialchars($value->id); ?>)" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Letra"></button>
 
                     <?php }?>
                     
@@ -219,6 +220,16 @@ function estado($intedb,$ba){
 
 <br><br><br>
 <script>
+    let estado = false; // Estado inicial
+
+    function letra(id){
+        if (estado) {
+            mostrarLetra(id) 
+        } else {
+            ocultarLetra(id) 
+        }
+        estado = !estado; 
+    }
     function mostrarLetra(id) {
         letraDiv=document.getElementById("footer-"+id);
 
