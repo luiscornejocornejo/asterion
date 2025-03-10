@@ -88,9 +88,24 @@
     <nav class="navbar">
         <div class="logo">Mi Web</div>
         <ul class="nav-links">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="/"  class="side-nav-link hovering-pan ">
+                <i class="uil-dashboard"></i>
+                <span> Dashboards </span>
+            </a></li>
+            <li> <a  href="/canciones"  class="side-nav-link hovering-pan ">
+                <i class="uil-music"></i>
+                <span>Canciones </span>
+            </a></li>
+            <li> <a  href="/videos"  class="side-nav-link hovering-pan ">
+                <i class="uil-video"></i>
+                <span>Videos</span>
+            </a></li>
+            <li> <a  href="/estudios"  class="side-nav-link hovering-pan ">
+                <i class="uil-book-reader"></i>
+                <span>Estudios</span>
+            </a></li>
+            <?php $tipodemenu = session('tipodemenu');?>
+
         </ul>
         <!-- Botón Hamburguesa -->
         <div class="menu-toggle" onclick="toggleMenu()">
