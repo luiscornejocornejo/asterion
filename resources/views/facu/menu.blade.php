@@ -94,16 +94,11 @@
         </ul>
         <!-- Botón Hamburguesa -->
         <div class="menu-toggle" onclick="toggleMenu()">
-            <div>inicio</div>
-            <div>Servicios</div>
-            <div>Contacto</div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
     </nav>
 
-    <script>
-        function toggleMenu() {
-            document.querySelector(".nav-links").classList.toggle("active");
-        }
-    </script>
 
 

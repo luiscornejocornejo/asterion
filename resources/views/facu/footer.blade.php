@@ -139,5 +139,11 @@ html[data-sidenav-size=full]:not([data-layout=topnav]) .leftside-menu {
 }
 
 </style>
+
+<script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
