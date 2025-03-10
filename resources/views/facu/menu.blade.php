@@ -100,7 +100,7 @@
             .nav-links {
                 display: none;
                 flex-direction: column;
-                position: absolute;
+               /* position: absolute;*/
                 top: 60px;
                 left: 0;
                 width: 100%;
