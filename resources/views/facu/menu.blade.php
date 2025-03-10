@@ -94,9 +94,9 @@
         </ul>
         <!-- Botón Hamburguesa -->
         <div class="menu-toggle" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
+            <div>inicio</div>
+            <div>Servicios</div>
+            <div>Contacto</div>
         </div>
     </nav>
 
