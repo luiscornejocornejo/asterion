@@ -176,10 +176,17 @@ function estado($intedb,$ba){
                     <center>
 
                     <h3><?php echo htmlspecialchars($value->nombre); ?> </h3>
+
+                    <?php if($value->url<>""){?>
                     <audio onpause="ocultarLetra(<?php echo htmlspecialchars($value->id); ?>)" onplay="mostrarLetra(<?php echo htmlspecialchars($value->id); ?>)" id="audio" controls>
                         <source src="<?php echo 'https://ibbvp.suricata.cloud/ibbvp/canciones/' . $value->url; ?>" type="audio/mpeg">
                         Tu navegador no soporta audio.
                     </audio>
+
+                    <?php }else{?>
+                        <button onclick="mostrarLetra(<?php echo htmlspecialchars($value->id); ?>)" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Letra"></button>
+
+                    <?php }?>
                     
                         
                         
