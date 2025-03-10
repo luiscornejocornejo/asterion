@@ -184,7 +184,56 @@ if (isset($_SERVER['HTTP_HOST'])) {
             </li>
 
 
-            <?php }?>
+            <?php }
+                    if($tipodemenu =="1"){?>
+                        
+                       
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                                <i class="mdi mdi-sitemap-outline"></i>
+                                <span class="badge bg-success float-end"></span>
+                                <span> Sienna </span>
+                            </a>
+                            <div class="collapse" id="sidebarDashboards">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                    <a target="_self" href="/siennai">
+                                                <span id="sienna" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Sienna</span>
+                                            </a>
+                                    </li>
+                                    <li>
+                                    <a target="_self" href="/siennaabm?id=13">
+                                                <span id="Usuarios" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Usuarios</span>
+                                            </a>
+                                    </li>
+                                    <li>
+                                    <a target="_self" href="/siennamenu?id=1">
+                                                <span id="report" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Report</span>
+                                            </a>
+                                    </li>
+                                    <li>
+                                    <a target="_self" href="/siennaabm?id=64">
+                                                <span id="report" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Ws</span>
+                                            </a>
+                                    </li>
+                                    <li>
+                                    <a target="_self" href="/siennaabm?id=65">
+                                                <span id="report" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Ws Principal</span>
+                                            </a>
+                                    </li>
+                                    <li>
+                                    <a target="_self" href="/siennaabm?id=4">
+                                                <span id="report" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Bases</span>
+                                            </a>
+                                    </li>
+                                    
+            
+                                </ul>
+                            </div>
+                        </li>
+                        <?php
+                    }?>
+            
             <li> <a  href="/salir"  class="side-nav-link hovering-pan ">
             <i class="uil-exit"></i>
             <span>Salir</span>
