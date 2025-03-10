@@ -185,7 +185,7 @@ function estado($intedb,$ba){
 
                     <?php }else{?>
 
-                        <button onclick="letra(<?php echo htmlspecialchars($value->id); ?>)" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Letra"></button>
+                        <button onclick="letra(<?php echo htmlspecialchars($value->id); ?>)" type="button" data-bs-dismiss="alert" aria-label="Letra">Letra</button>
 
                     <?php }?>
                     
