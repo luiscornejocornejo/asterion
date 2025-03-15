@@ -50,70 +50,35 @@ $clientIp = $_SERVER['SERVER_ADDR'] ?? 'No disponible';
         <div class="container-fluid p-0">
             <div class="row g-0">
                 <div class="col-xxl-3 col-lg-4 col-md-5">
-                    <div class="auth-full-page-content d-flex p-sm-5 p-4">
-                        <div class="w-100" style="">
-                            <div class="d-flex flex-column h-100">
-                                <div class="mb-4 mb-md-5 text-center">
-                                    <a href="" class="d-block auth-logo">
-                                        <img src="/img/asterion.png" alt="" height="80px;"> 
-                                        <br><br><span class="logo-txt"> <?php echo $empresasss[0];?></span>
-                                    </a>
-                                </div>
-                                <div class="auth-content my-auto">
-                                    <div class="text-center">
-                                        <h5 class="mb-0">Welcome Back!</h5>
-                                        <p class="text-muted mt-2">Sign in to continue to <?php echo $empresasss[0]; ?></p>
-                                        <p class="d-none"><?php echo "IP del cliente: " . $clientIp;?>
-                                        </p>
-                                    </div>
-
-
-                                    <form class="custom-form mt-4 pt-2" method="post" action="/login">
-                                        @csrf
-                                        <div class="mb-3">
-                                            <label class="form-label">Username</label>
-                                            <input type="text" name="email" class="form-control" id="username" placeholder="Enter username">
-                                        </div>
-                                        <div class="mb-3">
-                                            <div class="d-flex align-items-start">
-                                                <div class="flex-grow-1">
-                                                    <label class="form-label">Password</label>
-                                                </div>
-                                                <div class="flex-shrink-0">
-                                                    <div class="">
-                                                        <a href="/recuperar" class="text-muted">Forgot password?</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="input-group auth-pass-inputgroup">
-                                                <input type="password" name="password" class="form-control" placeholder="Enter password" aria-label="Password" aria-describedby="password-addon">
-                                                <button class="btn btn-light ms-0" type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-4">
-                                            <div class="col">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="remember-check">
-                                                    <label class="form-check-label" for="remember-check">
-                                                        Remember me
-                                                    </label>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="mb-3">
-                                            <button style="background-color: #ffc95c;" class="btn w-100 waves-effect waves-light" type="submit">Log In</button>
-                                        </div>
-                                    </form>
-
-
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+                <div class="bg-white p-8 rounded-lg shadow-md w-96">
+        <div class="flex justify-center mb-4">
+            <img src="logo.png" alt="Asterion Logo" class="w-16 h-16">
+        </div>
+        <h2 class="text-2xl font-bold text-center mb-2">Asterion</h2>
+        <p class="text-center text-gray-600 mb-6">Sign in to continue to Asterion</p>
+        
+        <form>
+            <label class="block text-sm font-medium text-gray-700">Username</label>
+            <input type="text" placeholder="Enter username" class="w-full p-2 border rounded mb-4">
+            
+            <label class="block text-sm font-medium text-gray-700">Password</label>
+            <div class="relative">
+                <input type="password" placeholder="Enter password" class="w-full p-2 border rounded">
+                <span class="absolute right-3 top-2 cursor-pointer">👁</span>
+            </div>
+            
+            <div class="flex items-center justify-between mt-4">
+                <label class="flex items-center">
+                    <input type="checkbox" class="mr-2">
+                    <span class="text-sm">Remember me</span>
+                </label>
+                <a href="#" class="text-sm text-blue-600 hover:underline">Forgot password?</a>
+            </div>
+            
+            <button class="w-full bg-yellow-400 text-white p-2 rounded mt-6 hover:bg-yellow-500">Log In</button>
+        </form>
+    </div>
+                   
                     <!-- end auth full page content -->
                 </div>
                 <!-- end col -->
