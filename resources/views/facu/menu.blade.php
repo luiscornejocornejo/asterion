@@ -12,7 +12,7 @@
 
         /* 🔹 Estilos del Menú */
         .navbar {
-            background-color: #333;
+            background-color: #87A1C8;
             padding: 10px 20px;
             display: flex;
             justify-content: space-between;
