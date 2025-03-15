@@ -128,7 +128,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
 
 <script>
     function editar(dd) {
-        urleditar = "https://<?php echo $subdomain_tmp; ?>.suricata.cloud/" + dd;
+        urleditar = "https://<?php echo $subdomain_tmp; ?>.asterion.site/" + dd;
         document.getElementById("editariframe").src = urleditar;
     }
 </script>
@@ -177,7 +177,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
             </div>
             <div class="modal-body">
                 <iframe style="display:block; height:500px;" class="w-100"
-                    src="https://<?php echo $subdomain_tmp; ?>.suricata.cloud/siennacreate?report={{ $master->id }}"" "></iframe>
+                    src="https://<?php echo $subdomain_tmp; ?>.asterion.site/siennacreate?report={{ $master->id }}"" "></iframe>
             </div>
 
         </div><!-- /.modal-content -->
