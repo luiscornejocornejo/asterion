@@ -148,24 +148,9 @@ if (isset($_SERVER['HTTP_HOST'])) {
 ?>
     <!-- Menú -->
     <nav class="navbar">
-        <div class="logo"><?php echo $subdomain_tmp;?></div>
+        <div class="logo"><a href="/"  class="side-nav-link hovering-pan "><?php echo $subdomain_tmp;?> </a></div>
         <ul class="nav-links">
-            <li><a href="/"  class="side-nav-link hovering-pan ">
-                <i class="uil-dashboard"></i>
-                <span> Dashboards </span>
-            </a></li>
-            <li> <a  href="/canciones"  class="side-nav-link hovering-pan ">
-                <i class="uil-music"></i>
-                <span>Canciones </span>
-            </a></li>
-            <li> <a  href="/videos"  class="side-nav-link hovering-pan ">
-                <i class="uil-video"></i>
-                <span>Videos</span>
-            </a></li>
-            <li> <a  href="/estudios"  class="side-nav-link hovering-pan ">
-                <i class="uil-book-reader"></i>
-                <span>Estudios</span>
-            </a></li>
+           
             <?php $tipodemenu = session('tipodemenu');
             if(($tipodemenu ==1)or($tipodemenu ==2)){
             ?>
@@ -182,14 +167,10 @@ if (isset($_SERVER['HTTP_HOST'])) {
                                    
                                     <li>
                                     <a target="_self" href="/siennaabm?id=1602">
-                                                <span id="report" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Canciones</span>
+                                                <span id="report" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Equipos</span>
                                             </a>
                                     </li>
-                                    <li>
-                                    <a target="_self" href="/siennaabm?id=1601">
-                                                <span id="report" onmouseover="changeColor(this.id, '#38e991')"  onmouseout="retro(this.id, '#a6e8ff')" class="sin" data-key="t-Base">Estucios</span>
-                                            </a>
-                                    </li>
+                                   
                                     
             
                                 </ul>

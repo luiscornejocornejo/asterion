@@ -4,9 +4,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class siennaloginxenioo extends Model
+class equipos extends Model
 {
-    protected $table = 'siennaloginxenioo';
+    protected $table = 'equipos';
 
     
 }

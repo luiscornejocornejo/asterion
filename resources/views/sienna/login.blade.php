@@ -104,7 +104,7 @@ $clientIp = $_SERVER['SERVER_ADDR'] ?? 'No disponible';
 
                                         </div>
                                         <div class="mb-3">
-                                            <button style="background-color:rgb(106, 13, 102);" class="btn w-100 waves-effect waves-light" type="submit">Log In</button>
+                                            <button style="background-color:#87A1C8;" class="btn w-100 waves-effect waves-light" type="submit">Log In</button>
                                         </div>
                                     </form>
 
