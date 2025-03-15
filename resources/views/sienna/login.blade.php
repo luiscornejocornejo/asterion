@@ -56,7 +56,7 @@ $clientIp = $_SERVER['SERVER_ADDR'] ?? 'No disponible';
                             <div class="d-flex flex-column h-100">
                                 <div class="mb-4 mb-md-5 text-center">
                                     <a href="" class="d-block auth-logo">
-                                        <img src="/img/asterion2.png" alt="" height="80px;"> 
+                                        <img src="/img/asterion2.png" alt="" height=""> 
                                         <br><br><span class="logo-txt"> <?php echo $empresasss[0];?></span>
                                     </a>
                                 </div>
