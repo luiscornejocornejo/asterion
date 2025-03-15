@@ -51,7 +51,7 @@ $clientIp = $_SERVER['SERVER_ADDR'] ?? 'No disponible';
             <div class="row g-0">
                 <div class="col-xxl-3 col-lg-4 col-md-5">
                     <div class="auth-full-page-content d-flex p-sm-5 p-4">
-                        <div class="w-100">
+                        <div class="w-100" style="background-color: #87A1C8;">
                             <div class="d-flex flex-column h-100">
                                 <div class="mb-4 mb-md-5 text-center">
                                     <a href="" class="d-block auth-logo">
