@@ -10,7 +10,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
     $domainParts = explode('.', $_SERVER['SERVER_NAME']);
     $subdomain_tmp = array_shift($domainParts);
 }
-
+ 
 ?>
 <link rel="stylesheet" href="agents.css">
 <script>
