@@ -15,7 +15,7 @@ return [
         |
         */
         'chunk_size'             => 1000,
-
+        'format' => Maatwebsite\Excel\Excel::XLSX,
         /*
         |--------------------------------------------------------------------------
         | Pre-calculate formulas during export
