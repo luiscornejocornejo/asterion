@@ -133,12 +133,9 @@ class ibbvpController extends Controller
 
         foreach($equipos as $equipo){
 
-            $comandos = [
-                "enabled",
-                "display ont info summary 0"
-            ];
+            $comandos = "ls";
             
-            $resultado = $this->ejecutarComandoSSH2($equipo,$comandos);
+            $resultado = $this->ejecutarComandoSSH($equipo,$comandos);
             echo  '<pre>'.$resultado.'</pre>';
 
         }
