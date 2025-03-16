@@ -117,6 +117,7 @@ class ibbvpController extends Controller
 
             $comando="enabled&&display ont info summary 0";
             $resultado = $this->ejecutarComandoSSH($equipo,$comando);
+            echo  '<pre>'.$resultado.'</pre>';
 
         }
  
