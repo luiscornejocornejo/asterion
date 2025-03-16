@@ -10,6 +10,7 @@ use Redirect;
 use Flash;
 use App\Models\users;
 use App\Models\graficos;
+use App\Models\equipos;
 use App\Models\siennaloginxenioo;
 use Mail; 
 use App\Models\logs;
@@ -68,6 +69,56 @@ class ibbvpController extends Controller
         return view("sienna/estudio")->with('estudio', $estudio);
 
     }
+
+
+    //////asterion
+    function ejecutarComandoSSH($equipo,$comando)
+     {
+        
+         $usuario = $equipo->usuario;//"root";  // Usuario SSH
+         $host = $equipo->ip;//"146.190.138.96"; // IP o dominio del servidor
+         $puerto = $equipo->puerto;//22;        // Puerto SSH (por defecto es 22)
+         $password =$equipo->pass;// "YmsZy2P7SeQetG"; // Tu contraseña SSH
+     
+         // Construir el comando SSH usando sshpass
+         $sshComando = [
+             'sshpass', '-p', $password,   // Pasar la contraseña
+             'ssh', '-p', $puerto,         // Especificar puerto SSH
+             '-o', 'StrictHostKeyChecking=no', // Omitir confirmación de clave del host
+             "{$usuario}@{$host}",         // Usuario y servidor remoto
+             $comando                      // Comando a ejecutar
+         ];
+     
+         // Ejecutar el proceso
+         $process = new Process($sshComando);
+         $process->setTimeout(120); // Tiempo límite en segundos
+     
+         try {
+             $process->run();
+     
+             if (!$process->isSuccessful()) {
+                 throw new ProcessFailedException($process);
+             }
+     
+             return $process->getOutput(); // Devuelve el resultado del comando
+     
+         } catch (ProcessFailedException $exception) {
+             return "Error al ejecutar el comando: " . $exception->getMessage();
+         }
+     }
+
+     public function prueba(Request $request)
+     {
+        $equipos = equipos::all();
+
+        foreach($equipos as $equipo){
+
+            $comando="enabled&&display ont info summary 0";
+            $resultado = $this->ejecutarComandoSSH($equipo,$comando);
+
+        }
+ 
+     }
    
 
 }
