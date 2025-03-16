@@ -108,15 +108,37 @@ class ibbvpController extends Controller
              return "Error al ejecutar el comando: " . $exception->getMessage();
          }
      }
-
+     function ejecutarComandosSSH2($equipo, $comandos) {
+        $conexion = ssh2_connect($equipo->ip, $equipo->puerto);
+    
+        if (!$conexion) {
+            return "Error: No se pudo conectar al servidor.";
+        }
+    
+        if (!ssh2_auth_password($conexion, $equipo->usuario, $equipo->pass)) {
+            return "Error: Autenticación fallida.";
+        }
+    
+        // Ejecutar comandos en una sola sesión SSH
+        $stream = ssh2_exec($conexion, implode(" && ", $comandos));
+        stream_set_blocking($stream, true);
+        $output = stream_get_contents($stream);
+    
+        fclose($stream);
+        return $output;
+    }
      public function prueba(Request $request)
      {
         $equipos = equipos::all();
 
         foreach($equipos as $equipo){
 
-            $comando="enabled&&display ont info summary 0";
-            $resultado = $this->ejecutarComandoSSH($equipo,$comando);
+            $comandos = [
+                "enabled",
+                "display ont info summary 0"
+            ];
+            
+            $resultado = $this->ejecutarComandoSSH2($equipo,$comandos);
             echo  '<pre>'.$resultado.'</pre>';
 
         }
