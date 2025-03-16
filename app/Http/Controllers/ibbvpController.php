@@ -108,7 +108,7 @@ class ibbvpController extends Controller
              return "Error al ejecutar el comando: " . $exception->getMessage();
          }
      }
-     function ejecutarComandosSSH2($equipo, $comandos) {
+     function ejecutarComandoSSH2($equipo, $comandos) {
         $conexion = ssh2_connect($equipo->ip, $equipo->puerto);
     
         if (!$conexion) {
