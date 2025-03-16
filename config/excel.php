@@ -176,6 +176,7 @@ return [
     | needs to guess the correct type based on the extension alone.
     |
     */
+    /*
     'extension_detector' => [
         'xlsx'     => Excel::XLSX,
         'xlsm'     => Excel::XLSX,
@@ -202,8 +203,8 @@ return [
         | Available options: Excel::MPDF | Excel::TCPDF | Excel::DOMPDF
         |
         */
-        'pdf'      => Excel::DOMPDF,
-    ],
+     //   'pdf'      => Excel::DOMPDF,
+   // ],
 
     /*
     |--------------------------------------------------------------------------
