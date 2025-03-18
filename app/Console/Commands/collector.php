@@ -159,11 +159,11 @@ class collector extends Command
                 ];
             }
         }
-    
+        DB::table('onts')->insert($ont_data);
+
             // Insertar datos en MySQL con Eloquent
             if (!empty($ont_data)) {
 
-                DB::table('onts')->insert($ont_data);
 /*
                 $query = "INSERT INTO onts (ont_id, sn, type, distance, rx_power, tx_power, description, created_at, updated_at) VALUES ";
                 $values = [];
