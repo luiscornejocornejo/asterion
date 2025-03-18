@@ -160,7 +160,7 @@ class collector extends Command
     
             // Insertar datos en MySQL con Eloquent
             if (!empty($ont_data)) {
-                $query = "INSERT INTO onts (ont_id, sn, type, distance, rx_power, tx_power, description) VALUES ";
+                $query = "INSERT INTO onts (ont_id, sn, type, distance, rx_power, tx_power, description, created_at, updated_at) VALUES ";
                 $values = [];
                 $bindings = [];
         
