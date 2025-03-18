@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Mail;
 use App\Models\empresa;
 use App\Models\categoria;
-
+use Illuminate\Support\Facades\Artisan;
 class collector extends Command
 {
     /**
