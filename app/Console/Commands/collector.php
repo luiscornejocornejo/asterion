@@ -67,7 +67,7 @@ class collector extends Command
         return 0;
     }
   
-    public function procesar_salida($salida) {
+    public function procesar_salida2($salida) {
         // Inicializar la lista de datos
         $datos = [];
     
@@ -110,8 +110,44 @@ class collector extends Command
     
         return $datos;
     }
-            
 
+    function procesar_salida($salida) {
+        $lines = explode("\n", $salida);
+        $ont_data = [];
+        $parsing = false;
+    
+        foreach ($lines as $line) {
+            $line = trim($line);
+    
+            // Detectar el inicio de la sección de ONTs
+            if (preg_match('/ONT\s+SN\s+Type\s+Distance\s+Rx\/Tx power\s+Description/', $line)) {
+                $parsing = true;
+                continue;
+            }
+    
+            // Detectar el final de la sección de ONTs
+            if ($parsing && empty($line)) {
+                break;
+            }
+    
+            // Si estamos en la sección de ONTs, procesar cada línea
+            if ($parsing && preg_match('/^(\d+)\s+([A-Z0-9]+)\s+([A-Z0-9-.]+)\s+(\d+)\s+([-\d.]+)\/([-\d.]+)\s+(.+)$/', $line, $matches)) {
+                $ont_data[] = [
+                    'ont_id' => $matches[1],
+                    'sn' => $matches[2],
+                    'type' => $matches[3],
+                    'distance' => (int) $matches[4],
+                    'rx_power' => (float) $matches[5],
+                    'tx_power' => (float) $matches[6],
+                    'description' => trim($matches[7])
+                ];
+            }
+        }
+    
+            // Insertar datos en MySQL con Eloquent
+    DB::table('onts')->insert($ont_data);
+    echo "Datos insertados correctamente.";
+    }
     
 
     public function conectar()
