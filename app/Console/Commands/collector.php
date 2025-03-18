@@ -51,6 +51,8 @@ class collector extends Command
         if ($return_var === 0) {
             // Unir la salida en una cadena
            // $resultado = implode("\n", $output);
+           var_dump($output);
+
            $sal=$this->procesar_salida($output) ;
             var_dump($sal);
             /*
