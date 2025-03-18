@@ -145,7 +145,7 @@ class ibbvpController extends Controller
         if ($return_var === 0) {
             // Unir la salida en una cadena
            // $resultado = implode("\n", $output);
-            echo "<pre>".$output."</pre>";
+            var_dump($output);
             /*
             return response()->json([
                 'success' => true,
