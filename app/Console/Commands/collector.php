@@ -153,13 +153,18 @@ class collector extends Command
                     'distance' => (int) $matches[4],
                     'rx_power' => (float) $matches[5],
                     'tx_power' => (float) $matches[6],
-                    'description' => trim($matches[7])
+                    'description' => trim($matches[7]),
+                    'created_at' => now(),
+                    'updated_at' => now()
                 ];
             }
         }
     
             // Insertar datos en MySQL con Eloquent
             if (!empty($ont_data)) {
+
+                DB::table('onts')->insert($ont_data);
+/*
                 $query = "INSERT INTO onts (ont_id, sn, type, distance, rx_power, tx_power, description, created_at, updated_at) VALUES ";
                 $values = [];
                 $bindings = [];
@@ -170,7 +175,7 @@ class collector extends Command
                 }
         
                 $query .= implode(", ", $values);
-                $resultados = DB::insert($query, $bindings);
+                $resultados = DB::insert($query, $bindings);*/
             }
     echo "Datos insertados correctamente.";
     }
