@@ -34,6 +34,15 @@ class collector extends Command
     {
 
         echo "entro";
+
+        Artisan::call('config:clear');
+        Artisan::call('config:cache');
+    
+        // Verificar que la conexión se está cargando correctamente
+        dump(env('DB_DATABASE')); // Verifica que el .env se carga
+        dump(Config::get('database.connections.mysql.database')); // Revisa configuración activa
+
+        /*
        
         // Ruta al script de Python
         $scriptPath = base_path('scripts/main.py');
@@ -59,11 +68,11 @@ class collector extends Command
             return response()->json([
                 'success' => true,
                 'resultado' => $resultado,
-            ]);*/
+            ]);
         } else {
             echo "error";
         }
-
+*/
         return 0;
     }
   
