@@ -112,6 +112,9 @@ class collector extends Command
     }
 
     function procesar_salida($salida) {
+        if (is_array($salida)) {
+            $salida = implode("\n", $salida);  // Convierte array en string
+        }
         $lines = explode("\n", $salida);
         $ont_data = [];
         $parsing = false;
