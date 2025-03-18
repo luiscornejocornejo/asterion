@@ -157,9 +157,10 @@ class collector extends Command
                     'created_at' => now(),
                     'updated_at' => now()
                 ];
+                DB::table('onts')->insert($ont_data);
+
             }
         }
-        DB::table('onts')->insert($ont_data);
 
             // Insertar datos en MySQL con Eloquent
             if (!empty($ont_data)) {
