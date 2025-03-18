@@ -51,7 +51,8 @@ class collector extends Command
         if ($return_var === 0) {
             // Unir la salida en una cadena
            // $resultado = implode("\n", $output);
-            var_dump($output);
+           $sal=$this->procesar_salida($output) ;
+            var_dump($sal);
             /*
             return response()->json([
                 'success' => true,
@@ -64,96 +65,48 @@ class collector extends Command
         return 0;
     }
   
-    public function enhora($merchant,$area){
-        // Configura la zona horaria a la hora local
-
-       // $area=$request->area;
-
-        //$emp=empresa::find(1);
-       echo $query="select * from ".$merchant.".empresa where id=1";
-        $resultados = DB::connection('mysql2')->select($query);
-
-        foreach($resultados as $emp){
-          echo   $zona=$emp->zona;
-
-        }
-        
-        date_default_timezone_set($zona); // Reemplaza 'America/Buenos_Aires' con la zona horaria deseada
-
-        // Obtiene la hora actual en formato de 24 horas
-        echo $horaLocal = date('H');
-        echo $diaSemana = date('l');
-        //$cat=categoria::where('area','=',$area)->get();
-
-        $query2="select * from ".$merchant.".categoria where area='".$area."'";
-        $cat = DB::connection('mysql2')->select($query2);
-
-        foreach($cat as $val){
-
-        echo $fecha=$val->$diaSemana;
-
-        }
-
-        $fec=explode("-",$fecha);
-
-        if(($horaLocal>=$fec[0]) and ($horaLocal<$fec[1])){
-            return true;
-        }else{
-
-            return false;
-
-        }
-        // Imprime la hora local
-
-
-}
-    public function asignacion($merchant)
-    {
-
-        $CONE=$this->conectar();
-       echo $query="select *  from ".$merchant.".siennatickets
-        where siennaestado not in('3','4')  
-         and asignado='0'
-        ";
-
-        $resultados = DB::connection('mysql2')->select($query);
-
-        foreach($resultados as $value){
-          //  echo  $query3="update ".$merchant.".siennatickets set asignado='99999' where id=".$tick."";
-            //$resultados3 = DB::connection('mysql2')->select($query3);
-             $area=$value->siennadepto;
-             $tick=$value->id;
-
-             $enhora=$this->enhora($merchant,$area);
-             if($enhora){
-                $query2="select s.idusuario,(select count(*) from ".$merchant.".siennatickets s2  
-                where s2.asignado=s.idusuario and s2.siennaestado not in('3','4'))as cantidad from siennaloginxenioo s
-                join users s3 on s3.id=s.idusuario 
-                where
-                s3.tickets=1 and 
-                s.login=1 and s.areas =".$area." and date(now())=date(s.created_at) group by idusuario order by cantidad limit 1";
-                $resultados2 = DB::connection('mysql2')->select($query2);
-
-                $idusu=0;
-                echo "/r";
-                foreach($resultados2 as $value2){
+    public function procesar_salida($salida) {
+        // Inicializar la lista de datos
+        $datos = [];
     
-                     $idusu=$value2->idusuario;
-                }
+        // Dividir la salida en líneas
+        $lineas = explode("\n", $salida);
     
-                if($idusu<>0){
-                   echo  $query3="update ".$merchant.".siennatickets set asignado='".$idusu."' where id=".$tick."";
-                   $resultados3 = DB::connection('mysql2')->select($query3);
-
-    
-                }
-             }else{
-                echo  $query3="update ".$merchant.".siennatickets set asignado='99999' where id=".$tick."";
-                $resultados3 = DB::connection('mysql2')->select($query3);
+        // Procesar cada línea
+        foreach ($lineas as $linea) {
+            // Ignorar líneas vacías o de separación
+            if (empty(trim($linea)) || strpos($linea, "----") !== false) {
+                continue;
             }
-
-           
+    
+            // Ignorar la línea de encabezado
+            if (strpos($linea, "ONT  Run") !== false) {
+                continue;
+            }
+    
+            // Dividir la línea en columnas
+            $columnas = preg_split('/\s+/', trim($linea)); // Divide por espacios en blanco
+    
+            // Asegurarse de que la línea tenga suficientes columnas
+            if (count($columnas) >= 7) {
+                $ont_id = (int)$columnas[0];
+                $run_state = $columnas[1];
+                $last_uptime = $columnas[2] . " " . $columnas[3];
+                $last_downtime = $columnas[4] . " " . $columnas[5];
+                $last_downcause = $columnas[6];
+    
+                // Agregar a la lista de datos
+                $datos[] = [
+                    'ont_id' => $ont_id,
+                    'run_state' => $run_state,
+                    'last_uptime' => $last_uptime,
+                    'last_downtime' => $last_downtime,
+                    'last_downcause' => $last_downcause,
+                ];
+            }
         }
+    
+        return $datos;
     }
             
 
