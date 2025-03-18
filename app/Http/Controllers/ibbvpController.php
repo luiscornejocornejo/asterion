@@ -127,20 +127,37 @@ class ibbvpController extends Controller
         fclose($stream);
         return $output;
     }
-     public function prueba(Request $request)
-     {
-        $equipos = equipos::all();
+    public function prueba(Request $request)
+    {
+        // Ruta al script de Python
+        $scriptPath = base_path('scripts/main.py');
 
-        foreach($equipos as $equipo){
+        // Argumentos para el script (opcional)
+        $nombre = '45.182.127.135 2922 root "#Demon51"';//$request->input('nombre', 'Mundo'); // Valor por defecto: "Mundo"
 
-            $comandos = "ls";
-            
-            $resultado = $this->ejecutarComandoSSH($equipo,$comandos);
-            echo  '<pre>'.$resultado.'</pre>';
+        // Comando para ejecutar el script
+        $comando = "python3 {$scriptPath} {$nombre}";
 
+        // Ejecutar el comando y capturar la salida
+        exec($comando, $output, $return_var);
+
+        // Verificar si la ejecución fue exitosa
+        if ($return_var === 0) {
+            // Unir la salida en una cadena
+           // $resultado = implode("\n", $output);
+            echo "<pre>".$output."</pre>";
+            /*
+            return response()->json([
+                'success' => true,
+                'resultado' => $resultado,
+            ]);*/
+        } else {
+            return response()->json([
+                'success' => false,
+                'error' => 'Error al ejecutar el script de Python.',
+            ], 500);
         }
- 
-     }
+    }
    
 
 }
