@@ -9,14 +9,14 @@ use Mail;
 use App\Models\empresa;
 use App\Models\categoria;
 
-class asignacion extends Command
+class collector extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'semanal:asignacion';
+    protected $signature = 'diario:collector';
 
     /**
      * The console command description.
@@ -34,14 +34,31 @@ class asignacion extends Command
     {
 
         echo "entro";
-        $os = array("infitelecom", "soporte", "demo", "sidecom");
+       
+        // Ruta al script de Python
+        $scriptPath = base_path('scripts/main.py');
 
-        foreach($os as $val){
+        // Argumentos para el script (opcional)
+        $nombre = '45.182.127.135 2922 root "#Demon51"';//$request->input('nombre', 'Mundo'); // Valor por defecto: "Mundo"
 
-            echo $val;
-            $sale = $this->asignacion($val);
+        // Comando para ejecutar el script
+        $comando = "python3 {$scriptPath} {$nombre}";
 
+        // Ejecutar el comando y capturar la salida
+        exec($comando, $output, $return_var);
 
+        // Verificar si la ejecución fue exitosa
+        if ($return_var === 0) {
+            // Unir la salida en una cadena
+           // $resultado = implode("\n", $output);
+            var_dump($output);
+            /*
+            return response()->json([
+                'success' => true,
+                'resultado' => $resultado,
+            ]);*/
+        } else {
+            echo "error";
         }
 
         return 0;
