@@ -126,41 +126,55 @@ class collector extends Command
         if (is_array($salida)) {
             $salida = implode("\n", $salida);  // Convierte array en string
         }
-        $lines = explode("\n", $salida);
-        $ont_data = [];
-        $parsing = false;
+        $port = null;
+        $onts_status = [];
+        $onts_details = [];
+        $insertData = [];
     
-        foreach ($lines as $line) {
+        foreach ($salida as $line) {
             $line = trim($line);
     
-            // Detectar el inicio de la sección de ONTs
-            if (preg_match('/ONT\s+SN\s+Type\s+Distance\s+Rx\/Tx power\s+Description/', $line)) {
-                $parsing = true;
-                continue;
+            // Detectar el puerto GPON
+            if (preg_match('/In port (\d+/\d+/\d+)/', $line, $matches)) {
+                $port = $matches[1];
             }
-    
-            // Detectar el final de la sección de ONTs
-            if ($parsing && empty($line)) {
-                break;
+            
+            // Capturar información de estado de la ONT
+            elseif (preg_match('/^(\d+)\s+(\w+)\s+(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\s+(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\s+(.+)/', $line, $matches)) {
+                $onts_status[$matches[1]] = [
+                    'port' => $port,
+                    'ont_id' => (int) $matches[1],
+                    'run_state' => $matches[2],
+                    'uptime' => $matches[3],
+                    'downtime' => $matches[4],
+                    'downcause' => trim($matches[5])
+                ];
             }
-    
-            // Si estamos en la sección de ONTs, procesar cada línea
-            if ($parsing && preg_match('/^(\d+)\s+([A-Z0-9]+)\s+([A-Z0-9-.]+)\s+(\d+)\s+([-\d.]+)\/([-\d.]+)\s+(.+)$/', $line, $matches)) {
-                $ont_data[] = [
-                    'ont_id' => $matches[1],
+            
+            // Capturar detalles técnicos de la ONT
+            elseif (preg_match('/^(\d+)\s+([A-Z0-9]+)\s+([A-Z0-9-.]+)\s+(\d+)\s+([-\d.]+)/([-\d.]+)\s+(.+)/', $line, $matches)) {
+                $onts_details[$matches[1]] = [
                     'sn' => $matches[2],
                     'type' => $matches[3],
                     'distance' => (int) $matches[4],
                     'rx_power' => (float) $matches[5],
                     'tx_power' => (float) $matches[6],
-                    'description' => trim($matches[7]),
-                    'created_at' => now(),
-                    'updated_at' => now()
+                    'description' => trim($matches[7])
                 ];
-                DB::table('onts')->insert($ont_data);
-
             }
         }
+        
+        // Unir los datos por ONT ID
+        foreach ($onts_status as $id => $status) {
+            if (isset($onts_details[$id])) {
+                $insertData[] = array_merge($status, $onts_details[$id]);
+            }
+        }
+        
+        // Insertar en la base de datos
+        DB::table('onts')->insert($insertData);
+        
+        echo "Datos insertados correctamente.";
 
             // Insertar datos en MySQL con Eloquent
             if (!empty($ont_data)) {

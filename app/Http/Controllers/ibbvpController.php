@@ -143,14 +143,56 @@ class ibbvpController extends Controller
 
         // Verificar si la ejecución fue exitosa
         if ($return_var === 0) {
-            // Unir la salida en una cadena
-           // $resultado = implode("\n", $output);
-            var_dump($output);
-            /*
-            return response()->json([
-                'success' => true,
-                'resultado' => $resultado,
-            ]);*/
+            $lines = explode("\n", $fileContent);
+
+            $port = null;
+            $onts_status = [];
+            $onts_details = [];
+            $insertData = [];
+            foreach ($lines as $line) {
+                $line = trim($line);
+        
+                // Detectar el puerto GPON
+                if (preg_match('/In port (\d+/\d+/\d+)/', $line, $matches)) {
+                    $port = $matches[1];
+                }
+                
+                // Capturar información de estado de la ONT
+                elseif (preg_match('/^(\d+)\s+(\w+)\s+(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\s+(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\s+(.+)/', $line, $matches)) {
+                    $onts_status[$matches[1]] = [
+                        'port' => $port,
+                        'ont_id' => (int) $matches[1],
+                        'run_state' => $matches[2],
+                        'uptime' => $matches[3],
+                        'downtime' => $matches[4],
+                        'downcause' => trim($matches[5])
+                    ];
+                }
+                
+                // Capturar detalles técnicos de la ONT
+                elseif (preg_match('/^(\d+)\s+([A-Z0-9]+)\s+([A-Z0-9-.]+)\s+(\d+)\s+([-\d.]+)/([-\d.]+)\s+(.+)/', $line, $matches)) {
+                    $onts_details[$matches[1]] = [
+                        'sn' => $matches[2],
+                        'type' => $matches[3],
+                        'distance' => (int) $matches[4],
+                        'rx_power' => (float) $matches[5],
+                        'tx_power' => (float) $matches[6],
+                        'description' => trim($matches[7])
+                    ];
+                }
+            }
+            
+            // Unir los datos por ONT ID
+            foreach ($onts_status as $id => $status) {
+                if (isset($onts_details[$id])) {
+                    $insertData[] = array_merge($status, $onts_details[$id]);
+                }
+            }
+            
+            // Insertar en la base de datos
+            DB::table('onts')->insert($insertData);
+            
+            echo "Datos insertados correctamente.";
         } else {
             return response()->json([
                 'success' => false,
