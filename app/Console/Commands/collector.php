@@ -122,7 +122,7 @@ class collector extends Command
         return $datos;
     }
 
-    function procesar_salida($salida) {
+    function oldprocesar_salida($salida) {
         if (is_array($salida)) {
             //$salida = implode("\n", $salida);  // Convierte array en string
         }
@@ -176,26 +176,67 @@ class collector extends Command
         
         echo "Datos insertados correctamente.";
 
-            // Insertar datos en MySQL con Eloquent
-            if (!empty($ont_data)) {
-
-/*
-                $query = "INSERT INTO onts (ont_id, sn, type, distance, rx_power, tx_power, description, created_at, updated_at) VALUES ";
-                $values = [];
-                $bindings = [];
-        
-                foreach ($ont_data as $ont) {
-                    $values[] = "(?, ?, ?, ?, ?, ?, ?, ?, ?)";
-                    array_push($bindings, ...array_values($ont));
-                }
-        
-                $query .= implode(", ", $values);
-                $resultados = DB::insert($query, $bindings);*/
-            }
-    echo "Datos insertados correctamente.";
     }
     
-
+    function procesar_salida($salida) {
+        // Asegurar que la salida es un array de líneas
+        if (is_string($salida)) {
+            $salida = explode("\n", $salida);
+        }
+        
+        $port = null;
+        $onts_status = [];
+        $onts_details = [];
+        $insertData = [];
+    
+        foreach ($salida as $line) {
+            $line = trim($line);
+    
+            // Detectar el puerto GPON
+            if (preg_match('/In port (\d+/\d+/\d+)/', $line, $matches)) {
+                $port = $matches[1];
+            }
+            
+            // Capturar información de estado de la ONT
+            elseif (preg_match('/^(\d+)\s+(\w+)\s+(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\s+(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\s+(.+)/', $line, $matches)) {
+                $onts_status[$matches[1]] = [
+                    'port' => $port ?? 'Desconocido',
+                    'ont_id' => (int) $matches[1],
+                    'run_state' => $matches[2],
+                    'uptime' => $matches[3],
+                    'downtime' => $matches[4],
+                    'downcause' => trim($matches[5])
+                ];
+            }
+            
+            // Capturar detalles técnicos de la ONT
+            elseif (preg_match('/^(\d+)\s+([A-Z0-9]+)\s+([A-Z0-9-.]+)\s+(\d+)\s+([-\d.]+)/([-\d.]+)\s+(.+)/', $line, $matches)) {
+                $onts_details[$matches[1]] = [
+                    'sn' => $matches[2],
+                    'type' => $matches[3],
+                    'distance' => (int) $matches[4],
+                    'rx_power' => (float) $matches[5],
+                    'tx_power' => (float) $matches[6],
+                    'description' => trim($matches[7])
+                ];
+            }
+        }
+        
+        // Unir los datos por ONT ID
+        foreach ($onts_status as $id => $status) {
+            if (isset($onts_details[$id])) {
+                $insertData[] = array_merge($status, $onts_details[$id]);
+            }
+        }
+        
+        // Insertar en la base de datos solo si hay datos válidos
+        if (!empty($insertData)) {
+            DB::table('onts')->insert($insertData);
+            echo "Datos insertados correctamente.";
+        } else {
+            echo "No se encontraron datos válidos para insertar.";
+        }
+    }
     public function conectar()
     {
       
