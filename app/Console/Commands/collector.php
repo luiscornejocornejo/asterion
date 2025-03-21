@@ -210,7 +210,7 @@ class collector extends Command
             }
             
             // Capturar detalles técnicos de la ONT
-            elseif (preg_match('/^(\d+)\s+([A-Z0-9]+)\s+([A-Z0-9-.]+)\s+(\d+)\s+([-\d.]+)/([-\d.]+)\s+(.+)/', $line, $matches)) {
+            elseif (preg_match('/^(\\d+)\\s+([A-Z0-9]+)\\s+([A-Z0-9-.]+)\\s+(\\d+)\\s+([-\\d.]+)\\/([-\\d.]+)\\s+(.+)/', $line, $matches)) {
                 $onts_details[$matches[1]] = [
                     'sn' => $matches[2],
                     'type' => $matches[3],
