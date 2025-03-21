@@ -193,7 +193,7 @@ class collector extends Command
             $line = trim($line);
     
             // Detectar el puerto GPON
-            if (preg_match('/In port (\d+/\d+/\d+)/', $line, $matches)) {
+            if (preg_match('/In port (\\d+\\/\\d+\\/\\d+)/', $line, $matches)) {
                 $port = $matches[1];
             }
             
