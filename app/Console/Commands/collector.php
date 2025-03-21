@@ -124,7 +124,7 @@ class collector extends Command
 
     function procesar_salida($salida) {
         if (is_array($salida)) {
-            $salida = implode("\n", $salida);  // Convierte array en string
+            //$salida = implode("\n", $salida);  // Convierte array en string
         }
         $port = null;
         $onts_status = [];
